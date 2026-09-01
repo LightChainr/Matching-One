@@ -1,0 +1,86 @@
+{
+  "schema": "matching-one.p40-source-thermal-run.v1",
+  "started_utc": "2026-08-31T07:57:47.273901+00:00",
+  "execution_commit": "104982e33dbdee53ce6bcd44bfb0293f5b639045",
+  "backend": {
+    "commit": "291854a518b03eef4293431b89254f0f4429da53",
+    "path": "src/gaussian_orientation_mc.cpp",
+    "git_blob": "b3d2047e35a6840cc7236e4a6088a291c734313b",
+    "sha256": "0e8ccfd0f042879db0e7898b748dc7e943bd5259e19e841712a0cfd113985c36"
+  },
+  "code": [
+    {
+      "path": "scripts/replay_p40_source_thermal.py",
+      "sha256": "f31a68a66159d3560bd67d07ea05169028d46be5f74712fe1ace1986fe952c3c"
+    },
+    {
+      "path": "analysis/p40_source_thermal_replay.json",
+      "sha256": "14e2b582d18e8ad41144febb9f31b8505e12560f351c12252072d8b2d7c8b8a7"
+    },
+    {
+      "path": "src/p40_source_thermal_replay.cpp",
+      "sha256": "ceec835e767630bb2b7aff3f8ae62570c2297fb9f0c8d9d95d8d5a799fcd2603"
+    },
+    {
+      "path": "scripts/replay_p40_even_given_odd.py",
+      "sha256": "bf7bd444c20e04eba0d4ba7db7aecbf00b2e6d4438b4184af6c55539f2c00953"
+    }
+  ],
+  "environment": {
+    "python": "3.11.15",
+    "machine": "arm64",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)"
+  },
+  "new_samples": 0,
+  "server_actions": 0,
+  "test_suites": [],
+  "runs": [
+    {
+      "N": 65,
+      "command": [
+        "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-p40-source-thermal-lx401wcy/p40-source-thermal-replay",
+        "65",
+        "/private/tmp/matching-pr267-fix/results/p40-source-thermal/raw/n65.csv"
+      ],
+      "elapsed_seconds": 6.930716749979183,
+      "stdout": "N=65: observed old 1000000 counters in 100 paired K-stratified batches; new samples=0\n",
+      "output": "results/p40-source-thermal/raw/n65.csv",
+      "sha256": "7bb1d3f571c168efa4ab2b682bd041fa230a2be1eb17fa962a4c54aa21b1bb27",
+      "old_counter_interval": [
+        40000000,
+        41000000
+      ]
+    },
+    {
+      "N": 85,
+      "command": [
+        "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-p40-source-thermal-lx401wcy/p40-source-thermal-replay",
+        "85",
+        "/private/tmp/matching-pr267-fix/results/p40-source-thermal/raw/n85.csv"
+      ],
+      "elapsed_seconds": 8.456811750074849,
+      "stdout": "N=85: observed old 1000000 counters in 100 paired K-stratified batches; new samples=0\n",
+      "output": "results/p40-source-thermal/raw/n85.csv",
+      "sha256": "03334aa9d9a79de79d06a10a2eb55b80435274ec478ab9d3a41dea01234a365d",
+      "old_counter_interval": [
+        40000000,
+        41000000
+      ]
+    }
+  ],
+  "compile": {
+    "command": [
+      "c++",
+      "-O3",
+      "-std=c++17",
+      "-DMATCHING_P40_BACKEND=\"/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-p40-source-thermal-lx401wcy/archived_gaussian.cpp\"",
+      "/private/tmp/matching-pr267-fix/src/p40_source_thermal_replay.cpp",
+      "-o",
+      "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-p40-source-thermal-lx401wcy/p40-source-thermal-replay"
+    ],
+    "elapsed_seconds": 1.0396825829520822,
+    "binary_sha256": "0021b40eef2c722b6df0fa08f8c7e5cf43851ceb8b54db39d0adbdafbed6c2e3"
+  },
+  "completed_utc": "2026-08-31T07:58:03.847926+00:00"
+}

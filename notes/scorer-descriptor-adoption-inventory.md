@@ -1,15 +1,20 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 59
+In this checked Draft snapshot, the exact `scripts/*score*.py` corpus contains 64
 files. Python-AST inspection finds twenty-eight
 direct typed entrypoints importing both `ObservableDescriptor` and
 `map_observable` from `wrapping_channels`. Twenty-seven frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Three paths are confirmed channel-bearing and
+a descriptor is not applicable. Eight paths are confirmed channel-bearing and
 require typed migrations:
+`score_euler_occupancy_clock.py`,
+`score_etop_production_elimination.py`,
 `score_norm4_production.py`,
-`score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`. No scorer remains outside a registered
+`score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
+`score_z5_projective_leg_augmented_joint.py`,
+`score_z5_projective_leg_joint_ta_rank.py` and
+`score_z5_projective_leg_joint_annihilation.py`. No scorer remains outside a registered
 audit class.
 
 This closes an inventory gap: the repository now has a deterministic list,
@@ -25,12 +30,20 @@ comparing it with the checked result. This prevents the meta-tool from being
 silently counted as an unclassified scorer while keeping the scorer partition
 unchanged.
 
+The integrated `main@e7d63b4` snapshot remains 59/28/27/3/1. The five extra
+paths are post-snapshot existing-data analyses: three P250 projective-leg
+scorers, one activation-resolved E_top model eliminator and one external-Euler
+occupancy-clock residual scorer. Registering them
+here changes future composability status, not their numerical results or
+evidence role.
+
 `outside_registered_typed_path` remains a deliberate fail-closed triage label,
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
 open because inventory classification is not the same as implementing the 3
-required typed migrations.
+required typed migrations in that main snapshot and five additional
+post-snapshot migrations.
 
 `score_axis_pair_annihilator.py` and its stable-reader entrypoint are now
 covered frozen kernels. Their two typed entrypoints share one semantic gate
@@ -183,7 +196,23 @@ It must also preserve that width and cocycle diagnostics reuse the same raw
 curves and are not additive evidence. Prediction chronology, multipliers,
 numerical-rank cutoff, jackknife construction, and scores remain unchanged.
 
-`score_v14_fixedp_scalar_projector.py` is now a covered frozen kernel. Its typed entrypoint locks the basis-dependent `direction_1/matching` value, fixed-p coordinate, `p_ref=0.592746050790`, H4-null orientation weights, covariance reconstruction, and `N^(25/8)` normalization before delegating row projections. It remains a retrospective discovery/power diagnostic and neither proves the V_<1,4> assignment nor removes common thermal displacement.\n\n`score_v14_scalar_root_projector.py` is also now a covered frozen kernel. Its typed entrypoint validates the exact `direction_1/matching` identity before the implicit-root calculation, and freezes size order 65/85/130/170, lineages 65->130 then 85->170, first/second orientation order, the H4-null scalar-root formula, beta 7/2, q=2^(-7/2), synchronized delete-one covariance, and parameter-free lineage reconstruction. The implicit root remains a response coordinate rather than a topology observable; H8/H12 contamination, slope anisotropy, matching parity, and the V_<1,4> assignment remain unresolved.
+`score_v14_fixedp_scalar_projector.py` is now a covered frozen kernel. Its
+typed entrypoint locks the basis-dependent `direction_1/matching` value,
+fixed-p coordinate, `p_ref=0.592746050790`, H4-null orientation weights,
+covariance reconstruction, and `N^(25/8)` normalization before delegating row
+projections. It remains a retrospective discovery/power diagnostic and
+neither proves the `V_<1,4>` assignment nor removes common thermal
+displacement.
+
+`score_v14_scalar_root_projector.py` is also now a covered frozen kernel. Its
+typed entrypoint validates the exact `direction_1/matching` identity before
+the implicit-root calculation, and freezes size order 65/85/130/170,
+lineages 65->130 then 85->170, first/second orientation order, the H4-null
+scalar-root formula, beta 7/2, `q=2^(-7/2)`, synchronized delete-one
+covariance, and parameter-free lineage reconstruction. The implicit root
+remains a response coordinate rather than a topology observable; H8/H12
+contamination, slope anisotropy, matching parity, and the `V_<1,4>`
+assignment remain unresolved.
 
 `score_p159_pell_hex_filter.py` is now a covered frozen kernel. Its typed
 entrypoint validates an exact identity map for the unchanged full-configuration
@@ -219,12 +248,12 @@ modes remain response coordinates rather than new topology identities, and all
 views reuse the same threshold histograms rather than becoming independent
 evidence blocks.
 
-The axis-pair annihilator score path is migration-required as one operational
-unit. The base scorer reconstructs the cross matching function from
-`K_minus/K_plus` rank histograms, solves implicit ordinary and annihilator
-roots, and compares an `L^(13/4)`-rescaled adjacent-size combination. The
-stable entrypoint corrects batch-reader ordering and delegates to that base
-without adding a semantic gate. A future migration must type both the implicit
-root-location quantity and the ordered adjacent-size relationship, while
-preserving the stable reader contract; this audit does not change its frozen
-numerics or reinterpret existing score artifacts.
+The axis-pair annihilator base and stable-reader paths are now covered frozen
+kernels, not migration-required adoption paths. Their shared semantic gate
+types the `cross` matching-odd topology value, adjacent upper/lower roles,
+orientation order, angular normalization and stable batch-reader contract.
+The implicit ordinary and annihilator roots, the `L^(13/4)` adjacent-size
+relationship and the candidate `q -> w` interpretation remain bespoke
+response/model metadata. They are a second-layer contract gap, not evidence
+that these two paths remain untyped in the current adoption inventory; the
+wrappers change neither frozen numerics nor existing score interpretation.

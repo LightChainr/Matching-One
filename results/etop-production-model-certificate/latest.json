@@ -1,0 +1,872 @@
+{
+  "claim_boundary": "This is a machine-checkable certificate relative to the declared Gaussian first-order outer confidence sets. It is not an exact finite-replica theorem, a continuum field identity, an exponent fit, or an independence-weighted meta-analysis.",
+  "confidence": {
+    "construction": "two-sided Gaussian Bonferroni intervals across the eight selected production datasets",
+    "covariance": "same-dataset intrinsic-center first-order A_top/E_top covariance from aligned production batches",
+    "cross_dataset_rule": "no cross-dataset independence or pooled p-value is used; one incompatible simultaneous interval eliminates a universal fixed-ratio model",
+    "familywise_alpha_per_model": 0.01
+  },
+  "decision_summary": {
+    "eliminated": [
+      "M_ETOP_ZERO",
+      "M_F2_ZERO",
+      "M_F1_ZERO"
+    ],
+    "not_eliminated": [
+      "M_COMMON_STATE_LINE"
+    ]
+  },
+  "fixed_ratio_models": [
+    {
+      "bonferroni_two_sided_gaussian_critical": 3.2272184259631627,
+      "decision": "eliminated",
+      "familywise_alpha": 0.01,
+      "id": "M_ETOP_ZERO",
+      "incompatible_datasets": [
+        "P49-N130",
+        "P50-N145",
+        "P49-N170",
+        "P43-N185",
+        "P43-N265"
+      ],
+      "logic": "a universal fixed-ratio model is eliminated when any simultaneous dataset interval excludes zero",
+      "meaning": "pure Alexander-odd state response with E_top=0",
+      "ratio_r_in_E_equals_rA": 0.0,
+      "rows": [
+        {
+          "N": 130,
+          "excludes_zero": true,
+          "id": "P49-N130",
+          "residual_E_minus_rA": -0.0001336148057156206,
+          "simultaneous_interval": [
+            -0.0002222651494105641,
+            -4.49644620206771e-05
+          ],
+          "standard_error": 2.7469582778081043e-05,
+          "variance": 7.545779780018467e-10,
+          "z": -4.864100295772843
+        },
+        {
+          "N": 145,
+          "excludes_zero": true,
+          "id": "P50-N145",
+          "residual_E_minus_rA": -0.00011697806190071244,
+          "simultaneous_interval": [
+            -0.00018484245054154277,
+            -4.911367325988209e-05
+          ],
+          "standard_error": 2.102875593881633e-05,
+          "variance": 4.422085763343031e-10,
+          "z": -5.5627666344629665
+        },
+        {
+          "N": 170,
+          "excludes_zero": true,
+          "id": "P49-N170",
+          "residual_E_minus_rA": -0.00010653636068648911,
+          "simultaneous_interval": [
+            -0.00019060504931981017,
+            -2.2467672053168067e-05
+          ],
+          "standard_error": 2.604989112511985e-05,
+          "variance": 6.78596827630598e-10,
+          "z": -4.089704643093742
+        },
+        {
+          "N": 185,
+          "excludes_zero": true,
+          "id": "P43-N185",
+          "residual_E_minus_rA": -0.00010323263125078345,
+          "simultaneous_interval": [
+            -0.00014755170687446613,
+            -5.8913555627100776e-05
+          ],
+          "standard_error": 1.3732902386505075e-05,
+          "variance": 1.885926079572768e-10,
+          "z": -7.517175054868748
+        },
+        {
+          "N": 265,
+          "excludes_zero": true,
+          "id": "P43-N265",
+          "residual_E_minus_rA": -8.156724853616632e-05,
+          "simultaneous_interval": [
+            -0.00011673356871778948,
+            -4.640092835454317e-05
+          ],
+          "standard_error": 1.0896789600204323e-05,
+          "variance": 1.187400235911211e-10,
+          "z": -7.485438512517199
+        },
+        {
+          "N": 290,
+          "excludes_zero": false,
+          "id": "P50-N290",
+          "residual_E_minus_rA": -4.1924295881435686e-05,
+          "simultaneous_interval": [
+            -0.00011346429749386867,
+            2.9615705730997303e-05
+          ],
+          "standard_error": 2.216769743159913e-05,
+          "variance": 4.914068094189266e-10,
+          "z": -1.8912336750714736
+        },
+        {
+          "N": 325,
+          "excludes_zero": false,
+          "id": "P57-N325",
+          "residual_E_minus_rA": -4.5427206610114255e-05,
+          "simultaneous_interval": [
+            -0.0001224758456691472,
+            3.162143244891869e-05
+          ],
+          "standard_error": 2.3874627896014752e-05,
+          "variance": 5.699978571731658e-10,
+          "z": -1.9027398796735653
+        },
+        {
+          "N": 425,
+          "excludes_zero": false,
+          "id": "P57-N425",
+          "residual_E_minus_rA": -4.663976706101828e-05,
+          "simultaneous_interval": [
+            -0.0001131491349118445,
+            1.9869600789807947e-05
+          ],
+          "standard_error": 2.0608883277237894e-05,
+          "variance": 4.247260699348157e-10,
+          "z": -2.2630904563631056
+        }
+      ],
+      "strongest_abs_z": {
+        "id": "P43-N185",
+        "z": -7.517175054868748
+      }
+    },
+    {
+      "bonferroni_two_sided_gaussian_critical": 3.2272184259631627,
+      "decision": "eliminated",
+      "familywise_alpha": 0.01,
+      "id": "M_F2_ZERO",
+      "incompatible_datasets": [
+        "P50-N145"
+      ],
+      "logic": "a universal fixed-ratio model is eliminated when any simultaneous dataset interval excludes zero",
+      "meaning": "exact endpoint cancellation F2=(A_top+E_top)/2=0",
+      "ratio_r_in_E_equals_rA": -1.0,
+      "rows": [
+        {
+          "N": 130,
+          "excludes_zero": false,
+          "id": "P49-N130",
+          "residual_E_minus_rA": 0.00015625139134291534,
+          "simultaneous_interval": [
+            -4.834383200641101e-05,
+            0.0003608466146922417
+          ],
+          "standard_error": 6.339676970834875e-05,
+          "variance": 4.019150409453406e-09,
+          "z": 2.4646585632317874
+        },
+        {
+          "N": 145,
+          "excludes_zero": true,
+          "id": "P50-N145",
+          "residual_E_minus_rA": 0.0001577256775429568,
+          "simultaneous_interval": [
+            1.1259186941014652e-05,
+            0.00030419216814489894
+          ],
+          "standard_error": 4.538474663617764e-05,
+          "variance": 2.0597752272300374e-09,
+          "z": 3.4753014885672755
+        },
+        {
+          "N": 170,
+          "excludes_zero": false,
+          "id": "P49-N170",
+          "residual_E_minus_rA": 0.00015702739893957865,
+          "simultaneous_interval": [
+            -5.635341590043831e-06,
+            0.00031969013946920113
+          ],
+          "standard_error": 5.040338739423125e-05,
+          "variance": 2.5405014608129493e-09,
+          "z": 3.1154136072519343
+        },
+        {
+          "N": 185,
+          "excludes_zero": false,
+          "id": "P43-N185",
+          "residual_E_minus_rA": 1.2910633760355051e-05,
+          "simultaneous_interval": [
+            -8.920377503588954e-05,
+            0.00011502504255659965
+          ],
+          "standard_error": 3.1641616809921556e-05,
+          "variance": 1.0011919143459103e-09,
+          "z": 0.40802699299192535
+        },
+        {
+          "N": 265,
+          "excludes_zero": false,
+          "id": "P43-N265",
+          "residual_E_minus_rA": -7.771960687608096e-06,
+          "simultaneous_interval": [
+            -8.443172376642978e-05,
+            6.888780239121359e-05
+          ],
+          "standard_error": 2.3754129085930276e-05,
+          "variance": 5.642586486310388e-10,
+          "z": -0.3271835670966139
+        },
+        {
+          "N": 290,
+          "excludes_zero": false,
+          "id": "P50-N290",
+          "residual_E_minus_rA": 0.00010329714123159215,
+          "simultaneous_interval": [
+            -3.907533767840736e-05,
+            0.0002456696201415916
+          ],
+          "standard_error": 4.4116158288080074e-05,
+          "variance": 1.9462354220989364e-09,
+          "z": 2.3414808822893907
+        },
+        {
+          "N": 325,
+          "excludes_zero": false,
+          "id": "P57-N325",
+          "residual_E_minus_rA": -1.1616763414855581e-05,
+          "simultaneous_interval": [
+            -0.0001701302104946872,
+            0.00014689668366497604
+          ],
+          "standard_error": 4.911766919914115e-05,
+          "variance": 2.4125454275562587e-09,
+          "z": -0.23650884914259546
+        },
+        {
+          "N": 425,
+          "excludes_zero": false,
+          "id": "P57-N425",
+          "residual_E_minus_rA": -8.863789254869508e-06,
+          "simultaneous_interval": [
+            -0.00013674090750835494,
+            0.00011901332899861593
+          ],
+          "standard_error": 3.9624562510150064e-05,
+          "variance": 1.57010595412079e-09,
+          "z": -0.2236943121479006
+        }
+      ],
+      "strongest_abs_z": {
+        "id": "P50-N145",
+        "z": 3.4753014885672755
+      }
+    },
+    {
+      "bonferroni_two_sided_gaussian_critical": 3.2272184259631627,
+      "decision": "eliminated",
+      "familywise_alpha": 0.01,
+      "id": "M_F1_ZERO",
+      "incompatible_datasets": [
+        "P49-N130",
+        "P50-N145",
+        "P49-N170",
+        "P43-N185",
+        "P43-N265",
+        "P50-N290"
+      ],
+      "logic": "a universal fixed-ratio model is eliminated when any simultaneous dataset interval excludes zero",
+      "meaning": "exact endpoint cancellation F1=(A_top-E_top)/2=0",
+      "ratio_r_in_E_equals_rA": 1.0,
+      "rows": [
+        {
+          "N": 130,
+          "excludes_zero": true,
+          "id": "P49-N130",
+          "residual_E_minus_rA": -0.0004234810027741565,
+          "simultaneous_interval": [
+            -0.0006349656997301788,
+            -0.00021199630581813427
+          ],
+          "standard_error": 6.553157209769732e-05,
+          "variance": 4.294386941595702e-09,
+          "z": -6.462243911115281
+        },
+        {
+          "N": 145,
+          "excludes_zero": true,
+          "id": "P50-N145",
+          "residual_E_minus_rA": -0.00039168180134438165,
+          "simultaneous_interval": [
+            -0.0005349371269067446,
+            -0.00024842647578201865
+          ],
+          "standard_error": 4.438972100861394e-05,
+          "variance": 1.9704473312225823e-09,
+          "z": -8.823704957919757
+        },
+        {
+          "N": 170,
+          "excludes_zero": true,
+          "id": "P49-N170",
+          "residual_E_minus_rA": -0.00037010012031255684,
+          "simultaneous_interval": [
+            -0.0005422771254995262,
+            -0.0001979231151255875
+          ],
+          "standard_error": 5.335151900528182e-05,
+          "variance": 2.846384580170947e-09,
+          "z": -6.937011864196721
+        },
+        {
+          "N": 185,
+          "excludes_zero": true,
+          "id": "P43-N185",
+          "residual_E_minus_rA": -0.00021937589626192194,
+          "simultaneous_interval": [
+            -0.00032469282693931516,
+            -0.00011405896558452874
+          ],
+          "standard_error": 3.263396423065519e-05,
+          "variance": 1.0649756214076826e-09,
+          "z": -6.722318340223221
+        },
+        {
+          "N": 265,
+          "excludes_zero": true,
+          "id": "P43-N265",
+          "residual_E_minus_rA": -0.00015536253638472454,
+          "simultaneous_interval": [
+            -0.0002263532217405473,
+            -8.437185102890176e-05
+          ],
+          "standard_error": 2.199748389656508e-05,
+          "variance": 4.8388929777964e-10,
+          "z": -7.062741226008329
+        },
+        {
+          "N": 290,
+          "excludes_zero": true,
+          "id": "P50-N290",
+          "residual_E_minus_rA": -0.00018714573299446352,
+          "simultaneous_interval": [
+            -0.0003312408712639025,
+            -4.3050594725024534e-05
+          ],
+          "standard_error": 4.464994904286152e-05,
+          "variance": 1.9936179495301306e-09,
+          "z": -4.191398579532841
+        },
+        {
+          "N": 325,
+          "excludes_zero": false,
+          "id": "P57-N325",
+          "residual_E_minus_rA": -7.923764980537294e-05,
+          "simultaneous_interval": [
+            -0.00023255860784734795,
+            7.408330823660208e-05
+          ],
+          "standard_error": 4.750870186179493e-05,
+          "variance": 2.257076752592917e-09,
+          "z": -1.6678555022589128
+        },
+        {
+          "N": 425,
+          "excludes_zero": false,
+          "id": "P57-N425",
+          "residual_E_minus_rA": -8.441574486716705e-05,
+          "simultaneous_interval": [
+            -0.00022163795390834392,
+            5.280646417400981e-05
+          ],
+          "standard_error": 4.2520273166890745e-05,
+          "variance": 1.8079736301870091e-09,
+          "z": -1.9853057983855815
+        }
+      ],
+      "strongest_abs_z": {
+        "id": "P50-N145",
+        "z": -8.823704957919757
+      }
+    }
+  ],
+  "free_ratio_model": {
+    "bonferroni_two_sided_gaussian_critical": 3.2272184259631627,
+    "common_ratio_intersection": [
+      -0.9305631428471134,
+      -0.4551779794216242
+    ],
+    "decision": "not_eliminated",
+    "familywise_alpha": 0.01,
+    "fieller_sets": [
+      {
+        "N": 130,
+        "discriminant": 3.837795225301813e-15,
+        "id": "P49-N130",
+        "interval": [
+          -1.4198485471600681,
+          -0.14486468930265037
+        ],
+        "quadratic": [
+          4.858880440243895e-08,
+          7.602754539239423e-08,
+          9.99403286919143e-09
+        ],
+        "set_type": "bounded"
+      },
+      {
+        "N": 145,
+        "discriminant": 2.0450655603008675e-15,
+        "id": "P50-N145",
+        "interval": [
+          -0.9305631428471134,
+          -0.1651256063114149
+        ],
+        "quadratic": [
+          5.9080459124315255e-08,
+          6.473379435763254e-08,
+          9.078291720453247e-09
+        ],
+        "set_type": "bounded"
+      },
+      {
+        "N": 170,
+        "discriminant": 2.1469033985278227e-15,
+        "id": "P49-N170",
+        "interval": [
+          -1.0406068281015983,
+          -0.08488501914027222
+        ],
+        "quadratic": [
+          4.848135566087343e-08,
+          5.4565370539546545e-08,
+          4.282451739795419e-09
+        ],
+        "set_type": "bounded"
+      },
+      {
+        "N": 185,
+        "discriminant": 3.9598578506950843e-16,
+        "id": "P43-N185",
+        "interval": [
+          -4.638623691594937,
+          -0.39923933664341243
+        ],
+        "quadratic": [
+          4.693934286028552e-09,
+          2.3647397996563615e-08,
+          8.692795690822527e-09
+        ],
+        "set_type": "bounded"
+      },
+      {
+        "N": 265,
+        "discriminant": 1.2865470071371998e-16,
+        "id": "P43-N265",
+        "interval": [
+          -9.720375710608486,
+          -0.4551779794216242
+        ],
+        "quadratic": [
+          1.22421624247275e-09,
+          1.245707810348839e-08,
+          5.416545958644292e-09
+        ],
+        "set_type": "bounded"
+      },
+      {
+        "N": 290,
+        "discriminant": 2.188104851991363e-16,
+        "id": "P50-N290",
+        "interval": [
+          -2.347928722138928,
+          0.2515014525064055
+        ],
+        "quadratic": [
+          5.6905718159465106e-09,
+          1.1929869934752528e-08,
+          -3.360325245552749e-09
+        ],
+        "set_type": "bounded"
+      },
+      {
+        "N": 325,
+        "discriminant": -2.51964867531461e-16,
+        "id": "P57-N325",
+        "quadratic": [
+          -1.7237275690110868e-08,
+          3.88142634233185e-09,
+          -3.872861680451128e-09
+        ],
+        "set_type": "all_real"
+      },
+      {
+        "N": 425,
+        "discriminant": -1.0036192389815927e-16,
+        "id": "P57-N425",
+        "quadratic": [
+          -1.1740725502351009e-08,
+          2.2850369700996796e-09,
+          -2.2482281404104708e-09
+        ],
+        "set_type": "all_real"
+      }
+    ],
+    "id": "M_COMMON_STATE_LINE",
+    "logic": "the common-line model survives exactly when the simultaneous Fieller sets have a nonempty real intersection",
+    "meaning": "one geometry-independent mixing line E_top=r*A_top with free real r"
+  },
+  "observable": {
+    "A_top": "P2-P0",
+    "E_top": "P0+P2=1-P1",
+    "F1": "(A_top-E_top)/2",
+    "F2": "(A_top+E_top)/2",
+    "orientation_coordinate": "P4 angular-normalized first-minus-second contrast at the source intrinsic center"
+  },
+  "projection_sha256": "259bd591cdc6fa5652b2056a88861d4d11621c5a49d4878439ef4b05dd8211d9",
+  "raw_production_git_objects": [
+    {
+      "bytes": 1504007,
+      "git_blob_sha": "72bda0fe9a58a2c27823482efdd009669a3144a6",
+      "path": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n185.hist.csv"
+    },
+    {
+      "bytes": 20385,
+      "git_blob_sha": "c339f8952a841246a6f82b23309b2362a7082362",
+      "path": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n185.moments.csv"
+    },
+    {
+      "bytes": 1990261,
+      "git_blob_sha": "44bc80928e5cb294f0f26902f407d8a7ba24b443",
+      "path": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n265.hist.csv"
+    },
+    {
+      "bytes": 21285,
+      "git_blob_sha": "ea3ed8c298fdebe8eff06b5808fdcba27ab09815",
+      "path": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n265.moments.csv"
+    },
+    {
+      "bytes": 1044865,
+      "git_blob_sha": "72a6ae5470aff5cc90b27cede5d12128863f7ede",
+      "path": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.hist.csv"
+    },
+    {
+      "bytes": 19085,
+      "git_blob_sha": "27e73ff4b76d8e31bd9a527561cde4ff1d5b2476",
+      "path": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.moments.csv"
+    },
+    {
+      "bytes": 1302766,
+      "git_blob_sha": "8e046a6a78f5804b9b194a927076056134ae6c75",
+      "path": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.hist.csv"
+    },
+    {
+      "bytes": 19985,
+      "git_blob_sha": "ec91f76a0371db3e44ab5eb94ef655df7071ded5",
+      "path": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.moments.csv"
+    },
+    {
+      "bytes": 1138741,
+      "git_blob_sha": "6feffb11fae15e692f7e32ce810da11bd8bcf56f",
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.hist.csv"
+    },
+    {
+      "bytes": 19085,
+      "git_blob_sha": "965efdcc83b6008000e00f12089c8661d5738f58",
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.moments.csv"
+    },
+    {
+      "bytes": 1952540,
+      "git_blob_sha": "c6101ee1f2ca06ee552bfb80dbfd967ba791fbf1",
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.hist.csv"
+    },
+    {
+      "bytes": 20485,
+      "git_blob_sha": "15af2c5855cae7d3048beaf7912379cdc4acc291",
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.moments.csv"
+    },
+    {
+      "bytes": 2279437,
+      "git_blob_sha": "da442e4f9dcf12c4435f4bd24f4da25b501d59c2",
+      "path": "results/server-20260829/P57-norm5-500m/raw/n325_500m.hist.csv"
+    },
+    {
+      "bytes": 21385,
+      "git_blob_sha": "1dc912794a14cf5d6fd8a49ad1921001f1c577a1",
+      "path": "results/server-20260829/P57-norm5-500m/raw/n325_500m.moments.csv"
+    },
+    {
+      "bytes": 2766279,
+      "git_blob_sha": "df5277e8b80b7757d26fec16cb27ed336d3dfec6",
+      "path": "results/server-20260829/P57-norm5-500m/raw/n425_500m.hist.csv"
+    },
+    {
+      "bytes": 21685,
+      "git_blob_sha": "937804a13cb709e1326f21cebf11f691f1d7b80c",
+      "path": "results/server-20260829/P57-norm5-500m/raw/n425_500m.moments.csv"
+    }
+  ],
+  "schema": "matching-one/etop-production-model-certificate/v1",
+  "source": {
+    "bytes": 190805,
+    "commit": "66513881dac903f42444052fe364528cfd7d9987",
+    "git_blob_sha": "fb64070aa47753b67d9527c094288ce950ec7a8c",
+    "integration_status": "branch_only",
+    "path": "results/rank-plane-crosswalk/latest.json",
+    "sha256": "d3739f34c0ba982edea580d71990deb1e2ef24f292c7497b31b2346e14a8c299"
+  },
+  "source_projection": [
+    {
+      "A_top": 0.00028986619705853594,
+      "E_top": -0.0001336148057156206,
+      "N": 130,
+      "batches": 100,
+      "covariance_AE": [
+        [
+          3.402190697522707e-09,
+          -6.8809133035574e-11
+        ],
+        [
+          -6.8809133035574e-11,
+          7.545779780018467e-10
+        ]
+      ],
+      "delta_cos4": 1.3633136094674556,
+      "histogram": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.hist.csv",
+      "id": "P49-N130",
+      "moments": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.moments.csv",
+      "orientations": {
+        "first": [
+          11,
+          3
+        ],
+        "second": [
+          9,
+          7
+        ]
+      },
+      "samples_per_orientation": 100000000
+    },
+    {
+      "A_top": 0.0002747037394436692,
+      "E_top": -0.00011697806190071244,
+      "N": 145,
+      "batches": 100,
+      "covariance_AE": [
+        [
+          1.572902702892007e-09,
+          2.23319740018638e-11
+        ],
+        [
+          2.23319740018638e-11,
+          4.422085763343031e-10
+        ]
+      ],
+      "delta_cos4": 1.917717003567182,
+      "histogram": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.hist.csv",
+      "id": "P50-N145",
+      "moments": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.moments.csv",
+      "orientations": {
+        "first": [
+          12,
+          1
+        ],
+        "second": [
+          9,
+          8
+        ]
+      },
+      "samples_per_orientation": 100000000
+    },
+    {
+      "A_top": 0.00026356375962606775,
+      "E_top": -0.00010653636068648911,
+      "N": 170,
+      "batches": 100,
+      "covariance_AE": [
+        [
+          2.01484619286135e-09,
+          -7.647077983949948e-11
+        ],
+        [
+          -7.647077983949948e-11,
+          6.78596827630598e-10
+        ]
+      ],
+      "delta_cos4": 1.5944636678200692,
+      "histogram": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.hist.csv",
+      "id": "P49-N170",
+      "moments": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.moments.csv",
+      "orientations": {
+        "first": [
+          13,
+          1
+        ],
+        "second": [
+          11,
+          7
+        ]
+      },
+      "samples_per_orientation": 100000000
+    },
+    {
+      "A_top": 0.0001161432650111385,
+      "E_top": -0.00010323263125078345,
+      "N": 185,
+      "batches": 100,
+      "covariance_AE": [
+        [
+          8.444911599195196e-10,
+          -1.594592676544309e-11
+        ],
+        [
+          -1.594592676544309e-11,
+          1.885926079572768e-10
+        ]
+      ],
+      "delta_cos4": 1.1780861943024106,
+      "histogram": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n185.hist.csv",
+      "id": "P43-N185",
+      "moments": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n185.moments.csv",
+      "orientations": {
+        "first": [
+          13,
+          4
+        ],
+        "second": [
+          11,
+          8
+        ]
+      },
+      "samples_per_orientation": 500000000
+    },
+    {
+      "A_top": 7.379528784855823e-05,
+      "E_top": -8.156724853616632e-05,
+      "N": 265,
+      "batches": 100,
+      "covariance_AE": [
+        [
+          4.053339496142183e-10,
+          2.009233771284972e-11
+        ],
+        [
+          2.009233771284972e-11,
+          1.187400235911211e-10
+        ]
+      ],
+      "delta_cos4": 1.7224635101459593,
+      "histogram": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n265.hist.csv",
+      "id": "P43-N265",
+      "moments": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n265.moments.csv",
+      "orientations": {
+        "first": [
+          16,
+          3
+        ],
+        "second": [
+          12,
+          11
+        ]
+      },
+      "samples_per_orientation": 500000000
+    },
+    {
+      "A_top": 0.00014522143711302783,
+      "E_top": -4.1924295881435686e-05,
+      "N": 290,
+      "batches": 100,
+      "covariance_AE": [
+        [
+          1.478519876395607e-09,
+          -1.184563185779851e-11
+        ],
+        [
+          -1.184563185779851e-11,
+          4.914068094189266e-10
+        ]
+      ],
+      "delta_cos4": -1.917717003567182,
+      "histogram": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.hist.csv",
+      "id": "P50-N290",
+      "moments": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.moments.csv",
+      "orientations": {
+        "first": [
+          13,
+          11
+        ],
+        "second": [
+          17,
+          1
+        ]
+      },
+      "samples_per_orientation": 100000000
+    },
+    {
+      "A_top": 3.3810443195258674e-05,
+      "E_top": -4.5427206610114255e-05,
+      "N": 325,
+      "batches": 100,
+      "covariance_AE": [
+        [
+          1.764813232901422e-09,
+          3.886716874083537e-11
+        ],
+        [
+          3.886716874083537e-11,
+          5.699978571731658e-10
+        ]
+      ],
+      "delta_cos4": -0.7634556213017751,
+      "histogram": "results/server-20260829/P57-norm5-500m/raw/n325_500m.hist.csv",
+      "id": "P57-N325",
+      "moments": "results/server-20260829/P57-norm5-500m/raw/n325_500m.moments.csv",
+      "orientations": {
+        "first": [
+          17,
+          6
+        ],
+        "second": [
+          18,
+          1
+        ]
+      },
+      "samples_per_orientation": 500000000
+    },
+    {
+      "A_top": 3.777597780614877e-05,
+      "E_top": -4.663976706101828e-05,
+      "N": 425,
+      "batches": 100,
+      "covariance_AE": [
+        [
+          1.264313722219084e-09,
+          -5.946691901655479e-11
+        ],
+        [
+          -5.946691901655479e-11,
+          4.247260699348157e-10
+        ]
+      ],
+      "delta_cos4": -0.8928996539792388,
+      "histogram": "results/server-20260829/P57-norm5-500m/raw/n425_500m.hist.csv",
+      "id": "P57-N425",
+      "moments": "results/server-20260829/P57-norm5-500m/raw/n425_500m.moments.csv",
+      "orientations": {
+        "first": [
+          16,
+          13
+        ],
+        "second": [
+          19,
+          8
+        ]
+      },
+      "samples_per_orientation": 500000000
+    }
+  ],
+  "status": "production_data_outer_confidence_model_elimination"
+}

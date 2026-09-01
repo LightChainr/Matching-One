@@ -1,0 +1,37 @@
+{
+  "schema": "matching-one.p154-absolute-cluster-replay.v1",
+  "question": "Does the explicitly defined absolute cluster fugacity have a directional q or E_top response beyond the declared linear clock/Euler controls?",
+  "status": "retrospective new-mark analysis of old Phase-E configurations; declared before reading these new moments, not a new independent trial",
+  "source": "S=(number of black NN clusters + number of white matching clusters)/N",
+  "measure": "P_lambda(eta) proportional to P_p(eta) exp(lambda S(eta))",
+  "p": 0.59274605079,
+  "parent_metadata_declared_commit": "0578105d92d3822cb48f5c421bd23ff339295cc6",
+  "resolvable_original_runner_commit": "05781051b76001f2b18560d7b0914f2481412584",
+  "backend_blob": "22058703c12b168e844088277c9b61d64b9c1d2c",
+  "provenance_boundary": "Preserve the historical metadata literally; its declared full SHA differs from the resolvable original runner. Replay identity is anchored by the unchanged backend blob, explicit seeds/counters, and archived batch sums/hashes.",
+  "runs": [
+    {"N": 65, "seed": 202615465, "counter_start": 15466000000, "counter_end_exclusive": 15466020000, "first": [8,1], "second": [7,4], "parent_sha256": "73ed38c9f8f346b5bbcd8a441a1ec351dc5fac487fea60bd9273b83ef432607e", "edge_replay_sha256": "9e8cd4c07d403a13cdeff07710da76e6c272ffda304a9054f934b1e0a3bc2bf4"},
+    {"N": 130, "seed": 2026154130, "counter_start": 15466200000, "counter_end_exclusive": 15466220000, "first": [11,3], "second": [9,7], "parent_sha256": "86f529b8af9c2b5a2e84ccaf69ac5ffe950d2b50627bc98d4ba3773da261fcd8", "edge_replay_sha256": "88033dd0f0ad3c1b5ea6a7731c49de0ee51cd6652e06fd4c9feda5c1c39b28fe"}
+  ],
+  "samples_per_size": 20000,
+  "batches_per_size": 100,
+  "primary_estimands": ["P4[Cov(q,S)]", "P4[Cov(q^2,S)]"],
+  "direction_projection": "(first-second)/(cos(4theta_first)-cos(4theta_second)); exact rational geometry; no exponent fit",
+  "controls": {
+    "clock": ["K", "K(K-1)"],
+    "clock_euler": ["K", "K(K-1)", "T_NN", "chi_local"],
+    "chi_local": "K - occupied NN edges + fully black elementary square faces; counted independently of cluster numbers",
+    "estimator": "per-orientation pooled linear least-squares source projection; reestimate coefficients in every aligned delete-one batch",
+    "boundary": "empirical linear controls, not the exact conditional mean given K, not RG thermal orthogonality, not conditioning on q or E"
+  },
+  "uncertainty": "pooled unbiased covariances; aligned delete-one of the same batch from both orientations; full output covariance and all delete-one vectors; N65 and N130 are independent original blocks",
+  "scope": "deterministic replay of 40000 existing counters, two paired geometries each; no new random sample, server job, scientific test suite or production launch",
+  "interpretation_limits": [
+    "P34/P40 already stored black and white cluster counts and their q second moments; these are not newly invented observables",
+    "the new information is E_top times absolute cluster count and its controls on the old norm4 Phase-E configurations",
+    "q/E readouts see any microscopic source only through its conditional projection onto 1,q,q^2; a nonzero response does not escape three-state readout closure",
+    "source residual variance is not a field count or a continuum operator assignment",
+    "an inconclusive finite pilot is completed work, not a prohibition on the source"
+  ],
+  "delivery": "existing Draft PR267, reproducible CSV/JSON and repository Markdown report; no new report surface requested"
+}

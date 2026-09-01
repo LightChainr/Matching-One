@@ -1,0 +1,146 @@
+{
+  "schema": "matching-one.p337-thermal-pivotal-preflight.contract.v1",
+  "status": "frozen_implementation_ready_not_executed",
+  "date": "2026-09-01",
+  "source_issue": 536,
+  "scientific_inputs": {
+    "raw_summability_commit": "eed2190c04b67084ab5aef5827e00377853a0bca",
+    "raw_summability_path": "notes/p337-critical-spatial-summability.md",
+    "joint_U_commit": "410015f5505dc2d8ca0e9ac904f656a4adc9fe86",
+    "joint_U_path": "notes/regular-pair-joint-transmission-result.md",
+    "spatial_result_commit": "a237968f1d7a82d26b46e83c58179dbba7f1a908",
+    "spatial_result_path": "notes/regular-pair-spatial-transmission-result.md",
+    "spatial_producer_path_at_commit": "scripts/p337_regular_pair_spatial_sampler.cpp",
+    "kernel_commit": "c29d8bce07e6381be0f948b2c0dd1f640e42d395",
+    "kernel_path": "analysis/regular_pair_spatial_kernel.tsv",
+    "kernel_sha256": "36ae069d370b1d7a4398861c928afb41aa76885c8895c696b1bc0c97e9c314fd",
+    "kernel_rows": 1874
+  },
+  "question": "On the first 32 already-produced configurations at each of L32 and L64, does a force-off/force-on callback reproduce the frozen pair kernel and expose a usable signed/absolute three-site decomposition of the q/E-weighted thermal midpoint primitives, without adding a seed or making a physical significance claim?",
+  "producer": {
+    "path": "scripts/p337_thermal_pivotal_preflight.cpp",
+    "language": "C++17 plus standard threads",
+    "cli": "p337_thermal_pivotal_preflight --kernel analysis/regular_pair_spatial_kernel.tsv --output-prefix OUTPUT_PREFIX --threads 1..64",
+    "seed_or_count_arguments": false,
+    "output_overwrite": "refused if any sidecar exists"
+  },
+  "scorer": {
+    "path": "scripts/analyze_p337_thermal_pivotal_preflight.py",
+    "cli": "python3 scripts/analyze_p337_thermal_pivotal_preflight.py --config results/p337-thermal-pivotal-preflight/raw/preflight.config.csv --shell results/p337-thermal-pivotal-preflight/raw/preflight.shell.csv --metadata results/p337-thermal-pivotal-preflight/raw/preflight.metadata.json --output-json results/p337-thermal-pivotal-preflight/latest.json --output-md results/p337-thermal-pivotal-preflight/REPORT.md",
+    "outputs": [
+      "results/p337-thermal-pivotal-preflight/latest.json",
+      "results/p337-thermal-pivotal-preflight/REPORT.md"
+    ],
+    "overwrite": "refused if either output exists",
+    "relocation_rule": "Raw files may be copied from the immutable temporary execution directory into results/p337-thermal-pivotal-preflight/raw; scorer requires unchanged basenames, preserves metadata's original paths as relocated_from and verifies current-file SHA256.",
+    "scope": "Strict structural validation plus descriptive signed/absolute sums by L, dyadic shell, complete carrier mask, nonexclusive carrier bit and endpoint/NN relation; no significance, centering or full J2."
+  },
+  "frozen_replay": {
+    "p_requested_decimal": "0.592746050790",
+    "p_uint64_threshold": 10934234699625173385,
+    "rng": "std::mt19937_64; one uint64 word per site; occupied iff word<threshold; x-fast row-major",
+    "sizes": [
+      {
+        "L": 32,
+        "N": 1024,
+        "r": 8,
+        "seed": 2026083123593201,
+        "configuration_counters": [0, 31]
+      },
+      {
+        "L": 64,
+        "N": 4096,
+        "r": 16,
+        "seed": 2026083123596401,
+        "configuration_counters": [0, 31]
+      }
+    ],
+    "total_configurations": 64,
+    "pairs": "the original 16 anchors (iL/4,jL/4), each with +(L/4,0) and +(0,L/4), in the original nested j,i,H,V order",
+    "pairs_per_configuration": 32,
+    "dependency_groups": [
+      "p337-regular-pair-spatial-L32-200k",
+      "p337-regular-pair-spatial-L64-200k"
+    ],
+    "evidence_boundary": "This is a deterministic subset replay of the two existing blocks, not a third block, a new seed or independent evidence."
+  },
+  "forced_state_semantics": {
+    "site_operation": "For every replayed rest state and every torus site z, build z=0 and z=1 while leaving every other occupation unchanged.",
+    "topology": "In each forced state compute original square-NN occupied components, square-matching vacant components, digital-Alexander q=r-1 in {-1,0,1}, and E=q^2.",
+    "pair_kernel": "For every original pair compute g16=16*g and the number of occupied exterior components shared by its two four-port neighbourhoods. Occupied marked endpoints give g16=0 and shared=-1.",
+    "vacant_edge_nodes": "Use physical undirected incident edge IDs. At r>=8 the two marked port sets are disjoint, reproducing the original producer's eight singleton vacant-edge semantics.",
+    "missing_kernel_key": "exact zero",
+    "original_reproduction": "For each z, the forced state selected by the original z bit must reproduce the independently computed original q,E,g16,shared and Bell8 key for all 32 pairs or the run aborts."
+  },
+  "midpoint_primitives": {
+    "definition": "Delta F=F(z=1)-F(z=0), Fmid=(F1+F0)/2; midpoint is not a p-weighted average.",
+    "q_observable_num32": "(g16_0+g16_1)*(q1-q0)",
+    "q_kernel_num32": "(q0+q1)*(g16_1-g16_0)",
+    "q_product_delta_num16": "q1*g16_1-q0*g16_0",
+    "q_identity": "q_observable_num32+q_kernel_num32=2*q_product_delta_num16 pair/site-wise",
+    "E_observable_num32": "(g16_0+g16_1)*(E1-E0)",
+    "E_kernel_num32": "(E0+E1)*(g16_1-g16_0)",
+    "E_product_delta_num16": "E1*g16_1-E0*g16_0",
+    "E_identity": "E_observable_num32+E_kernel_num32=2*E_product_delta_num16 pair/site-wise",
+    "absolute_value_rule": "Every absolute value is taken on the individual pair/site primitive before any shell, relation, carrier, pair or configuration sum.",
+    "centering_boundary": "The producer stores uncentered midpoint primitives and original configuration moments. A later scorer must apply ensemble centering and the complete root/slope functional; 32 replayed configurations do not estimate physical expectations."
+  },
+  "carrier_classification": {
+    "representation": "A nonexclusive four-bit mask is stored so intersections remain visible; rows are keyed by the complete mask and therefore still partition the pair/site records.",
+    "bit_1_two_bridge_persistent": "Both forced states have vacant endpoints, shared0=shared1=2, at least one g16 is nonzero and at least one of Delta g, Delta q, Delta E is nonzero.",
+    "bit_2_shared_transition_or_merger": "Both forced states have vacant endpoints, shared0!=shared1, at least one g16 is nonzero and at least one primitive changes.",
+    "bit_4_kernel_preserving_topological": "Delta g16=0, the common g16 is nonzero, and Delta q or Delta E is nonzero.",
+    "bit_8_kernel_changed": "Delta g16 is nonzero; output additionally separates kernel_only (Delta q=Delta E=0) from joint (Delta q or Delta E nonzero).",
+    "mask_0": "No named active carrier under these finite definitions; retained in output, not silently discarded.",
+    "interpretation_boundary": "Masks are finite callback labels, not causal percentages, continuum fields or independent votes. two_bridge and kernel-preserving may overlap."
+  },
+  "geometry_aggregation": {
+    "distance": "For each pair/site use min(d_Linf(z,x),d_Linf(z,y)) on the square torus.",
+    "dyadic_shells": "distance 0 is shell0; for distance>=1 shell k contains [2^(k-1),min(2^k-1,L/2)].",
+    "relation_mask": {
+      "1": "z=x endpoint",
+      "2": "z=y endpoint",
+      "4": "z is a square-NN neighbour of x",
+      "8": "z is a square-NN neighbour of y"
+    },
+    "row_grain": "configuration x original pair x dyadic shell x relation mask x complete carrier mask",
+    "detail_boundary": "The producer evaluates every pair/site record but serializes sufficient signed/absolute sums at the declared row grain, rather than a multi-gigabyte five-million-row detail dump."
+  },
+  "outputs": {
+    "configuration_csv": "OUTPUT_PREFIX.config.csv; original K,q,E, occupation fingerprint, 32-pair g16 sum and shared-count decomposition for every replayed counter",
+    "shell_csv": "OUTPUT_PREFIX.shell.csv; signed/absolute midpoint primitives and exact identity controls at the frozen aggregate grain",
+    "metadata_json": "OUTPUT_PREFIX.metadata.json; seeds, counts, carrier units, threads, L-specific and total wall/CPU seconds, peak RSS and evidence boundary",
+    "run_receipt_requirement": "The execution wrapper must add compiler/target, binary SHA256, kernel SHA256, output SHA256, command, exit code and any failure; the producer deliberately does not shell out to a hashing utility."
+  },
+  "built_in_semantic_controls": [
+    "L4 marks=0,2 z=5 occupied-before={3,4,6,8,10,11}: ambient rank 0->1, hence q=r-1 is -1->0; g16 4->4 and key labels [0,1,2,3,0,3,4,5]",
+    "L4 marks=0,2 z=5 occupied-before={3,4,6}: ambient rank remains 0, hence q remains -1; g16 0->4",
+    "s<=1 implies g16=0",
+    "selected forced state reproduces the original state for every z and pair",
+    "both q and E midpoint product identities hold for every pair/site"
+  ],
+  "resource_contract": {
+    "parallelism": "The site callbacks within one configuration may use 1..64 standard threads. Thread count is computational only and is recorded; output is deterministic.",
+    "complexity": "O(32*N^2) forced-state topology work per size plus 32 pair kernels per forced state; no dynamic production scaling follows from the measured time.",
+    "record": ["wall_seconds", "cpu_seconds", "peak_RSS_bytes", "threads"],
+    "gpu": false,
+    "cloud_required": false
+  },
+  "stop_rules": [
+    "Stop after counters 0..31 at each size, even if a carrier is absent or unresolved.",
+    "Do not accept another seed, counter range, distance grid, completion coefficient or source definition.",
+    "Do not treat 64 configurations or pair/site callbacks as physical significance units.",
+    "Do not launch a larger replay or new production without a separate prospective contract and a carrier-specific prediction.",
+    "A validity failure is reported; it is not repaired by changing frozen inputs."
+  ],
+  "forbidden": [
+    "new seed or additional counter",
+    "pair/site pseudoreplication",
+    "absolute value after summing sites or pairs",
+    "p-weighted midpoint without the missing cross term",
+    "dropping kernel-preserving q/E topology changes",
+    "calling a carrier mask a causal or continuum decomposition",
+    "fitting an exponent or claiming a macro-field decision from this preflight",
+    "automatic test, production, GPU or server run"
+  ]
+}

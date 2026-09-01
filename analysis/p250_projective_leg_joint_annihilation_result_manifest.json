@@ -1,0 +1,68 @@
+{
+  "schema": "matching-one/p250-projective-leg-joint-annihilation-result/v1",
+  "status": "local_zero_sample_scored_once",
+  "working_tree_parent_commit": "cb891f472d3f53c658941a922196df667d61a410",
+  "manifest": {
+    "path": "analysis/p250_projective_leg_joint_annihilation_manifest.json",
+    "sha256": "6e1b66af69b53777459eeb0a10590be5fd15521bc2a994d732eebac7468c5f84"
+  },
+  "scorer": {
+    "path": "scripts/score_z5_projective_leg_joint_annihilation.py",
+    "sha256": "5b72dcad1e2534f9aa12adf5a9d4ca47960dc299091b2c5f63921d8b488d9410"
+  },
+  "test": {
+    "path": "tests/test_z5_projective_leg_joint_annihilation.py",
+    "sha256": "bc40c7d3430f1fcfee059c0d57cc37c7be1249875418f850519800f55a96f8b3"
+  },
+  "input_batches": {
+    "commit": "4c1f5d8cf98b9c39557acff0146332899777505b",
+    "path": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv",
+    "sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72",
+    "samples": 80000,
+    "batches": 400
+  },
+  "identity_linear_replay": {
+    "reference_commit": "a770ac9f71460564dd2090210e1e0e64a1cd4979",
+    "passed": true,
+    "pivot_exact_match": true,
+    "residual_max_abs_difference": 0.0,
+    "covariance_max_abs_difference": 3.705769144237564e-22,
+    "finite_batch_p_abs_difference": 1.3891340334970526e-19,
+    "resolved_modes": 38
+  },
+  "post_radius5_primary": {
+    "candidate": "alexander_reflection_R2_conjugate",
+    "joint_rank5_finite_batch_p": 0.00582409832792886,
+    "decision_alpha": 0.01,
+    "decision": "rejected"
+  },
+  "primary_alexander_family": {
+    "R0_conjugate_p": 0.004120265623767268,
+    "R1_conjugate_p": 0.0040736153873273725,
+    "R2_conjugate_p": 0.00582409832792886,
+    "R3_conjugate_p": 0.07748638648550085,
+    "survivors": ["alexander_reflection_R3_conjugate"]
+  },
+  "all_candidate_survivors": [
+    "orientation_preserving_R3_conjugate",
+    "alexander_reflection_R3_conjugate"
+  ],
+  "cross_round_boundary": {
+    "radius5_only_survivor": "Alexander_R2_conjugation",
+    "radius4_joint_primary_family_survivor": "alexander_reflection_R3_conjugate",
+    "survivor_intersection": [],
+    "interpretation": "the two frozen outputs are in tension and do not identify one fixed parameter-free map; they are not independent p-values because the radius-five score also reuses the old 80k archive"
+  },
+  "outputs": {
+    "score": "results/local-20260830/P250-projective-leg-joint-annihilation/score.json",
+    "score_sha256": "a0114b461818687ccc63027c02eb0418f7bfefcee283bf5a71c667eea71fb44e",
+    "markdown": "results/local-20260830/P250-projective-leg-joint-annihilation/score.md",
+    "markdown_sha256": "b70e4aeb6dfcf84326f020e5f2fe6d405fb55dfe27f6d00bd4dcce140ddf1fe6"
+  },
+  "decision": "radius5_selected_R2_joint_null_rejected_primary_family_retains_only_R3_on_radius4",
+  "claim_boundary": [
+    "The result is one zero-sample reanalysis of the same 80k/400-batch dependency group, not new independent evidence.",
+    "The empty cross-round survivor intersection is an operational frozen-gate tension, not a multiplicity-adjusted proof that every physical sector map is impossible.",
+    "The score concerns a degree-two radius-four truncated common annihilator and does not identify exact rank five, a closed transfer algebra, ordered words, a microscopic quotient isomorphism, or a continuum field."
+  ]
+}

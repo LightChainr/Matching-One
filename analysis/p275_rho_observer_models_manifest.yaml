@@ -1,0 +1,76 @@
+schema: matching-one.p275-rho-observer-models.manifest.v1
+status: frozen_post_reveal_existing_production_reanalysis
+issue: 275
+
+source:
+  commit: 2402a3330b421595d3573337a5723ff3dbdcb7e9
+  batches:
+    path: results/server-20260830/P267-rho-C3-Etop-N112-2M/batches.csv
+    git_blob_sha1: 6aafcef04889af66549adf3447b1aa96a630232e
+    sha256: 39f9eebec3ac3ce5d41c8874ecf4482760074e4a9f10ac69026a98201cb7c857
+  score:
+    path: results/server-20260830/P267-rho-C3-Etop-N112-2M/score.json
+    git_blob_sha1: 4182a0bc1bea7a39a6ded74cd1151465fc3344be
+    sha256: d05422c368ffeafe227ba9d87dcd1eb804f8e086118b9942a8039700807a56b4
+  acquisition: existing_frozen_production_batches_via_git_show
+  dependency_group: p267-rho-C3-Etop-N112-fresh2m
+  expected_batches: 100
+  expected_samples_per_batch: 20000
+  expected_total_samples: 2000000
+
+observable:
+  state: finite_square_bond_topology
+  source: unperturbed_critical_square_bond_measure
+  observer: paired_Alexander_even_Etop_and_primitive_physical_H4
+  sector: rho_child_C3_topology_typed
+  geometry: [2omega, omega_over_2, omega_plus_1_over_2]
+  coordinate_order:
+    - 2omega_Etop
+    - 2omega_H4_re
+    - 2omega_H4_im
+    - omega_over_2_Etop
+    - omega_over_2_H4_re
+    - omega_over_2_H4_im
+    - omega_plus_1_over_2_Etop
+    - omega_plus_1_over_2_H4_re
+    - omega_plus_1_over_2_H4_im
+  normalizer: per_child_total_probability_mass
+  continuum_reference: fixed_fields_from_frozen_score_json
+  units: dimensionless_probability_and_primitive_direction_polarization
+
+models:
+  normalizer_only:
+    nuisance_dimension: 3
+    definition: E_j_equals_c_j_E0_j_and_H_j_equals_c_j_H0_j
+    exact_constraint: E0_j_H_j_minus_H0_j_E_j_equals_zero
+  rank1_mass_only:
+    nuisance_dimension: 3
+    definition: rank1_weight_multiplied_by_positive_lambda_j_with_internal_primitive_distribution_fixed
+    exact_constraint: one_minus_E0_j_times_H_j_minus_H0_j_times_one_minus_E_j_equals_zero
+  independent_real_rescalings:
+    nuisance_dimension: 6
+    definition: E_j_free_and_H_j_equals_b_j_H0_j_for_real_b_j
+    exact_constraint: imaginary_part_conjugate_H0_j_times_H_j_equals_zero
+
+statistics:
+  covariance: full_9_by_9_covariance_of_the_mean_reconstructed_from_aligned_batches
+  fit: generalized_least_squares_with_fixed_linear_constraint_crosscheck
+  covariance_policy: positive_definite_required_no_pseudoinverse_or_mode_removal
+  nominal_chi_square: diagnostic_only
+  hotelling_reference: iid_Gaussian_batch_means_with_fixed_constraints
+  decision_alpha: 0.01
+
+outputs:
+  schema: matching-one.p275-rho-observer-models.v1
+  json: results/p275-rho-observer-models/latest.json
+  markdown: results/p275-rho-observer-models/latest.md
+
+claim_boundary:
+  - post_reveal_exploratory_reanalysis
+  - one_existing_dependency_group_not_three_independent_experiments
+  - no_new_Monte_Carlo
+  - finite_N112_square_bond_topology_only
+  - Etop_is_not_an_identified_energy_operator
+  - primitive_H4_is_an_observer_weight_not_a_local_spin4_identification
+  - exclusions_apply_only_to_the_three_declared_parameterizations
+  - no_square_site_original_U_Q4_Jordan_or_asymptotic_exponent_claim

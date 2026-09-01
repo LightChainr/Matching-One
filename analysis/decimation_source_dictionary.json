@@ -1,0 +1,444 @@
+{
+  "schema": "matching-one.decimation-source-dictionary.v1",
+  "status": "completed_finite_endpoint_derivation_with_completed_global_u_counterexample",
+  "note_path": "notes/decimation-closed-source-and-global-u.md",
+  "delivery_scope": "repository science note and fixed dictionary only; no new enumeration, tests, production or source fitting in this derivation",
+  "sources": [
+    {
+      "id": "endpoint_original_u",
+      "commit": "207436518db46dd13ef0ec91168cb1c99d52eaea",
+      "path": "notes/p337-checkerboard-decimation-global-u.md",
+      "integration_status": "branch_only"
+    },
+    {
+      "id": "endpoint_homology_and_cluster_dictionary",
+      "commit": "56838d5f068f6f0ba7795926dc9343229bdd28ce",
+      "path": "notes/square-checkerboard-endpoint-homology.md",
+      "integration_status": "branch_only"
+    },
+    {
+      "id": "fixed_n25_contract",
+      "commit": "2bfe9b904bec0a21b244942ffb7c553813e4e740",
+      "path": "analysis/decimation_plaquette_u_contract.json",
+      "integration_status": "open_pr",
+      "pr": 267
+    },
+    {
+      "id": "completed_n25_enumeration_score",
+      "path": "results/decimation-plaquette-u/score/latest.json",
+      "report_path": "results/decimation-plaquette-u/score/REPORT.md",
+      "result_status": "completed_exact_finite_enumeration",
+      "integration_status": "open_pr",
+      "pr": 267,
+      "result_sha256": "61b7dd20330acc76bc06f7acef0b14c37841b7eba25bcb2fd4cf38e11529d6e9",
+      "numerical_reader_commit": "c76b038b2f99b266eb9cfc255219440e04c64c8f",
+      "bundle_commit_pointer": "analysis/research_ledger.yaml: SRC_PR267_DECIMATION_GLOBAL_U_AND_CLOSED_SOURCE; a bundle does not contain its own future commit hash"
+    },
+    {
+      "id": "completed_closed_source_N25",
+      "commit": "ec01768f520e85f1acfd9d3fde9bcf855477254e",
+      "path": "results/p337-closed-source-n25/latest.json",
+      "integration_status": "branch_only"
+    },
+    {
+      "id": "completed_cycle_rank_split",
+      "commit": "5483aa82047df34c2c9508d4930b6e20961ed9ca",
+      "path": "results/decimation-cycle-rank/latest.json",
+      "integration_status": "open_pr",
+      "pr": 267
+    },
+    {
+      "id": "completed_single_defect",
+      "commit": "f5c4a74a20bad8589c39e1034cfb209462110dbe",
+      "path": "results/p337-endpoint-defect/score/score.json",
+      "integration_status": "branch_only"
+    },
+    {
+      "id": "completed_local_pair_U",
+      "commit": "923f66b979a6b6132875f783106c041ed3c0c1a9",
+      "path": "notes/local-four-port-transmission-result.md",
+      "integration_status": "branch_only"
+    },
+    {
+      "id": "local_pair_two_insertion_obstruction",
+      "commit": "5864de49d19898e505e6aecc316b9cb824712c70",
+      "path": "results/local-pair-two-insertion/latest.json",
+      "definition_commit": "f393847ecbc018b0ec39c1613c4d7d40d715f95a",
+      "integration_status": "open_pr",
+      "pr": 267
+    },
+    {
+      "id": "trace_response_gauge_boundary",
+      "commit": "bea717e826df5a22518774b1725ae7bcbe2cb801",
+      "path": "notes/closed-source-two-trace-kernels-q1.md",
+      "integration_status": "branch_only"
+    },
+    {
+      "id": "canonical_regular_pair_activation",
+      "commit": "2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb",
+      "path": "notes/regular-pair-interaction-result.md",
+      "integration_status": "branch_only"
+    },
+    {
+      "id": "regular_one_site_thermal_quotient",
+      "commit": "21563da4b0cf721a2aa512901f6ffc966ffa8384",
+      "path": "notes/regular-one-site-q1-thermal-quotient.md",
+      "integration_status": "open_pr",
+      "pr": 267
+    },
+    {
+      "id": "regular_pair_counterterm_gram",
+      "commit": "21563da4b0cf721a2aa512901f6ffc966ffa8384",
+      "path": "results/regular-pair-counterterm/latest.json",
+      "definition_commit": "c4e4a821ab8adfc2d628b4cd65b4ce1d52535b56",
+      "integration_status": "open_pr",
+      "pr": 267
+    }
+  ],
+  "geometry": {
+    "parent_area": "N=2M",
+    "child_area": "M",
+    "parent_graph": "ordinary nearest-neighbor square-site graph",
+    "occupied_sublattice": "A even parity, completely occupied",
+    "random_sublattice": "B odd parity, occupied subset O",
+    "child_periods": "Lambda_child=Lambda_parent/(1+i)",
+    "child_occupied_set": "U=(Z[i]/Lambda_child)\\f(O), f(w)=(w-1)/(1+i)",
+    "one_level_condition": "every parent period has even x+y: Lambda_parent subset (1+i)Z[i]",
+    "two_level_condition": "Lambda_parent subset (1+i)^2 Z[i]=2Z[i]; both parent and intermediate periods preserve parity",
+    "r_level_condition": "Lambda_parent subset (1+i)^r Z[i], with the corresponding nested saturation constraints",
+    "area_divisibility_alone_sufficient": false,
+    "incidence_convention": "retain lifted lattice edge and unit-face orbits, parallel-edge multiplicity and nonzero-gain winding loops; a loop has two endpoint incidences",
+    "actual_n25_chain": {
+      "parent_N": 50,
+      "parent_direct_gaussian_generators": [[5, 5], [1, 7]],
+      "child_N": 25,
+      "child_gaussian_generators": [[5, 0], [4, 3]],
+      "child_delta_cos4": "1152/625",
+      "child_smith_groups": ["Z5 x Z5", "Z25"],
+      "child_allows_another_checkerboard_reduction": false
+    },
+    "legal_two_level_extension": {
+      "N100_generators": [[0, 10], [-6, 8]],
+      "N50_generators": [[5, 5], [1, 7]],
+      "N25_generators": [[5, 0], [4, 3]],
+      "status": "exact nested endpoint geometry, not a new enumerated or sampled campaign"
+    }
+  },
+  "basis": ["Ctot", "F4", "T_NN", "K", "constant"],
+  "definitions": {
+    "Ctot": "occupied-NN components plus vacant-matching components",
+    "F4": "number of unit-face orbits with all four lifted corners occupied",
+    "T_NN": "number of occupied undirected NN edge orbits, with incidence multiplicity retained",
+    "K": "number of occupied sites",
+    "constant": "configuration-independent scalar"
+  },
+  "observable_map": {
+    "row_semantics": "row i expresses parent basis observable i in child basis coordinates",
+    "matrix": [
+      [1, 1, 0, 0, 0],
+      [0, 0, 1, -4, "2M"],
+      [0, 0, 0, -4, "4M"],
+      [0, 0, 0, -1, "2M"],
+      [0, 0, 0, 0, 1]
+    ],
+    "identities": {
+      "Ctot_parent": "Ctot_child+F4_child",
+      "F4_parent": "2M-4K_child+T_NN_child",
+      "T_NN_parent": "4(M-K_child)",
+      "K_parent": "2M-K_child"
+    },
+    "face_edge_bijection": "the two occupied-or-vacant B corners of each parent face map to one child NN edge; the two parent face parities map to the two child edge directions, bijectively over 2M orbits",
+    "edge_expansion": "sum_child_edges (1-eta_i)(1-eta_j)=2M-4K_child+T_NN_child"
+  },
+  "coupling_map": {
+    "parent_weight": "exp(c*Ctot+f*F4+tau*T_NN+k*K+a)",
+    "input_order": ["c", "f", "tau", "k"],
+    "output_order": ["c_child", "f_child", "tau_child", "k_child"],
+    "matrix": [
+      [1, 0, 0, 0],
+      [1, 0, 0, 0],
+      [0, 1, 0, 0],
+      [0, -4, -4, -1]
+    ],
+    "constant_output": "a_child=a+M*(2f+4tau+2k)",
+    "parameter_fitting": false
+  },
+  "thermal_quotient": {
+    "quotiented_sources": ["constant", "geometry-common K"],
+    "reason": "constants cancel in normalized measures; a common K tilt reparameterizes Bernoulli odds, whose thermal Jacobian cancels in root-comoving Y_p/Q_p",
+    "remaining_basis": ["Ctot", "F4", "T_NN"],
+    "basis_images": ["Ctot+F4", "T_NN", "0"],
+    "row_image_matrix": [[1, 1, 0], [0, 0, 1], [0, 0, 0]],
+    "two_step_row_image_matrix": [[1, 1, 1], [0, 0, 0], [0, 0, 0]],
+    "two_step_identity": "D^2(a*Ctot+b*F4+c*T_NN)=a*(Ctot+F4+T_NN) modulo constants and common K",
+    "not_a_dynamical_or_lcft_jordan_statement": true
+  },
+  "fixed_source": {
+    "name": "S_star",
+    "coefficients_on_C_F_T_K": [1, 1, 1, -4],
+    "definition": "S_star_N=Ctot_N+F4_N+T_NN_N-4K_N",
+    "one_level_identity": "S_star_parent_2M=S_star_child_M-2M",
+    "constant_completed_name": "S_hat",
+    "constant_completed_definition": "S_hat_N=S_star_N+2N",
+    "positive_count_definition": "S_hat=Ctot+F4+Bvac, where Bvac=2N-4K+T_NN; this is execution's Sstar",
+    "cycle_gas_definition": "S_hat=2*beta_null+q-3K+2N+2; beta_null is ambient-zero graph cycle kernel dimension",
+    "constant_completed_identity": "S_hat_parent_2M=S_hat_child_M",
+    "normalized_measure_identity": "exp(t*S_star_parent) maps to exp(t*S_star_child), up to the cancelling factor exp(-2M*t)",
+    "uniqueness_scope": "fixed coupling ray in the declared Ctot,F4,T_NN,K span, up to scale and constants; not uniqueness over all microscopic sources"
+  },
+  "nested_source_closure": {
+    "areas": ["4L", "2L", "L"],
+    "exact_bare_cluster_identity": "Ctot_parent_4L=Ctot_grandchild_L+F4_grandchild_L+T_NN_grandchild_L-4K_grandchild_L+2L=S_hat_grandchild_L",
+    "requires_nested_saturation_not_single_interior_flow": true,
+    "new_n50_or_n100_enumeration_claimed": false
+  },
+  "original_u": {
+    "family": "p_A=s+(1-s)*p, p_B=p",
+    "thermal_direction": "differentiate p at fixed s and source couplings; at s=1 only B varies",
+    "Q": "fixed equal mean across paired geometries of E[q], q=rank-1",
+    "Y": "fixed P4 of E[E], E=q^2",
+    "definition": "U_N=N^(13/8)*Y_p/(2*Q_p), evaluated on a chosen regular pooled Q=0 root branch",
+    "child_probability": "1-p",
+    "endpoint_factor": "2^(13/8)",
+    "sign_rule": "complement reverses the E thermal derivative and the minus-pi/4 period rotation reverses DeltaCos4; the two signs cancel",
+    "coupled_endpoint_identity": "U_parent_2M_end(g)=2^(13/8)*U_child_M(g_child)",
+    "source_response_definition": "V_S=d_t U[normalized exp(t*S)] at t=0; source root and thermal-slope response are included",
+    "source_units": "common bulk coupling t, never S/N",
+    "response_input_order": ["V_Ctot", "V_F4", "V_T_NN", "V_K"],
+    "response_output_order": ["V_Ctot_parent_end", "V_F4_parent_end", "V_T_NN_parent_end", "V_K_parent_end"],
+    "response_matrix_before_thermal_quotient": [
+      [1, 1, 0, 0],
+      [0, 0, 1, -4],
+      [0, 0, 0, -4],
+      [0, 0, 0, -1]
+    ],
+    "response_matrix_multiplier": "2^(13/8)",
+    "common_thermal_response": "V_K=0",
+    "quotiented_responses": {
+      "V_Ctot_parent_end": "2^(13/8)*(V_Ctot_child+V_F4_child)",
+      "V_F4_parent_end": "2^(13/8)*V_T_NN_child",
+      "V_T_NN_parent_end": "0",
+      "V_K_parent_end": "0",
+      "V_S_star_parent_end": "2^(13/8)*V_S_star_child"
+    },
+    "finite_fixed_source_identity": "U_parent_2M_end_Sstar(t)=2^(13/8)*U_child_M_Sstar(t), on corresponding regular root branches",
+    "two_level_bare_cluster_identity": "U_parent_4L_nested_end_Ctot(t)=4^(13/8)*U_grandchild_L_Sstar(t), on corresponding regular root branches",
+    "nested_thermal_convention": "hold both nested saturation constraints fixed and differentiate the remaining Bernoulli probability; not an unconstrained one-level thermal derivative",
+    "root_scope": "local regular continuation exists around homogeneous zero coupling; global root uniqueness at arbitrary couplings is not asserted"
+  },
+  "completed_finite_observer_result": {
+    "source_id": "completed_n25_enumeration_score",
+    "status": "completed_exact_finite_enumeration",
+    "configuration_count": 67108864,
+    "V25_F4": 0.19441468646090693,
+    "missing_N50_endpoint_correction": 0.5996568681566026,
+    "reduced_response_enclosure": {
+      "quantity": "V25_F4/(25^(13/8)/2)",
+      "lower_fraction": "20802069874521977174733465434488623557/10000000000000000000000000000000000000000",
+      "upper_fraction": "2080206987452197717473346543448863911/1000000000000000000000000000000000000000",
+      "excludes_zero": true
+    },
+    "decision": "F4_thermal_alias_and_bare_cluster_endpoint_U_transport_rejected",
+    "uncertainty_type": "exact rational enclosure conditional on exhaustive integer graph counts; not sampling confidence or independent endpoint production",
+    "mechanism_boundary": "finite pair with different Smith classes; not original N65/N85 lineage replication, asymptotic H4 or a CFT field"
+  },
+  "completed_single_defect_question": {
+    "status": "completed_exact_primary_gain_and_secondary_thermal_only_null_rejected",
+    "source_id": "completed_single_defect",
+    "question": "Does a single saturation defect create a nonthermal mixed original-U response in the endpoint-fixed S_hat family?",
+    "epsilon": "1-s",
+    "defect": "remove one saturated A site a, retaining its four-terminal connectivity; Delta_a S_hat=S_hat(X_minus_a)-S_hat(X_plus)",
+    "exact_normalized_insertion": "J_O_epsilon=(1-p)*sum_a E_sat,t[exp(t*Delta_a S_hat)*(O(X_minus_a)-E_sat,t[O(X_plus)])]",
+    "stronger_candidate": "for q and E in both geometries near the mapped root, J_O_epsilon=b(p,t)*partial_p E[O] with one common b",
+    "candidate_prediction": "Xi_N=partial_t partial_epsilon U_N(s=1-epsilon,t) at epsilon=t=0 equals zero",
+    "nonzero_implication": "source-dependent interior transmission beyond the proposed common thermal extension",
+    "zero_boundary": "zero Xi alone does not prove full profile closure",
+    "value_available": true,
+    "U": 2.715728877348466,
+    "U_s": 3.708240929282322,
+    "U_t": 0.38914717849771724,
+    "U_st": 10.755718407564073,
+    "Xi": -10.755718407564073,
+    "R": 27.766563581230237,
+    "gain_predicted_U_st": 0.5313680267777353,
+    "boundary": "one sided endpoint first jet only; exact hard endpoint identity remains valid; shared coefficients not independent decisions",
+    "new_production_or_feature_search_requested": false
+  },
+  "completed_operator_split": {
+    "status": "weighted_rank_jump_only_rejected",
+    "result_commit": "e1b968959634b9b3999c727b83ed38d0b730cb20",
+    "result_path": "results/defect-reweight/latest.json",
+    "Xi_reweight": 4.550327123236791,
+    "Xi_weighted_jump": -15.306045530800864,
+    "model": "weighted_rank_jump_only_retains_E_w_DeltaO_but_drops_Cov_w_Oplus",
+    "prediction": "Xi_reweight=0",
+    "h_O": "M*(1-p)*Cov_0(Sminus-Splus,Oplus)",
+    "mixed_U": "Xi_reweight=A/D*partial_p(hY-r*hQ) at baseline root, r=Y_p/D",
+    "expanded_mixed_U": "A*(hY_p/D-Y_pp*hQ/D^2-Y_p*hQ_p/D^2+Y_p*Q_pp*hQ/D^3)",
+    "completed_per_KB_cross_sums": ["Sminus*qplus", "Sminus*Eplus"],
+    "acquisition": "alternating1/8 subset correction added to old full Sminus*Ominus moments; paired configurations and degree25 weights retained",
+    "existing_required_moments": ["Splus*Oplus", "Sminus*Ominus", "Splus", "Sminus", "Oplus", "Ominus"],
+    "decision": "nonzero exact Xi_reweight excludes weighted-jump-only model; zero does not prove full profile closure",
+    "boundary": "reweighting includes both rank-changing and rank-preserving holes, not a population-share split; fixed source and saturation chart; no independent evidence votes or fitted fraction",
+    "value_available": true,
+    "new_random_production_requested": false
+  },
+  "completed_weak_Q_path_comparison": {
+    "status": "named_Q_paths_have_opposite_original_U_tangents",
+    "result_commit": "e87d5de2d0bc83ac8e5c12af83a337b829c3323b",
+    "result_path": "results/weak-q-path-comparison/latest.json",
+    "fixed_identity": "V_Sstar/2=V_(CB-r/2)+V_Bvac; both named Q paths retain the rank projection",
+    "tied_Q_response": 0.06308268170708457,
+    "rank_projected_site_RC_Q_response": -0.2698280267134874,
+    "local_B_response": 0.33291070842057197,
+    "boundary": "saved N25 exact linear consequence, not a new random block or a universality decision"
+  },
+  "next_theoretical_question": {
+    "status": "J2_and_nonNN_global_transmission_completed_projected_macroscopic_size_comparison_next",
+    "question": "Which fixed projected macroscopically separated joint response can distinguish the competing field-loading size predictions for unchanged Kreg?",
+    "source_commit": "dac938a872b2cb2fcbfd59af8372ff07d25e3723",
+    "source_path": "notes/regular-pair-joint-size-decision.md",
+    "definition_commit": "99b58fc18666cfa6d35b96b52bb84c78dec43a55",
+    "definition": "analysis/regular_pair_joint_u_contract.json",
+    "known": "entry-regular homogeneous one-original-site interactions reduce to common Bernoulli thermal weights at Q1, including occupied and vacant tensors; direct U zero; canonical mixed Q U=-0.04503611397592696 already scored",
+    "required_output": "T_N=N^2*J2_macro for one fixed physical displacement window; N to 4N ratios 2^(-5/4) versus 2^(-13/4), scored by fixed D17 and D21 without a free exponent",
+    "fixed_support_split": "s=2 versus s>=3 shared exterior components within the same primary readout; components must sum to total and are not independent evidence",
+    "completed_null_models": "global linear additive first-Q logweight and four-NN-only global transmission",
+    "completed_decision": "both excluded: total J2=-0.0055194314248394015 and nonNN=-0.0037683569704366022, exact enclosures exclude zero",
+    "unconditional_sign_prediction": null,
+    "boundary": "fixed bilocal kernel projection is not the unfiltered homogeneous single-coupling second derivative; predictions are single-field conditional, not measured exponents or unique-field identification",
+    "new_production_requested": false
+  },
+  "completed_joint_global_U": {
+    "commit": "f8e30859f05e86ef35d257fc900f97e74f41e21c",
+    "integration_status": "open_pr",
+    "pr": 267,
+    "result_path": "results/regular-pair-joint-u/latest.json",
+    "J2": -0.0055194314248394015,
+    "J2_NN": -0.001751074454402799,
+    "J2_nonNN": -0.0037683569704366022,
+    "source": "2/N^2 sum_unordered_distinct_vacant gxy; translation moments use sum_y g16_0y/(16N)",
+    "execution_crosscheck_commit": "410015f5505dc2d8ca0e9ac904f656a4adc9fe86",
+    "execution_crosscheck": "alternate complete 2^25 traversal reproduces all three values and proves adjacent-kernel and coordinate-invariance details",
+    "boundary": "same full N25 population, implementation cross-check but no new independent evidence; nonNN is not macroscopic or every finite-range contact exclusion"
+  },
+  "completed_regular_spatial_support": {
+    "commit": "baa5d33b2f87b2868aa0cb9d3f6518c93dbf3bff",
+    "integration_status": "open_pr",
+    "pr": 509,
+    "result_path": "experiments/p337-regular-spatial-support-20260901/RESULT.md",
+    "selection_rule": "nonadjacent marks with at most one shared exterior occupied component have zero first-Q activation",
+    "bound": "|Cxy| <= (43/16) P(endpoints vacant and at least two shared components)",
+    "witness": "realisable s=2 exterior has a_xy=1/16",
+    "boundary": "support theorem and spatial-C bound, not an original-U numerical bound or distance exponent"
+  },
+  "completed_homogeneous_N50_Sstar": {
+    "commit": "ef3b2c68f824e29421747c805ea7a505aca41908",
+    "integration_status": "open_pr",
+    "pr": 509,
+    "result_path": "experiments/p337-homogeneous-n50-20260831/RESULT.md",
+    "U": 1.0615603876876551,
+    "V_Sstar": 0.0543457826695583,
+    "represented_configurations_per_geometry": 1125899906842624,
+    "boundary": "different source and completed finite point; no automatic N100, parameter grid, scale law or field confirmation"
+  },
+  "completed_regular_one_site_no_go": {
+    "source_id": "regular_one_site_thermal_quotient",
+    "class": "same entry-regular equality-diagram tensors on every original binary site and both geometries, allowing both vacant and occupied tensors, with unchanged original q/E and regular common root",
+    "Q1_weight": "a0^(N-K)*a1^K",
+    "Q1_probability": "Bernoulli at common p_tilde=a1/(a0+a1)",
+    "exact_result": "all direct coupling derivatives of full moving-root/slope U vanish at Q1",
+    "settled_question": "no completion in this class can retain old nonzero pure-K2 V",
+    "outside_scope": ["singular/confluent diagrams", "multi-original-site vertices", "connectivity-dependent occupation reweighting", "inhomogeneous or geometry-specific couplings", "changed observers", "Q derivatives"]
+  },
+  "completed_canonical_regular_pair": {
+    "source_id": "canonical_regular_pair_activation",
+    "execution_head": "2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb",
+    "integration_status": "branch_only",
+    "kernel": "Kreg=K2+K0 with singlet coefficient identically one",
+    "direct_Q1_U_response": 0,
+    "all_orders_endpoint": "every nonempty finite-network Kreg insertion vanishes at Q1",
+    "mixed_logQ_epsilon_U_N25": -0.04503611397592696,
+    "result_path": "results/p337-regular-pair-activation/score/REPORT.md",
+    "counterterm_rule": "for c(Q)=1+alpha*(Q-1)+... the mixed response W_alpha=W_canonical-alpha*V_old; no alpha is fitted",
+    "boundary": "mixed Q activation is a distinct physical definition from the old pure-pair direct V and old bounded-tangent size W_N"
+  },
+  "completed_counterterm_robust_interaction": {
+    "source_id": "regular_pair_counterterm_gram",
+    "basis": ["Kreg", "L=(Q-1)*K0"],
+    "activated_gram": [["13/8", "-1/4"], ["-1/4", "1/2"]],
+    "determinant": "3/4",
+    "same_real_alpha": "H_alpha=3/2+(alpha-1/2)^2/2>=3/2",
+    "different_alphas": "H_xy=13/8-(alpha_x+alpha_y)/4+alpha_x*alpha_y/2; no positive cross lower bound",
+    "conditional_hole_normalization": "divide by (1+v_x)*(1+v_y) after summing both interior occupations in the contractible four-path exterior",
+    "higher_Taylor_coefficients": "do not enter the first Q derivative",
+    "decision": "no common real regular scalar singlet counterterm makes this shared-line Q activation additive",
+    "boundary": "not an occupation-summed homogeneous response, positive universal field norm or CFT identification",
+    "elapsed_seconds": 0.16766479203943163,
+    "acquisition": "symbolic reduction and one-site theorem only; no old U score, production, server operation, alpha scan or test"
+  },
+  "completed_local_pair_route": {
+    "source_id": "completed_local_pair_U",
+    "execution_head": "2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb",
+    "integration_status": "branch_only",
+    "Vav_N25": 0.0018155512845251097,
+    "source": "S_av=-sum_x t_x/N, t_x=I_NS_EW+(I_NE_SW+I_NW_ES)/2 with x vacant",
+    "observer": "old q=r-1 and E=q^2 with separate geometric normalization, pooled moving root and both thermal-slope terms",
+    "completed_separation": "local and global seam sources differ configurationwise; local raw q/E moments need not vanish",
+    "nonlinear_boundary": "Cov(t_x,t_y) is the bounded occupation-reweighting response, not the joint two-local-tensor contraction"
+  },
+  "completed_local_pair_two_insertion": {
+    "source_id": "local_pair_two_insertion_obstruction",
+    "G": "Q*(Q-3)*(3*Q^2-9*Q+8)/(8*(Q-1)*(Q-2))",
+    "Q1_residue": 0.5,
+    "physical_exterior": "four contractible NN paths with52 occupied sites on L17; two interior holes summed with v_x,v_y; rank remains0",
+    "conditional_partition": "Q^4+(v_x+v_y+v_x*v_y)*Q+epsilon_x*epsilon_y*G(Q), after removing common exterior factor",
+    "connected_residue": "1/(2*(1+v_x)*(1+v_y))",
+    "scope": "nonremovable conditional two-site response; no assertion that all exteriors summed at homogeneous activity have an uncancelled pole",
+    "elapsed_seconds": 0.11422975000459701,
+    "acquisition": "symbolic Bell4 equality-class calculation and physical witness; no occupation enumeration, MC, root search, tests or cloud"
+  },
+  "parallel_local_pair_size_question": {
+    "source_commit": "5864de49d19898e505e6aecc316b9cb824712c70",
+    "source_path": "notes/local-pair-size-response-predictions.md",
+    "status": "separate_old_bounded_occupation_tangent_conditional_predictions_not_canonical_Kreg_activation_or_new_measurements",
+    "exact_units": "W_N=N*Vav(N)",
+    "geometry": "axis(5k,0), tilted(4k,3k), N=25*k^2, fixed local tensor and exact DeltaCos4",
+    "comparison": "W_(4N)/W_N tends2 for x=17/4 or1 for x=21/4 under stated single-field nonzero-U-loading and controlled-window assumptions",
+    "boundary": "W_N is the old extensive direct response, not canonical mixed-Q W_alpha; order-one W can reflect existing anisotropy modulation; ratios do not identify unique thermal Q4, pure spin4 or regular nonlinear colour family",
+    "new_production_requested": false
+  },
+  "trace_response_and_attribution_boundary": {
+    "source_id": "trace_response_gauge_boundary",
+    "V_trace": -0.001904836180602413,
+    "physical_mixed_logQ_epsilon_response": 0.005036496028411871,
+    "mixed_response_commit": "5c1f9d3b7971a41d07db3c9fa4ac86529c90c199",
+    "J_trace_reduced_convention": 0.03826094250721058,
+    "gauge_rule": "multiplying common partition and trace by Q^c leaves V_trace invariant but changes J_trace to J_trace+c*V_trace",
+    "boundary": "J_trace is an additive convention-dependent Q-derivative attribution, neither the physical mixed response nor the total Q tangent; it does not identify a local field"
+  },
+  "parallel_finite_coupling_question": {
+    "status": "N25_uniform_m_ge64_window_completed_fixed_m_oblique_twist_and_sector_odds_bounds_open",
+    "question": "control geometric order25 twist penalty and pooled restricted-sector odds mismatch for fixed m oblique geometry",
+    "completed_input": "N25 all real m>=64 Ustar<0<Udrop; axis fixed-m winding and growing-systole Poisson joint-limit original-U suppression",
+    "source_commit": "2690f665bc8029cb2370d3f1efcef5eb2853705c",
+    "source_paths": ["notes/closed-source-uniform-projection-tail.md", "notes/closed-source-fixed-coupling-peierls.md", "notes/closed-source-poisson-double-scaling.md", "notes/closed-source-pooled-sector-odds-bound.md", "notes/closed-source-oblique-twist-comparison.md"],
+    "integration_status": "branch_only",
+    "required_output": "Delta_k/k limsup<7tau_infty plus d<=gamma L with gamma<2tau for exponential winding suppression, without assuming total-pressure agreement bounds sector odds",
+    "boundary": "geometric translation seam distinct from colour3cycle; fixed-N window and Poisson joint limit do not solve fixed-m oblique limit",
+    "new_production_requested": false
+  },
+  "limits": [
+    "dictionary applies to saturated endpoints and explicitly legal nested endpoint constraints",
+    "no interior decimation semigroup, critical fixed point or continuum operator identity follows",
+    "simple-graph collapse of lifted edge or face incidences is outside the counting proof",
+    "the known positive N25 correction is a completed mechanism result and not a pending first calculation",
+    "prior P154 lag1 and P334 source decisions are unchanged"
+  ],
+  "report_shape": {
+    "audience": "technical",
+    "delivery": "user-specified repository Markdown note plus dictionary JSON; no additional HTML, Sites or rendering surface",
+    "structure": "completed result; incidence definitions and proof; source and U maps; scope; one open theoretical question",
+    "visual_choice": "exact equations and a matrix express the source mapping; no empirical trend chart is implied by one finite pair"
+  }
+}

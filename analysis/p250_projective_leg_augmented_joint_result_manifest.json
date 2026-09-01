@@ -1,0 +1,99 @@
+{
+  "schema": "matching-one/p250-projective-leg-augmented-joint-result/v2",
+  "status": "retrospective_zero_sample_existing_data_scored_once",
+  "implementation_parent_commit": "7a2afb0fed63ac8603e53bdec324c8ceef944ee8",
+  "chronology": {
+    "fixed_map_family": "pre_existing_before_radius_five_reveal",
+    "augmented_gate": "formed_after_observing_the_marginal_R2_R3_conflict",
+    "classification": "primary_retrospective_zero_sample_synthesis_not_prospective_confirmation"
+  },
+  "inputs": {
+    "old_stream_commit": "4c1f5d8cf98b9c39557acff0146332899777505b",
+    "old_stream_sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72",
+    "old_response_sha256": "1dcb88e9914c6c0b735938ff8574bfb056169ed6cbc7716bb57efd3b3e2fe8f8",
+    "old_exact_gate_sha256": "abc635623fdb336c15293546663836a2f4fc68899143a4d42b2969f05ba81f0b",
+    "fresh_stream_commit": "11130aef3ee46df8d52e59c8bfe486eadcdbbaf5",
+    "fresh_stream_sha256": "50985e38c9c8afab0c8b0e78113184d33861d928aefaba1e8043e67fc348677e",
+    "fresh_response_sha256": "e27f727a874e376b3872cbd062f3afe86f554dcd18de648a2d4a470887093d59",
+    "fresh_exact_gate_sha256": "8f3fd95f432457ce7eb44eb66ba8a19ce6a48b18fca56309c0cd79fb4b0deed7",
+    "reference_joint_commit": "99d23a705188ba9771523f1f10dc6d6bf9942ec4",
+    "reference_joint_sha256": "a0114b461818687ccc63027c02eb0418f7bfefcee283bf5a71c667eea71fb44e",
+    "reference_radius5_commit": "11130aef3ee46df8d52e59c8bfe486eadcdbbaf5",
+    "reference_radius5_score_sha256": "3fdced15302a360567b65185c30fca1eee9cfdff03dedac4d9b6f32e6ba8b2ca"
+  },
+  "input_semantic_audit": {
+    "passed": true,
+    "parent_order": 101,
+    "child_order": 505,
+    "p": 0.59274605079,
+    "hands": ["plus", "minus"],
+    "charges": [1, 2],
+    "gauge": "pinned affine-fiber C4 gauge equation and shared rotation_gauges/gauge_charged_rows implementation",
+    "translation": "same uniform translated-origin convention with independent seeds and distinct pinned salts",
+    "radius5_aliases_checked": 5,
+    "fresh_N505_evidence": "pinned fresh response declares its runner; that runner imports CHILD_ORDER and contexts from the pinned shared source with CHILD_ORDER=505"
+  },
+  "artifacts": {
+    "manifest": "analysis/p250_projective_leg_augmented_joint_manifest.json",
+    "manifest_sha256": "b89b6688e9d3c92cbea9368073d6ca7b1792f056470361c63fcf3493df1fb51d",
+    "scorer": "scripts/score_z5_projective_leg_augmented_joint.py",
+    "scorer_sha256": "ad5bcdf8585257b43f9be92afd819c5f3a9c7877072c8ada9b84fbfa251fe6a2",
+    "score": "results/local-20260830/P250-projective-leg-augmented-joint/score.json",
+    "score_sha256": "e29860c1a2364fd8f5abcceae70502f525e633eb7e0410fda661b864838e0240",
+    "covariance": "results/local-20260830/P250-projective-leg-augmented-joint/covariance.npz",
+    "covariance_sha256": "479995a06d8d424028598b13d7150379ef23e07b8bca4fd76dbe84be00ca5720",
+    "markdown": "results/local-20260830/P250-projective-leg-augmented-joint/score.md",
+    "markdown_sha256": "d059d3a6e15646ba1e76f103cf08c70300697f8a9d2095e1884837bc7409678b",
+    "readme": "results/local-20260830/P250-projective-leg-augmented-joint/README.md",
+    "readme_sha256": "aced8bc0d62b371c68061433fa5060745e4733a97ce81b10f0f3bd9a174fdf07"
+  },
+  "storage": {
+    "summary_json_bytes_approx": 160000,
+    "covariance_format": "compressed NPZ",
+    "covariance_arrays": 102,
+    "stored_components": ["residual_point", "old_covariance", "fresh_covariance", "correlation_eigenvalues"],
+    "total_covariance": "derived_exactly_as_old_plus_fresh_not_duplicated",
+    "hand_deduplication": "one canonical plus block and eight minus-geometry blocks referenced by sixteen candidates"
+  },
+  "operator": {
+    "matrix_shape": [40, 6],
+    "rank_null": "rank_at_most_five",
+    "residual_coordinates": 70,
+    "resolved_covariance_modes": 70,
+    "old_fresh_covariance": "separate complete delete-one matrices added once; equal batch indices never paired"
+  },
+  "primary_retrospective_joint_scores": {
+    "identity_conjugation": {"candidate": "orientation_preserving_R0_conjugate", "finite_batch_p": 3.669966473111187e-14},
+    "Alexander_R0_conjugation": {"candidate": "alexander_reflection_R0_conjugate", "finite_batch_p": 2.4634927102667614e-12},
+    "Alexander_R1_conjugation": {"candidate": "alexander_reflection_R1_conjugate", "finite_batch_p": 1.0313117376491952e-6},
+    "Alexander_R2_conjugation": {"candidate": "alexander_reflection_R2_conjugate", "finite_batch_p": 3.549696660651277e-8},
+    "Alexander_R3_conjugation": {"candidate": "alexander_reflection_R3_conjugate", "finite_batch_p": 1.2404377790753227e-8}
+  },
+  "secondary_candidates": {
+    "tested": 11,
+    "survivors_at_alpha_0p01": []
+  },
+  "hand_specific_support": {
+    "plus_finite_batch_p": 6.006837893884152e-7,
+    "minus_best_declared_coordinate": "R3_geometry",
+    "minus_best_finite_batch_p": 0.01782965286488452,
+    "primary_candidates_with_both_hands_surviving": []
+  },
+  "replay": {
+    "all_sixteen_candidates_passed": true,
+    "max_old_point_abs_difference": 6.505213034913027e-19,
+    "max_old_covariance_abs_difference": 7.940933880509066e-22,
+    "max_fresh_contribution_to_old_block": 3.7990801924225515e-32
+  },
+  "decision_alpha": 0.01,
+  "decision": "declared_fixed_bridges_rejected_and_full_hand_rank5_support_incomplete",
+  "claim_boundary": [
+    "The augmented gate is retrospective even though the five-map family predates the fresh reveal.",
+    "All five primary retrospective maps and all eleven frozen secondary maps reject in the one augmented operator.",
+    "The result is not bridge-only: the plus hand full-Schur rank-at-most-five extension also rejects, so the current general five-plus-five fallback is not supported by this gate.",
+    "The result does not identify rank six, a completed transfer algebra, a microscopic quotient or a continuum field.",
+    "The earlier radius-five support result tested old SVD line directions on fresh rows; this result restores old residual magnitude and the old-to-extension covariance in one locally complete Schur chart.",
+    "The finite-batch Hotelling value is the existing project approximation for a sum of independent jackknife covariances and is not an exact two-sample pivot law."
+  ],
+  "server_used": false
+}

@@ -1,0 +1,718 @@
+{
+  "schema": "matching-one.regular-pair-joint-u.v1",
+  "status": "completed_fixed_exact_joint_response",
+  "definition_commit": "99b58fc18666cfa6d35b96b52bb84c78dec43a55",
+  "contract": {
+    "schema": "matching-one.regular-pair-joint-u.contract.v1",
+    "question": "Does the fixed canonical regular interaction have a nonzero complete J2=partial_logQ partial_epsilon^2 U at Q1,epsilon0 on the original N25 pair?",
+    "decision_origin_commit": "16a6548af2bb090d9cec7b8e9236e31c0199a3f0",
+    "N": 25,
+    "geometries": [
+      [
+        5,
+        0
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "delta_cos4": "1152/625",
+    "model": "At each vacant original vertex use T0+epsilon*Kreg/N; occupied vertex unchanged; Kreg=K2+K0 with c(Q)=1 identically. Preserve original occupations, ambient rank, q=r-1 and E=q^2.",
+    "primary_quantity": "J2=partial_logQ partial_epsilon^2 U(Q,epsilon) at Q1,epsilon0, with U evaluated at its own original pooled mean-q zero and complete thermal-slope quotient",
+    "kernel": {
+      "commit": "c29d8bce07e6381be0f948b2c0dd1f640e42d395",
+      "path": "analysis/regular_pair_spatial_kernel.tsv",
+      "proof_path": "notes/regular-pair-spatial-kernel.md",
+      "sha256": "36ae069d370b1d7a4398861c928afb41aa76885c8895c696b1bc0c97e9c314fd",
+      "definition": "g16(pi)=16*partial_Q of the relative joint Kreg_x Kreg_y contraction at Q1; exact signed Bell8 lookup, zero for missing valid canonical keys"
+    },
+    "spatial_result_boundary": "The separately delivered L32/L64 fresh-block spatial C is not this original-U J2 and is not substituted for it. Its observed values do not select the present source, geometry, normalization or null.",
+    "joint_source": "S2(A)=2/N^2 sum_{x<y, both vacant} g_xy(A). Vertices are linear in epsilon; no coincident-vertex epsilon^2 term exists.",
+    "translation_reduction": "Against any translation-invariant K,q,E, full S2 moments equal those of N^(-1) sum_{y!=0} g_0y with origin0 vacant. Enumerate only the 2^24 origin-vacant configurations; use full 2^25 baseline normalization, not the conditional law.",
+    "port_rule": "Fixed N,E,S,W order at each mark. Occupied-neighbour ports use original NN component roots. Each vacant-vacant incident edge uses a globally unique physical edge ID; adjacent marks share the same isolated common edge ID. Do not reuse the noncontact sampler's n+i singleton convention.",
+    "integer_moments": [
+      "count",
+      "sum_q",
+      "sum_e",
+      "sum_G16",
+      "sum_G16_q",
+      "sum_G16_E"
+    ],
+    "moment_conversion": "For source, q-source and E-source profiles divide the fixed-origin G16 columns by 16*N exactly once, with p^K*(1-p)^(N-K) or equivalent full h-polynomial normalization",
+    "baseline": {
+      "commit": "a237968f1d7a82d26b46e83c58179dbba7f1a908",
+      "root_path": "results/p337-closed-source-n25/latest.json",
+      "root_sha256": "df4ab225ff499131b744c70ec569ad21b0229f2256e71a585c680faae51bac3a",
+      "counts_directory": "results/p337-closed-source-finite-coupling",
+      "use": "Import root_enclosure, matching_slope_enclosure and U25_over_A_enclosure; use only existing full count/q/E marginals. No root search and no old source rescoring."
+    },
+    "primary_null": "An unchanged Q1 baseline whose first-Q effective log weight is purely linear/additive in epsilon predicts J2=0",
+    "prescore_secondary": "In the same traversal split the ordered origin pairs into the four NN contact displacements and all other nonzero displacements. Report J2_contact and J2_noncontact=J2-J2_contact with identical 16N units and full U functional; no new radius or feature is selected.",
+    "secondary_null": "A global contact-only transmission model predicts J2_noncontact=0 even if the unprojected spatial mean C is nonzero. A strictly signed exact interval excludes this fixed finite global closure. This split is specified before new moments or score are computed.",
+    "tensor_sign_prediction": null,
+    "decision": "A strictly signed exact interval excludes that finite global additive closure. If the saved-root interval contains zero, report unresolved with no coefficient, geometry, Q or precision search. A conditional positive Gram does not supply the unconditional J2 sign.",
+    "compute": "One compilation, one fixed-origin exact traversal per geometry for the missing total/contact joint moments, one rational-interval score invocation for the fixed vector total/contact/noncontact. Local CPU, two independent geometry processes; no Monte Carlo or cloud action.",
+    "dependency": "Same complete finite N25 occupation populations as previous local/seam/source calculations, reduced by translation; no independent statistical evidence. Spatial production has different observers and dependency groups.",
+    "boundary": "Finite canonical response only, not unique continuum field, asymptotic H4 origin, a spatial C score, or covariance of separate one-mark activation derivatives. No alpha fitted.",
+    "new_random_samples": 0,
+    "tests_requested": false,
+    "automatic_followup_production": false
+  },
+  "decision": "global_additive_first_Q_closure_rejected",
+  "J2_over_A": {
+    "lower_fraction": "-295285300347483898344516138677335513/5000000000000000000000000000000000000000",
+    "upper_fraction": "-147642650173741949172258069338667607/2500000000000000000000000000000000000000",
+    "midpoint_approx": -5.905706006949678e-05,
+    "width_approx": 5.98e-38,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "numerical_values": {
+    "J2": -0.0055194314248394015,
+    "J2_contact": -0.001751074454402799,
+    "J2_noncontact": -0.0037683569704366022,
+    "terms": {
+      "direct_centered": -0.005529496208369856,
+      "root_motion": -0.0014591233330132293,
+      "slope_source": 7.758539927132672e-06,
+      "slope_root": 0.0014614295766165514
+    }
+  },
+  "secondary_decision": "global_NN_contact_only_transmission_rejected",
+  "contact_J2_over_A": {
+    "lower_fraction": "-93681125173899973024278054833748999/5000000000000000000000000000000000000000",
+    "upper_fraction": "-23420281293474993256069513708437209/1250000000000000000000000000000000000000",
+    "midpoint_approx": -1.8736225034779993e-05,
+    "width_approx": 3.26e-38,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "noncontact_J2_over_A": {
+    "lower_fraction": "-403208350347167850640476167687173353/10000000000000000000000000000000000000000",
+    "upper_fraction": "-403208350347167850640476167687172431/10000000000000000000000000000000000000000",
+    "midpoint_approx": -4.032083503471679e-05,
+    "width_approx": 9.22e-38,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "contact_terms_over_A": {
+    "direct_centered": {
+      "lower_fraction": "-222969917291414154565826016017832653/10000000000000000000000000000000000000000",
+      "upper_fraction": "-222969917291414154565826016017832571/10000000000000000000000000000000000000000",
+      "midpoint_approx": -2.2296991729141416e-05,
+      "width_approx": 8.2e-39,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "root_motion": {
+      "lower_fraction": "-79192207902405021071151039428981763/10000000000000000000000000000000000000000",
+      "upper_fraction": "-79192207902405021071151039428981521/10000000000000000000000000000000000000000",
+      "midpoint_approx": -7.919220790240503e-06,
+      "width_approx": 2.42e-38,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "slope_source": {
+      "lower_fraction": "3548249827639078190937604953883399/1000000000000000000000000000000000000000",
+      "upper_fraction": "35482498276390781909376049538833991/10000000000000000000000000000000000000000",
+      "midpoint_approx": 3.548249827639078e-06,
+      "width_approx": 1e-40,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "slope_root": {
+      "lower_fraction": "19829344142407111919761224060120607/2500000000000000000000000000000000000000",
+      "upper_fraction": "7931737656962844767904489624048243/1000000000000000000000000000000000000000",
+      "midpoint_approx": 7.931737656962845e-06,
+      "width_approx": 2e-40,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    }
+  },
+  "noncontact_terms_over_A": {
+    "direct_centered": {
+      "lower_fraction": "-23042349976798882109023316122176157/625000000000000000000000000000000000000",
+      "upper_fraction": "-46084699953597764218046632244352289/1250000000000000000000000000000000000000",
+      "midpoint_approx": -3.686775996287821e-05,
+      "width_approx": 2e-38,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "root_motion": {
+      "lower_fraction": "-9616465666548979823915528526542841/1250000000000000000000000000000000000000",
+      "upper_fraction": "-9616465666548979823915528526542751/1250000000000000000000000000000000000000",
+      "midpoint_approx": -7.693172533239183e-06,
+      "width_approx": 7.2e-38,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "slope_source": {
+      "lower_fraction": "-8663086634815997474380669065843959/2500000000000000000000000000000000000000",
+      "upper_fraction": "-17326173269631994948761338131687917/5000000000000000000000000000000000000000",
+      "midpoint_approx": -3.465234653926399e-06,
+      "width_approx": 2e-40,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "slope_root": {
+      "lower_fraction": "77053321153270091592743794743363721/10000000000000000000000000000000000000000",
+      "upper_fraction": "3082132846130803663709751789734549/400000000000000000000000000000000000000",
+      "midpoint_approx": 7.705332115327008e-06,
+      "width_approx": 4e-40,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    }
+  },
+  "terms_over_A": {
+    "direct_centered": {
+      "lower_fraction": "-147911879230049067077549768493162771/2500000000000000000000000000000000000000",
+      "upper_fraction": "-118329503384039253662039814794530193/2000000000000000000000000000000000000000",
+      "midpoint_approx": -5.916475169201963e-05,
+      "width_approx": 1.19e-38,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "root_motion": {
+      "lower_fraction": "-156123933234796859662475267641324249/10000000000000000000000000000000000000000",
+      "upper_fraction": "-156123933234796859662475267641323771/10000000000000000000000000000000000000000",
+      "midpoint_approx": -1.5612393323479684e-05,
+      "width_approx": 4.78e-38,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "slope_source": {
+      "lower_fraction": "166030347425358402370674655091631/2000000000000000000000000000000000000000",
+      "upper_fraction": "207537934281698002963343318864539/2500000000000000000000000000000000000000",
+      "midpoint_approx": 8.30151737126792e-08,
+      "width_approx": 1e-40,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "slope_root": {
+      "lower_fraction": "3127413954457970785435773819676923/200000000000000000000000000000000000000",
+      "upper_fraction": "156370697722898539271788690983846153/10000000000000000000000000000000000000000",
+      "midpoint_approx": 1.5637069772289854e-05,
+      "width_approx": 3e-40,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    }
+  },
+  "root_p_joint_tangent": {
+    "lower_fraction": "3785382848565117546261653316859743681/10000000000000000000000000000000000000000",
+    "upper_fraction": "1892691424282558773130826658429871841/5000000000000000000000000000000000000000",
+    "midpoint_approx": 0.00037853828485651174,
+    "width_approx": 1e-40,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "source_packets": [
+    {
+      "mean_S2": {
+        "lower_fraction": "28983984954881497357291512827112266731/5000000000000000000000000000000000000000",
+        "upper_fraction": "28983984954881497357291512827112266733/5000000000000000000000000000000000000000",
+        "midpoint_approx": 0.005796796990976299,
+        "width_approx": 4e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "mean_S2_h": {
+        "lower_fraction": "-6516771806879285324895920114710114899/1250000000000000000000000000000000000000",
+        "upper_fraction": "-52134174455034282599167360917680919137/10000000000000000000000000000000000000000",
+        "midpoint_approx": -0.005213417445503428,
+        "width_approx": 5.5e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_q": {
+        "lower_fraction": "-23272879918851246281955234829317561787/10000000000000000000000000000000000000000",
+        "upper_fraction": "-4654575983770249256391046965863512357/2000000000000000000000000000000000000000",
+        "midpoint_approx": -0.0023272879918851247,
+        "width_approx": 2e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_q_h": {
+        "lower_fraction": "-531437840776082123176718424371509099/10000000000000000000000000000000000000000",
+        "upper_fraction": "-132859460194020530794179606092877267/2500000000000000000000000000000000000000",
+        "midpoint_approx": -5.3143784077608215e-05,
+        "width_approx": 3.1e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_e": {
+        "lower_fraction": "264138520115048480398462193017174703/5000000000000000000000000000000000000000",
+        "upper_fraction": "132069260057524240199231096508587353/2500000000000000000000000000000000000000",
+        "midpoint_approx": 5.28277040230097e-05,
+        "width_approx": 6e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_e_h": {
+        "lower_fraction": "-5954530007715929467963088925360890911/5000000000000000000000000000000000000000",
+        "upper_fraction": "-11909060015431858935926177850721781713/10000000000000000000000000000000000000000",
+        "midpoint_approx": -0.001190906001543186,
+        "width_approx": 1.09e-38,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      }
+    },
+    {
+      "mean_S2": {
+        "lower_fraction": "56364719962601208513070066866275782991/10000000000000000000000000000000000000000",
+        "upper_fraction": "11272943992520241702614013373255156599/2000000000000000000000000000000000000000",
+        "midpoint_approx": 0.005636471996260121,
+        "width_approx": 4e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "mean_S2_h": {
+        "lower_fraction": "-50621339685609570981460205817688091163/10000000000000000000000000000000000000000",
+        "upper_fraction": "-50621339685609570981460205817688091109/10000000000000000000000000000000000000000",
+        "midpoint_approx": -0.005062133968560957,
+        "width_approx": 5.4e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_q": {
+        "lower_fraction": "-333228019317346426163746434006470573/156250000000000000000000000000000000000",
+        "upper_fraction": "-2132659323631017127447977177641411667/1000000000000000000000000000000000000000",
+        "midpoint_approx": -0.0021326593236310172,
+        "width_approx": 2e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_q_h": {
+        "lower_fraction": "71835162468870225888598370917891311/2000000000000000000000000000000000000000",
+        "upper_fraction": "44896976543043891180373981823682073/1250000000000000000000000000000000000000",
+        "midpoint_approx": 3.5917581234435116e-05,
+        "width_approx": 2.9e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_e": {
+        "lower_fraction": "1003147509019828906729439132751979067/10000000000000000000000000000000000000000",
+        "upper_fraction": "501573754509914453364719566375989537/5000000000000000000000000000000000000000",
+        "midpoint_approx": 0.00010031475090198289,
+        "width_approx": 7e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_e_h": {
+        "lower_fraction": "-2168626468604912146946176256566442109/2000000000000000000000000000000000000000",
+        "upper_fraction": "-10843132343024560734730881282832210439/10000000000000000000000000000000000000000",
+        "midpoint_approx": -0.001084313234302456,
+        "width_approx": 1.06e-38,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      }
+    }
+  ],
+  "coefficient_packets": [
+    {
+      "geometry": "axis",
+      "S2_coefficients_h": {
+        "s": [
+          "0",
+          "0",
+          "3/25",
+          "63/25",
+          "126/5",
+          "803/5",
+          "18359/25",
+          "128379/50",
+          "142743/20",
+          "1615753/100",
+          "3009459/100",
+          "4575619/100",
+          "5516209/100",
+          "5052739/100",
+          "3421673/100",
+          "439713/25",
+          "360887/50",
+          "235067/100",
+          "14574/25",
+          "518/5",
+          "294/25",
+          "16/25",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "qs": [
+          "0",
+          "0",
+          "-3/25",
+          "-63/25",
+          "-126/5",
+          "-4013/25",
+          "-18323/25",
+          "-127707/50",
+          "-705307/100",
+          "-63065/4",
+          "-2865531/100",
+          "-4148049/100",
+          "-4513869/100",
+          "-3303609/100",
+          "-1295163/100",
+          "-5727/25",
+          "61182/25",
+          "28629/20",
+          "11496/25",
+          "2322/25",
+          "282/25",
+          "16/25",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "es": [
+          "0",
+          "0",
+          "3/25",
+          "63/25",
+          "126/5",
+          "4013/25",
+          "18323/25",
+          "127707/50",
+          "705307/100",
+          "1576673/100",
+          "2866459/100",
+          "4156393/100",
+          "4561261/100",
+          "3487009/100",
+          "350503/20",
+          "175469/25",
+          "16612/5",
+          "147423/100",
+          "11496/25",
+          "2322/25",
+          "282/25",
+          "16/25",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "geometry": "tilted",
+      "S2_coefficients_h": {
+        "s": [
+          "0",
+          "0",
+          "3/25",
+          "63/25",
+          "126/5",
+          "4027/25",
+          "18531/25",
+          "65276/25",
+          "364577/50",
+          "823317/50",
+          "3029673/100",
+          "2255973/50",
+          "5320769/100",
+          "4814643/100",
+          "820884/25",
+          "430498/25",
+          "715377/100",
+          "233991/100",
+          "582",
+          "518/5",
+          "294/25",
+          "16/25",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "qs": [
+          "0",
+          "0",
+          "-3/25",
+          "-63/25",
+          "-126/5",
+          "-4027/25",
+          "-18531/25",
+          "-65246/25",
+          "-363597/50",
+          "-815129/50",
+          "-2939989/100",
+          "-1042957/25",
+          "-1103907/25",
+          "-1567697/50",
+          "-1175543/100",
+          "6787/20",
+          "273973/100",
+          "154569/100",
+          "12178/25",
+          "2421/25",
+          "289/25",
+          "16/25",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "es": [
+          "0",
+          "0",
+          "3/25",
+          "63/25",
+          "126/5",
+          "4027/25",
+          "18531/25",
+          "65246/25",
+          "363597/50",
+          "815129/50",
+          "2940341/100",
+          "208897/5",
+          "1115061/25",
+          "1661577/50",
+          "1664759/100",
+          "140197/20",
+          "70227/20",
+          "158273/100",
+          "12188/25",
+          "2421/25",
+          "289/25",
+          "16/25",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      }
+    }
+  ],
+  "contact_coefficient_packets": [
+    {
+      "geometry": "axis",
+      "S2_contact_coefficients_h": {
+        "s": [
+          "0",
+          "0",
+          "2/25",
+          "42/25",
+          "84/5",
+          "2672/25",
+          "2434/5",
+          "84557/50",
+          "232651/50",
+          "259158/25",
+          "472326/25",
+          "703196/25",
+          "843197/25",
+          "796097/25",
+          "1164977/50",
+          "664597/50",
+          "298951/50",
+          "10446/5",
+          "13668/25",
+          "504/5",
+          "292/25",
+          "16/25",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "qs": [
+          "0",
+          "0",
+          "-2/25",
+          "-42/25",
+          "-84/5",
+          "-534/5",
+          "-12134/25",
+          "-83897/50",
+          "-228647/50",
+          "-250232/25",
+          "-88244/5",
+          "-1231867/50",
+          "-647984/25",
+          "-92713/5",
+          "-349341/50",
+          "15043/25",
+          "22217/10",
+          "6514/5",
+          "10822/25",
+          "2256/25",
+          "56/5",
+          "16/25",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "es": [
+          "0",
+          "0",
+          "2/25",
+          "42/25",
+          "84/5",
+          "534/5",
+          "12134/25",
+          "83897/50",
+          "228647/50",
+          "250244/25",
+          "441452/25",
+          "247199/10",
+          "659408/25",
+          "506061/25",
+          "552613/50",
+          "26573/5",
+          "142867/50",
+          "33386/25",
+          "10822/25",
+          "2256/25",
+          "56/5",
+          "16/25",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "geometry": "tilted",
+      "S2_contact_coefficients_h": {
+        "s": [
+          "0",
+          "0",
+          "2/25",
+          "42/25",
+          "84/5",
+          "2672/25",
+          "12172/25",
+          "42294/25",
+          "232733/50",
+          "1036513/100",
+          "75453/4",
+          "1399521/50",
+          "3340423/100",
+          "3143577/100",
+          "1152143/50",
+          "132091/10",
+          "595647/100",
+          "104219/50",
+          "13656/25",
+          "504/5",
+          "292/25",
+          "16/25",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "qs": [
+          "0",
+          "0",
+          "-2/25",
+          "-42/25",
+          "-84/5",
+          "-2672/25",
+          "-12172/25",
+          "-42264/25",
+          "-231793/50",
+          "-1021729/100",
+          "-362061/20",
+          "-126249/5",
+          "-2636593/100",
+          "-1861429/100",
+          "-340791/50",
+          "21074/25",
+          "120737/50",
+          "34784/25",
+          "2286/5",
+          "2353/25",
+          "287/25",
+          "16/25",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "es": [
+          "0",
+          "0",
+          "2/25",
+          "42/25",
+          "84/5",
+          "2672/25",
+          "12172/25",
+          "42264/25",
+          "231793/50",
+          "1021729/100",
+          "1810657/100",
+          "632761/25",
+          "2679529/100",
+          "406873/20",
+          "555791/50",
+          "136888/25",
+          "150979/50",
+          "35606/25",
+          "2288/5",
+          "2353/25",
+          "287/25",
+          "16/25",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "commit": "c29d8bce07e6381be0f948b2c0dd1f640e42d395",
+      "path": "analysis/regular_pair_spatial_kernel.tsv",
+      "sha256": "36ae069d370b1d7a4398861c928afb41aa76885c8895c696b1bc0c97e9c314fd"
+    },
+    {
+      "commit": "a237968f1d7a82d26b46e83c58179dbba7f1a908",
+      "path": "results/p337-closed-source-n25/latest.json",
+      "sha256": "df4ab225ff499131b744c70ec569ad21b0229f2256e71a585c680faae51bac3a"
+    },
+    {
+      "commit": "a237968f1d7a82d26b46e83c58179dbba7f1a908",
+      "path": "results/p337-closed-source-finite-coupling/axis.csv",
+      "sha256": "2d23fecc98d276d9ad15ad1867199cd308f0570cb5040ef94eb6b923b4c53458"
+    },
+    {
+      "commit": "a237968f1d7a82d26b46e83c58179dbba7f1a908",
+      "path": "results/p337-closed-source-finite-coupling/tilted.csv",
+      "sha256": "225031e612929ed922ba75c55e76703d59990f5283e7ac39b94f022841798da5"
+    }
+  ],
+  "saved_root_p": {
+    "lower_fraction": "1185331078656453492302851399693093801267/2000000000000000000000000000000000000000",
+    "upper_fraction": "5926655393282267461514256998465469006339/10000000000000000000000000000000000000000",
+    "midpoint_approx": 0.5926655393282267,
+    "width_approx": 4e-40,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "source_unit_divisor": 400,
+  "normalization_population": 33554432,
+  "new_origin_vacant_configurations_per_geometry": 16777216,
+  "new_random_samples": 0,
+  "new_root_searches": 0,
+  "old_sources_rescored": false,
+  "response_scores": 1,
+  "tests_run": 0,
+  "cloud_jobs": 0,
+  "score_vector": [
+    "J2_total",
+    "J2_NN_contact",
+    "J2_noncontact_by_subtraction"
+  ],
+  "score_seconds": 0.2949527919990942,
+  "elapsed_seconds": 4.628810042049736,
+  "boundary": "Finite canonical response only, not unique continuum field, asymptotic H4 origin, a spatial C score, or covariance of separate one-mark activation derivatives. No alpha fitted."
+}

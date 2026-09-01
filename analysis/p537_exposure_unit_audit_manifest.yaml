@@ -1,0 +1,82 @@
+schema: matching-one.p537-exposure-unit-audit.manifest.v1
+status: frozen_git_blob_existing_data_correction
+issue: 537
+
+repository:
+  name: LightChainr/Matching-One
+  acquisition: fixed_git_blobs_only_zero_new_MC
+
+git_inputs:
+  n25_scorer:
+    commit: df4a64f68232eec5aa5b8c8a5d920062aaa7808e
+    path: experiments/p537-one-defect-diagonal-edge-20260901/score_diagonal_edge.py
+    git_blob_sha1: be812c27445f137f73ec7d6b85544ce18a70cb03
+    required_markers:
+      - 'positive[i] += weight * wi * count * 2'
+      - 'sum_a = row[f"sum_a16_{suffix}"] / (N * 16)'
+  n65_scorer:
+    commit: bab37f21b061afa9e03286b6e9bf4560f879ecd5
+    path: experiments/p537-contact-stage-n65-mc-20260901/score.py
+    git_blob_sha1: b37994a2b145d38ae38b4fac4d2575ccffae1a70
+    required_markers:
+      - 'exposure[st,mask-1]+=2*f*w*v[0]/N'
+  historical_scale_scorer:
+    commit: bab37f21b061afa9e03286b6e9bf4560f879ecd5
+    path: experiments/p537-contact-stage-n65-mc-20260901/score_scale.py
+    git_blob_sha1: 892140ad8d8f0d34911b19bd33ae41e30bb9af07
+    required_markers:
+      - 'density25 = n25 / e25'
+      - 'density65 = n65 / e65'
+  historical_scale_result:
+    commit: bab37f21b061afa9e03286b6e9bf4560f879ecd5
+    path: results/p537-contact-stage-n65/scale-fingerprint.json
+    git_blob_sha1: e7afe3c102b96416669cc494235fbeabb69d650b
+  n65_result:
+    commit: bab37f21b061afa9e03286b6e9bf4560f879ecd5
+    path: results/p537-contact-stage-n65/result.json
+    git_blob_sha1: 7ae70de65be7be1cca73ed0aa29dfbef274c7914
+  full_t_result:
+    commit: f9ba1ff690b07beefcc71e669f1f29581d4e264e
+    path: results/p537-full-t-transport/RESULT.json
+    git_blob_sha1: 421b99cf099387ab2fb8ccb26556402d2c30e7a1
+
+coordinate_contract:
+  selected_cell:
+    row: '01'
+    column: double
+    row_index: 0
+    column_index: 1
+  sizes:
+    n25: 25
+    n65: 65
+  stored_exposure_denominator_power:
+    n25: 0
+    n65: 1
+  conventions:
+    unweighted_positive_mass: 0
+    source_weighted_positive_mass: 1
+  decay_definition: minus_log_abs_F65_over_F25_divided_by_log_65_over_25
+
+decisions:
+  preserve:
+    - frozen_signed_matrices
+    - frozen_n65_determinant_and_transmission_decision
+    - frozen_full_J65
+  correct:
+    five_eighth: post_reveal_shape_fingerprint_not_a_conditional_strength_or_field_identification
+    commutator: algebraic_encoding_candidate_not_a_physical_noncommutation_identification
+    remainder: complement_of_selected_not_a_spatially_nonlocal_mechanism
+
+outputs:
+  schema: matching-one.p537-exposure-unit-audit.v1
+  json: results/p537-exposure-unit-audit/latest.json
+  markdown: results/p537-exposure-unit-audit/latest.md
+  note: notes/p537-exposure-unit-correction-20260901.md
+
+claim_boundary:
+  - existing_fixed_git_blobs_only
+  - no_new_random_samples
+  - no_raw_TSV_or_delete_one_reconstruction
+  - two_size_finite_comparison_not_a_universal_exponent
+  - historical_results_are_not_overwritten
+  - priority_is_attention_not_permission_or_lock

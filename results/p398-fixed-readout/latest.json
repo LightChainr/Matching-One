@@ -1,0 +1,4176 @@
+{
+  "schema": "matching-one.p398-fixed-readout.v1",
+  "status": "completed_numerical_readout_analysis_of_saved_width5_model",
+  "sources": [
+    {
+      "path": "results/p398-physical-two-point/latest.json",
+      "sha256": "f5e33ec1574607c7acab9fbb19c6941bb473cabffbb82396d606c482f824aa81",
+      "schema": "matching-one.p398-physical-two-point.v1"
+    },
+    {
+      "path": "results/p398-physical-two-point/mode-visibility.json",
+      "sha256": "644548ca06a5f0e7cfe5f38fe0acb63fed61f7b69529f8a45df913a6bcd0ff2e",
+      "schema": "matching-one.p398-width5-mode-visibility.v1"
+    }
+  ],
+  "definition": {
+    "model": "width5, Q=1, h=v=1/2, positive discrete T=HV, first C5 character; existing AP A and singleton/landing L only",
+    "physical_observable": "O_w=w_A A+w_L L; real and imaginary parts are real, bounded functions of the same physical frontier configuration",
+    "source_readout": "S_xy(d)=x^T C(d) conjugate(y); each of x,y separately normalized to stationary variance one",
+    "absolute_signal": "|S_xy(d)|/sqrt(Var(X)Var(Y)), already realized by the unit-variance coefficients; this is not a significance or sample-size estimate",
+    "two_mode_prediction": "Reuse the saved residues and two largest-|lambda| modes with no re-fit",
+    "null_selection": "One fixed algebraic rule from G1/G2, applied before lag errors; source and future nulls can differ because residues need not be Hermitian",
+    "spectral_status": "Numerical complex128 projection of a saved exact physical model. No exact algebraic null or independent validation is claimed for the rounded filter coefficients."
+  },
+  "readouts": {
+    "A": {
+      "formula": "A",
+      "meaning": "Original adjacent-pair Fourier readout; fixed microscopic indicator.",
+      "raw_coefficients_A_L": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "equal_time_variance_before_normalization": [
+        1.017776217065308,
+        -1.3877787807814457e-17
+      ],
+      "unit_variance_coefficients_A_L": [
+        [
+          0.9912286606832742,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "rule_status": "fixed_microscopic_or_equal_time_rule"
+    },
+    "L": {
+      "formula": "L",
+      "meaning": "Original singleton/landing Fourier readout; fixed microscopic indicator.",
+      "raw_coefficients_A_L": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ]
+      ],
+      "equal_time_variance_before_normalization": [
+        0.7791031405975646,
+        -1.3877787807814457e-17
+      ],
+      "unit_variance_coefficients_A_L": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.1329285532919517,
+          0.0
+        ]
+      ],
+      "rule_status": "fixed_microscopic_or_equal_time_rule"
+    },
+    "J": {
+      "formula": "L-beta A; beta=C_LA(0)/C_AA(0)",
+      "meaning": "Equal-time-only landing innovation, E[J conjugate(A)]=0. No lag or spectrum used in this rule.",
+      "raw_coefficients_A_L": [
+        [
+          0.64518879516405,
+          0.46875709827922185
+        ],
+        [
+          1.0,
+          0.0
+        ]
+      ],
+      "equal_time_variance_before_normalization": [
+        0.13179563597946545,
+        1.079728915000639e-16
+      ],
+      "unit_variance_coefficients_A_L": [
+        [
+          1.7771999871696318,
+          1.2912113714493192
+        ],
+        [
+          2.7545425470660088,
+          0.0
+        ]
+      ],
+      "rule_status": "fixed_microscopic_or_equal_time_rule"
+    },
+    "X1": {
+      "formula": "A-(G1_AA/G1_LA)L",
+      "meaning": "Exploratory source-side null of the slowest residue, X1^T G1=0.",
+      "raw_coefficients_A_L": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          1.0021642411209724,
+          -0.7281149412206052
+        ]
+      ],
+      "equal_time_variance_before_normalization": [
+        0.20238752087589557,
+        0.0
+      ],
+      "unit_variance_coefficients_A_L": [
+        [
+          2.2228396488527262,
+          0.0
+        ],
+        [
+          2.227650409826101,
+          -1.6184827602672334
+        ]
+      ],
+      "rule_status": "model_derived_exploratory_filter"
+    },
+    "Y1": {
+      "formula": "A-conjugate(G1_AA/G1_AL)L",
+      "meaning": "Exploratory future-readout null of the slowest residue, G1 conjugate(Y1)=0.",
+      "raw_coefficients_A_L": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          1.0703173628765463,
+          -0.7776310825923574
+        ]
+      ],
+      "equal_time_variance_before_normalization": [
+        0.23376788298667822,
+        1.3877787807814457e-16
+      ],
+      "unit_variance_coefficients_A_L": [
+        [
+          2.0682716451845966,
+          0.0
+        ],
+        [
+          2.2137070529863134,
+          -1.608352318539974
+        ]
+      ],
+      "rule_status": "model_derived_exploratory_filter"
+    },
+    "Y2": {
+      "formula": "A-conjugate(G2_AA/G2_AL)L",
+      "meaning": "Exploratory future-readout null of the second-slowest residue, G2 conjugate(Y2)=0.",
+      "raw_coefficients_A_L": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.6385997439272922,
+          -0.46396987233651127
+        ]
+      ],
+      "equal_time_variance_before_normalization": [
+        0.2218243590664201,
+        5.551115123125783e-17
+      ],
+      "unit_variance_coefficients_A_L": [
+        [
+          2.1232218865246058,
+          0.0
+        ],
+        [
+          1.3558889530354357,
+          -0.9851109876329079
+        ]
+      ],
+      "rule_status": "model_derived_exploratory_filter"
+    }
+  },
+  "channels": [
+    {
+      "name": "AP_auto",
+      "source": "A",
+      "readout": "A",
+      "projected_residues_in_unit_variance_units": [
+        [
+          0.8945154789727389,
+          1.2679326763561428e-16
+        ],
+        [
+          0.1013309232973536,
+          3.5697880667415497e-17
+        ],
+        [
+          0.005108842076850213,
+          8.709932886685827e-20
+        ],
+        [
+          -0.001116249672229652,
+          -1.5439909102133143e-18
+        ],
+        [
+          -7.766807046204916e-06,
+          -3.8987577960271116e-19
+        ],
+        [
+          0.00011219834175422988,
+          -1.5916926286766171e-18
+        ],
+        [
+          5.851079184001472e-05,
+          6.565394158055968e-19
+        ],
+        [
+          -1.9370012612237358e-06,
+          1.6393492622078243e-19
+        ]
+      ],
+      "lag_rows": [
+        {
+          "lag": 0,
+          "unit_equal_time_variance_covariance": [
+            0.9999999999999998,
+            -1.3635401943101165e-17
+          ],
+          "absolute_signal_in_unit_variance_units": 0.9999999999999998,
+          "two_slowest_prediction": [
+            0.9958464022700925,
+            1.6249114830302978e-16
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 0.00415359772990731,
+          "two_slowest_relative_error": 0.004153597729907311,
+          "all_modes_reconstruction_absolute_error": 2.0598828518418495e-16,
+          "all_modes_reconstruction_relative_error": 2.05988285184185e-16,
+          "individual_mode_contributions": [
+            [
+              0.8945154789727389,
+              1.2679326763561428e-16
+            ],
+            [
+              0.1013309232973536,
+              3.5697880667415497e-17
+            ],
+            [
+              0.005108842076850213,
+              8.709932886685827e-20
+            ],
+            [
+              -0.001116249672229652,
+              -1.5439909102133143e-18
+            ],
+            [
+              -7.766807046204916e-06,
+              -3.8987577960271116e-19
+            ],
+            [
+              0.00011219834175422988,
+              -1.5916926286766171e-18
+            ],
+            [
+              5.851079184001472e-05,
+              6.565394158055968e-19
+            ],
+            [
+              -1.9370012612237358e-06,
+              1.6393492622078243e-19
+            ]
+          ]
+        },
+        {
+          "lag": 1,
+          "unit_equal_time_variance_covariance": [
+            0.10187829898327191,
+            -8.522126214438228e-19
+          ],
+          "absolute_signal_in_unit_variance_units": 0.10187829898327191,
+          "two_slowest_prediction": [
+            0.10179987246531083,
+            2.7975653126160273e-17
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 7.842651796108324e-05,
+          "two_slowest_relative_error": 0.0007698059227899027,
+          "all_modes_reconstruction_absolute_error": 1.1470459226541037e-16,
+          "all_modes_reconstruction_relative_error": 1.1258981884281804e-15,
+          "individual_mode_contributions": [
+            [
+              0.09785380770704705,
+              2.638076033873044e-17
+            ],
+            [
+              0.003946064758263786,
+              1.5948927874298314e-18
+            ],
+            [
+              8.920039517377253e-05,
+              1.939164160385489e-20
+            ],
+            [
+              -1.1419071551161956e-05,
+              -7.538937581283669e-21
+            ],
+            [
+              -5.3273945888813334e-08,
+              -2.6538380904174395e-21
+            ],
+            [
+              5.823033801608743e-07,
+              -8.113880429360586e-21
+            ],
+            [
+              1.1813107340680475e-07,
+              1.281675100946757e-21
+            ],
+            [
+              -1.9661693097825475e-09,
+              1.6548526095810706e-22
+            ]
+          ]
+        },
+        {
+          "lag": 2,
+          "unit_equal_time_variance_covariance": [
+            0.010859642461582053,
+            -1.0652657768047785e-19
+          ],
+          "absolute_signal_in_unit_variance_units": 0.010859642461582053,
+          "two_slowest_prediction": [
+            0.010858198944688468,
+            4.324511548394786e-18
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 1.443516893585503e-06,
+          "two_slowest_relative_error": 0.00013292490049209306,
+          "all_modes_reconstruction_absolute_error": 2.128317797084194e-17,
+          "all_modes_reconstruction_relative_error": 1.959841499951313e-15,
+          "individual_mode_contributions": [
+            [
+              0.010704529891158604,
+              4.254429872662403e-18
+            ],
+            [
+              0.00015366905352986264,
+              7.008167573238376e-20
+            ],
+            [
+              1.5574391181930565e-06,
+              6.506038425771236e-22
+            ],
+            [
+              -1.1681543863757519e-07,
+              7.334058241469151e-24
+            ],
+            [
+              -3.654157099153112e-10,
+              -1.8063293968321552e-23
+            ],
+            [
+              3.0221233330660744e-09,
+              -4.134810279500315e-23
+            ],
+            [
+              2.3850216456479906e-10,
+              2.4991157097191354e-24
+            ],
+            [
+              -1.9957765811099557e-12,
+              1.6704511377164885e-25
+            ]
+          ]
+        },
+        {
+          "lag": 3,
+          "unit_equal_time_variance_covariance": [
+            0.0011770117931903718,
+            -1.3315822210059732e-20
+          ],
+          "absolute_signal_in_unit_variance_units": 0.0011770117931903718,
+          "two_slowest_prediction": [
+            0.0011769857816467666,
+            6.181555179753694e-19
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 2.601154360524008e-08,
+          "two_slowest_relative_error": 2.2099645692363024e-05,
+          "all_modes_reconstruction_absolute_error": 2.4674218750880107e-18,
+          "all_modes_reconstruction_relative_error": 2.096344224725135e-15,
+          "individual_mode_contributions": [
+            [
+              0.001171001546856065,
+              6.151158930862773e-19
+            ],
+            [
+              5.984234790701635e-06,
+              3.03962488909205e-21
+            ],
+            [
+              2.719289081794524e-08,
+              1.6807514741584097e-23
+            ],
+            [
+              -1.1950049216304763e-09,
+              9.3900190802722e-25
+            ],
+            [
+              -2.506452991704332e-12,
+              -1.2294006473877407e-25
+            ],
+            [
+              1.56846581205473e-11,
+              -2.1063709413842106e-25
+            ],
+            [
+              4.815268401583644e-13,
+              4.866865545895845e-27
+            ],
+            [
+              -2.025829689177411e-15,
+              1.6861441976991834e-28
+            ]
+          ]
+        },
+        {
+          "lag": 4,
+          "unit_equal_time_variance_covariance": [
+            0.00012833297441813027,
+            -3.328955552514933e-21
+          ],
+          "absolute_signal_in_unit_variance_units": 0.00012833297441813027,
+          "two_slowest_prediction": [
+            0.0001283325117897354,
+            8.379719971174935e-20
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 4.6262839487553296e-10,
+          "two_slowest_relative_error": 3.6049066654390192e-06,
+          "all_modes_reconstruction_absolute_error": 4.689506420110684e-19,
+          "all_modes_reconstruction_relative_error": 3.6541710666126145e-15,
+          "individual_mode_contributions": [
+            [
+              0.0001280994715958405,
+              8.36667387616601e-20
+            ],
+            [
+              2.3304019389489273e-07,
+              1.30460950089244e-22
+            ],
+            [
+              4.747879402789148e-10,
+              3.8858081908537566e-25
+            ],
+            [
+              -1.2224726280843792e-11,
+              1.8444196876928054e-26
+            ],
+            [
+              -1.7192218148145805e-14,
+              -8.366878802858164e-28
+            ],
+            [
+              8.140253498816151e-14,
+              -1.0726568297860153e-27
+            ],
+            [
+              9.721844588538416e-16,
+              9.465118800219177e-30
+            ],
+            [
+              -2.0563353475518813e-18,
+              1.7019310994884628e-31
+            ]
+          ]
+        },
+        {
+          "lag": 5,
+          "unit_equal_time_variance_covariance": [
+            1.4022279666776459e-05,
+            -2.080597220321833e-22
+          ],
+          "absolute_signal_in_unit_variance_units": 1.4022279666776459e-05,
+          "two_slowest_prediction": [
+            1.4022271501728462e-05,
+            1.094967881851337e-20
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 8.16504799698841e-12,
+          "two_slowest_relative_error": 5.822910533109806e-07,
+          "all_modes_reconstruction_absolute_error": 5.534646511601958e-20,
+          "all_modes_reconstruction_relative_error": 3.947037602391724e-15,
+          "individual_mode_contributions": [
+            [
+              1.401319636783583e-05,
+              1.0944127517717361e-20
+            ],
+            [
+              9.075133892632875e-09,
+              5.551300796009377e-24
+            ],
+            [
+              8.28979860006395e-12,
+              8.445444907386773e-27
+            ],
+            [
+              -1.25057169168517e-13,
+              2.7909642051021707e-28
+            ],
+            [
+              -1.1792455945980116e-16,
+              -5.69385828999064e-30
+            ],
+            [
+              4.2247479362129933e-16,
+              -5.460438263973131e-30
+            ],
+            [
+              1.962803613867295e-18,
+              1.838107614718903e-32
+            ],
+            [
+              -2.087300370895594e-21,
+              1.7178111108264091e-34
+            ]
+          ]
+        },
+        {
+          "lag": 6,
+          "unit_equal_time_variance_covariance": [
+            1.5333003300843617e-06,
+            -2.6007465254022913e-23
+          ],
+          "absolute_signal_in_unit_variance_units": 1.5333003300843617e-06,
+          "two_slowest_prediction": [
+            1.5333001866223797e-06,
+            1.393431194043674e-21
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 1.4346198192316387e-13,
+          "two_slowest_relative_error": 9.356417598584267e-08,
+          "all_modes_reconstruction_absolute_error": 7.130726155433108e-21,
+          "all_modes_reconstruction_relative_error": 4.650573677917866e-15,
+          "individual_mode_contributions": [
+            [
+              1.5329467795392808e-06,
+              1.393196677537052e-21
+            ],
+            [
+              3.534070830989763e-10,
+              2.34516506622105e-25
+            ],
+            [
+              1.447399038595044e-13,
+              1.7645545987344038e-28
+            ],
+            [
+              -1.2793166244507196e-15,
+              3.7800477325421045e-30
+            ],
+            [
+              -8.088660581175775e-19,
+              -3.874561313763155e-32
+            ],
+            [
+              2.192621535328314e-18,
+              -2.7786168976567136e-32
+            ],
+            [
+              3.9628261813118665e-21,
+              3.563959953346511e-35
+            ],
+            [
+              -2.1187316764883664e-24,
+              1.733783456122904e-37
+            ]
+          ]
+        },
+        {
+          "lag": 7,
+          "unit_equal_time_variance_covariance": [
+            1.6770754217040684e-07,
+            -3.250933156752864e-24
+          ],
+          "absolute_signal_in_unit_variance_units": 1.6770754217040684e-07,
+          "two_slowest_prediction": [
+            1.6770753965632825e-07,
+            1.7385531169240203e-22
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 2.5140785966246136e-15,
+          "two_slowest_relative_error": 1.4990849928920132e-08,
+          "all_modes_reconstruction_absolute_error": 9.172334139311845e-22,
+          "all_modes_reconstruction_relative_error": 5.4692436730077884e-15,
+          "individual_mode_contributions": [
+            [
+              1.6769377715234073e-07,
+              1.7384546502889227e-22
+            ],
+            [
+              1.3762503987507759e-11,
+              9.846663509765662e-27
+            ],
+            [
+              2.5271590758666876e-15,
+              3.587217408088636e-30
+            ],
+            [
+              -1.3087222719639241e-17,
+              4.8131257371854367e-32
+            ],
+            [
+              -5.548159797855323e-21,
+              -2.6363962875227886e-34
+            ],
+            [
+              1.1379588249458856e-20,
+              -1.4133758217183888e-34
+            ],
+            [
+              8.000796020723312e-24,
+              6.898491239454376e-38
+            ],
+            [
+              -2.150636285772855e-27,
+              1.7498473153166476e-40
+            ]
+          ]
+        },
+        {
+          "lag": 8,
+          "unit_equal_time_variance_covariance": [
+            1.8345075584171916e-08,
+            -4.06366644594108e-25
+          ],
+          "absolute_signal_in_unit_variance_units": 1.8345075584171916e-08,
+          "two_slowest_prediction": [
+            1.8345075540181462e-08,
+            2.1363223173660254e-23
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 4.399045428358801e-17,
+          "two_slowest_relative_error": 2.397943474353568e-09,
+          "all_modes_reconstruction_absolute_error": 1.1458355815703212e-22,
+          "all_modes_reconstruction_relative_error": 6.2460117774545734e-15,
+          "individual_mode_contributions": [
+            [
+              1.8344539595869466e-08,
+              2.1362811915055686e-23
+            ],
+            [
+              5.359443119964892e-13,
+              4.112586045692952e-28
+            ],
+            [
+              4.4124203653849514e-17,
+              7.147290509926425e-32
+            ],
+            [
+              -1.3388038210398412e-19,
+              5.891698120651375e-34
+            ],
+            [
+              -3.805583981873981e-23,
+              -1.793786149046589e-36
+            ],
+            [
+              5.905945309792463e-23,
+              -7.1863338462588505e-37
+            ],
+            [
+              1.6153304242082862e-26,
+              1.3328142761172547e-40
+            ],
+            [
+              -2.183021325923079e-30,
+              1.7660018227117007e-43
+            ]
+          ]
+        }
+      ],
+      "interpretation": "Named physical readout; no lag-dependent coefficient selection."
+    },
+    {
+      "name": "landing_auto",
+      "source": "L",
+      "readout": "L",
+      "projected_residues_in_unit_variance_units": [
+        [
+          0.7130319977660335,
+          -4.589806859216134e-17
+        ],
+        [
+          0.1895312203032983,
+          1.8276349661780493e-17
+        ],
+        [
+          0.10491628615520215,
+          -7.534304436150634e-17
+        ],
+        [
+          -0.013607070010123146,
+          8.390121426779125e-17
+        ],
+        [
+          8.3061778187798e-05,
+          -2.2135644560746493e-18
+        ],
+        [
+          0.004917259723297825,
+          2.136483039871763e-18
+        ],
+        [
+          0.0011730735636634624,
+          2.1271081237721224e-17
+        ],
+        [
+          -4.582927956042531e-05,
+          -1.2648337424304349e-19
+        ]
+      ],
+      "lag_rows": [
+        {
+          "lag": 0,
+          "unit_equal_time_variance_covariance": [
+            1.0,
+            -1.7812516834639284e-17
+          ],
+          "absolute_signal_in_unit_variance_units": 1.0,
+          "two_slowest_prediction": [
+            0.9025632180693318,
+            -2.7621718930380846e-17
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 0.09743678193066818,
+          "two_slowest_relative_error": 0.09743678193066818,
+          "all_modes_reconstruction_absolute_error": 6.664285049689573e-16,
+          "all_modes_reconstruction_relative_error": 6.664285049689573e-16,
+          "individual_mode_contributions": [
+            [
+              0.7130319977660335,
+              -4.589806859216134e-17
+            ],
+            [
+              0.1895312203032983,
+              1.8276349661780493e-17
+            ],
+            [
+              0.10491628615520215,
+              -7.534304436150634e-17
+            ],
+            [
+              -0.013607070010123146,
+              8.390121426779125e-17
+            ],
+            [
+              8.3061778187798e-05,
+              -2.2135644560746493e-18
+            ],
+            [
+              0.004917259723297825,
+              2.136483039871763e-18
+            ],
+            [
+              0.0011730735636634624,
+              2.1271081237721224e-17
+            ],
+            [
+              -4.582927956042531e-05,
+              -1.2648337424304349e-19
+            ]
+          ]
+        },
+        {
+          "lag": 1,
+          "unit_equal_time_variance_covariance": [
+            0.08710261404622763,
+            -2.2265646043299105e-18
+          ],
+          "absolute_signal_in_unit_variance_units": 0.08710261404622763,
+          "two_slowest_prediction": [
+            0.08538156185515991,
+            6.046003964190995e-18
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 0.001721052191067718,
+          "two_slowest_relative_error": 0.01975890402272325,
+          "all_modes_reconstruction_absolute_error": 1.3902747688290406e-16,
+          "all_modes_reconstruction_relative_error": 1.5961343801819606e-15,
+          "individual_mode_contributions": [
+            [
+              0.07800076984525321,
+              4.9513430299527965e-18
+            ],
+            [
+              0.0073807920099066915,
+              1.0946609342381982e-18
+            ],
+            [
+              0.0018318386132183072,
+              -9.484893351613495e-19
+            ],
+            [
+              -0.0001391983441633648,
+              9.589360894948254e-19
+            ],
+            [
+              5.697358837783361e-07,
+              -1.5401312712655367e-20
+            ],
+            [
+              2.552031441139638e-05,
+              1.7527176963643093e-20
+            ],
+            [
+              2.368391110474427e-06,
+              4.2066303391033117e-20
+            ],
+            [
+              -4.6519393025188534e-08,
+              -1.5011384364899744e-22
+            ]
+          ]
+        },
+        {
+          "lag": 2,
+          "unit_equal_time_variance_covariance": [
+            0.008850871275301264,
+            -1.391602877706194e-19
+          ],
+          "absolute_signal_in_unit_variance_units": 0.008850871275301264,
+          "two_slowest_prediction": [
+            0.00882017025595456,
+            1.6900816785458374e-18
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 3.070101934670409e-05,
+          "two_slowest_relative_error": 0.0034687002433733956,
+          "all_modes_reconstruction_absolute_error": 2.26255360369216e-17,
+          "all_modes_reconstruction_relative_error": 2.556306078030886e-15,
+          "individual_mode_contributions": [
+            [
+              0.00853274483545483,
+              1.632540541788658e-18
+            ],
+            [
+              0.0002874254204997299,
+              5.754113675717959e-20
+            ],
+            [
+              3.198390667311269e-05,
+              -1.0152798163731198e-20
+            ],
+            [
+              -1.4239787848087362e-06,
+              1.0839297687568978e-20
+            ],
+            [
+              3.9079223241619236e-09,
+              -1.0713619741437546e-22
+            ],
+            [
+              1.324490639716976e-07,
+              1.2438288585661606e-22
+            ],
+            [
+              4.781691980728593e-09,
+              8.315519371454612e-23
+            ],
+            [
+              -4.7219898462045046e-11,
+              -1.7442730433991757e-25
+            ]
+          ]
+        },
+        {
+          "lag": 3,
+          "unit_equal_time_variance_covariance": [
+            0.0009451608984285528,
+            -1.7395035971327426e-20
+          ],
+          "absolute_signal_in_unit_variance_units": 0.0009451608984285528,
+          "two_slowest_prediction": [
+            0.0009446163026204347,
+            3.007468412661748e-19
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 5.445958081181203e-07,
+          "two_slowest_relative_error": 0.0005761937560298764,
+          "all_modes_reconstruction_absolute_error": 3.59198880002219e-18,
+          "all_modes_reconstruction_relative_error": 3.8003992822749196e-15,
+          "individual_mode_contributions": [
+            [
+              0.0009334232799423046,
+              2.9792532750895385e-19
+            ],
+            [
+              1.1193022678130032e-05,
+              2.8215137572209846e-21
+            ],
+            [
+              5.584390888437241e-07,
+              -6.538718908404673e-23
+            ],
+            [
+              -1.4567095548245994e-08,
+              1.214162881024044e-22
+            ],
+            [
+              2.68051518721346e-11,
+              -7.451265770634111e-25
+            ],
+            [
+              6.874035430827191e-10,
+              8.189769816172466e-25
+            ],
+            [
+              9.65405506609252e-12,
+              1.6430336813737556e-25
+            ],
+            [
+              -4.793095235697795e-14,
+              -1.9943896746012496e-28
+            ]
+          ]
+        },
+        {
+          "lag": 4,
+          "unit_equal_time_variance_covariance": [
+            0.00010255553983944788,
+            -4.3487589928318565e-21
+          ],
+          "absolute_signal_in_unit_variance_units": 0.00010255553983944788,
+          "two_slowest_prediction": [
+            0.00010254593473996265,
+            4.5778069603487316e-20
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 9.605099485226901e-09,
+          "two_slowest_relative_error": 9.365753912722626e-05,
+          "all_modes_reconstruction_absolute_error": 4.365684503234093e-19,
+          "all_modes_reconstruction_relative_error": 4.2568977844284496e-15,
+          "individual_mode_contributions": [
+            [
+              0.00010211005208053987,
+              4.564557836050567e-20
+            ],
+            [
+              4.358826594227804e-07,
+              1.3249124298164559e-22
+            ],
+            [
+              9.750347858873956e-09,
+              8.11776669885285e-25
+            ],
+            [
+              -1.490192655786162e-10,
+              1.349810249645555e-24
+            ],
+            [
+              1.8386142489213654e-13,
+              -5.181333335356692e-27
+            ],
+            [
+              3.5675875455310646e-12,
+              5.1505726263212444e-27
+            ],
+            [
+              1.9491171659481407e-14,
+              3.2448668343152534e-28
+            ],
+            [
+              -4.865271355239151e-17,
+              -2.2516434739249867e-31
+            ]
+          ]
+        },
+        {
+          "lag": 5,
+          "unit_equal_time_variance_covariance": [
+            1.118727662673118e-05,
+            -2.7179743705199103e-22
+          ],
+          "absolute_signal_in_unit_variance_units": 1.118727662673118e-05,
+          "two_slowest_prediction": [
+            1.118710789026298e-05,
+            6.4274346347342425e-21
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 1.6873646819968665e-10,
+          "two_slowest_relative_error": 1.5082890486188855e-05,
+          "all_modes_reconstruction_absolute_error": 5.630414980792669e-20,
+          "all_modes_reconstruction_relative_error": 5.032873655183607e-15,
+          "individual_mode_contributions": [
+            [
+              1.1170133593127256e-05,
+              6.421394438110087e-21
+            ],
+            [
+              1.697429713572393e-08,
+              6.0401966241555134e-24
+            ],
+            [
+              1.7024109749533044e-10,
+              4.8280640092419374e-26
+            ],
+            [
+              -1.5244453803465328e-12,
+              1.4910519666012452e-26
+            ],
+            [
+              1.2611390423983724e-15,
+              -3.602242011171247e-29
+            ],
+            [
+              1.8515588147756713e-14,
+              3.140280150013472e-29
+            ],
+            [
+              3.9351937611553114e-17,
+              6.405179337921559e-31
+            ],
+            [
+              -4.9385343282594974e-20,
+              -2.5161926744183448e-34
+            ]
+          ]
+        },
+        {
+          "lag": 6,
+          "unit_equal_time_variance_covariance": [
+            1.222599348160389e-06,
+            -3.397467963149888e-23
+          ],
+          "absolute_signal_in_unit_variance_units": 1.222599348160389e-06,
+          "two_slowest_prediction": [
+            1.2225963912404323e-06,
+            8.589481553012647e-22
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 2.956919956689742e-12,
+          "two_slowest_relative_error": 2.4185518838521686e-06,
+          "all_modes_reconstruction_absolute_error": 7.254939478920101e-21,
+          "all_modes_reconstruction_relative_error": 5.934028584128075e-15,
+          "individual_mode_contributions": [
+            [
+              1.2219353721403988e-06,
+              8.586786402384937e-22
+            ],
+            [
+              6.610191000334786e-10,
+              2.6951506277113574e-25
+            ],
+            [
+              2.9724099792026977e-12,
+              1.4384887024317818e-27
+            ],
+            [
+              -1.5594854186379524e-14,
+              1.638073542340519e-28
+            ],
+            [
+              8.650382673769354e-18,
+              -2.503953438026995e-31
+            ],
+            [
+              9.609491009878394e-17,
+              1.8722423949416407e-31
+            ],
+            [
+              7.945007210637695e-20,
+              1.2636876619556277e-33
+            ],
+            [
+              -5.012900520982071e-23,
+              -2.788198656206071e-37
+            ]
+          ]
+        },
+        {
+          "lag": 7,
+          "unit_equal_time_variance_covariance": [
+            1.3369707324739986e-07,
+            0.0
+          ],
+          "absolute_signal_in_unit_variance_units": 1.3369707324739986e-07,
+          "two_slowest_prediction": [
+            1.3369702150808833e-07,
+            1.1103499695757983e-22
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 5.173931153190096e-14,
+          "two_slowest_relative_error": 3.869891110941517e-07,
+          "all_modes_reconstruction_absolute_error": 9.067961685038264e-22,
+          "all_modes_reconstruction_relative_error": 6.782468355353185e-15,
+          "individual_mode_contributions": [
+            [
+              1.336712798678239e-07,
+              1.1102316585563518e-22
+            ],
+            [
+              2.574164026441351e-11,
+              1.1831101944651112e-26
+            ],
+            [
+              5.189828551655176e-14,
+              3.5513598024617485e-29
+            ],
+            [
+              -1.5953308674080247e-16,
+              1.7910660597260943e-30
+            ],
+            [
+              5.933455224757986e-20,
+              -1.7402180451652814e-33
+            ],
+            [
+              4.987274329717771e-19,
+              1.0975160055710873e-33
+            ],
+            [
+              1.604066874677932e-22,
+              2.4917906881546815e-36
+            ],
+            [
+              -5.088386546078473e-26,
+              -3.0678260053893133e-40
+            ]
+          ]
+        },
+        {
+          "lag": 8,
+          "unit_equal_time_variance_covariance": [
+            1.462371700760272e-08,
+            -2.65427184621085e-25
+          ],
+          "absolute_signal_in_unit_variance_units": 1.462371700760272e-08,
+          "two_slowest_prediction": [
+            1.4623716103087428e-08,
+            1.4015170025535166e-23
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 9.045152913919682e-16,
+          "two_slowest_relative_error": 6.185262549334892e-08,
+          "all_modes_reconstruction_absolute_error": 1.0519855269779595e-22,
+          "all_modes_reconstruction_relative_error": 7.193694506198686e-15,
+          "individual_mode_contributions": [
+            [
+              1.4622713663001402e-08,
+              1.4014657285074784e-23
+            ],
+            [
+              1.0024400860261291e-12,
+              5.127404603812859e-28
+            ],
+            [
+              9.06144192222096e-16,
+              8.016093114304376e-31
+            ],
+            [
+              -1.632000239365945e-18,
+              1.9502263321919074e-32
+            ],
+            [
+              4.0698651414535713e-22,
+              -1.2092249887485318e-35
+            ],
+            [
+              2.588368646611243e-21,
+              6.349111812356088e-36
+            ],
+            [
+              3.2385502872721847e-25,
+              4.910608208293681e-39
+            ],
+            [
+              -5.165009266379778e-29,
+              -3.3552425740054793e-43
+            ]
+          ]
+        }
+      ],
+      "interpretation": "Named physical readout; no lag-dependent coefficient selection."
+    },
+    {
+      "name": "AP_to_landing",
+      "source": "A",
+      "readout": "L",
+      "projected_residues_in_unit_variance_units": [
+        [
+          -0.6252004043736473,
+          0.45423468230360353
+        ],
+        [
+          -0.1187017770149512,
+          0.08624188915117126
+        ],
+        [
+          0.008937718103160717,
+          -0.006493632305269667
+        ],
+        [
+          -0.0025512495688336787,
+          0.0018535913113129979
+        ],
+        [
+          2.1678671583578352e-05,
+          -1.5750476856132157e-05
+        ],
+        [
+          0.0003600238955192922,
+          -0.0002615726711929283
+        ],
+        [
+          -0.00030102198351390156,
+          0.00021870527288736765
+        ],
+        [
+          1.4054348672856463e-05,
+          -1.0211082014246483e-05
+        ]
+      ],
+      "lag_rows": [
+        {
+          "lag": 0,
+          "unit_equal_time_variance_covariance": [
+            -0.73742097792201,
+            0.5357677015036427
+          ],
+          "absolute_signal_in_unit_variance_units": 0.9115024567459761,
+          "two_slowest_prediction": [
+            -0.7439021813885985,
+            0.5404765714547748
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 0.008011208060710555,
+          "two_slowest_relative_error": 0.008789014227465955,
+          "all_modes_reconstruction_absolute_error": 5.978733960281817e-16,
+          "all_modes_reconstruction_relative_error": 6.55920773008735e-16,
+          "individual_mode_contributions": [
+            [
+              -0.6252004043736473,
+              0.45423468230360353
+            ],
+            [
+              -0.1187017770149512,
+              0.08624188915117126
+            ],
+            [
+              0.008937718103160717,
+              -0.006493632305269667
+            ],
+            [
+              -0.0025512495688336787,
+              0.0018535913113129979
+            ],
+            [
+              2.1678671583578352e-05,
+              -1.5750476856132157e-05
+            ],
+            [
+              0.0003600238955192922,
+              -0.0002615726711929283
+            ],
+            [
+              -0.00030102198351390156,
+              0.00021870527288736765
+            ],
+            [
+              1.4054348672856463e-05,
+              -1.0211082014246483e-05
+            ]
+          ]
+        },
+        {
+          "lag": 1,
+          "unit_equal_time_variance_covariance": [
+            -0.07288375021537356,
+            0.05295314413198878
+          ],
+          "absolute_signal_in_unit_variance_units": 0.09008926972131667,
+          "two_slowest_prediction": [
+            -0.07301512760055573,
+            0.05304859538954174
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 0.0001623913787913169,
+          "two_slowest_relative_error": 0.0018025607188698557,
+          "all_modes_reconstruction_absolute_error": 1.7179894178292947e-16,
+          "all_modes_reconstruction_relative_error": 1.9069856189796473e-15,
+          "individual_mode_contributions": [
+            [
+              -0.06839260089518406,
+              0.04969013315124872
+            ],
+            [
+              -0.004622526705371669,
+              0.0033584622382930233
+            ],
+            [
+              0.00015605257997038127,
+              -0.00011337883595343953
+            ],
+            [
+              -2.609891146771077e-05,
+              1.8961969115938615e-05
+            ],
+            [
+              1.486979617253694e-07,
+              -1.0803539302120233e-07
+            ],
+            [
+              1.8685047213869878e-06,
+              -1.3575481438664738e-06
+            ],
+            [
+              -6.077519875098262e-07,
+              4.4155766540565085e-07
+            ],
+            [
+              1.4265984014948792e-08,
+              -1.0364844090705521e-08
+            ]
+          ]
+        },
+        {
+          "lag": 2,
+          "unit_equal_time_variance_covariance": [
+            -0.007659222473492063,
+            0.005564750858446397
+          ],
+          "absolute_signal_in_unit_variance_units": 0.00946731963203027,
+          "two_slowest_prediction": [
+            -0.007661689668696177,
+            0.005566543380687072
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 3.049620986044059e-06,
+          "two_slowest_relative_error": 0.0003221208435517949,
+          "all_modes_reconstruction_absolute_error": 2.6985964133627383e-17,
+          "all_modes_reconstruction_relative_error": 2.8504334048601498e-15,
+          "individual_mode_contributions": [
+            [
+              -0.007481677594073377,
+              0.005435756952919134
+            ],
+            [
+              -0.00018001207462279916,
+              0.0001307864277679381
+            ],
+            [
+              2.7246784284682576e-06,
+              -1.9795947534210004e-06
+            ],
+            [
+              -2.6698806268129956e-07,
+              1.939781820077247e-07
+            ],
+            [
+              1.0199464361104407e-09,
+              -7.410344621217937e-10
+            ],
+            [
+              9.697439356933962e-09,
+              -7.045602105565577e-09
+            ],
+            [
+              -1.2270282522574844e-09,
+              8.914882083291112e-10
+            ],
+            [
+              1.4480806236708411e-11,
+              -1.0520921570774483e-11
+            ]
+          ]
+        },
+        {
+          "lag": 3,
+          "unit_equal_time_variance_covariance": [
+            -0.000825408989560503,
+            0.0005996947339136383
+          ],
+          "absolute_signal_in_unit_variance_units": 0.001020261620336196,
+          "two_slowest_prediction": [
+            -0.0008254538860661075,
+            0.0005997273531343183
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 5.549513287907073e-08,
+          "two_slowest_relative_error": 5.439304171883287e-05,
+          "all_modes_reconstruction_absolute_error": 3.836298902887396e-18,
+          "all_modes_reconstruction_relative_error": 3.7601129224318575e-15,
+          "individual_mode_contributions": [
+            [
+              -0.0008184437920038389,
+              0.0005946342216727623
+            ],
+            [
+              -7.010094062268652e-06,
+              5.093131461556033e-06
+            ],
+            [
+              4.7572892034013816e-08,
+              -3.4563729242918455e-08
+            ],
+            [
+              -2.7312489910739566e-09,
+              1.984368546586962e-09
+            ],
+            [
+              6.995998603233745e-12,
+              -5.0828905111158056e-12
+            ],
+            [
+              5.0329190504590106e-11,
+              -3.656629730166878e-11
+            ],
+            [
+              -2.4773235839293968e-12,
+              1.7998809393552828e-12
+            ],
+            [
+              1.4698863327294e-14,
+              -1.0679349320618027e-14
+            ]
+          ]
+        },
+        {
+          "lag": 4,
+          "unit_equal_time_variance_covariance": [
+            -8.980427778119705e-05,
+            6.524662700484658e-05
+          ],
+          "absolute_signal_in_unit_variance_units": 0.00011100419200783355,
+          "two_slowest_prediction": [
+            -8.980508076793471e-05,
+            6.524721040886082e-05
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 9.92546192725142e-10,
+          "two_slowest_relative_error": 8.94151990814093e-06,
+          "all_modes_reconstruction_absolute_error": 4.888312193416999e-19,
+          "all_modes_reconstruction_relative_error": 4.403718548820238e-15,
+          "individual_mode_contributions": [
+            [
+              -8.953209119840263e-05,
+              6.504887187689389e-05
+            ],
+            [
+              -2.729895695320778e-07,
+              1.9833853196693092e-07
+            ],
+            [
+              8.306228114237449e-10,
+              -6.034827972307269e-10
+            ],
+            [
+              -2.794027933805821e-11,
+              2.0299801183448777e-11
+            ],
+            [
+              4.7986830213453305e-14,
+              -3.486447293424908e-14
+            ],
+            [
+              2.6120580120319413e-13,
+              -1.8977712313583677e-13
+            ],
+            [
+              -5.001622520265289e-15,
+              3.633891470001925e-15
+            ],
+            [
+              1.4920203998501925e-17,
+              -1.0840162731427833e-17
+            ]
+          ]
+        },
+        {
+          "lag": 5,
+          "unit_equal_time_variance_covariance": [
+            -9.804808289003821e-06,
+            7.123610200900755e-06
+          ],
+          "absolute_signal_in_unit_variance_units": 1.2119409551562127e-05,
+          "two_slowest_prediction": [
+            -9.804822507529824e-06,
+            7.12362053126457e-06
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 1.757506467262142e-11,
+          "two_slowest_relative_error": 1.4501584914552285e-06,
+          "all_modes_reconstruction_absolute_error": 6.049618182049754e-20,
+          "all_modes_reconstruction_relative_error": 4.991677322489684e-15,
+          "individual_mode_contributions": [
+            [
+              -9.794191650880636e-06,
+              7.115896761799805e-06
+            ],
+            [
+              -1.0630856649189016e-08,
+              7.72376946476438e-09
+            ],
+            [
+              1.450267632172109e-11,
+              -1.0536811117626709e-11
+            ],
+            [
+              -2.8582498777665777e-13,
+              2.0766400918635477e-13
+            ],
+            [
+              3.2915041933690586e-16,
+              -2.3914177775907883e-16
+            ],
+            [
+              1.3556441082830453e-15,
+              -9.849330975075487e-16
+            ],
+            [
+              -1.009808649847248e-17,
+              7.336689292616677e-18
+            ],
+            [
+              1.514487769564797e-20,
+              -1.1003397727328629e-20
+            ]
+          ]
+        },
+        {
+          "lag": 6,
+          "unit_equal_time_variance_covariance": [
+            -1.0718305787671419e-06,
+            7.787304982909284e-07
+          ],
+          "absolute_signal_in_unit_variance_units": 1.3248554557191302e-06,
+          "two_slowest_prediction": [
+            -1.0718308290692254e-06,
+            7.787306801460354e-07
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 3.093903892724068e-13,
+          "two_slowest_relative_error": 2.3352765612039543e-07,
+          "all_modes_reconstruction_absolute_error": 7.93740379192364e-21,
+          "all_modes_reconstruction_relative_error": 5.991147002232954e-15,
+          "individual_mode_contributions": [
+            [
+              -1.0714168384787082e-06,
+              7.784298983758307e-07
+            ],
+            [
+              -4.139905905171458e-10,
+              3.00781770204759e-10
+            ],
+            [
+              2.5321676409547853e-13,
+              -1.8397274791926566e-13
+            ],
+            [
+              -2.9239479909653714e-15,
+              2.124372565112185e-15
+            ],
+            [
+              2.2577027502701646e-18,
+              -1.6403170636660702e-18
+            ],
+            [
+              7.035720262939015e-18,
+              -5.1117499861743134e-18
+            ],
+            [
+              -2.0387654309670613e-20,
+              1.481249790224684e-20
+            ],
+            [
+              1.537293460861294e-23,
+              -1.1169090773403295e-23
+            ]
+          ]
+        },
+        {
+          "lag": 7,
+          "unit_equal_time_variance_covariance": [
+            -1.1722171051787455e-07,
+            8.516655789676919e-08
+          ],
+          "absolute_signal_in_unit_variance_units": 1.4489400263889504e-07,
+          "two_slowest_prediction": [
+            -1.1722171490917958e-07,
+            8.516656108723885e-08
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 5.4279514120254516e-15,
+          "two_slowest_relative_error": 3.7461532659519366e-08,
+          "all_modes_reconstruction_absolute_error": 9.826849974573946e-22,
+          "all_modes_reconstruction_relative_error": 6.782095735918366e-15,
+          "individual_mode_contributions": [
+            [
+              -1.1720559314075654e-07,
+              8.515484793685286e-08
+            ],
+            [
+              -1.6121768423037628e-11,
+              1.1713150385990745e-11
+            ],
+            [
+              4.421165321255409e-15,
+              -3.2121646292345293e-15
+            ],
+            [
+              -2.9911562037924223e-17,
+              2.1732021899622762e-17
+            ],
+            [
+              1.5485994879927964e-20,
+              -1.1251233868741832e-20
+            ],
+            [
+              3.651501106807838e-20,
+              -2.6529708451545692e-20
+            ],
+            [
+              -4.1161902139925843e-23,
+              2.9905872438249726e-23
+            ],
+            [
+              1.5604425683054565e-26,
+              -1.1337278883838788e-26
+            ]
+          ]
+        },
+        {
+          "lag": 8,
+          "unit_equal_time_variance_covariance": [
+            -1.282210914019336e-08,
+            9.315807589076728e-09
+          ],
+          "absolute_signal_in_unit_variance_units": 1.5848998512200374e-08,
+          "two_slowest_prediction": [
+            -1.2822109217081138e-08,
+            9.315807644938948e-09
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 9.503850806515765e-17,
+          "two_slowest_relative_error": 5.996499273565968e-09,
+          "all_modes_reconstruction_absolute_error": 1.1815660511815926e-22,
+          "all_modes_reconstruction_relative_error": 7.455146457815848e-15,
+          "individual_mode_contributions": [
+            [
+              -1.2821481397456635e-08,
+              9.31535150728183e-09
+            ],
+            [
+              -6.278196245025252e-13,
+              4.561376571174405e-13
+            ],
+            [
+              7.719355733691121e-17,
+              -5.608440229328606e-17
+            ],
+            [
+              -3.0599092265426864e-19,
+              2.223154184919267e-19
+            ],
+            [
+              1.0622126291534962e-22,
+              -7.717426488644639e-23
+            ],
+            [
+              1.895109503323134e-22,
+              -1.376877649391388e-22
+            ],
+            [
+              -8.310432196082323e-26,
+              6.037882416558543e-26
+            ],
+            [
+              1.583940263178828e-29,
+              -1.1507999630194765e-29
+            ]
+          ]
+        }
+      ],
+      "interpretation": "Named physical readout; no lag-dependent coefficient selection."
+    },
+    {
+      "name": "landing_to_AP",
+      "source": "L",
+      "readout": "A",
+      "projected_residues_in_unit_variance_units": [
+        [
+          -0.6677177458757254,
+          -0.4851253390825907
+        ],
+        [
+          -0.10589631001558267,
+          -0.07693817278516092
+        ],
+        [
+          0.039251298036475674,
+          0.02851773730291286
+        ],
+        [
+          -0.0038966222720685554,
+          -0.0028310617962306376
+        ],
+        [
+          -1.947719279760733e-05,
+          -1.4151008893623177e-05
+        ],
+        [
+          0.0010029829456006103,
+          0.0007287097648429202
+        ],
+        [
+          -0.0001492376148003193,
+          -0.00010842747393051576
+        ],
+        [
+          4.134066888192937e-06,
+          3.0035754078906e-06
+        ]
+      ],
+      "lag_rows": [
+        {
+          "lag": 0,
+          "unit_equal_time_variance_covariance": [
+            -0.7374209779220101,
+            -0.5357677015036426
+          ],
+          "absolute_signal_in_unit_variance_units": 0.9115024567459761,
+          "two_slowest_prediction": [
+            -0.773614055891308,
+            -0.5620635118677516
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 0.044737104685002374,
+          "two_slowest_relative_error": 0.04908061887700433,
+          "all_modes_reconstruction_absolute_error": 1.1102230246251565e-16,
+          "all_modes_reconstruction_relative_error": 1.2180142976121032e-16,
+          "individual_mode_contributions": [
+            [
+              -0.6677177458757254,
+              -0.4851253390825907
+            ],
+            [
+              -0.10589631001558267,
+              -0.07693817278516092
+            ],
+            [
+              0.039251298036475674,
+              0.02851773730291286
+            ],
+            [
+              -0.0038966222720685554,
+              -0.0028310617962306376
+            ],
+            [
+              -1.947719279760733e-05,
+              -1.4151008893623177e-05
+            ],
+            [
+              0.0010029829456006103,
+              0.0007287097648429202
+            ],
+            [
+              -0.0001492376148003193,
+              -0.00010842747393051576
+            ],
+            [
+              4.134066888192937e-06,
+              3.0035754078906e-06
+            ]
+          ]
+        },
+        {
+          "lag": 1,
+          "unit_equal_time_variance_covariance": [
+            -0.07651731510679041,
+            -0.0555930835538703
+          ],
+          "absolute_signal_in_unit_variance_units": 0.09458060292776453,
+          "two_slowest_prediction": [
+            -0.07716755570972372,
+            -0.056065511005337215
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 0.0008037415869560326,
+          "two_slowest_relative_error": 0.008497953724929055,
+          "all_modes_reconstruction_absolute_error": 5.928593550334434e-17,
+          "all_modes_reconstruction_relative_error": 6.268297480470037e-16,
+          "individual_mode_contributions": [
+            [
+              -0.07304370404248464,
+              -0.053069357389902205
+            ],
+            [
+              -0.004123851667239082,
+              -0.0029961536154350077
+            ],
+            [
+              0.0006853277598464713,
+              0.0004979197631511058
+            ],
+            [
+              -3.986187825141665e-05,
+              -2.8961349795825673e-05
+            ],
+            [
+              -1.3359761726960015e-07,
+              -9.70643505865598e-08
+            ],
+            [
+              5.205427730351704e-06,
+              3.781964622558882e-06
+            ],
+            [
+              -3.013050938916936e-07,
+              -2.189109646169666e-07
+            ],
+            [
+              4.19631912630661e-09,
+              3.048804306343697e-09
+            ]
+          ]
+        },
+        {
+          "lag": 2,
+          "unit_equal_time_variance_covariance": [
+            -0.008139485071184633,
+            -0.005913682060280378
+          ],
+          "absolute_signal_in_unit_variance_units": 0.01006095684982892,
+          "two_slowest_prediction": [
+            -0.008151068609798267,
+            -0.005922097993707977
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 1.4318041146446221e-05,
+          "two_slowest_relative_error": 0.0014231291675492763,
+          "all_modes_reconstruction_absolute_error": 1.5922644930580816e-17,
+          "all_modes_reconstruction_relative_error": 1.5826173562061913e-15,
+          "individual_mode_contributions": [
+            [
+              -0.007990476115396071,
+              -0.00580542071684632
+            ],
+            [
+              -0.0001605924944021949,
+              -0.00011667727686165759
+            ],
+            [
+              1.1965824365342548e-05,
+              8.693680284064115e-06
+            ],
+            [
+              -4.077812081300982e-07,
+              -2.962703898279163e-07
+            ],
+            [
+              -9.163704197818041e-10,
+              -6.657820813776865e-10
+            ],
+            [
+              2.7015890922939335e-08,
+              1.9628193687469166e-08
+            ],
+            [
+              -6.083235766435477e-10,
+              -4.419729492198716e-10
+            ],
+            [
+              4.2595087805905995e-12,
+              3.0947142775109692e-12
+            ]
+          ]
+        },
+        {
+          "lag": 3,
+          "unit_equal_time_variance_covariance": [
+            -0.0008801517972266271,
+            -0.0006394677117854954
+          ],
+          "absolute_signal_in_unit_variance_units": 0.001087927451890722,
+          "two_slowest_prediction": [
+            -0.0008803566817086035,
+            -0.0006396165690749803
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 2.532511472581041e-07,
+          "two_slowest_relative_error": 0.00023278312061891256,
+          "all_modes_reconstruction_absolute_error": 2.7641840170916387e-18,
+          "all_modes_reconstruction_relative_error": 2.540779729648085e-15,
+          "individual_mode_contributions": [
+            [
+              -0.0008741028318276292,
+              -0.0006350728811726911
+            ],
+            [
+              -6.253849880974349e-06,
+              -4.5436879022891344e-06
+            ],
+            [
+              2.0892332272415332e-07,
+              1.5179167905128624e-07
+            ],
+            [
+              -4.1715423607299e-09,
+              -3.0308029324460917e-09
+            ],
+            [
+              -6.285551819060472e-12,
+              -4.56672070852944e-12
+            ],
+            [
+              1.4021102590753735e-10,
+              1.0186927321708602e-10
+            ],
+            [
+              -1.2281822690771312e-12,
+              -8.923266506266696e-13
+            ],
+            [
+              4.3236499669884114e-15,
+              3.141315577225696e-15
+            ]
+          ]
+        },
+        {
+          "lag": 4,
+          "unit_equal_time_variance_covariance": [
+            -9.586073909634227e-05,
+            -6.964690371951886e-05
+          ],
+          "absolute_signal_in_unit_variance_units": 0.00011849038989645082,
+          "two_slowest_prediction": [
+            -9.586434490589634e-05,
+            -6.964952349350786e-05
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 4.457025722795886e-09,
+          "two_slowest_relative_error": 3.761508192091271e-05,
+          "all_modes_reconstruction_absolute_error": 4.004307384453055e-19,
+          "all_modes_reconstruction_relative_error": 3.379436415014276e-15,
+          "individual_mode_contributions": [
+            [
+              -9.562080526552055e-05,
+              -6.947258158751971e-05
+            ],
+            [
+              -2.4353964037579785e-07,
+              -1.7694190598814887e-07
+            ],
+            [
+              3.647801726433846e-09,
+              2.650283087985568e-09
+            ],
+            [
+              -4.2674270712867524e-11,
+              -3.100467252451124e-11
+            ],
+            [
+              -4.311374616337097e-14,
+              -3.132397012932073e-14
+            ],
+            [
+              7.276877095084596e-13,
+              5.286960680647004e-13
+            ],
+            [
+              -2.4796535001952243e-15,
+              -1.801573722609199e-15
+            ],
+            [
+              4.388757014006411e-18,
+              3.1886186157571156e-18
+            ]
+          ]
+        },
+        {
+          "lag": 5,
+          "unit_equal_time_variance_covariance": [
+            -1.046967561507251e-05,
+            -7.606664588770864e-06
+          ],
+          "absolute_signal_in_unit_variance_units": 1.2941230762601543e-05,
+          "two_slowest_prediction": [
+            -1.0469738872623904e-05,
+            -7.606710548072178e-06
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 7.819063361944193e-11,
+          "two_slowest_relative_error": 6.0419781590946195e-06,
+          "all_modes_reconstruction_absolute_error": 4.9244604480307847e-20,
+          "all_modes_reconstruction_relative_error": 3.8052489275300065e-15,
+          "individual_mode_contributions": [
+            [
+              -1.046025486556214e-05,
+              -7.599820013605904e-06
+            ],
+            [
+              -9.484007061764042e-09,
+              -6.890534466274753e-09
+            ],
+            [
+              6.369062707729665e-11,
+              4.627394920698584e-11
+            ],
+            [
+              -4.365515733505494e-13,
+              -3.171732837068186e-13
+            ],
+            [
+              -2.9572504717929883e-16,
+              -2.1485682337217796e-16
+            ],
+            [
+              3.776660210152576e-15,
+              2.7439042565014775e-15
+            ],
+            [
+              -5.0063265329914005e-18,
+              -3.637309135299922e-18
+            ],
+            [
+              4.454844465914671e-21,
+              3.2366339601359732e-21
+            ]
+          ]
+        },
+        {
+          "lag": 6,
+          "unit_equal_time_variance_covariance": [
+            -1.1446477702267275e-06,
+            -8.316352846562261e-07
+          ],
+          "absolute_signal_in_unit_variance_units": 1.414862454293795e-06,
+          "two_slowest_prediction": [
+            -1.1446488778169294e-06,
+            -8.316360893676129e-07
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 1.3690567816290824e-12,
+          "two_slowest_relative_error": 9.676253528915813e-07,
+          "all_modes_reconstruction_absolute_error": 6.773781581646386e-21,
+          "all_modes_reconstruction_relative_error": 4.787590172521332e-15,
+          "individual_mode_contributions": [
+            [
+              -1.1442795482498463e-06,
+              -8.313677557302771e-07
+            ],
+            [
+              -3.693295670831943e-10,
+              -2.683336373357499e-10
+            ],
+            [
+              1.1120385047531007e-12,
+              8.079432664826205e-13
+            ],
+            [
+              -4.4658590061710314e-15,
+              -3.2446364920589298e-15
+            ],
+            [
+              -2.0284320271732265e-18,
+              -1.473742132909649e-18
+            ],
+            [
+              1.9600664071383336e-17,
+              1.424071602500654e-17
+            ],
+            [
+              -1.0107583722064576e-20,
+              -7.3435894294547e-21
+            ],
+            [
+              4.521927085996012e-24,
+              3.285372336515091e-24
+            ]
+          ]
+        },
+        {
+          "lag": 7,
+          "unit_equal_time_variance_covariance": [
+            -1.2519063292687627e-07,
+            -9.095631892928387e-08
+          ],
+          "absolute_signal_in_unit_variance_units": 1.5474413244384254e-07,
+          "two_slowest_prediction": [
+            -1.2519065229747324e-07,
+            -9.095633300284652e-08
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 2.3943374712399712e-14,
+          "two_slowest_relative_error": 1.547288051202128e-07,
+          "all_modes_reconstruction_absolute_error": 8.286351715436417e-22,
+          "all_modes_reconstruction_relative_error": 5.354872966471654e-15,
+          "individual_mode_contributions": [
+            [
+              -1.2517626973446654e-07,
+              -9.094588345916044e-08
+            ],
+            [
+              -1.4382563006705337e-11,
+              -1.0449543686088097e-11
+            ],
+            [
+              1.9416195016461452e-14,
+              1.4106691411505017e-14
+            ],
+            [
+              -4.568508712482416e-17,
+              -3.319215869181404e-17
+            ],
+            [
+              -1.3913385180280088e-20,
+              -1.0108666041994204e-20
+            ],
+            [
+              1.017263959851174e-19,
+              7.39085529039008e-20
+            ],
+            [
+              -2.040682884452201e-23,
+              -1.4826429017271863e-23
+            ],
+            [
+              4.590019859843979e-27,
+              3.334844632565488e-27
+            ]
+          ]
+        },
+        {
+          "lag": 8,
+          "unit_equal_time_variance_covariance": [
+            -1.3693978050858576e-08,
+            -9.949257431520711e-09
+          ],
+          "absolute_signal_in_unit_variance_units": 1.6926687753251272e-08,
+          "two_slowest_prediction": [
+            -1.3693978389398377e-08,
+            -9.949257677484299e-09
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 4.1845822153746833e-16,
+          "two_slowest_relative_error": 2.4721801904633766e-08,
+          "all_modes_reconstruction_absolute_error": 9.994861369944353e-23,
+          "all_modes_reconstruction_relative_error": 5.904794556173309e-15,
+          "individual_mode_contributions": [
+            [
+              -1.3693418298528113e-08,
+              -9.948850747647505e-09
+            ],
+            [
+              -5.600908702639897e-13,
+              -4.0692983679432247e-13
+            ],
+            [
+              3.390068125392502e-16,
+              2.4630286659330685e-16
+            ],
+            [
+              -4.673517866817406e-19,
+              -3.3955094856356454e-19
+            ],
+            [
+              -9.543444620355808e-23,
+              -6.933718380353278e-23
+            ],
+            [
+              5.279545428886364e-22,
+              3.835814282622207e-22
+            ],
+            [
+              -4.1200614799810314e-26,
+              -2.99339988320295e-26
+            ],
+            [
+              4.659137998710472e-30,
+              3.385061899908574e-30
+            ]
+          ]
+        }
+      ],
+      "interpretation": "Named physical readout; no lag-dependent coefficient selection."
+    },
+    {
+      "name": "equal_time_landing_innovation_auto",
+      "source": "J",
+      "readout": "J",
+      "projected_residues_in_unit_variance_units": [
+        [
+          -0.00281038680946916,
+          2.1510571102112408e-16
+        ],
+        [
+          0.12219393294038941,
+          -1.5265566588595902e-16
+        ],
+        [
+          0.9662526086258473,
+          -5.828670879282072e-16
+        ],
+        [
+          -0.1288646929614546,
+          6.366435156834882e-16
+        ],
+        [
+          0.00046753168647809397,
+          -2.7633602871224294e-17
+        ],
+        [
+          0.03869722639388737,
+          -5.681219383824043e-17
+        ],
+        [
+          0.004223070644741461,
+          7.681572392059799e-17
+        ],
+        [
+          -0.0001592905204196433,
+          -3.9217625457874106e-18
+        ]
+      ],
+      "lag_rows": [
+        {
+          "lag": 0,
+          "unit_equal_time_variance_covariance": [
+            1.0000000000000004,
+            5.48606583346494e-17
+          ],
+          "absolute_signal_in_unit_variance_units": 1.0000000000000004,
+          "two_slowest_prediction": [
+            0.11938354613092025,
+            6.245004513516506e-17
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 0.8806164538690802,
+          "two_slowest_relative_error": 0.8806164538690797,
+          "all_modes_reconstruction_absolute_error": 4.468743210692436e-16,
+          "all_modes_reconstruction_relative_error": 4.468743210692434e-16,
+          "individual_mode_contributions": [
+            [
+              -0.00281038680946916,
+              2.1510571102112408e-16
+            ],
+            [
+              0.12219393294038941,
+              -1.5265566588595902e-16
+            ],
+            [
+              0.9662526086258473,
+              -5.828670879282072e-16
+            ],
+            [
+              -0.1288646929614546,
+              6.366435156834882e-16
+            ],
+            [
+              0.00046753168647809397,
+              -2.7633602871224294e-17
+            ],
+            [
+              0.03869722639388737,
+              -5.681219383824043e-17
+            ],
+            [
+              0.004223070644741461,
+              7.681572392059799e-17
+            ],
+            [
+              -0.0001592905204196433,
+              -3.9217625457874106e-18
+            ]
+          ]
+        },
+        {
+          "lag": 1,
+          "unit_equal_time_variance_covariance": [
+            0.020215996418740927,
+            2.168404344971009e-17
+          ],
+          "absolute_signal_in_unit_variance_units": 0.020215996418740927,
+          "two_slowest_prediction": [
+            0.004451082597366769,
+            1.7793886652852866e-17
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 0.015764913821374158,
+          "two_slowest_relative_error": 0.7798237343749991,
+          "all_modes_reconstruction_absolute_error": 1.6657040274618957e-16,
+          "all_modes_reconstruction_relative_error": 8.239534638607922e-15,
+          "individual_mode_contributions": [
+            [
+              -0.00030743688276030123,
+              2.3491771984938752e-17
+            ],
+            [
+              0.00475851948012707,
+              -5.697885332085884e-18
+            ],
+            [
+              0.016870772913038148,
+              -6.796879364750166e-18
+            ],
+            [
+              -0.0013182670382389362,
+              7.465863160464655e-18
+            ],
+            [
+              3.2068850968700213e-06,
+              -1.9077137933848879e-19
+            ],
+            [
+              0.00020083653091211307,
+              -2.441798529650201e-19
+            ],
+            [
+              8.526219739089252e-06,
+              1.5192289849604034e-19
+            ],
+            [
+              -1.6168917328971074e-07,
+              -4.0563311285448944e-21
+            ]
+          ]
+        },
+        {
+          "lag": 2,
+          "unit_equal_time_variance_covariance": [
+            0.00043383591852026607,
+            2.168404344971009e-19
+          ],
+          "absolute_signal_in_unit_variance_units": 0.00043383591852026607,
+          "two_slowest_prediction": [
+            0.00015167648448812513,
+            2.353262917673529e-18
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 0.00028215943403214094,
+          "two_slowest_relative_error": 0.6503828336633225,
+          "all_modes_reconstruction_absolute_error": 6.240732671227167e-18,
+          "all_modes_reconstruction_relative_error": 1.438500687659323e-14,
+          "individual_mode_contributions": [
+            [
+              -3.363146900736562e-05,
+              2.5655376766368676e-18
+            ],
+            [
+              0.00018530795349549077,
+              -2.1227475896333829e-19
+            ],
+            [
+              0.00029456373637953457,
+              -5.965904651912845e-20
+            ],
+            [
+              -1.348567977907702e-05,
+              8.612469243435235e-20
+            ],
+            [
+              2.199660968863317e-08,
+              -1.3169550380831994e-21
+            ],
+            [
+              1.042330831110509e-06,
+              -1.004293371314161e-21
+            ],
+            [
+              1.7214114836027257e-08,
+              3.003362827355905e-22
+            ],
+            [
+              -1.641239459211797e-10,
+              -4.1940631984060015e-24
+            ]
+          ]
+        },
+        {
+          "lag": 3,
+          "unit_equal_time_variance_covariance": [
+            8.548000039247641e-06,
+            -1.0164395367051604e-18
+          ],
+          "absolute_signal_in_unit_variance_units": 8.548000039247641e-06,
+          "two_slowest_prediction": [
+            3.5372779124769527e-06,
+            2.72289645101576e-19
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 5.010722126770688e-06,
+          "two_slowest_relative_error": 0.5861864885077506,
+          "all_modes_reconstruction_absolute_error": 1.316145616065812e-18,
+          "all_modes_reconstruction_relative_error": 1.5397117571628527e-13,
+          "individual_mode_contributions": [
+            [
+              -3.6790501433598587e-06,
+              2.801817200842373e-19
+            ],
+            [
+              7.2163280558368114e-06,
+              -7.892074982661277e-21
+            ],
+            [
+              5.143083558597109e-06,
+              -1.1254066034438155e-23
+            ],
+            [
+              -1.3795653978177066e-07,
+              9.807841362002585e-22
+            ],
+            [
+              1.508787571672954e-10,
+              -9.090984678921946e-24
+            ],
+            [
+              5.409641147202256e-09,
+              -3.847340448347471e-24
+            ],
+            [
+              3.4754646098246874e-11,
+              5.93465815362946e-25
+            ],
+            [
+              -1.6659538221816402e-13,
+              -4.3350235152177874e-27
+            ]
+          ]
+        },
+        {
+          "lag": 4,
+          "unit_equal_time_variance_covariance": [
+            -3.302568082953698e-08,
+            4.235164736271502e-21
+          ],
+          "absolute_signal_in_unit_variance_units": 3.302568082953698e-08,
+          "two_slowest_prediction": [
+            -1.2144183770324132e-07,
+            3.030573266387208e-20
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 8.841615687370435e-08,
+          "two_slowest_relative_error": 2.677194069974422,
+          "all_modes_reconstruction_absolute_error": 9.477989219337218e-20,
+          "all_modes_reconstruction_relative_error": 2.8698845811107234e-12,
+          "individual_mode_contributions": [
+            [
+              -4.024626445663676e-07,
+              3.05984884747718e-20
+            ],
+            [
+              2.810208068631263e-07,
+              -2.92755810899719e-22
+            ],
+            [
+              8.979825152893347e-08,
+              1.779416884693967e-23
+            ],
+            [
+              -1.4112753068693918e-09,
+              1.1053615546546866e-23
+            ],
+            [
+              1.0349049097375802e-12,
+              -6.275283892784125e-26
+            ],
+            [
+              2.807574761107792e-11,
+              -1.2883793486708619e-26
+            ],
+            [
+              7.016831460229455e-14,
+              1.1721368300035939e-27
+            ],
+            [
+              -1.6910403427507764e-16,
+              -4.4792780718472385e-30
+            ]
+          ]
+        },
+        {
+          "lag": 5,
+          "unit_equal_time_variance_covariance": [
+            -3.1529424788633884e-08,
+            3.3881317890172014e-21
+          ],
+          "absolute_signal_in_unit_variance_units": 3.1529424788633884e-08,
+          "two_slowest_prediction": [
+            -3.30830182911626e-08,
+            3.3308014975327423e-21
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 1.553593502528714e-09,
+          "two_slowest_relative_error": 0.04927440043526492,
+          "all_modes_reconstruction_absolute_error": 7.358816265563292e-21,
+          "all_modes_reconstruction_relative_error": 2.3339519559570556e-13,
+          "individual_mode_contributions": [
+            [
+              -4.4026630233267516e-08,
+              3.3416343119160003e-21
+            ],
+            [
+              1.094361194210492e-08,
+              -1.0832814383257859e-23
+            ],
+            [
+              1.5678776916183654e-09,
+              6.248032842934268e-25
+            ],
+            [
+              -1.4437140819347189e-11,
+              1.235147727261646e-25
+            ],
+            [
+              7.098601501677178e-15,
+              -4.331502058093265e-28
+            ],
+            [
+              1.457116253133743e-13,
+              -3.0102188688390846e-29
+            ],
+            [
+              1.4166717049019076e-16,
+              2.313909588283532e-30
+            ],
+            [
+              -1.7165046249996702e-19,
+              -4.626894116631219e-33
+            ]
+          ]
+        },
+        {
+          "lag": 6,
+          "unit_equal_time_variance_covariance": [
+            -4.362810615791841e-09,
+            8.602678370551488e-23
+          ],
+          "absolute_signal_in_unit_variance_units": 4.362810615791841e-09,
+          "two_slowest_prediction": [
+            -4.390038879490285e-09,
+            3.6453619686863535e-22
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 2.7228263698444275e-11,
+          "two_slowest_relative_error": 0.006240991437924794,
+          "all_modes_reconstruction_absolute_error": 1.4416406614094064e-21,
+          "all_modes_reconstruction_relative_error": 3.304385150689727e-13,
+          "individual_mode_contributions": [
+            [
+              -4.816208897561982e-09,
+              3.64935941235377e-22
+            ],
+            [
+              4.261700180716971e-10,
+              -3.9974436674164236e-25
+            ],
+            [
+              2.7375148335516044e-11,
+              1.6393551382463036e-26
+            ],
+            [
+              -1.4768984763151558e-13,
+              1.3703162869601033e-27
+            ],
+            [
+              4.86906022045937e-17,
+              -2.9896929237294088e-30
+            ],
+            [
+              7.562355256067221e-16,
+              3.4574490201498606e-32
+            ],
+            [
+              2.860206534594531e-19,
+              4.565518040994886e-33
+            ],
+            [
+              -1.742352357397007e-22,
+              -4.77794017622294e-36
+            ]
+          ]
+        },
+        {
+          "lag": 7,
+          "unit_equal_time_variance_covariance": [
+            -5.097874210914105e-10,
+            1.9273308272485545e-22
+          ],
+          "absolute_signal_in_unit_variance_units": 5.097874210914105e-10,
+          "two_slowest_prediction": [
+            -5.102638846621967e-10,
+            3.983940424953382e-23
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 4.76463570786225e-13,
+          "two_slowest_relative_error": 0.0009346318702139767,
+          "all_modes_reconstruction_absolute_error": 1.627339319278962e-22,
+          "all_modes_reconstruction_relative_error": 3.1921919842489844e-13,
+          "individual_mode_contributions": [
+            [
+              -5.268599486732436e-10,
+              3.985411018464224e-23
+            ],
+            [
+              1.659606401104691e-11,
+              -1.4705935108422504e-26
+            ],
+            [
+              4.779701569820644e-13,
+              3.819905602373999e-28
+            ],
+            [
+              -1.5108456283940704e-15,
+              1.5110460968039174e-29
+            ],
+            [
+              3.339777197643571e-19,
+              -2.0634681301679743e-32
+            ],
+            [
+              3.924821845612778e-18,
+              1.1696983198055066e-33
+            ],
+            [
+              5.774648701057882e-22,
+              9.003239089794526e-36
+            ],
+            [
+              -1.7685893140704421e-25,
+              -4.9324860788418074e-39
+            ]
+          ]
+        },
+        {
+          "lag": 8,
+          "unit_equal_time_variance_covariance": [
+            -5.6980215340219975e-11,
+            2.1713491079516976e-24
+          ],
+          "absolute_signal_in_unit_variance_units": 5.6980215340219975e-11,
+          "two_slowest_prediction": [
+            -5.6988545267258575e-11,
+            4.3518563834324e-24
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 8.329927038599325e-15,
+          "two_slowest_relative_error": 0.00014618981323363963,
+          "all_modes_reconstruction_absolute_error": 4.364244715435837e-24,
+          "all_modes_reconstruction_relative_error": 7.659228188903136e-14,
+          "individual_mode_contributions": [
+            [
+              -5.7634835078787336e-11,
+              4.3523955357885465e-24
+            ],
+            [
+              6.462898115287625e-13,
+              -5.391523561461981e-28
+            ],
+            [
+              8.34536011149445e-15,
+              8.341510463907673e-30
+            ],
+            [
+              -1.545573070488006e-17,
+              1.6575213986592364e-31
+            ],
+            [
+              2.2908140842110214e-21,
+              -1.4241386730269013e-34
+            ],
+            [
+              2.0369615018337836e-20,
+              1.1210060483520956e-35
+            ],
+            [
+              1.1658797089405565e-24,
+              1.774439599677583e-38
+            ],
+            [
+              -1.7952213560964813e-28,
+              -5.0906029779336163e-42
+            ]
+          ]
+        }
+      ],
+      "interpretation": "Named physical readout; no lag-dependent coefficient selection."
+    },
+    {
+      "name": "slow1_source_null_auto",
+      "source": "X1",
+      "readout": "X1",
+      "projected_residues_in_unit_variance_units": [
+        [
+          4.4776667382710897e-17,
+          -1.5682636897598103e-17
+        ],
+        [
+          0.11604952090677084,
+          -1.1102230246251565e-16
+        ],
+        [
+          0.9700888862476472,
+          -6.106226635438361e-16
+        ],
+        [
+          -0.12943067474309172,
+          6.314393452555578e-16
+        ],
+        [
+          0.0004664267326652525,
+          -2.780978572425319e-17
+        ],
+        [
+          0.0387934472482899,
+          -5.551115123125783e-17
+        ],
+        [
+          0.004190317769354166,
+          7.676151381197371e-17
+        ],
+        [
+          -0.00015792416163533173,
+          -3.957337929572091e-18
+        ]
+      ],
+      "lag_rows": [
+        {
+          "lag": 0,
+          "unit_equal_time_variance_covariance": [
+            1.0000000000000002,
+            -5.551115123125783e-17
+          ],
+          "absolute_signal_in_unit_variance_units": 1.0000000000000002,
+          "two_slowest_prediction": [
+            0.11604952090677088,
+            -1.2670493936011377e-16
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 0.8839504790932293,
+          "two_slowest_relative_error": 0.8839504790932291,
+          "all_modes_reconstruction_absolute_error": 6.089386749024365e-17,
+          "all_modes_reconstruction_relative_error": 6.089386749024364e-17,
+          "individual_mode_contributions": [
+            [
+              4.4776667382710897e-17,
+              -1.5682636897598103e-17
+            ],
+            [
+              0.11604952090677084,
+              -1.1102230246251565e-16
+            ],
+            [
+              0.9700888862476472,
+              -6.106226635438361e-16
+            ],
+            [
+              -0.12943067474309172,
+              6.314393452555578e-16
+            ],
+            [
+              0.0004664267326652525,
+              -2.780978572425319e-17
+            ],
+            [
+              0.0387934472482899,
+              -5.551115123125783e-17
+            ],
+            [
+              0.004190317769354166,
+              7.676151381197371e-17
+            ],
+            [
+              -0.00015792416163533173,
+              -3.957337929572091e-18
+            ]
+          ]
+        },
+        {
+          "lag": 1,
+          "unit_equal_time_variance_covariance": [
+            0.020345773996200203,
+            -3.2959746043559335e-17
+          ],
+          "absolute_signal_in_unit_variance_units": 0.020345773996200203,
+          "two_slowest_prediction": [
+            0.004519241607221842,
+            -5.804570583223988e-18
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 0.01582653238897836,
+          "two_slowest_relative_error": 0.7778781181750146,
+          "all_modes_reconstruction_absolute_error": 1.7213714115238282e-16,
+          "all_modes_reconstruction_relative_error": 8.460584551097998e-15,
+          "individual_mode_contributions": [
+            [
+              4.898257775105231e-18,
+              -1.715572029093723e-18
+            ],
+            [
+              0.004519241607221836,
+              -4.088998554130265e-18
+            ],
+            [
+              0.01693775432971013,
+              -7.268072365567609e-18
+            ],
+            [
+              -0.0013240569494227478,
+              7.416811297849754e-18
+            ],
+            [
+              3.199306017167801e-06,
+              -1.9197694870981357e-19
+            ],
+            [
+              0.000201335911989271,
+              -2.3730151441123296e-19
+            ],
+            [
+              8.460092923761922e-06,
+              1.518379982181722e-19
+            ],
+            [
+              -1.603022393926373e-07,
+              -4.091794482674123e-21
+            ]
+          ]
+        },
+        {
+          "lag": 2,
+          "unit_equal_time_variance_covariance": [
+            0.00045926201715252386,
+            -4.607859233063394e-18
+          ],
+          "absolute_signal_in_unit_variance_units": 0.00045926201715252386,
+          "two_slowest_prediction": [
+            0.00017598990969426286,
+            -3.3777608301234166e-19
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 0.00028327210745826103,
+          "two_slowest_relative_error": 0.6167984655351643,
+          "all_modes_reconstruction_absolute_error": 4.603778648595021e-18,
+          "all_modes_reconstruction_relative_error": 1.0024296538039366e-14,
+          "individual_mode_contributions": [
+            [
+              5.358355284976604e-19,
+              -1.8767171657589813e-19
+            ],
+            [
+              0.00017598990969426231,
+              -1.5010436643644353e-19
+            ],
+            [
+              0.0002957332320786703,
+              -6.76517744065978e-20
+            ],
+            [
+              -1.3544909727114318e-05,
+              8.566572163301908e-20
+            ],
+            [
+              2.1944623398830798e-08,
+              -1.3252043601290182e-21
+            ],
+            [
+              1.0449225921354128e-06,
+              -9.679412443943065e-22
+            ],
+            [
+              1.7080607299555177e-08,
+              3.0021443352723397e-22
+            ],
+            [
+              -1.6271612708403548e-10,
+              -4.229403082055313e-24
+            ]
+          ]
+        },
+        {
+          "lag": 3,
+          "unit_equal_time_variance_covariance": [
+            1.1884009926115568e-05,
+            -6.539094352803199e-19
+          ],
+          "absolute_signal_in_unit_variance_units": 1.1884009926115568e-05,
+          "two_slowest_prediction": [
+            6.853461488914487e-06,
+            -2.6019828090363935e-20
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 5.030548437201081e-06,
+          "two_slowest_relative_error": 0.42330395787925573,
+          "all_modes_reconstruction_absolute_error": 9.231236168113503e-19,
+          "all_modes_reconstruction_relative_error": 7.767778910910792e-14,
+          "individual_mode_contributions": [
+            [
+              5.861670144425968e-20,
+              -2.0529988018719385e-20
+            ],
+            [
+              6.8534614889144286e-06,
+              -5.48984007164455e-21
+            ],
+            [
+              5.163502956368208e-06,
+              -1.4671618250921751e-22
+            ],
+            [
+              -1.3856245352260837e-07,
+              9.76527000801691e-22
+            ],
+            [
+              1.5052217372529463e-10,
+              -9.147431798348726e-24
+            ],
+            [
+              5.423092248009757e-09,
+              -3.655281056114997e-24
+            ],
+            [
+              3.448509943693235e-11,
+              5.933198686881257e-25
+            ],
+            [
+              -1.6516636394815113e-13,
+              -4.3702281684059415e-27
+            ]
+          ]
+        },
+        {
+          "lag": 4,
+          "unit_equal_time_variance_covariance": [
+            3.556564763226669e-07,
+            1.122318655111948e-20
+          ],
+          "absolute_signal_in_unit_variance_units": 3.556564763226669e-07,
+          "two_slowest_prediction": [
+            2.668899283011885e-07,
+            -2.4457789994288446e-21
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 8.876654802147842e-08,
+          "two_slowest_relative_error": 0.2495850741684388,
+          "all_modes_reconstruction_absolute_error": 3.588733203271371e-20,
+          "all_modes_reconstruction_relative_error": 1.0090448064877967e-13,
+          "individual_mode_contributions": [
+            [
+              6.412261795776906e-21,
+              -2.2458387216717686e-21
+            ],
+            [
+              2.668899283011821e-07,
+              -1.9994027775707598e-22
+            ],
+            [
+              9.015477426402563e-08,
+              1.550042764453803e-23
+            ],
+            [
+              -1.417473716179235e-09,
+              1.1014547054036804e-23
+            ],
+            [
+              1.0324590388821587e-12,
+              -6.3139083839335e-26
+            ],
+            [
+              2.814555810332432e-11,
+              -1.1869401884955175e-26
+            ],
+            [
+              6.962411009859599e-14,
+              1.1720441911142653e-27
+            ],
+            [
+              -1.6765349734365468e-16,
+              -4.5143354084185265e-30
+            ]
+          ]
+        },
+        {
+          "lag": 5,
+          "unit_equal_time_variance_covariance": [
+            1.1953077582750327e-08,
+            -5.558653716356346e-22
+          ],
+          "absolute_signal_in_unit_variance_units": 1.1953077582750327e-08,
+          "two_slowest_prediction": [
+            1.0393322256764824e-08,
+            -2.529261354696121e-22
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 1.5597553259855036e-09,
+          "two_slowest_relative_error": 0.13048985210607272,
+          "all_modes_reconstruction_absolute_error": 2.187110898712078e-20,
+          "all_modes_reconstruction_relative_error": 1.8297470953157132e-12,
+          "individual_mode_contributions": [
+            [
+              7.014570988215623e-22,
+              -2.4567922587978716e-22
+            ],
+            [
+              1.0393322256764122e-08,
+              -7.246909589824961e-24
+            ],
+            [
+              1.5741025794462275e-09,
+              5.860016848021478e-25
+            ],
+            [
+              -1.4500549643710927e-11,
+              1.2316095162893215e-25
+            ],
+            [
+              7.0818248274495846e-15,
+              -4.357931087022874e-28
+            ],
+            [
+              1.4607393802646964e-13,
+              -2.4746136744844508e-29
+            ],
+            [
+              1.405684422017323e-16,
+              2.3141304284837434e-30
+            ],
+            [
+              -1.7017808287153652e-19,
+              -4.661791717098782e-33
+            ]
+          ]
+        },
+        {
+          "lag": 6,
+          "unit_equal_time_variance_covariance": [
+            4.320767453067353e-10,
+            4.422314349861624e-22
+          ],
+          "absolute_signal_in_unit_variance_units": 4.320767453067353e-10,
+          "two_slowest_prediction": [
+            4.0474044195129155e-10,
+            -2.713682102570594e-23
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 2.7336303355443772e-11,
+          "two_slowest_relative_error": 0.06326724048996776,
+          "all_modes_reconstruction_absolute_error": 1.2794577899625758e-21,
+          "all_modes_reconstruction_relative_error": 2.9611817897171873e-12,
+          "individual_mode_contributions": [
+            [
+              7.673455594268159e-23,
+              -2.687560840698377e-23
+            ],
+            [
+              4.047404419512148e-10,
+              -2.612126187221652e-25
+            ],
+            [
+              2.7483834892235768e-11,
+              1.5737850209874257e-26
+            ],
+            [
+              -1.4833851066846705e-13,
+              1.367165724994231e-27
+            ],
+            [
+              4.857552793666377e-17,
+              -3.007777031142883e-30
+            ],
+            [
+              7.581159091686541e-16,
+              6.284654595533126e-32
+            ],
+            [
+              2.838023626447789e-19,
+              4.5667873923930937e-33
+            ],
+            [
+              -1.7274068449922287e-22,
+              -4.8126652804705165e-36
+            ]
+          ]
+        },
+        {
+          "lag": 7,
+          "unit_equal_time_variance_covariance": [
+            1.623990046794333e-11,
+            7.466920615424967e-23
+          ],
+          "absolute_signal_in_unit_variance_units": 1.623990046794333e-11,
+          "two_slowest_prediction": [
+            1.57615458564598e-11,
+            -2.9493601912000757e-24
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 4.7835461148353e-13,
+          "two_slowest_relative_error": 0.02945551374700699,
+          "all_modes_reconstruction_absolute_error": 8.336578044595643e-23,
+          "all_modes_reconstruction_relative_error": 5.133392326542635e-12,
+          "individual_mode_contributions": [
+            [
+              8.39422979054971e-24,
+              -2.9400057113455874e-24
+            ],
+            [
+              1.5761545856451406e-11,
+              -9.354479854488128e-27
+            ],
+            [
+              4.79867824528573e-13,
+              3.7092220508473185e-28
+            ],
+            [
+              -1.5174813567761875e-15,
+              1.5083028737491924e-29
+            ],
+            [
+              3.3318840437562355e-19,
+              -2.0758421376204577e-32
+            ],
+            [
+              3.934580935515465e-18,
+              1.3188910569323061e-33
+            ],
+            [
+              5.729862249392276e-22,
+              9.007464444004467e-36
+            ],
+            [
+              -1.7534187468656047e-25,
+              -4.96702557868127e-39
+            ]
+          ]
+        },
+        {
+          "lag": 8,
+          "unit_equal_time_variance_covariance": [
+            6.221547020251694e-13,
+            9.876286097877397e-25
+          ],
+          "absolute_signal_in_unit_variance_units": 6.221547020251694e-13,
+          "two_slowest_prediction": [
+            6.137917095404467e-13,
+            -3.2194873447675004e-25
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 8.362992484722733e-15,
+          "two_slowest_relative_error": 0.01344198228752502,
+          "all_modes_reconstruction_absolute_error": 1.3588139559451498e-24,
+          "all_modes_reconstruction_relative_error": 2.1840451442737447e-12,
+          "individual_mode_contributions": [
+            [
+              9.182706918794977e-25,
+              -3.216162942937723e-25
+            ],
+            [
+              6.137917095395284e-13,
+              -3.3244018297774726e-28
+            ],
+            [
+              8.37849339150403e-15,
+              8.154895055424294e-30
+            ],
+            [
+              -1.5523613239652157e-17,
+              1.6552059047756905e-31
+            ],
+            [
+              2.285400026019741e-21,
+              -1.432605507700695e-34
+            ],
+            [
+              2.042026417187057e-20,
+              1.1997141910043409e-35
+            ],
+            [
+              1.1568374939184008e-24,
+              1.775628351664609e-38
+            ],
+            [
+              -1.7798223451369838e-28,
+              -5.1249434095156e-42
+            ]
+          ]
+        }
+      ],
+      "interpretation": "The slowest mode is suppressed by a model-derived numerical filter, not by a previously proved physical symmetry."
+    },
+    {
+      "name": "slow1_biorthogonal_cross",
+      "source": "X1",
+      "readout": "Y1",
+      "projected_residues_in_unit_variance_units": [
+        [
+          2.888058517861912e-17,
+          3.1339331888150464e-20
+        ],
+        [
+          0.1282215733101992,
+          -2.7755575615628914e-17
+        ],
+        [
+          0.9456585813944601,
+          -3.885780586188048e-16
+        ],
+        [
+          -0.12660422792514942,
+          5.898059818321144e-16
+        ],
+        [
+          0.0004742817677022337,
+          -2.688821387764051e-17
+        ],
+        [
+          0.03808736157179057,
+          -4.5102810375396984e-17
+        ],
+        [
+          0.004209090064883613,
+          7.762887554996212e-17
+        ],
+        [
+          -0.0001580816349959174,
+          -3.9302328752599536e-18
+        ]
+      ],
+      "lag_rows": [
+        {
+          "lag": 0,
+          "unit_equal_time_variance_covariance": [
+            0.9898885785488902,
+            2.220446049250313e-16
+          ],
+          "absolute_signal_in_unit_variance_units": 0.9898885785488902,
+          "two_slowest_prediction": [
+            0.12822157331019923,
+            -2.7724236283740763e-17
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 0.861667005238691,
+          "two_slowest_relative_error": 0.8704686809315818,
+          "all_modes_reconstruction_absolute_error": 2.2692986697498047e-16,
+          "all_modes_reconstruction_relative_error": 2.292478889974105e-16,
+          "individual_mode_contributions": [
+            [
+              2.888058517861912e-17,
+              3.1339331888150464e-20
+            ],
+            [
+              0.1282215733101992,
+              -2.7755575615628914e-17
+            ],
+            [
+              0.9456585813944601,
+              -3.885780586188048e-16
+            ],
+            [
+              -0.12660422792514942,
+              5.898059818321144e-16
+            ],
+            [
+              0.0004742817677022337,
+              -2.688821387764051e-17
+            ],
+            [
+              0.03808736157179057,
+              -4.5102810375396984e-17
+            ],
+            [
+              0.004209090064883613,
+              7.762887554996212e-17
+            ],
+            [
+              -0.0001580816349959174,
+              -3.9302328752599536e-18
+            ]
+          ]
+        },
+        {
+          "lag": 1,
+          "unit_equal_time_variance_covariance": [
+            0.020418570408140505,
+            -2.2551405187698492e-17
+          ],
+          "absolute_signal_in_unit_variance_units": 0.020418570408140505,
+          "two_slowest_prediction": [
+            0.004993249989480043,
+            -8.183749091935614e-19
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 0.015425320418660462,
+          "two_slowest_relative_error": 0.7554554560054152,
+          "all_modes_reconstruction_absolute_error": 1.5811499733960797e-16,
+          "all_modes_reconstruction_relative_error": 7.743685976985464e-15,
+          "individual_mode_contributions": [
+            [
+              3.159336305483558e-18,
+              3.428306192948757e-21
+            ],
+            [
+              0.0049932499894800395,
+              -8.218032153865102e-19
+            ],
+            [
+              0.01651120114714169,
+              -3.476630979420666e-18
+            ],
+            [
+              -0.0012951428101825823,
+              6.970003446271374e-18
+            ],
+            [
+              3.2531851349346506e-06,
+              -1.8567634196922814e-19
+            ],
+            [
+              0.00019767136517262221,
+              -1.842073726833389e-19
+            ],
+            [
+              8.497993477684808e-06,
+              1.5357509912179585e-19
+            ],
+            [
+              -1.60462084042659e-07,
+              -4.064355922743959e-21
+            ]
+          ]
+        },
+        {
+          "lag": 2,
+          "unit_equal_time_variance_covariance": [
+            0.00047055061465359644,
+            -3.686287386450715e-18
+          ],
+          "absolute_signal_in_unit_variance_units": 0.00047055061465359644,
+          "two_slowest_prediction": [
+            0.00019444891225226635,
+            -2.153934719728277e-20
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 0.0002761017024013301,
+          "two_slowest_relative_error": 0.5867630257046564,
+          "all_modes_reconstruction_absolute_error": 4.466100221412393e-18,
+          "all_modes_reconstruction_relative_error": 9.491221735413493e-15,
+          "individual_mode_contributions": [
+            [
+              3.456095445924667e-19,
+              3.7503299031894057e-22
+            ],
+            [
+              0.000194448912252266,
+              -2.191438018760171e-20
+            ],
+            [
+              0.000288285612466362,
+              -2.94529470369579e-21
+            ],
+            [
+              -1.3249122294393997e-05,
+              8.088109129789543e-20
+            ],
+            [
+              2.231419009301701e-08,
+              -1.282128803781211e-21
+            ],
+            [
+              1.0259037905673236e-06,
+              -6.971840642451686e-22
+            ],
+            [
+              1.7157127082945996e-08,
+              3.036931684810801e-22
+            ],
+            [
+              -1.6287837873120633e-10,
+              -4.2016271185958104e-24
+            ]
+          ]
+        },
+        {
+          "lag": 3,
+          "unit_equal_time_variance_covariance": [
+            1.247574133971641e-05,
+            -6.132518538121134e-19
+          ],
+          "absolute_signal_in_unit_variance_units": 1.247574133971641e-05,
+          "two_slowest_prediction": [
+            7.572298514144077e-06,
+            -4.1949879643378203e-22
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 4.903442825572333e-06,
+          "two_slowest_relative_error": 0.3930381924449064,
+          "all_modes_reconstruction_absolute_error": 8.900949155605728e-19,
+          "all_modes_reconstruction_relative_error": 7.134605401980913e-14,
+          "individual_mode_contributions": [
+            [
+              3.780729424281098e-20,
+              4.102601573828236e-23
+            ],
+            [
+              7.572298514144039e-06,
+              -4.605248121720644e-22
+            ],
+            [
+              5.033467499697483e-06,
+              9.570071085345006e-22
+            ],
+            [
+              -1.3553659117102421e-07,
+              9.253932638462101e-22
+            ],
+            [
+              1.530570990750887e-10,
+              -8.852938962696702e-24
+            ],
+            [
+              5.3243856872303976e-09,
+              -2.2749701226290746e-24
+            ],
+            [
+              3.463958998242915e-11,
+              6.002859522086492e-25
+            ],
+            [
+              -1.6533105883788366e-13,
+              -4.342110861737273e-27
+            ]
+          ]
+        },
+        {
+          "lag": 4,
+          "unit_equal_time_variance_covariance": [
+            3.814097228953889e-07,
+            1.895236219481497e-20
+          ],
+          "absolute_signal_in_unit_variance_units": 3.814097228953889e-07,
+          "two_slowest_prediction": [
+            2.948831347172559e-07,
+            1.853431989608256e-24
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 8.652658817813302e-08,
+          "two_slowest_relative_error": 0.2268599434783289,
+          "all_modes_reconstruction_absolute_error": 3.175750847831176e-20,
+          "all_modes_reconstruction_relative_error": 8.326350004197991e-14,
+          "individual_mode_contributions": [
+            [
+              4.1358565477350675e-21,
+              4.487962421456307e-24
+            ],
+            [
+              2.9488313471725177e-07,
+              -2.6345304318480508e-24
+            ],
+            [
+              8.78843548720874e-08,
+              3.4316570972380937e-23
+            ],
+            [
+              -1.3865195850772839e-09,
+              1.0469076873146594e-23
+            ],
+            [
+              1.0498465541266757e-12,
+              -6.112575897025021e-26
+            ],
+            [
+              2.7633276343298136e-11,
+              -4.83491420519328e-27
+            ],
+            [
+              6.993602066067899e-14,
+              1.1859926612227165e-27
+            ],
+            [
+              -1.6782067226715758e-16,
+              -4.4858727767182816e-30
+            ]
+          ]
+        },
+        {
+          "lag": 5,
+          "unit_equal_time_variance_covariance": [
+            1.3003871545795742e-08,
+            4.0862722260119567e-22
+          ],
+          "absolute_signal_in_unit_variance_units": 1.3003871545795742e-08,
+          "two_slowest_prediction": [
+            1.1483443630524336e-08,
+            9.841515138434973e-25
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 1.5204279152714056e-09,
+          "two_slowest_relative_error": 0.11692117304580515,
+          "all_modes_reconstruction_absolute_error": 2.0316316658981354e-20,
+          "all_modes_reconstruction_relative_error": 1.5623283102600154e-12,
+          "individual_mode_contributions": [
+            [
+              4.524341063284525e-22,
+              4.909520540550359e-25
+            ],
+            [
+              1.1483443630523885e-08,
+              4.9319945978846145e-25
+            ],
+            [
+              1.5344610513025452e-09,
+              9.065895963504682e-25
+            ],
+            [
+              -1.4183893391394908e-11,
+              1.173519321067708e-25
+            ],
+            [
+              7.201088965307874e-15,
+              -4.220289954671159e-28
+            ],
+            [
+              1.4341522314892325e-13,
+              1.1091665894739921e-29
+            ],
+            [
+              1.4119817781711298e-16,
+              2.342058088373771e-30
+            ],
+            [
+              -1.7034777517403353e-19,
+              -4.6329797360261126e-33
+            ]
+          ]
+        },
+        {
+          "lag": 6,
+          "unit_equal_time_variance_covariance": [
+            4.738397237115344e-10,
+            4.695283952004123e-22
+          ],
+          "absolute_signal_in_unit_variance_units": 4.738397237115344e-10,
+          "two_slowest_prediction": [
+            4.471923351665297e-10,
+            9.611474014481556e-26
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 2.664738854500467e-11,
+          "two_slowest_relative_error": 0.05623713507233756,
+          "all_modes_reconstruction_absolute_error": 1.3161578520754926e-21,
+          "all_modes_reconstruction_relative_error": 2.77764354952382e-12,
+          "individual_mode_contributions": [
+            [
+              4.9493162590787655e-23,
+              5.370675971539113e-26
+            ],
+            [
+              4.471923351664802e-10,
+              4.240798042942443e-26
+            ],
+            [
+              2.6791693713761766e-11,
+              2.1196648642918297e-26
+            ],
+            [
+              -1.450991633322239e-13,
+              1.3053982885485955e-27
+            ],
+            [
+              4.9393582407302775e-17,
+              -2.9136795845703705e-30
+            ],
+            [
+              7.44317321454492e-16,
+              2.4536134569113367e-31
+            ],
+            [
+              2.850737750093701e-19,
+              4.622700301191363e-33
+            ],
+            [
+              -1.7291293208829525e-22,
+              -4.7834998827885155e-36
+            ]
+          ]
+        },
+        {
+          "lag": 7,
+          "unit_equal_time_variance_covariance": [
+            1.7881025437066808e-11,
+            8.16582360954692e-23
+          ],
+          "absolute_signal_in_unit_variance_units": 1.7881025437066808e-11,
+          "two_slowest_prediction": [
+            1.74147225402097e-11,
+            8.430140928016272e-27
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 4.663028968571089e-13,
+          "two_slowest_relative_error": 0.026078084755166084,
+          "all_modes_reconstruction_absolute_error": 8.955516664060564e-23,
+          "all_modes_reconstruction_relative_error": 5.008390987183575e-12,
+          "individual_mode_contributions": [
+            [
+              5.414209735682111e-24,
+              5.875148123534312e-27
+            ],
+            [
+              1.7414722540204283e-11,
+              2.5549928044819596e-27
+            ],
+            [
+              4.677830378573071e-13,
+              4.638117079112529e-28
+            ],
+            [
+              -1.484343305377937e-15,
+              1.4427198409128795e-29
+            ],
+            [
+              3.3879958917056695e-19,
+              -2.0115137551197555e-32
+            ],
+            [
+              3.8629670048479024e-18,
+              2.248064415809067e-33
+            ],
+            [
+              5.755531583655007e-22,
+              9.119397581914805e-36
+            ],
+            [
+              -1.7551671604061523e-25,
+              -4.937502653877616e-39
+            ]
+          ]
+        },
+        {
+          "lag": 8,
+          "unit_equal_time_variance_covariance": [
+            6.863226331025208e-13,
+            1.4472631493801936e-24
+          ],
+          "absolute_signal_in_unit_variance_units": 6.863226331025208e-13,
+          "two_slowest_prediction": [
+            6.781703023591896e-13,
+            7.773834506714891e-28
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 8.152330743331229e-15,
+          "two_slowest_relative_error": 0.011878277576944572,
+          "all_modes_reconstruction_absolute_error": 1.8397099754134088e-24,
+          "all_modes_reconstruction_relative_error": 2.6805322842072127e-12,
+          "individual_mode_contributions": [
+            [
+              5.922771051088825e-25,
+              6.427005772902153e-28
+            ],
+            [
+              6.781703023585973e-13,
+              1.346828733812738e-28
+            ],
+            [
+              8.167492986627107e-15,
+              9.73447304587638e-30
+            ],
+            [
+              -1.518461580082034e-17,
+              1.5856645028724726e-31
+            ],
+            [
+              2.3238881657867786e-21,
+              -1.3886288131266712e-34
+            ],
+            [
+              2.0048591710029073e-20,
+              1.6725726415413697e-35
+            ],
+            [
+              1.1620200353175767e-24,
+              1.7980348398943804e-38
+            ],
+            [
+              -1.7815970869056397e-28,
+              -5.095058803421509e-42
+            ]
+          ]
+        }
+      ],
+      "interpretation": "The slowest mode is suppressed by a model-derived numerical filter, not by a previously proved physical symmetry."
+    },
+    {
+      "name": "split_slow12_null_cross",
+      "source": "X1",
+      "readout": "Y2",
+      "projected_residues_in_unit_variance_units": [
+        [
+          1.1277006933714793e-16,
+          -9.506160199414147e-17
+        ],
+        [
+          2.7755575615628914e-17,
+          -6.938893903907228e-17
+        ],
+        [
+          0.6909921804142696,
+          -2.498001805406602e-16
+        ],
+        [
+          -0.08982152870451808,
+          4.2327252813834093e-16
+        ],
+        [
+          0.00022489290694983313,
+          -2.0139055353918245e-17
+        ],
+        [
+          0.026149123753440466,
+          -4.5102810375396984e-17
+        ],
+        [
+          0.002304058757909836,
+          4.662069341687669e-17
+        ],
+        [
+          -8.98470913495362e-05,
+          -2.6969529040576923e-18
+        ]
+      ],
+      "lag_rows": [
+        {
+          "lag": 0,
+          "unit_equal_time_variance_covariance": [
+            0.6297588800367022,
+            -1.6653345369377348e-16
+          ],
+          "absolute_signal_in_unit_variance_units": 0.6297588800367022,
+          "two_slowest_prediction": [
+            1.4052564495277685e-16,
+            -1.6445054103321377e-16
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 0.6297588800367021,
+          "two_slowest_relative_error": 0.9999999999999998,
+          "all_modes_reconstruction_absolute_error": 1.542371350417442e-16,
+          "all_modes_reconstruction_relative_error": 2.449145854565088e-16,
+          "individual_mode_contributions": [
+            [
+              1.1277006933714793e-16,
+              -9.506160199414147e-17
+            ],
+            [
+              2.7755575615628914e-17,
+              -6.938893903907228e-17
+            ],
+            [
+              0.6909921804142696,
+              -2.498001805406602e-16
+            ],
+            [
+              -0.08982152870451808,
+              4.2327252813834093e-16
+            ],
+            [
+              0.00022489290694983313,
+              -2.0139055353918245e-17
+            ],
+            [
+              0.026149123753440466,
+              -4.5102810375396984e-17
+            ],
+            [
+              0.002304058757909836,
+              4.662069341687669e-17
+            ],
+            [
+              -8.98470913495362e-05,
+              -2.6969529040576923e-18
+            ]
+          ]
+        },
+        {
+          "lag": 1,
+          "unit_equal_time_variance_covariance": [
+            0.011287679746883455,
+            -3.642919299551295e-17
+          ],
+          "absolute_signal_in_unit_variance_units": 0.011287679746883455,
+          "two_slowest_prediction": [
+            1.3417133236412914e-17,
+            -1.3101250571734378e-17
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 0.01128767974688344,
+          "two_slowest_relative_error": 0.9999999999999988,
+          "all_modes_reconstruction_absolute_error": 1.6514415398094312e-16,
+          "all_modes_reconstruction_relative_error": 1.46304783342688e-14,
+          "individual_mode_contributions": [
+            [
+              1.2336265765574233e-17,
+              -1.0399081894637676e-17
+            ],
+            [
+              1.080867470838681e-18,
+              -2.7021686770967022e-18
+            ],
+            [
+              0.012064725162328932,
+              -1.9443998111942523e-18
+            ],
+            [
+              -0.000918861155016421,
+              4.9943429287212244e-18
+            ],
+            [
+              1.5425814603541063e-06,
+              -1.3872788721216075e-19
+            ],
+            [
+              0.0001357125507543372,
+              -1.998399922777127e-19
+            ],
+            [
+              4.6518073966330676e-06,
+              9.239855105009222e-20
+            ],
+            [
+              -9.120004055809562e-08,
+              -2.780157504081263e-21
+            ]
+          ]
+        },
+        {
+          "lag": 2,
+          "unit_equal_time_variance_covariance": [
+            0.0002019745360713337,
+            -6.667843360785852e-18
+          ],
+          "absolute_signal_in_unit_variance_units": 0.0002019745360713337,
+          "two_slowest_prediction": [
+            1.3915936922935012e-18,
+            -1.2428164593629988e-18
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 0.00020197453607133232,
+          "two_slowest_relative_error": 0.9999999999999931,
+          "all_modes_reconstruction_absolute_error": 6.3807853185852494e-18,
+          "all_modes_reconstruction_relative_error": 3.1592028592810696e-14,
+          "individual_mode_contributions": [
+            [
+              1.349502167848252e-18,
+              -1.1375876482498759e-18
+            ],
+            [
+              4.20915244452492e-20,
+              -1.0522881111312296e-19
+            ],
+            [
+              0.00021065013088175167,
+              8.253555150610008e-21
+            ],
+            [
+              -9.399815772180709e-06,
+              5.788736523562017e-20
+            ],
+            [
+              1.05808475425106e-08,
+              -9.55609771156982e-22
+            ],
+            [
+              7.043408645700905e-07,
+              -8.594489798980741e-22
+            ],
+            [
+              9.391823008455118e-09,
+              1.8306270353359857e-22
+            ],
+            [
+              -9.257336295329301e-11,
+              -2.865256407727536e-24
+            ]
+          ]
+        },
+        {
+          "lag": 3,
+          "unit_equal_time_variance_covariance": [
+            3.585539990013563e-06,
+            -5.607358110823468e-19
+          ],
+          "absolute_signal_in_unit_variance_units": 3.585539990013563e-06,
+          "two_slowest_prediction": [
+            1.4926534825232206e-19,
+            -1.2854207983805144e-19
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 3.585539990013414e-06,
+          "two_slowest_relative_error": 0.9999999999999585,
+          "all_modes_reconstruction_absolute_error": 6.83072249502142e-19,
+          "all_modes_reconstruction_relative_error": 1.905074971704773e-13,
+          "individual_mode_contributions": [
+            [
+              1.47626205177038e-19,
+              -1.244442221498413e-19
+            ],
+            [
+              1.6391430752840517e-21,
+              -4.097857688210128e-21
+            ],
+            [
+              3.6779518010946065e-06,
+              8.809677460576076e-22
+            ],
+            [
+              -9.61587461484953e-08,
+              6.617010419068514e-22
+            ],
+            [
+              7.2575962822834e-11,
+              -6.58248064926176e-24
+            ],
+            [
+              3.655491336253497e-09,
+              -3.538189445511499e-24
+            ],
+            [
+              1.89617350636636e-11,
+              3.6255761105160103e-25
+            ],
+            [
+              -9.396736532176243e-14,
+              -2.9522877982061973e-27
+            ]
+          ]
+        },
+        {
+          "lag": 4,
+          "unit_equal_time_variance_covariance": [
+            6.325286529193441e-08,
+            -3.478129039662971e-20
+          ],
+          "absolute_signal_in_unit_variance_units": 6.325286529193441e-08,
+          "two_slowest_prediction": [
+            1.6213118082739723e-20,
+            -1.3772917582626245e-20
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 6.32528652919182e-08,
+          "two_slowest_relative_error": 0.9999999999997436,
+          "all_modes_reconstruction_absolute_error": 6.442746168150643e-20,
+          "all_modes_reconstruction_relative_error": 1.0185698526722993e-12,
+          "individual_mode_contributions": [
+            [
+              1.6149285991679525e-20,
+              -1.3613337354975753e-20
+            ],
+            [
+              6.38320910601971e-23,
+              -1.5958022765049263e-22
+            ],
+            [
+              6.421704745471351e-08,
+              2.824728780824277e-23
+            ],
+            [
+              -9.836899663732047e-10,
+              7.480302419954617e-24
+            ],
+            [
+              4.978117639914107e-13,
+              -4.5340976133635226e-26
+            ],
+            [
+              1.8971804110188233e-11,
+              -1.3576301645781844e-26
+            ],
+            [
+              3.8283025169967775e-14,
+              7.17778501471174e-28
+            ],
+            [
+              -9.538235906983938e-17,
+              -3.0412905791385195e-30
+            ]
+          ]
+        },
+        {
+          "lag": 5,
+          "unit_equal_time_variance_covariance": [
+            1.1112687552089818e-09,
+            -5.552036271455922e-21
+          ],
+          "absolute_signal_in_unit_variance_units": 1.1112687552089818e-09,
+          "two_slowest_prediction": [
+            1.769105984978197e-21,
+            -1.4954193984402919e-21
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 1.1112687552072126e-09,
+          "two_slowest_relative_error": 0.999999999998408,
+          "all_modes_reconstruction_absolute_error": 2.1464568350056094e-20,
+          "all_modes_reconstruction_relative_error": 1.9315371056229807e-11,
+          "individual_mode_contributions": [
+            [
+              1.7666202130461703e-21,
+              -1.4892049686102247e-21
+            ],
+            [
+              2.485771932026864e-24,
+              -6.214429830067156e-24
+            ],
+            [
+              1.1212298058320454e-09,
+              7.178309263475244e-25
+            ],
+            [
+              -1.0063005069232158e-11,
+              8.379784736819138e-26
+            ],
+            [
+              3.4145816704242384e-15,
+              -3.1230897900443845e-28
+            ],
+            [
+              9.846264649179713e-14,
+              -4.5617499481122644e-29
+            ],
+            [
+              7.729197835766085e-17,
+              1.4204749596662586e-30
+            ],
+            [
+              -9.681866029312586e-20,
+              -3.132304387595586e-33
+            ]
+          ]
+        },
+        {
+          "lag": 6,
+          "unit_equal_time_variance_covariance": [
+            1.9474266672526562e-11,
+            1.0634440750134862e-22
+          ],
+          "absolute_signal_in_unit_variance_units": 1.9474266672526562e-11,
+          "two_slowest_prediction": [
+            1.9335283670767624e-22,
+            -1.6315073004786702e-22
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 1.947426667233321e-11,
+          "two_slowest_relative_error": 0.9999999999900714,
+          "all_modes_reconstruction_absolute_error": 5.408794313598794e-22,
+          "all_modes_reconstruction_relative_error": 2.7774058990520464e-11,
+          "individual_mode_contributions": [
+            [
+              1.9325603489536798e-22,
+              -1.6290872551709638e-22
+            ],
+            [
+              9.68018123082539e-26,
+              -2.420045307706345e-25
+            ],
+            [
+              1.9576675155810068e-11,
+              1.645542616434226e-26
+            ],
+            [
+              -1.0294307605550311e-13,
+              9.316664966677627e-28
+            ],
+            [
+              2.342123836229461e-17,
+              -2.151148884557943e-30
+            ],
+            [
+              5.110158579469129e-16,
+              -1.0781968891062098e-31
+            ],
+            [
+              1.5604957789823855e-19,
+              2.8099557708315488e-33
+            ],
+            [
+              -9.827658984710296e-23,
+              -3.225369607365834e-36
+            ]
+          ]
+        },
+        {
+          "lag": 7,
+          "unit_equal_time_variance_covariance": [
+            3.4075851664114585e-13,
+            4.6803559268869554e-24
+          ],
+          "absolute_signal_in_unit_variance_units": 3.4075851664114585e-13,
+          "two_slowest_prediction": [
+            2.1144643517082952e-23,
+            -1.7830512262516185e-23
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 3.407585166200012e-13,
+          "two_slowest_relative_error": 0.9999999999379483,
+          "all_modes_reconstruction_absolute_error": 2.843756694473304e-23,
+          "all_modes_reconstruction_relative_error": 8.345372325552397e-11,
+          "individual_mode_contributions": [
+            [
+              2.114087382657135e-23,
+              -1.7821088036237187e-23
+            ],
+            [
+              3.769690511599656e-27,
+              -9.42422627899913e-27
+            ],
+            [
+              3.41808796165306e-13,
+              3.5579159444337434e-28
+            ],
+            [
+              -1.0530926730992602e-15,
+              1.0292187100392426e-29
+            ],
+            [
+              1.606505450359507e-19,
+              -1.4816612616871878e-32
+            ],
+            [
+              2.652144913604111e-18,
+              1.0957533582682863e-34
+            ],
+            [
+              3.150581894738732e-22,
+              5.5562370642046734e-36
+            ],
+            [
+              -9.975647341880684e-26,
+              -3.320527382455857e-39
+            ]
+          ]
+        },
+        {
+          "lag": 8,
+          "unit_equal_time_variance_covariance": [
+            5.957224306916018e-15,
+            -1.9470854189282266e-24
+          ],
+          "absolute_signal_in_unit_variance_units": 5.957224306916018e-15,
+          "two_slowest_prediction": [
+            2.3128122053198605e-24,
+            -1.9498707975516772e-24
+          ],
+          "two_slowest_absolute_error_in_unit_variance_units": 5.9572243046032055e-15,
+          "two_slowest_relative_error": 0.9999999996117634,
+          "all_modes_reconstruction_absolute_error": 4.031892709343863e-24,
+          "all_modes_reconstruction_relative_error": 6.768072682210491e-10,
+          "individual_mode_contributions": [
+            [
+              2.312665404694806e-24,
+              -1.9495037959890415e-24
+            ],
+            [
+              1.4680062505433897e-28,
+              -3.6700156263584697e-28
+            ],
+            [
+              5.9679824181636525e-15,
+              7.407779818506343e-30
+            ],
+            [
+              -1.0772984649666101e-17,
+              1.1307632557719447e-31
+            ],
+            [
+              1.101931384716906e-21,
+              -1.0205161994033395e-34
+            ],
+            [
+              1.3764489953434823e-20,
+              4.041562178186726e-36
+            ],
+            [
+              6.36090555908357e-25,
+              1.0981700009744886e-38
+            ],
+            [
+              -1.0125864159958402e-28,
+              -3.4178196308284844e-42
+            ]
+          ]
+        }
+      ],
+      "interpretation": "The first two modes are suppressed on opposite ends by construction; the nonzero remaining absolute signal is the result, not the near-100-percent truncation error."
+    }
+  ],
+  "numerical_diagnostics": {
+    "inherited_mode_diagnostics_not_recomputed": {
+      "eigenvector_matrix_condition_number_2": 3.45033820920501,
+      "max_relative_eigen_residual": 4.898313983998741e-16,
+      "relative_block_reconstruction_error_frobenius": 1.2921125904433806e-15,
+      "max_all_modes_correlation_reconstruction_error_lags_0_to_8": 6.5736154406932294e-15
+    },
+    "source_X1_null_G1_norm": 1.9255713347975454e-16,
+    "future_Y1_null_G1_norm": 2.978258042774212e-16,
+    "future_Y2_null_G2_norm": 1.3728421245958161e-17,
+    "max_projected_all_modes_absolute_reconstruction_error": 6.664285049689573e-16,
+    "split_null_max_relative_all_modes_reconstruction_error_lags_1_to_8": 6.768072682210491e-10
+  },
+  "new_remote_context_read_not_computed": {
+    "commit": "552c45d7595ebcb0d04555cec03b2a5bfd8da44a",
+    "ref": "theory/p398-width8-source-spectrum-20260831",
+    "path": "notes/p398-width8-source-spectrum.md",
+    "relation": "Already has duality-protected two rays and 93 propagation dimensions per ray, but for width8 continuous G=sum(J-I)+sum(D-I) with fixed i character. The width5 discrete T=HV numerical filters here are not those symmetry-protected rays."
+  },
+  "boundaries": [
+    "Exact width5 propagation rank eight, an effective two-slowest-mode whole-matrix approximation, and a readout-specific fast-mode filter are mutually compatible.",
+    "Exploratory mode-null filters are algebraic consequences of this same model, not independent evidence, held-out validation, or a universal fixed microscopic symmetry.",
+    "The split slow1/slow2 filter loses its leading signal under two-mode truncation by construction; its absolute normalized surviving signal quantifies the physical magnitude of that loss.",
+    "Normalized covariance amplitudes do not specify experimental detectability without a sampling covariance and coefficient-calibration uncertainty.",
+    "No continuum-field count, full-Q lifting result, energy-operator identification, or claim of non-Markovianity of the underlying 42-state process follows."
+  ],
+  "execution": {
+    "command": "/Users/lc/python-envs/research-py311/bin/python scripts/p398_fixed_readout_analysis.py",
+    "python": "3.11.15",
+    "numpy": "2.3.5",
+    "machine": "arm64",
+    "elapsed_seconds": 0.0027671660063788295,
+    "script_sha256": "81bcb5af43d31dc8298411ef0ec9b9cc868621559cb0111f213c7ccd4f995f2a",
+    "transfer_recomputed": false,
+    "eigenvalues_recomputed": false,
+    "new_monte_carlo_samples": 0
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "matching-one/etop-production-model-certificate-manifest/v1",
+  "status": "frozen_existing_production_data_model_elimination",
+  "source": {
+    "commit": "66513881dac903f42444052fe364528cfd7d9987",
+    "path": "results/rank-plane-crosswalk/latest.json",
+    "sha256": "d3739f34c0ba982edea580d71990deb1e2ef24f292c7497b31b2346e14a8c299",
+    "git_blob_sha": "fb64070aa47753b67d9527c094288ce950ec7a8c",
+    "bytes": 190805,
+    "integration_status": "branch_only"
+  },
+  "observable": {
+    "A_top": "P2-P0",
+    "E_top": "P0+P2=1-P1",
+    "F1": "(A_top-E_top)/2",
+    "F2": "(A_top+E_top)/2",
+    "orientation_coordinate": "P4 angular-normalized first-minus-second contrast at the source intrinsic center"
+  },
+  "selection": {
+    "rule": "use the source artifact's predeclared high_statistics_summary sizes and exclude only the two P154 10M variance pilots",
+    "expected_sizes": [130, 145, 170, 185, 265, 290, 325, 425],
+    "expected_dataset_ids": ["P49-N130", "P50-N145", "P49-N170", "P43-N185", "P43-N265", "P50-N290", "P57-N325", "P57-N425"]
+  },
+  "confidence": {
+    "familywise_alpha_per_model": 0.01,
+    "construction": "two-sided Gaussian Bonferroni intervals across the eight selected production datasets",
+    "covariance": "same-dataset intrinsic-center first-order A_top/E_top covariance from aligned production batches",
+    "cross_dataset_rule": "no cross-dataset independence or pooled p-value is used; one incompatible simultaneous interval eliminates a universal fixed-ratio model"
+  },
+  "fixed_ratio_models": [
+    {"id": "M_ETOP_ZERO", "ratio_r_in_E_equals_rA": 0.0, "meaning": "pure Alexander-odd state response with E_top=0"},
+    {"id": "M_F2_ZERO", "ratio_r_in_E_equals_rA": -1.0, "meaning": "exact endpoint cancellation F2=(A_top+E_top)/2=0"},
+    {"id": "M_F1_ZERO", "ratio_r_in_E_equals_rA": 1.0, "meaning": "exact endpoint cancellation F1=(A_top-E_top)/2=0"}
+  ],
+  "free_ratio_model": {
+    "id": "M_COMMON_STATE_LINE",
+    "meaning": "one geometry-independent mixing line E_top=r*A_top with free real r",
+    "certificate": "intersection of simultaneous Fieller sets; an empty intersection eliminates the model"
+  },
+  "outputs": {
+    "json": "results/etop-production-model-certificate/latest.json",
+    "markdown": "results/etop-production-model-certificate/latest.md"
+  },
+  "claim_boundary": "This is a machine-checkable certificate relative to the declared Gaussian first-order outer confidence sets. It is not an exact finite-replica theorem, a continuum field identity, an exponent fit, or an independence-weighted meta-analysis."
+}

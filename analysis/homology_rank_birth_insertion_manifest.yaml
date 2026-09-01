@@ -1,0 +1,44 @@
+schema: matching-one/homology-rank-birth-insertion-manifest/v1
+issues: [215, 269, 276]
+base_main: 3bb4054
+phase: exact_insertion_level_followup
+
+reused_assets:
+  - scripts/integer_period_torus.py
+  - scripts/threshold_rank_nz.py
+  - scripts/digital_alexander_filtration_oracle.py
+  - scripts/marked_pivotal_h4_reference.py
+
+increment_over_3bb4054:
+  - frozen-environment site insertion rather than permutation-path semantics
+  - pointwise 0-to-1 and 1-to-2 gate decomposition
+  - explicit simultaneous 0-to-2 handling
+  - exact Russo influence polynomials f_01 and f_12
+  - endpoint primitive line ell and saturation index iota
+  - exact homology-line H4 and radius-one landing-sector H4 marks
+
+claims:
+  exact_general:
+    - Delta_v r equals I_01 plus I_12 for monotone r in [0,1,2]
+    - M_prime equals f_01 plus f_12 by product-measure Russo differentiation
+  exhaustive_declared_controls:
+    - all rooted environments on axis L2 and Gaussian 2+1i
+    - all origin-root environments on translation-reduced axis L4
+    - full exact power-basis agreement with independently enumerated M polynomial
+  boundary:
+    - direct 0-to-2 has no canonical intermediate ell
+    - no nontrivial iota occurs in the declared controls
+    - no production stream or continuum field is claimed
+
+outputs:
+  script: scripts/homology_rank_birth_insertion.py
+  note: notes/p215-canonical-homology-rank-birth-insertion.md
+  json: results/homology-rank-birth-insertion/latest.json
+  markdown: results/homology-rank-birth-insertion/latest.md
+  tests: tests/test_homology_rank_birth_insertion.py
+
+commands:
+  - python scripts/homology_rank_birth_insertion.py --output results/homology-rank-birth-insertion/latest.json
+  - python scripts/homology_rank_birth_insertion.py --format markdown --output results/homology-rank-birth-insertion/latest.md
+  - python -m unittest discover -s tests -p 'test_homology_rank_birth_insertion.py'
+

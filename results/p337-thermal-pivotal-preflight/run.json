@@ -1,0 +1,100 @@
+{
+  "schema": "matching-one.p337-thermal-pivotal-preflight.execution-receipt.v1",
+  "status": "completed_frozen_64_configuration_replay_and_descriptive_score",
+  "date": "2026-09-01",
+  "branch": "research/navigation-priority-refresh-20260829",
+  "base_commit": "ffc2bfa0c931222f1e402f393bbb9ec44482f3a1",
+  "execution_environment": {
+    "host_class": "local_mac",
+    "os": "Darwin 25.5.0 arm64",
+    "compiler": "Apple clang 21.0.0 (clang-2100.1.1.101)",
+    "compiler_target": "arm64-apple-darwin25.5.0",
+    "logical_cpus": 10,
+    "memory_bytes": 17179869184,
+    "threads": 10,
+    "cloud_jobs": 0,
+    "gpu_jobs": 0
+  },
+  "compile": {
+    "count": 2,
+    "successful_count": 2,
+    "final_command": "clang++ -O3 -std=c++17 -pthread scripts/p337_thermal_pivotal_preflight.cpp -o /private/tmp/p337-thermal-preflight.1Xhiii/p337_thermal_pivotal_preflight",
+    "producer_sha256": "675a86b7fb2188f40db79887f839c5a54b0090ff291ac659cd31278486ae6fe3",
+    "binary_sha256": "6d08e21f0d82f293e850995a68b2b2f2acb4a03d5bc1eabd857ae761e88f345b"
+  },
+  "run_attempts": [
+    {
+      "attempt": 1,
+      "status": "validity_gate_failed_before_scientific_configuration_replay",
+      "failure": "the first implementation compared ambient homology rank with q=r-1 in the first L4 control",
+      "scientific_configurations_evaluated": 0,
+      "input_changed": false,
+      "seed_or_counter_changed": false,
+      "resolution": "corrected only the rank-to-q semantic assertion and expanded the diagnostic; retained both frozen streams, counters, pairs and kernel"
+    },
+    {
+      "attempt": 2,
+      "status": "completed",
+      "command": "/private/tmp/p337-thermal-preflight.1Xhiii/p337_thermal_pivotal_preflight --kernel analysis/regular_pair_spatial_kernel.tsv --output-prefix /private/tmp/p337-thermal-preflight.1Xhiii/preflight --threads 10",
+      "exit_code": 0,
+      "wall_seconds_internal": 3.439526875,
+      "cpu_seconds_internal": 25.978007,
+      "wall_seconds_external": 4.11,
+      "user_seconds_external": 25.77,
+      "sys_seconds_external": 0.20,
+      "peak_RSS_bytes": 40173568,
+      "configurations": 64,
+      "pair_site_callbacks": 5242880,
+      "new_seed_or_counter": false
+    }
+  ],
+  "scorer": {
+    "command": "python3 scripts/analyze_p337_thermal_pivotal_preflight.py --config results/p337-thermal-pivotal-preflight/raw/preflight.config.csv --shell results/p337-thermal-pivotal-preflight/raw/preflight.shell.csv --metadata results/p337-thermal-pivotal-preflight/raw/preflight.metadata.json --output-json results/p337-thermal-pivotal-preflight/latest.json --output-md results/p337-thermal-pivotal-preflight/REPORT.md",
+    "run_count": 1,
+    "exit_code": 0,
+    "wall_seconds_including_three_raw_file_renames": 0.501659792,
+    "scorer_sha256": "6400789cc4c2e0fbdd46f09d8a2610c47d41040fe18a3b88389dd76d9d1a3a3b"
+  },
+  "inputs": {
+    "contract": "analysis/p337_thermal_pivotal_preflight_contract.json",
+    "contract_sha256": "f7c297b6b6138c5fcf24828250788bb53552127bd32e90c3961c0660d6261b92",
+    "kernel": "analysis/regular_pair_spatial_kernel.tsv",
+    "kernel_sha256": "36ae069d370b1d7a4398861c928afb41aa76885c8895c696b1bc0c97e9c314fd",
+    "seeds": {
+      "L32": 2026083123593201,
+      "L64": 2026083123596401
+    },
+    "configuration_counters_per_size": "0..31"
+  },
+  "outputs": {
+    "raw_config": {
+      "path": "results/p337-thermal-pivotal-preflight/raw/preflight.config.csv",
+      "sha256": "7ef00b83bb836d1738d122f571392c52f009141e160cc08c1ecf1ee59c11a56b"
+    },
+    "raw_shell": {
+      "path": "results/p337-thermal-pivotal-preflight/raw/preflight.shell.csv",
+      "sha256": "ff2a977b6ccd1c14d3633cd840f97c6238b64380bf5c8c57631d6dd61546bf40"
+    },
+    "producer_metadata": {
+      "path": "results/p337-thermal-pivotal-preflight/raw/preflight.metadata.json",
+      "sha256": "aa7f799076f88c18d4a0bd598411e0120ffdd317749ba6401c883e946ab6afd8"
+    },
+    "score_json": {
+      "path": "results/p337-thermal-pivotal-preflight/latest.json",
+      "sha256": "3aeae2ab1f449ae89e1d191274e0130bc6ee0a5c08d3e0ed58215ed147c67f6d"
+    },
+    "report": {
+      "path": "results/p337-thermal-pivotal-preflight/REPORT.md",
+      "sha256": "8e2b9301e3196e2e0b64261d3262e372e9fa5da23c33fd3fcca107e4fe7c3ffb"
+    }
+  },
+  "decision": "The frozen semantic replay succeeded and is complete. Its 64 deterministic old configurations expose rare, shell-localized kernel-changing carriers and validate both midpoint channels, but do not estimate centered population contributions or full J2. No additional counter, seed, macro window, GPU or cloud job follows.",
+  "next_at_run": "Issue 536 delivery A: derive a signed/absolute q/E-weighted pivotal support or influence inequality that connects the finite carrier interface to population-level original-U control.",
+  "repository_routing_overlay": {
+    "observed_at": "2026-09-01T04:04:56Z",
+    "issue536": "closed_by_repository_team_as_duplicate_retained_as_provenance",
+    "issue537": "open_sole_P0_first_test_the_Schur_projected_ordinary_four_arm_landing_matrix_all_2x2_minors",
+    "issue539": "open_P2_exact_N25_support_import_existing_attachment_before_recomputation",
+    "tail_after_minor": "a_nonzero_minor_selects_the_nonrankone_signed_landing_tail_all_zero_minors_select_the_four_packet_remainder_candidate"
+  }
+}

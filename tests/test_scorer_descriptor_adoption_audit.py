@@ -124,15 +124,15 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             )
         )
         self.assertEqual(result, audit(ROOT, manifest))
-        self.assertEqual(result["counts"]["total"], 59)
+        self.assertEqual(result["counts"]["total"], 65)
         self.assertEqual(result["counts"]["direct_typed_entrypoint"], 28)
         self.assertEqual(result["counts"]["covered_frozen_kernel"], 27)
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 3)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 9)
         self.assertEqual(result["counts"]["outside_registered_typed_path"], 0)
-        self.assertEqual(len(result["rows"]), 59)
+        self.assertEqual(len(result["rows"]), 65)
         statuses = {row["path"]: row["status"] for row in result["rows"]}
         self.assertEqual(
             statuses["scripts/score_prequential_evidence.py"],
@@ -167,9 +167,14 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             "direct_typed_entrypoint",
         )
         for path in (
+            "scripts/score_euler_occupancy_clock.py",
+            "scripts/score_etop_production_elimination.py",
             "scripts/score_norm4_production.py",
             "scripts/score_norm4_thermal_jet.py",
             "scripts/score_norm5_thermal_jet.py",
+            "scripts/score_z5_projective_leg_augmented_joint.py",
+            "scripts/score_z5_projective_leg_joint_annihilation.py",
+            "scripts/score_z5_projective_leg_joint_ta_rank.py",
         ):
             self.assertEqual(
                 statuses[path], "channel_bearing_migration_required"

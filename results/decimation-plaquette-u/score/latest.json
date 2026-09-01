@@ -1,0 +1,216 @@
+{
+  "schema": "matching-one.decimation-plaquette-u.v1",
+  "status": "completed_exact_finite_enumeration",
+  "contract": {
+    "schema": "matching-one.decimation-plaquette-u.contract.v1",
+    "question": "Does the plaquette source forced by checkerboard decimation survive projection to the original root-normalized global U?",
+    "theory_commit": "207436518db46dd13ef0ec91168cb1c99d52eaea",
+    "theory_path": "notes/p337-checkerboard-decimation-global-u.md",
+    "topology_commit": "56838d5f068f6f0ba7795926dc9343229bdd28ce",
+    "topology_path": "notes/square-checkerboard-endpoint-homology.md",
+    "child_N": 25,
+    "geometries": [
+      [
+        5,
+        0
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "parent_direct_geometries": [
+      [
+        5,
+        5
+      ],
+      [
+        1,
+        7
+      ]
+    ],
+    "delta_cos4": "1152/625",
+    "enumeration": "all 2^25 binary configurations per geometry, not random permutations or a sampled pilot",
+    "observable": "q=CB_NN-CW_matching-(K-T_NN+F4); E=q^2, using digital Alexander on honest unit-cell tori",
+    "sources": [
+      "Ctot=CB_NN+CW_matching",
+      "F4=number of fully occupied unit faces"
+    ],
+    "source_units": "bulk exp(t*S), no division by N and no fitted source amplitude",
+    "root": "the exact new enumeration's common Q=mean(q) root in [11/20,13/20]",
+    "U": "N^(13/8) P4[E_p]/(2*Q_p) at the pooled root",
+    "response": "V_S=A/D*(jY_p-r*jQ_p-r_p*jQ), r=Y_p/D; per-geometry normalized source covariance and all root/slope terms included",
+    "primary_output": "V_F4 at the N25 paired root, with an exact rational enclosure for V_F4/A",
+    "candidate": "F4 is invisible to U as a common thermal-clock direction, so V_F4=0 and bare cluster-source transport predicts the endpoint",
+    "decision": "an exact rational response enclosure excluding zero rejects that finite observable-specific alias; an enclosure containing zero leaves the comparison unresolved",
+    "endpoint_implication": "V_cl,parent50,end-2^(13/8)*V_cl,child25=2^(13/8)*V_F4,child25",
+    "geometry_boundary": "axis Z5xZ5 and tilted Z25 quotients have different Smith classes; this is a fixed finite pair, not an asymptotic H4 law or a replica of the N65/N85 production family",
+    "forbidden_reinterpretations": [
+      "new confirmation from old P154/P334 data",
+      "new lag1 source or rescue template",
+      "continuum operator identity",
+      "measured interior saturation curvature",
+      "independent endpoint simulation"
+    ],
+    "new_random_samples": 0,
+    "cloud_jobs": 0,
+    "workers": 2,
+    "root_bisection_steps": 128
+  },
+  "code_commit": "c76b038b2f99b266eb9cfc255219440e04c64c8f",
+  "input_counts": [
+    {
+      "name": "axis.csv",
+      "sha256": "b7bc24b5e66bd6058433aff384a46c064b3845e4511a8e61a01214047ad4a451",
+      "configurations": 33554432
+    },
+    {
+      "name": "tilted.csv",
+      "sha256": "abae046b4d16fdc8ab6aa909f4c841d95d142a457478f073d825ba2da25851b4",
+      "configurations": 33554432
+    }
+  ],
+  "root_enclosure": {
+    "lower_fraction": "1185331078656453492302851399693093801267/2000000000000000000000000000000000000000",
+    "upper_fraction": "5926655393282267461514256998465469006339/10000000000000000000000000000000000000000",
+    "midpoint_approx": 0.5926655393282267,
+    "width_approx": 4e-40,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "matching_slope_enclosure": {
+    "lower_fraction": "2356404883699794733526408361574426941739/400000000000000000000000000000000000000",
+    "upper_fraction": "58910122092494868338160209039360673547099/10000000000000000000000000000000000000000",
+    "midpoint_approx": 5.891012209249487,
+    "width_approx": 3.624e-37,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "U25_over_A_enclosure": {
+    "lower_fraction": "47104256506328061033501906588386497037/5000000000000000000000000000000000000000",
+    "upper_fraction": "9420851301265612206700381317677299491/1000000000000000000000000000000000000000",
+    "midpoint_approx": 0.009420851301265612,
+    "width_approx": 8.36e-38,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "source_enclosures": {
+    "c": {
+      "V_over_A": {
+        "lower_fraction": "-21461750543023980624782322612665192741/5000000000000000000000000000000000000000",
+        "upper_fraction": "-8584700217209592249912929045066075361/2000000000000000000000000000000000000000",
+        "midpoint_approx": -0.0042923501086047965,
+        "width_approx": 8.677e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "root_tangent": {
+        "lower_fraction": "289603289769304855877653331383693172469/10000000000000000000000000000000000000000",
+        "upper_fraction": "289603289769304855877653331383693172563/10000000000000000000000000000000000000000",
+        "midpoint_approx": 0.028960328976930485,
+        "width_approx": 9.4e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "terms_over_A": {
+        "direct": {
+          "lower_fraction": "-3236820093303931297669662602737881689/10000000000000000000000000000000000000000",
+          "upper_fraction": "-3236820093303931297669662602737874533/10000000000000000000000000000000000000000",
+          "midpoint_approx": -0.0003236820093303931,
+          "width_approx": 7.156e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        "root_motion": {
+          "lower_fraction": "58062013929721577574876607351340057/400000000000000000000000000000000000000",
+          "upper_fraction": "1451550348243039439371915183783502533/10000000000000000000000000000000000000000",
+          "midpoint_approx": 0.00014515503482430395,
+          "width_approx": 1.108e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        "slope_source": {
+          "lower_fraction": "-3970555987776343396834649545011329119/1000000000000000000000000000000000000000",
+          "upper_fraction": "-9926389969440858492086623862528322699/2500000000000000000000000000000000000000",
+          "midpoint_approx": -0.003970555987776343,
+          "width_approx": 3.94e-38,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        "slope_root": {
+          "lower_fraction": "-1432671463223635422920402356262714029/10000000000000000000000000000000000000000",
+          "upper_fraction": "-1432671463223635422920402356262714007/10000000000000000000000000000000000000000",
+          "midpoint_approx": -0.00014326714632236355,
+          "width_approx": 2.2e-39,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      }
+    },
+    "f4": {
+      "V_over_A": {
+        "lower_fraction": "20802069874521977174733465434488623557/10000000000000000000000000000000000000000",
+        "upper_fraction": "2080206987452197717473346543448863911/1000000000000000000000000000000000000000",
+        "midpoint_approx": 0.0020802069874521975,
+        "width_approx": 1.5553e-36,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "root_tangent": {
+        "lower_fraction": "-1844346994391963297511554636673248210677/10000000000000000000000000000000000000000",
+        "upper_fraction": "-1844346994391963297511554636673248210483/10000000000000000000000000000000000000000",
+        "midpoint_approx": -0.18443469943919633,
+        "width_approx": 1.94e-38,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "terms_over_A": {
+        "direct": {
+          "lower_fraction": "79623218460810342939726290926513228689/10000000000000000000000000000000000000000",
+          "upper_fraction": "39811609230405171469863145463256618249/5000000000000000000000000000000000000000",
+          "midpoint_approx": 0.007962321846081035,
+          "width_approx": 7.809e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        "root_motion": {
+          "lower_fraction": "-9244240713298729707409537523648144819/10000000000000000000000000000000000000000",
+          "upper_fraction": "-9244240713298729707409537523648137771/10000000000000000000000000000000000000000",
+          "midpoint_approx": -0.000924424071329873,
+          "width_approx": 7.048e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        "slope_source": {
+          "lower_fraction": "-58700917856621082271949807281226090951/10000000000000000000000000000000000000000",
+          "upper_fraction": "-58700917856621082271949807281226090383/10000000000000000000000000000000000000000",
+          "midpoint_approx": -0.005870091785662108,
+          "width_approx": 5.68e-38,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        "slope_root": {
+          "lower_fraction": "2281002495907861553591629828212407659/2500000000000000000000000000000000000000",
+          "upper_fraction": "9124009983631446214366519312849630769/10000000000000000000000000000000000000000",
+          "midpoint_approx": 0.0009124009983631446,
+          "width_approx": 1.33e-38,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      }
+    }
+  },
+  "numerical_values": {
+    "root": 0.5926655393282267,
+    "U25": 0.8804661569633677,
+    "V25_cluster": -0.4011600314673097,
+    "V25_F4": 0.19441468646090693,
+    "V50_endpoint_cluster_bare": -1.2373466864997504,
+    "V50_endpoint_cluster_complete": -0.637689818343148,
+    "V50_endpoint_forced_correction": 0.5996568681566026
+  },
+  "decision": "F4_thermal_alias_and_bare_cluster_endpoint_U_transport_rejected",
+  "interval_scope": "exact rational propagation from exhaustive integer coefficients and the physical root bracket; irrational positive area prefactors shown numerically, not Monte Carlo confidence intervals",
+  "uncertainty": "no_sampling_error; computational conclusion conditional on stated graph/counting definitions",
+  "new_random_samples": 0
+}

@@ -1,0 +1,52 @@
+{
+  "started_utc": "2026-08-31T13:39:01.573949+00:00",
+  "finished_utc": "2026-08-31T13:39:03.610382+00:00",
+  "elapsed_seconds": 2.036464040982537,
+  "enumeration_and_compile_seconds": 1.9240487499628216,
+  "command": [
+    "scripts/analyze_defect_reweight.py",
+    "--output-dir",
+    "results/defect-reweight"
+  ],
+  "compile_command": [
+    "clang++",
+    "-O3",
+    "-std=c++17",
+    "/private/tmp/matching-pr267-fix/scripts/exact_defect_reweight_cross_moments.cpp",
+    "-o",
+    "TEMP_BINARY"
+  ],
+  "enumerations": [
+    {
+      "status": "completed",
+      "parent_N": 50,
+      "free_B_degree": 25,
+      "fixed_A_occupied": 24,
+      "fixed_A_vacancy": "origin",
+      "configurations": 4194304,
+      "elapsed_seconds": 0.201802
+    },
+    {
+      "status": "completed",
+      "parent_N": 50,
+      "free_B_degree": 25,
+      "fixed_A_occupied": 24,
+      "fixed_A_vacancy": "origin",
+      "configurations": 4194304,
+      "elapsed_seconds": 0.20434
+    }
+  ],
+  "python": "3.11.15 (main, Jun 23 2026, 15:46:51) [Clang 22.1.3 ]",
+  "machine": "arm64",
+  "code_commit": "e9aed6ff21759f4377f67bd5468998e2b45f11d1",
+  "hashes": {
+    "script": "0e8b440767cf72341ca41ac1e8ed865aff6190b00deadf769ef36d91187b70aa",
+    "cpp": "3b9e0ee76cff634c5d3f88ccc38ae98b2ee4f88769ee930906df5190e62667ea",
+    "helper": "88c4a56bc1c45f966cb0b836553dd6320bb3a0f4ea97677429f4c334749da251",
+    "contract": "c9a8fa4c2d401650fbe627bf74dac10519137b10a79c7e135b5ea4052d5b9277",
+    "result": "073a2715d16d703a7b82c5425e2eb70fcf7534ac2da75a4aec76735ced97b666"
+  },
+  "cloud_jobs": 0,
+  "new_random_samples": 0,
+  "science_tests_run": 0
+}

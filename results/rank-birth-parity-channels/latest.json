@@ -1,0 +1,1462 @@
+{
+  "base_commit": "3881e88",
+  "claim_boundary": {
+    "exact": "gate exchange and channel parity generally follow from digital rank complementarity; declared coefficient oracles are exhaustive",
+    "not_claimed": "nonzero continuum overlap, an asymptotic exponent, or a canonical ell for simultaneous 0_to_2",
+    "tiny_only": "integral iota equality and local landing-mark preservation are only exhaustively certified on the declared controls"
+  },
+  "exact_algebra": {
+    "complement_reversal": "rW(white v=0)=2-rB(black v=1); rW(white v=1)=2-rB(black v=0)",
+    "even_channel": "S=I_01+I_12=Delta r; S_G(p)=S_Ghat(1-p)",
+    "gate_exchange": "I_01^B=I_12^W and I_12^B=I_01^W",
+    "integrated": "sum E[S]=M_prime; sum E[D]=-partial_p P(rank=1)",
+    "odd_channel": "D=I_12-I_01; D_G(p)=-D_Ghat(1-p)",
+    "simultaneous_birth": "0_to_2 contributes 2 to S and 0 to D"
+  },
+  "geometries": [
+    {
+      "N": 4,
+      "bernstein_counts": {
+        "matching": {
+          "even": [
+            "0",
+            "16",
+            "8",
+            "0"
+          ],
+          "line_cos4_even": [
+            "0",
+            "8",
+            "8",
+            "0"
+          ],
+          "line_cos4_odd": [
+            "0",
+            "-8",
+            "8",
+            "0"
+          ],
+          "line_sin4_even": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "line_sin4_odd": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "local_h4_even": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "local_h4_odd": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "odd": [
+            "0",
+            "-8",
+            "8",
+            "0"
+          ],
+          "simultaneous_0_to_2": [
+            "0",
+            "4",
+            "0",
+            "0"
+          ]
+        },
+        "primal": {
+          "even": [
+            "0",
+            "8",
+            "16",
+            "0"
+          ],
+          "line_cos4_even": [
+            "0",
+            "8",
+            "8",
+            "0"
+          ],
+          "line_cos4_odd": [
+            "0",
+            "-8",
+            "8",
+            "0"
+          ],
+          "line_sin4_even": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "line_sin4_odd": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "local_h4_even": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "local_h4_odd": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "odd": [
+            "0",
+            "-8",
+            "8",
+            "0"
+          ],
+          "simultaneous_0_to_2": [
+            "0",
+            "0",
+            "4",
+            "0"
+          ]
+        }
+      },
+      "coefficient_parity_failures": {
+        "even": false,
+        "line_cos4_even": false,
+        "line_cos4_odd": false,
+        "line_sin4_even": false,
+        "line_sin4_odd": false,
+        "local_h4_even": false,
+        "local_h4_odd": false,
+        "odd": false,
+        "simultaneous_0_to_2": false
+      },
+      "complement_failure_counts": {},
+      "exact_identifications": {
+        "even": "f_01+f_12=M_prime",
+        "odd": "f_12-f_01=-partial_p Prob(rank=1)=partial_p(P0+P2)"
+      },
+      "id": "axis-L2-degenerate",
+      "line_index_pair_counts": {
+        "ell=(0, 1);iota_B=1;iota_W=1": 8,
+        "ell=(1, 0);iota_B=1;iota_W=1": 8
+      },
+      "p_equals_half_primal": {
+        "even": "3",
+        "line_cos4_even": "2",
+        "line_cos4_odd": "0",
+        "line_sin4_even": "0",
+        "line_sin4_odd": "0",
+        "local_h4_even": "0",
+        "local_h4_odd": "0",
+        "odd": "0",
+        "simultaneous_0_to_2": "1/2"
+      },
+      "paired_transition_counts": {
+        "0->0 | 2->2": 8,
+        "0->1 | 1->2": 8,
+        "0->2 | 0->2": 4,
+        "1->2 | 0->1": 8,
+        "2->2 | 0->0": 4
+      },
+      "period_matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "power_basis_coefficients_ascending": {
+        "matching": {
+          "even": [
+            "0",
+            "16",
+            "-24",
+            "8"
+          ],
+          "line_cos4_even": [
+            "0",
+            "8",
+            "-8",
+            "0"
+          ],
+          "line_cos4_odd": [
+            "0",
+            "-8",
+            "24",
+            "-16"
+          ],
+          "line_sin4_even": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "line_sin4_odd": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "local_h4_even": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "local_h4_odd": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "odd": [
+            "0",
+            "-8",
+            "24",
+            "-16"
+          ],
+          "simultaneous_0_to_2": [
+            "0",
+            "4",
+            "-8",
+            "4"
+          ]
+        },
+        "primal": {
+          "even": [
+            "0",
+            "8",
+            "0",
+            "-8"
+          ],
+          "line_cos4_even": [
+            "0",
+            "8",
+            "-8",
+            "0"
+          ],
+          "line_cos4_odd": [
+            "0",
+            "-8",
+            "24",
+            "-16"
+          ],
+          "line_sin4_even": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "line_sin4_odd": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "local_h4_even": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "local_h4_odd": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "odd": [
+            "0",
+            "-8",
+            "24",
+            "-16"
+          ],
+          "simultaneous_0_to_2": [
+            "0",
+            "0",
+            "4",
+            "-4"
+          ]
+        }
+      },
+      "root_sampling": {
+        "multiplicity": 1,
+        "roots": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "N": 5,
+      "bernstein_counts": {
+        "matching": {
+          "even": [
+            "0",
+            "20",
+            "30",
+            "0",
+            "0"
+          ],
+          "line_cos4_even": [
+            "0",
+            "-28/5",
+            "-42/5",
+            "0",
+            "0"
+          ],
+          "line_cos4_odd": [
+            "0",
+            "28/5",
+            "-42/5",
+            "0",
+            "0"
+          ],
+          "line_sin4_even": [
+            "0",
+            "96/5",
+            "144/5",
+            "0",
+            "0"
+          ],
+          "line_sin4_odd": [
+            "0",
+            "-96/5",
+            "144/5",
+            "0",
+            "0"
+          ],
+          "local_h4_even": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "local_h4_odd": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "odd": [
+            "0",
+            "-20",
+            "30",
+            "0",
+            "0"
+          ],
+          "simultaneous_0_to_2": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        "primal": {
+          "even": [
+            "0",
+            "0",
+            "30",
+            "20",
+            "0"
+          ],
+          "line_cos4_even": [
+            "0",
+            "0",
+            "-42/5",
+            "-28/5",
+            "0"
+          ],
+          "line_cos4_odd": [
+            "0",
+            "0",
+            "42/5",
+            "-28/5",
+            "0"
+          ],
+          "line_sin4_even": [
+            "0",
+            "0",
+            "144/5",
+            "96/5",
+            "0"
+          ],
+          "line_sin4_odd": [
+            "0",
+            "0",
+            "-144/5",
+            "96/5",
+            "0"
+          ],
+          "local_h4_even": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "local_h4_odd": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "odd": [
+            "0",
+            "0",
+            "-30",
+            "20",
+            "0"
+          ],
+          "simultaneous_0_to_2": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        }
+      },
+      "coefficient_parity_failures": {
+        "even": false,
+        "line_cos4_even": false,
+        "line_cos4_odd": false,
+        "line_sin4_even": false,
+        "line_sin4_odd": false,
+        "local_h4_even": false,
+        "local_h4_odd": false,
+        "odd": false,
+        "simultaneous_0_to_2": false
+      },
+      "complement_failure_counts": {},
+      "exact_identifications": {
+        "even": "f_01+f_12=M_prime",
+        "odd": "f_12-f_01=-partial_p Prob(rank=1)=partial_p(P0+P2)"
+      },
+      "id": "gaussian-2-1",
+      "line_index_pair_counts": {
+        "ell=(0, 1);iota_B=1;iota_W=1": 25,
+        "ell=(1, 0);iota_B=1;iota_W=1": 25
+      },
+      "p_equals_half_primal": {
+        "even": "25/8",
+        "line_cos4_even": "-7/8",
+        "line_cos4_odd": "7/40",
+        "line_sin4_even": "3",
+        "line_sin4_odd": "-3/5",
+        "local_h4_even": "0",
+        "local_h4_odd": "0",
+        "odd": "-5/8",
+        "simultaneous_0_to_2": "0"
+      },
+      "paired_transition_counts": {
+        "0->0 | 2->2": 25,
+        "0->1 | 1->2": 30,
+        "1->2 | 0->1": 20,
+        "2->2 | 0->0": 5
+      },
+      "period_matrix": [
+        [
+          2,
+          -1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "power_basis_coefficients_ascending": {
+        "matching": {
+          "even": [
+            "0",
+            "20",
+            "-30",
+            "0",
+            "10"
+          ],
+          "line_cos4_even": [
+            "0",
+            "-28/5",
+            "42/5",
+            "0",
+            "-14/5"
+          ],
+          "line_cos4_odd": [
+            "0",
+            "28/5",
+            "-126/5",
+            "168/5",
+            "-14"
+          ],
+          "line_sin4_even": [
+            "0",
+            "96/5",
+            "-144/5",
+            "0",
+            "48/5"
+          ],
+          "line_sin4_odd": [
+            "0",
+            "-96/5",
+            "432/5",
+            "-576/5",
+            "48"
+          ],
+          "local_h4_even": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "local_h4_odd": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "odd": [
+            "0",
+            "-20",
+            "90",
+            "-120",
+            "50"
+          ],
+          "simultaneous_0_to_2": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        "primal": {
+          "even": [
+            "0",
+            "0",
+            "30",
+            "-40",
+            "10"
+          ],
+          "line_cos4_even": [
+            "0",
+            "0",
+            "-42/5",
+            "56/5",
+            "-14/5"
+          ],
+          "line_cos4_odd": [
+            "0",
+            "0",
+            "42/5",
+            "-112/5",
+            "14"
+          ],
+          "line_sin4_even": [
+            "0",
+            "0",
+            "144/5",
+            "-192/5",
+            "48/5"
+          ],
+          "line_sin4_odd": [
+            "0",
+            "0",
+            "-144/5",
+            "384/5",
+            "-48"
+          ],
+          "local_h4_even": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "local_h4_odd": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "odd": [
+            "0",
+            "0",
+            "-30",
+            "80",
+            "-50"
+          ],
+          "simultaneous_0_to_2": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        }
+      },
+      "root_sampling": {
+        "multiplicity": 1,
+        "roots": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "N": 16,
+      "bernstein_counts": {
+        "matching": {
+          "even": [
+            "0",
+            "0",
+            "0",
+            "640",
+            "5760",
+            "20832",
+            "37472",
+            "36928",
+            "21824",
+            "8512",
+            "2304",
+            "384",
+            "32",
+            "0",
+            "0",
+            "0"
+          ],
+          "line_cos4_even": [
+            "0",
+            "0",
+            "0",
+            "576",
+            "4416",
+            "14016",
+            "24736",
+            "27456",
+            "19360",
+            "8480",
+            "2304",
+            "384",
+            "32",
+            "0",
+            "0",
+            "0"
+          ],
+          "line_cos4_odd": [
+            "0",
+            "0",
+            "0",
+            "-576",
+            "-4352",
+            "-9472",
+            "-672",
+            "15104",
+            "16864",
+            "8288",
+            "2304",
+            "384",
+            "32",
+            "0",
+            "0",
+            "0"
+          ],
+          "line_sin4_even": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "line_sin4_odd": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "local_h4_even": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "-192",
+            "-480",
+            "928",
+            "3968",
+            "5280",
+            "3648",
+            "1440",
+            "320",
+            "32",
+            "0",
+            "0",
+            "0"
+          ],
+          "local_h4_odd": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "-1376",
+            "-4192",
+            "-1536",
+            "3424",
+            "3456",
+            "1440",
+            "320",
+            "32",
+            "0",
+            "0",
+            "0"
+          ],
+          "odd": [
+            "0",
+            "0",
+            "0",
+            "-640",
+            "-5440",
+            "-12032",
+            "2464",
+            "20672",
+            "18784",
+            "8288",
+            "2304",
+            "384",
+            "32",
+            "0",
+            "0",
+            "0"
+          ],
+          "simultaneous_0_to_2": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "64",
+            "848",
+            "2048",
+            "1376",
+            "272",
+            "16",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        "primal": {
+          "even": [
+            "0",
+            "0",
+            "0",
+            "32",
+            "384",
+            "2304",
+            "8512",
+            "21824",
+            "36928",
+            "37472",
+            "20832",
+            "5760",
+            "640",
+            "0",
+            "0",
+            "0"
+          ],
+          "line_cos4_even": [
+            "0",
+            "0",
+            "0",
+            "32",
+            "384",
+            "2304",
+            "8480",
+            "19360",
+            "27456",
+            "24736",
+            "14016",
+            "4416",
+            "576",
+            "0",
+            "0",
+            "0"
+          ],
+          "line_cos4_odd": [
+            "0",
+            "0",
+            "0",
+            "-32",
+            "-384",
+            "-2304",
+            "-8288",
+            "-16864",
+            "-15104",
+            "672",
+            "9472",
+            "4352",
+            "576",
+            "0",
+            "0",
+            "0"
+          ],
+          "line_sin4_even": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "line_sin4_odd": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "local_h4_even": [
+            "0",
+            "0",
+            "0",
+            "32",
+            "320",
+            "1440",
+            "3648",
+            "5280",
+            "3968",
+            "928",
+            "-480",
+            "-192",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "local_h4_odd": [
+            "0",
+            "0",
+            "0",
+            "-32",
+            "-320",
+            "-1440",
+            "-3456",
+            "-3424",
+            "1536",
+            "4192",
+            "1376",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "odd": [
+            "0",
+            "0",
+            "0",
+            "-32",
+            "-384",
+            "-2304",
+            "-8288",
+            "-18784",
+            "-20672",
+            "-2464",
+            "12032",
+            "5440",
+            "640",
+            "0",
+            "0",
+            "0"
+          ],
+          "simultaneous_0_to_2": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "16",
+            "272",
+            "1376",
+            "2048",
+            "848",
+            "64",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        }
+      },
+      "coefficient_parity_failures": {
+        "even": false,
+        "line_cos4_even": false,
+        "line_cos4_odd": false,
+        "line_sin4_even": false,
+        "line_sin4_odd": false,
+        "local_h4_even": false,
+        "local_h4_odd": false,
+        "odd": false,
+        "simultaneous_0_to_2": false
+      },
+      "complement_failure_counts": {},
+      "exact_identifications": {
+        "even": "f_01+f_12=M_prime",
+        "odd": "f_12-f_01=-partial_p Prob(rank=1)=partial_p(P0+P2)"
+      },
+      "id": "axis-L4-fixed-root",
+      "line_index_pair_counts": {
+        "ell=(0, 1);iota_B=1;iota_W=1": 56800,
+        "ell=(1, -1);iota_B=1;iota_W=1": 5920,
+        "ell=(1, 0);iota_B=1;iota_W=1": 56800,
+        "ell=(1, 1);iota_B=1;iota_W=1": 5920
+      },
+      "p_equals_half_primal": {
+        "even": "4209/1024",
+        "line_cos4_even": "795/256",
+        "line_cos4_odd": "-109/128",
+        "line_sin4_even": "0",
+        "line_sin4_odd": "0",
+        "local_h4_even": "467/1024",
+        "local_h4_odd": "-49/1024",
+        "odd": "-17/16",
+        "simultaneous_0_to_2": "289/2048"
+      },
+      "paired_transition_counts": {
+        "0->0 | 2->2": 250096,
+        "0->1 | 1->2": 80128,
+        "0->2 | 0->2": 4624,
+        "1->1 | 1->1": 96736,
+        "1->2 | 0->1": 45312,
+        "2->2 | 0->0": 47392
+      },
+      "period_matrix": [
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "power_basis_coefficients_ascending": {
+        "matching": {
+          "even": [
+            "0",
+            "0",
+            "0",
+            "640",
+            "-1920",
+            "-288",
+            "5152",
+            "3520",
+            "-30528",
+            "47040",
+            "-32384",
+            "6912",
+            "4576",
+            "-3584",
+            "960",
+            "-96"
+          ],
+          "line_cos4_even": [
+            "0",
+            "0",
+            "0",
+            "576",
+            "-2496",
+            "3456",
+            "736",
+            "-7968",
+            "9376",
+            "-704",
+            "-10848",
+            "14848",
+            "-10176",
+            "3936",
+            "-800",
+            "64"
+          ],
+          "line_cos4_odd": [
+            "0",
+            "0",
+            "0",
+            "-576",
+            "2560",
+            "384",
+            "-18592",
+            "27872",
+            "28512",
+            "-141120",
+            "208736",
+            "-173184",
+            "89024",
+            "-28448",
+            "5280",
+            "-448"
+          ],
+          "line_sin4_even": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "line_sin4_odd": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "local_h4_even": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "-192",
+            "1632",
+            "-4832",
+            "5696",
+            "1184",
+            "-12256",
+            "17408",
+            "-13568",
+            "6656",
+            "-2080",
+            "384",
+            "-32"
+          ],
+          "local_h4_odd": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "-1376",
+            "9568",
+            "-25728",
+            "29920",
+            "-352",
+            "-42816",
+            "56832",
+            "-37120",
+            "13344",
+            "-2432",
+            "160"
+          ],
+          "odd": [
+            "0",
+            "0",
+            "0",
+            "-640",
+            "2240",
+            "5568",
+            "-35616",
+            "37856",
+            "97632",
+            "-356160",
+            "525536",
+            "-456000",
+            "249600",
+            "-85344",
+            "16800",
+            "-1472"
+          ],
+          "simultaneous_0_to_2": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "64",
+            "144",
+            "-2912",
+            "10544",
+            "-17648",
+            "13120",
+            "2480",
+            "-14048",
+            "12976",
+            "-6032",
+            "1456",
+            "-144"
+          ]
+        },
+        "primal": {
+          "even": [
+            "0",
+            "0",
+            "0",
+            "32",
+            "0",
+            "192",
+            "-448",
+            "1376",
+            "-6336",
+            "11040",
+            "-6688",
+            "-672",
+            "1664",
+            "224",
+            "-480",
+            "96"
+          ],
+          "line_cos4_even": [
+            "0",
+            "0",
+            "0",
+            "32",
+            "0",
+            "192",
+            "-480",
+            "-800",
+            "2752",
+            "-1696",
+            "-2048",
+            "4096",
+            "-2688",
+            "544",
+            "160",
+            "-64"
+          ],
+          "line_cos4_odd": [
+            "0",
+            "0",
+            "0",
+            "-32",
+            "0",
+            "-192",
+            "672",
+            "1568",
+            "-3456",
+            "-5600",
+            "16896",
+            "-13440",
+            "4160",
+            "-1568",
+            "1440",
+            "-448"
+          ],
+          "line_sin4_even": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "line_sin4_odd": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "local_h4_even": [
+            "0",
+            "0",
+            "0",
+            "32",
+            "-64",
+            "32",
+            "-192",
+            "288",
+            "512",
+            "-1312",
+            "864",
+            "-160",
+            "0",
+            "64",
+            "-96",
+            "32"
+          ],
+          "local_h4_odd": [
+            "0",
+            "0",
+            "0",
+            "-32",
+            "64",
+            "-32",
+            "384",
+            "-160",
+            "-2944",
+            "3744",
+            "5152",
+            "-14624",
+            "12160",
+            "-3904",
+            "32",
+            "160"
+          ],
+          "odd": [
+            "0",
+            "0",
+            "0",
+            "-32",
+            "0",
+            "-192",
+            "672",
+            "-352",
+            "6336",
+            "-23520",
+            "28864",
+            "-11712",
+            "832",
+            "-4704",
+            "5280",
+            "-1472"
+          ],
+          "simultaneous_0_to_2": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "16",
+            "128",
+            "-224",
+            "-1312",
+            "4240",
+            "-4592",
+            "1536",
+            "768",
+            "-704",
+            "144"
+          ]
+        }
+      },
+      "root_sampling": {
+        "multiplicity": 16,
+        "roots": [
+          0
+        ]
+      }
+    }
+  ],
+  "issue": 215,
+  "line_refinement": {
+    "channels": "chi4(ell)S remains complement-even; chi4(ell)D remains complement-odd",
+    "complement": "ell is preserved while the birth gate is exchanged",
+    "simultaneous_boundary": "0_to_2 has no ell and therefore forms an unpolarized even sector; it cancels from D"
+  },
+  "mechanism_inference": {
+    "conditional_hypothesis": "If the global anomalous matching-odd H4 response is carried by the essential-H1 lifetime mode, the line- or landing-marked D channel should couple more directly than the old untyped pivotal mark",
+    "exact_mass": "S and its H4 marks are the canonical matching-even local derivative channel carrying M_prime",
+    "new_odd_field": "D_H4 is a canonical matching-odd local field measuring the derivative of rank-one persistence rather than total matching susceptibility"
+  },
+  "rotation_character": {
+    "C4": "chi4(R_pi/2 ell)=chi4(ell)",
+    "definition": "chi4(ell)=(x+i y)^4/(x^2+y^2)^2",
+    "gaussian_pi_over_4": "chi4((1+i)ell)=-chi4(ell)",
+    "projective_sign": "chi4(-ell)=chi4(ell)",
+    "records": [
+      {
+        "chi4": {
+          "cos4": "1",
+          "sin4": "0"
+        },
+        "chi4_R_pi_over_2": {
+          "cos4": "1",
+          "sin4": "0"
+        },
+        "chi4_minus_vector": {
+          "cos4": "1",
+          "sin4": "0"
+        },
+        "chi4_times_1_plus_i": {
+          "cos4": "-1",
+          "sin4": "0"
+        },
+        "vector": [
+          1,
+          0
+        ]
+      },
+      {
+        "chi4": {
+          "cos4": "-1",
+          "sin4": "0"
+        },
+        "chi4_R_pi_over_2": {
+          "cos4": "-1",
+          "sin4": "0"
+        },
+        "chi4_minus_vector": {
+          "cos4": "-1",
+          "sin4": "0"
+        },
+        "chi4_times_1_plus_i": {
+          "cos4": "1",
+          "sin4": "0"
+        },
+        "vector": [
+          1,
+          1
+        ]
+      },
+      {
+        "chi4": {
+          "cos4": "-7/25",
+          "sin4": "24/25"
+        },
+        "chi4_R_pi_over_2": {
+          "cos4": "-7/25",
+          "sin4": "24/25"
+        },
+        "chi4_minus_vector": {
+          "cos4": "-7/25",
+          "sin4": "24/25"
+        },
+        "chi4_times_1_plus_i": {
+          "cos4": "7/25",
+          "sin4": "-24/25"
+        },
+        "vector": [
+          2,
+          1
+        ]
+      },
+      {
+        "chi4": {
+          "cos4": "-119/169",
+          "sin4": "-120/169"
+        },
+        "chi4_R_pi_over_2": {
+          "cos4": "-119/169",
+          "sin4": "-120/169"
+        },
+        "chi4_minus_vector": {
+          "cos4": "-119/169",
+          "sin4": "-120/169"
+        },
+        "chi4_times_1_plus_i": {
+          "cos4": "119/169",
+          "sin4": "120/169"
+        },
+        "vector": [
+          3,
+          -2
+        ]
+      }
+    ]
+  },
+  "schema": "matching-one/rank-birth-parity-channels/v1",
+  "status": "tiny_exact_complement_parity_oracle"
+}

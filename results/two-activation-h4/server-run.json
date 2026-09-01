@@ -1,0 +1,76 @@
+{
+  "schema": "matching-one.two-activation-h4.server-run.v1",
+  "analysis_schema": "matching-one.two-activation-h4.v1",
+  "status": "completed_existing_data_reanalysis",
+  "source_commit": "a73f1ad117a300edb890f66ecb6dcf8b14022be1",
+  "target": {
+    "name": "DevEnvC_TV2N0X",
+    "id": "4a8d1d443419434889e49148ed0a7ba6",
+    "hostname": "4a8d1d443419434889e49148ed0a7ba6",
+    "declared_vcpus": 16,
+    "observed_online_processors": 16,
+    "declared_memory_gib": 32,
+    "observed_memtotal_kib": 31686880,
+    "workspace_filesystem": "/dev/sda 40G",
+    "remote_root": "/workspace/Matching-One-TV2N0X"
+  },
+  "isolation": {
+    "ssh_alias": "Huawei-CodeBuddy-TV2N0X",
+    "local_loopback_port": 10026,
+    "tunnel_state_directory": "/Users/lc/.codex/state/huawei-codebuddy-tv2n0x/huawei-codebuddy",
+    "existing_ports_reused": false,
+    "other_environment_mutations": false,
+    "other_environment_jobs_inspected": false
+  },
+  "source_transfer": {
+    "github_direct_access_available": false,
+    "mode": "git archive of the exact local Draft-branch commit over the dedicated SSH tunnel",
+    "destination": "/workspace/Matching-One-TV2N0X",
+    "script_sha256": "5ba7b3db2f691c551de375ffc30930b2d9e260d924c4e784da7fa327b8eeecb9",
+    "manifest_sha256": "69025ca601fbae8118d68ca604165720884a60c9b2110f454538c24163d6e0c2",
+    "archive_count": 10
+  },
+  "environment": {
+    "kernel": "Linux 5.10.0-182.0.0.95.r3582_286.hce2.aarch64",
+    "architecture": "aarch64",
+    "python": "3.9.9",
+    "packages": {
+      "PyYAML": "6.0.3",
+      "mpmath": "1.4.1"
+    }
+  },
+  "execution": {
+    "working_directory": "/workspace/Matching-One-TV2N0X",
+    "command": ".venv/bin/python scripts/analyze_two_activation_h4.py --manifest analysis/two_activation_h4_manifest.yaml --output-json remote-output/latest.json --output-md remote-output/latest.md --workers 16",
+    "workers": 16,
+    "started_utc": "2026-08-29T13:40:26Z",
+    "finished_utc": "2026-08-29T13:40:49Z",
+    "real_seconds": 22.69,
+    "user_seconds": 109.74,
+    "sys_seconds": 0.09,
+    "exit_code": 0,
+    "new_monte_carlo_samples": 0
+  },
+  "outputs": {
+    "json": {
+      "remote_path": "/workspace/Matching-One-TV2N0X/remote-output/latest.json",
+      "repository_path": "results/two-activation-h4/latest.json",
+      "sha256": "c3b5e8ae30826aa190e8f1edb02bf527a47fa90113c0255a811f7f4e8068d333",
+      "byte_identical_remote_and_repository": true
+    },
+    "markdown": {
+      "remote_path": "/workspace/Matching-One-TV2N0X/remote-output/latest.md",
+      "repository_path": "results/two-activation-h4/latest.md",
+      "sha256": "2fd6062506a083c363333a65b10f7009dc14ca8cdb3ba13d3bf7a5bfe6b88aab",
+      "byte_identical_remote_and_repository": true
+    }
+  },
+  "verification": {
+    "remote_command": ".venv/bin/python -m unittest discover -s tests -p test_two_activation_h4.py -v",
+    "tests_run": 8,
+    "tests_passed": 8,
+    "tests_failed": 0,
+    "elapsed_seconds": 58.898
+  },
+  "boundary": "Existing archived histograms and joint moments were aggregated only; no new simulation, exponent fit, Issue mutation, PR merge, or history rewrite occurred."
+}

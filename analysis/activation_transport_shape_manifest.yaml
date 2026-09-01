@@ -1,0 +1,34 @@
+schema: matching-one.activation-transport-shape.manifest.v1
+status: retrospective_existing_data_reanalysis
+description: >-
+  Split each existing orientation-normalized K1/K2 activation curve into the
+  unique pooled-density translation tangent with the same integrated area and
+  a strictly zero-area deformation. No new samples or exponent fits.
+
+source_manifest: analysis/two_activation_h4_manifest.yaml
+source_manifest_sha256: 69025ca601fbae8118d68ca604165720884a60c9b2110f454538c24163d6e0c2
+required_sizes: [65, 85, 130, 145, 170, 185, 265, 290, 325, 425]
+
+semantic_contract:
+  K1: K_minus
+  K2: K_plus
+  D_i: (F_i_first - F_i_second) / Delta_cos_4_theta
+  pooled_density: derivative_p_of_(F_i_first_plus_F_i_second)_over_2
+  area_A_i: integral_0^1_D_i_dp
+  translation_T_i: A_i_times_pooled_density
+  deformation_R_i: D_i_minus_T_i
+  exact_integrals: integral_T_i_dp_equals_A_i_and_integral_R_i_dp_equals_0
+  interpretation: >-
+    T_i is the first-order threshold-location translation tangent fixed by the
+    observed area. R_i is all remaining activation-distribution reshaping; it
+    is not by itself a continuum field identification.
+
+quadrature:
+  method: composite_simpson
+  intervals: 128
+  domain: [0.0, 1.0]
+
+dependence:
+  within_N: delete_the_same_batch_from_both_orientations
+  shared_counter_group: delete_the_same_batch_from_every_N_in_the_group
+  cross_group_covariance: zero

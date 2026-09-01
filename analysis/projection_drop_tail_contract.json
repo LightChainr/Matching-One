@@ -1,0 +1,23 @@
+{
+  "schema": "matching-one.projection-drop-tail.contract.v1",
+  "source_commit": "85fd492312b597b3fa102ea913e4bcc7aeae2acf",
+  "histogram_commit": "3ae0d68cdaf4a54420d2b2491f95ffbd16ae09ef",
+  "histogram_directory": "results/p337-closed-source-finite-coupling",
+  "fixed_comparison": "Sdrop=Sstar+r deletes only the already defined m^(-r) projection",
+  "N": 25,
+  "delta_cos4": "1152/625",
+  "variable": "lambda=exp(-t), d=p/((1-p)m)*m^(2/N)",
+  "exact_weight": "d^K lambda^(g-r+2K/N)",
+  "root": "d0=1+O(lambda^(2+2/N)), pooled Q_d tends to N/2",
+  "primary_prediction": "projection-deleted U/A_N has positive leading coefficient3/Delta at exponent42/5; original projected law has negative coefficient-1/Delta at exponent11",
+  "calculation": "sort existing rank1 integer-histogram support by exact rational eta; compute normalized centered-K slope for minimum layer; no root search or new series fit",
+  "slope_coefficient": "E_d leading = sum_min count*(N/2-K)/2; U/A divides its angular contrast by N/2",
+  "theory_family": "axis LxL L>=5 and companion ell1>=L+2: Udrop/A=(L-2)/Delta*lambda^(2L-2+2/L)+O(lambda^(2L-2+4/L))",
+  "new_size_rows": [100, 225],
+  "new_size_status": "theory_prediction_not_new_data",
+  "scope": "fixed_volume_then_strong_coupling_no_uniform_N_limit_or_finite_t_zero_location",
+  "chronology": "specified after the original-source negative tail and fixed counterfactual root law were known, before extracting the counterfactual histogram leading term",
+  "no_new_random_samples": true,
+  "no_new_enumeration": true,
+  "no_fitted_parameters": true
+}

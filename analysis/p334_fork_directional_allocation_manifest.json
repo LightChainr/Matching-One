@@ -1,0 +1,26 @@
+{
+  "schema": "matching-one/p334-fork-directional-allocation-manifest/v1",
+  "status": "post_reveal_zero_new_sample_projection",
+  "source_branch": "experiment/p334-cooperative-closure-pilot-20260830",
+  "source_commit": "6147e22f53902a94e5f133739f2c1d423691d0b8",
+  "source_integration_snapshot": "branch_only",
+  "source_pr_lookup": {"checked_date": "2026-08-31", "head_branch_prs": [], "commit_associated_prs": [], "method": "GitHub head-branch PR list and commit-associated-pulls API"},
+  "production_result_commit": "e81dd59ff6be69056e504e0e81cfeccf73dc5e97",
+  "source_score": "results/local-20260831/P334-cooperative-closure/score.json",
+  "source_score_sha256": "ba51551cecf4feb8e48c7c95f105c38a744476eb625c30504fe9574e176f8d11",
+  "source_freeze": "analysis/p334_cooperative_closure_freeze.json",
+  "new_samples": 0,
+  "covariance_input": "All 22 parent checkpoint-cluster coordinates in each size, retaining paired-direction and cross-metric covariance. Independent sizes are not pooled.",
+  "estimand": "Second-minus-first orientation contrast in the parent's total clone gap Q-S2^2 and its common-gate, between-checkpoint and within-checkpoint components; Q=E_C[sum(c_v^2)/(d*(d-1)^2)] is also displayed separately.",
+  "normalization": "Divide each orientation contrast by the exact rational cos(4 theta_second)-cos(4 theta_first); no exponent fit and no assertion that H4 alone generated the contrast.",
+  "directional_fraction_policy": "Do not report component/total-directional-gap ratios: the task concerns additive responses, and a signed noisy total is not a stable mechanism-allocation denominator.",
+  "dependency_groups": {
+    "N325": "p334-cooperative-N325-20260831",
+    "N425": "p334-cooperative-N425-20260831"
+  },
+  "outputs": {
+    "json": "results/p334-fork-directional-allocation/score.json",
+    "markdown": "results/p334-fork-directional-allocation/REPORT.md"
+  },
+  "claim_boundary": "Exact scalar-state nonclosure is already established by distinct real checkpoints with identical N/orientation/k0/H2/b2/age/ell. This secondary directional projection is not independent evidence, not a new test of that exact theorem, and not an identified H4 continuum mechanism."
+}

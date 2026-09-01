@@ -1,0 +1,30 @@
+{
+  "schema": "matching-one.p398-block-count-measure-contract.v1",
+  "status": "Exploratory fixed candidate specified before computing it; motivated by the already completed eta0 response",
+  "source_commit": "fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40",
+  "source_directory": "experiments/p398-linear-response-20260831",
+  "question": "Does changing join/detach rates act on the stationary measure through block-count fugacity alone?",
+  "width": 8,
+  "candidate": {
+    "finite_form": "pi_eta(x) proportional to pi_0(x)*[(1-eta)/(1+eta)]^B(x), B=number of partition blocks",
+    "score": "g_B(x)=-2*(B(x)-E_pi0 B)",
+    "predicted_pi_prime": "pi0*g_B",
+    "no_fitted_amplitude": true,
+    "status": "hypothesis, not a known stationary law"
+  },
+  "primary_outputs": ["stationary_tangent_equation_residual", "pi0_weighted_score_error", "static_cross_response", "two_zero_frequency_cross_responses", "stationary_contribution_to_old_lag_response"],
+  "sufficiency_diagnostic": {
+    "definition": "g_given_B=E_pi0[pi_prime/pi0 | B]; weighted conditional residual variance tests all block-count-only first-order scores",
+    "boundary": "This conditional projection is a diagnostic using the known true derivative, not an independently predicted or fitted rescue model",
+    "witness": "Two explicitly listed states with equal B and different stationary score, accompanied by their pi0 probabilities"
+  },
+  "calculation": {
+    "baseline": "reuse saved pi0, pi_prime, H, metric, source and full linear responses",
+    "generator": "unchanged pinned construct(8); no stationary solve, no new eta, no finite-difference sweep",
+    "dynamic_terms": "reuse saved true Hprime contribution; replace only stationary metric derivative by the fixed candidate",
+    "timing": "original attempt clock and old lag set, no new root or crossover fitting",
+    "uncertainty": "deterministic float64 finite-state comparison, not Monte Carlo or an exact rational certificate"
+  },
+  "not_claimed": ["square-site matching identification", "CFT field count", "a new microscopic lattice source", "finite-strength validity from first derivative", "independent evidence from correlated readouts"],
+  "outputs": ["results/p398-block-count-measure/latest.json", "results/p398-block-count-measure/REPORT.md"]
+}

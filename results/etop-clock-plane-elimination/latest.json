@@ -1,0 +1,787 @@
+{
+  "alpha": 0.01,
+  "claim_boundary": "This is a covariance-aware linear source decomposition of the measured topology/clock coordinates. The fixed production best-fit coefficients do not directly predict the much more precise P205 rows; survival is after profiling their training uncertainty. The result does not identify C as a continuum primary, equate it with an ordinary local Potts energy field, or prove a unique microscopic mixing law.",
+  "decision": {
+    "A_plus_C": "a common plane survives jointly and under coefficient-uncertainty-profiled P205 prediction",
+    "A_plus_C_plus_W": "does not improve significantly over A_plus_C",
+    "A_plus_W": "survives at alpha .01 but is substantially weaker on P205 transport",
+    "A_ray": "eliminated jointly",
+    "mechanism_update": "one measured clock-plane direction absorbs the apparent E_top ray rotation; the independent prism favors a C-like translation-clock plane over a W-only lifetime plane, without yet fixing universal numerical coefficients"
+  },
+  "fixed_center_sensitivity": {
+    "P205_rows": [
+      {
+        "N": 25,
+        "covariance": [
+          [
+            5.244556903162701e-09,
+            4.042223156267145e-10,
+            -8.543773942799526e-10,
+            -8.920757492065487e-12
+          ],
+          [
+            4.042223156267145e-10,
+            3.29428163299371e-09,
+            -6.769586641679071e-11,
+            -1.017908669944813e-09
+          ],
+          [
+            -8.543773942799526e-10,
+            -6.769586641679071e-11,
+            1.444305757813171e-10,
+            -6.52471581479034e-13
+          ],
+          [
+            -8.920757492065487e-12,
+            -1.017908669944813e-09,
+            -6.52471581479034e-13,
+            3.508710650552201e-10
+          ]
+        ],
+        "estimate": [
+          0.004318745950433243,
+          -0.001130423509554073,
+          -0.00168838631393563,
+          0.0008903742515803063
+        ],
+        "id": "P205-prism-N25",
+        "metric_order": [
+          "P4_A_top",
+          "P4_E_top",
+          "P4_C",
+          "P4_W"
+        ],
+        "replay_AE_max_abs_error": 2.349307248379656e-19
+      },
+      {
+        "N": 50,
+        "covariance": [
+          [
+            9.268458951679047e-09,
+            6.180679270945235e-10,
+            -1.118260144633692e-09,
+            -2.259789382573043e-10
+          ],
+          [
+            6.180679270945235e-10,
+            4.206419379291433e-09,
+            -1.031672142137717e-10,
+            -1.018489579227179e-09
+          ],
+          [
+            -1.118260144633692e-09,
+            -1.031672142137717e-10,
+            1.457990556837584e-10,
+            2.571114693679948e-11
+          ],
+          [
+            -2.259789382573043e-10,
+            -1.018489579227179e-09,
+            2.571114693679948e-11,
+            2.833834837231098e-10
+          ]
+        ],
+        "estimate": [
+          0.001304369897978012,
+          -0.0004200004594443001,
+          -0.0005579459883635167,
+          0.0002112082354643246
+        ],
+        "id": "P205-prism-N50",
+        "metric_order": [
+          "P4_A_top",
+          "P4_E_top",
+          "P4_C",
+          "P4_W"
+        ],
+        "replay_AE_max_abs_error": 5.226067590851943e-20
+      },
+      {
+        "N": 125,
+        "covariance": [
+          [
+            4.517179403961647e-08,
+            7.596674581447816e-10,
+            -3.741324617162597e-09,
+            -1.961073988313634e-10
+          ],
+          [
+            7.596674581447816e-10,
+            1.263207505519436e-08,
+            -1.713117351781302e-10,
+            -2.192831808235498e-09
+          ],
+          [
+            -3.741324617162597e-09,
+            -1.713117351781302e-10,
+            3.354106646323974e-10,
+            1.93736258712888e-11
+          ],
+          [
+            -1.961073988313634e-10,
+            -2.192831808235498e-09,
+            1.93736258712888e-11,
+            5.088550908121916e-10
+          ]
+        ],
+        "estimate": [
+          0.0002300576758381774,
+          -0.0001952256875501715,
+          -0.0001439992953199798,
+          8.031656552474385e-05
+        ],
+        "id": "P205-prism-N125",
+        "metric_order": [
+          "P4_A_top",
+          "P4_E_top",
+          "P4_C",
+          "P4_W"
+        ],
+        "replay_AE_max_abs_error": 9.33220993833459e-21
+      }
+    ],
+    "covariance_semantics": "fixed",
+    "models": {
+      "A_plus_C": {
+        "P205_fixed_production_coefficients": {
+          "chi2": 260.7589741656353,
+          "df": 3,
+          "p": 3.08051923688907e-56,
+          "role": "stress sensitivity; ignores coefficient uncertainty"
+        },
+        "P205_profiled_prediction": {
+          "chi2": 5.226230421384224,
+          "df": 3,
+          "p": 0.1559614507959179
+        },
+        "joint": {
+          "beta": {
+            "P4_A_top": 1.9399121817797673,
+            "P4_C": 5.623904007527003
+          },
+          "chi2": 10.306264315354042,
+          "df": 9,
+          "improvement_over_A_ray": {
+            "delta_chi2": 46.129039163647,
+            "df": 1,
+            "p": 1.107152042281956e-11
+          },
+          "optimizer": {
+            "best_second_gap": 1.13509202037676e-12,
+            "method": "deterministic 5^k multistart Nelder-Mead",
+            "objective_replay_error": 0.0,
+            "starts": 25
+          },
+          "p": 0.3262651113560723
+        },
+        "predictors": [
+          "P4_A_top",
+          "P4_C"
+        ],
+        "production": {
+          "beta": {
+            "P4_A_top": 0.8286890638917261,
+            "P4_C": 3.334175830302386
+          },
+          "chi2": 5.080033893969818,
+          "df": 6,
+          "improvement_over_A_ray": {
+            "delta_chi2": 10.433977545759003,
+            "df": 1,
+            "p": 0.001237180176754579
+          },
+          "optimizer": {
+            "best_second_gap": 9.237055564881302e-14,
+            "method": "deterministic 5^k multistart Nelder-Mead",
+            "objective_replay_error": 0.0,
+            "starts": 25
+          },
+          "p": 0.5335899762759864
+        }
+      },
+      "A_plus_C_plus_W": {
+        "P205_fixed_production_coefficients": {
+          "chi2": 3335.9597557594275,
+          "df": 3,
+          "p": 0.0,
+          "role": "stress sensitivity; ignores coefficient uncertainty"
+        },
+        "P205_profiled_prediction": {
+          "chi2": 4.833255965438626,
+          "df": 3,
+          "p": 0.1844221402830679
+        },
+        "joint": {
+          "beta": {
+            "P4_A_top": 2.5107610329876673,
+            "P4_C": 6.125036543806761,
+            "P4_W": -1.8336544543455942
+          },
+          "chi2": 9.645082191550504,
+          "df": 8,
+          "improvement_over_A_plus_C": {
+            "delta_chi2": 0.6611821238035382,
+            "df": 1,
+            "p": 0.4161429191092116
+          },
+          "improvement_over_A_plus_W": {
+            "delta_chi2": 6.842526773356468,
+            "df": 1,
+            "p": 0.008901284597218645
+          },
+          "optimizer": {
+            "best_second_gap": 2.7000623958883807e-13,
+            "method": "deterministic 5^k multistart Nelder-Mead",
+            "objective_replay_error": 0.0,
+            "starts": 125
+          },
+          "p": 0.2908250901085556
+        },
+        "predictors": [
+          "P4_A_top",
+          "P4_C",
+          "P4_W"
+        ],
+        "production": {
+          "beta": {
+            "P4_A_top": 0.5124104687658853,
+            "P4_C": 1.2883178238830704,
+            "P4_W": -2.9220383831235512
+          },
+          "chi2": 4.811826226111878,
+          "df": 5,
+          "improvement_over_A_plus_C": {
+            "delta_chi2": 0.2682076678579408,
+            "df": 1,
+            "p": 0.6045366256316829
+          },
+          "improvement_over_A_plus_W": {
+            "delta_chi2": 0.48028092173902515,
+            "df": 1,
+            "p": 0.4882950981750081
+          },
+          "optimizer": {
+            "best_second_gap": 4.849454171562684e-13,
+            "method": "deterministic 5^k multistart Nelder-Mead",
+            "objective_replay_error": 0.0,
+            "starts": 125
+          },
+          "p": 0.439274291184827
+        }
+      },
+      "A_plus_W": {
+        "P205_fixed_production_coefficients": {
+          "chi2": 1660.8653248061712,
+          "df": 3,
+          "p": 0.0,
+          "role": "stress sensitivity; ignores coefficient uncertainty"
+        },
+        "P205_profiled_prediction": {
+          "chi2": 11.19550181705607,
+          "df": 3,
+          "p": 0.01071435972875122
+        },
+        "joint": {
+          "beta": {
+            "P4_A_top": -3.908383996673697,
+            "P4_W": 17.844998267525067
+          },
+          "chi2": 16.487608964906972,
+          "df": 9,
+          "improvement_over_A_ray": {
+            "delta_chi2": 39.94769451409407,
+            "df": 1,
+            "p": 2.608552785591363e-10
+          },
+          "optimizer": {
+            "best_second_gap": 1.1404210908949608e-12,
+            "method": "deterministic 5^k multistart Nelder-Mead",
+            "objective_replay_error": 0.0,
+            "starts": 25
+          },
+          "p": 0.05737130575466464
+        },
+        "predictors": [
+          "P4_A_top",
+          "P4_W"
+        ],
+        "production": {
+          "beta": {
+            "P4_A_top": 0.3171746459457062,
+            "P4_W": -4.786642884934658
+          },
+          "chi2": 5.292107147850903,
+          "df": 6,
+          "improvement_over_A_ray": {
+            "delta_chi2": 10.22190429187792,
+            "df": 1,
+            "p": 0.00138782484967605
+          },
+          "optimizer": {
+            "best_second_gap": 1.5205614545266144e-12,
+            "method": "deterministic 5^k multistart Nelder-Mead",
+            "objective_replay_error": 0.0,
+            "starts": 25
+          },
+          "p": 0.5069304787773671
+        }
+      },
+      "A_ray": {
+        "P205_fixed_production_coefficients": {
+          "chi2": 377.51303366563485,
+          "df": 3,
+          "p": 1.643002505256442e-81,
+          "role": "stress sensitivity; ignores coefficient uncertainty"
+        },
+        "P205_profiled_prediction": {
+          "chi2": 40.92129203927222,
+          "df": 3,
+          "p": 6.795443004718337e-09
+        },
+        "joint": {
+          "beta": {
+            "P4_A_top": -0.29562364518642426
+          },
+          "chi2": 56.43530347900104,
+          "df": 10,
+          "optimizer": {
+            "best_second_gap": 8.313350008393172e-13,
+            "method": "deterministic 5^k multistart Nelder-Mead",
+            "objective_replay_error": 0.0,
+            "starts": 5
+          },
+          "p": 1.701315747864967e-08
+        },
+        "predictors": [
+          "P4_A_top"
+        ],
+        "production": {
+          "beta": {
+            "P4_A_top": -0.5918301343917847
+          },
+          "chi2": 15.514011439728822,
+          "df": 7,
+          "optimizer": {
+            "best_second_gap": 8.384404281969182e-13,
+            "method": "deterministic 5^k multistart Nelder-Mead",
+            "objective_replay_error": 0.0,
+            "starts": 5
+          },
+          "p": 0.02994687672112919
+        }
+      }
+    },
+    "provenance": {
+      "existing_result_sha256": "8f44810da02b462ec15936ed5791f26b3def4031d017e9a864256dcc9955252c",
+      "raw_sha256": {
+        "25": {
+          "histogram": "c8c332ee6f6620e17d60af3b760aaf97dfff6c161c72aee40eca906fcb290c76",
+          "metadata": "2d4a6cdee724fa05106eb818a27eece382fd855a883c554fb79fdb592fa19486",
+          "moments": "931f6a98ff4d00d6e7f0856c73bcc7b5a0c9e9cd08f0cab5438523bc5a1f1e23"
+        },
+        "50": {
+          "histogram": "7c1f2604c1a8d386157a8774a69d9836f5cf2a96d89bbbb2fe7cbe05f8c89b88",
+          "metadata": "adb1f6fd84a81b40bbb172a77a5aaff9c6f45f29d0ab0650458c01318cae6450",
+          "moments": "bdb23a0d91398ceca91787aede4396855eb7669cfe046c5512952194059aa4e9"
+        },
+        "125": {
+          "histogram": "5045668f08ae97f71d013d8ab299df13378c3d2ba1e8b17309e64ea822607f4f",
+          "metadata": "7947e405ce82af46e737ac9ad8ce12f2cbefed3bc562688938faeafa0957ff22",
+          "moments": "5e58910c23f7b37773c436fc6a85c68e39377dafeaf4fa968a49d96124faa82c"
+        }
+      }
+    }
+  },
+  "primary": {
+    "P205_rows": [
+      {
+        "N": 25,
+        "covariance": [
+          [
+            5.243155695458079e-09,
+            4.095732104335504e-10,
+            -8.541936068420429e-10,
+            -9.274089627798882e-12
+          ],
+          [
+            4.095732104335504e-10,
+            3.282822304074029e-09,
+            -6.886283470167701e-11,
+            -1.015665168424135e-09
+          ],
+          [
+            -8.541936068420429e-10,
+            -6.886283470167701e-11,
+            1.444305757813171e-10,
+            -6.52471581479034e-13
+          ],
+          [
+            -9.274089627798882e-12,
+            -1.015665168424135e-09,
+            -6.52471581479034e-13,
+            3.508710650552201e-10
+          ]
+        ],
+        "estimate": [
+          0.004318745950433243,
+          -0.001130423509554073,
+          -0.00168838631393563,
+          0.0008903742515803063
+        ],
+        "id": "P205-prism-N25",
+        "metric_order": [
+          "P4_A_top",
+          "P4_E_top",
+          "P4_C",
+          "P4_W"
+        ],
+        "replay_AE_max_abs_error": 2.349307248379656e-19
+      },
+      {
+        "N": 50,
+        "covariance": [
+          [
+            9.267717532982555e-09,
+            6.204697878785821e-10,
+            -1.11820425108616e-09,
+            -2.25875925006998e-10
+          ],
+          [
+            6.204697878785821e-10,
+            4.211406465259262e-09,
+            -1.035802326201966e-10,
+            -1.019250782807207e-09
+          ],
+          [
+            -1.11820425108616e-09,
+            -1.035802326201966e-10,
+            1.457990556837584e-10,
+            2.571114693679948e-11
+          ],
+          [
+            -2.25875925006998e-10,
+            -1.019250782807207e-09,
+            2.571114693679948e-11,
+            2.833834837231098e-10
+          ]
+        ],
+        "estimate": [
+          0.001304369897978012,
+          -0.0004200004594443001,
+          -0.0005579459883635167,
+          0.0002112082354643246
+        ],
+        "id": "P205-prism-N50",
+        "metric_order": [
+          "P4_A_top",
+          "P4_E_top",
+          "P4_C",
+          "P4_W"
+        ],
+        "replay_AE_max_abs_error": 5.226067590851943e-20
+      },
+      {
+        "N": 125,
+        "covariance": [
+          [
+            4.517145640127489e-08,
+            7.607384652007492e-10,
+            -3.741324905867109e-09,
+            -1.96155911055112e-10
+          ],
+          [
+            7.607384652007492e-10,
+            1.262999407711704e-08,
+            -1.713102493490205e-10,
+            -2.192582138170824e-09
+          ],
+          [
+            -3.741324905867109e-09,
+            -1.713102493490205e-10,
+            3.354106646323974e-10,
+            1.93736258712888e-11
+          ],
+          [
+            -1.96155911055112e-10,
+            -2.192582138170824e-09,
+            1.93736258712888e-11,
+            5.088550908121916e-10
+          ]
+        ],
+        "estimate": [
+          0.0002300576758381774,
+          -0.0001952256875501715,
+          -0.0001439992953199798,
+          8.031656552474385e-05
+        ],
+        "id": "P205-prism-N125",
+        "metric_order": [
+          "P4_A_top",
+          "P4_E_top",
+          "P4_C",
+          "P4_W"
+        ],
+        "replay_AE_max_abs_error": 9.33220993833459e-21
+      }
+    ],
+    "covariance_semantics": "intrinsic",
+    "models": {
+      "A_plus_C": {
+        "P205_fixed_production_coefficients": {
+          "chi2": 261.6039200554648,
+          "df": 3,
+          "p": 2.022289978439186e-56,
+          "role": "stress sensitivity; ignores coefficient uncertainty"
+        },
+        "P205_profiled_prediction": {
+          "chi2": 5.226160708383552,
+          "df": 3,
+          "p": 0.1559661116201297
+        },
+        "joint": {
+          "beta": {
+            "P4_A_top": 1.9396239439461271,
+            "P4_C": 5.623187047196884
+          },
+          "chi2": 10.305948019202837,
+          "df": 9,
+          "improvement_over_A_ray": {
+            "delta_chi2": 46.14372733636501,
+            "df": 1,
+            "p": 1.098882742184554e-11
+          },
+          "optimizer": {
+            "best_second_gap": 2.5934809855243657e-13,
+            "method": "deterministic 5^k multistart Nelder-Mead",
+            "objective_replay_error": 0.0,
+            "starts": 25
+          },
+          "p": 0.3262895289741661
+        },
+        "predictors": [
+          "P4_A_top",
+          "P4_C"
+        ],
+        "production": {
+          "beta": {
+            "P4_A_top": 0.8287127431200354,
+            "P4_C": 3.334261982589098
+          },
+          "chi2": 5.0797873108192855,
+          "df": 6,
+          "improvement_over_A_ray": {
+            "delta_chi2": 10.434937710357548,
+            "df": 1,
+            "p": 0.001236537182435891
+          },
+          "optimizer": {
+            "best_second_gap": 9.698908343125368e-13,
+            "method": "deterministic 5^k multistart Nelder-Mead",
+            "objective_replay_error": 0.0,
+            "starts": 25
+          },
+          "p": 0.5336213428424905
+        }
+      },
+      "A_plus_C_plus_W": {
+        "P205_fixed_production_coefficients": {
+          "chi2": 3334.6948973145595,
+          "df": 3,
+          "p": 0.0,
+          "role": "stress sensitivity; ignores coefficient uncertainty"
+        },
+        "P205_profiled_prediction": {
+          "chi2": 4.832896271736429,
+          "df": 3,
+          "p": 0.1844502894517251
+        },
+        "joint": {
+          "beta": {
+            "P4_A_top": 2.5106017093335473,
+            "P4_C": 6.124556568176478,
+            "P4_W": -1.8337912594374202
+          },
+          "chi2": 9.644702926389998,
+          "df": 8,
+          "improvement_over_A_plus_C": {
+            "delta_chi2": 0.6612450928128393,
+            "df": 1,
+            "p": 0.4161207225670423
+          },
+          "improvement_over_A_plus_W": {
+            "delta_chi2": 6.842735244903659,
+            "df": 1,
+            "p": 0.008900245905065845
+          },
+          "optimizer": {
+            "best_second_gap": 1.0658141036401503e-13,
+            "method": "deterministic 5^k multistart Nelder-Mead",
+            "objective_replay_error": 0.0,
+            "starts": 125
+          },
+          "p": 0.2908536135610003
+        },
+        "predictors": [
+          "P4_A_top",
+          "P4_C",
+          "P4_W"
+        ],
+        "production": {
+          "beta": {
+            "P4_A_top": 0.5125316329284697,
+            "P4_C": 1.2889652097750655,
+            "P4_W": -2.9212689319957432
+          },
+          "chi2": 4.811806654653569,
+          "df": 5,
+          "improvement_over_A_plus_C": {
+            "delta_chi2": 0.2679806561657161,
+            "df": 1,
+            "p": 0.6046895929726973
+          },
+          "improvement_over_A_plus_W": {
+            "delta_chi2": 0.48041288654209957,
+            "df": 1,
+            "p": 0.4882353554980905
+          },
+          "optimizer": {
+            "best_second_gap": 3.161915174132446e-13,
+            "method": "deterministic 5^k multistart Nelder-Mead",
+            "objective_replay_error": 0.0,
+            "starts": 125
+          },
+          "p": 0.4392767686234938
+        }
+      },
+      "A_plus_W": {
+        "P205_fixed_production_coefficients": {
+          "chi2": 1654.205983336989,
+          "df": 3,
+          "p": 0.0,
+          "role": "stress sensitivity; ignores coefficient uncertainty"
+        },
+        "P205_profiled_prediction": {
+          "chi2": 11.195218630097989,
+          "df": 3,
+          "p": 0.0107157608017599
+        },
+        "joint": {
+          "beta": {
+            "P4_A_top": -3.9078350769243757,
+            "P4_W": 17.842264077599523
+          },
+          "chi2": 16.487438171293658,
+          "df": 9,
+          "improvement_over_A_ray": {
+            "delta_chi2": 39.96223718427419,
+            "df": 1,
+            "p": 2.589203753337245e-10
+          },
+          "optimizer": {
+            "best_second_gap": 1.4068746168049984e-12,
+            "method": "deterministic 5^k multistart Nelder-Mead",
+            "objective_replay_error": 0.0,
+            "starts": 25
+          },
+          "p": 0.0573744104296546
+        },
+        "predictors": [
+          "P4_A_top",
+          "P4_W"
+        ],
+        "production": {
+          "beta": {
+            "P4_A_top": 0.3171927036592288,
+            "P4_W": -4.78676029323001
+          },
+          "chi2": 5.292219541195669,
+          "df": 6,
+          "improvement_over_A_ray": {
+            "delta_chi2": 10.222505479981166,
+            "df": 1,
+            "p": 0.001387372551779968
+          },
+          "optimizer": {
+            "best_second_gap": 6.759037773917953e-13,
+            "method": "deterministic 5^k multistart Nelder-Mead",
+            "objective_replay_error": 0.0,
+            "starts": 25
+          },
+          "p": 0.5069165244654977
+        }
+      },
+      "A_ray": {
+        "P205_fixed_production_coefficients": {
+          "chi2": 377.87083890925305,
+          "df": 3,
+          "p": 1.374505358228342e-81,
+          "role": "stress sensitivity; ignores coefficient uncertainty"
+        },
+        "P205_profiled_prediction": {
+          "chi2": 40.93495033439101,
+          "df": 3,
+          "p": 6.750268887781641e-09
+        },
+        "joint": {
+          "beta": {
+            "P4_A_top": -0.2955649495124817
+          },
+          "chi2": 56.44967535556785,
+          "df": 10,
+          "optimizer": {
+            "best_second_gap": 1.1581846592889633e-12,
+            "method": "deterministic 5^k multistart Nelder-Mead",
+            "objective_replay_error": 0.0,
+            "starts": 5
+          },
+          "p": 1.690790150967187e-08
+        },
+        "predictors": [
+          "P4_A_top"
+        ],
+        "production": {
+          "beta": {
+            "P4_A_top": -0.5918349027633667
+          },
+          "chi2": 15.514725021176835,
+          "df": 7,
+          "optimizer": {
+            "best_second_gap": 1.1528555887707626e-12,
+            "method": "deterministic 5^k multistart Nelder-Mead",
+            "objective_replay_error": 0.0,
+            "starts": 5
+          },
+          "p": 0.02993918195650441
+        }
+      }
+    },
+    "provenance": {
+      "existing_result_sha256": "8f44810da02b462ec15936ed5791f26b3def4031d017e9a864256dcc9955252c",
+      "raw_sha256": {
+        "25": {
+          "histogram": "c8c332ee6f6620e17d60af3b760aaf97dfff6c161c72aee40eca906fcb290c76",
+          "metadata": "2d4a6cdee724fa05106eb818a27eece382fd855a883c554fb79fdb592fa19486",
+          "moments": "931f6a98ff4d00d6e7f0856c73bcc7b5a0c9e9cd08f0cab5438523bc5a1f1e23"
+        },
+        "50": {
+          "histogram": "7c1f2604c1a8d386157a8774a69d9836f5cf2a96d89bbbb2fe7cbe05f8c89b88",
+          "metadata": "adb1f6fd84a81b40bbb172a77a5aaff9c6f45f29d0ab0650458c01318cae6450",
+          "moments": "bdb23a0d91398ceca91787aede4396855eb7669cfe046c5512952194059aa4e9"
+        },
+        "125": {
+          "histogram": "5045668f08ae97f71d013d8ab299df13378c3d2ba1e8b17309e64ea822607f4f",
+          "metadata": "7947e405ce82af46e737ac9ad8ce12f2cbefed3bc562688938faeafa0957ff22",
+          "moments": "5e58910c23f7b37773c436fc6a85c68e39377dafeaf4fa968a49d96124faa82c"
+        }
+      }
+    }
+  },
+  "question": "does a measured C/W clock-plane coordinate explain the cross-geometry A_top/E_top ray failure, and does that explanation transport to the independent P205 prism?",
+  "schema": "matching-one/etop-clock-plane-elimination/v1",
+  "source": {
+    "P205_existing_result": "results/etop-p205-quotient-ray-test/latest.json",
+    "production_crosswalk": "results/rank-plane-crosswalk/latest.json",
+    "production_crosswalk_sha256": "d3739f34c0ba982edea580d71990deb1e2ef24f292c7497b31b2346e14a8c299"
+  },
+  "status": "zero_new_sample_production_plus_independent_archive_analysis"
+}

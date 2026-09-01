@@ -1,0 +1,22 @@
+schema: matching-one.euler-occupancy-clock-manifest.v1
+status: existing_data_reanalysis_no_new_samples
+source_commit: 48a8818047bfcbdbe3ef3af5466463d12dd89fa3
+dependency_group: external-euler-n325-n425
+semantic_note: n_occ_is_preinsertion_occupation_count_not_activation_K1_or_K2
+runs:
+  - N: 325
+    path: results/server-20260830/P267-target1-external-Euler-2m/raw-summary/N325_2m/N325_2m.path.csv.gz
+    sha256: 0715032f7014ed6ba4e296cdd8b13f92a82a5ea4ec1d038d027b6bfc8624bb7c
+    period_matrices: [[[17, -6], [6, 17]], [[18, -1], [1, 18]]]
+    batches: 100
+    samples: 2000000
+  - N: 425
+    path: results/server-20260830/P267-target1-external-Euler-2m/raw-summary/N425_2m/N425_2m.path.csv.gz
+    sha256: 797dac83ec998d9bd584a18cf8cccaa180ad3041222f10125b3090569b5c566a
+    period_matrices: [[[16, -13], [13, 16]], [[19, -8], [8, 19]]]
+    batches: 100
+    samples: 2000000
+claim_boundary:
+  - exact_mu_ext_and_exact_root_absent_mu_near_apply_only_to_the_declared_locally_injective_square_period_quotients
+  - fixed_n_occ_source_means_and_every_beta_are_recomputed_inside_each_aligned_delete_one_replicate
+  - all_rows_are_correlated_views_of_one_two_size_dependency_group_not_independent_evidence

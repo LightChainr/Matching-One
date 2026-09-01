@@ -1,0 +1,18 @@
+{
+  "schema": "matching-one.local-pair-two-insertion.contract.v1",
+  "question": "Does the already specified C4-averaged local pair tensor have a regular two-insertion Q1 continuation in every physical exterior?",
+  "acquisition": "exact symbolic closure and one explicit occupied graph, not stochastic confirmation or a source search",
+  "selection_history": "The fixed-cut Frobenius closure was symbolically explored before this recorded script; this is a reproducible exact derivation, not a prospective empirical test.",
+  "kernel_source": {"commit": "9dc3c4269c1c44a0a0a82b15f8cd13f922a8b2d4", "path": "notes/closed-source-local-four-port-pair-kernel.md", "status": "branch_only"},
+  "completed_linear_response": {"commit": "923f66b979a6b6132875f783106c041ed3c0c1a9", "path": "notes/local-four-port-transmission-result.md", "value": 0.0018155512845251097, "units": "site-average source", "status": "branch_only"},
+  "tensor": "Kbar(a,b,c,d)=[Pi2(a,b;c,d)+Pi2(b,c;d,a)]/2",
+  "fixed_contraction": "G(Q)=sum_abcd Kbar(a,b,c,d)^2; four disjoint exterior occupied paths implement the required reflected gluing",
+  "integer_colour_method": "15 exact equality patterns weighted by falling factorial (Q)_number_of_blocks, followed by rational continuation",
+  "physical_witness": {"L": 17, "holes": [[3,4],[11,4]], "paths": "direct E-W at y4; N-N via y6; S-S via y2; W-E via x1,y8,x13; other vertices vacant"},
+  "conditional_partition_without_spectator_factor": "Q^4+(v_x+v_y+v_x*v_y)*Q+epsilon_x*epsilon_y*G(Q)",
+  "decision": "A nonremovable mixed log-partition pole excludes a regular unrenormalized finite-strength Q1 local tensor family in all physical conditional exteriors. It does not negate the completed single-insertion response or prove a pole in the fully summed homogeneous partition.",
+  "outputs": ["latest.json", "REPORT.md", "run.json"],
+  "new_occupation_enumerations": 0,
+  "new_random_samples": 0,
+  "cloud_jobs": 0
+}

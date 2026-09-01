@@ -1,0 +1,4890 @@
+{
+  "schema": "matching-one/z5-projective-leg-augmented-joint-score/v2",
+  "status": "existing_data_old_plus_degree5_joint_operator",
+  "operator": {
+    "old_matrix_shape": [
+      24,
+      6
+    ],
+    "extension_matrix_shape": [
+      16,
+      6
+    ],
+    "augmented_matrix_shape": [
+      40,
+      6
+    ],
+    "rank_null": "rank<=5",
+    "residual": "19 old plus 16 extension complex Schur coordinates, realified to 70",
+    "pivot_policy": "candidate-specific pivot rows and columns frozen from 99d23a7; never reselected with fresh data or inside delete-one recomputation"
+  },
+  "candidate_maps": {
+    "orientation_preserving_R0_linear": {
+      "scope": "secondary_retrospective_joint_manifest",
+      "radius5_alias": null,
+      "alexander_reflection": false,
+      "rotation_power": 0,
+      "coefficient_conjugation": false,
+      "matrix_shape": [
+        40,
+        6
+      ],
+      "old_matrix_shape": [
+        24,
+        6
+      ],
+      "extension_matrix_shape": [
+        16,
+        6
+      ],
+      "rank_null": "rank(candidate_mapped_old_plus_degree5_operator)<=5",
+      "frozen_old_pivot": {
+        "rows": [
+          0,
+          6,
+          8,
+          18,
+          19
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "abs_determinant": 2.886445105325736e-12,
+        "condition_number": 133.19704033337172
+      },
+      "projective_q": [
+        {
+          "re": 0.01196573004311931,
+          "im": 0.012080252733516083,
+          "abs": 0.017003270319865846
+        },
+        {
+          "re": -0.3866186828962247,
+          "im": 0.15909934345703047,
+          "abs": 0.41807488211188876
+        },
+        {
+          "re": 0.15224978503544193,
+          "im": -0.04763269582343929,
+          "abs": 0.15952702202055477
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": -0.460948930635039,
+          "im": -0.21888093961950397,
+          "abs": 0.5102771623170127
+        },
+        {
+          "re": 0.10044013546119793,
+          "im": -0.1213156771876023,
+          "abs": 0.1574982994922495
+        }
+      ],
+      "residual_order": [
+        "plus:r1:u(1,0):re",
+        "plus:r1:u(1,0):im",
+        "plus:r1:u(0,1):re",
+        "plus:r1:u(0,1):im",
+        "plus:r1:u(2,0):re",
+        "plus:r1:u(2,0):im",
+        "plus:r1:u(1,1):re",
+        "plus:r1:u(1,1):im",
+        "plus:r1:u(0,2):re",
+        "plus:r1:u(0,2):im",
+        "plus:r2:u(1,0):re",
+        "plus:r2:u(1,0):im",
+        "plus:r2:u(2,0):re",
+        "plus:r2:u(2,0):im",
+        "plus:r2:u(1,1):re",
+        "plus:r2:u(1,1):im",
+        "plus:r2:u(0,2):re",
+        "plus:r2:u(0,2):im",
+        "minus:r1:u(0,0):re",
+        "minus:r1:u(0,0):im",
+        "minus:r1:u(1,0):re",
+        "minus:r1:u(1,0):im",
+        "minus:r1:u(0,1):re",
+        "minus:r1:u(0,1):im",
+        "minus:r1:u(2,0):re",
+        "minus:r1:u(2,0):im",
+        "minus:r1:u(1,1):re",
+        "minus:r1:u(1,1):im",
+        "minus:r1:u(0,2):re",
+        "minus:r1:u(0,2):im",
+        "minus:r2:u(0,1):re",
+        "minus:r2:u(0,1):im",
+        "minus:r2:u(2,0):re",
+        "minus:r2:u(2,0):im",
+        "minus:r2:u(1,1):re",
+        "minus:r2:u(1,1):im",
+        "minus:r2:u(0,2):re",
+        "minus:r2:u(0,2):im",
+        "extension:plus:r1:u3(3,0):re",
+        "extension:plus:r1:u3(3,0):im",
+        "extension:plus:r1:u3(2,1):re",
+        "extension:plus:r1:u3(2,1):im",
+        "extension:plus:r1:u3(1,2):re",
+        "extension:plus:r1:u3(1,2):im",
+        "extension:plus:r1:u3(0,3):re",
+        "extension:plus:r1:u3(0,3):im",
+        "extension:plus:r2:u3(3,0):re",
+        "extension:plus:r2:u3(3,0):im",
+        "extension:plus:r2:u3(2,1):re",
+        "extension:plus:r2:u3(2,1):im",
+        "extension:plus:r2:u3(1,2):re",
+        "extension:plus:r2:u3(1,2):im",
+        "extension:plus:r2:u3(0,3):re",
+        "extension:plus:r2:u3(0,3):im",
+        "extension:minus:r1:u3(3,0):re",
+        "extension:minus:r1:u3(3,0):im",
+        "extension:minus:r1:u3(2,1):re",
+        "extension:minus:r1:u3(2,1):im",
+        "extension:minus:r1:u3(1,2):re",
+        "extension:minus:r1:u3(1,2):im",
+        "extension:minus:r1:u3(0,3):re",
+        "extension:minus:r1:u3(0,3):im",
+        "extension:minus:r2:u3(3,0):re",
+        "extension:minus:r2:u3(3,0):im",
+        "extension:minus:r2:u3(2,1):re",
+        "extension:minus:r2:u3(2,1):im",
+        "extension:minus:r2:u3(1,2):re",
+        "extension:minus:r2:u3(1,2):im",
+        "extension:minus:r2:u3(0,3):re",
+        "extension:minus:r2:u3(0,3):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 38,
+        "old_point_max_abs_difference": 2.168404344971009e-19,
+        "old_covariance_max_abs_difference": 3.639594695233322e-22,
+        "fresh_contribution_to_old_block_max_abs": 2.1054408621956716e-32
+      },
+      "joint_score": {
+        "covariance_identity_max_abs_error": 4.1359030627651384e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 70,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 227.46011560242735,
+        "asymptotic_degrees_of_freedom": 70,
+        "asymptotic_survival_p": 1.5462226602763222e-18,
+        "finite_batch_Hotelling_F": 2.6874986805872187,
+        "finite_batch_numerator_df": 70,
+        "finite_batch_denominator_df": 330,
+        "finite_batch_survival_p": 1.966688625217432e-09,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "joint__orientation_preserving_R0_linear__point",
+          "old": "joint__orientation_preserving_R0_linear__old_covariance",
+          "fresh": "joint__orientation_preserving_R0_linear__fresh_covariance",
+          "total": "derive `joint__orientation_preserving_R0_linear__old_covariance + joint__orientation_preserving_R0_linear__fresh_covariance`",
+          "correlation_eigenvalues": "joint__orientation_preserving_R0_linear__correlation_eigenvalues"
+        }
+      },
+      "decision_alpha": 0.01,
+      "decision": "rejected",
+      "hand_specific_support_refs": {
+        "plus": "plus_source",
+        "minus": "minus_orientation_R0"
+      }
+    },
+    "orientation_preserving_R0_conjugate": {
+      "scope": "primary_retrospective_fixed_map",
+      "radius5_alias": "identity_conjugation",
+      "alexander_reflection": false,
+      "rotation_power": 0,
+      "coefficient_conjugation": true,
+      "matrix_shape": [
+        40,
+        6
+      ],
+      "old_matrix_shape": [
+        24,
+        6
+      ],
+      "extension_matrix_shape": [
+        16,
+        6
+      ],
+      "rank_null": "rank(candidate_mapped_old_plus_degree5_operator)<=5",
+      "frozen_old_pivot": {
+        "rows": [
+          6,
+          8,
+          9,
+          12,
+          13
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "abs_determinant": 2.692276288967576e-12,
+        "condition_number": 99.18315328236189
+      },
+      "projective_q": [
+        {
+          "re": 0.002478515489248643,
+          "im": 0.004906786810088355,
+          "abs": 0.005497235289679939
+        },
+        {
+          "re": -0.4627108039755092,
+          "im": 0.061125724324978516,
+          "abs": 0.4667308028081234
+        },
+        {
+          "re": 0.029208206174443172,
+          "im": -0.04157978202464464,
+          "abs": 0.05081336026229462
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": -0.019999310450228673,
+          "im": -0.10454549435282758,
+          "abs": 0.10644121761780878
+        },
+        {
+          "re": 0.022921026811129404,
+          "im": 0.041228127165449505,
+          "abs": 0.04717130419701143
+        }
+      ],
+      "residual_order": [
+        "plus:r1:u(0,0):conjugated:re",
+        "plus:r1:u(0,0):conjugated:im",
+        "plus:r1:u(1,0):conjugated:re",
+        "plus:r1:u(1,0):conjugated:im",
+        "plus:r1:u(0,1):conjugated:re",
+        "plus:r1:u(0,1):conjugated:im",
+        "plus:r1:u(2,0):conjugated:re",
+        "plus:r1:u(2,0):conjugated:im",
+        "plus:r1:u(1,1):conjugated:re",
+        "plus:r1:u(1,1):conjugated:im",
+        "plus:r1:u(0,2):conjugated:re",
+        "plus:r1:u(0,2):conjugated:im",
+        "plus:r2:u(1,0):conjugated:re",
+        "plus:r2:u(1,0):conjugated:im",
+        "plus:r2:u(1,1):conjugated:re",
+        "plus:r2:u(1,1):conjugated:im",
+        "plus:r2:u(0,2):conjugated:re",
+        "plus:r2:u(0,2):conjugated:im",
+        "minus:r1:u(0,1):re",
+        "minus:r1:u(0,1):im",
+        "minus:r1:u(2,0):re",
+        "minus:r1:u(2,0):im",
+        "minus:r1:u(1,1):re",
+        "minus:r1:u(1,1):im",
+        "minus:r1:u(0,2):re",
+        "minus:r1:u(0,2):im",
+        "minus:r2:u(0,0):re",
+        "minus:r2:u(0,0):im",
+        "minus:r2:u(1,0):re",
+        "minus:r2:u(1,0):im",
+        "minus:r2:u(0,1):re",
+        "minus:r2:u(0,1):im",
+        "minus:r2:u(2,0):re",
+        "minus:r2:u(2,0):im",
+        "minus:r2:u(1,1):re",
+        "minus:r2:u(1,1):im",
+        "minus:r2:u(0,2):re",
+        "minus:r2:u(0,2):im",
+        "extension:plus:r1:u3(3,0):conjugated:re",
+        "extension:plus:r1:u3(3,0):conjugated:im",
+        "extension:plus:r1:u3(2,1):conjugated:re",
+        "extension:plus:r1:u3(2,1):conjugated:im",
+        "extension:plus:r1:u3(1,2):conjugated:re",
+        "extension:plus:r1:u3(1,2):conjugated:im",
+        "extension:plus:r1:u3(0,3):conjugated:re",
+        "extension:plus:r1:u3(0,3):conjugated:im",
+        "extension:plus:r2:u3(3,0):conjugated:re",
+        "extension:plus:r2:u3(3,0):conjugated:im",
+        "extension:plus:r2:u3(2,1):conjugated:re",
+        "extension:plus:r2:u3(2,1):conjugated:im",
+        "extension:plus:r2:u3(1,2):conjugated:re",
+        "extension:plus:r2:u3(1,2):conjugated:im",
+        "extension:plus:r2:u3(0,3):conjugated:re",
+        "extension:plus:r2:u3(0,3):conjugated:im",
+        "extension:minus:r1:u3(3,0):re",
+        "extension:minus:r1:u3(3,0):im",
+        "extension:minus:r1:u3(2,1):re",
+        "extension:minus:r1:u3(2,1):im",
+        "extension:minus:r1:u3(1,2):re",
+        "extension:minus:r1:u3(1,2):im",
+        "extension:minus:r1:u3(0,3):re",
+        "extension:minus:r1:u3(0,3):im",
+        "extension:minus:r2:u3(3,0):re",
+        "extension:minus:r2:u3(3,0):im",
+        "extension:minus:r2:u3(2,1):re",
+        "extension:minus:r2:u3(2,1):im",
+        "extension:minus:r2:u3(1,2):re",
+        "extension:minus:r2:u3(1,2):im",
+        "extension:minus:r2:u3(0,3):re",
+        "extension:minus:r2:u3(0,3):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 38,
+        "old_point_max_abs_difference": 4.336808689942018e-19,
+        "old_covariance_max_abs_difference": 3.970466940254533e-22,
+        "fresh_contribution_to_old_block_max_abs": 9.080270682135889e-33
+      },
+      "joint_score": {
+        "covariance_identity_max_abs_error": 3.308722450212111e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 70,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 290.59476133387733,
+        "asymptotic_degrees_of_freedom": 70,
+        "asymptotic_survival_p": 1.1464593926232118e-28,
+        "finite_batch_Hotelling_F": 3.4334504561467782,
+        "finite_batch_numerator_df": 70,
+        "finite_batch_denominator_df": 330,
+        "finite_batch_survival_p": 3.669966473111187e-14,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "joint__orientation_preserving_R0_conjugate__point",
+          "old": "joint__orientation_preserving_R0_conjugate__old_covariance",
+          "fresh": "joint__orientation_preserving_R0_conjugate__fresh_covariance",
+          "total": "derive `joint__orientation_preserving_R0_conjugate__old_covariance + joint__orientation_preserving_R0_conjugate__fresh_covariance`",
+          "correlation_eigenvalues": "joint__orientation_preserving_R0_conjugate__correlation_eigenvalues"
+        }
+      },
+      "decision_alpha": 0.01,
+      "decision": "rejected",
+      "hand_specific_support_refs": {
+        "plus": "plus_source",
+        "minus": "minus_orientation_R0"
+      }
+    },
+    "orientation_preserving_R1_linear": {
+      "scope": "secondary_retrospective_joint_manifest",
+      "radius5_alias": null,
+      "alexander_reflection": false,
+      "rotation_power": 1,
+      "coefficient_conjugation": false,
+      "matrix_shape": [
+        40,
+        6
+      ],
+      "old_matrix_shape": [
+        24,
+        6
+      ],
+      "extension_matrix_shape": [
+        16,
+        6
+      ],
+      "rank_null": "rank(candidate_mapped_old_plus_degree5_operator)<=5",
+      "frozen_old_pivot": {
+        "rows": [
+          0,
+          9,
+          12,
+          13,
+          14
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "abs_determinant": 4.879007679617852e-12,
+        "condition_number": 92.62811875789966
+      },
+      "projective_q": [
+        {
+          "re": 0.011626611538915126,
+          "im": 0.0003392540584188654,
+          "abs": 0.011631560049838029
+        },
+        {
+          "re": -0.37633095443612324,
+          "im": -0.06692438270611988,
+          "abs": 0.3822353467006926
+        },
+        {
+          "re": 0.009257125744131327,
+          "im": 0.07410104111357722,
+          "abs": 0.07467702907292657
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": -0.23412674860601704,
+          "im": -0.08274154816051943,
+          "abs": 0.24831733367774522
+        },
+        {
+          "re": 0.08639982452896613,
+          "im": 0.04050063299343337,
+          "abs": 0.09542133383842903
+        }
+      ],
+      "residual_order": [
+        "plus:r1:u(1,0):re",
+        "plus:r1:u(1,0):im",
+        "plus:r1:u(0,1):re",
+        "plus:r1:u(0,1):im",
+        "plus:r1:u(2,0):re",
+        "plus:r1:u(2,0):im",
+        "plus:r1:u(1,1):re",
+        "plus:r1:u(1,1):im",
+        "plus:r1:u(0,2):re",
+        "plus:r1:u(0,2):im",
+        "plus:r2:u(0,0):re",
+        "plus:r2:u(0,0):im",
+        "plus:r2:u(1,0):re",
+        "plus:r2:u(1,0):im",
+        "plus:r2:u(0,1):re",
+        "plus:r2:u(0,1):im",
+        "plus:r2:u(1,1):re",
+        "plus:r2:u(1,1):im",
+        "plus:r2:u(0,2):re",
+        "plus:r2:u(0,2):im",
+        "minus:r1:u(0,2):re",
+        "minus:r1:u(0,2):im",
+        "minus:r1:u(-1,1):re",
+        "minus:r1:u(-1,1):im",
+        "minus:r1:u(-2,0):re",
+        "minus:r1:u(-2,0):im",
+        "minus:r2:u(0,0):re",
+        "minus:r2:u(0,0):im",
+        "minus:r2:u(0,1):re",
+        "minus:r2:u(0,1):im",
+        "minus:r2:u(-1,0):re",
+        "minus:r2:u(-1,0):im",
+        "minus:r2:u(0,2):re",
+        "minus:r2:u(0,2):im",
+        "minus:r2:u(-1,1):re",
+        "minus:r2:u(-1,1):im",
+        "minus:r2:u(-2,0):re",
+        "minus:r2:u(-2,0):im",
+        "extension:plus:r1:u3(3,0):re",
+        "extension:plus:r1:u3(3,0):im",
+        "extension:plus:r1:u3(2,1):re",
+        "extension:plus:r1:u3(2,1):im",
+        "extension:plus:r1:u3(1,2):re",
+        "extension:plus:r1:u3(1,2):im",
+        "extension:plus:r1:u3(0,3):re",
+        "extension:plus:r1:u3(0,3):im",
+        "extension:plus:r2:u3(3,0):re",
+        "extension:plus:r2:u3(3,0):im",
+        "extension:plus:r2:u3(2,1):re",
+        "extension:plus:r2:u3(2,1):im",
+        "extension:plus:r2:u3(1,2):re",
+        "extension:plus:r2:u3(1,2):im",
+        "extension:plus:r2:u3(0,3):re",
+        "extension:plus:r2:u3(0,3):im",
+        "extension:minus:r1:u3(0,3):re",
+        "extension:minus:r1:u3(0,3):im",
+        "extension:minus:r1:u3(-1,2):re",
+        "extension:minus:r1:u3(-1,2):im",
+        "extension:minus:r1:u3(-2,1):re",
+        "extension:minus:r1:u3(-2,1):im",
+        "extension:minus:r1:u3(-3,0):re",
+        "extension:minus:r1:u3(-3,0):im",
+        "extension:minus:r2:u3(0,3):re",
+        "extension:minus:r2:u3(0,3):im",
+        "extension:minus:r2:u3(-1,2):re",
+        "extension:minus:r2:u3(-1,2):im",
+        "extension:minus:r2:u3(-2,1):re",
+        "extension:minus:r2:u3(-2,1):im",
+        "extension:minus:r2:u3(-3,0):re",
+        "extension:minus:r2:u3(-3,0):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 38,
+        "old_point_max_abs_difference": 4.336808689942018e-19,
+        "old_covariance_max_abs_difference": 2.39055197027825e-22,
+        "fresh_contribution_to_old_block_max_abs": 1.802921513539777e-32
+      },
+      "joint_score": {
+        "covariance_identity_max_abs_error": 3.308722450212111e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 70,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 401.957059788832,
+        "asymptotic_degrees_of_freedom": 70,
+        "asymptotic_survival_p": 4.2956086374665953e-48,
+        "finite_batch_Hotelling_F": 4.749224122102204,
+        "finite_batch_numerator_df": 70,
+        "finite_batch_denominator_df": 330,
+        "finite_batch_survival_p": 2.363313816149805e-22,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "joint__orientation_preserving_R1_linear__point",
+          "old": "joint__orientation_preserving_R1_linear__old_covariance",
+          "fresh": "joint__orientation_preserving_R1_linear__fresh_covariance",
+          "total": "derive `joint__orientation_preserving_R1_linear__old_covariance + joint__orientation_preserving_R1_linear__fresh_covariance`",
+          "correlation_eigenvalues": "joint__orientation_preserving_R1_linear__correlation_eigenvalues"
+        }
+      },
+      "decision_alpha": 0.01,
+      "decision": "rejected",
+      "hand_specific_support_refs": {
+        "plus": "plus_source",
+        "minus": "minus_orientation_R1"
+      }
+    },
+    "orientation_preserving_R1_conjugate": {
+      "scope": "secondary_retrospective_joint_manifest",
+      "radius5_alias": null,
+      "alexander_reflection": false,
+      "rotation_power": 1,
+      "coefficient_conjugation": true,
+      "matrix_shape": [
+        40,
+        6
+      ],
+      "old_matrix_shape": [
+        24,
+        6
+      ],
+      "extension_matrix_shape": [
+        16,
+        6
+      ],
+      "rank_null": "rank(candidate_mapped_old_plus_degree5_operator)<=5",
+      "frozen_old_pivot": {
+        "rows": [
+          9,
+          12,
+          13,
+          14,
+          18
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "abs_determinant": 5.119494387631136e-12,
+        "condition_number": 76.01428604855461
+      },
+      "projective_q": [
+        {
+          "re": 0.008118534691119198,
+          "im": 0.014046021639640117,
+          "abs": 0.016223480805059816
+        },
+        {
+          "re": -0.45083436268071586,
+          "im": 0.014190342464994364,
+          "abs": 0.4510576331168791
+        },
+        {
+          "re": -0.0735285907164612,
+          "im": 0.13576196519305458,
+          "abs": 0.15439483425888648
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": 0.0015483309143660001,
+          "im": -0.3467838753796967,
+          "abs": 0.3467873318793254
+        },
+        {
+          "re": 0.14188146009669614,
+          "im": 0.007664818313946595,
+          "abs": 0.14208834631649492
+        }
+      ],
+      "residual_order": [
+        "plus:r1:u(0,0):conjugated:re",
+        "plus:r1:u(0,0):conjugated:im",
+        "plus:r1:u(1,0):conjugated:re",
+        "plus:r1:u(1,0):conjugated:im",
+        "plus:r1:u(0,1):conjugated:re",
+        "plus:r1:u(0,1):conjugated:im",
+        "plus:r1:u(2,0):conjugated:re",
+        "plus:r1:u(2,0):conjugated:im",
+        "plus:r1:u(1,1):conjugated:re",
+        "plus:r1:u(1,1):conjugated:im",
+        "plus:r1:u(0,2):conjugated:re",
+        "plus:r1:u(0,2):conjugated:im",
+        "plus:r2:u(0,0):conjugated:re",
+        "plus:r2:u(0,0):conjugated:im",
+        "plus:r2:u(1,0):conjugated:re",
+        "plus:r2:u(1,0):conjugated:im",
+        "plus:r2:u(0,1):conjugated:re",
+        "plus:r2:u(0,1):conjugated:im",
+        "plus:r2:u(1,1):conjugated:re",
+        "plus:r2:u(1,1):conjugated:im",
+        "plus:r2:u(0,2):conjugated:re",
+        "plus:r2:u(0,2):conjugated:im",
+        "minus:r1:u(0,2):re",
+        "minus:r1:u(0,2):im",
+        "minus:r1:u(-1,1):re",
+        "minus:r1:u(-1,1):im",
+        "minus:r1:u(-2,0):re",
+        "minus:r1:u(-2,0):im",
+        "minus:r2:u(0,1):re",
+        "minus:r2:u(0,1):im",
+        "minus:r2:u(-1,0):re",
+        "minus:r2:u(-1,0):im",
+        "minus:r2:u(0,2):re",
+        "minus:r2:u(0,2):im",
+        "minus:r2:u(-1,1):re",
+        "minus:r2:u(-1,1):im",
+        "minus:r2:u(-2,0):re",
+        "minus:r2:u(-2,0):im",
+        "extension:plus:r1:u3(3,0):conjugated:re",
+        "extension:plus:r1:u3(3,0):conjugated:im",
+        "extension:plus:r1:u3(2,1):conjugated:re",
+        "extension:plus:r1:u3(2,1):conjugated:im",
+        "extension:plus:r1:u3(1,2):conjugated:re",
+        "extension:plus:r1:u3(1,2):conjugated:im",
+        "extension:plus:r1:u3(0,3):conjugated:re",
+        "extension:plus:r1:u3(0,3):conjugated:im",
+        "extension:plus:r2:u3(3,0):conjugated:re",
+        "extension:plus:r2:u3(3,0):conjugated:im",
+        "extension:plus:r2:u3(2,1):conjugated:re",
+        "extension:plus:r2:u3(2,1):conjugated:im",
+        "extension:plus:r2:u3(1,2):conjugated:re",
+        "extension:plus:r2:u3(1,2):conjugated:im",
+        "extension:plus:r2:u3(0,3):conjugated:re",
+        "extension:plus:r2:u3(0,3):conjugated:im",
+        "extension:minus:r1:u3(0,3):re",
+        "extension:minus:r1:u3(0,3):im",
+        "extension:minus:r1:u3(-1,2):re",
+        "extension:minus:r1:u3(-1,2):im",
+        "extension:minus:r1:u3(-2,1):re",
+        "extension:minus:r1:u3(-2,1):im",
+        "extension:minus:r1:u3(-3,0):re",
+        "extension:minus:r1:u3(-3,0):im",
+        "extension:minus:r2:u3(0,3):re",
+        "extension:minus:r2:u3(0,3):im",
+        "extension:minus:r2:u3(-1,2):re",
+        "extension:minus:r2:u3(-1,2):im",
+        "extension:minus:r2:u3(-2,1):re",
+        "extension:minus:r2:u3(-2,1):im",
+        "extension:minus:r2:u3(-3,0):re",
+        "extension:minus:r2:u3(-3,0):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 38,
+        "old_point_max_abs_difference": 2.168404344971009e-19,
+        "old_covariance_max_abs_difference": 3.1763735522036263e-22,
+        "fresh_contribution_to_old_block_max_abs": 2.8535313445307287e-32
+      },
+      "joint_score": {
+        "covariance_identity_max_abs_error": 3.308722450212111e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 70,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 324.56858149292697,
+        "asymptotic_degrees_of_freedom": 70,
+        "asymptotic_survival_p": 2.0011865336344554e-34,
+        "finite_batch_Hotelling_F": 3.834859716887429,
+        "finite_batch_numerator_df": 70,
+        "finite_batch_denominator_df": 330,
+        "finite_batch_survival_p": 1.0572407456448811e-16,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "joint__orientation_preserving_R1_conjugate__point",
+          "old": "joint__orientation_preserving_R1_conjugate__old_covariance",
+          "fresh": "joint__orientation_preserving_R1_conjugate__fresh_covariance",
+          "total": "derive `joint__orientation_preserving_R1_conjugate__old_covariance + joint__orientation_preserving_R1_conjugate__fresh_covariance`",
+          "correlation_eigenvalues": "joint__orientation_preserving_R1_conjugate__correlation_eigenvalues"
+        }
+      },
+      "decision_alpha": 0.01,
+      "decision": "rejected",
+      "hand_specific_support_refs": {
+        "plus": "plus_source",
+        "minus": "minus_orientation_R1"
+      }
+    },
+    "orientation_preserving_R2_linear": {
+      "scope": "secondary_retrospective_joint_manifest",
+      "radius5_alias": null,
+      "alexander_reflection": false,
+      "rotation_power": 2,
+      "coefficient_conjugation": false,
+      "matrix_shape": [
+        40,
+        6
+      ],
+      "old_matrix_shape": [
+        24,
+        6
+      ],
+      "extension_matrix_shape": [
+        16,
+        6
+      ],
+      "rank_null": "rank(candidate_mapped_old_plus_degree5_operator)<=5",
+      "frozen_old_pivot": {
+        "rows": [
+          0,
+          6,
+          7,
+          8,
+          14
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "abs_determinant": 2.781224587232114e-12,
+        "condition_number": 98.73196117105196
+      },
+      "projective_q": [
+        {
+          "re": 0.011000943632825215,
+          "im": -0.010518625697442803,
+          "abs": 0.015220454900412857
+        },
+        {
+          "re": -0.3236131945324395,
+          "im": 0.06098806715855017,
+          "abs": 0.3293099512787707
+        },
+        {
+          "re": 0.1754591079799696,
+          "im": 0.12404611168967476,
+          "abs": 0.21487981849967647
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": -0.4731990704699338,
+          "im": -0.05714121256308792,
+          "abs": 0.47663663147809926
+        },
+        {
+          "re": -0.06400604329079002,
+          "im": -0.10215314877360268,
+          "abs": 0.12054890867239026
+        }
+      ],
+      "residual_order": [
+        "plus:r1:u(1,0):re",
+        "plus:r1:u(1,0):im",
+        "plus:r1:u(0,1):re",
+        "plus:r1:u(0,1):im",
+        "plus:r1:u(2,0):re",
+        "plus:r1:u(2,0):im",
+        "plus:r1:u(1,1):re",
+        "plus:r1:u(1,1):im",
+        "plus:r1:u(0,2):re",
+        "plus:r1:u(0,2):im",
+        "plus:r2:u(2,0):re",
+        "plus:r2:u(2,0):im",
+        "plus:r2:u(1,1):re",
+        "plus:r2:u(1,1):im",
+        "plus:r2:u(0,2):re",
+        "plus:r2:u(0,2):im",
+        "minus:r1:u(0,0):re",
+        "minus:r1:u(0,0):im",
+        "minus:r1:u(-1,0):re",
+        "minus:r1:u(-1,0):im",
+        "minus:r1:u(-2,0):re",
+        "minus:r1:u(-2,0):im",
+        "minus:r1:u(-1,-1):re",
+        "minus:r1:u(-1,-1):im",
+        "minus:r1:u(0,-2):re",
+        "minus:r1:u(0,-2):im",
+        "minus:r2:u(0,0):re",
+        "minus:r2:u(0,0):im",
+        "minus:r2:u(-1,0):re",
+        "minus:r2:u(-1,0):im",
+        "minus:r2:u(0,-1):re",
+        "minus:r2:u(0,-1):im",
+        "minus:r2:u(-2,0):re",
+        "minus:r2:u(-2,0):im",
+        "minus:r2:u(-1,-1):re",
+        "minus:r2:u(-1,-1):im",
+        "minus:r2:u(0,-2):re",
+        "minus:r2:u(0,-2):im",
+        "extension:plus:r1:u3(3,0):re",
+        "extension:plus:r1:u3(3,0):im",
+        "extension:plus:r1:u3(2,1):re",
+        "extension:plus:r1:u3(2,1):im",
+        "extension:plus:r1:u3(1,2):re",
+        "extension:plus:r1:u3(1,2):im",
+        "extension:plus:r1:u3(0,3):re",
+        "extension:plus:r1:u3(0,3):im",
+        "extension:plus:r2:u3(3,0):re",
+        "extension:plus:r2:u3(3,0):im",
+        "extension:plus:r2:u3(2,1):re",
+        "extension:plus:r2:u3(2,1):im",
+        "extension:plus:r2:u3(1,2):re",
+        "extension:plus:r2:u3(1,2):im",
+        "extension:plus:r2:u3(0,3):re",
+        "extension:plus:r2:u3(0,3):im",
+        "extension:minus:r1:u3(-3,0):re",
+        "extension:minus:r1:u3(-3,0):im",
+        "extension:minus:r1:u3(-2,-1):re",
+        "extension:minus:r1:u3(-2,-1):im",
+        "extension:minus:r1:u3(-1,-2):re",
+        "extension:minus:r1:u3(-1,-2):im",
+        "extension:minus:r1:u3(0,-3):re",
+        "extension:minus:r1:u3(0,-3):im",
+        "extension:minus:r2:u3(-3,0):re",
+        "extension:minus:r2:u3(-3,0):im",
+        "extension:minus:r2:u3(-2,-1):re",
+        "extension:minus:r2:u3(-2,-1):im",
+        "extension:minus:r2:u3(-1,-2):re",
+        "extension:minus:r2:u3(-1,-2):im",
+        "extension:minus:r2:u3(0,-3):re",
+        "extension:minus:r2:u3(0,-3):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 38,
+        "old_point_max_abs_difference": 3.1170812458958252e-19,
+        "old_covariance_max_abs_difference": 3.441071348220595e-22,
+        "fresh_contribution_to_old_block_max_abs": 3.7990801924225515e-32
+      },
+      "joint_score": {
+        "covariance_identity_max_abs_error": 3.308722450212111e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 70,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 293.43237127436,
+        "asymptotic_degrees_of_freedom": 70,
+        "asymptotic_survival_p": 3.8495975888422026e-29,
+        "finite_batch_Hotelling_F": 3.466977533853877,
+        "finite_batch_numerator_df": 70,
+        "finite_batch_denominator_df": 330,
+        "finite_batch_survival_p": 2.2473459631803167e-14,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "joint__orientation_preserving_R2_linear__point",
+          "old": "joint__orientation_preserving_R2_linear__old_covariance",
+          "fresh": "joint__orientation_preserving_R2_linear__fresh_covariance",
+          "total": "derive `joint__orientation_preserving_R2_linear__old_covariance + joint__orientation_preserving_R2_linear__fresh_covariance`",
+          "correlation_eigenvalues": "joint__orientation_preserving_R2_linear__correlation_eigenvalues"
+        }
+      },
+      "decision_alpha": 0.01,
+      "decision": "rejected",
+      "hand_specific_support_refs": {
+        "plus": "plus_source",
+        "minus": "minus_orientation_R2"
+      }
+    },
+    "orientation_preserving_R2_conjugate": {
+      "scope": "secondary_retrospective_joint_manifest",
+      "radius5_alias": null,
+      "alexander_reflection": false,
+      "rotation_power": 2,
+      "coefficient_conjugation": true,
+      "matrix_shape": [
+        40,
+        6
+      ],
+      "old_matrix_shape": [
+        24,
+        6
+      ],
+      "extension_matrix_shape": [
+        16,
+        6
+      ],
+      "rank_null": "rank(candidate_mapped_old_plus_degree5_operator)<=5",
+      "frozen_old_pivot": {
+        "rows": [
+          0,
+          6,
+          8,
+          19,
+          20
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "abs_determinant": 3.1479454936902986e-12,
+        "condition_number": 113.45372220755937
+      },
+      "projective_q": [
+        {
+          "re": 0.012262105010013844,
+          "im": 0.004860331975714321,
+          "abs": 0.013190225403334005
+        },
+        {
+          "re": -0.4967021875622965,
+          "im": 0.09328005049563512,
+          "abs": 0.5053852302448489
+        },
+        {
+          "re": -0.13257683857052252,
+          "im": -0.08751456571076047,
+          "abs": 0.158856593621094
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": 0.0015327710561798998,
+          "im": -0.0937202281270949,
+          "abs": 0.09373276133404677
+        },
+        {
+          "re": 0.35844875951330973,
+          "im": 0.08532275940511244,
+          "abs": 0.3684636840573753
+        }
+      ],
+      "residual_order": [
+        "plus:r1:u(1,0):conjugated:re",
+        "plus:r1:u(1,0):conjugated:im",
+        "plus:r1:u(0,1):conjugated:re",
+        "plus:r1:u(0,1):conjugated:im",
+        "plus:r1:u(2,0):conjugated:re",
+        "plus:r1:u(2,0):conjugated:im",
+        "plus:r1:u(1,1):conjugated:re",
+        "plus:r1:u(1,1):conjugated:im",
+        "plus:r1:u(0,2):conjugated:re",
+        "plus:r1:u(0,2):conjugated:im",
+        "plus:r2:u(1,0):conjugated:re",
+        "plus:r2:u(1,0):conjugated:im",
+        "plus:r2:u(2,0):conjugated:re",
+        "plus:r2:u(2,0):conjugated:im",
+        "plus:r2:u(1,1):conjugated:re",
+        "plus:r2:u(1,1):conjugated:im",
+        "plus:r2:u(0,2):conjugated:re",
+        "plus:r2:u(0,2):conjugated:im",
+        "minus:r1:u(0,0):re",
+        "minus:r1:u(0,0):im",
+        "minus:r1:u(-1,0):re",
+        "minus:r1:u(-1,0):im",
+        "minus:r1:u(0,-1):re",
+        "minus:r1:u(0,-1):im",
+        "minus:r1:u(-2,0):re",
+        "minus:r1:u(-2,0):im",
+        "minus:r1:u(-1,-1):re",
+        "minus:r1:u(-1,-1):im",
+        "minus:r1:u(0,-2):re",
+        "minus:r1:u(0,-2):im",
+        "minus:r2:u(0,0):re",
+        "minus:r2:u(0,0):im",
+        "minus:r2:u(-2,0):re",
+        "minus:r2:u(-2,0):im",
+        "minus:r2:u(-1,-1):re",
+        "minus:r2:u(-1,-1):im",
+        "minus:r2:u(0,-2):re",
+        "minus:r2:u(0,-2):im",
+        "extension:plus:r1:u3(3,0):conjugated:re",
+        "extension:plus:r1:u3(3,0):conjugated:im",
+        "extension:plus:r1:u3(2,1):conjugated:re",
+        "extension:plus:r1:u3(2,1):conjugated:im",
+        "extension:plus:r1:u3(1,2):conjugated:re",
+        "extension:plus:r1:u3(1,2):conjugated:im",
+        "extension:plus:r1:u3(0,3):conjugated:re",
+        "extension:plus:r1:u3(0,3):conjugated:im",
+        "extension:plus:r2:u3(3,0):conjugated:re",
+        "extension:plus:r2:u3(3,0):conjugated:im",
+        "extension:plus:r2:u3(2,1):conjugated:re",
+        "extension:plus:r2:u3(2,1):conjugated:im",
+        "extension:plus:r2:u3(1,2):conjugated:re",
+        "extension:plus:r2:u3(1,2):conjugated:im",
+        "extension:plus:r2:u3(0,3):conjugated:re",
+        "extension:plus:r2:u3(0,3):conjugated:im",
+        "extension:minus:r1:u3(-3,0):re",
+        "extension:minus:r1:u3(-3,0):im",
+        "extension:minus:r1:u3(-2,-1):re",
+        "extension:minus:r1:u3(-2,-1):im",
+        "extension:minus:r1:u3(-1,-2):re",
+        "extension:minus:r1:u3(-1,-2):im",
+        "extension:minus:r1:u3(0,-3):re",
+        "extension:minus:r1:u3(0,-3):im",
+        "extension:minus:r2:u3(-3,0):re",
+        "extension:minus:r2:u3(-3,0):im",
+        "extension:minus:r2:u3(-2,-1):re",
+        "extension:minus:r2:u3(-2,-1):im",
+        "extension:minus:r2:u3(-1,-2):re",
+        "extension:minus:r2:u3(-1,-2):im",
+        "extension:minus:r2:u3(0,-3):re",
+        "extension:minus:r2:u3(0,-3):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 38,
+        "old_point_max_abs_difference": 3.2526065174565133e-19,
+        "old_covariance_max_abs_difference": 3.705769144237564e-22,
+        "fresh_contribution_to_old_block_max_abs": 2.2982090052926543e-32
+      },
+      "joint_score": {
+        "covariance_identity_max_abs_error": 4.1359030627651384e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 70,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 207.59053109877945,
+        "asymptotic_degrees_of_freedom": 70,
+        "asymptotic_survival_p": 1.4846054395658992e-15,
+        "finite_batch_Hotelling_F": 2.452734524260552,
+        "finite_batch_numerator_df": 70,
+        "finite_batch_denominator_df": 330,
+        "finite_batch_survival_p": 5.650488650481128e-08,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "joint__orientation_preserving_R2_conjugate__point",
+          "old": "joint__orientation_preserving_R2_conjugate__old_covariance",
+          "fresh": "joint__orientation_preserving_R2_conjugate__fresh_covariance",
+          "total": "derive `joint__orientation_preserving_R2_conjugate__old_covariance + joint__orientation_preserving_R2_conjugate__fresh_covariance`",
+          "correlation_eigenvalues": "joint__orientation_preserving_R2_conjugate__correlation_eigenvalues"
+        }
+      },
+      "decision_alpha": 0.01,
+      "decision": "rejected",
+      "hand_specific_support_refs": {
+        "plus": "plus_source",
+        "minus": "minus_orientation_R2"
+      }
+    },
+    "orientation_preserving_R3_linear": {
+      "scope": "secondary_retrospective_joint_manifest",
+      "radius5_alias": null,
+      "alexander_reflection": false,
+      "rotation_power": 3,
+      "coefficient_conjugation": false,
+      "matrix_shape": [
+        40,
+        6
+      ],
+      "old_matrix_shape": [
+        24,
+        6
+      ],
+      "extension_matrix_shape": [
+        16,
+        6
+      ],
+      "rank_null": "rank(candidate_mapped_old_plus_degree5_operator)<=5",
+      "frozen_old_pivot": {
+        "rows": [
+          6,
+          8,
+          9,
+          13,
+          18
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "abs_determinant": 2.5338880286191768e-12,
+        "condition_number": 129.32861297184732
+      },
+      "projective_q": [
+        {
+          "re": 0.008424967941392806,
+          "im": -0.0075939648788506346,
+          "abs": 0.011342327247735071
+        },
+        {
+          "re": -0.2756988385336088,
+          "im": -0.06421091684486664,
+          "abs": 0.283077536040639
+        },
+        {
+          "re": 0.13844812166687417,
+          "im": -0.06847002162722787,
+          "abs": 0.15445396160253916
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": -0.49621344024811687,
+          "im": 0.2561948072772994,
+          "abs": 0.5584474528178314
+        },
+        {
+          "re": 0.0786790088694259,
+          "im": 0.0892672192496845,
+          "abs": 0.11899169243794477
+        }
+      ],
+      "residual_order": [
+        "plus:r1:u(0,0):re",
+        "plus:r1:u(0,0):im",
+        "plus:r1:u(1,0):re",
+        "plus:r1:u(1,0):im",
+        "plus:r1:u(0,1):re",
+        "plus:r1:u(0,1):im",
+        "plus:r1:u(2,0):re",
+        "plus:r1:u(2,0):im",
+        "plus:r1:u(1,1):re",
+        "plus:r1:u(1,1):im",
+        "plus:r1:u(0,2):re",
+        "plus:r1:u(0,2):im",
+        "plus:r2:u(1,0):re",
+        "plus:r2:u(1,0):im",
+        "plus:r2:u(1,1):re",
+        "plus:r2:u(1,1):im",
+        "plus:r2:u(0,2):re",
+        "plus:r2:u(0,2):im",
+        "minus:r1:u(0,0):re",
+        "minus:r1:u(0,0):im",
+        "minus:r1:u(1,0):re",
+        "minus:r1:u(1,0):im",
+        "minus:r1:u(0,-2):re",
+        "minus:r1:u(0,-2):im",
+        "minus:r1:u(1,-1):re",
+        "minus:r1:u(1,-1):im",
+        "minus:r1:u(2,0):re",
+        "minus:r1:u(2,0):im",
+        "minus:r2:u(0,-1):re",
+        "minus:r2:u(0,-1):im",
+        "minus:r2:u(1,0):re",
+        "minus:r2:u(1,0):im",
+        "minus:r2:u(0,-2):re",
+        "minus:r2:u(0,-2):im",
+        "minus:r2:u(1,-1):re",
+        "minus:r2:u(1,-1):im",
+        "minus:r2:u(2,0):re",
+        "minus:r2:u(2,0):im",
+        "extension:plus:r1:u3(3,0):re",
+        "extension:plus:r1:u3(3,0):im",
+        "extension:plus:r1:u3(2,1):re",
+        "extension:plus:r1:u3(2,1):im",
+        "extension:plus:r1:u3(1,2):re",
+        "extension:plus:r1:u3(1,2):im",
+        "extension:plus:r1:u3(0,3):re",
+        "extension:plus:r1:u3(0,3):im",
+        "extension:plus:r2:u3(3,0):re",
+        "extension:plus:r2:u3(3,0):im",
+        "extension:plus:r2:u3(2,1):re",
+        "extension:plus:r2:u3(2,1):im",
+        "extension:plus:r2:u3(1,2):re",
+        "extension:plus:r2:u3(1,2):im",
+        "extension:plus:r2:u3(0,3):re",
+        "extension:plus:r2:u3(0,3):im",
+        "extension:minus:r1:u3(0,-3):re",
+        "extension:minus:r1:u3(0,-3):im",
+        "extension:minus:r1:u3(1,-2):re",
+        "extension:minus:r1:u3(1,-2):im",
+        "extension:minus:r1:u3(2,-1):re",
+        "extension:minus:r1:u3(2,-1):im",
+        "extension:minus:r1:u3(3,0):re",
+        "extension:minus:r1:u3(3,0):im",
+        "extension:minus:r2:u3(0,-3):re",
+        "extension:minus:r2:u3(0,-3):im",
+        "extension:minus:r2:u3(1,-2):re",
+        "extension:minus:r2:u3(1,-2):im",
+        "extension:minus:r2:u3(2,-1):re",
+        "extension:minus:r2:u3(2,-1):im",
+        "extension:minus:r2:u3(3,0):re",
+        "extension:minus:r2:u3(3,0):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 38,
+        "old_point_max_abs_difference": 4.336808689942018e-19,
+        "old_covariance_max_abs_difference": 4.764560328305439e-22,
+        "fresh_contribution_to_old_block_max_abs": 1.3676688692721107e-32
+      },
+      "joint_score": {
+        "covariance_identity_max_abs_error": 3.308722450212111e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 70,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 297.06583351292426,
+        "asymptotic_degrees_of_freedom": 70,
+        "asymptotic_survival_p": 9.474887617427298e-30,
+        "finite_batch_Hotelling_F": 3.509907807349266,
+        "finite_batch_numerator_df": 70,
+        "finite_batch_denominator_df": 330,
+        "finite_batch_survival_p": 1.1997669187273728e-14,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "joint__orientation_preserving_R3_linear__point",
+          "old": "joint__orientation_preserving_R3_linear__old_covariance",
+          "fresh": "joint__orientation_preserving_R3_linear__fresh_covariance",
+          "total": "derive `joint__orientation_preserving_R3_linear__old_covariance + joint__orientation_preserving_R3_linear__fresh_covariance`",
+          "correlation_eigenvalues": "joint__orientation_preserving_R3_linear__correlation_eigenvalues"
+        }
+      },
+      "decision_alpha": 0.01,
+      "decision": "rejected",
+      "hand_specific_support_refs": {
+        "plus": "plus_source",
+        "minus": "minus_orientation_R3"
+      }
+    },
+    "orientation_preserving_R3_conjugate": {
+      "scope": "secondary_retrospective_joint_manifest",
+      "radius5_alias": null,
+      "alexander_reflection": false,
+      "rotation_power": 3,
+      "coefficient_conjugation": true,
+      "matrix_shape": [
+        40,
+        6
+      ],
+      "old_matrix_shape": [
+        24,
+        6
+      ],
+      "extension_matrix_shape": [
+        16,
+        6
+      ],
+      "rank_null": "rank(candidate_mapped_old_plus_degree5_operator)<=5",
+      "frozen_old_pivot": {
+        "rows": [
+          6,
+          7,
+          8,
+          18,
+          20
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "abs_determinant": 3.5771730992576704e-12,
+        "condition_number": 93.56765505493847
+      },
+      "projective_q": [
+        {
+          "re": 0.003697298364102236,
+          "im": 0.015396648608381452,
+          "abs": 0.015834355167267392
+        },
+        {
+          "re": -0.22767849209066943,
+          "im": 0.004721154772163477,
+          "abs": 0.22772743590323882
+        },
+        {
+          "re": 0.2947128041465812,
+          "im": -0.020088755748878057,
+          "abs": 0.29539667404268316
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": -0.5850865086153281,
+          "im": -0.18024596377750624,
+          "abs": 0.6122212263730786
+        },
+        {
+          "re": -0.2608510278004184,
+          "im": -0.04098805188791059,
+          "abs": 0.26405165991165575
+        }
+      ],
+      "residual_order": [
+        "plus:r1:u(0,0):conjugated:re",
+        "plus:r1:u(0,0):conjugated:im",
+        "plus:r1:u(1,0):conjugated:re",
+        "plus:r1:u(1,0):conjugated:im",
+        "plus:r1:u(0,1):conjugated:re",
+        "plus:r1:u(0,1):conjugated:im",
+        "plus:r1:u(2,0):conjugated:re",
+        "plus:r1:u(2,0):conjugated:im",
+        "plus:r1:u(1,1):conjugated:re",
+        "plus:r1:u(1,1):conjugated:im",
+        "plus:r1:u(0,2):conjugated:re",
+        "plus:r1:u(0,2):conjugated:im",
+        "plus:r2:u(2,0):conjugated:re",
+        "plus:r2:u(2,0):conjugated:im",
+        "plus:r2:u(1,1):conjugated:re",
+        "plus:r2:u(1,1):conjugated:im",
+        "plus:r2:u(0,2):conjugated:re",
+        "plus:r2:u(0,2):conjugated:im",
+        "minus:r1:u(0,0):re",
+        "minus:r1:u(0,0):im",
+        "minus:r1:u(0,-1):re",
+        "minus:r1:u(0,-1):im",
+        "minus:r1:u(1,0):re",
+        "minus:r1:u(1,0):im",
+        "minus:r1:u(0,-2):re",
+        "minus:r1:u(0,-2):im",
+        "minus:r1:u(1,-1):re",
+        "minus:r1:u(1,-1):im",
+        "minus:r1:u(2,0):re",
+        "minus:r1:u(2,0):im",
+        "minus:r2:u(0,-1):re",
+        "minus:r2:u(0,-1):im",
+        "minus:r2:u(0,-2):re",
+        "minus:r2:u(0,-2):im",
+        "minus:r2:u(1,-1):re",
+        "minus:r2:u(1,-1):im",
+        "minus:r2:u(2,0):re",
+        "minus:r2:u(2,0):im",
+        "extension:plus:r1:u3(3,0):conjugated:re",
+        "extension:plus:r1:u3(3,0):conjugated:im",
+        "extension:plus:r1:u3(2,1):conjugated:re",
+        "extension:plus:r1:u3(2,1):conjugated:im",
+        "extension:plus:r1:u3(1,2):conjugated:re",
+        "extension:plus:r1:u3(1,2):conjugated:im",
+        "extension:plus:r1:u3(0,3):conjugated:re",
+        "extension:plus:r1:u3(0,3):conjugated:im",
+        "extension:plus:r2:u3(3,0):conjugated:re",
+        "extension:plus:r2:u3(3,0):conjugated:im",
+        "extension:plus:r2:u3(2,1):conjugated:re",
+        "extension:plus:r2:u3(2,1):conjugated:im",
+        "extension:plus:r2:u3(1,2):conjugated:re",
+        "extension:plus:r2:u3(1,2):conjugated:im",
+        "extension:plus:r2:u3(0,3):conjugated:re",
+        "extension:plus:r2:u3(0,3):conjugated:im",
+        "extension:minus:r1:u3(0,-3):re",
+        "extension:minus:r1:u3(0,-3):im",
+        "extension:minus:r1:u3(1,-2):re",
+        "extension:minus:r1:u3(1,-2):im",
+        "extension:minus:r1:u3(2,-1):re",
+        "extension:minus:r1:u3(2,-1):im",
+        "extension:minus:r1:u3(3,0):re",
+        "extension:minus:r1:u3(3,0):im",
+        "extension:minus:r2:u3(0,-3):re",
+        "extension:minus:r2:u3(0,-3):im",
+        "extension:minus:r2:u3(1,-2):re",
+        "extension:minus:r2:u3(1,-2):im",
+        "extension:minus:r2:u3(2,-1):re",
+        "extension:minus:r2:u3(2,-1):im",
+        "extension:minus:r2:u3(3,0):re",
+        "extension:minus:r2:u3(3,0):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 38,
+        "old_point_max_abs_difference": 2.710505431213761e-19,
+        "old_covariance_max_abs_difference": 3.1763735522036263e-22,
+        "fresh_contribution_to_old_block_max_abs": 3.4688885312539464e-32
+      },
+      "joint_score": {
+        "covariance_identity_max_abs_error": 3.308722450212111e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 70,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 327.9369497236937,
+        "asymptotic_degrees_of_freedom": 70,
+        "asymptotic_survival_p": 5.261979612509893e-35,
+        "finite_batch_Hotelling_F": 3.874657837766521,
+        "finite_batch_numerator_df": 70,
+        "finite_batch_denominator_df": 330,
+        "finite_batch_survival_p": 5.939910184083462e-17,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "joint__orientation_preserving_R3_conjugate__point",
+          "old": "joint__orientation_preserving_R3_conjugate__old_covariance",
+          "fresh": "joint__orientation_preserving_R3_conjugate__fresh_covariance",
+          "total": "derive `joint__orientation_preserving_R3_conjugate__old_covariance + joint__orientation_preserving_R3_conjugate__fresh_covariance`",
+          "correlation_eigenvalues": "joint__orientation_preserving_R3_conjugate__correlation_eigenvalues"
+        }
+      },
+      "decision_alpha": 0.01,
+      "decision": "rejected",
+      "hand_specific_support_refs": {
+        "plus": "plus_source",
+        "minus": "minus_orientation_R3"
+      }
+    },
+    "alexander_reflection_R0_linear": {
+      "scope": "secondary_retrospective_joint_manifest",
+      "radius5_alias": null,
+      "alexander_reflection": true,
+      "rotation_power": 0,
+      "coefficient_conjugation": false,
+      "matrix_shape": [
+        40,
+        6
+      ],
+      "old_matrix_shape": [
+        24,
+        6
+      ],
+      "extension_matrix_shape": [
+        16,
+        6
+      ],
+      "rank_null": "rank(candidate_mapped_old_plus_degree5_operator)<=5",
+      "frozen_old_pivot": {
+        "rows": [
+          0,
+          6,
+          8,
+          13,
+          14
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "abs_determinant": 3.222780150887998e-12,
+        "condition_number": 101.07860688144169
+      },
+      "projective_q": [
+        {
+          "re": 0.00872221596603647,
+          "im": -0.002813311526896433,
+          "abs": 0.009164702565034495
+        },
+        {
+          "re": -0.45918028004017125,
+          "im": -0.09231019181073519,
+          "abs": 0.4683670580750794
+        },
+        {
+          "re": -0.05838075206026132,
+          "im": 0.01780401981056348,
+          "abs": 0.061035197489126246
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": -0.08530190455782556,
+          "im": 0.13212588580250506,
+          "abs": 0.15726940141136478
+        },
+        {
+          "re": 0.30594272351539187,
+          "im": 0.00019895664738266497,
+          "abs": 0.3059427882068199
+        }
+      ],
+      "residual_order": [
+        "plus:r1:u(1,0):re",
+        "plus:r1:u(1,0):im",
+        "plus:r1:u(0,1):re",
+        "plus:r1:u(0,1):im",
+        "plus:r1:u(2,0):re",
+        "plus:r1:u(2,0):im",
+        "plus:r1:u(1,1):re",
+        "plus:r1:u(1,1):im",
+        "plus:r1:u(0,2):re",
+        "plus:r1:u(0,2):im",
+        "plus:r2:u(1,0):re",
+        "plus:r2:u(1,0):im",
+        "plus:r2:u(2,0):re",
+        "plus:r2:u(2,0):im",
+        "plus:r2:u(1,1):re",
+        "plus:r2:u(1,1):im",
+        "plus:r2:u(0,2):re",
+        "plus:r2:u(0,2):im",
+        "minus:r1:u(0,0):re",
+        "minus:r1:u(0,0):im",
+        "minus:r1:u(2,0):re",
+        "minus:r1:u(2,0):im",
+        "minus:r1:u(1,-1):re",
+        "minus:r1:u(1,-1):im",
+        "minus:r1:u(0,-2):re",
+        "minus:r1:u(0,-2):im",
+        "minus:r2:u(0,0):re",
+        "minus:r2:u(0,0):im",
+        "minus:r2:u(1,0):re",
+        "minus:r2:u(1,0):im",
+        "minus:r2:u(0,-1):re",
+        "minus:r2:u(0,-1):im",
+        "minus:r2:u(2,0):re",
+        "minus:r2:u(2,0):im",
+        "minus:r2:u(1,-1):re",
+        "minus:r2:u(1,-1):im",
+        "minus:r2:u(0,-2):re",
+        "minus:r2:u(0,-2):im",
+        "extension:plus:r1:u3(3,0):re",
+        "extension:plus:r1:u3(3,0):im",
+        "extension:plus:r1:u3(2,1):re",
+        "extension:plus:r1:u3(2,1):im",
+        "extension:plus:r1:u3(1,2):re",
+        "extension:plus:r1:u3(1,2):im",
+        "extension:plus:r1:u3(0,3):re",
+        "extension:plus:r1:u3(0,3):im",
+        "extension:plus:r2:u3(3,0):re",
+        "extension:plus:r2:u3(3,0):im",
+        "extension:plus:r2:u3(2,1):re",
+        "extension:plus:r2:u3(2,1):im",
+        "extension:plus:r2:u3(1,2):re",
+        "extension:plus:r2:u3(1,2):im",
+        "extension:plus:r2:u3(0,3):re",
+        "extension:plus:r2:u3(0,3):im",
+        "extension:minus:r1:u3(3,0):re",
+        "extension:minus:r1:u3(3,0):im",
+        "extension:minus:r1:u3(2,-1):re",
+        "extension:minus:r1:u3(2,-1):im",
+        "extension:minus:r1:u3(1,-2):re",
+        "extension:minus:r1:u3(1,-2):im",
+        "extension:minus:r1:u3(0,-3):re",
+        "extension:minus:r1:u3(0,-3):im",
+        "extension:minus:r2:u3(3,0):re",
+        "extension:minus:r2:u3(3,0):im",
+        "extension:minus:r2:u3(2,-1):re",
+        "extension:minus:r2:u3(2,-1):im",
+        "extension:minus:r2:u3(1,-2):re",
+        "extension:minus:r2:u3(1,-2):im",
+        "extension:minus:r2:u3(0,-3):re",
+        "extension:minus:r2:u3(0,-3):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 38,
+        "old_point_max_abs_difference": 4.336808689942018e-19,
+        "old_covariance_max_abs_difference": 2.779326858178173e-22,
+        "fresh_contribution_to_old_block_max_abs": 3.309420967621422e-32
+      },
+      "joint_score": {
+        "covariance_identity_max_abs_error": 4.963083675318166e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 70,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 227.24150672658268,
+        "asymptotic_degrees_of_freedom": 70,
+        "asymptotic_survival_p": 1.669999353462011e-18,
+        "finite_batch_Hotelling_F": 2.6849157615385706,
+        "finite_batch_numerator_df": 70,
+        "finite_batch_denominator_df": 330,
+        "finite_batch_survival_p": 2.0413744642294125e-09,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "joint__alexander_reflection_R0_linear__point",
+          "old": "joint__alexander_reflection_R0_linear__old_covariance",
+          "fresh": "joint__alexander_reflection_R0_linear__fresh_covariance",
+          "total": "derive `joint__alexander_reflection_R0_linear__old_covariance + joint__alexander_reflection_R0_linear__fresh_covariance`",
+          "correlation_eigenvalues": "joint__alexander_reflection_R0_linear__correlation_eigenvalues"
+        }
+      },
+      "decision_alpha": 0.01,
+      "decision": "rejected",
+      "hand_specific_support_refs": {
+        "plus": "plus_source",
+        "minus": "minus_alexander_R0"
+      }
+    },
+    "alexander_reflection_R0_conjugate": {
+      "scope": "primary_retrospective_fixed_map",
+      "radius5_alias": "Alexander_R0_conjugation",
+      "alexander_reflection": true,
+      "rotation_power": 0,
+      "coefficient_conjugation": true,
+      "matrix_shape": [
+        40,
+        6
+      ],
+      "old_matrix_shape": [
+        24,
+        6
+      ],
+      "extension_matrix_shape": [
+        16,
+        6
+      ],
+      "rank_null": "rank(candidate_mapped_old_plus_degree5_operator)<=5",
+      "frozen_old_pivot": {
+        "rows": [
+          0,
+          6,
+          7,
+          8,
+          19
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "abs_determinant": 3.305372564114431e-12,
+        "condition_number": 112.15384085831289
+      },
+      "projective_q": [
+        {
+          "re": 0.010019899329024966,
+          "im": 0.008347538430817926,
+          "abs": 0.013041463890904931
+        },
+        {
+          "re": -0.3368504755507879,
+          "im": -0.0016030588577937224,
+          "abs": 0.33685428997786787
+        },
+        {
+          "re": 0.11893174064144087,
+          "im": -0.05764579733841073,
+          "abs": 0.1321657931644345
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": -0.39720763090506983,
+          "im": -0.05027957213626158,
+          "abs": 0.40037724388809076
+        },
+        {
+          "re": 0.02715441370603059,
+          "im": 0.024788945252412653,
+          "abs": 0.03676756709989626
+        }
+      ],
+      "residual_order": [
+        "plus:r1:u(1,0):conjugated:re",
+        "plus:r1:u(1,0):conjugated:im",
+        "plus:r1:u(0,1):conjugated:re",
+        "plus:r1:u(0,1):conjugated:im",
+        "plus:r1:u(2,0):conjugated:re",
+        "plus:r1:u(2,0):conjugated:im",
+        "plus:r1:u(1,1):conjugated:re",
+        "plus:r1:u(1,1):conjugated:im",
+        "plus:r1:u(0,2):conjugated:re",
+        "plus:r1:u(0,2):conjugated:im",
+        "plus:r2:u(2,0):conjugated:re",
+        "plus:r2:u(2,0):conjugated:im",
+        "plus:r2:u(1,1):conjugated:re",
+        "plus:r2:u(1,1):conjugated:im",
+        "plus:r2:u(0,2):conjugated:re",
+        "plus:r2:u(0,2):conjugated:im",
+        "minus:r1:u(0,0):re",
+        "minus:r1:u(0,0):im",
+        "minus:r1:u(1,0):re",
+        "minus:r1:u(1,0):im",
+        "minus:r1:u(0,-1):re",
+        "minus:r1:u(0,-1):im",
+        "minus:r1:u(2,0):re",
+        "minus:r1:u(2,0):im",
+        "minus:r1:u(1,-1):re",
+        "minus:r1:u(1,-1):im",
+        "minus:r1:u(0,-2):re",
+        "minus:r1:u(0,-2):im",
+        "minus:r2:u(0,0):re",
+        "minus:r2:u(0,0):im",
+        "minus:r2:u(0,-1):re",
+        "minus:r2:u(0,-1):im",
+        "minus:r2:u(2,0):re",
+        "minus:r2:u(2,0):im",
+        "minus:r2:u(1,-1):re",
+        "minus:r2:u(1,-1):im",
+        "minus:r2:u(0,-2):re",
+        "minus:r2:u(0,-2):im",
+        "extension:plus:r1:u3(3,0):conjugated:re",
+        "extension:plus:r1:u3(3,0):conjugated:im",
+        "extension:plus:r1:u3(2,1):conjugated:re",
+        "extension:plus:r1:u3(2,1):conjugated:im",
+        "extension:plus:r1:u3(1,2):conjugated:re",
+        "extension:plus:r1:u3(1,2):conjugated:im",
+        "extension:plus:r1:u3(0,3):conjugated:re",
+        "extension:plus:r1:u3(0,3):conjugated:im",
+        "extension:plus:r2:u3(3,0):conjugated:re",
+        "extension:plus:r2:u3(3,0):conjugated:im",
+        "extension:plus:r2:u3(2,1):conjugated:re",
+        "extension:plus:r2:u3(2,1):conjugated:im",
+        "extension:plus:r2:u3(1,2):conjugated:re",
+        "extension:plus:r2:u3(1,2):conjugated:im",
+        "extension:plus:r2:u3(0,3):conjugated:re",
+        "extension:plus:r2:u3(0,3):conjugated:im",
+        "extension:minus:r1:u3(3,0):re",
+        "extension:minus:r1:u3(3,0):im",
+        "extension:minus:r1:u3(2,-1):re",
+        "extension:minus:r1:u3(2,-1):im",
+        "extension:minus:r1:u3(1,-2):re",
+        "extension:minus:r1:u3(1,-2):im",
+        "extension:minus:r1:u3(0,-3):re",
+        "extension:minus:r1:u3(0,-3):im",
+        "extension:minus:r2:u3(3,0):re",
+        "extension:minus:r2:u3(3,0):im",
+        "extension:minus:r2:u3(2,-1):re",
+        "extension:minus:r2:u3(2,-1):im",
+        "extension:minus:r2:u3(1,-2):re",
+        "extension:minus:r2:u3(1,-2):im",
+        "extension:minus:r2:u3(0,-3):re",
+        "extension:minus:r2:u3(0,-3):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 38,
+        "old_point_max_abs_difference": 2.168404344971009e-19,
+        "old_covariance_max_abs_difference": 4.235164736271502e-22,
+        "fresh_contribution_to_old_block_max_abs": 2.2982090052926543e-32
+      },
+      "joint_score": {
+        "covariance_identity_max_abs_error": 3.308722450212111e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 70,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 266.28445942580925,
+        "asymptotic_degrees_of_freedom": 70,
+        "asymptotic_survival_p": 1.1487724812463625e-24,
+        "finite_batch_Hotelling_F": 3.1462181027754044,
+        "finite_batch_numerator_df": 70,
+        "finite_batch_denominator_df": 330,
+        "finite_batch_survival_p": 2.4634927102667614e-12,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "joint__alexander_reflection_R0_conjugate__point",
+          "old": "joint__alexander_reflection_R0_conjugate__old_covariance",
+          "fresh": "joint__alexander_reflection_R0_conjugate__fresh_covariance",
+          "total": "derive `joint__alexander_reflection_R0_conjugate__old_covariance + joint__alexander_reflection_R0_conjugate__fresh_covariance`",
+          "correlation_eigenvalues": "joint__alexander_reflection_R0_conjugate__correlation_eigenvalues"
+        }
+      },
+      "decision_alpha": 0.01,
+      "decision": "rejected",
+      "hand_specific_support_refs": {
+        "plus": "plus_source",
+        "minus": "minus_alexander_R0"
+      }
+    },
+    "alexander_reflection_R1_linear": {
+      "scope": "secondary_retrospective_joint_manifest",
+      "radius5_alias": null,
+      "alexander_reflection": true,
+      "rotation_power": 1,
+      "coefficient_conjugation": false,
+      "matrix_shape": [
+        40,
+        6
+      ],
+      "old_matrix_shape": [
+        24,
+        6
+      ],
+      "extension_matrix_shape": [
+        16,
+        6
+      ],
+      "rank_null": "rank(candidate_mapped_old_plus_degree5_operator)<=5",
+      "frozen_old_pivot": {
+        "rows": [
+          0,
+          6,
+          7,
+          18,
+          20
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "abs_determinant": 2.6013668077351432e-12,
+        "condition_number": 120.07781807718044
+      },
+      "projective_q": [
+        {
+          "re": 0.012535044965790085,
+          "im": -0.008712161473571619,
+          "abs": 0.015265291017074158
+        },
+        {
+          "re": -0.38991789672328214,
+          "im": 0.06924122834199856,
+          "abs": 0.3960180726777717
+        },
+        {
+          "re": 0.23493041228419828,
+          "im": -0.10298229585708188,
+          "abs": 0.2565105297566143
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": -0.4700143323612961,
+          "im": 0.09723471644925585,
+          "abs": 0.4799667308345466
+        },
+        {
+          "re": -0.031570952668477835,
+          "im": 0.2042474768035474,
+          "abs": 0.206673067507624
+        }
+      ],
+      "residual_order": [
+        "plus:r1:u(1,0):re",
+        "plus:r1:u(1,0):im",
+        "plus:r1:u(0,1):re",
+        "plus:r1:u(0,1):im",
+        "plus:r1:u(2,0):re",
+        "plus:r1:u(2,0):im",
+        "plus:r1:u(1,1):re",
+        "plus:r1:u(1,1):im",
+        "plus:r1:u(0,2):re",
+        "plus:r1:u(0,2):im",
+        "plus:r2:u(0,1):re",
+        "plus:r2:u(0,1):im",
+        "plus:r2:u(2,0):re",
+        "plus:r2:u(2,0):im",
+        "plus:r2:u(1,1):re",
+        "plus:r2:u(1,1):im",
+        "plus:r2:u(0,2):re",
+        "plus:r2:u(0,2):im",
+        "minus:r1:u(0,0):re",
+        "minus:r1:u(0,0):im",
+        "minus:r1:u(0,1):re",
+        "minus:r1:u(0,1):im",
+        "minus:r1:u(1,0):re",
+        "minus:r1:u(1,0):im",
+        "minus:r1:u(0,2):re",
+        "minus:r1:u(0,2):im",
+        "minus:r1:u(1,1):re",
+        "minus:r1:u(1,1):im",
+        "minus:r1:u(2,0):re",
+        "minus:r1:u(2,0):im",
+        "minus:r2:u(0,1):re",
+        "minus:r2:u(0,1):im",
+        "minus:r2:u(0,2):re",
+        "minus:r2:u(0,2):im",
+        "minus:r2:u(1,1):re",
+        "minus:r2:u(1,1):im",
+        "minus:r2:u(2,0):re",
+        "minus:r2:u(2,0):im",
+        "extension:plus:r1:u3(3,0):re",
+        "extension:plus:r1:u3(3,0):im",
+        "extension:plus:r1:u3(2,1):re",
+        "extension:plus:r1:u3(2,1):im",
+        "extension:plus:r1:u3(1,2):re",
+        "extension:plus:r1:u3(1,2):im",
+        "extension:plus:r1:u3(0,3):re",
+        "extension:plus:r1:u3(0,3):im",
+        "extension:plus:r2:u3(3,0):re",
+        "extension:plus:r2:u3(3,0):im",
+        "extension:plus:r2:u3(2,1):re",
+        "extension:plus:r2:u3(2,1):im",
+        "extension:plus:r2:u3(1,2):re",
+        "extension:plus:r2:u3(1,2):im",
+        "extension:plus:r2:u3(0,3):re",
+        "extension:plus:r2:u3(0,3):im",
+        "extension:minus:r1:u3(0,3):re",
+        "extension:minus:r1:u3(0,3):im",
+        "extension:minus:r1:u3(1,2):re",
+        "extension:minus:r1:u3(1,2):im",
+        "extension:minus:r1:u3(2,1):re",
+        "extension:minus:r1:u3(2,1):im",
+        "extension:minus:r1:u3(3,0):re",
+        "extension:minus:r1:u3(3,0):im",
+        "extension:minus:r2:u3(0,3):re",
+        "extension:minus:r2:u3(0,3):im",
+        "extension:minus:r2:u3(1,2):re",
+        "extension:minus:r2:u3(1,2):im",
+        "extension:minus:r2:u3(2,1):re",
+        "extension:minus:r2:u3(2,1):im",
+        "extension:minus:r2:u3(3,0):re",
+        "extension:minus:r2:u3(3,0):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 38,
+        "old_point_max_abs_difference": 2.710505431213761e-19,
+        "old_covariance_max_abs_difference": 3.705769144237564e-22,
+        "fresh_contribution_to_old_block_max_abs": 2.8535313445307287e-32
+      },
+      "joint_score": {
+        "covariance_identity_max_abs_error": 3.308722450212111e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 70,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 312.50169448985037,
+        "asymptotic_degrees_of_freedom": 70,
+        "asymptotic_survival_p": 2.32551488286774e-32,
+        "finite_batch_Hotelling_F": 3.6922864010616046,
+        "finite_batch_numerator_df": 70,
+        "finite_batch_denominator_df": 330,
+        "finite_batch_survival_p": 8.388579106342144e-16,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "joint__alexander_reflection_R1_linear__point",
+          "old": "joint__alexander_reflection_R1_linear__old_covariance",
+          "fresh": "joint__alexander_reflection_R1_linear__fresh_covariance",
+          "total": "derive `joint__alexander_reflection_R1_linear__old_covariance + joint__alexander_reflection_R1_linear__fresh_covariance`",
+          "correlation_eigenvalues": "joint__alexander_reflection_R1_linear__correlation_eigenvalues"
+        }
+      },
+      "decision_alpha": 0.01,
+      "decision": "rejected",
+      "hand_specific_support_refs": {
+        "plus": "plus_source",
+        "minus": "minus_alexander_R1"
+      }
+    },
+    "alexander_reflection_R1_conjugate": {
+      "scope": "primary_retrospective_fixed_map",
+      "radius5_alias": "Alexander_R1_conjugation",
+      "alexander_reflection": true,
+      "rotation_power": 1,
+      "coefficient_conjugation": true,
+      "matrix_shape": [
+        40,
+        6
+      ],
+      "old_matrix_shape": [
+        24,
+        6
+      ],
+      "extension_matrix_shape": [
+        16,
+        6
+      ],
+      "rank_null": "rank(candidate_mapped_old_plus_degree5_operator)<=5",
+      "frozen_old_pivot": {
+        "rows": [
+          6,
+          8,
+          12,
+          18,
+          19
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "abs_determinant": 3.1235856897614697e-12,
+        "condition_number": 108.8520043200531
+      },
+      "projective_q": [
+        {
+          "re": 0.013822181401088141,
+          "im": 0.00042789859546761355,
+          "abs": 0.013828803125816424
+        },
+        {
+          "re": -0.4975383737133549,
+          "im": -0.1433493395900179,
+          "abs": 0.5177774294793317
+        },
+        {
+          "re": 0.05801663383889091,
+          "im": -0.21834893712208142,
+          "abs": 0.22592518262544042
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": -0.2358170504849005,
+          "im": 0.33963384078080017,
+          "abs": 0.4134740948389827
+        },
+        {
+          "re": 0.1775637936038783,
+          "im": 0.3382164705782202,
+          "abs": 0.38199382425556144
+        }
+      ],
+      "residual_order": [
+        "plus:r1:u(0,0):conjugated:re",
+        "plus:r1:u(0,0):conjugated:im",
+        "plus:r1:u(1,0):conjugated:re",
+        "plus:r1:u(1,0):conjugated:im",
+        "plus:r1:u(0,1):conjugated:re",
+        "plus:r1:u(0,1):conjugated:im",
+        "plus:r1:u(2,0):conjugated:re",
+        "plus:r1:u(2,0):conjugated:im",
+        "plus:r1:u(1,1):conjugated:re",
+        "plus:r1:u(1,1):conjugated:im",
+        "plus:r1:u(0,2):conjugated:re",
+        "plus:r1:u(0,2):conjugated:im",
+        "plus:r2:u(1,0):conjugated:re",
+        "plus:r2:u(1,0):conjugated:im",
+        "plus:r2:u(2,0):conjugated:re",
+        "plus:r2:u(2,0):conjugated:im",
+        "plus:r2:u(1,1):conjugated:re",
+        "plus:r2:u(1,1):conjugated:im",
+        "plus:r2:u(0,2):conjugated:re",
+        "plus:r2:u(0,2):conjugated:im",
+        "minus:r1:u(0,1):re",
+        "minus:r1:u(0,1):im",
+        "minus:r1:u(1,0):re",
+        "minus:r1:u(1,0):im",
+        "minus:r1:u(0,2):re",
+        "minus:r1:u(0,2):im",
+        "minus:r1:u(1,1):re",
+        "minus:r1:u(1,1):im",
+        "minus:r1:u(2,0):re",
+        "minus:r1:u(2,0):im",
+        "minus:r2:u(1,0):re",
+        "minus:r2:u(1,0):im",
+        "minus:r2:u(0,2):re",
+        "minus:r2:u(0,2):im",
+        "minus:r2:u(1,1):re",
+        "minus:r2:u(1,1):im",
+        "minus:r2:u(2,0):re",
+        "minus:r2:u(2,0):im",
+        "extension:plus:r1:u3(3,0):conjugated:re",
+        "extension:plus:r1:u3(3,0):conjugated:im",
+        "extension:plus:r1:u3(2,1):conjugated:re",
+        "extension:plus:r1:u3(2,1):conjugated:im",
+        "extension:plus:r1:u3(1,2):conjugated:re",
+        "extension:plus:r1:u3(1,2):conjugated:im",
+        "extension:plus:r1:u3(0,3):conjugated:re",
+        "extension:plus:r1:u3(0,3):conjugated:im",
+        "extension:plus:r2:u3(3,0):conjugated:re",
+        "extension:plus:r2:u3(3,0):conjugated:im",
+        "extension:plus:r2:u3(2,1):conjugated:re",
+        "extension:plus:r2:u3(2,1):conjugated:im",
+        "extension:plus:r2:u3(1,2):conjugated:re",
+        "extension:plus:r2:u3(1,2):conjugated:im",
+        "extension:plus:r2:u3(0,3):conjugated:re",
+        "extension:plus:r2:u3(0,3):conjugated:im",
+        "extension:minus:r1:u3(0,3):re",
+        "extension:minus:r1:u3(0,3):im",
+        "extension:minus:r1:u3(1,2):re",
+        "extension:minus:r1:u3(1,2):im",
+        "extension:minus:r1:u3(2,1):re",
+        "extension:minus:r1:u3(2,1):im",
+        "extension:minus:r1:u3(3,0):re",
+        "extension:minus:r1:u3(3,0):im",
+        "extension:minus:r2:u3(0,3):re",
+        "extension:minus:r2:u3(0,3):im",
+        "extension:minus:r2:u3(1,2):re",
+        "extension:minus:r2:u3(1,2):im",
+        "extension:minus:r2:u3(2,1):re",
+        "extension:minus:r2:u3(2,1):im",
+        "extension:minus:r2:u3(3,0):re",
+        "extension:minus:r2:u3(3,0):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 38,
+        "old_point_max_abs_difference": 2.168404344971009e-19,
+        "old_covariance_max_abs_difference": 7.940933880509066e-22,
+        "fresh_contribution_to_old_block_max_abs": 1.3676688692721107e-32
+      },
+      "joint_score": {
+        "covariance_identity_max_abs_error": 5.790264287871194e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 70,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 189.99323356624663,
+        "asymptotic_degrees_of_freedom": 70,
+        "asymptotic_survival_p": 5.058728529721242e-13,
+        "finite_batch_Hotelling_F": 2.2448180120609162,
+        "finite_batch_numerator_df": 70,
+        "finite_batch_denominator_df": 330,
+        "finite_batch_survival_p": 1.0313117376491952e-06,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "joint__alexander_reflection_R1_conjugate__point",
+          "old": "joint__alexander_reflection_R1_conjugate__old_covariance",
+          "fresh": "joint__alexander_reflection_R1_conjugate__fresh_covariance",
+          "total": "derive `joint__alexander_reflection_R1_conjugate__old_covariance + joint__alexander_reflection_R1_conjugate__fresh_covariance`",
+          "correlation_eigenvalues": "joint__alexander_reflection_R1_conjugate__correlation_eigenvalues"
+        }
+      },
+      "decision_alpha": 0.01,
+      "decision": "rejected",
+      "hand_specific_support_refs": {
+        "plus": "plus_source",
+        "minus": "minus_alexander_R1"
+      }
+    },
+    "alexander_reflection_R2_linear": {
+      "scope": "secondary_retrospective_joint_manifest",
+      "radius5_alias": null,
+      "alexander_reflection": true,
+      "rotation_power": 2,
+      "coefficient_conjugation": false,
+      "matrix_shape": [
+        40,
+        6
+      ],
+      "old_matrix_shape": [
+        24,
+        6
+      ],
+      "extension_matrix_shape": [
+        16,
+        6
+      ],
+      "rank_null": "rank(candidate_mapped_old_plus_degree5_operator)<=5",
+      "frozen_old_pivot": {
+        "rows": [
+          9,
+          12,
+          13,
+          14,
+          18
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "abs_determinant": 4.7603012849646225e-12,
+        "condition_number": 82.22250640958036
+      },
+      "projective_q": [
+        {
+          "re": 0.01113986031999424,
+          "im": -0.01283225244958551,
+          "abs": 0.016993033598474275
+        },
+        {
+          "re": -0.33516850896107575,
+          "im": -0.09911071041689526,
+          "abs": 0.34951518181408425
+        },
+        {
+          "re": -0.20326497481665912,
+          "im": 0.11281844080303946,
+          "abs": 0.23247505365618476
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": -0.004633262958449055,
+          "im": 0.28463785635315303,
+          "abs": 0.28467556339622885
+        },
+        {
+          "re": 0.18368578285808662,
+          "im": -0.1933382887800008,
+          "abs": 0.26668363416709157
+        }
+      ],
+      "residual_order": [
+        "plus:r1:u(0,0):re",
+        "plus:r1:u(0,0):im",
+        "plus:r1:u(1,0):re",
+        "plus:r1:u(1,0):im",
+        "plus:r1:u(0,1):re",
+        "plus:r1:u(0,1):im",
+        "plus:r1:u(2,0):re",
+        "plus:r1:u(2,0):im",
+        "plus:r1:u(1,1):re",
+        "plus:r1:u(1,1):im",
+        "plus:r1:u(0,2):re",
+        "plus:r1:u(0,2):im",
+        "plus:r2:u(0,0):re",
+        "plus:r2:u(0,0):im",
+        "plus:r2:u(1,0):re",
+        "plus:r2:u(1,0):im",
+        "plus:r2:u(0,1):re",
+        "plus:r2:u(0,1):im",
+        "plus:r2:u(1,1):re",
+        "plus:r2:u(1,1):im",
+        "plus:r2:u(0,2):re",
+        "plus:r2:u(0,2):im",
+        "minus:r1:u(-2,0):re",
+        "minus:r1:u(-2,0):im",
+        "minus:r1:u(-1,1):re",
+        "minus:r1:u(-1,1):im",
+        "minus:r1:u(0,2):re",
+        "minus:r1:u(0,2):im",
+        "minus:r2:u(-1,0):re",
+        "minus:r2:u(-1,0):im",
+        "minus:r2:u(0,1):re",
+        "minus:r2:u(0,1):im",
+        "minus:r2:u(-2,0):re",
+        "minus:r2:u(-2,0):im",
+        "minus:r2:u(-1,1):re",
+        "minus:r2:u(-1,1):im",
+        "minus:r2:u(0,2):re",
+        "minus:r2:u(0,2):im",
+        "extension:plus:r1:u3(3,0):re",
+        "extension:plus:r1:u3(3,0):im",
+        "extension:plus:r1:u3(2,1):re",
+        "extension:plus:r1:u3(2,1):im",
+        "extension:plus:r1:u3(1,2):re",
+        "extension:plus:r1:u3(1,2):im",
+        "extension:plus:r1:u3(0,3):re",
+        "extension:plus:r1:u3(0,3):im",
+        "extension:plus:r2:u3(3,0):re",
+        "extension:plus:r2:u3(3,0):im",
+        "extension:plus:r2:u3(2,1):re",
+        "extension:plus:r2:u3(2,1):im",
+        "extension:plus:r2:u3(1,2):re",
+        "extension:plus:r2:u3(1,2):im",
+        "extension:plus:r2:u3(0,3):re",
+        "extension:plus:r2:u3(0,3):im",
+        "extension:minus:r1:u3(-3,0):re",
+        "extension:minus:r1:u3(-3,0):im",
+        "extension:minus:r1:u3(-2,1):re",
+        "extension:minus:r1:u3(-2,1):im",
+        "extension:minus:r1:u3(-1,2):re",
+        "extension:minus:r1:u3(-1,2):im",
+        "extension:minus:r1:u3(0,3):re",
+        "extension:minus:r1:u3(0,3):im",
+        "extension:minus:r2:u3(-3,0):re",
+        "extension:minus:r2:u3(-3,0):im",
+        "extension:minus:r2:u3(-2,1):re",
+        "extension:minus:r2:u3(-2,1):im",
+        "extension:minus:r2:u3(-1,2):re",
+        "extension:minus:r2:u3(-1,2):im",
+        "extension:minus:r2:u3(0,3):re",
+        "extension:minus:r2:u3(0,3):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 38,
+        "old_point_max_abs_difference": 2.168404344971009e-19,
+        "old_covariance_max_abs_difference": 3.705769144237564e-22,
+        "fresh_contribution_to_old_block_max_abs": 3.001742374259794e-32
+      },
+      "joint_score": {
+        "covariance_identity_max_abs_error": 2.481541837659083e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 70,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 206.40485237482622,
+        "asymptotic_degrees_of_freedom": 70,
+        "asymptotic_survival_p": 2.2164951284877826e-15,
+        "finite_batch_Hotelling_F": 2.4387254308518673,
+        "finite_batch_numerator_df": 70,
+        "finite_batch_denominator_df": 330,
+        "finite_batch_survival_p": 6.88838981064349e-08,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "joint__alexander_reflection_R2_linear__point",
+          "old": "joint__alexander_reflection_R2_linear__old_covariance",
+          "fresh": "joint__alexander_reflection_R2_linear__fresh_covariance",
+          "total": "derive `joint__alexander_reflection_R2_linear__old_covariance + joint__alexander_reflection_R2_linear__fresh_covariance`",
+          "correlation_eigenvalues": "joint__alexander_reflection_R2_linear__correlation_eigenvalues"
+        }
+      },
+      "decision_alpha": 0.01,
+      "decision": "rejected",
+      "hand_specific_support_refs": {
+        "plus": "plus_source",
+        "minus": "minus_alexander_R2"
+      }
+    },
+    "alexander_reflection_R2_conjugate": {
+      "scope": "primary_retrospective_fixed_map",
+      "radius5_alias": "Alexander_R2_conjugation",
+      "alexander_reflection": true,
+      "rotation_power": 2,
+      "coefficient_conjugation": true,
+      "matrix_shape": [
+        40,
+        6
+      ],
+      "old_matrix_shape": [
+        24,
+        6
+      ],
+      "extension_matrix_shape": [
+        16,
+        6
+      ],
+      "rank_null": "rank(candidate_mapped_old_plus_degree5_operator)<=5",
+      "frozen_old_pivot": {
+        "rows": [
+          8,
+          12,
+          13,
+          15,
+          18
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "abs_determinant": 4.842627844927216e-12,
+        "condition_number": 87.3331462709866
+      },
+      "projective_q": [
+        {
+          "re": 0.02544303761135524,
+          "im": -0.011603143164051144,
+          "abs": 0.027963924870774204
+        },
+        {
+          "re": -0.4308080695347031,
+          "im": -0.023032247580954162,
+          "abs": 0.43142331555543906
+        },
+        {
+          "re": -0.26858922889653075,
+          "im": 0.15649107178388094,
+          "abs": 0.31085306726378104
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": -0.1210559176759623,
+          "im": 0.15312690626770972,
+          "abs": 0.19519832127221104
+        },
+        {
+          "re": 0.4690825141588646,
+          "im": -0.30744323400746015,
+          "abs": 0.560856262536639
+        }
+      ],
+      "residual_order": [
+        "plus:r1:u(0,0):conjugated:re",
+        "plus:r1:u(0,0):conjugated:im",
+        "plus:r1:u(1,0):conjugated:re",
+        "plus:r1:u(1,0):conjugated:im",
+        "plus:r1:u(0,1):conjugated:re",
+        "plus:r1:u(0,1):conjugated:im",
+        "plus:r1:u(2,0):conjugated:re",
+        "plus:r1:u(2,0):conjugated:im",
+        "plus:r1:u(1,1):conjugated:re",
+        "plus:r1:u(1,1):conjugated:im",
+        "plus:r1:u(0,2):conjugated:re",
+        "plus:r1:u(0,2):conjugated:im",
+        "plus:r2:u(0,0):conjugated:re",
+        "plus:r2:u(0,0):conjugated:im",
+        "plus:r2:u(1,0):conjugated:re",
+        "plus:r2:u(1,0):conjugated:im",
+        "plus:r2:u(2,0):conjugated:re",
+        "plus:r2:u(2,0):conjugated:im",
+        "plus:r2:u(1,1):conjugated:re",
+        "plus:r2:u(1,1):conjugated:im",
+        "plus:r2:u(0,2):conjugated:re",
+        "plus:r2:u(0,2):conjugated:im",
+        "minus:r1:u(0,1):re",
+        "minus:r1:u(0,1):im",
+        "minus:r1:u(-1,1):re",
+        "minus:r1:u(-1,1):im",
+        "minus:r1:u(0,2):re",
+        "minus:r1:u(0,2):im",
+        "minus:r2:u(-1,0):re",
+        "minus:r2:u(-1,0):im",
+        "minus:r2:u(0,1):re",
+        "minus:r2:u(0,1):im",
+        "minus:r2:u(-2,0):re",
+        "minus:r2:u(-2,0):im",
+        "minus:r2:u(-1,1):re",
+        "minus:r2:u(-1,1):im",
+        "minus:r2:u(0,2):re",
+        "minus:r2:u(0,2):im",
+        "extension:plus:r1:u3(3,0):conjugated:re",
+        "extension:plus:r1:u3(3,0):conjugated:im",
+        "extension:plus:r1:u3(2,1):conjugated:re",
+        "extension:plus:r1:u3(2,1):conjugated:im",
+        "extension:plus:r1:u3(1,2):conjugated:re",
+        "extension:plus:r1:u3(1,2):conjugated:im",
+        "extension:plus:r1:u3(0,3):conjugated:re",
+        "extension:plus:r1:u3(0,3):conjugated:im",
+        "extension:plus:r2:u3(3,0):conjugated:re",
+        "extension:plus:r2:u3(3,0):conjugated:im",
+        "extension:plus:r2:u3(2,1):conjugated:re",
+        "extension:plus:r2:u3(2,1):conjugated:im",
+        "extension:plus:r2:u3(1,2):conjugated:re",
+        "extension:plus:r2:u3(1,2):conjugated:im",
+        "extension:plus:r2:u3(0,3):conjugated:re",
+        "extension:plus:r2:u3(0,3):conjugated:im",
+        "extension:minus:r1:u3(-3,0):re",
+        "extension:minus:r1:u3(-3,0):im",
+        "extension:minus:r1:u3(-2,1):re",
+        "extension:minus:r1:u3(-2,1):im",
+        "extension:minus:r1:u3(-1,2):re",
+        "extension:minus:r1:u3(-1,2):im",
+        "extension:minus:r1:u3(0,3):re",
+        "extension:minus:r1:u3(0,3):im",
+        "extension:minus:r2:u3(-3,0):re",
+        "extension:minus:r2:u3(-3,0):im",
+        "extension:minus:r2:u3(-2,1):re",
+        "extension:minus:r2:u3(-2,1):im",
+        "extension:minus:r2:u3(-1,2):re",
+        "extension:minus:r2:u3(-1,2):im",
+        "extension:minus:r2:u3(0,3):re",
+        "extension:minus:r2:u3(0,3):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 38,
+        "old_point_max_abs_difference": 3.2526065174565133e-19,
+        "old_covariance_max_abs_difference": 4.499862532288471e-22,
+        "fresh_contribution_to_old_block_max_abs": 7.884263954891687e-33
+      },
+      "joint_score": {
+        "covariance_identity_max_abs_error": 4.963083675318166e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 70,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 210.36610589932997,
+        "asymptotic_degrees_of_freedom": 70,
+        "asymptotic_survival_p": 5.785606472890351e-16,
+        "finite_batch_Hotelling_F": 2.485528641130644,
+        "finite_batch_numerator_df": 70,
+        "finite_batch_denominator_df": 330,
+        "finite_batch_survival_p": 3.549696660651277e-08,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "joint__alexander_reflection_R2_conjugate__point",
+          "old": "joint__alexander_reflection_R2_conjugate__old_covariance",
+          "fresh": "joint__alexander_reflection_R2_conjugate__fresh_covariance",
+          "total": "derive `joint__alexander_reflection_R2_conjugate__old_covariance + joint__alexander_reflection_R2_conjugate__fresh_covariance`",
+          "correlation_eigenvalues": "joint__alexander_reflection_R2_conjugate__correlation_eigenvalues"
+        }
+      },
+      "decision_alpha": 0.01,
+      "decision": "rejected",
+      "hand_specific_support_refs": {
+        "plus": "plus_source",
+        "minus": "minus_alexander_R2"
+      }
+    },
+    "alexander_reflection_R3_linear": {
+      "scope": "secondary_retrospective_joint_manifest",
+      "radius5_alias": null,
+      "alexander_reflection": true,
+      "rotation_power": 3,
+      "coefficient_conjugation": false,
+      "matrix_shape": [
+        40,
+        6
+      ],
+      "old_matrix_shape": [
+        24,
+        6
+      ],
+      "extension_matrix_shape": [
+        16,
+        6
+      ],
+      "rank_null": "rank(candidate_mapped_old_plus_degree5_operator)<=5",
+      "frozen_old_pivot": {
+        "rows": [
+          0,
+          6,
+          8,
+          12,
+          19
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "abs_determinant": 3.49034609911357e-12,
+        "condition_number": 121.18688070715649
+      },
+      "projective_q": [
+        {
+          "re": 0.013364650061375844,
+          "im": 0.001788708548560601,
+          "abs": 0.013483818062208016
+        },
+        {
+          "re": -0.40436291660517065,
+          "im": -0.012225826280769542,
+          "abs": 0.4045476970070251
+        },
+        {
+          "re": -0.015384484778655023,
+          "im": -0.022165282735185116,
+          "abs": 0.026981143983073875
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": -0.25171262311781584,
+          "im": 0.05268235683925858,
+          "abs": 0.2571666295594951
+        },
+        {
+          "re": 0.230380705329279,
+          "im": -0.035756315818054774,
+          "abs": 0.2331389789565369
+        }
+      ],
+      "residual_order": [
+        "plus:r1:u(1,0):re",
+        "plus:r1:u(1,0):im",
+        "plus:r1:u(0,1):re",
+        "plus:r1:u(0,1):im",
+        "plus:r1:u(2,0):re",
+        "plus:r1:u(2,0):im",
+        "plus:r1:u(1,1):re",
+        "plus:r1:u(1,1):im",
+        "plus:r1:u(0,2):re",
+        "plus:r1:u(0,2):im",
+        "plus:r2:u(1,0):re",
+        "plus:r2:u(1,0):im",
+        "plus:r2:u(2,0):re",
+        "plus:r2:u(2,0):im",
+        "plus:r2:u(1,1):re",
+        "plus:r2:u(1,1):im",
+        "plus:r2:u(0,2):re",
+        "plus:r2:u(0,2):im",
+        "minus:r1:u(0,-1):re",
+        "minus:r1:u(0,-1):im",
+        "minus:r1:u(-1,0):re",
+        "minus:r1:u(-1,0):im",
+        "minus:r1:u(0,-2):re",
+        "minus:r1:u(0,-2):im",
+        "minus:r1:u(-1,-1):re",
+        "minus:r1:u(-1,-1):im",
+        "minus:r1:u(-2,0):re",
+        "minus:r1:u(-2,0):im",
+        "minus:r2:u(0,0):re",
+        "minus:r2:u(0,0):im",
+        "minus:r2:u(-1,0):re",
+        "minus:r2:u(-1,0):im",
+        "minus:r2:u(0,-2):re",
+        "minus:r2:u(0,-2):im",
+        "minus:r2:u(-1,-1):re",
+        "minus:r2:u(-1,-1):im",
+        "minus:r2:u(-2,0):re",
+        "minus:r2:u(-2,0):im",
+        "extension:plus:r1:u3(3,0):re",
+        "extension:plus:r1:u3(3,0):im",
+        "extension:plus:r1:u3(2,1):re",
+        "extension:plus:r1:u3(2,1):im",
+        "extension:plus:r1:u3(1,2):re",
+        "extension:plus:r1:u3(1,2):im",
+        "extension:plus:r1:u3(0,3):re",
+        "extension:plus:r1:u3(0,3):im",
+        "extension:plus:r2:u3(3,0):re",
+        "extension:plus:r2:u3(3,0):im",
+        "extension:plus:r2:u3(2,1):re",
+        "extension:plus:r2:u3(2,1):im",
+        "extension:plus:r2:u3(1,2):re",
+        "extension:plus:r2:u3(1,2):im",
+        "extension:plus:r2:u3(0,3):re",
+        "extension:plus:r2:u3(0,3):im",
+        "extension:minus:r1:u3(0,-3):re",
+        "extension:minus:r1:u3(0,-3):im",
+        "extension:minus:r1:u3(-1,-2):re",
+        "extension:minus:r1:u3(-1,-2):im",
+        "extension:minus:r1:u3(-2,-1):re",
+        "extension:minus:r1:u3(-2,-1):im",
+        "extension:minus:r1:u3(-3,0):re",
+        "extension:minus:r1:u3(-3,0):im",
+        "extension:minus:r2:u3(0,-3):re",
+        "extension:minus:r2:u3(0,-3):im",
+        "extension:minus:r2:u3(-1,-2):re",
+        "extension:minus:r2:u3(-1,-2):im",
+        "extension:minus:r2:u3(-2,-1):re",
+        "extension:minus:r2:u3(-2,-1):im",
+        "extension:minus:r2:u3(-3,0):re",
+        "extension:minus:r2:u3(-3,0):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 38,
+        "old_point_max_abs_difference": 2.168404344971009e-19,
+        "old_covariance_max_abs_difference": 2.6469779601696886e-22,
+        "fresh_contribution_to_old_block_max_abs": 3.001742374259794e-32
+      },
+      "joint_score": {
+        "covariance_identity_max_abs_error": 3.308722450212111e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 70,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 297.4159463525257,
+        "asymptotic_degrees_of_freedom": 70,
+        "asymptotic_survival_p": 8.275459659346277e-30,
+        "finite_batch_Hotelling_F": 3.514044478923504,
+        "finite_batch_numerator_df": 70,
+        "finite_batch_denominator_df": 330,
+        "finite_batch_survival_p": 1.1293862638362626e-14,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "joint__alexander_reflection_R3_linear__point",
+          "old": "joint__alexander_reflection_R3_linear__old_covariance",
+          "fresh": "joint__alexander_reflection_R3_linear__fresh_covariance",
+          "total": "derive `joint__alexander_reflection_R3_linear__old_covariance + joint__alexander_reflection_R3_linear__fresh_covariance`",
+          "correlation_eigenvalues": "joint__alexander_reflection_R3_linear__correlation_eigenvalues"
+        }
+      },
+      "decision_alpha": 0.01,
+      "decision": "rejected",
+      "hand_specific_support_refs": {
+        "plus": "plus_source",
+        "minus": "minus_alexander_R3"
+      }
+    },
+    "alexander_reflection_R3_conjugate": {
+      "scope": "primary_retrospective_fixed_map",
+      "radius5_alias": "Alexander_R3_conjugation",
+      "alexander_reflection": true,
+      "rotation_power": 3,
+      "coefficient_conjugation": true,
+      "matrix_shape": [
+        40,
+        6
+      ],
+      "old_matrix_shape": [
+        24,
+        6
+      ],
+      "extension_matrix_shape": [
+        16,
+        6
+      ],
+      "rank_null": "rank(candidate_mapped_old_plus_degree5_operator)<=5",
+      "frozen_old_pivot": {
+        "rows": [
+          0,
+          6,
+          7,
+          11,
+          20
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "abs_determinant": 1.85403062319963e-12,
+        "condition_number": 118.96578377409689
+      },
+      "projective_q": [
+        {
+          "re": 0.008821756947425288,
+          "im": -0.005145829357148624,
+          "abs": 0.010212881836795085
+        },
+        {
+          "re": -0.2686930845306402,
+          "im": -0.020161991780120035,
+          "abs": 0.2694484729723503
+        },
+        {
+          "re": -0.6838697094284065,
+          "im": 0.19807898550702097,
+          "abs": 0.7119782749306216
+        },
+        {
+          "re": 0.12627602425041828,
+          "im": 0.032649940796712754,
+          "abs": 0.1304287274127946
+        },
+        {
+          "re": 0.7271975763412037,
+          "im": -0.12453307612790293,
+          "abs": 0.7377837095561265
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        }
+      ],
+      "residual_order": [
+        "plus:r1:u(1,0):conjugated:re",
+        "plus:r1:u(1,0):conjugated:im",
+        "plus:r1:u(0,1):conjugated:re",
+        "plus:r1:u(0,1):conjugated:im",
+        "plus:r1:u(2,0):conjugated:re",
+        "plus:r1:u(2,0):conjugated:im",
+        "plus:r1:u(1,1):conjugated:re",
+        "plus:r1:u(1,1):conjugated:im",
+        "plus:r1:u(0,2):conjugated:re",
+        "plus:r1:u(0,2):conjugated:im",
+        "plus:r2:u(0,1):conjugated:re",
+        "plus:r2:u(0,1):conjugated:im",
+        "plus:r2:u(2,0):conjugated:re",
+        "plus:r2:u(2,0):conjugated:im",
+        "plus:r2:u(1,1):conjugated:re",
+        "plus:r2:u(1,1):conjugated:im",
+        "minus:r1:u(0,0):re",
+        "minus:r1:u(0,0):im",
+        "minus:r1:u(0,-1):re",
+        "minus:r1:u(0,-1):im",
+        "minus:r1:u(-1,0):re",
+        "minus:r1:u(-1,0):im",
+        "minus:r1:u(0,-2):re",
+        "minus:r1:u(0,-2):im",
+        "minus:r1:u(-1,-1):re",
+        "minus:r1:u(-1,-1):im",
+        "minus:r1:u(-2,0):re",
+        "minus:r1:u(-2,0):im",
+        "minus:r2:u(0,0):re",
+        "minus:r2:u(0,0):im",
+        "minus:r2:u(0,-1):re",
+        "minus:r2:u(0,-1):im",
+        "minus:r2:u(0,-2):re",
+        "minus:r2:u(0,-2):im",
+        "minus:r2:u(-1,-1):re",
+        "minus:r2:u(-1,-1):im",
+        "minus:r2:u(-2,0):re",
+        "minus:r2:u(-2,0):im",
+        "extension:plus:r1:u3(3,0):conjugated:re",
+        "extension:plus:r1:u3(3,0):conjugated:im",
+        "extension:plus:r1:u3(2,1):conjugated:re",
+        "extension:plus:r1:u3(2,1):conjugated:im",
+        "extension:plus:r1:u3(1,2):conjugated:re",
+        "extension:plus:r1:u3(1,2):conjugated:im",
+        "extension:plus:r1:u3(0,3):conjugated:re",
+        "extension:plus:r1:u3(0,3):conjugated:im",
+        "extension:plus:r2:u3(3,0):conjugated:re",
+        "extension:plus:r2:u3(3,0):conjugated:im",
+        "extension:plus:r2:u3(2,1):conjugated:re",
+        "extension:plus:r2:u3(2,1):conjugated:im",
+        "extension:plus:r2:u3(1,2):conjugated:re",
+        "extension:plus:r2:u3(1,2):conjugated:im",
+        "extension:plus:r2:u3(0,3):conjugated:re",
+        "extension:plus:r2:u3(0,3):conjugated:im",
+        "extension:minus:r1:u3(0,-3):re",
+        "extension:minus:r1:u3(0,-3):im",
+        "extension:minus:r1:u3(-1,-2):re",
+        "extension:minus:r1:u3(-1,-2):im",
+        "extension:minus:r1:u3(-2,-1):re",
+        "extension:minus:r1:u3(-2,-1):im",
+        "extension:minus:r1:u3(-3,0):re",
+        "extension:minus:r1:u3(-3,0):im",
+        "extension:minus:r2:u3(0,-3):re",
+        "extension:minus:r2:u3(0,-3):im",
+        "extension:minus:r2:u3(-1,-2):re",
+        "extension:minus:r2:u3(-1,-2):im",
+        "extension:minus:r2:u3(-2,-1):re",
+        "extension:minus:r2:u3(-2,-1):im",
+        "extension:minus:r2:u3(-3,0):re",
+        "extension:minus:r2:u3(-3,0):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 38,
+        "old_point_max_abs_difference": 6.505213034913027e-19,
+        "old_covariance_max_abs_difference": 6.352747104407253e-22,
+        "fresh_contribution_to_old_block_max_abs": 3.6321082728543555e-32
+      },
+      "joint_score": {
+        "covariance_identity_max_abs_error": 8.271806125530277e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 70,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 216.61099427848305,
+        "asymptotic_degrees_of_freedom": 70,
+        "asymptotic_survival_p": 6.800386009800702e-17,
+        "finite_batch_Hotelling_F": 2.5593135736448054,
+        "finite_batch_numerator_df": 70,
+        "finite_batch_denominator_df": 330,
+        "finite_batch_survival_p": 1.2404377790753227e-08,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "joint__alexander_reflection_R3_conjugate__point",
+          "old": "joint__alexander_reflection_R3_conjugate__old_covariance",
+          "fresh": "joint__alexander_reflection_R3_conjugate__fresh_covariance",
+          "total": "derive `joint__alexander_reflection_R3_conjugate__old_covariance + joint__alexander_reflection_R3_conjugate__fresh_covariance`",
+          "correlation_eigenvalues": "joint__alexander_reflection_R3_conjugate__correlation_eigenvalues"
+        }
+      },
+      "decision_alpha": 0.01,
+      "decision": "rejected",
+      "hand_specific_support_refs": {
+        "plus": "plus_source",
+        "minus": "minus_alexander_R3"
+      }
+    }
+  },
+  "hand_specific_support_blocks": {
+    "plus_source": {
+      "matrix_shape": [
+        20,
+        6
+      ],
+      "old_matrix_shape": [
+        12,
+        6
+      ],
+      "extension_matrix_shape": [
+        8,
+        6
+      ],
+      "frozen_old_pivot": {
+        "rows": [
+          0,
+          6,
+          7,
+          8,
+          11
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "abs_determinant": 1.7272498335717815e-12,
+        "condition_number": 146.38848313973367
+      },
+      "projective_q": [
+        {
+          "re": 0.011888868694609553,
+          "im": 0.019191323620011497,
+          "abs": 0.02257547565668724
+        },
+        {
+          "re": -0.5213494760211971,
+          "im": -0.4157833836092991,
+          "abs": 0.6668441333873864
+        },
+        {
+          "re": -0.6831365751305823,
+          "im": -0.05360285783643527,
+          "abs": 0.6852363436431075
+        },
+        {
+          "re": 0.36326156849052094,
+          "im": 0.34154550739827116,
+          "abs": 0.4986103696937479
+        },
+        {
+          "re": 0.8850008345240135,
+          "im": 0.15105378133485772,
+          "abs": 0.8977993773464978
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        }
+      ],
+      "residual_order": [
+        "old:plus:r1:u(1,0):re",
+        "old:plus:r1:u(1,0):im",
+        "old:plus:r1:u(0,1):re",
+        "old:plus:r1:u(0,1):im",
+        "old:plus:r1:u(2,0):re",
+        "old:plus:r1:u(2,0):im",
+        "old:plus:r1:u(1,1):re",
+        "old:plus:r1:u(1,1):im",
+        "old:plus:r1:u(0,2):re",
+        "old:plus:r1:u(0,2):im",
+        "old:plus:r2:u(2,0):re",
+        "old:plus:r2:u(2,0):im",
+        "old:plus:r2:u(1,1):re",
+        "old:plus:r2:u(1,1):im",
+        "extension:plus:r1:u3(3,0):re",
+        "extension:plus:r1:u3(3,0):im",
+        "extension:plus:r1:u3(2,1):re",
+        "extension:plus:r1:u3(2,1):im",
+        "extension:plus:r1:u3(1,2):re",
+        "extension:plus:r1:u3(1,2):im",
+        "extension:plus:r1:u3(0,3):re",
+        "extension:plus:r1:u3(0,3):im",
+        "extension:plus:r2:u3(3,0):re",
+        "extension:plus:r2:u3(3,0):im",
+        "extension:plus:r2:u3(2,1):re",
+        "extension:plus:r2:u3(2,1):im",
+        "extension:plus:r2:u3(1,2):re",
+        "extension:plus:r2:u3(1,2):im",
+        "extension:plus:r2:u3(0,3):re",
+        "extension:plus:r2:u3(0,3):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 14,
+        "old_point_max_abs_difference": 6.505213034913027e-19,
+        "old_covariance_max_abs_difference": 5.293955920339377e-22,
+        "fresh_contribution_to_old_block_max_abs": 2.168758865402682e-32
+      },
+      "score": {
+        "covariance_identity_max_abs_error": 2.150669592637872e-23,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 30,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 97.09206836689084,
+        "asymptotic_degrees_of_freedom": 30,
+        "asymptotic_survival_p": 5.31520662711249e-09,
+        "finite_batch_Hotelling_F": 3.001175045593117,
+        "finite_batch_numerator_df": 30,
+        "finite_batch_denominator_df": 370,
+        "finite_batch_survival_p": 6.006837893884152e-07,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "hand__plus_source__point",
+          "old": "hand__plus_source__old_covariance",
+          "fresh": "hand__plus_source__fresh_covariance",
+          "total": "derive `hand__plus_source__old_covariance + hand__plus_source__fresh_covariance`",
+          "correlation_eigenvalues": "hand__plus_source__correlation_eigenvalues"
+        }
+      },
+      "decision": "rejected"
+    },
+    "minus_orientation_R0": {
+      "matrix_shape": [
+        20,
+        6
+      ],
+      "old_matrix_shape": [
+        12,
+        6
+      ],
+      "extension_matrix_shape": [
+        8,
+        6
+      ],
+      "frozen_old_pivot": {
+        "rows": [
+          0,
+          6,
+          7,
+          8,
+          11
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "abs_determinant": 1.889998387650288e-12,
+        "condition_number": 112.0803595854761
+      },
+      "projective_q": [
+        {
+          "re": 0.01359344174583316,
+          "im": -0.019478018797524834,
+          "abs": 0.023752365666899172
+        },
+        {
+          "re": 0.023410543022189506,
+          "im": -0.34117092803755644,
+          "abs": 0.34197317974163016
+        },
+        {
+          "re": -0.28559664313223326,
+          "im": 0.057623819098445384,
+          "abs": 0.29135192996767767
+        },
+        {
+          "re": 0.1086813136965801,
+          "im": 0.2752426878452552,
+          "abs": 0.29592256615387585
+        },
+        {
+          "re": -0.46429809017517953,
+          "im": 0.5347983528821607,
+          "abs": 0.7082245369837106
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        }
+      ],
+      "residual_order": [
+        "old:minus:r1:u(1,0):re",
+        "old:minus:r1:u(1,0):im",
+        "old:minus:r1:u(0,1):re",
+        "old:minus:r1:u(0,1):im",
+        "old:minus:r1:u(2,0):re",
+        "old:minus:r1:u(2,0):im",
+        "old:minus:r1:u(1,1):re",
+        "old:minus:r1:u(1,1):im",
+        "old:minus:r1:u(0,2):re",
+        "old:minus:r1:u(0,2):im",
+        "old:minus:r2:u(2,0):re",
+        "old:minus:r2:u(2,0):im",
+        "old:minus:r2:u(1,1):re",
+        "old:minus:r2:u(1,1):im",
+        "extension:minus:r1:u3(3,0):re",
+        "extension:minus:r1:u3(3,0):im",
+        "extension:minus:r1:u3(2,1):re",
+        "extension:minus:r1:u3(2,1):im",
+        "extension:minus:r1:u3(1,2):re",
+        "extension:minus:r1:u3(1,2):im",
+        "extension:minus:r1:u3(0,3):re",
+        "extension:minus:r1:u3(0,3):im",
+        "extension:minus:r2:u3(3,0):re",
+        "extension:minus:r2:u3(3,0):im",
+        "extension:minus:r2:u3(2,1):re",
+        "extension:minus:r2:u3(2,1):im",
+        "extension:minus:r2:u3(1,2):re",
+        "extension:minus:r2:u3(1,2):im",
+        "extension:minus:r2:u3(0,3):re",
+        "extension:minus:r2:u3(0,3):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 14,
+        "old_point_max_abs_difference": 2.168404344971009e-19,
+        "old_covariance_max_abs_difference": 3.705769144237564e-22,
+        "fresh_contribution_to_old_block_max_abs": 1.6326664382497484e-32
+      },
+      "score": {
+        "covariance_identity_max_abs_error": 5.790264287871194e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 30,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 80.134864363014,
+        "asymptotic_degrees_of_freedom": 30,
+        "asymptotic_survival_p": 1.8893187088555928e-06,
+        "finite_batch_Hotelling_F": 2.4770175283471327,
+        "finite_batch_numerator_df": 30,
+        "finite_batch_denominator_df": 370,
+        "finite_batch_survival_p": 4.531913542191007e-05,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "hand__minus_orientation_R0__point",
+          "old": "hand__minus_orientation_R0__old_covariance",
+          "fresh": "hand__minus_orientation_R0__fresh_covariance",
+          "total": "derive `hand__minus_orientation_R0__old_covariance + hand__minus_orientation_R0__fresh_covariance`",
+          "correlation_eigenvalues": "hand__minus_orientation_R0__correlation_eigenvalues"
+        }
+      },
+      "decision": "rejected"
+    },
+    "minus_orientation_R1": {
+      "matrix_shape": [
+        20,
+        6
+      ],
+      "old_matrix_shape": [
+        12,
+        6
+      ],
+      "extension_matrix_shape": [
+        8,
+        6
+      ],
+      "frozen_old_pivot": {
+        "rows": [
+          0,
+          1,
+          2,
+          5,
+          6
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "abs_determinant": 4.39801385504406e-12,
+        "condition_number": 88.05365905490855
+      },
+      "projective_q": [
+        {
+          "re": 0.014043170796940955,
+          "im": -0.00956252053768015,
+          "abs": 0.01698977472086107
+        },
+        {
+          "re": -0.3051881193634458,
+          "im": 0.14865060625113583,
+          "abs": 0.33946544881537954
+        },
+        {
+          "re": -0.32864826386534424,
+          "im": -0.05995743761305674,
+          "abs": 0.3340727101497944
+        },
+        {
+          "re": 0.4212097497122648,
+          "im": -0.269928061619366,
+          "abs": 0.5002787340096089
+        },
+        {
+          "re": -0.036568657384295516,
+          "im": 0.19058904023393278,
+          "abs": 0.1940655790195202
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        }
+      ],
+      "residual_order": [
+        "old:minus:r1:u(0,2):re",
+        "old:minus:r1:u(0,2):im",
+        "old:minus:r1:u(-1,1):re",
+        "old:minus:r1:u(-1,1):im",
+        "old:minus:r2:u(0,1):re",
+        "old:minus:r2:u(0,1):im",
+        "old:minus:r2:u(-1,0):re",
+        "old:minus:r2:u(-1,0):im",
+        "old:minus:r2:u(0,2):re",
+        "old:minus:r2:u(0,2):im",
+        "old:minus:r2:u(-1,1):re",
+        "old:minus:r2:u(-1,1):im",
+        "old:minus:r2:u(-2,0):re",
+        "old:minus:r2:u(-2,0):im",
+        "extension:minus:r1:u3(0,3):re",
+        "extension:minus:r1:u3(0,3):im",
+        "extension:minus:r1:u3(-1,2):re",
+        "extension:minus:r1:u3(-1,2):im",
+        "extension:minus:r1:u3(-2,1):re",
+        "extension:minus:r1:u3(-2,1):im",
+        "extension:minus:r1:u3(-3,0):re",
+        "extension:minus:r1:u3(-3,0):im",
+        "extension:minus:r2:u3(0,3):re",
+        "extension:minus:r2:u3(0,3):im",
+        "extension:minus:r2:u3(-1,2):re",
+        "extension:minus:r2:u3(-1,2):im",
+        "extension:minus:r2:u3(-2,1):re",
+        "extension:minus:r2:u3(-2,1):im",
+        "extension:minus:r2:u3(-3,0):re",
+        "extension:minus:r2:u3(-3,0):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 14,
+        "old_point_max_abs_difference": 2.710505431213761e-19,
+        "old_covariance_max_abs_difference": 2.117582368135751e-22,
+        "fresh_contribution_to_old_block_max_abs": 4.954047473143604e-33
+      },
+      "score": {
+        "covariance_identity_max_abs_error": 6.617444900424222e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 30,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 74.09514515384366,
+        "asymptotic_degrees_of_freedom": 30,
+        "asymptotic_survival_p": 1.3451314657671276e-05,
+        "finite_batch_Hotelling_F": 2.2903261242207313,
+        "finite_batch_numerator_df": 30,
+        "finite_batch_denominator_df": 370,
+        "finite_batch_survival_p": 0.00019734118469538758,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "hand__minus_orientation_R1__point",
+          "old": "hand__minus_orientation_R1__old_covariance",
+          "fresh": "hand__minus_orientation_R1__fresh_covariance",
+          "total": "derive `hand__minus_orientation_R1__old_covariance + hand__minus_orientation_R1__fresh_covariance`",
+          "correlation_eigenvalues": "hand__minus_orientation_R1__correlation_eigenvalues"
+        }
+      },
+      "decision": "rejected"
+    },
+    "minus_orientation_R2": {
+      "matrix_shape": [
+        20,
+        6
+      ],
+      "old_matrix_shape": [
+        12,
+        6
+      ],
+      "extension_matrix_shape": [
+        8,
+        6
+      ],
+      "frozen_old_pivot": {
+        "rows": [
+          1,
+          2,
+          6,
+          7,
+          8
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          3,
+          5
+        ],
+        "abs_determinant": 1.0015768729755183e-12,
+        "condition_number": 129.70928739641343
+      },
+      "projective_q": [
+        {
+          "re": -0.03584917723675665,
+          "im": 0.0048184719242164225,
+          "abs": 0.03617155208498597
+        },
+        {
+          "re": -0.0795609104555158,
+          "im": -0.16711803842737444,
+          "abs": 0.18509018677478287
+        },
+        {
+          "re": 0.05377924602367839,
+          "im": 0.016974436176626216,
+          "abs": 0.056394492518238734
+        },
+        {
+          "re": -0.3579495773254808,
+          "im": -0.05246302869696859,
+          "abs": 0.3617737819239384
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": -0.6193642288527863,
+          "im": 0.45145018758226735,
+          "abs": 0.7664328541043051
+        }
+      ],
+      "residual_order": [
+        "old:minus:r1:u(0,0):re",
+        "old:minus:r1:u(0,0):im",
+        "old:minus:r1:u(-2,0):re",
+        "old:minus:r1:u(-2,0):im",
+        "old:minus:r1:u(-1,-1):re",
+        "old:minus:r1:u(-1,-1):im",
+        "old:minus:r1:u(0,-2):re",
+        "old:minus:r1:u(0,-2):im",
+        "old:minus:r2:u(-2,0):re",
+        "old:minus:r2:u(-2,0):im",
+        "old:minus:r2:u(-1,-1):re",
+        "old:minus:r2:u(-1,-1):im",
+        "old:minus:r2:u(0,-2):re",
+        "old:minus:r2:u(0,-2):im",
+        "extension:minus:r1:u3(-3,0):re",
+        "extension:minus:r1:u3(-3,0):im",
+        "extension:minus:r1:u3(-2,-1):re",
+        "extension:minus:r1:u3(-2,-1):im",
+        "extension:minus:r1:u3(-1,-2):re",
+        "extension:minus:r1:u3(-1,-2):im",
+        "extension:minus:r1:u3(0,-3):re",
+        "extension:minus:r1:u3(0,-3):im",
+        "extension:minus:r2:u3(-3,0):re",
+        "extension:minus:r2:u3(-3,0):im",
+        "extension:minus:r2:u3(-2,-1):re",
+        "extension:minus:r2:u3(-2,-1):im",
+        "extension:minus:r2:u3(-1,-2):re",
+        "extension:minus:r2:u3(-1,-2):im",
+        "extension:minus:r2:u3(0,-3):re",
+        "extension:minus:r2:u3(0,-3):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 14,
+        "old_point_max_abs_difference": 1.0842021724855044e-19,
+        "old_covariance_max_abs_difference": 5.823351512373315e-22,
+        "fresh_contribution_to_old_block_max_abs": 4.2212002138028344e-33
+      },
+      "score": {
+        "covariance_identity_max_abs_error": 1.1580528575742387e-23,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 30,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 53.70406877895249,
+        "asymptotic_degrees_of_freedom": 30,
+        "asymptotic_survival_p": 0.004959185087910384,
+        "finite_batch_Hotelling_F": 1.6600255178122323,
+        "finite_batch_numerator_df": 30,
+        "finite_batch_denominator_df": 370,
+        "finite_batch_survival_p": 0.017829652864884898,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "hand__minus_orientation_R2__point",
+          "old": "hand__minus_orientation_R2__old_covariance",
+          "fresh": "hand__minus_orientation_R2__fresh_covariance",
+          "total": "derive `hand__minus_orientation_R2__old_covariance + hand__minus_orientation_R2__fresh_covariance`",
+          "correlation_eigenvalues": "hand__minus_orientation_R2__correlation_eigenvalues"
+        }
+      },
+      "decision": "survives"
+    },
+    "minus_orientation_R3": {
+      "matrix_shape": [
+        20,
+        6
+      ],
+      "old_matrix_shape": [
+        12,
+        6
+      ],
+      "extension_matrix_shape": [
+        8,
+        6
+      ],
+      "frozen_old_pivot": {
+        "rows": [
+          1,
+          2,
+          6,
+          7,
+          8
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "abs_determinant": 1.4508572072141545e-12,
+        "condition_number": 106.22173887675905
+      },
+      "projective_q": [
+        {
+          "re": -0.010062972326472349,
+          "im": 0.012880186319965037,
+          "abs": 0.016345109717599414
+        },
+        {
+          "re": 0.21716948695634394,
+          "im": 0.02215598609612211,
+          "abs": 0.21829675623969588
+        },
+        {
+          "re": -0.48105605986538147,
+          "im": -0.10958258018725939,
+          "abs": 0.49337944283654805
+        },
+        {
+          "re": -0.2872309992566744,
+          "im": -0.1012688138566663,
+          "abs": 0.3045603710168541
+        },
+        {
+          "re": -0.07887583952683344,
+          "im": 0.04057852780034923,
+          "abs": 0.08870183188360033
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        }
+      ],
+      "residual_order": [
+        "old:minus:r1:u(0,0):re",
+        "old:minus:r1:u(0,0):im",
+        "old:minus:r1:u(0,-2):re",
+        "old:minus:r1:u(0,-2):im",
+        "old:minus:r1:u(1,-1):re",
+        "old:minus:r1:u(1,-1):im",
+        "old:minus:r1:u(2,0):re",
+        "old:minus:r1:u(2,0):im",
+        "old:minus:r2:u(0,-2):re",
+        "old:minus:r2:u(0,-2):im",
+        "old:minus:r2:u(1,-1):re",
+        "old:minus:r2:u(1,-1):im",
+        "old:minus:r2:u(2,0):re",
+        "old:minus:r2:u(2,0):im",
+        "extension:minus:r1:u3(0,-3):re",
+        "extension:minus:r1:u3(0,-3):im",
+        "extension:minus:r1:u3(1,-2):re",
+        "extension:minus:r1:u3(1,-2):im",
+        "extension:minus:r1:u3(2,-1):re",
+        "extension:minus:r1:u3(2,-1):im",
+        "extension:minus:r1:u3(3,0):re",
+        "extension:minus:r1:u3(3,0):im",
+        "extension:minus:r2:u3(0,-3):re",
+        "extension:minus:r2:u3(0,-3):im",
+        "extension:minus:r2:u3(1,-2):re",
+        "extension:minus:r2:u3(1,-2):im",
+        "extension:minus:r2:u3(2,-1):re",
+        "extension:minus:r2:u3(2,-1):im",
+        "extension:minus:r2:u3(3,0):re",
+        "extension:minus:r2:u3(3,0):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 14,
+        "old_point_max_abs_difference": 4.336808689942018e-19,
+        "old_covariance_max_abs_difference": 2.117582368135751e-22,
+        "fresh_contribution_to_old_block_max_abs": 6.078528307876111e-33
+      },
+      "score": {
+        "covariance_identity_max_abs_error": 5.790264287871194e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 30,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 78.12520055422827,
+        "asymptotic_degrees_of_freedom": 30,
+        "asymptotic_survival_p": 3.661921758056805e-06,
+        "finite_batch_Hotelling_F": 2.4148975944080586,
+        "finite_batch_numerator_df": 30,
+        "finite_batch_denominator_df": 370,
+        "finite_batch_survival_p": 7.431208130149206e-05,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "hand__minus_orientation_R3__point",
+          "old": "hand__minus_orientation_R3__old_covariance",
+          "fresh": "hand__minus_orientation_R3__fresh_covariance",
+          "total": "derive `hand__minus_orientation_R3__old_covariance + hand__minus_orientation_R3__fresh_covariance`",
+          "correlation_eigenvalues": "hand__minus_orientation_R3__correlation_eigenvalues"
+        }
+      },
+      "decision": "rejected"
+    },
+    "minus_alexander_R0": {
+      "matrix_shape": [
+        20,
+        6
+      ],
+      "old_matrix_shape": [
+        12,
+        6
+      ],
+      "extension_matrix_shape": [
+        8,
+        6
+      ],
+      "frozen_old_pivot": {
+        "rows": [
+          1,
+          2,
+          6,
+          7,
+          8
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "abs_determinant": 1.450857207214155e-12,
+        "condition_number": 106.22173887675916
+      },
+      "projective_q": [
+        {
+          "re": -0.010062972326472347,
+          "im": 0.01288018631996504,
+          "abs": 0.016345109717599417
+        },
+        {
+          "re": -0.4810560598653813,
+          "im": -0.10958258018725939,
+          "abs": 0.4933794428365479
+        },
+        {
+          "re": 0.2171694869563439,
+          "im": 0.022155986096122002,
+          "abs": 0.2182967562396958
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": -0.07887583952683364,
+          "im": 0.04057852780034918,
+          "abs": 0.08870183188360048
+        },
+        {
+          "re": -0.2872309992566743,
+          "im": -0.10126881385666596,
+          "abs": 0.30456037101685385
+        }
+      ],
+      "residual_order": [
+        "old:minus:r1:u(0,0):re",
+        "old:minus:r1:u(0,0):im",
+        "old:minus:r1:u(2,0):re",
+        "old:minus:r1:u(2,0):im",
+        "old:minus:r1:u(1,-1):re",
+        "old:minus:r1:u(1,-1):im",
+        "old:minus:r1:u(0,-2):re",
+        "old:minus:r1:u(0,-2):im",
+        "old:minus:r2:u(2,0):re",
+        "old:minus:r2:u(2,0):im",
+        "old:minus:r2:u(1,-1):re",
+        "old:minus:r2:u(1,-1):im",
+        "old:minus:r2:u(0,-2):re",
+        "old:minus:r2:u(0,-2):im",
+        "extension:minus:r1:u3(3,0):re",
+        "extension:minus:r1:u3(3,0):im",
+        "extension:minus:r1:u3(2,-1):re",
+        "extension:minus:r1:u3(2,-1):im",
+        "extension:minus:r1:u3(1,-2):re",
+        "extension:minus:r1:u3(1,-2):im",
+        "extension:minus:r1:u3(0,-3):re",
+        "extension:minus:r1:u3(0,-3):im",
+        "extension:minus:r2:u3(3,0):re",
+        "extension:minus:r2:u3(3,0):im",
+        "extension:minus:r2:u3(2,-1):re",
+        "extension:minus:r2:u3(2,-1):im",
+        "extension:minus:r2:u3(1,-2):re",
+        "extension:minus:r2:u3(1,-2):im",
+        "extension:minus:r2:u3(0,-3):re",
+        "extension:minus:r2:u3(0,-3):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 14,
+        "old_point_max_abs_difference": 2.168404344971009e-19,
+        "old_covariance_max_abs_difference": 1.7205356741102976e-22,
+        "fresh_contribution_to_old_block_max_abs": 6.420914547440139e-33
+      },
+      "score": {
+        "covariance_identity_max_abs_error": 4.1359030627651384e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 30,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 78.12520055422857,
+        "asymptotic_degrees_of_freedom": 30,
+        "asymptotic_survival_p": 3.6619217580564505e-06,
+        "finite_batch_Hotelling_F": 2.414897594408068,
+        "finite_batch_numerator_df": 30,
+        "finite_batch_denominator_df": 370,
+        "finite_batch_survival_p": 7.431208130148775e-05,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "hand__minus_alexander_R0__point",
+          "old": "hand__minus_alexander_R0__old_covariance",
+          "fresh": "hand__minus_alexander_R0__fresh_covariance",
+          "total": "derive `hand__minus_alexander_R0__old_covariance + hand__minus_alexander_R0__fresh_covariance`",
+          "correlation_eigenvalues": "hand__minus_alexander_R0__correlation_eigenvalues"
+        }
+      },
+      "decision": "rejected"
+    },
+    "minus_alexander_R1": {
+      "matrix_shape": [
+        20,
+        6
+      ],
+      "old_matrix_shape": [
+        12,
+        6
+      ],
+      "extension_matrix_shape": [
+        8,
+        6
+      ],
+      "frozen_old_pivot": {
+        "rows": [
+          0,
+          6,
+          7,
+          8,
+          9
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "abs_determinant": 1.889998387650288e-12,
+        "condition_number": 112.0803595854761
+      },
+      "projective_q": [
+        {
+          "re": 0.013593441745833164,
+          "im": -0.019478018797524824,
+          "abs": 0.023752365666899165
+        },
+        {
+          "re": -0.28559664313223343,
+          "im": 0.0576238190984454,
+          "abs": 0.29135192996767784
+        },
+        {
+          "re": 0.023410543022189513,
+          "im": -0.3411709280375563,
+          "abs": 0.34197317974163
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": -0.46429809017517937,
+          "im": 0.5347983528821605,
+          "abs": 0.7082245369837102
+        },
+        {
+          "re": 0.1086813136965801,
+          "im": 0.2752426878452551,
+          "abs": 0.29592256615387574
+        }
+      ],
+      "residual_order": [
+        "old:minus:r1:u(0,1):re",
+        "old:minus:r1:u(0,1):im",
+        "old:minus:r1:u(1,0):re",
+        "old:minus:r1:u(1,0):im",
+        "old:minus:r1:u(0,2):re",
+        "old:minus:r1:u(0,2):im",
+        "old:minus:r1:u(1,1):re",
+        "old:minus:r1:u(1,1):im",
+        "old:minus:r1:u(2,0):re",
+        "old:minus:r1:u(2,0):im",
+        "old:minus:r2:u(1,1):re",
+        "old:minus:r2:u(1,1):im",
+        "old:minus:r2:u(2,0):re",
+        "old:minus:r2:u(2,0):im",
+        "extension:minus:r1:u3(0,3):re",
+        "extension:minus:r1:u3(0,3):im",
+        "extension:minus:r1:u3(1,2):re",
+        "extension:minus:r1:u3(1,2):im",
+        "extension:minus:r1:u3(2,1):re",
+        "extension:minus:r1:u3(2,1):im",
+        "extension:minus:r1:u3(3,0):re",
+        "extension:minus:r1:u3(3,0):im",
+        "extension:minus:r2:u3(0,3):re",
+        "extension:minus:r2:u3(0,3):im",
+        "extension:minus:r2:u3(1,2):re",
+        "extension:minus:r2:u3(1,2):im",
+        "extension:minus:r2:u3(2,1):re",
+        "extension:minus:r2:u3(2,1):im",
+        "extension:minus:r2:u3(3,0):re",
+        "extension:minus:r2:u3(3,0):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 14,
+        "old_point_max_abs_difference": 2.168404344971009e-19,
+        "old_covariance_max_abs_difference": 3.1763735522036263e-22,
+        "fresh_contribution_to_old_block_max_abs": 1.5777908354703088e-32
+      },
+      "score": {
+        "covariance_identity_max_abs_error": 5.790264287871194e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 30,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 80.13486436301392,
+        "asymptotic_degrees_of_freedom": 30,
+        "asymptotic_survival_p": 1.889318708855639e-06,
+        "finite_batch_Hotelling_F": 2.4770175283471305,
+        "finite_batch_numerator_df": 30,
+        "finite_batch_denominator_df": 370,
+        "finite_batch_survival_p": 4.5319135421910696e-05,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "hand__minus_alexander_R1__point",
+          "old": "hand__minus_alexander_R1__old_covariance",
+          "fresh": "hand__minus_alexander_R1__fresh_covariance",
+          "total": "derive `hand__minus_alexander_R1__old_covariance + hand__minus_alexander_R1__fresh_covariance`",
+          "correlation_eigenvalues": "hand__minus_alexander_R1__correlation_eigenvalues"
+        }
+      },
+      "decision": "rejected"
+    },
+    "minus_alexander_R2": {
+      "matrix_shape": [
+        20,
+        6
+      ],
+      "old_matrix_shape": [
+        12,
+        6
+      ],
+      "extension_matrix_shape": [
+        8,
+        6
+      ],
+      "frozen_old_pivot": {
+        "rows": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "abs_determinant": 4.39801385504406e-12,
+        "condition_number": 88.05365905490854
+      },
+      "projective_q": [
+        {
+          "re": 0.014043170796940927,
+          "im": -0.009562520537680154,
+          "abs": 0.01698977472086105
+        },
+        {
+          "re": -0.3286482638653442,
+          "im": -0.059957437613056705,
+          "abs": 0.3340727101497943
+        },
+        {
+          "re": -0.30518811936344564,
+          "im": 0.1486506062511358,
+          "abs": 0.3394654488153794
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": -0.036568657384295496,
+          "im": 0.1905890402339328,
+          "abs": 0.19406557901952023
+        },
+        {
+          "re": 0.42120974971226477,
+          "im": -0.26992806161936594,
+          "abs": 0.5002787340096089
+        }
+      ],
+      "residual_order": [
+        "old:minus:r1:u(-1,1):re",
+        "old:minus:r1:u(-1,1):im",
+        "old:minus:r1:u(0,2):re",
+        "old:minus:r1:u(0,2):im",
+        "old:minus:r2:u(-1,0):re",
+        "old:minus:r2:u(-1,0):im",
+        "old:minus:r2:u(0,1):re",
+        "old:minus:r2:u(0,1):im",
+        "old:minus:r2:u(-2,0):re",
+        "old:minus:r2:u(-2,0):im",
+        "old:minus:r2:u(-1,1):re",
+        "old:minus:r2:u(-1,1):im",
+        "old:minus:r2:u(0,2):re",
+        "old:minus:r2:u(0,2):im",
+        "extension:minus:r1:u3(-3,0):re",
+        "extension:minus:r1:u3(-3,0):im",
+        "extension:minus:r1:u3(-2,1):re",
+        "extension:minus:r1:u3(-2,1):im",
+        "extension:minus:r1:u3(-1,2):re",
+        "extension:minus:r1:u3(-1,2):im",
+        "extension:minus:r1:u3(0,3):re",
+        "extension:minus:r1:u3(0,3):im",
+        "extension:minus:r2:u3(-3,0):re",
+        "extension:minus:r2:u3(-3,0):im",
+        "extension:minus:r2:u3(-2,1):re",
+        "extension:minus:r2:u3(-2,1):im",
+        "extension:minus:r2:u3(-1,2):re",
+        "extension:minus:r2:u3(-1,2):im",
+        "extension:minus:r2:u3(0,3):re",
+        "extension:minus:r2:u3(0,3):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 14,
+        "old_point_max_abs_difference": 1.3552527156068805e-19,
+        "old_covariance_max_abs_difference": 2.3822801641527197e-22,
+        "fresh_contribution_to_old_block_max_abs": 4.2212002138028344e-33
+      },
+      "score": {
+        "covariance_identity_max_abs_error": 3.308722450212111e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 30,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 74.09514515384363,
+        "asymptotic_degrees_of_freedom": 30,
+        "asymptotic_survival_p": 1.3451314657671421e-05,
+        "finite_batch_Hotelling_F": 2.2903261242207305,
+        "finite_batch_numerator_df": 30,
+        "finite_batch_denominator_df": 370,
+        "finite_batch_survival_p": 0.0001973411846953862,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "hand__minus_alexander_R2__point",
+          "old": "hand__minus_alexander_R2__old_covariance",
+          "fresh": "hand__minus_alexander_R2__fresh_covariance",
+          "total": "derive `hand__minus_alexander_R2__old_covariance + hand__minus_alexander_R2__fresh_covariance`",
+          "correlation_eigenvalues": "hand__minus_alexander_R2__correlation_eigenvalues"
+        }
+      },
+      "decision": "rejected"
+    },
+    "minus_alexander_R3": {
+      "matrix_shape": [
+        20,
+        6
+      ],
+      "old_matrix_shape": [
+        12,
+        6
+      ],
+      "extension_matrix_shape": [
+        8,
+        6
+      ],
+      "frozen_old_pivot": {
+        "rows": [
+          1,
+          2,
+          6,
+          7,
+          8
+        ],
+        "columns": [
+          0,
+          1,
+          2,
+          3,
+          5
+        ],
+        "abs_determinant": 1.0015768729755222e-12,
+        "condition_number": 129.70928739641354
+      },
+      "projective_q": [
+        {
+          "re": -0.035849177236756666,
+          "im": 0.0048184719242164225,
+          "abs": 0.036171552084985986
+        },
+        {
+          "re": 0.053779246023678534,
+          "im": 0.016974436176626084,
+          "abs": 0.05639449251823883
+        },
+        {
+          "re": -0.07956091045551565,
+          "im": -0.16711803842737435,
+          "abs": 0.18509018677478273
+        },
+        {
+          "re": -0.6193642288527865,
+          "im": 0.4514501875822676,
+          "abs": 0.7664328541043055
+        },
+        {
+          "re": 1.0,
+          "im": 0.0,
+          "abs": 1.0
+        },
+        {
+          "re": -0.35794957732548116,
+          "im": -0.052463028696968644,
+          "abs": 0.3617737819239387
+        }
+      ],
+      "residual_order": [
+        "old:minus:r1:u(0,0):re",
+        "old:minus:r1:u(0,0):im",
+        "old:minus:r1:u(0,-2):re",
+        "old:minus:r1:u(0,-2):im",
+        "old:minus:r1:u(-1,-1):re",
+        "old:minus:r1:u(-1,-1):im",
+        "old:minus:r1:u(-2,0):re",
+        "old:minus:r1:u(-2,0):im",
+        "old:minus:r2:u(0,-2):re",
+        "old:minus:r2:u(0,-2):im",
+        "old:minus:r2:u(-1,-1):re",
+        "old:minus:r2:u(-1,-1):im",
+        "old:minus:r2:u(-2,0):re",
+        "old:minus:r2:u(-2,0):im",
+        "extension:minus:r1:u3(0,-3):re",
+        "extension:minus:r1:u3(0,-3):im",
+        "extension:minus:r1:u3(-1,-2):re",
+        "extension:minus:r1:u3(-1,-2):im",
+        "extension:minus:r1:u3(-2,-1):re",
+        "extension:minus:r1:u3(-2,-1):im",
+        "extension:minus:r1:u3(-3,0):re",
+        "extension:minus:r1:u3(-3,0):im",
+        "extension:minus:r2:u3(0,-3):re",
+        "extension:minus:r2:u3(0,-3):im",
+        "extension:minus:r2:u3(-1,-2):re",
+        "extension:minus:r2:u3(-1,-2):im",
+        "extension:minus:r2:u3(-2,-1):re",
+        "extension:minus:r2:u3(-2,-1):im",
+        "extension:minus:r2:u3(-3,0):re",
+        "extension:minus:r2:u3(-3,0):im"
+      ],
+      "replay": {
+        "passed": true,
+        "old_residual_width": 14,
+        "old_point_max_abs_difference": 1.6263032587282567e-19,
+        "old_covariance_max_abs_difference": 8.999725064576941e-22,
+        "fresh_contribution_to_old_block_max_abs": 4.802787798815679e-33
+      },
+      "score": {
+        "covariance_identity_max_abs_error": 8.271806125530277e-24,
+        "eigen_relative_cutoff": 1e-10,
+        "resolved_covariance_modes": 30,
+        "discarded_covariance_modes": 0,
+        "asymptotic_chi_square": 53.70406877895261,
+        "asymptotic_degrees_of_freedom": 30,
+        "asymptotic_survival_p": 0.004959185087910219,
+        "finite_batch_Hotelling_F": 1.660025517812236,
+        "finite_batch_numerator_df": 30,
+        "finite_batch_denominator_df": 370,
+        "finite_batch_survival_p": 0.01782965286488452,
+        "finite_batch_calibration": "project-compatible min-stream-B Hotelling approximation for a sum of two independent jackknife covariance estimates; not an exact two-sample pivot law",
+        "covariance_payload_refs": {
+          "point": "hand__minus_alexander_R3__point",
+          "old": "hand__minus_alexander_R3__old_covariance",
+          "fresh": "hand__minus_alexander_R3__fresh_covariance",
+          "total": "derive `hand__minus_alexander_R3__old_covariance + hand__minus_alexander_R3__fresh_covariance`",
+          "correlation_eigenvalues": "hand__minus_alexander_R3__correlation_eigenvalues"
+        }
+      },
+      "decision": "survives"
+    }
+  },
+  "primary_retrospective_candidates": [
+    "orientation_preserving_R0_conjugate",
+    "alexander_reflection_R0_conjugate",
+    "alexander_reflection_R1_conjugate",
+    "alexander_reflection_R2_conjugate",
+    "alexander_reflection_R3_conjugate"
+  ],
+  "primary_retrospective_survivors": [],
+  "secondary_candidates": [
+    "orientation_preserving_R0_linear",
+    "orientation_preserving_R1_linear",
+    "orientation_preserving_R1_conjugate",
+    "orientation_preserving_R2_linear",
+    "orientation_preserving_R2_conjugate",
+    "orientation_preserving_R3_linear",
+    "orientation_preserving_R3_conjugate",
+    "alexander_reflection_R0_linear",
+    "alexander_reflection_R1_linear",
+    "alexander_reflection_R2_linear",
+    "alexander_reflection_R3_linear"
+  ],
+  "secondary_survivors": [],
+  "primary_candidates_with_both_hand_support": [],
+  "primary_cross_candidate_covariance": {
+    "candidate_order": [
+      "orientation_preserving_R0_conjugate",
+      "alexander_reflection_R0_conjugate",
+      "alexander_reflection_R1_conjugate",
+      "alexander_reflection_R2_conjugate",
+      "alexander_reflection_R3_conjugate"
+    ],
+    "candidate_slices": {
+      "orientation_preserving_R0_conjugate": [
+        0,
+        70
+      ],
+      "alexander_reflection_R0_conjugate": [
+        70,
+        140
+      ],
+      "alexander_reflection_R1_conjugate": [
+        140,
+        210
+      ],
+      "alexander_reflection_R2_conjugate": [
+        210,
+        280
+      ],
+      "alexander_reflection_R3_conjugate": [
+        280,
+        350
+      ]
+    },
+    "dimension": 350,
+    "scope": "saved for correlated contrasts; no p-values are multiplied or added",
+    "covariance_payload_refs": {
+      "old": "primary_cross__old_covariance",
+      "fresh": "primary_cross__fresh_covariance",
+      "total": "derive `primary_cross__old_covariance + primary_cross__fresh_covariance`"
+    }
+  },
+  "decision_alpha": 0.01,
+  "decision": "declared_fixed_bridges_rejected_and_full_hand_rank5_support_incomplete",
+  "claim_boundary": [
+    "The fixed-map family itself predates the radius-five reveal, but this augmented joint gate was designed after the marginal R2/R3 conflict was observed; it is a primary retrospective zero-sample synthesis, not a prospective confirmation.",
+    "The other eleven maps were frozen in the later joint-annihilation manifest and are reported as secondary retrospective existing-data views.",
+    "A candidate is rejected by one 70-real-coordinate joint Wald gate; old and fresh p-values are never combined as independent votes.",
+    "The old and fresh streams have independent seeds.  Within each stream one delete-one removes every hand, charge and displacement together; equal batch indices across streams are never paired.",
+    "Hand-specific augmented support is reported because failure there cannot be interpreted as bridge-only failure.",
+    "The finite-batch Hotelling calibration is the existing project approximation for summed independent jackknife covariances, not an exact two-sample pivot law.",
+    "Survival means compatibility with a declared truncated rank-at-most-five chart, not exact rank five, a closed transfer algebra or a continuum field identity."
+  ],
+  "manifest": {
+    "path": "analysis/p250_projective_leg_augmented_joint_manifest.json",
+    "sha256": "b89b6688e9d3c92cbea9368073d6ca7b1792f056470361c63fcf3493df1fb51d"
+  },
+  "inputs": {
+    "old_stream": {
+      "name": "old_radius_four_bivariate",
+      "commit": "4c1f5d8cf98b9c39557acff0146332899777505b",
+      "path": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv",
+      "sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72",
+      "samples": 80000,
+      "batches": 400,
+      "samples_per_batch": 200,
+      "seed": 25050510120261130,
+      "response": {
+        "commit": "4c1f5d8cf98b9c39557acff0146332899777505b",
+        "path": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.json",
+        "sha256": "1dcb88e9914c6c0b735938ff8574bfb056169ed6cbc7716bb57efd3b3e2fe8f8"
+      },
+      "exact_gate": {
+        "commit": "4c1f5d8cf98b9c39557acff0146332899777505b",
+        "path": "results/huawei-20260830/P250-projective-leg-bivariate-80k/exact_gate.json",
+        "sha256": "abc635623fdb336c15293546663836a2f4fc68899143a4d42b2969f05ba81f0b"
+      },
+      "dependency_group": "p250-projective-leg-N505-bivariate-80k",
+      "audit": {
+        "batch_ids": [
+          0,
+          399
+        ],
+        "batches": 400,
+        "samples": 80000,
+        "samples_per_batch": 200,
+        "field_hashes_unique": 400,
+        "translation_hashes_unique": 400
+      }
+    },
+    "fresh_stream": {
+      "name": "fresh_radius_five_shell",
+      "commit": "11130aef3ee46df8d52e59c8bfe486eadcdbbaf5",
+      "raw_reveal_commit": "ad162d3e1ac1620d9959df2380aaeacb14330430",
+      "path": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/response_1200k.batches.csv",
+      "sha256": "50985e38c9c8afab0c8b0e78113184d33861d928aefaba1e8043e67fc348677e",
+      "samples": 1200000,
+      "batches": 400,
+      "samples_per_batch": 3000,
+      "seed": 25050510120261250,
+      "response": {
+        "commit": "11130aef3ee46df8d52e59c8bfe486eadcdbbaf5",
+        "path": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/response_1200k.json",
+        "sha256": "e27f727a874e376b3872cbd062f3afe86f554dcd18de648a2d4a470887093d59"
+      },
+      "exact_gate": {
+        "commit": "11130aef3ee46df8d52e59c8bfe486eadcdbbaf5",
+        "path": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/exact_gate.json",
+        "sha256": "8f3fd95f432457ce7eb44eb66ba8a19ce6a48b18fca56309c0cd79fb4b0deed7"
+      },
+      "dependency_group": "p250-projective-leg-N505-radius5-1200k",
+      "audit": {
+        "batch_ids": [
+          0,
+          399
+        ],
+        "batches": 400,
+        "samples": 1200000,
+        "samples_per_batch": 3000,
+        "field_hashes_unique": 400,
+        "translation_hashes_unique": 400
+      }
+    },
+    "cross_stream_independence": {
+      "seed_distinct": true,
+      "batch_indices_are_not_paired": true
+    },
+    "reference_joint_score": {
+      "commit": "99d23a705188ba9771523f1f10dc6d6bf9942ec4",
+      "path": "results/local-20260830/P250-projective-leg-joint-annihilation/score.json",
+      "sha256": "a0114b461818687ccc63027c02eb0418f7bfefcee283bf5a71c667eea71fb44e"
+    },
+    "reference_radius5_score": {
+      "commit": "11130aef3ee46df8d52e59c8bfe486eadcdbbaf5",
+      "path": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/score.json",
+      "sha256": "3fdced15302a360567b65185c30fca1eee9cfdff03dedac4d9b6f32e6ba8b2ca",
+      "published_surviving_maps": [
+        "Alexander_R2_conjugation"
+      ],
+      "published_decision": "Alexander_family_selected_over_identity"
+    }
+  },
+  "input_semantic_audit": {
+    "passed": true,
+    "parent_order": 101,
+    "child_order": 505,
+    "p": 0.59274605079,
+    "hands": [
+      "plus",
+      "minus"
+    ],
+    "charges": [
+      1,
+      2
+    ],
+    "gauge": {
+      "old_exact_gate_passed": true,
+      "shared_rotation_gauge_functions_pinned": true,
+      "equation": "t(Rx)=s(x)+k*t(x) mod 5"
+    },
+    "translation": {
+      "same_uniform_parent_translation_convention": true,
+      "independent_seed_and_salt": true,
+      "old_salt_token": "0x250505101B1A",
+      "fresh_salt_token": "0x250505101250"
+    },
+    "radius5_aliases": {
+      "orientation_preserving_R0_conjugate": "identity_conjugation",
+      "alexander_reflection_R0_conjugate": "Alexander_R0_conjugation",
+      "alexander_reflection_R1_conjugate": "Alexander_R1_conjugation",
+      "alexander_reflection_R2_conjugate": "Alexander_R2_conjugation",
+      "alexander_reflection_R3_conjugate": "Alexander_R3_conjugation"
+    },
+    "artifacts": {
+      "old_response": {
+        "commit": "4c1f5d8cf98b9c39557acff0146332899777505b",
+        "path": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.json",
+        "sha256": "1dcb88e9914c6c0b735938ff8574bfb056169ed6cbc7716bb57efd3b3e2fe8f8",
+        "observed_sha256": "1dcb88e9914c6c0b735938ff8574bfb056169ed6cbc7716bb57efd3b3e2fe8f8"
+      },
+      "old_exact_gate": {
+        "commit": "4c1f5d8cf98b9c39557acff0146332899777505b",
+        "path": "results/huawei-20260830/P250-projective-leg-bivariate-80k/exact_gate.json",
+        "sha256": "abc635623fdb336c15293546663836a2f4fc68899143a4d42b2969f05ba81f0b",
+        "observed_sha256": "abc635623fdb336c15293546663836a2f4fc68899143a4d42b2969f05ba81f0b"
+      },
+      "fresh_response": {
+        "commit": "11130aef3ee46df8d52e59c8bfe486eadcdbbaf5",
+        "path": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/response_1200k.json",
+        "sha256": "e27f727a874e376b3872cbd062f3afe86f554dcd18de648a2d4a470887093d59",
+        "observed_sha256": "e27f727a874e376b3872cbd062f3afe86f554dcd18de648a2d4a470887093d59"
+      },
+      "fresh_exact_gate": {
+        "commit": "11130aef3ee46df8d52e59c8bfe486eadcdbbaf5",
+        "path": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/exact_gate.json",
+        "sha256": "8f3fd95f432457ce7eb44eb66ba8a19ce6a48b18fca56309c0cd79fb4b0deed7",
+        "observed_sha256": "8f3fd95f432457ce7eb44eb66ba8a19ce6a48b18fca56309c0cd79fb4b0deed7"
+      },
+      "old_runner": {
+        "commit": "4c1f5d8cf98b9c39557acff0146332899777505b",
+        "declared_manifest_runner_commit": "0d0115da2820eeebf219d8ced61a522d709fec4c",
+        "path": "scripts/z5_projective_leg_bivariate_mc.py",
+        "sha256": "5a772bcfe28edab58d43054dc3c91e3b914ee956d02bbbad30828a3f3541a961",
+        "observed_sha256": "5a772bcfe28edab58d43054dc3c91e3b914ee956d02bbbad30828a3f3541a961"
+      },
+      "fresh_runner": {
+        "commit": "11130aef3ee46df8d52e59c8bfe486eadcdbbaf5",
+        "declared_manifest_runner_commit": "fd64f78b08d3b0033b35b40295b514597a6c674b",
+        "path": "scripts/z5_projective_leg_radius5_morphism_mc.py",
+        "sha256": "bfb1562212f79f81d68465acfd490193f2454779a270ad5ee19829b3eea47b24",
+        "observed_sha256": "bfb1562212f79f81d68465acfd490193f2454779a270ad5ee19829b3eea47b24"
+      },
+      "shared_geometry_runner": {
+        "commit": "11130aef3ee46df8d52e59c8bfe486eadcdbbaf5",
+        "path": "scripts/z5_projective_leg_cross_scale_mc.py",
+        "sha256": "15b5271a5eb95e9388c1aec2e23d116723609ec2f87abd38b30b72c0b62bdc48",
+        "observed_sha256": "15b5271a5eb95e9388c1aec2e23d116723609ec2f87abd38b30b72c0b62bdc48"
+      }
+    },
+    "fresh_N505_evidence": "the pinned fresh runner imports CHILD_ORDER and contexts from the pinned shared geometry runner, where CHILD_ORDER=505; its response pins that runner commit"
+  },
+  "runtime": {
+    "python": "3.13.7",
+    "machine": "arm64",
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "numpy": "2.4.6",
+    "scipy": "1.18.0",
+    "git_head": "7a2afb0fed63ac8603e53bdec324c8ceef944ee8",
+    "command": "python3 /private/tmp/matching-pr267-fix/scripts/score_z5_projective_leg_augmented_joint.py analysis/p250_projective_leg_augmented_joint_manifest.json --output results/local-20260830/P250-projective-leg-augmented-joint/score.json --markdown results/local-20260830/P250-projective-leg-augmented-joint/score.md --covariance-output results/local-20260830/P250-projective-leg-augmented-joint/covariance.npz",
+    "server_used": false
+  },
+  "covariance_payload": {
+    "path": "results/local-20260830/P250-projective-leg-augmented-joint/covariance.npz",
+    "sha256": "479995a06d8d424028598b13d7150379ef23e07b8bca4fd76dbe84be00ca5720",
+    "format": "numpy savez_compressed NPZ",
+    "array_count": 102,
+    "arrays": {
+      "joint__orientation_preserving_R0_linear__point": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R0_linear__old_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R0_linear__fresh_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R0_linear__correlation_eigenvalues": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R0_conjugate__point": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R0_conjugate__old_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R0_conjugate__fresh_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R0_conjugate__correlation_eigenvalues": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R1_linear__point": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R1_linear__old_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R1_linear__fresh_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R1_linear__correlation_eigenvalues": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R1_conjugate__point": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R1_conjugate__old_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R1_conjugate__fresh_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R1_conjugate__correlation_eigenvalues": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R2_linear__point": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R2_linear__old_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R2_linear__fresh_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R2_linear__correlation_eigenvalues": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R2_conjugate__point": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R2_conjugate__old_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R2_conjugate__fresh_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R2_conjugate__correlation_eigenvalues": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R3_linear__point": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R3_linear__old_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R3_linear__fresh_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R3_linear__correlation_eigenvalues": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R3_conjugate__point": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R3_conjugate__old_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R3_conjugate__fresh_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__orientation_preserving_R3_conjugate__correlation_eigenvalues": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R0_linear__point": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R0_linear__old_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R0_linear__fresh_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R0_linear__correlation_eigenvalues": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R0_conjugate__point": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R0_conjugate__old_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R0_conjugate__fresh_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R0_conjugate__correlation_eigenvalues": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R1_linear__point": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R1_linear__old_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R1_linear__fresh_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R1_linear__correlation_eigenvalues": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R1_conjugate__point": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R1_conjugate__old_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R1_conjugate__fresh_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R1_conjugate__correlation_eigenvalues": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R2_linear__point": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R2_linear__old_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R2_linear__fresh_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R2_linear__correlation_eigenvalues": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R2_conjugate__point": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R2_conjugate__old_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R2_conjugate__fresh_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R2_conjugate__correlation_eigenvalues": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R3_linear__point": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R3_linear__old_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R3_linear__fresh_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R3_linear__correlation_eigenvalues": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R3_conjugate__point": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R3_conjugate__old_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R3_conjugate__fresh_covariance": {
+        "shape": [
+          70,
+          70
+        ],
+        "dtype": "float64"
+      },
+      "joint__alexander_reflection_R3_conjugate__correlation_eigenvalues": {
+        "shape": [
+          70
+        ],
+        "dtype": "float64"
+      },
+      "hand__plus_source__point": {
+        "shape": [
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__plus_source__old_covariance": {
+        "shape": [
+          30,
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__plus_source__fresh_covariance": {
+        "shape": [
+          30,
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__plus_source__correlation_eigenvalues": {
+        "shape": [
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_orientation_R0__point": {
+        "shape": [
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_orientation_R0__old_covariance": {
+        "shape": [
+          30,
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_orientation_R0__fresh_covariance": {
+        "shape": [
+          30,
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_orientation_R0__correlation_eigenvalues": {
+        "shape": [
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_orientation_R1__point": {
+        "shape": [
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_orientation_R1__old_covariance": {
+        "shape": [
+          30,
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_orientation_R1__fresh_covariance": {
+        "shape": [
+          30,
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_orientation_R1__correlation_eigenvalues": {
+        "shape": [
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_orientation_R2__point": {
+        "shape": [
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_orientation_R2__old_covariance": {
+        "shape": [
+          30,
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_orientation_R2__fresh_covariance": {
+        "shape": [
+          30,
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_orientation_R2__correlation_eigenvalues": {
+        "shape": [
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_orientation_R3__point": {
+        "shape": [
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_orientation_R3__old_covariance": {
+        "shape": [
+          30,
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_orientation_R3__fresh_covariance": {
+        "shape": [
+          30,
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_orientation_R3__correlation_eigenvalues": {
+        "shape": [
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_alexander_R0__point": {
+        "shape": [
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_alexander_R0__old_covariance": {
+        "shape": [
+          30,
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_alexander_R0__fresh_covariance": {
+        "shape": [
+          30,
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_alexander_R0__correlation_eigenvalues": {
+        "shape": [
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_alexander_R1__point": {
+        "shape": [
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_alexander_R1__old_covariance": {
+        "shape": [
+          30,
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_alexander_R1__fresh_covariance": {
+        "shape": [
+          30,
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_alexander_R1__correlation_eigenvalues": {
+        "shape": [
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_alexander_R2__point": {
+        "shape": [
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_alexander_R2__old_covariance": {
+        "shape": [
+          30,
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_alexander_R2__fresh_covariance": {
+        "shape": [
+          30,
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_alexander_R2__correlation_eigenvalues": {
+        "shape": [
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_alexander_R3__point": {
+        "shape": [
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_alexander_R3__old_covariance": {
+        "shape": [
+          30,
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_alexander_R3__fresh_covariance": {
+        "shape": [
+          30,
+          30
+        ],
+        "dtype": "float64"
+      },
+      "hand__minus_alexander_R3__correlation_eigenvalues": {
+        "shape": [
+          30
+        ],
+        "dtype": "float64"
+      },
+      "primary_cross__old_covariance": {
+        "shape": [
+          350,
+          350
+        ],
+        "dtype": "float64"
+      },
+      "primary_cross__fresh_covariance": {
+        "shape": [
+          350,
+          350
+        ],
+        "dtype": "float64"
+      }
+    },
+    "derivation": "every total covariance is the exact array sum old + fresh",
+    "deduplication": "one canonical plus-hand block and eight minus-hand geometry blocks are stored; candidate summaries reference them rather than copying 32 hand blocks"
+  }
+}

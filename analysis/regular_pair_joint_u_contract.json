@@ -1,0 +1,41 @@
+{
+  "schema": "matching-one.regular-pair-joint-u.contract.v1",
+  "question": "Does the fixed canonical regular interaction have a nonzero complete J2=partial_logQ partial_epsilon^2 U at Q1,epsilon0 on the original N25 pair?",
+  "decision_origin_commit": "16a6548af2bb090d9cec7b8e9236e31c0199a3f0",
+  "N": 25,
+  "geometries": [[5, 0], [4, 3]],
+  "delta_cos4": "1152/625",
+  "model": "At each vacant original vertex use T0+epsilon*Kreg/N; occupied vertex unchanged; Kreg=K2+K0 with c(Q)=1 identically. Preserve original occupations, ambient rank, q=r-1 and E=q^2.",
+  "primary_quantity": "J2=partial_logQ partial_epsilon^2 U(Q,epsilon) at Q1,epsilon0, with U evaluated at its own original pooled mean-q zero and complete thermal-slope quotient",
+  "kernel": {
+    "commit": "c29d8bce07e6381be0f948b2c0dd1f640e42d395",
+    "path": "analysis/regular_pair_spatial_kernel.tsv",
+    "proof_path": "notes/regular-pair-spatial-kernel.md",
+    "sha256": "36ae069d370b1d7a4398861c928afb41aa76885c8895c696b1bc0c97e9c314fd",
+    "definition": "g16(pi)=16*partial_Q of the relative joint Kreg_x Kreg_y contraction at Q1; exact signed Bell8 lookup, zero for missing valid canonical keys"
+  },
+  "spatial_result_boundary": "The separately delivered L32/L64 fresh-block spatial C is not this original-U J2 and is not substituted for it. Its observed values do not select the present source, geometry, normalization or null.",
+  "joint_source": "S2(A)=2/N^2 sum_{x<y, both vacant} g_xy(A). Vertices are linear in epsilon; no coincident-vertex epsilon^2 term exists.",
+  "translation_reduction": "Against any translation-invariant K,q,E, full S2 moments equal those of N^(-1) sum_{y!=0} g_0y with origin0 vacant. Enumerate only the 2^24 origin-vacant configurations; use full 2^25 baseline normalization, not the conditional law.",
+  "port_rule": "Fixed N,E,S,W order at each mark. Occupied-neighbour ports use original NN component roots. Each vacant-vacant incident edge uses a globally unique physical edge ID; adjacent marks share the same isolated common edge ID. Do not reuse the noncontact sampler's n+i singleton convention.",
+  "integer_moments": ["count", "sum_q", "sum_e", "sum_G16", "sum_G16_q", "sum_G16_E"],
+  "moment_conversion": "For source, q-source and E-source profiles divide the fixed-origin G16 columns by 16*N exactly once, with p^K*(1-p)^(N-K) or equivalent full h-polynomial normalization",
+  "baseline": {
+    "commit": "a237968f1d7a82d26b46e83c58179dbba7f1a908",
+    "root_path": "results/p337-closed-source-n25/latest.json",
+    "root_sha256": "df4ab225ff499131b744c70ec569ad21b0229f2256e71a585c680faae51bac3a",
+    "counts_directory": "results/p337-closed-source-finite-coupling",
+    "use": "Import root_enclosure, matching_slope_enclosure and U25_over_A_enclosure; use only existing full count/q/E marginals. No root search and no old source rescoring."
+  },
+  "primary_null": "An unchanged Q1 baseline whose first-Q effective log weight is purely linear/additive in epsilon predicts J2=0",
+  "prescore_secondary": "In the same traversal split the ordered origin pairs into the four NN contact displacements and all other nonzero displacements. Report J2_contact and J2_noncontact=J2-J2_contact with identical 16N units and full U functional; no new radius or feature is selected.",
+  "secondary_null": "A global contact-only transmission model predicts J2_noncontact=0 even if the unprojected spatial mean C is nonzero. A strictly signed exact interval excludes this fixed finite global closure. This split is specified before new moments or score are computed.",
+  "tensor_sign_prediction": null,
+  "decision": "A strictly signed exact interval excludes that finite global additive closure. If the saved-root interval contains zero, report unresolved with no coefficient, geometry, Q or precision search. A conditional positive Gram does not supply the unconditional J2 sign.",
+  "compute": "One compilation, one fixed-origin exact traversal per geometry for the missing total/contact joint moments, one rational-interval score invocation for the fixed vector total/contact/noncontact. Local CPU, two independent geometry processes; no Monte Carlo or cloud action.",
+  "dependency": "Same complete finite N25 occupation populations as previous local/seam/source calculations, reduced by translation; no independent statistical evidence. Spatial production has different observers and dependency groups.",
+  "boundary": "Finite canonical response only, not unique continuum field, asymptotic H4 origin, a spatial C score, or covariance of separate one-mark activation derivatives. No alpha fitted.",
+  "new_random_samples": 0,
+  "tests_requested": false,
+  "automatic_followup_production": false
+}

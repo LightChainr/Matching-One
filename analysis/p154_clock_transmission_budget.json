@@ -1,0 +1,22 @@
+{
+  "schema": "matching-one.p154-clock-transmission-budget.v1",
+  "status": "fixed_planning_calculation_not_prospective_confirmation",
+  "question": "Does the rigid-two-birth-clock forecast separate from angular screening once discovery-calibration uncertainty is propagated?",
+  "theory_commit": "bde1a51ca95c74448265b670ba0d9a0d87915479",
+  "theory_path": "notes/p154-prospective-birth-clock-transmission-decision.md",
+  "lagged_result_commit": "4daae57eef5c945aa050a95cd3d5d5d77582161b",
+  "sizes": [260, 340],
+  "source": "one_step_early_rank_conditioned_bulk_cluster_source",
+  "model": "e_g=-tau1*F1_g_prime and x_g=-tau2*F2_g_prime with geometry-common constant shifts in the root window",
+  "prediction": "delta=2R/(D*(1-c*c)); v_clock=delta*K_rel",
+  "root_convention": "same_source_block_pooled_root_and_all_its_baseline_jets_no_high_statistics_anchor_splice",
+  "uncertainty": "delete_same_original_1000_plus9000_union_batch_for_baseline_jets_and_saved_lag_R_v_at_its_saved_root",
+  "planning": {"reference_new_samples_per_N": 8000000, "separation_SE": 3},
+  "boundaries": [
+    "two_endpoints_are_independent_groups_not_one_doubling_chain",
+    "old_data_forecast_calibration_and_no_new_random_samples",
+    "Gaussian_planning_with_fixed_efficiency_not_exact_power_or_anytime_inference",
+    "no_parameter_fit_no_lag_scan_no_new_observer_no_root_solver",
+    "poor_power_of_this_model_comparison_does_not_close_the_P154_research_line"
+  ]
+}

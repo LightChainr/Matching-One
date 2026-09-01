@@ -1,0 +1,36 @@
+{
+  "schema": "matching-one.p398-stationary-arrangement-contract.v1",
+  "status": "Exploratory conditional-score hierarchy specified before calculation; not an independent measure prediction",
+  "question": "Does full block-size composition determine the stationary rate response, and how much additional information resides in dual composition and circular arrangement?",
+  "source_commit": "fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40",
+  "source_directory": "experiments/p398-linear-response-20260831",
+  "score_commit": "7da1eeb0e51cf430987dbf204d23713c2ab5a46c",
+  "score_path": "results/p398-block-count-measure/latest.json",
+  "width": 8,
+  "nested_coordinates": [
+    {"id": "block_count", "definition": "B(x), number of blocks"},
+    {"id": "primal_sizes", "definition": "lambda(x), sorted multiset of all primal block sizes"},
+    {"id": "primal_dual_sizes", "definition": "ordered pair (lambda(x), lambda(Kreweras(x)))"},
+    {"id": "dihedral_arrangement", "definition": "entire noncrossing partition modulo rotations and reflections of the labelled cycle"}
+  ],
+  "stationary_score": "g(x)=pi_prime(x)/pi0(x), reused from the saved eta=0 derivative",
+  "projection": "g_Z=E_pi0[g|Z]; nested increments are orthogonal in L2(pi0), not fitted physical source laws",
+  "outputs": [
+    "conditional residual score variances and nested explained contributions",
+    "statewise projected scores and same-composition witnesses",
+    "Kreweras-odd residual of each conditional projection",
+    "additive stationary contributions to the saved static and zero-frequency two-ray response",
+    "integer join/detach target-profile counts and strong-lumpability witness for the primal/dual size quotient"
+  ],
+  "response_convention": "original 16-attempt clock, fixed saved rays and baseline; replace only stationary metric derivative and retain the saved true generator contribution",
+  "lumpability": "Compare exact target-profile event counts for states in each identical ordered primal/dual-size class, separately for F0=J+D and Fprime=J-D. This concerns the declared finite generator, not approximate slow-mode quality.",
+  "acquisition": "existing saved finite-state solution plus deterministic state/transition enumeration; no stationary solve, Frechet derivative, new eta, width sweep, Monte Carlo or server job",
+  "boundary": "Conditional projections use the full true score and diagnose sufficiency; they do not independently predict a measure, constitute rational certification of the floating stationary score, identify a square-site Matching source, or count continuum fields.",
+  "report": {
+    "audience": "technical",
+    "primary_artifacts": ["results/p398-stationary-arrangement/latest.json", "results/p398-stationary-arrangement/REPORT.md"],
+    "delivery": "user-selected repository Markdown, JSON and executable code; no separate report app or HTML surface",
+    "structure": ["technical summary", "coordinate definitions and result hierarchy", "readout attribution", "exact transition witness", "method and scope", "next scientific questions"],
+    "visual_omission": "A small nested coordinate hierarchy, exact partition witnesses and additive equations carry the inference; no continuous trend is measured. Further questions are integrated with next steps."
+  }
+}

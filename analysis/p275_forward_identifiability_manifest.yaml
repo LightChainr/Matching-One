@@ -1,0 +1,106 @@
+schema: matching-one.p275-forward-identifiability.manifest.v1
+status: frozen_existing_data_forward_identifiability
+issue: 275
+
+input:
+  path: results/norm4-two-activation-h4/latest.json
+  schema: matching-one.two-activation-h4.v1
+  sha256: f29ce76fa5be92abb2a233c7efb6e4d94f37236242656d0dcf17cbfc3fd1e462
+  source_manifest_sha256: 3c3a707a6001e44eb522fcd8b74cfae4e26c7cab1d2c02b70565bafe44dae59a
+  acquisition: existing_production_archive_reuse_zero_new_MC
+
+observable:
+  metrics: [angular_delta_F1, angular_delta_F2]
+  definition: d_i_N_equals_F_i_first_minus_F_i_second_divided_by_exact_Delta_cos4_at_the_pooled_matching_root
+  units: dimensionless_probability_response_per_unit_Delta_cos4
+  redundant_transforms_not_new_rank: [A_top_equals_d1_plus_d2, E_top_equals_d2_minus_d1, delta_p_i_equals_minus_d_i_over_Mbar_prime]
+
+lineages:
+  - id: N65_to_N130_to_N260
+    sizes: [65, 130, 260]
+  - id: N85_to_N170_to_N340
+    sizes: [85, 170, 340]
+
+scaling:
+  leading_N_exponent: 1.625
+  exact_fraction: 13/8
+  scaled_coordinate: u_i_N_equals_N_power_13_over_8_times_d_i_N
+
+models:
+  fixed_semisimple_q2:
+    id: SEMISIMPLE_Q2_FIXED
+    kappa: 0.5
+    equation: u_g_equals_a_plus_b_times_kappa_power_g
+    allowed_amplitudes: independent_a_and_b_for_every_lineage_activation_block
+  fixed_h8_alias_transplant:
+    id: SEMISIMPLE_H8_ALIAS_RADIAL_TRANSPLANT
+    angular_source_status: branch_only
+    angular_source_commit: 0b9e89c9528ab283a8175adcd596d9b0ac5047c1
+    angular_source_path: results/p275-gaussian-c3-phase/RESULT.json
+    angular_source_decision: H8_SELECTED_H4_STOP_within_the_frozen_N65_two_model_set
+    superseded_by_heldout_commit: 016a9d69207661a3f353422b47007b7823c3b7a0
+    exact_closure_commit: 74f550060d90163bf0959e559bd268f38e89d757
+    interpretation_commit: 74f550060d90163bf0959e559bd268f38e89d757
+    interpretation_path: notes/p275-gaussian-unit-rotation-character-theorem.md
+    post_reveal_scalar_alias: N145_three_way_gate_selects_H0_and_exact_unit_rotation_forces_the_character_line_into_omega_R_so_the_N65_H8_label_was_an_angle_alias
+    leading_global_candidate_dimension: 21/4
+    transplanted_candidate_dimension: 8
+    relative_N_exponent: 11/8
+    kappa: 0.3855527063519852
+    decision_alpha: 0.01
+    equation: u_g_equals_a_plus_b_times_kappa_power_g
+    allowed_amplitudes: independent_a_and_b_for_every_lineage_activation_block
+    interpretation: retained_historical_diagnostic_for_the_naive_weight8_radial_transplant_that_was_motivated_by_the_N65_binary_alias_and_is_not_a_live_primitive_sector_identification_after_74f55006
+  Jordan:
+    id: JORDAN_AFFINE_LOG
+    kappa: 1.0
+    equation: u_g_equals_a_plus_c_times_g
+    allowed_amplitudes: independent_a_and_c_for_every_lineage_activation_block
+  free_semisimple_kappa:
+    id: SEMISIMPLE_FREE_KAPPA_DIAGNOSTIC
+    support: [-2.0, 3.0]
+    grid_points: 10001
+    refinement_tolerance: 1.0e-12
+    allowed_amplitudes: independent_a_and_b_for_every_lineage_activation_block_one_common_kappa
+  physical_decaying_semisimple:
+    id: SEMISIMPLE_DECAYING_0_LT_KAPPA_LT_1
+    physical_open_support: [0.0, 1.0]
+    closed_profile_support: [0.0, 1.0]
+    grid_points: 10001
+    refinement_tolerance: 1.0e-12
+    boundary_rule: kappa_1_is_the_Jordan_collision_boundary_not_an_interior_semisimple_point
+
+identifiability:
+  single_geometry_basis: [F1, F2, B_bulk]
+  single_geometry_latent_basis: [A_top, E_top, B_bulk]
+  exact_single_geometry_result: both_semisimple_direct_sum_and_Etop_Bbulk_Jordan_shear_have_rank3_and_image_R3
+  fixed_kappa_result: each_three_generation_image_has_rank2_and_for_kappa_not1_intersects_the_Jordan_image_only_on_the_constant_line
+  nonuniform_result: unbounded_semisimple_image_closure_contains_the_full_Jordan_image_as_kappa_tends1
+  classification: PARTIALLY_IDENTIFIABLE
+  uniform_identifiability: false
+
+numerics:
+  eigen_relative_cutoff: 1.0e-10
+  eigen_absolute_floor: 1.0e-30
+  decision_alpha: 0.05
+
+unique_missing_input:
+  name: restricted_trace_modulus_or_phase_transport
+  requirement: one_semantics_matched_transfer_relation_for_the_same_B_source_original_q_E_and_pooled_root_physical_normalizer_on_rank0_rank2_restricted_traces
+  preferred_route: theory_derived_independent_singlet_and_Jordan_top_modulus_vectors_scored_on_existing_assets
+  fallback: one_phase_calibrated_second_physical_rotation_of_the_same_B_column
+
+outputs:
+  schema: matching-one.p275-forward-identifiability.v1
+  json: results/p275-forward-identifiability/latest.json
+  markdown: results/p275-forward-identifiability/latest.md
+
+claim_boundary:
+  - post_reveal_existing_data_diagnostic
+  - no_new_Monte_Carlo
+  - q2_exclusion_is_parameterization_specific
+  - H8_alias_transplant_exclusion_is_post_reveal_and_is_now_only_a_historical_parameterization_exclusion
+  - the_N145_three_way_gate_and_exact_unit_rotation_theorem_supersede_the_N65_H8_label_with_an_embedding_even_observer_symmetry
+  - H8_alias_transplant_assumes_canonical_weight8_radial_scaling_relative_to_the_weight21over4_global_Q4_candidate
+  - Jordan_compatibility_is_not_operator_identification
+  - no_free_exponent_claim

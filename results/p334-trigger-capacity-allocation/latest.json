@@ -1,0 +1,4200 @@
+{
+  "schema": "matching-one.p334-trigger-capacity-allocation.v1",
+  "provenance": {
+    "schema": "matching-one.p334-trigger-capacity-allocation-manifest.v1",
+    "status": "post_reveal_exact_arithmetic_on_existing_graphs",
+    "source_commit": "1b5a9dea07e1c62f69798fddbf4899ff986c0b72",
+    "source_path": "results/local-20260831/P334-cooperative-closure/trigger_graph_structure_bounded.json",
+    "source_sha256": "2765a8181051c519be89bf04219239b4d49dd2bc4df788216ae62047d4664300",
+    "background_overlap_commit": "85af4981628541882fd038ef07234b9a2f2f0266",
+    "question": "Does the saved two-sided capacity explanation come from localized support/block structure, bipartition side constraints, or residual degree organization?",
+    "selection": "Use exactly the two saved N425 witnesses and the existing first-five eligible counters in each of four environments; no extension, reselection or new topology enumeration.",
+    "benchmarks": [
+      "G(a,m) on all individually safe sites",
+      "independent G(s_j,m_j) on each observed nonisolated component vertex block",
+      "uniform m_j cross edges on each fixed observed L_j by R_j block"
+    ],
+    "benchmark_boundary": "The latter two benchmarks fix observed vertex blocks and edge counts but may disconnect them or create new isolates. They do not condition on connectedness or preservation of the original graph components. The localization increment includes support, block partition and block edge allocation; it is not a causal intervention.",
+    "new_samples": 0,
+    "dependency_groups": [
+      "p334-cooperative-N325-20260831",
+      "p334-cooperative-N425-20260831"
+    ],
+    "outputs": {
+      "json": "results/p334-trigger-capacity-allocation/latest.json",
+      "markdown": "results/p334-trigger-capacity-allocation/REPORT.md"
+    }
+  },
+  "environment": {
+    "python": "3.11.15 (main, Jun 23 2026, 15:46:51) [Clang 22.1.3 ]",
+    "machine": "arm64"
+  },
+  "new_samples": 0,
+  "exact_identities": {
+    "simple_W2": "2m(m-1)/(s+1)",
+    "bipartite_W2": "m(m-1)(s-2)/(2(LR-1))",
+    "bipartite_minus_simple": "m(m-1)((L-R)^2-s+2)/(2(LR-1)(s+1))",
+    "cooperative_increment": "2 DeltaW2/[d(d-1)^2]"
+  },
+  "rows": [
+    {
+      "selection": "existing_N425_A",
+      "N": 425,
+      "orientation": "second",
+      "replica": 43042514269,
+      "a": 173,
+      "d": 173,
+      "m": 108,
+      "support_vertices": 26,
+      "components": [
+        {
+          "L": 14,
+          "R": 12,
+          "m": 108,
+          "s": 26,
+          "imbalance_squared_minus_s_plus_2": -20,
+          "simple_expected_stars": {
+            "exact": "856",
+            "numerator": 856,
+            "denominator": 1,
+            "decimal": 856.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "138672/167",
+            "numerator": 138672,
+            "denominator": 167,
+            "decimal": 830.3712574850299
+          },
+          "side_constraint_increment": {
+            "exact": "-4280/167",
+            "numerator": -4280,
+            "denominator": 167,
+            "decimal": -25.62874251497006
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "926",
+        "numerator": 926,
+        "denominator": 1,
+        "decimal": 926.0
+      },
+      "global_null_W2": {
+        "exact": "3852/29",
+        "numerator": 3852,
+        "denominator": 29,
+        "decimal": 132.82758620689654
+      },
+      "block_simple_null_W2": {
+        "exact": "856",
+        "numerator": 856,
+        "denominator": 1,
+        "decimal": 856.0
+      },
+      "block_bipartite_null_W2": {
+        "exact": "138672/167",
+        "numerator": 138672,
+        "denominator": 167,
+        "decimal": 830.3712574850299
+      },
+      "excess_over_global_W2": {
+        "exact": "23002/29",
+        "numerator": 23002,
+        "denominator": 29,
+        "decimal": 793.1724137931035
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "20972/29",
+          "numerator": 20972,
+          "denominator": 29,
+          "decimal": 723.1724137931035
+        },
+        "bipartition_constraint": {
+          "exact": "-4280/167",
+          "numerator": -4280,
+          "denominator": 167,
+          "decimal": -25.62874251497006
+        },
+        "residual_organization": {
+          "exact": "15970/167",
+          "numerator": 15970,
+          "denominator": 167,
+          "decimal": 95.62874251497006
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "5243/18552866",
+          "numerator": 5243,
+          "denominator": 18552866,
+          "decimal": 0.0002825978476856352
+        },
+        "bipartition_constraint": {
+          "exact": "-535/53419459",
+          "numerator": -535,
+          "denominator": 53419459,
+          "decimal": -1.0015077090166712e-05
+        },
+        "residual_organization": {
+          "exact": "7985/213677836",
+          "numerator": 7985,
+          "denominator": 213677836,
+          "decimal": 3.7369341385505233e-05
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/2559016",
+        "numerator": 1,
+        "denominator": 2559016,
+        "decimal": 3.9077520421912173e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "existing_N425_B",
+      "N": 425,
+      "orientation": "second",
+      "replica": 43042505280,
+      "a": 173,
+      "d": 173,
+      "m": 108,
+      "support_vertices": 34,
+      "components": [
+        {
+          "L": 5,
+          "R": 29,
+          "m": 108,
+          "s": 34,
+          "imbalance_squared_minus_s_plus_2": 544,
+          "simple_expected_stars": {
+            "exact": "23112/35",
+            "numerator": 23112,
+            "denominator": 35,
+            "decimal": 660.3428571428572
+          },
+          "bipartite_expected_stars": {
+            "exact": "1284",
+            "numerator": 1284,
+            "denominator": 1,
+            "decimal": 1284.0
+          },
+          "side_constraint_increment": {
+            "exact": "21828/35",
+            "numerator": 21828,
+            "denominator": 35,
+            "decimal": 623.6571428571428
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "1466",
+        "numerator": 1466,
+        "denominator": 1,
+        "decimal": 1466.0
+      },
+      "global_null_W2": {
+        "exact": "3852/29",
+        "numerator": 3852,
+        "denominator": 29,
+        "decimal": 132.82758620689654
+      },
+      "block_simple_null_W2": {
+        "exact": "23112/35",
+        "numerator": 23112,
+        "denominator": 35,
+        "decimal": 660.3428571428572
+      },
+      "block_bipartite_null_W2": {
+        "exact": "1284",
+        "numerator": 1284,
+        "denominator": 1,
+        "decimal": 1284.0
+      },
+      "excess_over_global_W2": {
+        "exact": "38662/29",
+        "numerator": 38662,
+        "denominator": 29,
+        "decimal": 1333.1724137931035
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "535428/1015",
+          "numerator": 535428,
+          "denominator": 1015,
+          "decimal": 527.5152709359606
+        },
+        "bipartition_constraint": {
+          "exact": "21828/35",
+          "numerator": 21828,
+          "denominator": 35,
+          "decimal": 623.6571428571428
+        },
+        "residual_organization": {
+          "exact": "182",
+          "numerator": 182,
+          "denominator": 1,
+          "decimal": 182.0
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "133857/649350310",
+          "numerator": 133857,
+          "denominator": 649350310,
+          "decimal": 0.00020613988772870534
+        },
+        "bipartition_constraint": {
+          "exact": "5457/22391390",
+          "numerator": 5457,
+          "denominator": 22391390,
+          "decimal": 0.00024370974736271397
+        },
+        "residual_organization": {
+          "exact": "91/1279508",
+          "numerator": 91,
+          "denominator": 1279508,
+          "decimal": 7.112108716788016e-05
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/2559016",
+        "numerator": 1,
+        "denominator": 2559016,
+        "decimal": 3.9077520421912173e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N325_first_43032500005",
+      "N": 325,
+      "orientation": "first",
+      "replica": 43032500005,
+      "a": 123,
+      "d": 132,
+      "m": 7,
+      "support_vertices": 11,
+      "components": [
+        {
+          "L": 2,
+          "R": 2,
+          "m": 3,
+          "s": 4,
+          "imbalance_squared_minus_s_plus_2": -2,
+          "simple_expected_stars": {
+            "exact": "12/5",
+            "numerator": 12,
+            "denominator": 5,
+            "decimal": 2.4
+          },
+          "bipartite_expected_stars": {
+            "exact": "2",
+            "numerator": 2,
+            "denominator": 1,
+            "decimal": 2.0
+          },
+          "side_constraint_increment": {
+            "exact": "-2/5",
+            "numerator": -2,
+            "denominator": 5,
+            "decimal": -0.4
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 2,
+          "R": 1,
+          "m": 2,
+          "s": 3,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "1",
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": 1.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "1",
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": 1.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "3",
+        "numerator": 3,
+        "denominator": 1,
+        "decimal": 3.0
+      },
+      "global_null_W2": {
+        "exact": "21/31",
+        "numerator": 21,
+        "denominator": 31,
+        "decimal": 0.6774193548387096
+      },
+      "block_simple_null_W2": {
+        "exact": "17/5",
+        "numerator": 17,
+        "denominator": 5,
+        "decimal": 3.4
+      },
+      "block_bipartite_null_W2": {
+        "exact": "3",
+        "numerator": 3,
+        "denominator": 1,
+        "decimal": 3.0
+      },
+      "excess_over_global_W2": {
+        "exact": "72/31",
+        "numerator": 72,
+        "denominator": 31,
+        "decimal": 2.3225806451612905
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "422/155",
+          "numerator": 422,
+          "denominator": 155,
+          "decimal": 2.7225806451612904
+        },
+        "bipartition_constraint": {
+          "exact": "-2/5",
+          "numerator": -2,
+          "denominator": 5,
+          "decimal": -0.4
+        },
+        "residual_organization": {
+          "exact": "0",
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "211/87778515",
+          "numerator": 211,
+          "denominator": 87778515,
+          "decimal": 2.403777279668037e-06
+        },
+        "bipartition_constraint": {
+          "exact": "-1/2831565",
+          "numerator": -1,
+          "denominator": 2831565,
+          "decimal": -3.5316159085170213e-07
+        },
+        "residual_organization": {
+          "exact": "0",
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/1132626",
+        "numerator": 1,
+        "denominator": 1132626,
+        "decimal": 8.829039771292554e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N325_first_43032500012",
+      "N": 325,
+      "orientation": "first",
+      "replica": 43032500012,
+      "a": 125,
+      "d": 132,
+      "m": 32,
+      "support_vertices": 31,
+      "components": [
+        {
+          "L": 7,
+          "R": 4,
+          "m": 16,
+          "s": 11,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "40",
+            "numerator": 40,
+            "denominator": 1,
+            "decimal": 40.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "40",
+            "numerator": 40,
+            "denominator": 1,
+            "decimal": 40.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 2,
+          "R": 2,
+          "m": 3,
+          "s": 4,
+          "imbalance_squared_minus_s_plus_2": -2,
+          "simple_expected_stars": {
+            "exact": "12/5",
+            "numerator": 12,
+            "denominator": 5,
+            "decimal": 2.4
+          },
+          "bipartite_expected_stars": {
+            "exact": "2",
+            "numerator": 2,
+            "denominator": 1,
+            "decimal": 2.0
+          },
+          "side_constraint_increment": {
+            "exact": "-2/5",
+            "numerator": -2,
+            "denominator": 5,
+            "decimal": -0.4
+          }
+        },
+        {
+          "L": 4,
+          "R": 2,
+          "m": 6,
+          "s": 6,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "60/7",
+            "numerator": 60,
+            "denominator": 7,
+            "decimal": 8.571428571428571
+          },
+          "bipartite_expected_stars": {
+            "exact": "60/7",
+            "numerator": 60,
+            "denominator": 7,
+            "decimal": 8.571428571428571
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 2,
+          "R": 2,
+          "m": 4,
+          "s": 4,
+          "imbalance_squared_minus_s_plus_2": -2,
+          "simple_expected_stars": {
+            "exact": "24/5",
+            "numerator": 24,
+            "denominator": 5,
+            "decimal": 4.8
+          },
+          "bipartite_expected_stars": {
+            "exact": "4",
+            "numerator": 4,
+            "denominator": 1,
+            "decimal": 4.0
+          },
+          "side_constraint_increment": {
+            "exact": "-4/5",
+            "numerator": -4,
+            "denominator": 5,
+            "decimal": -0.8
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "63",
+        "numerator": 63,
+        "denominator": 1,
+        "decimal": 63.0
+      },
+      "global_null_W2": {
+        "exact": "992/63",
+        "numerator": 992,
+        "denominator": 63,
+        "decimal": 15.746031746031745
+      },
+      "block_simple_null_W2": {
+        "exact": "1952/35",
+        "numerator": 1952,
+        "denominator": 35,
+        "decimal": 55.77142857142857
+      },
+      "block_bipartite_null_W2": {
+        "exact": "382/7",
+        "numerator": 382,
+        "denominator": 7,
+        "decimal": 54.57142857142857
+      },
+      "excess_over_global_W2": {
+        "exact": "2977/63",
+        "numerator": 2977,
+        "denominator": 63,
+        "decimal": 47.25396825396825
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "12608/315",
+          "numerator": 12608,
+          "denominator": 315,
+          "decimal": 40.025396825396825
+        },
+        "bipartition_constraint": {
+          "exact": "-6/5",
+          "numerator": -6,
+          "denominator": 5,
+          "decimal": -1.2
+        },
+        "residual_organization": {
+          "exact": "59/7",
+          "numerator": 59,
+          "denominator": 7,
+          "decimal": 8.428571428571429
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "6304/178388595",
+          "numerator": 6304,
+          "denominator": 178388595,
+          "decimal": 3.5338582043319526e-05
+        },
+        "bipartition_constraint": {
+          "exact": "-1/943855",
+          "numerator": -1,
+          "denominator": 943855,
+          "decimal": -1.0594847725551064e-06
+        },
+        "residual_organization": {
+          "exact": "59/7928382",
+          "numerator": 59,
+          "denominator": 7928382,
+          "decimal": 7.441619235803724e-06
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/1132626",
+        "numerator": 1,
+        "denominator": 1132626,
+        "decimal": 8.829039771292554e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N325_first_43032500019",
+      "N": 325,
+      "orientation": "first",
+      "replica": 43032500019,
+      "a": 116,
+      "d": 132,
+      "m": 20,
+      "support_vertices": 17,
+      "components": [
+        {
+          "L": 8,
+          "R": 2,
+          "m": 15,
+          "s": 10,
+          "imbalance_squared_minus_s_plus_2": 28,
+          "simple_expected_stars": {
+            "exact": "420/11",
+            "numerator": 420,
+            "denominator": 11,
+            "decimal": 38.18181818181818
+          },
+          "bipartite_expected_stars": {
+            "exact": "56",
+            "numerator": 56,
+            "denominator": 1,
+            "decimal": 56.0
+          },
+          "side_constraint_increment": {
+            "exact": "196/11",
+            "numerator": 196,
+            "denominator": 11,
+            "decimal": 17.818181818181817
+          }
+        },
+        {
+          "L": 2,
+          "R": 2,
+          "m": 3,
+          "s": 4,
+          "imbalance_squared_minus_s_plus_2": -2,
+          "simple_expected_stars": {
+            "exact": "12/5",
+            "numerator": 12,
+            "denominator": 5,
+            "decimal": 2.4
+          },
+          "bipartite_expected_stars": {
+            "exact": "2",
+            "numerator": 2,
+            "denominator": 1,
+            "decimal": 2.0
+          },
+          "side_constraint_increment": {
+            "exact": "-2/5",
+            "numerator": -2,
+            "denominator": 5,
+            "decimal": -0.4
+          }
+        },
+        {
+          "L": 2,
+          "R": 1,
+          "m": 2,
+          "s": 3,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "1",
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": 1.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "1",
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": 1.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "59",
+        "numerator": 59,
+        "denominator": 1,
+        "decimal": 59.0
+      },
+      "global_null_W2": {
+        "exact": "760/117",
+        "numerator": 760,
+        "denominator": 117,
+        "decimal": 6.495726495726496
+      },
+      "block_simple_null_W2": {
+        "exact": "2287/55",
+        "numerator": 2287,
+        "denominator": 55,
+        "decimal": 41.58181818181818
+      },
+      "block_bipartite_null_W2": {
+        "exact": "59",
+        "numerator": 59,
+        "denominator": 1,
+        "decimal": 59.0
+      },
+      "excess_over_global_W2": {
+        "exact": "6143/117",
+        "numerator": 6143,
+        "denominator": 117,
+        "decimal": 52.504273504273506
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "225779/6435",
+          "numerator": 225779,
+          "denominator": 6435,
+          "decimal": 35.086091686091684
+        },
+        "bipartition_constraint": {
+          "exact": "958/55",
+          "numerator": 958,
+          "denominator": 55,
+          "decimal": 17.418181818181818
+        },
+        "residual_organization": {
+          "exact": "0",
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "225779/7288448310",
+          "numerator": 225779,
+          "denominator": 7288448310,
+          "decimal": 3.0977649891572054e-05
+        },
+        "bipartition_constraint": {
+          "exact": "479/31147215",
+          "numerator": 479,
+          "denominator": 31147215,
+          "decimal": 1.537858200163321e-05
+        },
+        "residual_organization": {
+          "exact": "0",
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/1132626",
+        "numerator": 1,
+        "denominator": 1132626,
+        "decimal": 8.829039771292554e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N325_first_43032500020",
+      "N": 325,
+      "orientation": "first",
+      "replica": 43032500020,
+      "a": 126,
+      "d": 132,
+      "m": 46,
+      "support_vertices": 35,
+      "components": [
+        {
+          "L": 13,
+          "R": 2,
+          "m": 26,
+          "s": 15,
+          "imbalance_squared_minus_s_plus_2": 108,
+          "simple_expected_stars": {
+            "exact": "325/4",
+            "numerator": 325,
+            "denominator": 4,
+            "decimal": 81.25
+          },
+          "bipartite_expected_stars": {
+            "exact": "169",
+            "numerator": 169,
+            "denominator": 1,
+            "decimal": 169.0
+          },
+          "side_constraint_increment": {
+            "exact": "351/4",
+            "numerator": 351,
+            "denominator": 4,
+            "decimal": 87.75
+          }
+        },
+        {
+          "L": 2,
+          "R": 3,
+          "m": 6,
+          "s": 5,
+          "imbalance_squared_minus_s_plus_2": -2,
+          "simple_expected_stars": {
+            "exact": "10",
+            "numerator": 10,
+            "denominator": 1,
+            "decimal": 10.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "9",
+            "numerator": 9,
+            "denominator": 1,
+            "decimal": 9.0
+          },
+          "side_constraint_increment": {
+            "exact": "-1",
+            "numerator": -1,
+            "denominator": 1,
+            "decimal": -1.0
+          }
+        },
+        {
+          "L": 5,
+          "R": 2,
+          "m": 9,
+          "s": 7,
+          "imbalance_squared_minus_s_plus_2": 4,
+          "simple_expected_stars": {
+            "exact": "18",
+            "numerator": 18,
+            "denominator": 1,
+            "decimal": 18.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "20",
+            "numerator": 20,
+            "denominator": 1,
+            "decimal": 20.0
+          },
+          "side_constraint_increment": {
+            "exact": "2",
+            "numerator": 2,
+            "denominator": 1,
+            "decimal": 2.0
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 2,
+          "R": 2,
+          "m": 3,
+          "s": 4,
+          "imbalance_squared_minus_s_plus_2": -2,
+          "simple_expected_stars": {
+            "exact": "12/5",
+            "numerator": 12,
+            "denominator": 5,
+            "decimal": 2.4
+          },
+          "bipartite_expected_stars": {
+            "exact": "2",
+            "numerator": 2,
+            "denominator": 1,
+            "decimal": 2.0
+          },
+          "side_constraint_increment": {
+            "exact": "-2/5",
+            "numerator": -2,
+            "denominator": 5,
+            "decimal": -0.4
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "200",
+        "numerator": 200,
+        "denominator": 1,
+        "decimal": 200.0
+      },
+      "global_null_W2": {
+        "exact": "4140/127",
+        "numerator": 4140,
+        "denominator": 127,
+        "decimal": 32.59842519685039
+      },
+      "block_simple_null_W2": {
+        "exact": "2233/20",
+        "numerator": 2233,
+        "denominator": 20,
+        "decimal": 111.65
+      },
+      "block_bipartite_null_W2": {
+        "exact": "200",
+        "numerator": 200,
+        "denominator": 1,
+        "decimal": 200.0
+      },
+      "excess_over_global_W2": {
+        "exact": "21260/127",
+        "numerator": 21260,
+        "denominator": 127,
+        "decimal": 167.4015748031496
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "200791/2540",
+          "numerator": 200791,
+          "denominator": 2540,
+          "decimal": 79.0515748031496
+        },
+        "bipartition_constraint": {
+          "exact": "1767/20",
+          "numerator": 1767,
+          "denominator": 20,
+          "decimal": 88.35
+        },
+        "residual_organization": {
+          "exact": "0",
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "200791/2876870040",
+          "numerator": 200791,
+          "denominator": 2876870040,
+          "decimal": 6.979494979203162e-05
+        },
+        "bipartition_constraint": {
+          "exact": "589/7550840",
+          "numerator": 589,
+          "denominator": 7550840,
+          "decimal": 7.800456637936971e-05
+        },
+        "residual_organization": {
+          "exact": "0",
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/1132626",
+        "numerator": 1,
+        "denominator": 1132626,
+        "decimal": 8.829039771292554e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N325_first_43032500023",
+      "N": 325,
+      "orientation": "first",
+      "replica": 43032500023,
+      "a": 125,
+      "d": 132,
+      "m": 24,
+      "support_vertices": 21,
+      "components": [
+        {
+          "L": 4,
+          "R": 3,
+          "m": 10,
+          "s": 7,
+          "imbalance_squared_minus_s_plus_2": -4,
+          "simple_expected_stars": {
+            "exact": "45/2",
+            "numerator": 45,
+            "denominator": 2,
+            "decimal": 22.5
+          },
+          "bipartite_expected_stars": {
+            "exact": "225/11",
+            "numerator": 225,
+            "denominator": 11,
+            "decimal": 20.454545454545453
+          },
+          "side_constraint_increment": {
+            "exact": "-45/22",
+            "numerator": -45,
+            "denominator": 22,
+            "decimal": -2.0454545454545454
+          }
+        },
+        {
+          "L": 2,
+          "R": 2,
+          "m": 3,
+          "s": 4,
+          "imbalance_squared_minus_s_plus_2": -2,
+          "simple_expected_stars": {
+            "exact": "12/5",
+            "numerator": 12,
+            "denominator": 5,
+            "decimal": 2.4
+          },
+          "bipartite_expected_stars": {
+            "exact": "2",
+            "numerator": 2,
+            "denominator": 1,
+            "decimal": 2.0
+          },
+          "side_constraint_increment": {
+            "exact": "-2/5",
+            "numerator": -2,
+            "denominator": 5,
+            "decimal": -0.4
+          }
+        },
+        {
+          "L": 5,
+          "R": 5,
+          "m": 11,
+          "s": 10,
+          "imbalance_squared_minus_s_plus_2": -8,
+          "simple_expected_stars": {
+            "exact": "20",
+            "numerator": 20,
+            "denominator": 1,
+            "decimal": 20.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "55/3",
+            "numerator": 55,
+            "denominator": 3,
+            "decimal": 18.333333333333332
+          },
+          "side_constraint_increment": {
+            "exact": "-5/3",
+            "numerator": -5,
+            "denominator": 3,
+            "decimal": -1.6666666666666667
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "40",
+        "numerator": 40,
+        "denominator": 1,
+        "decimal": 40.0
+      },
+      "global_null_W2": {
+        "exact": "184/21",
+        "numerator": 184,
+        "denominator": 21,
+        "decimal": 8.761904761904763
+      },
+      "block_simple_null_W2": {
+        "exact": "449/10",
+        "numerator": 449,
+        "denominator": 10,
+        "decimal": 44.9
+      },
+      "block_bipartite_null_W2": {
+        "exact": "1346/33",
+        "numerator": 1346,
+        "denominator": 33,
+        "decimal": 40.78787878787879
+      },
+      "excess_over_global_W2": {
+        "exact": "656/21",
+        "numerator": 656,
+        "denominator": 21,
+        "decimal": 31.238095238095237
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "7589/210",
+          "numerator": 7589,
+          "denominator": 210,
+          "decimal": 36.13809523809524
+        },
+        "bipartition_constraint": {
+          "exact": "-1357/330",
+          "numerator": -1357,
+          "denominator": 330,
+          "decimal": -4.112121212121212
+        },
+        "residual_organization": {
+          "exact": "-26/33",
+          "numerator": -26,
+          "denominator": 33,
+          "decimal": -0.7878787878787878
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "7589/237851460",
+          "numerator": 7589,
+          "denominator": 237851460,
+          "decimal": 3.190646801159009e-05
+        },
+        "bipartition_constraint": {
+          "exact": "-1357/373766580",
+          "numerator": -1357,
+          "denominator": 373766580,
+          "decimal": -3.6306081726193924e-06
+        },
+        "residual_organization": {
+          "exact": "-13/18688329",
+          "numerator": -13,
+          "denominator": 18688329,
+          "decimal": -6.956213153139588e-07
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/1132626",
+        "numerator": 1,
+        "denominator": 1132626,
+        "decimal": 8.829039771292554e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N325_second_43032500001",
+      "N": 325,
+      "orientation": "second",
+      "replica": 43032500001,
+      "a": 116,
+      "d": 132,
+      "m": 13,
+      "support_vertices": 17,
+      "components": [
+        {
+          "L": 2,
+          "R": 1,
+          "m": 2,
+          "s": 3,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "1",
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": 1.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "1",
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": 1.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 3,
+          "R": 3,
+          "m": 5,
+          "s": 6,
+          "imbalance_squared_minus_s_plus_2": -4,
+          "simple_expected_stars": {
+            "exact": "40/7",
+            "numerator": 40,
+            "denominator": 7,
+            "decimal": 5.714285714285714
+          },
+          "bipartite_expected_stars": {
+            "exact": "5",
+            "numerator": 5,
+            "denominator": 1,
+            "decimal": 5.0
+          },
+          "side_constraint_increment": {
+            "exact": "-5/7",
+            "numerator": -5,
+            "denominator": 7,
+            "decimal": -0.7142857142857143
+          }
+        },
+        {
+          "L": 2,
+          "R": 2,
+          "m": 4,
+          "s": 4,
+          "imbalance_squared_minus_s_plus_2": -2,
+          "simple_expected_stars": {
+            "exact": "24/5",
+            "numerator": 24,
+            "denominator": 5,
+            "decimal": 4.8
+          },
+          "bipartite_expected_stars": {
+            "exact": "4",
+            "numerator": 4,
+            "denominator": 1,
+            "decimal": 4.0
+          },
+          "side_constraint_increment": {
+            "exact": "-4/5",
+            "numerator": -4,
+            "denominator": 5,
+            "decimal": -0.8
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "10",
+        "numerator": 10,
+        "denominator": 1,
+        "decimal": 10.0
+      },
+      "global_null_W2": {
+        "exact": "8/3",
+        "numerator": 8,
+        "denominator": 3,
+        "decimal": 2.6666666666666665
+      },
+      "block_simple_null_W2": {
+        "exact": "403/35",
+        "numerator": 403,
+        "denominator": 35,
+        "decimal": 11.514285714285714
+      },
+      "block_bipartite_null_W2": {
+        "exact": "10",
+        "numerator": 10,
+        "denominator": 1,
+        "decimal": 10.0
+      },
+      "excess_over_global_W2": {
+        "exact": "22/3",
+        "numerator": 22,
+        "denominator": 3,
+        "decimal": 7.333333333333333
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "929/105",
+          "numerator": 929,
+          "denominator": 105,
+          "decimal": 8.847619047619048
+        },
+        "bipartition_constraint": {
+          "exact": "-53/35",
+          "numerator": -53,
+          "denominator": 35,
+          "decimal": -1.5142857142857142
+        },
+        "residual_organization": {
+          "exact": "0",
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "929/118925730",
+          "numerator": 929,
+          "denominator": 118925730,
+          "decimal": 7.811598045267412e-06
+        },
+        "bipartition_constraint": {
+          "exact": "-53/39641910",
+          "numerator": -53,
+          "denominator": 39641910,
+          "decimal": -1.3369688796528724e-06
+        },
+        "residual_organization": {
+          "exact": "0",
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/1132626",
+        "numerator": 1,
+        "denominator": 1132626,
+        "decimal": 8.829039771292554e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N325_second_43032500003",
+      "N": 325,
+      "orientation": "second",
+      "replica": 43032500003,
+      "a": 115,
+      "d": 132,
+      "m": 6,
+      "support_vertices": 10,
+      "components": [
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 2,
+          "R": 2,
+          "m": 3,
+          "s": 4,
+          "imbalance_squared_minus_s_plus_2": -2,
+          "simple_expected_stars": {
+            "exact": "12/5",
+            "numerator": 12,
+            "denominator": 5,
+            "decimal": 2.4
+          },
+          "bipartite_expected_stars": {
+            "exact": "2",
+            "numerator": 2,
+            "denominator": 1,
+            "decimal": 2.0
+          },
+          "side_constraint_increment": {
+            "exact": "-2/5",
+            "numerator": -2,
+            "denominator": 5,
+            "decimal": -0.4
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "2",
+        "numerator": 2,
+        "denominator": 1,
+        "decimal": 2.0
+      },
+      "global_null_W2": {
+        "exact": "15/29",
+        "numerator": 15,
+        "denominator": 29,
+        "decimal": 0.5172413793103449
+      },
+      "block_simple_null_W2": {
+        "exact": "12/5",
+        "numerator": 12,
+        "denominator": 5,
+        "decimal": 2.4
+      },
+      "block_bipartite_null_W2": {
+        "exact": "2",
+        "numerator": 2,
+        "denominator": 1,
+        "decimal": 2.0
+      },
+      "excess_over_global_W2": {
+        "exact": "43/29",
+        "numerator": 43,
+        "denominator": 29,
+        "decimal": 1.4827586206896552
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "273/145",
+          "numerator": 273,
+          "denominator": 145,
+          "decimal": 1.8827586206896552
+        },
+        "bipartition_constraint": {
+          "exact": "-2/5",
+          "numerator": -2,
+          "denominator": 5,
+          "decimal": -0.4
+        },
+        "residual_organization": {
+          "exact": "0",
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "91/54743590",
+          "numerator": 91,
+          "denominator": 54743590,
+          "decimal": 1.6622950741812878e-06
+        },
+        "bipartition_constraint": {
+          "exact": "-1/2831565",
+          "numerator": -1,
+          "denominator": 2831565,
+          "decimal": -3.5316159085170213e-07
+        },
+        "residual_organization": {
+          "exact": "0",
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/1132626",
+        "numerator": 1,
+        "denominator": 1132626,
+        "decimal": 8.829039771292554e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N325_second_43032500005",
+      "N": 325,
+      "orientation": "second",
+      "replica": 43032500005,
+      "a": 124,
+      "d": 132,
+      "m": 11,
+      "support_vertices": 15,
+      "components": [
+        {
+          "L": 2,
+          "R": 3,
+          "m": 4,
+          "s": 5,
+          "imbalance_squared_minus_s_plus_2": -2,
+          "simple_expected_stars": {
+            "exact": "4",
+            "numerator": 4,
+            "denominator": 1,
+            "decimal": 4.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "18/5",
+            "numerator": 18,
+            "denominator": 5,
+            "decimal": 3.6
+          },
+          "side_constraint_increment": {
+            "exact": "-2/5",
+            "numerator": -2,
+            "denominator": 5,
+            "decimal": -0.4
+          }
+        },
+        {
+          "L": 1,
+          "R": 5,
+          "m": 5,
+          "s": 6,
+          "imbalance_squared_minus_s_plus_2": 12,
+          "simple_expected_stars": {
+            "exact": "40/7",
+            "numerator": 40,
+            "denominator": 7,
+            "decimal": 5.714285714285714
+          },
+          "bipartite_expected_stars": {
+            "exact": "10",
+            "numerator": 10,
+            "denominator": 1,
+            "decimal": 10.0
+          },
+          "side_constraint_increment": {
+            "exact": "30/7",
+            "numerator": 30,
+            "denominator": 7,
+            "decimal": 4.285714285714286
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "14",
+        "numerator": 14,
+        "denominator": 1,
+        "decimal": 14.0
+      },
+      "global_null_W2": {
+        "exact": "44/25",
+        "numerator": 44,
+        "denominator": 25,
+        "decimal": 1.76
+      },
+      "block_simple_null_W2": {
+        "exact": "68/7",
+        "numerator": 68,
+        "denominator": 7,
+        "decimal": 9.714285714285714
+      },
+      "block_bipartite_null_W2": {
+        "exact": "68/5",
+        "numerator": 68,
+        "denominator": 5,
+        "decimal": 13.6
+      },
+      "excess_over_global_W2": {
+        "exact": "306/25",
+        "numerator": 306,
+        "denominator": 25,
+        "decimal": 12.24
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "1392/175",
+          "numerator": 1392,
+          "denominator": 175,
+          "decimal": 7.954285714285715
+        },
+        "bipartition_constraint": {
+          "exact": "136/35",
+          "numerator": 136,
+          "denominator": 35,
+          "decimal": 3.8857142857142857
+        },
+        "residual_organization": {
+          "exact": "2/5",
+          "numerator": 2,
+          "denominator": 5,
+          "decimal": 0.4
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "232/33034925",
+          "numerator": 232,
+          "denominator": 33034925,
+          "decimal": 7.022870492365277e-06
+        },
+        "bipartition_constraint": {
+          "exact": "68/19820955",
+          "numerator": 68,
+          "denominator": 19820955,
+          "decimal": 3.4307125968451068e-06
+        },
+        "residual_organization": {
+          "exact": "1/2831565",
+          "numerator": 1,
+          "denominator": 2831565,
+          "decimal": 3.5316159085170213e-07
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/1132626",
+        "numerator": 1,
+        "denominator": 1132626,
+        "decimal": 8.829039771292554e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N325_second_43032500008",
+      "N": 325,
+      "orientation": "second",
+      "replica": 43032500008,
+      "a": 119,
+      "d": 132,
+      "m": 17,
+      "support_vertices": 10,
+      "components": [
+        {
+          "L": 4,
+          "R": 4,
+          "m": 16,
+          "s": 8,
+          "imbalance_squared_minus_s_plus_2": -6,
+          "simple_expected_stars": {
+            "exact": "160/3",
+            "numerator": 160,
+            "denominator": 3,
+            "decimal": 53.333333333333336
+          },
+          "bipartite_expected_stars": {
+            "exact": "48",
+            "numerator": 48,
+            "denominator": 1,
+            "decimal": 48.0
+          },
+          "side_constraint_increment": {
+            "exact": "-16/3",
+            "numerator": -16,
+            "denominator": 3,
+            "decimal": -5.333333333333333
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "48",
+        "numerator": 48,
+        "denominator": 1,
+        "decimal": 48.0
+      },
+      "global_null_W2": {
+        "exact": "68/15",
+        "numerator": 68,
+        "denominator": 15,
+        "decimal": 4.533333333333333
+      },
+      "block_simple_null_W2": {
+        "exact": "160/3",
+        "numerator": 160,
+        "denominator": 3,
+        "decimal": 53.333333333333336
+      },
+      "block_bipartite_null_W2": {
+        "exact": "48",
+        "numerator": 48,
+        "denominator": 1,
+        "decimal": 48.0
+      },
+      "excess_over_global_W2": {
+        "exact": "652/15",
+        "numerator": 652,
+        "denominator": 15,
+        "decimal": 43.46666666666667
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "244/5",
+          "numerator": 244,
+          "denominator": 5,
+          "decimal": 48.8
+        },
+        "bipartition_constraint": {
+          "exact": "-16/3",
+          "numerator": -16,
+          "denominator": 3,
+          "decimal": -5.333333333333333
+        },
+        "residual_organization": {
+          "exact": "0",
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "122/2831565",
+          "numerator": 122,
+          "denominator": 2831565,
+          "decimal": 4.3085714083907665e-05
+        },
+        "bipartition_constraint": {
+          "exact": "-8/1698939",
+          "numerator": -8,
+          "denominator": 1698939,
+          "decimal": -4.708821211356029e-06
+        },
+        "residual_organization": {
+          "exact": "0",
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/1132626",
+        "numerator": 1,
+        "denominator": 1132626,
+        "decimal": 8.829039771292554e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N325_second_43032500013",
+      "N": 325,
+      "orientation": "second",
+      "replica": 43032500013,
+      "a": 124,
+      "d": 132,
+      "m": 29,
+      "support_vertices": 25,
+      "components": [
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 8,
+          "R": 8,
+          "m": 23,
+          "s": 16,
+          "imbalance_squared_minus_s_plus_2": -14,
+          "simple_expected_stars": {
+            "exact": "1012/17",
+            "numerator": 1012,
+            "denominator": 17,
+            "decimal": 59.529411764705884
+          },
+          "bipartite_expected_stars": {
+            "exact": "506/9",
+            "numerator": 506,
+            "denominator": 9,
+            "decimal": 56.22222222222222
+          },
+          "side_constraint_increment": {
+            "exact": "-506/153",
+            "numerator": -506,
+            "denominator": 153,
+            "decimal": -3.30718954248366
+          }
+        },
+        {
+          "L": 2,
+          "R": 2,
+          "m": 3,
+          "s": 4,
+          "imbalance_squared_minus_s_plus_2": -2,
+          "simple_expected_stars": {
+            "exact": "12/5",
+            "numerator": 12,
+            "denominator": 5,
+            "decimal": 2.4
+          },
+          "bipartite_expected_stars": {
+            "exact": "2",
+            "numerator": 2,
+            "denominator": 1,
+            "decimal": 2.0
+          },
+          "side_constraint_increment": {
+            "exact": "-2/5",
+            "numerator": -2,
+            "denominator": 5,
+            "decimal": -0.4
+          }
+        },
+        {
+          "L": 2,
+          "R": 1,
+          "m": 2,
+          "s": 3,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "1",
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": 1.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "1",
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": 1.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "56",
+        "numerator": 56,
+        "denominator": 1,
+        "decimal": 56.0
+      },
+      "global_null_W2": {
+        "exact": "1624/125",
+        "numerator": 1624,
+        "denominator": 125,
+        "decimal": 12.992
+      },
+      "block_simple_null_W2": {
+        "exact": "5349/85",
+        "numerator": 5349,
+        "denominator": 85,
+        "decimal": 62.92941176470588
+      },
+      "block_bipartite_null_W2": {
+        "exact": "533/9",
+        "numerator": 533,
+        "denominator": 9,
+        "decimal": 59.22222222222222
+      },
+      "excess_over_global_W2": {
+        "exact": "5376/125",
+        "numerator": 5376,
+        "denominator": 125,
+        "decimal": 43.008
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "106117/2125",
+          "numerator": 106117,
+          "denominator": 2125,
+          "decimal": 49.937411764705885
+        },
+        "bipartition_constraint": {
+          "exact": "-2836/765",
+          "numerator": -2836,
+          "denominator": 765,
+          "decimal": -3.7071895424836603
+        },
+        "residual_organization": {
+          "exact": "-29/9",
+          "numerator": -29,
+          "denominator": 9,
+          "decimal": -3.2222222222222223
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "9647/218802750",
+          "numerator": 9647,
+          "denominator": 218802750,
+          "decimal": 4.408993945460009e-05
+        },
+        "bipartition_constraint": {
+          "exact": "-1418/433229445",
+          "numerator": -1418,
+          "denominator": 433229445,
+          "decimal": -3.2730923910308084e-06
+        },
+        "residual_organization": {
+          "exact": "-29/10193634",
+          "numerator": -29,
+          "denominator": 10193634,
+          "decimal": -2.8449128151942675e-06
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/1132626",
+        "numerator": 1,
+        "denominator": 1132626,
+        "decimal": 8.829039771292554e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N425_first_43042500001",
+      "N": 425,
+      "orientation": "first",
+      "replica": 43042500001,
+      "a": 164,
+      "d": 173,
+      "m": 142,
+      "support_vertices": 37,
+      "components": [
+        {
+          "L": 21,
+          "R": 12,
+          "m": 140,
+          "s": 33,
+          "imbalance_squared_minus_s_plus_2": 50,
+          "simple_expected_stars": {
+            "exact": "19460/17",
+            "numerator": 19460,
+            "denominator": 17,
+            "decimal": 1144.7058823529412
+          },
+          "bipartite_expected_stars": {
+            "exact": "301630/251",
+            "numerator": 301630,
+            "denominator": 251,
+            "decimal": 1201.7131474103585
+          },
+          "side_constraint_increment": {
+            "exact": "243250/4267",
+            "numerator": 243250,
+            "denominator": 4267,
+            "decimal": 57.00726505741739
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "1260",
+        "numerator": 1260,
+        "denominator": 1,
+        "decimal": 1260.0
+      },
+      "global_null_W2": {
+        "exact": "13348/55",
+        "numerator": 13348,
+        "denominator": 55,
+        "decimal": 242.6909090909091
+      },
+      "block_simple_null_W2": {
+        "exact": "19460/17",
+        "numerator": 19460,
+        "denominator": 17,
+        "decimal": 1144.7058823529412
+      },
+      "block_bipartite_null_W2": {
+        "exact": "301630/251",
+        "numerator": 301630,
+        "denominator": 251,
+        "decimal": 1201.7131474103585
+      },
+      "excess_over_global_W2": {
+        "exact": "55952/55",
+        "numerator": 55952,
+        "denominator": 55,
+        "decimal": 1017.3090909090909
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "843384/935",
+          "numerator": 843384,
+          "denominator": 935,
+          "decimal": 902.0149732620321
+        },
+        "bipartition_constraint": {
+          "exact": "243250/4267",
+          "numerator": 243250,
+          "denominator": 4267,
+          "decimal": 57.00726505741739
+        },
+        "residual_organization": {
+          "exact": "14630/251",
+          "numerator": 14630,
+          "denominator": 251,
+          "decimal": 58.286852589641434
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "105423/299084995",
+          "numerator": 105423,
+          "denominator": 299084995,
+          "decimal": 0.00035248508538517624
+        },
+        "bipartition_constraint": {
+          "exact": "121625/5459660636",
+          "numerator": 121625,
+          "denominator": 5459660636,
+          "decimal": 2.2277025644785883e-05
+        },
+        "residual_organization": {
+          "exact": "7315/321156508",
+          "numerator": 7315,
+          "denominator": 321156508,
+          "decimal": 2.2777056724006974e-05
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/2559016",
+        "numerator": 1,
+        "denominator": 2559016,
+        "decimal": 3.9077520421912173e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N425_first_43042500004",
+      "N": 425,
+      "orientation": "first",
+      "replica": 43042500004,
+      "a": 169,
+      "d": 173,
+      "m": 32,
+      "support_vertices": 32,
+      "components": [
+        {
+          "L": 10,
+          "R": 2,
+          "m": 15,
+          "s": 12,
+          "imbalance_squared_minus_s_plus_2": 54,
+          "simple_expected_stars": {
+            "exact": "420/13",
+            "numerator": 420,
+            "denominator": 13,
+            "decimal": 32.30769230769231
+          },
+          "bipartite_expected_stars": {
+            "exact": "1050/19",
+            "numerator": 1050,
+            "denominator": 19,
+            "decimal": 55.26315789473684
+          },
+          "side_constraint_increment": {
+            "exact": "5670/247",
+            "numerator": 5670,
+            "denominator": 247,
+            "decimal": 22.955465587044536
+          }
+        },
+        {
+          "L": 1,
+          "R": 2,
+          "m": 2,
+          "s": 3,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "1",
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": 1.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "1",
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": 1.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 2,
+          "R": 2,
+          "m": 4,
+          "s": 4,
+          "imbalance_squared_minus_s_plus_2": -2,
+          "simple_expected_stars": {
+            "exact": "24/5",
+            "numerator": 24,
+            "denominator": 5,
+            "decimal": 4.8
+          },
+          "bipartite_expected_stars": {
+            "exact": "4",
+            "numerator": 4,
+            "denominator": 1,
+            "decimal": 4.0
+          },
+          "side_constraint_increment": {
+            "exact": "-4/5",
+            "numerator": -4,
+            "denominator": 5,
+            "decimal": -0.8
+          }
+        },
+        {
+          "L": 4,
+          "R": 4,
+          "m": 7,
+          "s": 8,
+          "imbalance_squared_minus_s_plus_2": -6,
+          "simple_expected_stars": {
+            "exact": "28/3",
+            "numerator": 28,
+            "denominator": 3,
+            "decimal": 9.333333333333334
+          },
+          "bipartite_expected_stars": {
+            "exact": "42/5",
+            "numerator": 42,
+            "denominator": 5,
+            "decimal": 8.4
+          },
+          "side_constraint_increment": {
+            "exact": "-14/15",
+            "numerator": -14,
+            "denominator": 15,
+            "decimal": -0.9333333333333333
+          }
+        },
+        {
+          "L": 3,
+          "R": 2,
+          "m": 4,
+          "s": 5,
+          "imbalance_squared_minus_s_plus_2": -2,
+          "simple_expected_stars": {
+            "exact": "4",
+            "numerator": 4,
+            "denominator": 1,
+            "decimal": 4.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "18/5",
+            "numerator": 18,
+            "denominator": 5,
+            "decimal": 3.6
+          },
+          "side_constraint_increment": {
+            "exact": "-2/5",
+            "numerator": -2,
+            "denominator": 5,
+            "decimal": -0.4
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "76",
+        "numerator": 76,
+        "denominator": 1,
+        "decimal": 76.0
+      },
+      "global_null_W2": {
+        "exact": "992/85",
+        "numerator": 992,
+        "denominator": 85,
+        "decimal": 11.670588235294117
+      },
+      "block_simple_null_W2": {
+        "exact": "10031/195",
+        "numerator": 10031,
+        "denominator": 195,
+        "decimal": 51.44102564102564
+      },
+      "block_bipartite_null_W2": {
+        "exact": "1373/19",
+        "numerator": 1373,
+        "denominator": 19,
+        "decimal": 72.26315789473684
+      },
+      "excess_over_global_W2": {
+        "exact": "5468/85",
+        "numerator": 5468,
+        "denominator": 85,
+        "decimal": 64.32941176470588
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "131839/3315",
+          "numerator": 131839,
+          "denominator": 3315,
+          "decimal": 39.77043740573152
+        },
+        "bipartition_constraint": {
+          "exact": "77146/3705",
+          "numerator": 77146,
+          "denominator": 3705,
+          "decimal": 20.8221322537112
+        },
+        "residual_organization": {
+          "exact": "71/19",
+          "numerator": 71,
+          "denominator": 19,
+          "decimal": 3.736842105263158
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "131839/8483138040",
+          "numerator": 131839,
+          "denominator": 8483138040,
+          "decimal": 1.5541300799108534e-05
+        },
+        "bipartition_constraint": {
+          "exact": "38573/4740577140",
+          "numerator": 38573,
+          "denominator": 4740577140,
+          "decimal": 8.136772983721556e-06
+        },
+        "residual_organization": {
+          "exact": "71/48621304",
+          "numerator": 71,
+          "denominator": 48621304,
+          "decimal": 1.4602652368188233e-06
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/2559016",
+        "numerator": 1,
+        "denominator": 2559016,
+        "decimal": 3.9077520421912173e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N425_first_43042500006",
+      "N": 425,
+      "orientation": "first",
+      "replica": 43042500006,
+      "a": 163,
+      "d": 173,
+      "m": 33,
+      "support_vertices": 16,
+      "components": [
+        {
+          "L": 9,
+          "R": 5,
+          "m": 32,
+          "s": 14,
+          "imbalance_squared_minus_s_plus_2": 4,
+          "simple_expected_stars": {
+            "exact": "1984/15",
+            "numerator": 1984,
+            "denominator": 15,
+            "decimal": 132.26666666666668
+          },
+          "bipartite_expected_stars": {
+            "exact": "1488/11",
+            "numerator": 1488,
+            "denominator": 11,
+            "decimal": 135.27272727272728
+          },
+          "side_constraint_increment": {
+            "exact": "496/165",
+            "numerator": 496,
+            "denominator": 165,
+            "decimal": 3.006060606060606
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "144",
+        "numerator": 144,
+        "denominator": 1,
+        "decimal": 144.0
+      },
+      "global_null_W2": {
+        "exact": "528/41",
+        "numerator": 528,
+        "denominator": 41,
+        "decimal": 12.878048780487806
+      },
+      "block_simple_null_W2": {
+        "exact": "1984/15",
+        "numerator": 1984,
+        "denominator": 15,
+        "decimal": 132.26666666666668
+      },
+      "block_bipartite_null_W2": {
+        "exact": "1488/11",
+        "numerator": 1488,
+        "denominator": 11,
+        "decimal": 135.27272727272728
+      },
+      "excess_over_global_W2": {
+        "exact": "5376/41",
+        "numerator": 5376,
+        "denominator": 41,
+        "decimal": 131.1219512195122
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "73424/615",
+          "numerator": 73424,
+          "denominator": 615,
+          "decimal": 119.38861788617886
+        },
+        "bipartition_constraint": {
+          "exact": "496/165",
+          "numerator": 496,
+          "denominator": 165,
+          "decimal": 3.006060606060606
+        },
+        "residual_organization": {
+          "exact": "96/11",
+          "numerator": 96,
+          "denominator": 11,
+          "decimal": 8.727272727272727
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "9178/196724355",
+          "numerator": 9178,
+          "denominator": 196724355,
+          "decimal": 4.665411153591023e-05
+        },
+        "bipartition_constraint": {
+          "exact": "62/52779705",
+          "numerator": 62,
+          "denominator": 52779705,
+          "decimal": 1.17469394722839e-06
+        },
+        "residual_organization": {
+          "exact": "12/3518647",
+          "numerator": 12,
+          "denominator": 3518647,
+          "decimal": 3.4104017822759713e-06
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/2559016",
+        "numerator": 1,
+        "denominator": 2559016,
+        "decimal": 3.9077520421912173e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N425_first_43042500009",
+      "N": 425,
+      "orientation": "first",
+      "replica": 43042500009,
+      "a": 171,
+      "d": 173,
+      "m": 51,
+      "support_vertices": 25,
+      "components": [
+        {
+          "L": 9,
+          "R": 10,
+          "m": 42,
+          "s": 19,
+          "imbalance_squared_minus_s_plus_2": -16,
+          "simple_expected_stars": {
+            "exact": "861/5",
+            "numerator": 861,
+            "denominator": 5,
+            "decimal": 172.2
+          },
+          "bipartite_expected_stars": {
+            "exact": "14637/89",
+            "numerator": 14637,
+            "denominator": 89,
+            "decimal": 164.46067415730337
+          },
+          "side_constraint_increment": {
+            "exact": "-3444/445",
+            "numerator": -3444,
+            "denominator": 445,
+            "decimal": -7.739325842696629
+          }
+        },
+        {
+          "L": 3,
+          "R": 3,
+          "m": 9,
+          "s": 6,
+          "imbalance_squared_minus_s_plus_2": -4,
+          "simple_expected_stars": {
+            "exact": "144/7",
+            "numerator": 144,
+            "denominator": 7,
+            "decimal": 20.571428571428573
+          },
+          "bipartite_expected_stars": {
+            "exact": "18",
+            "numerator": 18,
+            "denominator": 1,
+            "decimal": 18.0
+          },
+          "side_constraint_increment": {
+            "exact": "-18/7",
+            "numerator": -18,
+            "denominator": 7,
+            "decimal": -2.5714285714285716
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "204",
+        "numerator": 204,
+        "denominator": 1,
+        "decimal": 204.0
+      },
+      "global_null_W2": {
+        "exact": "1275/43",
+        "numerator": 1275,
+        "denominator": 43,
+        "decimal": 29.651162790697676
+      },
+      "block_simple_null_W2": {
+        "exact": "6747/35",
+        "numerator": 6747,
+        "denominator": 35,
+        "decimal": 192.77142857142857
+      },
+      "block_bipartite_null_W2": {
+        "exact": "16239/89",
+        "numerator": 16239,
+        "denominator": 89,
+        "decimal": 182.46067415730337
+      },
+      "excess_over_global_W2": {
+        "exact": "7497/43",
+        "numerator": 7497,
+        "denominator": 43,
+        "decimal": 174.34883720930233
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "245496/1505",
+          "numerator": 245496,
+          "denominator": 1505,
+          "decimal": 163.1202657807309
+        },
+        "bipartition_constraint": {
+          "exact": "-32118/3115",
+          "numerator": -32118,
+          "denominator": 3115,
+          "decimal": -10.310754414125201
+        },
+        "residual_organization": {
+          "exact": "1917/89",
+          "numerator": 1917,
+          "denominator": 89,
+          "decimal": 21.53932584269663
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "30687/481414885",
+          "numerator": 30687,
+          "denominator": 481414885,
+          "decimal": 6.374335517274252e-05
+        },
+        "bipartition_constraint": {
+          "exact": "-16059/3985667420",
+          "numerator": -16059,
+          "denominator": 3985667420,
+          "decimal": -4.029187161832986e-06
+        },
+        "residual_organization": {
+          "exact": "1917/227752424",
+          "numerator": 1917,
+          "denominator": 227752424,
+          "decimal": 8.41703445492198e-06
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/2559016",
+        "numerator": 1,
+        "denominator": 2559016,
+        "decimal": 3.9077520421912173e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N425_first_43042500013",
+      "N": 425,
+      "orientation": "first",
+      "replica": 43042500013,
+      "a": 161,
+      "d": 173,
+      "m": 40,
+      "support_vertices": 34,
+      "components": [
+        {
+          "L": 6,
+          "R": 1,
+          "m": 6,
+          "s": 7,
+          "imbalance_squared_minus_s_plus_2": 20,
+          "simple_expected_stars": {
+            "exact": "15/2",
+            "numerator": 15,
+            "denominator": 2,
+            "decimal": 7.5
+          },
+          "bipartite_expected_stars": {
+            "exact": "15",
+            "numerator": 15,
+            "denominator": 1,
+            "decimal": 15.0
+          },
+          "side_constraint_increment": {
+            "exact": "15/2",
+            "numerator": 15,
+            "denominator": 2,
+            "decimal": 7.5
+          }
+        },
+        {
+          "L": 4,
+          "R": 3,
+          "m": 12,
+          "s": 7,
+          "imbalance_squared_minus_s_plus_2": -4,
+          "simple_expected_stars": {
+            "exact": "33",
+            "numerator": 33,
+            "denominator": 1,
+            "decimal": 33.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "30",
+            "numerator": 30,
+            "denominator": 1,
+            "decimal": 30.0
+          },
+          "side_constraint_increment": {
+            "exact": "-3",
+            "numerator": -3,
+            "denominator": 1,
+            "decimal": -3.0
+          }
+        },
+        {
+          "L": 3,
+          "R": 7,
+          "m": 15,
+          "s": 10,
+          "imbalance_squared_minus_s_plus_2": 8,
+          "simple_expected_stars": {
+            "exact": "420/11",
+            "numerator": 420,
+            "denominator": 11,
+            "decimal": 38.18181818181818
+          },
+          "bipartite_expected_stars": {
+            "exact": "42",
+            "numerator": 42,
+            "denominator": 1,
+            "decimal": 42.0
+          },
+          "side_constraint_increment": {
+            "exact": "42/11",
+            "numerator": 42,
+            "denominator": 11,
+            "decimal": 3.8181818181818183
+          }
+        },
+        {
+          "L": 1,
+          "R": 4,
+          "m": 4,
+          "s": 5,
+          "imbalance_squared_minus_s_plus_2": 6,
+          "simple_expected_stars": {
+            "exact": "4",
+            "numerator": 4,
+            "denominator": 1,
+            "decimal": 4.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "6",
+            "numerator": 6,
+            "denominator": 1,
+            "decimal": 6.0
+          },
+          "side_constraint_increment": {
+            "exact": "2",
+            "numerator": 2,
+            "denominator": 1,
+            "decimal": 2.0
+          }
+        },
+        {
+          "L": 2,
+          "R": 1,
+          "m": 2,
+          "s": 3,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "1",
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": 1.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "1",
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": 1.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "103",
+        "numerator": 103,
+        "denominator": 1,
+        "decimal": 103.0
+      },
+      "global_null_W2": {
+        "exact": "520/27",
+        "numerator": 520,
+        "denominator": 27,
+        "decimal": 19.25925925925926
+      },
+      "block_simple_null_W2": {
+        "exact": "1841/22",
+        "numerator": 1841,
+        "denominator": 22,
+        "decimal": 83.68181818181819
+      },
+      "block_bipartite_null_W2": {
+        "exact": "94",
+        "numerator": 94,
+        "denominator": 1,
+        "decimal": 94.0
+      },
+      "excess_over_global_W2": {
+        "exact": "2261/27",
+        "numerator": 2261,
+        "denominator": 27,
+        "decimal": 83.74074074074075
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "38267/594",
+          "numerator": 38267,
+          "denominator": 594,
+          "decimal": 64.42255892255892
+        },
+        "bipartition_constraint": {
+          "exact": "227/22",
+          "numerator": 227,
+          "denominator": 22,
+          "decimal": 10.318181818181818
+        },
+        "residual_organization": {
+          "exact": "9",
+          "numerator": 9,
+          "denominator": 1,
+          "decimal": 9.0
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "38267/1520055504",
+          "numerator": 38267,
+          "denominator": 1520055504,
+          "decimal": 2.5174738619281365e-05
+        },
+        "bipartition_constraint": {
+          "exact": "227/56298352",
+          "numerator": 227,
+          "denominator": 56298352,
+          "decimal": 4.032089607170028e-06
+        },
+        "residual_organization": {
+          "exact": "9/2559016",
+          "numerator": 9,
+          "denominator": 2559016,
+          "decimal": 3.5169768379720953e-06
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/2559016",
+        "numerator": 1,
+        "denominator": 2559016,
+        "decimal": 3.9077520421912173e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N425_second_43042500000",
+      "N": 425,
+      "orientation": "second",
+      "replica": 43042500000,
+      "a": 160,
+      "d": 173,
+      "m": 3,
+      "support_vertices": 4,
+      "components": [
+        {
+          "L": 2,
+          "R": 2,
+          "m": 3,
+          "s": 4,
+          "imbalance_squared_minus_s_plus_2": -2,
+          "simple_expected_stars": {
+            "exact": "12/5",
+            "numerator": 12,
+            "denominator": 5,
+            "decimal": 2.4
+          },
+          "bipartite_expected_stars": {
+            "exact": "2",
+            "numerator": 2,
+            "denominator": 1,
+            "decimal": 2.0
+          },
+          "side_constraint_increment": {
+            "exact": "-2/5",
+            "numerator": -2,
+            "denominator": 5,
+            "decimal": -0.4
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "2",
+        "numerator": 2,
+        "denominator": 1,
+        "decimal": 2.0
+      },
+      "global_null_W2": {
+        "exact": "12/161",
+        "numerator": 12,
+        "denominator": 161,
+        "decimal": 0.07453416149068323
+      },
+      "block_simple_null_W2": {
+        "exact": "12/5",
+        "numerator": 12,
+        "denominator": 5,
+        "decimal": 2.4
+      },
+      "block_bipartite_null_W2": {
+        "exact": "2",
+        "numerator": 2,
+        "denominator": 1,
+        "decimal": 2.0
+      },
+      "excess_over_global_W2": {
+        "exact": "310/161",
+        "numerator": 310,
+        "denominator": 161,
+        "decimal": 1.9254658385093169
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "1872/805",
+          "numerator": 1872,
+          "denominator": 805,
+          "decimal": 2.325465838509317
+        },
+        "bipartition_constraint": {
+          "exact": "-2/5",
+          "numerator": -2,
+          "denominator": 5,
+          "decimal": -0.4
+        },
+        "residual_organization": {
+          "exact": "0",
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "234/257500985",
+          "numerator": 234,
+          "denominator": 257500985,
+          "decimal": 9.087343879480694e-07
+        },
+        "bipartition_constraint": {
+          "exact": "-1/6397540",
+          "numerator": -1,
+          "denominator": 6397540,
+          "decimal": -1.563100816876487e-07
+        },
+        "residual_organization": {
+          "exact": "0",
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/2559016",
+        "numerator": 1,
+        "denominator": 2559016,
+        "decimal": 3.9077520421912173e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N425_second_43042500003",
+      "N": 425,
+      "orientation": "second",
+      "replica": 43042500003,
+      "a": 155,
+      "d": 173,
+      "m": 28,
+      "support_vertices": 32,
+      "components": [
+        {
+          "L": 4,
+          "R": 3,
+          "m": 6,
+          "s": 7,
+          "imbalance_squared_minus_s_plus_2": -4,
+          "simple_expected_stars": {
+            "exact": "15/2",
+            "numerator": 15,
+            "denominator": 2,
+            "decimal": 7.5
+          },
+          "bipartite_expected_stars": {
+            "exact": "75/11",
+            "numerator": 75,
+            "denominator": 11,
+            "decimal": 6.818181818181818
+          },
+          "side_constraint_increment": {
+            "exact": "-15/22",
+            "numerator": -15,
+            "denominator": 22,
+            "decimal": -0.6818181818181818
+          }
+        },
+        {
+          "L": 2,
+          "R": 2,
+          "m": 3,
+          "s": 4,
+          "imbalance_squared_minus_s_plus_2": -2,
+          "simple_expected_stars": {
+            "exact": "12/5",
+            "numerator": 12,
+            "denominator": 5,
+            "decimal": 2.4
+          },
+          "bipartite_expected_stars": {
+            "exact": "2",
+            "numerator": 2,
+            "denominator": 1,
+            "decimal": 2.0
+          },
+          "side_constraint_increment": {
+            "exact": "-2/5",
+            "numerator": -2,
+            "denominator": 5,
+            "decimal": -0.4
+          }
+        },
+        {
+          "L": 6,
+          "R": 3,
+          "m": 11,
+          "s": 9,
+          "imbalance_squared_minus_s_plus_2": 2,
+          "simple_expected_stars": {
+            "exact": "22",
+            "numerator": 22,
+            "denominator": 1,
+            "decimal": 22.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "385/17",
+            "numerator": 385,
+            "denominator": 17,
+            "decimal": 22.647058823529413
+          },
+          "side_constraint_increment": {
+            "exact": "11/17",
+            "numerator": 11,
+            "denominator": 17,
+            "decimal": 0.6470588235294118
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 3,
+          "R": 3,
+          "m": 5,
+          "s": 6,
+          "imbalance_squared_minus_s_plus_2": -4,
+          "simple_expected_stars": {
+            "exact": "40/7",
+            "numerator": 40,
+            "denominator": 7,
+            "decimal": 5.714285714285714
+          },
+          "bipartite_expected_stars": {
+            "exact": "5",
+            "numerator": 5,
+            "denominator": 1,
+            "decimal": 5.0
+          },
+          "side_constraint_increment": {
+            "exact": "-5/7",
+            "numerator": -5,
+            "denominator": 7,
+            "decimal": -0.7142857142857143
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "37",
+        "numerator": 37,
+        "denominator": 1,
+        "decimal": 37.0
+      },
+      "global_null_W2": {
+        "exact": "126/13",
+        "numerator": 126,
+        "denominator": 13,
+        "decimal": 9.692307692307692
+      },
+      "block_simple_null_W2": {
+        "exact": "2633/70",
+        "numerator": 2633,
+        "denominator": 70,
+        "decimal": 37.614285714285714
+      },
+      "block_bipartite_null_W2": {
+        "exact": "6819/187",
+        "numerator": 6819,
+        "denominator": 187,
+        "decimal": 36.46524064171123
+      },
+      "excess_over_global_W2": {
+        "exact": "355/13",
+        "numerator": 355,
+        "denominator": 13,
+        "decimal": 27.307692307692307
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "25409/910",
+          "numerator": 25409,
+          "denominator": 910,
+          "decimal": 27.92197802197802
+        },
+        "bipartition_constraint": {
+          "exact": "-15041/13090",
+          "numerator": -15041,
+          "denominator": 13090,
+          "decimal": -1.1490450725744843
+        },
+        "residual_organization": {
+          "exact": "100/187",
+          "numerator": 100,
+          "denominator": 187,
+          "decimal": 0.5347593582887701
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "25409/2328704560",
+          "numerator": 25409,
+          "denominator": 2328704560,
+          "decimal": 1.091121666374029e-05
+        },
+        "bipartition_constraint": {
+          "exact": "-15041/33497519440",
+          "numerator": -15041,
+          "denominator": 33497519440,
+          "decimal": -4.490183228922697e-07
+        },
+        "residual_organization": {
+          "exact": "25/119633998",
+          "numerator": 25,
+          "denominator": 119633998,
+          "decimal": 2.089706974433806e-07
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/2559016",
+        "numerator": 1,
+        "denominator": 2559016,
+        "decimal": 3.9077520421912173e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N425_second_43042500010",
+      "N": 425,
+      "orientation": "second",
+      "replica": 43042500010,
+      "a": 166,
+      "d": 173,
+      "m": 18,
+      "support_vertices": 17,
+      "components": [
+        {
+          "L": 5,
+          "R": 1,
+          "m": 5,
+          "s": 6,
+          "imbalance_squared_minus_s_plus_2": 12,
+          "simple_expected_stars": {
+            "exact": "40/7",
+            "numerator": 40,
+            "denominator": 7,
+            "decimal": 5.714285714285714
+          },
+          "bipartite_expected_stars": {
+            "exact": "10",
+            "numerator": 10,
+            "denominator": 1,
+            "decimal": 10.0
+          },
+          "side_constraint_increment": {
+            "exact": "30/7",
+            "numerator": 30,
+            "denominator": 7,
+            "decimal": 4.285714285714286
+          }
+        },
+        {
+          "L": 2,
+          "R": 5,
+          "m": 10,
+          "s": 7,
+          "imbalance_squared_minus_s_plus_2": 4,
+          "simple_expected_stars": {
+            "exact": "45/2",
+            "numerator": 45,
+            "denominator": 2,
+            "decimal": 22.5
+          },
+          "bipartite_expected_stars": {
+            "exact": "25",
+            "numerator": 25,
+            "denominator": 1,
+            "decimal": 25.0
+          },
+          "side_constraint_increment": {
+            "exact": "5/2",
+            "numerator": 5,
+            "denominator": 2,
+            "decimal": 2.5
+          }
+        },
+        {
+          "L": 2,
+          "R": 2,
+          "m": 3,
+          "s": 4,
+          "imbalance_squared_minus_s_plus_2": -2,
+          "simple_expected_stars": {
+            "exact": "12/5",
+            "numerator": 12,
+            "denominator": 5,
+            "decimal": 2.4
+          },
+          "bipartite_expected_stars": {
+            "exact": "2",
+            "numerator": 2,
+            "denominator": 1,
+            "decimal": 2.0
+          },
+          "side_constraint_increment": {
+            "exact": "-2/5",
+            "numerator": -2,
+            "denominator": 5,
+            "decimal": -0.4
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "37",
+        "numerator": 37,
+        "denominator": 1,
+        "decimal": 37.0
+      },
+      "global_null_W2": {
+        "exact": "612/167",
+        "numerator": 612,
+        "denominator": 167,
+        "decimal": 3.6646706586826348
+      },
+      "block_simple_null_W2": {
+        "exact": "2143/70",
+        "numerator": 2143,
+        "denominator": 70,
+        "decimal": 30.614285714285714
+      },
+      "block_bipartite_null_W2": {
+        "exact": "37",
+        "numerator": 37,
+        "denominator": 1,
+        "decimal": 37.0
+      },
+      "excess_over_global_W2": {
+        "exact": "5567/167",
+        "numerator": 5567,
+        "denominator": 167,
+        "decimal": 33.33532934131737
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "315041/11690",
+          "numerator": 315041,
+          "denominator": 11690,
+          "decimal": 26.94961505560308
+        },
+        "bipartition_constraint": {
+          "exact": "447/70",
+          "numerator": 447,
+          "denominator": 70,
+          "decimal": 6.385714285714286
+        },
+        "residual_organization": {
+          "exact": "0",
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "315041/29914897040",
+          "numerator": 315041,
+          "denominator": 29914897040,
+          "decimal": 1.053124132698001e-05
+        },
+        "bipartition_constraint": {
+          "exact": "447/179131120",
+          "numerator": 447,
+          "denominator": 179131120,
+          "decimal": 2.495378804084963e-06
+        },
+        "residual_organization": {
+          "exact": "0",
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/2559016",
+        "numerator": 1,
+        "denominator": 2559016,
+        "decimal": 3.9077520421912173e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N425_second_43042500013",
+      "N": 425,
+      "orientation": "second",
+      "replica": 43042500013,
+      "a": 167,
+      "d": 173,
+      "m": 54,
+      "support_vertices": 25,
+      "components": [
+        {
+          "L": 6,
+          "R": 6,
+          "m": 36,
+          "s": 12,
+          "imbalance_squared_minus_s_plus_2": -10,
+          "simple_expected_stars": {
+            "exact": "2520/13",
+            "numerator": 2520,
+            "denominator": 13,
+            "decimal": 193.84615384615384
+          },
+          "bipartite_expected_stars": {
+            "exact": "180",
+            "numerator": 180,
+            "denominator": 1,
+            "decimal": 180.0
+          },
+          "side_constraint_increment": {
+            "exact": "-180/13",
+            "numerator": -180,
+            "denominator": 13,
+            "decimal": -13.846153846153847
+          }
+        },
+        {
+          "L": 8,
+          "R": 2,
+          "m": 16,
+          "s": 10,
+          "imbalance_squared_minus_s_plus_2": 28,
+          "simple_expected_stars": {
+            "exact": "480/11",
+            "numerator": 480,
+            "denominator": 11,
+            "decimal": 43.63636363636363
+          },
+          "bipartite_expected_stars": {
+            "exact": "64",
+            "numerator": 64,
+            "denominator": 1,
+            "decimal": 64.0
+          },
+          "side_constraint_increment": {
+            "exact": "224/11",
+            "numerator": 224,
+            "denominator": 11,
+            "decimal": 20.363636363636363
+          }
+        },
+        {
+          "L": 1,
+          "R": 2,
+          "m": 2,
+          "s": 3,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "1",
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": 1.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "1",
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": 1.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "245",
+        "numerator": 245,
+        "denominator": 1,
+        "decimal": 245.0
+      },
+      "global_null_W2": {
+        "exact": "477/14",
+        "numerator": 477,
+        "denominator": 14,
+        "decimal": 34.07142857142857
+      },
+      "block_simple_null_W2": {
+        "exact": "34103/143",
+        "numerator": 34103,
+        "denominator": 143,
+        "decimal": 238.4825174825175
+      },
+      "block_bipartite_null_W2": {
+        "exact": "245",
+        "numerator": 245,
+        "denominator": 1,
+        "decimal": 245.0
+      },
+      "excess_over_global_W2": {
+        "exact": "2953/14",
+        "numerator": 2953,
+        "denominator": 14,
+        "decimal": 210.92857142857142
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "409231/2002",
+          "numerator": 409231,
+          "denominator": 2002,
+          "decimal": 204.4110889110889
+        },
+        "bipartition_constraint": {
+          "exact": "932/143",
+          "numerator": 932,
+          "denominator": 143,
+          "decimal": 6.5174825174825175
+        },
+        "residual_organization": {
+          "exact": "0",
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "9517/119143024",
+          "numerator": 9517,
+          "denominator": 119143024,
+          "decimal": 7.987878501388382e-05
+        },
+        "bipartition_constraint": {
+          "exact": "233/91484822",
+          "numerator": 233,
+          "denominator": 91484822,
+          "decimal": 2.5468705617637865e-06
+        },
+        "residual_organization": {
+          "exact": "0",
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/2559016",
+        "numerator": 1,
+        "denominator": 2559016,
+        "decimal": 3.9077520421912173e-07
+      },
+      "exact_addition_residual": "0"
+    },
+    {
+      "selection": "first5_N425_second_43042500015",
+      "N": 425,
+      "orientation": "second",
+      "replica": 43042500015,
+      "a": 160,
+      "d": 173,
+      "m": 53,
+      "support_vertices": 28,
+      "components": [
+        {
+          "L": 8,
+          "R": 7,
+          "m": 44,
+          "s": 15,
+          "imbalance_squared_minus_s_plus_2": -12,
+          "simple_expected_stars": {
+            "exact": "473/2",
+            "numerator": 473,
+            "denominator": 2,
+            "decimal": 236.5
+          },
+          "bipartite_expected_stars": {
+            "exact": "1118/5",
+            "numerator": 1118,
+            "denominator": 5,
+            "decimal": 223.6
+          },
+          "side_constraint_increment": {
+            "exact": "-129/10",
+            "numerator": -129,
+            "denominator": 10,
+            "decimal": -12.9
+          }
+        },
+        {
+          "L": 2,
+          "R": 1,
+          "m": 2,
+          "s": 3,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "1",
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": 1.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "1",
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": 1.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        },
+        {
+          "L": 3,
+          "R": 3,
+          "m": 5,
+          "s": 6,
+          "imbalance_squared_minus_s_plus_2": -4,
+          "simple_expected_stars": {
+            "exact": "40/7",
+            "numerator": 40,
+            "denominator": 7,
+            "decimal": 5.714285714285714
+          },
+          "bipartite_expected_stars": {
+            "exact": "5",
+            "numerator": 5,
+            "denominator": 1,
+            "decimal": 5.0
+          },
+          "side_constraint_increment": {
+            "exact": "-5/7",
+            "numerator": -5,
+            "denominator": 7,
+            "decimal": -0.7142857142857143
+          }
+        },
+        {
+          "L": 1,
+          "R": 1,
+          "m": 1,
+          "s": 2,
+          "imbalance_squared_minus_s_plus_2": 0,
+          "simple_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "bipartite_expected_stars": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          },
+          "side_constraint_increment": {
+            "exact": "0",
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": 0.0
+          }
+        }
+      ],
+      "observed_W2": {
+        "exact": "243",
+        "numerator": 243,
+        "denominator": 1,
+        "decimal": 243.0
+      },
+      "global_null_W2": {
+        "exact": "5512/161",
+        "numerator": 5512,
+        "denominator": 161,
+        "decimal": 34.2360248447205
+      },
+      "block_simple_null_W2": {
+        "exact": "3405/14",
+        "numerator": 3405,
+        "denominator": 14,
+        "decimal": 243.21428571428572
+      },
+      "block_bipartite_null_W2": {
+        "exact": "1148/5",
+        "numerator": 1148,
+        "denominator": 5,
+        "decimal": 229.6
+      },
+      "excess_over_global_W2": {
+        "exact": "33611/161",
+        "numerator": 33611,
+        "denominator": 161,
+        "decimal": 208.7639751552795
+      },
+      "allocation_W2": {
+        "localization": {
+          "exact": "9613/46",
+          "numerator": 9613,
+          "denominator": 46,
+          "decimal": 208.97826086956522
+        },
+        "bipartition_constraint": {
+          "exact": "-953/70",
+          "numerator": -953,
+          "denominator": 70,
+          "decimal": -13.614285714285714
+        },
+        "residual_organization": {
+          "exact": "67/5",
+          "numerator": 67,
+          "denominator": 5,
+          "decimal": 13.4
+        }
+      },
+      "allocation_cooperative_excess": {
+        "localization": {
+          "exact": "9613/117714736",
+          "numerator": 9613,
+          "denominator": 117714736,
+          "decimal": 8.166352256866124e-05
+        },
+        "bipartition_constraint": {
+          "exact": "-953/179131120",
+          "numerator": -953,
+          "denominator": 179131120,
+          "decimal": -5.3201252802974715e-06
+        },
+        "residual_organization": {
+          "exact": "67/12795080",
+          "numerator": 67,
+          "denominator": 12795080,
+          "decimal": 5.236387736536231e-06
+        }
+      },
+      "W2_to_cooperative_factor": {
+        "exact": "1/2559016",
+        "numerator": 1,
+        "denominator": 2559016,
+        "decimal": 3.9077520421912173e-07
+      },
+      "exact_addition_residual": "0"
+    }
+  ],
+  "first_five_fixed_census": {
+    "N325_first": {
+      "graphs": 5,
+      "excess_over_global_W2_sum": {
+        "exact": "323214686/1074801",
+        "numerator": 323214686,
+        "denominator": 1074801,
+        "decimal": 300.7204924446479
+      },
+      "allocation_W2_sums": {
+        "localization": {
+          "exact": "45641663741/236456220",
+          "numerator": 45641663741,
+          "denominator": 236456220,
+          "decimal": 193.02373919789466
+        },
+        "bipartition_constraint": {
+          "exact": "66037/660",
+          "numerator": 66037,
+          "denominator": 660,
+          "decimal": 100.05606060606061
+        },
+        "residual_organization": {
+          "exact": "1765/231",
+          "numerator": 1765,
+          "denominator": 231,
+          "decimal": 7.640692640692641
+        }
+      },
+      "positive_bipartition_increment_graphs": 2,
+      "positive_residual_graphs": 1
+    },
+    "N325_second": {
+      "graphs": 5,
+      "excess_over_global_W2_sum": {
+        "exact": "389799/3625",
+        "numerator": 389799,
+        "denominator": 3625,
+        "decimal": 107.53075862068965
+      },
+      "allocation_W2_sums": {
+        "localization": {
+          "exact": "151958843/1294125",
+          "numerator": 151958843,
+          "denominator": 1294125,
+          "decimal": 117.4220751473003
+        },
+        "bipartition_constraint": {
+          "exact": "-7571/1071",
+          "numerator": -7571,
+          "denominator": 1071,
+          "decimal": -7.069094304388422
+        },
+        "residual_organization": {
+          "exact": "-127/45",
+          "numerator": -127,
+          "denominator": 45,
+          "decimal": -2.8222222222222224
+        }
+      },
+      "positive_bipartition_increment_graphs": 1,
+      "positive_residual_graphs": 1
+    },
+    "N425_first": {
+      "graphs": 5,
+      "excess_over_global_W2_sum": {
+        "exact": "65463026762/44506935",
+        "numerator": 65463026762,
+        "denominator": 44506935,
+        "decimal": 1470.850031843352
+      },
+      "allocation_W2_sums": {
+        "localization": {
+          "exact": "10438944374281/8100262170",
+          "numerator": 10438944374281,
+          "denominator": 8100262170,
+          "decimal": 1288.7168532572323
+        },
+        "bipartition_constraint": {
+          "exact": "5839049181033/72227124970",
+          "numerator": 5839049181033,
+          "denominator": 72227124970,
+          "decimal": 80.84288532124582
+        },
+        "residual_organization": {
+          "exact": "472909287/4668851",
+          "numerator": 472909287,
+          "denominator": 4668851,
+          "decimal": 101.29029326487395
+        }
+      },
+      "positive_bipartition_increment_graphs": 4,
+      "positive_residual_graphs": 5
+    },
+    "N425_second": {
+      "graphs": 5,
+      "excess_over_global_W2_sum": {
+        "exact": "337130363/699062",
+        "numerator": 337130363,
+        "denominator": 699062,
+        "decimal": 482.2610340713699
+      },
+      "allocation_W2_sums": {
+        "localization": {
+          "exact": "1292378513/2746315",
+          "numerator": 1292378513,
+          "denominator": 2746315,
+          "decimal": 470.58640869674457
+        },
+        "bipartition_constraint": {
+          "exact": "-384607/170170",
+          "numerator": -384607,
+          "denominator": 170170,
+          "decimal": -2.2601339836633954
+        },
+        "residual_organization": {
+          "exact": "13029/935",
+          "numerator": 13029,
+          "denominator": 935,
+          "decimal": 13.93475935828877
+        }
+      },
+      "positive_bipartition_increment_graphs": 2,
+      "positive_residual_graphs": 2
+    }
+  },
+  "saved_N425_B_minus_A": {
+    "observed_W2_difference": {
+      "exact": "540",
+      "numerator": 540,
+      "denominator": 1,
+      "decimal": 540.0
+    },
+    "allocation_W2": {
+      "localization": {
+        "exact": "-6848/35",
+        "numerator": -6848,
+        "denominator": 35,
+        "decimal": -195.65714285714284
+      },
+      "bipartition_constraint": {
+        "exact": "3795076/5845",
+        "numerator": 3795076,
+        "denominator": 5845,
+        "decimal": 649.285885372113
+      },
+      "residual_organization": {
+        "exact": "14424/167",
+        "numerator": 14424,
+        "denominator": 167,
+        "decimal": 86.37125748502994
+      }
+    },
+    "allocation_cooperative_difference": {
+      "localization": {
+        "exact": "-856/11195695",
+        "numerator": -856,
+        "denominator": 11195695,
+        "decimal": -7.645795995692987e-05
+      },
+      "bipartition_constraint": {
+        "exact": "948769/3739362130",
+        "numerator": 948769,
+        "denominator": 3739362130,
+        "decimal": 0.0002537248244528807
+      },
+      "residual_organization": {
+        "exact": "1803/53419459",
+        "numerator": 1803,
+        "denominator": 53419459,
+        "decimal": 3.375174578237492e-05
+      }
+    },
+    "exact_addition_residual": "0"
+  },
+  "uncertainty": "Exact arithmetic on fixed selected graphs, not estimated population effects. No new sampling covariance, p-values or prevalence estimates are asserted."
+}

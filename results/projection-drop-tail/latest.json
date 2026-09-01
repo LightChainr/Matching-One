@@ -1,0 +1,125 @@
+{
+  "schema": "matching-one.projection-drop-tail.v1",
+  "status": "completed_exact_saved_histogram_leading_term",
+  "contract": {
+    "schema": "matching-one.projection-drop-tail.contract.v1",
+    "source_commit": "85fd492312b597b3fa102ea913e4bcc7aeae2acf",
+    "histogram_commit": "3ae0d68cdaf4a54420d2b2491f95ffbd16ae09ef",
+    "histogram_directory": "results/p337-closed-source-finite-coupling",
+    "fixed_comparison": "Sdrop=Sstar+r deletes only the already defined m^(-r) projection",
+    "N": 25,
+    "delta_cos4": "1152/625",
+    "variable": "lambda=exp(-t), d=p/((1-p)m)*m^(2/N)",
+    "exact_weight": "d^K lambda^(g-r+2K/N)",
+    "root": "d0=1+O(lambda^(2+2/N)), pooled Q_d tends to N/2",
+    "primary_prediction": "projection-deleted U/A_N has positive leading coefficient3/Delta at exponent42/5; original projected law has negative coefficient-1/Delta at exponent11",
+    "calculation": "sort existing rank1 integer-histogram support by exact rational eta; compute normalized centered-K slope for minimum layer; no root search or new series fit",
+    "slope_coefficient": "E_d leading = sum_min count*(N/2-K)/2; U/A divides its angular contrast by N/2",
+    "theory_family": "axis LxL L>=5 and companion ell1>=L+2: Udrop/A=(L-2)/Delta*lambda^(2L-2+2/L)+O(lambda^(2L-2+4/L))",
+    "new_size_rows": [
+      100,
+      225
+    ],
+    "new_size_status": "theory_prediction_not_new_data",
+    "scope": "fixed_volume_then_strong_coupling_no_uniform_N_limit_or_finite_t_zero_location",
+    "chronology": "specified after the original-source negative tail and fixed counterfactual root law were known, before extracting the counterfactual histogram leading term",
+    "no_new_random_samples": true,
+    "no_new_enumeration": true,
+    "no_fitted_parameters": true
+  },
+  "code_commit": "944c364c36cde17d6a0bae1c7d7b77db84e680a3",
+  "geometry_leading_terms": [
+    {
+      "label": "axis",
+      "minimum_eta": "42/5",
+      "minimum_proper_eta": "52/25",
+      "leading_support": [
+        {
+          "k": 5,
+          "g": 9,
+          "q": 0,
+          "count": 10
+        }
+      ],
+      "leading_E_d_coefficient": "75/2",
+      "source": {
+        "commit": "3ae0d68cdaf4a54420d2b2491f95ffbd16ae09ef",
+        "path": "results/p337-closed-source-finite-coupling/axis.csv",
+        "sha256": "2d23fecc98d276d9ad15ad1867199cd308f0570cb5040ef94eb6b923b4c53458"
+      }
+    },
+    {
+      "label": "tilted",
+      "minimum_eta": "314/25",
+      "minimum_proper_eta": "52/25",
+      "leading_support": [
+        {
+          "k": 7,
+          "g": 13,
+          "q": 0,
+          "count": 250
+        }
+      ],
+      "leading_E_d_coefficient": "1375/2",
+      "source": {
+        "commit": "3ae0d68cdaf4a54420d2b2491f95ffbd16ae09ef",
+        "path": "results/p337-closed-source-finite-coupling/tilted.csv",
+        "sha256": "225031e612929ed922ba75c55e76703d59990f5283e7ac39b94f022841798da5"
+      }
+    }
+  ],
+  "projection_deleted_U_over_A_leading": {
+    "exponent": "42/5",
+    "coefficient": "625/384"
+  },
+  "fixed_prediction": {
+    "exponent": "42/5",
+    "coefficient": "625/384"
+  },
+  "matches_fixed_prediction": true,
+  "decision": "projection_deleted_positive_tail_opposes_original_negative_tail",
+  "theoretical_size_laws": [
+    {
+      "N": 25,
+      "L": 5,
+      "status": "N25_supported_by_existing_histogram",
+      "projected_exponent": 11,
+      "projected_coefficient": "-625/1152",
+      "drop_exponent": "42/5",
+      "drop_coefficient": "625/384",
+      "ratio_coefficient": "-3",
+      "ratio_exponential_rate_in_t": "13/5"
+    },
+    {
+      "N": 100,
+      "L": 10,
+      "status": "unmeasured_combinatorial_prediction",
+      "projected_exponent": 21,
+      "projected_coefficient": "-14375/576",
+      "drop_exponent": "91/5",
+      "drop_coefficient": "625/144",
+      "ratio_coefficient": "-4/23",
+      "ratio_exponential_rate_in_t": "14/5"
+    },
+    {
+      "N": 225,
+      "L": 15,
+      "status": "unmeasured_combinatorial_prediction",
+      "projected_exponent": 31,
+      "projected_coefficient": "-29375/384",
+      "drop_exponent": "422/15",
+      "drop_coefficient": "8125/1152",
+      "ratio_coefficient": "-13/141",
+      "ratio_exponential_rate_in_t": "43/15"
+    }
+  ],
+  "original_negative_tail_source": {
+    "commit": "85fd492312b597b3fa102ea913e4bcc7aeae2acf",
+    "path": "notes/closed-source-square-family-leading-law.md"
+  },
+  "dependency": "same exact N25 populations as original first moments, finite-coupling grid and projected series; no independent statistical vote",
+  "boundary": "fixed_N_then_t_to_infinity_no_uniform_size_remainder_finite_t_sign_threshold_or_new_larger_N_data",
+  "new_random_samples": 0,
+  "new_enumerations": 0,
+  "root_searches": 0
+}

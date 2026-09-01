@@ -1,0 +1,34 @@
+{
+  "schema": "matching-one.p40-absolute-cluster-reanalysis.v1",
+  "status": "retrospective existing-production analysis; declared before this aggregate, not before target reveal",
+  "input_commit": "291854a518b03eef4293431b89254f0f4429da53",
+  "input_branch": "analysis/p40-production-motif-projection-20260830",
+  "input_directory": "results/local-20260830/P40-production-motif-projection",
+  "runs": [
+    {"N":65,"first":[8,1],"second":[7,4],"motifs_sha256":"48b278428c2b3e3368a3cb5410e13b20037d3257326bbdf8582c0b88794c7f8f","metadata_sha256":"21ee827d997d353aac7a42397c6bff17f2faf70499c271da211f33eb7cdbde20"},
+    {"N":85,"first":[9,2],"second":[7,6],"motifs_sha256":"b58c44e5e3ad2f9a6c6e2bf73bbf2dcd9e3364ff2bdef76383b87d2497441bb3","metadata_sha256":"5049fbda0a17c58248976b7c53b015f3cac24f3e949583ed6913f4b08e6eafc6"}
+  ],
+  "samples_per_N":1000000,
+  "batches_per_N":100,
+  "p":0.59274605079,
+  "primary_readout":"J=Cov(q,S), q=rank_black-1, S=(c_blackNN+c_whiteMatching)/N",
+  "physical_measure":"P_lambda proportional to Bernoulli(p) exp(lambda S)",
+  "controls": {
+    "clock":["K/N","K(K-1)/[N(N-1)]"],
+    "full":["K/N","K(K-1)/[N(N-1)]","T_NN/(2N)","chi/N"],
+    "mapping":"K=V; T_NN=E_edges; chi=V-E_edges+F0; K(K-1)/[N(N-1)]=(E_edges-E_mc)/(2N)",
+    "meaning":"empirical linear source projection with intercept, refit per orientation in every aligned delete-one; not exact fixed-K or RG thermal centering"
+  },
+  "direction_projection":"(first-second)/exact Delta cos(4theta); no free exponent",
+  "uncertainty":"pooled sample covariance with denominator samples-1, same batch omitted in both directions, retain joint output covariance and all delete-one vectors",
+  "rng_correction": {
+    "seed":4020260830,
+    "counter_interval":[40000000,41000000],
+    "source":"src/gaussian_orientation_mc.cpp:counter_uniform at the pinned input commit",
+    "actual_key":"seed XOR splitmix64(N) XOR splitmix64(replica+c1) XOR splitmix64(site+c2)",
+    "interpretation":"N is an explicit domain separator; sizes do not share the same site uniforms. Same-N orientations share all uniforms. Different N blocks are treated as independent under the ordinary domain-separated PRNG model; a shared seed/counter interval alone does not prove cross-N dependence.",
+    "aggregation":"report both sizes and a nominal two-size joint zero statistic for the fixed raw and controlled readouts; derived views are not independent votes"
+  },
+  "limits":["no E_top-times-cluster moment in this archive","N85 is not N130 or another dyadic norm4 generation","no new sample, replay, simulation, server or test suite","this is source response, not a new field count or energy identification","floating-point Gram arithmetic is not an exact rational certificate"],
+  "delivery":"same Draft PR267; repository script, JSON and technical Markdown report"
+}

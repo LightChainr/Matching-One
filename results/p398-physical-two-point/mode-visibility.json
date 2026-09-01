@@ -1,0 +1,954 @@
+{
+  "schema": "matching-one.p398-width5-mode-visibility.v1",
+  "status": "completed_numerical_interpretation_of_existing_exact_model",
+  "source": {
+    "path": "results/p398-physical-two-point/latest.json",
+    "sha256": "f5e33ec1574607c7acab9fbb19c6941bb473cabffbb82396d606c482f824aa81",
+    "schema": "matching-one.p398-physical-two-point.v1",
+    "exact_positive_separation_hankel_rank": 8,
+    "exact_characteristic_square_free": true,
+    "unchanged_input": true
+  },
+  "definition": {
+    "scope": "width=5, Q=1, h=v=1/2, the existing positive past-connectivity A/L readouts only",
+    "precision": "NumPy complex128; eigenspectrum and residues are numerical, not additional exact certificates",
+    "R": "8x2 matrix whose columns are A and L on the charged orbit representatives",
+    "W": "diag(charged_orbit_stationary_weights)",
+    "eigen_decomposition": "B=V diag(lambda) V^-1",
+    "residue": "G_r=(R^T W conjugate(V))[:,r] outer conjugate((V^-1 R)[r,:])",
+    "correlation": "C(d)=sum_r G_r conjugate(lambda_r)^d",
+    "two_mode_selection": "The two eigenvalues of largest modulus, fixed before reading approximation errors; no fitted amplitudes or optimized pair.",
+    "relative_error": "||C_two(d)-C_stored_exact_embedded(d)||_F / ||C_stored_exact_embedded(d)||_F",
+    "contribution_norm_boundary": "Individual Frobenius contribution norms are not probabilities and need not sum to one; complex matrix residues can cancel."
+  },
+  "numerical_diagnostics": {
+    "eigenvector_matrix_condition_number_2": 3.45033820920501,
+    "max_relative_eigen_residual": 4.898313983998741e-16,
+    "relative_block_reconstruction_error_frobenius": 1.2921125904433806e-15,
+    "max_all_modes_correlation_reconstruction_error_lags_0_to_8": 6.5736154406932294e-15
+  },
+  "modes": [
+    {
+      "mode": 1,
+      "rank_by_eigenvalue_modulus": 1,
+      "eigenvalue": [
+        0.10939308486804757,
+        -1.3985731880165583e-17
+      ],
+      "eigenvalue_modulus": 0.10939308486804757,
+      "inverse_decay_rate_rows": 0.45191457211434105,
+      "residue_A_L_rows_columns": [
+        [
+          [
+            0.9104165802952363,
+            1.2904717228352467e-16
+          ],
+          [
+            -0.5567277598694099,
+            0.4044863940662826
+          ]
+        ],
+        [
+          [
+            -0.5945885547832725,
+            -0.4319938717152929
+          ],
+          [
+            0.5555254688060723,
+            -3.575932938751534e-17
+          ]
+        ]
+      ],
+      "residue_frobenius_norm": 1.4666888533160207,
+      "relative_eigen_residual": 4.475323814780114e-16,
+      "individual_contribution_frobenius_relative_to_C_by_lag_0_to_8": [
+        0.8524238038380741,
+        0.9440308858142827,
+        0.9795600241676337,
+        0.9926585728515861,
+        0.9973789934296533,
+        0.9990661368241748,
+        0.9996674766220802,
+        0.9998816197906126,
+        0.999957858090438
+      ]
+    },
+    {
+      "mode": 2,
+      "rank_by_eigenvalue_modulus": 2,
+      "eigenvalue": [
+        0.03894235471124779,
+        -2.0204420267518568e-18
+      ],
+      "eigenvalue_modulus": 0.03894235471124779,
+      "inverse_decay_rate_rows": 0.3081025286118822,
+      "residue_A_L_rows_columns": [
+        [
+          [
+            0.10313220378531546,
+            3.633245394293094e-17
+          ],
+          [
+            -0.10570142621110167,
+            0.07679658141318589
+          ]
+        ],
+        [
+          [
+            -0.09429842821755047,
+            -0.06851181842411123
+          ],
+          [
+            0.1476643689795886,
+            1.423916142015242e-17
+          ]
+        ]
+      ],
+      "residue_frobenius_norm": 0.2511923298423897,
+      "relative_eigen_residual": 4.748960180217129e-16,
+      "individual_contribution_frobenius_relative_to_C_by_lag_0_to_8": [
+        0.14599028336179906,
+        0.0575555124102483,
+        0.021260041768576796,
+        0.007669469002678589,
+        0.002743203047713607,
+        0.0009781924698038728,
+        0.000348431955281496,
+        0.00012406330286440206,
+        4.4168107404925084e-05
+      ]
+    },
+    {
+      "mode": 3,
+      "rank_by_eigenvalue_modulus": 3,
+      "eigenvalue": [
+        0.01746000244908095,
+        -3.498030833543457e-18
+      ],
+      "eigenvalue_modulus": 0.01746000244908095,
+      "inverse_decay_rate_rows": 0.2470451797927586,
+      "residue_A_L_rows_columns": [
+        [
+          [
+            0.005199657962560682,
+            8.86476254430382e-20
+          ],
+          [
+            0.007958849263544518,
+            -0.005782442463949241
+          ]
+        ],
+        [
+          [
+            0.03495245216564796,
+            0.025394442956416293
+          ],
+          [
+            0.08174060804335077,
+            -5.870000248423121e-17
+          ]
+        ]
+      ],
+      "residue_frobenius_norm": 0.09312301012172887,
+      "relative_eigen_residual": 4.898313983998741e-16,
+      "individual_contribution_frobenius_relative_to_C_by_lag_0_to_8": [
+        0.05412209299426093,
+        0.00956664477919023,
+        0.0015843784586981242,
+        0.0002562608156811829,
+        4.109575411779562e-05,
+        6.57030313208918e-06,
+        1.0493035972201418e-06,
+        1.6751303784755035e-07,
+        2.6738445680592694e-08
+      ]
+    },
+    {
+      "mode": 4,
+      "rank_by_eigenvalue_modulus": 4,
+      "eigenvalue": [
+        0.01022985433747357,
+        7.396073417957739e-18
+      ],
+      "eigenvalue_modulus": 0.01022985433747357,
+      "inverse_decay_rate_rows": 0.2182241169410303,
+      "residue_A_L_rows_columns": [
+        [
+          [
+            -0.0011360923687022855,
+            -1.571437227780129e-18
+          ],
+          [
+            -0.0022718338750077126,
+            0.0016505839267563097
+          ]
+        ],
+        [
+          [
+            -0.0034698598615900346,
+            -0.0025210007556639162
+          ],
+          [
+            -0.010601310979217878,
+            6.536769953598536e-17
+          ]
+        ]
+      ],
+      "residue_frobenius_norm": 0.011830449233750153,
+      "relative_eigen_residual": 3.089271895492605e-16,
+      "individual_contribution_frobenius_relative_to_C_by_lag_0_to_8": [
+        0.006875729991501927,
+        0.0007120803942709292,
+        6.909608784715913e-05,
+        6.547897665934715e-06,
+        6.152360611504687e-07,
+        5.7630897803449805e-08,
+        5.3925761876429635e-09,
+        5.043928157327441e-10,
+        4.717170620016693e-11
+      ]
+    },
+    {
+      "mode": 5,
+      "rank_by_eigenvalue_modulus": 5,
+      "eigenvalue": [
+        0.0068591823605099736,
+        2.625400592836268e-18
+      ],
+      "eigenvalue_modulus": 0.0068591823605099736,
+      "inverse_decay_rate_rows": 0.20071587187266487,
+      "residue_A_L_rows_columns": [
+        [
+          [
+            -7.90487149416262e-06,
+            -3.9680629608943524e-19
+          ],
+          [
+            1.9304399330581965e-05,
+            -1.4025467091267049e-05
+          ]
+        ],
+        [
+          [
+            -1.7344028952796366e-05,
+            -1.2601174641164394e-05
+          ],
+          [
+            6.47136922497317e-05,
+            -1.724595019642899e-18
+          ]
+        ]
+      ],
+      "residue_frobenius_norm": 7.265898059584624e-05,
+      "relative_eigen_residual": 8.510199421075363e-17,
+      "individual_contribution_frobenius_relative_to_C_by_lag_0_to_8": [
+        4.2228618893828163e-05,
+        2.9323782669543124e-06,
+        1.9078635982845072e-07,
+        1.2122680128760176e-08,
+        7.637328042729721e-10,
+        4.796869977199417e-11,
+        3.0095512996765875e-12,
+        1.887457809025126e-13,
+        1.1835669919346874e-14
+      ]
+    },
+    {
+      "mode": 6,
+      "rank_by_eigenvalue_modulus": 6,
+      "eigenvalue": [
+        0.0051899464025627765,
+        -1.3094578808226725e-18
+      ],
+      "eigenvalue_modulus": 0.0051899464025627765,
+      "inverse_decay_rate_rows": 0.190076779102045,
+      "residue_A_L_rows_columns": [
+        [
+          [
+            0.0001141928038316207,
+            -1.6199869023452236e-18
+          ],
+          [
+            0.00032059367756282685,
+            -0.00023292494095903516
+          ]
+        ],
+        [
+          [
+            0.0008931351364861442,
+            0.000648900659913047
+          ],
+          [
+            0.003831052493555247,
+            1.6645406461975221e-18
+          ]
+        ]
+      ],
+      "residue_frobenius_norm": 0.004008216558208718,
+      "relative_eigen_residual": 1.523729313998494e-16,
+      "individual_contribution_frobenius_relative_to_C_by_lag_0_to_8": [
+        0.0023295324004339786,
+        0.00012239745651232444,
+        6.025460534484745e-06,
+        2.8968905957696086e-07,
+        1.3809101333745423e-08,
+        6.562547226588791e-10,
+        3.115349452797682e-11,
+        1.4783347804473924e-12,
+        7.014212361571213e-14
+      ]
+    },
+    {
+      "mode": 7,
+      "rank_by_eigenvalue_modulus": 7,
+      "eigenvalue": [
+        0.002018962138297649,
+        7.494877523569838e-19
+      ],
+      "eigenvalue_modulus": 0.002018962138297649,
+      "inverse_decay_rate_rows": 0.1611558953645377,
+      "residue_A_L_rows_columns": [
+        [
+          [
+            5.9550892376425884e-05,
+            6.682102029728877e-19
+          ],
+          [
+            -0.00026805372066423573,
+            0.00019475242785262737
+          ]
+        ],
+        [
+          [
+            -0.00013289294503779716,
+            -9.655237624183998e-05
+          ],
+          [
+            0.0009139452976021806,
+            1.6572366196214536e-17
+          ]
+        ]
+      ],
+      "residue_frobenius_norm": 0.000987727957135549,
+      "relative_eigen_residual": 1.9368922803767772e-16,
+      "individual_contribution_frobenius_relative_to_C_by_lag_0_to_8": [
+        0.0005740568768045864,
+        1.1733399652635024e-05,
+        2.247020416993743e-07,
+        4.202562375123821e-09,
+        7.793145640126901e-11,
+        1.4407383601313609e-12,
+        2.6606316237860843e-14,
+        4.911521799995575e-16,
+        9.06541089825113e-18
+      ]
+    },
+    {
+      "mode": 8,
+      "rank_by_eigenvalue_modulus": 8,
+      "eigenvalue": [
+        0.0010150583528997727,
+        -4.740602149768238e-19
+      ],
+      "eigenvalue_modulus": 0.0010150583528997727,
+      "inverse_decay_rate_rows": 0.14507872976519812,
+      "residue_A_L_rows_columns": [
+        [
+          [
+            -1.9714338160990247e-06,
+            1.6684906905386834e-19
+          ],
+          [
+            1.2515100755415954e-05,
+            -9.092752941082208e-06
+          ]
+        ],
+        [
+          [
+            3.681299278940403e-06,
+            2.674620484465359e-06
+          ],
+          [
+            -3.570573563685113e-05,
+            -9.85435941061323e-20
+          ]
+        ]
+      ],
+      "residue_frobenius_norm": 3.9227510381654104e-05,
+      "relative_eigen_residual": 1.0890546486731115e-16,
+      "individual_contribution_frobenius_relative_to_C_by_lag_0_to_8": [
+        2.279860758403289e-05,
+        2.342826338190666e-07,
+        2.2557246607353406e-09,
+        2.1210752269815015e-11,
+        1.9775047294177649e-13,
+        1.83803041043656e-15,
+        1.7065348294154392e-17,
+        1.5838327480511757e-19,
+        1.4697503447762153e-21
+      ]
+    }
+  ],
+  "lag_errors": [
+    {
+      "lag": 0,
+      "stored_correlation_frobenius_norm": 1.7206099204552856,
+      "two_slowest_relative_frobenius_error": 0.05005863125814865,
+      "all_modes_relative_reconstruction_error": 5.6454506888270255e-16,
+      "two_slowest_correlation": [
+        [
+          [
+            1.0135487840805517,
+            1.6537962622645561e-16
+          ],
+          [
+            -0.6624291860805116,
+            0.4812829754794685
+          ]
+        ],
+        [
+          [
+            -0.6888869830008231,
+            -0.5005056901394042
+          ],
+          [
+            0.7031898377856609,
+            -2.1520167967362918e-17
+          ]
+        ]
+      ],
+      "all_modes_correlation": [
+        [
+          [
+            1.0177762170653075,
+            1.6271510269771063e-16
+          ],
+          [
+            -0.6566578112349901,
+            0.47708982620913676
+          ]
+        ],
+        [
+          [
+            -0.6566578112349907,
+            -0.4770898262091373
+          ],
+          [
+            0.779103140597564,
+            1.5612973130542524e-18
+          ]
+        ]
+      ]
+    },
+    {
+      "lag": 1,
+      "stored_correlation_frobenius_norm": 0.1699580179174169,
+      "two_slowest_relative_frobenius_error": 0.008995647925940898,
+      "all_modes_relative_reconstruction_error": 1.3588476009390707e-15,
+      "two_slowest_correlation": [
+        [
+          [
+            0.10360948909547488,
+            2.847295440867466e-17
+          ],
+          [
+            -0.06501842951678988,
+            0.04723865414806688
+          ]
+        ],
+        [
+          [
+            -0.06871607907533726,
+            -0.049925153806011834
+          ],
+          [
+            0.0665210429904803,
+            4.710460676566528e-18
+          ]
+        ]
+      ],
+      "all_modes_correlation": [
+        [
+          [
+            0.1036893097402428,
+            2.847553156651389e-17
+          ],
+          [
+            -0.06490144072913338,
+            0.047153656818534645
+          ]
+        ],
+        [
+          [
+            -0.0681370535473389,
+            -0.04950446713512027
+          ],
+          [
+            0.06786192015767335,
+            4.7529130781094694e-18
+          ]
+        ]
+      ]
+    },
+    {
+      "lag": 2,
+      "stored_correlation_frobenius_norm": 0.01791788220840243,
+      "two_slowest_relative_frobenius_error": 0.0015225279617078406,
+      "all_modes_relative_reconstruction_error": 2.218707868201387e-15,
+      "two_slowest_correlation": [
+        [
+          [
+            0.011051216646067548,
+            4.401385004380484e-18
+          ],
+          [
+            -0.006822572884195685,
+            0.004956889350784357
+          ]
+        ],
+        [
+          [
+            -0.00725835449870053,
+            -0.005273503226644971
+          ],
+          [
+            0.006871822347019422,
+            1.3167479436214654e-18
+          ]
+        ]
+      ],
+      "all_modes_correlation": [
+        [
+          [
+            0.011052685823230752,
+            4.401996883976671e-18
+          ],
+          [
+            -0.006820375898957754,
+            0.0049552931475756005
+          ]
+        ],
+        [
+          [
+            -0.0072480396021351685,
+            -0.005266009015618259
+          ],
+          [
+            0.006895741607611969,
+            1.317360885081356e-18
+          ]
+        ]
+      ]
+    },
+    {
+      "lag": 3,
+      "stored_correlation_frobenius_norm": 0.001934228162753926,
+      "two_slowest_relative_frobenius_error": 0.000250106786861242,
+      "all_modes_relative_reconstruction_error": 3.0312285977241513e-15,
+      "two_slowest_correlation": [
+        [
+          [
+            0.001197908136384101,
+            6.291439846430175e-19
+          ],
+          [
+            -0.0007350492572465356,
+            0.0005340445455683604
+          ]
+        ],
+        [
+          [
+            -0.0007839390375710335,
+            -0.0005695650501589489
+          ],
+          [
+            0.0007359535280312401,
+            2.34312808555274e-19
+          ]
+        ]
+      ],
+      "all_modes_correlation": [
+        [
+          [
+            0.0011979346103145486,
+            6.291617122436921e-19
+          ],
+          [
+            -0.0007350092778562188,
+            0.0005340154988410515
+          ]
+        ],
+        [
+          [
+            -0.0007837565922656785,
+            -0.0005694324958855734
+          ],
+          [
+            0.0007363778243356983,
+            2.343566463932528e-19
+          ]
+        ]
+      ]
+    },
+    {
+      "lag": 4,
+      "stored_correlation_frobenius_norm": 0.00021058976143662893,
+      "two_slowest_relative_frobenius_error": 4.050383679452777e-05,
+      "all_modes_relative_reconstruction_error": 3.8220199524365655e-15,
+      "two_slowest_correlation": [
+        [
+          [
+            0.00013061377837584595,
+            8.528679692329037e-20
+          ],
+          [
+            -7.996952831614503e-05,
+            5.810126326620825e-05
+          ]
+        ],
+        [
+          [
+            -8.536517509817811e-05,
+            -6.202143011945067e-05
+          ],
+          [
+            7.98938598114178e-05,
+            3.566583779857087e-20
+          ]
+        ]
+      ],
+      "all_modes_correlation": [
+        [
+          [
+            0.00013061424922802315,
+            8.528720925019232e-20
+          ],
+          [
+            -7.996881327340876e-05,
+            5.810074375725101e-05
+          ]
+        ],
+        [
+          [
+            -8.536196420090148e-05,
+            -6.201909726602614e-05
+          ],
+          [
+            7.990134317459216e-05,
+            3.566752212639595e-20
+          ]
+        ]
+      ]
+    },
+    {
+      "lag": 5,
+      "stored_correlation_frobenius_norm": 2.299816048519237e-05,
+      "two_slowest_relative_frobenius_error": 6.514207754549526e-06,
+      "all_modes_relative_reconstruction_error": 4.368986767012866e-15,
+      "two_slowest_correlation": [
+        [
+          [
+            1.4271534443691874e-05,
+            1.114432268598667e-20
+          ],
+          [
+            -8.730987427947887e-06,
+            6.343433677884273e-06
+          ]
+        ],
+        [
+          [
+            -9.32308141229231e-06,
+            -6.773615138086655e-06
+          ],
+          [
+            8.71591089150768e-06,
+            5.007634509907008e-21
+          ]
+        ]
+      ],
+      "all_modes_correlation": [
+        [
+          [
+            1.4271542753883479e-05,
+            1.1144331554283642e-20
+          ],
+          [
+            -8.730974766650646e-06,
+            6.3434244789133685e-06
+          ]
+        ],
+        [
+          [
+            -9.323025082778352e-06,
+            -6.773574212299181e-06
+          ],
+          [
+            8.716042354619946e-06,
+            5.007683739237707e-21
+          ]
+        ]
+      ]
+    },
+    {
+      "lag": 6,
+      "stored_correlation_frobenius_norm": 2.5143263439822852e-06,
+      "two_slowest_relative_frobenius_error": 1.0440237360545055e-06,
+      "all_modes_relative_reconstruction_error": 5.1294023597525805e-15,
+      "two_slowest_correlation": [
+        [
+          [
+            1.5605564635660565e-06,
+            1.4182011294145659e-21
+          ],
+          [
+            -9.54442723088927e-07,
+            6.934432288693486e-07
+          ]
+        ],
+        [
+          [
+            -1.0192856580482948e-06,
+            -7.405543787580172e-07
+          ],
+          [
+            9.525286880986696e-07,
+            6.692092054057e-22
+          ]
+        ]
+      ],
+      "all_modes_correlation": [
+        [
+          [
+            1.5605566095782425e-06,
+            1.418201312786301e-21
+          ],
+          [
+            -9.544425002002015e-07,
+            6.934430669312104e-07
+          ]
+        ],
+        [
+          [
+            -1.0192846717626002e-06,
+            -7.405536621795153e-07
+          ],
+          [
+            9.52530991844289e-07,
+            6.692104537113574e-22
+          ]
+        ]
+      ]
+    },
+    {
+      "lag": 7,
+      "stored_correlation_frobenius_norm": 2.749910080994637e-07,
+      "two_slowest_relative_frobenius_error": 1.6701770389548498e-07,
+      "all_modes_relative_reconstruction_error": 5.989278775649862e-15,
+      "two_slowest_correlation": [
+        [
+          [
+            1.706887452847479e-07,
+            1.76945801451003e-22
+          ],
+          [
+            -1.0438346215533725e-07,
+            7.58390244762905e-08
+          ]
+        ],
+        [
+          [
+            -1.1147963264673197e-07,
+            -8.099469412426578e-08
+          ],
+          [
+            1.0416376934549176e-07,
+            8.650771484589148e-23
+          ]
+        ]
+      ],
+      "all_modes_correlation": [
+        [
+          [
+            1.706887478435164e-07,
+            1.7694580515056231e-22
+          ],
+          [
+            -1.0438345824497222e-07,
+            7.583902163524401e-08
+          ]
+        ],
+        [
+          [
+            -1.1147961539762368e-07,
+            -8.099468159205503e-08
+          ],
+          [
+            1.0416380965575118e-07,
+            8.650774390957364e-23
+          ]
+        ]
+      ]
+    },
+    {
+      "lag": 8,
+      "stored_correlation_frobenius_norm": 3.007982118104298e-08,
+      "two_slowest_relative_frobenius_error": 2.669205052189489e-08,
+      "all_modes_relative_reconstruction_error": 6.5736154406932294e-15,
+      "two_slowest_correlation": [
+        [
+          [
+            1.8671181585063203e-08,
+            2.174298046600986e-23
+          ],
+          [
+            -1.1417817537047304e-08,
+            8.295530017670273e-09
+          ]
+        ],
+        [
+          [
+            -1.2194198626707125e-08,
+            -8.859603897247316e-09
+          ],
+          [
+            1.1393383143122592e-08,
+            1.0919262982903295e-23
+          ]
+        ]
+      ],
+      "all_modes_correlation": [
+        [
+          [
+            1.867118162983553e-08,
+            2.174298053935037e-23
+          ],
+          [
+            -1.1417817468580285e-08,
+            8.295529967926073e-09
+          ]
+        ],
+        [
+          [
+            -1.2194198325244497e-08,
+            -8.859603678221897e-09
+          ],
+          [
+            1.1393383847833218e-08,
+            1.091926362262943e-23
+          ]
+        ]
+      ]
+    }
+  ],
+  "two_readout_semigroup": {
+    "definition": "U_d=C(0)^-1 C(d); defect=U_2-U_1^2",
+    "U1": [
+      [
+        [
+          0.09261967405470578,
+          -6.938893903907228e-18
+        ],
+        [
+          -0.04475119345936544,
+          0.03251364522722432
+        ]
+      ],
+      [
+        [
+          -0.009392365046385368,
+          -0.006823952644750021
+        ],
+        [
+          0.02947462134730704,
+          -1.734723475976807e-17
+        ]
+      ]
+    ],
+    "U2": [
+      [
+        [
+          0.009984765382625584,
+          -6.938893903907228e-18
+        ],
+        [
+          -0.0058568860094688245,
+          0.004255276767558715
+        ]
+      ],
+      [
+        [
+          -0.0008875146103955008,
+          -0.0006448171086784505
+        ],
+        [
+          0.0013087129974767434,
+          4.445228907190568e-18
+        ]
+      ]
+    ],
+    "U1_squared": [
+      [
+        [
+          0.009220595142570495,
+          -8.131516293641283e-19
+        ],
+        [
+          -0.005463865433820388,
+          0.003969730604968972
+        ]
+      ],
+      [
+        [
+          -0.0011467541924969152,
+          -0.0008331656900174555
+        ],
+        [
+          0.0015109444241376828,
+          -4.87890977618477e-19
+        ]
+      ]
+    ],
+    "defect": [
+      [
+        [
+          0.0007641702400550884,
+          -6.1257422745431e-18
+        ],
+        [
+          -0.0003930205756484369,
+          0.0002855461625897431
+        ]
+      ],
+      [
+        [
+          0.00025923958210141435,
+          0.000188348581339005
+        ],
+        [
+          -0.00020223142666093942,
+          4.933119884809045e-18
+        ]
+      ]
+    ],
+    "relative_frobenius_defect_over_U2": 0.0788382434887371,
+    "C0_condition_number_2": 22.025063877485614,
+    "interpretation": "Nonzero defect rules out one time-homogeneous linear 2x2 propagator reproducing C(0), C(1), C(2). The underlying 42-state transfer remains Markov; this does not establish non-Markovianity of every nonlinear process built from the A/L pair."
+  },
+  "interpretation_boundaries": [
+    "Exact propagation rank eight and a good effective two-slowest-mode approximation are compatible.",
+    "A small Frobenius error for the whole 2x2 matrix does not guarantee the same relative error in a cancellation-sensitive projected observable.",
+    "The eigenvalue ordering is about decay in rows of this finite cylinder, not the count or dimensions of continuum fields.",
+    "This is not a full-Q lift, a new width/anisotropy scan, or an energy-operator identification for Matching One."
+  ],
+  "execution": {
+    "command": "/Users/lc/python-envs/research-py311/bin/python scripts/p398_width5_mode_visibility.py",
+    "python": "3.11.15",
+    "numpy": "2.3.5",
+    "machine": "arm64",
+    "elapsed_seconds": 0.005336791975423694,
+    "script_sha256": "0f3cb70378cc7597793e8303a4b6385d194e4cc3135e643a13193dfc227b1e3b",
+    "exact_engine_rerun": false,
+    "new_monte_carlo_samples": 0
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "schema": "matching-one/p250-projective-leg-augmented-joint-manifest/v2",
+  "status": "frozen_zero_sample_existing_data_reanalysis",
+  "old_stream": {
+    "name": "old_radius_four_bivariate",
+    "commit": "4c1f5d8cf98b9c39557acff0146332899777505b",
+    "path": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv",
+    "sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72",
+    "samples": 80000,
+    "batches": 400,
+    "samples_per_batch": 200,
+    "seed": 25050510120261130,
+    "response": {
+      "commit": "4c1f5d8cf98b9c39557acff0146332899777505b",
+      "path": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.json",
+      "sha256": "1dcb88e9914c6c0b735938ff8574bfb056169ed6cbc7716bb57efd3b3e2fe8f8"
+    },
+    "exact_gate": {
+      "commit": "4c1f5d8cf98b9c39557acff0146332899777505b",
+      "path": "results/huawei-20260830/P250-projective-leg-bivariate-80k/exact_gate.json",
+      "sha256": "abc635623fdb336c15293546663836a2f4fc68899143a4d42b2969f05ba81f0b"
+    },
+    "dependency_group": "p250-projective-leg-N505-bivariate-80k"
+  },
+  "fresh_stream": {
+    "name": "fresh_radius_five_shell",
+    "commit": "11130aef3ee46df8d52e59c8bfe486eadcdbbaf5",
+    "raw_reveal_commit": "ad162d3e1ac1620d9959df2380aaeacb14330430",
+    "path": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/response_1200k.batches.csv",
+    "sha256": "50985e38c9c8afab0c8b0e78113184d33861d928aefaba1e8043e67fc348677e",
+    "samples": 1200000,
+    "batches": 400,
+    "samples_per_batch": 3000,
+    "seed": 25050510120261250,
+    "response": {
+      "commit": "11130aef3ee46df8d52e59c8bfe486eadcdbbaf5",
+      "path": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/response_1200k.json",
+      "sha256": "e27f727a874e376b3872cbd062f3afe86f554dcd18de648a2d4a470887093d59"
+    },
+    "exact_gate": {
+      "commit": "11130aef3ee46df8d52e59c8bfe486eadcdbbaf5",
+      "path": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/exact_gate.json",
+      "sha256": "8f3fd95f432457ce7eb44eb66ba8a19ce6a48b18fca56309c0cd79fb4b0deed7"
+    },
+    "dependency_group": "p250-projective-leg-N505-radius5-1200k"
+  },
+  "reference_joint_score": {
+    "commit": "99d23a705188ba9771523f1f10dc6d6bf9942ec4",
+    "path": "results/local-20260830/P250-projective-leg-joint-annihilation/score.json",
+    "sha256": "a0114b461818687ccc63027c02eb0418f7bfefcee283bf5a71c667eea71fb44e"
+  },
+  "reference_radius5_score": {
+    "commit": "11130aef3ee46df8d52e59c8bfe486eadcdbbaf5",
+    "path": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/score.json",
+    "sha256": "3fdced15302a360567b65185c30fca1eee9cfdff03dedac4d9b6f32e6ba8b2ca"
+  },
+  "shared_semantics": {
+    "expected": {
+      "parent_order": 101,
+      "child_order": 505,
+      "p": 0.59274605079,
+      "hands": ["plus", "minus"],
+      "charges": [1, 2]
+    },
+    "old_runner": {
+      "commit": "4c1f5d8cf98b9c39557acff0146332899777505b",
+      "declared_manifest_runner_commit": "0d0115da2820eeebf219d8ced61a522d709fec4c",
+      "path": "scripts/z5_projective_leg_bivariate_mc.py",
+      "sha256": "5a772bcfe28edab58d43054dc3c91e3b914ee956d02bbbad30828a3f3541a961"
+    },
+    "fresh_runner": {
+      "commit": "11130aef3ee46df8d52e59c8bfe486eadcdbbaf5",
+      "declared_manifest_runner_commit": "fd64f78b08d3b0033b35b40295b514597a6c674b",
+      "path": "scripts/z5_projective_leg_radius5_morphism_mc.py",
+      "sha256": "bfb1562212f79f81d68465acfd490193f2454779a270ad5ee19829b3eea47b24"
+    },
+    "shared_geometry_runner": {
+      "commit": "11130aef3ee46df8d52e59c8bfe486eadcdbbaf5",
+      "path": "scripts/z5_projective_leg_cross_scale_mc.py",
+      "sha256": "15b5271a5eb95e9388c1aec2e23d116723609ec2f87abd38b30b72c0b62bdc48"
+    },
+    "gauge": {
+      "old_response_label": "exact affine-fiber C4 cocycle trivialization from exact_gate",
+      "equation": "t(Rx)=s(x)+k*t(x) mod 5",
+      "shared_functions": ["rotation_gauges", "gauge_charged_rows"]
+    },
+    "translation": {
+      "convention": "uniform seeded parent translation followed by displacement from the translated origin; translation index digest saved per batch",
+      "old_salt_token": "0x250505101B1A",
+      "fresh_salt_token": "0x250505101250",
+      "salts_are_intentionally_distinct": true
+    }
+  },
+  "radius5_alias_metadata": {
+    "orientation_preserving_R0_conjugate": "identity_conjugation",
+    "alexander_reflection_R0_conjugate": "Alexander_R0_conjugation",
+    "alexander_reflection_R1_conjugate": "Alexander_R1_conjugation",
+    "alexander_reflection_R2_conjugate": "Alexander_R2_conjugation",
+    "alexander_reflection_R3_conjugate": "Alexander_R3_conjugation"
+  },
+  "dependency_group": "p250-projective-leg-N505-augmented-old80k-fresh1200k",
+  "monomial_basis_degree_le_2": [[0, 0], [1, 0], [0, 1], [2, 0], [1, 1], [0, 2]],
+  "degree_three_left_rows": [[3, 0], [2, 1], [1, 2], [0, 3]],
+  "operator": {
+    "old_candidate_matrix": "24x6 complex: two hands x two charges x six degree<=2 left rows",
+    "extension_matrix": "16x6 complex: two hands x two charges x four degree-three left rows; columns of total degree 3/4 come from old stream and degree 5 from fresh stream",
+    "joint_null": "the 40x6 candidate-mapped old-plus-degree-five matrix has rank<=5",
+    "pivot": "reuse each candidate's old 5x5 pivot from 99d23a7; never refit the chart with fresh data",
+    "residual": "19 old plus 16 extension complex Schur coordinates, realified to 70"
+  },
+  "primary_retrospective_candidates": [
+    "orientation_preserving_R0_conjugate",
+    "alexander_reflection_R0_conjugate",
+    "alexander_reflection_R1_conjugate",
+    "alexander_reflection_R2_conjugate",
+    "alexander_reflection_R3_conjugate"
+  ],
+  "candidate_maps": [
+    {"name": "orientation_preserving_R0_linear", "alexander_reflection": false, "rotation_power": 0, "coefficient_conjugation": false, "scope": "secondary_retrospective_joint_manifest"},
+    {"name": "orientation_preserving_R0_conjugate", "alexander_reflection": false, "rotation_power": 0, "coefficient_conjugation": true, "scope": "primary_retrospective_fixed_map", "radius5_alias": "identity_conjugation"},
+    {"name": "orientation_preserving_R1_linear", "alexander_reflection": false, "rotation_power": 1, "coefficient_conjugation": false, "scope": "secondary_retrospective_joint_manifest"},
+    {"name": "orientation_preserving_R1_conjugate", "alexander_reflection": false, "rotation_power": 1, "coefficient_conjugation": true, "scope": "secondary_retrospective_joint_manifest"},
+    {"name": "orientation_preserving_R2_linear", "alexander_reflection": false, "rotation_power": 2, "coefficient_conjugation": false, "scope": "secondary_retrospective_joint_manifest"},
+    {"name": "orientation_preserving_R2_conjugate", "alexander_reflection": false, "rotation_power": 2, "coefficient_conjugation": true, "scope": "secondary_retrospective_joint_manifest"},
+    {"name": "orientation_preserving_R3_linear", "alexander_reflection": false, "rotation_power": 3, "coefficient_conjugation": false, "scope": "secondary_retrospective_joint_manifest"},
+    {"name": "orientation_preserving_R3_conjugate", "alexander_reflection": false, "rotation_power": 3, "coefficient_conjugation": true, "scope": "secondary_retrospective_joint_manifest"},
+    {"name": "alexander_reflection_R0_linear", "alexander_reflection": true, "rotation_power": 0, "coefficient_conjugation": false, "scope": "secondary_retrospective_joint_manifest"},
+    {"name": "alexander_reflection_R0_conjugate", "alexander_reflection": true, "rotation_power": 0, "coefficient_conjugation": true, "scope": "primary_retrospective_fixed_map", "radius5_alias": "Alexander_R0_conjugation"},
+    {"name": "alexander_reflection_R1_linear", "alexander_reflection": true, "rotation_power": 1, "coefficient_conjugation": false, "scope": "secondary_retrospective_joint_manifest"},
+    {"name": "alexander_reflection_R1_conjugate", "alexander_reflection": true, "rotation_power": 1, "coefficient_conjugation": true, "scope": "primary_retrospective_fixed_map", "radius5_alias": "Alexander_R1_conjugation"},
+    {"name": "alexander_reflection_R2_linear", "alexander_reflection": true, "rotation_power": 2, "coefficient_conjugation": false, "scope": "secondary_retrospective_joint_manifest"},
+    {"name": "alexander_reflection_R2_conjugate", "alexander_reflection": true, "rotation_power": 2, "coefficient_conjugation": true, "scope": "primary_retrospective_fixed_map", "radius5_alias": "Alexander_R2_conjugation"},
+    {"name": "alexander_reflection_R3_linear", "alexander_reflection": true, "rotation_power": 3, "coefficient_conjugation": false, "scope": "secondary_retrospective_joint_manifest"},
+    {"name": "alexander_reflection_R3_conjugate", "alexander_reflection": true, "rotation_power": 3, "coefficient_conjugation": true, "scope": "primary_retrospective_fixed_map", "radius5_alias": "Alexander_R3_conjugation"}
+  ],
+  "covariance": {
+    "old_delete_one": "delete one of 400 old batches across all old hands, charges and displacements; hold fresh full mean fixed",
+    "fresh_delete_one": "delete one of 400 fresh batches across the full fresh shell; hold old full mean and frozen old pivot fixed",
+    "cross_stream": "seeds are independent; add the two complete jackknife covariance matrices and never pair equal batch indices",
+    "correlation_eigen_relative_cutoff": 1e-10,
+    "finite_batch_calibration": "project-compatible Hotelling approximation with B=min(400,400); asymptotic chi-square also reported"
+  },
+  "decision_alpha": 0.01,
+  "decision_rule": "retrospective zero-sample synthesis formed after the marginal R2/R3 conflict was observed; report every candidate; reject the primary pre-existing fixed-map union only when all five candidates reject; never choose a map by largest p-value; interpret joint rejection as bridge-only only when both hand-specific augmented rank-five gates survive",
+  "no_new_simulation": true,
+  "no_server": true,
+  "score_once": true
+}

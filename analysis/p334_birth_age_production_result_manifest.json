@@ -1,0 +1,99 @@
+{
+  "schema": "matching-one/p334-birth-age-production-result/v1",
+  "status": "completed_retrospective_existing_production_reveal",
+  "completed_utc": "2026-08-30T11:35:03Z",
+  "issues": [334, 337],
+  "chronology": {
+    "exact_review_parent": "fee33287",
+    "protocol_freeze_commit": "cc1b4f0",
+    "pre_score_addendum_commit": "652bf15",
+    "scorer_commit": "1c85ff1a9469195e7d5b88c49c2ba510558279d1",
+    "completed_score_runs": 1,
+    "new_monte_carlo": false
+  },
+  "immutable_artifacts": {
+    "freeze_manifest": {
+      "path": "analysis/p334_birth_age_production_freeze.json",
+      "sha256": "44a4aacdc30f0f943b9c933c8d46ce5da8f83f2a71037953b5e7ddedc8603142"
+    },
+    "scorer": {
+      "path": "scripts/score_p334_birth_age_production.py",
+      "sha256": "cdce41ea4dc6ce257f0fe0acac5763b6d3a921387073acb7cb5437b1083edd14"
+    },
+    "score": {
+      "path": "results/local-20260830/P334-birth-age-production/score.json",
+      "sha256": "4ab6ddf989b8cce5dad3365d5d440b387a931239c8b88a0d5c62f3e508c3ab29"
+    }
+  },
+  "raw_inputs": {
+    "N325_marked_births_sha256": "c9bfb3ee791474491ad6b81e55259d9906befe9dac1c461f72087658f4c7219b",
+    "N425_marked_births_sha256": "4f1315ceb790962c9c24b67baa7644dab4ffba781920fe8d468b1ebe490ad4d0",
+    "raw_files_committed": false,
+    "local_cache": "external large-artifact cache; authoritative Huawei paths and hashes are in the freeze manifest"
+  },
+  "primary_birth_age_results": {
+    "N325": {
+      "k0": 193,
+      "first": {"beta_age": -0.06725262331784872, "se": 0.009518770381567117, "p": 2.2661112508039237e-10},
+      "second": {"beta_age": -0.08139932820232665, "se": 0.008956938912033915, "p": 1.0668465601639618e-14},
+      "two_orientation_joint_chi_square": 127.85578729754505,
+      "two_orientation_joint_p": 1.7237272551574198e-28
+    },
+    "N425": {
+      "k0": 252,
+      "first": {"beta_age": -0.06943758436664527, "se": 0.00848453307239685, "p": 9.668519294164711e-13},
+      "second": {"beta_age": -0.06691803647825126, "se": 0.007810778281220991, "p": 1.4392501719361437e-13},
+      "two_orientation_joint_chi_square": 151.67471765660179,
+      "two_orientation_joint_p": 1.1594540415648842e-33
+    },
+    "decision": "coarse_state_birth_age_independence_rejected_in_both_archives",
+    "sign": "negative beta: older rank-one plateaux have lower next-step exit risk after primitive-line fixed effects"
+  },
+  "nested_birth_mark_diagnostic": {
+    "maximum_absolute_slope_change": 0.0007800396655295166,
+    "maximum_relative_change": 0.011656636,
+    "decision": "recorded strict-0-to-1 landing/local-H4 birth marks do not materially attenuate the primary slopes",
+    "boundary": "the full current microscopic geometry at k0 was not recorded, so intrinsic temporal memory is not identified"
+  },
+  "complement_results": {
+    "N325_joint_p": 2.6028514269118302e-30,
+    "N425_joint_p": 4.937898712901701e-24,
+    "all_complement_audit_failure_sums": 0,
+    "interpretation": "the complement-transformed age view is resolved but paired with, not independent of, the forward archive"
+  },
+  "collision_results": {
+    "N325": {
+      "first_D_N": 0.0048895,
+      "second_D_N": 0.0049395,
+      "orientation_mean_Dbar": 0.0049145000000000005,
+      "Dbar_se": 0.00003591548018851646
+    },
+    "N425": {
+      "first_D_N": 0.0039075,
+      "second_D_N": 0.003798,
+      "orientation_mean_Dbar": 0.0038527500000000003,
+      "Dbar_se": 0.000031486519081003424
+    },
+    "maximum_absolute_beta_D_correlation": 0.08547552963698614,
+    "fixed_six_arm_ratio": 0.7996722504772675,
+    "observed_Dbar_ratio": 0.783955641469122,
+    "six_arm_contrast_chi_square": 3.284693827540312,
+    "six_arm_contrast_p": 0.06992866974648525,
+    "decision": "conditional_N_minus_5_over_6_ratio_not_rejected",
+    "boundary": "the two sizes are not a matched fixed-shape lineage; compatibility is not exponent confirmation"
+  },
+  "evidence_accounting": {
+    "dependency_groups": 2,
+    "N325": "one 2M paired-orientation archive",
+    "N425": "one independent 2M paired-orientation archive",
+    "orientation_rows_are_independent_evidence": false,
+    "forward_and_complement_are_independent_evidence": false
+  },
+  "claim_boundary": [
+    "The result rejects lumpability of the recorded coarse state (k,rank,ell) at these finite sizes.",
+    "It may be explained by unrecorded current configuration geometry and does not by itself establish intrinsic temporal memory.",
+    "It does not identify a Jordan block, CFT field or non-Markov continuum limit.",
+    "The direct-birth collision channel is retained separately and was not used to subtract the age slope.",
+    "The six-arm ratio is one conditional high-risk two-size adversary, not a fitted exponent or a Q4 test."
+  ]
+}

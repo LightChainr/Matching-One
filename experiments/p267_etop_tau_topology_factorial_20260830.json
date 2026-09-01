@@ -1,0 +1,82 @@
+{
+  "issue_context": [154, 205],
+  "pr_context": 267,
+  "status": "frozen before missing-cell production",
+  "base_commit": "dbb719fc9d1356d25114aea6c099ff9faaecc707",
+  "question": "does the normalized topology-map response in P4(A,E,C,W) depend on torus modulus tau?",
+  "fixed_probability": 0.59274605079,
+  "determinant": 50,
+  "factors": {
+    "tau": ["i", "2i"],
+    "topology_map": ["Smith(1,50)", "Smith(5,10)"],
+    "common_map": "O=(1/5)[[4,-3],[3,4]]"
+  },
+  "cells": [
+    {
+      "id": "P00_tau_i_cyclic",
+      "tau": "i",
+      "topology_map": "Smith(1,50)",
+      "period_matrix": [[7, -1], [1, 7]],
+      "short_axis": [7, 1],
+      "source": "existing P205 N50 first cell at fc14817"
+    },
+    {
+      "id": "P01_tau_i_noncyclic",
+      "tau": "i",
+      "topology_map": "Smith(5,10)",
+      "period_matrix": [[5, -5], [5, 5]],
+      "short_axis": [5, 5],
+      "source": "existing P205 N50 second cell at fc14817"
+    },
+    {
+      "id": "P10_tau_2i_cyclic",
+      "tau": "2i",
+      "topology_map": "Smith(1,50)",
+      "period_matrix": [[3, -8], [4, 6]],
+      "short_axis": [3, 4],
+      "source": "missing; run on Huawei-CodeBuddy (Zy)",
+      "pair_anchor": "P00_tau_i_cyclic"
+    },
+    {
+      "id": "P11_tau_2i_noncyclic",
+      "tau": "2i",
+      "topology_map": "Smith(5,10)",
+      "period_matrix": [[0, -10], [5, 0]],
+      "short_axis": [0, 5],
+      "source": "missing; run on Huawei-CodeBuddy-XPk2PZ (XP)",
+      "pair_anchor": "P00_tau_i_cyclic"
+    }
+  ],
+  "exact_contract": {
+    "gram_tau_i": [[50, 0], [0, 50]],
+    "gram_tau_2i": [[25, 0], [0, 100]],
+    "map_relations": ["P01=O*P00", "P11=O*P10"],
+    "delta_chi4_tau_i_first_minus_second": "1152/625",
+    "delta_chi4_tau_2i_first_minus_second": "-1152/625",
+    "minimality": "exhaustive HNF scan for determinant N<50 finds no two modular classes sharing two Smith types"
+  },
+  "production": {
+    "samples_per_missing_cell": 20000,
+    "batches": 100,
+    "seed": 202626750,
+    "pilot_counter": [26750000000, 26750020000],
+    "authorized_extension_counter": [26750020000, 26750100000],
+    "threads": 16,
+    "runner": "src/threshold_rank_integer_period_mc.cpp",
+    "coupling": "both jobs use identical seed/counter; P00 is second in both and must reproduce byte-identically"
+  },
+  "observable_order": ["A_top", "E_top", "C", "W"],
+  "primary": {
+    "square_projector": "(Y_P00-Y_P01)/(1152/625)",
+    "rectangle_projector": "(Y_P10-Y_P11)/(-1152/625)",
+    "interaction": "rectangle_projector-square_projector",
+    "test": "four-dimensional zero Wald test with full within-row aligned-batch covariance and independent old/new blocks",
+    "no_root_character": true
+  },
+  "secondary": {
+    "fixed_A_plus_C_coefficients": {"A_top": 0.8287127431200354, "C": 3.334261982589098},
+    "residual": "interaction_E-0.8287127431200354*interaction_A-3.334261982589098*interaction_C",
+    "status": "fixed-coefficient diagnostic; not another primary vote"
+  },
+  "promotion_gate": "extend both missing cells to 100k iff primary interaction chi-square exceeds 13.276704 (4 df, alpha .01) and its covariance is positive definite; otherwise stop"
+}

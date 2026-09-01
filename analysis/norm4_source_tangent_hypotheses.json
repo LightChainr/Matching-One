@@ -1,0 +1,16 @@
+{
+  "schema": "matching-one.norm4-source-tangent-hypotheses.v1",
+  "status": "Exploratory source-extension predictions written before the six-size source aggregate, after earlier unperturbed and P40 results were known",
+  "source": "s=CB+CW is conjugate to the common microscopic paired-cluster fugacity Q=exp(t); density source S=s/N is retained as a coordinate, with v_N=dU/dt=N*dU/dlambda_density",
+  "observable": "U=N^(13/8)*P4_standard[partial_p E]/(2*mean partial_p q), at the refound pooled matching root; E=q^2",
+  "sampling": "Reobserve the first 100000 already-produced permutations at each N, 100 aligned batches. Full K-prefix source moments followed by exact Binomial weights. These are correlated K readouts of each permutation, not independent K samples or new production.",
+  "sizes": [65,85,130,170,260,340],
+  "lineages": [[65,130,260],[85,170,340]],
+  "root_bracket": [0.58274605079,0.60274605079],
+  "common_thermal_clock": "For the same-N common source a+bK, root relocation cancels the shared thermal Jacobian and gives v_N=0. More generally the response is unchanged by adding such a source.",
+  "source_rigidity": "NEW extension hypothesis: the unperturbed transfer coefficients stay fixed under a common microscopic paired-cluster fugacity t. q2 then predicts v_N-3v_2N+2v_4N=0; Jordan predicts v_N-2v_2N+v_4N=0. The original t=0 recurrence alone does not imply either tangent equation.",
+  "generator_drift": "For R_kappa(U)=U_4N-(1+kappa)U_2N+kappa*U_N and one common differentiable kappa(t), R_kappa(v)=kappa_prime*(U_2N-U_N). kappa=.5 is q2 (half its legacy residual); kappa=1 is Jordan. The gain-free two-lineage determinant must vanish. No unstable division by U_2N-U_N and no free exponent fit.",
+  "interpretation": "Report the unperturbed residual alongside the tangent. A failing baseline cannot be rescued or certified by a compatible tangent or determinant. Nominal joint summaries and the nested drift diagnostic share samples and are not independent evidence votes.",
+  "uncertainty": "The four cyclic N share the same permutation counter domain and omit the same batch jointly. N260 and N340 have distinct seeds and form two further groups. Sum group-specific delete-one covariance contributions; save every vector and the full covariance.",
+  "resources": "Local CPU only; no GPU, server, new random counters, or test suites. This finite archived subset measures a new source response and does not inherit full-production precision."
+}

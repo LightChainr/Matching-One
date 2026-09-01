@@ -1,0 +1,15 @@
+{
+  "schema": "matching-one.regular-pair-counterterm.contract.v1",
+  "question": "Can a regular finite singlet counterterm remove the first-Q two-copy interaction of the specified local pair family?",
+  "acquisition": "symbolic reduction of three previously derived rational contractions, with no occupation score or parameter fit",
+  "source": {"commit": "7e46c74ce149d5a0a06d1085eb36eebb1bbe6bdb", "path": "notes/local-pair-two-insertion-algebra.md", "integration_status": "branch_only"},
+  "canonical_mixed_response": {"commit": "2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb", "path": "notes/regular-pair-interaction-result.md", "value": -0.04503611397592696, "recomputed": false},
+  "old_linear_response": {"commit": "923f66b979a6b6132875f783106c041ed3c0c1a9", "value": 0.0018155512845251097, "recomputed": false},
+  "basis": ["Kreg=K2+K0", "L=(Q-1)K0"],
+  "general_regular_family": "K(Q)=g(Q)*Kreg+a(Q)*L with g,a real analytic at Q1; pure pair coefficient one means g=1 and c(Q)=1+(Q-1)*a(Q)",
+  "fixed_contraction": "four disjoint exterior colour lines between two identical D4 local tensors, realizable by the existing L17 contractible two-hole graph",
+  "conditional_baseline": "Q^4+(v_x+v_y+v_x*v_y)*Q; v_x,v_y positive; sum both hole occupations, keep exterior fixed",
+  "requested_outputs": ["first-Q Gram on (Kreg,L)", "determinant and completed square", "uniform same-counterterm lower bound", "cross-counterterm expression and scope", "first-Q conditional connected two-site coefficient"],
+  "decision_scope": "strict positive quadratic form rules out additive first-Q colour interaction in this fixed shared-four-line exterior for a nonzero first-jet direction; not a claim about summed homogeneous U or a universal CFT norm",
+  "not_requested": ["choose a fitted counterterm", "rescore N25", "new root search", "new Monte Carlo", "new occupation enumeration", "cloud jobs"]
+}

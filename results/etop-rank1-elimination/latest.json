@@ -1,0 +1,1071 @@
+{
+  "alpha": 0.01,
+  "estimand": {
+    "boundary": "intrinsic-center covariance is first-order influence; fixed-center covariance is exact for batch estimators conditional on the plug-in p0",
+    "cross_size_covariance": "block diagonal, as specified for the independent production size blocks",
+    "primary_covariance": "covariance_intrinsic_center_first_order_influence",
+    "rank_one_null": "child=lambda*parent with unrestricted real lambda and unrestricted two-component parent truth",
+    "sensitivity_covariance": "covariance_fixed_center_exact_batch_estimator",
+    "state": "(P4_A_top, P4_E_top) at each archive's intrinsic matching center p0"
+  },
+  "fixed_center_sensitivity": {
+    "covariance_key": "covariance_fixed_center_exact_batch_estimator",
+    "joint_rank_one": {
+      "chi2": 0.814321791942105,
+      "combination": "sum across four block-diagonal production dependency groups",
+      "decision_at_alpha": "survives",
+      "degrees_of_freedom": 4,
+      "dependency_groups": [
+        "P49",
+        "P43",
+        "P50",
+        "P57"
+      ],
+      "p_value": 0.9365177811620978
+    },
+    "joint_zero_even_baseline": {
+      "chi2": 196.19590259971267,
+      "decision_at_alpha": "eliminated",
+      "degrees_of_freedom": 8,
+      "null": "P4_E_top=0 independently at every listed size",
+      "p_value": 4.0436856396228635e-38,
+      "per_size_chi2": {
+        "P43-N185": 56.5037721666886,
+        "P43-N265": 56.02031403492486,
+        "P49-N130": 23.674905064859402,
+        "P49-N170": 16.723703424913737,
+        "P50-N145": 30.95436780184644,
+        "P50-N290": 3.576604369151563,
+        "P57-N325": 3.6205875099326885,
+        "P57-N425": 5.121648227395395
+      }
+    },
+    "lineages": [
+      {
+        "child": {
+          "N": 170,
+          "batches": 100,
+          "covariance": [
+            [
+              2.014795090895877e-09,
+              -7.626487993118408e-11
+            ],
+            [
+              -7.626487993118408e-11,
+              6.786771960697006e-10
+            ]
+          ],
+          "estimate": [
+            0.00026356375962606775,
+            -0.00010653636068648911
+          ],
+          "id": "P49-N170",
+          "orientation_pair": {
+            "first": [
+              13,
+              1
+            ],
+            "second": [
+              11,
+              7
+            ]
+          },
+          "p0": 0.5927431258661282,
+          "samples_per_orientation": 100000000
+        },
+        "dependency_group": "P49",
+        "determinant_diagnostic": {
+          "boundary": "descriptive first-order diagnostic; the profiled Mahalanobis statistic is the primary rank-one test",
+          "delta_method_standard_error": 1.3199519375029622e-08,
+          "delta_method_z": 0.32840065553195413,
+          "determinant": 4.3347308154664575e-09
+        },
+        "lineage": "P49-N130-to-N170",
+        "parent": {
+          "N": 130,
+          "batches": 100,
+          "covariance": [
+            [
+              3.402163029622427e-09,
+              -6.868060205919373e-11
+            ],
+            [
+              -6.868060205919373e-11,
+              7.540860779594878e-10
+            ]
+          ],
+          "estimate": [
+            0.00028986619705853594,
+            -0.0001336148057156206
+          ],
+          "id": "P49-N130",
+          "orientation_pair": {
+            "first": [
+              11,
+              3
+            ],
+            "second": [
+              9,
+              7
+            ]
+          },
+          "p0": 0.5927481110969021,
+          "samples_per_orientation": 100000000
+        },
+        "rank_one_common_ray": {
+          "decision_at_alpha": "survives",
+          "degrees_of_freedom": 1,
+          "fitted_child_state": [
+            0.0002577193651793614,
+            -0.00011129078654988932
+          ],
+          "fitted_parent_state": [
+            0.0002987609897308355,
+            -0.00012901376469877612
+          ],
+          "lambda": 0.8626272305884046,
+          "min_chi2": 0.1072052879450554,
+          "optimizer_certificate": {
+            "derivative_polynomial_degree": 6,
+            "infinity_chi2": 46.3832761129692,
+            "max_normalized_root_residual": 3.162659382969157e-81,
+            "method": "all real roots of analytic rational-profile derivative plus |lambda|=infinity",
+            "number_of_complex_roots": 4,
+            "real_stationary_points": [
+              -0.8271059889994754,
+              0.8626272305884046
+            ],
+            "stationary_chi2": [
+              92.8581936600587,
+              0.1072052879450554
+            ]
+          },
+          "p_value": 0.7433485883478702
+        },
+        "zero_even_baseline": {
+          "chi2": 40.39860848977314,
+          "decision_at_alpha": "eliminated",
+          "degrees_of_freedom": 2,
+          "null": "P4_E_top=0 independently at every listed size",
+          "p_value": 1.6887043735763615e-09,
+          "per_size_chi2": {
+            "P49-N130": 23.674905064859402,
+            "P49-N170": 16.723703424913737
+          }
+        }
+      },
+      {
+        "child": {
+          "N": 265,
+          "batches": 100,
+          "covariance": [
+            [
+              4.053371883237447e-10,
+              2.008293839650469e-11
+            ],
+            [
+              2.008293839650469e-11,
+              1.187643473332352e-10
+            ]
+          ],
+          "estimate": [
+            7.379528784855823e-05,
+            -8.156724853616632e-05
+          ],
+          "id": "P43-N265",
+          "orientation_pair": {
+            "first": [
+              16,
+              3
+            ],
+            "second": [
+              12,
+              11
+            ]
+          },
+          "p0": 0.5927463120830452,
+          "samples_per_orientation": 500000000
+        },
+        "dependency_group": "P43",
+        "determinant_diagnostic": {
+          "boundary": "descriptive first-order diagnostic; the profiled Mahalanobis statistic is the primary rank-one test",
+          "delta_method_standard_error": 3.58569137858803e-09,
+          "delta_method_z": -0.5174468822189462,
+          "determinant": -1.8554048244497312e-09
+        },
+        "lineage": "P43-N185-to-N265",
+        "parent": {
+          "N": 185,
+          "batches": 100,
+          "covariance": [
+            [
+              8.44480714364217e-10,
+              -1.592583089760544e-11
+            ],
+            [
+              -1.592583089760544e-11,
+              1.886064548667952e-10
+            ]
+          ],
+          "estimate": [
+            0.0001161432650111385,
+            -0.00010323263125078345
+          ],
+          "id": "P43-N185",
+          "orientation_pair": {
+            "first": [
+              13,
+              4
+            ],
+            "second": [
+              11,
+              8
+            ]
+          },
+          "p0": 0.5927476015036172,
+          "samples_per_orientation": 500000000
+        },
+        "rank_one_common_ray": {
+          "decision_at_alpha": "survives",
+          "degrees_of_freedom": 1,
+          "fitted_child_state": [
+            8.035186837477861e-05,
+            -7.940676068076765e-05
+          ],
+          "fitted_parent_state": [
+            0.00010651805809662027,
+            -0.00010526518074237293
+          ],
+          "lambda": 0.7543497300888938,
+          "min_chi2": 0.2704068355012112,
+          "optimizer_certificate": {
+            "derivative_polynomial_degree": 6,
+            "infinity_chi2": 70.19127047071682,
+            "max_normalized_root_residual": 7.906648457422892e-82,
+            "method": "all real roots of analytic rational-profile derivative plus |lambda|=infinity",
+            "number_of_complex_roots": 4,
+            "real_stationary_points": [
+              -0.7043188284081633,
+              0.7543497300888938
+            ],
+            "stationary_chi2": [
+              144.93462271976682,
+              0.2704068355012112
+            ]
+          },
+          "p_value": 0.6030589941288016
+        },
+        "zero_even_baseline": {
+          "chi2": 112.52408620161346,
+          "decision_at_alpha": "eliminated",
+          "degrees_of_freedom": 2,
+          "null": "P4_E_top=0 independently at every listed size",
+          "p_value": 3.678791215028762e-25,
+          "per_size_chi2": {
+            "P43-N185": 56.5037721666886,
+            "P43-N265": 56.02031403492486
+          }
+        }
+      },
+      {
+        "child": {
+          "N": 290,
+          "batches": 100,
+          "covariance": [
+            [
+              1.478513099007497e-09,
+              -1.183105506287543e-11
+            ],
+            [
+              -1.183105506287543e-11,
+              4.914288536674554e-10
+            ]
+          ],
+          "estimate": [
+            0.00014522143711302783,
+            -4.1924295881435686e-05
+          ],
+          "id": "P50-N290",
+          "orientation_pair": {
+            "first": [
+              13,
+              11
+            ],
+            "second": [
+              17,
+              1
+            ]
+          },
+          "p0": 0.5927515789148524,
+          "samples_per_orientation": 100000000
+        },
+        "dependency_group": "P50",
+        "determinant_diagnostic": {
+          "boundary": "descriptive first-order diagnostic; the profiled Mahalanobis statistic is the primary rank-one test",
+          "delta_method_standard_error": 8.301569081549009e-09,
+          "delta_method_z": 0.6590273903646353,
+          "determinant": 5.470961407744986e-09
+        },
+        "lineage": "P50-N145-to-N290",
+        "parent": {
+          "N": 145,
+          "batches": 100,
+          "covariance": [
+            [
+              1.572877386763798e-09,
+              2.241655107537515e-11
+            ],
+            [
+              2.241655107537515e-11,
+              4.420657870851642e-10
+            ]
+          ],
+          "estimate": [
+            0.0002747037394436692,
+            -0.00011697806190071244
+          ],
+          "id": "P50-N145",
+          "orientation_pair": {
+            "first": [
+              12,
+              1
+            ],
+            "second": [
+              9,
+              8
+            ]
+          },
+          "p0": 0.5927419914140802,
+          "samples_per_orientation": 100000000
+        },
+        "rank_one_common_ray": {
+          "decision_at_alpha": "survives",
+          "degrees_of_freedom": 1,
+          "fitted_child_state": [
+            0.00013234472062191162,
+            -5.2772424492972615e-05
+          ],
+          "fitted_parent_state": [
+            0.00028151052618906796,
+            -0.00011225225243197157
+          ],
+          "lambda": 0.47012352402420055,
+          "min_chi2": 0.4341924470912055,
+          "optimizer_certificate": {
+            "derivative_polynomial_degree": 6,
+            "infinity_chi2": 81.06206422516395,
+            "max_normalized_root_residual": 2.7936824549560887e-80,
+            "method": "all real roots of analytic rational-profile derivative plus |lambda|=infinity",
+            "number_of_complex_roots": 4,
+            "real_stationary_points": [
+              -2.2387532082486157,
+              0.47012352402420055
+            ],
+            "stationary_chi2": [
+              97.69957210631182,
+              0.4341924470912055
+            ]
+          },
+          "p_value": 0.509938916227442
+        },
+        "zero_even_baseline": {
+          "chi2": 34.530972170998005,
+          "decision_at_alpha": "eliminated",
+          "degrees_of_freedom": 2,
+          "null": "P4_E_top=0 independently at every listed size",
+          "p_value": 3.174641328155806e-08,
+          "per_size_chi2": {
+            "P50-N145": 30.95436780184644,
+            "P50-N290": 3.576604369151563
+          }
+        }
+      },
+      {
+        "child": {
+          "N": 425,
+          "batches": 100,
+          "covariance": [
+            [
+              1.264296187355312e-09,
+              -5.94449760865148e-11
+            ],
+            [
+              -5.94449760865148e-11,
+              4.247202804500836e-10
+            ]
+          ],
+          "estimate": [
+            3.777597780614877e-05,
+            -4.663976706101828e-05
+          ],
+          "id": "P57-N425",
+          "orientation_pair": {
+            "first": [
+              16,
+              13
+            ],
+            "second": [
+              19,
+              8
+            ]
+          },
+          "p0": 0.5927474314289065,
+          "samples_per_orientation": 500000000
+        },
+        "dependency_group": "P57",
+        "determinant_diagnostic": {
+          "boundary": "descriptive first-order diagnostic; the profiled Mahalanobis statistic is the primary rank-one test",
+          "delta_method_standard_error": 2.775106573509226e-09,
+          "delta_method_z": 0.050140760420022495,
+          "determinant": 1.3914595384235564e-10
+        },
+        "lineage": "P57-N325-to-N425",
+        "parent": {
+          "N": 325,
+          "batches": 100,
+          "covariance": [
+            [
+              1.764818058032345e-09,
+              3.886451943466786e-11
+            ],
+            [
+              3.886451943466786e-11,
+              5.699713360709168e-10
+            ]
+          ],
+          "estimate": [
+            3.3810443195258674e-05,
+            -4.5427206610114255e-05
+          ],
+          "id": "P57-N325",
+          "orientation_pair": {
+            "first": [
+              17,
+              6
+            ],
+            "second": [
+              18,
+              1
+            ]
+          },
+          "p0": 0.592742670542117,
+          "samples_per_orientation": 500000000
+        },
+        "rank_one_common_ray": {
+          "decision_at_alpha": "survives",
+          "degrees_of_freedom": 1,
+          "fitted_child_state": [
+            3.678391347669563e-05,
+            -4.686294938084402e-05
+          ],
+          "fitted_parent_state": [
+            3.533323173165581e-05,
+            -4.5014771230126426e-05
+          ],
+          "lambda": 1.0410571485806128,
+          "min_chi2": 0.0025172214046328394,
+          "optimizer_certificate": {
+            "derivative_polynomial_degree": 6,
+            "infinity_chi2": 4.393611930258288,
+            "max_normalized_root_residual": 4.743989074453735e-81,
+            "method": "all real roots of analytic rational-profile derivative plus |lambda|=infinity",
+            "number_of_complex_roots": 4,
+            "real_stationary_points": [
+              -0.7750044651335962,
+              1.0410571485806128
+            ],
+            "stationary_chi2": [
+              10.289578690645158,
+              0.0025172214046328394
+            ]
+          },
+          "p_value": 0.9599853891632817
+        },
+        "zero_even_baseline": {
+          "chi2": 8.742235737328084,
+          "decision_at_alpha": "survives",
+          "degrees_of_freedom": 2,
+          "null": "P4_E_top=0 independently at every listed size",
+          "p_value": 0.012637106044355525,
+          "per_size_chi2": {
+            "P57-N325": 3.6205875099326885,
+            "P57-N425": 5.121648227395395
+          }
+        }
+      }
+    ],
+    "metric_order": [
+      "P4_A_top",
+      "P4_E_top"
+    ]
+  },
+  "issues": [
+    337,
+    370
+  ],
+  "primary": {
+    "covariance_key": "covariance_intrinsic_center_first_order_influence",
+    "joint_rank_one": {
+      "chi2": 0.8143353332897357,
+      "combination": "sum across four block-diagonal production dependency groups",
+      "decision_at_alpha": "survives",
+      "degrees_of_freedom": 4,
+      "dependency_groups": [
+        "P49",
+        "P43",
+        "P50",
+        "P57"
+      ],
+      "p_value": 0.9365159464312481
+    },
+    "joint_zero_even_baseline": {
+      "chi2": 196.18800119189734,
+      "decision_at_alpha": "eliminated",
+      "degrees_of_freedom": 8,
+      "null": "P4_E_top=0 independently at every listed size",
+      "p_value": 4.0592072230207355e-38,
+      "per_size_chi2": {
+        "P43-N185": 56.50792080554096,
+        "P43-N265": 56.031789724675676,
+        "P49-N130": 23.659471687337458,
+        "P49-N170": 16.72568406774251,
+        "P50-N145": 30.94437262949444,
+        "P50-N290": 3.576764813724352,
+        "P57-N325": 3.620419049700174,
+        "P57-N425": 5.121578413681769
+      }
+    },
+    "lineages": [
+      {
+        "child": {
+          "N": 170,
+          "batches": 100,
+          "covariance": [
+            [
+              2.01484619286135e-09,
+              -7.647077983949948e-11
+            ],
+            [
+              -7.647077983949948e-11,
+              6.78596827630598e-10
+            ]
+          ],
+          "estimate": [
+            0.00026356375962606775,
+            -0.00010653636068648911
+          ],
+          "id": "P49-N170",
+          "orientation_pair": {
+            "first": [
+              13,
+              1
+            ],
+            "second": [
+              11,
+              7
+            ]
+          },
+          "p0": 0.5927431258661282,
+          "samples_per_orientation": 100000000
+        },
+        "dependency_group": "P49",
+        "determinant_diagnostic": {
+          "boundary": "descriptive first-order diagnostic; the profiled Mahalanobis statistic is the primary rank-one test",
+          "delta_method_standard_error": 1.3199726828086926e-08,
+          "delta_method_z": 0.328395494234232,
+          "determinant": 4.3347308154664575e-09
+        },
+        "lineage": "P49-N130-to-N170",
+        "parent": {
+          "N": 130,
+          "batches": 100,
+          "covariance": [
+            [
+              3.402190697522707e-09,
+              -6.8809133035574e-11
+            ],
+            [
+              -6.8809133035574e-11,
+              7.545779780018467e-10
+            ]
+          ],
+          "estimate": [
+            0.00028986619705853594,
+            -0.0001336148057156206
+          ],
+          "id": "P49-N130",
+          "orientation_pair": {
+            "first": [
+              11,
+              3
+            ],
+            "second": [
+              9,
+              7
+            ]
+          },
+          "p0": 0.5927481110969021,
+          "samples_per_orientation": 100000000
+        },
+        "rank_one_common_ray": {
+          "decision_at_alpha": "survives",
+          "degrees_of_freedom": 1,
+          "fitted_child_state": [
+            0.0002577209331173405,
+            -0.0001112894637508665
+          ],
+          "fitted_parent_state": [
+            0.0002987600135938575,
+            -0.00012901102483562623
+          ],
+          "lambda": 0.8626352971977481,
+          "min_chi2": 0.10720319494681665,
+          "optimizer_certificate": {
+            "derivative_polynomial_degree": 6,
+            "infinity_chi2": 46.365362332041784,
+            "max_normalized_root_residual": 1.0542197943230523e-81,
+            "method": "all real roots of analytic rational-profile derivative plus |lambda|=infinity",
+            "number_of_complex_roots": 4,
+            "real_stationary_points": [
+              -0.8269093709258818,
+              0.8626352971977481
+            ],
+            "stationary_chi2": [
+              92.83880025884802,
+              0.10720319494681665
+            ]
+          },
+          "p_value": 0.7433510054435347
+        },
+        "zero_even_baseline": {
+          "chi2": 40.385155755079964,
+          "decision_at_alpha": "eliminated",
+          "degrees_of_freedom": 2,
+          "null": "P4_E_top=0 independently at every listed size",
+          "p_value": 1.7001015072156212e-09,
+          "per_size_chi2": {
+            "P49-N130": 23.659471687337458,
+            "P49-N170": 16.72568406774251
+          }
+        }
+      },
+      {
+        "child": {
+          "N": 265,
+          "batches": 100,
+          "covariance": [
+            [
+              4.053339496142183e-10,
+              2.009233771284972e-11
+            ],
+            [
+              2.009233771284972e-11,
+              1.187400235911211e-10
+            ]
+          ],
+          "estimate": [
+            7.379528784855823e-05,
+            -8.156724853616632e-05
+          ],
+          "id": "P43-N265",
+          "orientation_pair": {
+            "first": [
+              16,
+              3
+            ],
+            "second": [
+              12,
+              11
+            ]
+          },
+          "p0": 0.5927463120830452,
+          "samples_per_orientation": 500000000
+        },
+        "dependency_group": "P43",
+        "determinant_diagnostic": {
+          "boundary": "descriptive first-order diagnostic; the profiled Mahalanobis statistic is the primary rank-one test",
+          "delta_method_standard_error": 3.5856376830797324e-09,
+          "delta_method_z": -0.5174546310702841,
+          "determinant": -1.8554048244497312e-09
+        },
+        "lineage": "P43-N185-to-N265",
+        "parent": {
+          "N": 185,
+          "batches": 100,
+          "covariance": [
+            [
+              8.444911599195196e-10,
+              -1.594592676544309e-11
+            ],
+            [
+              -1.594592676544309e-11,
+              1.885926079572768e-10
+            ]
+          ],
+          "estimate": [
+            0.0001161432650111385,
+            -0.00010323263125078345
+          ],
+          "id": "P43-N185",
+          "orientation_pair": {
+            "first": [
+              13,
+              4
+            ],
+            "second": [
+              11,
+              8
+            ]
+          },
+          "p0": 0.5927476015036172,
+          "samples_per_orientation": 500000000
+        },
+        "rank_one_common_ray": {
+          "decision_at_alpha": "survives",
+          "degrees_of_freedom": 1,
+          "fitted_child_state": [
+            8.035214407547257e-05,
+            -7.940693383759428e-05
+          ],
+          "fitted_parent_state": [
+            0.00010651785999853953,
+            -0.00010526485333710013
+          ],
+          "lambda": 0.7543537213062136,
+          "min_chi2": 0.27041499520508133,
+          "optimizer_certificate": {
+            "derivative_polynomial_degree": 6,
+            "infinity_chi2": 70.19234024179015,
+            "max_normalized_root_residual": 2.635549485807631e-82,
+            "method": "all real roots of analytic rational-profile derivative plus |lambda|=infinity",
+            "number_of_complex_roots": 4,
+            "real_stationary_points": [
+              -0.7041825137138213,
+              0.7543537213062136
+            ],
+            "stationary_chi2": [
+              144.9513727952194,
+              0.27041499520508133
+            ]
+          },
+          "p_value": 0.6030535258157372
+        },
+        "zero_even_baseline": {
+          "chi2": 112.53971053021664,
+          "decision_at_alpha": "eliminated",
+          "degrees_of_freedom": 2,
+          "null": "P4_E_top=0 independently at every listed size",
+          "p_value": 3.6501638600197286e-25,
+          "per_size_chi2": {
+            "P43-N185": 56.50792080554096,
+            "P43-N265": 56.031789724675676
+          }
+        }
+      },
+      {
+        "child": {
+          "N": 290,
+          "batches": 100,
+          "covariance": [
+            [
+              1.478519876395607e-09,
+              -1.184563185779851e-11
+            ],
+            [
+              -1.184563185779851e-11,
+              4.914068094189266e-10
+            ]
+          ],
+          "estimate": [
+            0.00014522143711302783,
+            -4.1924295881435686e-05
+          ],
+          "id": "P50-N290",
+          "orientation_pair": {
+            "first": [
+              13,
+              11
+            ],
+            "second": [
+              17,
+              1
+            ]
+          },
+          "p0": 0.5927515789148524,
+          "samples_per_orientation": 100000000
+        },
+        "dependency_group": "P50",
+        "determinant_diagnostic": {
+          "boundary": "descriptive first-order diagnostic; the profiled Mahalanobis statistic is the primary rank-one test",
+          "delta_method_standard_error": 8.301540072465987e-09,
+          "delta_method_z": 0.6590296932843482,
+          "determinant": 5.470961407744986e-09
+        },
+        "lineage": "P50-N145-to-N290",
+        "parent": {
+          "N": 145,
+          "batches": 100,
+          "covariance": [
+            [
+              1.572902702892007e-09,
+              2.23319740018638e-11
+            ],
+            [
+              2.23319740018638e-11,
+              4.422085763343031e-10
+            ]
+          ],
+          "estimate": [
+            0.0002747037394436692,
+            -0.00011697806190071244
+          ],
+          "id": "P50-N145",
+          "orientation_pair": {
+            "first": [
+              12,
+              1
+            ],
+            "second": [
+              9,
+              8
+            ]
+          },
+          "p0": 0.5927419914140802,
+          "samples_per_orientation": 100000000
+        },
+        "rank_one_common_ray": {
+          "decision_at_alpha": "survives",
+          "degrees_of_freedom": 1,
+          "fitted_child_state": [
+            0.00013234484897066908,
+            -5.2772015819893303e-05
+          ],
+          "fitted_parent_state": [
+            0.00028150984412929337,
+            -0.00011225100231244506
+          ],
+          "lambda": 0.4701251189989826,
+          "min_chi2": 0.4341999241507299,
+          "optimizer_certificate": {
+            "derivative_polynomial_degree": 6,
+            "infinity_chi2": 81.04230447601283,
+            "max_normalized_root_residual": 1.2650637531876628e-80,
+            "method": "all real roots of analytic rational-profile derivative plus |lambda|=infinity",
+            "number_of_complex_roots": 4,
+            "real_stationary_points": [
+              -2.2381230057813717,
+              0.4701251189989826
+            ],
+            "stationary_chi2": [
+              97.68111566232061,
+              0.4341999241507299
+            ]
+          },
+          "p_value": 0.5099352727725408
+        },
+        "zero_even_baseline": {
+          "chi2": 34.52113744321879,
+          "decision_at_alpha": "eliminated",
+          "degrees_of_freedom": 2,
+          "null": "P4_E_top=0 independently at every listed size",
+          "p_value": 3.190290639931685e-08,
+          "per_size_chi2": {
+            "P50-N145": 30.94437262949444,
+            "P50-N290": 3.576764813724352
+          }
+        }
+      },
+      {
+        "child": {
+          "N": 425,
+          "batches": 100,
+          "covariance": [
+            [
+              1.264313722219084e-09,
+              -5.946691901655479e-11
+            ],
+            [
+              -5.946691901655479e-11,
+              4.247260699348157e-10
+            ]
+          ],
+          "estimate": [
+            3.777597780614877e-05,
+            -4.663976706101828e-05
+          ],
+          "id": "P57-N425",
+          "orientation_pair": {
+            "first": [
+              16,
+              13
+            ],
+            "second": [
+              19,
+              8
+            ]
+          },
+          "p0": 0.5927474314289065,
+          "samples_per_orientation": 500000000
+        },
+        "dependency_group": "P57",
+        "determinant_diagnostic": {
+          "boundary": "descriptive first-order diagnostic; the profiled Mahalanobis statistic is the primary rank-one test",
+          "delta_method_standard_error": 2.7751087508209527e-09,
+          "delta_method_z": 0.05014072108027928,
+          "determinant": 1.3914595384235564e-10
+        },
+        "lineage": "P57-N325-to-N425",
+        "parent": {
+          "N": 325,
+          "batches": 100,
+          "covariance": [
+            [
+              1.764813232901422e-09,
+              3.886716874083537e-11
+            ],
+            [
+              3.886716874083537e-11,
+              5.699978571731658e-10
+            ]
+          ],
+          "estimate": [
+            3.3810443195258674e-05,
+            -4.5427206610114255e-05
+          ],
+          "id": "P57-N325",
+          "orientation_pair": {
+            "first": [
+              17,
+              6
+            ],
+            "second": [
+              18,
+              1
+            ]
+          },
+          "p0": 0.592742670542117,
+          "samples_per_orientation": 500000000
+        },
+        "rank_one_common_ray": {
+          "decision_at_alpha": "survives",
+          "degrees_of_freedom": 1,
+          "fitted_child_state": [
+            3.678391432284241e-05,
+            -4.686293505011327e-05
+          ],
+          "fitted_parent_state": [
+            3.533322794080828e-05,
+            -4.501475159952459e-05
+          ],
+          "lambda": 1.0410572842216506,
+          "min_chi2": 0.002517218987107842,
+          "optimizer_certificate": {
+            "derivative_polynomial_degree": 6,
+            "infinity_chi2": 4.393448498487662,
+            "max_normalized_root_residual": 4.2168791772922093e-81,
+            "method": "all real roots of analytic rational-profile derivative plus |lambda|=infinity",
+            "number_of_complex_roots": 4,
+            "real_stationary_points": [
+              -0.7750006596184369,
+              1.0410572842216506
+            ],
+            "stationary_chi2": [
+              10.28921609060791,
+              0.002517218987107842
+            ]
+          },
+          "p_value": 0.9599854083620704
+        },
+        "zero_even_baseline": {
+          "chi2": 8.741997463381944,
+          "decision_at_alpha": "survives",
+          "degrees_of_freedom": 2,
+          "null": "P4_E_top=0 independently at every listed size",
+          "p_value": 0.012638611680604707,
+          "per_size_chi2": {
+            "P57-N325": 3.620419049700174,
+            "P57-N425": 5.121578413681769
+          }
+        }
+      }
+    ],
+    "metric_order": [
+      "P4_A_top",
+      "P4_E_top"
+    ]
+  },
+  "schema": "matching-one/etop-production-rank1-elimination/v1",
+  "scientific_card": [
+    "MECHANISM SPACE: test whether radial evolution of the two-component A_top/E_top state needs a rotating second direction, rather than whether E_top exists.",
+    "RESULT: all four common-ray rank-one lineages survive separately and jointly, while the global E_top=0 baseline is eliminated.",
+    "NOT PROVED: survival does not identify an asymptotic field or make the center influence exact; no stored cross-size CRN covariance is claimed.",
+    "OBSERVER-SECTOR-SOURCE-GEOMETRY: P4(A_top,E_top) | Alexander odd/even rank plane | threshold-rank source | four explicit Gaussian parent-child lineages.",
+    "DEPENDENCY GROUPS: P49, P43, P50 and P57 are kept as four named production blocks; within each size A_top/E_top covariance is full.",
+    "UPWEIGHT OBSERVATION: a future child with a frozen, large ray-rotation prediction or a stored cross-size CRN covariance can turn this surviving nuisance-ray test into a sharper discriminator."
+  ],
+  "source": {
+    "checked_crosswalk": "results/rank-plane-crosswalk/latest.json",
+    "checked_crosswalk_sha256": "d3739f34c0ba982edea580d71990deb1e2ef24f292c7497b31b2346e14a8c299",
+    "mode": "raw",
+    "raw_reconstruction_matches_checked_crosswalk": true,
+    "same_batch_archive_hashes": [
+      {
+        "histogram": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n185.hist.csv",
+        "histogram_sha256": "3c6d7b7c20683b16fa983a08147ae36f21cc54fcc3de9f8f5164480190ba1031",
+        "id": "P43-N185",
+        "moments": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n185.moments.csv",
+        "moments_sha256": "d85f9a48300120d608c6bedfe78318252f22b538057b27ade1623bd06b612dbf"
+      },
+      {
+        "histogram": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n265.hist.csv",
+        "histogram_sha256": "57e0bb194e38fd975bebfe16d6862b4b61e38e5e21d13f9164dab42697f931ff",
+        "id": "P43-N265",
+        "moments": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n265.moments.csv",
+        "moments_sha256": "8fd2dbcb0fd2f8c723db91a0ace725bea06ab5f7cd96f3f24d80684fe8ed2efd"
+      },
+      {
+        "histogram": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.hist.csv",
+        "histogram_sha256": "b49c8fef1d7ddf1c902fc50e9d4c7b0d90b5b8e049998cdb6cc592d3c9cfd4a3",
+        "id": "P49-N130",
+        "moments": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.moments.csv",
+        "moments_sha256": "989f0a2abac72a949561f8be7651b7effd9859ce7903387abf64996f6fcbb6d1"
+      },
+      {
+        "histogram": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.hist.csv",
+        "histogram_sha256": "5d6f5600399c80e25be2171dead9e823c5104dd1278052c24f39951fbfae29a1",
+        "id": "P49-N170",
+        "moments": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.moments.csv",
+        "moments_sha256": "40639b884a0806a6ee7aabb7654074e4bfbb5b33a0db845d4d622236748ec9a6"
+      },
+      {
+        "histogram": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.hist.csv",
+        "histogram_sha256": "c685dae9bddc005224fe5dd052945482cd3b8c5bb26744dad4e44996a8318b42",
+        "id": "P50-N145",
+        "moments": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.moments.csv",
+        "moments_sha256": "0a8e117cf5936a4cbbadce534396e88792ad42cbba5fc1145a691946a50cd484"
+      },
+      {
+        "histogram": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.hist.csv",
+        "histogram_sha256": "e5f62077407f5c989e1b2907171c5f844b770812212bde616f63c621dbf97eb9",
+        "id": "P50-N290",
+        "moments": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.moments.csv",
+        "moments_sha256": "8c5f9b0625167317caccff2641e7694d68bdac0d35444b403a6ce2f18f73d987"
+      },
+      {
+        "histogram": "results/server-20260829/P57-norm5-500m/raw/n325_500m.hist.csv",
+        "histogram_sha256": "19778d91af4bf865436bf0dcf5aebfe772d1a60384927a495eb148051d54e934",
+        "id": "P57-N325",
+        "moments": "results/server-20260829/P57-norm5-500m/raw/n325_500m.moments.csv",
+        "moments_sha256": "16104766bfedbcee727d635b26e9ec123c97c3782f6bbb665114ac8dfe84f8d1"
+      },
+      {
+        "histogram": "results/server-20260829/P57-norm5-500m/raw/n425_500m.hist.csv",
+        "histogram_sha256": "291203341dc5d2988fce2f8d9e00995df36f4a46f6a53df5e3327ac812785693",
+        "id": "P57-N425",
+        "moments": "results/server-20260829/P57-norm5-500m/raw/n425_500m.moments.csv",
+        "moments_sha256": "b98f3da938ba4e3f089f526b5cf2ddb01afcb897155d19d9cf7f0bdd26f24998"
+      }
+    ]
+  },
+  "status": "production_archive_model_elimination"
+}

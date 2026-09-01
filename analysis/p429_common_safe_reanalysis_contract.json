@@ -1,0 +1,76 @@
+{
+  "schema": "matching-one/p429-common-safe-reanalysis-contract/v1",
+  "status": "post_reveal_fixed_after_outcome_blind_support_audit_before_mechanism_scoring",
+  "parent_commit": "751f8b384883b3ce92e5efa77c35f45a86afa84d",
+  "scope": "Zero-new-sample secondary analysis of the already revealed P429 production block. This contract is not a preregistration and cannot turn the reused production rows into independent confirmation.",
+  "inputs": {
+    "raw_lock": "analysis/p429_branching_continuation_raw_lock.json",
+    "N325_csv": "results/server-20260830/P429-branching-continuation/production/N325/N325_100k.geometry_pilot.csv",
+    "N425_csv": "results/server-20260830/P429-branching-continuation/production/N425/N425_100k.geometry_pilot.csv",
+    "filter": "branch_common_safe == 1 within each orientation-specific at-risk table"
+  },
+  "analysis_unit": "One orientation-specific pre-common checkpoint row whose common update was safe and which carries the two subsequent clone responses (y1,y2). Clone responses are never expanded into independent rows.",
+  "dependency_contract": {
+    "fold": "batch modulo 5",
+    "holdout": "For each fold, hold out that complete batch set simultaneously in both orientations and both sizes.",
+    "nuisance_fit": "One joint model across all four size-orientation environments, with four unpenalized environment intercepts and common feature slopes.",
+    "uncertainty": "Conditional-on-fitted-fold-model batch score dispersion. The two orientations remain coupled inside each size-batch vector; size blocks are reported separately and are not meta-analysed into independent evidence.",
+    "uncertainty_boundary": "The nuisance models share slopes across sizes and are not refit inside a batch bootstrap or delete-one loop. Stored cross-size covariance blocks are zero only conditional on the fitted fold models. The reported dispersions and normal reference ranges are not full sampling SEs or confidence intervals and cannot support significance claims.",
+    "forbidden": [
+      "clone-level standard errors",
+      "orientation-wise model selection",
+      "size-wise model selection",
+      "row-wise random folds",
+      "a pooled all-size significance claim"
+    ]
+  },
+  "model": {
+    "family": "fractional-binomial ridge logit for u=(y1+y2)/2",
+    "loss": "pair-averaged Bernoulli log loss",
+    "ridge_lambda": 0.0001,
+    "environment_weighting": "equal total training weight for each size-orientation environment",
+    "standardization": "training-fold, within-environment mean and standard deviation; standardized values clipped to [-8,8]",
+    "selection": "No tuning, feature selection, interaction search, or outcome-adaptive knots. All candidate states use the same five folds and fixed ridge penalty."
+  },
+  "derived_features": {
+    "h2_rate": "H2/(N-k0)",
+    "h2_direction_balance": "(H2_direction_positive-H2_direction_negative)/max(H2,1)",
+    "multicontact_fraction": "boundary_multicontact_sites/max(vacant_frontier,1)",
+    "contact_pair_intensity": "boundary_contact_pairs/max(boundary_multicontact_sites,1)",
+    "corner_balance_ratio": "boundary_corner_balance/max(boundary_contact_pairs,1)",
+    "essential_fraction": "essential_size/N",
+    "vacant_frontier_L": "vacant_frontier/sqrt(N)",
+    "core_cycle_density": "(core_edges-core_vertices)/N",
+    "articulation_L": "articulation_vertices/sqrt(N)",
+    "axis_anisotropy": "abs(boundary_axis_imbalance)/max(boundary_cut_edges,1)",
+    "frontier_components_L": "frontier_components/sqrt(N)",
+    "largest_frontier_L": "largest_frontier_component/sqrt(N)",
+    "frontier_concentration": "frontier_component_sumsq/max(vacant_frontier^2,1)",
+    "age_fraction": "age_steps/N",
+    "line_chi4_re": "Re[((physical_x+i physical_y)/|physical|)^4] for physical=P*ell",
+    "line_chi4_im": "Im[((physical_x+i physical_y)/|physical|)^4] for physical=P*ell"
+  },
+  "candidate_states_in_fixed_nested_order": [
+    {"id": "intercept_only", "add": []},
+    {"id": "H2", "add": ["h2_rate", "h2_direction_balance"]},
+    {"id": "H2_cooperative", "add": ["multicontact_fraction", "contact_pair_intensity"]},
+    {"id": "H2_cooperative_geometry", "add": ["essential_fraction", "core_cycle_density", "vacant_frontier_L", "articulation_L", "axis_anisotropy", "corner_balance_ratio", "frontier_components_L", "largest_frontier_L", "frontier_concentration"]},
+    {"id": "H2_cooperative_geometry_age", "add": ["age_fraction"]},
+    {"id": "H2_cooperative_geometry_age_line", "add": ["line_chi4_re", "line_chi4_im"]}
+  ],
+  "estimands": {
+    "heldout_residual_dependence": "mean[(y1-m_hat(X))*(y2-m_hat(X))] on held-out batches, using one symmetry-locked m_hat for both clones",
+    "absorbed_dependence": "intercept-only held-out residual dependence minus candidate-state held-out residual dependence",
+    "absorbed_fraction": "absorbed_dependence/intercept-only held-out residual dependence",
+    "heldout_log_loss": "mean of the two clone Bernoulli log losses within each row",
+    "heldout_brier": "mean of the two clone squared errors within each row",
+    "block_increment": "current nested candidate minus the immediately preceding candidate on the absorbed-dependence and loss-improvement scales"
+  },
+  "degeneracy_audit": {
+    "excluded_exact_redundancy": "checkpoint_b1_safe_count=(N-k0)-H2",
+    "excluded_observed_degeneracy": ["H2_theta equals H2", "H2_figure8 is zero", "H2_separate is zero", "H2_direction_mixed is nonzero in only about 1.2%-1.7% of safe rows and is retained only in the support audit", "essential_carriers>1 occurs in only about 0.14%-0.16% of safe rows", "core_vertices and core_edges are near-collinear, so only their cycle contrast is used", "articulation_vertices and bridges are near-collinear, so only articulation_vertices is used"],
+    "cooperative_label_boundary": "The two cooperative coordinates are checkpoint local-multicontact proxies, not the exact two-step cooperative pair count."
+  },
+  "support_audit_amendment": "Before any mechanism model was scored, an outcome-blind support and collinearity audit replaced the broad first-draft geometry list by fixed low-redundancy coordinates. The earlier committed draft remains in git history at fa69c92.",
+  "claim_boundary": "Descriptive, post-reveal, zero-new-sample, model- and order-dependent predictive allocation at two fixed checkpoints. Cross-fitting limits in-sample prediction bias but does not establish causal mediation, full-state sufficiency, scaled Markov closure, a continuum memory field, or a scale exponent."
+}
