@@ -64,23 +64,27 @@ def main():
             for g in range(2):
                 mu,mqa=packet[(g,*d)];cov.append(mqa-base["q"][g]*mu);pdata[(g,*d)]=(mu,cov[-1])
             beta[d]=sum(cov)/(2*mt)
-        M=np.zeros((2,3))
+        M=np.zeros((2,3)); exposure=np.zeros((2,3))
         for (b,kind,g,dx,dy,stage,mask,k),v in records:
             if kind!="carrier" or b==prod_omit: continue
             f=factor(k);mu=pdata[(g,dx,dy)][0];bet=beta[(dx,dy)];st=("01","12").index(stage);sm=k-(N-1)*root
             for i in (0,1):
                 q,e,a16,qa16,ea16=(v[j] for j in ((1,2,3,4,5) if i==0 else (6,7,8,9,10)));aa,qa,ea=a16/(N*16),qa16/(N*16),ea16/(N*16);w=(1-root,root)[i];u=i-root;bi=u*(sm+u)-root*(1-root)
-                sh=2*c[g]*e-R*q-muh[g]*v[0];sha=2*c[g]*(ea-mu*e)-R*(qa-mu*q)-muh[g]*(aa-mu*v[0]);M[st,mask-1]+=2*f*w*(u*sha-bet*bi*sh)
+                sh=2*c[g]*e-R*q-muh[g]*v[0];sha=2*c[g]*(ea-mu*e)-R*(qa-mu*q)-muh[g]*(aa-mu*v[0]);M[st,mask-1]+=2*f*w*(u*sha-bet*bi*sh);exposure[st,mask-1]+=2*f*w*v[0]/N
         extra={"p":root,"M_t":mt,"R":R}
         if detail: extra["per_displacement"]={f"{d[0]},{d[1]}":{"beta":beta[d],"axis_mu_a":pdata[(0,*d)][0],"tilted_mu_a":pdata[(1,*d)][0]} for d in disps}
-        return np.r_[M.ravel(),root,R],extra
+        return np.r_[M.ravel(),exposure.ravel(),root,R],extra
 
     central,detail=evaluate(detail=True);prod=np.array([evaluate(prod_omit=b)[0] for b in range(B)]);base=np.array([evaluate(base_omit=b)[0] for b in range(B)])
     fp=math.sqrt((B-1)/B)*(prod-prod.mean(0));fb=math.sqrt((B-1)/B)*(base-base.mean(0));se=np.sqrt((fp*fp).sum(0)+(fb*fb).sum(0))
     def primary(v):
         m=v[:6].reshape(2,3);c=np.c_[m[:,0]+m[:,1],m[:,2]];left,right=c[0,0]*c[1,1],c[0,1]*c[1,0];delta=left-right;theta=delta/(abs(left)+abs(right)) if left or right else 0.;return np.r_[c.ravel(),delta,theta]
-    pc=primary(central);pp=np.array([primary(v) for v in prod]);pb=np.array([primary(v) for v in base]);fpp=math.sqrt((B-1)/B)*(pp-pp.mean(0));fpb=math.sqrt((B-1)/B)*(pb-pb.mean(0));pse=np.sqrt((fpp*fpp).sum(0)+(fpb*fpb).sum(0));ci=[pc[4]-1.96*pse[4],pc[4]+1.96*pse[4]]
+    pc=primary(central);pp=np.array([primary(v) for v in prod]);pb=np.array([primary(v) for v in base]);fpp=math.sqrt((B-1)/B)*(pp-pp.mean(0));fpb=math.sqrt((B-1)/B)*(pb-pb.mean(0));pcov=fpp.T@fpp+fpb.T@fpb;pse=np.sqrt(np.diag(pcov));ci=[pc[4]-1.96*pse[4],pc[4]+1.96*pse[4]]
+    def cross_ratio(v):
+        q=primary(v)[:4];return q[0]*q[3]/(q[1]*q[2])
+    chi=cross_ratio(central);chip=np.array([cross_ratio(v) for v in prod]);chib=np.array([cross_ratio(v) for v in base]);fchip=math.sqrt((B-1)/B)*(chip-chip.mean());fchib=math.sqrt((B-1)/B)*(chib-chib.mean());chi_se=math.sqrt((fchip*fchip).sum()+(fchib*fchib).sum())
     smoke=run["samples"]<=10000; signs=np.sign(pc[:4]).astype(int).tolist();decision="SMOKE_ONLY" if smoke else ("CONTACT_FUSION_COMPLETION_TRANSMITS" if ci[1]<0 and signs==[-1,-1,-1,1] else ("SIGN_ROTATION_REJECTED" if ci[0]>0 or signs!=[-1,-1,-1,1] else "UNRESOLVED_CONTACT_STAGE_GATE"))
-    payload={"schema":"matching-one/p537-contact-stage-n65-score/v1","status":"SMOKE" if smoke else "COMPLETED","geometry_order":["axis(8,1)","tilted(7,4)"],"stage_order":["01","12"],"contact_mask_order":[1,2,3],"definition":"alternating rank-changing Bell edge with g16_before != g16_after; full pooled-root Schur allocation; beta fixed per common displacement before aggregation","global":detail,"matrix":{"estimate":central[:6].reshape(2,3).tolist(),"se":se[:6].reshape(2,3).tolist()},"primary":{"column_order":["single=mask1+mask2","double=mask3"],"matrix":pc[:4].reshape(2,2).tolist(),"matrix_se":pse[:4].reshape(2,2).tolist(),"Delta":pc[4],"Delta_se":pse[4],"Delta_95":ci,"theta":pc[5],"theta_se":pse[5],"theta_definition":"Delta/(abs(L01_single*L12_double)+abs(L01_double*L12_single))","decision":decision},"independent_covariance_groups":["P45_baseline_100_batches","new_MC_100_batches"],"run":run}
+    ratio=central[:6]/central[6:12];rprod=prod[:,:6]/prod[:,6:12];rbase=base[:,:6]/base[:,6:12];frp=math.sqrt((B-1)/B)*(rprod-rprod.mean(0));frb=math.sqrt((B-1)/B)*(rbase-rbase.mean(0));rse=np.sqrt((frp*frp).sum(0)+(frb*frb).sum(0))
+    payload={"schema":"matching-one/p537-contact-stage-n65-score/v1","status":"SMOKE" if smoke else "COMPLETED","geometry_order":["axis(8,1)","tilted(7,4)"],"stage_order":["01","12"],"contact_mask_order":[1,2,3],"definition":"alternating rank-changing Bell edge with g16_before != g16_after; full pooled-root Schur allocation; beta fixed per common displacement before aggregation","global":detail,"matrix":{"estimate":central[:6].reshape(2,3).tolist(),"se":se[:6].reshape(2,3).tolist()},"positive_exposure":{"estimate":central[6:12].reshape(2,3).tolist(),"se":se[6:12].reshape(2,3).tolist()},"conditional_signed_density":{"estimate":ratio.reshape(2,3).tolist(),"se":rse.reshape(2,3).tolist()},"primary":{"column_order":["single=mask1+mask2","double=mask3"],"matrix":pc[:4].reshape(2,2).tolist(),"matrix_se":pse[:4].reshape(2,2).tolist(),"matrix_covariance":pcov[:4,:4].tolist(),"projective_cross_ratio":chi,"projective_cross_ratio_se":chi_se,"projective_cross_ratio_95":[chi-1.96*chi_se,chi+1.96*chi_se],"Delta":pc[4],"Delta_se":pse[4],"Delta_95":ci,"theta":pc[5],"theta_se":pse[5],"theta_definition":"Delta/(abs(L01_single*L12_double)+abs(L01_double*L12_single))","decision":decision},"independent_covariance_groups":["P45_baseline_100_batches","new_MC_100_batches"],"run":run}
     a.output.parent.mkdir(parents=True,exist_ok=True);a.output.write_text(json.dumps(payload,indent=2)+"\n");print(json.dumps({"status":payload["status"],"p":detail["p"],"matrix":payload["matrix"]}))
 if __name__=="__main__": main()

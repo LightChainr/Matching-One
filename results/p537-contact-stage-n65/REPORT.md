@@ -30,3 +30,36 @@ separable `contact x birth-stage` law cannot produce this rank-two tensor.
 The run used the independent 100-batch P45 N65 baseline, four counter-keyed
 shards, 100 new batches, seed `20260901537`, and no top-up.  The raw TSV shards
 are intentionally represented by `SHA256SUMS` rather than committed.
+
+## Two-scale operator fingerprint
+
+The preregistered positive exposures show that the exceptional entry-double
+cell is not suppressed because the event becomes unusually rare.  Comparing
+the exact N25 tensor with N65 gives the zero-parameter power matrix
+
+```text
+N^-3      N^-29/8
+N^-3      N^-3
+```
+
+Its N25-to-N65 prediction has joint `Q=0.6364` on 4 df (`p=0.95893`).  A
+common `N^-3` law is rejected (`Q=11.706`, `p=0.01967`), as is an arbitrary
+common rescaling of the N25 matrix (`p=0.01591`).  The entry-double exposure
+decays as `N^-5.0095`, while its conditional signed density grows only as
+`N^1.3879`, giving the net `N^-3.62157 ~= N^-29/8`.  Relative to the three
+`N^-3` cells, the missing `N^5/8=L^5/4` conditional amplification is the
+thermal-dimension fingerprint.
+
+The projective cross-ratio, invariant under every row and column rescaling,
+obeys
+
+```text
+N^(-5/8) * (-chi_N) = 0.1528319  at N25
+                    = 0.1505870 +/- 0.0485956 at N65.
+```
+
+The finite tensor is therefore naturally a noncommuting contact-fusion and
+birth-completion transfer, with an asymptotically triangular candidate block,
+not a scalar contact coefficient.  Complete numbers are in
+`scale-fingerprint.json`; the operator interpretation is developed in
+`notes/p537-contact-completion-commutator.md`.

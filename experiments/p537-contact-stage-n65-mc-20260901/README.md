@@ -44,3 +44,18 @@ as two independent covariance groups.  The primary collapse is
 `theta=Delta/(|L11 L22|+|L12 L21|)` are formed inside every replicate before
 the two independent jackknife variances are added.  A 10k smoke is labelled
 `SMOKE`; it is only an execution/schema check, not a scientific readout.
+
+After the held-out result is fixed, the declared N25-to-N65 mechanism
+fingerprint is reproduced with
+
+```bash
+python3 experiments/p537-contact-stage-n65-mc-20260901/score_scale.py \
+  --n25 results/p537-one-defect-diagonal-edge/contact-stage-tensor.json \
+  --n65 results/p537-contact-stage-n65/result.json \
+  --output results/p537-contact-stage-n65/scale-fingerprint.json
+```
+
+This second command uses the joint N65 covariance, the exact N25 anchor and
+the preregistered exposure only.  It compares the split power fingerprint
+`[[3,29/8],[3,3]]` with common-power alternatives; it does not rescore or
+extend the random block.

@@ -1,0 +1,122 @@
+{
+  "schema": "matching-one/p537-contact-stage-scale/v1",
+  "status": "POST_N65_TWO_SCALE_MECHANISM_FINGERPRINT",
+  "row_order": [
+    "01",
+    "12"
+  ],
+  "column_order": [
+    "single",
+    "double"
+  ],
+  "N25_matrix": [
+    [
+      -2.8838028012142906e-06,
+      -2.9372878646696404e-06
+    ],
+    [
+      -5.322565494177773e-06,
+      6.194816243610891e-06
+    ]
+  ],
+  "N65_matrix": [
+    [
+      -1.5785729079578637e-07,
+      -9.227657800496906e-08
+    ],
+    [
+      -3.0912984613371896e-07,
+      3.696802086023964e-07
+    ]
+  ],
+  "split_power_model": {
+    "powers_in_N_row_major": [
+      3.0,
+      3.625,
+      3.0,
+      3.0
+    ],
+    "prediction": [
+      [
+        -1.6407617212188726e-07,
+        -9.197464592882133e-08
+      ],
+      [
+        -3.0283144595913587e-07,
+        3.5245882132515306e-07
+      ]
+    ],
+    "Q": 0.63643567834563,
+    "df": 4,
+    "p_value": 0.9589300602347537,
+    "standardized_marginal_residual": [
+      0.2137240400969645,
+      -0.013519922419005223,
+      -0.2937842048432351,
+      0.565510969418869
+    ]
+  },
+  "common_N_minus_3": {
+    "prediction": [
+      [
+        -1.6407617212188726e-07,
+        -1.6711924582781291e-07
+      ],
+      [
+        -3.0283144595913587e-07,
+        3.5245882132515306e-07
+      ]
+    ],
+    "Q": 11.706243259208131,
+    "df": 4,
+    "p_value": 0.019674785856386906,
+    "standardized_marginal_residual": [
+      0.2137240400969645,
+      3.3513069413041237,
+      -0.2937842048432351,
+      0.565510969418869
+    ]
+  },
+  "free_common_amplitude": {
+    "prediction": [
+      [
+        -1.5540112186385303e-07,
+        -1.5828330190071993e-07
+      ],
+      [
+        -2.868201142743797e-07,
+        3.3382358654766317e-07
+      ]
+    ],
+    "Q": 10.337081146456297,
+    "df": 3,
+    "p_value": 0.015907791534747417,
+    "standardized_marginal_residual": [
+      -0.08441105719291295,
+      2.955650812557703,
+      -1.0406208962414198,
+      1.1774494569931073
+    ],
+    "lambda": 0.05388756880269963
+  },
+  "projective_invariant": {
+    "definition": "N^(-5/8)*(-K01s*K12d/(K01d*K12s))",
+    "N25": 0.15283188063086756,
+    "N65": 0.1505870339430484,
+    "N65_se": 0.048595581177517645,
+    "relative_center_difference": -0.014688340407464473,
+    "chi25": -1.1426848321655743,
+    "chi65": -2.0457776381483064,
+    "chi65_se": 0.6601880034597475
+  },
+  "entry_double_decomposition": {
+    "N25_exposure": 0.03269409005269323,
+    "N65_exposure": 0.0002726896937143593,
+    "exposure_decay_power": 5.009479622126682,
+    "N25_conditional_density": -8.984155423612032e-05,
+    "N65_conditional_density": -0.0003383940799083818,
+    "conditional_density_growth_power": 1.3879096161469635,
+    "signed_mass_decay_power": 3.6215700059797196
+  },
+  "interpretation": "three N^-3 cells plus one entry-double cell with an additional N^-5/8 thermal suppression in conditional signed strength"
+}
