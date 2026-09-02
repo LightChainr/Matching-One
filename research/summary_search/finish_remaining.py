@@ -128,7 +128,10 @@ def main() -> int:
 
     result = {
         "schema": SCHEMA,
-        "verdict": "NO_COMPRESSION_WITNESS_FOUND",
+        "verdict": "BOUNDED_SUMMARY_INSUFFICIENT",
+        "search_protocol_token": "NO_COMPRESSION_WITNESS_FOUND",
+        "embedding": "GENERAL_REALIZATION_LEMMA",
+        "cut_network_minimality": "UNRESOLVED",
         "closing_radius": None,
         "frozen_summary": {
             "S_z": "complete safe-subset counts by cardinality",
@@ -267,10 +270,13 @@ def main() -> int:
                 ),
             },
             "embeddable_in_rank_one_torus_category": (
-                "The pair lives in the already-closed planar two-terminal cut-network category. "
-                "The paper's cut-network representation maps rank-one torus states onto this category; "
-                "the two-port calculus can place either gadget as a two-terminal block. "
-                "No explicit torus occupation realizing these 7-vertex networks was constructed in this search."
+                "GENERAL_REALIZATION_LEMMA. Both graphs satisfy the hypotheses of "
+                "notes/p1-plane-tt-realization-lemma-20260902.md (finite connected plane "
+                "two-terminal vertex-networks, terminals on a common face, no L-R edge, "
+                "vertex activation). The lemma supplies a finite genuinely embedded torus "
+                "host and a rank-one occupied essential cycle whose residual cut-network "
+                "is rooted-isomorphic to each graph. No named square-HNF occupation is "
+                "constructed. Parallel-gadget section 6 is not a surjectivity proof."
             ),
         },
     }

@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Independent exact-rational check of the n=7 r=1 non-compression witness.
+"""Search-independent hard-coded exact-rational check of the n=7 r=1 witness.
 
 Hardcoded incidence lists (no search). Recomputes S(z), r=1 neighborhood
 equality, planarity, and the frozen E2_c2 probabilities from scratch using
-the same stdlib primitives as bounded_summary_search.py.
+the same stdlib primitives as bounded_summary_search.py. This is not a
+fully independent implementation of the enumerator.
 """
 from __future__ import annotations
 

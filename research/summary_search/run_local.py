@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Local entry: self-check, independent witness verify, optional EXH cache.
+"""Local entry: self-check, hard-coded witness verifier, optional EXH cache.
 
 Usage (from package root or repo root):
   python3 research/summary_search/run_local.py
@@ -27,7 +27,7 @@ def main() -> int:
     print("=== self-checks ===", flush=True)
     self_checks()
 
-    print("=== independent witness ===", flush=True)
+    print("=== hard-coded witness verifier ===", flush=True)
     import verify_witness
 
     rc = verify_witness.main()

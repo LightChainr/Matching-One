@@ -111,7 +111,7 @@ The common polynomial is `S(z) = 1 + 7z + 21z² + 35z³ + 33z⁴ + 15z⁵ + 2z�
 
 **Not an r=2 witness.** The radius-2 neighbourhoods of this pair differ. Lengthening both corridors to 2 hops equalizes r=1 and r=2 on this S-class but kills the `E2_c2` gap. All nine contracted hop combinations of the exhaustive n≤5 cores are closed at radius 2.
 
-The tuple `(S(z), n, H2, b2, radius-1 neighbourhood)` is therefore not a sufficient statistic for the frozen depth-2 compositional language, already inside the 7-vertex planar two-terminal category. This is a statement about the tested class, not an all-graphs minimality theorem.
+The tuple `(S(z), n, H2, b2, radius-1 neighbourhood)` is therefore not a sufficient statistic for the frozen depth-2 compositional language, already inside the 7-vertex planar two-terminal category. This is a statement about the tested class, not an all-graphs minimality theorem. The n=7 pair is the smallest witness found in the declared enumerated families; it is not claimed to be globally minimal among all plane two-terminal vertex-networks.
 
 Removing the r=1 neighbourhood from the summary still leaves a split (the same pair); the neighbourhood is included because it is the coarsening under test. Removing planarity would leave the pair outside the cut-network image category.
 
@@ -126,10 +126,10 @@ Alternate admissible occupied essential cycles of the same rank-one checkpoint i
 ## Embedding
 
 ```text
-TWO_PORT_EMBEDDING_SUFFICES
+GENERAL_REALIZATION_LEMMA
 ```
 
-The r=1 non-compression theorem is a theorem about plane two-terminal vertex-networks, the image category of the cut construction. The already-proved two-port rule — place the gadget in a cylinder strip with deterministic cut-boundary terminals, then glue — embeds any such gadget into the finite embedded-graph / rank-one continuation category. No explicit torus occupation of the 7-vertex pair was constructed. The pair is not claimed to be a nearest-neighbour square-site HNF quotient. Details: `notes/p1-n7-torus-embedding-20260902.md`.
+The r=1 non-sufficiency theorem is a theorem about plane two-terminal vertex-networks. Every such network with cofacial terminals and no terminal edge is realised as the residual cut-network of a finite honestly embedded rank-one torus checkpoint, by the cylinder-then-glue construction of `notes/p1-plane-tt-realization-lemma-20260902.md`. That lemma is new; it is not the cut-network theorem (the opposite direction) and it is not parallel-gadget §6 (which embeds *k* copies of two already realised N16 gadgets). The n=7 pair satisfies the hypotheses; no named square-HNF occupation is produced. Details: `notes/p1-n7-torus-embedding-20260902.md`.
 
 ## Explicit nonclaims
 
@@ -137,7 +137,7 @@ The r=1 non-compression theorem is a theorem about plane two-terminal vertex-net
 - no “one real scalar cannot encode the state”
 - no continuum / CFT / LCFT / field-count statement
 - not an all-graphs theorem
-- not a proof that the cut network is a minimal sufficient statistic
+- not a proof that the cut network is a minimal sufficient statistic (`UNRESOLVED`)
 - not a population-level #334 effect
 - not an r=2 non-compression witness
 - not a claim that every nearest-neighbour HNF torus realises the n=7 split

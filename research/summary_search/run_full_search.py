@@ -290,7 +290,10 @@ def main() -> int:
 
     result = {
         "schema": SCHEMA,
-        "verdict": "NO_COMPRESSION_WITNESS_FOUND",
+        "verdict": "BOUNDED_SUMMARY_INSUFFICIENT",
+        "search_protocol_token": "NO_COMPRESSION_WITNESS_FOUND",
+        "embedding": "GENERAL_REALIZATION_LEMMA",
+        "cut_network_minimality": "UNRESOLVED",
         "closing_radius": None,
         "frozen_summary": {
             "S_z": "complete safe-subset counts by cardinality",
@@ -391,10 +394,13 @@ def main() -> int:
                 ),
             },
             "embeddable_in_rank_one_torus_category": (
-                "The pair lives in the already-closed planar two-terminal cut-network category. "
-                "The paper's cut-network representation maps rank-one torus states onto this category; "
-                "the two-port calculus can place either gadget as a two-terminal block. "
-                "No explicit torus occupation realizing these 7-vertex networks was constructed in this search."
+                "GENERAL_REALIZATION_LEMMA. Both graphs satisfy the hypotheses of "
+                "notes/p1-plane-tt-realization-lemma-20260902.md (finite connected plane "
+                "two-terminal vertex-networks, terminals on a common face, no L-R edge, "
+                "vertex activation). The lemma supplies a finite genuinely embedded torus "
+                "host and a rank-one occupied essential cycle whose residual cut-network "
+                "is rooted-isomorphic to each graph. No named square-HNF occupation is "
+                "constructed. Parallel-gadget section 6 is not a surjectivity proof."
             ),
         },
     }
@@ -493,7 +499,7 @@ def render_md(result, recA, recB, netA, netB, family_stats, exh_stats, hid_stats
     lines.append("")
     lines.append("## Manuscript-ready theorem (only the class actually tested)")
     lines.append("")
-    lines.append("> **Theorem (r=1 non-compression on a 7-vertex pair).** There exist two connected plane two-terminal vertex-networks G_A, G_B, each with 7 switchable vertices and with terminals on a common face, such that the complete safe-subset polynomials agree, the singleton and pair trigger counts agree, and the radius-1 terminal-local rooted neighborhoods are isomorphic as typed graphs, but")
+    lines.append("> **Theorem (r=1 bounded summary is not sufficient on a 7-vertex pair).** There exist two connected plane two-terminal vertex-networks G_A, G_B, each with 7 switchable vertices and with terminals on a common face, such that the complete safe-subset polynomials agree, the singleton and pair trigger counts agree, and the radius-1 terminal-local rooted neighborhoods are isomorphic as typed graphs, but")
     lines.append(">")
     lines.append("> P(E2_c2; G_A) = 937/1050 ≠ 313/350 = P(E2_c2; G_B),")
     lines.append(">")
@@ -505,13 +511,14 @@ def render_md(result, recA, recB, netA, netB, family_stats, exh_stats, hid_stats
     lines.append("- Lengthening both corridors to 2 hops equalizes r=1 and r=2 but **kills** the E2_c2 gap on this S-class (the depth-2 language can no longer reach the mincut interiors). Hidden L2R2 of all exhaustive cores produced no r=2 split in this search.")
     lines.append("- Exhaustive plane two-terminal graphs with n≤5 are closed under the frozen summary at both r=1 and r=2: non-isomorphic graphs may share (S, r-neighborhood), but then they share the whole frozen language.")
     lines.append("- Delayed-fork E1_c1 agrees on the witness (both equal 1). The split is a genuine depth-2 experiment, not the successor-second-moment observable.")
-    lines.append("- This is not an all-graphs theorem and not a proof that the cut network is a minimal sufficient statistic.")
+    lines.append("- The n=7 pair is the smallest witness found in the declared enumerated families, not a global minimum among all plane two-terminal networks.")
+    lines.append("- This is not an all-graphs theorem. Cut-network minimality is `UNRESOLVED`.")
     lines.append("")
     lines.append("## Reproducibility")
     lines.append("")
     lines.append("- Library: `research/summary_search/bounded_summary_search.py`")
     lines.append("- Runner: `research/summary_search/run_full_search.py`")
-    lines.append("- Independent check: `research/summary_search/verify_witness.py`")
+    lines.append("- Search-independent hard-coded verifier: `research/summary_search/verify_witness.py`")
     lines.append("- Machine JSON: `artifacts/bounded_summary_search.json`")
     lines.append("")
     return "\n".join(lines) + "\n"

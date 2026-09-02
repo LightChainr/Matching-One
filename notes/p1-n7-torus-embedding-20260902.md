@@ -1,62 +1,75 @@
-# Embedding of the n=7 r=1 non-compression pair
+# Embedding of the n=7 r=1 pair
 
 Date: 2026-09-02
 Paper track: cut-network / predictive-state
-Depends on: cut-network theorem (open PR #491) and the two-port embedded-realization lemma (open PR #549, §6 of `notes/p429-parallel-gadget-lower-bound-20260901.md`).
+
+Supersedes the 2026-09-02 draft of this note that cited parallel-gadget §6 as
+if it had already proved surjectivity of the cut construction onto all plane
+two-terminal vertex-networks. That citation was incorrect. The general
+direction is proved in `notes/p1-plane-tt-realization-lemma-20260902.md`.
 
 ## Verdict
 
 ```text
-TWO_PORT_EMBEDDING_SUFFICES
+GENERAL_REALIZATION_LEMMA
 ```
 
-## Object of the theorem
+The n=7 pair satisfies the hypotheses of that lemma. A finite genuinely
+embedded torus graph and a rank-one occupied checkpoint therefore exist for
+each of `G_A` and `G_B`. No named square-HNF occupation is produced or claimed.
 
-The r=1 non-compression statement is a statement about **connected plane two-terminal vertex-networks** with terminals on a common face and no L–R edge. That is exactly the image category of the rank-one cut construction: cut along a simple occupied essential cycle, contract old occupied components, retain vacant sites as switchable vertices. Future ambient rank reaches two iff the residual terminals connect.
+## Hypotheses, checked on the pair
 
-The n=7 pair is certified inside that category:
+A plane two-terminal vertex-network is a finite undirected graph with
+switchable internal vertices, deterministic terminals `L, R` on a common
+face, no edge `{L, R}`, and vertex-activation semantics (terminal connection
+= vertex-connectivity after occupying a subset of switchable vertices).
+Fixed-cardinality sampling is a measure; it is not used by the realization
+lemma.
+
+Both certified graphs meet the definition:
 
 ```text
 A incidence: [[0,4],[0,6],[1,2],[1,3],[1,6],[2,3],[2,5],[4,5],['L',5],['R',6]]
 B incidence: [[0,2],[0,4],[0,6],[1,2],[1,3],[2,5],[3,6],[4,5],['L',5],['R',6]]
 ```
 
-Both graphs are plane with `G ∪ {L,R}` planar, connected carriers, unique L-neighbour, unique R-neighbour. No explicit torus occupation realizing either 7-vertex network was constructed in the bounded search, and none is constructed here.
+- finite simple undirected graphs, seven switchable vertices, connected
+  carriers, an `L`–`R` path, no `L`–`R` edge;
+- `H ∪ {e_{LR}}` plane, equivalently `L, R` on a common face (search-certified);
+- `deg(L) = deg(R) = 1`, so no extra rim subdivision is required beyond the
+  lemma's uniform `m = max(3, d_L, d_R) = 3`;
+- no loops and no parallel edges.
 
-## Why two-port embedding is enough
+The lemma therefore supplies, for each of `G_A` and `G_B`, a host `G_N` on an
+oriented torus, an occupied simple essential cycle `γ` of length 3, and a
+rank-one checkpoint `A_N = V(γ)`, whose residual cut-network is rooted-
+isomorphic to that graph.
 
-The cut-network theorem already maps every honestly embedded rank-one checkpoint to a planar two-terminal vertex network. The parallel-gadget lower bound then records an embedded-realization lemma that applies to **any** planar two-terminal gadget in that category, not only to the N16 base pair:
+## Why this is not a citation of parallel-gadget §6
 
-1. place the gadget in a strip of a cylinder, with the two deterministic cut-boundary components as the terminals;
-2. gadget interiors remain disjoint from any other strip;
-3. glue the two cylinder boundaries back together.
+Parallel-gadget §6 places *k* copies of two **already realized** N16
+cut-network gadgets in disjoint cylinder strips and glues the rims. Its
+host graphs exist because those two gadgets were obtained from actual
+`4×4` occupations by the cut-network theorem. It does not construct a
+torus from an arbitrary plane two-terminal network, and it does not apply
+to `G_A`, `G_B` until those graphs are known to be residual cut-networks.
 
-The result is an embedded torus graph whose initial occupied subgraph has ambient rank one, and whose future rank reaches two exactly when the two-terminal gadget connects. The lemma does **not** assert that the gadget is a nearest-neighbour square-site HNF quotient, nor that every member of the family is one of the repository's Gaussian HNFs.
+The cut-network theorem is the opposite direction: torus checkpoint to
+residual network. Using it alone cannot produce `G_N` from `G_A`.
 
-That already-proved rule places `G_A` and `G_B` as two-terminal blocks in the same finite embedded-graph / rank-one continuation category as the cut-network theorem. It is therefore unnecessary, for the r=1 non-compression lemma, to exhibit an explicit occupied mask on a named HNF torus whose residual network is isomorphic to `G_A` or `G_B`.
+The missing arrow is the realization lemma, which is now proved independently.
 
-The paper's theorem object remains:
+## What is not claimed
 
-```text
-plane two-terminal vertex-networks
-```
-
-and not
-
-```text
-every nearest-neighbour square-site HNF torus occupation.
-```
-
-## What an explicit occupation would have to be, and why it is not claimed
-
-An `EXPLICIT_TORUS_OCCUPATION` certificate would require a finite torus graph, an occupied rank-one mask, and an admissible occupied essential cycle such that the contracted residual network is isomorphic, as a rooted two-terminal vertex-network, to `G_A` (resp. `G_B`). The present pair has seven switchable vertices, each of degree at least two, terminals of degree one in the gadget, and a triangle on the A side. Nothing in the search constructed such a mask. Declaring the pair to be a square-site HNF quotient without that mask would be a category error.
-
-The two-port calculus is the correct embedding statement: the gadgets may be inserted as blocks between deterministic cut boundaries. That is the same rule already used to realize the unbounded parallel-gadget family.
-
-## Explicit nonclaims
-
-- no explicit torus occupation of the n=7 pair;
-- not a nearest-neighbour square-site HNF quotient unless independently constructed;
-- not a claim that the split occurs for every HNF torus;
+- no explicit occupied mask on a named nearest-neighbour square-site HNF
+  torus whose residual network is `G_A` or `G_B`;
+- not a claim that the E2_c2 split occurs for every HNF torus;
 - not an r=2 witness (the radius-2 neighbourhoods of this pair differ);
-- not a Euclidean or continuum embedding statement.
+- not a Euclidean or continuum embedding statement;
+- cut-network minimality remains `UNRESOLVED`.
+
+The object of the r=1 non-sufficiency theorem remains the plane two-terminal
+category. The realization lemma places that category inside the honestly
+embedded rank-one continuation category, without enlarging the theorem to
+square lattices.

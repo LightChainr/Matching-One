@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Independent exact-rational check of the n=7 r=1 non-compression witness."""
+"""Search-independent hard-coded check of the n=7 r=1 bounded-summary witness.
+
+Uses the same stdlib primitives as the search library; not a fully
+independent implementation of the enumerator.
+"""
 from __future__ import annotations
 
 import sys

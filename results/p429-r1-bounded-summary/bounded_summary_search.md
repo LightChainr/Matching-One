@@ -1,6 +1,9 @@
 # Bounded summary search certificate (extended to contract limits)
 
-**Verdict:** `NO_COMPRESSION_WITNESS_FOUND`
+**Verdict:** `BOUNDED_SUMMARY_INSUFFICIENT`
+
+Frozen search-protocol token (locked before search): `NO_COMPRESSION_WITNESS_FOUND`.
+Same split; manuscript wording uses the token above.
 
 Frozen before search: summary = (S(z), n, H2, b2, radius-1 terminal-local neighborhood).
 Successor-hazard moments were **not** in the summary. Arithmetic is exact `fractions.Fraction`. No Monte Carlo.
@@ -81,7 +84,11 @@ S_4 = 33, so C(7,4)−33 = 2 connecting 4-sets in each graph. The enumerator S(z
 
 ### Torus embedding
 
-The pair lives in the already-closed planar two-terminal cut-network category (PR #491): the cut-network representation maps rank-one torus states onto this category; the two-port calculus can place either gadget as a two-terminal block. No explicit torus occupation realizing these 7-vertex networks was constructed in this search. Consistent with #491, random variables are vertices (not edges) and all sampling is fixed-cardinality without replacement.
+```text
+GENERAL_REALIZATION_LEMMA
+```
+
+Both graphs satisfy the hypotheses of `notes/p1-plane-tt-realization-lemma-20260902.md` (finite connected plane two-terminal vertex-networks, terminals on a common face, no L–R edge, vertex activation). The lemma supplies a finite genuinely embedded torus host and a rank-one occupied essential cycle whose residual cut-network is rooted-isomorphic to each graph. No named square-HNF occupation is constructed. Parallel-gadget §6 is not a surjectivity proof for this class. Details: `notes/p1-n7-torus-embedding-20260902.md`.
 
 ## Corroboration inside series-parallel graphs
 
@@ -95,7 +102,7 @@ Two-terminal series-parallel graphs generated to n=12 produce **330** r=1 summar
 
 ## Manuscript-ready theorem (only the class actually tested)
 
-> **Theorem (r=1 non-compression on a 7-vertex pair).** There exist two connected plane two-terminal vertex-networks G_A, G_B, each with 7 switchable vertices and with terminals on a common face, such that the complete safe-subset polynomials agree, the singleton and pair trigger counts agree, and the radius-1 terminal-local rooted neighborhoods are isomorphic as typed graphs, but P(E2_c2; G_A) = 937/1050 ≠ 313/350 = P(E2_c2; G_B), where E2_c2 is the frozen experiment 'shared prefix of two distinct uniform vertices, then two independent 2-step continuations, observe terminal disconnection in both clones'. In particular the tuple (S(z), n, H2, b2, radius-1 neighborhood) is **not** a sufficient statistic for the frozen depth-2 compositional language, already inside the 7-vertex planar two-terminal category. This does **not** assert failure of the radius-2 neighborhood, nor a lower bound on Euclidean latent dimension, nor any continuum/CFT statement.
+> **Theorem (r=1 bounded summary is not sufficient on a 7-vertex pair).** There exist two connected plane two-terminal vertex-networks G_A, G_B, each with 7 switchable vertices and with terminals on a common face, such that the complete safe-subset polynomials agree, the singleton and pair trigger counts agree, and the radius-1 terminal-local rooted neighborhoods are isomorphic as typed graphs, but P(E2_c2; G_A) = 937/1050 ≠ 313/350 = P(E2_c2; G_B), where E2_c2 is the frozen experiment 'shared prefix of two distinct uniform vertices, then two independent 2-step continuations, observe terminal disconnection in both clones'. In particular the tuple (S(z), n, H2, b2, radius-1 neighborhood) is **not** a sufficient statistic for the frozen depth-2 compositional language, already inside the 7-vertex planar two-terminal category. This does **not** assert failure of the radius-2 neighborhood, nor a lower bound on Euclidean latent dimension, nor any continuum/CFT statement, nor minimality of the cut network.
 
 ## What this does not show
 
@@ -103,12 +110,12 @@ Two-terminal series-parallel graphs generated to n=12 produce **330** r=1 summar
 - Lengthening both corridors to 2 hops equalizes r=1 and r=2 but kills the E2_c2 gap on this S-class. **All nine** contracted hop combinations of the exhaustive cores are closed at radius 2 (0 splits over 66582 graphs).
 - Exhaustive plane two-terminal graphs with n<=5 are closed under the frozen summary at both r=1 and r=2.
 - Delayed-fork E1_c1 agrees on the witness (both equal 1). The split is a genuine depth-2 experiment.
-- The SP corroborations reach n=12; none is smaller than n=8, so the n=7 exhaustive-core witness remains minimal in n.
-- This is not an all-graphs theorem and not a proof that the cut network is a minimal sufficient statistic.
+- The SP corroborations reach n=12; none is smaller than n=8. The n=7 exhaustive-core pair is the smallest witness found in the declared enumerated families, not a global minimum among all plane two-terminal networks.
+- This is not an all-graphs theorem. Cut-network minimality is `UNRESOLVED`.
 
 ## Reproducibility
 
 - Library: `research/summary_search/bounded_summary_search.py`
 - Generators/hunts: `sp_gen12.py` (layered SP to n=12), `sp12_hunt.py` (per-layer hunt; per-layer = global because n is part of the summary key), `hid9_hunt.py` (full 9-combo HID sweep), `run_full_search.py` / `finish_remaining.py` (reference)
-- Independent check: `python3 research/summary_search/verify_witness.py` (hardcoded incidence; expected `VERIFY_OK`)
+- Search-independent hard-coded verifier: `python3 research/summary_search/verify_witness.py` (hardcoded incidence, same stdlib primitives; expected `VERIFY_OK`)
 - Machine JSON: `artifacts/bounded_summary_search.json`

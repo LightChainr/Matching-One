@@ -1,7 +1,8 @@
 {
   "change": "exact r=1 bounded-summary non-compression witness and n<=12 census",
-  "verdict": "NO_COMPRESSION_WITNESS_FOUND",
-  "claim_level": "C5 for the 7-vertex two-terminal statement; C1 for the independent verifier",
+  "verdict": "BOUNDED_SUMMARY_INSUFFICIENT",
+  "search_protocol_token": "NO_COMPRESSION_WITNESS_FOUND",
+  "claim_level": "C5 for the 7-vertex two-terminal statement; C1 for the search-independent hard-coded witness verifier (not a fully independent implementation)",
   "new_random_samples": 0,
   "monte_carlo": false,
   "commands": [
@@ -17,7 +18,8 @@
     "gap": "1/525"
   },
   "cut_dependence": "CUTS_LAW_EQUIVALENT_NOT_ISOMORPHIC",
-  "embedding": "TWO_PORT_EMBEDDING_SUFFICES",
+  "embedding": "GENERAL_REALIZATION_LEMMA",
+  "cut_network_minimality": "UNRESOLVED",
   "full_repository_suite_run": false,
   "standalone_bundle": true
 }

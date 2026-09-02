@@ -183,7 +183,10 @@ def render_markdown(base, hid9_stats, sp_splits, max_sp, sp_total) -> str:
     A = lines.append
     A("# Bounded summary search certificate (extended to contract limits)")
     A("")
-    A("**Verdict:** `NO_COMPRESSION_WITNESS_FOUND`")
+    A("**Verdict:** `BOUNDED_SUMMARY_INSUFFICIENT`")
+    A("")
+    A("Frozen search-protocol token (locked before search): `NO_COMPRESSION_WITNESS_FOUND`.")
+    A("Same split; manuscript wording uses the token above.")
     A("")
     A("Frozen before search: summary = (S(z), n, H2, b2, radius-1 terminal-local neighborhood).")
     A("Successor-hazard moments were **not** in the summary. Arithmetic is exact "
@@ -281,12 +284,17 @@ def render_markdown(base, hid9_stats, sp_splits, max_sp, sp_total) -> str:
     A("")
     A("### Torus embedding")
     A("")
-    A("The pair lives in the already-closed planar two-terminal cut-network category "
-      "(PR #491): the cut-network representation maps rank-one torus states onto this "
-      "category; the two-port calculus can place either gadget as a two-terminal block. "
-      "No explicit torus occupation realizing these 7-vertex networks was constructed "
-      "in this search. Consistent with #491, random variables are vertices (not edges) "
-      "and all sampling is fixed-cardinality without replacement.")
+    A("```text")
+    A("GENERAL_REALIZATION_LEMMA")
+    A("```")
+    A("")
+    A("Both graphs satisfy the hypotheses of `notes/p1-plane-tt-realization-lemma-20260902.md` "
+      "(finite connected plane two-terminal vertex-networks, terminals on a common face, "
+      "no L–R edge, vertex activation). The lemma supplies a finite genuinely embedded "
+      "torus host and a rank-one occupied essential cycle whose residual cut-network is "
+      "rooted-isomorphic to each graph. No named square-HNF occupation is constructed. "
+      "Parallel-gadget §6 is not a surjectivity proof for this class. "
+      "Details: `notes/p1-n7-torus-embedding-20260902.md`.")
     A("")
     A("## Corroboration inside series-parallel graphs")
     A("")
@@ -315,7 +323,7 @@ def render_markdown(base, hid9_stats, sp_splits, max_sp, sp_total) -> str:
     A("")
     A("## Manuscript-ready theorem (only the class actually tested)")
     A("")
-    A(f"> **Theorem (r=1 non-compression on a 7-vertex pair).** There exist two connected "
+    A(f"> **Theorem (r=1 bounded summary is not sufficient on a 7-vertex pair).** There exist two connected "
       f"plane two-terminal vertex-networks G_A, G_B, each with {w['n']} switchable vertices "
       f"and with terminals on a common face, such that the complete safe-subset polynomials "
       f"agree, the singleton and pair trigger counts agree, and the radius-1 terminal-local "
@@ -326,7 +334,8 @@ def render_markdown(base, hid9_stats, sp_splits, max_sp, sp_total) -> str:
       f"radius-1 neighborhood) is **not** a sufficient statistic for the frozen depth-2 "
       f"compositional language, already inside the 7-vertex planar two-terminal category. "
       f"This does **not** assert failure of the radius-2 neighborhood, nor a lower bound on "
-      f"Euclidean latent dimension, nor any continuum/CFT statement.")
+      f"Euclidean latent dimension, nor any continuum/CFT statement, nor minimality of the "
+      f"cut network.")
     A("")
     A("## What this does not show")
     A("")
@@ -338,10 +347,10 @@ def render_markdown(base, hid9_stats, sp_splits, max_sp, sp_total) -> str:
       "at both r=1 and r=2.")
     A("- Delayed-fork E1_c1 agrees on the witness (both equal 1). The split is a genuine "
       "depth-2 experiment.")
-    A(f"- The SP corroborations reach n={max_sp}; none is smaller than n=8, so the n=7 "
-      "exhaustive-core witness remains minimal in n.")
-    A("- This is not an all-graphs theorem and not a proof that the cut network is a "
-      "minimal sufficient statistic.")
+    A(f"- The SP corroborations reach n={max_sp}; none is smaller than n=8. The n=7 "
+      "exhaustive-core pair is the smallest witness found in the declared enumerated "
+      "families, not a global minimum among all plane two-terminal networks.")
+    A("- This is not an all-graphs theorem. Cut-network minimality is `UNRESOLVED`.")
     A("")
     A("## Reproducibility")
     A("")
@@ -349,8 +358,8 @@ def render_markdown(base, hid9_stats, sp_splits, max_sp, sp_total) -> str:
     A("- Generators/hunts: `sp_gen12.py` (layered SP to n=12), `sp12_hunt.py` (per-layer "
       "hunt; per-layer = global because n is part of the summary key), `hid9_hunt.py` "
       "(full 9-combo HID sweep), `run_full_search.py` / `finish_remaining.py` (reference)")
-    A("- Independent check: `python3 research/summary_search/verify_witness.py` "
-      "(hardcoded incidence; expected `VERIFY_OK`)")
+    A("- Search-independent hard-coded verifier: `python3 research/summary_search/verify_witness.py` "
+      "(hardcoded incidence, same stdlib primitives; expected `VERIFY_OK`)")
     A("- Machine JSON: `artifacts/bounded_summary_search.json`")
     A("")
     return "\n".join(lines)

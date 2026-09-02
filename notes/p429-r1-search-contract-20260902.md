@@ -1,5 +1,13 @@
 # 本地执行提示词：Matching-One P1 有界摘要非压缩搜索
 
+> Provenance, 2026-09-02, additive, does not rewrite the frozen protocol.
+> The two search-protocol tokens in §0 and §7 remain locked:
+> `NO_COMPRESSION_WITNESS_FOUND` and `BOUNDED_SEARCH_CLOSES_UNDER_SUMMARY`.
+> Manuscript and certificate wording for the same mathematical outcome uses
+> `BOUNDED_SUMMARY_INSUFFICIENT`. Size claims in the certificate are “smallest
+> witness found in the declared enumerated families”, not global minimality.
+> See `notes/p429-r1-claim-wording-erratum-20260902.md`.
+
 把本文件从「角色」到「停止规则」整段复制给本地 agent。不要改冻结合同。不要新开 Monte Carlo，不要写论文，不要合并 PR，不要开新 Issue。不需要 GitHub 权限：全部在本地仓库目录完成。
 
 ---
