@@ -1,0 +1,812 @@
+{
+  "closing_radius": null,
+  "enumerated_class": {
+    "SP_nle10": {
+      "N": 23559,
+      "S_classes": 3928,
+      "multi_summary": 3852,
+      "n_hist": {
+        "1": 1,
+        "10": 16750,
+        "2": 2,
+        "3": 5,
+        "4": 14,
+        "5": 41,
+        "6": 129,
+        "7": 418,
+        "8": 1401,
+        "9": 4798
+      },
+      "r1_splits": 29,
+      "splits_by_n": {
+        "10": 21,
+        "8": 2,
+        "9": 6
+      },
+      "summary_classes": 16865
+    },
+    "SP_nle12": {
+      "N": 295654,
+      "S_classes": 29817,
+      "multi_summary": 55765,
+      "n_hist": {
+        "1": 1,
+        "10": 16750,
+        "11": 59324,
+        "12": 212771,
+        "2": 2,
+        "3": 5,
+        "4": 14,
+        "5": 41,
+        "6": 129,
+        "7": 418,
+        "8": 1401,
+        "9": 4798
+      },
+      "r1_splits": 330,
+      "split_experiments": {
+        "E1_c2": 34,
+        "E2_c2": 296
+      },
+      "splits_by_n": {
+        "10": 21,
+        "11": 69,
+        "12": 232,
+        "8": 2,
+        "9": 6
+      },
+      "summary_classes": 172884
+    },
+    "additional_r1_splits_outside_hideL1R1": [
+      {
+        "A": "series(edge|series(edge|par(series(par(path1|path1)|edge)|series(par(path1|path1)|edge))))",
+        "B": "series(edge|series(par(path1|par(path1|series(edge|path1)))|par(path1|path1)))",
+        "family": "SP",
+        "n": 8,
+        "split": "E2_c2"
+      },
+      {
+        "A": "series(par(path1|path1)|series(par(path1|par(path1|series(edge|path1)))|edge))",
+        "B": "series(par(series(edge|par(path1|path1))|series(edge|par(path1|path1)))|path1)",
+        "family": "SP",
+        "n": 8,
+        "split": "E2_c2"
+      },
+      {
+        "A": "series(edge|series(edge|par(series(edge|path1)|series(edge|par(path1|series(par(path1|path1)|edge))))))",
+        "B": "series(edge|series(par(path1|series(edge|path1))|par(path1|par(path1|series(edge|path1)))))",
+        "family": "SP",
+        "n": 9,
+        "split": "E2_c2"
+      },
+      {
+        "A": "series(par(path1|par(path1|series(edge|path1)))|series(par(path1|series(edge|path1))|edge))",
+        "B": "series(par(series(edge|path1)|series(par(path1|series(edge|par(path1|path1)))|edge))|path1)",
+        "family": "SP",
+        "n": 9,
+        "split": "E2_c2"
+      },
+      {
+        "A": "series(edge|par(path1|series(edge|par(series(par(path1|path1)|edge)|series(par(path1|path1)|edge)))))",
+        "B": "series(edge|par(path1|series(par(path1|par(path1|series(edge|path1)))|par(path1|path1))))",
+        "family": "SP",
+        "n": 9,
+        "split": "E2_c2"
+      },
+      {
+        "A": "series(par(path1|series(par(path1|path1)|par(path1|par(path1|series(edge|path1)))))|edge)",
+        "B": "series(par(path1|series(par(series(edge|par(path1|path1))|series(edge|par(path1|path1)))|edge))|edge)",
+        "family": "SP",
+        "n": 9,
+        "split": "E2_c2"
+      },
+      {
+        "A": "par(path1|series(edge|series(edge|par(series(par(path1|path1)|edge)|series(par(path1|path1)|edge)))))",
+        "B": "par(path1|series(edge|series(par(path1|par(path1|series(edge|path1)))|par(path1|path1))))",
+        "family": "SP",
+        "n": 9,
+        "split": "E2_c2"
+      },
+      {
+        "A": "par(path1|series(par(path1|path1)|series(par(path1|par(path1|series(edge|path1)))|edge)))",
+        "B": "par(path1|series(par(series(edge|par(path1|path1))|series(edge|par(path1|path1)))|path1))",
+        "family": "SP",
+        "n": 9,
+        "split": "E2_c2"
+      },
+      {
+        "A": "series(edge|series(par(series(edge|par(path1|path1))|series(edge|series(edge|par(path1|series(edge|path1)))))|edge))",
+        "B": "series(edge|series(par(series(edge|path1)|series(edge|par(path1|series(edge|series(edge|par(path1|path1))))))|edge))",
+        "family": "SP",
+        "n": 10,
+        "split": "E2_c2"
+      },
+      {
+        "A": "series(edge|par(series(edge|path1)|series(par(series(edge|series(edge|path1))|series(edge|par(path1|path1)))|edge)))",
+        "B": "series(edge|par(series(par(path1|series(edge|path1))|edge)|series(edge|series(par(path1|series(edge|path1))|edge))))",
+        "family": "SP",
+        "n": 10,
+        "split": "E2_c2"
+      },
+      {
+        "A": "series(par(series(edge|par(path1|series(edge|path1)))|series(edge|series(edge|par(path1|series(edge|path1)))))|edge)",
+        "B": "series(par(series(edge|path1)|series(edge|par(series(edge|series(edge|path1))|series(edge|par(path1|path1)))))|edge)",
+        "family": "SP",
+        "n": 10,
+        "split": "E2_c2"
+      },
+      {
+        "A": "series(edge|series(edge|par(series(edge|path1)|series(edge|par(path1|par(path1|series(par(path1|path1)|edge)))))))",
+        "B": "series(edge|series(par(path1|series(edge|path1))|par(path1|par(path1|par(path1|series(edge|path1))))))",
+        "family": "SP",
+        "n": 10,
+        "split": "E2_c2"
+      },
+      {
+        "A": "series(edge|par(path1|series(edge|par(series(edge|path1)|series(edge|par(path1|series(par(path1|path1)|edge)))))))",
+        "B": "series(edge|par(path1|series(par(path1|series(edge|path1))|par(path1|par(path1|series(edge|path1))))))",
+        "family": "SP",
+        "n": 10,
+        "split": "E2_c2"
+      },
+      {
+        "A": "series(edge|par(series(edge|par(path1|path1))|series(edge|series(par(path1|par(path1|series(edge|path1)))|edge))))",
+        "B": "series(edge|par(series(edge|path1)|series(edge|par(path1|series(par(path1|series(edge|par(path1|path1)))|edge)))))",
+        "family": "SP",
+        "n": 10,
+        "split": "E1_c2"
+      },
+      {
+        "A": "series(edge|par(series(edge|path1)|series(edge|par(series(par(path1|path1)|edge)|series(par(path1|path1)|edge)))))",
+        "B": "series(edge|par(series(edge|path1)|series(par(path1|par(path1|series(edge|path1)))|par(path1|path1))))",
+        "family": "SP",
+        "n": 10,
+        "split": "E2_c2"
+      },
+      {
+        "A": "series(par(path1|par(path1|par(path1|series(edge|path1))))|series(par(path1|series(edge|path1))|edge))",
+        "B": "series(par(series(edge|path1)|series(par(path1|par(path1|series(edge|par(path1|path1))))|edge))|path1)",
+        "family": "SP",
+        "n": 10,
+        "split": "E2_c2"
+      },
+      {
+        "A": "series(par(path1|series(par(path1|par(path1|series(edge|path1)))|par(path1|series(edge|path1))))|edge)",
+        "B": "series(par(path1|series(par(series(edge|path1)|series(par(path1|series(edge|par(path1|path1)))|edge))|edge))|edge)",
+        "family": "SP",
+        "n": 10,
+        "split": "E2_c2"
+      },
+      {
+        "A": "series(par(series(edge|path1)|series(par(path1|path1)|par(path1|par(path1|series(edge|path1)))))|edge)",
+        "B": "series(par(series(edge|path1)|series(par(series(edge|par(path1|path1))|series(edge|par(path1|path1)))|edge))|edge)",
+        "family": "SP",
+        "n": 10,
+        "split": "E2_c2"
+      },
+      {
+        "A": "series(par(series(edge|path1)|series(par(path1|series(edge|par(path1|series(edge|par(path1|path1)))))|edge))|edge)",
+        "B": "series(par(series(par(path1|path1)|edge)|series(edge|series(edge|par(path1|par(path1|series(edge|path1))))))|edge)",
+        "family": "SP",
+        "n": 10,
+        "split": "E1_c2"
+      },
+      {
+        "A": "par(path1|series(edge|series(edge|par(series(edge|path1)|series(edge|par(path1|series(par(path1|path1)|edge)))))))",
+        "B": "par(path1|series(edge|series(par(path1|series(edge|path1))|par(path1|par(path1|series(edge|path1))))))",
+        "family": "SP",
+        "n": 10,
+        "split": "E2_c2"
+      },
+      {
+        "A": "par(path1|series(par(path1|par(path1|series(edge|path1)))|series(par(path1|series(edge|path1))|edge)))",
+        "B": "par(path1|series(par(series(edge|path1)|series(par(path1|series(edge|par(path1|path1)))|edge))|path1))",
+        "family": "SP",
+        "n": 10,
+        "split": "E2_c2"
+      },
+      {
+        "A": "par(series(edge|path1)|series(edge|series(edge|par(series(par(path1|path1)|edge)|series(par(path1|path1)|edge)))))",
+        "B": "par(series(edge|path1)|series(edge|series(par(path1|par(path1|series(edge|path1)))|par(path1|path1))))",
+        "family": "SP",
+        "n": 10,
+        "split": "E2_c2"
+      },
+      {
+        "A": "par(series(edge|path1)|series(par(path1|path1)|series(par(path1|par(path1|series(edge|path1)))|edge)))",
+        "B": "par(series(edge|path1)|series(par(series(edge|par(path1|path1))|series(edge|par(path1|path1)))|path1))",
+        "family": "SP",
+        "n": 10,
+        "split": "E2_c2"
+      },
+      {
+        "A": "series(edge|par(path1|par(path1|series(edge|par(series(par(path1|path1)|edge)|series(par(path1|path1)|edge))))))",
+        "B": "series(edge|par(path1|par(path1|series(par(path1|par(path1|series(edge|path1)))|par(path1|path1)))))",
+        "family": "SP",
+        "n": 10,
+        "split": "E2_c2"
+      },
+      {
+        "A": "series(par(path1|par(path1|series(par(path1|path1)|par(path1|par(path1|series(edge|path1))))))|edge)",
+        "B": "series(par(path1|par(path1|series(par(series(edge|par(path1|path1))|series(edge|par(path1|path1)))|edge)))|edge)",
+        "family": "SP",
+        "n": 10,
+        "split": "E2_c2"
+      },
+      {
+        "A": "par(path1|series(edge|par(path1|series(edge|par(series(par(path1|path1)|edge)|series(par(path1|path1)|edge))))))",
+        "B": "par(path1|series(edge|par(path1|series(par(path1|par(path1|series(edge|path1)))|par(path1|path1)))))",
+        "family": "SP",
+        "n": 10,
+        "split": "E2_c2"
+      },
+      {
+        "A": "par(path1|series(par(path1|series(par(path1|path1)|par(path1|par(path1|series(edge|path1)))))|edge))",
+        "B": "par(path1|series(par(path1|series(par(series(edge|par(path1|path1))|series(edge|par(path1|path1)))|edge))|edge))",
+        "family": "SP",
+        "n": 10,
+        "split": "E2_c2"
+      },
+      {
+        "A": "par(path1|par(path1|series(edge|series(edge|par(series(par(path1|path1)|edge)|series(par(path1|path1)|edge))))))",
+        "B": "par(path1|par(path1|series(edge|series(par(path1|par(path1|series(edge|path1)))|par(path1|path1)))))",
+        "family": "SP",
+        "n": 10,
+        "split": "E2_c2"
+      },
+      {
+        "A": "par(path1|par(path1|series(par(path1|path1)|series(par(path1|par(path1|series(edge|path1)))|edge))))",
+        "B": "par(path1|par(path1|series(par(series(edge|par(path1|path1))|series(edge|par(path1|path1)))|path1)))",
+        "family": "SP",
+        "n": 10,
+        "split": "E2_c2"
+      }
+    ],
+    "description": "Connected plane two-terminal vertex-networks with L,R on a common face, no L-R edge. Generators: exhaustive n<=5; path-hidden copies of those cores over the FULL contracted hop grid (Lh,Rh in {1,2,3}, 9 combinations, n<=12); two-terminal series-parallel generated to n=12 (295654 graphs; the PROMPT's n=11,12 layers are now included); Wheatstone+SP compositions n<=12 with SP partners n<=6; multipath n<=12; 2/3/4-row ladders n<=12.",
+    "exhaustive_nle5": {
+      "N": 7398,
+      "S_classes": 74,
+      "r1_multi_member": 901,
+      "r1_splits": 0,
+      "r1_summary_classes": 3905,
+      "r2_multi_member": 55,
+      "r2_splits": 0,
+      "r2_summary_classes": 7307
+    },
+    "family_sizes": {
+      "exhaustive_nle5": 7398,
+      "grids_nle12": 10,
+      "hidden_L1R1": 7398,
+      "hidden_L1R2": 7398,
+      "hidden_L1R3": 7398,
+      "hidden_L2R1": 7398,
+      "hidden_L2R2": 7398,
+      "hidden_L2R3": 7398,
+      "hidden_L3R1": 7398,
+      "hidden_L3R2": 7398,
+      "hidden_L3R3": 7398,
+      "hidden_full_grid_9combos": 66582,
+      "multipath_nle12": 271,
+      "series_parallel_nle10": 23559,
+      "series_parallel_nle12": 295654,
+      "wheatstone_sp_nle12": 577
+    },
+    "grids_nle12": {
+      "N": 10,
+      "r1_splits": 0
+    },
+    "hidden_L1R1": {
+      "N": 7398,
+      "S_classes": 74,
+      "r1_splits": 1,
+      "split_class_size": 56,
+      "split_experiment": "E2_c2"
+    },
+    "hidden_L2R2": {
+      "N": 7398,
+      "r1_splits": 0,
+      "r2_splits": 0
+    },
+    "hidden_full_grid": {
+      "combos": 9,
+      "per_combo": {
+        "L1R1": {
+          "N": 7398,
+          "n_hist": {
+            "3": 1,
+            "4": 7,
+            "5": 56,
+            "6": 559,
+            "7": 6775
+          },
+          "r1_multi_summary": 69,
+          "r1_splits": 1,
+          "r1_summary_classes": 74,
+          "r2_splits": 0
+        },
+        "L1R2": {
+          "N": 7398,
+          "n_hist": {
+            "4": 1,
+            "5": 7,
+            "6": 56,
+            "7": 559,
+            "8": 6775
+          },
+          "r1_multi_summary": 69,
+          "r1_splits": 0,
+          "r1_summary_classes": 74,
+          "r2_splits": 0
+        },
+        "L1R3": {
+          "N": 7398,
+          "n_hist": {
+            "5": 1,
+            "6": 7,
+            "7": 56,
+            "8": 559,
+            "9": 6775
+          },
+          "r1_multi_summary": 69,
+          "r1_splits": 0,
+          "r1_summary_classes": 74,
+          "r2_splits": 0
+        },
+        "L2R1": {
+          "N": 7398,
+          "n_hist": {
+            "4": 1,
+            "5": 7,
+            "6": 56,
+            "7": 559,
+            "8": 6775
+          },
+          "r1_multi_summary": 69,
+          "r1_splits": 0,
+          "r1_summary_classes": 74,
+          "r2_splits": 0
+        },
+        "L2R2": {
+          "N": 7398,
+          "n_hist": {
+            "5": 1,
+            "6": 7,
+            "7": 56,
+            "8": 559,
+            "9": 6775
+          },
+          "r1_multi_summary": 69,
+          "r1_splits": 0,
+          "r1_summary_classes": 74,
+          "r2_splits": 0
+        },
+        "L2R3": {
+          "N": 7398,
+          "n_hist": {
+            "10": 6775,
+            "6": 1,
+            "7": 7,
+            "8": 56,
+            "9": 559
+          },
+          "r1_multi_summary": 69,
+          "r1_splits": 0,
+          "r1_summary_classes": 74,
+          "r2_splits": 0
+        },
+        "L3R1": {
+          "N": 7398,
+          "n_hist": {
+            "5": 1,
+            "6": 7,
+            "7": 56,
+            "8": 559,
+            "9": 6775
+          },
+          "r1_multi_summary": 69,
+          "r1_splits": 0,
+          "r1_summary_classes": 74,
+          "r2_splits": 0
+        },
+        "L3R2": {
+          "N": 7398,
+          "n_hist": {
+            "10": 6775,
+            "6": 1,
+            "7": 7,
+            "8": 56,
+            "9": 559
+          },
+          "r1_multi_summary": 69,
+          "r1_splits": 0,
+          "r1_summary_classes": 74,
+          "r2_splits": 0
+        },
+        "L3R3": {
+          "N": 7398,
+          "n_hist": {
+            "10": 559,
+            "11": 6775,
+            "7": 1,
+            "8": 7,
+            "9": 56
+          },
+          "r1_multi_summary": 69,
+          "r1_splits": 0,
+          "r1_summary_classes": 74,
+          "r2_splits": 0
+        }
+      },
+      "r1_splits_total": 1,
+      "r2_splits_total": 0
+    },
+    "max_n_SP": 12,
+    "max_n_exhaustive": 5,
+    "max_n_reached": 12,
+    "multipath_nle12": {
+      "N": 271,
+      "r1_splits": 0
+    },
+    "name": "G_plane_tt_bounded_generators",
+    "wheatstone_sp_nle12": {
+      "N": 577,
+      "r1_splits": 0
+    }
+  },
+  "frozen_experiments": [
+    "E1_c2",
+    "E1_mix",
+    "E2_c1",
+    "E2_c2",
+    "E2_mix",
+    "E0_c2",
+    "E0_mix",
+    "E0_c1",
+    "E1_c1"
+  ],
+  "frozen_summary": {
+    "H2": "singleton terminal-connection count (= n - S_1; redundant given S,n)",
+    "S_z": "complete safe-subset counts by cardinality",
+    "b2": "minimal pair-trigger count (= C(n,2)-S_2; redundant given S,n)",
+    "n": "switchable vertex count",
+    "neighborhoods": "induced rooted typed ball around {L,R} at r=1 (witness); r=2 did not agree on this pair",
+    "successor_hazard_moments": "NOT included (frozen out before search)"
+  },
+  "r1": {
+    "closed": false,
+    "note": "exhaustive n<=5 closed at r=1 and r=2. Hidden-L1R1 of every exhaustive core has the single 56-member n=7 split (the primary witness). The other eight contracted hop combinations (L1R2,L1R3,L2R1,L2R2,L2R3,L3R1,L3R2,L3R3) are closed at r=1. SP n<=12 contributes additional r=1 splits from n=8 upward (see SP_nle12). Wheatstone, multipath and grids are closed at r=1.",
+    "split_count_hideL1R1": 1
+  },
+  "r2": {
+    "hidden_full_grid_r2_closed": true,
+    "hideL2R2_peek_closed": true,
+    "note": "All nine contracted hop combinations are closed at radius 2 (0 splits over 66582 graphs).",
+    "on_this_witness_pair": "neighborhoods DIFFER, so the pair is not an r=2 same-summary split"
+  },
+  "schema": "matching-one/bounded-summary-search/v1",
+  "verdict": "NO_COMPRESSION_WITNESS_FOUND",
+  "witness": {
+    "A": {
+      "adj": [
+        80,
+        76,
+        42,
+        6,
+        33,
+        20,
+        3
+      ],
+      "adj_L": 32,
+      "adj_R": 64,
+      "edges": [
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          "L",
+          5
+        ],
+        [
+          "R",
+          6
+        ]
+      ],
+      "name": "witnessA_parallel_4paths_plus_triangle",
+      "switchable": 7,
+      "terminals": [
+        "L",
+        "R"
+      ]
+    },
+    "B": {
+      "adj": [
+        84,
+        12,
+        35,
+        66,
+        33,
+        20,
+        9
+      ],
+      "adj_L": 32,
+      "adj_R": 64,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          "L",
+          5
+        ],
+        [
+          "R",
+          6
+        ]
+      ],
+      "name": "witnessB_fan_in",
+      "switchable": 7,
+      "terminals": [
+        "L",
+        "R"
+      ]
+    },
+    "H2": 0,
+    "S": [
+      1,
+      7,
+      21,
+      35,
+      33,
+      15,
+      2,
+      0
+    ],
+    "all_exps_A": {
+      "E0_c1": "1/1",
+      "E0_c2": "1/1",
+      "E0_mix": "1/1",
+      "E1_c1": "1/1",
+      "E1_c2": "1/1",
+      "E1_mix": "1/1",
+      "E2_c1": "1/1",
+      "E2_c2": "937/1050",
+      "E2_mix": "33/35"
+    },
+    "all_exps_B": {
+      "E0_c1": "1/1",
+      "E0_c2": "1/1",
+      "E0_mix": "1/1",
+      "E1_c1": "1/1",
+      "E1_c2": "1/1",
+      "E1_mix": "1/1",
+      "E2_c1": "1/1",
+      "E2_c2": "313/350",
+      "E2_mix": "33/35"
+    },
+    "b2": 0,
+    "construction": "Identify the unique n=5 exhaustive S-class S=(1,5,8,4,0,0) that already splits on delayed-fork / E1_mix (40 vs 16 graphs). Attach a 1-hop corridor on each side (series with the unit edge). The corridors force identical r=1 neighborhoods (unique L-neighbor and unique R-neighbor) while preserving S.",
+    "core_A": "exh_n5_4313",
+    "core_A_inc": {
+      "adj": [
+        16,
+        12,
+        10,
+        6,
+        1
+      ],
+      "adj_L": 20,
+      "adj_R": 3,
+      "edges": [
+        [
+          "R",
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          "R",
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          "L",
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          "L",
+          4
+        ]
+      ],
+      "name": "exh_n5_4313",
+      "switchable": 5,
+      "terminals": [
+        "L",
+        "R"
+      ]
+    },
+    "core_B": "exh_n5_2451",
+    "core_B_inc": {
+      "adj": [
+        20,
+        12,
+        3,
+        2,
+        1
+      ],
+      "adj_L": 20,
+      "adj_R": 9,
+      "edges": [
+        [
+          "R",
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          "L",
+          2
+        ],
+        [
+          "R",
+          3
+        ],
+        [
+          "L",
+          4
+        ]
+      ],
+      "name": "exh_n5_2451",
+      "switchable": 5,
+      "terminals": [
+        "L",
+        "R"
+      ]
+    },
+    "embeddable_in_rank_one_torus_category": "The pair lives in the already-closed planar two-terminal cut-network category. The paper's cut-network representation maps rank-one torus states onto this category; the two-port calculus can place either gadget as a two-terminal block. No explicit torus occupation realizing these 7-vertex networks was constructed in this search.",
+    "gap": "1/525",
+    "mincuts_size4": {
+      "A": [
+        [
+          1,
+          2,
+          5,
+          6
+        ],
+        [
+          0,
+          4,
+          5,
+          6
+        ]
+      ],
+      "B": [
+        [
+          0,
+          2,
+          5,
+          6
+        ],
+        [
+          0,
+          4,
+          5,
+          6
+        ]
+      ],
+      "count_each": 2,
+      "explanation": "S_4=33 so C(7,4)-33=2 connecting 4-sets in each graph. A: the two 4-mincuts are the interiors of two L-R paths that share only the corridor ports. B: the two 4-mincuts additionally share the R-adjacent core vertex (fan-in). E2_c2 = mean over 2-prefixes of p_surv(remaining, c=2)^2 therefore sees the intersection pattern, which S(z) does not."
+    },
+    "n": 7,
+    "p_A": "937/1050",
+    "p_B": "313/350",
+    "planar_G_union_LR": {
+      "A": true,
+      "B": true
+    },
+    "radius": 1,
+    "same_S": true,
+    "same_neigh_r1": true,
+    "same_neigh_r2": false,
+    "smallest_edge_variant": {
+      "A_name": "hide(L1,exh_n5_1056,R1)",
+      "B_name": "hide(L1,exh_n5_2451,R1)",
+      "edges": [
+        9,
+        10
+      ],
+      "nine_edge_pendant_cores": [
+        "exh_n5_1056",
+        "exh_n5_413"
+      ],
+      "note": "Replacing core A by exh_n5_1056 or exh_n5_413 (two 9-edge pendant cores in the same behaviour class) yields 9+10 edges instead of 10+10, same S/r=1/E2_c2 gap 1/525. Both pendant cores fail the 'no pendant / every switchable vertex on a simple L-R path' criterion, so the 10-edge pendant-free core exh_n5_4313 remains the primary A. Vertex deletion of the n=7 pair produced no witness.",
+      "p_A": "937/1050",
+      "p_B": "313/350"
+    },
+    "split_experiment": "E2_c2"
+  }
+}

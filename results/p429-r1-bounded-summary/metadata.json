@@ -1,0 +1,23 @@
+{
+  "change": "exact r=1 bounded-summary non-compression witness and n<=12 census",
+  "verdict": "NO_COMPRESSION_WITNESS_FOUND",
+  "claim_level": "C5 for the 7-vertex two-terminal statement; C1 for the independent verifier",
+  "new_random_samples": 0,
+  "monte_carlo": false,
+  "commands": [
+    "python3 research/summary_search/bounded_summary_search.py",
+    "python3 research/summary_search/verify_witness.py",
+    "python3 -m unittest tests/test_p429_r1_noncompression_witness.py -v"
+  ],
+  "expected": {
+    "self_checks": "self-checks passed",
+    "verify": "VERIFY_OK",
+    "S": [1, 7, 21, 35, 33, 15, 2, 0],
+    "E2_c2": ["937/1050", "313/350"],
+    "gap": "1/525"
+  },
+  "cut_dependence": "CUTS_LAW_EQUIVALENT_NOT_ISOMORPHIC",
+  "embedding": "TWO_PORT_EMBEDDING_SUFFICES",
+  "full_repository_suite_run": false,
+  "standalone_bundle": true
+}
