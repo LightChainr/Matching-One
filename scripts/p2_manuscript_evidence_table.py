@@ -18,8 +18,10 @@ from typing import Any, Mapping, Optional, Sequence
 
 try:
     from scripts.exact_polynomial_root_certificate import isolate_roots
+    from scripts.pslq_look_elsewhere_ledger import primitive_polynomial_count as _ledger_count
 except ModuleNotFoundError:
     from exact_polynomial_root_certificate import isolate_roots
+    from pslq_look_elsewhere_ledger import primitive_polynomial_count as _ledger_count
 
 ROOT=Path(__file__).resolve().parents[1]
 DEFAULT_CONTRACT=ROOT/"analysis"/"pslq_search_contract.json"
@@ -43,6 +45,7 @@ CONTROL_SOURCES={
     "standard_constant_pairwise":"results/pslq-standard-constant-pairwise/latest.json",
     "standard_constant_stability":"results/pslq-standard-constant-stability/latest.json",
     "lattice_native_candidates":"results/pslq-lattice-native-candidates/latest.json",
+    "degree4_boundary_sensitivity":"results/pslq-degree4-synthetic-boundary-control/latest.json",
 }
 
 
@@ -211,6 +214,104 @@ def _closest_approach(exclusion:Sequence[Mapping[str,Any]],table:Sequence[Mappin
     }
 
 
+def _reflect(coefficients:Sequence[int])->list[int]:
+    """Coefficients of P(1-x), sign-normalized to a positive leading coefficient.
+
+    This is the matching substitution p -> 1-p, so a lattice's exactly-known
+    threshold polynomial and its matching partner's are related by it.
+    """
+    degree=len(coefficients)-1
+    result=[0]*(degree+1)
+    for power,value in enumerate(coefficients):
+        # (1-x)^power = sum_j C(power,j) (-x)^j
+        binomial=1
+        for j in range(power+1):
+            result[j]+=value*binomial*(-1 if j%2 else 1)
+            binomial=binomial*(power-j)//(j+1)
+    while result and result[-1]==0:result.pop()
+    _require(bool(result),"reflection collapsed the polynomial")
+    if result[-1]<0:result=[-value for value in result]
+    common=0
+    for value in result:common=_gcd(common,abs(value))
+    _require(common>0,"reflection produced the zero polynomial")
+    return [value//common for value in result]
+
+
+def _gcd(first:int,second:int)->int:
+    while second:first,second=second,first%second
+    return abs(first)
+
+
+def _primitive_count(degree:int,height:int)->int:
+    """Delegate to the committed look-elsewhere ledger's exact counter."""
+    return _ledger_count(degree,height)
+
+
+def _historical_forms()->dict[str,Any]:
+    """Algebraic complexity of the exactly-known planar percolation thresholds.
+
+    Minimal polynomials are taken from the committed lattice-native candidate
+    artifact, which certifies each one with an isolating interval, rather than
+    restated here.  The triangular-bond entry is derived from the certified
+    kagome-site entry by the matching substitution p -> 1-p.
+    """
+    native=_load(CONTROL_SOURCES["lattice_native_candidates"])
+    polynomials={row["candidate_id"]:row["minimal_polynomial_coefficients_ascending"] for row in native["candidates"]}
+    kagome=polynomials["kagome-site"]
+    rows=[
+        {"lattice":"square bond; triangular site","closed_form":"1/2",
+         "minimal_polynomial_ascending":[-1,2],"provenance":"Sykes and Essam 1964"},
+        {"lattice":"triangular bond","closed_form":"2*sin(pi/18)",
+         "minimal_polynomial_ascending":_reflect(kagome),
+         "provenance":"derived from the certified kagome-site polynomial by p -> 1-p"},
+        {"lattice":"honeycomb bond; kagome site","closed_form":"1-2*sin(pi/18)",
+         "minimal_polynomial_ascending":kagome,
+         "provenance":"results/pslq-lattice-native-candidates/latest.json"},
+        {"lattice":"(3,12^2) site","closed_form":"sqrt(1-2*sin(pi/18))",
+         "minimal_polynomial_ascending":polynomials["three-twelve-site"],
+         "provenance":"results/pslq-lattice-native-candidates/latest.json"},
+        {"lattice":"martini bond","closed_form":"1/sqrt(2)",
+         "minimal_polynomial_ascending":polynomials["martini-descendant-root2"],
+         "provenance":"results/pslq-lattice-native-candidates/latest.json"},
+        {"lattice":"martini descendant","closed_form":"(sqrt(5)-1)/2",
+         "minimal_polynomial_ascending":polynomials["martini-descendant-golden"],
+         "provenance":"results/pslq-lattice-native-candidates/latest.json"},
+    ]
+    for row in rows:
+        coefficients=row["minimal_polynomial_ascending"]
+        row["degree"]=len(coefficients)-1
+        row["height"]=max(abs(value) for value in coefficients)
+        row["inside_census_class"]=row["degree"]<=4 and row["height"]<=100
+    max_degree=max(row["degree"] for row in rows)
+    max_height=max(row["height"] for row in rows)
+    extension={str(degree):_primitive_count(degree,max_height) for degree in range(1,max_degree+1)}
+    return {
+        "rows":rows,
+        "recommended_extension":{
+            "hypothesis":"the one exactly-known planar threshold outside the census class is the (3,12^2) site "
+                         "value, a square root of a lower-degree threshold; the targeted question is therefore "
+                         "whether any form of degree up to the historical maximum, at the historical height, "
+                         "has a root in a method interval",
+            "class":f"degree 1..{max_degree}, height <= {max_height}",
+            "primitive_counts_by_degree":extension,
+            "total_polynomials_per_interval":sum(extension.values()),
+            "status":"not run here",
+            "reason":"issue #551 sequences write-up and review before any degree or height expansion; the cost "
+                     "is recorded so the decision can be made with the number in hand",
+        },
+        "max_degree":max(row["degree"] for row in rows),
+        "max_height":max(row["height"] for row in rows),
+        "all_inside_census_class":all(row["inside_census_class"] for row in rows),
+        "outside_census_class":[row["lattice"] for row in rows if not row["inside_census_class"]],
+        "meaning":"every exactly-known planar percolation threshold is algebraic of degree at most 6 and "
+                  "coefficient height at most 3; the census class C(<=4, <=100) is far more generous in height "
+                  "than the entire historical record, but its degree bound does not reach the one known "
+                  "degree-6 form, which arises as a square root of a lower-degree threshold",
+        "claim_boundary":"algebraic complexity of published exact thresholds; not a claim that square-site p_c "
+                         "belongs to this tradition, and not a survey of every conjectured form",
+    }
+
+
 def _separation(bracket:tuple[Fraction,Fraction],lower:Fraction,upper:Fraction)->Optional[Fraction]:
     """Certified lower bound on the distance from a root bracket to an interval."""
     low,high=bracket
@@ -333,6 +434,7 @@ def build_result(contract_path:Path=DEFAULT_CONTRACT)->dict[str,Any]:
         "exclusion_table":exclusion,
         "intervals_excluded_at_every_degree":fully_excluded,
         "closest_approach_by_degree":_closest_approach(exclusion,interval_table),
+        "historical_form_complexity":_historical_forms(),
         "quartic_survivor_census":census,
         "width_scaling_diagnostic":_width_scaling(interval_table,census),
         "controls":{name:{"path":relative,"status":_load(relative).get("status")} for name,relative in sorted(CONTROL_SOURCES.items())},
@@ -415,6 +517,35 @@ def render_markdown(result:Mapping[str,Any])->str:
         lines.append(f"| `{_polynomial_text(row['coefficients_ascending'])}` | {row['height']} | "
                      f"`{row['surviving_interval_id']}` | `{row['root_decimal_prefix']}` | "
                      f"`{decimal_string(separation,13).rstrip('0')}` |")
+    historical=result["historical_form_complexity"]
+    lines+=["","## Table 6 — Algebraic complexity of the exactly-known planar thresholds","",
+            "Minimal polynomials are taken from the committed lattice-native candidate artifact; the "
+            "triangular-bond row is derived from the certified kagome-site row by the matching substitution "
+            "`p -> 1-p`.","",
+            "| Lattice | Closed form | Minimal polynomial | Degree | Height | Inside `C(<=4, <=100)` |",
+            "|---|---|---|---:|---:|---|"]
+    for row in historical["rows"]:
+        lines.append(f"| {row['lattice']} | `{row['closed_form']}` | "
+                     f"`{_polynomial_text(row['minimal_polynomial_ascending'])}` | {row['degree']} | "
+                     f"{row['height']} | {'yes' if row['inside_census_class'] else '**no**'} |")
+    lines+=["",f"Maximum degree {historical['max_degree']}, maximum height {historical['max_height']}. "
+            f"Outside the census class: {', '.join(historical['outside_census_class']) or 'none'}.",""]
+    control=_load(CONTROL_SOURCES["degree4_boundary_sensitivity"])
+    conclusion=control["conclusion"]
+    lines+=["## Table 7 — Quartic-census sensitivity at each frozen method width","",
+            "A committed quartic root witness is planted inside a synthetic interval of each method width and "
+            "the unmodified census path is re-run; the negative twin shifts the same interval one full width "
+            "away from the planted root.","",
+            "| Planted quartic | Width | Polarity | Roots found | Planted quartic reported | Expected |",
+            "|---|---|---|---:|---|---|"]
+    for row in control["trials"]:
+        lines.append(f"| `{_polynomial_text(row['planted_coefficients_ascending'])}` | `{row['width_id']}` | "
+                     f"{row['polarity']} | {row['root_containing_polynomials']} | "
+                     f"{'yes' if row['planted_quartic_detected'] else 'no'} | "
+                     f"{'yes' if row['expected_detection'] else 'no'} |")
+    lines+=["",f"All {conclusion['positive_trials']} positive and {conclusion['negative_trials']} negative "
+            f"trials behaved as required (`all_trials_passed = "
+            f"{str(conclusion['all_trials_passed']).lower()}`)."]
     return "\n".join(lines)+"\n"
 
 

@@ -285,6 +285,10 @@
   },
   "contract_sha256": "fbeead4ae587fdc417a08393f27e701aabae45209f2478a24656ed63675ad2ac",
   "controls": {
+    "degree4_boundary_sensitivity": {
+      "path": "results/pslq-degree4-synthetic-boundary-control/latest.json",
+      "status": "degree4_synthetic_boundary_control_complete"
+    },
     "kagome_positive_control": {
       "path": "results/pslq-kagome-exact-control/latest.json",
       "status": "exact_kagome_positive_control_recovered"
@@ -544,6 +548,116 @@
       "root_containing_polynomials": 0
     }
   ],
+  "historical_form_complexity": {
+    "all_inside_census_class": false,
+    "claim_boundary": "algebraic complexity of published exact thresholds; not a claim that square-site p_c belongs to this tradition, and not a survey of every conjectured form",
+    "max_degree": 6,
+    "max_height": 3,
+    "meaning": "every exactly-known planar percolation threshold is algebraic of degree at most 6 and coefficient height at most 3; the census class C(<=4, <=100) is far more generous in height than the entire historical record, but its degree bound does not reach the one known degree-6 form, which arises as a square root of a lower-degree threshold",
+    "outside_census_class": [
+      "(3,12^2) site"
+    ],
+    "recommended_extension": {
+      "class": "degree 1..6, height <= 3",
+      "hypothesis": "the one exactly-known planar threshold outside the census class is the (3,12^2) site value, a square root of a lower-degree threshold; the targeted question is therefore whether any form of degree up to the historical maximum, at the historical height, has a root in a method interval",
+      "primitive_counts_by_degree": {
+        "1": 15,
+        "2": 129,
+        "3": 975,
+        "4": 7041,
+        "5": 49935,
+        "6": 351489
+      },
+      "reason": "issue #551 sequences write-up and review before any degree or height expansion; the cost is recorded so the decision can be made with the number in hand",
+      "status": "not run here",
+      "total_polynomials_per_interval": 409584
+    },
+    "rows": [
+      {
+        "closed_form": "1/2",
+        "degree": 1,
+        "height": 2,
+        "inside_census_class": true,
+        "lattice": "square bond; triangular site",
+        "minimal_polynomial_ascending": [
+          -1,
+          2
+        ],
+        "provenance": "Sykes and Essam 1964"
+      },
+      {
+        "closed_form": "2*sin(pi/18)",
+        "degree": 3,
+        "height": 3,
+        "inside_census_class": true,
+        "lattice": "triangular bond",
+        "minimal_polynomial_ascending": [
+          1,
+          -3,
+          0,
+          1
+        ],
+        "provenance": "derived from the certified kagome-site polynomial by p -> 1-p"
+      },
+      {
+        "closed_form": "1-2*sin(pi/18)",
+        "degree": 3,
+        "height": 3,
+        "inside_census_class": true,
+        "lattice": "honeycomb bond; kagome site",
+        "minimal_polynomial_ascending": [
+          1,
+          0,
+          -3,
+          1
+        ],
+        "provenance": "results/pslq-lattice-native-candidates/latest.json"
+      },
+      {
+        "closed_form": "sqrt(1-2*sin(pi/18))",
+        "degree": 6,
+        "height": 3,
+        "inside_census_class": false,
+        "lattice": "(3,12^2) site",
+        "minimal_polynomial_ascending": [
+          1,
+          0,
+          0,
+          0,
+          -3,
+          0,
+          1
+        ],
+        "provenance": "results/pslq-lattice-native-candidates/latest.json"
+      },
+      {
+        "closed_form": "1/sqrt(2)",
+        "degree": 2,
+        "height": 2,
+        "inside_census_class": true,
+        "lattice": "martini bond",
+        "minimal_polynomial_ascending": [
+          -1,
+          0,
+          2
+        ],
+        "provenance": "results/pslq-lattice-native-candidates/latest.json"
+      },
+      {
+        "closed_form": "(sqrt(5)-1)/2",
+        "degree": 2,
+        "height": 1,
+        "inside_census_class": true,
+        "lattice": "martini descendant",
+        "minimal_polynomial_ascending": [
+          -1,
+          1,
+          1
+        ],
+        "provenance": "results/pslq-lattice-native-candidates/latest.json"
+      }
+    ]
+  },
   "interval_disjointness": {
     "adjacent_gaps": [
       {
@@ -1360,6 +1474,12 @@
       "schema": "matching-one/degree4-interval-exclusion/v1",
       "sha256": "e32540c2a45785250192bed39744419757d5d3e148f6b013c793da0f46f89aef",
       "status": "degree4_interval_exact_census_complete"
+    },
+    {
+      "path": "results/pslq-degree4-synthetic-boundary-control/latest.json",
+      "schema": "matching-one/degree4-synthetic-boundary-control/v1",
+      "sha256": "2830c59f61ddef0a6644ca286a22e0746873b57598d104aaca5ff1edeee91255",
+      "status": "degree4_synthetic_boundary_control_complete"
     },
     {
       "path": "results/pslq-kagome-exact-control/latest.json",

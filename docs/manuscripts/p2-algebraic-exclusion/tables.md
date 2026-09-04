@@ -97,3 +97,43 @@ Every survivor lies in exactly one method interval (`max_intervals_per_survivor 
 | `58x^4 + 99x^3 - 7x^2 + 99x - 84` | 99 | `mertens-2022-p-med` | `0.592746050787063060795653` | `0.0000000000024` |
 | `61x^4 + 89x^3 - 99x^2 + 94x - 47` | 99 | `mertens-2022-p-cell` | `0.592746050524477965107060` | `0.0000000002585` |
 | `96x^4 - 100x^3 + 22x^2 - 89x + 54` | 100 | `mertens-2022-p-cell` | `0.592746050520868117788040` | `0.0000000002621` |
+
+## Table 6 — Algebraic complexity of the exactly-known planar thresholds
+
+Minimal polynomials are taken from the committed lattice-native candidate artifact; the triangular-bond row is derived from the certified kagome-site row by the matching substitution `p -> 1-p`.
+
+| Lattice | Closed form | Minimal polynomial | Degree | Height | Inside `C(<=4, <=100)` |
+|---|---|---|---:|---:|---|
+| square bond; triangular site | `1/2` | `2x - 1` | 1 | 2 | yes |
+| triangular bond | `2*sin(pi/18)` | `x^3 - 3x + 1` | 3 | 3 | yes |
+| honeycomb bond; kagome site | `1-2*sin(pi/18)` | `x^3 - 3x^2 + 1` | 3 | 3 | yes |
+| (3,12^2) site | `sqrt(1-2*sin(pi/18))` | `x^6 - 3x^4 + 1` | 6 | 3 | **no** |
+| martini bond | `1/sqrt(2)` | `2x^2 - 1` | 2 | 2 | yes |
+| martini descendant | `(sqrt(5)-1)/2` | `x^2 + x - 1` | 2 | 1 | yes |
+
+Maximum degree 6, maximum height 3. Outside the census class: (3,12^2) site.
+
+## Table 7 — Quartic-census sensitivity at each frozen method width
+
+A committed quartic root witness is planted inside a synthetic interval of each method width and the unmodified census path is re-run; the negative twin shifts the same interval one full width away from the planted root.
+
+| Planted quartic | Width | Polarity | Roots found | Planted quartic reported | Expected |
+|---|---|---|---:|---|---|
+| `58x^4 + 99x^3 - 7x^2 + 99x - 84` | `jacobsen-2015-eigenvalue` | positive | 1 | yes | yes |
+| `58x^4 + 99x^3 - 7x^2 + 99x - 84` | `jacobsen-2015-eigenvalue` | negative | 0 | no | no |
+| `58x^4 + 99x^3 - 7x^2 + 99x - 84` | `mertens-2022-p-cell` | positive | 12 | yes | yes |
+| `58x^4 + 99x^3 - 7x^2 + 99x - 84` | `mertens-2022-p-cell` | negative | 13 | no | no |
+| `58x^4 + 99x^3 - 7x^2 + 99x - 84` | `mertens-2022-p-med` | positive | 1 | yes | yes |
+| `58x^4 + 99x^3 - 7x^2 + 99x - 84` | `mertens-2022-p-med` | negative | 0 | no | no |
+| `58x^4 + 99x^3 - 7x^2 + 99x - 84` | `yang-zhou-2024-corrected` | positive | 1 | yes | yes |
+| `58x^4 + 99x^3 - 7x^2 + 99x - 84` | `yang-zhou-2024-corrected` | negative | 0 | no | no |
+| `13x^4 + 62x^3 + 43x^2 + 31x - 48` | `jacobsen-2015-eigenvalue` | positive | 1 | yes | yes |
+| `13x^4 + 62x^3 + 43x^2 + 31x - 48` | `jacobsen-2015-eigenvalue` | negative | 0 | no | no |
+| `13x^4 + 62x^3 + 43x^2 + 31x - 48` | `mertens-2022-p-cell` | positive | 9 | yes | yes |
+| `13x^4 + 62x^3 + 43x^2 + 31x - 48` | `mertens-2022-p-cell` | negative | 12 | no | no |
+| `13x^4 + 62x^3 + 43x^2 + 31x - 48` | `mertens-2022-p-med` | positive | 1 | yes | yes |
+| `13x^4 + 62x^3 + 43x^2 + 31x - 48` | `mertens-2022-p-med` | negative | 0 | no | no |
+| `13x^4 + 62x^3 + 43x^2 + 31x - 48` | `yang-zhou-2024-corrected` | positive | 1 | yes | yes |
+| `13x^4 + 62x^3 + 43x^2 + 31x - 48` | `yang-zhou-2024-corrected` | negative | 0 | no | no |
+
+All 8 positive and 8 negative trials behaved as required (`all_trials_passed = true`).

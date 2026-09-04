@@ -1,0 +1,859 @@
+{
+  "census_path": {
+    "driver": "scripts/degree4_interval_exclusion.py::run_search",
+    "modified_for_this_control": false,
+    "screen": "scripts/degree4_fixed_point_screen.cpp"
+  },
+  "claim_boundary": {
+    "excluded": "new census results, degree/height expansion, a null distribution, a p-value, a claim about the planted quartics as candidate formulas, closed forms, or transcendence",
+    "included": "detection sensitivity and boundary specificity of the committed quartic census path at the four frozen method widths",
+    "parent_issue": "remain open"
+  },
+  "conclusion": {
+    "all_negative_trials_excluded_the_planted_quartic": true,
+    "all_positive_trials_detected_the_planted_quartic": true,
+    "all_trials_passed": true,
+    "meaning": "at every frozen method width the census path detects a height-100 quartic root that is present and does not report one that is absent, so a zero-survivor result at that width is a sensitivity-certified null",
+    "negative_trials": 8,
+    "positive_trials": 8
+  },
+  "contract_sha256": "fbeead4ae587fdc417a08393f27e701aabae45209f2478a24656ed63675ad2ac",
+  "issue": 551,
+  "planted_targets": [
+    {
+      "coefficients_ascending": [
+        -84,
+        99,
+        -7,
+        99,
+        58
+      ],
+      "committed_by": "results/pslq-degree4-mertens-2022-p-med/latest.json",
+      "committed_by_sha256": "91dc78561cf5d56c7370918fc7b355b30ff2c6551f1b91f423e183cb285811a2",
+      "height": 99,
+      "isolation_bits": 160,
+      "root_bracket": [
+        "270718538670849749916945886978465095609458503743/456719261665907161938651510223838443642478919680",
+        "1082874154683398999667783547913860382437834014973/1826877046663628647754606040895353774569915678720"
+      ]
+    },
+    {
+      "coefficients_ascending": [
+        -48,
+        31,
+        43,
+        62,
+        13
+      ],
+      "committed_by": "results/pslq-degree4-mertens-2022-p-cell/latest.json",
+      "committed_by_sha256": "47b545d118223919e075a7f2407865a6510977e286d90de1e221c77931e6822a",
+      "height": 62,
+      "isolation_bits": 160,
+      "root_bracket": [
+        "1082874154211452986299637893855413302184632811831/1826877046663628647754606040895353774569915678720",
+        "135359269276431623287454736731926662773079101479/228359630832953580969325755111919221821239459840"
+      ]
+    }
+  ],
+  "provenance_sha256": "95ea5cf00c124652c7347da99a83d464cf176224d81973a10b5e181379bfb1f2",
+  "schema": "matching-one/degree4-synthetic-boundary-control/v1",
+  "status": "degree4_synthetic_boundary_control_complete",
+  "trials": [
+    {
+      "expected_detection": true,
+      "lower": "991400898452796607642054473448385914023396676869206910209/1672555889889796735615178870448627112948531200000000000000",
+      "near_candidates_exactly_checked": 1543,
+      "passed": true,
+      "placement_fraction": "1/3",
+      "planted_coefficients_ascending": [
+        -84,
+        99,
+        -7,
+        99,
+        58
+      ],
+      "planted_quartic_detected": true,
+      "planted_root_bracket": [
+        "270718538670849749916945886978465095609458503743/456719261665907161938651510223838443642478919680",
+        "1082874154683398999667783547913860382437834014973/1826877046663628647754606040895353774569915678720"
+      ],
+      "polarity": "positive",
+      "root_containing_polynomials": 1,
+      "root_filter_candidates": 1,
+      "upper": "991400898452863509877650065317810521178214621953724851457/1672555889889796735615178870448627112948531200000000000000",
+      "width_id": "jacobsen-2015-eigenvalue",
+      "width_text": "1/25000000000000",
+      "witness_coefficients": [
+        [
+          -84,
+          99,
+          -7,
+          99,
+          58
+        ]
+      ]
+    },
+    {
+      "expected_detection": false,
+      "lower": "1321867864603847747497131461254602742528649693754861812289/2230074519853062314153571827264836150598041600000000000000",
+      "near_candidates_exactly_checked": 1543,
+      "passed": true,
+      "placement_fraction": "1/3",
+      "planted_coefficients_ascending": [
+        -84,
+        99,
+        -7,
+        99,
+        58
+      ],
+      "planted_quartic_detected": false,
+      "planted_root_bracket": [
+        "270718538670849749916945886978465095609458503743/456719261665907161938651510223838443642478919680",
+        "1082874154683398999667783547913860382437834014973/1826877046663628647754606040895353774569915678720"
+      ],
+      "polarity": "negative",
+      "root_containing_polynomials": 0,
+      "root_filter_candidates": 1,
+      "upper": "1321867864603936950477925583747168885401740287200885733953/2230074519853062314153571827264836150598041600000000000000",
+      "width_id": "jacobsen-2015-eigenvalue",
+      "width_text": "1/25000000000000",
+      "witness_coefficients": []
+    },
+    {
+      "expected_detection": true,
+      "lower": "7931207186908927420745044092043076613208607033654329813/13380447119118373884921430963589016903588249600000000000",
+      "near_candidates_exactly_checked": 1661,
+      "passed": true,
+      "placement_fraction": "1/3",
+      "planted_coefficients_ascending": [
+        -84,
+        99,
+        -7,
+        99,
+        58
+      ],
+      "planted_quartic_detected": true,
+      "planted_root_bracket": [
+        "270718538670849749916945886978465095609458503743/456719261665907161938651510223838443642478919680",
+        "1082874154683398999667783547913860382437834014973/1826877046663628647754606040895353774569915678720"
+      ],
+      "polarity": "positive",
+      "root_containing_polynomials": 12,
+      "root_filter_candidates": 129,
+      "upper": "7931207189049798959803983913630505567382849738228449749/13380447119118373884921430963589016903588249600000000000",
+      "width_id": "mertens-2022-p-cell",
+      "width_text": "1/6250000000",
+      "witness_coefficients": [
+        [
+          -53,
+          33,
+          44,
+          81,
+          9
+        ],
+        [
+          18,
+          10,
+          -62,
+          -18,
+          13
+        ],
+        [
+          -35,
+          43,
+          -18,
+          63,
+          22
+        ],
+        [
+          -67,
+          46,
+          73,
+          54,
+          23
+        ],
+        [
+          -49,
+          56,
+          11,
+          36,
+          36
+        ],
+        [
+          -47,
+          41,
+          88,
+          -62,
+          38
+        ],
+        [
+          22,
+          33,
+          -95,
+          -63,
+          40
+        ],
+        [
+          -84,
+          99,
+          -7,
+          99,
+          58
+        ],
+        [
+          -82,
+          84,
+          70,
+          1,
+          60
+        ],
+        [
+          16,
+          -94,
+          69,
+          34,
+          68
+        ],
+        [
+          -96,
+          97,
+          99,
+          -26,
+          74
+        ],
+        [
+          -19,
+          -51,
+          51,
+          97,
+          90
+        ]
+      ]
+    },
+    {
+      "expected_detection": false,
+      "lower": "10574942919684563741542618472212864736143463075236196373/17840596158824498513228574618118689204784332800000000000",
+      "near_candidates_exactly_checked": 1654,
+      "passed": true,
+      "placement_fraction": "1/3",
+      "planted_coefficients_ascending": [
+        -84,
+        99,
+        -7,
+        99,
+        58
+      ],
+      "planted_quartic_detected": false,
+      "planted_root_bracket": [
+        "270718538670849749916945886978465095609458503743/456719261665907161938651510223838443642478919680",
+        "1082874154683398999667783547913860382437834014973/1826877046663628647754606040895353774569915678720"
+      ],
+      "polarity": "negative",
+      "root_containing_polynomials": 13,
+      "root_filter_candidates": 124,
+      "upper": "10574942922539059126954538234329436675042453348001689621/17840596158824498513228574618118689204784332800000000000",
+      "width_id": "mertens-2022-p-cell",
+      "width_text": "1/6250000000",
+      "witness_coefficients": [
+        [
+          37,
+          -5,
+          -92,
+          -10,
+          3
+        ],
+        [
+          -58,
+          35,
+          45,
+          100,
+          5
+        ],
+        [
+          -21,
+          30,
+          -47,
+          90,
+          8
+        ],
+        [
+          -72,
+          48,
+          74,
+          73,
+          19
+        ],
+        [
+          -33,
+          28,
+          59,
+          -35,
+          24
+        ],
+        [
+          4,
+          23,
+          -33,
+          -45,
+          27
+        ],
+        [
+          -54,
+          58,
+          12,
+          55,
+          32
+        ],
+        [
+          -17,
+          53,
+          -80,
+          45,
+          35
+        ],
+        [
+          -87,
+          86,
+          71,
+          20,
+          56
+        ],
+        [
+          -50,
+          81,
+          -21,
+          10,
+          59
+        ],
+        [
+          -3,
+          -79,
+          99,
+          26,
+          78
+        ],
+        [
+          71,
+          -89,
+          -85,
+          6,
+          84
+        ],
+        [
+          -38,
+          -36,
+          81,
+          89,
+          100
+        ]
+      ]
+    },
+    {
+      "expected_detection": true,
+      "lower": "13218678645992983954766312141337294560010294280064211043/22300745198530623141535718272648361505980416000000000000",
+      "near_candidates_exactly_checked": 1548,
+      "passed": true,
+      "placement_fraction": "1/3",
+      "planted_coefficients_ascending": [
+        -84,
+        99,
+        -7,
+        99,
+        58
+      ],
+      "planted_quartic_detected": true,
+      "planted_root_bracket": [
+        "270718538670849749916945886978465095609458503743/456719261665907161938651510223838443642478919680",
+        "1082874154683398999667783547913860382437834014973/1826877046663628647754606040895353774569915678720"
+      ],
+      "polarity": "positive",
+      "root_containing_polynomials": 1,
+      "root_filter_candidates": 3,
+      "upper": "13218678646126788425957495880186508869646184449100093539/22300745198530623141535718272648361505980416000000000000",
+      "width_id": "mertens-2022-p-med",
+      "width_text": "3/500000000000",
+      "witness_coefficients": [
+        [
+          -84,
+          99,
+          -7,
+          99,
+          58
+        ]
+      ]
+    },
+    {
+      "expected_detection": false,
+      "lower": "52874714584685559665418228505878321224765924688497045609/89202980794122492566142873090593446023921664000000000000",
+      "near_candidates_exactly_checked": 1547,
+      "passed": true,
+      "placement_fraction": "1/3",
+      "planted_coefficients_ascending": [
+        -84,
+        99,
+        -7,
+        99,
+        58
+      ],
+      "planted_quartic_detected": false,
+      "planted_root_bracket": [
+        "270718538670849749916945886978465095609458503743/456719261665907161938651510223838443642478919680",
+        "1082874154683398999667783547913860382437834014973/1826877046663628647754606040895353774569915678720"
+      ],
+      "polarity": "negative",
+      "root_containing_polynomials": 0,
+      "root_filter_candidates": 4,
+      "upper": "52874714585220777550182963461275178463309485364640575593/89202980794122492566142873090593446023921664000000000000",
+      "width_id": "mertens-2022-p-med",
+      "width_text": "3/500000000000",
+      "witness_coefficients": []
+    },
+    {
+      "expected_detection": true,
+      "lower": "198280179690541480932252070191163954230061216684636597709/334511177977959347123035774089725422589706240000000000000",
+      "near_candidates_exactly_checked": 1543,
+      "passed": true,
+      "placement_fraction": "1/3",
+      "planted_coefficients_ascending": [
+        -84,
+        99,
+        -7,
+        99,
+        58
+      ],
+      "planted_quartic_detected": true,
+      "planted_root_bracket": [
+        "270718538670849749916945886978465095609458503743/456719261665907161938651510223838443642478919680",
+        "1082874154683398999667783547913860382437834014973/1826877046663628647754606040895353774569915678720"
+      ],
+      "polarity": "positive",
+      "root_containing_polynomials": 1,
+      "root_filter_candidates": 1,
+      "upper": "198280179690608383167847662060588561384879161769154538957/334511177977959347123035774089725422589706240000000000000",
+      "width_id": "yang-zhou-2024-corrected",
+      "width_text": "1/5000000000000",
+      "witness_coefficients": [
+        [
+          -84,
+          99,
+          -7,
+          99,
+          58
+        ]
+      ]
+    },
+    {
+      "expected_detection": false,
+      "lower": "264373572920840911884061590244973462804202413507791499789/446014903970612462830714365452967230119608320000000000000",
+      "near_candidates_exactly_checked": 1543,
+      "passed": true,
+      "placement_fraction": "1/3",
+      "planted_coefficients_ascending": [
+        -84,
+        99,
+        -7,
+        99,
+        58
+      ],
+      "planted_quartic_detected": false,
+      "planted_root_bracket": [
+        "270718538670849749916945886978465095609458503743/456719261665907161938651510223838443642478919680",
+        "1082874154683398999667783547913860382437834014973/1826877046663628647754606040895353774569915678720"
+      ],
+      "polarity": "negative",
+      "root_containing_polynomials": 0,
+      "root_filter_candidates": 1,
+      "upper": "264373572920930114864855712737539605677293006953815421453/446014903970612462830714365452967230119608320000000000000",
+      "width_id": "yang-zhou-2024-corrected",
+      "width_text": "1/5000000000000",
+      "witness_coefficients": []
+    },
+    {
+      "expected_detection": true,
+      "lower": "3965603592082779307538062245208031662683870614246868172297/6690223559559186942460715481794508451794124800000000000000",
+      "near_candidates_exactly_checked": 1546,
+      "passed": true,
+      "placement_fraction": "2/3",
+      "planted_coefficients_ascending": [
+        -48,
+        31,
+        43,
+        62,
+        13
+      ],
+      "planted_quartic_detected": true,
+      "planted_root_bracket": [
+        "1082874154211452986299637893855413302184632811831/1826877046663628647754606040895353774569915678720",
+        "135359269276431623287454736731926662773079101479/228359630832953580969325755111919221821239459840"
+      ],
+      "polarity": "positive",
+      "root_containing_polynomials": 1,
+      "root_filter_candidates": 1,
+      "upper": "3965603592083046916480444612685730091303142394584939937289/6690223559559186942460715481794508451794124800000000000000",
+      "width_id": "jacobsen-2015-eigenvalue",
+      "width_text": "1/25000000000000",
+      "witness_coefficients": [
+        [
+          -48,
+          31,
+          43,
+          62,
+          13
+        ]
+      ]
+    },
+    {
+      "expected_detection": false,
+      "lower": "165233483003467721768418035736285932377055149228360412083/278759314981632789269196478408104518824755200000000000000",
+      "near_candidates_exactly_checked": 1546,
+      "passed": true,
+      "placement_fraction": "2/3",
+      "planted_coefficients_ascending": [
+        -48,
+        31,
+        43,
+        62,
+        13
+      ],
+      "planted_quartic_detected": false,
+      "planted_root_bracket": [
+        "1082874154211452986299637893855413302184632811831/1826877046663628647754606040895353774569915678720",
+        "135359269276431623287454736731926662773079101479/228359630832953580969325755111919221821239459840"
+      ],
+      "polarity": "negative",
+      "root_containing_polynomials": 0,
+      "root_filter_candidates": 1,
+      "upper": "165233483003478872141017301047856700236191473409113402291/278759314981632789269196478408104518824755200000000000000",
+      "width_id": "jacobsen-2015-eigenvalue",
+      "width_text": "1/25000000000000",
+      "witness_coefficients": []
+    },
+    {
+      "expected_detection": true,
+      "lower": "31724828730954670937173364397312167709642433863580341629/53521788476473495539685723854356067614352998400000000000",
+      "near_candidates_exactly_checked": 1661,
+      "passed": true,
+      "placement_fraction": "2/3",
+      "planted_coefficients_ascending": [
+        -48,
+        31,
+        43,
+        62,
+        13
+      ],
+      "planted_quartic_detected": true,
+      "planted_root_bracket": [
+        "1082874154211452986299637893855413302184632811831/1826877046663628647754606040895353774569915678720",
+        "135359269276431623287454736731926662773079101479/228359630832953580969325755111919221821239459840"
+      ],
+      "polarity": "positive",
+      "root_containing_polynomials": 9,
+      "root_filter_candidates": 133,
+      "upper": "31724828739518157093409123683661883526339404681876821373/53521788476473495539685723854356067614352998400000000000",
+      "width_id": "mertens-2022-p-cell",
+      "width_text": "1/6250000000",
+      "witness_coefficients": [
+        [
+          34,
+          -18,
+          -14,
+          -89,
+          1
+        ],
+        [
+          -48,
+          31,
+          43,
+          62,
+          13
+        ],
+        [
+          -14,
+          13,
+          29,
+          -27,
+          14
+        ],
+        [
+          -62,
+          44,
+          72,
+          35,
+          27
+        ],
+        [
+          -92,
+          85,
+          53,
+          79,
+          53
+        ],
+        [
+          -47,
+          94,
+          -99,
+          89,
+          61
+        ],
+        [
+          18,
+          -56,
+          -41,
+          87,
+          93
+        ],
+        [
+          -14,
+          -53,
+          50,
+          78,
+          94
+        ],
+        [
+          54,
+          -89,
+          22,
+          -100,
+          96
+        ]
+      ]
+    },
+    {
+      "expected_detection": false,
+      "lower": "1321867864384464494343040133662292808505724384476546031/2230074519853062314153571827264836150598041600000000000",
+      "near_candidates_exactly_checked": 1659,
+      "passed": true,
+      "placement_fraction": "2/3",
+      "planted_coefficients_ascending": [
+        -48,
+        31,
+        43,
+        62,
+        13
+      ],
+      "planted_quartic_detected": false,
+      "planted_root_bracket": [
+        "1082874154211452986299637893855413302184632811831/1826877046663628647754606040895353774569915678720",
+        "135359269276431623287454736731926662773079101479/228359630832953580969325755111919221821239459840"
+      ],
+      "polarity": "negative",
+      "root_containing_polynomials": 12,
+      "root_filter_candidates": 130,
+      "upper": "1321867864741276417519530103926864300868098168572232687/2230074519853062314153571827264836150598041600000000000",
+      "width_id": "mertens-2022-p-cell",
+      "width_text": "1/6250000000",
+      "witness_coefficients": [
+        [
+          -53,
+          33,
+          44,
+          81,
+          9
+        ],
+        [
+          18,
+          10,
+          -62,
+          -18,
+          13
+        ],
+        [
+          -35,
+          43,
+          -18,
+          63,
+          22
+        ],
+        [
+          -67,
+          46,
+          73,
+          54,
+          23
+        ],
+        [
+          -49,
+          56,
+          11,
+          36,
+          36
+        ],
+        [
+          -31,
+          66,
+          -51,
+          18,
+          49
+        ],
+        [
+          -63,
+          69,
+          40,
+          9,
+          50
+        ],
+        [
+          -84,
+          99,
+          -7,
+          99,
+          58
+        ],
+        [
+          16,
+          -94,
+          69,
+          34,
+          68
+        ],
+        [
+          -96,
+          97,
+          99,
+          -26,
+          74
+        ],
+        [
+          2,
+          -81,
+          98,
+          7,
+          82
+        ],
+        [
+          -19,
+          -51,
+          51,
+          97,
+          90
+        ]
+      ]
+    },
+    {
+      "expected_detection": true,
+      "lower": "52874714560749290923485516565644281153371650231089860219/89202980794122492566142873090593446023921664000000000000",
+      "near_candidates_exactly_checked": 1549,
+      "passed": true,
+      "placement_fraction": "2/3",
+      "planted_coefficients_ascending": [
+        -48,
+        31,
+        43,
+        62,
+        13
+      ],
+      "planted_quartic_detected": true,
+      "planted_root_bracket": [
+        "1082874154211452986299637893855413302184632811831/1826877046663628647754606040895353774569915678720",
+        "135359269276431623287454736731926662773079101479/228359630832953580969325755111919221821239459840"
+      ],
+      "polarity": "positive",
+      "root_containing_polynomials": 1,
+      "root_filter_candidates": 4,
+      "upper": "52874714561284508808250251521041138391915210907233390203/89202980794122492566142873090593446023921664000000000000",
+      "width_id": "mertens-2022-p-med",
+      "width_text": "3/500000000000",
+      "witness_coefficients": [
+        [
+          -48,
+          31,
+          43,
+          62,
+          13
+        ]
+      ]
+    },
+    {
+      "expected_detection": false,
+      "lower": "6609339320205165091428342686413213735534698086422238123/11150372599265311570767859136324180752990208000000000000",
+      "near_candidates_exactly_checked": 1548,
+      "passed": true,
+      "placement_fraction": "2/3",
+      "planted_coefficients_ascending": [
+        -48,
+        31,
+        43,
+        62,
+        13
+      ],
+      "planted_quartic_detected": false,
+      "planted_root_bracket": [
+        "1082874154211452986299637893855413302184632811831/1826877046663628647754606040895353774569915678720",
+        "135359269276431623287454736731926662773079101479/228359630832953580969325755111919221821239459840"
+      ],
+      "polarity": "negative",
+      "root_containing_polynomials": 0,
+      "root_filter_candidates": 4,
+      "upper": "6609339320272067327023934555837820890352643170940179371/11150372599265311570767859136324180752990208000000000000",
+      "width_id": "mertens-2022-p-med",
+      "width_text": "3/500000000000",
+      "witness_coefficients": []
+    },
+    {
+      "expected_detection": true,
+      "lower": "793120718416413136738341853053500503939829173335735359797/1338044711911837388492143096358901690358824960000000000000",
+      "near_candidates_exactly_checked": 1546,
+      "passed": true,
+      "placement_fraction": "2/3",
+      "planted_coefficients_ascending": [
+        -48,
+        31,
+        43,
+        62,
+        13
+      ],
+      "planted_quartic_detected": true,
+      "planted_root_bracket": [
+        "1082874154211452986299637893855413302184632811831/1826877046663628647754606040895353774569915678720",
+        "135359269276431623287454736731926662773079101479/228359630832953580969325755111919221821239459840"
+      ],
+      "polarity": "positive",
+      "root_containing_polynomials": 1,
+      "root_filter_candidates": 1,
+      "upper": "793120718416680745680724220531198932559100953673807124789/1338044711911837388492143096358901690358824960000000000000",
+      "width_id": "yang-zhou-2024-corrected",
+      "width_text": "1/5000000000000",
+      "witness_coefficients": [
+        [
+          -48,
+          31,
+          43,
+          62,
+          13
+        ]
+      ]
+    },
+    {
+      "expected_detection": false,
+      "lower": "33046696600702464651763019396513800762720089190274474583/55751862996326557853839295681620903764951040000000000000",
+      "near_candidates_exactly_checked": 1546,
+      "passed": true,
+      "placement_fraction": "2/3",
+      "planted_coefficients_ascending": [
+        -48,
+        31,
+        43,
+        62,
+        13
+      ],
+      "planted_quartic_detected": false,
+      "planted_root_bracket": [
+        "1082874154211452986299637893855413302184632811831/1826877046663628647754606040895353774569915678720",
+        "135359269276431623287454736731926662773079101479/228359630832953580969325755111919221821239459840"
+      ],
+      "polarity": "negative",
+      "root_containing_polynomials": 0,
+      "root_filter_candidates": 1,
+      "upper": "33046696600713615024362284708084568621856413371027464791/55751862996326557853839295681620903764951040000000000000",
+      "width_id": "yang-zhou-2024-corrected",
+      "width_text": "1/5000000000000",
+      "witness_coefficients": []
+    }
+  ],
+  "widths_tested": {
+    "jacobsen-2015-eigenvalue": "1/25000000000000",
+    "mertens-2022-p-cell": "1/6250000000",
+    "mertens-2022-p-med": "3/500000000000",
+    "yang-zhou-2024-corrected": "1/5000000000000"
+  }
+}

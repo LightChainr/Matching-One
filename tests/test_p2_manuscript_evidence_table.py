@@ -17,6 +17,7 @@ from p2_manuscript_evidence_table import (  # noqa: E402
     build_result,
     decimal_prefix,
     decimal_string,
+    _reflect,
     render_markdown,
     validate_result,
 )
@@ -108,6 +109,56 @@ class P2ManuscriptEvidenceTests(unittest.TestCase):
         for row in self.result["closest_approach_by_degree"]["rows"]:
             with self.subTest(degree=row["degree"], interval=row["interval_id"]):
                 self.assertEqual(excluded[(row["degree"], row["interval_id"])], not row["root_inside_interval"])
+
+    def test_historical_forms_are_low_complexity_and_certified(self) -> None:
+        historical = self.result["historical_form_complexity"]
+        self.assertEqual(historical["max_degree"], 6)
+        self.assertEqual(historical["max_height"], 3)
+        self.assertFalse(historical["all_inside_census_class"])
+        self.assertEqual(historical["outside_census_class"], ["(3,12^2) site"])
+        native = json.loads((ROOT / "results" / "pslq-lattice-native-candidates" / "latest.json").read_text(encoding="utf-8"))
+        certified = {tuple(row["minimal_polynomial_coefficients_ascending"]) for row in native["candidates"]}
+        for row in historical["rows"]:
+            coefficients = row["minimal_polynomial_ascending"]
+            with self.subTest(lattice=row["lattice"]):
+                self.assertEqual(row["degree"], len(coefficients) - 1)
+                self.assertEqual(row["height"], max(abs(value) for value in coefficients))
+                self.assertGreater(coefficients[-1], 0)
+                self.assertEqual(row["inside_census_class"], row["degree"] <= 4 and row["height"] <= 100)
+        # every row is either certified by the native artifact, a matching reflection of one, or 1/2
+        for row in historical["rows"]:
+            coefficients = tuple(row["minimal_polynomial_ascending"])
+            with self.subTest(lattice=row["lattice"]):
+                self.assertTrue(
+                    coefficients in certified
+                    or tuple(_reflect(list(coefficients))) in certified
+                    or coefficients == (-1, 2),
+                    coefficients,
+                )
+
+    def test_matching_reflection_is_an_involution_and_matches_sykes_essam(self) -> None:
+        kagome = [1, 0, -3, 1]
+        triangular = _reflect(kagome)
+        self.assertEqual(triangular, [1, -3, 0, 1])
+        self.assertEqual(_reflect(triangular), kagome)
+
+    def test_recommended_extension_is_costed_and_not_run(self) -> None:
+        extension = self.result["historical_form_complexity"]["recommended_extension"]
+        self.assertEqual(extension["status"], "not run here")
+        self.assertEqual(extension["total_polynomials_per_interval"], sum(extension["primitive_counts_by_degree"].values()))
+        self.assertEqual(sorted(extension["primitive_counts_by_degree"], key=int), ["1", "2", "3", "4", "5", "6"])
+        self.assertLess(
+            extension["total_polynomials_per_interval"],
+            self.result["search_class"]["polynomials_per_interval"],
+        )
+
+    def test_sensitivity_control_is_digested_as_a_source(self) -> None:
+        paths = {artifact["path"] for artifact in self.result["source_artifacts"]}
+        self.assertIn("results/pslq-degree4-synthetic-boundary-control/latest.json", paths)
+        control = json.loads(
+            (ROOT / "results" / "pslq-degree4-synthetic-boundary-control" / "latest.json").read_text(encoding="utf-8")
+        )
+        self.assertTrue(control["conclusion"]["all_trials_passed"])
 
     def test_every_quartic_survivor_survives_exactly_one_interval(self) -> None:
         census = self.result["quartic_survivor_census"]
