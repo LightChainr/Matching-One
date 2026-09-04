@@ -94,7 +94,7 @@ That is a self-contained asymptotic theorem program. If the three obligations cl
 
 #### A1. P1 — continuation representations and predictive non-compression
 
-**Current status:** submitted manuscript exists; post-submission theorem strengthening is present in open Draft PRs #549/#550.
+**Current status:** a submitted manuscript exists; PRs #549/#550 contain theorem strengthening whose inclusion status in that submitted version must be audited.
 
 **Central claim:** unbranched survival information does not close delayed branching; the failure amplifies to an unbounded number of exact branching-predictive classes, and natural bounded summaries still fail inside the finite two-terminal continuation category.
 
