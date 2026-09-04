@@ -1,0 +1,1716 @@
+{
+  "claim_boundary": {
+    "excluded": "new census computation, degree/height expansion, near-hit promotion, p-values, closed forms, or transcendence",
+    "included": "assembly and exact cross-interval resolution of the committed degree-1..4 census artifacts",
+    "parent_issue": "remain open"
+  },
+  "closest_approach_by_degree": {
+    "approach_resolution_by_degree": {
+      "1": {
+        "closest_approach_decimal": "0.000153457927407407407407407407",
+        "closest_approach_text": "103584101/675000000000"
+      },
+      "2": {
+        "closest_approach_decimal": "0.000000069785998033141948735237",
+        "closest_approach_text": "8330703515206320130269/119375000000000000000000000000"
+      },
+      "3": {
+        "closest_approach_decimal": "0.000000000710343145459849755761",
+        "closest_approach_text": "4517338440658732040543887133074467/6359375000000000000000000000000000000000000"
+      },
+      "4": {
+        "closest_approach_decimal": "0.000000000000000000000000000000",
+        "closest_approach_text": "0/1"
+      }
+    },
+    "approach_resolution_strictly_decreasing_in_degree": true,
+    "boundary_degree": 4,
+    "claim_boundary": "a certified distance floor for the committed closest polynomials only; not an equidistribution theorem, a null distribution, or a p-value",
+    "degrees_whose_closest_polynomial_stays_further_than_one_interval_width": [
+      1,
+      2,
+      3
+    ],
+    "meaning": "the search class approaches the method intervals more closely at each higher degree; degree 4 is the first degree whose closest polynomial no longer stays more than one interval width away, and it is also the first degree with surviving polynomials",
+    "rows": [
+      {
+        "closest_coefficients_ascending": [
+          -16,
+          27
+        ],
+        "degree": 1,
+        "derivative_bound_on_unit_interval": 27,
+        "floor_to_interval_width_ratio_decimal": "3836454987.185185",
+        "floor_to_interval_width_ratio_text": "103584284654/27",
+        "interval_id": "jacobsen-2015-eigenvalue",
+        "root_distance_lower_bound_decimal": "0.000153458199487407407407407407",
+        "root_distance_lower_bound_text": "51792142327/337500000000000",
+        "root_inside_interval": false
+      },
+      {
+        "closest_coefficients_ascending": [
+          -16,
+          27
+        ],
+        "degree": 1,
+        "derivative_bound_on_unit_interval": 27,
+        "floor_to_interval_width_ratio_decimal": "25576365.067901",
+        "floor_to_interval_width_ratio_text": "4143371141/162",
+        "interval_id": "mertens-2022-p-med",
+        "root_distance_lower_bound_decimal": "0.000153458190407407407407407407",
+        "root_distance_lower_bound_text": "4143371141/27000000000000",
+        "root_inside_interval": false
+      },
+      {
+        "closest_coefficients_ascending": [
+          -16,
+          27
+        ],
+        "degree": 1,
+        "derivative_bound_on_unit_interval": 27,
+        "floor_to_interval_width_ratio_decimal": "959112.046296",
+        "floor_to_interval_width_ratio_text": "103584101/108",
+        "interval_id": "mertens-2022-p-cell",
+        "root_distance_lower_bound_decimal": "0.000153457927407407407407407407",
+        "root_distance_lower_bound_text": "103584101/675000000000",
+        "root_inside_interval": false
+      },
+      {
+        "closest_coefficients_ascending": [
+          -16,
+          27
+        ],
+        "degree": 1,
+        "derivative_bound_on_unit_interval": 27,
+        "floor_to_interval_width_ratio_decimal": "767290984.537037",
+        "floor_to_interval_width_ratio_text": "41433713165/54",
+        "interval_id": "yang-zhou-2024-corrected",
+        "root_distance_lower_bound_decimal": "0.000153458196907407407407407407",
+        "root_distance_lower_bound_text": "8286742633/54000000000000",
+        "root_inside_interval": false
+      },
+      {
+        "closest_coefficients_ascending": [
+          -64,
+          73,
+          59
+        ],
+        "degree": 2,
+        "derivative_bound_on_unit_interval": 191,
+        "floor_to_interval_width_ratio_decimal": "1744649.950828",
+        "floor_to_interval_width_ratio_text": "8330703515206320130269/4775000000000000",
+        "interval_id": "jacobsen-2015-eigenvalue",
+        "root_distance_lower_bound_decimal": "0.000000069785998033141948735237",
+        "root_distance_lower_bound_text": "8330703515206320130269/119375000000000000000000000000",
+        "root_inside_interval": false
+      },
+      {
+        "closest_coefficients_ascending": [
+          -64,
+          73,
+          59
+        ],
+        "degree": 2,
+        "derivative_bound_on_unit_interval": 191,
+        "floor_to_interval_width_ratio_decimal": "11631.388839",
+        "floor_to_interval_width_ratio_text": "4443190536572057087/382000000000000",
+        "interval_id": "mertens-2022-p-med",
+        "root_distance_lower_bound_decimal": "0.000000069788333035163200319371",
+        "root_distance_lower_bound_text": "13329571609716171261/191000000000000000000000000",
+        "root_inside_interval": false
+      },
+      {
+        "closest_coefficients_ascending": [
+          -64,
+          73,
+          59
+        ],
+        "degree": 2,
+        "derivative_bound_on_unit_interval": 191,
+        "floor_to_interval_width_ratio_decimal": "436.686927",
+        "floor_to_interval_width_ratio_text": "8340720318387949/19100000000000",
+        "interval_id": "mertens-2022-p-cell",
+        "root_distance_lower_bound_decimal": "0.000000069869908426286483769633",
+        "root_distance_lower_bound_text": "8340720318387949/119375000000000000000000",
+        "root_inside_interval": false
+      },
+      {
+        "closest_coefficients_ascending": [
+          -64,
+          73,
+          59
+        ],
+        "degree": 2,
+        "derivative_bound_on_unit_interval": 191,
+        "floor_to_interval_width_ratio_decimal": "348939.045782",
+        "floor_to_interval_width_ratio_text": "1332947154889237606069/3820000000000000",
+        "interval_id": "yang-zhou-2024-corrected",
+        "root_distance_lower_bound_decimal": "0.000000069787809156504586705183",
+        "root_distance_lower_bound_text": "1332947154889237606069/19100000000000000000000000000",
+        "root_inside_interval": false
+      },
+      {
+        "closest_coefficients_ascending": [
+          -63,
+          40,
+          65,
+          79
+        ],
+        "degree": 3,
+        "derivative_bound_on_unit_interval": 407,
+        "floor_to_interval_width_ratio_decimal": "17758.578636",
+        "floor_to_interval_width_ratio_text": "4517338440658732040543887133074467/254375000000000000000000000000",
+        "interval_id": "jacobsen-2015-eigenvalue",
+        "root_distance_lower_bound_decimal": "0.000000000710343145459849755761",
+        "root_distance_lower_bound_text": "4517338440658732040543887133074467/6359375000000000000000000000000000000000000",
+        "root_inside_interval": false
+      },
+      {
+        "closest_coefficients_ascending": [
+          -63,
+          40,
+          65,
+          79
+        ],
+        "degree": 3,
+        "derivative_bound_on_unit_interval": 407,
+        "floor_to_interval_width_ratio_decimal": "118.646469",
+        "floor_to_interval_width_ratio_text": "96578226225761623319993931183/814000000000000000000000000",
+        "interval_id": "mertens-2022-p-med",
+        "root_distance_lower_bound_decimal": "0.000000000711878817388906314397",
+        "root_distance_lower_bound_text": "289734678677284869959981793549/407000000000000000000000000000000000000",
+        "root_inside_interval": false
+      },
+      {
+        "closest_coefficients_ascending": [
+          -63,
+          40,
+          65,
+          79
+        ],
+        "degree": 3,
+        "derivative_bound_on_unit_interval": 407,
+        "floor_to_interval_width_ratio_decimal": "4.784555",
+        "floor_to_interval_width_ratio_text": "4868285312770582777358123/1017500000000000000000000",
+        "interval_id": "mertens-2022-p-cell",
+        "root_distance_lower_bound_decimal": "0.000000000765528894391442992017",
+        "root_distance_lower_bound_text": "4868285312770582777358123/6359375000000000000000000000000000",
+        "root_inside_interval": false
+      },
+      {
+        "closest_coefficients_ascending": [
+          -63,
+          40,
+          65,
+          79
+        ],
+        "degree": 3,
+        "derivative_bound_on_unit_interval": 407,
+        "floor_to_interval_width_ratio_decimal": "3557.671378",
+        "floor_to_interval_width_ratio_text": "289594450173250534212550929161433/81400000000000000000000000000",
+        "interval_id": "yang-zhou-2024-corrected",
+        "root_distance_lower_bound_decimal": "0.000000000711534275609952172512",
+        "root_distance_lower_bound_text": "289594450173250534212550929161433/407000000000000000000000000000000000000000",
+        "root_inside_interval": false
+      },
+      {
+        "closest_coefficients_ascending": [
+          -84,
+          99,
+          -7,
+          99,
+          58
+        ],
+        "degree": 4,
+        "derivative_bound_on_unit_interval": 642,
+        "floor_to_interval_width_ratio_decimal": "47.545308",
+        "floor_to_interval_width_ratio_text": "4968113293252801544466655463368227803796143/104492187500000000000000000000000000000000",
+        "interval_id": "jacobsen-2015-eigenvalue",
+        "root_distance_lower_bound_decimal": "0.000000000001901812341043315432",
+        "root_distance_lower_bound_text": "4968113293252801544466655463368227803796143/2612304687500000000000000000000000000000000000000000000",
+        "root_inside_interval": false
+      },
+      {
+        "closest_coefficients_ascending": [
+          -84,
+          99,
+          -7,
+          99,
+          58
+        ],
+        "degree": 4,
+        "derivative_bound_on_unit_interval": 642,
+        "floor_to_interval_width_ratio_decimal": "0.000000",
+        "floor_to_interval_width_ratio_text": "0/1",
+        "interval_id": "mertens-2022-p-med",
+        "root_distance_lower_bound_decimal": "0.000000000000000000000000000000",
+        "root_distance_lower_bound_text": "0/1",
+        "root_inside_interval": true
+      },
+      {
+        "closest_coefficients_ascending": [
+          -97,
+          87,
+          54,
+          98,
+          49
+        ],
+        "degree": 4,
+        "derivative_bound_on_unit_interval": 685,
+        "floor_to_interval_width_ratio_decimal": "0.000000",
+        "floor_to_interval_width_ratio_text": "0/1",
+        "interval_id": "mertens-2022-p-cell",
+        "root_distance_lower_bound_decimal": "0.000000000000000000000000000000",
+        "root_distance_lower_bound_text": "0/1",
+        "root_inside_interval": true
+      },
+      {
+        "closest_coefficients_ascending": [
+          -84,
+          99,
+          -7,
+          99,
+          58
+        ],
+        "degree": 4,
+        "derivative_bound_on_unit_interval": 642,
+        "floor_to_interval_width_ratio_decimal": "4.618952",
+        "floor_to_interval_width_ratio_text": "1581529430569369536835454487218843412783/342400000000000000000000000000000000000",
+        "interval_id": "yang-zhou-2024-corrected",
+        "root_distance_lower_bound_decimal": "0.000000000000923790555239117720",
+        "root_distance_lower_bound_text": "1581529430569369536835454487218843412783/1712000000000000000000000000000000000000000000000000",
+        "root_inside_interval": false
+      }
+    ]
+  },
+  "contract_sha256": "fbeead4ae587fdc417a08393f27e701aabae45209f2478a24656ed63675ad2ac",
+  "controls": {
+    "degree4_boundary_sensitivity": {
+      "path": "results/pslq-degree4-synthetic-boundary-control/latest.json",
+      "status": "degree4_synthetic_boundary_control_complete"
+    },
+    "degree6_low_height_control": {
+      "path": "results/pslq-degree6-low-height-control/latest.json",
+      "status": "degree6_low_height_control_complete"
+    },
+    "kagome_positive_control": {
+      "path": "results/pslq-kagome-exact-control/latest.json",
+      "status": "exact_kagome_positive_control_recovered"
+    },
+    "lattice_native_candidates": {
+      "path": "results/pslq-lattice-native-candidates/latest.json",
+      "status": "lattice_native_candidate_comparison_complete"
+    },
+    "look_elsewhere_ledger": {
+      "path": "results/pslq-look-elsewhere-ledger/latest.json",
+      "status": "exact_frozen_hypothesis_count_ledger"
+    },
+    "standard_constant_pairwise": {
+      "path": "results/pslq-standard-constant-pairwise/latest.json",
+      "status": "standard_constant_pairwise_search_complete"
+    },
+    "standard_constant_stability": {
+      "path": "results/pslq-standard-constant-stability/latest.json",
+      "status": "standard_constant_stability_audit_complete"
+    },
+    "synthetic_false_positive_calibration": {
+      "path": "results/pslq-synthetic-false-positive-calibration/latest.json",
+      "status": "seeded_degree1_false_positive_calibration_complete"
+    }
+  },
+  "exclusion_table": [
+    {
+      "closest_coefficients_ascending": [
+        -16,
+        27
+      ],
+      "closest_height": 27,
+      "closest_minimum_absolute_residual": "51792142327/12500000000000",
+      "degree": 1,
+      "excluded": true,
+      "interval_id": "jacobsen-2015-eigenvalue",
+      "polynomials_searched": 12175,
+      "root_containing_polynomials": 0
+    },
+    {
+      "closest_coefficients_ascending": [
+        -16,
+        27
+      ],
+      "closest_height": 27,
+      "closest_minimum_absolute_residual": "4143371141/1000000000000",
+      "degree": 1,
+      "excluded": true,
+      "interval_id": "mertens-2022-p-med",
+      "polynomials_searched": 12175,
+      "root_containing_polynomials": 0
+    },
+    {
+      "closest_coefficients_ascending": [
+        -16,
+        27
+      ],
+      "closest_height": 27,
+      "closest_minimum_absolute_residual": "103584101/25000000000",
+      "degree": 1,
+      "excluded": true,
+      "interval_id": "mertens-2022-p-cell",
+      "polynomials_searched": 12175,
+      "root_containing_polynomials": 0
+    },
+    {
+      "closest_coefficients_ascending": [
+        -16,
+        27
+      ],
+      "closest_height": 27,
+      "closest_minimum_absolute_residual": "8286742633/2000000000000",
+      "degree": 1,
+      "excluded": true,
+      "interval_id": "yang-zhou-2024-corrected",
+      "polynomials_searched": 12175,
+      "root_containing_polynomials": 0
+    },
+    {
+      "closest_coefficients_ascending": [
+        -64,
+        73,
+        59
+      ],
+      "closest_height": 73,
+      "closest_minimum_absolute_residual": "8330703515206320130269/625000000000000000000000000",
+      "degree": 2,
+      "excluded": true,
+      "interval_id": "jacobsen-2015-eigenvalue",
+      "polynomials_searched": 3355121,
+      "root_containing_polynomials": 0
+    },
+    {
+      "closest_coefficients_ascending": [
+        -64,
+        73,
+        59
+      ],
+      "closest_height": 73,
+      "closest_minimum_absolute_residual": "13329571609716171261/1000000000000000000000000",
+      "degree": 2,
+      "excluded": true,
+      "interval_id": "mertens-2022-p-med",
+      "polynomials_searched": 3355121,
+      "root_containing_polynomials": 0
+    },
+    {
+      "closest_coefficients_ascending": [
+        -64,
+        73,
+        59
+      ],
+      "closest_height": 73,
+      "closest_minimum_absolute_residual": "8340720318387949/625000000000000000000",
+      "degree": 2,
+      "excluded": true,
+      "interval_id": "mertens-2022-p-cell",
+      "polynomials_searched": 3355121,
+      "root_containing_polynomials": 0
+    },
+    {
+      "closest_coefficients_ascending": [
+        -64,
+        73,
+        59
+      ],
+      "closest_height": 73,
+      "closest_minimum_absolute_residual": "1332947154889237606069/100000000000000000000000000",
+      "degree": 2,
+      "excluded": true,
+      "interval_id": "yang-zhou-2024-corrected",
+      "polynomials_searched": 3355121,
+      "root_containing_polynomials": 0
+    },
+    {
+      "closest_coefficients_ascending": [
+        -63,
+        40,
+        65,
+        79
+      ],
+      "closest_height": 79,
+      "closest_minimum_absolute_residual": "4517338440658732040543887133074467/15625000000000000000000000000000000000000",
+      "degree": 3,
+      "excluded": true,
+      "interval_id": "jacobsen-2015-eigenvalue",
+      "polynomials_searched": 749507743,
+      "root_containing_polynomials": 0
+    },
+    {
+      "closest_coefficients_ascending": [
+        -63,
+        40,
+        65,
+        79
+      ],
+      "closest_height": 79,
+      "closest_minimum_absolute_residual": "289734678677284869959981793549/1000000000000000000000000000000000000",
+      "degree": 3,
+      "excluded": true,
+      "interval_id": "mertens-2022-p-med",
+      "polynomials_searched": 749507743,
+      "root_containing_polynomials": 0
+    },
+    {
+      "closest_coefficients_ascending": [
+        -63,
+        40,
+        65,
+        79
+      ],
+      "closest_height": 79,
+      "closest_minimum_absolute_residual": "4868285312770582777358123/15625000000000000000000000000000",
+      "degree": 3,
+      "excluded": true,
+      "interval_id": "mertens-2022-p-cell",
+      "polynomials_searched": 749507743,
+      "root_containing_polynomials": 0
+    },
+    {
+      "closest_coefficients_ascending": [
+        -63,
+        40,
+        65,
+        79
+      ],
+      "closest_height": 79,
+      "closest_minimum_absolute_residual": "289594450173250534212550929161433/1000000000000000000000000000000000000000",
+      "degree": 3,
+      "excluded": true,
+      "interval_id": "yang-zhou-2024-corrected",
+      "polynomials_searched": 749507743,
+      "root_containing_polynomials": 0
+    },
+    {
+      "closest_coefficients_ascending": [
+        -84,
+        99,
+        -7,
+        99,
+        58
+      ],
+      "closest_height": 99,
+      "closest_minimum_absolute_residual": "14904339879758404633399966390104683411388429/12207031250000000000000000000000000000000000000000000",
+      "degree": 4,
+      "excluded": true,
+      "interval_id": "jacobsen-2015-eigenvalue",
+      "polynomials_searched": 157309446881,
+      "root_containing_polynomials": 0
+    },
+    {
+      "closest_coefficients_ascending": [
+        -84,
+        99,
+        -7,
+        99,
+        58
+      ],
+      "closest_height": 99,
+      "closest_minimum_absolute_residual": "0/1",
+      "degree": 4,
+      "excluded": false,
+      "interval_id": "mertens-2022-p-med",
+      "polynomials_searched": 157309446881,
+      "root_containing_polynomials": 1
+    },
+    {
+      "closest_coefficients_ascending": [
+        -97,
+        87,
+        54,
+        98,
+        49
+      ],
+      "closest_height": 98,
+      "closest_minimum_absolute_residual": "0/1",
+      "degree": 4,
+      "excluded": false,
+      "interval_id": "mertens-2022-p-cell",
+      "polynomials_searched": 157309446881,
+      "root_containing_polynomials": 15
+    },
+    {
+      "closest_coefficients_ascending": [
+        -84,
+        99,
+        -7,
+        99,
+        58
+      ],
+      "closest_height": 99,
+      "closest_minimum_absolute_residual": "4744588291708108610506363461656530238349/8000000000000000000000000000000000000000000000000",
+      "degree": 4,
+      "excluded": true,
+      "interval_id": "yang-zhou-2024-corrected",
+      "polynomials_searched": 157309446881,
+      "root_containing_polynomials": 0
+    }
+  ],
+  "historical_form_complexity": {
+    "all_inside_census_class": false,
+    "claim_boundary": "algebraic complexity of published exact thresholds; not a claim that square-site p_c belongs to this tradition, and not a survey of every conjectured form",
+    "historical_class_closure": {
+      "artifacts": [
+        "results/pslq-degree6-low-height-jacobsen-2015-eigenvalue/latest.json",
+        "results/pslq-degree6-low-height-mertens-2022-p-cell/latest.json",
+        "results/pslq-degree6-low-height-mertens-2022-p-med/latest.json",
+        "results/pslq-degree6-low-height-yang-zhou-2024-corrected/latest.json"
+      ],
+      "class": "degree 1..6, height <= 3",
+      "control": "results/pslq-degree6-low-height-control/latest.json",
+      "hypothesis": "the one exactly-known planar threshold outside the census class is the (3,12^2) site value, a square root of a lower-degree threshold; the targeted question is therefore whether any form of degree up to the historical maximum, at the historical height, has a root in a method interval",
+      "issue": 559,
+      "primitive_counts_by_degree": {
+        "1": 15,
+        "2": 129,
+        "3": 975,
+        "4": 7041,
+        "5": 49935,
+        "6": 351489
+      },
+      "status": "executed",
+      "total_polynomials_per_interval": 409584
+    },
+    "max_degree": 6,
+    "max_height": 3,
+    "meaning": "every exactly-known planar percolation threshold is algebraic of degree at most 6 and coefficient height at most 3; the census class C(<=4, <=100) is far more generous in height than the entire historical record, but its degree bound does not reach the one known degree-6 form, which arises as a square root of a lower-degree threshold",
+    "outside_census_class": [
+      "(3,12^2) site"
+    ],
+    "rows": [
+      {
+        "closed_form": "1/2",
+        "degree": 1,
+        "height": 2,
+        "inside_census_class": true,
+        "lattice": "square bond; triangular site",
+        "minimal_polynomial_ascending": [
+          -1,
+          2
+        ],
+        "provenance": "Sykes and Essam 1964"
+      },
+      {
+        "closed_form": "2*sin(pi/18)",
+        "degree": 3,
+        "height": 3,
+        "inside_census_class": true,
+        "lattice": "triangular bond",
+        "minimal_polynomial_ascending": [
+          1,
+          -3,
+          0,
+          1
+        ],
+        "provenance": "derived from the certified kagome-site polynomial by p -> 1-p"
+      },
+      {
+        "closed_form": "1-2*sin(pi/18)",
+        "degree": 3,
+        "height": 3,
+        "inside_census_class": true,
+        "lattice": "honeycomb bond; kagome site",
+        "minimal_polynomial_ascending": [
+          1,
+          0,
+          -3,
+          1
+        ],
+        "provenance": "results/pslq-lattice-native-candidates/latest.json"
+      },
+      {
+        "closed_form": "sqrt(1-2*sin(pi/18))",
+        "degree": 6,
+        "height": 3,
+        "inside_census_class": false,
+        "lattice": "(3,12^2) site",
+        "minimal_polynomial_ascending": [
+          1,
+          0,
+          0,
+          0,
+          -3,
+          0,
+          1
+        ],
+        "provenance": "results/pslq-lattice-native-candidates/latest.json"
+      },
+      {
+        "closed_form": "1/sqrt(2)",
+        "degree": 2,
+        "height": 2,
+        "inside_census_class": true,
+        "lattice": "martini bond",
+        "minimal_polynomial_ascending": [
+          -1,
+          0,
+          2
+        ],
+        "provenance": "results/pslq-lattice-native-candidates/latest.json"
+      },
+      {
+        "closed_form": "(sqrt(5)-1)/2",
+        "degree": 2,
+        "height": 1,
+        "inside_census_class": true,
+        "lattice": "martini descendant",
+        "minimal_polynomial_ascending": [
+          -1,
+          1,
+          1
+        ],
+        "provenance": "results/pslq-lattice-native-candidates/latest.json"
+      }
+    ]
+  },
+  "historical_range_exclusion": {
+    "claim_boundary": "exhaustive over degree <= 6 at height <= 3 only; says nothing about height > 3 or degree > 6, and is not a transcendence or non-algebraicity claim",
+    "excluded_on_every_interval": true,
+    "meaning": "no algebraic form at the complexity of any exactly-known planar percolation threshold has a root in any of the four published intervals",
+    "polynomials_per_interval": 409584,
+    "rows": [
+      {
+        "closest_coefficients_ascending": [
+          -1,
+          2
+        ],
+        "degree": 1,
+        "floor_to_width_ratio_max_decimal": "1545767513201.333",
+        "floor_to_width_ratio_min_decimal": "386441877.166",
+        "polynomials_in_class": 15,
+        "root_containing_total": 0,
+        "root_distance_lower_bound_decimal": "0.061830700528053333333333333333",
+        "root_distance_lower_bound_text": "1159325634901/18750000000000",
+        "screen_candidates_total": 0
+      },
+      {
+        "closest_coefficients_ascending": [
+          -1,
+          0,
+          3
+        ],
+        "degree": 2,
+        "floor_to_width_ratio_max_decimal": "150121228302.281",
+        "floor_to_width_ratio_min_decimal": "37530306.403",
+        "polynomials_in_class": 129,
+        "root_containing_total": 0,
+        "root_distance_lower_bound_decimal": "0.006004849132091249954019131022",
+        "root_distance_lower_bound_text": "8444319092003320247839403/1406250000000000000000000000",
+        "screen_candidates_total": 0
+      },
+      {
+        "closest_coefficients_ascending": [
+          -1,
+          1,
+          0,
+          2
+        ],
+        "degree": 3,
+        "floor_to_width_ratio_max_decimal": "12869705979.670",
+        "floor_to_width_ratio_min_decimal": "3217426.201",
+        "polynomials_in_class": 975,
+        "root_containing_total": 0,
+        "root_distance_lower_bound_decimal": "0.000514788239186816220488489970",
+        "root_distance_lower_bound_text": "9049012016955753875774237768819934701/17578125000000000000000000000000000000000",
+        "screen_candidates_total": 0
+      },
+      {
+        "closest_coefficients_ascending": [
+          -3,
+          3,
+          1,
+          3,
+          2
+        ],
+        "degree": 4,
+        "floor_to_width_ratio_max_decimal": "1047421635.119",
+        "floor_to_width_ratio_min_decimal": "261854.897",
+        "polynomials_in_class": 7041,
+        "root_containing_total": 0,
+        "root_distance_lower_bound_decimal": "0.000041896865404784328932319242",
+        "root_distance_lower_bound_text": "5114363452732462027871001301591623994594062199867/122070312500000000000000000000000000000000000000000000",
+        "screen_candidates_total": 0
+      },
+      {
+        "closest_coefficients_ascending": [
+          -2,
+          2,
+          2,
+          -1,
+          2,
+          1
+        ],
+        "degree": 5,
+        "floor_to_width_ratio_max_decimal": "5447404.679",
+        "floor_to_width_ratio_min_decimal": "1361.938",
+        "polynomials_in_class": 49935,
+        "root_containing_total": 0,
+        "root_distance_lower_bound_decimal": "0.000000217896187168151545701674",
+        "root_distance_lower_bound_text": "31918386792209699077393684662048260205526894451320027034976919/146484375000000000000000000000000000000000000000000000000000000000000",
+        "screen_candidates_total": 0
+      },
+      {
+        "closest_coefficients_ascending": [
+          0,
+          -2,
+          2,
+          2,
+          -1,
+          2,
+          1
+        ],
+        "degree": 6,
+        "floor_to_width_ratio_max_decimal": "2306376.864",
+        "floor_to_width_ratio_min_decimal": "576.631",
+        "polynomials_in_class": 351489,
+        "root_containing_total": 0,
+        "root_distance_lower_bound_decimal": "0.000000092255074590416030211212",
+        "root_distance_lower_bound_text": "67569634709777365877353206112713488002499724031388667655912144262020953851/732421875000000000000000000000000000000000000000000000000000000000000000000000000",
+        "screen_candidates_total": 0
+      }
+    ],
+    "screen_retained_nothing": true,
+    "sensitivity_control": {
+      "all_trials_passed": true,
+      "closed_form": "sqrt(1-2*sin(pi/18))",
+      "negative_trials": 4,
+      "planted_coefficients_ascending": [
+        1,
+        0,
+        0,
+        0,
+        -3,
+        0,
+        1
+      ],
+      "positive_trials": 4
+    }
+  },
+  "interval_disjointness": {
+    "adjacent_gaps": [
+      {
+        "above_interval_id": "mertens-2022-p-med",
+        "below_interval_id": "mertens-2022-p-cell",
+        "gap_decimal": "0.000000000103000000000000",
+        "gap_text": "103/1000000000000"
+      },
+      {
+        "above_interval_id": "yang-zhou-2024-corrected",
+        "below_interval_id": "mertens-2022-p-med",
+        "gap_decimal": "0.000000000000500000000000",
+        "gap_text": "1/2000000000000"
+      },
+      {
+        "above_interval_id": "jacobsen-2015-eigenvalue",
+        "below_interval_id": "yang-zhou-2024-corrected",
+        "gap_decimal": "0.000000000002380000000000",
+        "gap_text": "119/50000000000000"
+      }
+    ],
+    "ascending_order": [
+      "mertens-2022-p-cell",
+      "mertens-2022-p-med",
+      "yang-zhou-2024-corrected",
+      "jacobsen-2015-eigenvalue"
+    ],
+    "meaning": "the four method intervals do not intersect, so no single pooled interval represents the literature",
+    "pairwise_disjoint": true
+  },
+  "intervals": [
+    {
+      "citation": "Jesper Lykke Jacobsen, Critical points of Potts and O(N) models from eigenvalue identities in periodic Temperley-Lieb algebras, J. Phys. A 48 (2015) 454003.",
+      "confidence_homogenized": false,
+      "doi": "10.1088/1751-8113/48/45/454003",
+      "estimator": "eigenvalue identity between topological transfer-matrix sectors",
+      "geometry": "n x infinity semi-infinite cylinder with periodic transverse direction",
+      "interval_id": "jacobsen-2015-eigenvalue",
+      "lower": "0.59274605079208",
+      "source_id": "jacobsen_2015_eigenvalue_identity",
+      "source_location": "paper abstract/conclusion extrapolation",
+      "source_status": "primary_verified",
+      "upper": "0.59274605079212",
+      "value_text": "0.59274605079210(2)",
+      "width_decimal": "0.000000000000040000000000",
+      "width_text": "1/25000000000000"
+    },
+    {
+      "citation": "Stephan Mertens, Exact site-percolation probability on the square lattice, J. Phys. A 55 (2022) 334002.",
+      "confidence_homogenized": false,
+      "doi": "10.1088/1751-8121/ac4195",
+      "estimator": "p_med",
+      "geometry": "finite n x n square; spanning in one direction",
+      "interval_id": "mertens-2022-p-med",
+      "lower": "0.592746050783",
+      "source_id": "mertens_2022_exact_spanning",
+      "source_location": "Eq. (22a)",
+      "source_status": "primary_verified",
+      "upper": "0.592746050789",
+      "value_text": "0.592746050786(3)",
+      "width_decimal": "0.000000000006000000000000",
+      "width_text": "3/500000000000"
+    },
+    {
+      "citation": "Stephan Mertens, Exact site-percolation probability on the square lattice, J. Phys. A 55 (2022) 334002.",
+      "confidence_homogenized": false,
+      "doi": "10.1088/1751-8121/ac4195",
+      "estimator": "p_cell",
+      "geometry": "finite n x n square; spanning in one direction",
+      "interval_id": "mertens-2022-p-cell",
+      "lower": "0.59274605052",
+      "source_id": "mertens_2022_exact_spanning",
+      "source_location": "Eq. (22b)",
+      "source_status": "primary_verified",
+      "upper": "0.59274605068",
+      "value_text": "0.59274605060(8)",
+      "width_decimal": "0.000000000160000000000000",
+      "width_text": "1/6250000000"
+    },
+    {
+      "citation": "Yi Yang and Shuigeng Zhou, Comment on 'Critical points of Potts and O(N) models from eigenvalue identities in periodic Temperley-Lieb algebras', J. Phys. A 57 (2024) 258001.",
+      "confidence_homogenized": false,
+      "doi": "10.1088/1751-8121/ad4d2c",
+      "estimator": "exact helical h(n) and extended cylindrical eigenvalue estimator p_c(n)",
+      "geometry": "n x infinity helical and cylindrical square lattices",
+      "interval_id": "yang-zhou-2024-corrected",
+      "lower": "0.5927460507895",
+      "source_id": "yang_zhou_2024_comment",
+      "source_location": "publisher-preview abstract; primary source verified",
+      "source_status": "primary_abstract_verified_table_pending",
+      "upper": "0.5927460507897",
+      "value_text": "0.5927460507896(1)",
+      "width_decimal": "0.000000000000200000000000",
+      "width_text": "1/5000000000000"
+    }
+  ],
+  "intervals_excluded_at_every_degree": [
+    "jacobsen-2015-eigenvalue",
+    "yang-zhou-2024-corrected"
+  ],
+  "issue": 551,
+  "provenance_sha256": "95ea5cf00c124652c7347da99a83d464cf176224d81973a10b5e181379bfb1f2",
+  "quartic_survivor_census": {
+    "distinct_surviving_quartics": 16,
+    "every_survivor_excluded_by_every_other_interval": true,
+    "max_intervals_per_survivor": 1,
+    "meaning": "each committed quartic root witness lies in exactly one method interval and is certified outside the other three",
+    "survivors": [
+      {
+        "coefficients_ascending": [
+          -48,
+          31,
+          43,
+          62,
+          13
+        ],
+        "excluded_by_interval_ids": [
+          "jacobsen-2015-eigenvalue",
+          "mertens-2022-p-med",
+          "yang-zhou-2024-corrected"
+        ],
+        "height": 62,
+        "isolation_bits": 120,
+        "root_bracket": [
+          "114653760793404343590203544062607863/193428131138340667952988160000000000",
+          "1146537607934043435902035440626078631/1934281311383406679529881600000000000"
+        ],
+        "root_decimal_prefix": "0.592746050528728207757762",
+        "separations": [
+          {
+            "interval_id": "jacobsen-2015-eigenvalue",
+            "separation_lower_bound_decimal": "0.000000000263351792242237",
+            "separation_lower_bound_text": "63674556256685812182953748341/241785163922925834941235200000000000000"
+          },
+          {
+            "interval_id": "mertens-2022-p-med",
+            "separation_lower_bound_decimal": "0.000000000254271792242237",
+            "separation_lower_bound_text": "2459165878730625824067493309/9671406556917033397649408000000000000"
+          },
+          {
+            "interval_id": "yang-zhou-2024-corrected",
+            "separation_lower_bound_decimal": "0.000000000260771792242237",
+            "separation_lower_bound_text": "2522030021350586541152214461/9671406556917033397649408000000000000"
+          }
+        ],
+        "surviving_interval_id": "mertens-2022-p-cell"
+      },
+      {
+        "coefficients_ascending": [
+          -45,
+          79,
+          -22,
+          -9,
+          63
+        ],
+        "excluded_by_interval_ids": [
+          "jacobsen-2015-eigenvalue",
+          "mertens-2022-p-med",
+          "yang-zhou-2024-corrected"
+        ],
+        "height": 79,
+        "isolation_bits": 120,
+        "root_bracket": [
+          "1146537608137229313025444763531354121/1934281311383406679529881600000000000",
+          "573268804068614656512722381765677061/967140655691703339764940800000000000"
+        ],
+        "root_decimal_prefix": "0.592746050633772844195928",
+        "separations": [
+          {
+            "interval_id": "jacobsen-2015-eigenvalue",
+            "separation_lower_bound_decimal": "0.000000000158307155804071",
+            "separation_lower_bound_text": "19138160808129823409897155983/120892581961462917470617600000000000000"
+          },
+          {
+            "interval_id": "mertens-2022-p-med",
+            "separation_lower_bound_decimal": "0.000000000149227155804071",
+            "separation_lower_bound_text": "721618246556789604770557927/4835703278458516698824704000000000000"
+          },
+          {
+            "interval_id": "yang-zhou-2024-corrected",
+            "separation_lower_bound_decimal": "0.000000000155727155804071",
+            "separation_lower_bound_text": "753050317866769963312918503/4835703278458516698824704000000000000"
+          }
+        ],
+        "surviving_interval_id": "mertens-2022-p-cell"
+      },
+      {
+        "coefficients_ascending": [
+          -77,
+          82,
+          69,
+          -18,
+          64
+        ],
+        "excluded_by_interval_ids": [
+          "jacobsen-2015-eigenvalue",
+          "mertens-2022-p-med",
+          "yang-zhou-2024-corrected"
+        ],
+        "height": 82,
+        "isolation_bits": 120,
+        "root_bracket": [
+          "35829300255182042928501231511701113/60446290980731458735308800000000000",
+          "1146537608165825373712039408374435617/1934281311383406679529881600000000000"
+        ],
+        "root_decimal_prefix": "0.592746050648556661068016",
+        "separations": [
+          {
+            "interval_id": "jacobsen-2015-eigenvalue",
+            "separation_lower_bound_decimal": "0.000000000143523338931983",
+            "separation_lower_bound_text": "34701814030435316214409125091/241785163922925834941235200000000000000"
+          },
+          {
+            "interval_id": "mertens-2022-p-med",
+            "separation_lower_bound_decimal": "0.000000000134443338931983",
+            "separation_lower_bound_text": "1300256189680605985325708379/9671406556917033397649408000000000000"
+          },
+          {
+            "interval_id": "yang-zhou-2024-corrected",
+            "separation_lower_bound_decimal": "0.000000000140943338931983",
+            "separation_lower_bound_text": "1363120332300566702410429531/9671406556917033397649408000000000000"
+          }
+        ],
+        "surviving_interval_id": "mertens-2022-p-cell"
+      },
+      {
+        "coefficients_ascending": [
+          66,
+          -87,
+          -84,
+          25,
+          80
+        ],
+        "excluded_by_interval_ids": [
+          "jacobsen-2015-eigenvalue",
+          "mertens-2022-p-med",
+          "yang-zhou-2024-corrected"
+        ],
+        "height": 87,
+        "isolation_bits": 120,
+        "root_bracket": [
+          "1146537608074986226613806001981921627/1934281311383406679529881600000000000",
+          "286634402018746556653451500495480407/483570327845851669882470400000000000"
+        ],
+        "root_decimal_prefix": "0.592746050601593922730196",
+        "separations": [
+          {
+            "interval_id": "jacobsen-2015-eigenvalue",
+            "separation_lower_bound_decimal": "0.000000000190486077269803",
+            "separation_lower_bound_text": "11514176854428623003368343429/60446290980731458735308800000000000000"
+          },
+          {
+            "interval_id": "mertens-2022-p-med",
+            "separation_lower_bound_decimal": "0.000000000181406077269803",
+            "separation_lower_bound_text": "438612981292943254322069581/2417851639229258349412352000000000000"
+          },
+          {
+            "interval_id": "yang-zhou-2024-corrected",
+            "separation_lower_bound_decimal": "0.000000000187906077269803",
+            "separation_lower_bound_text": "454329016947933433593249869/2417851639229258349412352000000000000"
+          }
+        ],
+        "surviving_interval_id": "mertens-2022-p-cell"
+      },
+      {
+        "coefficients_ascending": [
+          34,
+          -18,
+          -14,
+          -89,
+          1
+        ],
+        "excluded_by_interval_ids": [
+          "jacobsen-2015-eigenvalue",
+          "mertens-2022-p-med",
+          "yang-zhou-2024-corrected"
+        ],
+        "height": 89,
+        "isolation_bits": 120,
+        "root_bracket": [
+          "573268803990348089965674912481476369/967140655691703339764940800000000000",
+          "1146537607980696179931349824962952739/1934281311383406679529881600000000000"
+        ],
+        "root_decimal_prefix": "0.592746050552847111122416",
+        "separations": [
+          {
+            "interval_id": "jacobsen-2015-eigenvalue",
+            "separation_lower_bound_decimal": "0.000000000239232888877583",
+            "separation_lower_bound_text": "57842963253021514140844484841/241785163922925834941235200000000000000"
+          },
+          {
+            "interval_id": "mertens-2022-p-med",
+            "separation_lower_bound_decimal": "0.000000000230152888877583",
+            "separation_lower_bound_text": "2225902158584053902383122769/9671406556917033397649408000000000000"
+          },
+          {
+            "interval_id": "yang-zhou-2024-corrected",
+            "separation_lower_bound_decimal": "0.000000000236652888877583",
+            "separation_lower_bound_text": "2288766301204014619467843921/9671406556917033397649408000000000000"
+          }
+        ],
+        "surviving_interval_id": "mertens-2022-p-cell"
+      },
+      {
+        "coefficients_ascending": [
+          -32,
+          3,
+          91,
+          -9,
+          1
+        ],
+        "excluded_by_interval_ids": [
+          "jacobsen-2015-eigenvalue",
+          "mertens-2022-p-med",
+          "yang-zhou-2024-corrected"
+        ],
+        "height": 91,
+        "isolation_bits": 120,
+        "root_bracket": [
+          "286634402048163932895659537124697861/483570327845851669882470400000000000",
+          "229307521638531146316527629699758289/386856262276681335905976320000000000"
+        ],
+        "root_decimal_prefix": "0.592746050662427630979528",
+        "separations": [
+          {
+            "interval_id": "jacobsen-2015-eigenvalue",
+            "separation_lower_bound_decimal": "0.000000000129652369020471",
+            "separation_lower_bound_text": "31348019296610473698864646591/241785163922925834941235200000000000000"
+          },
+          {
+            "interval_id": "mertens-2022-p-med",
+            "separation_lower_bound_decimal": "0.000000000120572369020471",
+            "separation_lower_bound_text": "1166104400327612284703929239/9671406556917033397649408000000000000"
+          },
+          {
+            "interval_id": "yang-zhou-2024-corrected",
+            "separation_lower_bound_decimal": "0.000000000127072369020471",
+            "separation_lower_bound_text": "1228968542947573001788650391/9671406556917033397649408000000000000"
+          }
+        ],
+        "surviving_interval_id": "mertens-2022-p-cell"
+      },
+      {
+        "coefficients_ascending": [
+          -59,
+          92,
+          7,
+          -36,
+          77
+        ],
+        "excluded_by_interval_ids": [
+          "jacobsen-2015-eigenvalue",
+          "mertens-2022-p-med",
+          "yang-zhou-2024-corrected"
+        ],
+        "height": 92,
+        "isolation_bits": 120,
+        "root_bracket": [
+          "1146537608041056035975715720439891681/1934281311383406679529881600000000000",
+          "573268804020528017987857860219945841/967140655691703339764940800000000000"
+        ],
+        "root_decimal_prefix": "0.592746050584052425307661",
+        "separations": [
+          {
+            "interval_id": "jacobsen-2015-eigenvalue",
+            "separation_lower_bound_decimal": "0.000000000208027574692338",
+            "separation_lower_bound_text": "25148990623737888603113558483/120892581961462917470617600000000000000"
+          },
+          {
+            "interval_id": "mertens-2022-p-med",
+            "separation_lower_bound_decimal": "0.000000000198947574692338",
+            "separation_lower_bound_text": "962051439181112212499214027/4835703278458516698824704000000000000"
+          },
+          {
+            "interval_id": "yang-zhou-2024-corrected",
+            "separation_lower_bound_decimal": "0.000000000205447574692338",
+            "separation_lower_bound_text": "993483510491092571041574603/4835703278458516698824704000000000000"
+          }
+        ],
+        "surviving_interval_id": "mertens-2022-p-cell"
+      },
+      {
+        "coefficients_ascending": [
+          -14,
+          -53,
+          50,
+          78,
+          94
+        ],
+        "excluded_by_interval_ids": [
+          "jacobsen-2015-eigenvalue",
+          "mertens-2022-p-med",
+          "yang-zhou-2024-corrected"
+        ],
+        "height": 94,
+        "isolation_bits": 120,
+        "root_bracket": [
+          "1146537608013461476083718086639153981/1934281311383406679529881600000000000",
+          "573268804006730738041859043319576991/967140655691703339764940800000000000"
+        ],
+        "root_decimal_prefix": "0.592746050569786372211040",
+        "separations": [
+          {
+            "interval_id": "jacobsen-2015-eigenvalue",
+            "separation_lower_bound_decimal": "0.000000000222293627788959",
+            "separation_lower_bound_text": "26873650616987740715659664733/120892581961462917470617600000000000000"
+          },
+          {
+            "interval_id": "mertens-2022-p-med",
+            "separation_lower_bound_decimal": "0.000000000213213627788959",
+            "separation_lower_bound_text": "1031037838911106297001058277/4835703278458516698824704000000000000"
+          },
+          {
+            "interval_id": "yang-zhou-2024-corrected",
+            "separation_lower_bound_decimal": "0.000000000219713627788959",
+            "separation_lower_bound_text": "1062469910221086655543418853/4835703278458516698824704000000000000"
+          }
+        ],
+        "surviving_interval_id": "mertens-2022-p-cell"
+      },
+      {
+        "coefficients_ascending": [
+          20,
+          -71,
+          36,
+          -11,
+          95
+        ],
+        "excluded_by_interval_ids": [
+          "jacobsen-2015-eigenvalue",
+          "mertens-2022-p-med",
+          "yang-zhou-2024-corrected"
+        ],
+        "height": 95,
+        "isolation_bits": 120,
+        "root_bracket": [
+          "573268804060016962375418891852472861/967140655691703339764940800000000000",
+          "1146537608120033924750837783704945723/1934281311383406679529881600000000000"
+        ],
+        "root_decimal_prefix": "0.592746050624883036817130",
+        "separations": [
+          {
+            "interval_id": "jacobsen-2015-eigenvalue",
+            "separation_lower_bound_decimal": "0.000000000167196963182869",
+            "separation_lower_bound_text": "40425745150585519298095361841/241785163922925834941235200000000000000"
+          },
+          {
+            "interval_id": "mertens-2022-p-med",
+            "separation_lower_bound_decimal": "0.000000000158116963182869",
+            "separation_lower_bound_text": "1529213434486614108673157849/9671406556917033397649408000000000000"
+          },
+          {
+            "interval_id": "yang-zhou-2024-corrected",
+            "separation_lower_bound_decimal": "0.000000000164616963182869",
+            "separation_lower_bound_text": "1592077577106574825757879001/9671406556917033397649408000000000000"
+          }
+        ],
+        "surviving_interval_id": "mertens-2022-p-cell"
+      },
+      {
+        "coefficients_ascending": [
+          86,
+          -92,
+          -69,
+          -91,
+          95
+        ],
+        "excluded_by_interval_ids": [
+          "jacobsen-2015-eigenvalue",
+          "mertens-2022-p-med",
+          "yang-zhou-2024-corrected"
+        ],
+        "height": 95,
+        "isolation_bits": 120,
+        "root_bracket": [
+          "229307521613143030604136289307547439/386856262276681335905976320000000000",
+          "286634402016428788255170361634434299/483570327845851669882470400000000000"
+        ],
+        "root_decimal_prefix": "0.592746050596800890021581",
+        "separations": [
+          {
+            "interval_id": "jacobsen-2015-eigenvalue",
+            "separation_lower_bound_decimal": "0.000000000195279109978418",
+            "separation_lower_bound_text": "11803897904213765360999106929/60446290980731458735308800000000000000"
+          },
+          {
+            "interval_id": "mertens-2022-p-med",
+            "separation_lower_bound_decimal": "0.000000000186199109978418",
+            "separation_lower_bound_text": "450201823284348948627300121/2417851639229258349412352000000000000"
+          },
+          {
+            "interval_id": "yang-zhou-2024-corrected",
+            "separation_lower_bound_decimal": "0.000000000192699109978418",
+            "separation_lower_bound_text": "465917858939339127898480409/2417851639229258349412352000000000000"
+          }
+        ],
+        "surviving_interval_id": "mertens-2022-p-cell"
+      },
+      {
+        "coefficients_ascending": [
+          -79,
+          97,
+          -8,
+          80,
+          62
+        ],
+        "excluded_by_interval_ids": [
+          "jacobsen-2015-eigenvalue",
+          "mertens-2022-p-med",
+          "yang-zhou-2024-corrected"
+        ],
+        "height": 97,
+        "isolation_bits": 120,
+        "root_bracket": [
+          "573268804023937735245471816662612027/967140655691703339764940800000000000",
+          "229307521609575094098188726665044811/386856262276681335905976320000000000"
+        ],
+        "root_decimal_prefix": "0.592746050587577990319893",
+        "separations": [
+          {
+            "interval_id": "jacobsen-2015-eigenvalue",
+            "separation_lower_bound_decimal": "0.000000000204502009680106",
+            "separation_lower_bound_text": "49445551933072288095560570341/241785163922925834941235200000000000000"
+          },
+          {
+            "interval_id": "mertens-2022-p-med",
+            "separation_lower_bound_decimal": "0.000000000195422009680106",
+            "separation_lower_bound_text": "1890005705786084860571766189/9671406556917033397649408000000000000"
+          },
+          {
+            "interval_id": "yang-zhou-2024-corrected",
+            "separation_lower_bound_decimal": "0.000000000201922009680106",
+            "separation_lower_bound_text": "1952869848406045577656487341/9671406556917033397649408000000000000"
+          }
+        ],
+        "surviving_interval_id": "mertens-2022-p-cell"
+      },
+      {
+        "coefficients_ascending": [
+          -97,
+          87,
+          54,
+          98,
+          49
+        ],
+        "excluded_by_interval_ids": [
+          "jacobsen-2015-eigenvalue",
+          "mertens-2022-p-med",
+          "yang-zhou-2024-corrected"
+        ],
+        "height": 98,
+        "isolation_bits": 120,
+        "root_bracket": [
+          "1146537608129985625395294797717129711/1934281311383406679529881600000000000",
+          "71658600508124101587205924857320607/120892581961462917470617600000000000"
+        ],
+        "root_decimal_prefix": "0.592746050630027945464021",
+        "separations": [
+          {
+            "interval_id": "jacobsen-2015-eigenvalue",
+            "separation_lower_bound_decimal": "0.000000000162052054535978",
+            "separation_lower_bound_text": "2448861410626774534160772701/15111572745182864683827200000000000000"
+          },
+          {
+            "interval_id": "mertens-2022-p-med",
+            "separation_lower_bound_decimal": "0.000000000152972054535978",
+            "separation_lower_bound_text": "92465933204020564913264869/604462909807314587353088000000000000"
+          },
+          {
+            "interval_id": "yang-zhou-2024-corrected",
+            "separation_lower_bound_decimal": "0.000000000159472054535978",
+            "separation_lower_bound_text": "96394942117768109731059941/604462909807314587353088000000000000"
+          }
+        ],
+        "surviving_interval_id": "mertens-2022-p-cell"
+      },
+      {
+        "coefficients_ascending": [
+          -91,
+          95,
+          98,
+          -45,
+          78
+        ],
+        "excluded_by_interval_ids": [
+          "jacobsen-2015-eigenvalue",
+          "mertens-2022-p-med",
+          "yang-zhou-2024-corrected"
+        ],
+        "height": 98,
+        "isolation_bits": 120,
+        "root_bracket": [
+          "1146537608108812528065748556661778389/1934281311383406679529881600000000000",
+          "114653760810881252806574855666177839/193428131138340667952988160000000000"
+        ],
+        "root_decimal_prefix": "0.592746050619081710702335",
+        "separations": [
+          {
+            "interval_id": "jacobsen-2015-eigenvalue",
+            "separation_lower_bound_decimal": "0.000000000172998289297664",
+            "separation_lower_bound_text": "20914209868110836339245639233/120892581961462917470617600000000000000"
+          },
+          {
+            "interval_id": "mertens-2022-p-med",
+            "separation_lower_bound_decimal": "0.000000000163918289297664",
+            "separation_lower_bound_text": "792660208956030121944497257/4835703278458516698824704000000000000"
+          },
+          {
+            "interval_id": "yang-zhou-2024-corrected",
+            "separation_lower_bound_decimal": "0.000000000170418289297664",
+            "separation_lower_bound_text": "824092280266010480486857833/4835703278458516698824704000000000000"
+          }
+        ],
+        "surviving_interval_id": "mertens-2022-p-cell"
+      },
+      {
+        "coefficients_ascending": [
+          -84,
+          99,
+          -7,
+          99,
+          58
+        ],
+        "excluded_by_interval_ids": [
+          "jacobsen-2015-eigenvalue",
+          "mertens-2022-p-cell",
+          "yang-zhou-2024-corrected"
+        ],
+        "height": 99,
+        "isolation_bits": 120,
+        "root_bracket": [
+          "2866344021084339285530519353139669837/4835703278458516698824704000000000000",
+          "35829300263554241069131491914245873/60446290980731458735308800000000000"
+        ],
+        "root_decimal_prefix": "0.592746050787063060795653",
+        "separations": [
+          {
+            "interval_id": "jacobsen-2015-eigenvalue",
+            "separation_lower_bound_decimal": "0.000000000005016939204346",
+            "separation_lower_bound_text": "37906920872321081382190163/7555786372591432341913600000000000000"
+          },
+          {
+            "interval_id": "mertens-2022-p-cell",
+            "separation_lower_bound_decimal": "0.000000000107063060795653",
+            "separation_lower_bound_text": "517725194091345059519671117/4835703278458516698824704000000000000"
+          },
+          {
+            "interval_id": "yang-zhou-2024-corrected",
+            "separation_lower_bound_decimal": "0.000000000002436939204346",
+            "separation_lower_bound_text": "736519681241407437602123/302231454903657293676544000000000000"
+          }
+        ],
+        "surviving_interval_id": "mertens-2022-p-med"
+      },
+      {
+        "coefficients_ascending": [
+          -47,
+          94,
+          -99,
+          89,
+          61
+        ],
+        "excluded_by_interval_ids": [
+          "jacobsen-2015-eigenvalue",
+          "mertens-2022-p-med",
+          "yang-zhou-2024-corrected"
+        ],
+        "height": 99,
+        "isolation_bits": 120,
+        "root_bracket": [
+          "573268803962911135486969047053962063/967140655691703339764940800000000000",
+          "1146537607925822270973938094107924127/1934281311383406679529881600000000000"
+        ],
+        "root_decimal_prefix": "0.592746050524477965107060",
+        "separations": [
+          {
+            "interval_id": "jacobsen-2015-eigenvalue",
+            "separation_lower_bound_decimal": "0.000000000267602034892939",
+            "separation_lower_bound_text": "64702201872697980497723061341/241785163922925834941235200000000000000"
+          },
+          {
+            "interval_id": "mertens-2022-p-med",
+            "separation_lower_bound_decimal": "0.000000000258522034892939",
+            "separation_lower_bound_text": "2500271703371112556658265829/9671406556917033397649408000000000000"
+          },
+          {
+            "interval_id": "yang-zhou-2024-corrected",
+            "separation_lower_bound_decimal": "0.000000000265022034892939",
+            "separation_lower_bound_text": "2563135845991073273742986981/9671406556917033397649408000000000000"
+          }
+        ],
+        "surviving_interval_id": "mertens-2022-p-cell"
+      },
+      {
+        "coefficients_ascending": [
+          54,
+          -89,
+          22,
+          -100,
+          96
+        ],
+        "excluded_by_interval_ids": [
+          "jacobsen-2015-eigenvalue",
+          "mertens-2022-p-med",
+          "yang-zhou-2024-corrected"
+        ],
+        "height": 100,
+        "isolation_bits": 120,
+        "root_bracket": [
+          "1146537607918839810767811856100372627/1934281311383406679529881600000000000",
+          "286634401979709952691952964025093157/483570327845851669882470400000000000"
+        ],
+        "root_decimal_prefix": "0.592746050520868117788040",
+        "separations": [
+          {
+            "interval_id": "jacobsen-2015-eigenvalue",
+            "separation_lower_bound_decimal": "0.000000000271211882211959",
+            "separation_lower_bound_text": "16393752349615940062166749679/60446290980731458735308800000000000000"
+          },
+          {
+            "interval_id": "mertens-2022-p-med",
+            "separation_lower_bound_decimal": "0.000000000262131882211959",
+            "separation_lower_bound_text": "633796001100435936674005831/2417851639229258349412352000000000000"
+          },
+          {
+            "interval_id": "yang-zhou-2024-corrected",
+            "separation_lower_bound_decimal": "0.000000000268631882211959",
+            "separation_lower_bound_text": "649512036755426115945186119/2417851639229258349412352000000000000"
+          }
+        ],
+        "surviving_interval_id": "mertens-2022-p-cell"
+      }
+    ],
+    "survivors_per_interval": {
+      "jacobsen-2015-eigenvalue": 0,
+      "mertens-2022-p-cell": 15,
+      "mertens-2022-p-med": 1,
+      "yang-zhou-2024-corrected": 0
+    }
+  },
+  "schema": "matching-one/p2-manuscript-evidence/v1",
+  "search_class": {
+    "coefficient_height_max": 100,
+    "degree_max": 4,
+    "degree_min": 1,
+    "nonzero_leading_coefficient": true,
+    "polynomials_per_interval": 158062321920,
+    "primitive_coefficients_only": true,
+    "primitive_polynomial_counts_by_degree": {
+      "1": 12175,
+      "2": 3355121,
+      "3": 749507743,
+      "4": 157309446881
+    },
+    "total_declared_interval_comparisons": 632329518400
+  },
+  "source_artifacts": [
+    {
+      "path": "results/pslq-degree1-rational-exclusion/latest.json",
+      "schema": "matching-one/degree1-rational-exclusion/v1",
+      "sha256": "3523ccf2589e04fa263029d439692c020ec803bb021ce76cd77feeecb3356e39",
+      "status": "degree1_exact_exclusion_complete"
+    },
+    {
+      "path": "results/pslq-degree2-polynomial-exclusion/latest.json",
+      "schema": "matching-one/degree2-polynomial-exclusion/v1",
+      "sha256": "be1c79c1b7bd05ab7a6a75fe277527e7e1f0dcc089d76bb4b5428c7eaa7f080e",
+      "status": "degree2_exact_exclusion_complete"
+    },
+    {
+      "path": "results/pslq-degree3-jacobsen-2015-eigenvalue/latest.json",
+      "schema": "matching-one/degree3-interval-exclusion/v1",
+      "sha256": "49ebfac4c91309336db450ad44f57e030c66a2479b66542bdbfcacb1b696c141",
+      "status": "degree3_interval_exact_exclusion_complete"
+    },
+    {
+      "path": "results/pslq-degree3-mertens-2022-p-med/latest.json",
+      "schema": "matching-one/degree3-interval-exclusion/v1",
+      "sha256": "2a450caa75b4598d3e701cec8c3d7a29c23e305ff8806602d51b39714a8dad4e",
+      "status": "degree3_interval_exact_exclusion_complete"
+    },
+    {
+      "path": "results/pslq-degree3-mertens-2022-p-cell/latest.json",
+      "schema": "matching-one/degree3-interval-exclusion/v1",
+      "sha256": "c78ca378f791b4ac759ebed46e933786fb660c30a3e1a1a69967d3727d474720",
+      "status": "degree3_interval_exact_exclusion_complete"
+    },
+    {
+      "path": "results/pslq-degree3-yang-zhou-2024-corrected/latest.json",
+      "schema": "matching-one/degree3-interval-exclusion/v1",
+      "sha256": "9fd9269ef8c88055543bc68d644801df58c04b8a40954d38d8ff9708ef030374",
+      "status": "degree3_interval_exact_exclusion_complete"
+    },
+    {
+      "path": "results/pslq-degree4-jacobsen-2015-eigenvalue/latest.json",
+      "schema": "matching-one/degree4-interval-exclusion/v1",
+      "sha256": "96a45e2bf4db2564cbaa6ebf0fe0ed388735bc16eda8ace44121a5c7d3e9ed67",
+      "status": "degree4_interval_exact_census_complete"
+    },
+    {
+      "path": "results/pslq-degree4-mertens-2022-p-med/latest.json",
+      "schema": "matching-one/degree4-interval-exclusion/v1",
+      "sha256": "91dc78561cf5d56c7370918fc7b355b30ff2c6551f1b91f423e183cb285811a2",
+      "status": "degree4_interval_exact_census_complete"
+    },
+    {
+      "path": "results/pslq-degree4-mertens-2022-p-cell/latest.json",
+      "schema": "matching-one/degree4-interval-exclusion/v1",
+      "sha256": "47b545d118223919e075a7f2407865a6510977e286d90de1e221c77931e6822a",
+      "status": "degree4_interval_exact_census_complete"
+    },
+    {
+      "path": "results/pslq-degree4-yang-zhou-2024-corrected/latest.json",
+      "schema": "matching-one/degree4-interval-exclusion/v1",
+      "sha256": "e32540c2a45785250192bed39744419757d5d3e148f6b013c793da0f46f89aef",
+      "status": "degree4_interval_exact_census_complete"
+    },
+    {
+      "path": "results/pslq-degree6-low-height-jacobsen-2015-eigenvalue/latest.json",
+      "schema": "matching-one/degree6-low-height-exclusion/v1",
+      "sha256": "66d8b279e75b13836fbaf7b01ee35db5eacfcd0c85f66ea62247207508ad96af",
+      "status": "degree6_low_height_exclusion_complete"
+    },
+    {
+      "path": "results/pslq-degree6-low-height-mertens-2022-p-med/latest.json",
+      "schema": "matching-one/degree6-low-height-exclusion/v1",
+      "sha256": "5a18c3cde2167ef9309d9a1dfea7957ff15e7434a8a40a63b02fc93c5a5d106d",
+      "status": "degree6_low_height_exclusion_complete"
+    },
+    {
+      "path": "results/pslq-degree6-low-height-mertens-2022-p-cell/latest.json",
+      "schema": "matching-one/degree6-low-height-exclusion/v1",
+      "sha256": "c8831c5dc8d9ff8d8e8db3059813ef642a7b7c1e5ab36509b0feba9a423fc243",
+      "status": "degree6_low_height_exclusion_complete"
+    },
+    {
+      "path": "results/pslq-degree6-low-height-yang-zhou-2024-corrected/latest.json",
+      "schema": "matching-one/degree6-low-height-exclusion/v1",
+      "sha256": "d1a9194e44bd2ed0dadb326eb973e7fa94d1a496d94cbb5f4f1bebd881862fb6",
+      "status": "degree6_low_height_exclusion_complete"
+    },
+    {
+      "path": "results/pslq-degree4-synthetic-boundary-control/latest.json",
+      "schema": "matching-one/degree4-synthetic-boundary-control/v1",
+      "sha256": "1e36397fd8303db7ef2cbf098591994b26237df15af8fd06bcf290c9b96afc30",
+      "status": "degree4_synthetic_boundary_control_complete"
+    },
+    {
+      "path": "results/pslq-degree6-low-height-control/latest.json",
+      "schema": "matching-one/degree6-low-height-control/v1",
+      "sha256": "20cdee057928a9064b567d1c47186b41b46381983fb5874c452a56b972857b6d",
+      "status": "degree6_low_height_control_complete"
+    },
+    {
+      "path": "results/pslq-kagome-exact-control/latest.json",
+      "schema": "matching-one/kagome-exact-relation-control/v1",
+      "sha256": "1943480775ebf003702d875037a3cd0ed5e9f042867c183ffbe8e2ac78007fc9",
+      "status": "exact_kagome_positive_control_recovered"
+    },
+    {
+      "path": "results/pslq-lattice-native-candidates/latest.json",
+      "schema": "matching-one/lattice-native-candidate-comparison/v1",
+      "sha256": "97e5002641a5efec45dc079c55481a03edcf3b9ef6d12461c8121a41dbe8be2c",
+      "status": "lattice_native_candidate_comparison_complete"
+    },
+    {
+      "path": "results/pslq-look-elsewhere-ledger/latest.json",
+      "schema": "matching-one/pslq-look-elsewhere-ledger/v1",
+      "sha256": "792ae6f80c6330aa587fee58b3c37b35517699510fd1d5c565d5dfdaa6345537",
+      "status": "exact_frozen_hypothesis_count_ledger"
+    },
+    {
+      "path": "results/pslq-standard-constant-pairwise/latest.json",
+      "schema": "matching-one/standard-constant-pairwise-search/v1",
+      "sha256": "0a82035b7e91ee8209bdb783058eba0336fa1604a20568ae7f0282016916ff94",
+      "status": "standard_constant_pairwise_search_complete"
+    },
+    {
+      "path": "results/pslq-standard-constant-stability/latest.json",
+      "schema": "matching-one/standard-constant-stability-audit/v1",
+      "sha256": "e55dcfbea45cb876e13d6eae720cc36c90b78e5b225e7e921a7c8e544b22106f",
+      "status": "standard_constant_stability_audit_complete"
+    },
+    {
+      "path": "results/pslq-synthetic-false-positive-calibration/latest.json",
+      "schema": "matching-one/pslq-synthetic-false-positive-calibration/v1",
+      "sha256": "9c93aa91018c1efc5256b9534bee7ca29adabe0e67d45e36989b374d1e53fd63",
+      "status": "seeded_degree1_false_positive_calibration_complete"
+    }
+  ],
+  "status": "p2_manuscript_evidence_assembled",
+  "width_scaling_diagnostic": {
+    "claim_boundary": "descriptive count density only; this is not a null distribution, multiplicity correction, or p-value",
+    "rows_widest_first": [
+      {
+        "interval_id": "mertens-2022-p-cell",
+        "surviving_quartics": 15,
+        "survivors_per_unit_length_decimal": "93750000000.000",
+        "width_decimal": "0.000000000160000000000000"
+      },
+      {
+        "interval_id": "mertens-2022-p-med",
+        "surviving_quartics": 1,
+        "survivors_per_unit_length_decimal": "166666666666.666",
+        "width_decimal": "0.000000000006000000000000"
+      },
+      {
+        "interval_id": "yang-zhou-2024-corrected",
+        "surviving_quartics": 0,
+        "survivors_per_unit_length_decimal": "0.000",
+        "width_decimal": "0.000000000000200000000000"
+      },
+      {
+        "interval_id": "jacobsen-2015-eigenvalue",
+        "surviving_quartics": 0,
+        "survivors_per_unit_length_decimal": "0.000",
+        "width_decimal": "0.000000000000040000000000"
+      }
+    ],
+    "survivor_count_is_monotone_in_width": true
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "claim_boundary": {
+    "excluded": "new exclusion results, degree/height expansion, a null distribution, a p-value, any claim that the planted (3,12^2) form is a candidate for square-site p_c, closed forms, or transcendence",
+    "included": "detection sensitivity and boundary specificity of the degree-6 height-3 scan at the four frozen method widths",
+    "parent_issue": "remain open"
+  },
+  "conclusion": {
+    "all_negative_trials_excluded_the_planted_polynomial": true,
+    "all_positive_trials_detected_the_planted_polynomial": true,
+    "all_trials_passed": true,
+    "meaning": "at every frozen method width the degree-6 scan reports a height-3 degree-6 root that is present and does not report one that is absent, so the zero-candidate exclusion is a sensitivity-certified null rather than a blind screen",
+    "negative_trials": 4,
+    "positive_trials": 4
+  },
+  "contract_sha256": "fbeead4ae587fdc417a08393f27e701aabae45209f2478a24656ed63675ad2ac",
+  "issue": 559,
+  "planted": {
+    "candidate_id": "three-twelve-site",
+    "closed_form": "sqrt(1-2*sin(pi/18))",
+    "coefficients_ascending": [
+      1,
+      0,
+      0,
+      0,
+      -3,
+      0,
+      1
+    ],
+    "degree": 6,
+    "derivative_bound_on_unit_interval": 63,
+    "height": 3,
+    "isolation_bits": 160,
+    "placement_fraction": "1/3",
+    "root_bracket": [
+      "1475935361953353919428072795660739887086830218779/1826877046663628647754606040895353774569915678720",
+      "73796768097667695971403639783036994354341510939/91343852333181432387730302044767688728495783936"
+    ],
+    "source": "results/pslq-lattice-native-candidates/latest.json",
+    "source_sha256": "97e5002641a5efec45dc079c55481a03edcf3b9ef6d12461c8121a41dbe8be2c"
+  },
+  "provenance_sha256": "95ea5cf00c124652c7347da99a83d464cf176224d81973a10b5e181379bfb1f2",
+  "scan_path": {
+    "function": "scripts/degree6_low_height_exclusion.py::_scan_degree",
+    "modified_for_this_control": false
+  },
+  "schema": "matching-one/degree6-low-height-control/v1",
+  "status": "degree6_low_height_control_complete",
+  "trials": [
+    {
+      "expected_detection": true,
+      "lower": "5405036725903306498049745900679088717064031789777853031461/6690223559559186942460715481794508451794124800000000000000",
+      "passed": true,
+      "planted_polynomial_detected": true,
+      "polarity": "positive",
+      "root_containing_polynomials": 1,
+      "screen_candidates_exactly_decided": 1,
+      "upper": "5405036725903574106992128268156787145683303570115924796453/6690223559559186942460715481794508451794124800000000000000",
+      "width_id": "jacobsen-2015-eigenvalue",
+      "width_text": "1/25000000000000",
+      "witness_coefficients": [
+        [
+          1,
+          0,
+          0,
+          0,
+          -3,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "expected_detection": false,
+      "lower": "450419727158638609164410199220779440713032846963800902291/557518629963265578538392956816209037649510400000000000000",
+      "passed": true,
+      "planted_polynomial_detected": false,
+      "polarity": "negative",
+      "root_containing_polynomials": 0,
+      "screen_candidates_exactly_decided": 1,
+      "upper": "450419727158660909909608729843920976431305495325306882707/557518629963265578538392956816209037649510400000000000000",
+      "width_id": "jacobsen-2015-eigenvalue",
+      "width_text": "1/25000000000000",
+      "witness_coefficients": []
+    },
+    {
+      "expected_detection": true,
+      "lower": "43240293804372670222832400423256666940597988793025522377/53521788476473495539685723854356067614352998400000000000",
+      "passed": true,
+      "planted_polynomial_detected": true,
+      "polarity": "positive",
+      "root_containing_polynomials": 1,
+      "screen_candidates_exactly_decided": 1,
+      "upper": "43240293812936156379068159709606382757294959611322002121/53521788476473495539685723854356067614352998400000000000",
+      "width_id": "mertens-2022-p-cell",
+      "width_text": "1/6250000000",
+      "witness_coefficients": [
+        [
+          1,
+          0,
+          0,
+          0,
+          -3,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "expected_detection": false,
+      "lower": "3603357817982554313706673289310246224682829157009732687/4460149039706124628307143654529672301196083200000000000",
+      "passed": true,
+      "planted_polynomial_detected": false,
+      "polarity": "negative",
+      "root_containing_polynomials": 0,
+      "screen_candidates_exactly_decided": 1,
+      "upper": "3603357818696178160059653229839389209407576725201105999/4460149039706124628307143654529672301196083200000000000",
+      "width_id": "mertens-2022-p-cell",
+      "width_text": "1/6250000000",
+      "witness_coefficients": []
+    },
+    {
+      "expected_detection": true,
+      "lower": "72067156345200203385485621990489779052980444884270516047/89202980794122492566142873090593446023921664000000000000",
+      "passed": true,
+      "planted_polynomial_detected": true,
+      "polarity": "positive",
+      "root_containing_polynomials": 1,
+      "screen_candidates_exactly_decided": 1,
+      "upper": "72067156345735421270250356945886636291524005560414046031/89202980794122492566142873090593446023921664000000000000",
+      "width_id": "mertens-2022-p-med",
+      "width_text": "3/500000000000",
+      "witness_coefficients": [
+        [
+          1,
+          0,
+          0,
+          0,
+          -3,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "expected_detection": false,
+      "lower": "18016789086478456807959650482754730509426298113127679371/22300745198530623141535718272648361505980416000000000000",
+      "passed": true,
+      "planted_polynomial_detected": false,
+      "polarity": "negative",
+      "root_containing_polynomials": 0,
+      "screen_candidates_exactly_decided": 1,
+      "upper": "18016789086612261279150834221603944819062188282163561867/22300745198530623141535718272648361505980416000000000000",
+      "width_id": "mertens-2022-p-med",
+      "width_text": "3/500000000000",
+      "witness_coefficients": []
+    },
+    {
+      "expected_detection": true,
+      "lower": "1081007345180589937225313882141764829114333883198751468961/1338044711911837388492143096358901690358824960000000000000",
+      "passed": true,
+      "planted_polynomial_detected": true,
+      "polarity": "positive",
+      "root_containing_polynomials": 1,
+      "screen_candidates_exactly_decided": 1,
+      "upper": "1081007345180857546167696249619463257733605663536823233953/1338044711911837388492143096358901690358824960000000000000",
+      "width_id": "yang-zhou-2024-corrected",
+      "width_text": "1/5000000000000",
+      "witness_coefficients": [
+        [
+          1,
+          0,
+          0,
+          0,
+          -3,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "expected_detection": false,
+      "lower": "90083945431745562429040864342669116717224688081964964791/111503725992653115707678591363241807529902080000000000000",
+      "passed": true,
+      "planted_polynomial_detected": false,
+      "polarity": "negative",
+      "root_containing_polynomials": 0,
+      "screen_candidates_exactly_decided": 1,
+      "upper": "90083945431767863174239394965810652435497336443470945207/111503725992653115707678591363241807529902080000000000000",
+      "width_id": "yang-zhou-2024-corrected",
+      "width_text": "1/5000000000000",
+      "witness_coefficients": []
+    }
+  ],
+  "widths_tested": {
+    "jacobsen-2015-eigenvalue": "1/25000000000000",
+    "mertens-2022-p-cell": "1/6250000000",
+    "mertens-2022-p-med": "3/500000000000",
+    "yang-zhou-2024-corrected": "1/5000000000000"
+  }
+}
