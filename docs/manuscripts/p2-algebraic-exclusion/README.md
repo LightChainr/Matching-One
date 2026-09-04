@@ -100,10 +100,16 @@ answer was zero. This also keeps the control cheap enough for CI — see below.
 - **Ran** the degree-4 sensitivity control. It closes the one calibration gap that directly threatens Results A
   and B, it is a synthetic control rather than a census extension, and it costs 24 seconds.
 - **Scoped that control to the null-result widths only.** An earlier version covered all four widths (16 trials,
-  88 s). CI runs the full suite on three Python versions under a 20-minute per-job timeout, and the slowest job
-  on `main` already uses 770 s of that budget, so a 16-trial control would have left roughly 250 s of headroom.
-  Restricting to the two widths where the census reported a null costs nothing scientifically — the census
-  demonstrates its own sensitivity on the other two — and is the better-argued design regardless.
+  88 s). CI runs the full suite on three Python versions under a 20-minute per-job timeout, and the Python 3.9
+  job is the binding constraint: across three `main` runs it took 996 s, 1000 s and 770 s of that 1200 s budget,
+  roughly 40 % slower than 3.11/3.13 on this Fraction-heavy suite. A 16-trial control would have added about
+  23 %, putting the typical 3.9 run near 1230 s — over the timeout. The rescope was therefore necessary, not
+  merely prudent. It also costs nothing scientifically: the census demonstrates its own sensitivity on the two
+  intervals where it found roots, so the question only has force on the other two.
+
+  Measured on this branch: 3.9 1037 s, 3.11 722 s, 3.13 728 s — about +4 % against the `main` cluster on each
+  version. **The narrow 3.9 margin is pre-existing on `main`, not introduced here**, and is worth a separate
+  look; it is out of scope for this ticket.
 - **Did not run** the degree ≤ 6, height ≤ 3 census, even though it is only 409,584 polynomials (a few seconds)
   and would close the last uncovered form in the historical tradition — the `(3,12²)`-type radical. Issue #551
   sequences write-up and review before any degree or height expansion. The hypothesis and its exact cost are
