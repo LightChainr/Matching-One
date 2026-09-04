@@ -129,3 +129,18 @@ A committed quartic root witness is planted inside a synthetic interval of the w
 | `13x^4 + 62x^3 + 43x^2 + 31x - 48` | `yang-zhou-2024-corrected` | negative | 0 | no | no |
 
 All 4 positive and 4 negative trials behaved as required (`all_trials_passed = true`).
+
+## Table 8 — Exhaustion of the historical complexity range (degree ≤ 6, height ≤ 3)
+
+409,584 primitive polynomials per interval. Excluded on every interval: **true**. The certified screen retained no candidate at any degree on any interval: **true**.
+
+| Degree | Class | Closest polynomial | Distance floor | Floor / width (min–max over the four) |
+|---:|---:|---|---:|---:|
+| 1 | 15 | `2x - 1` | `0.061830700528053333333333333333` | 386441877.166 – 1545767513201.333 |
+| 2 | 129 | `3x^2 - 1` | `0.006004849132091249954019131022` | 37530306.403 – 150121228302.281 |
+| 3 | 975 | `2x^3 + x - 1` | `0.00051478823918681622048848997` | 3217426.201 – 12869705979.67 |
+| 4 | 7,041 | `2x^4 + 3x^3 + x^2 + 3x - 3` | `0.000041896865404784328932319242` | 261854.897 – 1047421635.119 |
+| 5 | 49,935 | `x^5 + 2x^4 - x^3 + 2x^2 + 2x - 2` | `0.000000217896187168151545701674` | 1361.938 – 5447404.679 |
+| 6 | 351,489 | `x^6 + 2x^5 - x^4 + 2x^3 + 2x^2 - 2x` | `0.000000092255074590416030211212` | 576.631 – 2306376.864 |
+
+Sensitivity control: the planted `sqrt(1-2*sin(pi/18))` polynomial `x^6 - 3x^4 + 1` was recovered in all 4 positive trials and reported in none of the 4 negative trials (`all_trials_passed = true`).

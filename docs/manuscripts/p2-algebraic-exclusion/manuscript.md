@@ -28,6 +28,13 @@ candidate formulas. Third, a planted-root control shows the census path detects 
 present, and rejects one that is absent, at **both** widths where the census reported a null — so those
 zero-survivor results are sensitivity-certified rather than blind spots.
 
+A companion exhaustion closes the one gap the height-100 class leaves. Every exactly-known planar
+percolation threshold is algebraic of degree at most 6 and coefficient height at most 3, and exactly one — the
+`(3,12²)` site value `√(1 − 2 sin(π/18))`, a root of `x⁶ − 3x⁴ + 1` — has degree 6 and so falls outside the
+censused class. Exhausting all 409,584 primitive integer polynomials of degree ≤ 6 and height ≤ 3 excludes every
+one of them on all four intervals, with a planted-root control confirming the degree-6 path is sensitive at each
+width. No form at the complexity of any known exact planar threshold has a root in any published interval.
+
 We also give a certified measure of how closely the search class can approach the targets at each degree —
 1.5·10⁻⁴, 7.0·10⁻⁸, 7.1·10⁻¹⁰, and below 10⁻¹² at degrees 1 to 4 — which locates degree 4 as the *boundary
 degree* for this height: the first degree at which the class's approach resolution reaches the width of the
@@ -87,7 +94,9 @@ negative result as a theorem about that class.
 1. A **complete certified census** of primitive integer polynomials of degree ≤ 4 and height ≤ 100 against four
    independently sourced threshold intervals, with a screening-completeness theorem (§3) and exact Sturm
    decisions throughout. Degrees 1–3 are excluded on all four intervals; degree 4 is excluded on the two
-   narrowest (§6.1).
+   narrowest (§6.1). A second exhaustion over degree ≤ 6 at height ≤ 3 — the complexity of the entire historical
+   record of exact planar thresholds — is excluded everywhere (§6.5), so the two classes together cover every
+   form the tradition has ever produced.
 2. The observation that the four published intervals are **pairwise disjoint** (§2.1), which makes per-interval
    reporting a necessity rather than a conservatism, and which is what makes the degree-4 survivors interpretable.
 3. A **cross-interval resolution** of every surviving quartic showing each survives exactly one interval (§6.2),
@@ -270,11 +279,15 @@ the same Sykes–Essam relation that anchors this problem — a small internal c
 `C(≤4, ≤100)` is therefore more than thirty times more generous in height than any threshold ever found, which
 is the honest justification for the height bound: it is not tuned, it is extravagant.
 
-The degree bound is the one place where the class does not dominate the tradition. The `(3,12²)` site value has
-degree 6, because it is the square root of a lower-degree threshold. A "`(3,12²)`-like" closed form for
+The degree bound is the one place where the height-100 class does not dominate the tradition. The `(3,12²)` site
+value has degree 6, because it is the square root of a lower-degree threshold. A "`(3,12²)`-like" closed form for
 square-site percolation — a square root, or another low-degree radical, of a simple algebraic number — would have
-degree 5 or 6 and would **not** be covered by this census. We state this as a limitation in §8 and as a specific,
-costed recommendation in §8.1 rather than quietly extending the search; see the sequencing note there.
+degree 5 or 6 and is **not** covered by `C(≤4, ≤100)`.
+
+Rather than raise the height, which §4.3 shows would destroy the negative result's content, we close that gap
+along the axis the literature actually occupies: **degree ≤ 6 at height ≤ 3**, the entire historical complexity
+range. That class holds only 409,584 polynomials per interval, `2.6·10⁻⁶` of the class already searched, and is
+reported in §6.5.
 
 ### 4.3 The approach-resolution argument, and why degree 4 is the stopping point
 
@@ -439,6 +452,47 @@ the zero-survivor results of Result B are certified nulls, not blind spots.
 This control also serves as the implementation-verification level of §3.4: it exercises the screen, the
 monotonicity check and the Sturm decisions end to end, on inputs whose correct answer is known in advance.
 
+### 6.5 The historical complexity range is closed
+
+§4.2 shows that every exactly-known planar percolation threshold has degree ≤ 6 and height ≤ 3, and that exactly
+one — the `(3,12²)` site value, root of `x⁶ − 3x⁴ + 1` — lies outside `C(≤4, ≤100)`. We exhaust the whole
+historical range directly.
+
+**Class.** `C(d, 3)` for `d = 1..6`: `15 + 129 + 975 + 7,041 + 49,935 + 351,489 = 409,584` primitive
+sign-normalized polynomials per interval.
+
+**Method.** The class is small enough to evaluate every member exactly at both interval endpoints, in integer
+arithmetic on the common denominator. Two consequences of `|P'| ≤ D` on `[0,1]`, with `D = 3d(d+1)/2`, do the
+rest. If `|P(l)| > D·(u−l)` then `P` cannot vanish on `[l, u]`, since `|P(x)| ≥ |P(l)| − D·(x−l)`; only
+polynomials failing that test receive an exact Sturm decision. And for a root `ξ` of `P` outside `[l, u]`, either
+`l − ξ ≥ |P(l)|/D` or `ξ − u ≥ |P(u)|/D`, so `min(|P(l)|, |P(u)|)/D` is a certified lower bound on the distance
+from the interval to the nearest root — no monotonicity assumption required.
+
+**Result F.** No primitive integer polynomial of degree ≤ 6 and height ≤ 3 has a root in any of the four method
+intervals. The exclusion is not marginal: the certified screen retains **zero** candidates at every degree on
+every interval, and the closest member of the whole class stays `9.23·10⁻⁸` away — between `5.8·10²` and
+`2.3·10⁶` interval widths, depending on the target.
+
+See [Table 8](tables.md#table-8--exhaustion-of-the-historical-complexity-range-degree--6-height--3) for the
+per-degree class sizes, closest polynomials, certified distance floors and floor-to-width ratios.
+
+The degree-6 minimiser is `x` times the degree-5 minimiser — at this height the class simply contains no
+irreducible sextic that comes closer, which is itself a statement about how coarse the historical complexity
+range is near this constant.
+
+**Sensitivity (Result G).** Because the screen retains nothing, the Sturm decision path never executes during the
+exclusion, and a null produced that way needs the same treatment as §6.4. We plant the `(3,12²)` polynomial
+itself — the exact form that motivated this section, taken from the certified lattice-native artifact — inside a
+synthetic interval of each of the four method widths, at both polarities, and run the **unmodified** scan. All 8
+trials pass: every positive trial retains exactly one candidate, decides it, and reports `x⁶ − 3x⁴ + 1`; every
+negative trial retains the same candidate and correctly returns no root
+(`results/pslq-degree6-low-height-control/latest.json`).
+
+Taken with Results A–C, this gives the paper's cleanest statement:
+
+> **No algebraic form at the complexity of any exactly-known planar percolation threshold has a root in any of
+> the four published intervals for `p_c^site(Z²)`.**
+
 ## 7. Calibration: what was added, and what was not
 
 Per the portfolio's stop rule, calibration is extended only where it answers a likely reviewer objection.
@@ -475,10 +529,9 @@ excluded within the declared finite complexity class
 ```
 
 Specifically, this work does **not** establish that `p_c^site(Z^2)` is transcendental or irrational; that it is
-not algebraic of degree ≤ 4 with height > 100; that it is not algebraic of degree > 4 — in particular the
-degree-5 and degree-6 radical forms discussed in §4.2 are untested; that it has no closed form involving
-transcendental constants beyond the six in the frozen library; or that any one of the four method intervals
-contains it.
+not algebraic of degree ≤ 4 with height > 100; that it is not algebraic of degree 5 or 6 at height > 3, nor of
+degree > 6 at any height; that it has no closed form involving transcendental constants beyond the six in the
+frozen library; or that any one of the four method intervals contains it.
 
 What it does establish is stronger than what an informal PSLQ report establishes, in a way that is worth stating
 directly. A heuristic search reports what it found. This census reports, with proof, what cannot be there: a
@@ -504,23 +557,15 @@ Four contributions are methodological and transfer beyond this constant:
 
 ### 8.1 Future work
 
-**The one uncovered form in the tradition.** §4.2 shows that every exactly-known planar threshold has height at
-most 3 and degree at most 6, and that the single form outside the census class is the `(3,12²)` site value — a
-square root of a lower-degree threshold. The targeted question is therefore not "degree 5 at height 100" but
-**degrees 1–6 at height ≤ 3**: the entire historical complexity range. That class contains only
-
-```text
-degree:  1     2      3      4       5        6
-count:  15   129    975  7,041  49,935  351,489      total 409,584 per interval
-```
-
-polynomials — about `2.6·10⁻⁶` of the class already searched, a few seconds of computation. By the
-boundary-degree criterion of §4.3 it should remain informative, because at height 3 the class is far too coarse
-to approach the intervals by accident.
-
-We deliberately do not run it here. Issue #551 sequences write-up and review before any degree or height
-expansion, and a limitation named with its cost is more useful to a referee than one silently closed. The cost is
-recorded in the manuscript artifact so the decision can be made with the number in hand.
+**Beyond the historical complexity range.** §6.5 closes degree ≤ 6 at height ≤ 3, so every form at the
+complexity of a known exact planar threshold is now excluded. What remains untested is genuinely more
+complicated: degree 5–6 at heights above 3, and degree > 6 at any height. Neither is a free extension. By the
+boundary-degree criterion of §4.3, raising the height on a fixed degree drives the class's approach resolution
+below the interval widths, at which point survivors appear by counting alone and a null carries no information;
+degree ≤ 6 at height ≤ 10 is already `890,350,944` polynomials per interval, with degree 6 alone at
+`848,419,937`, comparable to the height-100 cubic census. Any such extension should therefore begin by computing
+the class's approach resolution and confirming it still clears the widths — a cheap calculation that decides
+whether the census is worth running at all.
 
 **A rigorous interval.** Exclusion strength is governed by interval width, and every interval used here comes
 from an extrapolation rather than a proof. A rigorous narrowing of the threshold interval by a proved bound would
@@ -553,18 +598,23 @@ The full machine-readable specification, artifact list, and SHA-256 digests are 
 | `scripts/degree4_interval_exclusion.py` | degree-4 census driver, per interval |
 | `scripts/degree4_fixed_point_screen.cpp` | certified fixed-point meet-in-the-middle screen |
 | `scripts/degree4_synthetic_boundary_control.py` | planted-root sensitivity control (§6.4) |
+| `scripts/degree6_low_height_exclusion.py` | degree-1..6 height-3 exhaustion, per interval (§6.5) |
+| `scripts/degree6_low_height_control.py` | planted `(3,12²)` sensitivity control (§6.5) |
 | `scripts/exact_polynomial_root_certificate.py` | Sturm sequences, root isolation, stationary classification |
 | `scripts/p2_manuscript_evidence_table.py` | manuscript assembly; renders `tables.md`, no census computation |
 
-**Results** — ten census artifacts under `results/pslq-degree{1,2,3,4}-*/latest.json`, six control artifacts
-under `results/pslq-*/latest.json`, and the sensitivity control at
-`results/pslq-degree4-synthetic-boundary-control/latest.json`, all digested in the manuscript artifact.
+**Results** — ten census artifacts under `results/pslq-degree{1,2,3,4}-*/latest.json`, four historical-range
+artifacts under `results/pslq-degree6-low-height-*/latest.json`, and the control artifacts under
+`results/pslq-*/latest.json` including both sensitivity controls, all digested in the manuscript artifact.
 
 **Regeneration**
 
 ```bash
 python3 scripts/degree4_synthetic_boundary_control.py \
     --output results/pslq-degree4-synthetic-boundary-control/latest.json
+python3 scripts/degree6_low_height_exclusion.py --all
+python3 scripts/degree6_low_height_control.py \
+    --output results/pslq-degree6-low-height-control/latest.json
 python3 scripts/p2_manuscript_evidence_table.py \
     --output results/p2-algebraic-exclusion-manuscript/latest.json
 python3 scripts/p2_manuscript_evidence_table.py --markdown \

@@ -8,11 +8,16 @@ Draft manuscript workspace for portfolio track **P2**, requested by
 | [`manuscript.md`](manuscript.md) | the draft, sections 1–9 per the issue outline |
 | [`tables.md`](tables.md) | **generated** — every numerical table in the draft |
 | `results/p2-algebraic-exclusion-manuscript/latest.json` | the machine-readable evidence artifact |
-| `results/pslq-degree4-synthetic-boundary-control/latest.json` | the new sensitivity control (§6.4) |
+| `results/pslq-degree4-synthetic-boundary-control/latest.json` | quartic sensitivity control (§6.4) |
+| `results/pslq-degree6-low-height-*/latest.json` | degree-1..6 height-3 exhaustion, per interval (§6.5) |
+| `results/pslq-degree6-low-height-control/latest.json` | planted `(3,12²)` sensitivity control (§6.5) |
 | `scripts/p2_manuscript_evidence_table.py` | assembles the artifact and renders the tables |
-| `scripts/degree4_synthetic_boundary_control.py` | runs the sensitivity control |
+| `scripts/degree4_synthetic_boundary_control.py` | runs the quartic sensitivity control |
+| `scripts/degree6_low_height_exclusion.py` | runs the historical-range exhaustion |
+| `scripts/degree6_low_height_control.py` | runs its planted-root control |
 | `tests/test_p2_manuscript_evidence_table.py` | locks the assembly against the census artifacts |
-| `tests/test_degree4_synthetic_boundary_control.py` | locks the sensitivity control |
+| `tests/test_degree4_synthetic_boundary_control.py` | locks the quartic sensitivity control |
+| `tests/test_degree6_low_height_exclusion.py` | locks the historical-range exhaustion and its control |
 
 ## Ground rules honoured here
 
@@ -46,14 +51,15 @@ a null — read from the census artifacts, not hardcoded — and takes about 24 
 | 4.3 | Approach resolution / boundary degree | ready | **new result** |
 | 5 | Method | ready | |
 | 6.1–6.3 | Results and controls | ready | Tables 3 and 5; Results A–D |
-| 6.4 | Sensitivity control | ready | **new result and new computation** — Table 7, Result E |
+| 6.4 | Quartic sensitivity control | ready | **new result and new computation** — Table 7, Result E |
+| 6.5 | Historical complexity range closed | ready | **new result and new computation** — Table 8, Results F and G |
 | 7 | Calibration | ready | one gap closed, two recommendations left open |
 | 8 | Discussion and scope | ready | |
-| 8.1 | Future work | ready | costed recommendation, deliberately not executed |
+| 8.1 | Future work | ready | the costed recommendation was executed; what remains is genuinely harder |
 | 9 | Reproducibility supplement | ready | artifact list and digests generated |
 | — | Target venue | **needs a call** | see below |
 
-## Four results derived while assembling
+## Five results derived while assembling
 
 All follow from committed artifacts and are locked by tests.
 
@@ -95,6 +101,20 @@ The control deliberately does *not* cover the `p_med` and `p_cell` widths: the c
 there, so its sensitivity at those widths is already demonstrated and the question only has force where the
 answer was zero. This also keeps the control cheap enough for CI — see below.
 
+**5. The historical complexity range is closed.**
+
+Every exactly-known planar threshold has degree ≤ 6 and height ≤ 3, and the one form outside `C(≤4, ≤100)` is the
+`(3,12²)` site value `x⁶ − 3x⁴ + 1`. Exhausting all `409,584` primitive polynomials of degree ≤ 6 at height ≤ 3
+excludes every one of them on all four intervals — the certified screen retains **zero** candidates at any degree
+on any interval, and the closest member of the class stays `9.23e-8` away, between `5.8e2` and `2.3e6` interval
+widths. Because the screen retains nothing, the Sturm path never runs during the exclusion, so the planted-root
+control matters as much as it did at degree 4: planting `x⁶ − 3x⁴ + 1` itself at each frozen width gives 8/8,
+with every positive trial retaining exactly one candidate and reporting it, and every negative trial retaining
+the same candidate and correctly returning no root.
+
+Together with Results A–C this supports the paper's cleanest sentence: *no algebraic form at the complexity of
+any exactly-known planar percolation threshold has a root in any of the four published intervals.*
+
 ## Decisions taken while drafting
 
 - **Ran** the degree-4 sensitivity control. It closes the one calibration gap that directly threatens Results A
@@ -110,12 +130,13 @@ answer was zero. This also keeps the control cheap enough for CI — see below.
   Measured on this branch: 3.9 1037 s, 3.11 722 s, 3.13 728 s — about +4 % against the `main` cluster on each
   version. **The narrow 3.9 margin is pre-existing on `main`, not introduced here**, and is worth a separate
   look; it is out of scope for this ticket.
-- **Did not run** the degree ≤ 6, height ≤ 3 census, even though it is only 409,584 polynomials (a few seconds)
-  and would close the last uncovered form in the historical tradition — the `(3,12²)`-type radical. Issue #551
-  sequences write-up and review before any degree or height expansion. The hypothesis and its exact cost are
-  recorded in the artifact and in §8.1, so the call can be made immediately with the number in hand. **This is
-  the one substantive decision I would flag for a second opinion**: the argument for running it now is that a
-  referee will ask, and the argument against is that the ticket explicitly said not to.
+- **Ran** the degree ≤ 6, height ≤ 3 exhaustion (#559) after the owner's call. It was initially deferred under
+  #551's sequencing rule, then filed as a ticket, then run directly once it was clear the work is 3.6 s of
+  single-core arithmetic and needs no remote machine. It closes the last uncovered form in the historical
+  tradition, so the paper no longer has to name that gap as a limitation.
+- **Did not raise the height** on the null result, per §4.3. Degree ≤ 6 at height ≤ 10 is `890,350,944`
+  polynomials per interval and, more importantly, would improve the class's approach resolution toward the
+  interval widths; the boundary-degree check has to come first or the null is guaranteed and empty.
 - **Foregrounded** §2.1 and §4.3, and added §1.3 Contributions. They were not in the requested outline, but they
   generalize beyond this constant and are, in my judgement, the more durable part of the paper.
 

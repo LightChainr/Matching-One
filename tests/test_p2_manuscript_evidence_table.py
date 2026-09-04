@@ -142,15 +142,38 @@ class P2ManuscriptEvidenceTests(unittest.TestCase):
         self.assertEqual(triangular, [1, -3, 0, 1])
         self.assertEqual(_reflect(triangular), kagome)
 
-    def test_recommended_extension_is_costed_and_not_run(self) -> None:
-        extension = self.result["historical_form_complexity"]["recommended_extension"]
-        self.assertEqual(extension["status"], "not run here")
-        self.assertEqual(extension["total_polynomials_per_interval"], sum(extension["primitive_counts_by_degree"].values()))
-        self.assertEqual(sorted(extension["primitive_counts_by_degree"], key=int), ["1", "2", "3", "4", "5", "6"])
+    def test_historical_class_closure_is_costed_and_executed(self) -> None:
+        closure = self.result["historical_form_complexity"]["historical_class_closure"]
+        self.assertEqual(closure["status"], "executed")
+        self.assertEqual(closure["total_polynomials_per_interval"], sum(closure["primitive_counts_by_degree"].values()))
+        self.assertEqual(sorted(closure["primitive_counts_by_degree"], key=int), ["1", "2", "3", "4", "5", "6"])
         self.assertLess(
-            extension["total_polynomials_per_interval"],
+            closure["total_polynomials_per_interval"],
             self.result["search_class"]["polynomials_per_interval"],
         )
+        paths = {artifact["path"] for artifact in self.result["source_artifacts"]}
+        for relative in closure["artifacts"] + [closure["control"]]:
+            self.assertIn(relative, paths)
+
+    def test_historical_range_is_excluded_everywhere_and_sensitivity_certified(self) -> None:
+        historical = self.result["historical_range_exclusion"]
+        self.assertTrue(historical["excluded_on_every_interval"])
+        self.assertTrue(historical["screen_retained_nothing"])
+        self.assertEqual(historical["polynomials_per_interval"], 409584)
+        self.assertEqual([row["degree"] for row in historical["rows"]], [1, 2, 3, 4, 5, 6])
+        floors = [Fraction(row["root_distance_lower_bound_text"]) for row in historical["rows"]]
+        for higher, lower in zip(floors, floors[1:]):
+            self.assertGreater(higher, lower)
+        for row in historical["rows"]:
+            with self.subTest(degree=row["degree"]):
+                self.assertEqual(row["root_containing_total"], 0)
+                self.assertEqual(row["screen_candidates_total"], 0)
+                self.assertGreater(Fraction(row["floor_to_width_ratio_min_decimal"].replace(".", "") or "0"), 0)
+        control = historical["sensitivity_control"]
+        self.assertEqual(control["planted_coefficients_ascending"], [1, 0, 0, 0, -3, 0, 1])
+        self.assertTrue(control["all_trials_passed"])
+        self.assertEqual(control["positive_trials"], 4)
+        self.assertEqual(control["negative_trials"], 4)
 
     def test_sensitivity_control_is_digested_as_a_source(self) -> None:
         paths = {artifact["path"] for artifact in self.result["source_artifacts"]}
@@ -233,7 +256,8 @@ class P2ManuscriptEvidenceTests(unittest.TestCase):
 
     def test_manuscript_cites_only_generated_tables(self) -> None:
         draft = (MANUSCRIPT / "manuscript.md").read_text(encoding="utf-8")
-        for table in ("tables.md#table-1", "tables.md#table-2", "tables.md#table-3", "tables.md#table-4", "tables.md#table-5"):
+        for table in ("tables.md#table-1", "tables.md#table-2", "tables.md#table-3", "tables.md#table-4",
+                      "tables.md#table-5", "tables.md#table-8"):
             with self.subTest(table=table):
                 self.assertIn(table, draft)
 

@@ -46,7 +46,9 @@ CONTROL_SOURCES={
     "standard_constant_stability":"results/pslq-standard-constant-stability/latest.json",
     "lattice_native_candidates":"results/pslq-lattice-native-candidates/latest.json",
     "degree4_boundary_sensitivity":"results/pslq-degree4-synthetic-boundary-control/latest.json",
+    "degree6_low_height_control":"results/pslq-degree6-low-height-control/latest.json",
 }
+LOW_HEIGHT_SOURCES="results/pslq-degree6-low-height-{interval}/latest.json"
 
 
 def _require(condition:bool,message:str)->None:
@@ -101,6 +103,7 @@ def _source_artifacts(interval_ids:Sequence[str])->list[dict[str,Any]]:
     for degree,(template,_) in sorted(DEGREE_SOURCES.items()):
         if "{interval}" in template:paths.extend(template.format(interval=i) for i in interval_ids)
         else:paths.append(template)
+    paths.extend(LOW_HEIGHT_SOURCES.format(interval=i) for i in interval_ids)
     paths.extend(CONTROL_SOURCES[name] for name in sorted(CONTROL_SOURCES))
     artifacts=[]
     for relative in paths:
@@ -247,7 +250,7 @@ def _primitive_count(degree:int,height:int)->int:
     return _ledger_count(degree,height)
 
 
-def _historical_forms()->dict[str,Any]:
+def _historical_forms(table:Sequence[Mapping[str,Any]])->dict[str,Any]:
     """Algebraic complexity of the exactly-known planar percolation thresholds.
 
     Minimal polynomials are taken from the committed lattice-native candidate
@@ -287,7 +290,7 @@ def _historical_forms()->dict[str,Any]:
     extension={str(degree):_primitive_count(degree,max_height) for degree in range(1,max_degree+1)}
     return {
         "rows":rows,
-        "recommended_extension":{
+        "historical_class_closure":{
             "hypothesis":"the one exactly-known planar threshold outside the census class is the (3,12^2) site "
                          "value, a square root of a lower-degree threshold; the targeted question is therefore "
                          "whether any form of degree up to the historical maximum, at the historical height, "
@@ -295,9 +298,10 @@ def _historical_forms()->dict[str,Any]:
             "class":f"degree 1..{max_degree}, height <= {max_height}",
             "primitive_counts_by_degree":extension,
             "total_polynomials_per_interval":sum(extension.values()),
-            "status":"not run here",
-            "reason":"issue #551 sequences write-up and review before any degree or height expansion; the cost "
-                     "is recorded so the decision can be made with the number in hand",
+            "status":"executed",
+            "issue":559,
+            "artifacts":sorted(LOW_HEIGHT_SOURCES.format(interval=row["interval_id"]) for row in table),
+            "control":CONTROL_SOURCES["degree6_low_height_control"],
         },
         "max_degree":max(row["degree"] for row in rows),
         "max_height":max(row["height"] for row in rows),
@@ -309,6 +313,58 @@ def _historical_forms()->dict[str,Any]:
                   "degree-6 form, which arises as a square root of a lower-degree threshold",
         "claim_boundary":"algebraic complexity of published exact thresholds; not a claim that square-site p_c "
                          "belongs to this tradition, and not a survey of every conjectured form",
+    }
+
+
+def _historical_range(table:Sequence[Mapping[str,Any]])->dict[str,Any]:
+    """Summarise the degree-1..6 height-3 exhaustion across the frozen intervals."""
+    per_interval={}
+    for row in table:
+        payload=_load(LOW_HEIGHT_SOURCES.format(interval=row["interval_id"]))["interval_result"]
+        per_interval[row["interval_id"]]=payload
+    reference=next(iter(per_interval.values()))
+    degrees=[]
+    for index,entry in enumerate(reference["by_degree"]):
+        degree=entry["degree"]
+        ratios={}
+        for interval_id,payload in per_interval.items():
+            other=payload["by_degree"][index]
+            _require(other["degree"]==degree,"degree rows are misaligned across intervals")
+            _require(other["closest_polynomial"]["coefficients_ascending"]
+                     ==entry["closest_polynomial"]["coefficients_ascending"],
+                     f"degree {degree} closest polynomial differs across intervals")
+            ratios[interval_id]=Fraction(other["floor_to_interval_width_ratio_text"])
+        floor=Fraction(entry["root_distance_lower_bound_text"])
+        degrees.append({
+            "degree":degree,
+            "polynomials_in_class":entry["polynomials_in_class"],
+            "closest_coefficients_ascending":entry["closest_polynomial"]["coefficients_ascending"],
+            "root_distance_lower_bound_text":_text(floor),
+            "root_distance_lower_bound_decimal":decimal_string(floor,30),
+            "floor_to_width_ratio_min_decimal":decimal_string(min(ratios.values()),3),
+            "floor_to_width_ratio_max_decimal":decimal_string(max(ratios.values()),3),
+            "screen_candidates_total":sum(p["by_degree"][index]["screen_candidates_exactly_decided"]
+                                          for p in per_interval.values()),
+            "root_containing_total":sum(p["by_degree"][index]["root_containing_polynomials"]
+                                        for p in per_interval.values()),
+        })
+    control=_load(CONTROL_SOURCES["degree6_low_height_control"])
+    return {
+        "rows":degrees,
+        "polynomials_per_interval":reference["polynomials_per_interval"],
+        "excluded_on_every_interval":all(p["excluded"] for p in per_interval.values()),
+        "screen_retained_nothing":all(row["screen_candidates_total"]==0 for row in degrees),
+        "sensitivity_control":{
+            "planted_coefficients_ascending":control["planted"]["coefficients_ascending"],
+            "closed_form":control["planted"]["closed_form"],
+            "positive_trials":control["conclusion"]["positive_trials"],
+            "negative_trials":control["conclusion"]["negative_trials"],
+            "all_trials_passed":control["conclusion"]["all_trials_passed"],
+        },
+        "meaning":"no algebraic form at the complexity of any exactly-known planar percolation threshold has a "
+                  "root in any of the four published intervals",
+        "claim_boundary":"exhaustive over degree <= 6 at height <= 3 only; says nothing about height > 3 or "
+                         "degree > 6, and is not a transcendence or non-algebraicity claim",
     }
 
 
@@ -434,7 +490,8 @@ def build_result(contract_path:Path=DEFAULT_CONTRACT)->dict[str,Any]:
         "exclusion_table":exclusion,
         "intervals_excluded_at_every_degree":fully_excluded,
         "closest_approach_by_degree":_closest_approach(exclusion,interval_table),
-        "historical_form_complexity":_historical_forms(),
+        "historical_form_complexity":_historical_forms(interval_table),
+        "historical_range_exclusion":_historical_range(interval_table),
         "quartic_survivor_census":census,
         "width_scaling_diagnostic":_width_scaling(interval_table,census),
         "controls":{name:{"path":relative,"status":_load(relative).get("status")} for name,relative in sorted(CONTROL_SOURCES.items())},
@@ -549,6 +606,26 @@ def render_markdown(result:Mapping[str,Any])->str:
     lines+=["",f"All {conclusion['positive_trials']} positive and {conclusion['negative_trials']} negative "
             f"trials behaved as required (`all_trials_passed = "
             f"{str(conclusion['all_trials_passed']).lower()}`)."]
+    historical=result["historical_range_exclusion"]
+    sensitivity=historical["sensitivity_control"]
+    lines+=["","## Table 8 — Exhaustion of the historical complexity range (degree ≤ 6, height ≤ 3)","",
+            f"{historical['polynomials_per_interval']:,} primitive polynomials per interval. Excluded on every "
+            f"interval: **{str(historical['excluded_on_every_interval']).lower()}**. The certified screen "
+            f"retained no candidate at any degree on any interval: "
+            f"**{str(historical['screen_retained_nothing']).lower()}**.","",
+            "| Degree | Class | Closest polynomial | Distance floor | Floor / width (min–max over the four) |",
+            "|---:|---:|---|---:|---:|"]
+    for row in historical["rows"]:
+        lines.append(f"| {row['degree']} | {row['polynomials_in_class']:,} | "
+                     f"`{_polynomial_text(row['closest_coefficients_ascending'])}` | "
+                     f"`{row['root_distance_lower_bound_decimal'].rstrip('0')}` | "
+                     f"{row['floor_to_width_ratio_min_decimal'].rstrip('0').rstrip('.')} – "
+                     f"{row['floor_to_width_ratio_max_decimal'].rstrip('0').rstrip('.')} |")
+    lines+=["",f"Sensitivity control: the planted `{sensitivity['closed_form']}` polynomial "
+            f"`{_polynomial_text(sensitivity['planted_coefficients_ascending'])}` was recovered in all "
+            f"{sensitivity['positive_trials']} positive trials and reported in none of the "
+            f"{sensitivity['negative_trials']} negative trials "
+            f"(`all_trials_passed = {str(sensitivity['all_trials_passed']).lower()}`)."]
     return "\n".join(lines)+"\n"
 
 
