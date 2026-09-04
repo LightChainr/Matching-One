@@ -57,7 +57,7 @@ a null — read from the census artifacts, not hardcoded — and takes about 24 
 | 8 | Discussion and scope | ready | |
 | 8.1 | Future work | ready | the costed recommendation was executed; what remains is genuinely harder |
 | 9 | Reproducibility supplement | ready | artifact list and digests generated |
-| — | Target venue | **needs a call** | see below |
+| — | Target venue | decided | J. Phys. A, fallback Experimental Mathematics — reasoning in the manuscript |
 
 ## Five results derived while assembling
 
@@ -142,24 +142,27 @@ any exactly-known planar percolation threshold has a root in any of the four pub
 
 ## Open items
 
-1. **Target venue.** J. Phys. A gives the result its audience; a methods or computational-number-theory venue is
-   the better home for Theorem 2, the boundary-degree criterion and the sensitivity control. Since §8's
-   methodological contributions are the durable part, I lean methods-oriented, but this needs whoever owns
-   literature search.
-2. **Primary-source verification** for Scullard 2006, Ziff 2006 and Suding–Ziff 1999. arXiv was unreachable from
-   this environment, so they are cited from secondary indexing and flagged as `PENDING` in `references.bib`, in
-   line with `data/README.md`'s provenance rules. Sykes–Essam 1964 is verified.
-3. **Two remaining calibration recommendations** (§7): an independent second implementation of the exact filter,
-   and interval-perturbation sensitivity for the degree-4 near hits. Neither blocks a submission draft.
+1. **Primary-source verification** for Scullard 2006, Ziff 2006 and Suding–Ziff 1999. arXiv was unreachable from
+   the drafting environment, so they are cited from secondary indexing and flagged `PENDING` in
+   `references.bib`, in line with `data/README.md`'s provenance rules. Sykes–Essam 1964 is verified. None of the
+   paper's results depend on them; they motivate the search class in §1.1 and §4.2, and §4.2's table is
+   generated from the repository's own certified artifact rather than from those citations.
+2. **Two remaining calibration recommendations** (§7): an independent second implementation of the exact filter,
+   and interval-perturbation sensitivity for the degree-4 near hits. Neither blocks submission.
 
 ## Regenerating
 
 ```bash
 python3 scripts/degree4_synthetic_boundary_control.py \
     --output results/pslq-degree4-synthetic-boundary-control/latest.json
+python3 scripts/degree6_low_height_exclusion.py --all
+python3 scripts/degree6_low_height_control.py \
+    --output results/pslq-degree6-low-height-control/latest.json
 python3 scripts/p2_manuscript_evidence_table.py \
     --output results/p2-algebraic-exclusion-manuscript/latest.json
 python3 scripts/p2_manuscript_evidence_table.py --markdown \
     --output docs/manuscripts/p2-algebraic-exclusion/tables.md
-python3 -m unittest tests.test_p2_manuscript_evidence_table tests.test_degree4_synthetic_boundary_control
+python3 -m unittest tests.test_p2_manuscript_evidence_table \
+    tests.test_degree4_synthetic_boundary_control \
+    tests.test_degree6_low_height_exclusion
 ```

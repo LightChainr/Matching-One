@@ -627,10 +627,31 @@ corresponding degree script with `--output` and compare digests.
 
 ---
 
-## Target venue **[LIT]**
+## Target venue
 
-*Needs cross-checking with whoever owns literature search.* The natural candidates are the journal that published
-all four source papers (J. Phys. A), for direct comparability, or an applied/computational number theory venue.
-The trade-off to resolve: the physics venue gives the result its audience, while the number-theory venue is the
-better home for Theorem 2 and the boundary-degree argument. Given that §8's methodological contributions are the
-more durable part, a methods-oriented venue may serve the paper better than either.
+**Decision: *Journal of Physics A: Mathematical and Theoretical*, with *Experimental Mathematics* as the
+fallback.**
+
+The methodological contributions of §8 are the more durable part of this paper, and they would be at home in a
+computational number theory or methods venue. That argues for the fallback, not the primary. The deciding
+consideration runs the other way:
+
+The paper's central claim is about **one physical constant**, and its most consequential readers are precisely
+the people who produce the estimates it tests. Three of the four intervals come from papers in this journal —
+Jacobsen 2015, Mertens 2022, Yang–Zhou 2024 — as does the 2024 Reply. §2.1 shows those four published intervals
+are pairwise disjoint at their own quoted precisions, which is a correction to that literature's reporting
+practice and not merely an input to our census. Published anywhere else, that correction does not reach the
+people it is about. The methodology travels by citation regardless; the correction does not.
+
+Secondary considerations pointing the same way: the venue has an established remit for exact and
+transfer-matrix computation in statistical mechanics, so Theorem 2 and the boundary-degree criterion need no
+special pleading; and direct comparability with the four source papers is what lets a reader check the interval
+table against its origins in one sitting.
+
+Take *Experimental Mathematics* if the physics venue judges the work insufficiently physical — its remit covers
+certified computational searches and negative results explicitly, and the boundary-degree criterion is closer to
+its centre of gravity than to J. Phys. A's.
+
+**Framing note for submission.** Lead with the census as the work and §8 as what the work forced. A submission
+that leads with the methodology invites the reading that the constant is a worked example, which understates
+both the completeness of the search and the significance of the disjointness finding for this literature.
