@@ -25,8 +25,8 @@ disjoint** at their own quoted precisions, so at least three of them do not cont
 is defensible. Second, each of the 16 surviving quartics has a root in **exactly one** of the four intervals and
 is certified outside the other three, which identifies the survivors as artifacts of interval width rather than
 candidate formulas. Third, a planted-root control shows the census path detects a height-100 quartic root that is
-present, and rejects one that is absent, at **every** one of the four widths — so the zero-survivor results are
-sensitivity-certified nulls rather than blind spots.
+present, and rejects one that is absent, at **both** widths where the census reported a null — so those
+zero-survivor results are sensitivity-certified rather than blind spots.
 
 We also give a certified measure of how closely the search class can approach the targets at each degree —
 1.5·10⁻⁴, 7.0·10⁻⁸, 7.1·10⁻¹⁰, and below 10⁻¹² at degrees 1 to 4 — which locates degree 4 as the *boundary
@@ -92,7 +92,8 @@ negative result as a theorem about that class.
    reporting a necessity rather than a conservatism, and which is what makes the degree-4 survivors interpretable.
 3. A **cross-interval resolution** of every surviving quartic showing each survives exactly one interval (§6.2),
    converting an awkward positive count into a clean negative statement.
-4. A **sensitivity control** at each reported width, establishing that the nulls are not blind spots (§6.4).
+4. A **sensitivity control** at the widths where the census reports a null, establishing that those nulls are
+   not blind spots (§6.4).
 5. The **boundary-degree** criterion (§4.3): a certified comparison between a search class's approach resolution
    and the target's width, which gives an objective place to stop that applies to any integer-relation search
    against a measured constant.
@@ -415,34 +416,37 @@ by which published extrapolation one adopts.
 
 Results A and B are null results at widths as small as `4·10⁻¹⁴`. A referee is entitled to ask whether the
 pipeline could have found a quartic root at that width had one been there. We answer it directly
-([Table 7](tables.md#table-7--quartic-census-sensitivity-at-each-frozen-method-width)).
+([Table 7](tables.md#table-7--quartic-census-sensitivity-where-the-census-returned-a-null)).
 
 Take a quartic root that is *known* to exist — a root witness the census itself already committed — and plant it
-inside a synthetic interval of each of the four method widths, placed off-centre. Then run the **unmodified**
-census path on that interval. The negative twin shifts the same interval one full width away from the planted
-root, so the root is certified outside.
+inside a synthetic interval of the width in question, placed off-centre. Then run the **unmodified** census path
+on that interval. The negative twin shifts the same interval one full width away from the planted root, so the
+root is certified outside.
 
-**Result E.** Over two planted quartics × four method widths × two polarities, all 16 trials behave as required:
-every positive trial reports the planted quartic among its root witnesses, and no negative trial reports it
-(`results/pslq-degree4-synthetic-boundary-control/latest.json`).
+The control covers exactly the intervals whose census result was a null, and it reads that set from the census
+artifacts rather than naming it. On `p_med` and `p_cell` the census itself found 1 and 15 roots, so its
+sensitivity at those widths is already demonstrated and a planted root would add nothing; the question has force
+only where the answer was zero.
 
-At the two narrowest widths the positive trials return exactly one root — the planted one — and the negative
-trials return none, so those regions are genuinely sparse and the pipeline resolves them. At the `p_cell` width
-the same trials return 9 to 13 roots, which is the width-artifact density of §6.2 seen from a second direction.
+**Result E.** Over two planted quartics × the two null-result widths × two polarities, all 8 trials behave as
+required: every positive trial reports the planted quartic among its root witnesses, and no negative trial
+reports it (`results/pslq-degree4-synthetic-boundary-control/latest.json`).
+
+In every positive trial the interval returns exactly one root — the planted one — and every negative trial
+returns none. So at `4·10⁻¹⁴` and `2·10⁻¹³` these regions are genuinely sparse and the pipeline resolves them:
+the zero-survivor results of Result B are certified nulls, not blind spots.
 
 This control also serves as the implementation-verification level of §3.4: it exercises the screen, the
 monotonicity check and the Sturm decisions end to end, on inputs whose correct answer is known in advance.
-
----
 
 ## 7. Calibration: what was added, and what was not
 
 Per the portfolio's stop rule, calibration is extended only where it answers a likely reviewer objection.
 
-**Added (§6.4):** a degree-4 planted-root sensitivity and specificity control at every reported width. The
-pre-existing synthetic calibration was degree 1 only, while the paper's interpretation is load-bearing at
-degree 4 — the boundary degree — and the strongest claims (Results A and B) are nulls at the narrowest widths.
-This was the gap most likely to be challenged.
+**Added (§6.4):** a degree-4 planted-root sensitivity and specificity control at the two widths where the census
+reports a null. The pre-existing synthetic calibration was degree 1 only, while the paper's interpretation is
+load-bearing at degree 4 — the boundary degree — and the strongest claims (Results A and B) are nulls at the
+narrowest widths. This was the gap most likely to be challenged.
 
 **Recommended, not done:**
 
@@ -490,9 +494,9 @@ Four contributions are methodological and transfer beyond this constant:
 2. **Survivors must be cross-resolved.** A polynomial surviving one interval and excluded by three others is a
    width artifact (§6.2). Cross-interval resolution is a cheap, decisive test that heuristic searches do not
    perform, and it converts an awkward positive count into a clean negative statement.
-3. **Nulls must be sensitivity-certified.** Planting a known root at the reported width and re-running the
-   unmodified pipeline (§6.4) distinguishes "nothing is there" from "the method cannot see it". This costs
-   minutes and is, as far as we know, absent from the integer-relation literature.
+3. **Nulls must be sensitivity-certified.** Planting a known root at the width where a null was reported and
+   re-running the unmodified pipeline (§6.4) distinguishes "nothing is there" from "the method cannot see it".
+   This costs seconds and is, as far as we know, absent from the integer-relation literature.
 4. **Search classes have a boundary degree.** The approach resolution of a bounded class can be certified and
    compared to the target's width (§4.3). Beyond the degree where these meet, negative results are guaranteed to
    fail and positive ones are guaranteed to appear, independently of the physics. This gives an objective place

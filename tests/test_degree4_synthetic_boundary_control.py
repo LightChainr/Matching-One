@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Lock the quartic-census sensitivity control at the four frozen method widths."""
+"""Lock the quartic-census sensitivity control where the census returned a null."""
 
 from __future__ import annotations
 
@@ -49,20 +49,37 @@ class Degree4BoundaryControlTests(unittest.TestCase):
                 self.assertLessEqual(target["height"], 100)
                 self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(), target["committed_by_sha256"])
 
-    def test_every_frozen_method_width_is_covered_at_both_polarities(self) -> None:
+    def test_control_covers_exactly_the_intervals_the_census_nulled(self) -> None:
         contract = json.loads((ROOT / "analysis" / "pslq_search_contract.json").read_text(encoding="utf-8"))
         widths = {row["id"]: Fraction(row["upper"]) - Fraction(row["lower"]) for row in contract["intervals"]}
-        self.assertEqual(set(self.result["widths_tested"]), set(widths))
+        nulled, found = set(), set()
+        for interval_id in widths:
+            census = json.loads(
+                (ROOT / "results" / f"pslq-degree4-{interval_id}" / "latest.json").read_text(encoding="utf-8")
+            )
+            target = nulled if census["interval_result"]["root_containing_polynomials"] == 0 else found
+            target.add(interval_id)
+        selection = self.result["width_selection"]
+        self.assertEqual(set(selection["covered"]), nulled)
+        self.assertEqual(set(selection["not_covered"]), found)
+        self.assertEqual(set(self.result["widths_tested"]), nulled)
         for width_id, width_text in self.result["widths_tested"].items():
             self.assertEqual(Fraction(width_text), widths[width_id])
         covered = {(row["width_id"], row["polarity"], tuple(row["planted_coefficients_ascending"])) for row in self.result["trials"]}
         expected = {
             (width_id, polarity, tuple(planted["coefficients_ascending"]))
-            for width_id in widths
+            for width_id in nulled
             for polarity in ("positive", "negative")
             for planted in PLANTED
         }
         self.assertEqual(covered, expected)
+
+    def test_covered_widths_are_the_narrowest(self) -> None:
+        contract = json.loads((ROOT / "analysis" / "pslq_search_contract.json").read_text(encoding="utf-8"))
+        widths = {row["id"]: Fraction(row["upper"]) - Fraction(row["lower"]) for row in contract["intervals"]}
+        covered = set(self.result["width_selection"]["covered"])
+        self.assertEqual(covered, {"jacobsen-2015-eigenvalue", "yang-zhou-2024-corrected"})
+        self.assertLess(max(widths[i] for i in covered), min(widths[i] for i in widths if i not in covered))
 
     def test_trial_intervals_have_the_declared_width_and_placement(self) -> None:
         for row in self.result["trials"]:
@@ -78,7 +95,7 @@ class Degree4BoundaryControlTests(unittest.TestCase):
 
     def test_planted_root_is_recovered_at_every_width(self) -> None:
         positive = [row for row in self.result["trials"] if row["polarity"] == "positive"]
-        self.assertEqual(len(positive), 8)
+        self.assertEqual(len(positive), 4)
         for row in positive:
             with self.subTest(width=row["width_id"], planted=row["planted_coefficients_ascending"]):
                 self.assertTrue(row["planted_quartic_detected"])
@@ -87,7 +104,7 @@ class Degree4BoundaryControlTests(unittest.TestCase):
 
     def test_planted_root_is_not_reported_when_absent(self) -> None:
         negative = [row for row in self.result["trials"] if row["polarity"] == "negative"]
-        self.assertEqual(len(negative), 8)
+        self.assertEqual(len(negative), 4)
         for row in negative:
             with self.subTest(width=row["width_id"], planted=row["planted_coefficients_ascending"]):
                 self.assertFalse(row["planted_quartic_detected"])

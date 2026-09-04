@@ -24,8 +24,9 @@ inputs. Root decisions reuse the repository's existing exact Sturm path
 and a regression test fails if it drifts from the artifact.
 
 The one new computation is the §6.4 sensitivity control. It is a synthetic control, not a census extension: it
-runs the **unmodified** `degree4_interval_exclusion.run_search` on synthetic intervals of the four frozen widths,
-and `GOVERNANCE.md` places synthetic controls outside the production queue. It takes about 45 seconds.
+runs the **unmodified** `degree4_interval_exclusion.run_search` on synthetic intervals, and `GOVERNANCE.md`
+places synthetic controls outside the production queue. It covers exactly the intervals whose census result was
+a null — read from the census artifacts, not hardcoded — and takes about 24 seconds.
 
 ## Section readiness
 
@@ -83,17 +84,26 @@ question *why stop at degree 4?*
 
 **4. The nulls are sensitivity-certified.**
 
-Planting a committed quartic root witness inside synthetic intervals of each of the four method widths and
-re-running the unmodified census path: 16/16 trials pass — every positive trial recovers the planted quartic,
-including at the narrowest width (`4e-14`), and no negative trial reports it. The zero-survivor results on the
-Jacobsen and Yang–Zhou intervals are therefore certified nulls rather than blind spots. This closes the
+Planting a committed quartic root witness inside synthetic intervals of the two widths where the census returned
+zero, and re-running the unmodified census path: 8/8 trials pass — every positive trial recovers the planted
+quartic, including at the narrowest width (`4e-14`), and no negative trial reports it. The zero-survivor results
+on the Jacobsen and Yang–Zhou intervals are therefore certified nulls rather than blind spots. This closes the
 calibration gap flagged in §7 and, as far as I can tell, is a control the integer-relation literature does not
 routinely perform.
+
+The control deliberately does *not* cover the `p_med` and `p_cell` widths: the census itself found 1 and 15 roots
+there, so its sensitivity at those widths is already demonstrated and the question only has force where the
+answer was zero. This also keeps the control cheap enough for CI — see below.
 
 ## Decisions taken while drafting
 
 - **Ran** the degree-4 sensitivity control. It closes the one calibration gap that directly threatens Results A
-  and B, it is a synthetic control rather than a census extension, and it costs 45 seconds.
+  and B, it is a synthetic control rather than a census extension, and it costs 24 seconds.
+- **Scoped that control to the null-result widths only.** An earlier version covered all four widths (16 trials,
+  88 s). CI runs the full suite on three Python versions under a 20-minute per-job timeout, and the slowest job
+  on `main` already uses 770 s of that budget, so a 16-trial control would have left roughly 250 s of headroom.
+  Restricting to the two widths where the census reported a null costs nothing scientifically — the census
+  demonstrates its own sensitivity on the other two — and is the better-argued design regardless.
 - **Did not run** the degree ≤ 6, height ≤ 3 census, even though it is only 409,584 polynomials (a few seconds)
   and would close the last uncovered form in the historical tradition — the `(3,12²)`-type radical. Issue #551
   sequences write-up and review before any degree or height expansion. The hypothesis and its exact cost are

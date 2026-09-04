@@ -113,27 +113,19 @@ Minimal polynomials are taken from the committed lattice-native candidate artifa
 
 Maximum degree 6, maximum height 3. Outside the census class: (3,12^2) site.
 
-## Table 7 — Quartic-census sensitivity at each frozen method width
+## Table 7 — Quartic-census sensitivity where the census returned a null
 
-A committed quartic root witness is planted inside a synthetic interval of each method width and the unmodified census path is re-run; the negative twin shifts the same interval one full width away from the planted root.
+A committed quartic root witness is planted inside a synthetic interval of the width in question and the unmodified census path is re-run; the negative twin shifts the same interval one full width away from the planted root. Covered: `jacobsen-2015-eigenvalue`, `yang-zhou-2024-corrected`. Not covered: `mertens-2022-p-cell`, `mertens-2022-p-med` — the census itself found roots on the uncovered intervals, so its sensitivity there is already demonstrated.
 
 | Planted quartic | Width | Polarity | Roots found | Planted quartic reported | Expected |
 |---|---|---|---:|---|---|
 | `58x^4 + 99x^3 - 7x^2 + 99x - 84` | `jacobsen-2015-eigenvalue` | positive | 1 | yes | yes |
 | `58x^4 + 99x^3 - 7x^2 + 99x - 84` | `jacobsen-2015-eigenvalue` | negative | 0 | no | no |
-| `58x^4 + 99x^3 - 7x^2 + 99x - 84` | `mertens-2022-p-cell` | positive | 12 | yes | yes |
-| `58x^4 + 99x^3 - 7x^2 + 99x - 84` | `mertens-2022-p-cell` | negative | 13 | no | no |
-| `58x^4 + 99x^3 - 7x^2 + 99x - 84` | `mertens-2022-p-med` | positive | 1 | yes | yes |
-| `58x^4 + 99x^3 - 7x^2 + 99x - 84` | `mertens-2022-p-med` | negative | 0 | no | no |
 | `58x^4 + 99x^3 - 7x^2 + 99x - 84` | `yang-zhou-2024-corrected` | positive | 1 | yes | yes |
 | `58x^4 + 99x^3 - 7x^2 + 99x - 84` | `yang-zhou-2024-corrected` | negative | 0 | no | no |
 | `13x^4 + 62x^3 + 43x^2 + 31x - 48` | `jacobsen-2015-eigenvalue` | positive | 1 | yes | yes |
 | `13x^4 + 62x^3 + 43x^2 + 31x - 48` | `jacobsen-2015-eigenvalue` | negative | 0 | no | no |
-| `13x^4 + 62x^3 + 43x^2 + 31x - 48` | `mertens-2022-p-cell` | positive | 9 | yes | yes |
-| `13x^4 + 62x^3 + 43x^2 + 31x - 48` | `mertens-2022-p-cell` | negative | 12 | no | no |
-| `13x^4 + 62x^3 + 43x^2 + 31x - 48` | `mertens-2022-p-med` | positive | 1 | yes | yes |
-| `13x^4 + 62x^3 + 43x^2 + 31x - 48` | `mertens-2022-p-med` | negative | 0 | no | no |
 | `13x^4 + 62x^3 + 43x^2 + 31x - 48` | `yang-zhou-2024-corrected` | positive | 1 | yes | yes |
 | `13x^4 + 62x^3 + 43x^2 + 31x - 48` | `yang-zhou-2024-corrected` | negative | 0 | no | no |
 
-All 8 positive and 8 negative trials behaved as required (`all_trials_passed = true`).
+All 4 positive and 4 negative trials behaved as required (`all_trials_passed = true`).

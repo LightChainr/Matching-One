@@ -532,10 +532,13 @@ def render_markdown(result:Mapping[str,Any])->str:
             f"Outside the census class: {', '.join(historical['outside_census_class']) or 'none'}.",""]
     control=_load(CONTROL_SOURCES["degree4_boundary_sensitivity"])
     conclusion=control["conclusion"]
-    lines+=["## Table 7 — Quartic-census sensitivity at each frozen method width","",
-            "A committed quartic root witness is planted inside a synthetic interval of each method width and "
-            "the unmodified census path is re-run; the negative twin shifts the same interval one full width "
-            "away from the planted root.","",
+    selection=control["width_selection"]
+    lines+=["## Table 7 — Quartic-census sensitivity where the census returned a null","",
+            "A committed quartic root witness is planted inside a synthetic interval of the width in question "
+            "and the unmodified census path is re-run; the negative twin shifts the same interval one full "
+            "width away from the planted root. Covered: "
+            +", ".join(f"`{i}`" for i in selection["covered"])+". Not covered: "
+            +", ".join(f"`{i}`" for i in selection["not_covered"])+" — "+selection["reason"]+".","",
             "| Planted quartic | Width | Polarity | Roots found | Planted quartic reported | Expected |",
             "|---|---|---|---:|---|---|"]
     for row in control["trials"]:
