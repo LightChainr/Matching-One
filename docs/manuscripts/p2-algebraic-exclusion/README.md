@@ -10,18 +10,22 @@ Draft manuscript workspace for portfolio track **P2**, requested by
 | `results/p2-algebraic-exclusion-manuscript/latest.json` | the machine-readable evidence artifact |
 | `results/pslq-degree4-synthetic-boundary-control/latest.json` | quartic sensitivity control (§6.4) |
 | `results/pslq-degree6-low-height-*/latest.json` | degree-1..6 height-3 exhaustion, per interval (§6.5) |
+| `results/pslq-degree6-height4-*/latest.json` | degree-1..6 height-**4** exhaustion, per interval (§6.6) |
+| `results/ziff-a-lattice-complexity/latest.json` | the A-lattice quintic that forced height 4 (§4.2) |
 | `results/pslq-degree6-low-height-control/latest.json` | planted `(3,12²)` sensitivity control (§6.5) |
 | `results/pslq-degree6-low-height-replication-*/latest.json` | the same census by a second implementation (§7) |
 | `results/pslq-degree6-implementation-agreement/latest.json` | cell-by-cell comparison of the two (§7) |
 | `scripts/p2_manuscript_evidence_table.py` | assembles the artifact and renders the tables |
 | `scripts/degree4_synthetic_boundary_control.py` | runs the quartic sensitivity control |
-| `scripts/degree6_low_height_exclusion.py` | runs the historical-range exhaustion |
+| `scripts/degree6_low_height_exclusion.py` | runs the historical-range exhaustion, at either height |
+| `scripts/ziff_a_lattice_complexity.py` | certifies the A-lattice polynomial's degree, height and root |
 | `scripts/degree6_low_height_control.py` | runs its planted-root control |
 | `scripts/degree6_independent_replication.py` | the second implementation, committed as received |
 | `scripts/degree6_implementation_agreement.py` | compares the two implementations |
 | `tests/test_p2_manuscript_evidence_table.py` | locks the assembly against the census artifacts |
+| `tests/test_ziff_a_lattice_complexity.py` | locks the A-lattice certification |
 | `tests/test_degree4_synthetic_boundary_control.py` | locks the quartic sensitivity control |
-| `tests/test_degree6_low_height_exclusion.py` | locks the historical-range exhaustion and its control |
+| `tests/test_degree6_low_height_exclusion.py` | locks the historical-range exhaustion at both heights, and its control |
 | `tests/test_degree6_implementation_agreement.py` | locks the two-implementation agreement |
 
 ## Ground rules honoured here
@@ -33,12 +37,13 @@ inputs — it computes no census itself. Root decisions reuse the repository's e
 (`scripts/exact_polynomial_root_certificate.py`). No number in the draft is hand-typed: `tables.md` is rendered,
 and a regression test fails if it drifts from the artifact.
 
-Three computations were added, each with its reason for being inside the stop rule:
+Four computations were added, each with its reason for being inside the stop rule:
 
 | Computation | Why it is not a census extension | Cost |
 |---|---|---:|
 | §6.4 quartic sensitivity control | synthetic control on synthetic intervals, running the **unmodified** `degree4_interval_exclusion.run_search`. Covers exactly the widths whose census result was a null, read from the artifacts rather than hardcoded | ~24 s |
 | §6.5 degree ≤ 6 height ≤ 3 exhaustion | a different frozen class, not a widening of the quartic one; it closes the last form in the historical tradition (issue #559) | ~4 s |
+| §6.6 degree ≤ 6 height ≤ **4** exhaustion | run after §4.2's literature pass found the height-3 bound to be false; it is a correction to a class chosen on a wrong premise, not an exploratory widening | ~20 s |
 | §7 second implementation and its comparison | re-decides the §6.5 class, adding no new class and no new interval; its value is entirely in being written separately | ~50 s to regenerate, 12 s in CI |
 
 ## Section readiness
@@ -55,20 +60,21 @@ Three computations were added, each with its reason for being inside the stop ru
 | 2.2 | Provenance limitations | ready | Yang–Zhou tables and Jacobsen 2024 Reply left pending, as in the manifest |
 | 3 | Completeness theorem | ready | Prop. 1 and Thm. 2 stated and proved from the committed implementation |
 | 4.1 | What the bounds must not be | ready | |
-| 4.2 | Complexity of the known exact thresholds | ready | **literature pass done** — Table 6, generated from the certified lattice-native artifact |
+| 4.2 | Complexity of the known exact thresholds | ready, **corrected** | Table 6 plus the A-lattice row it omits; the height-3 claim this section used to make is false, and the section now says so |
 | 4.2.1 | The historical range is a selected sample | ready | **new** — states the strongest referee objection to our own motivation, and answers it by pointing at §4.3, which does not use the literature at all |
 | 4.3 | Approach resolution / boundary degree | ready | **new result** |
 | 5 | Method | ready | |
 | 6.1–6.3 | Results and controls | ready | Tables 3 and 5; Results A–D |
 | 6.4 | Quartic sensitivity control | ready | **new result and new computation** — Table 7, Result E |
-| 6.5 | Historical complexity range closed | ready | **new result and new computation** — Table 8, Results F and G |
+| 6.5 | Historical complexity range closed (height ≤ 3) | ready | **new result and new computation** — Table 8, Results F and G. Kept as run, with its premise corrected in place |
+| 6.6 | Corrected range closed (height ≤ 4) | ready | **new result and new computation** — Table 10, Result F′. Carries the paper's closing statement; sensitivity is inherited, not re-run, and says so |
 | 7 | Calibration | ready | two gaps closed — the second partly; one recommendation left open, and it is the more valuable one |
 | 8 | Discussion and scope | ready | |
 | 8.1 | Future work | ready | the costed recommendation was executed; what remains is genuinely harder |
 | 9 | Reproducibility supplement | ready | artifact list and digests generated |
 | — | Target venue | decided | J. Phys. A, fallback Experimental Mathematics — reasoning in the manuscript |
 
-## Five results derived while assembling
+## Six results derived while assembling
 
 All follow from committed artifacts and are locked by tests.
 
@@ -112,7 +118,7 @@ answer was zero. This also keeps the control cheap enough for CI — see below.
 
 **5. The historical complexity range is closed.**
 
-Every exactly-known planar threshold has degree ≤ 6 and height ≤ 3, and the one form outside `C(≤4, ≤100)` is the
+Every exactly-known planar threshold has degree ≤ 6, and the one form outside `C(≤4, ≤100)` is the
 `(3,12²)` site value `x⁶ − 3x⁴ + 1`. Exhausting all `409,584` primitive polynomials of degree ≤ 6 at height ≤ 3
 excludes every one of them on all four intervals — the certified screen retains **zero** candidates at any degree
 on any interval, and the closest member of the class stays `9.23e-8` away, between `5.8e2` and `2.3e6` interval
@@ -120,6 +126,25 @@ widths. Because the screen retains nothing, the Sturm path never runs during the
 control matters as much as it did at degree 4: planting `x⁶ − 3x⁴ + 1` itself at each frozen width gives 8/8,
 with every positive trial retaining exactly one candidate and reporting it, and every negative trial retaining
 the same candidate and correctly returning no root.
+
+**6. The height bound in that statement was wrong, and correcting it does not break the result.**
+
+Found while doing the literature pass for §4.2, after the height-3 census had been run and written up. Ziff's
+2006 generalized-cell construction gives an exact bond threshold for its "A lattice" as the root of
+`p⁵ − 4p⁴ + 3p³ + 2p² − 1`, which is irreducible over `Q` of **height 4**. So "every exactly-known planar
+threshold has degree ≤ 6 and height ≤ 3" — a sentence that had been sitting in the abstract, §4.2, §6.5 and this
+file — is false, and the class chosen to close the historical range did not in fact close it.
+
+Re-running the same script at height 4 exhausts `2,351,328` polynomials per interval, 5.7 times the class, in
+about 20 seconds, and excludes every one of them on all four intervals with the certified screen again retaining
+zero candidates. The closest approach falls from `9.23e-8` to `8.70e-9` — from `5.8e2` to `54` interval widths at
+the narrowest. The null survives, with an order of magnitude less margin.
+
+Two things are worth keeping about this. The correction was found by checking a claim the paper was *relying*
+on, not by a reviewer; and the result it corrects was not fragile, which is a fact about the result rather than
+about our luck. The A-lattice row's own status is `CORROBORATED_NOT_PRIMARY` — the polynomial and its decimal
+were cross-checked against each other from two independent indexes, but the primary text is unreachable from
+this environment and remains owed.
 
 Together with Results A–C this supports the paper's cleanest sentence: *no algebraic form at the complexity of
 any exactly-known planar percolation threshold has a root in any of the four published intervals.*
@@ -167,7 +192,10 @@ any exactly-known planar percolation threshold has a root in any of the four pub
 
 ## Open items
 
-1. **Primary-source verification** for Scullard 2006, Ziff 2006 and Suding–Ziff 1999. arXiv was unreachable from
+1. **Primary-source verification** for Scullard 2006, Ziff 2006 and Suding–Ziff 1999. This is no longer only a
+   citation-hygiene item: the A-lattice polynomial taken from Ziff 2006 now sets the height bound of §6.6 and of
+   the paper's closing sentence. If the primary text disagrees with the corroborated polynomial, §6.6's class is
+   the wrong one — though §6.5 would then be the right one, so the closing sentence stands either way. arXiv was unreachable from
    the drafting environment, so they are cited from secondary indexing and flagged `PENDING` in
    `references.bib`, in line with `data/README.md`'s provenance rules. Sykes–Essam 1964 is verified. None of the
    paper's results depend on them; they motivate the search class in §1.1 and §4.2, and §4.2's table is
@@ -183,6 +211,9 @@ any exactly-known planar percolation threshold has a root in any of the four pub
 python3 scripts/degree4_synthetic_boundary_control.py \
     --output results/pslq-degree4-synthetic-boundary-control/latest.json
 python3 scripts/degree6_low_height_exclusion.py --all
+python3 scripts/degree6_low_height_exclusion.py --all --height 4
+python3 scripts/ziff_a_lattice_complexity.py \
+    --output results/ziff-a-lattice-complexity/latest.json
 python3 scripts/degree6_low_height_control.py \
     --output results/pslq-degree6-low-height-control/latest.json
 for interval in jacobsen-2015-eigenvalue mertens-2022-p-med \

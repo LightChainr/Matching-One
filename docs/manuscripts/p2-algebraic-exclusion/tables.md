@@ -111,7 +111,11 @@ Minimal polynomials are taken from the committed lattice-native candidate artifa
 | martini bond | `1/sqrt(2)` | `2x^2 - 1` | 2 | 2 | yes |
 | martini descendant | `(sqrt(5)-1)/2` | `x^2 + x - 1` | 2 | 1 | yes |
 
-Maximum degree 6, maximum height 3. Outside the census class: (3,12^2) site.
+Maximum degree 6, maximum height 3 **over this artifact's rows**. Outside the census class: (3,12^2) site.
+
+This table is not the whole historical record, and one omission matters. Ziff 2006 'A lattice', bond percolation has minimal polynomial `p^5 - 4p^4 + 3p^3 + 2p^2 - 1`, irreducible over `Q`, of degree 5 and height **4** (`results/ziff-a-lattice-complexity/latest.json`). Its height exceeds every row above, which is why the exhaustion is carried out twice: at height 3 in Table 8, as it was first run, and at height 4 in Table 10, which is the class that actually covers the record.
+
+Status of that row: `CORROBORATED_NOT_PRIMARY`. Still owed: a reading of Ziff, Phys. Rev. E 73, 016134 (2006) itself. The publisher, arXiv and the indexing services are unreachable through the network policy in use here, so this was corroborated from two independent search summaries rather than read. It must be checked against the primary text before submission.
 
 ## Table 7 — Quartic-census sensitivity where the census returned a null
 
@@ -166,3 +170,22 @@ Compared per cell: `polynomials_in_class`, `screen_survivors`, `root_containing_
 The two implementations evaluate the closest member at different points, so the residual gap must be non-zero; the mean value theorem caps it at `D(u-l)/2` with `D = 32` for that polynomial. Every interval is inside its allowance, so the agreement is between two implementations of the same quantity (`implementations_agree = true`).
 
 `scripts/exact_polynomial_root_certificate.py` is imported unchanged by both, so the Sturm path is shared, not replicated. Its contribution here: none: both screens retain zero candidates at every degree on every interval, so root isolation never runs during either census.
+
+## Table 10 — Exhaustion of the corrected historical range (degree ≤ 6, height ≤ 4)
+
+Table 8's class was chosen from a claim that turned out to be false. Ziff 2006 'A lattice', bond percolation has minimal polynomial `p^5 - 4p^4 + 3p^3 + 2p^2 - 1` — degree 5, height 4 (`CORROBORATED_NOT_PRIMARY`, `results/ziff-a-lattice-complexity/latest.json`) — so the class that actually covers the historical record is height ≤ 4, and this table exhausts it.
+
+2,351,328 primitive polynomials per interval, 5.7 times Table 8's class. Excluded on every interval: **true**. The certified screen retained no candidate at any degree on any interval: **true**.
+
+| Degree | Class | Closest polynomial | Distance floor | Floor / width (min–max over the four) |
+|---:|---:|---|---:|---:|
+| 1 | 23 | `2x - 1` | `0.04637302539604` | 289831407.875 – 1159325634901 |
+| 2 | 265 | `4x^2 + x - 2` | `0.000155202190771832373515301866` | 970014.027 – 3880054769.295 |
+| 3 | 2,639 | `4x^3 - 3x^2 - 3x + 2` | `0.000031603352558771761748899105` | 197521.021 – 790083813.969 |
+| 4 | 24,913 | `x^4 + x^3 - 2x^2 + 4x - 2` | `0.000000153906023149301453208663` | 961.974 – 3847650.578 |
+| 5 | 229,703 | `x^5 + x^4 - 2x^3 + 4x^2 - 2x` | `0.000000060818124943246023803813` | 380.137 – 1520453.123 |
+| 6 | 2,093,785 | `4x^6 + 4x^5 + 2x^4 + 2x^3 - x^2 - 3x + 1` | `0.000000008704058151401043652794` | 54.323 – 217601.453 |
+
+The narrowest margin anywhere in the table is 54.323 interval widths, at degree 6, so the null is not a width artifact: the published intervals would have to be some fifty times wider before the closest height-4 polynomial of that degree could reach one.
+
+Sensitivity control: the same planted-root control as Table 8 (`x^6 - 3x^4 + 1`, planted at height 3). The planted-root control exercises the scan path, not the enumeration bound: the same screen and the same exact Sturm decision run here, over a strictly larger class. It certifies that a root inside a frozen-width interval is reported; it does not certify the height-4 enumeration, which is checked instead by the committed class sizes.

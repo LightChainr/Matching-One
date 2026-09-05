@@ -3,7 +3,7 @@
 
 Built for the case where someone -- an external model, a preprint, a referee --
 hands us a closed form or an exact value for the square-site percolation
-threshold.  The repository holds two exhaustive certified exclusions and four
+threshold.  The repository holds three exhaustive certified exclusions and four
 mutually disjoint published intervals.  Between them, most claims can be refuted
 or placed within seconds, and the ones that cannot are exactly the interesting
 ones.
@@ -38,7 +38,7 @@ RESULTS = ROOT / "results"
 
 SCHEMA = "matching-one.threshold-claim-intake.v1"
 
-# The two censused classes.  Whether a class is actually *excluded* varies by
+# The censused classes.  Whether a class is actually *excluded* varies by
 # interval -- the wider Mertens intervals have surviving quartics -- so the
 # verdict reads each committed artifact rather than assuming.
 EXCLUSIONS = (
@@ -56,8 +56,19 @@ EXCLUSIONS = (
         "degree_max": 6,
         "height_max": 3,
         "artifact": "results/pslq-degree6-low-height-{interval}/latest.json",
-        "note": "the historical complexity range: every exactly-known planar "
-                "percolation threshold has degree <= 6 and height <= 3",
+        "note": "the historical complexity range as first read, at height 3; "
+                "superseded by degree6-height4, which is the class that "
+                "actually covers the exactly-known thresholds",
+    },
+    {
+        "id": "degree6-height4",
+        "degree_min": 1,
+        "degree_max": 6,
+        "height_max": 4,
+        "artifact": "results/pslq-degree6-height4-{interval}/latest.json",
+        "note": "the corrected historical complexity range: every exactly-known "
+                "planar percolation threshold has degree <= 6 and height <= 4, "
+                "the height being set by the Ziff 2006 A-lattice quintic",
     },
 )
 
@@ -254,6 +265,23 @@ def verdict(report: dict) -> dict:
                 )
 
     inside = report.get("value", {}).get("intervals_containing_it")
+
+    polynomial = report.get("polynomial")
+    if polynomial and not any(
+        row["has_root_in_interval"] for row in polynomial["per_interval"]
+    ):
+        return {
+            "outcome": "the_polynomial_has_no_root_in_any_published_interval",
+            "because": [
+                "certified by exact Sturm isolation at 120 bits on all four "
+                "intervals: this polynomial has no real root in any of them"
+            ],
+            "what_this_means": (
+                "it cannot be a minimal polynomial for the square-site threshold "
+                "unless every published estimate is wrong by more than its own "
+                "quoted uncertainty"
+            ),
+        }
 
     if contradictions:
         return {

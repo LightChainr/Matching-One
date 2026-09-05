@@ -24,7 +24,7 @@ Each file states its decision rule explicitly. If a question's decision rule rea
 
 | | Question | Blocks | Status |
 |---|---|---|---|
-| [Q4](Q4-why-square-site-resists.md) | Is "degree ≤ 6, height ≤ 3" a theorem about the solvable mechanisms, and is square-site provably outside them? | the interpretation of our main exclusion result, and the original target | unasked |
+| [Q4](Q4-why-square-site-resists.md) | Is the low degree/height of every exactly-known threshold a theorem about the three solvable mechanisms, and is square-site provably outside them? | the interpretation of our main exclusion result, and the original target | unasked |
 | [Q1](Q1-descendant-log-coupling.md) | Does the `h=5/8` logarithmic coupling descend to the level‑4 `x=21/4, s=4` state? | issue #275, the project's only P0 | unasked |
 | [Q2](Q2-additive-shape-ambiguity.md) | What admissible additive shape carries the measured ratio from `11/4` to `1.88 ± 0.18`? | `ROADMAP` item 2 — **the block has been run and came back negative** | unasked, and sharper than when written |
 | [Q3](Q3-unit-automorphism-escape.md) | What is the smallest escape from the Gaussian-unit no-go? | the Gaussian-cover production line, declared dead by a theorem | unasked |
@@ -48,11 +48,12 @@ python3 scripts/threshold_claim_intake.py --decimal <as many digits as are claim
 python3 scripts/threshold_claim_intake.py --expression "<mpmath closed form>"
 ```
 
-It places the claim against the four published intervals and both exhaustive censuses
-and returns one of four verdicts: refuted by a committed certificate, already
-catalogued as a width artifact, contradicts every published interval, or survives our
-checks. **It never confirms** — the last verdict means only that the claim is not
-already dead, and the report lists what would still have to be done.
+It places the claim against the four published intervals and all three exhaustive
+censuses and returns one of five verdicts: refuted by a committed certificate, already
+catalogued as a width artifact, has no root in any published interval, contradicts
+every published interval, or survives our checks. **It never confirms** — the last
+verdict means only that the claim is not already dead, and the report lists what would
+still have to be done.
 
 The filter takes seconds and costs nothing, so it goes first, before any assessment
 is written into `ANSWERS.md`.

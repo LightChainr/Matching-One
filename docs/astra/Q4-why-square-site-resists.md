@@ -1,4 +1,4 @@
-# Q4 — Is "degree ≤ 6, height ≤ 3" a theorem about the solvable mechanisms?
+# Q4 — Is the degree/height regularity a theorem about the solvable mechanisms?
 
 **Blocks:** the interpretation of this project's main exclusion result, and the
 scope paragraph of the P2 manuscript.
@@ -10,25 +10,41 @@ percolation threshold.
 ## The observation
 
 Every planar percolation threshold that is known exactly is an algebraic number of
-**degree at most 6 and coefficient height at most 3**. We have verified the minimal
-polynomials of the ones we rely on by exact Sturm isolation at 100 bits:
+strikingly low complexity. We have certified the minimal polynomials by exact Sturm
+isolation at 100–120 bits:
 
 | lattice | minimal polynomial | degree | height |
 |---|---|---:|---:|
 | square bond, triangular site | `2x - 1` | 1 | 2 |
-| kagome site | `x³ - 3x + 1` | 3 | 3 |
-| (3,12²) site | `x⁶ - 3x⁴ + 1` | 6 | 3 |
-| martini-family descendants | `x² + x - 1`, `2x² - 1` | 2 | 1, 2 |
 | triangular bond | `x³ - 3x + 1` (as `2 sin(π/18)`) | 3 | 3 |
+| honeycomb bond, kagome site | `x³ - 3x² + 1` (as `1 - 2 sin(π/18)`) | 3 | 3 |
+| (3,12²) site | `x⁶ - 3x⁴ + 1` | 6 | 3 |
+| martini bond | `2x² - 1` | 2 | 2 |
+| martini descendant | `x² + x - 1` | 2 | 1 |
+| Ziff 2006 "A lattice", bond | `p⁵ - 4p⁴ + 3p³ + 2p² - 1` | 5 | **4** |
 
 Each of these comes from one of exactly three mechanisms: **self-duality**,
 **self-matching**, or a **star-triangle / Yang–Baxter reduction** (including the
 generalized Scullard–Ziff self-dual-cell constructions).
 
 We have used that regularity as a *heuristic* to choose what to exclude: our
-exhaustive census covers degree ≤ 6 at height ≤ 3, and separately degree ≤ 4 at
+exhaustive census covers degree ≤ 6 at height ≤ 4, and separately degree ≤ 4 at
 height ≤ 100, and finds no root in the narrowest published interval for the
 square-site threshold.
+
+**A datum that bears directly on the question, and that we found the hard way.**
+The last row is a late addition. For some time we worked with "degree ≤ 6 **and
+height ≤ 3**", which held across the first six rows, and we chose a census class
+from it. It is false. The A-lattice threshold is an output of the generalized
+self-dual-cell mechanism like the others, and it sits a full unit of height above
+every other row. Six mechanism outputs supported a bound that the seventh broke.
+
+That is what an accident of a small sample looks like. It is not proof that no
+bound exists — a correct bound might simply be looser than the one we guessed —
+but it does mean the regularity should not be assumed, and it is the reason this
+question is worth asking rather than answering by inspection. (Our A-lattice row
+is corroborated from two independent indexes rather than read from the primary
+text; if you know it to be wrong, saying so is itself a useful answer.)
 
 ## The question
 
@@ -56,7 +72,7 @@ that obstruction is provable.
 |---|---|
 | **The mechanisms do bound degree and height, and square-site is outside the reachable set** | Our exclusion stops being a numerical census of an arbitrary class and becomes the numerical half of a real statement: *the square-site threshold is not reachable by any known exact mechanism, and is not a low-complexity algebraic number either.* That is a different and much stronger paper. |
 | **The mechanisms bound nothing; the regularity is small-sample coincidence** | Our choice of class was arbitrary and we should say so in print, rather than presenting "the historical complexity range" as though it meant something. The census stands as a fact; its interpretation shrinks. |
-| **The mechanisms bound degree/height and square-site is *inside* the reachable set** | The best outcome: it says where to look, and the exclusion tells us the answer must have degree ≥ 5 (or height > 3 at degrees 5–6, or height > 100 at degrees ≤ 4) on the Jacobsen interval. That is a search space, not a mystery. |
+| **The mechanisms bound degree/height and square-site is *inside* the reachable set** | The best outcome: it says where to look, and the exclusion tells us the answer must have degree ≥ 7, or height > 4 at degrees 5–6, or height > 100 at degrees ≤ 4, on the Jacobsen interval. That is a search space, not a mystery. |
 
 There is no answer to this question that leaves our position unchanged, which is why
 it is worth an expensive query.
@@ -79,8 +95,9 @@ four needs to say why.
 
 - The exact minimal polynomials in the table above, certified here.
 - The census results: no primitive integer polynomial of degree ≤ 4 and height ≤ 100,
-  and none of degree ≤ 6 and height ≤ 3, has a root in the Jacobsen 2015 interval
-  `[0.59274605079208, 0.59274605079212]`.
+  and none of degree ≤ 6 and height ≤ 4, has a root in the Jacobsen 2015 interval
+  `[0.59274605079208, 0.59274605079212]`. Both are exhaustive and certified, not
+  searches.
 - The standard theory of planar duality, matching lattices, the star-triangle
   relation and the Scullard–Ziff self-dual-cell criterion.
 - That the square-site problem is not self-dual and not self-matching. We are asking
@@ -98,6 +115,8 @@ four needs to say why.
 ## Provenance of the framing above
 
 `docs/manuscripts/p2-algebraic-exclusion/manuscript.md` §1.1 and §4.2, whose Table 6
-is generated from `results/pslq-lattice-native-candidates/latest.json`; the census
-artifacts under `results/pslq-degree4-*` and `results/pslq-degree6-low-height-*`; and
-the interval table in `analysis/pslq_search_contract.json`.
+is generated from `results/pslq-lattice-native-candidates/latest.json`; the A-lattice
+row from `results/ziff-a-lattice-complexity/latest.json`; the census artifacts under
+`results/pslq-degree4-*`, `results/pslq-degree6-low-height-*` and
+`results/pslq-degree6-height4-*`; and the interval table in
+`analysis/pslq_search_contract.json`.

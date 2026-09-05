@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Lock the four verdicts of the claimed-threshold filter.
+"""Lock the five verdicts of the claimed-threshold filter.
 
 Each assertion names a wrong answer the filter would otherwise give about a
 claim someone hands us: calling a refuted claim survivable, calling a known
@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from threshold_claim_intake import (  # noqa: E402
+    EXCLUSIONS,
     decimal_window,
     exclusion_status,
     normalize,
@@ -82,6 +83,17 @@ class CensusReadingTests(unittest.TestCase):
         )
 
 
+class NoRootTests(unittest.TestCase):
+    def test_a_polynomial_with_no_root_in_any_interval_is_refuted(self) -> None:
+        """The Ziff A-lattice threshold is exact -- for a different lattice.
+        Reporting it as surviving would be the filter's worst failure mode."""
+        report = render(Arguments(polynomial="-1,0,2,3,-4,1"))
+        self.assertEqual(
+            report["verdict"]["outcome"],
+            "the_polynomial_has_no_root_in_any_published_interval",
+        )
+
+
 class RefutationBranchTests(unittest.TestCase):
     def test_a_root_inside_an_excluded_class_is_refuted(self) -> None:
         """No such polynomial exists -- that is the theorem -- so this is the
@@ -108,6 +120,30 @@ class RefutationBranchTests(unittest.TestCase):
         self.assertEqual(
             verdict(report)["outcome"], "refuted_by_a_committed_certificate"
         )
+
+    def test_the_height_4_census_is_wired_in_and_covers_the_a_lattice_quintic(self) -> None:
+        """The wrong answer here is "we have not censused that".
+
+        A height-4 quintic is exactly what the corrected historical range now
+        covers.  If the class were missing from EXCLUSIONS the filter would
+        report such a claim as uncensused, which is a weaker -- and false --
+        statement about what this repository can already say.
+        """
+        classes = {entry["id"]: entry for entry in EXCLUSIONS}
+        self.assertIn("degree6-height4", classes)
+        covering = classes["degree6-height4"]
+        self.assertEqual((covering["degree_min"], covering["degree_max"], covering["height_max"]), (1, 6, 4))
+        for interval in ("jacobsen-2015-eigenvalue", "mertens-2022-p-cell"):
+            with self.subTest(interval=interval):
+                self.assertTrue(exclusion_status(covering, interval)["excluded"])
+
+        a_lattice = [-1, 0, 2, 3, -4, 1]  # the Ziff A-lattice quintic, height 4
+        report = render(Arguments(polynomial=",".join(str(v) for v in a_lattice)))
+        self.assertEqual(report["polynomial"]["height"], 4)
+        for row in report["polynomial"]["per_interval"]:
+            covering_ids = {entry["class"] for entry in row["censused_classes_covering_this_claim"]}
+            self.assertIn("degree6-height4", covering_ids)
+            self.assertNotIn("degree4-height100", covering_ids)  # degree 5 is outside it
 
     def test_the_filter_never_confirms(self) -> None:
         report = render(Arguments(decimal="0.59274605079210"))

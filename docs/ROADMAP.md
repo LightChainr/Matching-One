@@ -73,6 +73,21 @@ The N145->290 quantile-center `N^-3/4` transfer passed while the width metric dr
 
 The exact/no-new-compute programs in open PRs #245/#246 can proceed in parallel. Treat them as mechanism-discovery tools. They do not block the active compute choices above.
 
+### Publication track P2 — the algebraic exclusion manuscript
+
+`docs/manuscripts/p2-algebraic-exclusion/` is drafted end to end, with every number
+generated from committed artifacts. It needs no new compute.
+
+One item blocks submission rather than drafting: **a primary reading of Ziff, Phys.
+Rev. E 73, 016134 (2006).** Its "A lattice" bond threshold is an irreducible quintic of
+height 4, which is what sets the height bound of the paper's closing sentence, and we
+have it corroborated from two independent indexes rather than read — the publisher,
+arXiv and the indexing services are all unreachable from this environment. Anyone with
+library access closes this in minutes. The same reading also clears the two remaining
+`[LIT: primary text not verified]` markers.
+
+**Action:** read the three unverified sources; then the manuscript is submittable.
+
 ## Completed high-information blocks
 
 - **#50 N145->290 full curve:** complete. Corrected slope/root structure survives; a single three-level multiplier shape does not.

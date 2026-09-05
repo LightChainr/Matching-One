@@ -1,0 +1,38 @@
+{
+  "claim_level": "C1_exact_arithmetic_on_a_sourced_polynomial",
+  "consequence_for_the_manuscript": "degree 5 and height 4, so the claim that every exactly-known planar threshold has degree <= 6 and height <= 3 is false. The true historical range, on what we can verify, is degree <= 6 and height <= 4, and results/pslq-degree6-height4-* censuses that class",
+  "cross_check_against_the_quoted_decimal": {
+    "agrees_with_the_isolated_root": true,
+    "quoted": "0.625457",
+    "quoted_window": [
+      "1250913/2000000",
+      "250183/400000"
+    ],
+    "why_this_matters": "the polynomial and the decimal were taken from independent summaries; a transcription error in either would almost certainly break this agreement"
+  },
+  "degree": 5,
+  "height": 4,
+  "irreducible_over_Q": true,
+  "lattice": "Ziff 2006 'A lattice', bond percolation",
+  "monic_integer_factorizations_found": [],
+  "polynomial_ascending": [
+    -1,
+    0,
+    2,
+    3,
+    -4,
+    1
+  ],
+  "polynomial_text": "p^5 - 4p^4 + 3p^3 + 2p^2 - 1",
+  "primitive": true,
+  "root_in_unit_interval": {
+    "isolating_bracket": [
+      "831374706591180807335131615407006863/1329227995784915872903807060280344576",
+      "51960919161948800458445725962937929/83076749736557242056487941267521536"
+    ],
+    "isolation_bits": 120
+  },
+  "schema": "matching-one/ziff-a-lattice-complexity/v1",
+  "verification_status": "CORROBORATED_NOT_PRIMARY",
+  "what_is_still_owed": "a reading of Ziff, Phys. Rev. E 73, 016134 (2006) itself. The publisher, arXiv and the indexing services are unreachable through the network policy in use here, so this was corroborated from two independent search summaries rather than read. It must be checked against the primary text before submission."
+}
