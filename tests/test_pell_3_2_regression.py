@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 from copy import deepcopy
 import json
 from pathlib import Path
@@ -37,18 +37,6 @@ class PellThreeTwoRegressionTests(unittest.TestCase):
             with self.subTest(geometry=label):
                 with self.assertRaisesRegex(ValueError, f"{label} power coefficients drifted"):
                     validate_contract(changed)
-
-    def test_bernstein_drift_fails_before_power_claim(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["geometries"][1]["bernstein_counts"][4] += 1
-        with self.assertRaisesRegex(ValueError, "diamond_L2 Bernstein coefficients drifted"):
-            validate_contract(changed)
-
-    def test_pell_geometry_drift_is_rejected(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["pell_pair"]["diamond_d"] = 3
-        with self.assertRaisesRegex(ValueError, "Pell pair must remain"):
-            validate_contract(changed)
 
     def test_numerical_or_monte_carlo_result_fields_are_forbidden(self) -> None:
         for key in ("physical_root", "root_gap", "samples"):

@@ -29,8 +29,7 @@ inputs. Root decisions reuse the repository's existing exact Sturm path
 and a regression test fails if it drifts from the artifact.
 
 The one new computation is the §6.4 sensitivity control. It is a synthetic control, not a census extension: it
-runs the **unmodified** `degree4_interval_exclusion.run_search` on synthetic intervals, and `GOVERNANCE.md`
-places synthetic controls outside the production queue. It covers exactly the intervals whose census result was
+runs the **unmodified** `degree4_interval_exclusion.run_search` on synthetic intervals. It covers exactly the intervals whose census result was
 a null — read from the census artifacts, not hardcoded — and takes about 24 seconds.
 
 ## Section readiness

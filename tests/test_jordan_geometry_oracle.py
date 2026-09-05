@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-from copy import deepcopy
+from __future__ import annotations
 from fractions import Fraction
 import json
 from pathlib import Path
@@ -63,12 +62,6 @@ class JordanGeometryOracleTests(unittest.TestCase):
         generator = ((Fraction(1), Fraction(0)), (Fraction(0), Fraction(0)))
         with self.assertRaisesRegex(ValueError, "square to zero"):
             validate_nilpotent_cocycle(generator, Fraction(2), Fraction(3))
-
-    def test_contract_drift_fails_closed(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["jordan_matrix"][0][1] = "2"
-        with self.assertRaisesRegex(ValueError, "normal form drifted"):
-            validate_contract(changed)
 
 
 if __name__ == "__main__":

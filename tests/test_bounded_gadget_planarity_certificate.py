@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-import copy
+from __future__ import annotations
 from itertools import combinations
 import json
 import unittest
@@ -67,12 +66,6 @@ class BoundedGadgetPlanarityCertificateTests(unittest.TestCase):
             validate_simple_graph(3, ((0, 1), (1, 0)))
         with self.assertRaisesRegex(ValueError, "three or four"):
             build_row(2)
-
-    def test_tampering_fails_closed(self) -> None:
-        tampered = copy.deepcopy(build_artifact())
-        tampered["rows"][1]["all_canonical_orbits"]["planar_orbits"] = 90
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_artifact(tampered)
 
 
 if __name__ == "__main__":

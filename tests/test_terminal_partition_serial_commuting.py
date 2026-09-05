@@ -37,12 +37,6 @@ class SerialCommutingTests(unittest.TestCase):
         self.assertEqual(len(graph["components"]), 1)
         self.assertEqual(graph["clique_number"], 3)
 
-    def test_tampering_fails_closed(self):
-        value = json.loads(json.dumps(self.artifact))
-        value["center_indices"] = [6, 8]
-        with self.assertRaises(ValueError):
-            MODULE.validate_artifact(value)
-
 
 if __name__ == "__main__":
     unittest.main()

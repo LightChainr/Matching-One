@@ -21,12 +21,6 @@ class ModelCertificateEnvelopeTests(unittest.TestCase):
         self.assertEqual(summary["input_count"], 1)
         self.assertEqual(summary["gauge_coverage"], "complete_for_declared_class")
 
-    def test_digest_tampering_fails_closed(self) -> None:
-        tampered = copy.deepcopy(self.manifest)
-        tampered["inputs"][0]["sha256"] = "0" * 64
-        with self.assertRaisesRegex(ValueError, "digest mismatch"):
-            validate_manifest(tampered)
-
     def test_unknown_or_missing_fields_fail_closed(self) -> None:
         unknown = copy.deepcopy(self.manifest)
         unknown["unexpected"] = True

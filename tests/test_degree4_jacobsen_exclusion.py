@@ -1,4 +1,3 @@
-import copy
 import json
 from pathlib import Path
 import sys
@@ -33,12 +32,6 @@ class DegreeFourJacobsenExclusionTests(unittest.TestCase):
         self.assertEqual(row["root_containing_polynomials"], 0)
         self.assertEqual(row["near_candidates_with_stationary_point"], 0)
         self.assertEqual(row["closest_polynomial"]["coefficients_ascending"], [-84, 99, -7, 99, 58])
-
-    def test_tampering_fails_closed(self):
-        changed = copy.deepcopy(self.result)
-        changed["interval_result"]["excluded"] = False
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(changed, INTERVAL_ID)
 
 
 if __name__ == "__main__":

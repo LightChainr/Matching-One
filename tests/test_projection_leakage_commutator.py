@@ -88,12 +88,6 @@ class ProjectionLeakageCommutatorTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             analyze(u, v, ((1, 0, 0), (0, 1, 0), (0, 0, "1/2")))
 
-    def test_tampered_certificate_fails_validation(self):
-        artifact = build_artifact()
-        artifact["witness"]["compressed_commutator_frobenius_norm_squared"] = "0"
-        with self.assertRaises(ValueError):
-            validate_artifact(artifact)
-
 
 if __name__ == "__main__":
     unittest.main()

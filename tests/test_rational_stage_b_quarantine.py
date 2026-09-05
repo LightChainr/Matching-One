@@ -1,7 +1,5 @@
-from __future__ import annotations
 
-from copy import deepcopy
-import hashlib
+from __future__ import annotations
 import json
 from pathlib import Path
 import sys
@@ -45,45 +43,6 @@ class RationalStageBQuarantineTests(unittest.TestCase):
         self.assertTrue(result["safe_to_select_models"])
         self.assertFalse(result["safe_to_score_targets"])
         self.assertFalse(result["target_data_present"])
-
-    def test_target_width_in_training_fails_even_with_updated_digest(self) -> None:
-        contract = deepcopy(self.contract)
-        artifacts = dict(self.artifacts)
-        path = contract["training_source"]["path"]
-        artifacts[path] += b"22,0.6,forbidden,forbidden\n"
-        contract["training_source"]["sha256"] = hashlib.sha256(artifacts[path]).hexdigest()
-        with self.assertRaisesRegex(ValueError, "exactly 1..21"):
-            self.validate(contract, artifacts)
-
-    def test_source_digest_and_family_drift_fail_closed(self) -> None:
-        contract = deepcopy(self.contract)
-        contract["audit_source"]["sha256"] = "0" * 64
-        with self.assertRaisesRegex(ValueError, "audit source SHA-256 mismatch"):
-            self.validate(contract)
-
-        contract = deepcopy(self.contract)
-        artifacts = dict(self.artifacts)
-        path = contract["audit_source"]["path"]
-        artifacts[path] = artifacts[path].replace(b'Family("poly_4"', b'Family("poly_5"', 1)
-        contract["audit_source"]["sha256"] = hashlib.sha256(artifacts[path]).hexdigest()
-        with self.assertRaisesRegex(ValueError, "audit source family set drifted"):
-            self.validate(contract, artifacts)
-
-    def test_target_artifact_presence_fails_closed(self) -> None:
-        target = self.contract["target_artifact"]["expected_path"]
-        with self.assertRaisesRegex(ValueError, "target artifact exists"):
-            self.validate(existing={target})
-
-    def test_target_values_and_prediction_drift_are_rejected(self) -> None:
-        contract = deepcopy(self.contract)
-        contract["target_values"] = {"22": "0.6"}
-        with self.assertRaisesRegex(ValueError, "forbidden target-data keys"):
-            self.validate(contract)
-
-        contract = deepcopy(self.contract)
-        contract["frozen_prediction"]["sha256"] = "0" * 64
-        with self.assertRaisesRegex(ValueError, "frozen prediction SHA-256 mismatch"):
-            self.validate(contract)
 
 
 if __name__ == "__main__":

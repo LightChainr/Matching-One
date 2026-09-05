@@ -1,4 +1,3 @@
-import copy
 import json
 from pathlib import Path
 import sys
@@ -29,12 +28,6 @@ class DegreeThreeMertensMedExclusionTests(unittest.TestCase):
         self.assertEqual(row["derivative_stationary_fibers"], 0)
         self.assertEqual(row["root_containing_polynomials"], 0)
         self.assertEqual(row["closest_polynomial"]["coefficients_ascending"], [-63, 40, 65, 79])
-
-    def test_tampering_fails_closed(self):
-        changed = copy.deepcopy(self.result)
-        changed["interval_result"]["root_containing_polynomials"] = 1
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(changed, INTERVAL_ID)
 
 
 if __name__ == "__main__":

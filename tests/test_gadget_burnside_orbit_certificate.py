@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-import copy
+from __future__ import annotations
 import json
 import unittest
 
@@ -42,16 +41,6 @@ class GadgetBurnsideOrbitCertificateTests(unittest.TestCase):
         self.assertEqual((four["fixed_graph_sum"], four["group_order"]), (2160, 24))
         self.assertEqual(three["canonical_orbits_by_burnside"], 20)
         self.assertEqual(four["canonical_orbits_by_burnside"], 90)
-
-    def test_invalid_scope_fails_closed(self) -> None:
-        with self.assertRaisesRegex(ValueError, "three or four"):
-            build_row(2)
-
-    def test_tampering_fails_closed(self) -> None:
-        tampered = copy.deepcopy(build_artifact())
-        tampered["rows"][0]["fixed_graph_sum"] += 1
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_artifact(tampered)
 
 
 if __name__ == "__main__":

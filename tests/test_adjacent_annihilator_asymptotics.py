@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-from copy import deepcopy
+from __future__ import annotations
 from fractions import Fraction
 import json
 from pathlib import Path
@@ -48,17 +47,6 @@ class AdjacentAnnihilatorAsymptoticsTests(unittest.TestCase):
             profile = annihilator_profile(q)
             self.assertEqual(Fraction(profile["leading_coefficient"]), q / 4)
             self.assertEqual(Fraction(profile["root_power_w"]), q + 4)
-
-    def test_contract_drift_fails_closed(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["expected"]["3"]["w"] = "8"
-        with self.assertRaisesRegex(ValueError, "root power drifted"):
-            validate_contract(changed)
-
-        changed = deepcopy(self.contract)
-        changed["candidates"] = ["2", "3/2"]
-        with self.assertRaisesRegex(ValueError, "sorted and distinct"):
-            validate_contract(changed)
 
 
 if __name__ == "__main__":

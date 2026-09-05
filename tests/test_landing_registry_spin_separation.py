@@ -1,9 +1,6 @@
-from __future__ import annotations
 
+from __future__ import annotations
 from fractions import Fraction
-import json
-from pathlib import Path
-import tempfile
 import unittest
 
 from scripts.landing_registry_spin_separation import (
@@ -39,15 +36,6 @@ class LandingRegistrySpinSeparationTests(unittest.TestCase):
         self.assertEqual(matrix_rank(columns), 2)
         with self.assertRaisesRegex(ValueError, "denominator must be positive"):
             cosine_alias_at_rational_angle(4, 12, 1, 0)
-
-    def test_contract_drift_fails_closed(self) -> None:
-        frozen = build_contract()
-        frozen["extended_registry"]["rank"] = 1
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "drift.json"
-            path.write_text(json.dumps(frozen), encoding="utf-8")
-            with self.assertRaisesRegex(AssertionError, "contract drifted"):
-                validate_contract(path)
 
 
 if __name__ == "__main__":

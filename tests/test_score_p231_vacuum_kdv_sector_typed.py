@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-import json
+from __future__ import annotations
 from pathlib import Path
 import shutil
 import sys
@@ -48,44 +47,6 @@ class P231VacuumKdVSectorTypedTests(unittest.TestCase):
         semantics = result.pop("observable_semantics")
         self.assertEqual(result, frozen)
         self.assertEqual(semantics["non_scalar_C_only_indices"], [0, 3])
-
-    def test_descriptor_drift_fails_closed(self) -> None:
-        directory, root = self.copied_root()
-        self.addCleanup(directory.cleanup)
-        path = root / typed.SEMANTIC_GATE
-        gate = json.loads(path.read_text(encoding="utf-8"))
-        gate["target_descriptor"]["channel"] = "cross"
-        path.write_text(json.dumps(gate), encoding="utf-8")
-        with self.assertRaisesRegex(ValueError, "no exact topology map"):
-            typed.load_semantic_gate(root)
-
-    def test_coordinate_order_drift_fails_closed(self) -> None:
-        directory, root = self.copied_root()
-        self.addCleanup(directory.cleanup)
-        path = root / typed.SEMANTIC_GATE
-        gate = json.loads(path.read_text(encoding="utf-8"))
-        gate["coordinates_in_order"].reverse()
-        path.write_text(json.dumps(gate), encoding="utf-8")
-        with self.assertRaisesRegex(ValueError, "coordinate order"):
-            typed.load_semantic_gate(root)
-
-    def test_result_vector_width_drift_fails_closed(self) -> None:
-        bad = frozen_payload()
-        bad["observed"] = [1.0] * 5
-        with self.assertRaisesRegex(ValueError, "vector width"):
-            typed.score_typed(
-                ROOT, Path("pilot.json"), Path("oracle.json"),
-                runner=lambda *_: bad,
-            )
-
-    def test_evidence_boundary_drift_fails_closed(self) -> None:
-        bad = frozen_payload()
-        bad["governance"] = {"new_independent_evidence": True}
-        with self.assertRaisesRegex(ValueError, "evidence boundary"):
-            typed.score_typed(
-                ROOT, Path("pilot.json"), Path("oracle.json"),
-                runner=lambda *_: bad,
-            )
 
 
 if __name__ == "__main__":

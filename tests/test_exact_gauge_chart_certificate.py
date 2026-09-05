@@ -24,18 +24,6 @@ class ExactGaugeChartCertificateTests(unittest.TestCase):
         self.assertEqual(verification["amplification_factor"], "1024")
         self.assertTrue(verification["responses_identical"])
 
-    def test_singular_source_fails_closed(self) -> None:
-        descriptor = copy.deepcopy(build_result()["descriptor"])
-        descriptor["source_matrix"][0][0] = "0"
-        with self.assertRaisesRegex(ValueError, "singular"):
-            verify_chart(descriptor)
-
-    def test_wrong_similarity_fails_closed(self) -> None:
-        descriptor = copy.deepcopy(build_result()["descriptor"])
-        descriptor["normalizing_similarity"][0][0] = "1023"
-        with self.assertRaisesRegex(ValueError, "exact source inverse"):
-            verify_chart(descriptor)
-
     def test_boundary_must_remain_explicit(self) -> None:
         descriptor = copy.deepcopy(build_result()["descriptor"])
         descriptor["boundary_minor_value"] = "1"

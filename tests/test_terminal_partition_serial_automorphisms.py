@@ -35,20 +35,6 @@ class SerialAutomorphismTests(unittest.TestCase):
                 for b in range(15):
                     self.assertEqual(value[self.table[a][b]], self.table[value[b]][value[a]])
 
-    def test_nongenerating_seed_fails_closed(self):
-        with self.assertRaises(ValueError):
-            MODULE.word_representatives([6], self.table)
-
-    def test_map_width_drift_fails_closed(self):
-        with self.assertRaises(ValueError):
-            MODULE.compose_maps([0], [0, 1])
-
-    def test_tampering_fails_closed(self):
-        value = json.loads(json.dumps(self.artifact))
-        value["automorphism_count"] = 3
-        with self.assertRaises(ValueError):
-            MODULE.validate_artifact(value)
-
 
 if __name__ == "__main__":
     unittest.main()

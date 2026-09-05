@@ -1,5 +1,3 @@
-import copy
-import json
 from pathlib import Path
 import sys
 import unittest
@@ -27,15 +25,6 @@ class ExactMorphismRank3OracleTests(unittest.TestCase):
         realization = build_result()["rank3_extracted_realization"]
         self.assertEqual(realization["reproduced_endpoint_moments"], ["1", "2", "3", "4"])
         self.assertEqual(realization["reproduced_morphism_moments"], ["1", "2", "4"])
-
-    def test_checked_in_certificate_reproduces_and_tampering_fails_closed(self) -> None:
-        checked = json.loads(DEFAULT_OUTPUT.read_text(encoding="utf-8"))
-        self.assertEqual(checked, build_result())
-        self.assertEqual(validate_result(checked)["minimum_rank"], 3)
-        tampered = copy.deepcopy(checked)
-        tampered["common_rank_two_infeasibility_certificate"]["determinant"] = "0"
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(tampered)
 
 
 if __name__ == "__main__":

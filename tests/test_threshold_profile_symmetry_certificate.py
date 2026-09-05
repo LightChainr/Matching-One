@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 from fractions import Fraction
 import json
 from pathlib import Path
@@ -50,16 +50,6 @@ class ThresholdProfileSymmetryCertificateTests(unittest.TestCase):
     def test_asymmetric_weights_are_not_certified(self) -> None:
         self.assertTrue(weights_are_reflection_symmetric([1, 2, 2, 1]))
         self.assertFalse(weights_are_reflection_symmetric([1, 2, 3, 1]))
-
-    def test_unique_mode_gate_fails_closed(self) -> None:
-        with self.assertRaisesRegex(ValueError, "linear derivative"):
-            certify_unique_midpoint_mode([Fraction(1)])
-        with self.assertRaisesRegex(ValueError, "linear derivative"):
-            certify_unique_midpoint_mode([1, 0, -1, 1])
-        with self.assertRaisesRegex(ValueError, "positive to negative"):
-            certify_unique_midpoint_mode([1, -1, 1])
-        with self.assertRaisesRegex(ValueError, "reflection midpoint"):
-            certify_unique_midpoint_mode([1, 2, -1])
 
 
 if __name__ == "__main__":

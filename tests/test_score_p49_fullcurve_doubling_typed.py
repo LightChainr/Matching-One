@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 import copy
 import json
 import math
@@ -43,15 +43,6 @@ class P49FullcurveDoublingTypedTests(unittest.TestCase):
         cls.frozen_result = copy.deepcopy(cls.typed_result)
         cls.semantics = cls.frozen_result.pop("observable_semantics")
 
-    def test_registered_sign_and_normalized_projector_maps(self) -> None:
-        _, validated = typed.load_semantic_gate(ROOT)
-        matching = validated["matching_map"]
-        self.assertEqual((matching.scale, matching.offset), (-1.0, 0.0))
-        self.assertTrue(all(
-            (row["transform"].scale, row["transform"].offset) == (1.0, 0.0)
-            for row in validated["projectors"].values()
-        ))
-
     def test_canonical_replay_matches_committed_score(self) -> None:
         committed = json.loads(
             (ROOT / self.gate["committed_score"]["path"]).read_text(encoding="utf-8")
@@ -78,19 +69,6 @@ class P49FullcurveDoublingTypedTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "canonical histogram 0 git blob"):
                 typed.score_typed(ROOT, inputs, runner=runner)
             self.assertFalse(called)
-
-    def test_joint_order_drift_fails_closed(self) -> None:
-        bad = copy.deepcopy(self.frozen_result)
-        name, value = bad["joint_scores"].popitem()
-        bad["joint_scores"] = {name: value, **bad["joint_scores"]}
-        with self.assertRaisesRegex(ValueError, "joint score order"):
-            typed.score_typed(ROOT, self.histograms, runner=lambda _: bad)
-
-    def test_refit_boundary_drift_fails_closed(self) -> None:
-        bad = copy.deepcopy(self.frozen_result)
-        bad["P48_Sprime_fresh_seed_replication"]["classification"] = "refit"
-        with self.assertRaisesRegex(ValueError, "refit boundary"):
-            typed.score_typed(ROOT, self.histograms, runner=lambda _: bad)
 
     def test_response_coordinates_are_not_promoted_to_topology(self) -> None:
         self.assertIn("response/model coordinates", self.gate["semantic_boundary"])

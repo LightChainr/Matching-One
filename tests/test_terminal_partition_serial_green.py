@@ -36,12 +36,6 @@ class SerialGreenTests(unittest.TestCase):
     def test_unique_nontrivial_h_class(self):
         self.assertEqual([c for c in self.artifact["green_classes"]["H"] if len(c) > 1], [[6, 8]])
 
-    def test_tampering_fails_closed(self):
-        value = json.loads(json.dumps(self.artifact))
-        value["two_sided_ideals"][1].append(0)
-        with self.assertRaises(ValueError):
-            MODULE.validate_artifact(value)
-
 
 if __name__ == "__main__":
     unittest.main()

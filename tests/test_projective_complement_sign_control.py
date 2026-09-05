@@ -55,31 +55,6 @@ class ProjectiveComplementSignControlTest(unittest.TestCase):
         midpoint = analyze_orientation_pair(synthetic_control())["self_matching_midpoint"]
         self.assertEqual(midpoint, {"first": "0", "second": "0", "odd_H4_contrast": "0"})
 
-    def test_birth_tie_fails_closed(self):
-        control = synthetic_control()
-        with self.assertRaises(ValueError):
-            certify_complement(
-                control["orientations"][0]["rows"], "1/4", control["line_duality"]
-            )
-
-    def test_incomplete_or_noninvolutive_line_map_fails_closed(self):
-        control = synthetic_control()
-        rows = control["orientations"][0]["rows"]
-        with self.assertRaises(ValueError):
-            dualize_rows(rows, {"L0": "L1", "L1": "L0"})
-        with self.assertRaises(ValueError):
-            dualize_rows(rows, {"L0": "L1", "L1": "L2", "L2": "L0"})
-
-    def test_descriptor_drift_fails_closed(self):
-        control = synthetic_control()
-        control["orientations"][1]["name"] = "first"
-        with self.assertRaises(ValueError):
-            analyze_orientation_pair(control)
-        control = synthetic_control()
-        control["orientations"][1]["covector"] = "-1"
-        with self.assertRaises(ValueError):
-            analyze_orientation_pair(control)
-
     def test_float_threshold_and_invalid_birth_fail_closed(self):
         control = synthetic_control()
         control["threshold"] = 0.375
@@ -89,12 +64,6 @@ class ProjectiveComplementSignControlTest(unittest.TestCase):
         control["orientations"][0]["rows"][0]["tau2"] = "1/8"
         with self.assertRaises(ValueError):
             analyze_orientation_pair(control)
-
-    def test_tampered_certificate_fails_validation(self):
-        artifact = build_artifact()
-        artifact["report"]["H4_contrasts"]["dual"] = "0"
-        with self.assertRaises(ValueError):
-            validate_artifact(artifact)
 
 
 if __name__ == "__main__":

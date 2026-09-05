@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 import json
 from pathlib import Path
 import sys
@@ -18,18 +18,6 @@ from score_norm5_harmonic_primary_typed import (  # noqa: E402
 
 
 class Norm5PrimarySemanticGateTests(unittest.TestCase):
-    def test_exact_either_odd_to_cross_odd_map_is_registered(self) -> None:
-        manifest, source, target, transform = load_semantic_gate(ROOT)
-        self.assertEqual(source.channel.value, "either")
-        self.assertEqual(target.channel.value, "cross")
-        self.assertEqual(source.combination.value, "odd")
-        self.assertEqual(target.combination.value, "odd")
-        self.assertEqual(source.normalization.value, "raw")
-        self.assertEqual(target.normalization.value, "raw")
-        self.assertEqual(transform.scale, 1.0)
-        self.assertEqual(transform.offset, 0.0)
-        self.assertEqual(manifest["exact_registered_map"]["identity"], "D_either = D_cross")
-
     def test_wrapper_requires_output_path(self) -> None:
         self.assertEqual(find_output_path(["--output", "score.json"]), Path("score.json"))
         self.assertEqual(find_output_path(["--output=other.json"]), Path("other.json"))

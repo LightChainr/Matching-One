@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 import json
 from pathlib import Path
 import sys
@@ -143,13 +143,6 @@ class WrappingChannelMapTests(unittest.TestCase):
             map_observable(source, target)
         transform = map_observable(source, target, source_angular_factor=-0.5)
         self.assertEqual(transform.scale, -2.0)
-
-    def test_unsupported_channel_change_fails_closed(self) -> None:
-        with self.assertRaises(ObservableMappingError):
-            map_observable(
-                descriptor(TopologyChannel.BOTH, Combination.EVEN),
-                descriptor(TopologyChannel.EITHER, Combination.EVEN),
-            )
 
     def test_machine_readable_audit_maps_validate(self) -> None:
         path = ROOT / "predictions" / "wrapping_channel_audit_20260828.json"

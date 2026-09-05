@@ -1,4 +1,3 @@
-import copy
 from fractions import Fraction
 import json
 from pathlib import Path
@@ -37,12 +36,6 @@ class ExactHankelMinorCertificateTests(unittest.TestCase):
         summary = validate_result(checked)
         self.assertEqual(summary["minor_count"], 6)
         self.assertEqual(summary["rank_lower_bound"], 2)
-
-    def test_tampering_fails_closed(self) -> None:
-        tampered = copy.deepcopy(build_result())
-        tampered["minors"][0]["determinant"] = "0"
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(tampered)
 
     def test_shape_and_order_errors_fail_closed(self) -> None:
         with self.assertRaisesRegex(ValueError, "insufficient moments"):

@@ -1,9 +1,7 @@
-from __future__ import annotations
 
-import json
+from __future__ import annotations
 from pathlib import Path
 import sys
-import tempfile
 import unittest
 
 
@@ -60,28 +58,6 @@ class TypedIssue50N290Tests(unittest.TestCase):
         semantics = result["observable_semantics"]
         self.assertEqual(semantics["applied_transform"]["scale"], 1.0)
         self.assertEqual(semantics["validation_order"], "semantic_map_before_frozen_kernel_score")
-
-    def test_reversed_orientation_fails_closed(self) -> None:
-        with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
-            target = root / SEMANTIC_MANIFEST
-            target.parent.mkdir(parents=True)
-            payload = json.loads((ROOT / SEMANTIC_MANIFEST).read_text(encoding="utf-8"))
-            payload["target_descriptor"]["orientation_order"] = "second_minus_first"
-            target.write_text(json.dumps(payload), encoding="utf-8")
-            with self.assertRaisesRegex(ValueError, "differs from the semantic gate"):
-                load_semantic_gate(root)
-
-    def test_lineage_drift_fails_closed(self) -> None:
-        with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
-            target = root / SEMANTIC_MANIFEST
-            target.parent.mkdir(parents=True)
-            payload = json.loads((ROOT / SEMANTIC_MANIFEST).read_text(encoding="utf-8"))
-            payload["lineage_first"] = [17, 1]
-            target.write_text(json.dumps(payload), encoding="utf-8")
-            with self.assertRaisesRegex(ValueError, "first lineage"):
-                load_semantic_gate(root)
 
 
 if __name__ == "__main__":

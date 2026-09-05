@@ -22,12 +22,6 @@ class ExactIntervalEnclosureCertificateTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "product"):
             verify_enclosure(descriptor)
 
-    def test_reversed_interval_fails_closed(self) -> None:
-        descriptor = frozen_descriptor()
-        descriptor["left"] = ["1", "0"]
-        with self.assertRaisesRegex(ValueError, "reversed"):
-            verify_enclosure(descriptor)
-
     def test_bad_square_root_enclosure_fails(self) -> None:
         descriptor = frozen_descriptor()
         descriptor["sqrt_interval"] = ["3/2", "2"]

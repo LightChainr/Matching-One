@@ -84,16 +84,6 @@ class ProjectiveCommonRayWedgeTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             analyze(synthetic_batches((2, 2, 2, 2))[:1], self.SIZES)
 
-    def test_non_doubling_lineage_fails_closed(self):
-        with self.assertRaises(ValueError):
-            analyze(synthetic_batches((2, 2, 2, 2)), (85, 170, 341, 682))
-
-    def test_tampered_certificate_fails_validation(self):
-        artifact = build_artifact()
-        artifact["loading_drift_control"]["full_wedges"]["85"] = "0"
-        with self.assertRaises(ValueError):
-            validate_artifact(artifact)
-
 
 if __name__ == "__main__":
     unittest.main()

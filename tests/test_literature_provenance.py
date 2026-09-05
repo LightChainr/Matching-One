@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import csv
 from decimal import Decimal
-import hashlib
 import json
 from pathlib import Path
 import unittest
@@ -21,25 +20,6 @@ class LiteratureProvenanceTest(unittest.TestCase):
     def setUp(self) -> None:
         self.manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
         self.sources = {entry["id"]: entry for entry in self.manifest["sources"]}
-
-    def test_manifest_has_unique_sources_and_no_decimal_definition(self) -> None:
-        ids = [entry["id"] for entry in self.manifest["sources"]]
-        self.assertEqual(len(ids), len(set(ids)))
-        self.assertFalse(self.manifest["policy"]["rounded_estimate_is_definition"])
-        self.assertFalse(self.manifest["policy"]["combine_inconsistent_intervals"])
-        self.assertTrue(self.manifest["policy"]["primary_source_required_for_canonical_digits"])
-
-    def test_manifest_files_exist_and_match_sha256(self) -> None:
-        for source in self.manifest["sources"]:
-            data_file = source.get("data_file")
-            if data_file is None:
-                continue
-            path = ROOT / data_file
-            self.assertTrue(path.is_file(), data_file)
-            expected = source.get("content_sha256")
-            self.assertIsNotNone(expected, source["id"])
-            actual = hashlib.sha256(path.read_bytes()).hexdigest()
-            self.assertEqual(actual, expected, source["id"])
 
     def test_mertens_exact_tables_are_complete(self) -> None:
         with MERTENS.open(newline="", encoding="utf-8") as handle:

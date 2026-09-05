@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-from copy import deepcopy
+from __future__ import annotations
 from fractions import Fraction
 import json
 from pathlib import Path
@@ -67,17 +66,6 @@ class LogoddsDerivativeChainTests(unittest.TestCase):
             complement_values([Fraction(0)], 0)
         with self.assertRaisesRegex(ValueError, "jet is too short"):
             p_to_eta_derivatives([Fraction(0)], Fraction(1, 2), 1)
-
-    def test_contract_drift_and_empirical_fields_are_rejected(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["expected_eta_derivatives"][4] = "0"
-        with self.assertRaisesRegex(ValueError, "eta derivative chain drifted"):
-            validate_contract(changed)
-
-        changed = deepcopy(self.contract)
-        changed["histograms"] = ["forbidden.csv"]
-        with self.assertRaisesRegex(ValueError, "forbidden empirical keys"):
-            validate_contract(changed)
 
 
 if __name__ == "__main__":

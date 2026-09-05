@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 import json
 import sys
 import unittest
@@ -17,12 +17,6 @@ class EssentialBirthHistogramAnalysisTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.artifact = analysis.build_artifact()
-
-    def test_archive_checksums_and_totals(self) -> None:
-        audit = self.artifact["archive_validation"]
-        self.assertTrue(all(row["expected"] == row["observed"] for row in audit["checksums"].values()))
-        self.assertEqual(audit["marginal_totals"], {"K_minus": 100000, "K_plus": 100000})
-        self.assertEqual(audit["joint_total"], 100000)
 
     def test_joint_reconstructs_marginals_and_moments(self) -> None:
         audit = self.artifact["archive_validation"]

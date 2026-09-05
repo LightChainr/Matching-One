@@ -45,28 +45,6 @@ class TerminalPartitionSerialReversalTests(unittest.TestCase):
             values,
         )
 
-    def test_invalid_state_width_fails_closed(self):
-        with self.assertRaises(ValueError):
-            MODULE.reverse_ports((0, 1, 2))
-
-    def test_incomplete_or_duplicate_catalog_fails_closed(self):
-        values = tuple(range(15))
-        with self.assertRaises(ValueError):
-            MODULE.reverse_index_vector(values, self.partitions[:-1])
-        duplicate = self.partitions[:-1] + (self.partitions[0],)
-        with self.assertRaises(ValueError):
-            MODULE.reverse_index_vector(values, duplicate)
-
-    def test_mismatched_vector_length_fails_closed(self):
-        with self.assertRaises(ValueError):
-            MODULE.reverse_index_vector(tuple(range(14)), self.partitions)
-
-    def test_tampered_artifact_fails_closed(self):
-        payload = json.loads(json.dumps(self.artifact))
-        payload["reversal_index_map"][0] = 1
-        with self.assertRaises(ValueError):
-            MODULE.validate_artifact(payload)
-
 
 if __name__ == "__main__":
     unittest.main()

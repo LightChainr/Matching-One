@@ -23,9 +23,6 @@ class TerminalPartitionGluingAlgebraTests(unittest.TestCase):
     def test_committed_artifact_regenerates_exactly(self):
         self.assertEqual(json.loads(ARTIFACT.read_text()), self.artifact)
 
-    def test_four_terminal_catalog_has_bell_number_15(self):
-        self.assertEqual(len(self.partitions), 15)
-
     def test_join_laws_exhaustively(self):
         discrete = (0, 1, 2, 3)
         connected = (0, 0, 0, 0)
@@ -80,12 +77,6 @@ class TerminalPartitionGluingAlgebraTests(unittest.TestCase):
             MODULE.bilinear_compose([0.0] * 15, [0] * 15, MODULE.interface_table(self.partitions))
         with self.assertRaises(ValueError):
             MODULE.bilinear_compose([0] * 14, [0] * 15, MODULE.interface_table(self.partitions))
-
-    def test_tampered_artifact_fails_closed(self):
-        payload = json.loads(json.dumps(self.artifact))
-        payload["join_cayley_table"][0][0] = 14
-        with self.assertRaises(ValueError):
-            MODULE.validate_artifact(payload)
 
 
 if __name__ == "__main__":

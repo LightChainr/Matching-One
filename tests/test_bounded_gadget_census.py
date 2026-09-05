@@ -1,8 +1,6 @@
-from __future__ import annotations
 
-import copy
+from __future__ import annotations
 import json
-from pathlib import Path
 import unittest
 
 from scripts.bounded_gadget_census import (
@@ -60,16 +58,6 @@ class BoundedGadgetCensusTests(unittest.TestCase):
             vertex_degrees(4, ((0, 3), (1, 3), (2, 3))),
             (1, 1, 1, 3),
         )
-
-    def test_invalid_scope_fails_closed(self) -> None:
-        with self.assertRaisesRegex(ValueError, "three or four"):
-            build_census_row(2)
-
-    def test_artifact_tampering_fails_closed(self) -> None:
-        tampered = copy.deepcopy(build_artifact())
-        tampered["rows"][1]["connected_carrier_orbits"] += 1
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_artifact(tampered)
 
 
 if __name__ == "__main__":

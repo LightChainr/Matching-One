@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-import copy
+from __future__ import annotations
 from fractions import Fraction
 import json
 from pathlib import Path
@@ -115,12 +114,6 @@ class RankOneSurvivalCertificateTests(unittest.TestCase):
             trigger_layers(self.cache, rank_zero)
         with self.assertRaisesRegex(ValueError, "horizon"):
             subset_survival(self.cache, self.mask_a, 6)
-
-    def test_artifact_tampering_fails_closed(self) -> None:
-        tampered = copy.deepcopy(build_artifact())
-        tampered["witnesses"]["B"]["b2"] = 2
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_artifact(tampered)
 
 
 if __name__ == "__main__":

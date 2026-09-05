@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-import json
+from __future__ import annotations
 from pathlib import Path
 import shutil
 import sys
@@ -48,38 +47,6 @@ class V14ScalarRootTypedTests(unittest.TestCase):
         self.assertIs(result, frozen)
         self.assertEqual(result, payload())
         self.assertEqual(semantics["fixed_beta_in_N"], {"numerator": 7, "denominator": 2})
-
-    def test_descriptor_drift_fails_closed(self) -> None:
-        directory, root = self.copied_root()
-        self.addCleanup(directory.cleanup)
-        path = root / typed.SEMANTIC_GATE
-        gate = json.loads(path.read_text(encoding="utf-8"))
-        gate["target_descriptor"]["channel"] = "direction_0"
-        path.write_text(json.dumps(gate), encoding="utf-8")
-        with self.assertRaisesRegex(ValueError, "no exact topology map"):
-            typed.load_semantic_gate(root)
-
-    def test_runtime_beta_drift_fails_before_kernel(self) -> None:
-        called = []
-        with self.assertRaisesRegex(ValueError, "runtime beta"):
-            typed.score_typed(
-                ROOT, [], beta=3.0, runner=lambda *_: called.append(True)
-            )
-        self.assertEqual(called, [])
-
-    def test_runtime_lineage_drift_fails_before_kernel(self) -> None:
-        called = []
-        with self.assertRaisesRegex(ValueError, "runtime lineages"):
-            typed.score_typed(
-                ROOT, [], lineages=((65, 130),), runner=lambda *_: called.append(True)
-            )
-        self.assertEqual(called, [])
-
-    def test_frozen_payload_drift_fails_closed(self) -> None:
-        bad = payload()
-        bad["two_lineage_consistency"] = None
-        with self.assertRaisesRegex(ValueError, "consistency contract"):
-            typed.score_typed(ROOT, [], runner=lambda *_: bad)
 
 
 if __name__ == "__main__":

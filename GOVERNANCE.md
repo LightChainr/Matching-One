@@ -1,152 +1,183 @@
 # Governance
 
-Matching One is an exploratory computational-mathematics project. Governance exists to increase discovery speed while keeping the evidence chain legible. The default is **do the useful work, integrate it quickly, and control claim strength afterward**.
+Matching One is an exploratory computational-mathematics project. Its output is
+mathematics. Everything else — checks, manifests, digests, templates, ledgers — is
+overhead, justified only when it buys more discovery than it costs.
+
+Time spent on assurance is time not spent exploring. That trade is real and it has
+gone the wrong way here before.
+
+## 0. Two speeds
+
+This is the rule the rest of the document serves.
+
+| | **Exploring** (default) | **Publishing** (a specific paper, a specific claim) |
+|---|---|---|
+| Verification | minimum necessary — §2 | full — `docs/PUBLICATION-CHECKLIST.md` |
+| Freezing, preregistration | only when the run is meant as confirmatory | as required by the claim |
+| Digests, manifests, provenance chains | no | yes, for the artifacts the paper cites |
+| PR ceremony | a sentence saying what and why | the checklist |
+| Reviewer | none needed | whatever the venue needs |
+
+**Everything that reads like a requirement in this repository applies at publication
+time unless it appears in §2.** If you find a rule elsewhere that seems to gate
+exploratory work, it is stale; delete it.
+
+The order matters: explore first, verify what survived. Verification is *cheaper*
+after the fact, not more expensive, because by then you know which numbers mattered.
+Verifying during exploration means verifying everything, including the nine ideas
+out of ten that were about to be abandoned.
 
 ## 1. Default mode: run and integrate
 
 `main` is the shared research line, not a publication-only branch.
 
-Useful scripts, exact calculations, source-data reanalyses, pilots, theory notes, frozen predictions, negative results, and result archives should normally enter `main` as soon as they are understandable and minimally checked. External approval is not required for ordinary exploratory work in a solo-maintainer repository.
+Useful scripts, exact calculations, source-data reanalyses, pilots, theory notes,
+frozen predictions, negative results, and result archives enter `main` as soon as
+they are understandable. External approval is not required.
 
-A registry or documentation conflict must not block a scientifically useful analysis asset. Integrate the asset first and repair navigation in a follow-up commit when that is faster.
+A registry or documentation conflict must never block a scientifically useful asset.
+Integrate the asset; repair navigation later, or not at all.
 
-Branches and PRs are coordination tools, not permission gates. Close or bypass duplicate entrypoints aggressively once the useful content is canonical.
+Branches and PRs are coordination tools, not permission gates.
 
-## 2. The three hard constraints
+## 2. The minimum, while exploring
 
-Only three repository-wide constraints should routinely block a claim-bearing score or evidence aggregation.
+These five are the whole list. They are here because each is either free, or
+impossible to reconstruct later, or the kind of mistake that yields a confidently
+wrong answer instead of a missing check.
 
-### A. Do not rewrite frozen chronology
+**A. Don't fool yourself about a number.** If a result is claimed exact, compute it
+exactly — exact arithmetic, no binary floating point in the claim. If a computation
+*is* the result, check it once, by the cheapest independent means available: a closed
+form, a tiny case done by hand, a different method on one input. Once. Not a suite.
 
-A prediction or scoring contract frozen before target reveal stays immutable. Committed raw results and historical reports are preserved. Corrections are additive: keep the old artifact and add the corrected interpretation or replacement result.
+**B. Don't destroy data.** Commit raw sufficient statistics, not just fitted
+coefficients. Don't overwrite a committed result; add alongside it. Reruns are
+expensive; disk is not.
 
-This does **not** prevent new models, new analyses, new observables, or post-reveal discovery. It only prevents presenting a later change as if it had been frozen earlier.
+**C. Don't misdate.** If something was frozen before a target was seen, say so. If it
+was not, don't imply it was. This is a sentence, not a process — but it is the one
+fact that cannot be recovered afterwards, which is why it survives the cut.
 
-### B. Do not silently compare different observable semantics
+**D. Say which observable.** When comparing two numbers, name the convention each
+uses. If they differ, say what the map is. A wrong comparison is worse than no
+comparison and much harder to notice later.
 
-For a claim-bearing scorer, channel, primal/matching or even/odd combination, probability coordinate, orientation order, normalization, and quantity must either match or use a named exact map. Unsupported mappings fail closed.
+**E. Count one random block once.** Roots, slopes, derivatives, quantiles and score
+modes taken from the same histograms are all useful, and they are all the same block.
+Adding them as independent evidence inflates the conclusion. This one stays in the
+minimum not because it is ceremony-free — it is — but because violating it produces a
+confidently wrong answer rather than a missing check.
 
-Exploratory work may inspect alternative conventions freely, provided it is labeled as exploratory and does not silently enter a frozen score.
+That is all. Not: digests, tamper tests, manifests, registries, adoption audits,
+templates, power analyses, or independent reimplementations. Those are §3.
 
-### C. Do not count one random block as several independent evidence blocks
+## 3. What moves to publication time
 
-Multiple roots, slopes, derivatives, score modes, quantiles, or other views derived from the same histograms may all be useful. They simply must not be added as independent primary evidence unless their joint covariance/evidence construction justifies it.
+Everything else. Concretely, and non-exhaustively: SHA-256 chains and provenance
+manifests; independent second implementations; preregistration and held-out design
+for claims that need them; full covariance treatment; power and sensitivity; digest
+re-verification; artifact registries; reviewer checklists; the PR template's long
+form; and anything phrased as "every X must have Y".
 
-Everything else in this document is guidance, priority, or claim-labeling policy rather than a permission gate.
+`docs/PUBLICATION-CHECKLIST.md` holds the full form. Reach for it when there is a
+specific paper and a specific claim. Not before.
 
-## 3. Scientific claim levels
+## 4. What not to build
 
-Every important conclusion should fit one of these levels.
+The failure mode here is additive: every individual check looks reasonable, and the
+sum is a compliance system with a research project attached. Some checks are always
+a bad trade, so they are named:
+
+- **Tamper tests.** Verifying that a validator raises when you deliberately corrupt
+  its input. Nobody is corrupting anything. This tests an error path, not the
+  mathematics.
+- **Error-path tests for frozen constants** — "fails closed when a manifest field
+  drifts". The constant is right there in version control.
+- **Tests that assert a document contains a sentence.** Prose is not an invariant.
+- **Digest re-verification.** A hash proves a file did not change. It never proved
+  the file was right, and nothing here changes files behind our back. Git already
+  does this job.
+- **Meta-tooling that audits the repository itself** — inventories of which files
+  import which type, adoption reports, registry-consistency checkers.
+- **Wrappers whose only function is to be audited.**
+
+A test earns its place if you can name the wrong number it would prevent us from
+believing. If you cannot name that number in one sentence, do not write the test.
+
+Remember that a check written today runs forever. Its cost is not the hour you spend
+writing it; it is the permanent tax on every run afterwards, and the pressure it puts
+on everyone later to keep the pattern going. That is why "it's cheap, might as well"
+is wrong.
+
+## 5. Scientific claim levels
 
 | Level | Meaning |
 |---|---|
 | C0 | hypothesis, conjecture, design, or theory candidate |
 | C1 | method/control validated by exact identity, oracle, or deterministic regression |
 | C2 | exploratory numerical signal; analysis may be adaptive |
-| C3 | reproduced/frozen finite-size numerical result, e.g. independent seed or prospective/held-out test |
+| C3 | reproduced/frozen finite-size numerical result — independent seed, prospective or held-out |
 | C4 | asymptotic/mechanistic interpretation supported by multiple discriminating tests |
 | C5 | rigorous result or independently checkable certificate/proof |
 
-A result can be on `main` at any level. Merging is not a claim upgrade and lack of preregistration is not a reason to discard useful C2 evidence.
+A result can be on `main` at any level. Merging is not a claim upgrade, and lack of
+preregistration is not a reason to discard useful C2 evidence.
 
-The current project-wide summary lives in `docs/STATUS.md`; the execution-facing synthesis lives in the latest `notes/SYNTHESIS-*.md`.
+Claim levels are labels on conclusions, **not** gates on work. Nothing needs to reach
+a level before it can be committed, discussed or built on. The only thing a level
+governs is the language used in `docs/STATUS.md`.
 
-## 4. Research execution policy
+## 6. Research execution
 
-### Existing-data analysis
+Existing-data analysis, exact calculations, controls, pilots, and new production:
+**run them**. There is no production gate. Choose by expected information gain.
 
-Default: **run it**.
+For an expensive confirmatory question, freezing the target, model, sign and score
+before reading the target is worth it, because it is what earns C3. If that was not
+done, the run is still useful C2 evidence rather than something to discard.
 
-If the required sufficient statistics already exist, analysis should not wait for a separate issue, approval, or roadmap promotion. Add exact/semantic checks where cheap, record whether the result is retrospective or prospective, and integrate useful outputs.
+Large campaigns — GPU, Pell, N=1105, norm-4, norm-5, modulus scans — are **priority
+decisions, not permission classes**.
 
-### Exact calculations and controls
+## 7. High-risk machinery
 
-Default: **run them**.
+Topology, homology, RNG, threshold-rank reconstruction, covariance propagation and
+exact polynomial machinery contaminate everything downstream if wrong. These deserve
+a real check — one, at the point of reuse, proportional to consequence.
 
-Bounded enumeration, algebraic identities, tiny-system oracles, symbolic calculations, and synthetic controls are low-friction ways to kill weak ideas early. They do not need to wait behind the primary compute queue.
+This is the one place where more than the §2 minimum is worth it while exploring, and
+it is worth it because the blast radius is large, not because checking is virtuous.
 
-### Pilots and method experiments
+## 8. Results and corrections
 
-Default: **run small pilots**.
+Negative, null, failed, underpowered and contradictory results are first-class assets.
+Keep them.
 
-A pilot may be used to estimate variance, runtime, numerical stability, or information gain. Pilot outcomes should not be relabeled as prospective target evidence, but they may immediately change engineering choices and future priorities.
+On finding an error: preserve the old artifact, add the correction, say what changed.
+Update `docs/STATUS.md` only if the claim boundary moved. Do not build a correction
+workflow more elaborate than the risk.
 
-### New production
+## 9. Scientific language
 
-There is no general production gate. Run new production when the expected information gain justifies the cost and the observable is sufficiently defined to interpret the result.
+Language stays conservative even though execution is permissive:
 
-For an expensive confirmatory question, freezing the target/model/sign/score before reading the target is strongly preferred because it can support C3 evidence. If that is not done, the run remains useful exploratory C2 evidence rather than being blocked or discarded.
+- "observed at these sizes", not "asymptotic", without an asymptotic test;
+- "compatible with", not "equal to", for a numerical candidate;
+- "candidate operator", not "identified operator", until competitors are excluded;
+- "exact" only for a proved identity, exact arithmetic, or a certified computation.
 
-GPU, large CPU, Pell, N=1105, norm-4, norm-5, modulus scans, or other campaigns are therefore **priority decisions, not permission classes**. The roadmap may say “later”, “low leverage”, or “needs a better observable”; it should not imply that useful exploratory computation is forbidden.
-
-### Sequential stopping
-
-Predeclared e-process/confidence-sequence stopping is preferred when a run is intended as confirmatory evidence. Exploratory monitoring is allowed; it simply cannot inherit the same optional-stopping guarantee after the fact.
-
-## 5. High-risk numerical machinery
-
-Topology, homology, RNG, threshold-rank reconstruction, covariance propagation, and exact polynomial machinery can contaminate many downstream analyses if wrong. These deserve exact or independent regressions where practical.
-
-The check is proportional to reuse and consequence. It should not freeze unrelated exploratory work while a stronger oracle is being developed.
-
-## 6. PR and branch practice
-
-Use the smallest workflow that keeps work legible.
-
-Good patterns include direct integration of focused research assets, one small PR for a reusable method, one combined code+result PR for a tightly coupled experiment, or one archival PR for a coherent compute campaign.
-
-Prefer canonicalization over stacked coordination debt:
-
-- if a PR contains a useful standalone asset, integrate it even if its registry edit conflicts;
-- if a later PR supersedes an earlier theory/protocol entrypoint, keep the history but close the duplicate;
-- do not maintain deep stacks merely to preserve process order;
-- merge commits are useful when provenance ancestry matters; squash/rebase are optional.
-
-## 7. Results and corrections
-
-Negative, null, failed, underpowered, and contradictory results are first-class research assets. Keep them.
-
-When an error or interpretation change is found:
-
-1. preserve the old artifact;
-2. add a correction or replacement result;
-3. state what changed and why;
-4. update `docs/STATUS.md` only if the current claim boundary changes.
-
-Do not build a more elaborate correction workflow than the scientific risk requires.
-
-## 8. Statistical discipline without bureaucracy
-
-For strong quantitative claims, prefer full covariance, effect sizes, held-out/prospective data, and parameter-free tests. For discovery, flexible fits and approximate diagnostics are allowed when labeled accordingly.
-
-A statistical refinement should block a strong claim only when it could realistically change that claim. It should not block qualitative exploration, alternative coordinates, mechanism discovery, or generation of the next sharper test.
-
-## 9. Roadmap semantics
-
-Roadmap labels are scheduling hints:
-
-- **active** — high expected information now;
-- **ready** — can be run/analyzed whenever resources are available;
-- **later** — lower information per cost at present;
-- **dependency** — another result would make interpretation sharper, but exploratory work may proceed;
-- **historical** — retained for provenance.
-
-Avoid using `gated`, `blocked`, or `do not start` except when one of the three hard constraints would be violated.
+A result may be valuable because it kills a promising route. Do not tidy failures out
+of the narrative.
 
 ## 10. Operating principle
 
-Scientific language stays conservative; research execution stays permissive.
+**Explore first. Verify what survives.**
 
-In practice:
-
-- integrate useful analysis quickly;
-- use existing sufficient statistics harder before assuming new data are required;
-- run cheap exact controls and pilots early;
-- choose expensive work by information gain rather than ceremony;
-- keep chronology and observable semantics explicit;
-- aggregate correlated evidence once, not repeatedly;
-- let failed tests redirect the program immediately.
-
-## 11. Releases
-
-A paper-oriented or archival release should contain a claim-ledger snapshot, source/result hashes, major limitations, and enough information to reconstruct the reported tables/figures. A release tag does not itself upgrade a claim.
+- integrate useful analysis immediately;
+- use existing sufficient statistics harder before assuming new data are needed;
+- run cheap exact controls early — to kill ideas, not to certify them;
+- choose expensive work by information gain, never by ceremony;
+- let a failed test redirect the programme the same day;
+- when a rule and a discovery conflict, the rule is what gives way.

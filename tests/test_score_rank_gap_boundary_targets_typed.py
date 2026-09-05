@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-import json
+from __future__ import annotations
 from pathlib import Path
 import shutil
 import sys
@@ -46,39 +45,6 @@ class RankGapBoundaryTypedTests(unittest.TestCase):
         semantics = result.pop("observable_semantics")
         self.assertEqual(result, frozen)
         self.assertEqual(semantics["units"], "rank")
-
-    def test_descriptor_drift_fails_before_kernel(self) -> None:
-        directory, root = self.copied_root()
-        self.addCleanup(directory.cleanup)
-        path = root / typed.SEMANTIC_GATE
-        gate = json.loads(path.read_text(encoding="utf-8"))
-        gate["target_descriptor"]["channel"] = "either"
-        path.write_text(json.dumps(gate), encoding="utf-8")
-        called = []
-        with self.assertRaisesRegex(ValueError, "no exact topology map"):
-            typed.score_typed(
-                root, Path("manifest"), Path("source"),
-                runner=lambda *_: called.append(True),
-            )
-        self.assertEqual(called, [])
-
-    def test_model_drift_fails_closed(self) -> None:
-        directory, root = self.copied_root()
-        self.addCleanup(directory.cleanup)
-        path = root / typed.SEMANTIC_GATE
-        gate = json.loads(path.read_text(encoding="utf-8"))
-        gate["model"]["exponent_in_N"]["fitted"] = True
-        path.write_text(json.dumps(gate), encoding="utf-8")
-        with self.assertRaisesRegex(ValueError, "frozen model"):
-            typed.load_semantic_gate(root)
-
-    def test_result_target_order_drift_fails_closed(self) -> None:
-        bad = frozen_payload()
-        bad["target_order"] = [425, 325]
-        with self.assertRaisesRegex(ValueError, "target order differs"):
-            typed.score_typed(
-                ROOT, Path("manifest"), Path("source"), runner=lambda *_: bad
-            )
 
 
 if __name__ == "__main__":

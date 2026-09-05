@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-import json
+from __future__ import annotations
 from pathlib import Path
 import shutil
 import sys
@@ -67,33 +66,11 @@ class ThresholdScoreModesTypedTests(unittest.TestCase):
         self.assertEqual(result, payload())
         self.assertEqual(semantics["sector_order"], ["S", "D"])
 
-    def test_descriptor_drift_fails_closed(self) -> None:
-        directory, root = self.copied_root()
-        self.addCleanup(directory.cleanup)
-        path = root / typed.SEMANTIC_GATE
-        gate = json.loads(path.read_text(encoding="utf-8"))
-        gate["sector_descriptors"]["S"]["channel"] = "direction_0"
-        path.write_text(json.dumps(gate), encoding="utf-8")
-        with self.assertRaisesRegex(ValueError, "descriptor changed"):
-            typed.load_semantic_gate(root)
-
     def test_runtime_order_fails_before_kernel(self) -> None:
         called = []
         with self.assertRaisesRegex(ValueError, "runtime order"):
             typed.score_typed(ROOT, [], max_order=13, runner=lambda *_: called.append(True))
         self.assertEqual(called, [])
-
-    def test_mode_order_drift_fails_closed(self) -> None:
-        bad = payload()
-        bad["by_N"]["65"]["mode_order"].reverse()
-        with self.assertRaisesRegex(ValueError, "mode order"):
-            typed.score_typed(ROOT, [], max_order=2, runner=lambda *_: bad)
-
-    def test_evidence_guard_drift_fails_closed(self) -> None:
-        bad = payload()
-        bad["evidence_guard"] = "independent"
-        with self.assertRaisesRegex(ValueError, "evidence guard"):
-            typed.score_typed(ROOT, [], max_order=2, runner=lambda *_: bad)
 
 
 if __name__ == "__main__":

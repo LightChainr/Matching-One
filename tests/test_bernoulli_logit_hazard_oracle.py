@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-from copy import deepcopy
+from __future__ import annotations
 from fractions import Fraction
 import json
 from pathlib import Path
@@ -46,17 +45,6 @@ class BernoulliLogitHazardOracleTests(unittest.TestCase):
         all_open = threshold_oracle(3, 3, p)
         self.assertEqual(any_open["F"], 1 - (1 - p) ** 3)
         self.assertEqual(all_open["F"], p**3)
-
-    def test_contract_drift_fails_closed(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["expected"]["1/2"]["dF_deta"] = "1/2"
-        with self.assertRaisesRegex(ValueError, "dF_deta drifted"):
-            validate_contract(changed)
-
-        changed = deepcopy(self.contract)
-        changed["p_points"] = ["1/2", "1/3"]
-        with self.assertRaisesRegex(ValueError, "sorted and distinct"):
-            validate_contract(changed)
 
 
 if __name__ == "__main__":

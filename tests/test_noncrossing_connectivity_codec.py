@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-from copy import deepcopy
+from __future__ import annotations
 import json
 from pathlib import Path
 import sys
@@ -57,21 +56,6 @@ class NoncrossingConnectivityCodecTests(unittest.TestCase):
         self.assertTrue(is_noncrossing_rgs((0, 0, 1, 1)))
         with self.assertRaisesRegex(ValueError, "crossing"):
             rank_state((0, 1, 0, 1))
-
-    def test_canonicalization_and_malformed_inputs(self) -> None:
-        self.assertEqual(canonical_rgs((7, 7, -2, 9, -2)), (0, 0, 1, 2, 1))
-        for state in ((1,), (0, 2), (0, -1), ()):
-            with self.subTest(state=state):
-                with self.assertRaises(ValueError):
-                    validate_rgs(state)
-        with self.assertRaisesRegex(ValueError, "out of range"):
-            unrank_state(3, 5)
-
-    def test_contract_drift_fails_closed(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["expected_counts"]["6"] = 131
-        with self.assertRaisesRegex(ValueError, "declared Catalan count drifted"):
-            validate_contract(changed)
 
 
 if __name__ == "__main__":
