@@ -139,7 +139,10 @@ class P3EvidenceTable(unittest.TestCase):
         self.assertTrue(
             verdicts["no_modulus_dependence"]["verdict_survives_the_missing_covariance"])
         self.assertGreater(min(value for name, value in rows.items() if name not in below_one),
-                           7.0)
+                           3.0)
+        # the exact (u+1) solution, not the leading-order gap over lambda, which
+        # would put the top of this column at 785 rather than 17.5
+        self.assertLess(max(rows.values()), 20.0)
 
     def test_exactly_one_verdict_is_undetermined_by_the_missing_covariance(self) -> None:
         """Stops us believing a stable exclusion that the absent cov(r2,r4) could undo.

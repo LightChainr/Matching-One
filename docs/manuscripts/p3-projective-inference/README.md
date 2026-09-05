@@ -52,6 +52,15 @@ No number in the draft is hand-typed into a generated table. `tables.md` is rend
 | 7 | reproducibility and preconditions | complete |
 | 8 | related work | **one open item**: reference [6] is marked **[LIT]** and needs a primary reading |
 
+## One correction already applied to this draft
+
+The `|A₈/A₄|` column of §4.6 first shipped as the raw gap divided by the leakage coefficient, which is the
+leading-order form and drops the `(u + 1)` the exact solution carries. It overstated the requirement by 2.4× for
+the bare aspect ratio and by 45× for the weight-12 rays, where it read 783 instead of 17.5. The frozen design
+records the leakage *per rung with its sign*, which is what makes the exact solve available at all; the fix is in
+`required_spin8_ratio`, and `test_every_survivor_of_the_clean_pair_needs_a_large_spin8` now pins the top of the
+column below 20 so the leading-order form cannot come back silently. The dichotomy is unchanged.
+
 ## Open items before submission
 
 1. **Reference [6].** The claim that ratio-testing of aspect-ratio amplitudes is standard practice in the

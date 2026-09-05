@@ -137,10 +137,25 @@ def required_spin8_ratio(vector: Sequence[float], covariance: Sequence[Sequence[
                          ray: Sequence[float]) -> float:
     """How large |A8/A4| must be for this model to reach the r=2 rung.
 
-    The amplitude is fixed from the r=1 and r=4 rungs, whose leakages share a
-    sign, and the r=2 rung is then predicted.  The gap has to be spin-8, and this
-    reports the gap in units of the predicted spin-4 amplitude, divided by the
-    leakage coefficient.
+    The frozen design records the leakage per rung with its sign: r=1 and r=4
+    both carry -1148/21025 and r=2 carries +1148/21025.  So if the ratio
+    rho = A8/A4 is the same at all three aspect ratios -- which is exactly what
+    the design's own "bounded well below 1" presupposes when it is applied to
+    every rung at once -- the measured quantities are
+
+        m(1) = a v1 (1 - lambda rho)
+        m(2) = a v2 (1 + lambda rho)
+        m(4) = a v4 (1 - lambda rho)
+
+    The amplitude is fitted from the two rungs that share a sign, which returns
+    ``a (1 - lambda rho)`` rather than ``a``, and the middle rung then gives
+
+        u = m(2) / (v2 * fitted)  =  (1 + lambda rho) / (1 - lambda rho),
+
+    so ``rho = (u - 1) / (lambda (u + 1))`` exactly.  Dividing the raw gap by
+    ``lambda`` instead -- the leading-order form this routine used until
+    2026-09-06 -- omits the ``(u + 1)`` and overstates the requirement by that
+    factor, which reaches 45 for the weight-12 rays.
     """
     pair_covariance = [[covariance[0][0], covariance[0][2]],
                        [covariance[2][0], covariance[2][2]]]
@@ -149,7 +164,10 @@ def required_spin8_ratio(vector: Sequence[float], covariance: Sequence[Sequence[
     predicted_middle = amplitude * ray[1]
     if predicted_middle == 0.0:
         return math.inf
-    return abs(vector[1] - predicted_middle) / (LEAKAGE * abs(predicted_middle))
+    u = vector[1] / predicted_middle
+    if u == -1.0:
+        return math.inf
+    return abs(u - 1.0) / (LEAKAGE * abs(u + 1.0))
 
 
 def rescore(competitors: Mapping[str, Sequence[float]],
@@ -212,6 +230,20 @@ def rescore(competitors: Mapping[str, Sequence[float]],
         "competitors": rows,
         "spin8_bound_provenance": {
             "assumed_by_the_frozen_design": "|A8/A4| well below 1",
+            "how_the_requirement_is_solved": (
+                "from the per-rung leakage signs the frozen design "
+                "records -- r=1 and r=4 carry -1148/21025 and r=2 carries "
+                "+1148/21025 -- so with rho = A8/A4 the same at all three rungs, "
+                "u = m(2) / (v2 * amplitude fitted from r=1 and r=4) equals "
+                "(1 + lambda rho) / (1 - lambda rho) and rho = (u-1)/(lambda(u+1))"
+            ),
+            "what_that_solution_assumes": (
+                "that A8/A4 is the same at all three aspect ratios. That is what "
+                "a single bound on |A8/A4| presupposes when it is applied to every "
+                "rung at once, so it is the design's own assumption rather than a "
+                "new one -- but it is an assumption, and a rung-dependent ratio "
+                "would change these numbers"
+            ),
             "traces_to": (
                 "predictions/modulus_fingerprint_n290_v2_20260905.yaml, quoting the "
                 "committed H4-beats-H8 results as H4 0.4163/2 against H8 16.0120/2"

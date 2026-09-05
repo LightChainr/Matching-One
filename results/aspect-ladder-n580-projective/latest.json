@@ -15,7 +15,7 @@
         2.0,
         4.0
       ],
-      "required_abs_A8_over_A4_to_reach_r2": 7.7034025881458845,
+      "required_abs_A8_over_A4_to_reach_r2": 3.1824107160344903,
       "sigma_over_admissible_correlations": [
         2.1440765898340355,
         4.7688492476881645
@@ -33,7 +33,7 @@
         1.0,
         1.0
       ],
-      "required_abs_A8_over_A4_to_reach_r2": 0.3896855217837803,
+      "required_abs_A8_over_A4_to_reach_r2": 0.1927917002925078,
       "sigma_over_admissible_correlations": [
         9.214918506995293,
         Infinity
@@ -51,7 +51,7 @@
         4.0,
         16.0
       ],
-      "required_abs_A8_over_A4_to_reach_r2": 32.00978409632667,
+      "required_abs_A8_over_A4_to_reach_r2": 8.540981609702602,
       "sigma_over_admissible_correlations": [
         6.104937105992065,
         8.93392019413982
@@ -69,7 +69,7 @@
         2.75,
         10.9908008589
       ],
-      "required_abs_A8_over_A4_to_reach_r2": 32.10162275195793,
+      "required_abs_A8_over_A4_to_reach_r2": 8.554041060067567,
       "sigma_over_admissible_correlations": [
         5.933602731446329,
         8.858616104770292
@@ -87,7 +87,7 @@
         32.515625,
         2080.30719731
       ],
-      "required_abs_A8_over_A4_to_reach_r2": 784.5938258072141,
+      "required_abs_A8_over_A4_to_reach_r2": 17.4975818194515,
       "sigma_over_admissible_correlations": [
         11.133083476071072,
         11.378149352382191
@@ -105,7 +105,7 @@
         20.796875,
         1327.6635036
       ],
-      "required_abs_A8_over_A4_to_reach_r2": 782.8485404744023,
+      "required_abs_A8_over_A4_to_reach_r2": 17.495842070093417,
       "sigma_over_admissible_correlations": [
         11.130227368349383,
         11.377193844580397
@@ -123,7 +123,7 @@
         0.125,
         2.79010739704e-05
       ],
-      "required_abs_A8_over_A4_to_reach_r2": 222.48919954985303,
+      "required_abs_A8_over_A4_to_reach_r2": 15.725529111410033,
       "sigma_over_admissible_correlations": [
         Infinity,
         Infinity
@@ -141,7 +141,7 @@
         7.5625,
         120.79770352
       ],
-      "required_abs_A8_over_A4_to_reach_r2": 182.1558946444769,
+      "required_abs_A8_over_A4_to_reach_r2": 15.248255876821228,
       "sigma_over_admissible_correlations": [
         10.025962742762978,
         10.968462543592507
@@ -177,8 +177,10 @@
   "source_artifact": "results/aspect-ladder-n580/latest.json",
   "spin8_bound_provenance": {
     "assumed_by_the_frozen_design": "|A8/A4| well below 1",
+    "how_the_requirement_is_solved": "from the per-rung leakage signs the frozen design records -- r=1 and r=4 carry -1148/21025 and r=2 carries +1148/21025 -- so with rho = A8/A4 the same at all three rungs, u = m(2) / (v2 * amplitude fitted from r=1 and r=4) equals (1 + lambda rho) / (1 - lambda rho) and rho = (u-1)/(lambda(u+1))",
     "traces_to": "predictions/modulus_fingerprint_n290_v2_20260905.yaml, quoting the committed H4-beats-H8 results as H4 0.4163/2 against H8 16.0120/2",
-    "what_that_actually_is": "a model-selection result on a homology character, not a measurement of the angular spin-8 to spin-4 amplitude ratio. The inference from one to the other is a plausibility argument and is not quantified anywhere in the repository"
+    "what_that_actually_is": "a model-selection result on a homology character, not a measurement of the angular spin-8 to spin-4 amplitude ratio. The inference from one to the other is a plausibility argument and is not quantified anywhere in the repository",
+    "what_that_solution_assumes": "that A8/A4 is the same at all three aspect ratios. That is what a single bound on |A8/A4| presupposes when it is applied to every rung at once, so it is the design's own assumption rather than a new one -- but it is an assumption, and a rung-dependent ratio would change these numbers"
   },
   "what_this_does_not_separate": "a spin-8 amplitude comparable to spin-4, and a C + A4 cos4 + A8 cos8 form that is simply wrong, produce the same arithmetic here. Two orientations per rung determine C and A4 exactly with nothing left over, so this run cannot tell them apart. Three orientations per rung can, and the design already costed that at N=650"
 }

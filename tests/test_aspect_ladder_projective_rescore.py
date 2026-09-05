@@ -138,6 +138,11 @@ class Spin8ReconciliationTests(unittest.TestCase):
         within the assumed bound, and it is the one the clean r=1 / r=4 pair
         excludes outright. Everything else needs |A8/A4| far above 1 -- which
         is the assumption the whole two-orientation estimator rests on.
+
+        The wrong number this stops us believing is a requirement column that
+        has silently become the leading-order form again: dividing the raw gap
+        by lambda, without the (u+1) the exact solution carries, inflates every
+        entry -- by 2.4x for the bare aspect ratio and by 45x for weight 12.
         """
         report = rescore.rescore(rescore.load_competitors(), rescore.load_response())
         cheap = {name for name, row in report["competitors"].items()
@@ -146,7 +151,12 @@ class Spin8ReconciliationTests(unittest.TestCase):
         self.assertTrue(report["competitors"]["no_modulus_dependence"]["excluded_at_3_sigma"])
         for name, row in report["competitors"].items():
             if name != "no_modulus_dependence":
-                self.assertGreater(row["required_abs_A8_over_A4_to_reach_r2"], 5.0, name)
+                self.assertGreater(row["required_abs_A8_over_A4_to_reach_r2"], 3.0, name)
+        # the exact solution, not the leading-order gap over lambda: weight-12
+        # would read 783 under that form and reads 17.5 under this one
+        self.assertLess(
+            max(row["required_abs_A8_over_A4_to_reach_r2"]
+                for row in report["competitors"].values()), 20.0)
 
     def test_the_bound_provenance_is_recorded_rather_than_asserted(self) -> None:
         """Keeps the weak link visible.

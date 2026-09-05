@@ -40,12 +40,13 @@ one exclusion weakens, and seven of eight competitors are excluded at 7.0–11.3
 
 The surviving structure is not a winner. The measured second divided difference is negative, `−4.66·10⁻⁴ ±
 1.53·10⁻⁴` (`z = −3.05`), while every competitor predicts it to be exactly zero or strictly positive: the
-response is concave in `r` and no candidate law is. Reconciling the dropped middle rung with any competitor
-requires a spin-8 to spin-4 amplitude ratio between 7.7 and 785, against the `≪ 1` the frozen design assumed
-when it dropped that rung — and the one competitor needing a small ratio, 0.4, is excluded at 9.2σ by the two
-clean rungs alone. The design's justification for discarding a rung and the data on that rung are therefore in
-quantitative contradiction, a contradiction the ratio test could not express because it lives in the direction
-the ratio quotients away.
+response is concave in `r` and no candidate law is. Because the design records its leakage per rung *with its
+sign*, the amplitude ratio each competitor needs to reach the dropped middle rung can be solved exactly rather
+than bounded, and it lies between 3.2 and 17.5 — against the `≪ 1` the frozen design assumed when it dropped
+that rung. The one competitor needing a small ratio, 0.19, is excluded at 9.2σ by the two clean rungs alone. The
+design's justification for discarding a rung and the data on that rung are therefore in quantitative
+contradiction, a contradiction the ratio test could not express because it lives in the direction the ratio
+quotients away.
 
 We conclude with the design consequence: the amplitude the analysis assumed must be measured, which requires
 three lattice orientations per family rather than two, and we give the smallest geometry where that is possible.
@@ -108,7 +109,7 @@ plausibility argument. And the rung that was dropped is the only place where the
 that bound.
 
 We will show that this is exactly what happened in the analysis we reanalyse here, and that the contradiction is
-large: the dropped rung requires the systematic to be between 8 and 785 times its assumed bound.
+large: the dropped rung requires the systematic to be between 3 and 18 times the value it was bounded *below*.
 
 ### 1.4 The reframing
 
@@ -422,30 +423,48 @@ form for its variance.
 
 ### 4.6 The design's assumption, priced
 
-Section 3.3 described the move that dropped the middle rung: a spin-8 leakage of coefficient `0.0546`, assumed
-small because `|A₈/A₄| ≪ 1`. We can now price that assumption. Fixing each competitor's amplitude from the two
-clean rungs — whose leakages share a sign — and asking what spin-8 amplitude is needed to bring the middle rung
-onto the predicted ray gives Table **T5**:
+Section 3.3 described the move that dropped the middle rung: a spin-8 leakage of coefficient `λ = 1148/21025 =
+0.0546`, assumed harmless because `|A₈/A₄| ≪ 1`. We can now price that assumption, and price it exactly rather
+than to leading order, because the frozen design records the leakage per rung *with its sign*: `r = 1` and
+`r = 4` both carry `−λ` and `r = 2` carries `+λ`.
+
+Write `ρ = A₈/A₄` and take it to be the same at all three aspect ratios — which is precisely what a *single*
+bound on `|A₈/A₄|`, applied to every rung at once, presupposes. Then the measured quantities are
+
+```text
+m(1) = a v₁ (1 − λρ),    m(2) = a v₂ (1 + λρ),    m(4) = a v₄ (1 − λρ).
+```
+
+Fitting the amplitude from the two rungs that share a sign returns `a(1 − λρ)`, not `a`, and the middle rung then
+supplies
+
+```text
+u  =  m(2) / (v₂ · fitted)  =  (1 + λρ) / (1 − λρ),        ρ = (u − 1) / (λ (u + 1)).
+```
+
+This is exact. Dividing the raw gap `|m(2) − v₂ · fitted|` by `λ` instead — the leading-order form — omits the
+`(u + 1)` and overstates the requirement by that factor, which reaches 45 for the weight-12 rays. Table **T5**
+reports the exact solution:
 
 | competitor | required \|A₈/A₄\| |
 |---|---:|
-| `no_modulus_dependence` | **0.4** |
-| `bare_aspect_ratio` | 7.7 |
-| `plain_area_scaling` | 32.0 |
-| `q4_jordan_weight4` | 32.1 |
-| `weight8_E8` | 182 |
-| `weight12_delta` | 222 |
-| `weight12_E4_cubed` | 783 |
-| `weight12_E12` | 785 |
+| `no_modulus_dependence` | **0.19** |
+| `bare_aspect_ratio` | 3.2 |
+| `plain_area_scaling` | 8.5 |
+| `q4_jordan_weight4` | 8.6 |
+| `weight8_E8` | 15.2 |
+| `weight12_delta` | 15.7 |
+| `weight12_E4_cubed` | 17.5 |
+| `weight12_E12` | 17.5 |
 
-Seven of the eight require the assumed-negligible harmonic to be between 8 and 785 times the spin-4 amplitude it
-was assumed to be far smaller than. The only competitor consistent with a small ratio, `no_modulus_dependence` at
-0.4, is excluded at 9.2σ by the two clean rungs alone — the one exclusion that does not depend on the disputed
-rung at all.
+Seven of the eight require the assumed-negligible harmonic to be between 3 and 18 times the spin-4 amplitude it
+was assumed to be far *smaller* than. The only competitor consistent with a small ratio,
+`no_modulus_dependence` at 0.19, is excluded at 9.2σ by the two clean rungs alone — the one exclusion that does
+not depend on the disputed rung at all.
 
 So the ladder presents a fork with no third branch:
 
-- **either** the spin-8 amplitude is one to three orders of magnitude larger than the bound under which the
+- **either** the spin-8 amplitude is one to two orders of magnitude larger than the bound under which the
   middle rung was set aside, in which case the frozen design's justification for setting it aside is false;
 - **or** the assumed decomposition `C + A₄cos4θ + A₈cos8θ` is not the right form for this observable, in which
   case the amplitudes being compared are not the amplitudes the models predict.
@@ -462,7 +481,7 @@ the residual direction the ratio removes.
 - On this data, the projective and Fieller statistics agree exactly where they are both defined (`1.5·10⁻¹⁵`).
 - Using all three rungs, seven of eight prospectively frozen competitors are excluded at 7.0–11.3σ.
 - The response's second divided difference is negative at 3.05σ, and no competitor's class permits that sign.
-- Reconciling the middle rung with any competitor requires `|A₈/A₄|` between 0.4 and 785, and the only value
+- Reconciling the middle rung with any competitor requires `|A₈/A₄|` between 0.19 and 17.5, and the only value
   below 1 belongs to a competitor excluded at 9.2σ without that rung.
 
 ### 5.2 One verdict is not stable
@@ -496,6 +515,10 @@ covariance (§7), so this gap does not recur.
   spin-8 amplitude and a wrong functional form produce the same arithmetic here.
 - **No modular identification.** Nothing here bears on whether the underlying object carries modular weight; the
   competitors are rays, and rays are compatible with many mechanisms.
+- **The `|A₈/A₄|` column assumes a rung-independent ratio.** §4.6's exact solve takes `ρ = A₈/A₄` to be the
+  same at all three aspect ratios. That is what the design's single bound presupposes when it is applied to every
+  rung, so it is not a new assumption, but it is an assumption: a ratio that varies with `r` would change those
+  numbers. It would not change the exclusions of §4.4 or the curvature of §4.5, neither of which uses it.
 - **No claim about the percolation threshold.** This is an amplitude ladder, not a threshold estimate.
 
 ---
@@ -516,8 +539,8 @@ The smallest site count meeting that condition is **N = 650**: square `|w|² = 6
 `19+17i`, and rectangular `|w|² = 325` with `18+i`, `17+6i`, `15+10i`. This is 2.24× the sites of the design in
 which the leakage was first identified, and requires three coupled runs rather than two. It is the measurement
 this reanalysis makes mandatory rather than optional, and it converts the fork of §4.6 into a decision: a
-measured `|A₈/A₄|` near 0.05 falsifies the large-leakage branch and indicts the angular form; a measured value
-above 1 falsifies the design's own justification for the analysis it froze.
+measured `|A₈/A₄|` well below 1 falsifies the large-leakage branch and indicts the angular form; a measured value
+of order 10 falsifies the design's own justification for the analysis it froze.
 
 ---
 

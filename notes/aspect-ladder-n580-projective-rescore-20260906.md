@@ -25,14 +25,14 @@ what Fieller cannot: use every rung at once.
 
 | competitor | σ | σ across the missing covariance | required \|A8/A4\| to reach r=2 |
 |---|---:|---|---:|
-| bare_aspect_ratio | 2.74 | [2.14, 4.77] | 7.7 |
-| q4_jordan_weight4 | 7.00 | [5.93, 8.86] | 32.1 |
-| plain_area_scaling | 7.13 | [6.10, 8.93] | 32.0 |
-| no_modulus_dependence | 9.22 | [9.21, ∞] | **0.4** |
-| weight8_E8 | 10.47 | [10.03, 10.97] | 182 |
-| weight12_E4_cubed | 11.25 | [11.13, 11.38] | 783 |
-| weight12_E12 | 11.25 | [11.13, 11.38] | 785 |
-| weight12_delta | ∞ | — | 222 |
+| bare_aspect_ratio | 2.74 | [2.14, 4.77] | 3.2 |
+| q4_jordan_weight4 | 7.00 | [5.93, 8.86] | 8.6 |
+| plain_area_scaling | 7.13 | [6.10, 8.93] | 8.5 |
+| no_modulus_dependence | 9.22 | [9.21, ∞] | **0.19** |
+| weight8_E8 | 10.47 | [10.03, 10.97] | 15.2 |
+| weight12_E4_cubed | 11.25 | [11.13, 11.38] | 17.5 |
+| weight12_E12 | 11.25 | [11.13, 11.38] | 17.5 |
+| weight12_delta | ∞ | — | 15.7 |
 
 Seven of the eight verdicts hold across **every** positive-definite value of the
 covariance entry the first scoring run threw away. Only `bare_aspect_ratio`
@@ -66,13 +66,24 @@ admissible range.
 
 The r=2 rung is contaminated by spin-8 leakage, so the natural objection is that
 the concavity is that leakage. Fix each model's amplitude from the r=1 and r=4
-rungs, whose leakages share a sign, then predict r=2 and read the gap as spin-8.
+rungs, whose leakages share a sign (the design records -1148/21025 on r=1 and
+r=4, +1148/21025 on r=2), then predict r=2 and solve for the spin-8 amplitude
+that closes the gap. With `rho = A8/A4` the same at all three rungs -- which is
+what a single bound on it presupposes -- the solution is exact:
+`u = m(2)/(v2 * fitted)` equals `(1 + λρ)/(1 - λρ)`, so `ρ = (u-1)/(λ(u+1))`.
 That is the last column above, and it produces a clean trap:
 
 - **`no_modulus_dependence`** is the only competitor the r=2 rung can accept
-  within the assumed bound — it needs \|A8/A4\| = 0.4. It is also the one the
+  within the assumed bound — it needs \|A8/A4\| = 0.19. It is also the one the
   clean r=1 / r=4 pair excludes outright, at 9.2σ.
-- **Every other competitor** needs \|A8/A4\| between 7.7 and 785.
+- **Every other competitor** needs \|A8/A4\| between 3.2 and 17.5.
+
+> **Corrected 2026-09-06, same day.** This column first shipped as the raw gap
+> divided by λ, which drops the `(u+1)` of the exact solution and overstates the
+> requirement — by 2.4× for the bare aspect ratio and by 45× for weight 12, where
+> it read 783 instead of 17.5. The dichotomy is unchanged: `no_modulus_dependence`
+> is still the only competitor inside the assumed bound and still the one the
+> clean pair kills. The numbers above are the exact ones.
 
 So under the frozen design's own assumptions, no competitor fits all three
 rungs. The escape hatch is a spin-8 amplitude **comparable to or larger than**

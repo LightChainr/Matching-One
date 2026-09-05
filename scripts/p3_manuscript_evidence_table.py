@@ -191,6 +191,10 @@ def spin8_table(projective: Mapping[str, Any],
         "leakage_coefficient": rescore_module.LEAKAGE,
         "assumed_by_the_frozen_design":
             projective["spin8_bound_provenance"]["assumed_by_the_frozen_design"],
+        "how_the_requirement_is_solved":
+            projective["spin8_bound_provenance"]["how_the_requirement_is_solved"],
+        "what_that_solution_assumes":
+            projective["spin8_bound_provenance"]["what_that_solution_assumes"],
         "provenance": projective["spin8_bound_provenance"],
         "rows": rows,
         "smallest_requirement": min(finite),
@@ -345,10 +349,15 @@ def render(payload: Mapping[str, Any]) -> str:
         "",
         "## T5 — the spin-8 amplitude each competitor needs",
         "",
-        f"Leakage coefficient {spin8['leakage_coefficient']:.6f} "
-        f"(= 1148/21025, exactly equal and opposite between the two families).",
+        f"Leakage coefficient &lambda; = {spin8['leakage_coefficient']:.6f} = 1148/21025. The "
+        "frozen design records it per rung with its sign: `r=1` and `r=4` carry "
+        "&minus;&lambda;, `r=2` carries +&lambda;.",
         "",
         f"The frozen design assumed: *{spin8['assumed_by_the_frozen_design']}*.",
+        "",
+        f"How the requirement is solved: {spin8['how_the_requirement_is_solved']}.",
+        "",
+        f"What that assumes: {spin8['what_that_solution_assumes']}.",
         "",
         "| competitor | required \\|A&#8328;/A&#8324;\\| to reach `r=2` |",
         "|---|---:|",

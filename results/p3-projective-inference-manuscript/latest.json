@@ -102,48 +102,52 @@
   },
   "spin8": {
     "assumed_by_the_frozen_design": "|A8/A4| well below 1",
-    "largest_requirement": 784.5938258072141,
+    "how_the_requirement_is_solved": "from the per-rung leakage signs the frozen design records -- r=1 and r=4 carry -1148/21025 and r=2 carries +1148/21025 -- so with rho = A8/A4 the same at all three rungs, u = m(2) / (v2 * amplitude fitted from r=1 and r=4) equals (1 + lambda rho) / (1 - lambda rho) and rho = (u-1)/(lambda(u+1))",
+    "largest_requirement": 17.4975818194515,
     "leakage_coefficient": 0.05460166468489893,
     "provenance": {
       "assumed_by_the_frozen_design": "|A8/A4| well below 1",
+      "how_the_requirement_is_solved": "from the per-rung leakage signs the frozen design records -- r=1 and r=4 carry -1148/21025 and r=2 carries +1148/21025 -- so with rho = A8/A4 the same at all three rungs, u = m(2) / (v2 * amplitude fitted from r=1 and r=4) equals (1 + lambda rho) / (1 - lambda rho) and rho = (u-1)/(lambda(u+1))",
       "traces_to": "predictions/modulus_fingerprint_n290_v2_20260905.yaml, quoting the committed H4-beats-H8 results as H4 0.4163/2 against H8 16.0120/2",
-      "what_that_actually_is": "a model-selection result on a homology character, not a measurement of the angular spin-8 to spin-4 amplitude ratio. The inference from one to the other is a plausibility argument and is not quantified anywhere in the repository"
+      "what_that_actually_is": "a model-selection result on a homology character, not a measurement of the angular spin-8 to spin-4 amplitude ratio. The inference from one to the other is a plausibility argument and is not quantified anywhere in the repository",
+      "what_that_solution_assumes": "that A8/A4 is the same at all three aspect ratios. That is what a single bound on |A8/A4| presupposes when it is applied to every rung at once, so it is the design's own assumption rather than a new one -- but it is an assumption, and a rung-dependent ratio would change these numbers"
     },
     "rows": [
       {
         "competitor": "bare_aspect_ratio",
-        "required_abs_A8_over_A4_to_reach_r2": 7.7034025881458845
+        "required_abs_A8_over_A4_to_reach_r2": 3.1824107160344903
       },
       {
         "competitor": "no_modulus_dependence",
-        "required_abs_A8_over_A4_to_reach_r2": 0.3896855217837803
+        "required_abs_A8_over_A4_to_reach_r2": 0.1927917002925078
       },
       {
         "competitor": "plain_area_scaling",
-        "required_abs_A8_over_A4_to_reach_r2": 32.00978409632667
+        "required_abs_A8_over_A4_to_reach_r2": 8.540981609702602
       },
       {
         "competitor": "q4_jordan_weight4",
-        "required_abs_A8_over_A4_to_reach_r2": 32.10162275195793
+        "required_abs_A8_over_A4_to_reach_r2": 8.554041060067567
       },
       {
         "competitor": "weight12_E12",
-        "required_abs_A8_over_A4_to_reach_r2": 784.5938258072141
+        "required_abs_A8_over_A4_to_reach_r2": 17.4975818194515
       },
       {
         "competitor": "weight12_E4_cubed",
-        "required_abs_A8_over_A4_to_reach_r2": 782.8485404744023
+        "required_abs_A8_over_A4_to_reach_r2": 17.495842070093417
       },
       {
         "competitor": "weight12_delta",
-        "required_abs_A8_over_A4_to_reach_r2": 222.48919954985303
+        "required_abs_A8_over_A4_to_reach_r2": 15.725529111410033
       },
       {
         "competitor": "weight8_E8",
-        "required_abs_A8_over_A4_to_reach_r2": 182.1558946444769
+        "required_abs_A8_over_A4_to_reach_r2": 15.248255876821228
       }
     ],
-    "smallest_requirement": 0.3896855217837803
+    "smallest_requirement": 0.1927917002925078,
+    "what_that_solution_assumes": "that A8/A4 is the same at all three aspect ratios. That is what a single bound on |A8/A4| presupposes when it is applied to every rung at once, so it is the design's own assumption rather than a new one -- but it is an assumption, and a rung-dependent ratio would change these numbers"
   },
   "two_entry_control": {
     "entry": "r4_over_r1",

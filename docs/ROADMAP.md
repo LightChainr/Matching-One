@@ -122,8 +122,9 @@ flips two of eight frozen verdicts from compatible to excluded, at 7.0σ and 7.1
 
 The physical finding is that no competitor's class can produce the measured concavity:
 `f[1,2,4] = -4.66e-04 ± 1.53e-04`, `z = -3.05`, against zero or strictly positive for
-every frozen ray. Reconciling the rung the design dropped needs `|A8/A4|` between 7.7 and
-785 against the `<< 1` under which it was dropped.
+every frozen ray. Reconciling the rung the design dropped needs `|A8/A4|` between 3.2 and
+17.5 against the `<< 1` under which it was dropped -- solved exactly from the per-rung
+leakage signs, not bounded.
 
 **Action:** the draft's own §6 —
 [#583](https://github.com/LightChainr/Matching-One/issues/583), N=650 with three

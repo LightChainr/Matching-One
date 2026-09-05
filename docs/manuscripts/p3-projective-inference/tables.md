@@ -88,19 +88,23 @@ covariance range.
 
 ## T5 — the spin-8 amplitude each competitor needs
 
-Leakage coefficient 0.054602 (= 1148/21025, exactly equal and opposite between the two families).
+Leakage coefficient &lambda; = 0.054602 = 1148/21025. The frozen design records it per rung with its sign: `r=1` and `r=4` carry &minus;&lambda;, `r=2` carries +&lambda;.
 
 The frozen design assumed: *|A8/A4| well below 1*.
 
+How the requirement is solved: from the per-rung leakage signs the frozen design records -- r=1 and r=4 carry -1148/21025 and r=2 carries +1148/21025 -- so with rho = A8/A4 the same at all three rungs, u = m(2) / (v2 * amplitude fitted from r=1 and r=4) equals (1 + lambda rho) / (1 - lambda rho) and rho = (u-1)/(lambda(u+1)).
+
+What that assumes: that A8/A4 is the same at all three aspect ratios. That is what a single bound on |A8/A4| presupposes when it is applied to every rung at once, so it is the design's own assumption rather than a new one -- but it is an assumption, and a rung-dependent ratio would change these numbers.
+
 | competitor | required \|A&#8328;/A&#8324;\| to reach `r=2` |
 |---|---:|
-| `bare_aspect_ratio` | 7.7 |
-| `no_modulus_dependence` | 0.4 |
-| `plain_area_scaling` | 32.0 |
-| `q4_jordan_weight4` | 32.1 |
-| `weight12_E12` | 784.6 |
-| `weight12_E4_cubed` | 782.8 |
-| `weight12_delta` | 222.5 |
-| `weight8_E8` | 182.2 |
+| `bare_aspect_ratio` | 3.2 |
+| `no_modulus_dependence` | 0.2 |
+| `plain_area_scaling` | 8.5 |
+| `q4_jordan_weight4` | 8.6 |
+| `weight12_E12` | 17.5 |
+| `weight12_E4_cubed` | 17.5 |
+| `weight12_delta` | 15.7 |
+| `weight8_E8` | 15.2 |
 
-Smallest requirement 0.39, largest 785.
+Smallest requirement 0.19, largest 17.
