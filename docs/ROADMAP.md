@@ -4,6 +4,16 @@ This roadmap optimizes for **information gained per unit effort**. It is not a p
 
 While exploring, the whole rule set is `GOVERNANCE.md` §2 — five items, of which three bear on this roadmap: chronology, observable-semantic compatibility for claim-bearing scores, and non-duplication of correlated evidence. Everything else applies when there is a paper.
 
+## Theory-bound questions
+
+Three items below are blocked on theory rather than on compute, and no amount of
+sampling moves them. They are packaged as self-contained questions for an external
+mathematical model in [`docs/astra/`](astra/README.md): the descendant logarithmic
+coupling that #275 needs to reopen, the additive-shape ambiguity that decides whether
+item 2 is worth running, and an escape from the unit-automorphism no-go that closed
+the Gaussian-cover line. An answer there is a theory input, not evidence; the pack's
+README states the ordering that keeps it out of the claim ledger.
+
 ## Active — highest information now
 
 ### 1. Same-N norm-5 coalescence control — #205
