@@ -20,16 +20,42 @@ reason to ask. A question belongs here only if all four hold:
 Each file states its decision rule explicitly. If a question's decision rule reads
 "we would carry on as before" under either branch, delete the question.
 
-## The three questions
+## The questions
 
 | | Question | Blocks | Status |
 |---|---|---|---|
+| [Q4](Q4-why-square-site-resists.md) | Is "degree ≤ 6, height ≤ 3" a theorem about the solvable mechanisms, and is square-site provably outside them? | the interpretation of our main exclusion result, and the original target | unasked |
 | [Q1](Q1-descendant-log-coupling.md) | Does the `h=5/8` logarithmic coupling descend to the level‑4 `x=21/4, s=4` state? | issue #275, the project's only P0 | unasked |
-| [Q2](Q2-additive-shape-ambiguity.md) | What is the largest amplitude-free modular observable given the unfixed additive shape? | `ROADMAP` item 2, the modulus fingerprint | unasked |
+| [Q2](Q2-additive-shape-ambiguity.md) | What admissible additive shape carries the measured ratio from `11/4` to `1.88 ± 0.18`? | `ROADMAP` item 2 — **the block has been run and came back negative** | unasked, and sharper than when written |
 | [Q3](Q3-unit-automorphism-escape.md) | What is the smallest escape from the Gaussian-unit no-go? | the Gaussian-cover production line, declared dead by a theorem | unasked |
 
-Q1 first. Q2 and Q3 are independent of it and of each other, so a partial or
-negative answer to Q1 does not waste them.
+**Q4 first.** It is the one aimed at the problem the project was started for, it is
+the only one whose answer changes a manuscript already drafted, and it is the only one
+where a lucky answer could be very large. Q1 is the project's P0 and comes next. Q2
+and Q3 are independent of both and of each other.
+
+Q2 has *improved* since it was written: the production block it was asking us to
+approve has since been frozen, run and reported negative, so it now carries a
+measured number to explain rather than a design to bless.
+
+## If an answer contains a claimed exact threshold
+
+Run it through the filter before doing anything else:
+
+```bash
+python3 scripts/threshold_claim_intake.py --polynomial <ascending integer coefficients>
+python3 scripts/threshold_claim_intake.py --decimal <as many digits as are claimed>
+python3 scripts/threshold_claim_intake.py --expression "<mpmath closed form>"
+```
+
+It places the claim against the four published intervals and both exhaustive censuses
+and returns one of four verdicts: refuted by a committed certificate, already
+catalogued as a width artifact, contradicts every published interval, or survives our
+checks. **It never confirms** — the last verdict means only that the claim is not
+already dead, and the report lists what would still have to be done.
+
+The filter takes seconds and costs nothing, so it goes first, before any assessment
+is written into `ANSWERS.md`.
 
 ## What an answer is, and is not
 
