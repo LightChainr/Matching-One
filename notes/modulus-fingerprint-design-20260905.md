@@ -30,11 +30,20 @@ and `θ = π/4`. A 45° turn multiplies a weight-`k` amplitude by `e^{-ikπ/4}`,
 
 | weight mod 8 | factor | fate in the difference |
 |---|---|---|
-| 0 | `+1` | **cancels exactly** |
+| 0 | `+1` | **cancels** |
 | 4 | `-1` | doubles |
 
 This is the axis/diamond pairing the orientation programme already uses, applied to
-a rectangle instead of a square. It is free, and it is exact rather than statistical.
+a rectangle instead of a square.
+
+**One caveat, stated up front, because it limits the realized design and not the
+idealization.** Two Gaussian integers of the *same* norm can never differ by exactly
+45°: multiplying by `1+i` doubles the norm. So no realizable same-`N` pair is the
+idealized pair of the table above. What a realizable pair does cancel exactly is
+**spin 0** — any orientation difference does that, since a scalar is
+orientation-independent, and that is where all scalar finite-size corrections live.
+Weight 8 is *not* cancelled by the realized pair; it leaks at a coefficient computed
+exactly below.
 
 The score is
 
@@ -47,7 +56,7 @@ D(r) = Â_axis(r) - Â_diagonal(r),     reported as D(r)/D(1).
 | candidate | weight | `D(2)/D(1)` |
 |---|---:|---:|
 | **E4 — the Q4-Jordan prediction** | 4 | **11/4 = 2.75** |
-| E8 (= E4²) | 8 | — cancels identically |
+| E8 (= E4²) | 8 | — cancels for the idealized pair; see the leakage below |
 | E6 | 6 | — vanishes at the square point |
 | Δ | 12 | 0.125 |
 | E4³ | 12 | 20.796875 |
@@ -56,9 +65,9 @@ D(r) = Â_axis(r) - Â_diagonal(r),     reported as D(r)/D(1).
 
 Two things follow.
 
-**Modular weight is not the hard part.** Weight 8 and everything congruent to it
-disappears from the channel for free, and the nearest surviving modular competitor
-sits about a factor of 12 away. No precision argument is needed for either.
+**Modular weight is mostly not the hard part.** The nearest surviving modular
+competitor sits about a factor of 12 away, so no precision argument is needed there.
+Weight 8 needs the caveat above and is quantified below.
 
 **The only real competitor is plain area scaling**, and against it the entire
 discriminating content is the single constant `1/E4(i) = 0.68692…`. The measurement
@@ -112,6 +121,31 @@ square family rotated.
 Estimator: within each family, two members determine `C` and `A` exactly, so
 `A = (O₁ - O₂)/(cos 4θ₁ - cos 4θ₂)`, and the score is `A_rect / A_sq`, predicted
 `11/4` against `4`.
+
+### The spin-8 leakage, exactly
+
+Because the realized pair is not a 45° turn, a spin-8 component of amplitude `A₈`
+enters the projector at `(cos 8θ₁ - cos 8θ₂)/(cos 4θ₁ - cos 4θ₂)`. At N=290 that is
+
+```text
+square:      +1148/21025 = +0.054602
+rectangular: -1148/21025 = -0.054602
+```
+
+— exactly equal and opposite, for the same `1+i` reason the leverages are equal. So a
+spin-8 component biases the score by roughly `-0.055·(A₈/A₄ + A₈'/A₄')`: up to ~11%
+if the two amplitudes were comparable, which is the same order as the precision we
+are trying to reach. The committed H4-beats-H8 results (`H4 0.4163/2` against
+`H8 16.0120/2`) bound `A₈/A₄` well below 1, so the real bias is expected to be a few
+percent — but it is a **systematic on the score, not a statistical error**, and it
+does not shrink with samples.
+
+The fix is three orientations per family, which determine `C`, `A₄` and `A₈`
+together. The smallest size where both families have three representations is
+**N=650** (square `|w|²=650`: `25+5i`, `23+11i`, `19+17i`; rectangular `|w|²=325`:
+`18+i`, `17+6i`, `15+10i`). That is 2.24× the sites of N=290 and needs three coupled
+runs rather than two, so it is the upgrade to make only if N=290 comes back
+interesting.
 
 Two things to be honest about. Two members per family determine `C` and `A` with
 nothing left over, so this size cannot check the `cos 4θ` form itself — that rests on

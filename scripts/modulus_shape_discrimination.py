@@ -157,8 +157,24 @@ def production_design() -> dict:
         leverage = cos4(*reps[0]) - cos4(*reps[1])
         return rows, leverage
 
+    def cos8(a: int, b: int) -> Fraction:
+        value = cos4(a, b)
+        return 2 * value * value - 1
+
+    def spin8_leakage(reps) -> Fraction:
+        """What a spin-8 component contributes to the spin-4 projector.
+
+        An exact 45-degree turn would cancel weight 8, but two Gaussian integers
+        of the *same* norm can never differ by exactly 45 degrees -- multiplying
+        by 1+i doubles the norm.  So the realized pair removes spin 0 exactly
+        (any orientation pair does) and leaves spin 8 at this coefficient.
+        """
+        return (cos8(*reps[0]) - cos8(*reps[1])) / (cos4(*reps[0]) - cos4(*reps[1]))
+
     square_rows, square_leverage = family(square, 1)
     rectangular_rows, rectangular_leverage = family(rectangular, 2)
+    square_leak = spin8_leakage(square)
+    rectangular_leak = spin8_leakage(rectangular)
 
     return {
         "site_count": 290,
@@ -175,6 +191,24 @@ def production_design() -> dict:
             "angular_leverage": f"{rectangular_leverage.numerator}/{rectangular_leverage.denominator}",
         },
         "leverages_are_equal": square_leverage == rectangular_leverage,
+        "spin8_leakage": {
+            "square": f"{square_leak.numerator}/{square_leak.denominator}",
+            "rectangular": f"{rectangular_leak.numerator}/{rectangular_leak.denominator}",
+            "equal_and_opposite": square_leak == -rectangular_leak,
+            "meaning": (
+                "a spin-8 component of amplitude A8 enters the square estimator "
+                "as +0.0546 A8 and the rectangular one as -0.0546 A8, so it biases "
+                "the ratio by roughly -0.055 (A8/A4 + A8'/A4'). The committed "
+                "H4-beats-H8 results bound A8/A4 well below 1, but this is a "
+                "systematic on the score and not a statistical error"
+            ),
+            "how_to_remove_it": (
+                "three orientations per family determine C, A4 and A8 together. "
+                "N=650 is the smallest size where both the square family "
+                "(|w|^2=650) and the rectangular family (|w|^2=325) have three "
+                "representations"
+            ),
+        },
         "why_they_are_equal": (
             "multiplication by 1+i maps the norm-145 representations to the "
             "norm-290 ones, which is the 45-degree turn; the two families "
@@ -194,6 +228,10 @@ def production_design() -> dict:
             "the engine couples two period matrices per run, so the two families "
             "are two runs; treating them as independent for the ratio is "
             "conservative but loses the shared-field variance reduction",
+            "the exact weight-8 cancellation belongs to an idealized 45-degree "
+            "pair, which no two Gaussian integers of equal norm can realize; the "
+            "realized pair cancels spin 0 exactly and leaves the spin-8 leakage "
+            "recorded above",
         ],
     }
 

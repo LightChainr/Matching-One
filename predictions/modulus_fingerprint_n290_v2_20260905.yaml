@@ -91,7 +91,22 @@ conditional_on:
     docs/astra/Q2-additive-shape-ambiguity.md. This run tests the ratio, not the
     module identification.
 
+known_systematic:
+  name: spin-8 leakage through the P4 projector
+  square: 1148/21025          # +0.054602
+  rectangular: -1148/21025    # -0.054602
+  note: >
+    Two Gaussian integers of the same norm can never differ by exactly 45 degrees,
+    so the realized orientation pair cancels spin 0 exactly but not spin 8. A
+    spin-8 component biases the score by about -0.055 (A8/A4 + A8'/A4'), with the
+    two leakages exactly equal and opposite. This is a systematic on the score and
+    does not shrink with samples. The committed H4-beats-H8 results bound A8/A4
+    well below 1. Removing it needs three orientations per family, for which the
+    smallest size is N=650. This was identified after the first run and before
+    this one; it applies equally to both.
+
 not_established_by_this_run:
   - identification of the Q4 Jordan module
   - that the measured amplitude is the log slope rather than a leading amplitude
   - anything about shapes carrying the same E4 factor
+  - freedom from the spin-8 systematic recorded above

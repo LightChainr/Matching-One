@@ -107,7 +107,8 @@
   "production_design": {
     "caveats": [
       "two members per family determine C and A exactly, leaving nothing over to check the cos4theta form itself at this size; that form rests on the existing orientation programme at other sizes",
-      "the engine couples two period matrices per run, so the two families are two runs; treating them as independent for the ratio is conservative but loses the shared-field variance reduction"
+      "the engine couples two period matrices per run, so the two families are two runs; treating them as independent for the ratio is conservative but loses the shared-field variance reduction",
+      "the exact weight-8 cancellation belongs to an idealized 45-degree pair, which no two Gaussian integers of equal norm can realize; the realized pair cancels spin 0 exactly and leaves the spin-8 leakage recorded above"
     ],
     "estimator": "within each family solve O(theta) = C + A cos4theta on its two members, so A = (O1-O2)/(cos4theta1-cos4theta2); the score is A_rectangular / A_square, predicted 11/4 against 4 for area scaling",
     "leverages_are_equal": true,
@@ -149,6 +150,13 @@
       "modulus": "2i"
     },
     "site_count": 290,
+    "spin8_leakage": {
+      "equal_and_opposite": true,
+      "how_to_remove_it": "three orientations per family determine C, A4 and A8 together. N=650 is the smallest size where both the square family (|w|^2=650) and the rectangular family (|w|^2=325) have three representations",
+      "meaning": "a spin-8 component of amplitude A8 enters the square estimator as +0.0546 A8 and the rectangular one as -0.0546 A8, so it biases the ratio by roughly -0.055 (A8/A4 + A8'/A4'). The committed H4-beats-H8 results bound A8/A4 well below 1, but this is a systematic on the score and not a statistical error",
+      "rectangular": "-1148/21025",
+      "square": "1148/21025"
+    },
     "square_family": {
       "angular_leverage": "8064/4205",
       "lattice": "<w, i w> with |w|^2 = 290",

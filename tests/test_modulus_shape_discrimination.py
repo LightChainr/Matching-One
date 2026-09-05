@@ -65,6 +65,13 @@ class PredictionTests(unittest.TestCase):
 
 
 class ProductionDesignTests(unittest.TestCase):
+    def test_spin8_leaks_equal_and_opposite(self) -> None:
+        """The size of the one systematic the score cannot outspend."""
+        leakage = production_design()["spin8_leakage"]
+        self.assertTrue(leakage["equal_and_opposite"])
+        self.assertEqual(leakage["square"], "1148/21025")
+        self.assertEqual(leakage["rectangular"], "-1148/21025")
+
     def test_both_families_have_the_same_site_count(self) -> None:
         design = production_design()
         for family in ("square_family", "rectangular_family"):
