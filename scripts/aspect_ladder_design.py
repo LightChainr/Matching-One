@@ -9,34 +9,43 @@ single point cannot distinguish a law from a coincidence.  The one reading it
 happens to sit on, the bare aspect ratio r itself, has no standing: it was
 noticed after the number came back.
 
-This module freezes the design that gives it standing or takes it away.  Three
-things make the ladder work at one site count:
+This module chooses and freezes the design that gives that reading its one
+chance to lose.
+
+Three things fix the shape of the design:
 
 * **r = 4 is where the competitors separate.**  At r = 2 the weight-4 shape
   predicts 2.75 and the linear law predicts 2.00, which the existing 9 percent
   measurement cannot cleanly split.  At r = 4 they predict 10.99 and 4.00.
-* **N = 1300 carries all three moduli.**  A torus of modulus r*i with N sites
-  needs a Gaussian integer of norm N/r, so the ladder needs 1300, 650 and 325 to
-  each be a sum of two squares in at least three ways.  325 is the smallest
-  integer with three essentially distinct representations, and 650 = (1+i)*325
-  and 1300 = 2*325 inherit them.  Nothing smaller does this.
-* **Three orientations fit the spin-8 leakage out.**  Two orientations determine
-  a constant and a spin-4 amplitude, leaving spin 8 as an unremovable systematic
-  -- which is exactly the caveat the N=290 run had to carry.  Three determine
-  C, A4 and A8 together.
+* **One site count carries all three moduli.**  A torus of modulus r*i with N
+  sites needs a Gaussian integer of norm N/r, so the ladder needs N, N/2 and N/4
+  each to be a sum of two squares in at least two ways.  Since N = 4m makes all
+  three inherit m's representations, the candidates are 4m for m a sum of two
+  squares in two ways.
+* **The choice among those candidates is not free.**  They differ by a factor of
+  two in angular leverage and by a factor of thirty-six in spin-8 leakage, and
+  the leakage signs across the three rungs decide whether the systematic cancels
+  in the score or compounds in it.  ``rank_candidates`` searches them and states
+  the objective rather than asserting a winner.
 
-The r = 2 rung is therefore also a replication: it re-measures the surprising
-N=290 number at a different site count, with the systematic fitted rather than
-bounded.
+What made this concrete: a 1M pilot.  An earlier version of this design used
+N=1300 and three orientations per family, to fit the spin-8 amplitude out
+instead of bounding it.  The pilot killed it twice over.  The analysis path
+returned zeros at N=1300 -- the binomial tail's recurrence underflows near 790
+sites, now fixed in ``analyze_p48_retrospective`` -- and the measured
+per-difference noise there was 2.0 times the N=290 noise against a signal some
+6.5 times smaller, which puts a decisive run about three orders of magnitude
+outside what we can spend.  N=580 needs no such fit: its r=1 and r=4 rungs carry
+the *same* leakage, so the leading spin-8 bias cancels in the ratio that
+discriminates.
 
 Nothing here is a measurement.  This is the design and the competitor list,
-frozen before any block is run.
+frozen before any scoring block is run.
 """
 
 from __future__ import annotations
 
 import argparse
-import itertools
 import json
 from fractions import Fraction
 from pathlib import Path
@@ -46,10 +55,11 @@ from mpmath import mp
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "results" / "aspect-ladder-design" / "latest.json"
-SCHEMA = "matching-one/aspect-ladder-design/v1"
+SCHEMA = "matching-one/aspect-ladder-design/v2"
 
-SITE_COUNT = 1300
+SITE_COUNT = 580
 ASPECTS = (1, 2, 4)
+SEARCH_CEILING = 1000
 PRECISION = 40
 
 
@@ -94,119 +104,77 @@ def period_matrix(a: int, b: int, aspect: int) -> list[int]:
     return [a, -aspect * b, b, aspect * a]
 
 
-def design_matrix(members: Sequence[tuple[int, int]]) -> list[list[Fraction]]:
-    return [[Fraction(1), cos4(a, b), cos8(a, b)] for a, b in members]
+def rung(aspect: int, site_count: int) -> Optional[dict[str, Any]]:
+    """One family: a modulus, two orientations, a leverage and a leakage.
 
+    Two orientations determine the constant and the spin-4 amplitude:
 
-def invert3(matrix: Sequence[Sequence[Fraction]]) -> tuple[list[list[Fraction]], Fraction]:
-    (a, b, c), (d, e, f), (g, h, i) = matrix
-    determinant = a * (e * i - f * h) - b * (d * i - f * g) + c * (d * h - e * g)
-    _require(determinant != 0, "the three orientations do not determine C, A4 and A8")
-    adjugate = [
-        [(e * i - f * h), -(b * i - c * h), (b * f - c * e)],
-        [-(d * i - f * g), (a * i - c * g), -(a * f - c * d)],
-        [(d * h - e * g), -(a * h - b * g), (a * e - b * d)],
-    ]
-    return [[value / determinant for value in row] for row in adjugate], determinant
+        (O_1 - O_2) / delta_cos4  =  A4  +  A8 * (delta_cos8 / delta_cos4).
 
-
-def paired_difference_plan(members: Sequence[tuple[int, int]], aspect: int) -> dict[str, Any]:
-    """The realizable estimator: two paired runs, not one three-orientation run.
-
-    The engine couples exactly two period matrices on a common random field per
-    sample (``--first-matrix`` / ``--second-matrix``), so "three orientations in
-    one run" is not a thing it can do.  It does not need to be.  Differencing
-    within a pair removes the constant C, leaving
-
-        D_ij = A4 (cos4_i - cos4_j) + A8 (cos8_i - cos8_j),
-
-    and two pairs on disjoint seed streams determine A4 and A8.  The third pair
-    is exactly their sum and carries no new information, so it is an
-    over-determination check rather than a third run.
-
-    Which two pairs is a free choice, and it is not free of consequence: the
-    three choices differ by a factor of 2.5 in Var(A4).  We take the best for A4,
-    which is the worst for A8 -- A8 here is a nuisance being projected out, and
-    the A4 variance already carries the cost of projecting it.
+    The bracketed factor is the leakage.  It does not shrink with samples, so it
+    is a property of the geometry and belongs in the design rather than in the
+    error bar.
     """
-    best = None
-    for left, right in itertools.combinations(itertools.combinations(range(3), 2), 2):
-        matrix = [
-            [cos4(*members[i]) - cos4(*members[j]), cos8(*members[i]) - cos8(*members[j])]
-            for i, j in (left, right)
-        ]
-        determinant = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
-        if determinant == 0:
-            continue
-        row = [matrix[1][1] / determinant, -matrix[0][1] / determinant]
-        variance = sum(value * value for value in row)
-        if best is None or variance < best[0]:
-            best = (variance, (left, right), determinant,
-                    [-matrix[1][0] / determinant, matrix[0][0] / determinant])
-    _require(best is not None, "no two pairs determine A4 and A8")
-    variance, (left, right), determinant, a8_row = best
-    return {
-        "runs_per_family": 2,
-        "pairs": [
-            {
-                "first": f"{members[i][0]}+{members[i][1]}i",
-                "second": f"{members[j][0]}+{members[j][1]}i",
-                "first_rep": list(members[i]),
-                "second_rep": list(members[j]),
-                "first_matrix_row_major": period_matrix(*members[i], aspect),
-                "second_matrix_row_major": period_matrix(*members[j], aspect),
-                "delta_cos4": _text(cos4(*members[i]) - cos4(*members[j])),
-                "delta_cos8": _text(cos8(*members[i]) - cos8(*members[j])),
-            }
-            for i, j in (left, right)
-        ],
-        "redundant_pair_available_as_a_check": True,
-        "determinant": _text(determinant),
-        "variance_amplification": {
-            "A4": _text(variance),
-            "A8": _text(sum(value * value for value in a8_row)),
-            "meaning": (
-                "Var(A) = this factor times the variance of one paired difference, "
-                "for equal counts on the two runs"
-            ),
-        },
-    }
-
-
-def family(aspect: int, site_count: int = SITE_COUNT) -> dict[str, Any]:
-    _require(site_count % aspect == 0, f"aspect {aspect} does not divide {site_count}")
-    norm = site_count // aspect
-    members = representations(norm)
-    _require(len(members) >= 3, f"norm {norm} has only {len(members)} orientations")
-    members = members[:3]
-    matrix = design_matrix(members)
-    inverse, determinant = invert3(matrix)
+    if site_count % aspect:
+        return None
+    members = representations(site_count // aspect)
+    if len(members) < 2:
+        return None
+    first, second = members[0], members[1]
+    leverage = cos4(*first) - cos4(*second)
+    if leverage == 0:
+        return None
+    leakage = (cos8(*first) - cos8(*second)) / leverage
     return {
         "aspect_ratio": aspect,
         "modulus": "i" if aspect == 1 else f"{aspect}i",
-        "gaussian_norm": norm,
-        "members": [
-            {
-                "gaussian_integer": f"{a}+{b}i",
-                "period_matrix_row_major": period_matrix(a, b, aspect),
-                "sites": (a * a + b * b) * aspect,
-                "cos4theta": _text(cos4(a, b)),
-                "cos8theta": _text(cos8(a, b)),
-            }
-            for a, b in members
-        ],
-        "design_determinant": _text(determinant),
-        "variance_amplification": {
-            "A4": _text(sum(value * value for value in inverse[1])),
-            "A8": _text(sum(value * value for value in inverse[2])),
-            "meaning": (
-                "Var(A) = this factor times the per-orientation variance, for "
-                "equal counts on the three orientations. This is the joint fit; "
-                "what the engine can actually run is paired_difference_plan below"
-            ),
-        },
-        "paired_difference_plan": paired_difference_plan(members, aspect),
+        "gaussian_norm": site_count // aspect,
+        "first_rep": list(first),
+        "second_rep": list(second),
+        "first_matrix_row_major": period_matrix(*first, aspect),
+        "second_matrix_row_major": period_matrix(*second, aspect),
+        "delta_cos4": _text(leverage),
+        "delta_cos8": _text(cos8(*first) - cos8(*second)),
+        "spin8_leakage": _text(leakage),
+        "orientations_available": len(members),
     }
+
+
+def ladder(site_count: int) -> Optional[list[dict[str, Any]]]:
+    rungs = [rung(aspect, site_count) for aspect in ASPECTS]
+    if any(row is None for row in rungs):
+        return None
+    return rungs
+
+
+def rank_candidates(ceiling: int = SEARCH_CEILING) -> list[dict[str, Any]]:
+    """Every site count up to the ceiling that carries the ladder, best first.
+
+    The objective, in order: **maximum angular leverage**, because it divides
+    into every amplitude and so sets the sample budget; then **minimum spin-8
+    leakage**, because that one does not shrink with samples at all.
+    """
+    scored = []
+    for site_count in range(4, ceiling + 1, 4):
+        rungs = ladder(site_count)
+        if rungs is None:
+            continue
+        leverages = {row["delta_cos4"] for row in rungs}
+        leakages = {abs(Fraction(row["spin8_leakage"])) for row in rungs}
+        scored.append({
+            "site_count": site_count,
+            "leverage": _text(Fraction(next(iter(leverages)))) if len(leverages) == 1 else None,
+            "leverage_is_shared": len(leverages) == 1,
+            "max_abs_leakage": _text(max(leakages)),
+            "leakage_cancels_in_the_r4_over_r1_ratio":
+                Fraction(rungs[0]["spin8_leakage"]) == Fraction(rungs[2]["spin8_leakage"]),
+        })
+    scored.sort(key=lambda row: (
+        -Fraction(row["leverage"]) if row["leverage_is_shared"] else Fraction(0),
+        Fraction(row["max_abs_leakage"]),
+        row["site_count"],
+    ))
+    return scored
 
 
 def shape_predictions(aspects: Sequence[int] = ASPECTS) -> dict[str, Any]:
@@ -281,85 +249,94 @@ def non_modular_competitors(aspects: Sequence[int] = ASPECTS) -> list[dict[str, 
 
 
 def build_result(site_count: int = SITE_COUNT) -> dict[str, Any]:
-    families = [family(aspect, site_count) for aspect in ASPECTS]
-    determinants = {row["design_determinant"] for row in families}
-    amplifications = {row["variance_amplification"]["A4"] for row in families}
+    rungs = ladder(site_count)
+    _require(rungs is not None, f"{site_count} does not carry the r = 1, 2, 4 ladder")
+    leverages = {row["delta_cos4"] for row in rungs}
+    ranked = rank_candidates()
+    _require(ranked[0]["site_count"] == site_count,
+             f"the search prefers {ranked[0]['site_count']} over the frozen {site_count}")
     return {
         "schema": SCHEMA,
         "status": "design_only_no_measurement",
         "site_count": site_count,
         "roadmap_item": 2,
-        "families": families,
-        "families_share_one_design_matrix": len(determinants) == 1,
-        "families_share_one_variance_amplification": len(amplifications) == 1,
-        "why_they_share_it": (
-            "1300 = 2*650 = 4*325, and 1300 is divisible by 4, so both parts of every "
-            "representation of it are even: the r=1 family is exactly 2 times the r=4 "
-            "family and samples the identical three orientations. The r=2 family is "
-            "(1+i) times the r=4 family, a 45 degree turn, under which cos8 is "
-            "invariant and cos4 changes sign; the sign change is undone by the "
-            "reversal of the sorted order, so all three design matrices have the same "
-            "determinant, not merely the same magnitude. No family is the noisy one"
+        "rungs": rungs,
+        "runs_total": len(rungs),
+        "leverage_is_shared_across_rungs": len(leverages) == 1,
+        "shared_leverage": next(iter(leverages)) if len(leverages) == 1 else None,
+        "spin8_cancels_in_the_discriminating_ratio":
+            Fraction(rungs[0]["spin8_leakage"]) == Fraction(rungs[2]["spin8_leakage"]),
+        "why_that_matters": (
+            "the estimator is A4 + A8 * leakage. When the r=1 and r=4 rungs carry "
+            "the same leakage, the ratio A4(4i)/A4(i) -- the one that discriminates "
+            "-- has that bias cancel to leading order instead of compounding, which "
+            "is what the N=290 pair could not do: its two families had equal and "
+            "*opposite* leakage, so the systematic entered the score twice"
         ),
+        "candidate_search": {
+            "ceiling": SEARCH_CEILING,
+            "objective": (
+                "maximum shared angular leverage first, because it divides into "
+                "every amplitude and sets the sample budget; then minimum spin-8 "
+                "leakage, because that one does not shrink with samples"
+            ),
+            "best_five": ranked[:5],
+            "candidates_found": len(ranked),
+        },
         "estimator": (
-            "within each family solve O(theta) = C + A4 cos4theta + A8 cos8theta on "
-            "its three members; the score is the vector (A4(2i)/A4(i), A4(4i)/A4(i))"
-        ),
-        "how_it_is_actually_run": (
-            "the engine couples exactly two period matrices on a common random field "
-            "per sample, so a family is two paired runs on disjoint seed streams "
-            "rather than one three-orientation run. Differencing within a pair kills "
-            "C; two pairs determine A4 and A8; the third pair is their exact sum and "
-            "is a check, not a third run. See paired_difference_plan on each family"
-        ),
-        "cost_of_removing_the_spin8_systematic": (
-            "Var(A4) = 0.2978 times one paired difference's variance, against 0.2719 "
-            "for the two-orientation N=290 estimator that could only bound the "
-            "leakage. Nine percent more variance and one extra run per family buys "
-            "the systematic outright"
+            "per rung, one paired run gives (O_first - O_second) / delta_cos4 = "
+            "A4 + A8 * leakage; the score is the vector "
+            "(A4(2i)/A4(i), A4(4i)/A4(i))"
         ),
         "score_is_amplitude_free": (
             "both entries are ratios of A4 within one observable, so the unknown "
-            "non-universal overlap constant and the additive constant C cancel"
+            "non-universal overlap constant and the additive constant cancel"
         ),
         "modular_shape_predictions": shape_predictions(),
         "non_modular_competitors": non_modular_competitors(),
         "what_separates_at_r4": (
             "at r=2 the weight-4 shape predicts 2.75 and the bare aspect ratio 2.00, "
             "which the existing 9 percent measurement cannot split; at r=4 they "
-            "predict 10.99 and 4.00, a factor of 2.7 apart, so about 16 percent "
-            "relative precision on the r=4 amplitude ratio decides it either way"
+            "predict 10.99 and 4.00, a factor of 2.7 apart, so about 30 percent "
+            "relative precision on the r=1 amplitude decides it either way"
         ),
         "what_the_r2_rung_adds": (
-            "a replication of the N=290 number at a different site count with the "
-            "spin-8 leakage fitted rather than bounded. The N=290 design could only "
-            "bound it, because two orientations determine only C and A4"
+            "a replication of the N=290 number at a different site count, in a "
+            "geometry where the leakage enters the r=2/r=1 ratio once rather than "
+            "twice"
         ),
-        "cost_relative_to_the_n290_design": {
-            "orientations_per_family": 3,
-            "runs_per_family": 2,
-            "runs_total": 6,
-            "variance_amplification_ratio": "0.2978 / 0.2719 = 1.095",
-            "samples_for_the_same_sigma_on_A4": "about 1.1 times the N=290 design, per run",
-            "sites_per_sample_ratio": "1300 / 290 = 4.48",
-            "note": (
-                "the three-orientation joint fit would cost 1.64 in variance and 1.5 "
-                "in runs; the paired-difference realization gets the same A4, with "
-                "spin 8 projected out, for 1.095 and one extra run per family"
+        "rejected_alternative": {
+            "site_count": 1300,
+            "shape": "three orientations per rung, spin-8 fitted rather than bounded",
+            "why_rejected": (
+                "measured, not estimated. A 1M pilot at N=1300 gave a per-difference "
+                "noise of 0.0131 against 0.0065 at N=290, a factor of 2.0 for a 4.5 "
+                "times larger torus, while the amplitude falls roughly as N^-5/4. "
+                "Reaching a decisive ratio there is about three orders of magnitude "
+                "beyond what we can spend"
+            ),
+            "what_the_pilot_also_found": (
+                "the analysis path returned zeros at N=1300: the binomial tail's "
+                "recurrence starts at (1-p)^N, which underflows to exactly zero near "
+                "790 sites at the percolation threshold, and then stays zero. Fixed "
+                "in analyze_p48_retrospective by anchoring the recurrence at the mode"
             ),
         },
         "not_established_by_this_design": [
-            "anything at all: no block has been run",
+            "anything at all: no scoring block has been run",
             "identification of the Q4 Jordan module, which the ratio cannot decide "
             "on its own (docs/astra/Q2-additive-shape-ambiguity.md)",
             "that the fitted A4 is the log slope rather than a leading amplitude",
+            "freedom from spin-8 in the r=2/r=1 entry, where the leakage does not "
+            "cancel; only the r=4/r=1 entry is clean",
         ],
         "before_running": [
-            "size the pilot honestly. A 200000-sample pilot of the N=290 channel "
-            "returned an amplitude five times the 20M value, and a sample count "
-            "projected from it was wrong by about forty times",
-            "freeze a prediction file naming every competitor above, including "
-            "bare_aspect_ratio, and declare no optional stopping",
+            "size the budget from a pilot at this site count, not from an "
+            "extrapolation. A 200000-sample pilot of the N=290 channel returned an "
+            "amplitude five times its 20M value; standard errors do extrapolate as "
+            "one over root n, central values at small counts do not",
+            "declare no optional stopping, and place the replica offset past every "
+            "committed stream so the pilot can never be pooled into the run",
         ],
     }
 

@@ -1,363 +1,52 @@
 {
   "before_running": [
-    "size the pilot honestly. A 200000-sample pilot of the N=290 channel returned an amplitude five times the 20M value, and a sample count projected from it was wrong by about forty times",
-    "freeze a prediction file naming every competitor above, including bare_aspect_ratio, and declare no optional stopping"
+    "size the budget from a pilot at this site count, not from an extrapolation. A 200000-sample pilot of the N=290 channel returned an amplitude five times its 20M value; standard errors do extrapolate as one over root n, central values at small counts do not",
+    "declare no optional stopping, and place the replica offset past every committed stream so the pilot can never be pooled into the run"
   ],
-  "cost_of_removing_the_spin8_systematic": "Var(A4) = 0.2978 times one paired difference's variance, against 0.2719 for the two-orientation N=290 estimator that could only bound the leakage. Nine percent more variance and one extra run per family buys the systematic outright",
-  "cost_relative_to_the_n290_design": {
-    "note": "the three-orientation joint fit would cost 1.64 in variance and 1.5 in runs; the paired-difference realization gets the same A4, with spin 8 projected out, for 1.095 and one extra run per family",
-    "orientations_per_family": 3,
-    "runs_per_family": 2,
-    "runs_total": 6,
-    "samples_for_the_same_sigma_on_A4": "about 1.1 times the N=290 design, per run",
-    "sites_per_sample_ratio": "1300 / 290 = 4.48",
-    "variance_amplification_ratio": "0.2978 / 0.2719 = 1.095"
+  "candidate_search": {
+    "best_five": [
+      {
+        "leakage_cancels_in_the_r4_over_r1_ratio": true,
+        "leverage": "8064/4205",
+        "leverage_is_shared": true,
+        "max_abs_leakage": "1148/21025",
+        "site_count": 580
+      },
+      {
+        "leakage_cancels_in_the_r4_over_r1_ratio": true,
+        "leverage": "1152/625",
+        "leverage_is_shared": true,
+        "max_abs_leakage": "196/625",
+        "site_count": 100
+      },
+      {
+        "leakage_cancels_in_the_r4_over_r1_ratio": true,
+        "leverage": "1152/625",
+        "leverage_is_shared": true,
+        "max_abs_leakage": "196/625",
+        "site_count": 200
+      },
+      {
+        "leakage_cancels_in_the_r4_over_r1_ratio": true,
+        "leverage": "1152/625",
+        "leverage_is_shared": true,
+        "max_abs_leakage": "196/625",
+        "site_count": 400
+      },
+      {
+        "leakage_cancels_in_the_r4_over_r1_ratio": true,
+        "leverage": "1152/625",
+        "leverage_is_shared": true,
+        "max_abs_leakage": "196/625",
+        "site_count": 800
+      }
+    ],
+    "candidates_found": 16,
+    "ceiling": 1000,
+    "objective": "maximum shared angular leverage first, because it divides into every amplitude and sets the sample budget; then minimum spin-8 leakage, because that one does not shrink with samples"
   },
-  "estimator": "within each family solve O(theta) = C + A4 cos4theta + A8 cos8theta on its three members; the score is the vector (A4(2i)/A4(i), A4(4i)/A4(i))",
-  "families": [
-    {
-      "aspect_ratio": 1,
-      "design_determinant": "-553752213848064/235684033203125",
-      "gaussian_norm": 1300,
-      "members": [
-        {
-          "cos4theta": "103033/105625",
-          "cos8theta": "10074957553/11156640625",
-          "gaussian_integer": "2+36i",
-          "period_matrix_row_major": [
-            2,
-            -36,
-            36,
-            2
-          ],
-          "sites": 1300
-        },
-        {
-          "cos4theta": "22393/105625",
-          "cos8theta": "-10153747727/11156640625",
-          "gaussian_integer": "12+34i",
-          "period_matrix_row_major": [
-            12,
-            -34,
-            34,
-            12
-          ],
-          "sites": 1300
-        },
-        {
-          "cos4theta": "-119/169",
-          "cos8theta": "-239/28561",
-          "gaussian_integer": "20+30i",
-          "period_matrix_row_major": [
-            20,
-            -30,
-            30,
-            20
-          ],
-          "sites": 1300
-        }
-      ],
-      "modulus": "i",
-      "paired_difference_plan": {
-        "determinant": "-553752213848064/235684033203125",
-        "pairs": [
-          {
-            "delta_cos4": "177408/105625",
-            "delta_cos8": "10168316928/11156640625",
-            "first": "2+36i",
-            "first_matrix_row_major": [
-              2,
-              -36,
-              36,
-              2
-            ],
-            "first_rep": [
-              2,
-              36
-            ],
-            "second": "20+30i",
-            "second_matrix_row_major": [
-              20,
-              -30,
-              30,
-              20
-            ],
-            "second_rep": [
-              20,
-              30
-            ]
-          },
-          {
-            "delta_cos4": "96768/105625",
-            "delta_cos8": "-10060388352/11156640625",
-            "first": "12+34i",
-            "first_matrix_row_major": [
-              12,
-              -34,
-              34,
-              12
-            ],
-            "first_rep": [
-              12,
-              34
-            ],
-            "second": "20+30i",
-            "second_matrix_row_major": [
-              20,
-              -30,
-              30,
-              20
-            ],
-            "second_rep": [
-              20,
-              30
-            ]
-          }
-        ],
-        "redundant_pair_available_as_a_check": true,
-        "runs_per_family": 2,
-        "variance_amplification": {
-          "A4": "447749267647703125/1503674582974857216",
-          "A8": "781675556622314453125/1178880873052288057344",
-          "meaning": "Var(A) = this factor times the variance of one paired difference, for equal counts on the two runs"
-        }
-      },
-      "variance_amplification": {
-        "A4": "671611155902171875/751837291487428608",
-        "A8": "64724727618408203125/84205776646592004096",
-        "meaning": "Var(A) = this factor times the per-orientation variance, for equal counts on the three orientations. This is the joint fit; what the engine can actually run is paired_difference_plan below"
-      }
-    },
-    {
-      "aspect_ratio": 2,
-      "design_determinant": "-553752213848064/235684033203125",
-      "gaussian_norm": 650,
-      "members": [
-        {
-          "cos4theta": "119/169",
-          "cos8theta": "-239/28561",
-          "gaussian_integer": "5+25i",
-          "period_matrix_row_major": [
-            5,
-            -50,
-            25,
-            10
-          ],
-          "sites": 1300
-        },
-        {
-          "cos4theta": "-22393/105625",
-          "cos8theta": "-10153747727/11156640625",
-          "gaussian_integer": "11+23i",
-          "period_matrix_row_major": [
-            11,
-            -46,
-            23,
-            22
-          ],
-          "sites": 1300
-        },
-        {
-          "cos4theta": "-103033/105625",
-          "cos8theta": "10074957553/11156640625",
-          "gaussian_integer": "17+19i",
-          "period_matrix_row_major": [
-            17,
-            -38,
-            19,
-            34
-          ],
-          "sites": 1300
-        }
-      ],
-      "modulus": "2i",
-      "paired_difference_plan": {
-        "determinant": "-553752213848064/235684033203125",
-        "pairs": [
-          {
-            "delta_cos4": "96768/105625",
-            "delta_cos8": "10060388352/11156640625",
-            "first": "5+25i",
-            "first_matrix_row_major": [
-              5,
-              -50,
-              25,
-              10
-            ],
-            "first_rep": [
-              5,
-              25
-            ],
-            "second": "11+23i",
-            "second_matrix_row_major": [
-              11,
-              -46,
-              23,
-              22
-            ],
-            "second_rep": [
-              11,
-              23
-            ]
-          },
-          {
-            "delta_cos4": "177408/105625",
-            "delta_cos8": "-10168316928/11156640625",
-            "first": "5+25i",
-            "first_matrix_row_major": [
-              5,
-              -50,
-              25,
-              10
-            ],
-            "first_rep": [
-              5,
-              25
-            ],
-            "second": "17+19i",
-            "second_matrix_row_major": [
-              17,
-              -38,
-              19,
-              34
-            ],
-            "second_rep": [
-              17,
-              19
-            ]
-          }
-        ],
-        "redundant_pair_available_as_a_check": true,
-        "runs_per_family": 2,
-        "variance_amplification": {
-          "A4": "447749267647703125/1503674582974857216",
-          "A8": "781675556622314453125/1178880873052288057344",
-          "meaning": "Var(A) = this factor times the variance of one paired difference, for equal counts on the two runs"
-        }
-      },
-      "variance_amplification": {
-        "A4": "671611155902171875/751837291487428608",
-        "A8": "64724727618408203125/84205776646592004096",
-        "meaning": "Var(A) = this factor times the per-orientation variance, for equal counts on the three orientations. This is the joint fit; what the engine can actually run is paired_difference_plan below"
-      }
-    },
-    {
-      "aspect_ratio": 4,
-      "design_determinant": "-553752213848064/235684033203125",
-      "gaussian_norm": 325,
-      "members": [
-        {
-          "cos4theta": "103033/105625",
-          "cos8theta": "10074957553/11156640625",
-          "gaussian_integer": "1+18i",
-          "period_matrix_row_major": [
-            1,
-            -72,
-            18,
-            4
-          ],
-          "sites": 1300
-        },
-        {
-          "cos4theta": "22393/105625",
-          "cos8theta": "-10153747727/11156640625",
-          "gaussian_integer": "6+17i",
-          "period_matrix_row_major": [
-            6,
-            -68,
-            17,
-            24
-          ],
-          "sites": 1300
-        },
-        {
-          "cos4theta": "-119/169",
-          "cos8theta": "-239/28561",
-          "gaussian_integer": "10+15i",
-          "period_matrix_row_major": [
-            10,
-            -60,
-            15,
-            40
-          ],
-          "sites": 1300
-        }
-      ],
-      "modulus": "4i",
-      "paired_difference_plan": {
-        "determinant": "-553752213848064/235684033203125",
-        "pairs": [
-          {
-            "delta_cos4": "177408/105625",
-            "delta_cos8": "10168316928/11156640625",
-            "first": "1+18i",
-            "first_matrix_row_major": [
-              1,
-              -72,
-              18,
-              4
-            ],
-            "first_rep": [
-              1,
-              18
-            ],
-            "second": "10+15i",
-            "second_matrix_row_major": [
-              10,
-              -60,
-              15,
-              40
-            ],
-            "second_rep": [
-              10,
-              15
-            ]
-          },
-          {
-            "delta_cos4": "96768/105625",
-            "delta_cos8": "-10060388352/11156640625",
-            "first": "6+17i",
-            "first_matrix_row_major": [
-              6,
-              -68,
-              17,
-              24
-            ],
-            "first_rep": [
-              6,
-              17
-            ],
-            "second": "10+15i",
-            "second_matrix_row_major": [
-              10,
-              -60,
-              15,
-              40
-            ],
-            "second_rep": [
-              10,
-              15
-            ]
-          }
-        ],
-        "redundant_pair_available_as_a_check": true,
-        "runs_per_family": 2,
-        "variance_amplification": {
-          "A4": "447749267647703125/1503674582974857216",
-          "A8": "781675556622314453125/1178880873052288057344",
-          "meaning": "Var(A) = this factor times the variance of one paired difference, for equal counts on the two runs"
-        }
-      },
-      "variance_amplification": {
-        "A4": "671611155902171875/751837291487428608",
-        "A8": "64724727618408203125/84205776646592004096",
-        "meaning": "Var(A) = this factor times the per-orientation variance, for equal counts on the three orientations. This is the joint fit; what the engine can actually run is paired_difference_plan below"
-      }
-    }
-  ],
-  "families_share_one_design_matrix": true,
-  "families_share_one_variance_amplification": true,
-  "how_it_is_actually_run": "the engine couples exactly two period matrices on a common random field per sample, so a family is two paired runs on disjoint seed streams rather than one three-orientation run. Differencing within a pair kills C; two pairs determine A4 and A8; the third pair is their exact sum and is a check, not a third run. See paired_difference_plan on each family",
+  "estimator": "per rung, one paired run gives (O_first - O_second) / delta_cos4 = A4 + A8 * leakage; the score is the vector (A4(2i)/A4(i), A4(4i)/A4(i))",
+  "leverage_is_shared_across_rungs": true,
   "modular_shape_predictions": {
     "rows": [
       {
@@ -457,16 +146,115 @@
     }
   ],
   "not_established_by_this_design": [
-    "anything at all: no block has been run",
+    "anything at all: no scoring block has been run",
     "identification of the Q4 Jordan module, which the ratio cannot decide on its own (docs/astra/Q2-additive-shape-ambiguity.md)",
-    "that the fitted A4 is the log slope rather than a leading amplitude"
+    "that the fitted A4 is the log slope rather than a leading amplitude",
+    "freedom from spin-8 in the r=2/r=1 entry, where the leakage does not cancel; only the r=4/r=1 entry is clean"
   ],
+  "rejected_alternative": {
+    "shape": "three orientations per rung, spin-8 fitted rather than bounded",
+    "site_count": 1300,
+    "what_the_pilot_also_found": "the analysis path returned zeros at N=1300: the binomial tail's recurrence starts at (1-p)^N, which underflows to exactly zero near 790 sites at the percolation threshold, and then stays zero. Fixed in analyze_p48_retrospective by anchoring the recurrence at the mode",
+    "why_rejected": "measured, not estimated. A 1M pilot at N=1300 gave a per-difference noise of 0.0131 against 0.0065 at N=290, a factor of 2.0 for a 4.5 times larger torus, while the amplitude falls roughly as N^-5/4. Reaching a decisive ratio there is about three orders of magnitude beyond what we can spend"
+  },
   "roadmap_item": 2,
-  "schema": "matching-one/aspect-ladder-design/v1",
-  "score_is_amplitude_free": "both entries are ratios of A4 within one observable, so the unknown non-universal overlap constant and the additive constant C cancel",
-  "site_count": 1300,
+  "rungs": [
+    {
+      "aspect_ratio": 1,
+      "delta_cos4": "8064/4205",
+      "delta_cos8": "-9257472/88410125",
+      "first_matrix_row_major": [
+        2,
+        -24,
+        24,
+        2
+      ],
+      "first_rep": [
+        2,
+        24
+      ],
+      "gaussian_norm": 580,
+      "modulus": "i",
+      "orientations_available": 2,
+      "second_matrix_row_major": [
+        16,
+        -18,
+        18,
+        16
+      ],
+      "second_rep": [
+        16,
+        18
+      ],
+      "spin8_leakage": "-1148/21025"
+    },
+    {
+      "aspect_ratio": 2,
+      "delta_cos4": "8064/4205",
+      "delta_cos8": "9257472/88410125",
+      "first_matrix_row_major": [
+        1,
+        -34,
+        17,
+        2
+      ],
+      "first_rep": [
+        1,
+        17
+      ],
+      "gaussian_norm": 290,
+      "modulus": "2i",
+      "orientations_available": 2,
+      "second_matrix_row_major": [
+        11,
+        -26,
+        13,
+        22
+      ],
+      "second_rep": [
+        11,
+        13
+      ],
+      "spin8_leakage": "1148/21025"
+    },
+    {
+      "aspect_ratio": 4,
+      "delta_cos4": "8064/4205",
+      "delta_cos8": "-9257472/88410125",
+      "first_matrix_row_major": [
+        1,
+        -48,
+        12,
+        4
+      ],
+      "first_rep": [
+        1,
+        12
+      ],
+      "gaussian_norm": 145,
+      "modulus": "4i",
+      "orientations_available": 2,
+      "second_matrix_row_major": [
+        8,
+        -36,
+        9,
+        32
+      ],
+      "second_rep": [
+        8,
+        9
+      ],
+      "spin8_leakage": "-1148/21025"
+    }
+  ],
+  "runs_total": 3,
+  "schema": "matching-one/aspect-ladder-design/v2",
+  "score_is_amplitude_free": "both entries are ratios of A4 within one observable, so the unknown non-universal overlap constant and the additive constant cancel",
+  "shared_leverage": "8064/4205",
+  "site_count": 580,
+  "spin8_cancels_in_the_discriminating_ratio": true,
   "status": "design_only_no_measurement",
-  "what_separates_at_r4": "at r=2 the weight-4 shape predicts 2.75 and the bare aspect ratio 2.00, which the existing 9 percent measurement cannot split; at r=4 they predict 10.99 and 4.00, a factor of 2.7 apart, so about 16 percent relative precision on the r=4 amplitude ratio decides it either way",
-  "what_the_r2_rung_adds": "a replication of the N=290 number at a different site count with the spin-8 leakage fitted rather than bounded. The N=290 design could only bound it, because two orientations determine only C and A4",
-  "why_they_share_it": "1300 = 2*650 = 4*325, and 1300 is divisible by 4, so both parts of every representation of it are even: the r=1 family is exactly 2 times the r=4 family and samples the identical three orientations. The r=2 family is (1+i) times the r=4 family, a 45 degree turn, under which cos8 is invariant and cos4 changes sign; the sign change is undone by the reversal of the sorted order, so all three design matrices have the same determinant, not merely the same magnitude. No family is the noisy one"
+  "what_separates_at_r4": "at r=2 the weight-4 shape predicts 2.75 and the bare aspect ratio 2.00, which the existing 9 percent measurement cannot split; at r=4 they predict 10.99 and 4.00, a factor of 2.7 apart, so about 30 percent relative precision on the r=1 amplitude decides it either way",
+  "what_the_r2_rung_adds": "a replication of the N=290 number at a different site count, in a geometry where the leakage enters the r=2/r=1 ratio once rather than twice",
+  "why_that_matters": "the estimator is A4 + A8 * leakage. When the r=1 and r=4 rungs carry the same leakage, the ratio A4(4i)/A4(i) -- the one that discriminates -- has that bias cancel to leading order instead of compounding, which is what the N=290 pair could not do: its two families had equal and *opposite* leakage, so the systematic entered the score twice"
 }

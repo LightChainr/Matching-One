@@ -1,0 +1,166 @@
+# Third and final frozen design for the aspect ladder, superseding v1 and v2 on
+# affordability and on a bug the pilot found.
+#
+# This file exists to give a post-hoc reading its one chance to be wrong.
+#
+# The N=290 fingerprint returned A(2i)/A(i) = 1.880 +/- 0.177 against a predicted
+# 11/4, excluding the weight-4 shape at 4.9 sigma, plain area scaling at 12, and
+# no dependence at 5.0. The number it does sit on is the bare aspect ratio r = 2
+# (z = -0.68) -- noticed after the run, with no prospective standing, and
+# explicitly not asked to be rationalized (docs/astra/Q2). Naming it here, before
+# any scoring block at N=580 is executed, is what converts it into a law that can
+# lose.
+#
+# WHY N=580, AND NOT THE N=1300 OF v1/v2
+#
+# v1 and v2 put the ladder at N=1300 so each rung would have three orientations
+# and the spin-8 amplitude could be fitted out instead of bounded. A 1M pilot
+# killed that twice over.
+#
+#   1. The analysis path returned zeros at N=1300. The binomial tail's recurrence
+#      starts at (1-p)^N and walks up; at the percolation threshold 1-p is about
+#      0.407, so that first term underflows to exactly zero near 790 sites and
+#      the recurrence then stays zero for every later term. Every channel came
+#      back 0.0 with nothing raised. Fixed by anchoring the recurrence at the
+#      mode (scripts/analyze_p48_retrospective.py).
+#   2. Even fixed, it is unaffordable. Measured per-difference noise at N=1300 is
+#      0.0131 per 1M samples against 0.0065 at N=290 -- a factor of 2.0 for a 4.5
+#      times larger torus -- while the amplitude falls roughly as N^-5/4. A
+#      decisive ratio there is about three orders of magnitude beyond what we can
+#      spend.
+#
+# N=580 needs no three-orientation fit. Its r=1 and r=4 rungs carry the *same*
+# spin-8 leakage, -1148/21025, so the bias cancels to leading order in the ratio
+# that discriminates -- which is strictly better than what the N=290 design could
+# do, where the two families had equal and *opposite* leakage and the systematic
+# entered the score twice. It also carries the maximum shared angular leverage,
+# 8064/4205, the same as N=290. Both facts are searched for rather than asserted:
+# see results/aspect-ladder-design/latest.json, candidate_search.
+#
+# Nothing has been scored at N=580. This is a design, not a result.
+status: frozen_before_any_scoring_run_at_this_size
+frozen_at: "2026-09-05"
+supersedes_on_affordability:
+  - predictions/aspect_ladder_n1300_20260905.yaml
+  - predictions/aspect_ladder_n1300_v2_20260905.yaml
+issue: 216
+roadmap_item: 2
+claim_level_if_it_passes: C3
+claim_level_if_it_fails: C3_negative
+design_artifact: results/aspect-ladder-design/latest.json
+
+question: >
+  Across aspect ratios 1, 2 and 4 at a single site count, does the spin-4
+  amplitude of the matching-odd readout follow the area-normalized weight-4
+  modular factor (1, 2.75, 10.99), the bare aspect ratio (1, 2, 4), plain area
+  scaling (1, 4, 16), or none of them?
+
+observable:
+  name: P4_S_prime
+  definition: >
+    the frozen P48 spin-4 projector of the matching-odd slope, computed by
+    analyze_p48_retrospective.project_size on the engine histograms.
+  fit: >
+    per rung, one paired run gives (O_first - O_second) / delta_cos4, which is
+    A4 + A8 * leakage. The leakage is a property of the geometry and is listed
+    per rung below; it does not shrink with samples.
+
+design:
+  site_count: 580
+  engine: src/threshold_rank_integer_period_mc.cpp
+  runs_total: 3
+  rungs:
+    r1:
+      modulus: i
+      gaussian_norm: 580
+      first_rep: [2, 24]
+      second_rep: [16, 18]
+      first_matrix: [2, -24, 24, 2]
+      second_matrix: [16, -18, 18, 16]
+      delta_cos4: "8064/4205"
+      spin8_leakage: "-1148/21025"
+    r2:
+      modulus: 2i
+      gaussian_norm: 290
+      first_rep: [1, 17]
+      second_rep: [11, 13]
+      first_matrix: [1, -34, 17, 2]
+      second_matrix: [11, -26, 13, 22]
+      delta_cos4: "8064/4205"
+      spin8_leakage: "1148/21025"
+    r4:
+      modulus: 4i
+      gaussian_norm: 145
+      first_rep: [1, 12]
+      second_rep: [8, 9]
+      first_matrix: [1, -48, 12, 4]
+      second_matrix: [8, -36, 9, 32]
+      delta_cos4: "8064/4205"
+      spin8_leakage: "-1148/21025"
+  why_this_site_count: >
+    A torus of modulus r*i with N sites needs a Gaussian integer of norm N/r, so
+    the ladder needs 580, 290 and 145 each to be a sum of two squares in at least
+    two ways. Sixteen site counts up to 1000 carry the ladder; N=580 is chosen by
+    a stated objective -- maximum shared angular leverage first, then minimum
+    spin-8 leakage -- and it wins on both, at 8064/4205 and 1148/21025 against
+    1152/625 and 196/625 for the runners-up. The search is in the design artifact.
+  spin8: >
+    The r=1 and r=4 rungs carry the identical leakage -1148/21025, so it cancels
+    to leading order in A4(4i)/A4(i). It does NOT cancel in A4(2i)/A4(i), where
+    the r=2 rung carries the opposite sign; that entry keeps a systematic of about
+    -0.055 * (A8/A4 + A8'/A4'), bounded well below 1 by the committed
+    H4-beats-H8 results but not removed.
+
+score: [A4(2i) / A4(i), A4(4i) / A4(i)]
+
+competing_predictions:
+  # (r=2, r=4)
+  q4_jordan_weight4:    [2.75,      10.9908008589]
+  bare_aspect_ratio:    [2.0,        4.0]
+  plain_area_scaling:   [4.0,       16.0]
+  no_modulus_dependence: [1.0,       1.0]
+  weight12_delta:       [0.125,      0.0000279010739704]
+  weight12_E4_cubed:    [20.796875, 1327.6635036]
+  weight12_E12:         [32.515625, 2080.30719731]
+  weight8_E8:           [7.5625,    120.79770352]
+
+decision:
+  - >
+    The r=4 entry is the discriminator, and it is the clean one. The weight-4
+    shape and the bare aspect ratio predict 10.99 and 4.00 there, a factor of 2.7
+    apart, against 2.75 and 2.00 at r=2 which the existing 9 percent measurement
+    cannot split.
+  - >
+    An r=2 entry compatible with 2.0 and incompatible with 2.75 replicates the
+    N=290 result at a different site count, in a geometry where the leakage enters
+    once rather than twice.
+  - >
+    Compatible with both live laws at r=4 is underpowered, reported as such, and
+    any further run is a new frozen design. No optional stopping.
+
+conditional_on:
+  - >
+    The weight-4 entry is a prediction only if the normalization removes the same
+    thermal-primary block; the additive shape A~(tau) is not fixed by the Jordan
+    relation. See docs/astra/Q2-additive-shape-ambiguity.md. This ladder tests the
+    amplitude law, not the module identification.
+
+not_established_by_this_run:
+  - identification of the Q4 Jordan module
+  - that the fitted A4 is the log slope rather than a leading amplitude
+  - the C + A4 cos4 + A8 cos8 form itself, which two orientations determine
+    exactly and therefore cannot check
+  - freedom from spin-8 in the r=2/r=1 entry, where the leakage does not cancel
+  - any modular interpretation of the bare aspect ratio, should it win. A law that
+    fits three points is a law that fits three points
+
+before_running:
+  - >
+    Size the budget from a pilot at this site count. Standard errors extrapolate
+    as one over root n and were checked to do so -- a 1M pilot at N=290 predicted
+    the committed 200M standard error to within 22 percent. Central values at
+    small counts do not extrapolate: a 200000-sample pilot of this channel once
+    returned an amplitude five times its 20M value.
+  - >
+    The pilot uses replica offset 800000000, past every committed stream, so it
+    can never be pooled into the scoring run.

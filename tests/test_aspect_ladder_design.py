@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Lock the r = 1, 2, 4 aspect ladder at N = 1300.
+"""Lock the r = 1, 2, 4 aspect ladder at N = 580.
 
-Every assertion here names a wrong number that would otherwise reach a frozen
+Every assertion names a wrong number that would otherwise reach a frozen
 prediction file and then a claim: a torus that does not have the site count it
-claims, a family whose three orientations cannot separate spin 4 from spin 8, a
+claims, a rung whose leverage silently differs from the others so one leg is the
+noisy one, a spin-8 leakage that compounds in the score instead of cancelling, a
 competitor list that quietly drops the one law the N=290 point happens to sit
 on, or an r=4 prediction that is not actually where the competitors separate.
 """
@@ -27,6 +28,8 @@ from aspect_ladder_design import (  # noqa: E402
     build_result,
     cos4,
     cos8,
+    ladder,
+    rank_candidates,
     representations,
     validate_result,
 )
@@ -45,64 +48,77 @@ class AspectLadderDesignTests(unittest.TestCase):
     def test_every_torus_really_has_the_site_count(self) -> None:
         """The whole design is 'same N, three moduli'.
 
-        A period matrix whose determinant is not 1300 would compare tori of
-        different sizes, and the finite-size correction would then be inside the
-        score with nothing to say so.
+        A period matrix whose determinant is not the site count would compare
+        tori of different sizes, and the finite-size correction would then be
+        inside the score with nothing to say so.
         """
-        for family in self.result["families"]:
-            for member in family["members"]:
-                a, b, c, d = member["period_matrix_row_major"]
-                with self.subTest(member=member["gaussian_integer"]):
+        for rung in self.result["rungs"]:
+            for key in ("first_matrix_row_major", "second_matrix_row_major"):
+                a, b, c, d = rung[key]
+                with self.subTest(aspect=rung["aspect_ratio"], matrix=key):
                     self.assertEqual(a * d - b * c, SITE_COUNT)
-                    self.assertEqual(member["sites"], SITE_COUNT)
 
-    def test_each_family_determines_all_three_of_C_A4_and_A8(self) -> None:
-        """Two orientations leave spin 8 as an unremovable systematic.
-
-        That is the caveat the N=290 run had to carry. A singular or
-        near-singular design matrix here would put it back while the artifact
-        claimed it was fitted out.
-        """
-        for family in self.result["families"]:
-            with self.subTest(aspect=family["aspect_ratio"]):
-                self.assertEqual(len(family["members"]), 3)
-                determinant = Fraction(family["design_determinant"])
-                self.assertNotEqual(determinant, 0)
-                self.assertGreater(abs(determinant), Fraction(1, 2))
-                values = {member["cos4theta"] for member in family["members"]}
-                self.assertEqual(len(values), 3)
-
-    def test_the_three_families_are_equally_conditioned(self) -> None:
+    def test_all_three_rungs_share_one_leverage(self) -> None:
         """Otherwise one rung is the noisy one and the ladder is not a ladder.
 
-        This is a fact about 1300, not a design choice, so it is checked rather
-        than assumed: it is what makes a single sample budget per family right.
+        The leverage divides into every amplitude, so an unequal one would make
+        a single sample budget per rung the wrong allocation while the artifact
+        reported three comparable numbers.
         """
-        self.assertTrue(self.result["families_share_one_design_matrix"])
-        self.assertTrue(self.result["families_share_one_variance_amplification"])
-        amplifications = {f["variance_amplification"]["A4"] for f in self.result["families"]}
-        self.assertEqual(len(amplifications), 1)
-        # 3-orientation A4 costs 1.64x the 2-orientation variance of the N=290 design
-        amplification = Fraction(next(iter(amplifications)))
-        self.assertAlmostEqual(float(amplification), 0.8933, places=4)
+        self.assertTrue(self.result["leverage_is_shared_across_rungs"])
+        self.assertEqual(self.result["shared_leverage"], "8064/4205")
+        self.assertEqual({rung["delta_cos4"] for rung in self.result["rungs"]}, {"8064/4205"})
 
-    def test_the_gaussian_norms_are_the_only_ones_that_work(self) -> None:
-        """N = 1300 is claimed to be the smallest site count carrying the ladder.
+    def test_the_spin8_leakage_cancels_in_the_discriminating_ratio(self) -> None:
+        """The systematic that does not shrink with samples.
 
-        If a smaller one existed, this design would be spending compute for
-        nothing, so the claim is checked by search rather than by assertion.
+        Two orientations give A4 + A8 * leakage, not A4. The N=290 pair had
+        equal and *opposite* leakage on its two families, so the bias entered
+        the score twice. Here the r=1 and r=4 rungs carry the same leakage, so
+        it cancels to leading order in the ratio that separates the hypotheses.
+        Losing that property would put a systematic back into the one number
+        this design exists to measure.
         """
-        for aspect in ASPECTS:
-            self.assertGreaterEqual(len(representations(SITE_COUNT // aspect)), 3, aspect)
-        for candidate in range(4, SITE_COUNT, 4):
-            with self.subTest(candidate=candidate):
-                self.assertFalse(
-                    all(len(representations(candidate // aspect)) >= 3 for aspect in ASPECTS),
-                    f"{candidate} also carries the ladder and is smaller than {SITE_COUNT}",
+        by_aspect = {rung["aspect_ratio"]: rung for rung in self.result["rungs"]}
+        self.assertTrue(self.result["spin8_cancels_in_the_discriminating_ratio"])
+        self.assertEqual(
+            Fraction(by_aspect[1]["spin8_leakage"]),
+            Fraction(by_aspect[4]["spin8_leakage"]),
+        )
+        self.assertEqual(
+            Fraction(by_aspect[2]["spin8_leakage"]),
+            -Fraction(by_aspect[1]["spin8_leakage"]),
+        )
+        self.assertLess(abs(Fraction(by_aspect[1]["spin8_leakage"])), Fraction(1, 15))
+
+    def test_the_search_prefers_this_site_count_over_every_smaller_one(self) -> None:
+        """N=580 is not the smallest ladder, so the choice has to be justified.
+
+        100, 200, 260, 340, 400 and 500 all carry it and are cheaper. They lose
+        on leverage or on leakage, and if that stopped being true this design
+        would be paying for sites it does not need.
+        """
+        ranked = rank_candidates()
+        self.assertEqual(ranked[0]["site_count"], SITE_COUNT)
+        cheaper = [row for row in ranked if row["site_count"] < SITE_COUNT]
+        self.assertTrue(cheaper, "the search found no cheaper candidate to compare against")
+        best_leverage = Fraction(ranked[0]["leverage"])
+        best_leakage = Fraction(ranked[0]["max_abs_leakage"])
+        for row in cheaper:
+            with self.subTest(site_count=row["site_count"]):
+                self.assertTrue(
+                    Fraction(row["leverage"]) < best_leverage
+                    or Fraction(row["max_abs_leakage"]) > best_leakage
                 )
 
+    def test_a_rung_needs_two_orientations_of_the_right_norm(self) -> None:
+        for aspect in ASPECTS:
+            with self.subTest(aspect=aspect):
+                self.assertGreaterEqual(len(representations(SITE_COUNT // aspect)), 2)
+        self.assertIsNone(ladder(SITE_COUNT + 4), "a site count without the ladder was accepted")
+
     def test_cos8_is_the_chebyshev_image_of_cos4(self) -> None:
-        for a, b in representations(325):
+        for a, b in representations(145):
             with self.subTest(rep=(a, b)):
                 self.assertEqual(cos8(a, b), 2 * cos4(a, b) ** 2 - 1)
                 self.assertLessEqual(abs(cos4(a, b)), 1)
@@ -139,47 +155,6 @@ class AspectLadderDesignTests(unittest.TestCase):
         self.assertGreater(at_four, 6.0)
         self.assertGreater(at_four / at_two, 8.0)
 
-    def test_two_paired_runs_determine_A4_with_spin8_projected_out(self) -> None:
-        """The estimator the engine can actually run.
-
-        The engine couples two period matrices per run, so a three-orientation
-        joint fit is not a thing it does. Two pairs are enough -- but only if
-        their leverage matrix is non-singular. A singular choice would leave A4
-        and A8 indistinguishable while the artifact claimed the systematic was
-        fitted out.
-        """
-        for family in self.result["families"]:
-            plan = family["paired_difference_plan"]
-            with self.subTest(aspect=family["aspect_ratio"]):
-                self.assertEqual(plan["runs_per_family"], 2)
-                self.assertEqual(len(plan["pairs"]), 2)
-                rows = [
-                    [Fraction(pair["delta_cos4"]), Fraction(pair["delta_cos8"])]
-                    for pair in plan["pairs"]
-                ]
-                determinant = rows[0][0] * rows[1][1] - rows[0][1] * rows[1][0]
-                self.assertNotEqual(determinant, 0)
-                self.assertEqual(Fraction(plan["determinant"]), determinant)
-                for pair in plan["pairs"]:
-                    for key in ("first_matrix_row_major", "second_matrix_row_major"):
-                        a, b, c, d = pair[key]
-                        self.assertEqual(a * d - b * c, SITE_COUNT, (key, pair))
-
-    def test_the_paired_estimator_costs_almost_nothing_over_the_n290_one(self) -> None:
-        """The claim that motivates running it at all.
-
-        If projecting spin 8 out cost a large factor in variance, the honest
-        design would be to keep bounding it. It costs 9 percent, and that number
-        is what the sample budget is set from, so it is checked rather than
-        quoted.
-        """
-        n290 = Fraction(4205, 8064) ** 2  # one pair, A4 = D / delta_cos4
-        for family in self.result["families"]:
-            amplification = Fraction(family["paired_difference_plan"]["variance_amplification"]["A4"])
-            with self.subTest(aspect=family["aspect_ratio"]):
-                self.assertLess(amplification / n290, Fraction(6, 5))
-                self.assertGreater(amplification / n290, 1)
-
     def test_the_frozen_prediction_file_agrees_with_the_design(self) -> None:
         """The prediction file is what a later run is scored against.
 
@@ -191,29 +166,23 @@ class AspectLadderDesignTests(unittest.TestCase):
         import yaml
 
         frozen = yaml.safe_load(
-            (ROOT / "predictions" / "aspect_ladder_n1300_v2_20260905.yaml").read_text(encoding="utf-8")
+            (ROOT / "predictions" / "aspect_ladder_n580_20260905.yaml").read_text(encoding="utf-8")
         )
         self.assertEqual(frozen["design"]["site_count"], SITE_COUNT)
         self.assertEqual(frozen["design_artifact"], "results/aspect-ladder-design/latest.json")
-        self.assertEqual(
-            frozen["supersedes_on_realizability"],
-            "predictions/aspect_ladder_n1300_20260905.yaml",
-        )
 
-        by_aspect = {family["aspect_ratio"]: family for family in self.result["families"]}
-        for key, block in frozen["design"]["families"].items():
+        by_aspect = {rung["aspect_ratio"]: rung for rung in self.result["rungs"]}
+        for key, block in frozen["design"]["rungs"].items():
             aspect = int(key[1:])
             with self.subTest(aspect=aspect):
-                plan = by_aspect[aspect]["paired_difference_plan"]
-                self.assertEqual(block["gaussian_norm"], by_aspect[aspect]["gaussian_norm"])
-                self.assertEqual(len(block["pairs"]), len(plan["pairs"]))
-                for written, generated in zip(block["pairs"], plan["pairs"]):
-                    self.assertEqual(list(written["first_rep"]), generated["first_rep"])
-                    self.assertEqual(list(written["second_rep"]), generated["second_rep"])
-                    self.assertEqual(list(written["first_matrix"]), generated["first_matrix_row_major"])
-                    self.assertEqual(list(written["second_matrix"]), generated["second_matrix_row_major"])
-                    self.assertEqual(written["delta_cos4"], generated["delta_cos4"])
-                    self.assertEqual(written["delta_cos8"], generated["delta_cos8"])
+                generated = by_aspect[aspect]
+                self.assertEqual(block["gaussian_norm"], generated["gaussian_norm"])
+                self.assertEqual(list(block["first_rep"]), generated["first_rep"])
+                self.assertEqual(list(block["second_rep"]), generated["second_rep"])
+                self.assertEqual(list(block["first_matrix"]), generated["first_matrix_row_major"])
+                self.assertEqual(list(block["second_matrix"]), generated["second_matrix_row_major"])
+                self.assertEqual(block["delta_cos4"], generated["delta_cos4"])
+                self.assertEqual(block["spin8_leakage"], generated["spin8_leakage"])
 
         predictions = frozen["competing_predictions"]
         shapes = {row["shape"]: row for row in self.result["modular_shape_predictions"]["rows"]}
@@ -240,7 +209,8 @@ class AspectLadderDesignTests(unittest.TestCase):
 
     def test_the_artifact_does_not_claim_a_measurement(self) -> None:
         self.assertEqual(self.result["status"], "design_only_no_measurement")
-        self.assertIn("no block has been run", self.result["not_established_by_this_design"][0])
+        self.assertIn("no scoring block has been run",
+                      self.result["not_established_by_this_design"][0])
 
 
 if __name__ == "__main__":
