@@ -1,0 +1,97 @@
+# Second frozen design for the same question.  The first run
+# (predictions/modulus_fingerprint_n290_20260905.yaml) declared no optional
+# stopping, and it came back underpowered, so this is a new design rather than
+# an extension of that one.
+#
+# What the first run returned, recorded here before this one is executed:
+#   P4_S_prime(square)      = +0.002185 +/- 0.000580   (20M samples)
+#   P4_S_prime(rectangular) = +0.005213 +/- 0.000546   (20M samples)
+#   ratio                   = +2.386   +/- 0.671
+#   compatible at 3 sigma with 11/4, with 4, and with 1 -> underpowered
+#
+# The square family is the bottleneck at 26.5 percent relative error against the
+# rectangular family's 10.5 percent, so this design allocates unequally instead
+# of buying the same count twice.  Sample counts are chosen from that measured
+# variance to reach about 10 percent on the ratio, which separates 11/4 from 4
+# at roughly 4 sigma.
+#
+# Note against over-reading the first run: its 200000-sample plumbing check gave
+# P4_S_prime(square) = 0.0113, five times the 20M value.  Small-sample estimates
+# of this channel run high, and a sample count projected from one is wrong.
+status: frozen_before_target_reveal
+frozen_at: "2026-09-05"
+supersedes_by_power: predictions/modulus_fingerprint_n290_20260905.yaml
+issue: 216
+roadmap_item: 2
+claim_level_if_it_passes: C3
+claim_level_if_it_fails: C3_negative
+
+question: >
+  Does the spin-4 amplitude of the matching-odd readout scale between the square
+  torus and the 2:1 rectangular torus of the same site count by the area-normalized
+  weight-4 modular factor 11/4, rather than by the naive area factor 4?
+
+observable:
+  name: P4_S_prime
+  definition: >
+    (S'_second - S'_first) / (cos4theta_first - cos4theta_second), the frozen P48
+    spin-4 projector of the matching-odd slope, computed by
+    analyze_p48_retrospective.project_size on the engine histograms.
+  normalizer: delta_cos4, identical rational 8064/4205 in both families
+
+design:
+  site_count: 290
+  engine: src/threshold_rank_integer_period_mc.cpp
+  runner: scripts/score_modulus_fingerprint_n290.py
+  square_samples: 200000000
+  rectangular_samples: 100000000
+  batches: 100
+  seed: "20260905"
+  replica_offset: 20000000
+  stopping_rule: >
+    One run at the sample counts above. The replica offset places this run past
+    the first run's stream, so the two are disjoint and neither may be pooled
+    into the other after the fact. No extension and no optional stopping: if this
+    is still underpowered it is reported as underpowered and any further run is
+    again a new frozen design.
+  families:
+    square:
+      modulus: i
+      first_matrix: [17, -1, 1, 17]
+      second_matrix: [13, -11, 11, 13]
+      first_rep: [17, 1]
+      second_rep: [13, 11]
+    rectangular:
+      modulus: 2i
+      first_matrix: [12, -2, 1, 24]
+      second_matrix: [9, -16, 8, 18]
+      first_rep: [12, 1]
+      second_rep: [9, 8]
+
+score: P4_S_prime(rectangular) / P4_S_prime(square)
+
+competing_predictions:
+  q4_jordan_weight4: 2.75
+  plain_area_scaling: 4
+  no_modulus_dependence: 1
+  weight12_delta: 0.125
+  weight12_E4_cubed: 20.796875
+  weight12_E12: 32.515625
+
+decision:
+  - A ratio compatible with 2.75 and incompatible with 4 is C3 support for a
+    weight-4 modular shape in this channel.
+  - A ratio compatible with 4 and incompatible with 2.75 is a C3 negative for it.
+  - Compatible with both is underpowered, and is reported as such.
+
+conditional_on:
+  - >
+    11/4 is a prediction only if the normalization removes the same block; the
+    additive shape A~(tau) is not fixed by the Jordan relation. See
+    docs/astra/Q2-additive-shape-ambiguity.md. This run tests the ratio, not the
+    module identification.
+
+not_established_by_this_run:
+  - identification of the Q4 Jordan module
+  - that the measured amplitude is the log slope rather than a leading amplitude
+  - anything about shapes carrying the same E4 factor
