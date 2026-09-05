@@ -94,15 +94,41 @@ The exact/no-new-compute programs in open PRs #245/#246 can proceed in parallel.
 `docs/manuscripts/p2-algebraic-exclusion/` is drafted end to end, with every number
 generated from committed artifacts. It needs no new compute.
 
-One item blocks submission rather than drafting: **a primary reading of Ziff, Phys.
-Rev. E 73, 016134 (2006).** Its "A lattice" bond threshold is an irreducible quintic of
-height 4, which is what sets the height bound of the paper's closing sentence, and we
-have it corroborated from two independent indexes rather than read — the publisher,
-arXiv and the indexing services are all unreachable from this environment. Anyone with
-library access closes this in minutes. The same reading also clears the two remaining
-`[LIT: primary text not verified]` markers.
+The blocker is cleared. [#574](https://github.com/LightChainr/Matching-One/issues/574)
+returned the primary reading: Ziff, Phys. Rev. E **73**, 016134 (2006) prints the "A
+lattice" quintic and its own statement that the method does not reach square site, both
+now quoted verbatim in §1.1; the Suding–Ziff sentence is quoted as printed rather than
+as the shortened paraphrase we had. That reading also corrected §4.2 — the historical
+exact-bond record reaches height **6** (Wierman 1984), not 4, so the class the paper
+exhausts is a choice we defend rather than a bound the literature hands us, and §4.2 and
+§8.1 now say so.
 
-**Action:** read the three unverified sources; then the manuscript is submittable.
+**One `[LIT]` marker remains:** Scullard 2006 (martini lattices), which #574 did not
+cover. It supports a background sentence, not a result.
+
+**Action:** read Scullard 2006, or weaken the sentence that cites it; then submittable.
+
+### Publication track P3 — denominator-free projective inference
+
+`docs/manuscripts/p3-projective-inference/` is drafted end to end from committed
+artifacts and needs no new compute. Target: *Physical Review E*.
+
+The methodological claim is that a model predicting proportions predicts a **ray**, so
+the test is the covariance-weighted distance to that ray and no coordinate should be
+nominated as a denominator; for two entries and one ray this is exactly Fieller's `z`
+squared, verified to `1.5e-15` on the real N=580 covariance, so every verdict change is
+attributable to the third rung and not to a change of statistic. Using all three rungs
+flips two of eight frozen verdicts from compatible to excluded, at 7.0σ and 7.1σ.
+
+The physical finding is that no competitor's class can produce the measured concavity:
+`f[1,2,4] = -4.66e-04 ± 1.53e-04`, `z = -3.05`, against zero or strictly positive for
+every frozen ray. Reconciling the rung the design dropped needs `|A8/A4|` between 7.7 and
+785 against the `<< 1` under which it was dropped.
+
+**Action:** the draft's own §6 —
+[#583](https://github.com/LightChainr/Matching-One/issues/583), N=650 with three
+orientations per family, which measures `A8` instead of assuming it. One deterministic
+N=580 replay would also settle the single undetermined verdict of §5.2.
 
 ## Completed high-information blocks
 

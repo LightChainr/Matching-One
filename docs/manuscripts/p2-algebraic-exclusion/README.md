@@ -51,7 +51,7 @@ Four computations were added, each with its reason for being inside the stop rul
 | § | Section | State | Note |
 |---|---|---|---|
 | — | Abstract | draft ready | numbers generated; wording is a first pass |
-| 1.1 | Exact thresholds in 2D | ready, partly unverified | Sykes–Essam verified; Scullard / Ziff / Suding–Ziff cited from secondary indexing, marked in-text and in `references.bib` |
+| 1.1 | Exact thresholds in 2D | ready | Sykes–Essam, Ziff 2006 and Suding–Ziff 1999 verified in the primary (#574) and the last two quoted verbatim; Scullard 2006 still cited from secondary indexing and marked in-text |
 | 1.2 | Why heuristic searches are insufficient | ready | |
 | 1.3 | Contributions | ready | **new section** — foregrounds the four methodological results |
 | 1.4 | Scope statement | ready | mirrors the issue's explicit non-claims |
@@ -198,14 +198,16 @@ published intervals.*
 
 ## Open items
 
-1. **Primary-source verification** for Scullard 2006, Ziff 2006 and Suding–Ziff 1999. This is no longer only a
-   citation-hygiene item: the A-lattice polynomial taken from Ziff 2006 now sets the height bound of §6.6 and of
-   the paper's closing sentence. If the primary text disagrees with the corroborated polynomial, §6.6's class is
-   the wrong one — though §6.5 would then be the right one, so the closing sentence stands either way. arXiv was unreachable from
-   the drafting environment, so they are cited from secondary indexing and flagged `PENDING` in
-   `references.bib`, in line with `data/README.md`'s provenance rules. Sykes–Essam 1964 is verified. None of the
-   paper's results depend on them; they motivate the search class in §1.1 and §4.2, and §4.2's table is
-   generated from the repository's own certified artifact rather than from those citations.
+1. **Primary-source verification** — mostly closed. [#574](https://github.com/LightChainr/Matching-One/issues/574)
+   read Ziff 2006 and Suding–Ziff 1999 in the primary; both are now quoted verbatim in §1.1 and their `[LIT]`
+   markers are gone, with the quotes and their sources recorded in
+   `notes/literature-officer-20260905-issue574-quotes.md`. The A-lattice quintic that sets the height bound of
+   §6.6 is confirmed on the page, as is Ziff's own sentence that his method does not reach square site. The same
+   reading also found that our height-4 bound on the historical record was wrong — Wierman 1984 is height 6 —
+   which §4.2 and §8.1 now state.
+
+   **Scullard 2006 remains unread** and keeps its `[LIT]` marker. It supports one background clause in §1.1 and
+   no result depends on it; either read it or drop the clause. Sykes–Essam 1964 is verified.
 2. **One remaining calibration recommendation** (§7): interval-perturbation sensitivity for the degree-4 near
    hits. The second-implementation recommendation is met for the degree ≤ 6 height ≤ 3 census only (Table 9); the
    quartic census of §6.1–6.3, where Results A–D live, still has a single implementation of both its C++ screen

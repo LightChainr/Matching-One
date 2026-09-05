@@ -67,11 +67,20 @@ for a matching pair of planar lattices, together with the exact bond thresholds 
 these values is duality combined with the star–triangle transformation, and later work extended the same
 machinery: site-to-bond and star–triangle constructions give the exact martini-lattice thresholds
 [Scullard 2006] **[LIT: primary text not verified]**, and a generalized cell/dual-cell transformation generates
-in principle an unbounded family of exactly solvable lattices [Ziff 2006] **[LIT: primary text not verified]**.
-That last reference carries more weight here than the others: §4.2 takes one of its exact thresholds — the "A
-lattice" bond value — as the polynomial that sets the height bound of the class exhausted in §6.6.
-Site thresholds for the Archimedean lattices are catalogued in [Suding–Ziff 1999] **[LIT: primary text not
-verified]**, where most entries are numerical and only a few are exact.
+in principle an unbounded family of exactly solvable lattices [Ziff 2006]. That last reference carries more
+weight here than the others: §4.2 takes one of its exact thresholds — the "A lattice" bond value — as the
+polynomial that sets the height bound of the class exhausted in §6.6. Ziff also states the limits of his own
+method in terms that name our target directly: *"Unfortunately, the method does not appear to work for some of
+the more notorious unsolved systems: site percolation on the square and honeycomb lattices, and bond percolation
+on the kagomé lattice."*
+Site thresholds for the Archimedean lattices are catalogued in [Suding–Ziff 1999], where most entries are
+numerical and only a few are exact; square site is not among them, and the reason given is explicitly a
+measurement rather than a form: *"We did not consider the square, triangular, and Kagomé lattices, as p_c (site)
+is either known exactly (triangular and Kagomé [14]), or has already been measured to a high degree of precision
+(square [15]) for these cases."*
+Both sentences were read in the primary and are recorded, with their sources and the one discrepancy against an
+earlier paraphrase of the second, in `notes/literature-officer-20260905-issue574-quotes.md`
+([#574](https://github.com/LightChainr/Matching-One/issues/574)).
 
 Square-lattice *site* percolation is the conspicuous gap. It is the most-studied planar percolation problem, it
 has been computed to thirteen digits by several independent methods, and it is not known in closed form. The
