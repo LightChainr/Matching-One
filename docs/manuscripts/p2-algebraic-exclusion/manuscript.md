@@ -502,10 +502,34 @@ reports a null. The pre-existing synthetic calibration was degree 1 only, while 
 load-bearing at degree 4 — the boundary degree — and the strongest claims (Results A and B) are nulls at the
 narrowest widths. This was the gap most likely to be challenged.
 
+**Added (§6.5, partial):** an independent second implementation, covering the degree ≤ 6 height ≤ 3 census but
+not the quartic census. `scripts/degree6_independent_replication.py` was written separately from the same frozen
+protocol and enumerates `C(d,3)` in its own code, screening at the interval *midpoint* where
+`scripts/degree6_low_height_exclusion.py` screens at both *endpoints*. Both screens are certified consequences
+of `|P'| ≤ D` on `[0,1]`, but they evaluate different points against different bounds
+([Table 9](tables.md#table-9--agreement-of-two-independent-implementations-degree--6-height--3)). Every
+interval-by-degree cell agrees on class size, screen survivors, root-containing polynomials and distinct roots;
+the exclusion verdict agrees on all four intervals; and both implementations single out the same closest member
+of the class, coefficient for coefficient.
+
+Equal counts alone would be weak evidence, since two implementations can agree by both being empty. The check
+that carries the weight is the residual. The two evaluate that minimiser at *different points*, so their
+residuals must differ — and the mean value theorem caps the difference at `D(u-l)/2` for that polynomial's own
+`D = Σ k|a_k|`. Table 9 gives the observed gap and the allowance on each interval; the gap is non-zero, tracks
+the interval width, and stays inside the allowance everywhere. The two implementations are computing the same
+quantity, not merely reporting the same zero.
+
+The replication is partial in a way worth stating precisely. Both import
+`scripts/exact_polynomial_root_certificate.py` unchanged, so the Sturm path is shared rather than replicated.
+For this census that shared code contributes nothing: both screens retain zero candidates at every degree on
+every interval, so root isolation never runs, and the null is produced end to end by two independently written
+certified screens. It does run in the planted-root controls of §6.5, where the replication does not reach.
+
 **Recommended, not done:**
 
-- an independent second implementation of the final exact filter (a different Sturm/root-isolation code path, or
-  a computer-algebra cross-check on the retained candidate sets);
+- an independent second implementation of the *quartic* census (§6.1–6.3), whose C++ fixed-point
+  meet-in-the-middle screen and whose Sturm decisions on the 16 retained candidates are both single-implementation
+  — this is where Results A–D live, and it is the more valuable of the two replications;
 - interval-perturbation sensitivity for the degree-4 near hits: how the survivor sets move as the interval
   endpoints are varied within the sources' quoted precision.
 
@@ -600,11 +624,15 @@ The full machine-readable specification, artifact list, and SHA-256 digests are 
 | `scripts/degree4_synthetic_boundary_control.py` | planted-root sensitivity control (§6.4) |
 | `scripts/degree6_low_height_exclusion.py` | degree-1..6 height-3 exhaustion, per interval (§6.5) |
 | `scripts/degree6_low_height_control.py` | planted `(3,12²)` sensitivity control (§6.5) |
+| `scripts/degree6_independent_replication.py` | second, independently written implementation of that census (§7) |
+| `scripts/degree6_implementation_agreement.py` | cell-by-cell comparison of the two implementations (§7) |
 | `scripts/exact_polynomial_root_certificate.py` | Sturm sequences, root isolation, stationary classification |
 | `scripts/p2_manuscript_evidence_table.py` | manuscript assembly; renders `tables.md`, no census computation |
 
 **Results** — ten census artifacts under `results/pslq-degree{1,2,3,4}-*/latest.json`, four historical-range
-artifacts under `results/pslq-degree6-low-height-*/latest.json`, and the control artifacts under
+artifacts under `results/pslq-degree6-low-height-*/latest.json`, four replication artifacts under
+`results/pslq-degree6-low-height-replication-*/latest.json`, their comparison in
+`results/pslq-degree6-implementation-agreement/latest.json`, and the control artifacts under
 `results/pslq-*/latest.json` including both sensitivity controls, all digested in the manuscript artifact.
 
 **Regeneration**
@@ -615,6 +643,12 @@ python3 scripts/degree4_synthetic_boundary_control.py \
 python3 scripts/degree6_low_height_exclusion.py --all
 python3 scripts/degree6_low_height_control.py \
     --output results/pslq-degree6-low-height-control/latest.json
+for interval in jacobsen-2015-eigenvalue mertens-2022-p-med \
+                mertens-2022-p-cell yang-zhou-2024-corrected; do
+    python3 scripts/degree6_independent_replication.py "$interval" \
+        --output "results/pslq-degree6-low-height-replication-$interval/latest.json"
+done
+python3 scripts/degree6_implementation_agreement.py
 python3 scripts/p2_manuscript_evidence_table.py \
     --output results/p2-algebraic-exclusion-manuscript/latest.json
 python3 scripts/p2_manuscript_evidence_table.py --markdown \

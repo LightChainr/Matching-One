@@ -289,6 +289,10 @@
       "path": "results/pslq-degree4-synthetic-boundary-control/latest.json",
       "status": "degree4_synthetic_boundary_control_complete"
     },
+    "degree6_implementation_agreement": {
+      "path": "results/pslq-degree6-implementation-agreement/latest.json",
+      "status": "degree6_implementation_agreement_complete"
+    },
     "degree6_low_height_control": {
       "path": "results/pslq-degree6-low-height-control/latest.json",
       "status": "degree6_low_height_control_complete"
@@ -790,6 +794,114 @@
         1
       ],
       "positive_trials": 4
+    }
+  },
+  "implementation_agreement": {
+    "cells_compared": 24,
+    "cells_in_agreement": 24,
+    "fields_compared_per_cell": [
+      "polynomials_in_class",
+      "screen_survivors",
+      "root_containing_polynomials",
+      "distinct_roots_in_interval"
+    ],
+    "implementations": [
+      {
+        "path": "scripts/degree6_low_height_exclusion.py",
+        "screen": "exact integer evaluation at both endpoints; excludes when |P(l)| > D*(u-l)"
+      },
+      {
+        "path": "scripts/degree6_independent_replication.py",
+        "screen": "exact rational evaluation at the midpoint; excludes when |P(m)| > D*(u-l)/2"
+      }
+    ],
+    "implementations_agree": true,
+    "not_replicated": "the degree-4 height-100 census of sections 6.1-6.3",
+    "partial": true,
+    "rows": [
+      {
+        "cells_compared": 6,
+        "cells_in_agreement": 6,
+        "closest_coefficients_agree": true,
+        "closest_coefficients_ascending": [
+          0,
+          -2,
+          2,
+          2,
+          -1,
+          2,
+          1
+        ],
+        "exclusion_verdicts_agree": true,
+        "interval_id": "jacobsen-2015-eigenvalue",
+        "mean_value_allowance_decimal": "0.000000000000640000000000",
+        "polynomial_derivative_bound": 32,
+        "residual_gap_decimal": "0.000000000000066390298964"
+      },
+      {
+        "cells_compared": 6,
+        "cells_in_agreement": 6,
+        "closest_coefficients_agree": true,
+        "closest_coefficients_ascending": [
+          0,
+          -2,
+          2,
+          2,
+          -1,
+          2,
+          1
+        ],
+        "exclusion_verdicts_agree": true,
+        "interval_id": "mertens-2022-p-med",
+        "mean_value_allowance_decimal": "0.000000000096000000000000",
+        "polynomial_derivative_bound": 32,
+        "residual_gap_decimal": "0.000000000009958544844462"
+      },
+      {
+        "cells_compared": 6,
+        "cells_in_agreement": 6,
+        "closest_coefficients_agree": true,
+        "closest_coefficients_ascending": [
+          0,
+          -2,
+          2,
+          2,
+          -1,
+          2,
+          1
+        ],
+        "exclusion_verdicts_agree": true,
+        "interval_id": "mertens-2022-p-cell",
+        "mean_value_allowance_decimal": "0.000000002560000000000000",
+        "polynomial_derivative_bound": 32,
+        "residual_gap_decimal": "0.000000000265561195628943"
+      },
+      {
+        "cells_compared": 6,
+        "cells_in_agreement": 6,
+        "closest_coefficients_agree": true,
+        "closest_coefficients_ascending": [
+          0,
+          -2,
+          2,
+          2,
+          -1,
+          2,
+          1
+        ],
+        "exclusion_verdicts_agree": true,
+        "interval_id": "yang-zhou-2024-corrected",
+        "mean_value_allowance_decimal": "0.000000000003200000000000",
+        "polynomial_derivative_bound": 32,
+        "residual_gap_decimal": "0.000000000000331951494819"
+      }
+    ],
+    "scope": "degree 1..6 at height 3 only",
+    "shared_code": {
+      "contribution_to_this_result": "none: both screens retain zero candidates at every degree on every interval, so root isolation never runs during either census",
+      "path": "scripts/exact_polynomial_root_certificate.py",
+      "role": "exact Sturm isolation, imported unchanged by both",
+      "sha256": "ab9370b09f083f4894e37b27361e78cec39f61878c1ffaaea973edd183febb6e"
     }
   },
   "interval_disjointness": {
@@ -1638,6 +1750,12 @@
       "schema": "matching-one/degree4-synthetic-boundary-control/v1",
       "sha256": "020471e873fabcbedf74fe68e3be8514b22fa62d9916aa20ce04d266b95adb88",
       "status": "degree4_synthetic_boundary_control_complete"
+    },
+    {
+      "path": "results/pslq-degree6-implementation-agreement/latest.json",
+      "schema": "matching-one/degree6-implementation-agreement/v1",
+      "sha256": "b3ac88891da111b3e9bdaf1dea2bf41eb30d90995c570e254f5647cf7bd19736",
+      "status": "degree6_implementation_agreement_complete"
     },
     {
       "path": "results/pslq-degree6-low-height-control/latest.json",

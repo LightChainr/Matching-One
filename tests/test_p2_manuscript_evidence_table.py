@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import copy
 import json
+from decimal import Decimal
 from pathlib import Path
 import sys
 import unittest
@@ -257,9 +258,35 @@ class P2ManuscriptEvidenceTests(unittest.TestCase):
     def test_manuscript_cites_only_generated_tables(self) -> None:
         draft = (MANUSCRIPT / "manuscript.md").read_text(encoding="utf-8")
         for table in ("tables.md#table-1", "tables.md#table-2", "tables.md#table-3", "tables.md#table-4",
-                      "tables.md#table-5", "tables.md#table-8"):
+                      "tables.md#table-5", "tables.md#table-8", "tables.md#table-9"):
             with self.subTest(table=table):
                 self.assertIn(table, draft)
+
+    def test_implementation_agreement_is_derived_and_bounded(self) -> None:
+        """Section 7's second-implementation claim, and the limit on it."""
+        agreement = self.result["implementation_agreement"]
+        self.assertTrue(agreement["implementations_agree"])
+        self.assertEqual(agreement["cells_compared"], 24)
+        self.assertEqual(agreement["cells_in_agreement"], 24)
+        self.assertTrue(agreement["partial"])
+        self.assertIn("degree-4 height-100", agreement["not_replicated"])
+        screens = {row["screen"] for row in agreement["implementations"]}
+        self.assertEqual(len(screens), 2)
+        for row in agreement["rows"]:
+            with self.subTest(interval=row["interval_id"]):
+                self.assertEqual(row["cells_in_agreement"], row["cells_compared"])
+                self.assertTrue(row["exclusion_verdicts_agree"])
+                self.assertTrue(row["closest_coefficients_agree"])
+                gap = Decimal(row["residual_gap_decimal"])
+                allowance = Decimal(row["mean_value_allowance_decimal"])
+                self.assertGreater(gap, 0)
+                self.assertLessEqual(gap, allowance)
+
+    def test_table_nine_states_what_was_not_replicated(self) -> None:
+        rendered = render_markdown(self.result)
+        self.assertIn("## Table 9", rendered)
+        self.assertIn("Not replicated:", rendered)
+        self.assertIn("shared, not replicated", rendered)
 
     def test_tampering_fails(self) -> None:
         changed = copy.deepcopy(self.result)

@@ -1,0 +1,561 @@
+{
+  "cells_compared": 24,
+  "cells_in_agreement": 24,
+  "claim_boundary": {
+    "excluded": "the degree-4 height-100 census, whose C++ meet-in-the-middle screen and retained-candidate Sturm decisions have no second implementation; also higher degree or height, closed forms, or transcendence",
+    "included": "the degree-1..6 height-3 census of section 6.5 is reproduced by a second independently written enumeration and certified screen",
+    "parent_issue": "remain open"
+  },
+  "contract_sha256": "29e06e53e11901fa8997e60ef80477e90b26b868fd11b46836856224147d7526",
+  "fields_compared_per_cell": [
+    "polynomials_in_class",
+    "screen_survivors",
+    "root_containing_polynomials",
+    "distinct_roots_in_interval"
+  ],
+  "implementations": [
+    {
+      "path": "scripts/degree6_low_height_exclusion.py",
+      "screen": "exact integer evaluation at both endpoints; excludes when |P(l)| > D*(u-l)",
+      "sha256": "fe249867feab20566e32f43007a1cb74c4a872bce63012721d90c2bb4bd1be98"
+    },
+    {
+      "path": "scripts/degree6_independent_replication.py",
+      "screen": "exact rational evaluation at the midpoint; excludes when |P(m)| > D*(u-l)/2",
+      "sha256": "5494b8dec8bff54f3b5cf2e8e734b37e33170b9dda23ad62d5d6f9b95f208a4d"
+    }
+  ],
+  "implementations_agree": true,
+  "intervals": [
+    {
+      "by_degree": [
+        {
+          "agree": true,
+          "degree": 1,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 15,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 2,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 129,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 3,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 975,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 4,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 7041,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 5,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 49935,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 6,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 351489,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        }
+      ],
+      "cells_compared": 6,
+      "cells_in_agreement": 6,
+      "closest_member": {
+        "coefficients_agree": true,
+        "coefficients_ascending": [
+          0,
+          -2,
+          2,
+          2,
+          -1,
+          2,
+          1
+        ],
+        "endpoint_residual_text": "1418962328905324683424417328366983248052494204659162020774155029502440030871/244140625000000000000000000000000000000000000000000000000000000000000000000000000",
+        "mean_value_allowance_text": "1/1562500000000",
+        "midpoint_residual_text": "5812069765586508868132738175327443943830969447330588791765926936296696479/1000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "polynomial_derivative_bound": 32,
+        "residual_gap_text": "1037348421325411324974004383746999268516354080541796686491479720508631/15625000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "within_mean_value_bound": true
+      },
+      "exclusion_verdict": true,
+      "exclusion_verdicts_agree": true,
+      "interval_id": "jacobsen-2015-eigenvalue",
+      "width_text": "1/25000000000000"
+    },
+    {
+      "by_degree": [
+        {
+          "agree": true,
+          "degree": 1,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 15,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 2,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 129,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 3,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 975,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 4,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 7041,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 5,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 49935,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 6,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 351489,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        }
+      ],
+      "cells_compared": 6,
+      "cells_in_agreement": 6,
+      "closest_member": {
+        "coefficients_agree": true,
+        "coefficients_ascending": [
+          0,
+          -2,
+          2,
+          2,
+          -1,
+          2,
+          1
+        ],
+        "endpoint_residual_text": "5812080056082848324664986658241426365988984630938829740859548973239/1000000000000000000000000000000000000000000000000000000000000000000000000",
+        "mean_value_allowance_text": "3/31250000000",
+        "midpoint_residual_text": "90813906478557699793817613870537686342907986520451642910229869151/15625000000000000000000000000000000000000000000000000000000000000000000",
+        "polynomial_derivative_bound": 32,
+        "residual_gap_text": "398341793778485573625178919422398285060254803016215806506097/40000000000000000000000000000000000000000000000000000000000000000000000",
+        "within_mean_value_bound": true
+      },
+      "exclusion_verdict": true,
+      "exclusion_verdicts_agree": true,
+      "interval_id": "mertens-2022-p-med",
+      "width_text": "3/500000000000"
+    },
+    {
+      "by_degree": [
+        {
+          "agree": true,
+          "degree": 1,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 15,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 2,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 129,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 3,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 975,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 4,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 7041,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 5,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 49935,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 6,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 351489,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        }
+      ],
+      "cells_compared": 6,
+      "cells_in_agreement": 6,
+      "closest_member": {
+        "coefficients_agree": true,
+        "coefficients_ascending": [
+          0,
+          -2,
+          2,
+          2,
+          -1,
+          2,
+          1
+        ],
+        "endpoint_residual_text": "1419053194143576111814836088008072331948783774751173947431/244140625000000000000000000000000000000000000000000000000000000",
+        "mean_value_allowance_text": "1/390625000",
+        "midpoint_residual_text": "90823553818870573395750943153252025681181442299107271/15625000000000000000000000000000000000000000000000000000000",
+        "polynomial_derivative_bound": 32,
+        "residual_gap_text": "8104284534574686721549845186321164959532646547145243/30517578125000000000000000000000000000000000000000000000000000",
+        "within_mean_value_bound": true
+      },
+      "exclusion_verdict": true,
+      "exclusion_verdicts_agree": true,
+      "interval_id": "mertens-2022-p-cell",
+      "width_text": "1/6250000000"
+    },
+    {
+      "by_degree": [
+        {
+          "agree": true,
+          "degree": 1,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 15,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 2,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 129,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 3,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 975,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 4,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 7041,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 5,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 49935,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        },
+        {
+          "agree": true,
+          "degree": 6,
+          "disagreements": [],
+          "fields_compared": [
+            "distinct_roots_in_interval",
+            "polynomials_in_class",
+            "root_containing_polynomials",
+            "screen_survivors"
+          ],
+          "values": {
+            "distinct_roots_in_interval": 0,
+            "polynomials_in_class": 351489,
+            "root_containing_polynomials": 0,
+            "screen_survivors": 0
+          }
+        }
+      ],
+      "cells_compared": 6,
+      "cells_in_agreement": 6,
+      "closest_member": {
+        "coefficients_agree": true,
+        "coefficients_ascending": [
+          0,
+          -2,
+          2,
+          2,
+          -1,
+          2,
+          1
+        ],
+        "endpoint_residual_text": "5812077732422384592317423522216024611545846366503564837977664260652367471/1000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "mean_value_allowance_text": "1/312500000000",
+        "midpoint_residual_text": "22171318299766080519836938780300565297627398280132220922496909056191/3814697265625000000000000000000000000000000000000000000000000000000000000",
+        "polynomial_derivative_bound": 32,
+        "residual_gap_text": "331951494819474710957407086777835390328243416083529365466973766033/1000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "within_mean_value_bound": true
+      },
+      "exclusion_verdict": true,
+      "exclusion_verdicts_agree": true,
+      "interval_id": "yang-zhou-2024-corrected",
+      "width_text": "1/5000000000000"
+    }
+  ],
+  "issue": 559,
+  "provenance_sha256": "6d6f6f97232b71b698e6b1235ab3a68799f755b2f6c643a6c36c1a97b1fecfd5",
+  "schema": "matching-one/degree6-implementation-agreement/v1",
+  "shared_code": {
+    "contribution_to_this_result": "none: both screens retain zero candidates at every degree on every interval, so root isolation never runs during either census",
+    "path": "scripts/exact_polynomial_root_certificate.py",
+    "role": "exact Sturm isolation, imported unchanged by both",
+    "sha256": "ab9370b09f083f4894e37b27361e78cec39f61878c1ffaaea973edd183febb6e"
+  },
+  "status": "degree6_implementation_agreement_complete"
+}

@@ -11,27 +11,35 @@ Draft manuscript workspace for portfolio track **P2**, requested by
 | `results/pslq-degree4-synthetic-boundary-control/latest.json` | quartic sensitivity control (§6.4) |
 | `results/pslq-degree6-low-height-*/latest.json` | degree-1..6 height-3 exhaustion, per interval (§6.5) |
 | `results/pslq-degree6-low-height-control/latest.json` | planted `(3,12²)` sensitivity control (§6.5) |
+| `results/pslq-degree6-low-height-replication-*/latest.json` | the same census by a second implementation (§7) |
+| `results/pslq-degree6-implementation-agreement/latest.json` | cell-by-cell comparison of the two (§7) |
 | `scripts/p2_manuscript_evidence_table.py` | assembles the artifact and renders the tables |
 | `scripts/degree4_synthetic_boundary_control.py` | runs the quartic sensitivity control |
 | `scripts/degree6_low_height_exclusion.py` | runs the historical-range exhaustion |
 | `scripts/degree6_low_height_control.py` | runs its planted-root control |
+| `scripts/degree6_independent_replication.py` | the second implementation, committed as received |
+| `scripts/degree6_implementation_agreement.py` | compares the two implementations |
 | `tests/test_p2_manuscript_evidence_table.py` | locks the assembly against the census artifacts |
 | `tests/test_degree4_synthetic_boundary_control.py` | locks the quartic sensitivity control |
 | `tests/test_degree6_low_height_exclusion.py` | locks the historical-range exhaustion and its control |
+| `tests/test_degree6_implementation_agreement.py` | locks the two-implementation agreement |
 
 ## Ground rules honoured here
 
-No census was re-run and no degree or height was expanded.
+The quartic census was not re-run and no degree or height was expanded beyond the frozen classes.
 `scripts/p2_manuscript_evidence_table.py` reads the frozen contract, the provenance manifest and the committed
 census artifacts, re-verifies the provenance digest, and derives only statements that follow exactly from those
-inputs. Root decisions reuse the repository's existing exact Sturm path
+inputs — it computes no census itself. Root decisions reuse the repository's existing exact Sturm path
 (`scripts/exact_polynomial_root_certificate.py`). No number in the draft is hand-typed: `tables.md` is rendered,
 and a regression test fails if it drifts from the artifact.
 
-The one new computation is the §6.4 sensitivity control. It is a synthetic control, not a census extension: it
-runs the **unmodified** `degree4_interval_exclusion.run_search` on synthetic intervals, and `GOVERNANCE.md`
-places synthetic controls outside the production queue. It covers exactly the intervals whose census result was
-a null — read from the census artifacts, not hardcoded — and takes about 24 seconds.
+Three computations were added, each with its reason for being inside the stop rule:
+
+| Computation | Why it is not a census extension | Cost |
+|---|---|---:|
+| §6.4 quartic sensitivity control | synthetic control on synthetic intervals, running the **unmodified** `degree4_interval_exclusion.run_search`; `GOVERNANCE.md` places synthetic controls outside the production queue. Covers exactly the widths whose census result was a null, read from the artifacts rather than hardcoded | ~24 s |
+| §6.5 degree ≤ 6 height ≤ 3 exhaustion | a different frozen class, not a widening of the quartic one; it closes the last form in the historical tradition (issue #559) | ~4 s |
+| §7 second implementation and its comparison | re-decides the §6.5 class, adding no new class and no new interval; its value is entirely in being written separately | ~50 s to regenerate, 12 s in CI |
 
 ## Section readiness
 
@@ -53,7 +61,7 @@ a null — read from the census artifacts, not hardcoded — and takes about 24 
 | 6.1–6.3 | Results and controls | ready | Tables 3 and 5; Results A–D |
 | 6.4 | Quartic sensitivity control | ready | **new result and new computation** — Table 7, Result E |
 | 6.5 | Historical complexity range closed | ready | **new result and new computation** — Table 8, Results F and G |
-| 7 | Calibration | ready | one gap closed, two recommendations left open |
+| 7 | Calibration | ready | two gaps closed — the second partly; one recommendation left open, and it is the more valuable one |
 | 8 | Discussion and scope | ready | |
 | 8.1 | Future work | ready | the costed recommendation was executed; what remains is genuinely harder |
 | 9 | Reproducibility supplement | ready | artifact list and digests generated |
@@ -137,6 +145,22 @@ any exactly-known planar percolation threshold has a root in any of the four pub
 - **Did not raise the height** on the null result, per §4.3. Degree ≤ 6 at height ≤ 10 is `890,350,944`
   polynomials per interval and, more importantly, would improve the class's approach resolution toward the
   interval widths; the boundary-degree check has to come first or the null is guaranteed and empty.
+- **Imported** the second implementation of the §6.5 census rather than only citing it. It was written
+  independently against the same frozen protocol, and it screens at the interval midpoint where the primary
+  implementation screens at both endpoints. Committing it, its four artifacts and a cell-by-cell comparison turns
+  "a second implementation agrees" from a remark into a checked claim that CI re-derives. The comparison also
+  checks the two residuals against the mean value bound, which is what rules out their agreeing by both being
+  trivially empty.
+
+  **Scoped the CI cost.** The replication census is about 12 s per interval of pure-Python rational arithmetic.
+  Recensusing all four in the test suite would cost roughly 70 s on the Python 3.9 job, which is the binding one
+  (see above). The test therefore recensuses one interval — the narrowest, carrying Result A — and covers the
+  other three through the agreement check against the primary implementation, which CI already rebuilds in full.
+  Measured cost of the new module: 12 s here.
+- **Did not overstate what the replication covers.** It reaches the degree ≤ 6 height ≤ 3 census and not the
+  quartic census, and both implementations share the Sturm code unchanged. That shared code contributes nothing
+  to *this* null — the screens retain zero candidates, so isolation never runs — but it does run in the planted
+  controls. §7, Table 9 and the artifact's `claim_boundary` all say so rather than leaving it to be inferred.
 - **Foregrounded** §2.1 and §4.3, and added §1.3 Contributions. They were not in the requested outline, but they
   generalize beyond this constant and are, in my judgement, the more durable part of the paper.
 
@@ -147,8 +171,10 @@ any exactly-known planar percolation threshold has a root in any of the four pub
    `references.bib`, in line with `data/README.md`'s provenance rules. Sykes–Essam 1964 is verified. None of the
    paper's results depend on them; they motivate the search class in §1.1 and §4.2, and §4.2's table is
    generated from the repository's own certified artifact rather than from those citations.
-2. **Two remaining calibration recommendations** (§7): an independent second implementation of the exact filter,
-   and interval-perturbation sensitivity for the degree-4 near hits. Neither blocks submission.
+2. **One remaining calibration recommendation** (§7): interval-perturbation sensitivity for the degree-4 near
+   hits. The second-implementation recommendation is met for the degree ≤ 6 height ≤ 3 census only (Table 9); the
+   quartic census of §6.1–6.3, where Results A–D live, still has a single implementation of both its C++ screen
+   and its Sturm decisions, and replicating *that* is the more valuable of the two. Neither blocks submission.
 
 ## Regenerating
 
@@ -158,11 +184,18 @@ python3 scripts/degree4_synthetic_boundary_control.py \
 python3 scripts/degree6_low_height_exclusion.py --all
 python3 scripts/degree6_low_height_control.py \
     --output results/pslq-degree6-low-height-control/latest.json
+for interval in jacobsen-2015-eigenvalue mertens-2022-p-med \
+                mertens-2022-p-cell yang-zhou-2024-corrected; do
+    python3 scripts/degree6_independent_replication.py "$interval" \
+        --output "results/pslq-degree6-low-height-replication-$interval/latest.json"
+done
+python3 scripts/degree6_implementation_agreement.py
 python3 scripts/p2_manuscript_evidence_table.py \
     --output results/p2-algebraic-exclusion-manuscript/latest.json
 python3 scripts/p2_manuscript_evidence_table.py --markdown \
     --output docs/manuscripts/p2-algebraic-exclusion/tables.md
 python3 -m unittest tests.test_p2_manuscript_evidence_table \
     tests.test_degree4_synthetic_boundary_control \
-    tests.test_degree6_low_height_exclusion
+    tests.test_degree6_low_height_exclusion \
+    tests.test_degree6_implementation_agreement
 ```
