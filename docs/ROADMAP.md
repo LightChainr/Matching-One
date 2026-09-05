@@ -55,6 +55,8 @@ The linear-in-`r` law is named in the frozen file as `bare_aspect_ratio` **befor
 
 **Action:** run the three rungs — ticket #567.
 
+**Run, 2026-09-05 — underpowered** — `notes/aspect-ladder-n580-result-20260905.md`. `A4(4i)/A4(i) = 4.58`, scored by Fieller contrast because the denominator `A4(i)` is only 3.6σ from zero (the ratio z is recorded but not used). `no_modulus_dependence` `1.00` is excluded at `9.5` sigma; the bare aspect ratio `4.00` (z=+0.50), the weight-4 shape `10.99` (z=−2.08) and area scaling `16` (z=−2.56) all survive — underpowered, three survivors. The 3σ Fieller interval is `[2.40, 27.47]`. The cross-rung covariance was measured by the #575 deterministic replay (`ρ=−0.1648`, reconstructed was −0.1526) and moves no verdict. The r=2 entry (`3.23 +/- 0.93`) cannot split `2.75` from `2.00`, which is why the ladder went to r=4. No optional stopping: any further run is a new frozen design.
+
 Aspect ratio **3 is arithmetically impossible** here: `N = 3|w|^2` and 3 is inert in `Z[i]`, so no 3:1 rectangle shares a site count with a square torus. The reachable ladder is `r` that are themselves sums of two squares.
 
 ### 3. Norm-4 dyadic closure with deck characters — #154

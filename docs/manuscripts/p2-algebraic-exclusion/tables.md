@@ -151,27 +151,31 @@ All 4 positive and 4 negative trials behaved as required (`all_trials_passed = t
 
 Sensitivity control: the planted `sqrt(1-2*sin(pi/18))` polynomial `x^6 - 3x^4 + 1` was recovered in all 4 positive trials and reported in none of the 4 negative trials (`all_trials_passed = true`).
 
-## Table 9 — Agreement of two independent implementations (degree ≤ 6, height ≤ 3)
+## Table 9 — Agreement of two independent implementations (degree ≤ 6, height ≤ 3 and 4)
 
-Scope: degree 1..6 at height 3 only. Not replicated: the degree-4 height-100 census of sections 6.1-6.3.
+Scope: degree 1..6 at height 3 and height 4. Not replicated: the degree-4 height-100 census of sections 6.1-6.3.
 
 | Implementation | Screen |
 |---|---|
 | `scripts/degree6_low_height_exclusion.py` | exact integer evaluation at both endpoints; excludes when |P(l)| > D*(u-l) |
 | `scripts/degree6_independent_replication.py` | exact rational evaluation at the midpoint; excludes when |P(m)| > D*(u-l)/2 |
 
-Compared per cell: `polynomials_in_class`, `screen_survivors`, `root_containing_polynomials`, `distinct_roots_in_interval`. Cells in agreement: **24 of 24**.
+Compared per cell: `polynomials_in_class`, `screen_survivors`, `root_containing_polynomials`, `distinct_roots_in_interval`. Cells in agreement: **48 of 48**.
 
-| Interval | Cells | Verdicts agree | Closest member | Residual gap | Mean-value allowance |
-|---|---:|---|---|---:|---:|
-| `jacobsen-2015-eigenvalue` | 6/6 | yes | same: `x^6 + 2x^5 - x^4 + 2x^3 + 2x^2 - 2x` | `0.000000000000066390298964` | `0.00000000000064` |
-| `mertens-2022-p-med` | 6/6 | yes | same: `x^6 + 2x^5 - x^4 + 2x^3 + 2x^2 - 2x` | `0.000000000009958544844462` | `0.000000000096` |
-| `mertens-2022-p-cell` | 6/6 | yes | same: `x^6 + 2x^5 - x^4 + 2x^3 + 2x^2 - 2x` | `0.000000000265561195628943` | `0.00000000256` |
-| `yang-zhou-2024-corrected` | 6/6 | yes | same: `x^6 + 2x^5 - x^4 + 2x^3 + 2x^2 - 2x` | `0.000000000000331951494819` | `0.0000000000032` |
+| Interval | h | Cells | Verdicts agree | Closest member | Residual gap | Mean-value allowance |
+|---|---|---:|---|---|---:|---:|
+| `jacobsen-2015-eigenvalue` | 3 | 6/6 | yes | same: `x^6 + 2x^5 - x^4 + 2x^3 + 2x^2 - 2x` | `0.000000000000066390298964` | `0.00000000000064` |
+| `mertens-2022-p-med` | 3 | 6/6 | yes | same: `x^6 + 2x^5 - x^4 + 2x^3 + 2x^2 - 2x` | `0.000000000009958544844462` | `0.000000000096` |
+| `mertens-2022-p-cell` | 3 | 6/6 | yes | same: `x^6 + 2x^5 - x^4 + 2x^3 + 2x^2 - 2x` | `0.000000000265561195628943` | `0.00000000256` |
+| `yang-zhou-2024-corrected` | 3 | 6/6 | yes | same: `x^6 + 2x^5 - x^4 + 2x^3 + 2x^2 - 2x` | `0.000000000000331951494819` | `0.0000000000032` |
+| `jacobsen-2015-eigenvalue` | 4 | 6/6 | yes | same: `4x^6 + 4x^5 + 2x^4 + 2x^3 - x^2 - 3x + 1` | `0.000000000000076274080197` | `0.00000000000126` |
+| `mertens-2022-p-med` | 4 | 6/6 | yes | same: `4x^6 + 4x^5 + 2x^4 + 2x^3 - x^2 - 3x + 1` | `0.000000000011441112028581` | `0.000000000189` |
+| `mertens-2022-p-cell` | 4 | 6/6 | yes | same: `4x^6 + 4x^5 + 2x^4 + 2x^3 - x^2 - 3x + 1` | `0.000000000305096319953612` | `0.00000000504` |
+| `yang-zhou-2024-corrected` | 4 | 6/6 | yes | same: `4x^6 + 4x^5 + 2x^4 + 2x^3 - x^2 - 3x + 1` | `0.000000000000381370400975` | `0.0000000000063` |
 
-The two implementations evaluate the closest member at different points, so the residual gap must be non-zero; the mean value theorem caps it at `D(u-l)/2` with `D = 32` for that polynomial. Every interval is inside its allowance, so the agreement is between two implementations of the same quantity (`implementations_agree = true`).
+The two implementations evaluate the closest member at different points, so the residual gap must be non-zero; the mean value theorem caps it at `D(u-l)/2` with `D` the derivative bound of each row's closest member. Every interval, at both heights, is inside its allowance, so the agreement is between two implementations of the same quantity (`implementations_agree = true`).
 
-`scripts/exact_polynomial_root_certificate.py` is imported unchanged by both, so the Sturm path is shared, not replicated. Its contribution here: none: both screens retain zero candidates at every degree on every interval, so root isolation never runs during either census.
+`scripts/exact_polynomial_root_certificate.py` is imported unchanged by both, so the Sturm path is shared, not replicated. Its contribution here: none: both screens retain zero candidates at every degree on every interval at both heights, so root isolation never runs during either census.
 
 ## Table 10 — Exhaustion of the corrected historical range (degree ≤ 6, height ≤ 4)
 
