@@ -44,9 +44,10 @@ published intervals, and therefore the last degree at which a negative result ca
 
 The conclusion is a bounded one. Within the declared finite complexity class, no low-degree algebraic relation
 holds. This is not evidence of transcendence, not a claim that `p_c` is non-algebraic, and not a claim that no
-exact representation of another type exists. We also note explicitly that the historical complexity range is a
-selected sample — it is the range reachable by the three mechanisms that produce exact planar thresholds, on the
-lattices where they work, and square-site is a lattice where all three fail.
+exact representation of another type exists. We also note explicitly that the class is a choice rather than an
+inherited bound: the three mechanisms that produce exact planar thresholds bound neither the degree nor the
+height of what they produce — published bow-tie thresholds reach degree 11 at height 36 — and square-site is a
+lattice where all three mechanisms fail.
 
 ---
 
@@ -100,10 +101,12 @@ negative result as a theorem about that class.
 1. A **complete certified census** of primitive integer polynomials of degree ≤ 4 and height ≤ 100 against four
    independently sourced threshold intervals, with a screening-completeness theorem (§3) and exact Sturm
    decisions throughout. Degrees 1–3 are excluded on all four intervals; degree 4 is excluded on the two
-   narrowest (§6.1). A second exhaustion over degree ≤ 6 at height ≤ 4 — the complexity of the entire historical
-   record of exact planar thresholds — is excluded everywhere (§6.6), so the two classes together cover every
-   form the tradition has ever produced. The height bound of that second class is itself a correction: it was
-   run at height ≤ 3 first (§6.5), on a reading of the literature that §4.2 shows was incomplete.
+   narrowest (§6.1). A second exhaustion over degree ≤ 6 at height ≤ 4 is excluded everywhere (§6.6). That
+   second class contains every entry of our exact-threshold table together with the A-lattice quintic, but it
+   is a class we chose and defend by the resolution criterion of §4.3, not a bound the literature supplies:
+   §4.2 gives published thresholds at heights 6 to 36, one of them at degree 11. The height was itself
+   corrected twice — the census ran at height ≤ 3 first (§6.5) — and we report that sequence rather than the
+   final choice alone.
 2. The observation that the four published intervals are **pairwise disjoint** (§2.1), which makes per-interval
    reporting a necessity rather than a conservatism, and which is what makes the degree-4 survivors interpretable.
 3. A **cross-interval resolution** of every surviving quartic showing each survives exactly one interval (§6.2),
@@ -293,14 +296,33 @@ which we certify here to be irreducible over `Q`, of degree 5 and **coefficient 
 in `(0,1)` isolated at 120 bits and agreeing with the separately quoted decimal `0.625457`
 (`results/ziff-a-lattice-complexity/latest.json`). It is not in the repository's frozen lattice-native candidate
 library, which is why it is absent from the generated Table 6; the library is pinned by a contract digest and we
-have not reopened it for a value that is not a square-site candidate. Its verification status is recorded in that
-artifact as `CORROBORATED_NOT_PRIMARY`: the polynomial and the decimal were obtained from two independent indexes
-of the publisher and preprint records and checked against each other, but the primary text has not been read, and
-that reading is owed before submission.
+have not reopened it for a value that is not a square-site candidate.
 
-**The historical record therefore reaches degree 6 and coefficient height 4**, not height 3. The census class
-`C(≤4, ≤100)` is still twenty-five times more generous in height than any threshold ever found, which is the
-honest justification for the height bound: it is not tuned, it is extravagant.
+That row refutes the height-3 bound we had assumed. It is important to say what it does **not** do, because we
+made this error once and the natural repair is to make it again one unit higher. It does not install height 4 as
+the record's ceiling. The bow-tie bond threshold of [Wierman 1984], reproduced in [Ziff–Scullard 2006], is the
+root in `[0,1]` of
+
+```text
+1 − p − 6p² + 6p³ − p⁵
+```
+
+with `p_c = 0.404518…`: degree 5 and **coefficient height 6**, twenty-two years before the A-lattice. The
+generalized bow-ties of the same 2006 paper reach degree 11 at heights 35 and 36, and the asymmetric bow-tie of
+[Ziff–Scullard–Wierman–Sedlock 2012] is degree 8 at height 15. The three mechanisms of §4.2.1 bound neither the
+degree nor the height of what they produce; the cell can be made larger, and the polynomial grows with it. There
+is no published uniform bound, and we are aware of no argument that one exists.
+
+The consequence for this paper is a change of standing, not of result. **A search class is a choice we make and
+must defend, not a range the literature hands us.** Every census below remains an exhaustive certified null on
+the class it names. None of them is a null on "the complexity of exactly-known thresholds", because that phrase
+does not denote a bounded set.
+
+We keep the sequence visible rather than presenting the final class as if it had been chosen first: we assumed
+height ≤ 3 from a table we assembled ourselves, found the A-lattice quintic at height 4 and widened, and then
+found — from the primary texts, on the second look — that the record had reached height 6 in 1984 and height 36
+by 2006. Twice the error was the same one: reading a bound off an incomplete table. What survives that is the
+exhaustion, not the framing.
 
 The degree bound is the one place where the height-100 class does not dominate the tradition. The `(3,12²)` site
 value has degree 6, because it is the square root of a lower-degree threshold. A "`(3,12²)`-like" closed form for
@@ -308,8 +330,10 @@ square-site percolation — a square root, or another low-degree radical, of a s
 degree 5 or 6 and is **not** covered by `C(≤4, ≤100)`.
 
 Rather than raise the height without limit, which §4.3 shows would destroy the negative result's content, we
-close that gap along the axis the literature actually occupies: **degree ≤ 6 at height ≤ 4**, the entire
-historical complexity range including the A-lattice quintic. That class holds 2,351,328 polynomials per
+close that gap at **degree ≤ 6 at height ≤ 4**. That is the largest class in this family whose certified approach
+resolution still clears every published interval width — the criterion of §4.3, and the only defensible reason to
+stop anywhere — and it contains every entry of Table 6 together with the A-lattice quintic. It does not contain
+the bow-tie thresholds above, and we do not claim it does. That class holds 2,351,328 polynomials per
 interval, `1.5·10⁻⁵` of the class already searched, and is reported in §6.6. Its approach resolution is checked
 there and still clears every interval width, so this particular widening does not cost the null its content.
 
@@ -515,18 +539,19 @@ the zero-survivor results of Result B are certified nulls, not blind spots.
 This control also serves as the implementation-verification level of §3.4: it exercises the screen, the
 monotonicity check and the Sturm decisions end to end, on inputs whose correct answer is known in advance.
 
-### 6.5 The historical complexity range is closed
+### 6.5 The degree ≤ 6, height ≤ 3 class is closed
 
-Every exactly-known planar percolation threshold has degree ≤ 6, and exactly one — the `(3,12²)` site value,
-root of `x⁶ − 3x⁴ + 1` — lies outside `C(≤4, ≤100)`. We exhaust the historical range directly.
+Every entry of Table 6 has degree ≤ 6, and exactly one — the `(3,12²)` site value, root of `x⁶ − 3x⁴ + 1` —
+lies outside `C(≤4, ≤100)`. We exhaust that degree range directly.
 
-This section reports that exhaustion at **height ≤ 3**, which was the height bound we believed the record
-respected when the census was designed and run. §4.2 corrects it: the A-lattice bond threshold of [Ziff 2006]
-has height 4, so height ≤ 3 does not in fact cover the record. §6.6 reports the corrected census. We keep this
-section as it stands, rather than rewriting it at the larger height, because the height-3 result is what the
-committed artifacts, the sensitivity control and the independent replication of §7 actually cover, and because
-the sequence — a class chosen from an incomplete reading of the literature, then widened when the reading was
-corrected — is itself the sort of thing a reader is entitled to see rather than have tidied away.
+This section reports the exhaustion at **height ≤ 3**, which was the bound we believed the published record
+respected when the census was designed and run. It does not: §4.2 gives the A-lattice quintic at height 4 and
+the bow-tie thresholds at heights 6, 15, 35 and 36, the last of them at degree 11. §6.6 reports the census at
+the widened height. We keep this section as it stands, rather than rewriting it, because the height-3 result is
+what the committed artifacts, the sensitivity control and the independent replication of §7 actually cover, and
+because the sequence — a class chosen from an incomplete reading of the literature, widened when the reading
+was corrected, then found still not to bound anything — is the sort of thing a reader is entitled to see rather
+than have tidied away.
 
 **Class.** `C(d, 3)` for `d = 1..6`: `15 + 129 + 975 + 7,041 + 49,935 + 351,489 = 409,584` primitive
 sign-normalized polynomials per interval.
@@ -558,11 +583,13 @@ trials pass: every positive trial retains exactly one candidate, decides it, and
 negative trial retains the same candidate and correctly returns no root
 (`results/pslq-degree6-low-height-control/latest.json`).
 
-### 6.6 The corrected historical range is closed as well
+### 6.6 The degree ≤ 6, height ≤ 4 class is closed as well
 
-Result F is stated at height ≤ 3, and §4.2 shows that bound is one unit too tight: the A-lattice quintic
-`p⁵ − 4p⁴ + 3p³ + 2p² − 1` has height 4. The class that actually covers the exactly-known thresholds is
-therefore `C(d, 4)` for `d = 1..6`, and we exhaust it.
+Result F is stated at height ≤ 3, and §4.2 shows nothing in the literature licenses that bound: the A-lattice
+quintic `p⁵ − 4p⁴ + 3p³ + 2p² − 1` has height 4. We therefore widen to `C(d, 4)` for `d = 1..6` and exhaust it.
+This class is chosen, not inherited — §4.2 gives published thresholds well outside it — and §4.3 is why we stop
+here rather than higher: it is the largest class in the family whose certified approach resolution still clears
+every published interval width.
 
 **Class.** `23 + 265 + 2,639 + 24,913 + 229,703 + 2,093,785 = 2,351,328` primitive sign-normalized polynomials
 per interval — 5.7 times the height-3 class, and still `1.5·10⁻⁵` of the quartic census of §6.1. The derivative
@@ -598,14 +625,19 @@ height parameter — and is listed in §7 as recommended rather than done.
 
 Taken with Results A–C, this gives the paper's cleanest statement:
 
-> **No algebraic form at the complexity of any exactly-known planar percolation threshold has a root in any of
-> the four published intervals for `p_c^site(Z²)`.**
+> **No integer polynomial of degree ≤ 6 and coefficient height ≤ 4, and none of degree ≤ 4 and height ≤ 100,
+> has a root in any of the four published intervals for `p_c^site(Z²)`.**
 
-The statement is now carried by Result F′ rather than Result F, and it is worth being explicit about how much
-of it rests on a claim we have not read at first hand. The A-lattice polynomial's status is
-`CORROBORATED_NOT_PRIMARY` (§4.2). If the primary text disagrees with it, the *height* of the historical range
-changes and the sentence above is supported by whichever of Result F and F′ then applies; nothing else in the
-paper moves, because no other result depends on that row.
+An earlier draft of this paper stated that sentence as "no algebraic form at the complexity of any exactly-known
+planar percolation threshold", and we withdraw that phrasing. It is not supportable: §4.2 gives published
+thresholds at heights 6, 15, 35 and 36, one of them at degree 11, so "the complexity of an exactly-known
+threshold" is not a bounded set and no finite census can exhaust it. The statement above says exactly what was
+searched, which is both weaker and true. Everything the census actually establishes survives the change of
+wording; what does not survive is the claim to have covered the literature.
+
+The A-lattice row itself is no longer the weak link it was. Its verification status is `PRIMARY_TEXT_READ`
+(§4.2): the primary text was read and confirms both the quintic and the value. What that row establishes is the
+falsity of our original height-3 bound — not a new bound of its own.
 
 ## 7. Calibration: what was added, and what was not
 
@@ -701,9 +733,10 @@ Four contributions are methodological and transfer beyond this constant:
 
 ### 8.1 Future work
 
-**Beyond the historical complexity range.** §6.6 closes degree ≤ 6 at height ≤ 4, so every form at the
-complexity of a known exact planar threshold is now excluded. What remains untested is genuinely more
-complicated: degree 5–6 at heights above 4, and degree > 6 at any height. Neither is a free extension. By the
+**Beyond the class we closed.** §6.6 closes degree ≤ 6 at height ≤ 4, which covers every entry of Table 6 and
+the A-lattice quintic. What remains untested starts immediately above it, and includes published thresholds:
+the bow-tie bonds of §4.2 sit at heights 6 to 36, one of them at degree 11. Degree 5–6 above height 4, and
+degree > 6 at any height, are both open here. Neither is a free extension. By the
 boundary-degree criterion of §4.3, raising the height on a fixed degree drives the class's approach resolution
 below the interval widths, at which point survivors appear by counting alone and a null carries no information;
 degree ≤ 6 at height ≤ 10 is already `890,350,944` polynomials per interval, with degree 6 alone at
@@ -711,20 +744,24 @@ degree ≤ 6 at height ≤ 10 is already `890,350,944` polynomials per interval,
 the class's approach resolution and confirming it still clears the widths — a cheap calculation that decides
 whether the census is worth running at all.
 
-**Is the historical range a theorem?** §4.2.1 notes that the degree ≤ 6, height ≤ 4
-regularity is observed on a selected sample: the lattices where self-duality,
-self-matching or a star-triangle reduction happens to close. If those mechanisms can
-be shown to bound the degree and height of the threshold they produce, in terms of the
-fundamental cell, then §6.6 upgrades from "no form at the observed complexity fits" to
-"no mechanism-reachable form fits", and the square-site case — where all three
-mechanisms fail — acquires a reason rather than an observation. If instead no such
-bound exists, the honest consequence is that our class choice was motivated by a
-coincidence, the census stands unchanged as a fact, and its interpretation shrinks to
-what §4.3 supports on its own. We regard this as the most valuable open question
-adjacent to this work. The A-lattice correction of §4.2 is a small piece of evidence
-on the "coincidence" side: a bound that held across six mechanism outputs failed on the
-seventh, which is what an accident of small samples looks like and not what a theorem
-looks like.
+**Is there a mechanism bound at all?** Earlier drafts treated the low complexity of
+Table 6 as a regularity that might turn out to be a theorem. On the published record it
+is not one. The bow-tie thresholds of §4.2 are outputs of the same star-triangle
+mechanism and reach degree 11 at height 36, and the cell can be enlarged further; the
+degree and height grow with it, with no published uniform bound. So the "coincidence"
+branch is the one the evidence supports, and its consequence is the one we have taken:
+our class is a choice defended by §4.3's resolution criterion, the census stands
+unchanged as a fact about that class, and its interpretation is what §4.3 supports on
+its own. The question that remains live, and that we regard as the most valuable one
+adjacent to this work, is narrower and better posed: **can square-site percolation be
+shown to lie outside every cell reachable by these mechanisms, not merely outside the
+cells tried so far?** [Ziff 2006] states that his method does not reach it, in those
+words, but that is a statement about one method in one year. A negative answer would
+give the square-site case a reason rather than an observation. Our own history here is
+a caution on how such a question should be approached: we read a bound off an
+incomplete table twice, at height 3 and then at height 4, and both times the next paper
+we read broke it. A bound on these mechanisms will have to come from an argument about
+the cell, not from a longer table.
 
 **A rigorous interval.** Exclusion strength is governed by interval width, and every interval used here comes
 from an extrapolation rather than a proof. A rigorous narrowing of the threshold interval by a proved bound would

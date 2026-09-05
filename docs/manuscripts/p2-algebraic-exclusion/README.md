@@ -142,12 +142,18 @@ the narrowest. The null survives, with an order of magnitude less margin.
 
 Two things are worth keeping about this. The correction was found by checking a claim the paper was *relying*
 on, not by a reviewer; and the result it corrects was not fragile, which is a fact about the result rather than
-about our luck. The A-lattice row's own status is `CORROBORATED_NOT_PRIMARY` — the polynomial and its decimal
-were cross-checked against each other from two independent indexes, but the primary text is unreachable from
-this environment and remains owed.
+about our luck. The A-lattice row's status is now `PRIMARY_TEXT_READ`: the primary text was read under #574 and
+confirms both the quintic and the value.
 
-Together with Results A–C this supports the paper's cleanest sentence: *no algebraic form at the complexity of
-any exactly-known planar percolation threshold has a root in any of the four published intervals.*
+A third thing is worth keeping, and it is the least comfortable. Height 4 is *also* not a bound. Wierman's 1984
+bow-tie bond threshold is degree 5 height 6, and the generalized bow-ties of Ziff–Scullard 2006 reach degree 11
+at height 36. We read a bound off a table we had assembled ourselves, twice, and both times the next paper broke
+it. The census is unaffected — it is an exhaustive certified null on the class it names — but the framing was
+not, and the paper no longer claims to have covered the literature.
+
+Together with Results A–C this supports the paper's cleanest sentence, in its corrected form: *no integer
+polynomial of degree ≤ 6 and height ≤ 4, and none of degree ≤ 4 and height ≤ 100, has a root in any of the four
+published intervals.*
 
 ## Decisions taken while drafting
 

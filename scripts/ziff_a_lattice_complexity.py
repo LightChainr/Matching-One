@@ -13,16 +13,23 @@ which is irreducible over Q and has height 4.  This module certifies the degree,
 the height, the irreducibility and the root, so that the corrected statement in
 the manuscript is generated rather than asserted.
 
-On sourcing.  The primary text could not be read from this environment -- the
-publisher, arXiv and the indexing services are all unreachable through the
-network policy in use.  What was obtained is the polynomial and the decimal value
-from two independent search-engine summaries of the publisher and preprint
-records.  Those two are checked against each other here: the polynomial's only
-root in (0,1) is computed exactly and compared with the separately quoted decimal
-0.625457.  A transcription error in either would almost certainly break that
-agreement, so the two corroborate one another.  This is recorded as
-CORROBORATED_NOT_PRIMARY and must be replaced by a primary reading before the
-manuscript is submitted.
+On sourcing.  This row was first recorded as CORROBORATED_NOT_PRIMARY: the
+primary text is unreachable through the network policy in use here, so the
+polynomial and the decimal came from two independent summaries checked against
+each other -- the polynomial's only root in (0,1) is computed exactly and
+compared with the separately quoted 0.625457, and a transcription error in
+either would almost certainly break that agreement.  The primary text has since
+been read by a human (LightChainr/Matching-One#574, 2026-09-05) and confirms both
+the quintic and the value, so the status here is now PRIMARY_TEXT_READ.
+
+What this row does NOT establish is a height bound.  It refutes "height <= 3";
+it does not install "height <= 4" in its place.  Wierman's 1984 bow-tie bond
+threshold is degree 5 and height 6, twenty-two years earlier, and the generalized
+bow-ties of Ziff-Scullard 2006 reach height 36.  The three mechanisms bound
+neither degree nor height, so a census class is a choice we make and defend, not
+a range the literature hands us.  That was the error this row was created to fix,
+and stating the corrected bound as a new bound would simply have repeated it one
+unit higher.
 """
 
 from __future__ import annotations
@@ -151,17 +158,33 @@ def build_result() -> dict:
         },
         "consequence_for_the_manuscript": (
             "degree 5 and height 4, so the claim that every exactly-known planar "
-            "threshold has degree <= 6 and height <= 3 is false. The true "
-            "historical range, on what we can verify, is degree <= 6 and "
-            "height <= 4, and results/pslq-degree6-height4-* censuses that class"
+            "threshold has degree <= 6 and height <= 3 is false. This refutes a "
+            "bound; it does not supply one. Wierman 1984 (bow-tie bond) is "
+            "degree 5 height 6 and the Ziff-Scullard 2006 generalized bow-ties "
+            "reach height 36, so no height bound follows from the mechanisms and "
+            "results/pslq-degree6-height4-* censuses a class we chose, not the "
+            "historical record"
         ),
-        "verification_status": "CORROBORATED_NOT_PRIMARY",
+        "does_not_establish": (
+            "that height <= 4 bounds the exactly-known planar thresholds. It does "
+            "not. See LightChainr/Matching-One#574 Q3 and the manuscript's 4.2"
+        ),
+        "verification_status": "PRIMARY_TEXT_READ",
+        "primary_reading": {
+            "source": "Ziff, Phys. Rev. E 73, 016134 (2006); arXiv cond-mat/0510245",
+            "read_on": "2026-09-05",
+            "ticket": "LightChainr/Matching-One#574",
+            "confirmed": (
+                "the paper prints this quintic with p_c(bond) = 0.625457, and "
+                "states in its own words that the method does not reach site "
+                "percolation on the square and honeycomb lattices or bond "
+                "percolation on the kagome lattice"
+            ),
+        },
         "what_is_still_owed": (
-            "a reading of Ziff, Phys. Rev. E 73, 016134 (2006) itself. The "
-            "publisher, arXiv and the indexing services are unreachable through "
-            "the network policy in use here, so this was corroborated from two "
-            "independent search summaries rather than read. It must be checked "
-            "against the primary text before submission."
+            "nothing on the sourcing of this row; the primary text has been read. "
+            "What remains owed is elsewhere: the manuscript must not present "
+            "height <= 4 as a bound on the record"
         ),
     }
 

@@ -799,7 +799,8 @@
   "historical_range_exclusion_height4": {
     "claim_boundary": "exhaustive over degree <= 6 at height <= 4 only; says nothing about height > 4 or degree > 6, and is not a transcendence or non-algebraicity claim",
     "excluded_on_every_interval": true,
-    "meaning": "no algebraic form at the complexity of any exactly-known planar percolation threshold, including the height-4 A-lattice quintic, has a root in any published interval",
+    "meaning": "no integer polynomial of degree <= 6 and height <= 4, a class containing every row of Table 6 together with the height-4 A-lattice quintic, has a root in any published interval",
+    "not_the_historical_record": "published thresholds sit outside this class: Wierman 1984 bow-tie bond is degree 5 height 6, and the Ziff-Scullard 2006 generalized bow-ties reach degree 11 at heights 35 and 36",
     "polynomials_per_interval": 2351328,
     "rows": [
       {
@@ -926,7 +927,7 @@
       "height": 4,
       "lattice": "Ziff 2006 'A lattice', bond percolation",
       "polynomial_text": "p^5 - 4p^4 + 3p^3 + 2p^2 - 1",
-      "verification_status": "CORROBORATED_NOT_PRIMARY"
+      "verification_status": "PRIMARY_TEXT_READ"
     }
   },
   "implementation_agreement": {
@@ -1905,7 +1906,7 @@
     {
       "path": "results/ziff-a-lattice-complexity/latest.json",
       "schema": "matching-one/ziff-a-lattice-complexity/v1",
-      "sha256": "b278fa86f9edb3da3d1c0b0f7865304b9b1a0e6c75bd8f40ac112989fc17755a",
+      "sha256": "c828345b86ff675c753ba49a6a6466e1e0062dd45c9895fe4515f1a15a1e7406",
       "status": null
     },
     {

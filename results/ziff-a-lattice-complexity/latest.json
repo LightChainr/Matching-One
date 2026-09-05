@@ -1,6 +1,6 @@
 {
   "claim_level": "C1_exact_arithmetic_on_a_sourced_polynomial",
-  "consequence_for_the_manuscript": "degree 5 and height 4, so the claim that every exactly-known planar threshold has degree <= 6 and height <= 3 is false. The true historical range, on what we can verify, is degree <= 6 and height <= 4, and results/pslq-degree6-height4-* censuses that class",
+  "consequence_for_the_manuscript": "degree 5 and height 4, so the claim that every exactly-known planar threshold has degree <= 6 and height <= 3 is false. This refutes a bound; it does not supply one. Wierman 1984 (bow-tie bond) is degree 5 height 6 and the Ziff-Scullard 2006 generalized bow-ties reach height 36, so no height bound follows from the mechanisms and results/pslq-degree6-height4-* censuses a class we chose, not the historical record",
   "cross_check_against_the_quoted_decimal": {
     "agrees_with_the_isolated_root": true,
     "quoted": "0.625457",
@@ -11,6 +11,7 @@
     "why_this_matters": "the polynomial and the decimal were taken from independent summaries; a transcription error in either would almost certainly break this agreement"
   },
   "degree": 5,
+  "does_not_establish": "that height <= 4 bounds the exactly-known planar thresholds. It does not. See LightChainr/Matching-One#574 Q3 and the manuscript's 4.2",
   "height": 4,
   "irreducible_over_Q": true,
   "lattice": "Ziff 2006 'A lattice', bond percolation",
@@ -24,6 +25,12 @@
     1
   ],
   "polynomial_text": "p^5 - 4p^4 + 3p^3 + 2p^2 - 1",
+  "primary_reading": {
+    "confirmed": "the paper prints this quintic with p_c(bond) = 0.625457, and states in its own words that the method does not reach site percolation on the square and honeycomb lattices or bond percolation on the kagome lattice",
+    "read_on": "2026-09-05",
+    "source": "Ziff, Phys. Rev. E 73, 016134 (2006); arXiv cond-mat/0510245",
+    "ticket": "LightChainr/Matching-One#574"
+  },
   "primitive": true,
   "root_in_unit_interval": {
     "isolating_bracket": [
@@ -33,6 +40,6 @@
     "isolation_bits": 120
   },
   "schema": "matching-one/ziff-a-lattice-complexity/v1",
-  "verification_status": "CORROBORATED_NOT_PRIMARY",
-  "what_is_still_owed": "a reading of Ziff, Phys. Rev. E 73, 016134 (2006) itself. The publisher, arXiv and the indexing services are unreachable through the network policy in use here, so this was corroborated from two independent search summaries rather than read. It must be checked against the primary text before submission."
+  "verification_status": "PRIMARY_TEXT_READ",
+  "what_is_still_owed": "nothing on the sourcing of this row; the primary text has been read. What remains owed is elsewhere: the manuscript must not present height <= 4 as a bound on the record"
 }

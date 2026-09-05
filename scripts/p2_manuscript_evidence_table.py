@@ -322,11 +322,15 @@ def _historical_forms(table:Sequence[Mapping[str,Any]])->dict[str,Any]:
 
 
 def _height4_range(table:Sequence[Mapping[str,Any]])->dict[str,Any]:
-    """The corrected historical range: degree <= 6 at height <= 4.
+    """The widened census class: degree <= 6 at height <= 4.
 
     The height-3 census was motivated by a claim that turned out to be false --
     Ziff's A-lattice bond threshold is an irreducible quintic of height 4 -- so
-    the class that actually covers the historical record is this one.
+    the census was re-run one unit higher.  This class is a choice, not the
+    historical record: Wierman 1984 is degree 5 height 6 and the generalized
+    bow-ties of Ziff-Scullard 2006 reach degree 11 at height 36, so the three
+    mechanisms bound neither degree nor height.  It is the largest class in this
+    family whose approach resolution still clears every published width.
     """
     summary=_historical_range(table,HEIGHT4_SOURCES)
     ziff=_load(ZIFF_A_LATTICE)
@@ -345,8 +349,12 @@ def _height4_range(table:Sequence[Mapping[str,Any]])->dict[str,Any]:
         "verification_status":ziff["verification_status"],
         "artifact":ZIFF_A_LATTICE,
     }
-    summary["meaning"]=("no algebraic form at the complexity of any exactly-known planar percolation threshold, "
-                        "including the height-4 A-lattice quintic, has a root in any published interval")
+    summary["meaning"]=("no integer polynomial of degree <= 6 and height <= 4, a class containing every row of "
+                        "Table 6 together with the height-4 A-lattice quintic, has a root in any published "
+                        "interval")
+    summary["not_the_historical_record"]=("published thresholds sit outside this class: Wierman 1984 bow-tie bond "
+                                          "is degree 5 height 6, and the Ziff-Scullard 2006 generalized bow-ties "
+                                          "reach degree 11 at heights 35 and 36")
     summary["claim_boundary"]=("exhaustive over degree <= 6 at height <= 4 only; says nothing about height > 4 or "
                                "degree > 6, and is not a transcendence or non-algebraicity claim")
     summary["sensitivity_control"]["planted_at_height"]=3
@@ -677,10 +685,12 @@ def render_markdown(result:Mapping[str,Any])->str:
             f"has minimal polynomial `{a_lattice['polynomial_text']}`, irreducible over `Q`, of degree "
             f"{a_lattice['degree']} and height **{a_lattice['height']}** (`{ZIFF_A_LATTICE}`). Its height "
             f"exceeds every row above, which is why the exhaustion is carried out twice: at height 3 in Table 8, "
-            f"as it was first run, and at height 4 in Table 10, which is the class that actually covers the "
-            f"record.","",
-            f"Status of that row: `{a_lattice['verification_status']}`. Still owed: "
-            f"{a_lattice['what_is_still_owed']}",""]
+            f"as it was first run, and again at height 4 in Table 10.","",
+            f"Height 4 is not a bound either, and this table should not be read as one. "
+            f"{a_lattice['does_not_establish']}","",
+            f"Status of that row: `{a_lattice['verification_status']}` "
+            f"({a_lattice['primary_reading']['source']}, read {a_lattice['primary_reading']['read_on']} under "
+            f"{a_lattice['primary_reading']['ticket']}). Still owed: {a_lattice['what_is_still_owed']}.",""]
     control=_load(CONTROL_SOURCES["degree4_boundary_sensitivity"])
     conclusion=control["conclusion"]
     selection=control["width_selection"]
@@ -751,8 +761,12 @@ def render_markdown(result:Mapping[str,Any])->str:
     lines+=["","## Table 10 — Exhaustion of the corrected historical range (degree ≤ 6, height ≤ 4)","",
             f"Table 8's class was chosen from a claim that turned out to be false. {why['lattice']} has minimal "
             f"polynomial `{why['polynomial_text']}` — degree {why['degree']}, height {why['height']} "
-            f"(`{why['verification_status']}`, `{why['artifact']}`) — so the class that actually covers the "
-            f"historical record is height ≤ 4, and this table exhausts it.","",
+            f"(`{why['verification_status']}`, `{why['artifact']}`) — so the census was re-run one unit higher, "
+            f"and this table exhausts that class.","",
+            f"This class is a choice, not the record: {height4['not_the_historical_record']}. It is the largest "
+            f"class in this family whose certified approach resolution still clears every published interval "
+            f"width, which is the reason to stop here rather than higher.","",
+
             f"{height4['polynomials_per_interval']:,} primitive polynomials per interval, "
             f"{height4['polynomials_per_interval']/historical['polynomials_per_interval']:.1f} times Table 8's class. "
             f"Excluded on every interval: **{str(height4['excluded_on_every_interval']).lower()}**. The certified "

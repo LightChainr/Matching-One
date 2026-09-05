@@ -113,9 +113,11 @@ Minimal polynomials are taken from the committed lattice-native candidate artifa
 
 Maximum degree 6, maximum height 3 **over this artifact's rows**. Outside the census class: (3,12^2) site.
 
-This table is not the whole historical record, and one omission matters. Ziff 2006 'A lattice', bond percolation has minimal polynomial `p^5 - 4p^4 + 3p^3 + 2p^2 - 1`, irreducible over `Q`, of degree 5 and height **4** (`results/ziff-a-lattice-complexity/latest.json`). Its height exceeds every row above, which is why the exhaustion is carried out twice: at height 3 in Table 8, as it was first run, and at height 4 in Table 10, which is the class that actually covers the record.
+This table is not the whole historical record, and one omission matters. Ziff 2006 'A lattice', bond percolation has minimal polynomial `p^5 - 4p^4 + 3p^3 + 2p^2 - 1`, irreducible over `Q`, of degree 5 and height **4** (`results/ziff-a-lattice-complexity/latest.json`). Its height exceeds every row above, which is why the exhaustion is carried out twice: at height 3 in Table 8, as it was first run, and again at height 4 in Table 10.
 
-Status of that row: `CORROBORATED_NOT_PRIMARY`. Still owed: a reading of Ziff, Phys. Rev. E 73, 016134 (2006) itself. The publisher, arXiv and the indexing services are unreachable through the network policy in use here, so this was corroborated from two independent search summaries rather than read. It must be checked against the primary text before submission.
+Height 4 is not a bound either, and this table should not be read as one. that height <= 4 bounds the exactly-known planar thresholds. It does not. See LightChainr/Matching-One#574 Q3 and the manuscript's 4.2
+
+Status of that row: `PRIMARY_TEXT_READ` (Ziff, Phys. Rev. E 73, 016134 (2006); arXiv cond-mat/0510245, read 2026-09-05 under LightChainr/Matching-One#574). Still owed: nothing on the sourcing of this row; the primary text has been read. What remains owed is elsewhere: the manuscript must not present height <= 4 as a bound on the record.
 
 ## Table 7 — Quartic-census sensitivity where the census returned a null
 
@@ -173,7 +175,9 @@ The two implementations evaluate the closest member at different points, so the 
 
 ## Table 10 — Exhaustion of the corrected historical range (degree ≤ 6, height ≤ 4)
 
-Table 8's class was chosen from a claim that turned out to be false. Ziff 2006 'A lattice', bond percolation has minimal polynomial `p^5 - 4p^4 + 3p^3 + 2p^2 - 1` — degree 5, height 4 (`CORROBORATED_NOT_PRIMARY`, `results/ziff-a-lattice-complexity/latest.json`) — so the class that actually covers the historical record is height ≤ 4, and this table exhausts it.
+Table 8's class was chosen from a claim that turned out to be false. Ziff 2006 'A lattice', bond percolation has minimal polynomial `p^5 - 4p^4 + 3p^3 + 2p^2 - 1` — degree 5, height 4 (`PRIMARY_TEXT_READ`, `results/ziff-a-lattice-complexity/latest.json`) — so the census was re-run one unit higher, and this table exhausts that class.
+
+This class is a choice, not the record: published thresholds sit outside this class: Wierman 1984 bow-tie bond is degree 5 height 6, and the Ziff-Scullard 2006 generalized bow-ties reach degree 11 at heights 35 and 36. It is the largest class in this family whose certified approach resolution still clears every published interval width, which is the reason to stop here rather than higher.
 
 2,351,328 primitive polynomials per interval, 5.7 times Table 8's class. Excluded on every interval: **true**. The certified screen retained no candidate at any degree on any interval: **true**.
 

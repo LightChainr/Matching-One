@@ -91,6 +91,76 @@ def jackknife_se(full: float, deleted: Sequence[float]) -> float:
     )
 
 
+def _pseudovalues(full: float, deleted: Sequence[float]) -> list[float]:
+    batches = len(deleted)
+    return [batches * full - (batches - 1) * value for value in deleted]
+
+
+def jackknife_covariance(full_x: float, deleted_x: Sequence[float],
+                         full_y: float, deleted_y: Sequence[float]) -> float:
+    """Paired delete-one covariance of two channels sampled on the same batches.
+
+    The rungs share a seed and a replica offset, so batch b of one rung and
+    batch b of another are the same random block seen through two geometries.
+    Deleting them together is what makes this a covariance rather than a
+    coincidence, and ``load_shards`` is what enforces the sharing.
+    """
+    batches = len(deleted_x)
+    if batches != len(deleted_y):
+        raise ValueError("paired jackknife needs the same batches on both channels")
+    if batches < 2:
+        raise ValueError("delete-one jackknife needs at least two batches")
+    px = _pseudovalues(full_x, deleted_x)
+    py = _pseudovalues(full_y, deleted_y)
+    mx = math.fsum(px) / batches
+    my = math.fsum(py) / batches
+    return math.fsum((a - mx) * (b - my) for a, b in zip(px, py)) / (batches * (batches - 1))
+
+
+def fieller_z(numerator: float, var_numerator: float,
+              denominator: float, var_denominator: float,
+              covariance: float, predicted_ratio: float) -> float:
+    """Test ratio == predicted_ratio on the contrast Y - R0*X, not on Y/X.
+
+    Dividing first and then forming (Rhat - R0)/SE(Rhat) assumes Rhat is
+    roughly normal with a spread that does not depend on R0.  Both assumptions
+    fail when the denominator is only a few sigma from zero: the ratio of two
+    normals has Cauchy-like tails, and the spread grows as R0 moves out toward
+    the region where the denominator could have been small.  The contrast has
+    neither problem -- X and Y are means over the batches, so the CLT applies to
+    them directly -- and it is the standard (Fieller) treatment.
+    """
+    residual = numerator - predicted_ratio * denominator
+    variance = (var_numerator
+                + predicted_ratio * predicted_ratio * var_denominator
+                - 2.0 * predicted_ratio * covariance)
+    if variance <= 0.0:
+        raise ValueError("non-positive variance in the Fieller contrast")
+    return residual / math.sqrt(variance)
+
+
+def fieller_interval(numerator: float, var_numerator: float,
+                     denominator: float, var_denominator: float,
+                     covariance: float, sigma: float = 3.0):
+    """The Fieller confidence set for the ratio, or None when it is unbounded.
+
+    The set is bounded exactly when the denominator itself clears ``sigma``.
+    When it does not, every large ratio is compatible with the data and the
+    honest report is that there is no upper limit -- not a wide interval.
+    """
+    k = sigma * sigma
+    a = denominator * denominator - k * var_denominator
+    if a <= 0.0:
+        return None
+    b = -2.0 * denominator * numerator + 2.0 * k * covariance
+    c = numerator * numerator - k * var_numerator
+    discriminant = b * b - 4.0 * a * c
+    if discriminant < 0.0:
+        return None
+    root = math.sqrt(discriminant)
+    return ((-b - root) / (2.0 * a), (-b + root) / (2.0 * a))
+
+
 def run_rung(binary: Path, rung: Mapping[str, Any], prefix: Path, samples: int,
              batches: int, seed: str, replica_offset: int) -> tuple[Path, float]:
     command = [
@@ -171,15 +241,30 @@ def score(binary: Path, workdir: Path, samples: int, batches: int, seed: str,
             denominator = measured["r1"]["channels"][key]["value"]
             if denominator == 0.0:
                 continue
-            value = measured[numerator]["channels"][key]["value"] / denominator
+            top = measured[numerator]["channels"][key]["value"]
+            deleted_top = [measured[numerator]["_deleted"][b][key] for b in range(batches)]
+            deleted_bottom = [measured["r1"]["_deleted"][b][key] for b in range(batches)]
             deleted = [
-                measured[numerator]["_deleted"][b][key] / measured["r1"]["_deleted"][b][key]
-                for b in range(batches)
-                if measured["r1"]["_deleted"][b][key] != 0.0
+                a / b for a, b in zip(deleted_top, deleted_bottom) if b != 0.0
             ]
+            var_top = jackknife_se(top, deleted_top) ** 2
+            var_bottom = jackknife_se(denominator, deleted_bottom) ** 2
+            covariance = jackknife_covariance(top, deleted_top, denominator, deleted_bottom)
             ratios[label][key] = {
-                "value": value,
-                "standard_error": jackknife_se(value, deleted),
+                "value": top / denominator,
+                "standard_error": jackknife_se(top / denominator, deleted),
+                # Kept so the deciding statistic can be recomputed, and the run
+                # re-tested against a competitor nobody listed, without the
+                # histograms.  The first version of this script threw these away
+                # and the run could not be re-scored at all.
+                "numerator_value": top,
+                "numerator_variance": var_top,
+                "denominator_value": denominator,
+                "denominator_variance": var_bottom,
+                "covariance": covariance,
+                "denominator_sigma_from_zero": (
+                    abs(denominator) / math.sqrt(var_bottom) if var_bottom > 0.0 else math.inf
+                ),
             }
 
     primary = {
@@ -187,18 +272,38 @@ def score(binary: Path, workdir: Path, samples: int, batches: int, seed: str,
     }
     comparison = {}
     for name, (at_two, at_four) in COMPETING.items():
-        comparison[name] = {
-            "predicted": {"r2_over_r1": at_two, "r4_over_r1": at_four},
-            "z": {
-                label: (primary[label]["value"] - predicted) / primary[label]["standard_error"]
-                for label, predicted in (("r2_over_r1", at_two), ("r4_over_r1", at_four))
-            },
-        }
+        row = {"predicted": {"r2_over_r1": at_two, "r4_over_r1": at_four}, "z": {}, "ratio_z_not_used": {}}
+        for label, predicted in (("r2_over_r1", at_two), ("r4_over_r1", at_four)):
+            entry = primary[label]
+            row["z"][label] = fieller_z(
+                entry["numerator_value"], entry["numerator_variance"],
+                entry["denominator_value"], entry["denominator_variance"],
+                entry["covariance"], predicted,
+            )
+            row["ratio_z_not_used"][label] = (
+                (entry["value"] - predicted) / entry["standard_error"]
+            )
+        comparison[name] = row
 
     # The r=4 entry is the discriminator and the clean one; the r=2 entry keeps a
     # spin-8 systematic, so a competitor is only excluded on the strength of r=4.
     excluded = sorted(n for n, row in comparison.items() if abs(row["z"]["r4_over_r1"]) >= 3.0)
     compatible = sorted(n for n in comparison if n not in excluded)
+
+    intervals = {}
+    for label in ("r2_over_r1", "r4_over_r1"):
+        entry = primary[label]
+        bounds = fieller_interval(
+            entry["numerator_value"], entry["numerator_variance"],
+            entry["denominator_value"], entry["denominator_variance"],
+            entry["covariance"],
+        )
+        intervals[label] = {"lower": bounds[0], "upper": bounds[1]} if bounds else {
+            "unbounded_because": (
+                "the denominator does not clear 3 sigma, so arbitrarily large "
+                "ratios are compatible with the data and there is no upper limit"
+            )
+        }
 
     for row in measured.values():
         del row["_deleted"]
@@ -214,8 +319,27 @@ def score(binary: Path, workdir: Path, samples: int, batches: int, seed: str,
         "replica_offset": replica_offset,
         "rungs": measured,
         "ratios": ratios,
+        "fieller_interval_3sigma": intervals,
         "primary_channel": "P4_S_prime",
         "discriminating_entry": "r4_over_r1",
+        "test_statistic": {
+            "used": "fieller_contrast",
+            "definition": "z = (Y - R0*X) / sqrt(varY + R0^2 varX - 2 R0 cov(X,Y))",
+            "why": (
+                "the denominator A4(i) is only a few sigma from zero, so the ratio "
+                "is not approximately normal and its standard error at the observed "
+                "point understates the spread out where the large predictions sit. "
+                "X and Y are means over batches, so the CLT applies to the contrast "
+                "directly. The pre-registered statistic was (Rhat - R0)/SE(Rhat), "
+                "reported alongside as ratio_z_not_used and NOT used to decide"
+            ),
+            "deviation_from_the_frozen_runner": (
+                "the ratio z-test was committed in the runner before the run and is "
+                "therefore effectively part of the freeze. Changing it after seeing "
+                "the data is a real deviation and is recorded here rather than "
+                "silently applied. It moves verdicts in both directions"
+            ),
+        },
         "why_that_entry": (
             "the r=1 and r=4 rungs carry the same spin-8 leakage, so it cancels to "
             "leading order in their ratio. It does not cancel in r2_over_r1, where "
