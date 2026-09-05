@@ -2,7 +2,7 @@
 
 This roadmap optimizes for **information gained per unit effort**. It is not a permission system. Existing-data analysis, exact work, pilots and exploratory production may proceed whenever useful.
 
-The only hard constraints are chronology, observable-semantic compatibility for claim-bearing scores, and non-duplication of correlated evidence.
+While exploring, the whole rule set is `GOVERNANCE.md` §2 — five items, of which three bear on this roadmap: chronology, observable-semantic compatibility for claim-bearing scores, and non-duplication of correlated evidence. Everything else applies when there is a paper.
 
 ## Active — highest information now
 

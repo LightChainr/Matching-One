@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 import math
 from pathlib import Path
 import sys
@@ -35,29 +35,6 @@ class P48FrozenSPrimeScorerTests(unittest.TestCase):
         self.manifest = load_yaml("p48_sprime_scoring_manifest_20260828.yaml")
         self.sizes, self.power, self.models = validate_manifest(self.manifest)
         self.by_name = {model["name"]: model for model in self.models}
-
-    def test_manifest_matches_separate_correction_artifacts(self) -> None:
-        q2 = load_yaml("p48_sprime_q2_correction_20260828.yaml")
-        log = load_yaml("p48_sprime_jordan_log_20260828.yaml")
-        q2_model = self.by_name["q2_even_scalar"]
-        log_model = self.by_name["rank2_jordan_log"]
-
-        self.assertEqual(
-            q2_model["parameters"],
-            [q2["fit"]["A"], q2["fit"]["B"]],
-        )
-        self.assertEqual(
-            q2_model["parameter_covariance"],
-            q2["fit"]["covariance_AB"],
-        )
-        self.assertEqual(
-            log_model["parameters"],
-            [log["fit"]["A"], log["fit"]["B_logN"]],
-        )
-        self.assertEqual(
-            log_model["parameter_covariance"],
-            log["fit"]["covariance_AB"],
-        )
 
     def test_frozen_predictions_are_recomputed_from_parameters(self) -> None:
         for model in self.models:

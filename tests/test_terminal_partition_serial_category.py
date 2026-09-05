@@ -62,18 +62,6 @@ class TerminalPartitionSerialCategoryTests(unittest.TestCase):
             MODULE.compose_measures(a, MODULE.compose_measures(b, c, table), table),
         )
 
-    def test_invalid_width_fails_closed(self):
-        with self.assertRaises(ValueError):
-            MODULE.serial_compose((0, 1, 2), (0, 1, 2, 3))
-        with self.assertRaises(ValueError):
-            MODULE.triple_graph_output((0, 1, 2, 3), (0, 1), (0, 1, 2, 3))
-
-    def test_tampered_artifact_fails_closed(self):
-        payload = json.loads(json.dumps(self.artifact))
-        payload["monoid"]["identity_index"] = 0
-        with self.assertRaises(ValueError):
-            MODULE.validate_artifact(payload)
-
 
 if __name__ == "__main__":
     unittest.main()

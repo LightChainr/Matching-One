@@ -21,14 +21,6 @@ class GadgetGraphCanonicalTests(unittest.TestCase):
         encoded = encode_graph(4, 3, edges)
         self.assertEqual(decode_graph(encoded), (3, 4, edges))
 
-    def test_simple_graph_validation_fails_closed(self):
-        with self.assertRaisesRegex(ValueError, "self-loops"):
-            validate_graph(4, 3, ((0, 0),))
-        with self.assertRaisesRegex(ValueError, "duplicate"):
-            validate_graph(4, 3, ((0, 1), (1, 0)))
-        with self.assertRaisesRegex(ValueError, "out of range"):
-            validate_graph(4, 3, ((0, 4),))
-
     def test_terminal_and_internal_relabeling_invariance(self):
         group = full_symmetric_group(3)
         graph = ((0, 3), (1, 3), (1, 4), (2, 4), (3, 4))

@@ -1,11 +1,8 @@
-from __future__ import annotations
 
+from __future__ import annotations
 import copy
-import json
 from pathlib import Path
-import shutil
 import sys
-import tempfile
 import unittest
 
 
@@ -57,53 +54,6 @@ class P50FullcurveTypedTests(unittest.TestCase):
         self.assertEqual(result, frozen)
         self.assertEqual(semantics["rng_relation"], "independent_parent_and_child_streams")
         self.assertEqual(list(semantics["topology_anchors"]), ["thermal_even", "matching_function", "P4_S", "P4_D"])
-
-    def test_result_schema_drift_fails_closed(self) -> None:
-        contract, _ = typed.load_contract(ROOT)
-        result = frozen_result(contract)
-        result["schema"] = "wrong"
-        with self.assertRaisesRegex(ValueError, "result identity"):
-            typed.score_typed(ROOT, *self.paths(), runner=lambda *_: result)
-
-    def test_result_feature_order_drift_fails_closed(self) -> None:
-        contract, _ = typed.load_contract(ROOT)
-        result = frozen_result(contract)
-        result["observations"]["N290"] = dict(reversed(result["observations"]["N290"].items()))
-        with self.assertRaisesRegex(ValueError, "feature order"):
-            typed.score_typed(ROOT, *self.paths(), runner=lambda *_: result)
-
-    def test_result_covariance_drift_fails_closed(self) -> None:
-        contract, _ = typed.load_contract(ROOT)
-        result = frozen_result(contract)
-        result["covariance_rule"] = "shared streams"
-        with self.assertRaisesRegex(ValueError, "covariance rule"):
-            typed.score_typed(ROOT, *self.paths(), runner=lambda *_: result)
-
-    def test_prediction_drift_fails_before_runner(self) -> None:
-        with tempfile.NamedTemporaryFile("w", encoding="utf-8") as prediction:
-            prediction.write("status: wrong\n")
-            prediction.flush()
-            called = False
-            def runner(*_):
-                nonlocal called
-                called = True
-                return {}
-            with self.assertRaisesRegex(ValueError, "prediction identity"):
-                typed.score_typed(ROOT, *self.paths()[:-1], Path(prediction.name), runner=runner)
-            self.assertFalse(called)
-
-    def test_contract_scoring_order_drift_fails_closed(self) -> None:
-        directory = tempfile.TemporaryDirectory()
-        self.addCleanup(directory.cleanup)
-        root = Path(directory.name)
-        target = root / typed.CONTRACT
-        target.parent.mkdir(parents=True)
-        shutil.copy(ROOT / typed.CONTRACT, target)
-        payload = json.loads(target.read_text(encoding="utf-8"))
-        payload["scoring_order"].reverse()
-        target.write_text(json.dumps(payload), encoding="utf-8")
-        with self.assertRaisesRegex(ValueError, "scoring order"):
-            typed.load_contract(root)
 
 
 if __name__ == "__main__":

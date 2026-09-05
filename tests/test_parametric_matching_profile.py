@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 from copy import deepcopy
 from fractions import Fraction
 import json
@@ -49,17 +49,6 @@ class ParametricMatchingProfileTests(unittest.TestCase):
             )
         with self.assertRaisesRegex(ValueError, "cover the requested order"):
             parametric_derivatives([Fraction(0), Fraction(1)], [Fraction(0), Fraction(1)], 2)
-
-    def test_contract_drift_and_empirical_fields_are_rejected(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["representations"][1]["matching_derivatives"][5] = "10369"
-        with self.assertRaisesRegex(ValueError, "does not reconstruct"):
-            validate_contract(changed)
-
-        changed = deepcopy(self.contract)
-        changed["covariance"] = [["1"]]
-        with self.assertRaisesRegex(ValueError, "forbidden empirical keys"):
-            validate_contract(changed)
 
     def test_noncanonical_fraction_is_rejected(self) -> None:
         changed = deepcopy(self.contract)

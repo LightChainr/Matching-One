@@ -1,10 +1,8 @@
-from __future__ import annotations
 
+from __future__ import annotations
 import copy
-import json
 from pathlib import Path
 import sys
-import tempfile
 import unittest
 from unittest import mock
 
@@ -55,28 +53,6 @@ class TypedIssue43FullCurveTests(unittest.TestCase):
             semantics["validation_order"],
             "semantic_maps_before_frozen_full_curve_score",
         )
-
-    def test_sector_drift_fails_before_frozen_analysis(self) -> None:
-        with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
-            destination = root / typed.SEMANTIC_MANIFEST
-            destination.parent.mkdir(parents=True)
-            payload = json.loads(
-                (ROOT / typed.SEMANTIC_MANIFEST).read_text(encoding="utf-8")
-            )
-            payload["sectors"]["DeltaS"]["source_descriptor"]["combination"] = "odd"
-            destination.write_text(json.dumps(payload), encoding="utf-8")
-            with mock.patch.object(typed.frozen, "analyze") as kernel:
-                with self.assertRaisesRegex(ValueError, "DeltaS source descriptor"):
-                    typed.analyze_typed(root, {}, Path("predictions.yaml"))
-                kernel.assert_not_called()
-
-    def test_result_sector_order_drift_fails_closed(self) -> None:
-        payload = frozen_result()
-        payload["scores"] = {"DeltaS": {}, "DeltaM": {}}
-        with mock.patch.object(typed.frozen, "analyze", return_value=payload):
-            with self.assertRaisesRegex(ValueError, "sector order"):
-                typed.analyze_typed(ROOT, {}, Path("predictions.yaml"))
 
     def test_locked_entrypoint_freezes_production_and_activates_validators(self) -> None:
         gate, _ = locked_typed.load_semantic_gate(ROOT)

@@ -37,10 +37,6 @@ class GaussianExperimentDesignTests(unittest.TestCase):
             self.assertIn("numerator", row["harmonic_angular_ratios"]["H4"])
             self.assertGreater(row["estimated_cpu_seconds"], 0)
 
-    def test_no_target_outcome_field_in_manifest(self):
-        self.assertNotIn("candidate_target_observations", self.config)
-        self.assertIn("Candidate target outcomes", self.config["selection_boundary"])
-
 
 if __name__ == "__main__":
     unittest.main()

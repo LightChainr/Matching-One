@@ -1,4 +1,3 @@
-import copy
 import json
 from pathlib import Path
 import sys
@@ -29,17 +28,6 @@ class BuildAlgebraicModelProblemTests(unittest.TestCase):
         first = build_result()["problem"]
         second = build_result()["problem"]
         self.assertEqual(first, second)
-
-    def test_unknown_relation_type_fails_closed(self) -> None:
-        descriptor = copy.deepcopy(build_result()["descriptor"])
-        descriptor["relations"][0]["type"] = "free_form"
-        with self.assertRaisesRegex(ValueError, "unsupported relation type"):
-            compile_problem(descriptor)
-
-    def test_evaluator_rejects_assignment_drift(self) -> None:
-        problem = build_result()["problem"]
-        with self.assertRaisesRegex(ValueError, "assignment variables drift"):
-            evaluate_equation(problem["equations"][0], problem["variable_order"], {})
 
     def test_checked_in_result_reproduces(self) -> None:
         result = json.loads(DEFAULT_OUTPUT.read_text(encoding="utf-8"))

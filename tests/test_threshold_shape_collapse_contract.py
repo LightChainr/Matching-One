@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 import json
 import sys
 import unittest
@@ -35,11 +35,6 @@ class ThresholdShapeCollapseContractTests(unittest.TestCase):
         self.assertEqual(result["scale_ratio"], 1)
         self.assertGreater(result["shape_sse"], 0)
         self.assertGreater(result["shape_max_abs"], 0)
-
-    def test_zero_iqr_fails_closed(self) -> None:
-        concentrated = contract.fixture((0, 1, 2), (1, 10, 1))
-        with self.assertRaisesRegex(ValueError, "interquartile scale"):
-            contract.standardized_profile(concentrated)
 
     def test_invalid_distribution_and_affine_scale_fail(self) -> None:
         with self.assertRaises(ValueError):

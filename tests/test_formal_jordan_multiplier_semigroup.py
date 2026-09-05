@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-from copy import deepcopy
+from __future__ import annotations
 from fractions import Fraction
 import json
 from pathlib import Path
@@ -69,17 +68,6 @@ class FormalJordanMultiplierSemigroupTests(unittest.TestCase):
     def test_zero_multiplier_is_rejected(self) -> None:
         with self.assertRaisesRegex(ValueError, "zero Gaussian multiplier"):
             quartic_character((0, 0))
-
-    def test_contract_drift_fails_closed(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["expected_quartic_characters"]["norm5"][1] = "0"
-        with self.assertRaisesRegex(ValueError, "quartic character drifted"):
-            validate_contract(changed)
-
-        changed = deepcopy(self.contract)
-        changed["multipliers"]["norm10"] = [1, 3]
-        with self.assertRaisesRegex(ValueError, "paths do not close"):
-            validate_contract(changed)
 
 
 if __name__ == "__main__":

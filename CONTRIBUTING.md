@@ -1,144 +1,117 @@
 # Contributing
 
-Matching One accepts contributions to numerical methods, exact checks, statistical analysis, theory, data provenance, documentation, and research infrastructure.
+Read `GOVERNANCE.md` §0 and §2 first. They are short, and they are the whole rule set
+for exploratory work.
 
-Read `GOVERNANCE.md` and `REPRODUCIBILITY.md` before proposing production computation or a claim-bearing result.
+Everything in this file that sounds like a requirement applies **at publication
+time**, and lives in `docs/PUBLICATION-CHECKLIST.md`. While exploring, the list is:
 
-## Start with an issue
+1. don't fool yourself about a number;
+2. don't destroy data;
+3. don't misdate a freeze;
+4. say which observable;
+5. count one random block once.
 
-Open an issue before work that changes a scientific protocol, consumes substantial compute, imports a dataset, or introduces a new interpretation. The issue should identify:
+## While exploring
 
-- the question and why it matters;
-- the current evidence and literature boundary;
-- the proposed discriminator or deliverable;
-- dependencies and resource requirements;
-- acceptance and failure criteria.
+**Issues.** Open one when you want the discussion or want to hand work off. Not
+required before starting. An issue that exists only to record permission is noise.
 
-Small bug fixes and documentation corrections may proceed directly to a pull request.
+**Branches.** One focused branch, any name that says what it is. Don't stack.
 
-## Branches
+**Committing.** Say what you did and why in the commit message. That is the
+documentation. If the work is interesting, a note in `notes/` is worth more than a
+manifest.
 
-Use one focused branch:
+**Pull requests.** A sentence on what and why. The template is a *publication-time*
+form; for exploratory work, delete the sections that don't apply, or don't use it.
+Nobody is waiting to review — merge your own work when it is useful.
 
-```text
-research/<topic>
-fix/<topic>
-governance/<topic>
-```
-
-Do not build a long hidden stack. If a branch depends on another open PR, state the dependency in both PR descriptions.
-
-## Development environment
-
-The baseline code supports Python 3.9 and later. Research branches may add dependencies in `requirements.txt`; production work should also record exact versions in the result metadata or an environment file.
-
-Typical checks are:
+**Checks before pushing.** Whatever convinces *you* the number is right. Usually:
 
 ```bash
 python3 -m compileall -q scripts tests
-python3 -m unittest discover -s tests -p 'test_*.py' -v
+python3 -m unittest tests.test_<the_thing_you_changed>
 ```
 
-For C++ code, use C++17 or later only when required, record the compiler and flags, and retain deterministic self-tests. GitHub Actions compiles source files and runs declared self-tests where available.
+Run the whole suite when you have reason to think you broke something far away —
+not as a ritual before every push, and not to feel finished.
 
-## Code requirements
+## Writing tests
 
-### Python
+The bar: **name the wrong number this test would stop us believing.** One sentence.
+If you can't, don't write it.
 
-- Prefer standard-library code for reference/oracle implementations.
-- Use type hints on public functions and data contracts.
-- Validate inputs and fail explicitly on missing sizes, singular covariance, invalid rank conventions, or incomplete metadata.
-- Keep parsing, estimation, model selection, and reporting separable.
-- Avoid binary floating-point when exact decimal transcription or arbitrary precision is part of the scientific contract.
+Worth writing:
 
-### C++
+- an exact vector or closed form the implementation must reproduce;
+- an independent method agreeing on one input — union-find against BFS, a tiny case
+  done by hand;
+- an invariance the mathematics requires — basis, geometry, batch partition;
+- a leakage check where held-out integrity is the point.
 
-- Make RNG and reductions independent of thread scheduling where promised.
-- Use fixed-width integer types for counters and histograms; document overflow bounds.
-- Keep a slow reference path or exact regression vectors.
-- Do not enable `fast-math` when it can alter Bernoulli decisions, rank ordering, or reproducibility.
-- Record source and executable hashes for production runs.
+Not worth writing, ever — see `GOVERNANCE.md` §4:
 
-### Tests
+- tamper tests and other validator error paths;
+- "fails closed when a frozen constant drifts";
+- assertions that a document contains a sentence;
+- digest and checksum re-verification;
+- anything auditing the repository's own structure.
 
-A test should protect a scientific or software contract, not merely repeat the implementation. Important examples include:
+A test that repeats the implementation in different syntax protects nothing.
 
-- exact polynomial or enumeration vectors;
-- independent union-find/BFS topology agreement;
-- basis and geometry invariance;
-- RNG test vectors and batch-partition invariance;
-- held-out leakage checks;
-- covariance normalization and propagation;
-- deliberately corrupted metadata or certificates being rejected.
+## Code
+
+**Python.** Standard library for reference implementations. Type hints where they
+help a reader. Exact arithmetic wherever exactness is part of the claim — never
+binary floating point inside an exactness claim.
+
+Validate an input when a bad value would silently produce a plausible wrong answer.
+Do not validate inputs to satisfy a policy: a `ValueError` for a negative CLI
+argument protects nothing.
+
+**C++.** RNG and reductions independent of thread scheduling where promised.
+Fixed-width integers for counters, with the overflow bound written down. No
+`fast-math` where it can move a Bernoulli decision or a rank ordering. Keep a slow
+reference path — that is the check that earns its place.
 
 ## Data and results
 
-Prefer reviewable text formats: CSV, JSON, YAML, Markdown, and exact integer coefficient files. Large binary files require a documented reason and storage policy.
+Text formats: CSV, JSON, YAML, Markdown, exact integer coefficients.
 
-Every imported source dataset needs:
+An imported dataset needs a citation precise enough to find the table again, and the
+decimals as printed. That is it, while exploring. Checksums, row-count tests and
+sentinel tests are publication-time.
 
-- source citation and exact table/equation/location;
-- estimator and geometry definition;
-- decimal-preserving transcription;
-- row-count and sentinel-value tests;
-- SHA-256 checksums.
+One thing that is *not* optional, because it cannot be recovered later: if you
+transcribe numbers from a source, check the digits against the source **once**, when
+you transcribe them, and say in the commit that you did. A hash cannot do this — it
+proves a file did not change, never that it was right to begin with.
 
-Every stochastic result needs the metadata described in `REPRODUCIBILITY.md`. Commit raw sufficient statistics, not only final roots or fitted coefficients.
+Commit raw sufficient statistics, not only fitted coefficients. Don't overwrite a
+committed result; add beside it and link the superseded one.
 
-Do not overwrite a committed result. Add a correction directory or a new version and link the superseded artifact.
+## Experiments
 
-## Experiment design
+If a run is meant as confirmatory evidence, freeze the hypothesis, sizes, orientation
+order, splits, seeds, estimand and stopping rule before you look. That is what earns
+C3, and it is the reason to do it — not compliance.
 
-Before production, freeze:
-
-- the primary hypothesis and alternatives;
-- all sizes/geometries and signed orientation order;
-- training and held-out partitions;
-- seed/counter domains and batching;
-- primary estimand and covariance treatment;
-- power target and sample-count rule;
-- success, failure, and stopping conditions.
-
-Pilot data may be used for variance and power. Evaluation choices must not depend on whether the pilot point estimate favors the hypothesis.
-
-Report signed effects, standard errors, covariance/correlation, condition numbers, and sensitivity or power. Preserve negative results and rejected models.
-
-## Pull requests
-
-Keep source/protocol changes reviewable. Bulk raw results should normally be a separate PR or clearly isolated directory with a manifest.
-
-A PR description should include:
-
-- linked issue and dependency PRs;
-- change class and proposed claim level;
-- exact commands/tests run;
-- provenance and generated-file boundaries;
-- compatibility or migration implications;
-- known limitations;
-- explicit statements of what the change does **not** establish.
-
-Use the repository PR template. Do not mark a PR ready for review while required result files, tests, or metadata are still expected.
+If it is exploratory, run it. Report signed effects and uncertainties. Keep the
+negative results.
 
 ## Scientific writing
 
-Use precise language:
+Precise language, per `GOVERNANCE.md` §9. "Compatible with", not "equal to".
+"Candidate", not "identified". "Exact" only when it is.
 
-- “observed in these sizes” rather than “asymptotic” without an asymptotic test;
-- “compatible with” rather than “equal to” for a numerical candidate;
-- “candidate operator” rather than “identified operator” until competing sectors are excluded;
-- “exact” only for a proved identity, exact arithmetic result, or certified computation.
+Do not remove failed attempts to improve the narrative.
 
-A result may be valuable because it falsifies a promising route. Do not optimize the narrative by removing failed attempts.
+## Review
 
-## Review priorities
+There is usually no reviewer. When there is, look in this order: definitions and sign
+conventions; whether the number is right; whether the claim language matches the
+evidence. Then stop.
 
-Reviewers should examine, in order:
-
-1. definition and sign/unit conventions;
-2. provenance and frozen design;
-3. exact controls and independent implementation checks;
-4. covariance and held-out integrity;
-5. numerical conditioning and finite-size alternatives;
-6. performance and presentation.
-
-Correctness and auditability take precedence over throughput.
+Correctness matters. Auditability is a property of published work, not of a research
+line in progress.

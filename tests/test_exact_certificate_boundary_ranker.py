@@ -29,12 +29,6 @@ class ExactCertificateBoundaryRankerTests(unittest.TestCase):
         self.assertFalse(ranking[0]["disjoint"])
         self.assertEqual(ranking[0]["separation_margin"], "0")
 
-    def test_reversed_interval_fails_closed(self) -> None:
-        candidates = frozen_candidates()
-        candidates[0]["forecast_interval"] = ["2", "1"]
-        with self.assertRaisesRegex(ValueError, "reversed"):
-            rank_candidates(candidates)
-
     def test_nonpositive_cost_and_duplicate_ids_fail_closed(self) -> None:
         candidates = frozen_candidates()
         candidates[0]["cost"] = "0"

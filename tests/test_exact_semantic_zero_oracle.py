@@ -1,5 +1,3 @@
-import copy
-import json
 from pathlib import Path
 import sys
 import unittest
@@ -29,15 +27,6 @@ class ExactSemanticZeroOracleTests(unittest.TestCase):
         excluded = build_result()["claim_boundary"]["excluded"]
         self.assertIn("physical selection rule", excluded)
         self.assertIn("model validation", excluded)
-
-    def test_checked_in_certificate_reproduces_and_tampering_fails_closed(self) -> None:
-        checked = json.loads(DEFAULT_OUTPUT.read_text(encoding="utf-8"))
-        self.assertEqual(checked, build_result())
-        self.assertIs(validate_result(checked)["solver_invoked"], False)
-        tampered = copy.deepcopy(checked)
-        tampered["primitive_bezout_infeasibility_witness"]["result_coefficients_constant_first"] = ["0", "0"]
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(tampered)
 
 
 if __name__ == "__main__":

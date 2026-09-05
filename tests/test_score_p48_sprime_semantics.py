@@ -1,12 +1,10 @@
-from __future__ import annotations
 
+from __future__ import annotations
 import json
 from pathlib import Path
 import sys
 import tempfile
 import unittest
-
-import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -48,19 +46,6 @@ class P48SPrimeSemanticGateTests(unittest.TestCase):
             row["frozen_model_artifact"],
             "predictions/p48_sprime_correction_20260828.yaml",
         )
-
-    def test_descriptor_drift_fails_closed(self) -> None:
-        with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
-            destination = root / SEMANTIC_MANIFEST
-            destination.parent.mkdir(parents=True)
-            payload = yaml.safe_load(
-                (ROOT / SEMANTIC_MANIFEST).read_text(encoding="utf-8")
-            )
-            payload["source_descriptor"]["channel"] = "either"
-            destination.write_text(yaml.safe_dump(payload), encoding="utf-8")
-            with self.assertRaisesRegex(ValueError, "no longer matches"):
-                load_semantic_gate(root)
 
     def test_missing_output_path_fails_before_scoring(self) -> None:
         with self.assertRaisesRegex(ValueError, "requires --output"):

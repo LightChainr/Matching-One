@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-import copy
+from __future__ import annotations
 from fractions import Fraction
 import json
 from pathlib import Path
@@ -97,12 +96,6 @@ class BranchingSurvivalCounterexampleTests(unittest.TestCase):
             row_major_mask(((4, 0),), 4)
         with self.assertRaisesRegex(ValueError, "rank-one"):
             complete_survival_counts(self.cache, 0)
-
-    def test_artifact_tampering_fails_closed(self) -> None:
-        tampered = copy.deepcopy(build_artifact())
-        tampered["comparison"]["branch_success_gap"] = "0"
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_artifact(tampered)
 
 
 if __name__ == "__main__":

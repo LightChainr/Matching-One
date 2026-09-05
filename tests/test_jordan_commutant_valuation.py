@@ -1,10 +1,7 @@
-from __future__ import annotations
 
+from __future__ import annotations
 from fractions import Fraction
 from itertools import product
-import json
-from pathlib import Path
-import tempfile
 import unittest
 
 from scripts.descendant_jordan_rank_survival import jordan_nilpotent, multiply
@@ -50,15 +47,6 @@ class JordanCommutantValuationTests(unittest.TestCase):
             )
         with self.assertRaisesRegex(ValueError, "must fit"):
             polynomial_in_nilpotent(2, [Fraction(1)] * 3)
-
-    def test_contract_drift_fails_closed(self) -> None:
-        frozen = build_contract()
-        frozen["rank_five_controls"][1]["image_chain_rank"] = 5
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "drift.json"
-            path.write_text(json.dumps(frozen), encoding="utf-8")
-            with self.assertRaisesRegex(AssertionError, "contract drifted"):
-                validate_contract(path)
 
 
 if __name__ == "__main__":

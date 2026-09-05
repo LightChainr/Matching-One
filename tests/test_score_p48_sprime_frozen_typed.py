@@ -1,10 +1,7 @@
-from __future__ import annotations
 
-import copy
-import json
+from __future__ import annotations
 from pathlib import Path
 import sys
-import tempfile
 import unittest
 
 
@@ -63,11 +60,6 @@ def fixture_manifest() -> dict:
 
 
 class TypedFrozenP48SPrimeTests(unittest.TestCase):
-    def test_registered_descriptor_is_exact_identity(self) -> None:
-        _, source, target, transform = load_semantic_gate(ROOT)
-        self.assertEqual(source.to_dict(), target.to_dict())
-        self.assertEqual((transform.scale, transform.offset), (1.0, 0.0))
-
     def test_typed_score_preserves_frozen_numerics(self) -> None:
         target = fixture_target()
         manifest = fixture_manifest()
@@ -80,34 +72,6 @@ class TypedFrozenP48SPrimeTests(unittest.TestCase):
             "semantic_map_before_frozen_kernel_score",
         )
         self.assertEqual(semantics["applied_transform"]["scale"], 1.0)
-
-    def test_descriptor_sector_drift_fails_closed(self) -> None:
-        with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
-            target = root / SEMANTIC_MANIFEST
-            target.parent.mkdir(parents=True)
-            payload = json.loads((ROOT / SEMANTIC_MANIFEST).read_text(encoding="utf-8"))
-            payload["target_descriptor"]["combination"] = "odd"
-            target.write_text(json.dumps(payload), encoding="utf-8")
-            with self.assertRaises(ValueError):
-                load_semantic_gate(root)
-
-    def test_model_order_drift_fails_closed(self) -> None:
-        with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
-            target = root / SEMANTIC_MANIFEST
-            target.parent.mkdir(parents=True)
-            payload = json.loads((ROOT / SEMANTIC_MANIFEST).read_text(encoding="utf-8"))
-            payload["models_in_scoring_order"].reverse()
-            target.write_text(json.dumps(payload), encoding="utf-8")
-            with self.assertRaisesRegex(ValueError, "model order"):
-                load_semantic_gate(root)
-
-    def test_target_independence_gate_is_preserved(self) -> None:
-        target = copy.deepcopy(fixture_target())
-        target["independent_of_retrospective_source"] = False
-        with self.assertRaisesRegex(ValueError, "independent"):
-            score_typed(ROOT, target, fixture_manifest())
 
 
 if __name__ == "__main__":

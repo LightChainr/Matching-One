@@ -26,9 +26,20 @@ The Yang–Zhou 2024 publisher abstract is sufficient to verify their quoted cor
 1. Preserve printed decimal strings. Do not parse through binary floating point before committing them.
 2. Record the exact table/equation/source location and estimator definition.
 3. Prefer primary sources. If only secondary evidence is available, mark it as pending rather than silently promoting it.
-4. Add a SHA-256 to the manifest for every canonical machine-readable source table.
+4. Record a SHA-256 in the manifest for every canonical machine-readable source table. The manifest is the only pin; a second copy elsewhere only goes stale. What the pin does *not* do is tell you the digits were right — that is step 3, and it is done once, by eye, against the source.
 5. Add or update a regression test that locks row count, endpoint values, and any source-specific invariant.
 6. Do not delete a superseded estimate. Change its status and preserve its provenance.
 7. Do not average quoted uncertainties from different methods unless a separate statistical model justifies that operation.
+8. Check the digits against the primary source before committing, and record that the check happened. A SHA-256 pin detects drift after a file is committed; it cannot detect an error made while transcribing. Both are needed.
+
+## Transcription corrections
+
+Two rows of `jacobsen_2015_square_site_cylinder.csv` did not reproduce the strings printed in Table 2 of arXiv:1507.03027v1 and were corrected on 2026-09-04: `n=4` carried `0` where the source prints `9` in the 20th decimal, and `n=1` carried two trailing zeros beyond the 40 decimals printed. The remaining 19 rows reproduce the printed strings exactly, and `mertens_2022_square_site_estimators.csv` was checked the same way and is clean in all 47 cells.
+
+The `n=4` error stood under a matching file digest for the whole history of the file, because every check the repository ran was a check for *drift* and the file had not drifted. The digit was wrong the day it was written. The comparison that found it was a digit-by-digit read of all 21 rows against the paper.
+
+Nothing downstream moved. Every committed fit over this table trains on `n_min >= 5`, so neither row is in any training window, and the frozen pre-registration `predictions/polynomial_widths_22_24.yaml` regenerates byte-identically apart from its `input_sha256` line. `tests/test_preregister_width_predictions.py` pins the digest of that file with the `input_sha256` line removed, so a future input correction can move the input digest but not a prediction. Full records are in `literature_threshold_sources.json` (`transcription_verification`, `transcription_corrections`, `correction_impact`) and in `analysis/rational_stage_b_quarantine_manifest.json` (`transcription_correction`).
+
+Correcting the table also moves the digest of `literature_threshold_sources.json`, which `analysis/pslq_search_contract.json` pins and every PSLQ result artifact re-verifies, so those artifacts were regenerated. That is the seal working as intended: the numbers in them are unchanged and only the recorded digests moved.
 
 Issue #4 tracks provenance completion. Issue #1 (bounded integer-relation/PSLQ work) is downstream of this dataset and must not select a preferred rounded value independently.

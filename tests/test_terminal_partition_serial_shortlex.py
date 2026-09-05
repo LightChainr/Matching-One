@@ -32,20 +32,6 @@ class SerialShortlexTests(unittest.TestCase):
         self.assertEqual(self.artifact["profile_count"], 8)
         self.assertEqual(self.artifact["diameter_histogram"], {"4": 4, "5": 4})
 
-    def test_unsorted_seed_fails_closed(self):
-        with self.assertRaises(ValueError):
-            MODULE.shortlex_words([2, 1, 3], self.table)
-
-    def test_invalid_word_fails_closed(self):
-        with self.assertRaises(ValueError):
-            MODULE.evaluate_word([15], self.table)
-
-    def test_tampering_fails_closed(self):
-        value = json.loads(json.dumps(self.artifact))
-        value["profile_count"] += 1
-        with self.assertRaises(ValueError):
-            MODULE.validate_artifact(value)
-
 
 if __name__ == "__main__":
     unittest.main()

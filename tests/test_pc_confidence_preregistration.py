@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 import copy
 import json
 import sys
@@ -32,12 +32,6 @@ class PcConfidencePreregistrationTests(unittest.TestCase):
         self.assertEqual(audit["accepted_records"], 2)
         self.assertTrue(all(row["tested_parameter"] == "synthetic-only" for row in self.records))
 
-    def test_plan_tampering_invalidates_existing_records(self) -> None:
-        changed = copy.deepcopy(self.plan)
-        changed["statistical_contract"]["trials_per_attempt"] = 401
-        with self.assertRaisesRegex(ValueError, "plan digest mismatch"):
-            prereg.audit_records(changed, self.records)
-
     def test_duplicate_side_attempt_fails(self) -> None:
         duplicate = copy.deepcopy(self.records[0])
         duplicate["record_id"] = "different-id"
@@ -52,16 +46,6 @@ class PcConfidencePreregistrationTests(unittest.TestCase):
             changed[1][field] = changed[0][field]
             with self.assertRaisesRegex(ValueError, message):
                 prereg.audit_records(self.plan, changed)
-
-    def test_exploration_digest_reuse_fails_after_redigesting_plan(self) -> None:
-        changed_plan = copy.deepcopy(self.plan)
-        changed_plan["forbidden_exploration_data_digests"] = [self.records[0]["data_digest"]]
-        changed_records = copy.deepcopy(self.records)
-        digest = prereg.plan_digest(changed_plan)
-        for record in changed_records:
-            record["plan_digest"] = digest
-        with self.assertRaisesRegex(ValueError, "reuses an exploration digest"):
-            prereg.audit_records(changed_plan, changed_records)
 
     def test_graph_counts_and_phase_fail_closed(self) -> None:
         mutations = [

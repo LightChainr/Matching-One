@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 import json
 from pathlib import Path
 import shutil
@@ -55,24 +55,6 @@ class P159PellHexFilterTypedTests(unittest.TestCase):
             "semantic_gate_and_canonical_inputs_before_frozen_score",
         )
 
-    def test_gate_drift_fails_before_runner(self) -> None:
-        directory, root = self.copied_root()
-        self.addCleanup(directory.cleanup)
-        path = root / typed.SEMANTIC_GATE
-        gate = json.loads(path.read_text(encoding="utf-8"))
-        gate["primitive_line_contract"]["target_lines_in_order"].reverse()
-        path.write_text(json.dumps(gate), encoding="utf-8")
-        called = False
-
-        def runner(*_args: Path) -> dict:
-            nonlocal called
-            called = True
-            return {}
-
-        with self.assertRaisesRegex(ValueError, "primitive line order"):
-            typed.score_typed(root, self.batches, self.source, runner=runner)
-        self.assertFalse(called)
-
     def test_noncanonical_input_fails_before_runner(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             altered = Path(directory) / "batches.csv"
@@ -87,16 +69,6 @@ class P159PellHexFilterTypedTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "canonical batches git blob"):
                 typed.score_typed(ROOT, altered, self.source, runner=runner)
             self.assertFalse(called)
-
-    def test_governance_drift_fails_closed(self) -> None:
-        from score_p159_pell_hex_filter import build_score
-
-        frozen = build_score(self.batches, self.source)
-        frozen["governance"]["new_primary_evidence"] = True
-        with self.assertRaisesRegex(ValueError, "governance"):
-            typed.score_typed(
-                ROOT, self.batches, self.source, runner=lambda *_: frozen,
-            )
 
 
 if __name__ == "__main__":

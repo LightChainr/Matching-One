@@ -47,6 +47,7 @@ CONTROL_SOURCES={
     "lattice_native_candidates":"results/pslq-lattice-native-candidates/latest.json",
     "degree4_boundary_sensitivity":"results/pslq-degree4-synthetic-boundary-control/latest.json",
     "degree6_low_height_control":"results/pslq-degree6-low-height-control/latest.json",
+    "degree6_implementation_agreement":"results/pslq-degree6-implementation-agreement/latest.json",
 }
 LOW_HEIGHT_SOURCES="results/pslq-degree6-low-height-{interval}/latest.json"
 
@@ -368,6 +369,45 @@ def _historical_range(table:Sequence[Mapping[str,Any]])->dict[str,Any]:
     }
 
 
+def _implementation_agreement()->dict[str,Any]:
+    """Section 7's second-implementation check, read from its committed artifact.
+
+    Only the degree-1..6 height-3 census is replicated; the quartic census is
+    not, and the ``partial`` flag below says so rather than leaving the reader
+    to infer it from the absence of quartic rows.
+    """
+    report=_load(CONTROL_SOURCES["degree6_implementation_agreement"])
+    rows=[]
+    for entry in report["intervals"]:
+        closest=entry["closest_member"]
+        gap=Fraction(closest["residual_gap_text"])
+        allowance=Fraction(closest["mean_value_allowance_text"])
+        _require(gap<=allowance,f"{entry['interval_id']}: residuals violate the mean-value bound")
+        rows.append({
+            "interval_id":entry["interval_id"],
+            "cells_compared":entry["cells_compared"],
+            "cells_in_agreement":entry["cells_in_agreement"],
+            "exclusion_verdicts_agree":entry["exclusion_verdicts_agree"],
+            "closest_coefficients_ascending":closest["coefficients_ascending"],
+            "closest_coefficients_agree":closest["coefficients_agree"],
+            "residual_gap_decimal":decimal_string(gap),
+            "mean_value_allowance_decimal":decimal_string(allowance),
+            "polynomial_derivative_bound":closest["polynomial_derivative_bound"],
+        })
+    return {
+        "implementations":[{"path":row["path"],"screen":row["screen"]} for row in report["implementations"]],
+        "shared_code":report["shared_code"],
+        "fields_compared_per_cell":report["fields_compared_per_cell"],
+        "cells_compared":report["cells_compared"],
+        "cells_in_agreement":report["cells_in_agreement"],
+        "implementations_agree":report["implementations_agree"],
+        "scope":"degree 1..6 at height 3 only",
+        "partial":True,
+        "not_replicated":"the degree-4 height-100 census of sections 6.1-6.3",
+        "rows":rows,
+    }
+
+
 def _separation(bracket:tuple[Fraction,Fraction],lower:Fraction,upper:Fraction)->Optional[Fraction]:
     """Certified lower bound on the distance from a root bracket to an interval."""
     low,high=bracket
@@ -494,6 +534,7 @@ def build_result(contract_path:Path=DEFAULT_CONTRACT)->dict[str,Any]:
         "historical_range_exclusion":_historical_range(interval_table),
         "quartic_survivor_census":census,
         "width_scaling_diagnostic":_width_scaling(interval_table,census),
+        "implementation_agreement":_implementation_agreement(),
         "controls":{name:{"path":relative,"status":_load(relative).get("status")} for name,relative in sorted(CONTROL_SOURCES.items())},
         "claim_boundary":{
             "included":"assembly and exact cross-interval resolution of the committed degree-1..4 census artifacts",
@@ -626,6 +667,31 @@ def render_markdown(result:Mapping[str,Any])->str:
             f"{sensitivity['positive_trials']} positive trials and reported in none of the "
             f"{sensitivity['negative_trials']} negative trials "
             f"(`all_trials_passed = {str(sensitivity['all_trials_passed']).lower()}`)."]
+    agreement=result["implementation_agreement"]
+    shared=agreement["shared_code"]
+    lines+=["","## Table 9 — Agreement of two independent implementations (degree ≤ 6, height ≤ 3)","",
+            f"Scope: {agreement['scope']}. Not replicated: {agreement['not_replicated']}.","",
+            "| Implementation | Screen |","|---|---|"]
+    for row in agreement["implementations"]:
+        lines.append(f"| `{row['path']}` | {row['screen']} |")
+    lines+=["",f"Compared per cell: {', '.join('`'+name+'`' for name in agreement['fields_compared_per_cell'])}. "
+            f"Cells in agreement: **{agreement['cells_in_agreement']} of {agreement['cells_compared']}**.","",
+            "| Interval | Cells | Verdicts agree | Closest member | Residual gap | Mean-value allowance |",
+            "|---|---:|---|---|---:|---:|"]
+    for row in agreement["rows"]:
+        lines.append(f"| `{row['interval_id']}` | {row['cells_in_agreement']}/{row['cells_compared']} | "
+                     f"{'yes' if row['exclusion_verdicts_agree'] else 'no'} | "
+                     f"{'same' if row['closest_coefficients_agree'] else 'differ'}: "
+                     f"`{_polynomial_text(row['closest_coefficients_ascending'])}` | "
+                     f"`{row['residual_gap_decimal'].rstrip('0')}` | "
+                     f"`{row['mean_value_allowance_decimal'].rstrip('0')}` |")
+    lines+=["",f"The two implementations evaluate the closest member at different points, so the residual gap "
+            f"must be non-zero; the mean value theorem caps it at `D(u-l)/2` with "
+            f"`D = {agreement['rows'][0]['polynomial_derivative_bound']}` for that polynomial. Every interval "
+            f"is inside its allowance, so the agreement is between two implementations of the same quantity "
+            f"(`implementations_agree = {str(agreement['implementations_agree']).lower()}`).","",
+            f"`{shared['path']}` is imported unchanged by both, so the Sturm path is shared, not replicated. "
+            f"Its contribution here: {shared['contribution_to_this_result']}."]
     return "\n".join(lines)+"\n"
 
 

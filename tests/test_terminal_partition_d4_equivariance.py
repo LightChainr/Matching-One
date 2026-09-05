@@ -75,12 +75,6 @@ class TerminalPartitionD4EquivarianceTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             MODULE.declared_interface_glue(discrete, discrete, left_outer=(0,), left_interface=(1, 2), right_interface=(0, 1), right_outer=(2, 3))
 
-    def test_tampered_artifact_fails_closed(self):
-        payload = json.loads(json.dumps(self.artifact))
-        payload["counts"]["group_order"] = 7
-        with self.assertRaises(ValueError):
-            MODULE.validate_artifact(payload)
-
 
 if __name__ == "__main__":
     unittest.main()

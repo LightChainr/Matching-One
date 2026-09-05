@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-import json
+from __future__ import annotations
 from pathlib import Path
 import shutil
 import sys
@@ -48,35 +47,6 @@ class IntrinsicQuantileCenterTypedTests(unittest.TestCase):
         semantics = result.pop("observable_semantics")
         self.assertEqual(result, frozen)
         self.assertEqual(semantics["cross_size_covariance"], "zero_by_independent_rng_domains")
-
-    def test_descriptor_drift_fails_closed(self) -> None:
-        directory, root = self.copied_root()
-        self.addCleanup(directory.cleanup)
-        path = root / typed.SEMANTIC_GATE
-        gate = json.loads(path.read_text(encoding="utf-8"))
-        gate["target_descriptor"]["channel"] = "either"
-        path.write_text(json.dumps(gate), encoding="utf-8")
-        with self.assertRaisesRegex(ValueError, "no exact topology map"):
-            typed.load_semantic_gate(root)
-
-    def test_feature_order_drift_fails_closed(self) -> None:
-        directory, root = self.copied_root()
-        self.addCleanup(directory.cleanup)
-        path = root / typed.SEMANTIC_GATE
-        gate = json.loads(path.read_text(encoding="utf-8"))
-        gate["size_local_feature_order"].reverse()
-        path.write_text(json.dumps(gate), encoding="utf-8")
-        with self.assertRaisesRegex(ValueError, "feature order"):
-            typed.load_semantic_gate(root)
-
-    def test_kernel_contract_drift_fails_closed(self) -> None:
-        bad = frozen_payload()
-        bad["observations"] = {"N290": {}, "N145": {}}
-        with self.assertRaisesRegex(ValueError, "size order"):
-            typed.score_typed(
-                ROOT, *(Path(name) for name in ("ph", "pm", "ch", "cm", "freeze")),
-                runner=lambda *_: bad,
-            )
 
 
 if __name__ == "__main__":

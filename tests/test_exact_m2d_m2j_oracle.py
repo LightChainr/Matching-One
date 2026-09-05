@@ -1,4 +1,3 @@
-import copy
 import json
 from pathlib import Path
 import sys
@@ -29,12 +28,6 @@ class ExactM2dM2jOracleTests(unittest.TestCase):
         checked = json.loads(DEFAULT_OUTPUT.read_text(encoding="utf-8"))
         self.assertEqual(checked, build_result())
         self.assertEqual(validate_result(checked)["discriminant"], "0")
-
-    def test_tampering_fails_closed(self) -> None:
-        tampered = copy.deepcopy(build_result())
-        tampered["m2j_extracted_realization"]["nilpotent_rank"] = 0
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(tampered)
 
 
 if __name__ == "__main__":

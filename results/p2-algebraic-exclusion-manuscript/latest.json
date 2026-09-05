@@ -283,11 +283,15 @@
       }
     ]
   },
-  "contract_sha256": "fbeead4ae587fdc417a08393f27e701aabae45209f2478a24656ed63675ad2ac",
+  "contract_sha256": "29e06e53e11901fa8997e60ef80477e90b26b868fd11b46836856224147d7526",
   "controls": {
     "degree4_boundary_sensitivity": {
       "path": "results/pslq-degree4-synthetic-boundary-control/latest.json",
       "status": "degree4_synthetic_boundary_control_complete"
+    },
+    "degree6_implementation_agreement": {
+      "path": "results/pslq-degree6-implementation-agreement/latest.json",
+      "status": "degree6_implementation_agreement_complete"
     },
     "degree6_low_height_control": {
       "path": "results/pslq-degree6-low-height-control/latest.json",
@@ -792,6 +796,114 @@
       "positive_trials": 4
     }
   },
+  "implementation_agreement": {
+    "cells_compared": 24,
+    "cells_in_agreement": 24,
+    "fields_compared_per_cell": [
+      "polynomials_in_class",
+      "screen_survivors",
+      "root_containing_polynomials",
+      "distinct_roots_in_interval"
+    ],
+    "implementations": [
+      {
+        "path": "scripts/degree6_low_height_exclusion.py",
+        "screen": "exact integer evaluation at both endpoints; excludes when |P(l)| > D*(u-l)"
+      },
+      {
+        "path": "scripts/degree6_independent_replication.py",
+        "screen": "exact rational evaluation at the midpoint; excludes when |P(m)| > D*(u-l)/2"
+      }
+    ],
+    "implementations_agree": true,
+    "not_replicated": "the degree-4 height-100 census of sections 6.1-6.3",
+    "partial": true,
+    "rows": [
+      {
+        "cells_compared": 6,
+        "cells_in_agreement": 6,
+        "closest_coefficients_agree": true,
+        "closest_coefficients_ascending": [
+          0,
+          -2,
+          2,
+          2,
+          -1,
+          2,
+          1
+        ],
+        "exclusion_verdicts_agree": true,
+        "interval_id": "jacobsen-2015-eigenvalue",
+        "mean_value_allowance_decimal": "0.000000000000640000000000",
+        "polynomial_derivative_bound": 32,
+        "residual_gap_decimal": "0.000000000000066390298964"
+      },
+      {
+        "cells_compared": 6,
+        "cells_in_agreement": 6,
+        "closest_coefficients_agree": true,
+        "closest_coefficients_ascending": [
+          0,
+          -2,
+          2,
+          2,
+          -1,
+          2,
+          1
+        ],
+        "exclusion_verdicts_agree": true,
+        "interval_id": "mertens-2022-p-med",
+        "mean_value_allowance_decimal": "0.000000000096000000000000",
+        "polynomial_derivative_bound": 32,
+        "residual_gap_decimal": "0.000000000009958544844462"
+      },
+      {
+        "cells_compared": 6,
+        "cells_in_agreement": 6,
+        "closest_coefficients_agree": true,
+        "closest_coefficients_ascending": [
+          0,
+          -2,
+          2,
+          2,
+          -1,
+          2,
+          1
+        ],
+        "exclusion_verdicts_agree": true,
+        "interval_id": "mertens-2022-p-cell",
+        "mean_value_allowance_decimal": "0.000000002560000000000000",
+        "polynomial_derivative_bound": 32,
+        "residual_gap_decimal": "0.000000000265561195628943"
+      },
+      {
+        "cells_compared": 6,
+        "cells_in_agreement": 6,
+        "closest_coefficients_agree": true,
+        "closest_coefficients_ascending": [
+          0,
+          -2,
+          2,
+          2,
+          -1,
+          2,
+          1
+        ],
+        "exclusion_verdicts_agree": true,
+        "interval_id": "yang-zhou-2024-corrected",
+        "mean_value_allowance_decimal": "0.000000000003200000000000",
+        "polynomial_derivative_bound": 32,
+        "residual_gap_decimal": "0.000000000000331951494819"
+      }
+    ],
+    "scope": "degree 1..6 at height 3 only",
+    "shared_code": {
+      "contribution_to_this_result": "none: both screens retain zero candidates at every degree on every interval, so root isolation never runs during either census",
+      "path": "scripts/exact_polynomial_root_certificate.py",
+      "role": "exact Sturm isolation, imported unchanged by both",
+      "sha256": "ab9370b09f083f4894e37b27361e78cec39f61878c1ffaaea973edd183febb6e"
+    }
+  },
   "interval_disjointness": {
     "adjacent_gaps": [
       {
@@ -893,7 +1005,7 @@
     "yang-zhou-2024-corrected"
   ],
   "issue": 551,
-  "provenance_sha256": "95ea5cf00c124652c7347da99a83d464cf176224d81973a10b5e181379bfb1f2",
+  "provenance_sha256": "6d6f6f97232b71b698e6b1235ab3a68799f755b2f6c643a6c36c1a97b1fecfd5",
   "quartic_survivor_census": {
     "distinct_surviving_quartics": 16,
     "every_survivor_excluded_by_every_other_interval": true,
@@ -1552,133 +1664,139 @@
     {
       "path": "results/pslq-degree1-rational-exclusion/latest.json",
       "schema": "matching-one/degree1-rational-exclusion/v1",
-      "sha256": "3523ccf2589e04fa263029d439692c020ec803bb021ce76cd77feeecb3356e39",
+      "sha256": "2699a3b70e80a33b491ee331496ed104bf60f5e06a753994c9c34f03e8436302",
       "status": "degree1_exact_exclusion_complete"
     },
     {
       "path": "results/pslq-degree2-polynomial-exclusion/latest.json",
       "schema": "matching-one/degree2-polynomial-exclusion/v1",
-      "sha256": "be1c79c1b7bd05ab7a6a75fe277527e7e1f0dcc089d76bb4b5428c7eaa7f080e",
+      "sha256": "c9904ef450f3321865496157bba717cb4ed738a6ed3dd0d294c107062e4b4fb3",
       "status": "degree2_exact_exclusion_complete"
     },
     {
       "path": "results/pslq-degree3-jacobsen-2015-eigenvalue/latest.json",
       "schema": "matching-one/degree3-interval-exclusion/v1",
-      "sha256": "49ebfac4c91309336db450ad44f57e030c66a2479b66542bdbfcacb1b696c141",
+      "sha256": "00fdce84e6da804ccdd8d41136028c5e22c442b2809dc9ca6d188be8b5359df1",
       "status": "degree3_interval_exact_exclusion_complete"
     },
     {
       "path": "results/pslq-degree3-mertens-2022-p-med/latest.json",
       "schema": "matching-one/degree3-interval-exclusion/v1",
-      "sha256": "2a450caa75b4598d3e701cec8c3d7a29c23e305ff8806602d51b39714a8dad4e",
+      "sha256": "9a726148c0c3ee7deca84d3922d9a45e1178cbbd4cf0502d318708dafaef255b",
       "status": "degree3_interval_exact_exclusion_complete"
     },
     {
       "path": "results/pslq-degree3-mertens-2022-p-cell/latest.json",
       "schema": "matching-one/degree3-interval-exclusion/v1",
-      "sha256": "c78ca378f791b4ac759ebed46e933786fb660c30a3e1a1a69967d3727d474720",
+      "sha256": "2515f92d2ba196dd42baf4f0d8be4933b9051c0615db90e7ebaa4ae8290eedd7",
       "status": "degree3_interval_exact_exclusion_complete"
     },
     {
       "path": "results/pslq-degree3-yang-zhou-2024-corrected/latest.json",
       "schema": "matching-one/degree3-interval-exclusion/v1",
-      "sha256": "9fd9269ef8c88055543bc68d644801df58c04b8a40954d38d8ff9708ef030374",
+      "sha256": "febafe95e9f57633ec927d694d37defa3c443d77e95fa1fb3f0bbe926c20578e",
       "status": "degree3_interval_exact_exclusion_complete"
     },
     {
       "path": "results/pslq-degree4-jacobsen-2015-eigenvalue/latest.json",
       "schema": "matching-one/degree4-interval-exclusion/v1",
-      "sha256": "96a45e2bf4db2564cbaa6ebf0fe0ed388735bc16eda8ace44121a5c7d3e9ed67",
+      "sha256": "1de283c07455c35e5e1f20519e5fe57862ae165686cc0352fbd6cc889b47b961",
       "status": "degree4_interval_exact_census_complete"
     },
     {
       "path": "results/pslq-degree4-mertens-2022-p-med/latest.json",
       "schema": "matching-one/degree4-interval-exclusion/v1",
-      "sha256": "91dc78561cf5d56c7370918fc7b355b30ff2c6551f1b91f423e183cb285811a2",
+      "sha256": "a87daa626c4dc84d52aa5aa84504612d394e3b73bd8fb340c9413bcf200922ff",
       "status": "degree4_interval_exact_census_complete"
     },
     {
       "path": "results/pslq-degree4-mertens-2022-p-cell/latest.json",
       "schema": "matching-one/degree4-interval-exclusion/v1",
-      "sha256": "47b545d118223919e075a7f2407865a6510977e286d90de1e221c77931e6822a",
+      "sha256": "d19a7446d76f9192c8cbba20d74bd313ae50616757d997d37ac22b1ef11a0c3e",
       "status": "degree4_interval_exact_census_complete"
     },
     {
       "path": "results/pslq-degree4-yang-zhou-2024-corrected/latest.json",
       "schema": "matching-one/degree4-interval-exclusion/v1",
-      "sha256": "e32540c2a45785250192bed39744419757d5d3e148f6b013c793da0f46f89aef",
+      "sha256": "db3a9d7be37e2bb6e369bb53e52a3389613df14fd73b128969729e941e2a5347",
       "status": "degree4_interval_exact_census_complete"
     },
     {
       "path": "results/pslq-degree6-low-height-jacobsen-2015-eigenvalue/latest.json",
       "schema": "matching-one/degree6-low-height-exclusion/v1",
-      "sha256": "66d8b279e75b13836fbaf7b01ee35db5eacfcd0c85f66ea62247207508ad96af",
+      "sha256": "855fb2291ce65bd2a3375d93d5cc7c42e29082c80b63e095b68dad15efc7c2dc",
       "status": "degree6_low_height_exclusion_complete"
     },
     {
       "path": "results/pslq-degree6-low-height-mertens-2022-p-med/latest.json",
       "schema": "matching-one/degree6-low-height-exclusion/v1",
-      "sha256": "5a18c3cde2167ef9309d9a1dfea7957ff15e7434a8a40a63b02fc93c5a5d106d",
+      "sha256": "97284e01b73f0a244da2505fef30a11118af1bddb52ac1e5d96d97a602cc67ae",
       "status": "degree6_low_height_exclusion_complete"
     },
     {
       "path": "results/pslq-degree6-low-height-mertens-2022-p-cell/latest.json",
       "schema": "matching-one/degree6-low-height-exclusion/v1",
-      "sha256": "c8831c5dc8d9ff8d8e8db3059813ef642a7b7c1e5ab36509b0feba9a423fc243",
+      "sha256": "d22d3e01bb604f770cad0a65c9182787034e6761d88ebb57d5ece3152e3811a0",
       "status": "degree6_low_height_exclusion_complete"
     },
     {
       "path": "results/pslq-degree6-low-height-yang-zhou-2024-corrected/latest.json",
       "schema": "matching-one/degree6-low-height-exclusion/v1",
-      "sha256": "d1a9194e44bd2ed0dadb326eb973e7fa94d1a496d94cbb5f4f1bebd881862fb6",
+      "sha256": "faef1553fb36843f8d7dc7d663d367544f982132c7104f1c77dba49a548b93e4",
       "status": "degree6_low_height_exclusion_complete"
     },
     {
       "path": "results/pslq-degree4-synthetic-boundary-control/latest.json",
       "schema": "matching-one/degree4-synthetic-boundary-control/v1",
-      "sha256": "1e36397fd8303db7ef2cbf098591994b26237df15af8fd06bcf290c9b96afc30",
+      "sha256": "020471e873fabcbedf74fe68e3be8514b22fa62d9916aa20ce04d266b95adb88",
       "status": "degree4_synthetic_boundary_control_complete"
+    },
+    {
+      "path": "results/pslq-degree6-implementation-agreement/latest.json",
+      "schema": "matching-one/degree6-implementation-agreement/v1",
+      "sha256": "b3ac88891da111b3e9bdaf1dea2bf41eb30d90995c570e254f5647cf7bd19736",
+      "status": "degree6_implementation_agreement_complete"
     },
     {
       "path": "results/pslq-degree6-low-height-control/latest.json",
       "schema": "matching-one/degree6-low-height-control/v1",
-      "sha256": "20cdee057928a9064b567d1c47186b41b46381983fb5874c452a56b972857b6d",
+      "sha256": "5ebd003f75caaea0ffd1828820bf89d86d90ac548ded2b4f9cbb10ecd74e36a7",
       "status": "degree6_low_height_control_complete"
     },
     {
       "path": "results/pslq-kagome-exact-control/latest.json",
       "schema": "matching-one/kagome-exact-relation-control/v1",
-      "sha256": "1943480775ebf003702d875037a3cd0ed5e9f042867c183ffbe8e2ac78007fc9",
+      "sha256": "9db54928f4519b7458289b65bdab42b6c656c46c046aacb47b0f2f74c2c26164",
       "status": "exact_kagome_positive_control_recovered"
     },
     {
       "path": "results/pslq-lattice-native-candidates/latest.json",
       "schema": "matching-one/lattice-native-candidate-comparison/v1",
-      "sha256": "97e5002641a5efec45dc079c55481a03edcf3b9ef6d12461c8121a41dbe8be2c",
+      "sha256": "c7b9447339f0939efdcc9c11b1299a43d64e82c56adcf95152523316d4a61437",
       "status": "lattice_native_candidate_comparison_complete"
     },
     {
       "path": "results/pslq-look-elsewhere-ledger/latest.json",
       "schema": "matching-one/pslq-look-elsewhere-ledger/v1",
-      "sha256": "792ae6f80c6330aa587fee58b3c37b35517699510fd1d5c565d5dfdaa6345537",
+      "sha256": "3fc5f99204f3040644b18a140dc42d48b37d05dc2f7a9c31690aacdffa25ef51",
       "status": "exact_frozen_hypothesis_count_ledger"
     },
     {
       "path": "results/pslq-standard-constant-pairwise/latest.json",
       "schema": "matching-one/standard-constant-pairwise-search/v1",
-      "sha256": "0a82035b7e91ee8209bdb783058eba0336fa1604a20568ae7f0282016916ff94",
+      "sha256": "2209bba11d03b7cfef154b1d52bbcddc62f5f9c7f9ed0f11d9a76ec12670e5fd",
       "status": "standard_constant_pairwise_search_complete"
     },
     {
       "path": "results/pslq-standard-constant-stability/latest.json",
       "schema": "matching-one/standard-constant-stability-audit/v1",
-      "sha256": "e55dcfbea45cb876e13d6eae720cc36c90b78e5b225e7e921a7c8e544b22106f",
+      "sha256": "1676c354db8d51908500a0501a6fd784fc31a4a32d51ef4968ee9028e5dee9bc",
       "status": "standard_constant_stability_audit_complete"
     },
     {
       "path": "results/pslq-synthetic-false-positive-calibration/latest.json",
       "schema": "matching-one/pslq-synthetic-false-positive-calibration/v1",
-      "sha256": "9c93aa91018c1efc5256b9534bee7ca29adabe0e67d45e36989b374d1e53fd63",
+      "sha256": "9eb53a670e65329f23580d0b84d8b1e9681e5c408db78954e2d2091212770990",
       "status": "seeded_degree1_false_positive_calibration_complete"
     }
   ],

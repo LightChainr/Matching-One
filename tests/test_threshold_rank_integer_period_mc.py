@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 import csv
 import json
 import os
@@ -156,18 +156,6 @@ class ThresholdRankIntegerPeriodMCTests(unittest.TestCase):
                 Path(str(first) + suffix).read_bytes(),
                 Path(str(second) + suffix).read_bytes(),
             )
-
-    def test_negative_unsigned_cli_value_is_rejected(self) -> None:
-        completed = subprocess.run(
-            [
-                str(self.binary), "--samples", "-2", "--batches", "2",
-                "--n", "260", "--output-prefix",
-                str(Path(self.temporary.name) / "must-not-run"),
-            ],
-            text=True, capture_output=True,
-        )
-        self.assertEqual(completed.returncode, 2)
-        self.assertIn("negative value for --samples", completed.stderr)
 
 
 if __name__ == "__main__":

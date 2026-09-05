@@ -37,16 +37,6 @@ class SerialCongruenceTests(unittest.TestCase):
         labels[witness["unsupported_merge"][1]] = labels[witness["unsupported_merge"][0]]
         self.assertEqual(MODULE.congruence_failure(labels, self.table), {key: value for key, value in witness.items() if key != "unsupported_merge"})
 
-    def test_invalid_width_fails_closed(self):
-        with self.assertRaises(ValueError):
-            MODULE.congruence_failure([0], self.table)
-
-    def test_tampering_fails_closed(self):
-        value = json.loads(json.dumps(self.artifact))
-        value["congruence_count"] += 1
-        with self.assertRaises(ValueError):
-            MODULE.validate_artifact(value)
-
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,94 @@
+{
+  "claim_boundary": {
+    "excluded": "other method intervals, higher degree/height, library expansion, near-hit promotion, p-values, closed forms, cross-interval resolution, or transcendence",
+    "included": "certified exclusion on the frozen jacobsen-2015-eigenvalue method interval over the declared finite class C(1..6,3)",
+    "parent_issue": "remain open"
+  },
+  "contract_sha256": "29e06e53e11901fa8997e60ef80477e90b26b868fd11b46836856224147d7526",
+  "interval_result": {
+    "by_degree": [
+      {
+        "class_size": 15,
+        "degree": 1,
+        "distinct_roots_in_interval": 0,
+        "root_containing_polynomials": 0,
+        "screen_survivors": 0
+      },
+      {
+        "class_size": 129,
+        "degree": 2,
+        "distinct_roots_in_interval": 0,
+        "root_containing_polynomials": 0,
+        "screen_survivors": 0
+      },
+      {
+        "class_size": 975,
+        "degree": 3,
+        "distinct_roots_in_interval": 0,
+        "root_containing_polynomials": 0,
+        "screen_survivors": 0
+      },
+      {
+        "class_size": 7041,
+        "degree": 4,
+        "distinct_roots_in_interval": 0,
+        "root_containing_polynomials": 0,
+        "screen_survivors": 0
+      },
+      {
+        "class_size": 49935,
+        "degree": 5,
+        "distinct_roots_in_interval": 0,
+        "root_containing_polynomials": 0,
+        "screen_survivors": 0
+      },
+      {
+        "class_size": 351489,
+        "degree": 6,
+        "distinct_roots_in_interval": 0,
+        "root_containing_polynomials": 0,
+        "screen_survivors": 0
+      }
+    ],
+    "class_size_total": 409584,
+    "closest_polynomial_at_midpoint": {
+      "coefficients_ascending": [
+        0,
+        -2,
+        2,
+        2,
+        -1,
+        2,
+        1
+      ],
+      "degree": 6,
+      "height": 2,
+      "minimum_absolute_residual_at_midpoint": "5812069765586508868132738175327443943830969447330588791765926936296696479/1000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "distinct_roots_in_interval": 0,
+    "excluded": true,
+    "interval_id": "jacobsen-2015-eigenvalue",
+    "lower": "7409325634901/12500000000000",
+    "midpoint": "5927460507921/10000000000000",
+    "root_containing_polynomials": 0,
+    "root_witnesses": [],
+    "screen_survivors_total": 0,
+    "source_id": "jacobsen_2015_eigenvalue_identity",
+    "upper": "14818651269803/25000000000000",
+    "width": "1/25000000000000"
+  },
+  "issue": 559,
+  "provenance_sha256": "6d6f6f97232b71b698e6b1235ab3a68799f755b2f6c643a6c36c1a97b1fecfd5",
+  "schema": "matching-one/degree56-interval-exclusion/v1",
+  "search": {
+    "arithmetic": "exact rational throughout; no binary float in any exclusion claim",
+    "coefficient_height_max": 3,
+    "degree_max": 6,
+    "degree_min": 1,
+    "exact_decision": "120-bit Sturm isolation with exact rational endpoints",
+    "primitive_coefficients_only": true,
+    "screen": "exact rational midpoint evaluation with mean-value derivative bound",
+    "sign_normalization": "a_d_positive"
+  },
+  "status": "degree56_interval_exact_exclusion_complete"
+}

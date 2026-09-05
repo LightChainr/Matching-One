@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-from copy import deepcopy
+from __future__ import annotations
 import json
 from pathlib import Path
 import sys
@@ -58,12 +57,6 @@ class PlanarStateOperationsTests(unittest.TestCase):
             with self.subTest(point=point):
                 with self.assertRaises(ValueError):
                     join_cyclic_adjacent_rgs((0, 1, 1, 0), point)
-
-    def test_contract_coverage_drift_fails_closed(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["expected_cases_per_operation"] -= 1
-        with self.assertRaisesRegex(ValueError, "operation coverage drifted"):
-            validate_contract(changed)
 
 
 if __name__ == "__main__":

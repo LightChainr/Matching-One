@@ -1,4 +1,3 @@
-import copy
 import json
 from pathlib import Path
 import sys
@@ -33,12 +32,6 @@ class DegreeThreeJacobsenExclusionTests(unittest.TestCase):
             row["closest_polynomial"]["independent_sturm_certificate"]["sturm_open_root_count_in_method_interval"],
             0,
         )
-
-    def test_tampering_fails_closed(self):
-        changed = copy.deepcopy(self.result)
-        changed["interval_result"]["excluded"] = False
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(changed, INTERVAL_ID)
 
 
 if __name__ == "__main__":

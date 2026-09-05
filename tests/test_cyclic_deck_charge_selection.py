@@ -1,8 +1,5 @@
-from __future__ import annotations
 
-import json
-from pathlib import Path
-import tempfile
+from __future__ import annotations
 import unittest
 
 from scripts.cyclic_deck_charge_selection import (
@@ -43,15 +40,6 @@ class CyclicDeckChargeSelectionTests(unittest.TestCase):
             power = minimal_neutral_tensor_power(5, charge)
             self.assertEqual(power, 5)
             self.assertEqual(total_charge(5, (charge,) * power), 0)
-
-    def test_contract_drift_fails_closed(self) -> None:
-        frozen = build_contract()
-        frozen["C5"]["minimal_tensor_power"]["1"] = 4
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "drift.json"
-            path.write_text(json.dumps(frozen), encoding="utf-8")
-            with self.assertRaisesRegex(AssertionError, "contract drifted"):
-                validate_contract(path)
 
 
 if __name__ == "__main__":

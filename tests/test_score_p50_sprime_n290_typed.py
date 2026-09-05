@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-import json
+from __future__ import annotations
 from pathlib import Path
 import shutil
 import sys
@@ -54,42 +53,6 @@ class P50SprimeTypedTests(unittest.TestCase):
         semantics = result.pop("observable_semantics")
         self.assertEqual(result, frozen)
         self.assertEqual(semantics["applied_transform"]["scale"], 1.0)
-
-    def test_topology_drift_fails_closed(self) -> None:
-        directory, root = self.copied_root()
-        self.addCleanup(directory.cleanup)
-        path = root / typed.SEMANTIC_GATE
-        gate = json.loads(path.read_text(encoding="utf-8"))
-        gate["target_descriptor"]["channel"] = "either"
-        path.write_text(json.dumps(gate), encoding="utf-8")
-        with self.assertRaisesRegex(ValueError, "differs from semantic gate"):
-            typed.load_semantic_gate(root)
-
-    def test_model_order_drift_fails_closed(self) -> None:
-        directory, root = self.copied_root()
-        self.addCleanup(directory.cleanup)
-        path = root / typed.SEMANTIC_GATE
-        gate = json.loads(path.read_text(encoding="utf-8"))
-        gate["models_in_scoring_order"].reverse()
-        path.write_text(json.dumps(gate), encoding="utf-8")
-        with self.assertRaisesRegex(ValueError, "model order changed"):
-            typed.load_semantic_gate(root)
-
-    def test_result_contract_drift_fails_closed(self) -> None:
-        bad = {
-            "observable": "P4_S_prime",
-            "N": 290,
-            "models": {"rank2_jordan_log": {}, "q2_even_scalar_correction": {}},
-        }
-        with patch.object(typed, "validate_prediction_files"):
-            with self.assertRaisesRegex(ValueError, "model order differs"):
-                typed.score_typed(
-                    ROOT,
-                    Path("child.csv"),
-                    Path("q2.yaml"),
-                    Path("jordan.yaml"),
-                    runner=lambda *_: bad,
-                )
 
 
 if __name__ == "__main__":

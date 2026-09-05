@@ -1,9 +1,8 @@
-from __future__ import annotations
 
+from __future__ import annotations
 import math
 import sys
 import unittest
-from fractions import Fraction
 from pathlib import Path
 
 import mpmath as mp

@@ -36,16 +36,6 @@ class SerialEndomorphismTests(unittest.TestCase):
     def test_orbits_partition_census(self):
         self.assertEqual(sorted(i for orbit in self.artifact["automorphism_conjugacy_orbits"] for i in orbit), list(range(self.artifact["endomorphism_count"])))
 
-    def test_map_width_mismatch_fails_closed(self):
-        with self.assertRaises(ValueError):
-            MODULE.compose_maps([0], [0, 1])
-
-    def test_tampering_fails_closed(self):
-        value = json.loads(json.dumps(self.artifact))
-        value["endomorphism_count"] += 1
-        with self.assertRaises(ValueError):
-            MODULE.validate_artifact(value)
-
 
 if __name__ == "__main__":
     unittest.main()

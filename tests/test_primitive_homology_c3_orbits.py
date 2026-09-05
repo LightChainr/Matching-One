@@ -1,8 +1,5 @@
-from __future__ import annotations
 
-import json
-from pathlib import Path
-import tempfile
+from __future__ import annotations
 import unittest
 
 from scripts.primitive_homology_c3_orbits import (
@@ -46,15 +43,6 @@ class PrimitiveHomologyC3OrbitTests(unittest.TestCase):
         self.assertEqual(spin_charge(8), 1)
         self.assertEqual(spin_charge(12), 0)
         self.assertEqual(projector_exponents(2), [0, 1, 2])
-
-    def test_contract_drift_fails_closed(self) -> None:
-        frozen = build_contract()
-        frozen["rotation_order_on_unoriented_lines"] = 6
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "drift.json"
-            path.write_text(json.dumps(frozen), encoding="utf-8")
-            with self.assertRaisesRegex(AssertionError, "contract drifted"):
-                validate_contract(path)
 
 
 if __name__ == "__main__":

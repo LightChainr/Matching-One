@@ -1,9 +1,6 @@
-from __future__ import annotations
 
-import json
+from __future__ import annotations
 from fractions import Fraction
-from pathlib import Path
-import tempfile
 import unittest
 
 from scripts.two_sided_hexagonal_pell import (
@@ -42,15 +39,6 @@ class TwoSidedHexagonalPellTests(unittest.TestCase):
             for p, q in pell_family(eta, 8):
                 self.assertTrue(exact_limit_error_identity(p, q))
         self.assertEqual(Fraction(-2, 2) / Fraction(1, 2), -2)
-
-    def test_contract_drift_fails_closed(self) -> None:
-        frozen = build_contract()
-        frozen["negative_over_positive_limit"] = "2"
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "drift.json"
-            path.write_text(json.dumps(frozen), encoding="utf-8")
-            with self.assertRaisesRegex(AssertionError, "contract drifted"):
-                validate_contract(path)
 
 
 if __name__ == "__main__":

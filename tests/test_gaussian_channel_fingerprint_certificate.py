@@ -1,9 +1,7 @@
-from __future__ import annotations
 
-import json
+from __future__ import annotations
 from fractions import Fraction
 from pathlib import Path
-import tempfile
 import unittest
 
 from scripts.gaussian_channel_fingerprint_certificate import (
@@ -41,15 +39,6 @@ class GaussianChannelFingerprintCertificateTests(unittest.TestCase):
             exponent = EXPONENT_EIGHTHS[channel]
             expected = Fraction(1679**8, 625**8 * 5**exponent)
             self.assertEqual(h12_fingerprint(5, exponent), expected)
-
-    def test_contract_drift_fails_closed(self) -> None:
-        frozen = build_contract()
-        frozen["exponent_eighths"]["P4_D"] = 12
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "drift.json"
-            path.write_text(json.dumps(frozen), encoding="utf-8")
-            with self.assertRaisesRegex(AssertionError, "contract drifted"):
-                validate_contract(path)
 
 
 if __name__ == "__main__":

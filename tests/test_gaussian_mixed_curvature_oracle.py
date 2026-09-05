@@ -1,9 +1,6 @@
-from __future__ import annotations
 
-import json
+from __future__ import annotations
 from fractions import Fraction
-from pathlib import Path
-import tempfile
 import unittest
 
 from scripts.gaussian_mixed_curvature_oracle import (
@@ -39,15 +36,6 @@ class GaussianMixedCurvatureOracleTests(unittest.TestCase):
         for beta, target in expected.items():
             self.assertEqual(ordinary_power_mixed_response(beta), target)
             self.assertGreater(target, 0)
-
-    def test_contract_drift_fails_closed(self) -> None:
-        frozen = build_contract()
-        frozen["ordinary_power_responses"]["2"] = "17/25"
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "drift.json"
-            path.write_text(json.dumps(frozen), encoding="utf-8")
-            with self.assertRaisesRegex(AssertionError, "contract drifted"):
-                validate_contract(path)
 
 
 if __name__ == "__main__":

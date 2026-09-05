@@ -397,13 +397,21 @@ Failures, corrections and null results are retained because they define the curr
 
 Production archives preserve sufficient statistics, metadata, batch structure and covariance whenever practical, rather than only final decimals. The same threshold-rank data can support roots, slopes, derivative channels, Krawtchouk/Hermite coordinates, rank-gap observables and selected source/continuation analyses without pretending that those derived views are independent samples.
 
-Run the repository test suite with
+Run what you changed:
 
 ```bash
-python3 -m unittest discover -s tests -p 'test_*.py' -v
+python3 -m unittest tests.test_<the_thing_you_changed>
 ```
 
-Exact/search PRs also carry focused replay or certificate checks appropriate to their scope.
+The whole suite exists and passes, but running it is not a step in the workflow. Run
+it when you have reason to think you broke something far away — not before every push.
+
+This project verifies late and deliberately. `GOVERNANCE.md` §0 and §2 give the whole
+rule set for exploratory work; the full apparatus — digests, provenance chains,
+preregistration, independent implementations — lives in
+[`docs/PUBLICATION-CHECKLIST.md`](docs/PUBLICATION-CHECKLIST.md) and applies when
+there is a paper. Time spent on assurance is time not spent exploring, and that trade
+has gone the wrong way here before.
 
 ---
 

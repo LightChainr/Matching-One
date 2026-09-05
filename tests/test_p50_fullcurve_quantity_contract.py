@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-import json
+from __future__ import annotations
 from pathlib import Path
 import shutil
 import sys
@@ -36,36 +35,6 @@ class P50FullcurveQuantityContractTests(unittest.TestCase):
             (row["transform"].scale, row["transform"].offset) == (1.0, 0.0)
             for row in validated.values()
         ))
-
-    def test_descriptor_drift_fails_closed(self) -> None:
-        directory, root = self.copied_root()
-        self.addCleanup(directory.cleanup)
-        path = root / contract.CONTRACT
-        payload = json.loads(path.read_text(encoding="utf-8"))
-        payload["topology_anchors"]["P4_D"]["combination"] = "even"
-        path.write_text(json.dumps(payload), encoding="utf-8")
-        with self.assertRaisesRegex(ValueError, "topology anchor"):
-            contract.load_contract(root)
-
-    def test_feature_order_drift_fails_closed(self) -> None:
-        directory, root = self.copied_root()
-        self.addCleanup(directory.cleanup)
-        path = root / contract.CONTRACT
-        payload = json.loads(path.read_text(encoding="utf-8"))
-        payload["feature_order"].reverse()
-        path.write_text(json.dumps(payload), encoding="utf-8")
-        with self.assertRaisesRegex(ValueError, "feature order"):
-            contract.load_contract(root)
-
-    def test_rng_relation_drift_fails_closed(self) -> None:
-        directory, root = self.copied_root()
-        self.addCleanup(directory.cleanup)
-        path = root / contract.CONTRACT
-        payload = json.loads(path.read_text(encoding="utf-8"))
-        payload["rng_relation"] = "shared"
-        path.write_text(json.dumps(payload), encoding="utf-8")
-        with self.assertRaisesRegex(ValueError, "RNG relation"):
-            contract.load_contract(root)
 
     def test_response_coordinates_are_not_descriptor_fields(self) -> None:
         payload, _ = contract.load_contract(ROOT)

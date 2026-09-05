@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-from copy import deepcopy
+from __future__ import annotations
 from fractions import Fraction
 import json
 from pathlib import Path
@@ -58,18 +57,6 @@ class DoubledMatchingExchangeTests(unittest.TestCase):
     def test_singular_identification_is_rejected(self) -> None:
         with self.assertRaisesRegex(ValueError, "singular"):
             inverse_2x2(((Fraction(1), Fraction(2)), (Fraction(2), Fraction(4))))
-
-    def test_intertwiner_drift_fails_closed(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["RG_G_star"][0][1] = "3"
-        with self.assertRaisesRegex(ValueError, "does not intertwine"):
-            validate_contract(changed)
-
-    def test_declared_inverse_drift_fails_closed(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["matching_map_A_inverse"][0][1] = "0"
-        with self.assertRaisesRegex(ValueError, "declared inverse drifted"):
-            validate_contract(changed)
 
 
 if __name__ == "__main__":

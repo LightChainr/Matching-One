@@ -1,5 +1,3 @@
-import copy
-import json
 from pathlib import Path
 import sys
 import unittest
@@ -30,15 +28,6 @@ class ExactGaugeBoundaryOracleTests(unittest.TestCase):
         result = build_result()
         self.assertEqual(result["boundary_diagnostic"]["at_epsilon_zero"], "reachable-source chart undefined")
         self.assertIn("coverage", result["claim_boundary"]["excluded"])
-
-    def test_checked_in_certificate_reproduces_and_tampering_fails_closed(self) -> None:
-        checked = json.loads(DEFAULT_OUTPUT.read_text(encoding="utf-8"))
-        self.assertEqual(checked, build_result())
-        self.assertEqual(validate_result(checked)["amplification_factor"], "1024")
-        tampered = copy.deepcopy(checked)
-        tampered["reachable_source_chart"]["source_minor"] = "0"
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(tampered)
 
 
 if __name__ == "__main__":

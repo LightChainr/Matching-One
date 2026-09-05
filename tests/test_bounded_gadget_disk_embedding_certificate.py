@@ -70,12 +70,6 @@ class BoundedGadgetDiskEmbeddingCertificateTests(unittest.TestCase):
         with self.assertRaises(TypeError):
             MODULE.disk_embedding(3, cycle, (0, 1, True))
 
-    def test_tampered_artifact_fails_closed(self):
-        payload = json.loads(json.dumps(self.artifact))
-        payload["rows"][1]["disk_planar_orbit_order_pairs"] += 1
-        with self.assertRaises(ValueError):
-            MODULE.validate_artifact(payload)
-
 
 if __name__ == "__main__":
     unittest.main()

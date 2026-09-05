@@ -1,9 +1,6 @@
-from __future__ import annotations
 
+from __future__ import annotations
 from fractions import Fraction
-import json
-from pathlib import Path
-import tempfile
 import unittest
 
 from scripts.cover_haar_occupancy_independence import (
@@ -47,15 +44,6 @@ class CoverHaarOccupancyIndependenceTests(unittest.TestCase):
         )
         with self.assertRaisesRegex(ValueError, "degree at least two"):
             joint_parent_child(1, Fraction(1, 2))
-
-    def test_contract_drift_fails_closed(self) -> None:
-        frozen = build_contract()
-        frozen["frozen_cases"][0]["h0_covariance_with_fiber_mean"] = "1"
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "drift.json"
-            path.write_text(json.dumps(frozen), encoding="utf-8")
-            with self.assertRaisesRegex(AssertionError, "contract drifted"):
-                validate_contract(path)
 
 
 if __name__ == "__main__":

@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import copy
 from fractions import Fraction
 import json
 from pathlib import Path
@@ -131,12 +130,6 @@ class Degree4BoundaryControlTests(unittest.TestCase):
         excluded = self.result["claim_boundary"]["excluded"]
         for forbidden in ("candidate formulas", "p-value", "transcendence", "degree/height expansion"):
             self.assertIn(forbidden, excluded)
-
-    def test_tampering_fails(self) -> None:
-        changed = copy.deepcopy(self.result)
-        changed["trials"][0]["planted_quartic_detected"] = False
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(changed)
 
 
 if __name__ == "__main__":

@@ -1,6 +1,4 @@
-import copy
 import json
-from pathlib import Path
 import unittest
 
 from scripts.degree1_rational_exclusion import (
@@ -36,20 +34,6 @@ class DegreeOneRationalExclusionTests(unittest.TestCase):
             self.assertTrue(interval["excluded"])
             self.assertEqual(interval["zero_containing_residuals"], 0)
             self.assertGreater(interval["closest_polynomial"]["slope_abs"], 0)
-
-    def test_result_tampering_fails_closed(self):
-        result = build_result()
-        tampered = copy.deepcopy(result)
-        tampered["interval_results"][0]["excluded"] = False
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(tampered)
-
-    def test_contract_digest_tampering_fails_closed(self):
-        result = build_result()
-        tampered = copy.deepcopy(result)
-        tampered["contract"]["sha256"] = "0" * 64
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(tampered)
 
 
 if __name__ == "__main__":

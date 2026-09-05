@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 from copy import deepcopy
 from fractions import Fraction
 import json

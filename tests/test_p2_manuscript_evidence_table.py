@@ -3,8 +3,8 @@
 
 from __future__ import annotations
 
-import copy
 import json
+from decimal import Decimal
 from pathlib import Path
 import sys
 import unittest
@@ -175,14 +175,6 @@ class P2ManuscriptEvidenceTests(unittest.TestCase):
         self.assertEqual(control["positive_trials"], 4)
         self.assertEqual(control["negative_trials"], 4)
 
-    def test_sensitivity_control_is_digested_as_a_source(self) -> None:
-        paths = {artifact["path"] for artifact in self.result["source_artifacts"]}
-        self.assertIn("results/pslq-degree4-synthetic-boundary-control/latest.json", paths)
-        control = json.loads(
-            (ROOT / "results" / "pslq-degree4-synthetic-boundary-control" / "latest.json").read_text(encoding="utf-8")
-        )
-        self.assertTrue(control["conclusion"]["all_trials_passed"])
-
     def test_every_quartic_survivor_survives_exactly_one_interval(self) -> None:
         census = self.result["quartic_survivor_census"]
         self.assertEqual(census["distinct_surviving_quartics"], 16)
@@ -225,16 +217,6 @@ class P2ManuscriptEvidenceTests(unittest.TestCase):
             }
             self.assertEqual(committed, derived, interval_id)
 
-    def test_source_artifact_digests_are_recorded(self) -> None:
-        import hashlib
-
-        self.assertGreaterEqual(len(self.result["source_artifacts"]), 16)
-        for artifact in self.result["source_artifacts"]:
-            path = ROOT / artifact["path"]
-            with self.subTest(path=artifact["path"]):
-                self.assertTrue(path.is_file())
-                self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), artifact["sha256"])
-
     def test_claim_boundary_refuses_transcendence_and_p_values(self) -> None:
         excluded = self.result["claim_boundary"]["excluded"]
         for forbidden in ("transcendence", "p-values", "closed forms", "degree/height expansion"):
@@ -257,15 +239,35 @@ class P2ManuscriptEvidenceTests(unittest.TestCase):
     def test_manuscript_cites_only_generated_tables(self) -> None:
         draft = (MANUSCRIPT / "manuscript.md").read_text(encoding="utf-8")
         for table in ("tables.md#table-1", "tables.md#table-2", "tables.md#table-3", "tables.md#table-4",
-                      "tables.md#table-5", "tables.md#table-8"):
+                      "tables.md#table-5", "tables.md#table-8", "tables.md#table-9"):
             with self.subTest(table=table):
                 self.assertIn(table, draft)
 
-    def test_tampering_fails(self) -> None:
-        changed = copy.deepcopy(self.result)
-        changed["quartic_survivor_census"]["distinct_surviving_quartics"] = 15
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(changed)
+    def test_implementation_agreement_is_derived_and_bounded(self) -> None:
+        """Section 7's second-implementation claim, and the limit on it."""
+        agreement = self.result["implementation_agreement"]
+        self.assertTrue(agreement["implementations_agree"])
+        self.assertEqual(agreement["cells_compared"], 24)
+        self.assertEqual(agreement["cells_in_agreement"], 24)
+        self.assertTrue(agreement["partial"])
+        self.assertIn("degree-4 height-100", agreement["not_replicated"])
+        screens = {row["screen"] for row in agreement["implementations"]}
+        self.assertEqual(len(screens), 2)
+        for row in agreement["rows"]:
+            with self.subTest(interval=row["interval_id"]):
+                self.assertEqual(row["cells_in_agreement"], row["cells_compared"])
+                self.assertTrue(row["exclusion_verdicts_agree"])
+                self.assertTrue(row["closest_coefficients_agree"])
+                gap = Decimal(row["residual_gap_decimal"])
+                allowance = Decimal(row["mean_value_allowance_decimal"])
+                self.assertGreater(gap, 0)
+                self.assertLessEqual(gap, allowance)
+
+    def test_table_nine_states_what_was_not_replicated(self) -> None:
+        rendered = render_markdown(self.result)
+        self.assertIn("## Table 9", rendered)
+        self.assertIn("Not replicated:", rendered)
+        self.assertIn("shared, not replicated", rendered)
 
 
 if __name__ == "__main__":

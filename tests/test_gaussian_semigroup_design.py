@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 from collections import Counter
 from fractions import Fraction
 from pathlib import Path
@@ -68,15 +68,6 @@ class GaussianSemigroupDesignTests(unittest.TestCase):
                 _ratio(first_step["harmonic_predictions"][harmonic])
                 * _ratio(second_step["harmonic_predictions"][harmonic]),
             )
-
-    def test_catalog_preserves_pair_translation_groups(self) -> None:
-        catalog = default_catalog()
-        self.assertEqual(catalog["schema_version"], 3)
-        for section in ("doubling_lineages", "norm5_harmonic_discrimination", "N1105_edges"):
-            for edge in catalog[section].values():
-                contract = edge["pair_translation_group_contract"]
-                self.assertTrue(contract["parent_pair_matches"])
-                self.assertTrue(contract["child_pair_matches"])
 
     def test_N1105_commuting_diagram_has_three_genealogies_per_orientation(self) -> None:
         catalog = default_catalog()

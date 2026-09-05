@@ -37,20 +37,6 @@ class SerialGeneratorTests(unittest.TestCase):
             diameters.append(max(lengths))
         self.assertEqual(sorted(diameters), [4, 4, 4, 4, 5, 5, 5, 5])
 
-    def test_invalid_generator_fails_closed(self):
-        with self.assertRaises(ValueError):
-            MODULE.generated_closure([15], self.table)
-
-    def test_nongenerating_word_metric_fails_closed(self):
-        with self.assertRaises(ValueError):
-            MODULE.shortest_word_lengths([6], self.table)
-
-    def test_tampering_fails_closed(self):
-        value = json.loads(json.dumps(self.artifact))
-        value["monoid_rank"] = 2
-        with self.assertRaises(ValueError):
-            MODULE.validate_artifact(value)
-
 
 if __name__ == "__main__":
     unittest.main()

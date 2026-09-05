@@ -10,7 +10,7 @@
   ],
   "training_source": {
     "path": "data/jacobsen_2015_square_site_cylinder.csv",
-    "sha256": "d73191d771e5ca7d95a6a2f6dc36c444f40eacbe7819804c442497222d562210",
+    "sha256": "473130e2735e44cab5bf0b04b7026e03d51903a5de3e511f7273cefe8b537d29",
     "required_widths": {
       "first": 1,
       "last": 21
@@ -20,9 +20,18 @@
     "path": "scripts/rational_finite_size_audit.py",
     "sha256": "b09cb836cd02a2bf945527b1e6544de5148b65411ccdea589185dff42d0c562c"
   },
+  "transcription_correction": {
+    "date": "2026-09-04",
+    "source_table": "data/jacobsen_2015_square_site_cylinder.csv",
+    "training_source_sha256_before": "d73191d771e5ca7d95a6a2f6dc36c444f40eacbe7819804c442497222d562210",
+    "frozen_prediction_sha256_before": "cbc683a77453f9a711c74ced9a4c2dc94b9e2b15ee09a4ce7bfb1b26899dbb10",
+    "reason": "Two rows of the training table did not reproduce the strings printed in Table 2 of arXiv:1507.03027v1: n=4 carried a wrong 20th decimal and n=1 carried two extra trailing zeros. See transcription_corrections in data/literature_threshold_sources.json.",
+    "effect_on_preregistration": "none. predictions/polynomial_widths_22_24.yaml regenerates byte-identically apart from its input_sha256 line, because every model in the ensemble trains on n_min >= 8 and the bias calibration on cutoffs 15-18. No predicted value, interval or model coefficient moved, so the pre-reveal barrier for widths 22-24 is intact.",
+    "verification": "scripts/preregister_width_predictions.py re-run against the corrected table reproduces the frozen file except for line 5; tests/test_preregister_width_predictions.py locks that reproduction."
+  },
   "frozen_prediction": {
     "path": "predictions/polynomial_widths_22_24.yaml",
-    "sha256": "cbc683a77453f9a711c74ced9a4c2dc94b9e2b15ee09a4ce7bfb1b26899dbb10"
+    "sha256": "b26cb0ea939a420b28065f81b8d4e76fe7f74221c27834ce039bd79ef438c911"
   },
   "audit_families": [
     "poly_0",

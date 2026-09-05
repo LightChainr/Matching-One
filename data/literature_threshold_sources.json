@@ -20,7 +20,38 @@
       "finite_size_range": {"n_min": 1, "n_max": 21},
       "data_file": "data/jacobsen_2015_square_site_cylinder.csv",
       "data_transcription": "Table 2; decimal strings retained as printed",
-      "content_sha256": "d73191d771e5ca7d95a6a2f6dc36c444f40eacbe7819804c442497222d562210",
+      "content_sha256": "473130e2735e44cab5bf0b04b7026e03d51903a5de3e511f7273cefe8b537d29",
+      "transcription_verification": {
+        "checked": "2026-09-04",
+        "coverage": "all 21 rows, every printed decimal",
+        "method": "digit-by-digit comparison against Table 2 of arXiv:1507.03027v1, using an extraction written for this check (raw zlib decompression of the PDF content streams and reassembly of the text-showing operators) rather than a third-party PDF library",
+        "printed_decimal_places": {"n_1_to_20": 40, "n_21": 30},
+        "result": "two rows deviated from the printed strings and were corrected; the other 19 reproduce them exactly",
+        "note": "The SHA-256 pin detects drift after a file is committed. It cannot detect an error made at transcription time, which is why these rows were wrong under a green digest for the file's whole history. Only comparison against the primary source finds that class of error."
+      },
+      "transcription_corrections": [
+        {
+          "n": 4,
+          "kind": "single_digit_transcription_error",
+          "printed": "0.5914171708531384817988341017359231779642",
+          "previously_committed": "0.5914171708531384817088341017359231779642",
+          "decimal_position": 20,
+          "magnitude": "9e-21",
+          "detail": "20th decimal read as 0; the source prints 9"
+        },
+        {
+          "n": 1,
+          "kind": "trailing_zero_padding",
+          "printed": "0.5000000000000000000000000000000000000000",
+          "previously_committed": "0.500000000000000000000000000000000000000000",
+          "detail": "two trailing zeros beyond the 40 decimals printed; numerically identical, corrected to satisfy the printed-string rule in data/README.md"
+        }
+      ],
+      "correction_impact": {
+        "content_sha256_before": "d73191d771e5ca7d95a6a2f6dc36c444f40eacbe7819804c442497222d562210",
+        "downstream_fits": "none affected: every committed fit over this table uses n_min >= 5, so n=1 and n=4 are outside all training windows",
+        "frozen_preregistration": "predictions/polynomial_widths_22_24.yaml regenerates byte-identically apart from its input_sha256 line; no predicted value, calibration band or model coefficient changes"
+      },
       "quoted_estimates": [
         {
           "value_text": "0.59274605079210(2)",
@@ -49,6 +80,13 @@
       "data_file": "data/mertens_2022_square_site_estimators.csv",
       "data_transcription": "p_med from Table 4 and p_cell from Table 5; paper states all displayed decimals are exact",
       "content_sha256": "dc6e1ed72836d1f27981bd6a4df89dfe71b8ae7d7258e59b8a33ac63a5b57d55",
+      "transcription_verification": {
+        "checked": "2026-09-04",
+        "coverage": "all 47 non-empty cells: p_med for n=1..24 and p_cell for n=2..24",
+        "method": "digit-by-digit comparison against the merged Table 4 of arXiv:2109.12102, extracted the same way as the Jacobsen table; the preprint groups digits in threes, so whitespace is stripped before comparison",
+        "result": "no deviations; the empty p_cell at n=1 matches the source, where the cell is blank because a 1x1 square has no cell crossing",
+        "note": "Checked alongside the Jacobsen table, which turned out to carry a transcription error. This one did not."
+      },
       "quoted_estimates": [
         {
           "estimator": "p_med",

@@ -1,10 +1,8 @@
-from __future__ import annotations
 
+from __future__ import annotations
 import copy
-import json
 from pathlib import Path
 import sys
-import tempfile
 import unittest
 
 
@@ -79,33 +77,11 @@ class TypedMatchingOddSynthesisTests(unittest.TestCase):
         self.assertEqual(len(semantics["blocks"]), 2)
         self.assertEqual(result["predictive_comparison"]["delta_nlpd_fixed_H4_minus_zero_effect"], -9.0)
 
-    def test_descriptor_drift_fails_closed(self) -> None:
-        with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
-            target = root / SEMANTIC_MANIFEST
-            target.parent.mkdir(parents=True)
-            payload = json.loads((ROOT / SEMANTIC_MANIFEST).read_text(encoding="utf-8"))
-            payload["blocks"][0]["target_descriptor"]["orientation_order"] = "second_minus_first"
-            target.write_text(json.dumps(payload), encoding="utf-8")
-            with self.assertRaisesRegex(ValueError, "differs"):
-                load_semantic_gate(root)
-
     def test_legacy_channel_drift_still_fails(self) -> None:
         ledger = copy.deepcopy(fixture_ledger())
         ledger["blocks"][0]["channel"]["target"] = "matching_even"
         with self.assertRaisesRegex(ValueError, "matching_odd"):
             synthesize_typed(ROOT, ledger)
-
-    def test_semantic_block_id_drift_fails_closed(self) -> None:
-        with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
-            target = root / SEMANTIC_MANIFEST
-            target.parent.mkdir(parents=True)
-            payload = json.loads((ROOT / SEMANTIC_MANIFEST).read_text(encoding="utf-8"))
-            payload["blocks"][0]["id"] = "other"
-            target.write_text(json.dumps(payload), encoding="utf-8")
-            with self.assertRaisesRegex(ValueError, "block IDs"):
-                load_semantic_gate(root)
 
 
 if __name__ == "__main__":

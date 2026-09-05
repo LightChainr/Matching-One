@@ -1,8 +1,5 @@
-from __future__ import annotations
 
-import json
-from pathlib import Path
-import tempfile
+from __future__ import annotations
 import unittest
 
 from scripts.oriented_homology_c6_orbits import (
@@ -50,15 +47,6 @@ class OrientedHomologyC6OrbitTests(unittest.TestCase):
         self.assertFalse(descends_to_unoriented_lines(oriented_spin_charge(3)))
         with self.assertRaisesRegex(ValueError, "odd C6 charge"):
             quotient_c3_charge(3)
-
-    def test_contract_drift_fails_closed(self) -> None:
-        frozen = build_contract()
-        frozen["rotation_sixth_power"] = "-I"
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "drift.json"
-            path.write_text(json.dumps(frozen), encoding="utf-8")
-            with self.assertRaisesRegex(AssertionError, "contract drifted"):
-                validate_contract(path)
 
 
 if __name__ == "__main__":

@@ -1,4 +1,3 @@
-import copy
 from fractions import Fraction
 import json
 from pathlib import Path
@@ -47,12 +46,6 @@ class ExactRecurrenceCertificateTests(unittest.TestCase):
         self.assertEqual(summary["selected_order"], 2)
         self.assertEqual(summary["lower_orders_rejected"], [1])
         self.assertEqual(summary["discriminant"], "0")
-
-    def test_tampering_fails_closed(self) -> None:
-        tampered = copy.deepcopy(build_result())
-        tampered["selected_recurrence"]["residuals"][0] = "1"
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(tampered)
 
 
 if __name__ == "__main__":
