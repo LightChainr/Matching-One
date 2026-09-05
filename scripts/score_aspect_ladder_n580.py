@@ -29,6 +29,7 @@ from __future__ import annotations
 
 import argparse
 import collections
+import hashlib
 import json
 import math
 import subprocess
@@ -92,7 +93,8 @@ def jackknife_se(full: float, deleted: Sequence[float]) -> float:
 
 
 def run_rung(binary: Path, rung: Mapping[str, Any], prefix: Path, samples: int,
-             batches: int, seed: str, replica_offset: int) -> tuple[Path, float]:
+             batches: int, seed: str, replica_offset: int,
+             engine_threads: int = 0) -> tuple[Path, float]:
     command = [
         str(binary),
         "--first-matrix", *(str(v) for v in rung["first_matrix_row_major"]),
@@ -105,6 +107,11 @@ def run_rung(binary: Path, rung: Mapping[str, Any], prefix: Path, samples: int,
         "--replica-offset", str(replica_offset),
         "--output-prefix", str(prefix),
     ]
+    if engine_threads > 0:
+        # Threads do not change the output: batches get disjoint replica ranges
+        # and each batch's row is written once by index, so this only sets how
+        # many cores the wall time is spread over.
+        command += ["--threads", str(engine_threads)]
     started = time.time()
     completed = subprocess.run(command, capture_output=True, text=True)
     if completed.returncode != 0:
@@ -127,42 +134,48 @@ def grouped(path: Path):
     return by_orientation
 
 
-def score(binary: Path, workdir: Path, samples: int, batches: int, seed: str,
-          replica_offset: int) -> dict[str, Any]:
-    rungs = load_design()
-    workdir.mkdir(parents=True, exist_ok=True)
-    measured: dict[str, Any] = {}
-
-    for aspect in (1, 2, 4):
-        rung = rungs[aspect]
-        path, seconds = run_rung(
-            binary, rung, workdir / f"n580_r{aspect}", samples, batches, seed, replica_offset
+def measure_rung(binary: Path, rungs: Mapping[int, Mapping[str, Any]], aspect: int,
+                 workdir: Path, samples: int, batches: int, seed: str,
+                 replica_offset: int, engine_threads: int = 0) -> dict[str, Any]:
+    """Run one rung and return its measured block, `_deleted` included."""
+    rung = rungs[aspect]
+    path, seconds = run_rung(
+        binary, rung, workdir / f"n580_r{aspect}", samples, batches, seed, replica_offset,
+        engine_threads
+    )
+    by_orientation = grouped(path)
+    full = project_size(by_orientation)
+    deleted = [project_size(by_orientation, omitted=b) for b in range(batches)]
+    expected = float(Fraction(rung["delta_cos4"]))
+    if abs(full["delta_cos4"] - expected) > 1e-12:
+        raise ValueError(
+            f"r={aspect}: engine leverage {full['delta_cos4']} is not the design's {expected}"
         )
-        by_orientation = grouped(path)
-        full = project_size(by_orientation)
-        deleted = [project_size(by_orientation, omitted=b) for b in range(batches)]
-        expected = float(Fraction(rung["delta_cos4"]))
-        if abs(full["delta_cos4"] - expected) > 1e-12:
-            raise ValueError(
-                f"r={aspect}: engine leverage {full['delta_cos4']} is not the design's {expected}"
-            )
-        measured[f"r{aspect}"] = {
-            "aspect_ratio": aspect,
-            "modulus": rung["modulus"],
-            "gaussian_norm": rung["gaussian_norm"],
-            "samples": samples,
-            "seconds": round(seconds, 1),
-            "delta_cos4": full["delta_cos4"],
-            "spin8_leakage": rung["spin8_leakage"],
-            "channels": {
-                key: {
-                    "value": full[key],
-                    "standard_error": jackknife_se(full[key], [d[key] for d in deleted]),
-                }
-                for key in REPORTED
-            },
-            "_deleted": [{key: d[key] for key in REPORTED} for d in deleted],
-        }
+    return {
+        "aspect_ratio": aspect,
+        "modulus": rung["modulus"],
+        "gaussian_norm": rung["gaussian_norm"],
+        "samples": samples,
+        "seconds": round(seconds, 1),
+        "delta_cos4": full["delta_cos4"],
+        "spin8_leakage": rung["spin8_leakage"],
+        "histogram_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+        "channels": {
+            key: {
+                "value": full[key],
+                "standard_error": jackknife_se(full[key], [d[key] for d in deleted]),
+            }
+            for key in REPORTED
+        },
+        "_deleted": [{key: d[key] for key in REPORTED} for d in deleted],
+    }
+
+
+def finalize(measured: Mapping[str, Any], seed: str, replica_offset: int) -> dict[str, Any]:
+    """Score a complete three-rung measured block. The single source of the
+    ratio, comparison and verdict logic -- the split-run path and the one-shot
+    path both come through here."""
+    batches = len(measured["r1"]["_deleted"])
 
     ratios: dict[str, dict[str, Any]] = {}
     for label, numerator in (("r2_over_r1", "r2"), ("r4_over_r1", "r4")):
@@ -200,8 +213,10 @@ def score(binary: Path, workdir: Path, samples: int, batches: int, seed: str,
     excluded = sorted(n for n, row in comparison.items() if abs(row["z"]["r4_over_r1"]) >= 3.0)
     compatible = sorted(n for n in comparison if n not in excluded)
 
-    for row in measured.values():
-        del row["_deleted"]
+    payload_measured = {
+        label: {k: v for k, v in row.items() if k != "_deleted"}
+        for label, row in measured.items()
+    }
 
     return {
         "schema": SCHEMA,
@@ -210,9 +225,9 @@ def score(binary: Path, workdir: Path, samples: int, batches: int, seed: str,
         "frozen_design": "predictions/aspect_ladder_n580_20260905.yaml",
         "batches": batches,
         "seed": seed,
-        "samples_per_rung": samples,
+        "samples_per_rung": measured["r1"]["samples"],
         "replica_offset": replica_offset,
-        "rungs": measured,
+        "rungs": payload_measured,
         "ratios": ratios,
         "primary_channel": "P4_S_prime",
         "discriminating_entry": "r4_over_r1",
@@ -246,22 +261,125 @@ def score(binary: Path, workdir: Path, samples: int, batches: int, seed: str,
     }
 
 
+SHARD_SCHEMA = "matching-one.aspect-ladder-n580-shard.v1"
+
+
+def write_shard(path: Path, measured: Mapping[str, Any], samples: int, batches: int,
+                seed: str, replica_offset: int) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "schema": SHARD_SCHEMA,
+        "aspect": measured["aspect_ratio"],
+        "samples": samples,
+        "batches": batches,
+        "seed": seed,
+        "replica_offset": replica_offset,
+        "measured": dict(measured),
+    }
+    path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def load_shards(shard_dir: Path) -> tuple[dict[str, Any], int, int, str, int]:
+    """Reassemble the three rungs' measured blocks from per-box shards, after
+    checking the runs are one experiment and not three. Returns the measured
+    blocks plus the shared run parameters (samples, batches, seed, offset)."""
+    measured: dict[str, Any] = {}
+    fixed: tuple[int, int, str, int] | None = None
+    for aspect in (1, 2, 4):
+        path = shard_dir / f"rung_r{aspect}.json"
+        if not path.is_file():
+            raise FileNotFoundError(f"missing shard {path}")
+        shard = json.loads(path.read_text(encoding="utf-8"))
+        if shard["schema"] != SHARD_SCHEMA or shard["aspect"] != aspect:
+            raise ValueError(f"{path} is not a shard for r={aspect}")
+        key = (shard["samples"], shard["batches"], shard["seed"], shard["replica_offset"])
+        if fixed is None:
+            fixed = key
+        elif key != fixed:
+            raise ValueError(
+                f"{path} was run under {key}, not the other shards' {fixed}"
+            )
+        measured[f"r{aspect}"] = shard["measured"]
+    assert fixed is not None
+    samples, batches, seed, replica_offset = fixed
+    return measured, samples, batches, seed, replica_offset
+
+
+def score(binary: Path, workdir: Path, samples: int, batches: int, seed: str,
+          replica_offset: int, engine_threads: int = 0) -> dict[str, Any]:
+    rungs = load_design()
+    workdir.mkdir(parents=True, exist_ok=True)
+    measured = {
+        f"r{aspect}": measure_rung(
+            binary, rungs, aspect, workdir, samples, batches, seed, replica_offset,
+            engine_threads
+        )
+        for aspect in (1, 2, 4)
+    }
+    return finalize(measured, seed, replica_offset)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--binary", type=Path, default=ROOT / "build" / "tr_period")
-    parser.add_argument("--workdir", type=Path, required=True)
-    parser.add_argument("--samples", type=int, required=True,
+    parser.add_argument("--workdir", type=Path)
+    parser.add_argument("--samples", type=int,
                         help="samples per rung; the same count on all three")
-    parser.add_argument("--batches", type=int, required=True)
-    parser.add_argument("--seed", required=True,
+    parser.add_argument("--batches", type=int)
+    parser.add_argument("--seed",
                         help="integer seed; the engine rejects non-numeric values")
-    parser.add_argument("--replica-offset", type=int, required=True,
+    parser.add_argument("--replica-offset", type=int,
                         help="must be disjoint from the pilot's 800000000")
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--rungs",
+                        help="comma-separated subset of {1,2,4} to run, e.g. --rungs 4. "
+                             "Writes one shard per rung into --rung-dir and scores nothing")
+    parser.add_argument("--rung-dir", type=Path,
+                        help="directory for per-rung shard files (default: <workdir>/shards)")
+    parser.add_argument("--merge-from", type=Path,
+                        help="directory holding rung_r{1,2,4}.json shards; scores the "
+                             "merged experiment without running the engine")
+    parser.add_argument("--engine-threads", type=int, default=0,
+                        help="pass --threads T to the engine (0 = engine default). "
+                             "Threads do not change the output, only the wall time")
     arguments = parser.parse_args()
 
-    payload = score(arguments.binary, arguments.workdir, arguments.samples,
-                    arguments.batches, arguments.seed, arguments.replica_offset)
+    if arguments.merge_from is not None:
+        if arguments.rungs or arguments.workdir or arguments.samples:
+            parser.error("--merge-from cannot be combined with running options")
+        measured, samples, batches, seed, replica_offset = load_shards(arguments.merge_from)
+        payload = finalize(measured, seed, replica_offset)
+        payload["merged_from_shards"] = str(arguments.merge_from)
+    elif arguments.rungs:
+        if arguments.workdir is None or arguments.samples is None or \
+                arguments.batches is None or arguments.seed is None or \
+                arguments.replica_offset is None:
+            parser.error("--rungs needs --workdir --samples --batches --seed --replica-offset")
+        aspects = parse_rung_subset(arguments.rungs)
+        rungs = load_design()
+        workdir = arguments.workdir
+        workdir.mkdir(parents=True, exist_ok=True)
+        shard_dir = arguments.rung_dir or (workdir / "shards")
+        for aspect in aspects:
+            measured = measure_rung(
+                arguments.binary, rungs, aspect, workdir, arguments.samples,
+                arguments.batches, arguments.seed, arguments.replica_offset,
+                arguments.engine_threads
+            )
+            write_shard(shard_dir / f"rung_r{aspect}.json", measured,
+                        arguments.samples, arguments.batches, arguments.seed,
+                        arguments.replica_offset)
+            print(f"rung r={aspect} shard written to {shard_dir / f'rung_r{aspect}.json'}",
+                  file=sys.stderr)
+        return 0
+    else:
+        if arguments.workdir is None or arguments.samples is None or \
+                arguments.batches is None or arguments.seed is None or \
+                arguments.replica_offset is None:
+            parser.error("needs --workdir --samples --batches --seed --replica-offset")
+        payload = score(arguments.binary, arguments.workdir, arguments.samples,
+                        arguments.batches, arguments.seed, arguments.replica_offset,
+                        arguments.engine_threads)
     text = json.dumps(payload, indent=2, sort_keys=True) + "\n"
     if arguments.output is None:
         print(text, end="")
@@ -269,6 +387,13 @@ def main() -> int:
         arguments.output.parent.mkdir(parents=True, exist_ok=True)
         arguments.output.write_text(text, encoding="utf-8")
     return 0
+
+
+def parse_rung_subset(text: str) -> list[int]:
+    aspects = sorted({int(part) for part in text.split(",") if part.strip()})
+    if not aspects or not set(aspects) <= {1, 2, 4}:
+        raise ValueError(f"--rungs must be a subset of 1,2,4; got {text!r}")
+    return aspects
 
 
 if __name__ == "__main__":
