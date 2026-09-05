@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Certified exclusion of primitive polynomials C(1..6, 3) on one frozen interval.
+"""Certified exclusion of primitive polynomials C(1..6, height) on one frozen interval.
 
 This is a **second, independent implementation** of the census in
 ``scripts/degree6_low_height_exclusion.py``, kept alongside it rather than
