@@ -3,12 +3,15 @@
     "size the pilot honestly. A 200000-sample pilot of the N=290 channel returned an amplitude five times the 20M value, and a sample count projected from it was wrong by about forty times",
     "freeze a prediction file naming every competitor above, including bare_aspect_ratio, and declare no optional stopping"
   ],
+  "cost_of_removing_the_spin8_systematic": "Var(A4) = 0.2978 times one paired difference's variance, against 0.2719 for the two-orientation N=290 estimator that could only bound the leakage. Nine percent more variance and one extra run per family buys the systematic outright",
   "cost_relative_to_the_n290_design": {
+    "note": "the three-orientation joint fit would cost 1.64 in variance and 1.5 in runs; the paired-difference realization gets the same A4, with spin 8 projected out, for 1.095 and one extra run per family",
     "orientations_per_family": 3,
-    "runs_per_family_ratio": "3 / 2 = 1.5",
-    "samples_for_the_same_sigma_on_A4": "about 2.5 times the N=290 design, per family, per site",
+    "runs_per_family": 2,
+    "runs_total": 6,
+    "samples_for_the_same_sigma_on_A4": "about 1.1 times the N=290 design, per run",
     "sites_per_sample_ratio": "1300 / 290 = 4.48",
-    "variance_amplification_ratio": "0.8933 / 0.5438 = 1.64"
+    "variance_amplification_ratio": "0.2978 / 0.2719 = 1.095"
   },
   "estimator": "within each family solve O(theta) = C + A4 cos4theta + A8 cos8theta on its three members; the score is the vector (A4(2i)/A4(i), A4(4i)/A4(i))",
   "families": [
@@ -55,10 +58,74 @@
         }
       ],
       "modulus": "i",
+      "paired_difference_plan": {
+        "determinant": "-553752213848064/235684033203125",
+        "pairs": [
+          {
+            "delta_cos4": "177408/105625",
+            "delta_cos8": "10168316928/11156640625",
+            "first": "2+36i",
+            "first_matrix_row_major": [
+              2,
+              -36,
+              36,
+              2
+            ],
+            "first_rep": [
+              2,
+              36
+            ],
+            "second": "20+30i",
+            "second_matrix_row_major": [
+              20,
+              -30,
+              30,
+              20
+            ],
+            "second_rep": [
+              20,
+              30
+            ]
+          },
+          {
+            "delta_cos4": "96768/105625",
+            "delta_cos8": "-10060388352/11156640625",
+            "first": "12+34i",
+            "first_matrix_row_major": [
+              12,
+              -34,
+              34,
+              12
+            ],
+            "first_rep": [
+              12,
+              34
+            ],
+            "second": "20+30i",
+            "second_matrix_row_major": [
+              20,
+              -30,
+              30,
+              20
+            ],
+            "second_rep": [
+              20,
+              30
+            ]
+          }
+        ],
+        "redundant_pair_available_as_a_check": true,
+        "runs_per_family": 2,
+        "variance_amplification": {
+          "A4": "447749267647703125/1503674582974857216",
+          "A8": "781675556622314453125/1178880873052288057344",
+          "meaning": "Var(A) = this factor times the variance of one paired difference, for equal counts on the two runs"
+        }
+      },
       "variance_amplification": {
         "A4": "671611155902171875/751837291487428608",
         "A8": "64724727618408203125/84205776646592004096",
-        "meaning": "Var(A) = this factor times the per-orientation variance, for equal counts on the three orientations"
+        "meaning": "Var(A) = this factor times the per-orientation variance, for equal counts on the three orientations. This is the joint fit; what the engine can actually run is paired_difference_plan below"
       }
     },
     {
@@ -104,10 +171,74 @@
         }
       ],
       "modulus": "2i",
+      "paired_difference_plan": {
+        "determinant": "-553752213848064/235684033203125",
+        "pairs": [
+          {
+            "delta_cos4": "96768/105625",
+            "delta_cos8": "10060388352/11156640625",
+            "first": "5+25i",
+            "first_matrix_row_major": [
+              5,
+              -50,
+              25,
+              10
+            ],
+            "first_rep": [
+              5,
+              25
+            ],
+            "second": "11+23i",
+            "second_matrix_row_major": [
+              11,
+              -46,
+              23,
+              22
+            ],
+            "second_rep": [
+              11,
+              23
+            ]
+          },
+          {
+            "delta_cos4": "177408/105625",
+            "delta_cos8": "-10168316928/11156640625",
+            "first": "5+25i",
+            "first_matrix_row_major": [
+              5,
+              -50,
+              25,
+              10
+            ],
+            "first_rep": [
+              5,
+              25
+            ],
+            "second": "17+19i",
+            "second_matrix_row_major": [
+              17,
+              -38,
+              19,
+              34
+            ],
+            "second_rep": [
+              17,
+              19
+            ]
+          }
+        ],
+        "redundant_pair_available_as_a_check": true,
+        "runs_per_family": 2,
+        "variance_amplification": {
+          "A4": "447749267647703125/1503674582974857216",
+          "A8": "781675556622314453125/1178880873052288057344",
+          "meaning": "Var(A) = this factor times the variance of one paired difference, for equal counts on the two runs"
+        }
+      },
       "variance_amplification": {
         "A4": "671611155902171875/751837291487428608",
         "A8": "64724727618408203125/84205776646592004096",
-        "meaning": "Var(A) = this factor times the per-orientation variance, for equal counts on the three orientations"
+        "meaning": "Var(A) = this factor times the per-orientation variance, for equal counts on the three orientations. This is the joint fit; what the engine can actually run is paired_difference_plan below"
       }
     },
     {
@@ -153,15 +284,80 @@
         }
       ],
       "modulus": "4i",
+      "paired_difference_plan": {
+        "determinant": "-553752213848064/235684033203125",
+        "pairs": [
+          {
+            "delta_cos4": "177408/105625",
+            "delta_cos8": "10168316928/11156640625",
+            "first": "1+18i",
+            "first_matrix_row_major": [
+              1,
+              -72,
+              18,
+              4
+            ],
+            "first_rep": [
+              1,
+              18
+            ],
+            "second": "10+15i",
+            "second_matrix_row_major": [
+              10,
+              -60,
+              15,
+              40
+            ],
+            "second_rep": [
+              10,
+              15
+            ]
+          },
+          {
+            "delta_cos4": "96768/105625",
+            "delta_cos8": "-10060388352/11156640625",
+            "first": "6+17i",
+            "first_matrix_row_major": [
+              6,
+              -68,
+              17,
+              24
+            ],
+            "first_rep": [
+              6,
+              17
+            ],
+            "second": "10+15i",
+            "second_matrix_row_major": [
+              10,
+              -60,
+              15,
+              40
+            ],
+            "second_rep": [
+              10,
+              15
+            ]
+          }
+        ],
+        "redundant_pair_available_as_a_check": true,
+        "runs_per_family": 2,
+        "variance_amplification": {
+          "A4": "447749267647703125/1503674582974857216",
+          "A8": "781675556622314453125/1178880873052288057344",
+          "meaning": "Var(A) = this factor times the variance of one paired difference, for equal counts on the two runs"
+        }
+      },
       "variance_amplification": {
         "A4": "671611155902171875/751837291487428608",
         "A8": "64724727618408203125/84205776646592004096",
-        "meaning": "Var(A) = this factor times the per-orientation variance, for equal counts on the three orientations"
+        "meaning": "Var(A) = this factor times the per-orientation variance, for equal counts on the three orientations. This is the joint fit; what the engine can actually run is paired_difference_plan below"
       }
     }
   ],
   "families_share_one_design_matrix": true,
   "families_share_one_variance_amplification": true,
+  "how_it_is_actually_run": "the engine couples exactly two period matrices on a common random field per sample, so a family is two paired runs on disjoint seed streams rather than one three-orientation run. Differencing within a pair kills C; two pairs determine A4 and A8; the third pair is their exact sum and is a check, not a third run. See paired_difference_plan on each family",
   "modular_shape_predictions": {
     "rows": [
       {

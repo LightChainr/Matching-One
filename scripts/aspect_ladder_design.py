@@ -36,6 +36,7 @@ frozen before any block is run.
 from __future__ import annotations
 
 import argparse
+import itertools
 import json
 from fractions import Fraction
 from pathlib import Path
@@ -109,6 +110,69 @@ def invert3(matrix: Sequence[Sequence[Fraction]]) -> tuple[list[list[Fraction]],
     return [[value / determinant for value in row] for row in adjugate], determinant
 
 
+def paired_difference_plan(members: Sequence[tuple[int, int]], aspect: int) -> dict[str, Any]:
+    """The realizable estimator: two paired runs, not one three-orientation run.
+
+    The engine couples exactly two period matrices on a common random field per
+    sample (``--first-matrix`` / ``--second-matrix``), so "three orientations in
+    one run" is not a thing it can do.  It does not need to be.  Differencing
+    within a pair removes the constant C, leaving
+
+        D_ij = A4 (cos4_i - cos4_j) + A8 (cos8_i - cos8_j),
+
+    and two pairs on disjoint seed streams determine A4 and A8.  The third pair
+    is exactly their sum and carries no new information, so it is an
+    over-determination check rather than a third run.
+
+    Which two pairs is a free choice, and it is not free of consequence: the
+    three choices differ by a factor of 2.5 in Var(A4).  We take the best for A4,
+    which is the worst for A8 -- A8 here is a nuisance being projected out, and
+    the A4 variance already carries the cost of projecting it.
+    """
+    best = None
+    for left, right in itertools.combinations(itertools.combinations(range(3), 2), 2):
+        matrix = [
+            [cos4(*members[i]) - cos4(*members[j]), cos8(*members[i]) - cos8(*members[j])]
+            for i, j in (left, right)
+        ]
+        determinant = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
+        if determinant == 0:
+            continue
+        row = [matrix[1][1] / determinant, -matrix[0][1] / determinant]
+        variance = sum(value * value for value in row)
+        if best is None or variance < best[0]:
+            best = (variance, (left, right), determinant,
+                    [-matrix[1][0] / determinant, matrix[0][0] / determinant])
+    _require(best is not None, "no two pairs determine A4 and A8")
+    variance, (left, right), determinant, a8_row = best
+    return {
+        "runs_per_family": 2,
+        "pairs": [
+            {
+                "first": f"{members[i][0]}+{members[i][1]}i",
+                "second": f"{members[j][0]}+{members[j][1]}i",
+                "first_rep": list(members[i]),
+                "second_rep": list(members[j]),
+                "first_matrix_row_major": period_matrix(*members[i], aspect),
+                "second_matrix_row_major": period_matrix(*members[j], aspect),
+                "delta_cos4": _text(cos4(*members[i]) - cos4(*members[j])),
+                "delta_cos8": _text(cos8(*members[i]) - cos8(*members[j])),
+            }
+            for i, j in (left, right)
+        ],
+        "redundant_pair_available_as_a_check": True,
+        "determinant": _text(determinant),
+        "variance_amplification": {
+            "A4": _text(variance),
+            "A8": _text(sum(value * value for value in a8_row)),
+            "meaning": (
+                "Var(A) = this factor times the variance of one paired difference, "
+                "for equal counts on the two runs"
+            ),
+        },
+    }
+
+
 def family(aspect: int, site_count: int = SITE_COUNT) -> dict[str, Any]:
     _require(site_count % aspect == 0, f"aspect {aspect} does not divide {site_count}")
     norm = site_count // aspect
@@ -137,9 +201,11 @@ def family(aspect: int, site_count: int = SITE_COUNT) -> dict[str, Any]:
             "A8": _text(sum(value * value for value in inverse[2])),
             "meaning": (
                 "Var(A) = this factor times the per-orientation variance, for "
-                "equal counts on the three orientations"
+                "equal counts on the three orientations. This is the joint fit; "
+                "what the engine can actually run is paired_difference_plan below"
             ),
         },
+        "paired_difference_plan": paired_difference_plan(members, aspect),
     }
 
 
@@ -239,6 +305,19 @@ def build_result(site_count: int = SITE_COUNT) -> dict[str, Any]:
             "within each family solve O(theta) = C + A4 cos4theta + A8 cos8theta on "
             "its three members; the score is the vector (A4(2i)/A4(i), A4(4i)/A4(i))"
         ),
+        "how_it_is_actually_run": (
+            "the engine couples exactly two period matrices on a common random field "
+            "per sample, so a family is two paired runs on disjoint seed streams "
+            "rather than one three-orientation run. Differencing within a pair kills "
+            "C; two pairs determine A4 and A8; the third pair is their exact sum and "
+            "is a check, not a third run. See paired_difference_plan on each family"
+        ),
+        "cost_of_removing_the_spin8_systematic": (
+            "Var(A4) = 0.2978 times one paired difference's variance, against 0.2719 "
+            "for the two-orientation N=290 estimator that could only bound the "
+            "leakage. Nine percent more variance and one extra run per family buys "
+            "the systematic outright"
+        ),
         "score_is_amplitude_free": (
             "both entries are ratios of A4 within one observable, so the unknown "
             "non-universal overlap constant and the additive constant C cancel"
@@ -258,10 +337,16 @@ def build_result(site_count: int = SITE_COUNT) -> dict[str, Any]:
         ),
         "cost_relative_to_the_n290_design": {
             "orientations_per_family": 3,
-            "variance_amplification_ratio": "0.8933 / 0.5438 = 1.64",
-            "runs_per_family_ratio": "3 / 2 = 1.5",
-            "samples_for_the_same_sigma_on_A4": "about 2.5 times the N=290 design, per family, per site",
+            "runs_per_family": 2,
+            "runs_total": 6,
+            "variance_amplification_ratio": "0.2978 / 0.2719 = 1.095",
+            "samples_for_the_same_sigma_on_A4": "about 1.1 times the N=290 design, per run",
             "sites_per_sample_ratio": "1300 / 290 = 4.48",
+            "note": (
+                "the three-orientation joint fit would cost 1.64 in variance and 1.5 "
+                "in runs; the paired-difference realization gets the same A4, with "
+                "spin 8 projected out, for 1.095 and one extra run per family"
+            ),
         },
         "not_established_by_this_design": [
             "anything at all: no block has been run",

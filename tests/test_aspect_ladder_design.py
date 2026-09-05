@@ -139,6 +139,47 @@ class AspectLadderDesignTests(unittest.TestCase):
         self.assertGreater(at_four, 6.0)
         self.assertGreater(at_four / at_two, 8.0)
 
+    def test_two_paired_runs_determine_A4_with_spin8_projected_out(self) -> None:
+        """The estimator the engine can actually run.
+
+        The engine couples two period matrices per run, so a three-orientation
+        joint fit is not a thing it does. Two pairs are enough -- but only if
+        their leverage matrix is non-singular. A singular choice would leave A4
+        and A8 indistinguishable while the artifact claimed the systematic was
+        fitted out.
+        """
+        for family in self.result["families"]:
+            plan = family["paired_difference_plan"]
+            with self.subTest(aspect=family["aspect_ratio"]):
+                self.assertEqual(plan["runs_per_family"], 2)
+                self.assertEqual(len(plan["pairs"]), 2)
+                rows = [
+                    [Fraction(pair["delta_cos4"]), Fraction(pair["delta_cos8"])]
+                    for pair in plan["pairs"]
+                ]
+                determinant = rows[0][0] * rows[1][1] - rows[0][1] * rows[1][0]
+                self.assertNotEqual(determinant, 0)
+                self.assertEqual(Fraction(plan["determinant"]), determinant)
+                for pair in plan["pairs"]:
+                    for key in ("first_matrix_row_major", "second_matrix_row_major"):
+                        a, b, c, d = pair[key]
+                        self.assertEqual(a * d - b * c, SITE_COUNT, (key, pair))
+
+    def test_the_paired_estimator_costs_almost_nothing_over_the_n290_one(self) -> None:
+        """The claim that motivates running it at all.
+
+        If projecting spin 8 out cost a large factor in variance, the honest
+        design would be to keep bounding it. It costs 9 percent, and that number
+        is what the sample budget is set from, so it is checked rather than
+        quoted.
+        """
+        n290 = Fraction(4205, 8064) ** 2  # one pair, A4 = D / delta_cos4
+        for family in self.result["families"]:
+            amplification = Fraction(family["paired_difference_plan"]["variance_amplification"]["A4"])
+            with self.subTest(aspect=family["aspect_ratio"]):
+                self.assertLess(amplification / n290, Fraction(6, 5))
+                self.assertGreater(amplification / n290, 1)
+
     def test_the_frozen_prediction_file_agrees_with_the_design(self) -> None:
         """The prediction file is what a later run is scored against.
 
@@ -150,21 +191,29 @@ class AspectLadderDesignTests(unittest.TestCase):
         import yaml
 
         frozen = yaml.safe_load(
-            (ROOT / "predictions" / "aspect_ladder_n1300_20260905.yaml").read_text(encoding="utf-8")
+            (ROOT / "predictions" / "aspect_ladder_n1300_v2_20260905.yaml").read_text(encoding="utf-8")
         )
         self.assertEqual(frozen["design"]["site_count"], SITE_COUNT)
         self.assertEqual(frozen["design_artifact"], "results/aspect-ladder-design/latest.json")
+        self.assertEqual(
+            frozen["supersedes_on_realizability"],
+            "predictions/aspect_ladder_n1300_20260905.yaml",
+        )
 
         by_aspect = {family["aspect_ratio"]: family for family in self.result["families"]}
         for key, block in frozen["design"]["families"].items():
             aspect = int(key[1:])
             with self.subTest(aspect=aspect):
-                family = by_aspect[aspect]
-                self.assertEqual(block["gaussian_norm"], family["gaussian_norm"])
-                self.assertEqual(
-                    [list(row) for row in block["period_matrices_row_major"]],
-                    [member["period_matrix_row_major"] for member in family["members"]],
-                )
+                plan = by_aspect[aspect]["paired_difference_plan"]
+                self.assertEqual(block["gaussian_norm"], by_aspect[aspect]["gaussian_norm"])
+                self.assertEqual(len(block["pairs"]), len(plan["pairs"]))
+                for written, generated in zip(block["pairs"], plan["pairs"]):
+                    self.assertEqual(list(written["first_rep"]), generated["first_rep"])
+                    self.assertEqual(list(written["second_rep"]), generated["second_rep"])
+                    self.assertEqual(list(written["first_matrix"]), generated["first_matrix_row_major"])
+                    self.assertEqual(list(written["second_matrix"]), generated["second_matrix_row_major"])
+                    self.assertEqual(written["delta_cos4"], generated["delta_cos4"])
+                    self.assertEqual(written["delta_cos8"], generated["delta_cos8"])
 
         predictions = frozen["competing_predictions"]
         shapes = {row["shape"]: row for row in self.result["modular_shape_predictions"]["rows"]}
