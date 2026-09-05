@@ -1,0 +1,181 @@
+# Second frozen design for the same question, superseding v1 on realizability.
+#
+# What changed, and why v1 is kept rather than edited.  v1
+# (predictions/aspect_ladder_n1300_20260905.yaml) specified "three orientations
+# per family, jointly fitted".  The engine couples exactly two period matrices on
+# a common random field per sample (--first-matrix / --second-matrix), so that is
+# not a run it can perform.  It does not need to be.  Differencing within a pair
+# removes the constant C, leaving
+#
+#     D_ij = A4 (cos4_i - cos4_j) + A8 (cos8_i - cos8_j),
+#
+# and two pairs on disjoint seed streams determine A4 and A8.  The third pair is
+# exactly their sum and carries no information, so it is an over-determination
+# check rather than a third run.
+#
+# The correction is cheaper, not more expensive.  Var(A4) = 0.2978 times one
+# paired difference's variance, against 0.2719 for the two-orientation N=290
+# estimator that could only *bound* the spin-8 leakage.  Nine percent more
+# variance and one extra run per family buys the systematic outright, where v1's
+# joint fit would have cost 1.64 in variance and 1.5 in runs.
+#
+# Which two of the three pairs is a free choice worth 2.5x in Var(A4).  The
+# choice below is the best for A4 in each family; it is the worst for A8, which
+# is a nuisance being projected out, and the A4 variance already carries the cost
+# of projecting it.  The choice is frozen here, before any run.
+#
+# Nothing has been run at N=1300.  The site count, the families, the competitor
+# list and the decision rule are unchanged from v1.
+status: frozen_before_any_run_at_this_size
+frozen_at: "2026-09-05"
+compute_status: not_yet_scheduled
+supersedes_on_realizability: predictions/aspect_ladder_n1300_20260905.yaml
+issue: 216
+roadmap_item: 2
+claim_level_if_it_passes: C3
+claim_level_if_it_fails: C3_negative
+design_artifact: results/aspect-ladder-design/latest.json
+
+question: >
+  Across aspect ratios 1, 2 and 4 at a single site count, does the spin-4
+  amplitude of the matching-odd readout follow the area-normalized weight-4
+  modular factor (1, 2.75, 10.99), the bare aspect ratio (1, 2, 4), plain area
+  scaling (1, 4, 16), or none of them?
+
+observable:
+  name: P4_S_prime
+  definition: >
+    the frozen P48 spin-4 projector of the matching-odd slope, computed by
+    analyze_p48_retrospective.project_size on the engine histograms.
+  fit: >
+    per family, two paired runs on disjoint seed streams give two differences
+    D = A4 * delta_cos4 + A8 * delta_cos8; solve the 2x2 system for A4. This is
+    the change from the N=290 design, which had one pair per family and could
+    only bound the spin-8 leakage.
+
+design:
+  site_count: 1300
+  engine: src/threshold_rank_integer_period_mc.cpp
+  runs_total: 6
+  families:
+    r1:
+      modulus: i
+      gaussian_norm: 1300
+      pairs:
+        - first_rep: [2, 36]
+          second_rep: [20, 30]
+          first_matrix: [2, -36, 36, 2]
+          second_matrix: [20, -30, 30, 20]
+          delta_cos4: "177408/105625"
+          delta_cos8: "10168316928/11156640625"
+        - first_rep: [12, 34]
+          second_rep: [20, 30]
+          first_matrix: [12, -34, 34, 12]
+          second_matrix: [20, -30, 30, 20]
+          delta_cos4: "96768/105625"
+          delta_cos8: "-10060388352/11156640625"
+    r2:
+      modulus: 2i
+      gaussian_norm: 650
+      pairs:
+        - first_rep: [5, 25]
+          second_rep: [11, 23]
+          first_matrix: [5, -50, 25, 10]
+          second_matrix: [11, -46, 23, 22]
+          delta_cos4: "96768/105625"
+          delta_cos8: "10060388352/11156640625"
+        - first_rep: [5, 25]
+          second_rep: [17, 19]
+          first_matrix: [5, -50, 25, 10]
+          second_matrix: [17, -38, 19, 34]
+          delta_cos4: "177408/105625"
+          delta_cos8: "-10168316928/11156640625"
+    r4:
+      modulus: 4i
+      gaussian_norm: 325
+      pairs:
+        - first_rep: [1, 18]
+          second_rep: [10, 15]
+          first_matrix: [1, -72, 18, 4]
+          second_matrix: [10, -60, 15, 40]
+          delta_cos4: "177408/105625"
+          delta_cos8: "10168316928/11156640625"
+        - first_rep: [6, 17]
+          second_rep: [10, 15]
+          first_matrix: [6, -68, 17, 24]
+          second_matrix: [10, -60, 15, 40]
+          delta_cos4: "96768/105625"
+          delta_cos8: "-10060388352/11156640625"
+  why_this_site_count: >
+    A torus of modulus r*i with N sites needs a Gaussian integer of norm N/r, so
+    the ladder needs 1300, 650 and 325 each to be a sum of two squares in at least
+    three ways. 325 is the smallest integer with three essentially distinct
+    representations; 650 = (1+i)*325 and 1300 = 2*325 inherit them. No smaller site
+    count carries all three families -- checked by search in
+    tests/test_aspect_ladder_design.py, not asserted.
+  conditioning: >
+    All three families carry the identical pair of leverages, 177408/105625 and
+    96768/105625, and the identical Var(A4) amplification of 0.2978. This is a
+    fact about 1300 being divisible by 4, not a design choice. No rung is the
+    noisy one, so one sample budget per run is the right allocation.
+  redundant_pair: >
+    The third pair in each family is the exact sum of the two above. Running it
+    would be an over-determination check on the C + A4 cos4 + A8 cos8 form itself,
+    which nothing at this size otherwise tests. It is not part of this design and
+    may not be pooled into it after the fact.
+
+score: [A4(2i) / A4(i), A4(4i) / A4(i)]
+
+competing_predictions:
+  # (r=2, r=4)
+  q4_jordan_weight4:    [2.75,      10.9908008589]
+  bare_aspect_ratio:    [2.0,        4.0]
+  plain_area_scaling:   [4.0,       16.0]
+  no_modulus_dependence: [1.0,       1.0]
+  weight12_delta:       [0.125,      0.0000279010739704]
+  weight12_E4_cubed:    [20.796875, 1327.6635036]
+  weight12_E12:         [32.515625, 2080.30719731]
+  weight8_E8:           [7.5625,    120.79770352]
+
+decision:
+  - >
+    The r=4 entry is the discriminator. The weight-4 shape and the bare aspect
+    ratio predict 10.99 and 4.00 there, a factor of 2.7 apart, against 2.75 and
+    2.00 at r=2 which the existing 9 percent measurement cannot split. About 16
+    percent relative precision on A4(4i)/A4(i) decides it either way.
+  - >
+    An r=2 entry compatible with 2.0 and incompatible with 2.75 replicates the
+    N=290 result at a different site count, with the spin-8 leakage fitted rather
+    than bounded. An r=2 entry compatible with 2.75 would instead say the N=290
+    number was driven by that systematic, and this design is how we would find
+    out.
+  - >
+    Compatible with both live laws at r=4 is underpowered, reported as such, and
+    any further run is a new frozen design. No optional stopping.
+
+conditional_on:
+  - >
+    The weight-4 entry is a prediction only if the normalization removes the same
+    thermal-primary block; the additive shape A~(tau) is not fixed by the Jordan
+    relation. See docs/astra/Q2-additive-shape-ambiguity.md. This ladder tests the
+    amplitude law, not the module identification.
+
+not_established_by_this_run:
+  - identification of the Q4 Jordan module
+  - that the fitted A4 is the log slope rather than a leading amplitude
+  - the C + A4 cos4 + A8 cos8 form itself, which two pairs determine exactly and
+    therefore cannot check; the redundant third pair is where that would be tested
+  - any modular interpretation of the bare aspect ratio, should it win. A law that
+    fits three points is a law that fits three points
+
+before_running:
+  - >
+    Size the pilot honestly. A 200000-sample pilot of the N=290 channel returned
+    an amplitude five times its 20M value, and a sample count projected from that
+    pilot was wrong by about forty times. Pilot at a size where the estimator is
+    already in its asymptotic regime, or do not pilot.
+  - >
+    1300 sites is 4.5 times N=290 and the estimator costs 1.095 times its
+    variance, so the naive budget is about five times the N=290 cost per run,
+    across six runs. The real budget follows from a pilot, not from this
+    arithmetic.

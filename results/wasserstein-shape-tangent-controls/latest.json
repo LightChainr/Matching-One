@@ -1,0 +1,85 @@
+{
+  "affine_null": [
+    {
+      "case": "pure_translation",
+      "degrees_of_freedom": 7,
+      "statistic": 0.0,
+      "unweighted_shape_norm": 0.0
+    },
+    {
+      "case": "pure_scale",
+      "degrees_of_freedom": 7,
+      "statistic": 6.523347668379026e-35,
+      "unweighted_shape_norm": 8.076724378347343e-18
+    },
+    {
+      "case": "translation_and_scale",
+      "degrees_of_freedom": 7,
+      "statistic": 1.57534876845618e-33,
+      "unweighted_shape_norm": 3.9690663492264525e-17
+    },
+    {
+      "case": "negative_scale",
+      "degrees_of_freedom": 7,
+      "statistic": 9.272158098213253e-34,
+      "unweighted_shape_norm": 3.045021855128999e-17
+    }
+  ],
+  "affine_tangent_is_the_579_statistic": "the affine tangent span{1, Q} is a two-column basis for projective_inference.subspace_residual, the same routine that scores a model ray with a one-column basis",
+  "base_quantile": [
+    -0.7265425280053609,
+    -0.5095254494944288,
+    -0.3249196962329063,
+    -0.15838444032453625,
+    0.0,
+    0.15838444032453625,
+    0.32491969623290623,
+    0.5095254494944289,
+    0.7265425280053609
+  ],
+  "issue": 582,
+  "not_established": [
+    "anything about a percolation threshold law: every control here is synthetic",
+    "that a covariance-weighted shape norm removes the need to declare a quantile window; it removes the need for the window to carry the conditioning, which is a smaller claim",
+    "that the shape subspace of any real lineage is low-dimensional"
+  ],
+  "quantile_levels": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9
+  ],
+  "rank_recovery": [
+    {
+      "case": "one_shape_direction",
+      "degrees_of_freedom_affine_basis_only": 7,
+      "generators": 1,
+      "statistic_affine_basis_only": 0.3100858556010492,
+      "statistic_after_all_generators": 1.0132628974084777e-32,
+      "statistic_after_one_generator": 1.0132628974084777e-32
+    },
+    {
+      "case": "two_shape_directions",
+      "degrees_of_freedom_affine_basis_only": 7,
+      "generators": 2,
+      "statistic_affine_basis_only": 0.40236479087141197,
+      "statistic_after_all_generators": 1.2195152505502447e-32,
+      "statistic_after_one_generator": 0.3257479221201268
+    }
+  ],
+  "schema": "matching-one.wasserstein-shape-tangent-controls.v1",
+  "tail_dominance": {
+    "degrees_of_freedom": 7,
+    "tail_excursion_in_units_of_its_own_sigma": 1.0,
+    "tail_standard_deviation": 400.0,
+    "unweighted_shape_norm": 310.206295759707,
+    "weighted_equivalent_sigma": 0.00648142993303469,
+    "weighted_statistic": 0.9999958580256162,
+    "what_it_shows": "an affine displacement carrying a one-sigma excursion in the noisiest quantile produces a large unweighted shape norm and a weighted statistic consistent with its degrees of freedom, so the frozen u_min window that the unweighted formulation needs is not load-bearing for the weighted one"
+  }
+}

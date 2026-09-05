@@ -1,0 +1,336 @@
+{
+  "batches": 100,
+  "comparison": {
+    "bare_aspect_ratio": {
+      "predicted": {
+        "r2_over_r1": 2.0,
+        "r4_over_r1": 4.0
+      },
+      "ratio_z_not_used": {
+        "r2_over_r1": 1.3202049399845956,
+        "r4_over_r1": 0.4424034603508623
+      },
+      "z": {
+        "r2_over_r1": 1.9893846202566141,
+        "r4_over_r1": 0.5018674220172588
+      }
+    },
+    "no_modulus_dependence": {
+      "predicted": {
+        "r2_over_r1": 1.0,
+        "r4_over_r1": 1.0
+      },
+      "ratio_z_not_used": {
+        "r2_over_r1": 2.3948318600223715,
+        "r4_over_r1": 2.720758248612442
+      },
+      "z": {
+        "r2_over_r1": 5.649181774307248,
+        "r4_over_r1": 9.47723901832477
+      }
+    },
+    "plain_area_scaling": {
+      "predicted": {
+        "r2_over_r1": 4.0,
+        "r4_over_r1": 16.0
+      },
+      "ratio_z_not_used": {
+        "r2_over_r1": -0.8290489000909559,
+        "r4_over_r1": -8.671015692695457
+      },
+      "z": {
+        "r2_over_r1": -0.679001502517834,
+        "r4_over_r1": -2.5589172641951103
+      }
+    },
+    "q4_jordan_weight4": {
+      "predicted": {
+        "r2_over_r1": 2.75,
+        "r4_over_r1": 10.9908008589
+      },
+      "ratio_z_not_used": {
+        "r2_over_r1": 0.5142347499562637,
+        "r4_over_r1": -4.866771409868465
+      },
+      "z": {
+        "r2_over_r1": 0.5931401856404663,
+        "r4_over_r1": -2.080601604685513
+      }
+    },
+    "weight12_E12": {
+      "predicted": {
+        "r2_over_r1": 32.515625,
+        "r4_over_r1": 2080.30719731
+      },
+      "ratio_z_not_used": {
+        "r2_over_r1": -31.472707166793153,
+        "r4_over_r1": -1576.4124115040556
+      },
+      "z": {
+        "r2_over_r1": -3.260208552206519,
+        "r4_over_r1": -3.6108418170330143
+      }
+    },
+    "weight12_E4_cubed": {
+      "predicted": {
+        "r2_over_r1": 20.796875,
+        "r4_over_r1": 1327.6635036
+      },
+      "ratio_z_not_used": {
+        "r2_over_r1": -18.87942294760047,
+        "r4_over_r1": -1004.8159570310356
+      },
+      "z": {
+        "r2_over_r1": -3.056585776558743,
+        "r4_over_r1": -3.6061955962333316
+      }
+    },
+    "weight12_delta": {
+      "predicted": {
+        "r2_over_r1": 0.125,
+        "r4_over_r1": 2.79010739704e-05
+      },
+      "ratio_z_not_used": {
+        "r2_over_r1": 3.335130415055425,
+        "r4_over_r1": 3.4801886551844765
+      },
+      "z": {
+        "r2_over_r1": 10.748982316399294,
+        "r4_over_r1": 21.174545947690643
+      }
+    },
+    "weight8_E8": {
+      "predicted": {
+        "r2_over_r1": 7.5625,
+        "r4_over_r1": 120.79770352
+      },
+      "ratio_z_not_used": {
+        "r2_over_r1": -4.657407302725533,
+        "r4_over_r1": -88.25979889723195
+      },
+      "z": {
+        "r2_over_r1": -2.060503346687623,
+        "r4_over_r1": -3.477960791241494
+      }
+    }
+  },
+  "compatible_at_3_sigma": [
+    "bare_aspect_ratio",
+    "plain_area_scaling",
+    "q4_jordan_weight4"
+  ],
+  "design_artifact": "results/aspect-ladder-design/latest.json",
+  "discriminating_entry": "r4_over_r1",
+  "excluded_at_3_sigma": [
+    "no_modulus_dependence",
+    "weight12_E12",
+    "weight12_E4_cubed",
+    "weight12_delta",
+    "weight8_E8"
+  ],
+  "fieller_interval_3sigma": {
+    "r2_over_r1": {
+      "lower": 1.6364674379955721,
+      "upper": 18.908043339734434
+    },
+    "r4_over_r1": {
+      "lower": 2.3946684331198034,
+      "upper": 27.4683890189934
+    }
+  },
+  "frozen_design": "predictions/aspect_ladder_n580_20260905.yaml",
+  "merged_from_shards": "results/aspect-ladder-n580/shards",
+  "not_established": [
+    "identification of the Q4 Jordan module",
+    "that the measured amplitude is the log slope rather than a leading amplitude with the same symmetry",
+    "the C + A4 cos4 + A8 cos8 form itself, which two orientations determine exactly and therefore cannot check",
+    "freedom from spin-8 in the r2_over_r1 entry",
+    "any modular interpretation of the bare aspect ratio, should it be the survivor. A law that fits three points is a law that fits three points"
+  ],
+  "primary_channel": "P4_S_prime",
+  "ratios": {
+    "r2_over_r1": {
+      "Mbar_prime": {
+        "covariance": 1.9364421159058308e-08,
+        "denominator_sigma_from_zero": 36891.89877221576,
+        "denominator_value": 18.958859373943056,
+        "denominator_variance": 2.6409634687793607e-07,
+        "numerator_value": 15.25610772894889,
+        "numerator_variance": 2.5877398735814574e-07,
+        "standard_error": 3.330178087035882e-05,
+        "value": 0.8046954422752244
+      },
+      "P4_D_prime": {
+        "covariance": 1.0874720072428282e-08,
+        "denominator_sigma_from_zero": 1.7551300088153927,
+        "denominator_value": -0.00046438511261303635,
+        "denominator_variance": 7.000644005442003e-08,
+        "numerator_value": -0.0010490510501072047,
+        "numerator_variance": 8.447992571939647e-08,
+        "standard_error": 1.3647973089770937,
+        "value": 2.259010940734786
+      },
+      "P4_S": {
+        "covariance": -9.06839875757046e-12,
+        "denominator_sigma_from_zero": 1.385078301810534,
+        "denominator_value": -1.0712760807662967e-05,
+        "denominator_variance": 5.982106833352764e-11,
+        "numerator_value": -2.874616719070028e-05,
+        "numerator_variance": 9.416571759177199e-11,
+        "standard_error": 2.30527969788275,
+        "value": 2.683357512298585
+      },
+      "P4_S_prime": {
+        "covariance": 1.348087282697039e-09,
+        "denominator_sigma_from_zero": 3.6190381588102256,
+        "denominator_value": 0.0009016433036753112,
+        "denominator_variance": 6.207020770273793e-08,
+        "numerator_value": 0.0029109770266212776,
+        "numerator_variance": 6.713835319545046e-08,
+        "standard_error": 0.9305555084780935,
+        "value": 3.2285239792226563
+      }
+    },
+    "r4_over_r1": {
+      "Mbar_prime": {
+        "covariance": -1.313711302071752e-08,
+        "denominator_sigma_from_zero": 36891.89877221576,
+        "denominator_value": 18.958859373943056,
+        "denominator_variance": 2.6409634687793607e-07,
+        "numerator_value": 6.323991679510491,
+        "numerator_variance": 1.2695421688891926e-07,
+        "standard_error": 2.1432124995093493e-05,
+        "value": 0.33356393202653045
+      },
+      "P4_D_prime": {
+        "covariance": -4.164891401525736e-09,
+        "denominator_sigma_from_zero": 1.7551300088153927,
+        "denominator_value": -0.00046438511261303635,
+        "denominator_variance": 7.000644005442003e-08,
+        "numerator_value": -0.0017578959003842444,
+        "numerator_variance": 3.566977193945691e-08,
+        "standard_error": 2.2894495577923952,
+        "value": 3.785426906760181
+      },
+      "P4_S": {
+        "covariance": 4.3004126275699384e-12,
+        "denominator_sigma_from_zero": 1.385078301810534,
+        "denominator_value": -1.0712760807662967e-05,
+        "denominator_variance": 5.982106833352764e-11,
+        "numerator_value": -4.4726444293875174e-05,
+        "numerator_variance": 2.9041364603384826e-11,
+        "standard_error": 3.0896602091691063,
+        "value": 4.175062348249371
+      },
+      "P4_S_prime": {
+        "covariance": -8.011196220988017e-09,
+        "denominator_sigma_from_zero": 3.6190381588102256,
+        "denominator_value": 0.0009016433036753112,
+        "denominator_variance": 6.207020770273793e-08,
+        "numerator_value": 0.004131807633330795,
+        "numerator_variance": 3.8075146799102154e-08,
+        "standard_error": 1.3167396120465709,
+        "value": 4.582530160750455
+      }
+    }
+  },
+  "replica_offset": 900000000,
+  "rungs": {
+    "r1": {
+      "aspect_ratio": 1,
+      "channels": {
+        "Mbar_prime": {
+          "standard_error": 0.0005139030520223986,
+          "value": 18.958859373943056
+        },
+        "P4_D_prime": {
+          "standard_error": 0.0002645873013854218,
+          "value": -0.00046438511261303635
+        },
+        "P4_S": {
+          "standard_error": 7.734408079066403e-06,
+          "value": -1.0712760807662967e-05
+        },
+        "P4_S_prime": {
+          "standard_error": 0.00024913893253110386,
+          "value": 0.0009016433036753112
+        }
+      },
+      "delta_cos4": 1.9177170035671818,
+      "gaussian_norm": 580,
+      "histogram_sha256": "f71c0faf485bb289b4970aee5a007948ead4574169ff2a38a94a5541f836cdc7",
+      "modulus": "i",
+      "samples": 200000000,
+      "seconds": 1668.8,
+      "spin8_leakage": "-1148/21025"
+    },
+    "r2": {
+      "aspect_ratio": 2,
+      "channels": {
+        "Mbar_prime": {
+          "standard_error": 0.0005086983264746855,
+          "value": 15.25610772894889
+        },
+        "P4_D_prime": {
+          "standard_error": 0.0002906543062116859,
+          "value": -0.0010490510501072047
+        },
+        "P4_S": {
+          "standard_error": 9.703902183749174e-06,
+          "value": -2.874616719070028e-05
+        },
+        "P4_S_prime": {
+          "standard_error": 0.00025911069679858926,
+          "value": 0.0029109770266212776
+        }
+      },
+      "delta_cos4": 1.9177170035671818,
+      "gaussian_norm": 290,
+      "histogram_sha256": "68b6253a27caab1f00e89ce25d4ca1201f7c4e13e9e8322ad25fa3759ed7cea1",
+      "modulus": "2i",
+      "samples": 200000000,
+      "seconds": 1741.7,
+      "spin8_leakage": "1148/21025"
+    },
+    "r4": {
+      "aspect_ratio": 4,
+      "channels": {
+        "Mbar_prime": {
+          "standard_error": 0.00035630635258007855,
+          "value": 6.323991679510491
+        },
+        "P4_D_prime": {
+          "standard_error": 0.0001888644274061606,
+          "value": -0.0017578959003842444
+        },
+        "P4_S": {
+          "standard_error": 5.389004045589948e-06,
+          "value": -4.4726444293875174e-05
+        },
+        "P4_S_prime": {
+          "standard_error": 0.00019512853917124002,
+          "value": 0.004131807633330795
+        }
+      },
+      "delta_cos4": 1.9177170035671818,
+      "gaussian_norm": 145,
+      "histogram_sha256": "5d00fe008e6bfba62cc56366004fcadbc4f7b10e0c3072ea9b4d6aeeef8df0fb",
+      "modulus": "4i",
+      "samples": 200000000,
+      "seconds": 1905.1,
+      "spin8_leakage": "-1148/21025"
+    }
+  },
+  "samples_per_rung": 200000000,
+  "schema": "matching-one.aspect-ladder-n580.v1",
+  "seed": "20260906",
+  "site_count": 580,
+  "test_statistic": {
+    "definition": "z = (Y - R0*X) / sqrt(varY + R0^2 varX - 2 R0 cov(X,Y))",
+    "deviation_from_the_frozen_runner": "the ratio z-test was committed in the runner before the run and is therefore effectively part of the freeze. Changing it after seeing the data is a real deviation and is recorded here rather than silently applied. It moves verdicts in both directions",
+    "used": "fieller_contrast",
+    "why": "the denominator A4(i) is only a few sigma from zero, so the ratio is not approximately normal and its standard error at the observed point understates the spread out where the large predictions sit. X and Y are means over batches, so the CLT applies to the contrast directly. The pre-registered statistic was (Rhat - R0)/SE(Rhat), reported alongside as ratio_z_not_used and NOT used to decide"
+  },
+  "verdict": "underpowered: more than one competing prediction survives at r4_over_r1",
+  "why_that_entry": "the r=1 and r=4 rungs carry the same spin-8 leakage, so it cancels to leading order in their ratio. It does not cancel in r2_over_r1, where the r=2 rung carries the opposite sign, so that entry keeps a systematic of about -0.055 * (A8/A4 + A8'/A4') and is reported but not used to exclude"
+}

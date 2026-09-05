@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Certified exclusion of primitive polynomials C(1..6, 3) on one frozen interval.
+"""Certified exclusion of primitive polynomials C(1..6, height) on one frozen interval.
 
 This is a **second, independent implementation** of the census in
 ``scripts/degree6_low_height_exclusion.py``, kept alongside it rather than
@@ -76,6 +76,19 @@ HEIGHT = 3
 ISOLATION_BITS = 120
 EXPECTED_CLASS_SIZES = {1: 15, 2: 129, 3: 975, 4: 7041, 5: 49935, 6: 351489}
 EXPECTED_CLASS_TOTAL = 409584
+# Height-4 class, counted independently by this module's own enumeration.  The
+# Ziff "A lattice" quintic x^5-4x^4+3x^3+2x^2-1 is height 4, so height <= 3 does
+# not cover the historical record (Result F' in the manuscript).
+HEIGHT4_EXPECTED_CLASS_SIZES = {1: 23, 2: 265, 3: 2639, 4: 24913, 5: 229703, 6: 2093785}
+HEIGHT4_EXPECTED_CLASS_TOTAL = 2351328
+
+
+def _expected_class_sizes(height: int) -> dict[int, int]:
+    if height == 4:
+        return HEIGHT4_EXPECTED_CLASS_SIZES
+    if height == 3:
+        return EXPECTED_CLASS_SIZES
+    raise ValueError(f"no frozen expected class sizes for height {height}")
 
 
 def _require(condition: bool, message: str) -> None:
@@ -186,7 +199,7 @@ def run_search(interval: Mapping[str, Any],
 
     for degree in range(degree_min, degree_max + 1):
         polynomials = _degree_polynomials(degree, height)
-        _require(len(polynomials) == EXPECTED_CLASS_SIZES[degree],
+        _require(len(polynomials) == _expected_class_sizes(height)[degree],
                  f"class size drift at degree {degree}")
         class_sizes[degree] = len(polynomials)
         survivors = 0
@@ -253,7 +266,8 @@ def run_search(interval: Mapping[str, Any],
 
 @lru_cache(maxsize=8)
 def build_result(interval_id: str,
-                 contract_path: Path = DEFAULT_CONTRACT) -> dict[str, Any]:
+                 contract_path: Path = DEFAULT_CONTRACT,
+                 height: int = HEIGHT) -> dict[str, Any]:
     raw = contract_path.read_bytes()
     contract = json.loads(raw)
     rows = [row for row in contract["intervals"] if row["id"] == interval_id]
@@ -261,7 +275,7 @@ def build_result(interval_id: str,
     provenance = contract["provenance"]
     digest = hashlib.sha256((ROOT / provenance["path"]).read_bytes()).hexdigest()
     _require(digest == provenance["sha256"], "provenance digest drift")
-    interval_result = run_search(rows[0])
+    interval_result = run_search(rows[0], height=height)
     return {
         "schema": SCHEMA,
         "issue": ISSUE,
@@ -271,7 +285,7 @@ def build_result(interval_id: str,
         "search": {
             "degree_min": DEGREE_MIN,
             "degree_max": DEGREE_MAX,
-            "coefficient_height_max": HEIGHT,
+            "coefficient_height_max": height,
             "primitive_coefficients_only": True,
             "sign_normalization": "a_d_positive",
             "screen": "exact rational midpoint evaluation with mean-value derivative bound",
@@ -281,7 +295,7 @@ def build_result(interval_id: str,
         "interval_result": interval_result,
         "claim_boundary": {
             "included": (f"certified exclusion on the frozen {interval_id} method interval "
-                         f"over the declared finite class C(1..6,{HEIGHT})"),
+                         f"over the declared finite class C(1..6,{height})"),
             "excluded": ("other method intervals, higher degree/height, library expansion, "
                          "near-hit promotion, p-values, closed forms, cross-interval "
                          "resolution, or transcendence"),
@@ -290,8 +304,9 @@ def build_result(interval_id: str,
     }
 
 
-def validate_result(result: Mapping[str, Any], interval_id: str) -> Mapping[str, Any]:
-    expected = build_result(interval_id)
+def validate_result(result: Mapping[str, Any], interval_id: str,
+                    height: int = HEIGHT) -> Mapping[str, Any]:
+    expected = build_result(interval_id, height=height)
     _require(result == expected, "degree-56 interval result does not exactly reproduce")
     row = expected["interval_result"]
     return {
@@ -308,12 +323,15 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     parser.add_argument("interval_id")
     parser.add_argument("--output", type=Path)
     parser.add_argument("--validate", type=Path)
+    parser.add_argument("--height", type=int, default=HEIGHT,
+                        help="coefficient height bound for the class C(1..6, height)")
     args = parser.parse_args(argv)
     if args.validate:
-        print(json.dumps(validate_result(json.loads(args.validate.read_text()), args.interval_id),
+        print(json.dumps(validate_result(json.loads(args.validate.read_text()), args.interval_id,
+                                         args.height),
                          indent=2, sort_keys=True))
         return 0
-    rendered = json.dumps(build_result(args.interval_id), indent=2, sort_keys=True) + "\n"
+    rendered = json.dumps(build_result(args.interval_id, height=args.height), indent=2, sort_keys=True) + "\n"
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(rendered)

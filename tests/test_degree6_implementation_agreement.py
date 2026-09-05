@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Locks the two-implementation cross-check of the C(1..6, 3) census."""
+"""Locks the two-implementation cross-check of the C(1..6, 3) and C(1..6, 4) censuses."""
 
 from __future__ import annotations
 
@@ -29,6 +29,13 @@ INTERVALS = (
 # Python rational arithmetic, and the other three are covered by the agreement
 # check against the primary implementation, which CI rebuilds in full.
 RECENSUSED = "jacobsen-2015-eigenvalue"
+# The global minimiser over the whole class differs between the two heights.
+CLOSEST = {3: [0, -2, 2, 2, -1, 2, 1], 4: [1, -3, -1, 2, 2, 4, 4]}
+CLASS_TOTAL = {3: 409_584, 4: 2_351_328}
+
+
+def _rows_at(rows, height):
+    return [row for row in rows if row["coefficient_height_max"] == height]
 
 
 class ImplementationAgreementTests(unittest.TestCase):
@@ -43,24 +50,27 @@ class ImplementationAgreementTests(unittest.TestCase):
         self.assertEqual(report["status"], "valid")
         self.assertTrue(report["implementations_agree"])
 
-    def test_every_cell_agrees(self) -> None:
-        self.assertEqual(self.built["cells_compared"], 24)
-        self.assertEqual(self.built["cells_in_agreement"], 24)
-        self.assertEqual(
-            [row["interval_id"] for row in self.built["intervals"]], list(INTERVALS)
-        )
-        for row in self.built["intervals"]:
-            self.assertTrue(row["exclusion_verdict"], row["interval_id"])
-            self.assertTrue(row["exclusion_verdicts_agree"], row["interval_id"])
-            for cell in row["by_degree"]:
-                self.assertEqual(cell["disagreements"], [], (row["interval_id"], cell["degree"]))
-                self.assertEqual(cell["values"]["screen_survivors"], 0)
-                self.assertEqual(cell["values"]["root_containing_polynomials"], 0)
-        total = sum(
-            cell["values"]["polynomials_in_class"]
-            for cell in self.built["intervals"][0]["by_degree"]
-        )
-        self.assertEqual(total, 409_584)
+    def test_every_cell_agrees_at_both_heights(self) -> None:
+        self.assertEqual(self.built["heights_compared"], [3, 4])
+        self.assertEqual(self.built["cells_compared"], 48)
+        self.assertEqual(self.built["cells_in_agreement"], 48)
+        # 4 intervals x 2 heights, each interval by height with all six degrees.
+        self.assertEqual(len(self.built["intervals"]), 8)
+        for height in (3, 4):
+            rows = _rows_at(self.built["intervals"], height)
+            self.assertEqual([row["interval_id"] for row in rows], list(INTERVALS))
+            for row in rows:
+                self.assertTrue(row["exclusion_verdict"], row["interval_id"])
+                self.assertTrue(row["exclusion_verdicts_agree"], row["interval_id"])
+                for cell in row["by_degree"]:
+                    self.assertEqual(cell["disagreements"], [], (height, row["interval_id"], cell["degree"]))
+                    self.assertEqual(cell["values"]["screen_survivors"], 0)
+                    self.assertEqual(cell["values"]["root_containing_polynomials"], 0)
+            total = sum(
+                cell["values"]["polynomials_in_class"]
+                for cell in rows[0]["by_degree"]
+            )
+            self.assertEqual(total, CLASS_TOTAL[height])
 
     def test_closest_member_matches_and_respects_the_mean_value_bound(self) -> None:
         """Equal counts could be coincidence; equal residuals cannot.
@@ -69,9 +79,12 @@ class ImplementationAgreementTests(unittest.TestCase):
         their residuals must differ -- but by no more than ``D*(u-l)/2``.
         """
         for row in self.built["intervals"]:
+            height = row["coefficient_height_max"]
             closest = row["closest_member"]
             self.assertTrue(closest["coefficients_agree"], row["interval_id"])
-            self.assertEqual(closest["coefficients_ascending"], [0, -2, 2, 2, -1, 2, 1])
+            self.assertEqual(
+                closest["coefficients_ascending"], CLOSEST[height], (height, row["interval_id"])
+            )
             gap = Fraction(closest["residual_gap_text"])
             allowance = Fraction(closest["mean_value_allowance_text"])
             self.assertGreater(gap, 0, row["interval_id"])
@@ -110,14 +123,16 @@ class ImplementationAgreementTests(unittest.TestCase):
 
     def test_replication_artifact_regenerates(self) -> None:
         """One interval is recensused so the second implementation is not a fossil."""
-        committed = json.loads(
-            (
-                ROOT / "results" / f"pslq-degree6-low-height-replication-{RECENSUSED}" / "latest.json"
-            ).read_text(encoding="utf-8")
-        )
-        self.assertEqual(replication.build_result(RECENSUSED), committed)
-        self.assertTrue(committed["interval_result"]["excluded"])
-        self.assertEqual(committed["interval_result"]["class_size_total"], 409_584)
+        for height in (3, 4):
+            prefix = "low-height" if height == 3 else "height4"
+            committed = json.loads(
+                (
+                    ROOT / "results" / f"pslq-degree6-{prefix}-replication-{RECENSUSED}" / "latest.json"
+                ).read_text(encoding="utf-8")
+            )
+            self.assertEqual(replication.build_result(RECENSUSED, height=height), committed)
+            self.assertTrue(committed["interval_result"]["excluded"])
+            self.assertEqual(committed["interval_result"]["class_size_total"], CLASS_TOTAL[height])
 
     def test_a_planted_disagreement_is_reported(self) -> None:
         """Guards the comparison itself: agreement must be earned, not default."""
@@ -135,10 +150,14 @@ class ImplementationAgreementTests(unittest.TestCase):
         finally:
             agreement._load = original
         self.assertFalse(tampered["implementations_agree"])
-        self.assertEqual(tampered["cells_in_agreement"], 20)
-        for row in tampered["intervals"]:
+        # 48 cells, four height-3 intervals each losing one degree-4 cell.
+        self.assertEqual(tampered["cells_in_agreement"], 44)
+        for row in _rows_at(tampered["intervals"], 3):
             degree_four = next(c for c in row["by_degree"] if c["degree"] == 4)
             self.assertEqual(degree_four["disagreements"], ["screen_survivors"])
+        for row in _rows_at(tampered["intervals"], 4):
+            for cell in row["by_degree"]:
+                self.assertEqual(cell["disagreements"], [])
 
     def test_a_mismatched_contract_is_refused(self) -> None:
         original = agreement._load
