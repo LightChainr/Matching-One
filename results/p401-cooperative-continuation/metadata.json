@@ -1,0 +1,25 @@
+{
+  "schema": "matching-one/p401-local-reproduction/v1",
+  "created_utc": "2026-08-30T13:00:54.180027+00:00",
+  "repository": "LightChainr/Matching-One",
+  "base_commit": "6f711e524d9b33693703109521e592ca893e9cb0",
+  "result_commit": "The containing additive Git commit; source content is fixed by the hashes below.",
+  "worktree": "local focused source bundle, not a full repository checkout",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "arithmetic": "Python integers and fractions.Fraction",
+  "randomness": "none; bounded exhaustive enumeration",
+  "new_focused_tests_passed": 13,
+  "repository_wide_ci_run": false,
+  "commands": [
+    "python scripts/p401_cooperative_continuation.py --output results/p401-cooperative-continuation/exact.json",
+    "python -m unittest discover -s tests -p 'test_p401_*.py' -v"
+  ],
+  "sha256": {
+    "scripts/p334_birth_age_collision_review_20260830.py": "9730143009f4f662e746d9bb577c4a51e6cf2fbc4d5e0b0987a1399a19d24fbd",
+    "scripts/p401_cooperative_continuation.py": "490715269fd5e553d26c704cc36c75c0bfaf2254e9821cd317689c79d3203418",
+    "tests/test_p401_cooperative_continuation.py": "373df706db1bc3c98f04c92c841c7a481aabbd63da42be88776fd5a9b80f40c6",
+    "results/p401-cooperative-continuation/exact.json": "be4c1439e4ebd452929bab4fe24be02e0724b4baa2b9d86f8c51687f106eba94",
+    "notes/p401-frontier-continuation-review-20260830.md": "7d74da7347f9126109bc40ea8fa2777f40e467ea2adfc9d6cc2c3d8e44c64a54"
+  }
+}

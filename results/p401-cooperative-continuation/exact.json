@@ -1,0 +1,408 @@
+{
+  "schema": "matching-one/p401-cooperative-continuation/v1",
+  "status": "exact_finite_volume",
+  "topology_source": {
+    "commit": "fee33287cf4830e07ccef6177f43034add02256e",
+    "path": "scripts/p334_birth_age_collision_review_20260830.py",
+    "git_blob": "62e06795fdfa91a956aedd62b7344e84aa5efc5c",
+    "changed": false
+  },
+  "gates": [
+    {
+      "generator": [
+        2,
+        1
+      ],
+      "N": 5,
+      "states": 32,
+      "rank_one_states": 10,
+      "two_step_identity_cases": 10,
+      "three_step_identity_cases": 0,
+      "full_survival_signatures_checked": 10
+    },
+    {
+      "generator": [
+        3,
+        0
+      ],
+      "N": 9,
+      "states": 512,
+      "rank_one_states": 162,
+      "two_step_identity_cases": 162,
+      "three_step_identity_cases": 162,
+      "full_survival_signatures_checked": 162
+    },
+    {
+      "generator": [
+        3,
+        1
+      ],
+      "N": 10,
+      "states": 1024,
+      "rank_one_states": 310,
+      "two_step_identity_cases": 310,
+      "three_step_identity_cases": 310,
+      "full_survival_signatures_checked": 310
+    },
+    {
+      "generator": [
+        3,
+        2
+      ],
+      "N": 13,
+      "states": 8192,
+      "rank_one_states": 2340,
+      "two_step_identity_cases": 2340,
+      "three_step_identity_cases": 2340,
+      "full_survival_signatures_checked": 2340
+    }
+  ],
+  "history_witnesses": [
+    {
+      "N": 10,
+      "k": 5,
+      "line": [
+        0,
+        1
+      ],
+      "x": 1,
+      "c2_control": null,
+      "horizon": 2,
+      "current_subsets": 30,
+      "rows": [
+        {
+          "K1": 4,
+          "prefixes": 960,
+          "successful_subset_weight": 6240,
+          "cooperative_pair_weight": 2400,
+          "mean_c2": "5/2",
+          "probability": "13/20"
+        },
+        {
+          "K1": 5,
+          "prefixes": 2640,
+          "successful_subset_weight": 17760,
+          "cooperative_pair_weight": 7200,
+          "mean_c2": "30/11",
+          "probability": "37/55"
+        }
+      ],
+      "latest_minus_earliest": "1/44"
+    },
+    {
+      "N": 13,
+      "k": 6,
+      "line": [
+        0,
+        1
+      ],
+      "x": 0,
+      "c2_control": null,
+      "horizon": 2,
+      "current_subsets": 65,
+      "rows": [
+        {
+          "K1": 5,
+          "prefixes": 12480,
+          "successful_subset_weight": 56160,
+          "cooperative_pair_weight": 56160,
+          "mean_c2": "9/2",
+          "probability": "3/14"
+        },
+        {
+          "K1": 6,
+          "prefixes": 34320,
+          "successful_subset_weight": 159120,
+          "cooperative_pair_weight": 159120,
+          "mean_c2": "51/11",
+          "probability": "17/77"
+        }
+      ],
+      "latest_minus_earliest": "1/154"
+    },
+    {
+      "N": 13,
+      "k": 6,
+      "line": [
+        0,
+        1
+      ],
+      "x": 0,
+      "c2_control": 5,
+      "horizon": 3,
+      "current_subsets": 52,
+      "rows": [
+        {
+          "K1": 5,
+          "prefixes": 9360,
+          "successful_subset_weight": 199680,
+          "cooperative_pair_weight": 46800,
+          "mean_c2": "5",
+          "probability": "64/105"
+        },
+        {
+          "K1": 6,
+          "prefixes": 28080,
+          "successful_subset_weight": 605280,
+          "cooperative_pair_weight": 140400,
+          "mean_c2": "5",
+          "probability": "194/315"
+        }
+      ],
+      "latest_minus_earliest": "2/315"
+    }
+  ],
+  "configuration_witnesses": [
+    {
+      "N": 10,
+      "mask": 155,
+      "k": 5,
+      "line": [
+        0,
+        1
+      ],
+      "vacancies": 5,
+      "x": 1,
+      "c2": 2,
+      "pair_wedges": 0,
+      "pair_triangles": 0,
+      "minimal_triples": 0,
+      "trigger_sites": [
+        5
+      ],
+      "cooperative_pairs": [
+        [
+          2,
+          6
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "successful_subsets_by_horizon": [
+        0,
+        1,
+        6,
+        10
+      ],
+      "exit_probability": {
+        "1": "1/5",
+        "2": "3/5",
+        "3": "1"
+      },
+      "bernoulli_second_derivative_at_zero": 4,
+      "survival_signature": [
+        1,
+        4,
+        4,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "N": 10,
+      "mask": 157,
+      "k": 5,
+      "line": [
+        0,
+        1
+      ],
+      "vacancies": 5,
+      "x": 1,
+      "c2": 3,
+      "pair_wedges": 2,
+      "pair_triangles": 0,
+      "minimal_triples": 0,
+      "trigger_sites": [
+        6
+      ],
+      "cooperative_pairs": [
+        [
+          1,
+          5
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "successful_subsets_by_horizon": [
+        0,
+        1,
+        7,
+        10
+      ],
+      "exit_probability": {
+        "1": "1/5",
+        "2": "7/10",
+        "3": "1"
+      },
+      "bernoulli_second_derivative_at_zero": 6,
+      "survival_signature": [
+        1,
+        4,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "N": 13,
+      "mask": 655,
+      "k": 6,
+      "line": [
+        0,
+        1
+      ],
+      "vacancies": 7,
+      "x": 0,
+      "c2": 5,
+      "pair_wedges": 4,
+      "pair_triangles": 0,
+      "minimal_triples": 0,
+      "trigger_sites": [],
+      "cooperative_pairs": [
+        [
+          5,
+          10
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          8,
+          11
+        ]
+      ],
+      "successful_subsets_by_horizon": [
+        0,
+        0,
+        5,
+        21
+      ],
+      "exit_probability": {
+        "1": "0",
+        "2": "5/21",
+        "3": "3/5"
+      },
+      "bernoulli_second_derivative_at_zero": 10,
+      "survival_signature": [
+        1,
+        7,
+        16,
+        14,
+        4,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "N": 13,
+      "mask": 693,
+      "k": 6,
+      "line": [
+        0,
+        1
+      ],
+      "vacancies": 7,
+      "x": 0,
+      "c2": 5,
+      "pair_wedges": 6,
+      "pair_triangles": 0,
+      "minimal_triples": 3,
+      "trigger_sites": [],
+      "cooperative_pairs": [
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          12
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          12
+        ]
+      ],
+      "successful_subsets_by_horizon": [
+        0,
+        0,
+        5,
+        22
+      ],
+      "exit_probability": {
+        "1": "0",
+        "2": "5/21",
+        "3": "22/35"
+      },
+      "bernoulli_second_derivative_at_zero": 10,
+      "survival_signature": [
+        1,
+        7,
+        16,
+        13,
+        3,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "independent_prefix_check": {
+    "ordered_prefixes_checked": 30240,
+    "prefix_counts": {
+      "4": 960,
+      "5": 2640
+    },
+    "successful_pair_weight": {
+      "4": 6240,
+      "5": 17760
+    }
+  },
+  "two_future_control": {
+    "N": 10,
+    "k": 5,
+    "line": [
+      0,
+      1
+    ],
+    "x": 1,
+    "current_subsets": 30,
+    "mean_q2": "2/3",
+    "mean_q2_squared": "67/150",
+    "variance_q2_given_k_line_x": "1/450",
+    "variance_after_also_controlling_c2": "0"
+  },
+  "boundaries": [
+    "No continuum-memory or asymptotic exponent is proved.",
+    "Fixed-checkpoint reliability sufficiency does not prove Markov closure.",
+    "No Q4/Jordan identification or BA/TM/ULC counterexample.",
+    "No Monte Carlo, new production field, or repository-wide CI was run."
+  ]
+}
