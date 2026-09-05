@@ -1,0 +1,141 @@
+{
+  "E4_at_square_point": "1.45576289227",
+  "candidate_shapes": [
+    {
+      "diagonal_over_axis_at_square": "-1.0",
+      "difference_ratio": {
+        "2": "2.75",
+        "3": "6.18233512793",
+        "4": "10.9908008589"
+      },
+      "modular_weight": 4,
+      "on_the_list_because": "the Q4-Jordan prediction",
+      "shape": "E4",
+      "survives_difference_channel": true
+    },
+    {
+      "diagonal_over_axis_at_square": "1.0",
+      "modular_weight": 8,
+      "on_the_list_because": "the next even weight; equals E4^2",
+      "shape": "E8",
+      "survives_difference_channel": false,
+      "why": "the 45-degree lattice gives the same amplitude, so the axis-minus-diagonal difference is identically zero"
+    },
+    {
+      "diagonal_over_axis_at_square": "-1.0",
+      "difference_ratio": {
+        "2": "32.515625",
+        "3": "370.250215227",
+        "4": "2080.30719731"
+      },
+      "modular_weight": 12,
+      "on_the_list_because": "weight-12 Eisenstein",
+      "shape": "E12",
+      "survives_difference_channel": true
+    },
+    {
+      "diagonal_over_axis_at_square": "-1.0",
+      "difference_ratio": {
+        "2": "20.796875",
+        "3": "236.296685528",
+        "4": "1327.6635036"
+      },
+      "modular_weight": 12,
+      "on_the_list_because": "a weight-12 power of the same shape",
+      "shape": "E4^3",
+      "survives_difference_channel": true
+    },
+    {
+      "diagonal_over_axis_at_square": "-1.0",
+      "difference_ratio": {
+        "2": "0.125",
+        "3": "0.00265913961943",
+        "4": "2.79010739704e-5"
+      },
+      "modular_weight": 12,
+      "on_the_list_because": "the weight-12 cusp form",
+      "shape": "Delta",
+      "survives_difference_channel": true
+    },
+    {
+      "diagonal_over_axis_at_square": null,
+      "modular_weight": 6,
+      "on_the_list_because": "an odd-spin weight, for contrast",
+      "shape": "E6",
+      "survives_difference_channel": false,
+      "why": "the shape vanishes at the square point"
+    }
+  ],
+  "claim_level": "C0_exact_design_input",
+  "design": {
+    "null_channel": "A_axis + A_diagonal must be consistent with zero for a pure weight-4 shape, and carries the cancelled scalar content",
+    "observable_pair": "the same 1:r torus realized twice, once axis-aligned and once with the lattice at 45 degrees; period vectors (1,0),(0,r) and (1,1),(-r,r)",
+    "score": "D(r) = A_axis(r) - A_diagonal(r), reported as D(r)/D(1)",
+    "why_the_difference": "the orientation prefactor is exp(-i k theta), so a 45-degree turn multiplies a weight-k amplitude by exp(-i k pi/4); weights congruent to 0 mod 8 are unchanged and cancel exactly in D"
+  },
+  "design_conclusions": [
+    "the axis/diagonal difference removes every weight congruent to 0 mod 8 exactly, which is where all scalar finite-size corrections live; this costs nothing and is not a statistical argument",
+    "the nearest surviving modular competitor sits roughly a factor of 12 away at aspect ratio 2, so modular weight is not the hard part",
+    "the one competitor that survives is plain area scaling, and the entire discriminating content against it is the constant 1/E4(i); the measurement is 11/4 against 4, a gap of 45 percent of the predicted value",
+    "aspect ratios 3 and 4 reproduce the area law to within 1e-5 and better, so they add essentially nothing against that competitor: one rectangle is the whole experiment",
+    "3 sigma between 11/4 and 4 needs the ratio to about 15 percent relative, and that number, not the number of geometries, is what the production design has to hit"
+  ],
+  "effect_on_the_open_normalization_question": "the axis/diagonal difference removes every weight congruent to 0 mod 8, so any scalar part of the unfixed additive shape drops out of the score; a spin-4 part does not. The channel narrows docs/astra/Q2 without closing it, and the narrowing is exact rather than statistical.",
+  "marginal_value_of_extra_aspect_ratios": [
+    {
+      "aspect_ratio": 3,
+      "distance_from_the_r2_value": "0.000834727",
+      "q4_over_area": "0.686926125326"
+    },
+    {
+      "aspect_ratio": 4,
+      "distance_from_the_r2_value": "0.000836286",
+      "q4_over_area": "0.686925053681"
+    }
+  ],
+  "nearest_modular_competitor_at_2i": {
+    "difference_ratio_at_2i": "0.125",
+    "shape": "Delta"
+  },
+  "not_established": [
+    "that any lattice observable equals one of these shapes",
+    "that the measured amplitude is the root-normalized log slope rather than a leading amplitude with the same symmetry",
+    "that the difference channel is free of lattice-level spin-4 contamination that is not of modular origin",
+    "that 11/4 is a prediction rather than a conditional statement: the additive shape A~(tau) is not fixed by the Jordan relation and the ratio is clean only if the normalization removes the same block, which is the open question in docs/astra/Q2",
+    "any statement about achievable precision, which depends on the production design and not on this arithmetic"
+  ],
+  "q4_jordan_prediction_at_2i": "11/4",
+  "question": "which candidate spin-4 shapes can a rectangular-torus measurement separate, and how many rectangles are worth running",
+  "schema": "matching-one.modulus-shape-discrimination.v2",
+  "separation_from_area_scaling": [
+    {
+      "area_scaling": "4",
+      "aspect_ratio": 2,
+      "q4_jordan": "2.75",
+      "q4_over_area": "0.6875",
+      "relative_distance": "0.45454545"
+    },
+    {
+      "area_scaling": "9",
+      "aspect_ratio": 3,
+      "q4_jordan": "6.18233512793",
+      "q4_over_area": "0.686926125326",
+      "relative_distance": "0.45576062"
+    },
+    {
+      "area_scaling": "16",
+      "aspect_ratio": 4,
+      "q4_jordan": "10.9908008589",
+      "q4_over_area": "0.686925053681",
+      "relative_distance": "0.45576289"
+    }
+  ],
+  "surviving_competitor_without_modular_structure": {
+    "description": "spin-4 amplitude scaling with torus area and nothing else",
+    "difference_ratio": {
+      "2": "4",
+      "3": "9",
+      "4": "16"
+    }
+  }
+}

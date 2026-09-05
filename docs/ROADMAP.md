@@ -37,7 +37,9 @@ Scale-log behavior is no longer enough to identify the Q4 Jordan module. Use exa
 - rectangular/CM `11/4` relation;
 - hexagonal degree-2 E4 child phase projector `(1,zeta,zeta^2)` which cancels a common scalar mode.
 
-**Action:** freeze the smallest scalar-cancelled two/modulus score that separates ordinary analytic correction, generic log mixing and Q4-Jordan shape. Prefer a geometry ratio/projector over another free radial exponent.
+**The score is now chosen** — see `notes/modulus-fingerprint-design-20260905.md`. Run each torus twice, axis-aligned and with the lattice turned 45 degrees, and take the difference `D(r)`. The orientation factor is `exp(-i k theta)`, so every modular weight congruent to 0 mod 8 cancels exactly; that is where all scalar corrections live. The frozen prediction is `D(2)/D(1) = 11/4` against `4` for plain area scaling.
+
+**Action:** run **one** aspect ratio (`r=2`), two orientations, to about 15 percent relative on the ratio. Aspect ratios 3 and 4 reproduce the area law to 1e-5 and separate nothing further — do not buy them. The 11/4 remains conditional on the normalization question in `docs/astra/Q2-additive-shape-ambiguity.md`.
 
 ### 3. Norm-4 dyadic closure with deck characters — #154
 
@@ -92,6 +94,7 @@ Not forbidden, simply poor use of time/compute now:
 - a third primitive norm-2 generation whose only purpose is another sign flip;
 - another scalar width/boundary correction fit to P57;
 - another free exponent fit before testing shape/modulus information;
+- rectangular tori beyond `r=2` for the modulus fingerprint: they reproduce the area law to 1e-5 and separate nothing the square/rectangle pair has not already separated;
 - large production that stores only final scalars instead of reusable sufficient statistics;
 - treating registry/doc synchronization as a prerequisite for science.
 
