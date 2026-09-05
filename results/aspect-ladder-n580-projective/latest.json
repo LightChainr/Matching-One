@@ -1,0 +1,184 @@
+{
+  "admissible_corr_r2_r4": [
+    -0.985,
+    0.98
+  ],
+  "channel": "P4_S_prime",
+  "competitors": {
+    "bare_aspect_ratio": {
+      "curvature_predicted": -1.1102230246251565e-16,
+      "degrees_of_freedom": 2,
+      "equivalent_sigma": 2.7416123268017065,
+      "excluded_at_3_sigma": false,
+      "ray": [
+        1.0,
+        2.0,
+        4.0
+      ],
+      "required_abs_A8_over_A4_to_reach_r2": 7.7034025881458845,
+      "sigma_over_admissible_correlations": [
+        2.1440765898340355,
+        4.7688492476881645
+      ],
+      "statistic": 10.194398731084052,
+      "verdict_survives_the_missing_covariance": false
+    },
+    "no_modulus_dependence": {
+      "curvature_predicted": -2.7755575615628914e-17,
+      "degrees_of_freedom": 2,
+      "equivalent_sigma": 9.220248446442094,
+      "excluded_at_3_sigma": true,
+      "ray": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "required_abs_A8_over_A4_to_reach_r2": 0.3896855217837803,
+      "sigma_over_admissible_correlations": [
+        9.214918506995293,
+        Infinity
+      ],
+      "statistic": 89.93023916877925,
+      "verdict_survives_the_missing_covariance": true
+    },
+    "plain_area_scaling": {
+      "curvature_predicted": 0.9999999999999998,
+      "degrees_of_freedom": 2,
+      "equivalent_sigma": 7.133738711613244,
+      "excluded_at_3_sigma": true,
+      "ray": [
+        1.0,
+        4.0,
+        16.0
+      ],
+      "required_abs_A8_over_A4_to_reach_r2": 32.00978409632667,
+      "sigma_over_admissible_correlations": [
+        6.104937105992065,
+        8.93392019413982
+      ],
+      "statistic": 55.309016047363585,
+      "verdict_survives_the_missing_covariance": true
+    },
+    "q4_jordan_weight4": {
+      "curvature_predicted": 0.7901334764833332,
+      "degrees_of_freedom": 2,
+      "equivalent_sigma": 6.997859679376489,
+      "excluded_at_3_sigma": true,
+      "ray": [
+        1.0,
+        2.75,
+        10.9908008589
+      ],
+      "required_abs_A8_over_A4_to_reach_r2": 32.10162275195793,
+      "sigma_over_admissible_correlations": [
+        5.933602731446329,
+        8.858616104770292
+      ],
+      "statistic": 53.351771861647514,
+      "verdict_survives_the_missing_covariance": true
+    },
+    "weight12_E12": {
+      "curvature_predicted": 330.7933870516666,
+      "degrees_of_freedom": 2,
+      "equivalent_sigma": 11.253750988906026,
+      "excluded_at_3_sigma": true,
+      "ray": [
+        1.0,
+        32.515625,
+        2080.30719731
+      ],
+      "required_abs_A8_over_A4_to_reach_r2": 784.5938258072141,
+      "sigma_over_admissible_correlations": [
+        11.133083476071072,
+        11.378149352382191
+      ],
+      "statistic": 131.95538872229977,
+      "verdict_survives_the_missing_covariance": true
+    },
+    "weight12_E4_cubed": {
+      "curvature_predicted": 211.21214643333334,
+      "degrees_of_freedom": 2,
+      "equivalent_sigma": 11.251829761007931,
+      "excluded_at_3_sigma": true,
+      "ray": [
+        1.0,
+        20.796875,
+        1327.6635036
+      ],
+      "required_abs_A8_over_A4_to_reach_r2": 782.8485404744023,
+      "sigma_over_admissible_correlations": [
+        11.130227368349383,
+        11.377193844580397
+      ],
+      "statistic": 131.91181409773355,
+      "verdict_survives_the_missing_covariance": true
+    },
+    "weight12_delta": {
+      "curvature_predicted": 0.2708379835123284,
+      "degrees_of_freedom": 2,
+      "equivalent_sigma": Infinity,
+      "excluded_at_3_sigma": true,
+      "ray": [
+        1.0,
+        0.125,
+        2.79010739704e-05
+      ],
+      "required_abs_A8_over_A4_to_reach_r2": 222.48919954985303,
+      "sigma_over_admissible_correlations": [
+        Infinity,
+        Infinity
+      ],
+      "statistic": 555.1425001560752,
+      "verdict_survives_the_missing_covariance": true
+    },
+    "weight8_E8": {
+      "curvature_predicted": 16.68503392,
+      "degrees_of_freedom": 2,
+      "equivalent_sigma": 10.46511341805997,
+      "excluded_at_3_sigma": true,
+      "ray": [
+        1.0,
+        7.5625,
+        120.79770352
+      ],
+      "required_abs_A8_over_A4_to_reach_r2": 182.1558946444769,
+      "sigma_over_admissible_correlations": [
+        10.025962742762978,
+        10.968462543592507
+      ],
+      "statistic": 114.68413846515315,
+      "verdict_survives_the_missing_covariance": true
+    }
+  },
+  "covariance_is_complete": false,
+  "curvature": {
+    "definition": "second divided difference on r = 1, 2, 4: (m4 - 3 m2 + 2 m1) / 6",
+    "sign_predicted_by_every_competitor": "zero for the two families linear in r, strictly positive for every modular family; the measurement is negative",
+    "standard_error": 0.00015296870813746256,
+    "value": -0.0004663061398637359,
+    "why_it_is_safe": "a linear functional of the response, so it has no denominator and no matrix inverse; nothing about it degrades when one rung is close to zero, which is what broke the ratio test",
+    "z": -3.0483760080179167,
+    "z_over_admissible_correlations": [
+      -3.7895654133864847,
+      -2.619049652883127
+    ]
+  },
+  "response_vector": [
+    0.0009016433036753112,
+    0.0029109770266212776,
+    0.004131807633330795
+  ],
+  "rungs": [
+    1,
+    2,
+    4
+  ],
+  "schema": "matching-one.aspect-ladder-n580-projective.v1",
+  "source_artifact": "results/aspect-ladder-n580/latest.json",
+  "spin8_bound_provenance": {
+    "assumed_by_the_frozen_design": "|A8/A4| well below 1",
+    "traces_to": "predictions/modulus_fingerprint_n290_v2_20260905.yaml, quoting the committed H4-beats-H8 results as H4 0.4163/2 against H8 16.0120/2",
+    "what_that_actually_is": "a model-selection result on a homology character, not a measurement of the angular spin-8 to spin-4 amplitude ratio. The inference from one to the other is a plausibility argument and is not quantified anywhere in the repository"
+  },
+  "what_this_does_not_separate": "a spin-8 amplitude comparable to spin-4, and a C + A4 cos4 + A8 cos8 form that is simply wrong, produce the same arithmetic here. Two orientations per rung determine C and A4 exactly with nothing left over, so this run cannot tell them apart. Three orientations per rung can, and the design already costed that at N=650"
+}
