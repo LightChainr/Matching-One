@@ -50,6 +50,8 @@ CONTROL_SOURCES={
     "degree6_implementation_agreement":"results/pslq-degree6-implementation-agreement/latest.json",
 }
 LOW_HEIGHT_SOURCES="results/pslq-degree6-low-height-{interval}/latest.json"
+HEIGHT4_SOURCES="results/pslq-degree6-height4-{interval}/latest.json"
+ZIFF_A_LATTICE="results/ziff-a-lattice-complexity/latest.json"
 
 
 def _require(condition:bool,message:str)->None:
@@ -105,6 +107,8 @@ def _source_artifacts(interval_ids:Sequence[str])->list[dict[str,Any]]:
         if "{interval}" in template:paths.extend(template.format(interval=i) for i in interval_ids)
         else:paths.append(template)
     paths.extend(LOW_HEIGHT_SOURCES.format(interval=i) for i in interval_ids)
+    paths.extend(HEIGHT4_SOURCES.format(interval=i) for i in interval_ids)
+    paths.append(ZIFF_A_LATTICE)
     paths.extend(CONTROL_SOURCES[name] for name in sorted(CONTROL_SOURCES))
     artifacts=[]
     for relative in paths:
@@ -317,11 +321,49 @@ def _historical_forms(table:Sequence[Mapping[str,Any]])->dict[str,Any]:
     }
 
 
-def _historical_range(table:Sequence[Mapping[str,Any]])->dict[str,Any]:
-    """Summarise the degree-1..6 height-3 exhaustion across the frozen intervals."""
+def _height4_range(table:Sequence[Mapping[str,Any]])->dict[str,Any]:
+    """The corrected historical range: degree <= 6 at height <= 4.
+
+    The height-3 census was motivated by a claim that turned out to be false --
+    Ziff's A-lattice bond threshold is an irreducible quintic of height 4 -- so
+    the class that actually covers the historical record is this one.
+    """
+    summary=_historical_range(table,HEIGHT4_SOURCES)
+    ziff=_load(ZIFF_A_LATTICE)
+    _require(ziff["height"]==4 and ziff["degree"]==5,"A-lattice complexity drift")
+    _require(ziff["irreducible_over_Q"],"A-lattice polynomial is not irreducible")
+    _require(sum(row["polynomials_in_class"] for row in summary["rows"])==summary["polynomials_per_interval"],
+             "height-4 class sizes do not sum to the reported per-interval total")
+    _require([row["polynomials_in_class"] for row in summary["rows"]]
+             ==[23,265,2639,24913,229703,2093785],
+             "height-4 class sizes drifted from the independently counted values")
+    summary["why_this_class"]={
+        "lattice":ziff["lattice"],
+        "polynomial_text":ziff["polynomial_text"],
+        "degree":ziff["degree"],
+        "height":ziff["height"],
+        "verification_status":ziff["verification_status"],
+        "artifact":ZIFF_A_LATTICE,
+    }
+    summary["meaning"]=("no algebraic form at the complexity of any exactly-known planar percolation threshold, "
+                        "including the height-4 A-lattice quintic, has a root in any published interval")
+    summary["claim_boundary"]=("exhaustive over degree <= 6 at height <= 4 only; says nothing about height > 4 or "
+                               "degree > 6, and is not a transcendence or non-algebraicity claim")
+    summary["sensitivity_control"]["planted_at_height"]=3
+    summary["sensitivity_control"]["why_the_height_3_control_carries"]=(
+        "the planted-root control exercises the scan path, not the enumeration bound: the same screen and the "
+        "same exact Sturm decision run here, over a strictly larger class. It certifies that a root inside a "
+        "frozen-width interval is reported; it does not certify the height-4 enumeration, which is checked "
+        "instead by the committed class sizes")
+    return summary
+
+
+def _historical_range(table:Sequence[Mapping[str,Any]],template:str=LOW_HEIGHT_SOURCES,
+                      control:str="degree6_low_height_control")->dict[str,Any]:
+    """Summarise a degree-1..6 exhaustion at one height across the frozen intervals."""
     per_interval={}
     for row in table:
-        payload=_load(LOW_HEIGHT_SOURCES.format(interval=row["interval_id"]))["interval_result"]
+        payload=_load(template.format(interval=row["interval_id"]))["interval_result"]
         per_interval[row["interval_id"]]=payload
     reference=next(iter(per_interval.values()))
     degrees=[]
@@ -349,7 +391,7 @@ def _historical_range(table:Sequence[Mapping[str,Any]])->dict[str,Any]:
             "root_containing_total":sum(p["by_degree"][index]["root_containing_polynomials"]
                                         for p in per_interval.values()),
         })
-    control=_load(CONTROL_SOURCES["degree6_low_height_control"])
+    control=_load(CONTROL_SOURCES[control])
     return {
         "rows":degrees,
         "polynomials_per_interval":reference["polynomials_per_interval"],
@@ -372,9 +414,9 @@ def _historical_range(table:Sequence[Mapping[str,Any]])->dict[str,Any]:
 def _implementation_agreement()->dict[str,Any]:
     """Section 7's second-implementation check, read from its committed artifact.
 
-    Only the degree-1..6 height-3 census is replicated; the quartic census is
-    not, and the ``partial`` flag below says so rather than leaving the reader
-    to infer it from the absence of quartic rows.
+    The degree-1..6 censuses at height 3 and height 4 are each replicated; the
+    quartic census is not, and the ``partial`` flag below says so rather than
+    leaving the reader to infer it from the absence of quartic rows.
     """
     report=_load(CONTROL_SOURCES["degree6_implementation_agreement"])
     rows=[]
@@ -382,8 +424,10 @@ def _implementation_agreement()->dict[str,Any]:
         closest=entry["closest_member"]
         gap=Fraction(closest["residual_gap_text"])
         allowance=Fraction(closest["mean_value_allowance_text"])
-        _require(gap<=allowance,f"{entry['interval_id']}: residuals violate the mean-value bound")
+        _require(gap<=allowance,
+                 f"h={entry['coefficient_height_max']} {entry['interval_id']}: residuals violate the mean-value bound")
         rows.append({
+            "coefficient_height_max":entry["coefficient_height_max"],
             "interval_id":entry["interval_id"],
             "cells_compared":entry["cells_compared"],
             "cells_in_agreement":entry["cells_in_agreement"],
@@ -398,10 +442,11 @@ def _implementation_agreement()->dict[str,Any]:
         "implementations":[{"path":row["path"],"screen":row["screen"]} for row in report["implementations"]],
         "shared_code":report["shared_code"],
         "fields_compared_per_cell":report["fields_compared_per_cell"],
+        "heights_compared":report["heights_compared"],
         "cells_compared":report["cells_compared"],
         "cells_in_agreement":report["cells_in_agreement"],
         "implementations_agree":report["implementations_agree"],
-        "scope":"degree 1..6 at height 3 only",
+        "scope":"degree 1..6 at height 3 and height 4",
         "partial":True,
         "not_replicated":"the degree-4 height-100 census of sections 6.1-6.3",
         "rows":rows,
@@ -532,6 +577,7 @@ def build_result(contract_path:Path=DEFAULT_CONTRACT)->dict[str,Any]:
         "closest_approach_by_degree":_closest_approach(exclusion,interval_table),
         "historical_form_complexity":_historical_forms(interval_table),
         "historical_range_exclusion":_historical_range(interval_table),
+        "historical_range_exclusion_height4":_height4_range(interval_table),
         "quartic_survivor_census":census,
         "width_scaling_diagnostic":_width_scaling(interval_table,census),
         "implementation_agreement":_implementation_agreement(),
@@ -626,8 +672,18 @@ def render_markdown(result:Mapping[str,Any])->str:
         lines.append(f"| {row['lattice']} | `{row['closed_form']}` | "
                      f"`{_polynomial_text(row['minimal_polynomial_ascending'])}` | {row['degree']} | "
                      f"{row['height']} | {'yes' if row['inside_census_class'] else '**no**'} |")
-    lines+=["",f"Maximum degree {historical['max_degree']}, maximum height {historical['max_height']}. "
-            f"Outside the census class: {', '.join(historical['outside_census_class']) or 'none'}.",""]
+    a_lattice=_load(ZIFF_A_LATTICE)
+    lines+=["",f"Maximum degree {historical['max_degree']}, maximum height {historical['max_height']} "
+            f"**over this artifact's rows**. Outside the census class: "
+            f"{', '.join(historical['outside_census_class']) or 'none'}.","",
+            f"This table is not the whole historical record, and one omission matters. {a_lattice['lattice']} "
+            f"has minimal polynomial `{a_lattice['polynomial_text']}`, irreducible over `Q`, of degree "
+            f"{a_lattice['degree']} and height **{a_lattice['height']}** (`{ZIFF_A_LATTICE}`). Its height "
+            f"exceeds every row above, which is why the exhaustion is carried out twice: at height 3 in Table 8, "
+            f"as it was first run, and at height 4 in Table 10, which is the class that actually covers the "
+            f"record.","",
+            f"Status of that row: `{a_lattice['verification_status']}`. Still owed: "
+            f"{a_lattice['what_is_still_owed']}",""]
     control=_load(CONTROL_SOURCES["degree4_boundary_sensitivity"])
     conclusion=control["conclusion"]
     selection=control["width_selection"]
@@ -669,17 +725,18 @@ def render_markdown(result:Mapping[str,Any])->str:
             f"(`all_trials_passed = {str(sensitivity['all_trials_passed']).lower()}`)."]
     agreement=result["implementation_agreement"]
     shared=agreement["shared_code"]
-    lines+=["","## Table 9 — Agreement of two independent implementations (degree ≤ 6, height ≤ 3)","",
+    lines+=["","## Table 9 — Agreement of two independent implementations (degree ≤ 6, height ≤ 3 and 4)","",
             f"Scope: {agreement['scope']}. Not replicated: {agreement['not_replicated']}.","",
             "| Implementation | Screen |","|---|---|"]
     for row in agreement["implementations"]:
         lines.append(f"| `{row['path']}` | {row['screen']} |")
     lines+=["",f"Compared per cell: {', '.join('`'+name+'`' for name in agreement['fields_compared_per_cell'])}. "
             f"Cells in agreement: **{agreement['cells_in_agreement']} of {agreement['cells_compared']}**.","",
-            "| Interval | Cells | Verdicts agree | Closest member | Residual gap | Mean-value allowance |",
-            "|---|---:|---|---|---:|---:|"]
+            "| Interval | h | Cells | Verdicts agree | Closest member | Residual gap | Mean-value allowance |",
+            "|---|---|---:|---|---|---:|---:|"]
     for row in agreement["rows"]:
-        lines.append(f"| `{row['interval_id']}` | {row['cells_in_agreement']}/{row['cells_compared']} | "
+        lines.append(f"| `{row['interval_id']}` | {row['coefficient_height_max']} | "
+                     f"{row['cells_in_agreement']}/{row['cells_compared']} | "
                      f"{'yes' if row['exclusion_verdicts_agree'] else 'no'} | "
                      f"{'same' if row['closest_coefficients_agree'] else 'differ'}: "
                      f"`{_polynomial_text(row['closest_coefficients_ascending'])}` | "
@@ -687,11 +744,40 @@ def render_markdown(result:Mapping[str,Any])->str:
                      f"`{row['mean_value_allowance_decimal'].rstrip('0')}` |")
     lines+=["",f"The two implementations evaluate the closest member at different points, so the residual gap "
             f"must be non-zero; the mean value theorem caps it at `D(u-l)/2` with "
-            f"`D = {agreement['rows'][0]['polynomial_derivative_bound']}` for that polynomial. Every interval "
+            f"`D` the derivative bound of each row's closest member. Every interval, at both heights, "
             f"is inside its allowance, so the agreement is between two implementations of the same quantity "
             f"(`implementations_agree = {str(agreement['implementations_agree']).lower()}`).","",
             f"`{shared['path']}` is imported unchanged by both, so the Sturm path is shared, not replicated. "
             f"Its contribution here: {shared['contribution_to_this_result']}."]
+    height4=result["historical_range_exclusion_height4"]
+    why=height4["why_this_class"]
+    control4=height4["sensitivity_control"]
+    lines+=["","## Table 10 — Exhaustion of the corrected historical range (degree ≤ 6, height ≤ 4)","",
+            f"Table 8's class was chosen from a claim that turned out to be false. {why['lattice']} has minimal "
+            f"polynomial `{why['polynomial_text']}` — degree {why['degree']}, height {why['height']} "
+            f"(`{why['verification_status']}`, `{why['artifact']}`) — so the class that actually covers the "
+            f"historical record is height ≤ 4, and this table exhausts it.","",
+            f"{height4['polynomials_per_interval']:,} primitive polynomials per interval, "
+            f"{height4['polynomials_per_interval']/historical['polynomials_per_interval']:.1f} times Table 8's class. "
+            f"Excluded on every interval: **{str(height4['excluded_on_every_interval']).lower()}**. The certified "
+            f"screen retained no candidate at any degree on any interval: "
+            f"**{str(height4['screen_retained_nothing']).lower()}**.","",
+            "| Degree | Class | Closest polynomial | Distance floor | Floor / width (min–max over the four) |",
+            "|---:|---:|---|---:|---:|"]
+    for row in height4["rows"]:
+        lines.append(f"| {row['degree']} | {row['polynomials_in_class']:,} | "
+                     f"`{_polynomial_text(row['closest_coefficients_ascending'])}` | "
+                     f"`{row['root_distance_lower_bound_decimal'].rstrip('0')}` | "
+                     f"{row['floor_to_width_ratio_min_decimal'].rstrip('0').rstrip('.')} – "
+                     f"{row['floor_to_width_ratio_max_decimal'].rstrip('0').rstrip('.')} |")
+    narrowest=min(height4["rows"],key=lambda row:Fraction(row["floor_to_width_ratio_min_decimal"]))
+    lines+=["",f"The narrowest margin anywhere in the table is "
+            f"{narrowest['floor_to_width_ratio_min_decimal'].rstrip('0').rstrip('.')} interval widths, at degree "
+            f"{narrowest['degree']}, so the null is not a width artifact: the published intervals would have to "
+            f"be some fifty times wider before the closest height-4 polynomial of that degree could reach one.","",
+            f"Sensitivity control: the same planted-root control as Table 8 "
+            f"(`{_polynomial_text(control4['planted_coefficients_ascending'])}`, planted at height "
+            f"{control4['planted_at_height']}). {control4['why_the_height_3_control_carries'][0].upper()}{control4['why_the_height_3_control_carries'][1:]}."]
     return "\n".join(lines)+"\n"
 
 

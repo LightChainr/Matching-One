@@ -30,6 +30,22 @@
     "git_blob": "39941d4083754f6fbe931bbe4d1730475917c4cb",
     "sha256": "2b90d2bfcbc3268a0bae7ae32bd060c67cd53f601b8c11360ff567ad1a569428"
   },
+  "replay_reproducibility": {
+    "contract": "semantic_not_bitwise",
+    "why_not_bitwise": "The committed score is a dated reveal and is not regenerated. Commit 844173c anchored the binomial tail recurrence at the distribution mode, removing a silent underflow that zeroed the tail above about 790 sites. That is a reassociation of the same sum, so every channel built on the tail moves in its last few floating-point digits and a replay of the frozen kernel no longer reproduces the 2026-08-28 bytes exactly.",
+    "measured_on": "2026-09-05",
+    "measured_against_commit": "844173cd0a7fe1f139ac0ece67dd7384b0913a45",
+    "structural_differences": 0,
+    "float_leaves_total": 598,
+    "float_leaves_that_moved": 565,
+    "largest_relative_move": 6.81e-09,
+    "largest_relative_move_path": "joint_scores/P48_artifact_negative_all/covariance/6/2",
+    "largest_relative_move_outside_covariance": 2.60e-10,
+    "largest_chi_square_relative_move": 2.37e-10,
+    "replay_rel_tol": 1e-08,
+    "replay_abs_tol": 2e-15,
+    "tolerance_rationale": "Every covariance entry that moved is smaller in magnitude than the absolute tolerance, so the relative tolerance is set by the decision-bearing leaves, whose largest move is 2.6e-10. A regression that mattered -- a flipped sign, a dropped batch, a changed projector or jackknife normalization -- would move these numbers by 1e-2 or more, so 1e-8 leaves about forty times headroom over rounding while staying a million times tighter than anything worth catching."
+  },
   "size_order": [65, 85, 130, 170],
   "lineages_in_order": [[65, 130], [85, 170]],
   "genealogy": "multiplication_by_1_plus_i",

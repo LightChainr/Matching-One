@@ -1,0 +1,127 @@
+# Frozen design for the aspect ladder r = 1, 2, 4 at one site count.
+#
+# This file exists to give a post-hoc reading its one chance to be wrong.
+#
+# The N=290 fingerprint returned A(2i)/A(i) = 1.880 +/- 0.177 against a predicted
+# 11/4, excluding the weight-4 shape at 4.9 sigma, plain area scaling at 12, and
+# no dependence at 5.0. The number it does sit on is the bare aspect ratio r = 2
+# (z = -0.68) -- noticed after the run, with no prospective standing, and
+# explicitly not asked to be rationalized (docs/astra/Q2). Naming it here, before
+# any block at N=1300 is executed, is what converts it into a law that can lose.
+#
+# Nothing has been run at N=1300. This is a design, not a result.
+status: frozen_before_any_run_at_this_size
+frozen_at: "2026-09-05"
+compute_status: not_yet_scheduled
+issue: 216
+roadmap_item: 2
+claim_level_if_it_passes: C3
+claim_level_if_it_fails: C3_negative
+design_artifact: results/aspect-ladder-design/latest.json
+
+question: >
+  Across aspect ratios 1, 2 and 4 at a single site count, does the spin-4
+  amplitude of the matching-odd readout follow the area-normalized weight-4
+  modular factor (1, 2.75, 10.99), the bare aspect ratio (1, 2, 4), plain area
+  scaling (1, 4, 16), or none of them?
+
+observable:
+  name: P4_S_prime
+  definition: >
+    the frozen P48 spin-4 projector of the matching-odd slope, computed by
+    analyze_p48_retrospective.project_size on the engine histograms.
+  fit: >
+    within each family, least squares of O(theta) = C + A4 cos4theta + A8 cos8theta
+    on its three orientations. This is the change from the N=290 design, which had
+    two orientations per family and could only bound the spin-8 leakage.
+
+design:
+  site_count: 1300
+  engine: src/threshold_rank_integer_period_mc.cpp
+  families:
+    r1:
+      modulus: i
+      gaussian_norm: 1300
+      period_matrices_row_major:
+        - [2, -36, 36, 2]
+        - [12, -34, 34, 12]
+        - [20, -30, 30, 20]
+    r2:
+      modulus: 2i
+      gaussian_norm: 650
+      period_matrices_row_major:
+        - [5, -50, 25, 10]
+        - [11, -46, 23, 22]
+        - [17, -38, 19, 34]
+    r4:
+      modulus: 4i
+      gaussian_norm: 325
+      period_matrices_row_major:
+        - [1, -72, 18, 4]
+        - [6, -68, 17, 24]
+        - [10, -60, 15, 40]
+  why_this_site_count: >
+    A torus of modulus r*i with N sites needs a Gaussian integer of norm N/r, so
+    the ladder needs 1300, 650 and 325 each to be a sum of two squares in at least
+    three ways. 325 is the smallest integer with three essentially distinct
+    representations; 650 = (1+i)*325 and 1300 = 2*325 inherit them. No smaller site
+    count carries all three families -- checked by search in
+    tests/test_aspect_ladder_design.py, not asserted.
+  conditioning: >
+    All three families share one design matrix and one variance amplification
+    (Var(A4) = 0.8933 times the per-orientation variance), because 1300 is
+    divisible by 4. No rung is the noisy one, so one sample budget per family is
+    the right allocation.
+
+score: [A4(2i) / A4(i), A4(4i) / A4(i)]
+
+competing_predictions:
+  # (r=2, r=4)
+  q4_jordan_weight4:    [2.75,      10.9908008589]
+  bare_aspect_ratio:    [2.0,        4.0]
+  plain_area_scaling:   [4.0,       16.0]
+  no_modulus_dependence: [1.0,       1.0]
+  weight12_delta:       [0.125,      0.0000279010739704]
+  weight12_E4_cubed:    [20.796875, 1327.6635036]
+  weight12_E12:         [32.515625, 2080.30719731]
+  weight8_E8:           [7.5625,    120.79770352]
+
+decision:
+  - >
+    The r=4 entry is the discriminator. The weight-4 shape and the bare aspect
+    ratio predict 10.99 and 4.00 there, a factor of 2.7 apart, against 2.75 and
+    2.00 at r=2 which the existing 9 percent measurement cannot split. About 16
+    percent relative precision on A4(4i)/A4(i) decides it either way.
+  - >
+    An r=2 entry compatible with 2.0 and incompatible with 2.75 replicates the
+    N=290 result at a different site count, with the spin-8 leakage fitted rather
+    than bounded. An r=2 entry compatible with 2.75 would instead say the N=290
+    number was driven by that systematic, and this design is how we would find
+    out.
+  - >
+    Compatible with both live laws at r=4 is underpowered, reported as such, and
+    any further run is a new frozen design. No optional stopping.
+
+conditional_on:
+  - >
+    The weight-4 entry is a prediction only if the normalization removes the same
+    thermal-primary block; the additive shape A~(tau) is not fixed by the Jordan
+    relation. See docs/astra/Q2-additive-shape-ambiguity.md. This ladder tests the
+    amplitude law, not the module identification.
+
+not_established_by_this_run:
+  - identification of the Q4 Jordan module
+  - that the fitted A4 is the log slope rather than a leading amplitude
+  - any modular interpretation of the bare aspect ratio, should it win. A law that
+    fits three points is a law that fits three points
+
+before_running:
+  - >
+    Size the pilot honestly. A 200000-sample pilot of the N=290 channel returned
+    an amplitude five times its 20M value, and a sample count projected from that
+    pilot was wrong by about forty times. Pilot at a size where the estimator is
+    already in its asymptotic regime, or do not pilot.
+  - >
+    1300 sites is 4.5 times N=290, three orientations instead of two is 1.5 times
+    the runs, and the three-parameter fit costs 1.64 times the variance on A4. The
+    sample budget follows from a pilot, not from this arithmetic.

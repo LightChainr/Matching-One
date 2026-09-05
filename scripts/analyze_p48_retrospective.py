@@ -132,27 +132,59 @@ def validate_alignment(records: Mapping[Tuple[int, str, int], Histogram]) -> Non
                 raise ValueError("cross-N synchronized batch alignment is absent")
 
 
+def _binomial_pmf(trials: int, p: float) -> List[float]:
+    """Binomial(trials, p) probabilities, anchored at the mode.
+
+    The obvious recurrence starts at ``(1-p)**trials`` and walks up.  That term
+    underflows to exactly zero once ``trials * log10(1-p) < -308``, and the
+    multiplicative recurrence then stays at zero for every later term, so the
+    whole array silently becomes zeros rather than raising.  At the percolation
+    threshold ``1-p`` is about 0.407, which puts the cliff at roughly 790 sites:
+    every size this project has run is below it, and the sizes it wants next are
+    above it.
+
+    Anchoring at the mode fixes it.  The largest term is at least ``1/(trials+1)``
+    and so is always representable; walking outward from it in both directions is
+    the same recurrence, and the terms that now underflow are the ones that were
+    negligible anyway.
+    """
+    if trials == 0:
+        return [1.0]
+    q = 1.0 - p
+    mode = min(max(int((trials + 1) * p), 0), trials)
+    log_peak = (
+        math.lgamma(trials + 1)
+        - math.lgamma(mode + 1)
+        - math.lgamma(trials - mode + 1)
+        + mode * math.log(p)
+        + (trials - mode) * math.log(q)
+    )
+    pmf = [0.0] * (trials + 1)
+    pmf[mode] = math.exp(log_peak)
+    for k in range(mode, trials):
+        pmf[k + 1] = pmf[k] * (trials - k) * p / ((k + 1) * q)
+    for k in range(mode, 0, -1):
+        pmf[k - 1] = pmf[k] * k * q / ((trials - k + 1) * p)
+    return pmf
+
+
 def tail_and_derivative(hist: Sequence[int], samples: int, p: float) -> Tuple[float, float]:
     """Return E[1{Binomial(N,p)>=K}] and its analytic p derivative."""
     n = len(hist) - 1
     if not 0.0 < p < 1.0:
         raise ValueError("p must be strictly between zero and one")
-    q = 1.0 - p
-    probability = q ** n
+    probability = _binomial_pmf(n, p)
     cumulative = 0
     value = 0.0
     for occupied in range(n + 1):
         if occupied:
             cumulative += hist[occupied]
-        value += cumulative * probability
-        if occupied < n:
-            probability *= (n - occupied) * p / ((occupied + 1) * q)
-    density = n * q ** (n - 1)
+        value += cumulative * probability[occupied]
+    # d/dp P(Binomial(n,p) >= r) = n * Binomial(n-1, p)[r-1]
+    shifted = _binomial_pmf(n - 1, p)
     derivative = 0.0
     for rank in range(1, n + 1):
-        derivative += hist[rank] * density
-        if rank < n:
-            density *= (n - rank) * p / (rank * q)
+        derivative += hist[rank] * n * shifted[rank - 1]
     return value / samples, derivative / samples
 
 

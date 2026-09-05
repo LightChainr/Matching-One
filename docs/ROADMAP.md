@@ -39,7 +39,23 @@ Scale-log behavior is no longer enough to identify the Q4 Jordan module. Use exa
 
 **Run, and negative** — see `notes/modulus-fingerprint-n290-result-20260905.md`. The N=290 square-vs-rectangular ratio is `1.880 +/- 0.177`, which excludes `11/4` at 4.9 sigma along with every other prediction on the frozen list. The hypothesis tested was a conjunction — weight-4 shape *and* a normalization that removes the same block — so what died is the cheap version of the fingerprint, not the module. The known spin-8 systematic would need `A8/A4 = 3.44` to explain the gap and is ruled out by the committed H4-beats-H8 results.
 
-**Action:** freeze and run aspect ratio **4 at N=3380**. It has three orientations in *both* families (square `|w|^2=3380`: `58+4i`, `52+26i`, `44+38i`; rectangular `|w|^2=845`: `29+2i`, `26+13i`, `22+19i`), so it fits `C`, `A4` and `A8` together and removes the spin-8 systematic rather than bounding it, and it separates linear-in-`r` (4.0) from weight 4 (10.99) from area (16). Name the linear-in-`r` law as a competitor **before** the run: it is a post-hoc reading of the N=290 point and has no standing yet.
+**Designed and frozen, not yet scored — `predictions/aspect_ladder_n580_20260905.yaml`.** The design is the *ladder* `r = 1, 2, 4` at one site count, and it lives at **N=580** — not the N=3380 this item first named, nor the N=1300 of the two superseded prediction files.
+
+Each rung is one paired run: two orientations of the same norm, giving `(O₁−O₂)/Δcos4 = A4 + A8·(Δcos8/Δcos4)`. Three runs in all. N=580 is picked by a stated objective over the sixteen site counts up to 1000 that carry the ladder — **maximum shared angular leverage first, then minimum spin-8 leakage** — and it wins on both: `Δcos4 = 8064/4205` in all three rungs, the same maximum the N=290 design had, and leakage `1148/21025 ≈ 0.055` against `196/625 ≈ 0.31` for the runners-up. The search is in `results/aspect-ladder-design/latest.json`, not asserted here.
+
+The property that makes it better than a bigger, more expensive design: **the r=1 and r=4 rungs carry the *same* leakage**, so the spin-8 bias cancels to leading order in `A4(4i)/A4(i)` — the ratio that discriminates. The N=290 pair could not do this; its two families had equal and *opposite* leakage, so the systematic entered the score twice. It still does not cancel in the `r=2/r=1` entry, and the frozen file says so.
+
+`r=4` is where the live hypotheses separate: weight 4 predicts `10.99`, the bare aspect ratio `4.00`, area `16`, none `1`. At `r=2` the first two are `2.75` and `2.00`, which the existing 9 % measurement cannot split — which is why the ladder goes to 4. The `r=2` rung is separately a replication of the N=290 number.
+
+The linear-in-`r` law is named in the frozen file as `bare_aspect_ratio` **before** any block runs, which is the whole point: it is a post-hoc reading of the N=290 point and this is its one chance to lose.
+
+**Why not N=1300, measured rather than guessed.** A 1M pilot there returned a per-difference noise of `0.0131` against `0.0065` at N=290 — a factor 2.0 for a 4.5× larger torus — while the amplitude falls roughly as `N^-5/4`. A decisive ratio at N=1300 is about three orders of magnitude beyond what we can spend. The same pilot found that **the analysis path returned zeros at N=1300**: the binomial tail's recurrence starts at `(1−p)^N`, which underflows to exactly zero near **790 sites** at the percolation threshold and then stays zero, silently. That bound had never been noticed, and it capped every future large-`N` plan in this repository. It is fixed (`analyze_p48_retrospective` now anchors the recurrence at the mode) and `N ≳ 4000` is analyzable.
+
+**Piloted 2026-09-05** — `notes/aspect-ladder-n580-pilot-20260905.md`. Measured throughput 33 s/M samples and per-difference noise 0.0018–0.0024 per 10M, comparable across all three rungs. **200 M samples per rung, three rungs, about 5.5 hours** puts ~20 % on the denominator of both score entries, which separates 4.00 from 10.99 at r=4 with room to spare. The pilot's central values are noise (33 %, 1416 %, 22 % relative) and may not be read or pooled.
+
+**Action:** run the three rungs — ticket #567.
+
+**Run, 2026-09-05 — underpowered** — `notes/aspect-ladder-n580-result-20260905.md`. `A4(4i)/A4(i) = 4.58 +/- 1.32` excludes the weight-4 shape `10.99` at `4.9` sigma and area scaling `16` at `8.7` sigma. The bare aspect ratio `4.00` survives (`z=+0.44`), but so does no modulus dependence `1.00` (`z=+2.72`), so the run is underpowered — two survivors, no unique winner. The r=2 entry (`3.23 +/- 0.93`) cannot split `2.75` from `2.00`, which is why the ladder went to r=4. No optional stopping: any further run is a new frozen design.
 
 Aspect ratio **3 is arithmetically impossible** here: `N = 3|w|^2` and 3 is inert in `Z[i]`, so no 3:1 rectangle shares a site count with a square torus. The reachable ladder is `r` that are themselves sums of two squares.
 
@@ -72,6 +88,21 @@ The N145->290 quantile-center `N^-3/4` transfer passed while the width metric dr
 ### Boolean/noise and energy-log-pair exact programs — #227/#234
 
 The exact/no-new-compute programs in open PRs #245/#246 can proceed in parallel. Treat them as mechanism-discovery tools. They do not block the active compute choices above.
+
+### Publication track P2 — the algebraic exclusion manuscript
+
+`docs/manuscripts/p2-algebraic-exclusion/` is drafted end to end, with every number
+generated from committed artifacts. It needs no new compute.
+
+One item blocks submission rather than drafting: **a primary reading of Ziff, Phys.
+Rev. E 73, 016134 (2006).** Its "A lattice" bond threshold is an irreducible quintic of
+height 4, which is what sets the height bound of the paper's closing sentence, and we
+have it corroborated from two independent indexes rather than read — the publisher,
+arXiv and the indexing services are all unreachable from this environment. Anyone with
+library access closes this in minutes. The same reading also clears the two remaining
+`[LIT: primary text not verified]` markers.
+
+**Action:** read the three unverified sources; then the manuscript is submittable.
 
 ## Completed high-information blocks
 

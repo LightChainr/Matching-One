@@ -33,6 +33,7 @@ power — is publication-time work and lives in `docs/PUBLICATION-CHECKLIST.md`.
 | Rank-2/Jordan is uniquely established | C2 | No. Jordan/log is compatible (`17.0513/10`) and now has a precise Q4-module origin, but scale-log behavior alone is not module identification |
 | Intrinsic quantile-center transfer obeys `N^-3/4` on N145->290 | C3 | frozen ratio observed `0.59584549` vs `2^-3/4=0.59460356`, `z=-1.033` |
 | Square/rectangular spin-4 ratio carries the area-normalized weight-4 shape | C3 negative | Prospectively falsified at N=290: ratio `1.880 +/- 0.177` excludes `11/4` at `4.9` sigma, area scaling `4` at `12.0`, and no-dependence `1` at `5.0`. Tests the fingerprint as constructed, not the module: the normalization assumption is a second conjunct (`docs/astra/Q2`) |
+| Weight-4 modular amplitude law `(1, 2.75, 10.99)` holds across aspect ratios | C3 negative | Prospectively falsified at N=580 ladder: `A4(4i)/A4(i) = 4.58 +/- 1.32` excludes `10.99` at `4.9` sigma and area scaling `16` at `8.7` sigma. `bare_aspect_ratio` (`4.00`) survives (`z=+0.44`) but `no_modulus_dependence` (`1.00`) also survives (`z=+2.72`), so the run is **underpowered** — two survivors, no unique winner. `notes/aspect-ladder-n580-result-20260905.md` |
 
 ## Exact semantics and controls
 
