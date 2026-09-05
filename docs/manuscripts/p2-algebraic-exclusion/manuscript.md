@@ -42,7 +42,9 @@ published intervals, and therefore the last degree at which a negative result ca
 
 The conclusion is a bounded one. Within the declared finite complexity class, no low-degree algebraic relation
 holds. This is not evidence of transcendence, not a claim that `p_c` is non-algebraic, and not a claim that no
-exact representation of another type exists.
+exact representation of another type exists. We also note explicitly that the historical complexity range is a
+selected sample — it is the range reachable by the three mechanisms that produce exact planar thresholds, on the
+lattices where they work, and square-site is a lattice where all three fail.
 
 ---
 
@@ -288,6 +290,40 @@ Rather than raise the height, which §4.3 shows would destroy the negative resul
 along the axis the literature actually occupies: **degree ≤ 6 at height ≤ 3**, the entire historical complexity
 range. That class holds only 409,584 polynomials per interval, `2.6·10⁻⁶` of the class already searched, and is
 reported in §6.5.
+
+### 4.2.1 The historical range is a selected sample, and we say so
+
+Table 6 is not a random sample of planar percolation thresholds. It is the list of
+thresholds that are **known exactly**, and a planar threshold becomes known exactly
+when one of three mechanisms delivers it: self-duality, self-matching, or a
+star-triangle (Yang–Baxter) reduction, including the generalized self-dual-cell
+constructions. Every row of Table 6 is an output of one of those three.
+
+Square-site percolation is precisely a case where all three fail. Its matching lattice
+is the square lattice with both diagonals, which is not the square lattice, so the
+Sykes–Essam self-matching argument that fixes the triangular-site value at `1/2` does
+not close; the site problem on `Z²` is not self-dual; and no star-triangle reduction
+for it is known.
+
+So "degree ≤ 6, height ≤ 3" is the complexity range **reachable by those mechanisms**,
+observed on the lattices where they work. Whether the mechanisms bound the degree and
+height of their own output — whether the regularity is a theorem in disguise rather
+than a coincidence among six numbers — is, as far as we are aware, open. We do not
+assume it, and a reader should not read Table 6 as a prior over the algebraic
+complexity of an arbitrary threshold.
+
+Two things follow, and they pull in opposite directions.
+
+The negative result of §6.5 should be read for what it is: *no form at the complexity
+of a mechanism-produced threshold fits any published interval.* That is a meaningful
+statement about the square-site value — it says the constant does not look like the
+ones we can derive — and it is weaker than "no simple algebraic number fits", which we
+do not claim.
+
+And it is why §4.3 exists. The approach-resolution criterion given there is derived
+from the search class itself and makes no reference to the literature at all. It
+supplies a stopping degree that does not rest on a selected sample, and it is the
+bound we would keep if Table 6 turned out to carry no information.
 
 ### 4.3 The approach-resolution argument, and why degree 4 is the stopping point
 
@@ -590,6 +626,18 @@ degree ≤ 6 at height ≤ 10 is already `890,350,944` polynomials per interval,
 `848,419,937`, comparable to the height-100 cubic census. Any such extension should therefore begin by computing
 the class's approach resolution and confirming it still clears the widths — a cheap calculation that decides
 whether the census is worth running at all.
+
+**Is the historical range a theorem?** §4.2.1 notes that the degree ≤ 6, height ≤ 3
+regularity is observed on a selected sample: the lattices where self-duality,
+self-matching or a star-triangle reduction happens to close. If those mechanisms can
+be shown to bound the degree and height of the threshold they produce, in terms of the
+fundamental cell, then §6.5 upgrades from "no form at the observed complexity fits" to
+"no mechanism-reachable form fits", and the square-site case — where all three
+mechanisms fail — acquires a reason rather than an observation. If instead no such
+bound exists, the honest consequence is that our class choice was motivated by a
+coincidence, the census stands unchanged as a fact, and its interpretation shrinks to
+what §4.3 supports on its own. We regard this as the most valuable open question
+adjacent to this work.
 
 **A rigorous interval.** Exclusion strength is governed by interval width, and every interval used here comes
 from an extrapolation rather than a proof. A rigorous narrowing of the threshold interval by a proved bound would

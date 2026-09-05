@@ -56,6 +56,7 @@ Three computations were added, each with its reason for being inside the stop ru
 | 3 | Completeness theorem | ready | Prop. 1 and Thm. 2 stated and proved from the committed implementation |
 | 4.1 | What the bounds must not be | ready | |
 | 4.2 | Complexity of the known exact thresholds | ready | **literature pass done** — Table 6, generated from the certified lattice-native artifact |
+| 4.2.1 | The historical range is a selected sample | ready | **new** — states the strongest referee objection to our own motivation, and answers it by pointing at §4.3, which does not use the literature at all |
 | 4.3 | Approach resolution / boundary degree | ready | **new result** |
 | 5 | Method | ready | |
 | 6.1–6.3 | Results and controls | ready | Tables 3 and 5; Results A–D |
