@@ -414,9 +414,9 @@ def _historical_range(table:Sequence[Mapping[str,Any]],template:str=LOW_HEIGHT_S
 def _implementation_agreement()->dict[str,Any]:
     """Section 7's second-implementation check, read from its committed artifact.
 
-    Only the degree-1..6 height-3 census is replicated; the quartic census is
-    not, and the ``partial`` flag below says so rather than leaving the reader
-    to infer it from the absence of quartic rows.
+    The degree-1..6 censuses at height 3 and height 4 are each replicated; the
+    quartic census is not, and the ``partial`` flag below says so rather than
+    leaving the reader to infer it from the absence of quartic rows.
     """
     report=_load(CONTROL_SOURCES["degree6_implementation_agreement"])
     rows=[]
@@ -424,8 +424,10 @@ def _implementation_agreement()->dict[str,Any]:
         closest=entry["closest_member"]
         gap=Fraction(closest["residual_gap_text"])
         allowance=Fraction(closest["mean_value_allowance_text"])
-        _require(gap<=allowance,f"{entry['interval_id']}: residuals violate the mean-value bound")
+        _require(gap<=allowance,
+                 f"h={entry['coefficient_height_max']} {entry['interval_id']}: residuals violate the mean-value bound")
         rows.append({
+            "coefficient_height_max":entry["coefficient_height_max"],
             "interval_id":entry["interval_id"],
             "cells_compared":entry["cells_compared"],
             "cells_in_agreement":entry["cells_in_agreement"],
@@ -440,10 +442,11 @@ def _implementation_agreement()->dict[str,Any]:
         "implementations":[{"path":row["path"],"screen":row["screen"]} for row in report["implementations"]],
         "shared_code":report["shared_code"],
         "fields_compared_per_cell":report["fields_compared_per_cell"],
+        "heights_compared":report["heights_compared"],
         "cells_compared":report["cells_compared"],
         "cells_in_agreement":report["cells_in_agreement"],
         "implementations_agree":report["implementations_agree"],
-        "scope":"degree 1..6 at height 3 only",
+        "scope":"degree 1..6 at height 3 and height 4",
         "partial":True,
         "not_replicated":"the degree-4 height-100 census of sections 6.1-6.3",
         "rows":rows,
@@ -722,17 +725,18 @@ def render_markdown(result:Mapping[str,Any])->str:
             f"(`all_trials_passed = {str(sensitivity['all_trials_passed']).lower()}`)."]
     agreement=result["implementation_agreement"]
     shared=agreement["shared_code"]
-    lines+=["","## Table 9 — Agreement of two independent implementations (degree ≤ 6, height ≤ 3)","",
+    lines+=["","## Table 9 — Agreement of two independent implementations (degree ≤ 6, height ≤ 3 and 4)","",
             f"Scope: {agreement['scope']}. Not replicated: {agreement['not_replicated']}.","",
             "| Implementation | Screen |","|---|---|"]
     for row in agreement["implementations"]:
         lines.append(f"| `{row['path']}` | {row['screen']} |")
     lines+=["",f"Compared per cell: {', '.join('`'+name+'`' for name in agreement['fields_compared_per_cell'])}. "
             f"Cells in agreement: **{agreement['cells_in_agreement']} of {agreement['cells_compared']}**.","",
-            "| Interval | Cells | Verdicts agree | Closest member | Residual gap | Mean-value allowance |",
-            "|---|---:|---|---|---:|---:|"]
+            "| Interval | h | Cells | Verdicts agree | Closest member | Residual gap | Mean-value allowance |",
+            "|---|---|---:|---|---|---:|---:|"]
     for row in agreement["rows"]:
-        lines.append(f"| `{row['interval_id']}` | {row['cells_in_agreement']}/{row['cells_compared']} | "
+        lines.append(f"| `{row['interval_id']}` | {row['coefficient_height_max']} | "
+                     f"{row['cells_in_agreement']}/{row['cells_compared']} | "
                      f"{'yes' if row['exclusion_verdicts_agree'] else 'no'} | "
                      f"{'same' if row['closest_coefficients_agree'] else 'differ'}: "
                      f"`{_polynomial_text(row['closest_coefficients_ascending'])}` | "
@@ -740,7 +744,7 @@ def render_markdown(result:Mapping[str,Any])->str:
                      f"`{row['mean_value_allowance_decimal'].rstrip('0')}` |")
     lines+=["",f"The two implementations evaluate the closest member at different points, so the residual gap "
             f"must be non-zero; the mean value theorem caps it at `D(u-l)/2` with "
-            f"`D = {agreement['rows'][0]['polynomial_derivative_bound']}` for that polynomial. Every interval "
+            f"`D` the derivative bound of each row's closest member. Every interval, at both heights, "
             f"is inside its allowance, so the agreement is between two implementations of the same quantity "
             f"(`implementations_agree = {str(agreement['implementations_agree']).lower()}`).","",
             f"`{shared['path']}` is imported unchanged by both, so the Sturm path is shared, not replicated. "
