@@ -1,0 +1,33 @@
+# N260/N340 and N65/N130 were performed by the frozen driver on the first host.
+# Its redundant N85/N170 leg was stopped after those accepted blocks completed.
+scripts/run_norm4_production_20260829.sh results/server-20260829/P154-norm4-production
+
+# N85/N170 used the same frozen binary and exact same registered arguments on
+# a second 16-vCPU Huawei host; see source_85_170.stdout.txt and environment.txt.
+
+# Frozen scalar q=2/Jordan score and correlated secondary rows.
+python3 scripts/score_norm4_production.py \
+  --source-run 65:results/server-20260828/P45-root-amplitude/n65.hist.csv:results/server-20260828/P45-root-amplitude/n65.metadata.json:results/server-20260829/P154-norm4-production/raw/n65_1900m.hist.csv:results/server-20260829/P154-norm4-production/raw/n65_1900m.metadata.json \
+  --source-run 130:results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.hist.csv:results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.metadata.json:results/server-20260829/P154-norm4-production/raw/n130_1900m.hist.csv:results/server-20260829/P154-norm4-production/raw/n130_1900m.metadata.json \
+  --source-run 85:results/server-20260828/P45-root-amplitude/n85.hist.csv:results/server-20260828/P45-root-amplitude/n85.metadata.json:results/server-20260829/P154-norm4-production/raw/n85_1900m.hist.csv:results/server-20260829/P154-norm4-production/raw/n85_1900m.metadata.json \
+  --source-run 170:results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.hist.csv:results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.metadata.json:results/server-20260829/P154-norm4-production/raw/n170_1900m.hist.csv:results/server-20260829/P154-norm4-production/raw/n170_1900m.metadata.json \
+  --target-run 260:results/server-20260829/P154-norm4-production/raw/n260_1b.hist.csv:results/server-20260829/P154-norm4-production/raw/n260_1b.metadata.json \
+  --target-run 340:results/server-20260829/P154-norm4-production/raw/n340_1b.hist.csv:results/server-20260829/P154-norm4-production/raw/n340_1b.metadata.json \
+  --output results/server-20260829/P154-norm4-production/analysis/scalar_score.json
+
+# Frozen one-common-generator ranks 2..6 thermal-jet score.
+python3 scripts/score_norm4_thermal_jet.py \
+  --source-run 65:results/server-20260828/P45-root-amplitude/n65.hist.csv:results/server-20260828/P45-root-amplitude/n65.moments.csv:results/server-20260829/P154-norm4-production/raw/n65_1900m.hist.csv:results/server-20260829/P154-norm4-production/raw/n65_1900m.moments.csv \
+  --source-run 130:results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.hist.csv:results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.moments.csv:results/server-20260829/P154-norm4-production/raw/n130_1900m.hist.csv:results/server-20260829/P154-norm4-production/raw/n130_1900m.moments.csv \
+  --source-run 85:results/server-20260828/P45-root-amplitude/n85.hist.csv:results/server-20260828/P45-root-amplitude/n85.moments.csv:results/server-20260829/P154-norm4-production/raw/n85_1900m.hist.csv:results/server-20260829/P154-norm4-production/raw/n85_1900m.moments.csv \
+  --source-run 170:results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.hist.csv:results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.moments.csv:results/server-20260829/P154-norm4-production/raw/n170_1900m.hist.csv:results/server-20260829/P154-norm4-production/raw/n170_1900m.moments.csv \
+  --target-run 260:results/server-20260829/P154-norm4-production/raw/n260_1b.hist.csv:results/server-20260829/P154-norm4-production/raw/n260_1b.moments.csv \
+  --target-run 340:results/server-20260829/P154-norm4-production/raw/n340_1b.hist.csv:results/server-20260829/P154-norm4-production/raw/n340_1b.moments.csv \
+  --dps 50 \
+  --output results/server-20260829/P154-norm4-production/analysis/thermal_jet_score.json
+
+python3 -m unittest discover -s tests -p 'test_norm4_*py'
+sha256sum results/server-20260829/P154-norm4-production/raw/* \
+  results/server-20260829/P154-norm4-production/analysis/* \
+  results/server-20260829/P154-norm4-production/production.stdout.txt \
+  results/server-20260829/P154-norm4-production/production.stderr.txt

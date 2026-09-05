@@ -1,0 +1,672 @@
+{
+  "schema": "matching-one/norm4-production-score/v1",
+  "status": "prospective score under predictions/norm4_two_generator_transfer_20260829.yaml",
+  "size_order": [
+    65,
+    130,
+    260,
+    85,
+    170,
+    340
+  ],
+  "metric_order_within_size": [
+    "U",
+    "P4_D",
+    "root_gap"
+  ],
+  "point": {
+    "65": {
+      "U": 1.148147298614282,
+      "P4_D": 0.00042999073124029807,
+      "root_gap": -0.00013992372032123335,
+      "p0": 0.5927266459579275
+    },
+    "130": {
+      "U": 1.3990777789752291,
+      "P4_D": 0.00014088934035657886,
+      "root_gap": -3.543058413923994e-05,
+      "p0": 0.592750417543082
+    },
+    "260": {
+      "U": 1.6607937928433711,
+      "P4_D": 3.923452928885447e-05,
+      "root_gap": -7.618167962242239e-06,
+      "p0": 0.5927449083432159
+    },
+    "85": {
+      "U": 1.2286046608068135,
+      "P4_D": 0.0002758633492657015,
+      "root_gap": -9.503150865630694e-05,
+      "p0": 0.5927564294685335
+    },
+    "170": {
+      "U": 1.5015218451014178,
+      "P4_D": 9.458168027243159e-05,
+      "root_gap": -2.5172280698315674e-05,
+      "p0": 0.5927438204756994
+    },
+    "340": {
+      "U": 1.9845090198288815,
+      "P4_D": 4.1968466420279e-05,
+      "root_gap": -8.621020401777812e-06,
+      "p0": 0.5927469912229808
+    }
+  },
+  "primary_models_in_frozen_order": [
+    {
+      "label": "analytic_q2",
+      "residual": [
+        0.27250154737533716,
+        0.6930571651603228
+      ],
+      "covariance": [
+        [
+          0.014458782981547244,
+          5.9276354473201815e-05
+        ],
+        [
+          5.9276354473201815e-05,
+          0.030377406229712387
+        ]
+      ],
+      "z_marginal": [
+        2.2662254013471945,
+        3.976433403366076
+      ],
+      "chi_square": 20.896991197258426,
+      "df": 2,
+      "p_value": 2.8991855894882614e-05
+    },
+    {
+      "label": "rank2_Jordan",
+      "residual": [
+        0.010785533507194911,
+        0.21006999043285934
+      ],
+      "covariance": [
+        [
+          0.0039403927594173676,
+          4.278643741657731e-05
+        ],
+        [
+          4.278643741657731e-05,
+          0.008212878746800618
+        ]
+      ],
+      "z_marginal": [
+        0.1718192726327671,
+        2.3180153637936933
+      ],
+      "chi_square": 5.397031289230601,
+      "df": 2,
+      "p_value": 0.0673053436784323
+    }
+  ],
+  "correlated_secondary_views": [
+    {
+      "label": "central_D_4_to_1",
+      "residual": [
+        -5.962678772681787e-06,
+        1.2971903733102528e-05
+      ],
+      "covariance": [
+        [
+          5.938007757945905e-11,
+          -2.6954083057053675e-14
+        ],
+        [
+          -2.6954083057053675e-14,
+          4.781314032049381e-11
+        ]
+      ],
+      "z_marginal": [
+        -0.7737862941171856,
+        1.875988115189323
+      ],
+      "chi_square": 4.116609063203752,
+      "df": 2,
+      "p_value": 0.127670247366993
+    },
+    {
+      "label": "root_character_plus_1_over_16",
+      "residual": [
+        1.1270645578348448e-06,
+        -2.6815511107586287e-06
+      ],
+      "covariance": [
+        [
+          2.238663571213486e-12,
+          -1.067890562653e-15
+        ],
+        [
+          -1.067890562653e-15,
+          2.017491736874094e-12
+        ]
+      ],
+      "z_marginal": [
+        0.7532764270213276,
+        -1.8879052612761826
+      ],
+      "chi_square": 4.130183500454002,
+      "df": 2,
+      "p_value": 0.12680665549481604
+    }
+  ],
+  "evidence_guard": "The scalar primary and secondary views share histograms and are not additive evidence rows. The full-jet even-generator vector is scored separately.",
+  "inputs": {
+    "source": [
+      {
+        "N": 65,
+        "base_histogram": "results/server-20260828/P45-root-amplitude/n65.hist.csv",
+        "base_sha256": "998ecb82ea8d3d6b8d37a1ddc4aae479b550054a8b4bfe9bf23fe49810e5138f",
+        "base_metadata": {
+          "engine": "same-N Gaussian threshold-rank Newman-Ziff",
+          "generated_utc": "2026-08-28T12:28:38Z",
+          "git_commit": "6d2d68a62b433e337b97eadaf1870cb58e2f7666",
+          "command": "/workspace/rootamp-build-6d2d68a/threshold_rank_orientation_mc --samples 100000000 --batches 100 --seed 2026104501 --replica-offset 5000000000 --threads 8 --n 65 --git-commit 6d2d68a62b433e337b97eadaf1870cb58e2f7666 --output-prefix /workspace/rootamp-results-20260828/n65",
+          "compiler": "10.3.1",
+          "openmp": true,
+          "threads_requested": 8,
+          "samples_per_pair": 100000000,
+          "batches": 100,
+          "seed": 2026104501,
+          "replica_counter_first": 5000000000,
+          "replica_counter_last_exclusive": 5100000000,
+          "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+          "coupling": "same cyclic permutation shared by same-N orientations",
+          "channel": "rank-2 cross wrapping",
+          "K_plus": "first black primal cross rank, 1-based",
+          "K_minus": "first black rank after white matching cross is lost; N-r+1",
+          "sparse_joint_histogram": false,
+          "per_batch_joint_moments": true,
+          "elapsed_seconds": 136.402881065,
+          "designs": [
+            {
+              "N": 65,
+              "first": [
+                8,
+                1
+              ],
+              "second": [
+                7,
+                4
+              ]
+            }
+          ],
+          "histogram_csv": "/workspace/rootamp-results-20260828/n65.hist.csv",
+          "moments_csv": "/workspace/rootamp-results-20260828/n65.moments.csv"
+        },
+        "extension_histogram": "results/server-20260829/P154-norm4-production/raw/n65_1900m.hist.csv",
+        "extension_sha256": "5b791d7875dbdbe43b09e9eb53be3ac50107403cc7922022b94e78e6b22bc3eb",
+        "extension_metadata": {
+          "engine": "same-N Gaussian threshold-rank Newman-Ziff",
+          "generated_utc": "2026-08-29T10:21:01Z",
+          "git_commit": "bfab0330f5f56ca4d746b45d737f1607e3d229a0",
+          "command": "build/threshold_rank_orientation_mc --n 65 --samples 1900000000 --batches 100 --seed 2026104501 --replica-offset 5100000000 --threads 8 --git-commit bfab0330f5f56ca4d746b45d737f1607e3d229a0 --output-prefix results/server-20260829/P154-norm4-production/raw/n65_1900m",
+          "compiler": "10.3.1",
+          "openmp": true,
+          "threads_requested": 8,
+          "samples_per_pair": 1900000000,
+          "batches": 100,
+          "seed": 2026104501,
+          "replica_counter_first": 5100000000,
+          "replica_counter_last_exclusive": 7000000000,
+          "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+          "coupling": "same cyclic permutation shared by same-N orientations",
+          "channel": "rank-2 cross wrapping",
+          "K_plus": "first black primal cross rank, 1-based",
+          "K_minus": "first black rank after white matching cross is lost; N-r+1",
+          "sparse_joint_histogram": false,
+          "per_batch_joint_moments": true,
+          "elapsed_seconds": 2616.893152217,
+          "designs": [
+            {
+              "N": 65,
+              "first": [
+                8,
+                1
+              ],
+              "second": [
+                7,
+                4
+              ]
+            }
+          ],
+          "histogram_csv": "results/server-20260829/P154-norm4-production/raw/n65_1900m.hist.csv",
+          "moments_csv": "results/server-20260829/P154-norm4-production/raw/n65_1900m.moments.csv"
+        }
+      },
+      {
+        "N": 130,
+        "base_histogram": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.hist.csv",
+        "base_sha256": "b49c8fef1d7ddf1c902fc50e9d4c7b0d90b5b8e049998cdb6cc592d3c9cfd4a3",
+        "base_metadata": {
+          "engine": "same-N Gaussian threshold-rank Newman-Ziff",
+          "generated_utc": "2026-08-28T13:10:53Z",
+          "git_commit": "6d2d68a62b433e337b97eadaf1870cb58e2f7666",
+          "command": "/workspace/rootamp-build-6d2d68a/threshold_rank_orientation_mc --samples 100000000 --batches 100 --seed 2026104501 --replica-offset 5000000000 --threads 8 --n 130 --git-commit 6d2d68a62b433e337b97eadaf1870cb58e2f7666 --output-prefix /workspace/fullcurve-results-20260828/n130",
+          "compiler": "10.3.1",
+          "openmp": true,
+          "threads_requested": 8,
+          "samples_per_pair": 100000000,
+          "batches": 100,
+          "seed": 2026104501,
+          "replica_counter_first": 5000000000,
+          "replica_counter_last_exclusive": 5100000000,
+          "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+          "coupling": "same cyclic permutation shared by same-N orientations",
+          "channel": "rank-2 cross wrapping",
+          "K_plus": "first black primal cross rank, 1-based",
+          "K_minus": "first black rank after white matching cross is lost; N-r+1",
+          "sparse_joint_histogram": false,
+          "per_batch_joint_moments": true,
+          "elapsed_seconds": 261.330051923,
+          "designs": [
+            {
+              "N": 130,
+              "first": [
+                11,
+                3
+              ],
+              "second": [
+                9,
+                7
+              ]
+            }
+          ],
+          "histogram_csv": "/workspace/fullcurve-results-20260828/n130.hist.csv",
+          "moments_csv": "/workspace/fullcurve-results-20260828/n130.moments.csv"
+        },
+        "extension_histogram": "results/server-20260829/P154-norm4-production/raw/n130_1900m.hist.csv",
+        "extension_sha256": "1d0a986624f1896333310c3ee8b4f34c0e582cd26a0e7af6f728f53778d9e361",
+        "extension_metadata": {
+          "engine": "same-N Gaussian threshold-rank Newman-Ziff",
+          "generated_utc": "2026-08-29T10:57:48Z",
+          "git_commit": "bfab0330f5f56ca4d746b45d737f1607e3d229a0",
+          "command": "build/threshold_rank_orientation_mc --n 130 --samples 1900000000 --batches 100 --seed 2026104501 --replica-offset 5100000000 --threads 8 --git-commit bfab0330f5f56ca4d746b45d737f1607e3d229a0 --output-prefix results/server-20260829/P154-norm4-production/raw/n130_1900m",
+          "compiler": "10.3.1",
+          "openmp": true,
+          "threads_requested": 8,
+          "samples_per_pair": 1900000000,
+          "batches": 100,
+          "seed": 2026104501,
+          "replica_counter_first": 5100000000,
+          "replica_counter_last_exclusive": 7000000000,
+          "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+          "coupling": "same cyclic permutation shared by same-N orientations",
+          "channel": "rank-2 cross wrapping",
+          "K_plus": "first black primal cross rank, 1-based",
+          "K_minus": "first black rank after white matching cross is lost; N-r+1",
+          "sparse_joint_histogram": false,
+          "per_batch_joint_moments": true,
+          "elapsed_seconds": 4824.685882401,
+          "designs": [
+            {
+              "N": 130,
+              "first": [
+                11,
+                3
+              ],
+              "second": [
+                9,
+                7
+              ]
+            }
+          ],
+          "histogram_csv": "results/server-20260829/P154-norm4-production/raw/n130_1900m.hist.csv",
+          "moments_csv": "results/server-20260829/P154-norm4-production/raw/n130_1900m.moments.csv"
+        }
+      },
+      {
+        "N": 85,
+        "base_histogram": "results/server-20260828/P45-root-amplitude/n85.hist.csv",
+        "base_sha256": "a83dfb90980e8e1fdeb94beeaa8b33fd002e1943d6dabb39a5c89f68207ffac7",
+        "base_metadata": {
+          "engine": "same-N Gaussian threshold-rank Newman-Ziff",
+          "generated_utc": "2026-08-28T12:29:12Z",
+          "git_commit": "6d2d68a62b433e337b97eadaf1870cb58e2f7666",
+          "command": "/workspace/rootamp-build-6d2d68a/threshold_rank_orientation_mc --samples 100000000 --batches 100 --seed 2026104501 --replica-offset 5000000000 --threads 8 --n 85 --git-commit 6d2d68a62b433e337b97eadaf1870cb58e2f7666 --output-prefix /workspace/rootamp-results-20260828/n85",
+          "compiler": "10.3.1",
+          "openmp": true,
+          "threads_requested": 8,
+          "samples_per_pair": 100000000,
+          "batches": 100,
+          "seed": 2026104501,
+          "replica_counter_first": 5000000000,
+          "replica_counter_last_exclusive": 5100000000,
+          "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+          "coupling": "same cyclic permutation shared by same-N orientations",
+          "channel": "rank-2 cross wrapping",
+          "K_plus": "first black primal cross rank, 1-based",
+          "K_minus": "first black rank after white matching cross is lost; N-r+1",
+          "sparse_joint_histogram": false,
+          "per_batch_joint_moments": true,
+          "elapsed_seconds": 170.382688104,
+          "designs": [
+            {
+              "N": 85,
+              "first": [
+                9,
+                2
+              ],
+              "second": [
+                7,
+                6
+              ]
+            }
+          ],
+          "histogram_csv": "/workspace/rootamp-results-20260828/n85.hist.csv",
+          "moments_csv": "/workspace/rootamp-results-20260828/n85.moments.csv"
+        },
+        "extension_histogram": "results/server-20260829/P154-norm4-production/raw/n85_1900m.hist.csv",
+        "extension_sha256": "926de368bc65782273218b78b57753c9791fb8e104ea4e6a2fd26c39e14777ae",
+        "extension_metadata": {
+          "engine": "same-N Gaussian threshold-rank Newman-Ziff",
+          "generated_utc": "2026-08-29T11:18:43Z",
+          "git_commit": "bfab0330f5f56ca4d746b45d737f1607e3d229a0",
+          "command": "/workspace/threshold_rank_orientation_mc-bfab033 --n 85 --samples 1900000000 --batches 100 --seed 2026104501 --replica-offset 5100000000 --threads 8 --git-commit bfab0330f5f56ca4d746b45d737f1607e3d229a0 --output-prefix results/server-20260829/P154-norm4-production/raw/n85_1900m",
+          "compiler": "10.3.1",
+          "openmp": true,
+          "threads_requested": 8,
+          "samples_per_pair": 1900000000,
+          "batches": 100,
+          "seed": 2026104501,
+          "replica_counter_first": 5100000000,
+          "replica_counter_last_exclusive": 7000000000,
+          "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+          "coupling": "same cyclic permutation shared by same-N orientations",
+          "channel": "rank-2 cross wrapping",
+          "K_plus": "first black primal cross rank, 1-based",
+          "K_minus": "first black rank after white matching cross is lost; N-r+1",
+          "sparse_joint_histogram": false,
+          "per_batch_joint_moments": true,
+          "elapsed_seconds": 3269.761138062,
+          "designs": [
+            {
+              "N": 85,
+              "first": [
+                9,
+                2
+              ],
+              "second": [
+                7,
+                6
+              ]
+            }
+          ],
+          "histogram_csv": "results/server-20260829/P154-norm4-production/raw/n85_1900m.hist.csv",
+          "moments_csv": "results/server-20260829/P154-norm4-production/raw/n85_1900m.moments.csv"
+        }
+      },
+      {
+        "N": 170,
+        "base_histogram": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.hist.csv",
+        "base_sha256": "5d6f5600399c80e25be2171dead9e823c5104dd1278052c24f39951fbfae29a1",
+        "base_metadata": {
+          "engine": "same-N Gaussian threshold-rank Newman-Ziff",
+          "generated_utc": "2026-08-28T13:12:07Z",
+          "git_commit": "6d2d68a62b433e337b97eadaf1870cb58e2f7666",
+          "command": "/workspace/rootamp-build-6d2d68a/threshold_rank_orientation_mc --samples 100000000 --batches 100 --seed 2026104501 --replica-offset 5000000000 --threads 8 --n 170 --git-commit 6d2d68a62b433e337b97eadaf1870cb58e2f7666 --output-prefix /workspace/fullcurve-results-20260828/n170",
+          "compiler": "10.3.1",
+          "openmp": true,
+          "threads_requested": 8,
+          "samples_per_pair": 100000000,
+          "batches": 100,
+          "seed": 2026104501,
+          "replica_counter_first": 5000000000,
+          "replica_counter_last_exclusive": 5100000000,
+          "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+          "coupling": "same cyclic permutation shared by same-N orientations",
+          "channel": "rank-2 cross wrapping",
+          "K_plus": "first black primal cross rank, 1-based",
+          "K_minus": "first black rank after white matching cross is lost; N-r+1",
+          "sparse_joint_histogram": false,
+          "per_batch_joint_moments": true,
+          "elapsed_seconds": 336.101382582,
+          "designs": [
+            {
+              "N": 170,
+              "first": [
+                13,
+                1
+              ],
+              "second": [
+                11,
+                7
+              ]
+            }
+          ],
+          "histogram_csv": "/workspace/fullcurve-results-20260828/n170.hist.csv",
+          "moments_csv": "/workspace/fullcurve-results-20260828/n170.moments.csv"
+        },
+        "extension_histogram": "results/server-20260829/P154-norm4-production/raw/n170_1900m.hist.csv",
+        "extension_sha256": "b66e5f4d8d7a7614d04a0d0d2603b0e0aa24d831de7aa0e2a3538744d947cae1",
+        "extension_metadata": {
+          "engine": "same-N Gaussian threshold-rank Newman-Ziff",
+          "generated_utc": "2026-08-29T12:07:45Z",
+          "git_commit": "bfab0330f5f56ca4d746b45d737f1607e3d229a0",
+          "command": "/workspace/threshold_rank_orientation_mc-bfab033 --n 170 --samples 1900000000 --batches 100 --seed 2026104501 --replica-offset 5100000000 --threads 8 --git-commit bfab0330f5f56ca4d746b45d737f1607e3d229a0 --output-prefix results/server-20260829/P154-norm4-production/raw/n170_1900m",
+          "compiler": "10.3.1",
+          "openmp": true,
+          "threads_requested": 8,
+          "samples_per_pair": 1900000000,
+          "batches": 100,
+          "seed": 2026104501,
+          "replica_counter_first": 5100000000,
+          "replica_counter_last_exclusive": 7000000000,
+          "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+          "coupling": "same cyclic permutation shared by same-N orientations",
+          "channel": "rank-2 cross wrapping",
+          "K_plus": "first black primal cross rank, 1-based",
+          "K_minus": "first black rank after white matching cross is lost; N-r+1",
+          "sparse_joint_histogram": false,
+          "per_batch_joint_moments": true,
+          "elapsed_seconds": 6212.030425749,
+          "designs": [
+            {
+              "N": 170,
+              "first": [
+                13,
+                1
+              ],
+              "second": [
+                11,
+                7
+              ]
+            }
+          ],
+          "histogram_csv": "results/server-20260829/P154-norm4-production/raw/n170_1900m.hist.csv",
+          "moments_csv": "results/server-20260829/P154-norm4-production/raw/n170_1900m.moments.csv"
+        }
+      }
+    ],
+    "target": [
+      {
+        "N": 260,
+        "histogram": "results/server-20260829/P154-norm4-production/raw/n260_1b.hist.csv",
+        "sha256": "02f74c5c2983d597ef9b6e91517a5d730075811fd4af6aa2309cef3f5b74729c",
+        "metadata": {
+          "engine": "general integer-period threshold-rank Newman-Ziff",
+          "generated_utc": "2026-08-29T09:07:29Z",
+          "git_commit": "bfab0330f5f56ca4d746b45d737f1607e3d229a0",
+          "command": "build/threshold_rank_integer_period_mc --n 260 --samples 1000000000 --batches 100 --seed 2026105401 --replica-offset 8200000000 --threads 8 --git-commit bfab0330f5f56ca4d746b45d737f1607e3d229a0 --output-prefix results/server-20260829/P154-norm4-production/raw/n260_1b",
+          "compiler": "10.3.1",
+          "openmp": true,
+          "threads_requested": 8,
+          "samples_per_pair": 1000000000,
+          "batches": 100,
+          "seed": 2026105401,
+          "replica_counter_first": 8200000000,
+          "replica_counter_last_exclusive": 9200000000,
+          "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+          "coupling": "same HNF mixed-radix label permutation shared by the pair",
+          "quotient_coordinates": "column-HNF representatives (rx,ry), label=rx+h11*ry",
+          "period_matrix_convention": "row-major matrix; columns are lifted period vectors",
+          "channel": "rank-2 cross wrapping",
+          "K_plus": "first black primal cross rank, 1-based",
+          "K_minus": "first black rank after white matching cross is lost; N-r+1",
+          "sparse_joint_histogram": false,
+          "per_batch_joint_moments": true,
+          "elapsed_seconds": 6721.813176946,
+          "designs": [
+            {
+              "id": "N65_to_N260_q4",
+              "N": 260,
+              "first": [
+                16,
+                2
+              ],
+              "second": [
+                14,
+                8
+              ],
+              "first_period_matrix": [
+                [
+                  16,
+                  -2
+                ],
+                [
+                  2,
+                  16
+                ]
+              ],
+              "second_period_matrix": [
+                [
+                  14,
+                  -8
+                ],
+                [
+                  8,
+                  14
+                ]
+              ],
+              "first_HNF": [
+                [
+                  130,
+                  16
+                ],
+                [
+                  0,
+                  2
+                ]
+              ],
+              "second_HNF": [
+                [
+                  130,
+                  36
+                ],
+                [
+                  0,
+                  2
+                ]
+              ],
+              "first_smith_invariants": [
+                2,
+                130
+              ],
+              "second_smith_invariants": [
+                2,
+                130
+              ]
+            }
+          ],
+          "histogram_csv": "results/server-20260829/P154-norm4-production/raw/n260_1b.hist.csv",
+          "moments_csv": "results/server-20260829/P154-norm4-production/raw/n260_1b.moments.csv"
+        }
+      },
+      {
+        "N": 340,
+        "histogram": "results/server-20260829/P154-norm4-production/raw/n340_1b.hist.csv",
+        "sha256": "c3d9323e7c62c2f982b0c31d7a3dbe4f727fe45590569fa918e9c6d5c4f3ae92",
+        "metadata": {
+          "engine": "general integer-period threshold-rank Newman-Ziff",
+          "generated_utc": "2026-08-29T09:37:24Z",
+          "git_commit": "bfab0330f5f56ca4d746b45d737f1607e3d229a0",
+          "command": "build/threshold_rank_integer_period_mc --n 340 --samples 1000000000 --batches 100 --seed 2026105402 --replica-offset 8200000000 --threads 8 --git-commit bfab0330f5f56ca4d746b45d737f1607e3d229a0 --output-prefix results/server-20260829/P154-norm4-production/raw/n340_1b",
+          "compiler": "10.3.1",
+          "openmp": true,
+          "threads_requested": 8,
+          "samples_per_pair": 1000000000,
+          "batches": 100,
+          "seed": 2026105402,
+          "replica_counter_first": 8200000000,
+          "replica_counter_last_exclusive": 9200000000,
+          "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+          "coupling": "same HNF mixed-radix label permutation shared by the pair",
+          "quotient_coordinates": "column-HNF representatives (rx,ry), label=rx+h11*ry",
+          "period_matrix_convention": "row-major matrix; columns are lifted period vectors",
+          "channel": "rank-2 cross wrapping",
+          "K_plus": "first black primal cross rank, 1-based",
+          "K_minus": "first black rank after white matching cross is lost; N-r+1",
+          "sparse_joint_histogram": false,
+          "per_batch_joint_moments": true,
+          "elapsed_seconds": 8516.346060886,
+          "designs": [
+            {
+              "id": "N85_to_N340_q4",
+              "N": 340,
+              "first": [
+                18,
+                4
+              ],
+              "second": [
+                14,
+                12
+              ],
+              "first_period_matrix": [
+                [
+                  18,
+                  -4
+                ],
+                [
+                  4,
+                  18
+                ]
+              ],
+              "second_period_matrix": [
+                [
+                  14,
+                  -12
+                ],
+                [
+                  12,
+                  14
+                ]
+              ],
+              "first_HNF": [
+                [
+                  170,
+                  94
+                ],
+                [
+                  0,
+                  2
+                ]
+              ],
+              "second_HNF": [
+                [
+                  170,
+                  144
+                ],
+                [
+                  0,
+                  2
+                ]
+              ],
+              "first_smith_invariants": [
+                2,
+                170
+              ],
+              "second_smith_invariants": [
+                2,
+                170
+              ]
+            }
+          ],
+          "histogram_csv": "results/server-20260829/P154-norm4-production/raw/n340_1b.hist.csv",
+          "moments_csv": "results/server-20260829/P154-norm4-production/raw/n340_1b.moments.csv"
+        }
+      }
+    ]
+  }
+}
