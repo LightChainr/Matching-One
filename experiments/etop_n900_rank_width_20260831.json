@@ -1,0 +1,27 @@
+{
+  "status": "frozen_before_N900_acquisition",
+  "question": "Does the intrinsic D_A rank-clock width follow the quarter-power finite-regime prediction or the fixed critical-width prediction at a third homothetic scale?",
+  "source_prediction_commit": "fb1a944e1ef34e9b9dfcf32c59af25f44ce43d9a",
+  "source_prediction_path": "results/p267-rank-clock-width/score.json",
+  "fixed_p": 0.59274605079,
+  "area": 900,
+  "samples_per_shape_pair": 32000000,
+  "batches": 800,
+  "seed": 20260831141001,
+  "replica_offset": 267900000000,
+  "primary_readout": "Centered second moment of the signed rank-step profile D_A=P4[A_top](4i)-P4[A_top](2i), in z=N^(3/8)(p-p_ref), with full same-counter batch covariance and area normalization uncertainty.",
+  "predictions": {
+    "quarter_power_width": 2.5655353884852174,
+    "fixed_critical_width_profile": 2.0947508729472655,
+    "shared_anchor_covariance": [[0.008380982835833564,0.0068430438302720725],[0.0068430438302720725,0.005587321890555725]]
+  },
+  "sampling": "One new N900 counter block shared by the two shapes, independent of N100/N400. 32M distinct counters and 64M geometry-pair evaluations. No adaptive extension or result-dependent truncation.",
+  "geometry": "Each N100 period entry is multiplied by three. Same moduli and rational rotation; both pairs have Smith(3,300)/(15,60). The shear geometry is omitted because this question concerns the already named D_A width, not common three-shape transport.",
+  "shapes": [
+    {"name":"tau_2i", "first":[21,-6,3,42], "second":[15,-30,15,30], "delta_cos4":"1152/625"},
+    {"name":"tau_4i", "first":[12,36,-9,48], "second":[15,0,0,60], "delta_cos4":"-1152/625"}
+  ],
+  "resource": "Two existing-engine single-threaded processes on the local Mac; no cloud/GPU rental or engine change.",
+  "interpretation": "Both candidates are conditional finite-regime shape predictions selected from N100/N400, not established critical exponents. Include target sampling uncertainty and the perfectly correlated shared N400 anchor. Either, both, or neither may be incompatible; do not force a winner or call an unresolved comparison model recovery.",
+  "secondary_readouts": ["fixed-p A/E/C/W and exact full threshold histograms", "N400-to-N900 finite effective width and area-normalized mean location", "source-defined auxiliary standardized shape moments if independently declared before target reveal"]
+}
