@@ -1,0 +1,333 @@
+{
+  "census": [
+    {
+      "N": 5,
+      "cemetery_included": false,
+      "gaussian": [
+        2,
+        1
+      ],
+      "rank_one_states": 10,
+      "split_survival_classes": 0,
+      "strong_markov_classes": 2,
+      "survival_classes": 2
+    },
+    {
+      "N": 9,
+      "cemetery_included": false,
+      "gaussian": [
+        3,
+        0
+      ],
+      "rank_one_states": 162,
+      "split_survival_classes": 0,
+      "strong_markov_classes": 10,
+      "survival_classes": 10
+    },
+    {
+      "N": 10,
+      "cemetery_included": false,
+      "gaussian": [
+        3,
+        1
+      ],
+      "rank_one_states": 310,
+      "split_survival_classes": 0,
+      "strong_markov_classes": 16,
+      "survival_classes": 16
+    },
+    {
+      "N": 13,
+      "cemetery_included": false,
+      "gaussian": [
+        3,
+        2
+      ],
+      "rank_one_states": 2340,
+      "split_survival_classes": 0,
+      "strong_markov_classes": 62,
+      "survival_classes": 62
+    },
+    {
+      "N": 16,
+      "cemetery_included": false,
+      "gaussian": [
+        4,
+        0
+      ],
+      "rank_one_states": 19932,
+      "split_survival_classes": 4,
+      "strong_markov_classes": 214,
+      "survival_classes": 210
+    },
+    {
+      "N": 17,
+      "cemetery_included": false,
+      "gaussian": [
+        4,
+        1
+      ],
+      "rank_one_states": 38896,
+      "split_survival_classes": 42,
+      "strong_markov_classes": 390,
+      "survival_classes": 346
+    }
+  ],
+  "claim_boundary": "No all-HNF minimality, asymptotic complexity, or CFT field claim.",
+  "inherited_oracle_blob": "62e06795fdfa91a956aedd62b7344e84aa5efc5c",
+  "inherited_oracle_commit": "fee33287cf4830e07ccef6177f43034add02256e",
+  "issue": 429,
+  "n16_history": {
+    "event": "rank(S9)=1 and x(S9)=3",
+    "full_counts": [
+      1,
+      7,
+      18,
+      20,
+      8,
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap_K1_8_minus_4": "1/66",
+    "k": 8,
+    "line": [
+      1,
+      0
+    ],
+    "rows": [
+      {
+        "K1": 4,
+        "next_exit_probabilities": {
+          "1": "7/24",
+          "2": "5/12",
+          "3": "1/6",
+          "absorbed": "1/8"
+        },
+        "next_exit_weights": {
+          "1": 258048,
+          "2": 368640,
+          "3": 147456,
+          "absorbed": 110592
+        },
+        "prefixes": 110592
+      },
+      {
+        "K1": 5,
+        "next_exit_probabilities": {
+          "1": "7/24",
+          "2": "5/12",
+          "3": "1/6",
+          "absorbed": "1/8"
+        },
+        "next_exit_weights": {
+          "1": 1032192,
+          "2": 1474560,
+          "3": 589824,
+          "absorbed": 442368
+        },
+        "prefixes": 442368
+      },
+      {
+        "K1": 6,
+        "next_exit_probabilities": {
+          "1": "29/104",
+          "2": "23/52",
+          "3": "2/13",
+          "absorbed": "1/8"
+        },
+        "next_exit_weights": {
+          "1": 2672640,
+          "2": 4239360,
+          "3": 1474560,
+          "absorbed": 1198080
+        },
+        "prefixes": 1198080
+      },
+      {
+        "K1": 7,
+        "next_exit_probabilities": {
+          "1": "117/424",
+          "2": "95/212",
+          "3": "8/53",
+          "absorbed": "1/8"
+        },
+        "next_exit_weights": {
+          "1": 5391360,
+          "2": 8755200,
+          "3": 2949120,
+          "absorbed": 2442240
+        },
+        "prefixes": 2442240
+      },
+      {
+        "K1": 8,
+        "next_exit_probabilities": {
+          "1": "27/88",
+          "2": "17/44",
+          "3": "2/11",
+          "absorbed": "1/8"
+        },
+        "next_exit_weights": {
+          "1": 8709120,
+          "2": 10967040,
+          "3": 5160960,
+          "absorbed": 3548160
+        },
+        "prefixes": 3548160
+      }
+    ],
+    "selected_prefixes": 7741440,
+    "stratum_states": 192
+  },
+  "n16_witness": [
+    {
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "counts": [
+        1,
+        7,
+        18,
+        20,
+        8,
+        0,
+        0,
+        0,
+        0
+      ],
+      "k": 8,
+      "line": [
+        1,
+        0
+      ],
+      "name": "A",
+      "next_exit_choices": {
+        "1": 3,
+        "2": 2,
+        "3": 2,
+        "absorbed": 1
+      },
+      "shared_step_fork": "95/196",
+      "successor_prediction_variance": "1/14",
+      "survival": [
+        "1",
+        "7/8",
+        "9/14",
+        "5/14",
+        "4/35",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "unbranched_two_step": "9/14"
+    },
+    {
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "counts": [
+        1,
+        7,
+        18,
+        20,
+        8,
+        0,
+        0,
+        0,
+        0
+      ],
+      "k": 8,
+      "line": [
+        1,
+        0
+      ],
+      "name": "B",
+      "next_exit_choices": {
+        "1": 1,
+        "2": 6,
+        "absorbed": 1
+      },
+      "shared_step_fork": "93/196",
+      "successor_prediction_variance": "3/49",
+      "survival": [
+        "1",
+        "7/8",
+        "9/14",
+        "5/14",
+        "4/35",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "unbranched_two_step": "9/14"
+    }
+  ],
+  "schema": "matching-one/p429-branching-continuation/v1",
+  "status": "exact_finite_volume"
+}
