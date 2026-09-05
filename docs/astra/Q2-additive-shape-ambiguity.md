@@ -57,6 +57,45 @@ cannot compute, and the clean-looking `0` and `11/4` above are only available if
 normalization really does remove the same block — which is an assumption, not a
 theorem.
 
+## We have now measured it, and it is not 11/4
+
+**Added 2026-09-05, after this question was written.** The two-modulus block described
+below was frozen and run. The measurement, on a square torus (`τ = i`) and a 2:1
+rectangular torus (`τ = 2i`) with the same 290 sites, of the spin-4 amplitude of the
+matching-odd slope, is
+
+```text
+ratio  =  A(2i) / A(i)  =  1.880 +/- 0.177          (prospective, frozen before the run)
+```
+
+against `Ê4(2i)/Ê4(i) = 11/4 = 2.75`. That is **4.9 sigma low**. Plain area scaling
+(4) is excluded at 12 sigma and no modulus dependence (1) at 5.0 sigma, so the number
+is not consistent with the obvious alternatives either. A known spin-8 leakage in the
+orientation projector (`±1148/21025`, exactly equal and opposite between the two
+families) would need `A₈/A₄ = 3.44` to account for the gap, which this project's own
+H4-beats-H8 results rule out.
+
+So the conjunction *{weight-4 shape} ∧ {the normalization removes the same block}* is
+false. Since the second conjunct is exactly the assumption this question is about,
+the question is now sharper and more valuable, not less:
+
+> **What additive-shape contribution `A~(τ)`, admissible under the `q̃ → q̃ + αq`
+> gauge and the generic-`c` derivatives of the colliding blocks, would carry the
+> ratio from `11/4` to `1.88 ± 0.18` at `τ = 2i` relative to `τ = i`?**
+>
+> Equivalently: is `1.88` reachable inside the rank-2 module at all, or does it
+> falsify the module rather than the normalization?
+
+That is a number to explain, not a design to approve, and it is worth more than the
+original framing. Answer it together with the question as originally posed below.
+
+One further datum, for whatever it is worth: `1.880 ± 0.177` is compatible with the
+bare aspect ratio `r = 2` (`z = -0.68`). We record that as a post-hoc observation with
+no prospective standing — it is a reading of a single point — and we are **not**
+asking to have it rationalized. If a linear-in-`r` law falls out of a correct
+treatment, that is informative; if it does not, please say so plainly rather than
+constructing one.
+
 ## The question
 
 > Fix the two-parameter ambiguity `(α, C)`: `α` the Jordan gauge `q~ → q~ + α q`, and
@@ -83,17 +122,20 @@ actually separates a Jordan module from ordinary logarithmic mixing.
 |---|---|
 | **Invariants exist and separate** | Freeze the smallest such combination as the score and run the two-modulus block. This is `ROADMAP` item 2, and it becomes executable. |
 | **Invariants exist but do not separate** | The shape route cannot identify the module. Drop item 2, and say so in the status ledger rather than leaving it "ready". |
-| **`α` is removable by a stated principle** | Best case: the `0` at the CM point and the `11/4` rectangular ratio become genuine predictions instead of conditional ones, and the test is much sharper than planned. |
+| **`α` is removable by a stated principle** | The `0` at the CM point and the `11/4` rectangular ratio become genuine predictions instead of conditional ones — and since `11/4` is now excluded at 4.9 sigma, that outcome would falsify the module in this channel rather than confirm it. Either way it is decisive. |
 
-A negative answer here saves a production block, which is the cheaper of the two
-outcomes and the more likely one.
+The block has since been spent: it cost about 70 minutes and returned the number
+above, so the table's first two rows are now about what to do with a measurement
+rather than whether to take one.
 
 ## What we already have, and do not need re-derived
 
 - The `-493/192` coefficient and the `A_q/A_ε = (493/96) g₂` Ward ratio, both
   already checked against exact Ward and Hecke fractions in this project.
 - The CM zero and the `11/4` rectangular ratio, verified independently by a
-  90-decimal direct `E₄` `q`-series.
+  90-decimal direct `E₄` `q`-series. The competitor shapes and what each predicts for
+  the same ratio are in `results/modulus-shape-discrimination/latest.json`; the
+  measurement is in `results/modulus-fingerprint-n290/latest.json`.
 - The general theory of `g₂`, `E₂`, `E₄`, quasi-modularity and the `E₂` anomaly.
 - The dilation cocycle and the `log L = ½ log N` bookkeeping shown above.
 
@@ -102,7 +144,8 @@ outcomes and the more likely one.
 - Reviewing modular forms, or listing properties of `g₂`.
 - Re-deriving the boxed relations, which we hold as exact.
 - Which lattice geometry realizes which `τ` — we handle that.
-- Statistical design of the score.
+- Statistical design of the score, or how the measurement was taken. The number
+  above is frozen, prospective and ours to defend.
 
 ## Provenance of the framing above
 

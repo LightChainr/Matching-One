@@ -1,0 +1,118 @@
+{
+  "batches": 100,
+  "comparison": {
+    "no_modulus_dependence": {
+      "predicted": 1.0,
+      "z": 4.9800477654670665
+    },
+    "plain_area_scaling": {
+      "predicted": 4.0,
+      "z": -12.005198015842263
+    },
+    "q4_jordan_weight4": {
+      "predicted": 2.75,
+      "z": -4.928012273630042
+    },
+    "weight12_E12": {
+      "predicted": 32.515625,
+      "z": -173.45349776005855
+    },
+    "weight12_E4_cubed": {
+      "predicted": 20.796875,
+      "z": -107.10488142681898
+    },
+    "weight12_delta": {
+      "predicted": 0.125,
+      "z": 9.93407778501562
+    }
+  },
+  "compatible_at_3_sigma": [],
+  "excluded_at_3_sigma": [
+    "no_modulus_dependence",
+    "plain_area_scaling",
+    "q4_jordan_weight4",
+    "weight12_E12",
+    "weight12_E4_cubed",
+    "weight12_delta"
+  ],
+  "families": {
+    "rectangular": {
+      "channels": {
+        "Mbar_prime": {
+          "standard_error": 0.0005567543794888227,
+          "value": 11.763959743381875
+        },
+        "P4_D_prime": {
+          "standard_error": 0.0002621399737156613,
+          "value": -0.0015317298201410802
+        },
+        "P4_S": {
+          "standard_error": 1.1068397369514012e-05,
+          "value": -5.713087600384491e-05
+        },
+        "P4_S_prime": {
+          "standard_error": 0.0003069916583582473,
+          "value": 0.005203138783226137
+        }
+      },
+      "delta_cos4": 1.9177170035671818,
+      "modulus": "2i",
+      "samples": 100000000,
+      "seconds": 1471.7
+    },
+    "square": {
+      "channels": {
+        "Mbar_prime": {
+          "standard_error": 0.00034019789512160204,
+          "value": 14.627908318711988
+        },
+        "P4_D_prime": {
+          "standard_error": 0.0001787505458218489,
+          "value": -0.0008936306697178608
+        },
+        "P4_S": {
+          "standard_error": 7.060141836610332e-06,
+          "value": -4.624026228593526e-05
+        },
+        "P4_S_prime": {
+          "standard_error": 0.00019669491602619904,
+          "value": 0.002768222835193602
+        }
+      },
+      "delta_cos4": 1.9177170035671818,
+      "modulus": "i",
+      "samples": 200000000,
+      "seconds": 2786.9
+    }
+  },
+  "not_established": [
+    "identification of the Q4 Jordan module",
+    "that the measured amplitude is the log slope rather than a leading amplitude with the same symmetry",
+    "anything separating shapes that carry the same E4 factor",
+    "the 11/4 itself, which is conditional on the normalization removing the same block (docs/astra/Q2-additive-shape-ambiguity.md)"
+  ],
+  "primary_channel": "P4_S_prime",
+  "ratios_rectangular_over_square": {
+    "Mbar_prime": {
+      "standard_error": 4.1762767564254415e-05,
+      "value": 0.8042133903952244
+    },
+    "P4_D_prime": {
+      "standard_error": 0.41410744529035565,
+      "value": 1.7140524290920784
+    },
+    "P4_S": {
+      "standard_error": 0.3037120833179234,
+      "value": 1.2355223171219385
+    },
+    "P4_S_prime": {
+      "standard_error": 0.17662387925532516,
+      "value": 1.879595355213607
+    }
+  },
+  "replica_offset": 20000000,
+  "schema": "matching-one.modulus-fingerprint-n290.v1",
+  "seed": "20260905",
+  "site_count": 290,
+  "verdict": "no competing prediction survives"
+}

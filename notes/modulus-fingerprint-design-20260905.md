@@ -76,6 +76,13 @@ is 11/4 against 4 — a gap of 45% of the predicted value, needing the ratio to 
 
 ## One rectangle is the whole experiment
 
+> **Superseded 2026-09-05, same day.** The reasoning below is correct *against the
+> area competitor* and the arithmetic stands. The overreach is the heading: it treats
+> the competitor list as complete. The N=290 run landed at `1.880 ± 0.177`, which is
+> none of the listed hypotheses, and against a linear-in-`r` law longer rectangles
+> separate a great deal (at `r=4`: 4.0 against 10.99 against 16). See
+> `notes/modulus-fingerprint-n290-result-20260905.md`.
+
 `E4(ri) → 1` very fast, so for `r ≥ 2` the prediction is `0.687·r²` to high accuracy:
 
 | r | `D(r)/D(1)` | `r²` | ratio |
@@ -89,8 +96,9 @@ and it is already constant to 0.08% at `r = 3`. **Aspect ratios 3 and 4 test not
 that `r = 2` has not already tested.** Buying them would be exactly the kind of
 same-purpose repetition the roadmap tells us to stop.
 
-So the production ask is one aspect ratio, two orientations, and enough statistics to
-reach ~15% on the ratio — not a ladder of geometries.
+So the production ask *against the area competitor* is one aspect ratio, two
+orientations, and enough statistics to reach ~15% on the ratio. That was the right
+first run. It was not the whole experiment.
 
 ## The concrete run: N = 290, four period matrices
 
