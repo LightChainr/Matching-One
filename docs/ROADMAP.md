@@ -51,7 +51,9 @@ The linear-in-`r` law is named in the frozen file as `bare_aspect_ratio` **befor
 
 **Why not N=1300, measured rather than guessed.** A 1M pilot there returned a per-difference noise of `0.0131` against `0.0065` at N=290 — a factor 2.0 for a 4.5× larger torus — while the amplitude falls roughly as `N^-5/4`. A decisive ratio at N=1300 is about three orders of magnitude beyond what we can spend. The same pilot found that **the analysis path returned zeros at N=1300**: the binomial tail's recurrence starts at `(1−p)^N`, which underflows to exactly zero near **790 sites** at the percolation threshold and then stays zero, silently. That bound had never been noticed, and it capped every future large-`N` plan in this repository. It is fixed (`analyze_p48_retrospective` now anchors the recurrence at the mode) and `N ≳ 4000` is analyzable.
 
-**Action:** pilot at N=580 to size the budget, then run the three rungs.
+**Piloted 2026-09-05** — `notes/aspect-ladder-n580-pilot-20260905.md`. Measured throughput 33 s/M samples and per-difference noise 0.0018–0.0024 per 10M, comparable across all three rungs. **200 M samples per rung, three rungs, about 5.5 hours** puts ~20 % on the denominator of both score entries, which separates 4.00 from 10.99 at r=4 with room to spare. The pilot's central values are noise (33 %, 1416 %, 22 % relative) and may not be read or pooled.
+
+**Action:** run the three rungs — ticket #567.
 
 Aspect ratio **3 is arithmetically impossible** here: `N = 3|w|^2` and 3 is inert in `Z[i]`, so no 3:1 rectangle shares a site count with a square torus. The reachable ladder is `r` that are themselves sums of two squares.
 
