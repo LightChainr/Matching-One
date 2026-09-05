@@ -37,7 +37,11 @@ Scale-log behavior is no longer enough to identify the Q4 Jordan module. Use exa
 - rectangular/CM `11/4` relation;
 - hexagonal degree-2 E4 child phase projector `(1,zeta,zeta^2)` which cancels a common scalar mode.
 
-**Action:** freeze the smallest scalar-cancelled two/modulus score that separates ordinary analytic correction, generic log mixing and Q4-Jordan shape. Prefer a geometry ratio/projector over another free radial exponent.
+**Run, and negative** — see `notes/modulus-fingerprint-n290-result-20260905.md`. The N=290 square-vs-rectangular ratio is `1.880 +/- 0.177`, which excludes `11/4` at 4.9 sigma along with every other prediction on the frozen list. The hypothesis tested was a conjunction — weight-4 shape *and* a normalization that removes the same block — so what died is the cheap version of the fingerprint, not the module. The known spin-8 systematic would need `A8/A4 = 3.44` to explain the gap and is ruled out by the committed H4-beats-H8 results.
+
+**Action:** freeze and run aspect ratio **4 at N=3380**. It has three orientations in *both* families (square `|w|^2=3380`: `58+4i`, `52+26i`, `44+38i`; rectangular `|w|^2=845`: `29+2i`, `26+13i`, `22+19i`), so it fits `C`, `A4` and `A8` together and removes the spin-8 systematic rather than bounding it, and it separates linear-in-`r` (4.0) from weight 4 (10.99) from area (16). Name the linear-in-`r` law as a competitor **before** the run: it is a post-hoc reading of the N=290 point and has no standing yet.
+
+Aspect ratio **3 is arithmetically impossible** here: `N = 3|w|^2` and 3 is inert in `Z[i]`, so no 3:1 rectangle shares a site count with a square torus. The reachable ladder is `r` that are themselves sums of two squares.
 
 ### 3. Norm-4 dyadic closure with deck characters — #154
 
@@ -92,6 +96,7 @@ Not forbidden, simply poor use of time/compute now:
 - a third primitive norm-2 generation whose only purpose is another sign flip;
 - another scalar width/boundary correction fit to P57;
 - another free exponent fit before testing shape/modulus information;
+- (withdrawn 2026-09-05) *"rectangular tori beyond r=2 separate nothing"* — true only against the area competitor, and the N=290 measurement landed on a third hypothesis where longer rectangles separate a great deal. See `notes/modulus-fingerprint-n290-result-20260905.md`;
 - large production that stores only final scalars instead of reusable sufficient statistics;
 - treating registry/doc synchronization as a prerequisite for science.
 

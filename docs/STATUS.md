@@ -1,6 +1,6 @@
 # Project Status and Claim Ledger
 
-**Status date:** 2026-08-29
+**Status date:** 2026-09-05
 
 `main` is the shared research line. Claim strength follows evidence and chronology, not PR state. `docs/ROADMAP.md` ranks information gain; it is not a permission system.
 
@@ -32,6 +32,7 @@ power — is publication-time work and lives in `docs/PUBLICATION-CHECKLIST.md`.
 | One scalar width explains the higher thermal jet | C2 negative | No: full covariance norm-5 width score `24.5004/10`; width-corrected q2 `22.2386/10` |
 | Rank-2/Jordan is uniquely established | C2 | No. Jordan/log is compatible (`17.0513/10`) and now has a precise Q4-module origin, but scale-log behavior alone is not module identification |
 | Intrinsic quantile-center transfer obeys `N^-3/4` on N145->290 | C3 | frozen ratio observed `0.59584549` vs `2^-3/4=0.59460356`, `z=-1.033` |
+| Square/rectangular spin-4 ratio carries the area-normalized weight-4 shape | C3 negative | Prospectively falsified at N=290: ratio `1.880 +/- 0.177` excludes `11/4` at `4.9` sigma, area scaling `4` at `12.0`, and no-dependence `1` at `5.0`. Tests the fingerprint as constructed, not the module: the normalization assumption is a second conjunct (`docs/astra/Q2`) |
 
 ## Exact semantics and controls
 
