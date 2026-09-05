@@ -138,6 +138,34 @@ decision:
     Compatible with both live laws at r=4 is underpowered, reported as such, and
     any further run is a new frozen design. No optional stopping.
 
+test_statistic:
+  # Added 2026-09-05, AFTER the run, and that is the point of recording it here.
+  used: fieller_contrast
+  definition: z = (Y - R0*X) / sqrt(varY + R0^2 varX - 2 R0 cov(X,Y))
+  frozen_in_code_before_the_run: (Rhat - R0) / SE(Rhat), scored on the ratio
+  why_it_was_replaced: >
+    This freeze named the quantity, the discriminating entry and the 3-sigma
+    threshold, but not the statistic. The statistic was fixed instead by the
+    committed runner (939a04f), before any block was run, so it was frozen in
+    effect. It is wrong for this data: A4(i) came in 3.6 sigma from zero, and a
+    ratio with a denominator that weak is not approximately normal, so its
+    standard error at the observed point understates the spread out where the
+    large predictions sit. The Fieller contrast has no such problem because X
+    and Y are batch means and the CLT applies to them directly.
+  this_is_a_real_deviation: >
+    Changing a statistic after seeing the data is a deviation whether or not the
+    freeze named it. It is recorded rather than applied quietly. What makes it
+    defensible and not motivated is that it moves verdicts in both directions:
+    no_modulus_dependence goes from surviving at 2.7 to excluded at 9.5, while
+    q4_jordan_weight4 and plain_area_scaling go from excluded at 4.9 and 8.7 to
+    surviving at 2.1 and 2.6. The pre-registered numbers stay in the artifact
+    under ratio_z_not_used.
+  foreseeable: >
+    Yes, and it should have been caught at design time. The pilot sized the
+    budget for 20 percent relative error on A4 at r=1 -- a 5-sigma denominator,
+    already marginal for a ratio test -- and equal sample allocation across
+    rungs put the smallest amplitude in every denominator.
+
 conditional_on:
   - >
     The weight-4 entry is a prediction only if the normalization removes the same

@@ -11,6 +11,7 @@ from __future__ import annotations
 
 from fractions import Fraction
 import json
+import math
 from pathlib import Path
 import sys
 import unittest
@@ -19,6 +20,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+import score_aspect_ladder_n580 as ladder  # noqa: E402
 from score_aspect_ladder_n580 import (  # noqa: E402
     COMPETING,
     SITE_COUNT,
@@ -105,6 +107,124 @@ class ScoreAspectLadderTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             jackknife_se(1.0, [1.0])
 
+
+
+class FiellerContrastTests(unittest.TestCase):
+    """The statistic that decides the ladder, tested on the numbers it decided.
+
+    The run measured A4 at r=1 as 9.016e-04 +- 2.491e-04 -- 3.6 sigma from zero --
+    against 4.132e-03 +- 1.951e-04 at r=4.  Dividing first turns that into
+    4.58 +- 1.32 and then reads competitors off it, which is where the error was.
+    """
+
+    # The committed N=580 run, results/aspect-ladder-n580/latest.json.
+    Y, SY = 4.131807633330795e-03, 1.9512853917124002e-04
+    X, SX = 9.016433036753112e-04, 2.4913893253110386e-04
+    RHO = -0.1526
+    COV = RHO * SX * SY
+
+    def test_the_two_statistics_agree_when_the_denominator_is_sharp(self) -> None:
+        """The anchor: with a well-measured denominator there is nothing to fix.
+
+        The wrong number this stops us believing is a Fieller implementation
+        that is simply a different formula rather than a better one.  Shrink the
+        denominator's error and it must converge on the naive ratio z.
+        """
+        var_x = (self.X * 1e-6) ** 2
+        ratio = self.Y / self.X
+        se_ratio = math.sqrt(self.SY ** 2) / self.X  # denominator noise negligible
+        for predicted in (2.0, 4.0, 10.9908008589, 16.0):
+            naive = (ratio - predicted) / se_ratio
+            exact = ladder.fieller_z(
+                self.Y, self.SY ** 2, self.X, var_x, 0.0, predicted
+            )
+            self.assertAlmostEqual(naive, exact, delta=abs(naive) * 1e-3 + 1e-9)
+
+    def test_the_weak_denominator_is_where_the_two_disagree(self) -> None:
+        """Pins the finding that changed the run's verdicts.
+
+        The wrong numbers here are the pre-registered ones.  On this data the
+        ratio z-test excluded the weight-4 modular shape at 4.9 sigma and plain
+        area scaling at 8.7, and let "no modulus dependence" survive at 2.7.
+        All three are artifacts of dividing by a 3.6-sigma denominator.
+        """
+        cases = {          # predicted r4/r1 -> (frozen ratio z, correct z)
+            1.0:            (2.72, 9.53),
+            4.0:            (0.44, 0.50),
+            10.9908008589:  (-4.87, -2.08),
+            16.0:           (-8.67, -2.56),
+            120.79770352:   (-88.26, -3.48),
+        }
+        ratio = self.Y / self.X
+        se_ratio = 1.3167396120465709
+        for predicted, (frozen, correct) in cases.items():
+            self.assertAlmostEqual((ratio - predicted) / se_ratio, frozen, delta=0.02)
+            self.assertAlmostEqual(
+                ladder.fieller_z(self.Y, self.SY ** 2, self.X, self.SX ** 2,
+                                 self.COV, predicted),
+                correct, delta=0.02,
+            )
+
+    def test_the_verdict_flips_in_both_directions(self) -> None:
+        """Guards against a statistic chosen because it helped.
+
+        A correction that only ever loosened, or only ever tightened, would be
+        suspect.  This one excludes a competitor the frozen test let live and
+        revives two it had killed, which is what an unmotivated fix looks like.
+        """
+        def decide(predicted: float) -> bool:
+            return abs(ladder.fieller_z(self.Y, self.SY ** 2, self.X, self.SX ** 2,
+                                        self.COV, predicted)) >= 3.0
+        self.assertTrue(decide(1.0))            # survived the frozen test
+        self.assertFalse(decide(10.9908008589))  # the frozen test excluded it
+        self.assertFalse(decide(16.0))           # so did this one
+
+    def test_the_conclusions_do_not_rest_on_the_correlation(self) -> None:
+        """The covariance was reconstructed, not measured, for this run.
+
+        The committed artifact dropped the delete-one replicates, so rho was
+        backed out of the reported ratio standard error.  If the verdicts moved
+        with rho, that reconstruction would be load-bearing and unusable.
+        """
+        for rho in (-0.5, -0.1526, 0.0, 0.5):
+            cov = rho * self.SX * self.SY
+            for predicted, expected in ((1.0, True), (10.9908008589, False), (16.0, False)):
+                z = ladder.fieller_z(self.Y, self.SY ** 2, self.X, self.SX ** 2,
+                                     cov, predicted)
+                self.assertEqual(abs(z) >= 3.0, expected, f"rho={rho} R0={predicted}")
+
+    def test_the_interval_is_unbounded_when_the_denominator_is_not_resolved(self) -> None:
+        """Stops a wide interval being reported where there is no interval.
+
+        Below 3 sigma on the denominator every large ratio is compatible with
+        the data.  Reporting some finite upper limit there would be the same
+        error as the ratio z-test, one level up.
+        """
+        bounds = ladder.fieller_interval(self.Y, self.SY ** 2, self.X, self.SX ** 2, self.COV)
+        self.assertIsNotNone(bounds)
+        self.assertAlmostEqual(bounds[0], 2.399, delta=0.01)
+        self.assertAlmostEqual(bounds[1], 27.42, delta=0.05)
+        # Same data, denominator error widened until it no longer clears 3 sigma.
+        weak = ladder.fieller_interval(self.Y, self.SY ** 2, self.X, (self.X / 2.9) ** 2, 0.0)
+        self.assertIsNone(weak)
+
+    def test_paired_covariance_sees_a_correlation_a_separate_one_would_miss(self) -> None:
+        """The batches must be deleted together or this is not a covariance.
+
+        Two channels built from the same random blocks are correlated; deleting
+        batch b from one and batch b from the other is what measures it.  A
+        perfectly proportional pair must come back with the covariance implied
+        by its own variances, and an antiproportional one with the sign flipped.
+        """
+        deleted_x = [1.0 + 0.01 * b for b in range(20)]
+        full_x = sum(deleted_x) / 20
+        for scale in (3.0, -3.0):
+            deleted_y = [scale * v for v in deleted_x]
+            full_y = scale * full_x
+            cov = ladder.jackknife_covariance(full_x, deleted_x, full_y, deleted_y)
+            sx = ladder.jackknife_se(full_x, deleted_x)
+            sy = ladder.jackknife_se(full_y, deleted_y)
+            self.assertAlmostEqual(cov / (sx * sy), 1.0 if scale > 0 else -1.0, places=9)
 
 if __name__ == "__main__":
     unittest.main()
