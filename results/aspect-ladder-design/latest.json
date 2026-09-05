@@ -1,0 +1,276 @@
+{
+  "before_running": [
+    "size the pilot honestly. A 200000-sample pilot of the N=290 channel returned an amplitude five times the 20M value, and a sample count projected from it was wrong by about forty times",
+    "freeze a prediction file naming every competitor above, including bare_aspect_ratio, and declare no optional stopping"
+  ],
+  "cost_relative_to_the_n290_design": {
+    "orientations_per_family": 3,
+    "runs_per_family_ratio": "3 / 2 = 1.5",
+    "samples_for_the_same_sigma_on_A4": "about 2.5 times the N=290 design, per family, per site",
+    "sites_per_sample_ratio": "1300 / 290 = 4.48",
+    "variance_amplification_ratio": "0.8933 / 0.5438 = 1.64"
+  },
+  "estimator": "within each family solve O(theta) = C + A4 cos4theta + A8 cos8theta on its three members; the score is the vector (A4(2i)/A4(i), A4(4i)/A4(i))",
+  "families": [
+    {
+      "aspect_ratio": 1,
+      "design_determinant": "-553752213848064/235684033203125",
+      "gaussian_norm": 1300,
+      "members": [
+        {
+          "cos4theta": "103033/105625",
+          "cos8theta": "10074957553/11156640625",
+          "gaussian_integer": "2+36i",
+          "period_matrix_row_major": [
+            2,
+            -36,
+            36,
+            2
+          ],
+          "sites": 1300
+        },
+        {
+          "cos4theta": "22393/105625",
+          "cos8theta": "-10153747727/11156640625",
+          "gaussian_integer": "12+34i",
+          "period_matrix_row_major": [
+            12,
+            -34,
+            34,
+            12
+          ],
+          "sites": 1300
+        },
+        {
+          "cos4theta": "-119/169",
+          "cos8theta": "-239/28561",
+          "gaussian_integer": "20+30i",
+          "period_matrix_row_major": [
+            20,
+            -30,
+            30,
+            20
+          ],
+          "sites": 1300
+        }
+      ],
+      "modulus": "i",
+      "variance_amplification": {
+        "A4": "671611155902171875/751837291487428608",
+        "A8": "64724727618408203125/84205776646592004096",
+        "meaning": "Var(A) = this factor times the per-orientation variance, for equal counts on the three orientations"
+      }
+    },
+    {
+      "aspect_ratio": 2,
+      "design_determinant": "-553752213848064/235684033203125",
+      "gaussian_norm": 650,
+      "members": [
+        {
+          "cos4theta": "119/169",
+          "cos8theta": "-239/28561",
+          "gaussian_integer": "5+25i",
+          "period_matrix_row_major": [
+            5,
+            -50,
+            25,
+            10
+          ],
+          "sites": 1300
+        },
+        {
+          "cos4theta": "-22393/105625",
+          "cos8theta": "-10153747727/11156640625",
+          "gaussian_integer": "11+23i",
+          "period_matrix_row_major": [
+            11,
+            -46,
+            23,
+            22
+          ],
+          "sites": 1300
+        },
+        {
+          "cos4theta": "-103033/105625",
+          "cos8theta": "10074957553/11156640625",
+          "gaussian_integer": "17+19i",
+          "period_matrix_row_major": [
+            17,
+            -38,
+            19,
+            34
+          ],
+          "sites": 1300
+        }
+      ],
+      "modulus": "2i",
+      "variance_amplification": {
+        "A4": "671611155902171875/751837291487428608",
+        "A8": "64724727618408203125/84205776646592004096",
+        "meaning": "Var(A) = this factor times the per-orientation variance, for equal counts on the three orientations"
+      }
+    },
+    {
+      "aspect_ratio": 4,
+      "design_determinant": "-553752213848064/235684033203125",
+      "gaussian_norm": 325,
+      "members": [
+        {
+          "cos4theta": "103033/105625",
+          "cos8theta": "10074957553/11156640625",
+          "gaussian_integer": "1+18i",
+          "period_matrix_row_major": [
+            1,
+            -72,
+            18,
+            4
+          ],
+          "sites": 1300
+        },
+        {
+          "cos4theta": "22393/105625",
+          "cos8theta": "-10153747727/11156640625",
+          "gaussian_integer": "6+17i",
+          "period_matrix_row_major": [
+            6,
+            -68,
+            17,
+            24
+          ],
+          "sites": 1300
+        },
+        {
+          "cos4theta": "-119/169",
+          "cos8theta": "-239/28561",
+          "gaussian_integer": "10+15i",
+          "period_matrix_row_major": [
+            10,
+            -60,
+            15,
+            40
+          ],
+          "sites": 1300
+        }
+      ],
+      "modulus": "4i",
+      "variance_amplification": {
+        "A4": "671611155902171875/751837291487428608",
+        "A8": "64724727618408203125/84205776646592004096",
+        "meaning": "Var(A) = this factor times the per-orientation variance, for equal counts on the three orientations"
+      }
+    }
+  ],
+  "families_share_one_design_matrix": true,
+  "families_share_one_variance_amplification": true,
+  "modular_shape_predictions": {
+    "rows": [
+      {
+        "amplitude_ratio_by_aspect": {
+          "1": "1.0",
+          "2": "2.75",
+          "4": "10.9908008589"
+        },
+        "modular_weight": 4,
+        "on_the_list_because": "the Q4-Jordan prediction",
+        "shape": "E4",
+        "usable": true
+      },
+      {
+        "amplitude_ratio_by_aspect": {
+          "1": "1.0",
+          "2": "7.5625",
+          "4": "120.79770352"
+        },
+        "modular_weight": 8,
+        "on_the_list_because": "the next even weight; equals E4^2",
+        "shape": "E8",
+        "usable": true
+      },
+      {
+        "amplitude_ratio_by_aspect": {
+          "1": "1.0",
+          "2": "32.515625",
+          "4": "2080.30719731"
+        },
+        "modular_weight": 12,
+        "on_the_list_because": "weight-12 Eisenstein",
+        "shape": "E12",
+        "usable": true
+      },
+      {
+        "amplitude_ratio_by_aspect": {
+          "1": "1.0",
+          "2": "20.796875",
+          "4": "1327.6635036"
+        },
+        "modular_weight": 12,
+        "on_the_list_because": "a weight-12 power of the same shape",
+        "shape": "E4^3",
+        "usable": true
+      },
+      {
+        "amplitude_ratio_by_aspect": {
+          "1": "1.0",
+          "2": "0.125",
+          "4": "2.79010739704e-5"
+        },
+        "modular_weight": 12,
+        "on_the_list_because": "the weight-12 cusp form",
+        "shape": "Delta",
+        "usable": true
+      },
+      {
+        "modular_weight": 6,
+        "on_the_list_because": "an odd-spin weight, for contrast",
+        "shape": "E6",
+        "usable": false,
+        "why_not": "the shape vanishes at the square point, so the ratio is undefined"
+      }
+    ]
+  },
+  "non_modular_competitors": [
+    {
+      "formula": "A(r)/A(1) = r",
+      "law": "bare_aspect_ratio",
+      "predicted_by_aspect": {
+        "1": "1.0",
+        "2": "2.0",
+        "4": "4.0"
+      },
+      "standing": "post-hoc on the N=290 point (z = -0.68 there), prospective from this design forward"
+    },
+    {
+      "formula": "A(r)/A(1) = r^2",
+      "law": "plain_area_scaling",
+      "predicted_by_aspect": {
+        "1": "1.0",
+        "2": "4.0",
+        "4": "16.0"
+      },
+      "standing": "prospective; excluded at 12 sigma by the N=290 run"
+    },
+    {
+      "formula": "A(r)/A(1) = 1",
+      "law": "no_modulus_dependence",
+      "predicted_by_aspect": {
+        "1": "1.0",
+        "2": "1.0",
+        "4": "1.0"
+      },
+      "standing": "prospective; excluded at 5.0 sigma by the N=290 run"
+    }
+  ],
+  "not_established_by_this_design": [
+    "anything at all: no block has been run",
+    "identification of the Q4 Jordan module, which the ratio cannot decide on its own (docs/astra/Q2-additive-shape-ambiguity.md)",
+    "that the fitted A4 is the log slope rather than a leading amplitude"
+  ],
+  "roadmap_item": 2,
+  "schema": "matching-one/aspect-ladder-design/v1",
+  "score_is_amplitude_free": "both entries are ratios of A4 within one observable, so the unknown non-universal overlap constant and the additive constant C cancel",
+  "site_count": 1300,
+  "status": "design_only_no_measurement",
+  "what_separates_at_r4": "at r=2 the weight-4 shape predicts 2.75 and the bare aspect ratio 2.00, which the existing 9 percent measurement cannot split; at r=4 they predict 10.99 and 4.00, a factor of 2.7 apart, so about 16 percent relative precision on the r=4 amplitude ratio decides it either way",
+  "what_the_r2_rung_adds": "a replication of the N=290 number at a different site count with the spin-8 leakage fitted rather than bounded. The N=290 design could only bound it, because two orientations determine only C and A4",
+  "why_they_share_it": "1300 = 2*650 = 4*325, and 1300 is divisible by 4, so both parts of every representation of it are even: the r=1 family is exactly 2 times the r=4 family and samples the identical three orientations. The r=2 family is (1+i) times the r=4 family, a 45 degree turn, under which cos8 is invariant and cos4 changes sign; the sign change is undone by the reversal of the sorted order, so all three design matrices have the same determinant, not merely the same magnitude. No family is the noisy one"
+}

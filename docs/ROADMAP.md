@@ -39,7 +39,17 @@ Scale-log behavior is no longer enough to identify the Q4 Jordan module. Use exa
 
 **Run, and negative** — see `notes/modulus-fingerprint-n290-result-20260905.md`. The N=290 square-vs-rectangular ratio is `1.880 +/- 0.177`, which excludes `11/4` at 4.9 sigma along with every other prediction on the frozen list. The hypothesis tested was a conjunction — weight-4 shape *and* a normalization that removes the same block — so what died is the cheap version of the fingerprint, not the module. The known spin-8 systematic would need `A8/A4 = 3.44` to explain the gap and is ruled out by the committed H4-beats-H8 results.
 
-**Action:** freeze and run aspect ratio **4 at N=3380**. It has three orientations in *both* families (square `|w|^2=3380`: `58+4i`, `52+26i`, `44+38i`; rectangular `|w|^2=845`: `29+2i`, `26+13i`, `22+19i`), so it fits `C`, `A4` and `A8` together and removes the spin-8 systematic rather than bounding it, and it separates linear-in-`r` (4.0) from weight 4 (10.99) from area (16). Name the linear-in-`r` law as a competitor **before** the run: it is a post-hoc reading of the N=290 point and has no standing yet.
+**Designed and frozen, not yet run — `predictions/aspect_ladder_n1300_20260905.yaml`.** The design is the *ladder* `r = 1, 2, 4` at one site count, not a single r=4 ratio, and it lives at **N=1300**, not the N=3380 this item named earlier.
+
+A torus of modulus `r i` with `N` sites needs a Gaussian integer of norm `N/r`, so a three-rung ladder needs `1300`, `650` and `325` each to be a sum of two squares in three ways. `325 = 1+18i = 6+17i = 10+15i` is the smallest integer with three essentially distinct representations; `650 = (1+i)·325` and `1300 = 2·325` inherit them. Because 1300 is divisible by 4, all three families are the *same three orientations* — scaled by 2, or turned by 45° — so they share one design matrix and one variance amplification, and no rung is the noisy one. No smaller site count carries the ladder; that is checked by search in `tests/test_aspect_ladder_design.py`.
+
+Three orientations per family fit `C`, `A4` and `A8` together, so the spin-8 leakage is **removed rather than bounded** — the one caveat the N=290 run had to carry.
+
+`r=4` is where the live hypotheses separate: weight 4 predicts `10.99`, the bare aspect ratio `4.00`, area `16`, none `1`. At `r=2` the first two are `2.75` and `2.00`, which the existing 9 % measurement cannot split — which is why the ladder goes to 4. About 16 % relative precision on `A4(4i)/A4(i)` decides it either way. The `r=2` rung is separately a replication of the N=290 number at a different size.
+
+The linear-in-`r` law is named in the frozen file as `bare_aspect_ratio` **before** any block runs, which is the whole point: it is a post-hoc reading of the N=290 point and this is its one chance to lose.
+
+**Action:** size a pilot and run it, when compute is available. The design carries the sizing lesson explicitly — a 200k pilot of this channel once mis-projected the sample count by ~40×, so pilot inside the asymptotic regime or not at all.
 
 Aspect ratio **3 is arithmetically impossible** here: `N = 3|w|^2` and 3 is inert in `Z[i]`, so no 3:1 rectangle shares a site count with a square torus. The reachable ladder is `r` that are themselves sums of two squares.
 
