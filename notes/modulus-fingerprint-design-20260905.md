@@ -83,6 +83,42 @@ same-purpose repetition the roadmap tells us to stop.
 So the production ask is one aspect ratio, two orientations, and enough statistics to
 reach ~15% on the ratio — not a ladder of geometries.
 
+## The concrete run: N = 290, four period matrices
+
+A square torus of `N` sites needs a Gaussian integer of norm `N`; a 1:2 rectangular
+torus of the *same* site count needs one of norm `N/2`. Both families need two
+representations to separate the spin-4 amplitude `A` from the scalar part `C` in
+`O(θ) = C + A·cos 4θ`. Sweeping `N` up to 1200, 46 sizes qualify. The best of them
+is one this repository has already run:
+
+| family | modulus | lattice | `w` | period vectors | `cos 4θ` |
+|---|---|---|---|---|---|
+| square | `i` | `<w, i w>`, `|w|² = 290` | `17+i` | `(17,1),(-1,17)` | `+20447/21025` |
+| square | `i` | | `13+11i` | `(13,11),(-11,13)` | `-19873/21025` |
+| rectangular | `2i` | `<w, 2i w>`, `|w|² = 145` | `12+i` | `(12,1),(-2,24)` | `+19873/21025` |
+| rectangular | `2i` | | `9+8i` | `(9,8),(-16,18)` | `-20447/21025` |
+
+All four have exactly 290 sites. The two families sample **the same pair of `cos 4θ`
+values with the roles exchanged**, so their angular leverage is the identical rational
+`8064/4205 = 1.9177…` — within 4% of the maximum possible 2, and equal between
+numerator and denominator of the score, so the ratio estimator pays no relative
+variance penalty.
+
+That is not a coincidence. Multiplication by `1+i` maps the norm-145 representations
+to the norm-290 ones — `(12+i)(1+i) = 11+13i`, `(9+8i)(1+i) = 1+17i` — and that map
+*is* the 45° turn, which flips the sign of `cos 4θ`. The rectangular family is the
+square family rotated.
+
+Estimator: within each family, two members determine `C` and `A` exactly, so
+`A = (O₁ - O₂)/(cos 4θ₁ - cos 4θ₂)`, and the score is `A_rect / A_sq`, predicted
+`11/4` against `4`.
+
+Two things to be honest about. Two members per family determine `C` and `A` with
+nothing left over, so this size cannot check the `cos 4θ` form itself — that rests on
+the orientation programme at other sizes. And the engine couples two period matrices
+per run, so this is two runs; treating them as independent for the ratio is
+conservative but gives up the shared-field variance reduction.
+
 ## What this does not settle
 
 The 11/4 is **conditional, not a prediction**. The additive shape `A~(τ)` is not

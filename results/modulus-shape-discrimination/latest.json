@@ -104,6 +104,90 @@
     "that 11/4 is a prediction rather than a conditional statement: the additive shape A~(tau) is not fixed by the Jordan relation and the ratio is clean only if the normalization removes the same block, which is the open question in docs/astra/Q2",
     "any statement about achievable precision, which depends on the production design and not on this arithmetic"
   ],
+  "production_design": {
+    "caveats": [
+      "two members per family determine C and A exactly, leaving nothing over to check the cos4theta form itself at this size; that form rests on the existing orientation programme at other sizes",
+      "the engine couples two period matrices per run, so the two families are two runs; treating them as independent for the ratio is conservative but loses the shared-field variance reduction"
+    ],
+    "estimator": "within each family solve O(theta) = C + A cos4theta on its two members, so A = (O1-O2)/(cos4theta1-cos4theta2); the score is A_rectangular / A_square, predicted 11/4 against 4 for area scaling",
+    "leverages_are_equal": true,
+    "rectangular_family": {
+      "angular_leverage": "8064/4205",
+      "lattice": "<w, 2i w> with |w|^2 = 145",
+      "members": [
+        {
+          "cos4theta": "19873/21025",
+          "gaussian_integer": "12+1i",
+          "period_vectors": [
+            [
+              12,
+              1
+            ],
+            [
+              -2,
+              24
+            ]
+          ],
+          "sites": 290
+        },
+        {
+          "cos4theta": "-20447/21025",
+          "gaussian_integer": "9+8i",
+          "period_vectors": [
+            [
+              9,
+              8
+            ],
+            [
+              -16,
+              18
+            ]
+          ],
+          "sites": 290
+        }
+      ],
+      "modulus": "2i"
+    },
+    "site_count": 290,
+    "square_family": {
+      "angular_leverage": "8064/4205",
+      "lattice": "<w, i w> with |w|^2 = 290",
+      "members": [
+        {
+          "cos4theta": "20447/21025",
+          "gaussian_integer": "17+1i",
+          "period_vectors": [
+            [
+              17,
+              1
+            ],
+            [
+              -1,
+              17
+            ]
+          ],
+          "sites": 290
+        },
+        {
+          "cos4theta": "-19873/21025",
+          "gaussian_integer": "13+11i",
+          "period_vectors": [
+            [
+              13,
+              11
+            ],
+            [
+              -11,
+              13
+            ]
+          ],
+          "sites": 290
+        }
+      ],
+      "modulus": "i"
+    },
+    "why_they_are_equal": "multiplication by 1+i maps the norm-145 representations to the norm-290 ones, which is the 45-degree turn; the two families therefore sample the same pair of cos4theta values with the roles exchanged, so the ratio estimator carries no relative variance penalty between its numerator and denominator"
+  },
   "q4_jordan_prediction_at_2i": "11/4",
   "question": "which candidate spin-4 shapes can a rectangular-torus measurement separate, and how many rectangles are worth running",
   "schema": "matching-one.modulus-shape-discrimination.v2",

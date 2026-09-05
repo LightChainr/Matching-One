@@ -124,6 +124,80 @@ SHAPES = (
 VANISHING_TOLERANCE = mp.mpf(10) ** -25
 
 
+def production_design() -> dict:
+    """The concrete N=290 realization of the axis/diagonal rectangular test.
+
+    A square torus needs a Gaussian integer of norm N; a 1:2 rectangular torus of
+    the same site count needs one of norm N/2.  Both families need at least two
+    representations to separate the spin-4 amplitude from the scalar part.  N=290
+    is the smallest size in the project's existing production range where both
+    hold and the angular leverage is near its maximum -- and it is a size this
+    repository has already run.
+    """
+
+    def cos4(a: int, b: int) -> Fraction:
+        norm = a * a + b * b
+        return Fraction(a**4 - 6 * a * a * b * b + b**4, norm * norm)
+
+    square = [(17, 1), (13, 11)]
+    rectangular = [(12, 1), (9, 8)]
+
+    def family(reps, multiplier):
+        rows = []
+        for a, b in reps:
+            value = cos4(a, b)
+            rows.append(
+                {
+                    "gaussian_integer": f"{a}+{b}i",
+                    "period_vectors": [[a, b], [-multiplier * b, multiplier * a]],
+                    "sites": (a * a + b * b) * multiplier,
+                    "cos4theta": f"{value.numerator}/{value.denominator}",
+                }
+            )
+        leverage = cos4(*reps[0]) - cos4(*reps[1])
+        return rows, leverage
+
+    square_rows, square_leverage = family(square, 1)
+    rectangular_rows, rectangular_leverage = family(rectangular, 2)
+
+    return {
+        "site_count": 290,
+        "square_family": {
+            "modulus": "i",
+            "lattice": "<w, i w> with |w|^2 = 290",
+            "members": square_rows,
+            "angular_leverage": f"{square_leverage.numerator}/{square_leverage.denominator}",
+        },
+        "rectangular_family": {
+            "modulus": "2i",
+            "lattice": "<w, 2i w> with |w|^2 = 145",
+            "members": rectangular_rows,
+            "angular_leverage": f"{rectangular_leverage.numerator}/{rectangular_leverage.denominator}",
+        },
+        "leverages_are_equal": square_leverage == rectangular_leverage,
+        "why_they_are_equal": (
+            "multiplication by 1+i maps the norm-145 representations to the "
+            "norm-290 ones, which is the 45-degree turn; the two families "
+            "therefore sample the same pair of cos4theta values with the roles "
+            "exchanged, so the ratio estimator carries no relative variance "
+            "penalty between its numerator and denominator"
+        ),
+        "estimator": (
+            "within each family solve O(theta) = C + A cos4theta on its two "
+            "members, so A = (O1-O2)/(cos4theta1-cos4theta2); the score is "
+            "A_rectangular / A_square, predicted 11/4 against 4 for area scaling"
+        ),
+        "caveats": [
+            "two members per family determine C and A exactly, leaving nothing "
+            "over to check the cos4theta form itself at this size; that form "
+            "rests on the existing orientation programme at other sizes",
+            "the engine couples two period matrices per run, so the two families "
+            "are two runs; treating them as independent for the ratio is "
+            "conservative but loses the shared-field variance reduction",
+        ],
+    }
+
+
 def render(dps: int = 40) -> dict:
     exact_two = exact_ratios()["E4hat_2i_over_E4hat_i"]
 
@@ -236,6 +310,7 @@ def render(dps: int = 40) -> dict:
                 ),
             },
             "q4_jordan_prediction_at_2i": f"{exact_two.numerator}/{exact_two.denominator}",
+            "production_design": production_design(),
             "E4_at_square_point": mp.nstr(e4_at_square, 12),
             "candidate_shapes": channels,
             "surviving_competitor_without_modular_structure": {

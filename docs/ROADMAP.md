@@ -39,7 +39,7 @@ Scale-log behavior is no longer enough to identify the Q4 Jordan module. Use exa
 
 **The score is now chosen** — see `notes/modulus-fingerprint-design-20260905.md`. Run each torus twice, axis-aligned and with the lattice turned 45 degrees, and take the difference `D(r)`. The orientation factor is `exp(-i k theta)`, so every modular weight congruent to 0 mod 8 cancels exactly; that is where all scalar corrections live. The frozen prediction is `D(2)/D(1) = 11/4` against `4` for plain area scaling.
 
-**Action:** run **one** aspect ratio (`r=2`), two orientations, to about 15 percent relative on the ratio. Aspect ratios 3 and 4 reproduce the area law to 1e-5 and separate nothing further — do not buy them. The 11/4 remains conditional on the normalization question in `docs/astra/Q2-additive-shape-ambiguity.md`.
+**Action:** run **one** aspect ratio (`r=2`) at **N=290**, four period matrices in two coupled pairs — square `(17,1),(-1,17)` and `(13,11),(-11,13)`; rectangular `(12,1),(-2,24)` and `(9,8),(-16,18)` — to about 15 percent relative on the ratio. Both families have the identical exact angular leverage `8064/4205`, and N=290 is already a production size here. Aspect ratios 3 and 4 reproduce the area law to 1e-5 and separate nothing further — do not buy them. The 11/4 remains conditional on the normalization question in `docs/astra/Q2-additive-shape-ambiguity.md`.
 
 ### 3. Norm-4 dyadic closure with deck characters — #154
 

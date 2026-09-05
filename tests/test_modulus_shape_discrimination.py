@@ -22,6 +22,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from modulus_shape_discrimination import (  # noqa: E402
     axis_and_diagonal,
     eisenstein,
+    production_design,
     render,
 )
 
@@ -61,6 +62,33 @@ class PredictionTests(unittest.TestCase):
         for row in self.result["marginal_value_of_extra_aspect_ratios"]:
             with self.subTest(aspect_ratio=row["aspect_ratio"]):
                 self.assertLess(float(row["distance_from_the_r2_value"]), 0.01)
+
+
+class ProductionDesignTests(unittest.TestCase):
+    def test_both_families_have_the_same_site_count(self) -> None:
+        design = production_design()
+        for family in ("square_family", "rectangular_family"):
+            for member in design[family]["members"]:
+                with self.subTest(family=family, w=member["gaussian_integer"]):
+                    self.assertEqual(member["sites"], design["site_count"])
+
+    def test_the_two_families_have_equal_angular_leverage(self) -> None:
+        """If they differed the ratio estimator would pay for it in variance."""
+        design = production_design()
+        self.assertTrue(design["leverages_are_equal"])
+        self.assertEqual(
+            design["square_family"]["angular_leverage"],
+            design["rectangular_family"]["angular_leverage"],
+        )
+
+    def test_period_vectors_span_the_stated_lattice(self) -> None:
+        """The determinant is the site count; a wrong vector would be a wrong torus."""
+        design = production_design()
+        for family in ("square_family", "rectangular_family"):
+            for member in design[family]["members"]:
+                (a, b), (c, d) = member["period_vectors"]
+                with self.subTest(family=family, w=member["gaussian_integer"]):
+                    self.assertEqual(abs(a * d - b * c), member["sites"])
 
 
 if __name__ == "__main__":
