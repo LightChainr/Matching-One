@@ -1,0 +1,46 @@
+{
+  "schema": "matching-one/p337-p0-review-provenance/v1",
+  "review_date": "2026-09-01",
+  "integration_parent": "580678a769b1360d701fb708e1f557a2db626f16",
+  "scientific_read_base": "baa5d33b2f87b2868aa0cb9d3f6518c93dbf3bff",
+  "kernel_read_base": "2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb",
+  "priority": "P0 recommendation; finite algebra is not a continuum claim",
+  "python": "3.13.5",
+  "focused_tests_passed": 17,
+  "full_repository_suite_run": false,
+  "remote_CI_claimed": false,
+  "new_random_samples": 0,
+  "new_occupation_enumeration": false,
+  "cloud_jobs": 0,
+  "commands": [
+    "python3 scripts/p337_bridge_completion_review.py --verify results/p337-p0-bridge-review/exact.json",
+    "python3 -m unittest discover -s tests -p 'test_p337_bridge_completion_review.py' -v"
+  ],
+  "files": {
+    "notes/P0-p337-two-bridge-and-completion-review-20260901.md": {
+      "bytes": 12452,
+      "sha256": "c0174d1a55270f8dd66b69c07738d031ae88778ee40c450991be1ce84efe12e1",
+      "git_blob_sha1": "561604b0421fed093c6e87c27ac1638bda4f9e1b"
+    },
+    "results/p337-p0-bridge-review/exact.json": {
+      "bytes": 5985,
+      "sha256": "17e7d9008b74e881bc89148a88fa446f1dc9b4ac9cb362950dffa47aad5a539f",
+      "git_blob_sha1": "839df284502a71df038d7b011032795acba73202"
+    },
+    "results/p337-p0-bridge-review/tests.log": {
+      "bytes": 2385,
+      "sha256": "4e67a0aa761b100ac685c58540605461df529e788d5759082a846ec00aa445e2",
+      "git_blob_sha1": "9cf5be24bc99d352a76313ebd910969430cb2cdd"
+    },
+    "scripts/p337_bridge_completion_review.py": {
+      "bytes": 8762,
+      "sha256": "63e1472fd28fb6b6a192522524acb74986bc8785a2c76307432da7c71cc20342",
+      "git_blob_sha1": "d9f3eadfd50795d23423e06f3946ce2a200ab941"
+    },
+    "tests/test_p337_bridge_completion_review.py": {
+      "bytes": 4737,
+      "sha256": "1090c38bbb053b8b3c7f91262a9d5d4a3da06dba49a04f4e0d36d73827acfe5c",
+      "git_blob_sha1": "3a4e5e292ecba1cd52facd2754f46fe0b0b06f8a"
+    }
+  }
+}
