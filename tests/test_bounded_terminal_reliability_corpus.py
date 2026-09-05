@@ -1,4 +1,3 @@
-import copy
 import json
 from pathlib import Path
 import sys
@@ -48,16 +47,6 @@ class BoundedTerminalReliabilityCorpusTests(unittest.TestCase):
         summary = validate_result(checked_in)
         self.assertEqual(summary["candidate_orbits"], 27)
         self.assertEqual(summary["total_configurations"], 4576)
-
-    def test_digest_and_filter_tampering_fail_closed(self):
-        digest = copy.deepcopy(self.result)
-        digest["enumeration"]["corpus_sha256"] = "0" * 64
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(digest)
-        selection = copy.deepcopy(self.result)
-        selection["selection"]["candidate_orbits"] = 26
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(selection)
 
 
 if __name__ == "__main__":

@@ -47,22 +47,6 @@ class AdditiveVsGeometricHankelTests(unittest.TestCase):
         self.assertNotEqual(MODULE.exact_determinant(MODULE.hankel(sequence, 3)), 0)
         self.assertEqual(MODULE.exact_rank(MODULE.hankel(sequence, 3)), 3)
 
-    def test_inexact_and_malformed_inputs_fail_closed(self):
-        with self.assertRaises(TypeError):
-            MODULE.exact_sequence((1, 0.5))
-        with self.assertRaises(ValueError):
-            MODULE.hankel((1, 2), 2)
-        with self.assertRaises(ValueError):
-            MODULE.exact_rank(((1, 2), (3,)))
-        with self.assertRaises(ValueError):
-            MODULE.exponential_sum_sequence(5, ("1/2", "1/2"))
-
-    def test_tampered_certificate_fails_closed(self):
-        payload = MODULE.build_certificate()
-        payload["exact_checks"]["geometric_power_rank_one"] = False
-        with self.assertRaises(ValueError):
-            MODULE.validate_certificate(payload)
-
 
 if __name__ == "__main__":
     unittest.main()

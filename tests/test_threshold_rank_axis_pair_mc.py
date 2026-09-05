@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 import csv
 from collections import Counter
 from pathlib import Path

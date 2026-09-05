@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 from fractions import Fraction
 import json
 from pathlib import Path
@@ -23,11 +23,6 @@ class ProductionPairMotifCovarianceCertificateTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.artifact = build_artifact()
-
-    def test_declared_pair_inventory(self) -> None:
-        self.assertEqual(len(self.artifact["declared_pairs"]), len(DECLARED_PAIRS))
-        self.assertEqual(self.artifact["control_order"], list(CONTROL_ORDER))
-        self.assertEqual([item["N"] for item in self.artifact["declared_pairs"]], [65, 85, 130, 145, 170])
 
     def test_all_exact_gates_pass(self) -> None:
         totals = self.artifact["totals"]

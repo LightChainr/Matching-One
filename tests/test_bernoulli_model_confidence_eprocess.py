@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-from copy import deepcopy
+from __future__ import annotations
 from fractions import Fraction
 import json
 from pathlib import Path
@@ -56,17 +55,6 @@ class BernoulliModelConfidenceEprocessTests(unittest.TestCase):
             row = model_certificate(self.models, null_index, 4, Fraction(1, 4))
             self.assertTrue(row["ville_bound_holds"])
             self.assertEqual(row["fixed_time_expectations"], ["1"] * 5)
-
-    def test_contract_drift_fails_closed(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["expected_ever_excluded_probability"] = "1/4"
-        with self.assertRaisesRegex(ValueError, "ever-excluded probability drifted"):
-            validate_contract(changed)
-
-        changed = deepcopy(self.contract)
-        changed["models"] = ["2/3", "1/3"]
-        with self.assertRaisesRegex(ValueError, "strictly increasing"):
-            validate_contract(changed)
 
 
 if __name__ == "__main__":

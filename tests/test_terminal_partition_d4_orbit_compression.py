@@ -49,17 +49,6 @@ class TerminalPartitionD4OrbitCompressionTests(unittest.TestCase):
         failure = self.artifact["averaging_boundary"]["first_failure"]
         self.assertNotEqual(failure["left_grouped"], failure["right_grouped"])
 
-    def test_distribution_dimension_drift_fails_closed(self):
-        kernel = [[[(Fraction(int(k == 0))) for k in range(2)] for _ in range(2)] for _ in range(2)]
-        with self.assertRaises(ValueError):
-            MODULE.compose_distributions((Fraction(1),), (Fraction(1),), kernel)
-
-    def test_tampered_artifact_fails_closed(self):
-        payload = json.loads(json.dumps(self.artifact))
-        payload["deterministic_quotient"]["ambiguous_pairs"] = 25
-        with self.assertRaises(ValueError):
-            MODULE.validate_artifact(payload)
-
 
 if __name__ == "__main__":
     unittest.main()

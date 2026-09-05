@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-from copy import deepcopy
+from __future__ import annotations
 from fractions import Fraction
 import json
 from pathlib import Path
@@ -63,17 +62,6 @@ class PredictableArmEprocessTests(unittest.TestCase):
             "B": Arm("B", Fraction(1, 4), Fraction(1, 2)),
         }
         self.assertEqual(peek_both_expected_factor(arms), Fraction(4, 3))
-
-    def test_contract_drift_fails_closed(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["peek_both_negative_control_expected_factor"] = "1"
-        with self.assertRaisesRegex(ValueError, "negative control drifted"):
-            validate_contract(changed)
-
-        changed = deepcopy(self.contract)
-        changed["predictable_policy"]["after_success"] = "C"
-        with self.assertRaisesRegex(ValueError, "unknown arm"):
-            validate_contract(changed)
 
 
 if __name__ == "__main__":

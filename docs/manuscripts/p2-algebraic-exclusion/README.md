@@ -37,7 +37,7 @@ Three computations were added, each with its reason for being inside the stop ru
 
 | Computation | Why it is not a census extension | Cost |
 |---|---|---:|
-| §6.4 quartic sensitivity control | synthetic control on synthetic intervals, running the **unmodified** `degree4_interval_exclusion.run_search`; `GOVERNANCE.md` places synthetic controls outside the production queue. Covers exactly the widths whose census result was a null, read from the artifacts rather than hardcoded | ~24 s |
+| §6.4 quartic sensitivity control | synthetic control on synthetic intervals, running the **unmodified** `degree4_interval_exclusion.run_search`. Covers exactly the widths whose census result was a null, read from the artifacts rather than hardcoded | ~24 s |
 | §6.5 degree ≤ 6 height ≤ 3 exhaustion | a different frozen class, not a widening of the quartic one; it closes the last form in the historical tradition (issue #559) | ~4 s |
 | §7 second implementation and its comparison | re-decides the §6.5 class, adding no new class and no new interval; its value is entirely in being written separately | ~50 s to regenerate, 12 s in CI |
 

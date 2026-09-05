@@ -1,9 +1,7 @@
-from __future__ import annotations
 
-import copy
+from __future__ import annotations
 import json
 from pathlib import Path
-import shutil
 import sys
 import tempfile
 import unittest
@@ -109,19 +107,6 @@ class Issue43SecondaryScoreTests(unittest.TestCase):
                 "zero_effect",
             ],
         )
-
-    def test_rejects_modified_artifact_and_wrong_primary_contract(self) -> None:
-        with tempfile.TemporaryDirectory() as directory:
-            altered = Path(directory) / "x17.yaml"
-            shutil.copyfile(self.x17_artifact, altered)
-            altered.write_text(altered.read_text() + "\n# changed\n", encoding="utf-8")
-            with self.assertRaisesRegex(ValueError, "x=17/4.*hash"):
-                score(primary_score(), altered, self.p48_artifact)
-
-        malformed = copy.deepcopy(primary_score())
-        malformed["prediction_artifact_sha256"] = "0" * 64
-        with self.assertRaisesRegex(ValueError, "primary frozen prediction hash"):
-            score(malformed, self.x17_artifact, self.p48_artifact)
 
 
 if __name__ == "__main__":

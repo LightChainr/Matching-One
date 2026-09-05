@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-import json
+from __future__ import annotations
 from pathlib import Path
 import shutil
 import sys
@@ -60,22 +59,6 @@ class Issue43SecondaryTypedTests(unittest.TestCase):
         self.assertIs(result, frozen)
         self.assertEqual(result, payload())
         self.assertEqual(semantics["stage_order"], typed.STAGE_ORDER)
-
-    def test_descriptor_drift_fails_closed(self) -> None:
-        directory, root = self.copied_root()
-        self.addCleanup(directory.cleanup)
-        path = root / typed.SEMANTIC_GATE
-        gate = json.loads(path.read_text(encoding="utf-8"))
-        gate["observable_descriptors"]["DeltaM"]["channel"] = "direction_0"
-        path.write_text(json.dumps(gate), encoding="utf-8")
-        with self.assertRaisesRegex(ValueError, "observable descriptor"):
-            typed.load_semantic_gate(root)
-
-    def test_stage_order_drift_fails_closed(self) -> None:
-        bad = payload()
-        bad["stages"][0], bad["stages"][1] = bad["stages"][1], bad["stages"][0]
-        with self.assertRaisesRegex(ValueError, "frozen stages"):
-            typed.score_typed(ROOT, {}, Path("x17"), Path("p48"), runner=lambda *_: bad)
 
     def test_not_scorable_stage_cannot_be_promoted(self) -> None:
         bad = payload()

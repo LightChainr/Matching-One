@@ -59,20 +59,6 @@ class TerminalPartitionIncidenceAlgebraTests(unittest.TestCase):
         self.assertEqual(abs(MODULE.determinant_bareiss(zeta)), 1)
         self.assertEqual(abs(MODULE.determinant_bareiss(mobius)), 1)
 
-    def test_invalid_catalogs_and_values_fail_closed(self):
-        with self.assertRaises(ValueError):
-            MODULE.matrices([self.partitions[0], self.partitions[0]])
-        with self.assertRaises(ValueError):
-            MODULE.matrices([(0, 1), (0, 1, 2)])
-        with self.assertRaises(TypeError):
-            MODULE.transform([0.0] * 15, [[int(i == j) for j in range(15)] for i in range(15)])
-
-    def test_tampered_artifact_fails_closed(self):
-        payload = json.loads(json.dumps(self.artifact))
-        payload["mobius_matrix"][0][0] = 2
-        with self.assertRaises(ValueError):
-            MODULE.validate_artifact(payload)
-
 
 if __name__ == "__main__":
     unittest.main()

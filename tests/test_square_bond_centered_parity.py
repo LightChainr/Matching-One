@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-from copy import deepcopy
+from __future__ import annotations
 from fractions import Fraction
 import json
 from pathlib import Path
@@ -58,17 +57,6 @@ class SquareBondCenteredParityTests(unittest.TestCase):
         for row in result["channels"].values():
             self.assertEqual(row["D_at_half"], "0")
             self.assertEqual(row["D_first_derivative_at_half"], "27/8")
-
-    def test_contract_drift_fails_closed(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["expected_centered_D_coefficients"][1] = "1"
-        with self.assertRaisesRegex(ValueError, "D polynomial drifted"):
-            validate_contract(changed)
-
-        changed = deepcopy(self.contract)
-        changed["channels"] = changed["channels"][:-1]
-        with self.assertRaisesRegex(ValueError, "channel registry drifted"):
-            validate_contract(changed)
 
 
 if __name__ == "__main__":

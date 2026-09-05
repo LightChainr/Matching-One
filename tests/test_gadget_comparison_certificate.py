@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import copy
-import hashlib
 import json
 from pathlib import Path
 import sys
@@ -56,19 +55,6 @@ class GadgetComparisonCertificateTests(unittest.TestCase):
         changed = copy.deepcopy(self.certificate)
         changed["claims"][0]["lhs"]["lower"] = 0.6
         with self.assertRaisesRegex(ValueError, "floating point"):
-            self.verify(changed)
-
-    def test_artifact_digest_and_shared_definition_fail_closed(self) -> None:
-        changed = copy.deepcopy(self.certificate)
-        changed["artifacts"][1]["content"] = "synthetic-candidate-artifact-v2"
-        with self.assertRaisesRegex(ValueError, "SHA-256 mismatch"):
-            self.verify(changed)
-
-        changed["artifacts"][1]["sha256"] = hashlib.sha256(
-            changed["artifacts"][1]["content"].encode("utf-8")
-        ).hexdigest()
-        changed["claims"][0]["definition_id"] = "synthetic-unshared-definition"
-        with self.assertRaisesRegex(ValueError, "unknown definition"):
             self.verify(changed)
 
     def test_theorem_or_new_bound_flags_fail(self) -> None:

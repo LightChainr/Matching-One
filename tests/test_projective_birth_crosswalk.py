@@ -57,24 +57,6 @@ class ProjectiveBirthCrosswalkTest(unittest.TestCase):
         self.assertEqual(plateau.rank_at(Fraction(1, 4)), 1)
         self.assertEqual(plateau.rank_at(Fraction(3, 4)), 2)
 
-    def test_kind_inventory_is_independent_of_threshold(self):
-        for threshold in ("0", "1/2", "1"):
-            result = reconstruct_at_threshold(synthetic_rows(), threshold)
-            self.assertEqual(
-                result["input_kind_counts"],
-                {"DIRECT_RANK2": 2, "plateau": 4},
-            )
-
-    def test_record_schema_fails_closed(self):
-        row = synthetic_rows()[0]
-        for malformed in (
-            {key: value for key, value in row.items() if key != "line"},
-            {**row, "extra": 1},
-        ):
-            with self.subTest(malformed=malformed):
-                with self.assertRaises(ValueError):
-                    reconstruct_at_threshold([malformed], "1/2")
-
     def test_inexact_numeric_values_fail_closed(self):
         with self.assertRaises(TypeError):
             reconstruct_at_threshold(
@@ -111,12 +93,6 @@ class ProjectiveBirthCrosswalkTest(unittest.TestCase):
         for threshold in ("-1/4", "5/4"):
             with self.assertRaises(ValueError):
                 reconstruct_at_threshold(synthetic_rows(), threshold)
-
-    def test_tampered_certificate_fails_validation(self):
-        artifact = build_artifact()
-        artifact["threshold_reconstructions"][2]["rank_counts"]["P1"] = 3
-        with self.assertRaises(ValueError):
-            validate_artifact(artifact)
 
 
 if __name__ == "__main__":

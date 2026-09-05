@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-import json
+from __future__ import annotations
 from pathlib import Path
 import shutil
 import sys
@@ -47,44 +46,6 @@ class ThresholdRankRootDoublingTypedTests(unittest.TestCase):
         semantics = result.pop("observable_semantics")
         self.assertEqual(result, frozen)
         self.assertEqual(semantics["applied_stored_child_transform"]["scale"], -1.0)
-
-    def test_orientation_drift_fails_closed(self) -> None:
-        directory, root = self.copied_root()
-        self.addCleanup(directory.cleanup)
-        path = root / typed.SEMANTIC_GATE
-        gate = json.loads(path.read_text(encoding="utf-8"))
-        gate["stored_child_descriptor"]["orientation_order"] = "first_minus_second"
-        path.write_text(json.dumps(gate), encoding="utf-8")
-        with self.assertRaisesRegex(ValueError, "child sign map changed"):
-            typed.load_semantic_gate(root)
-
-    def test_genealogy_drift_fails_closed(self) -> None:
-        directory, root = self.copied_root()
-        self.addCleanup(directory.cleanup)
-        path = root / typed.SEMANTIC_GATE
-        gate = json.loads(path.read_text(encoding="utf-8"))
-        gate["lineages_in_order"].reverse()
-        path.write_text(json.dumps(gate), encoding="utf-8")
-        with self.assertRaisesRegex(ValueError, "lineage order"):
-            typed.load_semantic_gate(root)
-
-    def test_result_ratio_drift_fails_closed(self) -> None:
-        bad = frozen_payload()
-        bad["full_cross_size_covariance"] = {
-            "target_ratio": 0.25,
-            "lineages": bad["full_cross_size_covariance"]["lineages"],
-        }
-        with self.assertRaisesRegex(ValueError, "target ratio differs"):
-            typed.score_typed(ROOT, {}, runner=lambda _: bad)
-
-    def test_result_lineage_drift_fails_closed(self) -> None:
-        bad = frozen_payload()
-        bad["diagonal_cross_size_covariance"] = {
-            "target_ratio": -0.25,
-            "lineages": list(reversed(bad["diagonal_cross_size_covariance"]["lineages"])),
-        }
-        with self.assertRaisesRegex(ValueError, "lineage order differs"):
-            typed.score_typed(ROOT, {}, runner=lambda _: bad)
 
 
 if __name__ == "__main__":

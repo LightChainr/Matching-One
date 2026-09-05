@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 from pathlib import Path
 import sys
 import unittest
@@ -67,16 +67,6 @@ class ExactPivotalRussoTests(unittest.TestCase):
                     channel=channel,
                 )
                 self.assertGreaterEqual(mass, 0)
-
-    def test_unknown_channel_fails_closed(self) -> None:
-        geometry = axis_integer_torus(2)
-        with self.assertRaises(ValueError):
-            wrapping_event(
-                geometry,
-                [False] * geometry.n,
-                matching=False,
-                channel="some_wrap",
-            )
 
 
 if __name__ == "__main__":

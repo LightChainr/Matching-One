@@ -1,5 +1,4 @@
 import unittest
-from fractions import Fraction
 
 from scripts.verify_q4_jordan_inheritance import render
 

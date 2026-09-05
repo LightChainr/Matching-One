@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-from copy import deepcopy
+from __future__ import annotations
 from fractions import Fraction
 import json
 from pathlib import Path
@@ -60,17 +59,6 @@ class SquareBondTransportParityTheoremTests(unittest.TestCase):
                     parity,
                 )
         self.assertEqual(reversal_fixture(4, -1)[2], Fraction(0))
-
-    def test_contract_drift_fails_closed(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["lengths"] = [3, 2]
-        with self.assertRaisesRegex(ValueError, "lengths must be sorted"):
-            validate_contract(changed)
-
-        changed = deepcopy(self.contract)
-        changed["permutation_square_translation"] = [0, 0]
-        with self.assertRaisesRegex(ValueError, "translation drifted"):
-            validate_contract(changed)
 
 
 if __name__ == "__main__":

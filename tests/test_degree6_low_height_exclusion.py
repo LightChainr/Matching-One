@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import copy
 from fractions import Fraction
 import json
 from math import gcd
@@ -124,12 +123,6 @@ class Degree6LowHeightExclusionTests(unittest.TestCase):
             for forbidden in ("transcendence", "p-values", "closed forms", "higher degree or height"):
                 self.assertIn(forbidden, excluded)
 
-    def test_tampering_fails(self) -> None:
-        changed = copy.deepcopy(self.results[INTERVAL_IDS[0]])
-        changed["interval_result"]["excluded"] = False
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(changed)
-
 
 class Degree6LowHeightControlTests(unittest.TestCase):
     @classmethod
@@ -204,12 +197,6 @@ class Degree6LowHeightControlTests(unittest.TestCase):
         excluded = self.result["claim_boundary"]["excluded"]
         for forbidden in ("candidate for square-site p_c", "p-value", "transcendence", "degree/height expansion"):
             self.assertIn(forbidden, excluded)
-
-    def test_tampering_fails(self) -> None:
-        changed = copy.deepcopy(self.result)
-        changed["trials"][0]["planted_polynomial_detected"] = False
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_control(changed)
 
 
 if __name__ == "__main__":

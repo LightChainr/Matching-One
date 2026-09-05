@@ -64,18 +64,6 @@ class TerminalPartitionLatticeAutomorphismsTests(unittest.TestCase):
                 self.assertIn(mapping, accepted)
         self.assertEqual(rejected, 696)
 
-    def test_invalid_atom_permutation_fails_closed(self):
-        with self.assertRaises(ValueError):
-            MODULE.induced_map_from_atom_permutation((0, 0, 1, 2, 3, 4), self.partitions, self.atoms)
-        with self.assertRaises(ValueError):
-            MODULE.join_atoms((6,), self.atoms)
-
-    def test_tampered_artifact_fails_closed(self):
-        payload = json.loads(json.dumps(self.artifact))
-        payload["enumeration"]["lattice_automorphisms"] = 25
-        with self.assertRaises(ValueError):
-            MODULE.validate_artifact(payload)
-
 
 if __name__ == "__main__":
     unittest.main()

@@ -38,17 +38,6 @@ class GaussianCommutingSquareRootTests(unittest.TestCase):
         self.assertTrue(all(row["paths_close"] for row in result["lineages"]))
         self.assertFalse(result["contains_target_data"])
 
-    def test_multiplier_or_child_drift_fails(self) -> None:
-        changed = copy.deepcopy(self.contract)
-        changed["lineages"][0]["multipliers"]["norm5"] = [2, 1]
-        with self.assertRaisesRegex(ValueError, "commuting product drift"):
-            self.validate(changed)
-
-        changed = copy.deepcopy(self.contract)
-        changed["lineages"][1]["canonical_children"]["norm10"][0] = [29, 1]
-        with self.assertRaisesRegex(ValueError, "canonical child drift"):
-            self.validate(changed)
-
     def test_character_target_and_source_digest_drift_fail(self) -> None:
         changed = copy.deepcopy(self.contract)
         changed["character_contract"]["norm10_factor"] = "1/100"

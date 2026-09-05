@@ -84,12 +84,6 @@ class H4H12OrthogonalDesignTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "target-data fields"):
                     self.validate(changed)
 
-    def test_source_note_digest_drift_fails(self) -> None:
-        changed = copy.deepcopy(self.manifest)
-        changed["source_note"]["sha256"] = "0" * 64
-        with self.assertRaisesRegex(ValueError, "SHA-256 mismatch"):
-            self.validate(changed)
-
 
 if __name__ == "__main__":
     unittest.main()

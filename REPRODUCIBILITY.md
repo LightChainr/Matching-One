@@ -1,5 +1,18 @@
 # Reproducibility Standard
 
+> **When this applies.** At publication time, and for expensive runs nobody wants to
+> repeat. It is not a gate on exploratory work — see `GOVERNANCE.md` §0 and §2.
+>
+> **While exploring, the reproducibility minimum is two lines:** record the command
+> and the seed, and commit the raw sufficient statistics rather than only the fitted
+> numbers. Everything below is what you fill in later, for the runs that turned out
+> to matter.
+>
+> The reason the full form exists is that some of it genuinely cannot be
+> reconstructed afterwards — a seed, a compiler flag, a dirty tree. Where a field is
+> in that class it is marked **irrecoverable** below and is worth recording at the
+> time even while exploring. The rest can wait, and should.
+
 This standard applies to computation, imported data, statistical analysis, and claim-bearing reports in Matching One.
 
 ## 1. Reproduction target
@@ -10,7 +23,19 @@ A screenshot, final decimal, or prose description alone is not a reproducible ar
 
 ## 2. Minimum production metadata
 
-Each production result directory must record, as applicable:
+For a published or expensive result, record, as applicable — the **irrecoverable**
+ones first, since those are the only fields worth stopping for at the time:
+
+```text
+full_git_commit        irrecoverable
+dirty_tree             irrecoverable
+command_line           irrecoverable
+seed / counter domain  irrecoverable  (see section 3)
+compiler_flags         irrecoverable in practice
+```
+
+The remainder can be reconstructed later from the commit, and should be filled in
+when the result is written up rather than when it is produced:
 
 ```text
 result_id

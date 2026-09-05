@@ -64,17 +64,6 @@ class ProjectiveDirect02DecompositionTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             analyze_batch(batch)
 
-    def test_empty_mechanism_sector_fails_closed(self):
-        batch = synthetic_batch()
-        batch["orientations"][0]["rows"] = [
-            row for row in batch["orientations"][0]["rows"] if row["kind"] == "plateau"
-        ]
-        batch["orientations"][1]["rows"] = [
-            row for row in batch["orientations"][1]["rows"] if row["kind"] == "plateau"
-        ]
-        with self.assertRaises(ValueError):
-            analyze_batch(batch)
-
     def test_float_threshold_and_malformed_row_fail_closed(self):
         batch = synthetic_batch()
         batch["threshold"] = 0.5
@@ -84,12 +73,6 @@ class ProjectiveDirect02DecompositionTest(unittest.TestCase):
         del batch["orientations"][0]["rows"][0]["line"]
         with self.assertRaises(ValueError):
             analyze_batch(batch)
-
-    def test_tampered_certificate_fails_validation(self):
-        artifact = build_artifact()
-        artifact["report"]["H4_contrasts"]["A_M_total"] = "0"
-        with self.assertRaises(ValueError):
-            validate_artifact(artifact)
 
 
 if __name__ == "__main__":

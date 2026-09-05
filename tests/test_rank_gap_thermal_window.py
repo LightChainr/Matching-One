@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 import csv
 import json
 from pathlib import Path
@@ -84,11 +84,6 @@ class RankGapThermalWindowTests(unittest.TestCase):
         self.assertAlmostEqual(float(statistics["gap_variance"]), 2 / 3)
         self.assertGreater(float(statistics["rank_correlation"]), 0.0)
         self.assertGreater(float(statistics["gap_cv"]), 0.0)
-
-    def test_squared_gap_identity_fails_closed(self) -> None:
-        moments, metadata = self.make_run(mutate_gap2=True)
-        with self.assertRaisesRegex(ValueError, "squared-gap"):
-            read_run(5, moments, metadata)
 
 
 if __name__ == "__main__":

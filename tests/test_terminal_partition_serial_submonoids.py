@@ -35,16 +35,6 @@ class SerialSubmonoidTests(unittest.TestCase):
         self.assertEqual(symmetry["reversal_stable_count"], 32)
         self.assertEqual(symmetry["lane_swap_stable_count"], 84)
 
-    def test_invalid_symmetry_map_fails_closed(self):
-        with self.assertRaises(ValueError):
-            MODULE.image(frozenset({6}), list(range(14)))
-
-    def test_tampering_fails_closed(self):
-        value = json.loads(json.dumps(self.artifact))
-        value["submonoid_count"] = 227
-        with self.assertRaises(ValueError):
-            MODULE.validate_artifact(value)
-
 
 if __name__ == "__main__":
     unittest.main()

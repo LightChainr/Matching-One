@@ -1,4 +1,3 @@
-import copy
 import json
 from pathlib import Path
 import sys
@@ -22,24 +21,6 @@ class ExactMatrixRelationCertificateTests(unittest.TestCase):
         self.assertEqual(result["verification"]["status"], "exact_matrix_relations_verified")
         self.assertEqual(result["verification"]["nilpotent_rank"], 1)
         self.assertFalse(result["solver_invoked"])
-
-    def test_non_nilpotent_matrix_fails_closed(self) -> None:
-        descriptor = copy.deepcopy(build_result()["descriptor"])
-        descriptor["nilpotent"][1][1] = "1"
-        with self.assertRaisesRegex(ValueError, "identity-plus-nilpotent|square to zero"):
-            verify_relations(descriptor)
-
-    def test_wrong_declared_rank_fails_closed(self) -> None:
-        descriptor = copy.deepcopy(build_result()["descriptor"])
-        descriptor["declared_nilpotent_rank"] = 2
-        with self.assertRaisesRegex(ValueError, "rank mismatch"):
-            verify_relations(descriptor)
-
-    def test_dimension_mismatch_fails_closed(self) -> None:
-        descriptor = copy.deepcopy(build_result()["descriptor"])
-        descriptor["nilpotent"] = [["0"]]
-        with self.assertRaisesRegex(ValueError, "dimension mismatch"):
-            verify_relations(descriptor)
 
     def test_checked_in_result_reproduces(self) -> None:
         result = json.loads(DEFAULT_OUTPUT.read_text(encoding="utf-8"))

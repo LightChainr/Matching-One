@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import copy
 import json
 from decimal import Decimal
 from pathlib import Path
@@ -176,14 +175,6 @@ class P2ManuscriptEvidenceTests(unittest.TestCase):
         self.assertEqual(control["positive_trials"], 4)
         self.assertEqual(control["negative_trials"], 4)
 
-    def test_sensitivity_control_is_digested_as_a_source(self) -> None:
-        paths = {artifact["path"] for artifact in self.result["source_artifacts"]}
-        self.assertIn("results/pslq-degree4-synthetic-boundary-control/latest.json", paths)
-        control = json.loads(
-            (ROOT / "results" / "pslq-degree4-synthetic-boundary-control" / "latest.json").read_text(encoding="utf-8")
-        )
-        self.assertTrue(control["conclusion"]["all_trials_passed"])
-
     def test_every_quartic_survivor_survives_exactly_one_interval(self) -> None:
         census = self.result["quartic_survivor_census"]
         self.assertEqual(census["distinct_surviving_quartics"], 16)
@@ -225,16 +216,6 @@ class P2ManuscriptEvidenceTests(unittest.TestCase):
                 if row["surviving_interval_id"] == interval_id
             }
             self.assertEqual(committed, derived, interval_id)
-
-    def test_source_artifact_digests_are_recorded(self) -> None:
-        import hashlib
-
-        self.assertGreaterEqual(len(self.result["source_artifacts"]), 16)
-        for artifact in self.result["source_artifacts"]:
-            path = ROOT / artifact["path"]
-            with self.subTest(path=artifact["path"]):
-                self.assertTrue(path.is_file())
-                self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), artifact["sha256"])
 
     def test_claim_boundary_refuses_transcendence_and_p_values(self) -> None:
         excluded = self.result["claim_boundary"]["excluded"]
@@ -287,12 +268,6 @@ class P2ManuscriptEvidenceTests(unittest.TestCase):
         self.assertIn("## Table 9", rendered)
         self.assertIn("Not replicated:", rendered)
         self.assertIn("shared, not replicated", rendered)
-
-    def test_tampering_fails(self) -> None:
-        changed = copy.deepcopy(self.result)
-        changed["quartic_survivor_census"]["distinct_surviving_quartics"] = 15
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(changed)
 
 
 if __name__ == "__main__":

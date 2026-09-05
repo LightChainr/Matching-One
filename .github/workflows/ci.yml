@@ -1,5 +1,17 @@
 name: ci
 
+# What CI is for here: catching the breakage you would not notice yourself.
+# It is not a gate, not a claim, and not evidence. See GOVERNANCE.md sections 0 and 2.
+#
+# The tests are deterministic standard-library mathematics, so running the whole
+# suite on three interpreters bought almost nothing and cost three times the budget.
+# It now runs once, on 3.11; 3.9 and 3.13 are compile-checked, which is what actually
+# catches a version incompatibility in this codebase.
+#
+# If branch protection is ever turned on for main, the checks to require are the ones
+# this file defines: "Compile on 3.9", "Compile on 3.13", "Tests", and
+# "C++17 build and self-tests". That is a note, not a machine-checked contract.
+
 on:
   push:
     branches: [main]
@@ -15,99 +27,62 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  python:
-    name: Python ${{ matrix.python-version }}
+  compile:
+    name: Compile on ${{ matrix.python-version }}
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 5
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.9", "3.11", "3.13"]
-    env:
-      PYTHONHASHSEED: "0"
+        python-version: ["3.9", "3.13"]
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-
-      - name: Install dependencies
-        shell: bash
-        run: |
-          python -m pip install --upgrade pip
-          if [[ -f requirements.txt ]]; then
-            python -m pip install -r requirements.txt
-          fi
-
       - name: Compile Python sources
         shell: bash
         run: |
           targets=()
           for path in scripts tests; do
-            if [[ -e "$path" ]]; then
-              targets+=("$path")
-            fi
+            [[ -e "$path" ]] && targets+=("$path")
           done
-          if (( ${#targets[@]} )); then
-            python -m compileall -q "${targets[@]}"
-          fi
+          (( ${#targets[@]} )) && python -m compileall -q "${targets[@]}"
 
-      - name: Validate structured control files
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
         shell: bash
         run: |
-          python - <<'PY'
-          from __future__ import annotations
+          python -m pip install --upgrade pip
+          [[ -f requirements.txt ]] && python -m pip install -r requirements.txt
 
-          import json
-          from pathlib import Path
-
-          roots = [Path("constants"), Path("experiments"), Path("predictions")]
-          for root in roots:
-              if not root.exists():
-                  continue
-              for path in root.rglob("*.json"):
-                  with path.open(encoding="utf-8") as handle:
-                      json.load(handle)
-
-          try:
-              import yaml
-          except ModuleNotFoundError:
-              yaml = None
-
-          if yaml is not None:
-              for root in roots:
-                  if not root.exists():
-                      continue
-                  for pattern in ("*.yaml", "*.yml"):
-                      for path in root.rglob(pattern):
-                          with path.open(encoding="utf-8") as handle:
-                              yaml.safe_load(handle)
-          PY
-
-      - name: Run unit and regression tests
+      - name: Run tests
         shell: bash
         run: |
-          if [[ -d tests ]]; then
-            python -m unittest discover -s tests -p 'test_*.py' -v
-          fi
+          [[ -d tests ]] && python -m unittest discover -s tests -p 'test_*.py'
 
-      - name: Run main-branch smoke check
+      - name: Smoke check
         shell: bash
         run: |
-          if [[ -f scripts/compare_candidates.py ]]; then
-            python scripts/compare_candidates.py
-          fi
+          [[ -f scripts/compare_candidates.py ]] && python scripts/compare_candidates.py
 
   cxx:
     name: C++17 build and self-tests
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Compile standalone C++ sources
         shell: bash

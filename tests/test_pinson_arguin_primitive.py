@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 import json
 from math import gcd
 from pathlib import Path

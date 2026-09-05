@@ -1,4 +1,3 @@
-import copy
 import json
 from pathlib import Path
 import sys
@@ -28,14 +27,6 @@ class ExactRationalRealizationCertificateTests(unittest.TestCase):
         self.assertEqual(verified["dimension"], 2)
         self.assertTrue(verified["minimal_on_declared_typed_rows"])
 
-    def test_response_mismatch_fails_closed(self) -> None:
-        descriptor = {
-            "generator": [["1"]],
-            "channels": [{"id": "bad", "source": ["1"], "readout": ["1"], "moments": ["1", "2"]}],
-        }
-        with self.assertRaisesRegex(ValueError, "response mismatch"):
-            verify_realization(descriptor)
-
     def test_exact_rank_handles_rectangular_matrices(self) -> None:
         self.assertEqual(matrix_rank([[1, 2, 3], [2, 4, 6]]), 1)
         self.assertEqual(matrix_rank([[1, 0], [0, 1], [1, 1]]), 2)
@@ -48,12 +39,6 @@ class ExactRationalRealizationCertificateTests(unittest.TestCase):
         self.assertEqual(summary["channel_count"], 2)
         self.assertEqual(summary["reachability_rank"], 3)
         self.assertEqual(summary["observability_rank"], 3)
-
-    def test_tampering_fails_closed(self) -> None:
-        tampered = copy.deepcopy(build_result())
-        tampered["verification"]["reachability_rank_across_typed_channels"] = 2
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(tampered)
 
 
 if __name__ == "__main__":

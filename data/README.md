@@ -26,7 +26,7 @@ The Yang–Zhou 2024 publisher abstract is sufficient to verify their quoted cor
 1. Preserve printed decimal strings. Do not parse through binary floating point before committing them.
 2. Record the exact table/equation/source location and estimator definition.
 3. Prefer primary sources. If only secondary evidence is available, mark it as pending rather than silently promoting it.
-4. Add a SHA-256 to the manifest and to `SHA256SUMS` for every canonical machine-readable source table. `tests/test_literature_provenance.py` requires the two to agree with each other and with the files.
+4. Record a SHA-256 in the manifest for every canonical machine-readable source table. The manifest is the only pin; a second copy elsewhere only goes stale. What the pin does *not* do is tell you the digits were right — that is step 3, and it is done once, by eye, against the source.
 5. Add or update a regression test that locks row count, endpoint values, and any source-specific invariant.
 6. Do not delete a superseded estimate. Change its status and preserve its provenance.
 7. Do not average quoted uncertainties from different methods unless a separate statistical model justifies that operation.

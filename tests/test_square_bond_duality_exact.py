@@ -1,5 +1,5 @@
-from __future__ import annotations
 
+from __future__ import annotations
 from fractions import Fraction
 import os
 import sys

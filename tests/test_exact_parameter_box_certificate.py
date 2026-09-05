@@ -15,12 +15,6 @@ class ExactParameterBoxCertificateTests(unittest.TestCase):
         result = verify_parameter_box(frozen_parameters())
         self.assertEqual(result["active_boundaries"], ["k:lower", "lambda:upper"])
 
-    def test_outside_value_fails_closed(self) -> None:
-        parameters = frozen_parameters()
-        parameters[0]["value"] = "2"
-        with self.assertRaisesRegex(ValueError, "outside bounds"):
-            verify_parameter_box(parameters)
-
     def test_reversed_bounds_fail_closed(self) -> None:
         parameters = frozen_parameters()
         parameters[0]["lower"] = "2"

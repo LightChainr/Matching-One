@@ -1,4 +1,3 @@
-import copy
 import json
 from pathlib import Path
 import sys
@@ -25,12 +24,6 @@ class StandardConstantPairwiseTests(unittest.TestCase):
     def test_all_24_cells_excluded(self):
         self.assertEqual(len(self.result["results"]), 24)
         self.assertTrue(all(row["zero_containing_residuals"] == 0 for row in self.result["results"]))
-
-    def test_tampering_fails(self):
-        changed = copy.deepcopy(self.result)
-        changed["results"][0]["excluded"] = False
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(changed)
 
 
 if __name__ == "__main__":

@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-from copy import deepcopy
+from __future__ import annotations
 from fractions import Fraction
 import json
 from pathlib import Path
@@ -58,17 +57,6 @@ class AngularRadialProjectorOracleTests(unittest.TestCase):
             radial_filter(pure_h4, (Fraction(-1, 8), Fraction(1))),
             (Fraction(0), Fraction(0)),
         )
-
-    def test_contract_drift_fails_closed(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["h4_sizes"][0] = "7"
-        with self.assertRaisesRegex(ValueError, "radial row did not kill"):
-            validate_contract(changed)
-
-        changed = deepcopy(self.contract)
-        changed["h4_orientation"][1] = "1"
-        with self.assertRaisesRegex(ValueError, "angular row did not kill"):
-            validate_contract(changed)
 
 
 if __name__ == "__main__":

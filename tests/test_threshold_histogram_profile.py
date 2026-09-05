@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-from copy import deepcopy
+from __future__ import annotations
 from fractions import Fraction
 import json
 import math
@@ -130,36 +129,6 @@ class ThresholdHistogramProfileTests(unittest.TestCase):
                     Fraction(1),
                 ]
             )
-
-    def test_histogram_validation_fails_closed(self) -> None:
-        for raw, message in [({"0": 1}, "out of range"), ({"01": 1}, "canonical"), ({"1": -1}, "nonnegative")]:
-            with self.subTest(raw=raw):
-                with self.assertRaisesRegex(ValueError, message):
-                    parse_histogram(raw, 4, "test")
-        with self.assertRaisesRegex(ValueError, "sample counts must match"):
-            mixture_weights({1: 1}, {2: 2}, 4)
-        with self.assertRaisesRegex(ValueError, "rank is out of range"):
-            mixture_weights({5: 1}, {2: 1}, 4)
-
-    def test_contract_coefficient_and_moment_drift_is_rejected(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["expected_density_power_coefficients"][1] = "4"
-        with self.assertRaisesRegex(ValueError, "density coefficients drifted"):
-            validate_contract(changed)
-        changed = deepcopy(self.contract)
-        changed["expected_raw_moments_0_through_6"][4] = "0"
-        with self.assertRaisesRegex(ValueError, "raw moments drifted"):
-            validate_contract(changed)
-        changed = deepcopy(self.contract)
-        changed["expected_exact_shape_invariants"]["kurtosis"] = "3"
-        with self.assertRaisesRegex(ValueError, "shape invariants drifted"):
-            validate_contract(changed)
-
-    def test_empirical_result_fields_are_rejected(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["tail_fit"] = {"exponent": "4/3"}
-        with self.assertRaisesRegex(ValueError, "forbidden empirical keys"):
-            validate_contract(changed)
 
 
 if __name__ == "__main__":

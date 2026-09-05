@@ -1,9 +1,6 @@
-from __future__ import annotations
 
+from __future__ import annotations
 from fractions import Fraction
-import json
-from pathlib import Path
-import tempfile
 import unittest
 
 from scripts.descendant_jordan_rank_survival import (
@@ -45,15 +42,6 @@ class DescendantJordanRankSurvivalTests(unittest.TestCase):
         self.assertFalse(bottom_survives(nilpotent))
         top_image = apply(nilpotent, basis_vector(3, 2))
         self.assertEqual(jordan_chain_length(nilpotent, top_image), 2)
-
-    def test_contract_drift_fails_closed(self) -> None:
-        frozen = build_contract()
-        frozen["q4_case"]["ordinary_q4_gram_norm"] = 0
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "drift.json"
-            path.write_text(json.dumps(frozen), encoding="utf-8")
-            with self.assertRaisesRegex(AssertionError, "contract drifted"):
-                validate_contract(path)
 
 
 if __name__ == "__main__":

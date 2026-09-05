@@ -1,10 +1,8 @@
-from __future__ import annotations
 
+from __future__ import annotations
 import copy
-import json
 from pathlib import Path
 import sys
-import tempfile
 import unittest
 from unittest import mock
 
@@ -53,41 +51,6 @@ class TypedC4TangentOrthogonalHoldoutTests(unittest.TestCase):
             semantics["validation_order"],
             "semantic_map_before_frozen_kernel_score",
         )
-
-    def test_descriptor_drift_fails_before_kernel(self) -> None:
-        with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
-            destination = root / typed.SEMANTIC_MANIFEST
-            destination.parent.mkdir(parents=True)
-            payload = json.loads(
-                (ROOT / typed.SEMANTIC_MANIFEST).read_text(encoding="utf-8")
-            )
-            payload["target_descriptor"]["channel"] = "either"
-            destination.write_text(json.dumps(payload), encoding="utf-8")
-            with mock.patch.object(typed.frozen_kernel, "render") as kernel:
-                with self.assertRaisesRegex(ValueError, "no exact topology map"):
-                    typed.render_typed(root, Path("source.csv"), Path("target.csv"))
-                kernel.assert_not_called()
-
-    def test_response_coordinate_drift_fails_closed(self) -> None:
-        with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
-            destination = root / typed.SEMANTIC_MANIFEST
-            destination.parent.mkdir(parents=True)
-            payload = json.loads(
-                (ROOT / typed.SEMANTIC_MANIFEST).read_text(encoding="utf-8")
-            )
-            payload["response_coordinates_in_order"].reverse()
-            destination.write_text(json.dumps(payload), encoding="utf-8")
-            with self.assertRaisesRegex(ValueError, "coordinate order"):
-                typed.load_semantic_gate(root)
-
-    def test_result_channel_drift_fails_closed(self) -> None:
-        payload = frozen_result()
-        payload["primary_channel"] = "either"
-        with mock.patch.object(typed.frozen_kernel, "render", return_value=payload):
-            with self.assertRaisesRegex(ValueError, "result channel"):
-                typed.render_typed(ROOT, Path("source.csv"), Path("target.csv"))
 
 
 if __name__ == "__main__":

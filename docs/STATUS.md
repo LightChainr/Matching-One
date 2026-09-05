@@ -4,9 +4,19 @@
 
 `main` is the shared research line. Claim strength follows evidence and chronology, not PR state. `docs/ROADMAP.md` ranks information gain; it is not a permission system.
 
-## Hard constraints
+## What is required while exploring
 
-Only three constraints are treated as hard: preserve frozen predictions/result history; use identical observable semantics or an exact registered map for claim-bearing comparisons; and do not count correlated views of one raw random block as independent primary evidence.
+`GOVERNANCE.md` §2 is the whole list, and it is short: don't fool yourself about a
+number, don't destroy data, don't misdate a freeze, say which observable, and count
+one random block once. Nothing else in this repository gates exploratory work.
+
+The three that bear directly on this ledger: frozen predictions and result history are
+preserved rather than overwritten; a claim-bearing comparison uses identical observable
+semantics or an exact registered map; and correlated views of one raw random block are
+counted once, not as independent primary evidence.
+
+Everything else — digests, provenance chains, second implementations, preregistration,
+power — is publication-time work and lives in `docs/PUBLICATION-CHECKLIST.md`.
 
 ## Strongest current evidence
 

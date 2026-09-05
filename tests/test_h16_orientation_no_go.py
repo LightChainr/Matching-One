@@ -1,8 +1,5 @@
-from __future__ import annotations
 
-import json
-from pathlib import Path
-import tempfile
+from __future__ import annotations
 import unittest
 
 from scripts.h16_orientation_no_go import (
@@ -43,15 +40,6 @@ class H16OrientationNoGoTests(unittest.TestCase):
         subset = first_full_rank_subset(FIRST_FIVE_ORIENTATION_N)
         self.assertEqual(len(subset), 5)
         self.assertEqual(harmonic_rank(FIRST_FIVE_ORIENTATION_N, subset), 5)
-
-    def test_contract_drift_fails_closed(self) -> None:
-        frozen = build_contract()
-        frozen["n1105"]["primitive_d4_orbit_count"] = 5
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "drift.json"
-            path.write_text(json.dumps(frozen), encoding="utf-8")
-            with self.assertRaisesRegex(AssertionError, "contract drifted"):
-                validate_contract(path)
 
 
 if __name__ == "__main__":

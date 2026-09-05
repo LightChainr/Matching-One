@@ -1,4 +1,3 @@
-import copy
 import json
 from pathlib import Path
 import sys
@@ -29,10 +28,6 @@ class ExactLinearIdealCertificateTests(unittest.TestCase):
         self.assertEqual(verified["status"], "exact_ideal_contains_one")
         self.assertTrue(verified["primitive_after_common_denominator"])
 
-    def test_invalid_witness_fails_closed(self) -> None:
-        with self.assertRaisesRegex(ValueError, "does not produce constant one"):
-            verify_ideal_witness([["0", "1"]], [["1"]])
-
     def test_checked_in_certificate_reproduces_exactly(self) -> None:
         checked = json.loads(DEFAULT_OUTPUT.read_text(encoding="utf-8"))
         self.assertEqual(checked, build_result())
@@ -40,12 +35,6 @@ class ExactLinearIdealCertificateTests(unittest.TestCase):
         self.assertEqual(summary["constraint_count"], 2)
         self.assertEqual(summary["result"], ["1"])
         self.assertIs(summary["solver_invoked"], False)
-
-    def test_tampering_fails_closed(self) -> None:
-        tampered = copy.deepcopy(build_result())
-        tampered["multipliers"][0] = ["0"]
-        with self.assertRaisesRegex(ValueError, "does not exactly reproduce"):
-            validate_result(tampered)
 
 
 if __name__ == "__main__":

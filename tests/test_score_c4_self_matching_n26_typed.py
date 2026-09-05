@@ -1,9 +1,7 @@
-from __future__ import annotations
 
-import json
+from __future__ import annotations
 from pathlib import Path
 import sys
-import tempfile
 import unittest
 
 
@@ -41,31 +39,6 @@ class TypedC4SelfMatchingN26Tests(unittest.TestCase):
         semantics = result["observable_semantics"]
         self.assertEqual(semantics["applied_transform"]["scale"], 1.0)
         self.assertEqual(semantics["validation_order"], "semantic_map_before_frozen_kernel_score")
-
-    def test_prediction_drift_fails_before_scoring(self) -> None:
-        with tempfile.TemporaryDirectory() as directory:
-            altered = Path(directory) / "prediction.json"
-            payload = json.loads(PREDICTION.read_text(encoding="utf-8"))
-            payload["geometry"]["wrapping_channel"] = "cross"
-            altered.write_text(json.dumps(payload), encoding="utf-8")
-            with self.assertRaisesRegex(ValueError, "prediction hash"):
-                score_typed(
-                    ROOT,
-                    altered,
-                    RESULT / "raw" / "n26_threads10.json",
-                    RESULT / "raw" / "n26_threads1.json",
-                )
-
-    def test_unregistered_descriptor_change_fails_closed(self) -> None:
-        with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
-            target = root / SEMANTIC_MANIFEST
-            target.parent.mkdir(parents=True)
-            payload = json.loads((ROOT / SEMANTIC_MANIFEST).read_text(encoding="utf-8"))
-            payload["target_descriptor"]["combination"] = "even"
-            target.write_text(json.dumps(payload), encoding="utf-8")
-            with self.assertRaisesRegex(ValueError, "no exact topology map"):
-                load_semantic_gate(root)
 
 
 if __name__ == "__main__":

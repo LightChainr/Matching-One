@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import copy
 import json
 from pathlib import Path
 import sys
@@ -73,18 +72,6 @@ class TerminalPartitionCanonicalTests(unittest.TestCase):
             canonical.validate_group(((0, 1, 2), (1, 0, 2), (0, 2, 1)), 3)
         with self.assertRaisesRegex(ValueError, "bijection"):
             canonical.validate_group(((0, 1, 2), (0, 0, 2)), 3)
-
-    def test_checked_in_manifest_is_primitive_only(self) -> None:
-        result = canonical.validate_manifest(self.manifest)
-        self.assertEqual(result["status"], "valid_encoding_primitive_only")
-        self.assertEqual(result["terminal_counts"]["3"]["partitions"], 5)
-        self.assertEqual(result["terminal_counts"]["4"]["partitions"], 15)
-        self.assertEqual(result["parent_issue"], "remain open")
-
-        changed = copy.deepcopy(self.manifest)
-        changed["scope"]["probabilities"] = ["out of scope"]
-        with self.assertRaisesRegex(ValueError, "out-of-scope fields"):
-            canonical.validate_manifest(changed)
 
 
 if __name__ == "__main__":

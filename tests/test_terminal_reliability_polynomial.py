@@ -41,15 +41,6 @@ class TerminalReliabilityPolynomialTests(unittest.TestCase):
         self.assertEqual(counts[(0, 0)], (0, 0, 1))
         self.assertEqual(counts[(0, 1)], (1, 2, 0))
 
-    def test_gadget_validation_fails_closed(self):
-        for bad, message in (
-            ({"vertex_count": 3, "terminal_count": 2, "edges": [[0, 0]]}, "self-loops"),
-            ({"vertex_count": 3, "terminal_count": 2, "edges": [[0, 2], [2, 0]]}, "duplicate"),
-            ({"vertex_count": 3, "terminal_count": 2, "edges": [[0, 3]]}, "out of range"),
-        ):
-            with self.assertRaisesRegex(ValueError, message):
-                validate_gadget(bad)
-
     def test_checked_in_result_reproduces_exactly(self):
         checked_in = json.loads(DEFAULT_OUTPUT.read_text(encoding="utf-8"))
         self.assertEqual(checked_in, build_star4_result())

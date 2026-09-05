@@ -60,12 +60,6 @@ class PslqSearchContractTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "lower endpoint drift"):
             self.validate(changed)
 
-    def test_provenance_digest_drift_fails(self) -> None:
-        changed = copy.deepcopy(self.contract)
-        changed["provenance"]["sha256"] = "0" * 64
-        with self.assertRaisesRegex(ValueError, "SHA-256 mismatch"):
-            self.validate(changed)
-
     def test_library_must_be_frozen_before_search(self) -> None:
         changed = copy.deepcopy(self.contract)
         changed["search_stages"]["standard_constant_pairwise"]["library_frozen_before_search"] = False

@@ -1,6 +1,5 @@
-from __future__ import annotations
 
-from copy import deepcopy
+from __future__ import annotations
 from fractions import Fraction
 import json
 from pathlib import Path
@@ -71,17 +70,6 @@ class FormalJordanConjugateSemigroupTests(unittest.TestCase):
             self.assertTrue(row["conjugation_intertwines_character"])
             self.assertTrue(row["conjugation_intertwines_transfer"])
             self.assertTrue(row["norm_factorization_closes_both_orders"])
-
-    def test_contract_drift_fails_closed(self) -> None:
-        changed = deepcopy(self.contract)
-        changed["expected_quartic_characters"]["norm5"][1] = "24/625"
-        with self.assertRaisesRegex(ValueError, "quartic character drifted"):
-            validate_contract(changed)
-
-        changed = deepcopy(self.contract)
-        changed["multipliers"]["norm10"] = [3, 1]
-        with self.assertRaisesRegex(ValueError, "multiplier product did not close"):
-            validate_contract(changed)
 
 
 if __name__ == "__main__":

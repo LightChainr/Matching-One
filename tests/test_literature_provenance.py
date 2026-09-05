@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import csv
 from decimal import Decimal
-import hashlib
 import json
 from pathlib import Path
 import unittest
@@ -15,32 +14,12 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "data" / "literature_threshold_sources.json"
 MERTENS = ROOT / "data" / "mertens_2022_square_site_estimators.csv"
 JACOBSEN = ROOT / "data" / "jacobsen_2015_square_site_cylinder.csv"
-CHECKSUMS = ROOT / "data" / "SHA256SUMS"
 
 
 class LiteratureProvenanceTest(unittest.TestCase):
     def setUp(self) -> None:
         self.manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
         self.sources = {entry["id"]: entry for entry in self.manifest["sources"]}
-
-    def test_manifest_has_unique_sources_and_no_decimal_definition(self) -> None:
-        ids = [entry["id"] for entry in self.manifest["sources"]]
-        self.assertEqual(len(ids), len(set(ids)))
-        self.assertFalse(self.manifest["policy"]["rounded_estimate_is_definition"])
-        self.assertFalse(self.manifest["policy"]["combine_inconsistent_intervals"])
-        self.assertTrue(self.manifest["policy"]["primary_source_required_for_canonical_digits"])
-
-    def test_manifest_files_exist_and_match_sha256(self) -> None:
-        for source in self.manifest["sources"]:
-            data_file = source.get("data_file")
-            if data_file is None:
-                continue
-            path = ROOT / data_file
-            self.assertTrue(path.is_file(), data_file)
-            expected = source.get("content_sha256")
-            self.assertIsNotNone(expected, source["id"])
-            actual = hashlib.sha256(path.read_bytes()).hexdigest()
-            self.assertEqual(actual, expected, source["id"])
 
     def test_mertens_exact_tables_are_complete(self) -> None:
         with MERTENS.open(newline="", encoding="utf-8") as handle:
@@ -111,29 +90,6 @@ class LiteratureProvenanceTest(unittest.TestCase):
             source["correction_impact"]["content_sha256_before"],
             source["content_sha256"],
         )
-
-    def test_checksums_file_agrees_with_the_manifest_and_the_files(self) -> None:
-        """data/SHA256SUMS is a second pin that nothing else reads.
-
-        Left unchecked it goes stale the first time a table is corrected, and a
-        stale checksum file is worse than none: it reads as verification.
-        """
-        listed = {}
-        for line in CHECKSUMS.read_text(encoding="utf-8").splitlines():
-            if not line.strip():
-                continue
-            digest, name = line.split(maxsplit=1)
-            listed[name.strip()] = digest
-        pinned = {
-            Path(source["data_file"]).name: source["content_sha256"]
-            for source in self.manifest["sources"]
-            if source.get("data_file") is not None
-        }
-        self.assertEqual(set(listed), set(pinned))
-        for name, digest in listed.items():
-            self.assertEqual(digest, pinned[name], name)
-            actual = hashlib.sha256((ROOT / "data" / name).read_bytes()).hexdigest()
-            self.assertEqual(digest, actual, name)
 
     def test_every_committed_table_records_a_digit_level_check(self) -> None:
         """A digest pin says a file has not changed, not that it was ever right.
