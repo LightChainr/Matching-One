@@ -286,6 +286,25 @@ rule *requires* a nonzero first-order response there, and one appears at `0.292`
 and `0.107` (w=7). Demanding the lumping carry all eight readouts at w=5 collapses it to
 the identity, as it must.
 
+**#598 Phase C is now closed too, by #600 / PR #603.** The frozen finite-horizon balanced
+realization was built twice — on the microscopic `Catalan(w)` chain and after exact
+reduction to the `R`-orbit quotient — and they agree on the protected `D0` dictionary to
+`1.5e-16`–`2.7e-15` in the Hankel spectrum at `w = 4..8`, with balanced order and
+numerical rank preserved. The reason the reduction is exact rather than merely accurate is
+that the **odd sector is inert**: reach and observe energy `1.7e-17`–`5.7e-17` across
+`dim = 4/16/56/197/680`, i.e. exactly uncontrollable and unobservable. The declared trap
+fired — `halves_linked` breaks the agreement at `w = 5, 7` only (`1.8e-2`, `8.7e-3`) and
+symmetrization restores `1e-16`, so the break is the `R`-odd part and nothing else. A
+continuity gate against the committed pure-Python #588 numbers was run before any quotient
+result was read.
+
+So the two-step picture is now established end to end and in the right order:
+
+```text
+exact task symmetry quotient   (a first factor, not an approximation)
+  -> task-relative balanced reduction   (a second, lossy, task-relative compression)
+```
+
 **Action:** #593 changes character — it is no longer "two more rows" but a falsification
 of a closed form declared in advance, `r_positive(9) = 2494` and `r_positive(10) = 8524`.
 And #594's Q1 no longer needs the codimension conjecture in its body: the closed condition

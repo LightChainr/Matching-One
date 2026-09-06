@@ -124,6 +124,41 @@ r_positive(10) = (16796 + 252)/2 = 8524.
 
 If DeepSeek's exact refinement returns those, the orbit account holds two widths beyond where it was fitted. If not, the account is wrong and the state semantics need repair before anything else proceeds. Either way that is worth far more than two more rows.
 
+## Phase C — closed by #600 / PR #603
+
+Phase C (does the balanced realization factor through the quotient?) was not run here: it
+needs finite-horizon Gramians and Hankel SVDs on a 1430-state operator twice, which is the
+wrong job for a pure-Python environment. It was handed to #600 and came back affirmative.
+
+Protected `D0`, microscopic vs quotient construction, `w = 4..8`:
+
+```text
+w   states -> orbits   max |A-B| Hankel spectrum   response rel-Frobenius
+4      14 ->  10             1.5e-16                    9.7e-16
+5      42 ->  26             3.3e-16                    1.3e-15
+6     132 ->  76             3.0e-16                    2.6e-15
+7     429 -> 232             3.4e-16                    4.2e-15
+8    1430 -> 750             2.7e-15                    1.1e-14
+```
+
+Balanced order and numerical rank preserved at every width. The odd sector is **exactly
+inert** — reach/observe energy `1.7e-17` to `5.7e-17` across `dim = 4/16/56/197/680` — which
+is why the reduction is exact rather than accurate.
+
+The declared trap fired. `halves_linked` is `R`-even only at even widths, and the agreement
+breaks at exactly `w = 5` (`1.8e-2`) and `w = 7` (`8.7e-3`), recovering to `1e-16` under
+symmetrization. The break is the `R`-odd part and nothing else.
+
+So the factorization theorem is established in the form #598 proposed:
+
+```text
+exact task symmetry quotient  ->  task-relative balanced reduction,
+```
+
+the first an exact factor, the second a lossy compression of the quotient dynamics. That
+is a much cleaner statement than comparing `r_positive` and balanced order as two
+unrelated dimensions.
+
 ## Claim boundary
 
 - This is an exact finite symmetry statement about P398. It is **not** a percolation-threshold result.
