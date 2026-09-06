@@ -1,0 +1,38 @@
+{
+  "10": {
+    "enumerate_seconds": 0.27,
+    "generator_build_seconds": 0.37,
+    "mean_nonzero_per_row": 12.32,
+    "nnz": 206856,
+    "one_expv_seconds_at_t2": 0.244,
+    "poisson_terms_at_t2": 246,
+    "states": 16796,
+    "uniformization_rate": 72.0
+  },
+  "8": {
+    "enumerate_seconds": 0.01,
+    "generator_build_seconds": 0.02,
+    "mean_nonzero_per_row": 9.8,
+    "nnz": 14014,
+    "one_expv_seconds_at_t2": 0.014,
+    "poisson_terms_at_t2": 203,
+    "states": 1430,
+    "uniformization_rate": 56.0
+  },
+  "9": {
+    "enumerate_seconds": 0.05,
+    "generator_build_seconds": 0.09,
+    "mean_nonzero_per_row": 11.06,
+    "nnz": 53768,
+    "one_expv_seconds_at_t2": 0.059,
+    "poisson_terms_at_t2": 225,
+    "states": 4862,
+    "uniformization_rate": 64.0
+  },
+  "budget_estimate_w9": {
+    "assumed_expv_calls": 48,
+    "estimated_wallclock_seconds": 2.8,
+    "verdict": "feasible in a normal probe session"
+  },
+  "recommendation": "w9 memory-order computation is feasible with the numpy sparse stack; w10 (16796) is feasible for vector-counts ~dozens but the generator build/expv scale ~x3.4 per width step and the exact numerical order (tol 1e-6) additionally needs careful rank-revealing work.  The repo's pure-Python cap at width 8 is a code limit, not a hard science barrier.  Recommend: run the w9 projected-memory kernel (frozen #580/#588 conventions, port needed) as the next heavy but bounded step; leave w10 to #593."
+}
