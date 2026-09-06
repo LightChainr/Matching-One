@@ -569,7 +569,11 @@ coordinates. Three practices make that true and are cheap:
 1. **Share the random stream across rungs.** All rungs use one seed and one replica offset, so a delete-one
    jackknife can delete batch `b` from every rung simultaneously and the resulting pseudo-values are paired. A
    ladder whose rungs were run independently has a diagonal `S` by construction, which is not a measurement of
-   independence but an absence of one.
+   independence but an absence of one. Where coordinates genuinely do come from separate runs, the cross block
+   should be *measured* — the batch-by-batch correlation between the two runs' estimates is available whenever
+   both were batched — and dropped on that evidence rather than by assumption. A companion analysis in this
+   repository does exactly that for a quantile grid assembled from independent productions, and finds the largest
+   per-level correlation at 0.10–0.19 against a noise floor of `1/√100 = 0.10`.
 2. **Persist the response vector and its full covariance, not the derived comparisons.** The gap of §5.2 exists
    only because the original scorer stored what its ratios needed. Storing `y` and `S` costs `O(n²)` numbers and
    makes every future reanalysis possible without a rerun; storing derived ratios does not. This is the concrete
