@@ -131,6 +131,35 @@ leakage signs, not bounded.
 orientations per family, which measures `A8` instead of assuming it. One deterministic
 N=580 replay would also settle the single undetermined verdict of §5.2.
 
+**#583 is now blocked on an identifiability problem, and the cheap fix has been tried
+and failed.** [#589](https://github.com/LightChainr/Matching-One/issues/589) showed the
+N=650 design moves the lattice angle and the Smith/quotient class together, so its third
+fitted coefficient absorbs any noncyclic offset;
+[#591](https://github.com/LightChainr/Matching-One/issues/591) made the leakage exact
+(`0.32494 delta` into `A8`, `±0.77170 delta` into `A4`, same-sign `A8` in both modulus
+families). #589's option 2 was to calibrate that offset from #205's archived histograms
+in the derivative channel — no new sampling.
+
+That attempt is complete and negative (`notes/p205-derivative-smith-loading-20260906.md`,
+`results/p205-derivative-smith-loading/latest.json`). Rescoring the frozen #205 block in
+`M`/`S`/`D`/`Sp`/`Dp` at the same `p_ref` with the same aligned jackknife — the `M`
+channel reproduces the published `analysis/score.json` exactly, as the control that this
+is the same pipeline — gives a noncyclic offset consistent with zero everywhere
+(`max |delta_z| = 1.83`) but an angular amplitude that is *also* barely resolved
+(`|A4_z|` from 0.06 to 2.18). The exported ratio `rho = delta / A4` is therefore
+unconstrained: in **all ten** channel×size cells the 2σ interval for `rho` reaches the
+pole `rho = ∓1.29584` at which the quotient response annihilates N=650's fitted `A4`
+entirely. This is a power failure, not a detection, and it holds in the published `M`
+channel too — #205 bounded an offset, never an offset *relative to* the amplitude.
+
+Cost of fixing it by this route, assuming a zero true offset: `Sp` is the only viable
+channel (~3× the existing 10M/node for a banded reading, ~26× for a clean one); `Dp`
+needs 2.6e4–1.5e6×. So the live options are #589's 3 and 4 — the all-cyclic N=2210
+design, or a crossed design — and one cheap prospective question that changes the cost by
+an order of magnitude: **which channel maximizes `A4` resolution at fixed sample count?**
+`Sp` beats `M` by 4.5× on exactly that figure of merit and nothing has yet been optimized
+for it.
+
 ### State-object contraction — #582 / #581 / #580
 
 Three zero-new-sampling tests of what the finite "state" actually is, ahead of any

@@ -1,0 +1,29 @@
+{
+  "engine": "general integer-period threshold-rank Newman-Ziff",
+  "generated_utc": "2026-08-29T13:20:46Z",
+  "git_commit": "1668bddd9e8b10cbe5c57add79eb61f74861fb4b",
+  "command": "build/threshold_rank_integer_period_mc --first-matrix 20 -5 5 20 --second-matrix 16 -13 13 16 --first-rep 20 5 --second-rep 16 13 --samples 10000000 --batches 100 --seed 2026105502 --replica-offset 9300000000 --threads 8 --git-commit 1668bddd9e8b10cbe5c57add79eb61f74861fb4b --output-prefix results/server-20260829/P205-norm5-conjugate-coalescence/raw/n425_C_A_10m",
+  "compiler": "10.3.1",
+  "openmp": true,
+  "threads_requested": 8,
+  "samples_per_pair": 10000000,
+  "batches": 100,
+  "seed": 2026105502,
+  "replica_counter_first": 9300000000,
+  "replica_counter_last_exclusive": 9310000000,
+  "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+  "coupling": "same HNF mixed-radix label permutation shared by the pair",
+  "quotient_coordinates": "column-HNF representatives (rx,ry), label=rx+h11*ry",
+  "period_matrix_convention": "row-major matrix; columns are lifted period vectors",
+  "channel": "rank-2 cross wrapping",
+  "K_plus": "first black primal cross rank, 1-based",
+  "K_minus": "first black rank after white matching cross is lost; N-r+1",
+  "sparse_joint_histogram": false,
+  "per_batch_joint_moments": true,
+  "elapsed_seconds": 110.703623777,
+  "designs": [
+    {"id": "custom", "N": 425, "first": [20,5], "second": [16,13], "first_period_matrix": [[20,-5],[5,20]], "second_period_matrix": [[16,-13],[13,16]], "first_HNF": [[85,20],[0,5]], "second_HNF": [[425,132],[0,1]], "first_smith_invariants": [5,85], "second_smith_invariants": [1,425]}
+  ],
+  "histogram_csv": "results/server-20260829/P205-norm5-conjugate-coalescence/raw/n425_C_A_10m.hist.csv",
+  "moments_csv": "results/server-20260829/P205-norm5-conjugate-coalescence/raw/n425_C_A_10m.moments.csv"
+}

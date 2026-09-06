@@ -1,0 +1,249 @@
+{
+  "schema": "matching-one/p205-norm5-conjugate-coalescence-score/v1",
+  "status": "prospective fixed-sample score; no model refit",
+  "fixed_probability": "0.59274605079",
+  "geometry_order": [
+    "C",
+    "A",
+    "B"
+  ],
+  "model_order": [
+    "H4",
+    "H12",
+    "H8"
+  ],
+  "by_size": {
+    "325": {
+      "raw_M": {
+        "C": "0.00018448614021788672735211546081",
+        "A": "-0.0000373598809196026531799863223057",
+        "B": "0.000204406223093737944587332353119"
+      },
+      "raw_M_covariance": [
+        [
+          "2.358974687704373902634e-8",
+          "2.040878057112280840659e-9",
+          "-3.933469402205232206896e-9"
+        ],
+        [
+          "2.040878057112280840659e-9",
+          "3.165079655403742402009e-8",
+          "1.944976916616153163291e-9"
+        ],
+        [
+          "-3.933469402205232206896e-9",
+          "1.944976916616153163291e-9",
+          "2.801717306762749299467e-8"
+        ]
+      ],
+      "common_C_histogram_rows_sha256": "74b068bdcb476a4b7a68347496c73fa6daa1676e37f9b81722f3f7fc1078a782",
+      "common_C_moments_rows_sha256": "938cd67fe01155e4bfe137f9f54788fdb0ce1ef0238f352aea432790ceeb1d8c"
+    },
+    "425": {
+      "raw_M": {
+        "C": "-0.0001308517474060682494101230822",
+        "A": "-0.000196671714956815155830293290128",
+        "B": "0.0000502278885677749462334335297514"
+      },
+      "raw_M_covariance": [
+        [
+          "2.914566976815246352459e-8",
+          "1.187259956199375362232e-10",
+          "7.128154300893100885647e-9"
+        ],
+        [
+          "1.187259956199375362232e-10",
+          "3.039465923775809126251e-8",
+          "3.075653388731186621337e-9"
+        ],
+        [
+          "7.128154300893100885647e-9",
+          "3.075653388731186621337e-9",
+          "2.775925668183490173651e-8"
+        ]
+      ],
+      "common_C_histogram_rows_sha256": "b49ae8f814df8b2929e7fae813e23b761ad9f09ca057e3e1745ca1cd67a8a9c6",
+      "common_C_moments_rows_sha256": "07ccac5cd7036068115492368622f455943bf72efc0637bcaee805a48e1ca236"
+    }
+  },
+  "models": [
+    {
+      "name": "H4",
+      "by_size": {
+        "325": {
+          "integer_weights_C_A_B": [
+            5,
+            -11,
+            6
+          ],
+          "normalized_weights_C_A_B": [
+            "1.0",
+            "-2.2",
+            "1.2"
+          ],
+          "residual": "0.000511965345953498097852884193624",
+          "variance": "0.0000001884346632796485794982805",
+          "standard_error": "0.00043409061643814483576",
+          "signed_z": "1.17939740359821834"
+        },
+        "425": {
+          "integer_weights_C_A_B": [
+            20,
+            13,
+            -33
+          ],
+          "normalized_weights_C_A_B": [
+            "1.0",
+            "0.65",
+            "-1.65"
+          ],
+          "residual": "-0.000341564378264826761984979044873",
+          "variance": "8.7596147694931067632335e-8",
+          "standard_error": "0.00029596646380110545834",
+          "signed_z": "-1.15406446351423074"
+        }
+      },
+      "joint_chi_square": "2.7228430215606079375",
+      "degrees_of_freedom": 2,
+      "chi_square_survival_df2": "0.256296190085709881",
+      "delta_chi_square_from_best": "2.2528962970510361031"
+    },
+    {
+      "name": "H12",
+      "by_size": {
+        "325": {
+          "integer_weights_C_A_B": [
+            7144145,
+            -363263,
+            -6780882
+          ],
+          "normalized_weights_C_A_B": [
+            "1.0",
+            "-0.0508476521683140529762483824167",
+            "-0.949152347831685947023751617583"
+          ],
+          "residual": "-0.00000762684411289243832370970929523",
+          "variance": "5.635908889606239770704352e-8",
+          "standard_error": "0.00023740069270341735401",
+          "signed_z": "-0.032126461073222685"
+        },
+        "425": {
+          "integer_weights_C_A_B": [
+            68620,
+            -181189,
+            112569
+          ],
+          "normalized_weights_C_A_B": [
+            "1.0",
+            "-2.64046925094724570096181871175",
+            "1.64046925094724570096181871175"
+          ],
+          "residual": "0.000470851175203903175717921073375",
+          "variance": "0.0000003118786267981335051448495",
+          "standard_error": "0.00055846094473842439428",
+          "signed_z": "0.843122835428435451"
+        }
+      },
+      "joint_chi_square": "0.71188822512197394178",
+      "degrees_of_freedom": 2,
+      "chi_square_survival_df2": "0.700511768950046609",
+      "delta_chi_square_from_best": "0.24194150061240210737"
+    },
+    {
+      "name": "H8",
+      "by_size": {
+        "325": {
+          "integer_weights_C_A_B": [
+            44795,
+            -22517,
+            -22278
+          ],
+          "normalized_weights_C_A_B": [
+            "1.0",
+            "-0.502667708449603750418573501507",
+            "-0.497332291550396249581426498493"
+          ],
+          "residual": "0.000101607930609323249556315971058",
+          "variance": "4.135003385318300990446575e-8",
+          "standard_error": "0.00020334707731655011398",
+          "signed_z": "0.499677359272542307"
+        },
+        "425": {
+          "integer_weights_C_A_B": [
+            242420,
+            -89531,
+            -152889
+          ],
+          "normalized_weights_C_A_B": [
+            "1.0",
+            "-0.369321838132167312927976239584",
+            "-0.630678161867832687072023760416"
+          ],
+          "residual": "-0.0000898942205660382437919456643787",
+          "variance": "3.668678438994595526069932e-8",
+          "standard_error": "0.00019153794503947763525",
+          "signed_z": "-0.469328521549660897"
+        }
+      },
+      "joint_chi_square": "0.46994672450957183441",
+      "degrees_of_freedom": 2,
+      "chi_square_survival_df2": "0.790591908934086601",
+      "delta_chi_square_from_best": "0.0"
+    }
+  ],
+  "best_fixed_harmonic_by_chi_square": "H8",
+  "decision_map_result": "H4_survives_same_parent_conjugation_and_noncyclic_quotient_control",
+  "provenance": {
+    "prediction": "/Volumes/Mac Data/Research/\u8bba\u6587\u9879\u76ee\u603b\u5e93/Matching-One-worktrees/p205-norm5-conjugate-coalescence-20260829/predictions/norm5_conjugate_coalescence_20260829.yaml",
+    "prediction_sha256": "157e65eba43de09495f527c3a153c1867a45e994295a792ee27d631a0139abe4",
+    "experiment": "/Volumes/Mac Data/Research/\u8bba\u6587\u9879\u76ee\u603b\u5e93/Matching-One-worktrees/p205-norm5-conjugate-coalescence-20260829/experiments/p205_norm5_conjugate_coalescence_20260829.yaml",
+    "experiment_sha256": "677f125c0e1d9d78ca1bcebc87bf5320d7cb62e4476afaa7f95f7a14b401b6f8",
+    "inputs": [
+      {
+        "N": 325,
+        "pair": "C-A",
+        "histogram": "results/server-20260829/P205-norm5-conjugate-coalescence/raw/n325_C_A_10m.hist.csv",
+        "histogram_sha256": "284527458bcc6106b56b151d744933bfaff5a89f2f5415dbc5aeef31019f2d26",
+        "moments": "results/server-20260829/P205-norm5-conjugate-coalescence/raw/n325_C_A_10m.moments.csv",
+        "moments_sha256": "fb84139bfda104cf9f585b92b632c122fe2ef0af08e2bd144e7aa2e59cb7b9be",
+        "metadata": "results/server-20260829/P205-norm5-conjugate-coalescence/raw/n325_C_A_10m.metadata.json",
+        "metadata_sha256": "fc5a943f0e238bae4a3ccae7532a0b8325f667ad0b00cf658e8f2c5ac6cc4b96",
+        "git_commit": "1668bddd9e8b10cbe5c57add79eb61f74861fb4b"
+      },
+      {
+        "N": 325,
+        "pair": "C-B",
+        "histogram": "results/server-20260829/P205-norm5-conjugate-coalescence/raw/n325_C_B_10m.hist.csv",
+        "histogram_sha256": "96c00bfad4f4a452b9e68b8fed6caa8f474450f3fbdd30439df013cb30b6a572",
+        "moments": "results/server-20260829/P205-norm5-conjugate-coalescence/raw/n325_C_B_10m.moments.csv",
+        "moments_sha256": "5ad0ed06c9abe260c8809f6b81ac5ae3584a36ae77b217c6056388f64ab2dbeb",
+        "metadata": "results/server-20260829/P205-norm5-conjugate-coalescence/raw/n325_C_B_10m.metadata.json",
+        "metadata_sha256": "54f3bf75adcead0976cad93cddbb03401bfd4bbe829506859fb74963363cfb56",
+        "git_commit": "1668bddd9e8b10cbe5c57add79eb61f74861fb4b"
+      },
+      {
+        "N": 425,
+        "pair": "C-A",
+        "histogram": "results/server-20260829/P205-norm5-conjugate-coalescence/raw/n425_C_A_10m.hist.csv",
+        "histogram_sha256": "d6296347dd36cbb5c89c337926160686147f5f23c67189f1b5c5f5866931ff18",
+        "moments": "results/server-20260829/P205-norm5-conjugate-coalescence/raw/n425_C_A_10m.moments.csv",
+        "moments_sha256": "2672cf6c3150efd7327a0541899561ac133936b797bc7e48f308a6a26a6e4656",
+        "metadata": "results/server-20260829/P205-norm5-conjugate-coalescence/raw/n425_C_A_10m.metadata.json",
+        "metadata_sha256": "6a09c4aa7c9d3275de4c2a030562dd5044ab03b2e14f4759675c0414c43f4c6e",
+        "git_commit": "1668bddd9e8b10cbe5c57add79eb61f74861fb4b"
+      },
+      {
+        "N": 425,
+        "pair": "C-B",
+        "histogram": "results/server-20260829/P205-norm5-conjugate-coalescence/raw/n425_C_B_10m.hist.csv",
+        "histogram_sha256": "e49ee5594705eb13c30c91b7966ec7072183652df4a06df35ccccd459c5399ae",
+        "moments": "results/server-20260829/P205-norm5-conjugate-coalescence/raw/n425_C_B_10m.moments.csv",
+        "moments_sha256": "3aad2672d09b30e9b09d57682e7b536a9529438811afac426d5cb8843bb14d6a",
+        "metadata": "results/server-20260829/P205-norm5-conjugate-coalescence/raw/n425_C_B_10m.metadata.json",
+        "metadata_sha256": "1fa3ef07b1f058836fc918c25b14137b9619e9a698cf366d7e730444febd04d1",
+        "git_commit": "1668bddd9e8b10cbe5c57add79eb61f74861fb4b"
+      }
+    ]
+  },
+  "interpretation_guard": "H4, H12 and H8 use the exact frozen affine residuals in that order. The three M values at each size share one delete-one covariance block; N325 and N425 are independent. No exponent, center, amplitude or quotient offset is fitted."
+}
