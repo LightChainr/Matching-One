@@ -1,0 +1,44 @@
+{
+  "schema": "matching-one.homological-balance-exact-torus.v1",
+  "issue_targets": [276, 321],
+  "verified": "2026-09-06 independent rerun, two winding algorithms",
+  "conventions": {
+    "geometry": "honest LxL square torus, L^2 sites",
+    "black": "4-connected NN",
+    "white": "8-connected NN+NNN matching graph",
+    "rank": "rank im[H1 -> H1(T^2)] via winding image"
+  },
+  "p_c_used_for_M_pc": "0.5927460 (truncated square-site; not an exact constant)",
+  "by_width": {
+    "3": {
+      "sites": 9,
+      "configs": 512,
+      "dual_fail": 0,
+      "rank_pairs": {"0,2": 259, "1,1": 162, "2,0": 91},
+      "M_0": "-1",
+      "M_1": "1",
+      "M_half": "-21/64",
+      "M_half_float": -0.328125,
+      "M_pc_float": 0.024969673280633063,
+      "p_L_H": 0.5865114551126757
+    },
+    "4": {
+      "sites": 16,
+      "configs": 65536,
+      "dual_fail": 0,
+      "rank_pairs": {"0,2": 36559, "1,1": 19932, "2,0": 9045},
+      "M_0": "-1",
+      "M_1": "1",
+      "M_half": "-13757/32768",
+      "M_half_float": -0.419830322265625,
+      "M_pc_float": 0.01033298289690873,
+      "p_L_H": 0.5906721123310283
+    }
+  },
+  "independent_algorithms": {
+    "A": "spanning-tree fundamental-cycle windings (exact_torus_enum.ambient_rank)",
+    "B": "single-BFS lift coordinates (verify_independent.ambient_rank_v2)",
+    "mismatches_L3": 0,
+    "mismatches_L4": 0
+  }
+}
