@@ -232,6 +232,37 @@ def unresolved_columns(
     return [project_out(basis, matvec(rows, column)) for column in basis]
 
 
+def coupling_rank(
+    basis: Sequence[Sequence[float]],
+    rows: Sequence[Sequence[Tuple[int, float]]],
+) -> Dict[str, Any]:
+    """Rank of ``C``, and how many of its columns vanish identically.
+
+    This is the structural cap on the kernel: ``rank K(tau) <= rank C`` for
+    every ``tau``, so if ``rank C`` is small and width-independent then the
+    kernel's *instantaneous* rank is too, for reasons that are arithmetic about
+    the Krylov construction rather than anything about the process.
+
+    Reporting it is what stops a small leading Hankel order from being read as a
+    discovery.  A rank-6 Krylov prefix over a 3-dimensional seed span contains
+    its own first level entirely, so ``Q G`` annihilates the seed directions and
+    only the frontier survives -- and the frontier is the rank.
+    """
+
+    columns = unresolved_columns(basis, rows)
+    norms = [_norm(column) for column in columns]
+    largest = max(norms) if norms else 0.0
+    gram = [[_dot(left, right) for right in columns] for left in columns]
+    spectrum = singular_spectrum(gram)
+    top = spectrum[0] if spectrum else 0.0
+    rank = sum(1 for value in spectrum if top > 0 and value > 1e-10 * top)
+    return {
+        "rank": rank,
+        "vanishing_columns": sum(1 for value in norms if largest > 0 and value <= 1e-12 * largest),
+        "column_norms": norms,
+    }
+
+
 def resolved_operator(
     basis: Sequence[Sequence[float]],
     rows: Sequence[Sequence[Tuple[int, float]]],
@@ -1042,6 +1073,7 @@ def width_memory(
     # are recorded so the comparison can be made per unit of perturbation.
     tangent_norm = _sparse_frobenius(generator.tangent_rows(intervention))
     generator_norm = _sparse_frobenius(baseline_rows)
+    coupling = coupling_rank(basis, baseline_rows)
 
     baseline_hankel: Optional[List[List[float]]] = None
     baseline_kernels: Optional[List[List[List[float]]]] = None
@@ -1166,6 +1198,7 @@ def width_memory(
         "intervention": intervention,
         "in_pencil": IN_PENCIL[intervention],
         "rank": rank,
+        "coupling_rank": coupling,
         "tangent_frobenius_norm": tangent_norm,
         "baseline_generator_frobenius_norm": generator_norm,
         "representation": representation,
@@ -1405,17 +1438,33 @@ def decide(
     residual_shares = [row["held_out"].get("residual_share") for row in ladder]
     declared_memory_shares = [row["declared"].get("memory_share") for row in ladder]
 
+    numerical = [entry["hankel"]["numerical_rank"] for entry in baselines]
+    couplings = [block["coupling_rank"]["rank"] for block in chosen]
     last_order = orders[-1]
     first_order = orders[0]
     low_order = last_order is not None and last_order <= LOW_ORDER_MULTIPLE * rank
-    grew = (
+    # Two order notions, and they do not agree.  The energy-effective order is
+    # how many poles reproduce the kernel to a stated accuracy; the numerical
+    # rank is how many it has at all.  #588's table asks whether "memory
+    # rank/tail grows with width" as if that were one question.  It is two, and
+    # reporting only the one that happens to saturate would be choosing the
+    # answer.
+    grew_energy = (
         last_order is not None
         and first_order is not None
         and last_order - first_order >= ORDER_GROWTH_STEP
     )
+    grew_numerical = numerical[-1] - numerical[0] >= ORDER_GROWTH_STEP
+    grew = grew_energy and grew_numerical
     tail_grew = (
         tails[0] is not None and tails[-1] is not None and tails[-1] > tails[0] + 0.10
     )
+    if grew_energy and grew_numerical:
+        complexity = "MEMORY_ORDER_GROWS_WITH_WIDTH"
+    elif not grew_energy and not grew_numerical:
+        complexity = "MEMORY_ORDER_SATURATES"
+    else:
+        complexity = "BOUNDED_MEMORY_ORDER_IS_ACCURACY_DEPENDENT"
     memory_share = memory_shares[-1] if memory_shares else None
     forcing_share = forcing_shares[-1] if forcing_shares else None
 
@@ -1456,6 +1505,14 @@ def decide(
         "held_out_memory_over_drift": [row["memory_over_drift"] for row in held_out],
         "held_out_forcing_over_drift": [row["forcing_over_drift"] for row in held_out],
         "effective_memory_order_p999": orders,
+        "numerical_memory_order": numerical,
+        "coupling_rank_by_width": couplings,
+        "memory_complexity": complexity,
+        "memory_complexity_note": (
+            "rank K(tau) <= rank C at every tau, and rank C is fixed by the "
+            "Krylov construction rather than by the width, so a small leading "
+            "order is not by itself a finding about the process."
+        ),
         "memory_decay_time": decays,
         "tail_mass_fraction": tails,
         "attribution_widths": sorted(finest),
@@ -1584,6 +1641,7 @@ def render(result: Mapping[str, Any]) -> str:
         lines.append(
             f"width {block['width']:>2} ({block['states']:>4} states)  "
             f"{block['intervention']}  [{pencil}]  rank {block['rank']}  "
+            f"rank(C) = {block['coupling_rank']['rank']}  "
             f"||H||/||G_0|| = "
             f"{block['tangent_frobenius_norm'] / block['baseline_generator_frobenius_norm']:.4f}"
         )
@@ -1662,6 +1720,9 @@ def render(result: Mapping[str, Any]) -> str:
         f"{[None if v is None else round(v, 4) for v in decision['held_out_forcing_over_drift']]}"
     )
     lines.append(f"  effective order (99.9%)   {decision['effective_memory_order_p999']}")
+    lines.append(f"  numerical order           {decision.get('numerical_memory_order')}")
+    lines.append(f"  rank(C) by width          {decision.get('coupling_rank_by_width')}")
+    lines.append(f"  memory complexity         {decision.get('memory_complexity')}")
     lines.append(f"  attribution widths        {decision.get('attribution_widths')}")
     lines.append(
         f"  held-out memory share     "

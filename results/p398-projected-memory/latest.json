@@ -2,6 +2,18 @@
   "blocks": [
     {
       "baseline_generator_frobenius_norm": 22.09072203,
+      "coupling_rank": {
+        "column_norms": [
+          2.808666775e-16,
+          3.726160183e-16,
+          1.658813575e-15,
+          0.5038314737,
+          0.9210733241,
+          1.6
+        ],
+        "rank": 2,
+        "vanishing_columns": 3
+      },
       "etas": {
         "+0.000": {
           "eta": 0.0,
@@ -496,6 +508,18 @@
     },
     {
       "baseline_generator_frobenius_norm": 22.09072203,
+      "coupling_rank": {
+        "column_norms": [
+          2.808666775e-16,
+          3.726160183e-16,
+          1.658813575e-15,
+          0.5038314737,
+          0.9210733241,
+          1.6
+        ],
+        "rank": 2,
+        "vanishing_columns": 3
+      },
       "etas": {
         "+0.000": {
           "eta": 0.0,
@@ -990,6 +1014,18 @@
     },
     {
       "baseline_generator_frobenius_norm": 48.06245936,
+      "coupling_rank": {
+        "column_norms": [
+          1.844758008e-16,
+          1.611009337e-15,
+          2.049288938e-15,
+          0.6697371694,
+          1.050210493,
+          1.900294841
+        ],
+        "rank": 3,
+        "vanishing_columns": 3
+      },
       "etas": {
         "+0.000": {
           "eta": 0.0,
@@ -1484,6 +1520,18 @@
     },
     {
       "baseline_generator_frobenius_norm": 48.06245936,
+      "coupling_rank": {
+        "column_norms": [
+          1.844758008e-16,
+          1.611009337e-15,
+          2.049288938e-15,
+          0.6697371694,
+          1.050210493,
+          1.900294841
+        ],
+        "rank": 3,
+        "vanishing_columns": 3
+      },
       "etas": {
         "+0.000": {
           "eta": 0.0,
@@ -1978,6 +2026,18 @@
     },
     {
       "baseline_generator_frobenius_norm": 102.5280449,
+      "coupling_rank": {
+        "column_norms": [
+          2.711280471e-16,
+          2.024686492e-15,
+          1.382745248e-15,
+          0.7464903879,
+          1.139084723,
+          2.439403684
+        ],
+        "rank": 3,
+        "vanishing_columns": 3
+      },
       "etas": {
         "+0.000": {
           "eta": 0.0,
@@ -2472,6 +2532,18 @@
     },
     {
       "baseline_generator_frobenius_norm": 102.5280449,
+      "coupling_rank": {
+        "column_norms": [
+          2.711280471e-16,
+          2.024686492e-15,
+          1.382745248e-15,
+          0.7464903879,
+          1.139084723,
+          2.439403684
+        ],
+        "rank": 3,
+        "vanishing_columns": 3
+      },
       "etas": {
         "+0.000": {
           "eta": 0.0,
@@ -2966,6 +3038,18 @@
     },
     {
       "baseline_generator_frobenius_norm": 216.0138884,
+      "coupling_rank": {
+        "column_norms": [
+          4.314312222e-16,
+          1.451230937e-15,
+          1.968858739e-15,
+          0.7901909237,
+          1.195366415,
+          2.647758615
+        ],
+        "rank": 3,
+        "vanishing_columns": 3
+      },
       "etas": {
         "+0.000": {
           "eta": 0.0,
@@ -3460,6 +3544,18 @@
     },
     {
       "baseline_generator_frobenius_norm": 216.0138884,
+      "coupling_rank": {
+        "column_norms": [
+          4.314312222e-16,
+          1.451230937e-15,
+          1.968858739e-15,
+          0.7901909237,
+          1.195366415,
+          2.647758615
+        ],
+        "rank": 3,
+        "vanishing_columns": 3
+      },
       "etas": {
         "+0.000": {
           "eta": 0.0,
@@ -3954,6 +4050,18 @@
     },
     {
       "baseline_generator_frobenius_norm": 451.2560249,
+      "coupling_rank": {
+        "column_norms": [
+          3.641850664e-16,
+          2.618066905e-15,
+          2.73654005e-15,
+          0.8182275514,
+          1.233162754,
+          2.746104397
+        ],
+        "rank": 3,
+        "vanishing_columns": 3
+      },
       "etas": {
         "+0.000": {
           "eta": 0.0,
@@ -4448,6 +4556,18 @@
     },
     {
       "baseline_generator_frobenius_norm": 451.2560249,
+      "coupling_rank": {
+        "column_norms": [
+          3.641850664e-16,
+          2.618066905e-15,
+          2.73654005e-15,
+          0.8182275514,
+          1.233162754,
+          2.746104397
+        ],
+        "rank": 3,
+        "vanishing_columns": 3
+      },
       "etas": {
         "+0.000": {
           "eta": 0.0,
@@ -4950,6 +5070,13 @@
       7,
       8
     ],
+    "coupling_rank_by_width": [
+      2,
+      3,
+      3,
+      3,
+      3
+    ],
     "declared_intervention": "uniform_join_minus_detach",
     "declared_memory_over_drift": [
       0.008043791866,
@@ -5011,6 +5138,8 @@
       "single_point_join": 1.80980101,
       "uniform_join_minus_detach": 2.576914448
     },
+    "memory_complexity": "BOUNDED_MEMORY_ORDER_IS_ACCURACY_DEPENDENT",
+    "memory_complexity_note": "rank K(tau) <= rank C at every tau, and rank C is fixed by the Krylov construction rather than by the width, so a small leading order is not by itself a finding about the process.",
     "memory_decay_time": [
       0.06256022084,
       0.08911461074,
@@ -5022,6 +5151,13 @@
       "single_point_join": 0.04512534308,
       "uniform_join_minus_detach": 0.2567730134
     },
+    "numerical_memory_order": [
+      4,
+      9,
+      12,
+      13,
+      14
+    ],
     "tail_mass_fraction": [
       1.746212796e-06,
       3.65351606e-05,

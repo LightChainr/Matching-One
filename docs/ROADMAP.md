@@ -159,10 +159,13 @@ description. On the held-out readouts memory and unrepresented-readout are joint
 required, ~40% and ~43% of the closure error each, stably from 14 states to 1430.
 Neither repair alone is the object.
 
-Two things this rules out. Memory complexity does **not** grow with width (pole count
-2, 3, 4, 4, 4 and then flat over a factor of 102 in state count), so the predictive
-noncompression branch does not fire here. And the memory description is not an artifact
-of the operator pencil: per unit of perturbation the out-of-pencil intervention moves
+Two qualifications carried in the note. The memory order is bounded only relative to
+an accuracy target: four poles reproduce 99.9% of the kernel at every width, but the
+exact numerical degree goes 4, 9, 12, 13, 14 — sublinear and apparently flattening, not
+flat. And the small leading order is partly arithmetic: `rank C = 3` uniformly, because
+a rank-6 Krylov prefix over a 3-dimensional seed span contains its own first level, so
+`rank K(tau) <= 3` for structural reasons. What is not an artifact is the pencil
+comparison: per unit of perturbation the out-of-pencil intervention moves
 the kernel 1.80 against the declared one's 2.58, where #580's exact lumping went from
 750 blocks to the identity partition under the same probe. The three descriptions of
 one object -- `r_transport`, `r_positive`, memory -- respond differently to the same

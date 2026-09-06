@@ -79,20 +79,60 @@ width  states   ||A||   ||K(0)||   int||K||   int||K||/||A||   decay   tail>2   
 `poles` is the block-Hankel order carrying 99.9% of the kernel energy; at the 99%
 level it is 3 at every width from 5 up.
 
-Two readings, and the second is the important one.
-
 The memory **decays before the first declared lag**. Its centroid is at `t = 0.14` at
 width 8; the declared lag grid starts at 0.25 and runs to 4.0, and the mass beyond
 `t = 2` is `6e-4`. So the projected process is nearly Markovian *in time* — but with a
 generator that is not `A`.
 
-And the memory **does not become more complicated as the state space grows**. From 14
-states to 1430 — a factor of 102 — the effective order goes 2, 3, 4, 4, 4 and then
-stops. The integrated weight roughly doubles and the decay time roughly doubles, but
-the pole count saturates. This is a clean negative for the "growing memory /
-predictive noncompression" branch of #588's table: on this object, projecting onto a
-6-dimensional observable dictionary does **not** export unbounded complexity into
-history.
+### Two things that stop the order column from being a discovery
+
+**First, `rank C` is 3, and that is arithmetic about the span, not physics.**
+`K(tau) = B exp(tau D) C`, so `rank K(tau) <= rank C` at every `tau`. Measured:
+
+```text
+width         4      5      6      7      8
+rank C        2      3      3      3      3
+zero columns  3      3      3      3      3
+```
+
+Three of the six columns of `C` vanish *identically*. The reason is structural: the
+declared seeds `[1, blocks, singletons, wrap]` span only three dimensions on this state
+space, so a rank-6 Krylov prefix is exactly three seed directions plus their three
+images — the resolved space contains its own first Krylov level entirely, `Q G`
+annihilates the seed directions, and only the frontier survives. The frontier is the
+rank. Any small leading Hankel order was going to happen for that reason alone, at any
+width, and reporting the order without this cap would have made it look like a property
+of the process.
+
+**Second, the two order notions disagree, and the reading depends on which is used.**
+
+```text
+width                          4      5      6      7      8      states
+effective order, 99.9% energy  2      3      4      4      4      14 -> 1430
+effective order, 99% energy    2      3      3      3      3
+numerical order, tol 1e-6      4      9     12     13     14
+```
+
+The *energy-effective* order saturates. The *numerical* order does not: it more than
+triples between widths 4 and 6, then adds one per width while the state space
+multiplies by 3.25 and then 3.33. The singular spectrum broadens accordingly — at width
+4 the third value is `3e-4`, at width 8 the eighth is `7e-4` — and the tail mass beyond
+`t = 2` rises monotonically, `0.0000, 0.0000, 0.0001, 0.0003, 0.0006`.
+
+So #588's table asks "does memory rank/tail grow with width" as if that were one
+question, and it is two. The honest answer is
+`BOUNDED_MEMORY_ORDER_IS_ACCURACY_DEPENDENT`:
+
+- to any accuracy target we have tested, **four poles suffice at every width**, and the
+  number needed does not grow;
+- the exact degree **does** grow, sublinearly and apparently flattening (12, 13, 14
+  over an 11-fold increase in state count), but it is not flat.
+
+An earlier draft of this note and the first #588 comment said the pole count saturates
+and the predictive-noncompression branch does not fire. That was one of the two
+readings stated as if it were both. It is corrected here, and widths 9 and 10 (4862 and
+16796 states) are what would separate saturation from slow growth — opened as a
+heavy-compute ticket rather than guessed at.
 
 ## Result 2 — for the declared dictionary, the entire residual is memory
 
@@ -220,13 +260,20 @@ Settles:
 
 - The declared dictionary's residual is memory, it is low-order, and it is short.
   A small state plus three or four poles is a genuine candidate description.
-- Memory complexity does not grow with width on this object. The predictive
-  noncompression branch does not fire here.
+- To a fixed accuracy target, the number of poles needed does not grow with width.
 - The held-out failure is jointly memory and unrepresented readout, ~40/43, stably
   across a factor of 100 in state count.
 - The memory description is not an artifact of the operator pencil.
+- `rank C = 3` uniformly, which is why the leading order is small and is *not* itself
+  evidence about the process.
 
-Does not settle, and is Phase B/C:
+Does **not** settle:
+
+- Whether the exact memory degree saturates or keeps growing. It goes 4, 9, 12, 13, 14
+  over widths 4-8; that is sublinear and looks like it is flattening, but two more
+  widths are needed to say so, and pure Python cannot reach them.
+
+Phase B/C:
 
 - Whether the 3-4 poles can be Markovianized by a few *common* auxiliary coordinates,
   or whether they are readout-specific. That is the difference between an operational

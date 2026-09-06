@@ -470,3 +470,35 @@ class DeclaredManifest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CouplingStructure(unittest.TestCase):
+    """The structural cap that keeps a small Hankel order from being a finding."""
+
+    def test_the_coupling_rank_is_the_krylov_frontier_not_the_span_rank(self) -> None:
+        """Stops us believing a small kernel order is a discovery.
+
+        ``rank K(tau) <= rank C`` at every ``tau``.  A rank-6 Krylov prefix over
+        a 3-dimensional seed span contains its own first level entirely, so
+        ``Q G`` annihilates the seed directions and only the 3 frontier
+        directions survive.  If that cap were not reported, "the leading order
+        saturates at 3-4 across a factor of 100 in state count" would read as a
+        property of the process instead of arithmetic about the span.
+        """
+
+        from scripts.p398_projected_memory import coupling_rank
+
+        for width in (5, 6, 7):
+            generator = Generator(width)
+            rows = generator.rows(generator.baseline_rates())
+            basis = frozen_span(generator, rows)
+            report = coupling_rank(basis, rows)
+            self.assertEqual(report["rank"], 3)
+            self.assertEqual(report["vanishing_columns"], 3)
+            kernels = memory_kernel(
+                basis, rows, generator.size,
+                generator.exit_rate(generator.baseline_rates()), (0.25, 1.0),
+            )
+            for block in kernels:
+                spectrum = singular_spectrum(block)
+                self.assertLess(spectrum[3] / spectrum[0], 1e-8)
