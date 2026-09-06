@@ -181,6 +181,29 @@ the noncyclic row loads the derivative channels enough to contaminate an `A8` re
 
 Blocking relation: **#583 (N=650) must not be interpreted before this lands.**
 
+**DONE, and negative** (`notes/p205-derivative-smith-loading-20260906.md`, commit
+`8659c066`). The `M` channel reproduces the published `analysis/score.json` exactly, so
+the pipeline is the published one; `D ≡ M/2` gives `rho` bit-identically, so the ratio
+machinery is scale-invariant; the frozen integer nulls are verified to be exactly the
+two-cyclic-row `cos4θ` interpolation, so `residual` really is the offset.
+
+The offset is consistent with zero in every channel (`max |delta_z| = 1.83`) — but the
+*denominator* is too: `|A4_z|` runs 0.06 to 2.18. So `rho = delta/A4` is unconstrained,
+and in **all ten** channel×size cells its 2σ interval reaches the pole `rho = ∓1.29584`
+where the quotient response annihilates N=650's fitted `A4` outright. A power failure,
+not a detection — and it holds in the published `M` channel too, because #205 bounded an
+offset and never an offset *relative to* the amplitude.
+
+Cost to fix by this route, assuming a zero true offset: `Sp` only (~3× the existing
+10M/node banded, ~26× clean); `Dp` needs 2.6e4–1.5e6×. #589's option 2 is therefore
+closed as unaffordable rather than refuted, the live options are its 3 and 4, and **#583
+stays blocked**.
+
+The failure exposed a design question nobody had asked, opened as **#595**: the channel
+spread in angular leverage is 9,000× and no production ever selected for it. That moves
+ahead of P3 in the queue — it is zero-sampling, it reuses the P2 context entirely, and it
+multiplies into #589's options 3/4, #583's scoring, and #581's still-unfrozen observable.
+
 ### P3 — #584: index or falsify the #582 remainder
 
 Candidate indices, all predeclared: Smith type, deck group, Gaussian cover word, parent
@@ -269,7 +292,8 @@ and those are not the same venue.
 ```text
 1. #588 Phase A          (this block)
 2. #588 Phase B + C      (next block; C includes the balanced adversary)
-3. #589/#591 rescore     (zero sampling; unblocks #583)
+3. #589/#591 rescore     (zero sampling; unblocks #583)   -- DONE, negative
+4. #595 channel leverage (zero sampling; re-prices #589's 3/4 and #581)
 4. #584 with the P1 warning attached
 5. #275 rescoped
 ```
