@@ -1,6 +1,6 @@
 # Project Status and Claim Ledger
 
-**Status date:** 2026-09-05
+**Status date:** 2026-09-06
 
 `main` is the shared research line. Claim strength follows evidence and chronology, not PR state. `docs/ROADMAP.md` ranks information gain; it is not a permission system.
 
@@ -34,6 +34,7 @@ power — is publication-time work and lives in `docs/PUBLICATION-CHECKLIST.md`.
 | Intrinsic quantile-center transfer obeys `N^-3/4` on N145->290 | C3 | frozen ratio observed `0.59584549` vs `2^-3/4=0.59460356`, `z=-1.033` |
 | Square/rectangular spin-4 ratio carries the area-normalized weight-4 shape | C3 negative | Prospectively falsified at N=290: ratio `1.880 +/- 0.177` excludes `11/4` at `4.9` sigma, area scaling `4` at `12.0`, and no-dependence `1` at `5.0`. Tests the fingerprint as constructed, not the module: the normalization assumption is a second conjunct (`docs/astra/Q2`) |
 | Weight-4 modular amplitude law `(1, 2.75, 10.99)` holds across aspect ratios | C3 negative | N=580 ladder `A4(4i)/A4(i) = 4.58` scored by Fieller contrast (the denominator is 3.6σ from zero, so the ratio z is not used). `no_modulus_dependence` (`1.00`) is excluded at `9.5` sigma; `bare_aspect_ratio` (`4.00`, z=+0.50), the weight-4 shape (`10.99`, z=−2.08) and plain area scaling (`16`, z=−2.56) all survive — **underpowered**, three survivors. Cross-rung covariance measured (`ρ=−0.1648`, #575 replay) and moves no verdict. `notes/aspect-ladder-n580-result-20260905.md` |
+| #582's Wasserstein remainder `r_N` is indexed by a pre-existing discrete label | C2 negative | Re-frozen five transitions reproduce #582 affine statistics bit-for-bit; exact permutation null over ≤30 relabellings is beaten by **no** label — lineage p=.133, multiplier/interpolation .300, prime parity/min-component .700, prime cos4-sign .600. The remainder is structured but unlabelled and not smooth curvature (Taylor stat 1.82e6/1.19e6 on 7 df, curvatures 43–80° from `r_N`, never dominant). `notes/type582-residual-20260906.md` |
 
 ## Exact semantics and controls
 
@@ -126,6 +127,7 @@ The general integer-period backend is production-ready. Exact Gaussian-cover ari
 4. **Local pivotal physics is real, but current N130/N170 readouts are nearly rank-one.** Change the readout/geometry rather than buying more of the same samples.
 5. **Primitive square-bond H4 is a separate `x≈4` sector.** Do not fold it into the thermal `x=21/4` story.
 6. **Norm-4 has exact deck-character structure.** Use it to sharpen, not delay, the existing production design.
+7. **The #582 dominant transferable direction is the robust finite object; its remainder is real but unlabelled.** The remainder after removing the consensus `g_N` is structured yet matches no pre-existing discrete label above its permutation null, and is not a smooth one-parameter-law curvature artifact. Resolve it with one crossed transition or a changed readout, not with another fitted rank or exponent.
 
 ## Explicit non-claims
 

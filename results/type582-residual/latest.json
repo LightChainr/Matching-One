@@ -1,0 +1,1089 @@
+{
+  "consensus_g": [
+    -0.2887126766006569,
+    -0.12066783122729056,
+    0.06921759100370817,
+    0.2385347464569182,
+    0.3780737808016512,
+    0.47827324271813404,
+    0.518589378735454,
+    0.444347665976014,
+    0.048264834818264817
+  ],
+  "degenerate_or_missing_labels": [
+    "Smith normal form / cyclic-noncyclic: degenerate for all eight sizes (every orientation is primitive with gcd=1, giving the cyclic Z x Z/N quotient; the noncyclic cases only appear at N=650/260/340)",
+    "deck-group type / Gaussian cover word: no per-size label exists in the tree for these eight sizes",
+    "primitive homology sector: available but one distinct value per orientation, i.e. too fine-grained to test with five transitions"
+  ],
+  "issue": 584,
+  "levels": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9
+  ],
+  "not_established": [
+    "that a label beating the permutation null here is a state or a fiber; #588 has shown a structured remainder can be context or memory",
+    "that the p50 lineage's absence of a second-difference curvature is innocuous; it limits the Taylor null to two of three lineages"
+  ],
+  "pairwise_remainder_angles_deg": [
+    [
+      0.0,
+      55.2366,
+      40.4355,
+      49.1583,
+      27.5052
+    ],
+    [
+      55.2366,
+      0.0,
+      47.1922,
+      10.2109,
+      39.4943
+    ],
+    [
+      40.4355,
+      47.1922,
+      0.0,
+      37.0509,
+      54.2069
+    ],
+    [
+      49.1583,
+      10.2109,
+      37.0509,
+      0.0,
+      38.9516
+    ],
+    [
+      27.5052,
+      39.4943,
+      54.2069,
+      38.9516,
+      0.0
+    ]
+  ],
+  "primary_weighting": "spin0",
+  "schema": "matching-one.type582-residual.v1",
+  "screen": [
+    {
+      "class_conditional_correction": [
+        {
+          "affine_statistic": 435746.10833512194,
+          "class": "gaussian_13",
+          "class_conditional_fraction_removed": 0.9895813097209136,
+          "class_conditional_statistic": 4539.903743060864,
+          "class_size": 2,
+          "consensus_g_fraction_removed": 0.9950351464543615,
+          "transition": "65->130"
+        },
+        {
+          "affine_statistic": 192537.3825442312,
+          "class": "gaussian_13",
+          "class_conditional_fraction_removed": 0.9874004446759717,
+          "class_conditional_statistic": 2425.8854033096427,
+          "class_size": 2,
+          "consensus_g_fraction_removed": 0.9986372139042614,
+          "transition": "130->325"
+        },
+        {
+          "affine_statistic": 292805.4466750862,
+          "class": "gaussian_17",
+          "class_conditional_fraction_removed": 0.9889001426606876,
+          "class_conditional_statistic": 3250.098686267106,
+          "class_size": 2,
+          "consensus_g_fraction_removed": 0.998647967044713,
+          "transition": "85->170"
+        },
+        {
+          "affine_statistic": 154876.18287209084,
+          "class": "gaussian_17",
+          "class_conditional_fraction_removed": 0.9877274984017893,
+          "class_conditional_statistic": 1900.7182018225024,
+          "class_size": 2,
+          "consensus_g_fraction_removed": 0.9946641617130197,
+          "transition": "170->425"
+        },
+        {
+          "affine_statistic": 112067.10056745633,
+          "class": "p50",
+          "class_conditional_fraction_removed": null,
+          "class_conditional_statistic": null,
+          "class_size": 1,
+          "consensus_g_fraction_removed": 0.9984176022942811,
+          "note": "singleton class, no co-class direction",
+          "transition": "145->290"
+        }
+      ],
+      "label": "lineage",
+      "leave_one_out": {
+        "correct": 3,
+        "per_transition": [
+          {
+            "assigned": "gaussian_17",
+            "correct": false,
+            "held_out": 0,
+            "mean_angle_deg": 13.598877376328431,
+            "true": "gaussian_13"
+          },
+          {
+            "assigned": "gaussian_13",
+            "correct": true,
+            "held_out": 1,
+            "mean_angle_deg": 15.001872484058104,
+            "true": "gaussian_13"
+          },
+          {
+            "assigned": "gaussian_17",
+            "correct": true,
+            "held_out": 2,
+            "mean_angle_deg": 12.91097740543874,
+            "true": "gaussian_17"
+          },
+          {
+            "assigned": "gaussian_17",
+            "correct": true,
+            "held_out": 3,
+            "mean_angle_deg": 12.91097772587019,
+            "true": "gaussian_17"
+          },
+          {
+            "assigned": "gaussian_17",
+            "correct": false,
+            "held_out": 4,
+            "mean_angle_deg": 19.107707817068565,
+            "true": "p50"
+          }
+        ],
+        "total": 5
+      },
+      "partition": {
+        "assignment": [
+          "gaussian_13",
+          "gaussian_13",
+          "gaussian_17",
+          "gaussian_17",
+          "p50"
+        ],
+        "class_sizes": {
+          "gaussian_13": 2,
+          "gaussian_17": 2,
+          "p50": 1
+        },
+        "classes": [
+          "gaussian_13",
+          "gaussian_17",
+          "p50"
+        ]
+      },
+      "permutation_null": {
+        "observed_separation_deg": 3.5445592416095124,
+        "p_value": 0.13333333333333333,
+        "relabellings": 30,
+        "relabellings_at_least_as_separated": 4
+      },
+      "within_between": {
+        "between_pairs": 8,
+        "mean_between_deg": 17.500984299041555,
+        "mean_within_deg": 13.956425057432043,
+        "separation_deg": 3.5445592416095124,
+        "within_pairs": 2
+      },
+      "within_between_unweighted": {
+        "between_pairs": 8,
+        "mean_between_deg": 38.394368063045135,
+        "mean_within_deg": 46.14374591443493,
+        "separation_deg": -7.749377851389795,
+        "within_pairs": 2
+      }
+    },
+    {
+      "class_conditional_correction": [
+        {
+          "affine_statistic": 435746.10833512194,
+          "class": "m=2",
+          "class_conditional_fraction_removed": 0.9935841164395194,
+          "class_conditional_statistic": 2795.6962930107074,
+          "class_size": 3,
+          "consensus_g_fraction_removed": 0.9950351464543615,
+          "transition": "65->130"
+        },
+        {
+          "affine_statistic": 192537.3825442312,
+          "class": "m=2.5",
+          "class_conditional_fraction_removed": 0.9984241856878469,
+          "class_conditional_statistic": 303.4031630377107,
+          "class_size": 2,
+          "consensus_g_fraction_removed": 0.9986372139042614,
+          "transition": "130->325"
+        },
+        {
+          "affine_statistic": 292805.4466750862,
+          "class": "m=2",
+          "class_conditional_fraction_removed": 0.9996153211007142,
+          "class_conditional_statistic": 112.63607693188153,
+          "class_size": 3,
+          "consensus_g_fraction_removed": 0.998647967044713,
+          "transition": "85->170"
+        },
+        {
+          "affine_statistic": 154876.18287209084,
+          "class": "m=2.5",
+          "class_conditional_fraction_removed": 0.9985786797298625,
+          "class_conditional_statistic": 220.12865807763006,
+          "class_size": 2,
+          "consensus_g_fraction_removed": 0.9946641617130197,
+          "transition": "170->425"
+        },
+        {
+          "affine_statistic": 112067.10056745633,
+          "class": "m=2",
+          "class_conditional_fraction_removed": 0.989659631765685,
+          "class_conditional_statistic": 1158.8150868195098,
+          "class_size": 3,
+          "consensus_g_fraction_removed": 0.9984176022942811,
+          "transition": "145->290"
+        }
+      ],
+      "label": "multiplier",
+      "leave_one_out": {
+        "correct": 2,
+        "per_transition": [
+          {
+            "assigned": "m=2.5",
+            "correct": false,
+            "held_out": 0,
+            "mean_angle_deg": 13.69224998580209,
+            "true": "m=2"
+          },
+          {
+            "assigned": "m=2.5",
+            "correct": true,
+            "held_out": 1,
+            "mean_angle_deg": 15.803367624456925,
+            "true": "m=2.5"
+          },
+          {
+            "assigned": "m=2.5",
+            "correct": false,
+            "held_out": 2,
+            "mean_angle_deg": 15.98291951195595,
+            "true": "m=2"
+          },
+          {
+            "assigned": "m=2",
+            "correct": false,
+            "held_out": 3,
+            "mean_angle_deg": 15.037289363676116,
+            "true": "m=2.5"
+          },
+          {
+            "assigned": "m=2",
+            "correct": true,
+            "held_out": 4,
+            "mean_angle_deg": 16.450408263460375,
+            "true": "m=2"
+          }
+        ],
+        "total": 5
+      },
+      "partition": {
+        "assignment": [
+          "m=2",
+          "m=2.5",
+          "m=2",
+          "m=2.5",
+          "m=2"
+        ],
+        "class_sizes": {
+          "m=2": 3,
+          "m=2.5": 2
+        },
+        "classes": [
+          "m=2",
+          "m=2.5"
+        ]
+      },
+      "permutation_null": {
+        "observed_separation_deg": 1.5204075774804107,
+        "p_value": 0.3,
+        "relabellings": 10,
+        "relabellings_at_least_as_separated": 3
+      },
+      "within_between": {
+        "between_pairs": 6,
+        "mean_between_deg": 17.400235481711817,
+        "mean_within_deg": 15.879827904231407,
+        "separation_deg": 1.5204075774804107,
+        "within_pairs": 4
+      },
+      "within_between_unweighted": {
+        "between_pairs": 6,
+        "mean_between_deg": 44.51399422193981,
+        "mean_within_deg": 33.08961775039802,
+        "separation_deg": 11.424376471541791,
+        "within_pairs": 4
+      }
+    },
+    {
+      "class_conditional_correction": [
+        {
+          "affine_statistic": 435746.10833512194,
+          "class": "odd",
+          "class_conditional_fraction_removed": 0.9887729351858882,
+          "class_conditional_statistic": 4892.149800775403,
+          "class_size": 3,
+          "consensus_g_fraction_removed": 0.9950351464543615,
+          "transition": "65->130"
+        },
+        {
+          "affine_statistic": 192537.3825442312,
+          "class": "odd",
+          "class_conditional_fraction_removed": 0.9966141133172438,
+          "class_conditional_statistic": 651.9097594892471,
+          "class_size": 3,
+          "consensus_g_fraction_removed": 0.9986372139042614,
+          "transition": "130->325"
+        },
+        {
+          "affine_statistic": 292805.4466750862,
+          "class": "even",
+          "class_conditional_fraction_removed": 0.9889001426606876,
+          "class_conditional_statistic": 3250.098686267106,
+          "class_size": 2,
+          "consensus_g_fraction_removed": 0.998647967044713,
+          "transition": "85->170"
+        },
+        {
+          "affine_statistic": 154876.18287209084,
+          "class": "even",
+          "class_conditional_fraction_removed": 0.9877274984017893,
+          "class_conditional_statistic": 1900.7182018225024,
+          "class_size": 2,
+          "consensus_g_fraction_removed": 0.9946641617130197,
+          "transition": "170->425"
+        },
+        {
+          "affine_statistic": 112067.10056745633,
+          "class": "odd",
+          "class_conditional_fraction_removed": 0.9956124950382146,
+          "class_conditional_statistic": 491.69495979261507,
+          "class_size": 3,
+          "consensus_g_fraction_removed": 0.9984176022942811,
+          "transition": "145->290"
+        }
+      ],
+      "label": "prime_dominant_parity",
+      "leave_one_out": {
+        "correct": 2,
+        "per_transition": [
+          {
+            "assigned": "even",
+            "correct": false,
+            "held_out": 0,
+            "mean_angle_deg": 13.598877376328431,
+            "true": "odd"
+          },
+          {
+            "assigned": "even",
+            "correct": false,
+            "held_out": 1,
+            "mean_angle_deg": 17.429114597358854,
+            "true": "odd"
+          },
+          {
+            "assigned": "even",
+            "correct": true,
+            "held_out": 2,
+            "mean_angle_deg": 12.91097740543874,
+            "true": "even"
+          },
+          {
+            "assigned": "even",
+            "correct": true,
+            "held_out": 3,
+            "mean_angle_deg": 12.91097772587019,
+            "true": "even"
+          },
+          {
+            "assigned": "even",
+            "correct": false,
+            "held_out": 4,
+            "mean_angle_deg": 19.107707817068565,
+            "true": "odd"
+          }
+        ],
+        "total": 5
+      },
+      "partition": {
+        "assignment": [
+          "odd",
+          "odd",
+          "even",
+          "even",
+          "odd"
+        ],
+        "class_sizes": {
+          "even": 2,
+          "odd": 3
+        },
+        "classes": [
+          "even",
+          "odd"
+        ]
+      },
+      "permutation_null": {
+        "observed_separation_deg": -0.20043127064907296,
+        "p_value": 0.7,
+        "relabellings": 10,
+        "relabellings_at_least_as_separated": 7
+      },
+      "within_between": {
+        "between_pairs": 6,
+        "mean_between_deg": 16.711899942460025,
+        "mean_within_deg": 16.9123312131091,
+        "separation_deg": -0.20043127064907296,
+        "within_pairs": 4
+      },
+      "within_between_unweighted": {
+        "between_pairs": 6,
+        "mean_between_deg": 40.02589577527033,
+        "mean_within_deg": 39.82176542040224,
+        "separation_deg": 0.2041303548680915,
+        "within_pairs": 4
+      }
+    },
+    {
+      "class_conditional_correction": [
+        {
+          "affine_statistic": 435746.10833512194,
+          "class": "min=2",
+          "class_conditional_fraction_removed": 0.9887729351858882,
+          "class_conditional_statistic": 4892.149800775403,
+          "class_size": 3,
+          "consensus_g_fraction_removed": 0.9950351464543615,
+          "transition": "65->130"
+        },
+        {
+          "affine_statistic": 192537.3825442312,
+          "class": "min=2",
+          "class_conditional_fraction_removed": 0.9966141133172438,
+          "class_conditional_statistic": 651.9097594892471,
+          "class_size": 3,
+          "consensus_g_fraction_removed": 0.9986372139042614,
+          "transition": "130->325"
+        },
+        {
+          "affine_statistic": 292805.4466750862,
+          "class": "min=1",
+          "class_conditional_fraction_removed": 0.9889001426606876,
+          "class_conditional_statistic": 3250.098686267106,
+          "class_size": 2,
+          "consensus_g_fraction_removed": 0.998647967044713,
+          "transition": "85->170"
+        },
+        {
+          "affine_statistic": 154876.18287209084,
+          "class": "min=1",
+          "class_conditional_fraction_removed": 0.9877274984017893,
+          "class_conditional_statistic": 1900.7182018225024,
+          "class_size": 2,
+          "consensus_g_fraction_removed": 0.9946641617130197,
+          "transition": "170->425"
+        },
+        {
+          "affine_statistic": 112067.10056745633,
+          "class": "min=2",
+          "class_conditional_fraction_removed": 0.9956124950382146,
+          "class_conditional_statistic": 491.69495979261507,
+          "class_size": 3,
+          "consensus_g_fraction_removed": 0.9984176022942811,
+          "transition": "145->290"
+        }
+      ],
+      "label": "prime_min_component",
+      "leave_one_out": {
+        "correct": 2,
+        "per_transition": [
+          {
+            "assigned": "min=1",
+            "correct": false,
+            "held_out": 0,
+            "mean_angle_deg": 13.598877376328431,
+            "true": "min=2"
+          },
+          {
+            "assigned": "min=1",
+            "correct": false,
+            "held_out": 1,
+            "mean_angle_deg": 17.429114597358854,
+            "true": "min=2"
+          },
+          {
+            "assigned": "min=1",
+            "correct": true,
+            "held_out": 2,
+            "mean_angle_deg": 12.91097740543874,
+            "true": "min=1"
+          },
+          {
+            "assigned": "min=1",
+            "correct": true,
+            "held_out": 3,
+            "mean_angle_deg": 12.91097772587019,
+            "true": "min=1"
+          },
+          {
+            "assigned": "min=1",
+            "correct": false,
+            "held_out": 4,
+            "mean_angle_deg": 19.107707817068565,
+            "true": "min=2"
+          }
+        ],
+        "total": 5
+      },
+      "partition": {
+        "assignment": [
+          "min=2",
+          "min=2",
+          "min=1",
+          "min=1",
+          "min=2"
+        ],
+        "class_sizes": {
+          "min=1": 2,
+          "min=2": 3
+        },
+        "classes": [
+          "min=1",
+          "min=2"
+        ]
+      },
+      "permutation_null": {
+        "observed_separation_deg": -0.20043127064907296,
+        "p_value": 0.7,
+        "relabellings": 10,
+        "relabellings_at_least_as_separated": 7
+      },
+      "within_between": {
+        "between_pairs": 6,
+        "mean_between_deg": 16.711899942460025,
+        "mean_within_deg": 16.9123312131091,
+        "separation_deg": -0.20043127064907296,
+        "within_pairs": 4
+      },
+      "within_between_unweighted": {
+        "between_pairs": 6,
+        "mean_between_deg": 40.02589577527033,
+        "mean_within_deg": 39.82176542040224,
+        "separation_deg": 0.2041303548680915,
+        "within_pairs": 4
+      }
+    },
+    {
+      "class_conditional_correction": [
+        {
+          "affine_statistic": 435746.10833512194,
+          "class": "negative",
+          "class_conditional_fraction_removed": 0.9895813097209136,
+          "class_conditional_statistic": 4539.903743060864,
+          "class_size": 2,
+          "consensus_g_fraction_removed": 0.9950351464543615,
+          "transition": "65->130"
+        },
+        {
+          "affine_statistic": 192537.3825442312,
+          "class": "negative",
+          "class_conditional_fraction_removed": 0.9874004446759717,
+          "class_conditional_statistic": 2425.8854033096427,
+          "class_size": 2,
+          "consensus_g_fraction_removed": 0.9986372139042614,
+          "transition": "130->325"
+        },
+        {
+          "affine_statistic": 292805.4466750862,
+          "class": "positive",
+          "class_conditional_fraction_removed": 0.9926222026411372,
+          "class_conditional_statistic": 2160.2592511400994,
+          "class_size": 3,
+          "consensus_g_fraction_removed": 0.998647967044713,
+          "transition": "85->170"
+        },
+        {
+          "affine_statistic": 154876.18287209084,
+          "class": "positive",
+          "class_conditional_fraction_removed": 0.9958343202804498,
+          "class_conditional_statistic": 645.1645740316155,
+          "class_size": 3,
+          "consensus_g_fraction_removed": 0.9946641617130197,
+          "transition": "170->425"
+        },
+        {
+          "affine_statistic": 112067.10056745633,
+          "class": "positive",
+          "class_conditional_fraction_removed": 0.9992020731310997,
+          "class_conditional_statistic": 89.42135066253518,
+          "class_size": 3,
+          "consensus_g_fraction_removed": 0.9984176022942811,
+          "transition": "145->290"
+        }
+      ],
+      "label": "prime_cos4_sign",
+      "leave_one_out": {
+        "correct": 3,
+        "per_transition": [
+          {
+            "assigned": "positive",
+            "correct": false,
+            "held_out": 0,
+            "mean_angle_deg": 13.900472831557323,
+            "true": "negative"
+          },
+          {
+            "assigned": "negative",
+            "correct": true,
+            "held_out": 1,
+            "mean_angle_deg": 15.001872484058104,
+            "true": "negative"
+          },
+          {
+            "assigned": "positive",
+            "correct": true,
+            "held_out": 2,
+            "mean_angle_deg": 15.654065082707152,
+            "true": "positive"
+          },
+          {
+            "assigned": "negative",
+            "correct": false,
+            "held_out": 3,
+            "mean_angle_deg": 14.09299785005912,
+            "true": "positive"
+          },
+          {
+            "assigned": "positive",
+            "correct": true,
+            "held_out": 4,
+            "mean_angle_deg": 19.107707817068565,
+            "true": "positive"
+          }
+        ],
+        "total": 5
+      },
+      "partition": {
+        "assignment": [
+          "negative",
+          "negative",
+          "positive",
+          "positive",
+          "positive"
+        ],
+        "class_sizes": {
+          "negative": 2,
+          "positive": 3
+        },
+        "classes": [
+          "negative",
+          "positive"
+        ]
+      },
+      "permutation_null": {
+        "observed_separation_deg": 0.4333433252620651,
+        "p_value": 0.6,
+        "relabellings": 10,
+        "relabellings_at_least_as_separated": 6
+      },
+      "within_between": {
+        "between_pairs": 6,
+        "mean_between_deg": 16.96540978082448,
+        "mean_within_deg": 16.532066455562415,
+        "separation_deg": 0.4333433252620651,
+        "within_pairs": 4
+      },
+      "within_between_unweighted": {
+        "between_pairs": 6,
+        "mean_between_deg": 35.666069143307,
+        "mean_within_deg": 46.36150536834724,
+        "separation_deg": -10.69543622504024,
+        "within_pairs": 4
+      }
+    },
+    {
+      "class_conditional_correction": [
+        {
+          "affine_statistic": 435746.10833512194,
+          "class": "interpolation",
+          "class_conditional_fraction_removed": 0.9935841164395194,
+          "class_conditional_statistic": 2795.6962930107074,
+          "class_size": 3,
+          "consensus_g_fraction_removed": 0.9950351464543615,
+          "transition": "65->130"
+        },
+        {
+          "affine_statistic": 192537.3825442312,
+          "class": "extrapolation",
+          "class_conditional_fraction_removed": 0.9984241856878469,
+          "class_conditional_statistic": 303.4031630377107,
+          "class_size": 2,
+          "consensus_g_fraction_removed": 0.9986372139042614,
+          "transition": "130->325"
+        },
+        {
+          "affine_statistic": 292805.4466750862,
+          "class": "interpolation",
+          "class_conditional_fraction_removed": 0.9996153211007142,
+          "class_conditional_statistic": 112.63607693188153,
+          "class_size": 3,
+          "consensus_g_fraction_removed": 0.998647967044713,
+          "transition": "85->170"
+        },
+        {
+          "affine_statistic": 154876.18287209084,
+          "class": "extrapolation",
+          "class_conditional_fraction_removed": 0.9985786797298625,
+          "class_conditional_statistic": 220.12865807763006,
+          "class_size": 2,
+          "consensus_g_fraction_removed": 0.9946641617130197,
+          "transition": "170->425"
+        },
+        {
+          "affine_statistic": 112067.10056745633,
+          "class": "interpolation",
+          "class_conditional_fraction_removed": 0.989659631765685,
+          "class_conditional_statistic": 1158.8150868195098,
+          "class_size": 3,
+          "consensus_g_fraction_removed": 0.9984176022942811,
+          "transition": "145->290"
+        }
+      ],
+      "label": "target_interpolation",
+      "leave_one_out": {
+        "correct": 2,
+        "per_transition": [
+          {
+            "assigned": "extrapolation",
+            "correct": false,
+            "held_out": 0,
+            "mean_angle_deg": 13.69224998580209,
+            "true": "interpolation"
+          },
+          {
+            "assigned": "extrapolation",
+            "correct": true,
+            "held_out": 1,
+            "mean_angle_deg": 15.803367624456925,
+            "true": "extrapolation"
+          },
+          {
+            "assigned": "extrapolation",
+            "correct": false,
+            "held_out": 2,
+            "mean_angle_deg": 15.98291951195595,
+            "true": "interpolation"
+          },
+          {
+            "assigned": "interpolation",
+            "correct": false,
+            "held_out": 3,
+            "mean_angle_deg": 15.037289363676116,
+            "true": "extrapolation"
+          },
+          {
+            "assigned": "interpolation",
+            "correct": true,
+            "held_out": 4,
+            "mean_angle_deg": 16.450408263460375,
+            "true": "interpolation"
+          }
+        ],
+        "total": 5
+      },
+      "partition": {
+        "assignment": [
+          "interpolation",
+          "extrapolation",
+          "interpolation",
+          "extrapolation",
+          "interpolation"
+        ],
+        "class_sizes": {
+          "extrapolation": 2,
+          "interpolation": 3
+        },
+        "classes": [
+          "extrapolation",
+          "interpolation"
+        ]
+      },
+      "permutation_null": {
+        "observed_separation_deg": 1.5204075774804107,
+        "p_value": 0.3,
+        "relabellings": 10,
+        "relabellings_at_least_as_separated": 3
+      },
+      "within_between": {
+        "between_pairs": 6,
+        "mean_between_deg": 17.400235481711817,
+        "mean_within_deg": 15.879827904231407,
+        "separation_deg": 1.5204075774804107,
+        "within_pairs": 4
+      },
+      "within_between_unweighted": {
+        "between_pairs": 6,
+        "mean_between_deg": 44.51399422193981,
+        "mean_within_deg": 33.08961775039802,
+        "separation_deg": 11.424376471541791,
+        "within_pairs": 4
+      }
+    }
+  ],
+  "taylor_curvature": [
+    {
+      "computable": true,
+      "curvature_degrees_of_freedom": 7,
+      "curvature_norm": 0.0015888348492670847,
+      "curvature_shape": [
+        -0.0009263828781150927,
+        -0.0007499863495103488,
+        -0.00040709836222799743,
+        -6.4092795880627e-05,
+        0.00023821328341751773,
+        0.00047153826147331704,
+        0.0005897943331826042,
+        0.0004797068879645802,
+        -0.0002771723284737803
+      ],
+      "curvature_statistic": 1816254.197535005,
+      "lineage": "gaussian_13",
+      "sizes": [
+        65,
+        130,
+        325
+      ],
+      "step_logs": [
+        0.6931471805599453,
+        0.9162907318741551
+      ]
+    },
+    {
+      "computable": true,
+      "curvature_degrees_of_freedom": 7,
+      "curvature_norm": 0.0027287811445907938,
+      "curvature_shape": [
+        0.00043251766927176506,
+        0.000506637219656627,
+        0.000714097680112138,
+        0.0009237817660691879,
+        0.0011019924566942063,
+        0.0012246412372068204,
+        0.0012529605362595767,
+        0.0010930310684935645,
+        0.0004005308026140634
+      ],
+      "curvature_statistic": 1190225.5364772226,
+      "lineage": "gaussian_17",
+      "sizes": [
+        85,
+        170,
+        425
+      ],
+      "step_logs": [
+        0.6931471805599453,
+        0.9162907318741551
+      ]
+    },
+    {
+      "computable": false,
+      "lineage": "p50",
+      "reason": "two sizes give one step, not a second difference",
+      "sizes": [
+        145,
+        290
+      ]
+    }
+  ],
+  "taylor_curvature_alignment": [
+    {
+      "angle_to_g_deg": 44.37225087458526,
+      "computable": true,
+      "lineage": "gaussian_13",
+      "remainder_angles_deg": [
+        {
+          "angle_to_curvature_deg": 79.36423894823109,
+          "transition": "65->130"
+        },
+        {
+          "angle_to_curvature_deg": 79.84286397952063,
+          "transition": "130->325"
+        }
+      ]
+    },
+    {
+      "angle_to_g_deg": 34.793578925950186,
+      "computable": true,
+      "lineage": "gaussian_17",
+      "remainder_angles_deg": [
+        {
+          "angle_to_curvature_deg": 73.36330426108844,
+          "transition": "85->170"
+        },
+        {
+          "angle_to_curvature_deg": 43.36766378989656,
+          "transition": "170->425"
+        }
+      ]
+    },
+    {
+      "computable": false,
+      "lineage": "p50"
+    }
+  ],
+  "transitions": [
+    {
+      "affine_degrees_of_freedom": 7,
+      "affine_statistic": 435746.10833512194,
+      "base": 65,
+      "g_amplitude": -0.0021840521127264637,
+      "labels": {
+        "gaussian_prime": [
+          3,
+          2
+        ],
+        "lineage": "gaussian_13",
+        "multiplier": 2.0,
+        "prime_cos4": -0.7041420118343196,
+        "prime_cos4_sign": "negative",
+        "prime_dominant_parity": "odd",
+        "prime_min_component": 2,
+        "prime_norm": 13,
+        "target_interpolation": true,
+        "transition": "65->130"
+      },
+      "lineage": "gaussian_13",
+      "multiplier": 2.0,
+      "remainder_degrees_of_freedom_after_g": 6,
+      "remainder_statistic_after_g": 2163.415610965779,
+      "residual_norm": 0.001780967288408243,
+      "target": 130,
+      "transition": "65->130"
+    },
+    {
+      "affine_degrees_of_freedom": 7,
+      "affine_statistic": 192537.3825442312,
+      "base": 130,
+      "g_amplitude": -0.0009990705637047735,
+      "labels": {
+        "gaussian_prime": [
+          3,
+          2
+        ],
+        "lineage": "gaussian_13",
+        "multiplier": 2.5,
+        "prime_cos4": -0.7041420118343196,
+        "prime_cos4_sign": "negative",
+        "prime_dominant_parity": "odd",
+        "prime_min_component": 2,
+        "prime_norm": 13,
+        "target_interpolation": false,
+        "transition": "130->325"
+      },
+      "lineage": "gaussian_13",
+      "multiplier": 2.5,
+      "remainder_degrees_of_freedom_after_g": 6,
+      "remainder_statistic_after_g": 262.38726784118063,
+      "residual_norm": 0.0010294738596160512,
+      "target": 325,
+      "transition": "130->325"
+    },
+    {
+      "affine_degrees_of_freedom": 7,
+      "affine_statistic": 292805.4466750862,
+      "base": 85,
+      "g_amplitude": -0.0017098301794851712,
+      "labels": {
+        "gaussian_prime": [
+          4,
+          1
+        ],
+        "lineage": "gaussian_17",
+        "multiplier": 2.0,
+        "prime_cos4": 0.5570934256055363,
+        "prime_cos4_sign": "positive",
+        "prime_dominant_parity": "even",
+        "prime_min_component": 1,
+        "prime_norm": 17,
+        "target_interpolation": true,
+        "transition": "85->170"
+      },
+      "lineage": "gaussian_17",
+      "multiplier": 2.0,
+      "remainder_degrees_of_freedom_after_g": 6,
+      "remainder_statistic_after_g": 395.8826133922446,
+      "residual_norm": 0.002366835518541194,
+      "target": 170,
+      "transition": "85->170"
+    },
+    {
+      "affine_degrees_of_freedom": 7,
+      "affine_statistic": 154876.18287209084,
+      "base": 170,
+      "g_amplitude": -0.0007816922794499794,
+      "labels": {
+        "gaussian_prime": [
+          4,
+          1
+        ],
+        "lineage": "gaussian_17",
+        "multiplier": 2.5,
+        "prime_cos4": 0.5570934256055363,
+        "prime_cos4_sign": "positive",
+        "prime_dominant_parity": "even",
+        "prime_min_component": 1,
+        "prime_norm": 17,
+        "target_interpolation": false,
+        "transition": "170->425"
+      },
+      "lineage": "gaussian_17",
+      "multiplier": 2.5,
+      "remainder_degrees_of_freedom_after_g": 6,
+      "remainder_statistic_after_g": 826.3942663102574,
+      "residual_norm": 0.00128131921428499,
+      "target": 425,
+      "transition": "170->425"
+    },
+    {
+      "affine_degrees_of_freedom": 7,
+      "affine_statistic": 112067.10056745633,
+      "base": 145,
+      "g_amplitude": -0.0010459771782841544,
+      "labels": {
+        "gaussian_prime": [
+          5,
+          2
+        ],
+        "lineage": "p50",
+        "multiplier": 2.0,
+        "prime_cos4": 0.04875148632580262,
+        "prime_cos4_sign": "positive",
+        "prime_dominant_parity": "odd",
+        "prime_min_component": 2,
+        "prime_norm": 29,
+        "target_interpolation": true,
+        "transition": "145->290"
+      },
+      "lineage": "p50",
+      "multiplier": 2.0,
+      "remainder_degrees_of_freedom_after_g": 6,
+      "remainder_statistic_after_g": 177.3347228245163,
+      "residual_norm": 0.0009347411289366476,
+      "target": 290,
+      "transition": "145->290"
+    }
+  ]
+}

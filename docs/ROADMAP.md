@@ -312,6 +312,37 @@ is a symmetry and the surviving descriptions are invariant. The general statemen
 `C2` case of a character selection rule and is the same shape as #244's deck rule — an
 analogy in representation theory, not an identification of the two systems.
 
+**#584 (Gate 3) is complete — no pre-existing discrete label indexes #582's remainder**
+(`notes/type582-residual-20260906.md`, `results/type582-residual/latest.json`). Re-freezing
+the five #582 transitions reproduces the affine statistics bit-for-bit (`435 746, 192 537,
+292 805, 154 876, 112 067` on 7 df) and the frozen consensus direction `g_N` carrying
+99.5–99.9 % of each transition's `chi^2`. Against an **exact** permutation null over every
+class-consistent relabelling (≤30 for five transitions), **no label beats the null**:
+lineage p=.133 (closest, and only the amplitude effect #582 already saw), multiplier and
+target-interpolation p=.300, prime dominant-parity and min-component p=.700, prime
+cos4-sign p=.600. The one genuinely new arithmetic label — the parent Gaussian prime's
+**dominant-component parity** (13=3+2i and 29=5+2i odd, 17=4+i even), which coarsens
+lineage 3→2 and could have matched #582's `{65,145}` vs `{85,170}` split — does not
+survive. Smith/cyclic is degenerate on these sizes (all primitive), deck/scale-word labels
+are missing, and primitive homology is too fine (16 values over 5 transitions).
+
+The remainder after removing `g_N` is a different, weaker object from #582's clusters: its
+tight pair is now `{130→325, 170→425}` — the two `m=2.5` transitions, 10.2° — not the
+`{85→170, 170→425}` lineage pair, so #582's apparent cluster structure was largely the
+dominant direction's amplitude varying across lineages. A Taylor second-difference
+curvature null is strongly resolved (stat 1.82e6 / 1.19e6 on 7 df) but does **not** unify
+the remainder: the two lineages' curvatures are 78.5° apart and each sits 43–80° from the
+transitions' own `r_N` (4–53 % shared variance, never dominant). The remainder is therefore
+neither noise nor a smooth one-parameter-law curvature artifact.
+
+**Verdict: "downgrade the fiber."** Keep the dominant transferable #582 direction as the
+robust finite object; do not fit a free third direction or exponent to five residuals;
+resolve the remainder with one strategically crossed transition or a changed readout, not
+with another rank. **#584 step 4 (couple base/fiber to #581's typed channels) is
+deferred**: the duality-even Betti / ambient-homology tangents are exact only on the
+square-bond torus, and the five #582 transitions are square-site with no canonical lift —
+the coupling needs a square-site decomposition that is not built yet.
+
 ## Completed high-information blocks
 
 - **#50 N145->290 full curve:** complete. Corrected slope/root structure survives; a single three-level multiplier shape does not.
