@@ -229,6 +229,40 @@ gives #581 an independent bulk-versus-topology datum from an exactly solvable pr
 Not opened by this: any square-site application, which needs a declared intervention with
 common observables before and after and a supplied map between microscopic state spaces.
 
+**#598 is complete, and it revises #580's headline** (`notes/p398-reflection-parity-20260906.md`).
+The exact positive quotient was never a fragile emergent state. It **is** the orbit
+partition of one reflection — checked as the same partition, not merely the same block
+count, by exact refinement at every width 4-8 (`10, 26, 76, 232, 750` = R-orbits exactly).
+The reflection is identified by the task, not assumed: seven of the eight declared
+readouts are fully dihedral-invariant and `wrap` fixes the remaining freedom, so
+`R: i -> (w-1) - i` is the unique reflection preserving `D0`. The orbit-count formula
+`[Catalan(w) + C(w,floor(w/2))]/2` matches all five widths but identifies nothing on its
+own — every reflection has the same fixed-point count, and that caveat is part of the
+result.
+
+The collapse under a localized tilt then needs no explanation, but the *survival of the
+task* does, and parity supplies it exactly. `H_single` splits into `H_even + H_odd` with
+`||H_odd||/||H_single|| = 0.56` — the odd part is over half the perturbation — yet for
+`R`-even sources and readouts the first-order integrand
+`mu^T e^{(t-s)G} H_odd e^{sG} f` vanishes **pointwise**, to `6.6e-15` over 288 declared
+pairs at width 4 and `5.5e-16` over 288 at width 8. The consequence checks out on a
+declared epsilon ladder: log-log slopes `2.0006 -> 2.0010` for the odd direction against
+`0.980 -> 0.983` for the even one, the latter being the control that a first-order effect
+is visible at all. At `eta = 1/4`, width 8, the odd direction moves an invariant task 26x
+less than the even one.
+
+The test is falsifiable and fires: `halves_linked` is not `R`-even at odd widths, so the
+rule *requires* a nonzero first-order response there, and one appears at `0.292` (w=5)
+and `0.107` (w=7). Demanding the lumping carry all eight readouts at w=5 collapses it to
+the identity, as it must.
+
+**Action:** #593 changes character — it is no longer "two more rows" but a falsification
+of a closed form declared in advance, `r_positive(9) = 2494` and `r_positive(10) = 8524`.
+And #594's Q1 no longer needs the codimension conjecture in its body: the closed condition
+is a symmetry and the surviving descriptions are invariant. The general statement is the
+`C2` case of a character selection rule and is the same shape as #244's deck rule — an
+analogy in representation theory, not an identification of the two systems.
+
 ## Completed high-information blocks
 
 - **#50 N145->290 full curve:** complete. Corrected slope/root structure survives; a single three-level multiplier shape does not.

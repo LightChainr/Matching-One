@@ -1,0 +1,946 @@
+{
+  "schema": "matching-one.p398-reflection-parity.v1",
+  "issue": 598,
+  "status": "exact symmetry/parity computation; no sampling, no new width, no fit",
+  "widths": [
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "declared": {
+    "dictionary_D0": [
+      "blocks",
+      "singletons",
+      "wrap"
+    ],
+    "held_out_readouts": [
+      "max_block",
+      "linked_pairs",
+      "halves_linked",
+      "covering_depth",
+      "boundary_span"
+    ],
+    "lags": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "split_fractions": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "epsilons": [
+      0.0625,
+      0.125,
+      0.25
+    ],
+    "sector_tolerance": 1e-10
+  },
+  "by_width": [
+    {
+      "width": 4,
+      "states": 14,
+      "task_compatible_reflection": "i -> 3 - i",
+      "reflection_survey": {
+        "all_reflections_have_the_same_fixed_count": true,
+        "central_binomial": 6,
+        "fixed_count_equals_central_binomial": true,
+        "reflections_preserving_D0": [
+          3
+        ],
+        "reflections_preserving_all_readouts": [
+          3
+        ],
+        "task_compatible_k": 3
+      },
+      "per_reflection_fixed_states": {
+        "0": 6,
+        "1": 6,
+        "2": 6,
+        "3": 6
+      },
+      "orbit_count": {
+        "catalan": 14,
+        "central_binomial": 6,
+        "r_reflect_formula": 10,
+        "orbits_counted": 10,
+        "formula_matches_count": true,
+        "reported_r_positive": 10,
+        "matches_reported_r_positive": true,
+        "caveat": "Every reflection gives this same orbit count, so agreement with r_positive is necessary and not identifying.  What names R is the declared dictionary, not this number.  Agreement here also does not show that the coarsest admissible lumping *is* the orbit partition -- only that the two have the same cardinality."
+      },
+      "lumping": {
+        "D0": {
+          "initial_blocks": 8,
+          "coarsest_blocks": 10,
+          "orbit_blocks": 10,
+          "orbit_partition_is_admissible": true,
+          "coarsest_equals_orbit_partition": true
+        },
+        "all_readouts": {
+          "initial_blocks": 10,
+          "coarsest_blocks": 10,
+          "orbit_blocks": 10,
+          "orbit_partition_is_admissible": true,
+          "coarsest_equals_orbit_partition": true
+        },
+        "baseline_is_pencil_sum": true
+      },
+      "equivariance": {
+        "R_J_R_equals_J": true,
+        "R_D_R_equals_D": true,
+        "R_G0_R_equals_G0": true,
+        "all_moves_map_as_predicted": true,
+        "reflection_is_state_involution": true
+      },
+      "parity_split": {
+        "mirror_partner_point": 2,
+        "mirrored_single_is_the_partner_join": true,
+        "R_Heven_R_equals_plus_Heven": true,
+        "R_Hodd_R_equals_minus_Hodd": true,
+        "even_plus_odd_is_H_single": true,
+        "norm_H_single": 4.242640687119285,
+        "norm_H_even": 3.5355339059327378,
+        "norm_H_odd": 2.345207879911715,
+        "odd_share_of_norm": 0.5527707983925667
+      },
+      "selection_rule": {
+        "readout_even_defect": {
+          "blocks": 0.0,
+          "singletons": 0.0,
+          "wrap": 0.0,
+          "max_block": 0.0,
+          "linked_pairs": 0.0,
+          "halves_linked": 0.0,
+          "covering_depth": 0.0,
+          "boundary_span": 0.0
+        },
+        "source_even_defect": {
+          "delta_all_singletons": 0.0,
+          "delta_single_block": 0.0,
+          "delta_wrapped_pair": 0.0,
+          "uniform": 0.0
+        },
+        "even_readouts": [
+          "blocks",
+          "boundary_span",
+          "covering_depth",
+          "halves_linked",
+          "linked_pairs",
+          "max_block",
+          "singletons",
+          "wrap"
+        ],
+        "odd_containing_readouts": [],
+        "even_sources": [
+          "delta_all_singletons",
+          "delta_single_block",
+          "delta_wrapped_pair",
+          "uniform"
+        ],
+        "protected_pairs": 288,
+        "worst_protected_relative_integrand": 6.566407046622844e-15,
+        "protected_all_vanish": true,
+        "exposed_pairs": 0,
+        "largest_exposed_relative_integrand": 0.0,
+        "exposed_channel_is_visible": false,
+        "worst_sector_defect": 1.3805058721460314e-14
+      },
+      "second_order": {
+        "readouts_scored": [
+          "blocks",
+          "singletons",
+          "wrap",
+          "max_block",
+          "linked_pairs",
+          "halves_linked",
+          "covering_depth",
+          "boundary_span"
+        ],
+        "odd_vs_none": {
+          "points": [
+            {
+              "epsilon": 0.0625,
+              "relative_difference": 5.450691411784233e-05
+            },
+            {
+              "epsilon": 0.125,
+              "relative_difference": 0.0002180629718595383
+            },
+            {
+              "epsilon": 0.25,
+              "relative_difference": 0.0008728173761092361
+            }
+          ],
+          "log_log_slope": 2.0005843364869813,
+          "consistent_with_second_order": true
+        },
+        "single_vs_even": {
+          "points": [
+            {
+              "epsilon": 0.0625,
+              "relative_difference": 5.3255951983551354e-05
+            },
+            {
+              "epsilon": 0.125,
+              "relative_difference": 0.00020821112392868142
+            },
+            {
+              "epsilon": 0.25,
+              "relative_difference": 0.0007963565407130284
+            }
+          ],
+          "log_log_slope": 1.95119990689528,
+          "consistent_with_second_order": true
+        },
+        "even_vs_none": {
+          "points": [
+            {
+              "epsilon": 0.0625,
+              "relative_difference": 0.007641428072801808
+            },
+            {
+              "epsilon": 0.125,
+              "relative_difference": 0.015140282164048047
+            },
+            {
+              "epsilon": 0.25,
+              "relative_difference": 0.029728219373927785
+            }
+          ],
+          "log_log_slope": 0.9799594327445322,
+          "consistent_with_first_order": true
+        }
+      }
+    },
+    {
+      "width": 5,
+      "states": 42,
+      "task_compatible_reflection": "i -> 4 - i",
+      "reflection_survey": {
+        "all_reflections_have_the_same_fixed_count": true,
+        "central_binomial": 10,
+        "fixed_count_equals_central_binomial": true,
+        "reflections_preserving_D0": [
+          4
+        ],
+        "reflections_preserving_all_readouts": [],
+        "task_compatible_k": 4
+      },
+      "per_reflection_fixed_states": {
+        "0": 10,
+        "1": 10,
+        "2": 10,
+        "3": 10,
+        "4": 10
+      },
+      "orbit_count": {
+        "catalan": 42,
+        "central_binomial": 10,
+        "r_reflect_formula": 26,
+        "orbits_counted": 26,
+        "formula_matches_count": true,
+        "reported_r_positive": 26,
+        "matches_reported_r_positive": true,
+        "caveat": "Every reflection gives this same orbit count, so agreement with r_positive is necessary and not identifying.  What names R is the declared dictionary, not this number.  Agreement here also does not show that the coarsest admissible lumping *is* the orbit partition -- only that the two have the same cardinality."
+      },
+      "lumping": {
+        "D0": {
+          "initial_blocks": 12,
+          "coarsest_blocks": 26,
+          "orbit_blocks": 26,
+          "orbit_partition_is_admissible": true,
+          "coarsest_equals_orbit_partition": true
+        },
+        "all_readouts": {
+          "initial_blocks": 25,
+          "coarsest_blocks": 42,
+          "orbit_blocks": 26,
+          "orbit_partition_is_admissible": true,
+          "coarsest_equals_orbit_partition": false
+        },
+        "baseline_is_pencil_sum": true
+      },
+      "equivariance": {
+        "R_J_R_equals_J": true,
+        "R_D_R_equals_D": true,
+        "R_G0_R_equals_G0": true,
+        "all_moves_map_as_predicted": true,
+        "reflection_is_state_involution": true
+      },
+      "parity_split": {
+        "mirror_partner_point": 3,
+        "mirrored_single_is_the_partner_join": true,
+        "R_Heven_R_equals_plus_Heven": true,
+        "R_Hodd_R_equals_minus_Hodd": true,
+        "even_plus_odd_is_H_single": true,
+        "norm_H_single": 7.483314773547883,
+        "norm_H_even": 6.2048368229954285,
+        "norm_H_odd": 4.183300132670378,
+        "odd_share_of_norm": 0.5590169943749475
+      },
+      "selection_rule": {
+        "readout_even_defect": {
+          "blocks": 0.0,
+          "singletons": 0.0,
+          "wrap": 0.0,
+          "max_block": 0.0,
+          "linked_pairs": 0.0,
+          "halves_linked": 0.30618621784789724,
+          "covering_depth": 0.0,
+          "boundary_span": 0.0
+        },
+        "source_even_defect": {
+          "delta_all_singletons": 0.0,
+          "delta_single_block": 0.0,
+          "delta_wrapped_pair": 0.0,
+          "uniform": 0.0
+        },
+        "even_readouts": [
+          "blocks",
+          "boundary_span",
+          "covering_depth",
+          "linked_pairs",
+          "max_block",
+          "singletons",
+          "wrap"
+        ],
+        "odd_containing_readouts": [
+          "halves_linked"
+        ],
+        "even_sources": [
+          "delta_all_singletons",
+          "delta_single_block",
+          "delta_wrapped_pair",
+          "uniform"
+        ],
+        "protected_pairs": 252,
+        "worst_protected_relative_integrand": 2.1417460203022993e-16,
+        "protected_all_vanish": true,
+        "exposed_pairs": 36,
+        "largest_exposed_relative_integrand": 0.292092871260188,
+        "exposed_channel_is_visible": true,
+        "worst_sector_defect": 2.9997256497673376e-15
+      },
+      "second_order": {
+        "readouts_scored": [
+          "blocks",
+          "singletons",
+          "wrap",
+          "max_block",
+          "linked_pairs",
+          "covering_depth",
+          "boundary_span"
+        ],
+        "odd_vs_none": {
+          "points": [
+            {
+              "epsilon": 0.0625,
+              "relative_difference": 6.014145171084163e-05
+            },
+            {
+              "epsilon": 0.125,
+              "relative_difference": 0.0002406128288584379
+            },
+            {
+              "epsilon": 0.25,
+              "relative_difference": 0.0009632043770149318
+            }
+          ],
+          "log_log_slope": 2.0007051752132914,
+          "consistent_with_second_order": true
+        },
+        "single_vs_even": {
+          "points": [
+            {
+              "epsilon": 0.0625,
+              "relative_difference": 5.868406299574633e-05
+            },
+            {
+              "epsilon": 0.125,
+              "relative_difference": 0.0002291420753029681
+            },
+            {
+              "epsilon": 0.25,
+              "relative_difference": 0.0008742737069171846
+            }
+          ],
+          "log_log_slope": 1.9485221735343232,
+          "consistent_with_second_order": true
+        },
+        "even_vs_none": {
+          "points": [
+            {
+              "epsilon": 0.0625,
+              "relative_difference": 0.007116975183806887
+            },
+            {
+              "epsilon": 0.125,
+              "relative_difference": 0.014109621133894214
+            },
+            {
+              "epsilon": 0.25,
+              "relative_difference": 0.027736377680604198
+            }
+          ],
+          "log_log_slope": 0.9812216380591523,
+          "consistent_with_first_order": true
+        }
+      }
+    },
+    {
+      "width": 6,
+      "states": 132,
+      "task_compatible_reflection": "i -> 5 - i",
+      "reflection_survey": {
+        "all_reflections_have_the_same_fixed_count": true,
+        "central_binomial": 20,
+        "fixed_count_equals_central_binomial": true,
+        "reflections_preserving_D0": [
+          5
+        ],
+        "reflections_preserving_all_readouts": [
+          5
+        ],
+        "task_compatible_k": 5
+      },
+      "per_reflection_fixed_states": {
+        "0": 20,
+        "1": 20,
+        "2": 20,
+        "3": 20,
+        "4": 20,
+        "5": 20
+      },
+      "orbit_count": {
+        "catalan": 132,
+        "central_binomial": 20,
+        "r_reflect_formula": 76,
+        "orbits_counted": 76,
+        "formula_matches_count": true,
+        "reported_r_positive": 76,
+        "matches_reported_r_positive": true,
+        "caveat": "Every reflection gives this same orbit count, so agreement with r_positive is necessary and not identifying.  What names R is the declared dictionary, not this number.  Agreement here also does not show that the coarsest admissible lumping *is* the orbit partition -- only that the two have the same cardinality."
+      },
+      "lumping": {
+        "D0": {
+          "initial_blocks": 18,
+          "coarsest_blocks": 76,
+          "orbit_blocks": 76,
+          "orbit_partition_is_admissible": true,
+          "coarsest_equals_orbit_partition": true
+        },
+        "all_readouts": {
+          "initial_blocks": 49,
+          "coarsest_blocks": 76,
+          "orbit_blocks": 76,
+          "orbit_partition_is_admissible": true,
+          "coarsest_equals_orbit_partition": true
+        },
+        "baseline_is_pencil_sum": true
+      },
+      "equivariance": {
+        "R_J_R_equals_J": true,
+        "R_D_R_equals_D": true,
+        "R_G0_R_equals_G0": true,
+        "all_moves_map_as_predicted": true,
+        "reflection_is_state_involution": true
+      },
+      "parity_split": {
+        "mirror_partner_point": 4,
+        "mirrored_single_is_the_partner_join": true,
+        "R_Heven_R_equals_plus_Heven": true,
+        "R_Hodd_R_equals_minus_Hodd": true,
+        "even_plus_odd_is_H_single": true,
+        "norm_H_single": 13.416407864998739,
+        "norm_H_even": 11.113055385446435,
+        "norm_H_odd": 7.516648189186454,
+        "odd_share_of_norm": 0.560257877132387
+      },
+      "selection_rule": {
+        "readout_even_defect": {
+          "blocks": 0.0,
+          "singletons": 0.0,
+          "wrap": 0.0,
+          "max_block": 0.0,
+          "linked_pairs": 0.0,
+          "halves_linked": 0.0,
+          "covering_depth": 0.0,
+          "boundary_span": 0.0
+        },
+        "source_even_defect": {
+          "delta_all_singletons": 0.0,
+          "delta_single_block": 0.0,
+          "delta_wrapped_pair": 0.0,
+          "uniform": 0.0
+        },
+        "even_readouts": [
+          "blocks",
+          "boundary_span",
+          "covering_depth",
+          "halves_linked",
+          "linked_pairs",
+          "max_block",
+          "singletons",
+          "wrap"
+        ],
+        "odd_containing_readouts": [],
+        "even_sources": [
+          "delta_all_singletons",
+          "delta_single_block",
+          "delta_wrapped_pair",
+          "uniform"
+        ],
+        "protected_pairs": 288,
+        "worst_protected_relative_integrand": 1.1215571118975001e-15,
+        "protected_all_vanish": true,
+        "exposed_pairs": 0,
+        "largest_exposed_relative_integrand": 0.0,
+        "exposed_channel_is_visible": false,
+        "worst_sector_defect": 6.754315685992056e-15
+      },
+      "second_order": {
+        "readouts_scored": [
+          "blocks",
+          "singletons",
+          "wrap",
+          "max_block",
+          "linked_pairs",
+          "halves_linked",
+          "covering_depth",
+          "boundary_span"
+        ],
+        "odd_vs_none": {
+          "points": [
+            {
+              "epsilon": 0.0625,
+              "relative_difference": 6.203050186677856e-05
+            },
+            {
+              "epsilon": 0.125,
+              "relative_difference": 0.00024817857417383846
+            },
+            {
+              "epsilon": 0.25,
+              "relative_difference": 0.0009936203367244519
+            }
+          ],
+          "log_log_slope": 2.000822499764047,
+          "consistent_with_second_order": true
+        },
+        "single_vs_even": {
+          "points": [
+            {
+              "epsilon": 0.0625,
+              "relative_difference": 6.045240128796303e-05
+            },
+            {
+              "epsilon": 0.125,
+              "relative_difference": 0.00023576347927226635
+            },
+            {
+              "epsilon": 0.25,
+              "relative_difference": 0.000897448400568914
+            }
+          ],
+          "log_log_slope": 1.945978720072646,
+          "consistent_with_second_order": true
+        },
+        "even_vs_none": {
+          "points": [
+            {
+              "epsilon": 0.0625,
+              "relative_difference": 0.006546461740719268
+            },
+            {
+              "epsilon": 0.125,
+              "relative_difference": 0.012983547177209884
+            },
+            {
+              "epsilon": 0.25,
+              "relative_difference": 0.02554122655579804
+            }
+          ],
+          "log_log_slope": 0.9820202700756343,
+          "consistent_with_first_order": true
+        }
+      }
+    },
+    {
+      "width": 7,
+      "states": 429,
+      "task_compatible_reflection": "i -> 6 - i",
+      "reflection_survey": {
+        "all_reflections_have_the_same_fixed_count": true,
+        "central_binomial": 35,
+        "fixed_count_equals_central_binomial": true,
+        "reflections_preserving_D0": [
+          6
+        ],
+        "reflections_preserving_all_readouts": [],
+        "task_compatible_k": 6
+      },
+      "per_reflection_fixed_states": {
+        "0": 35,
+        "1": 35,
+        "2": 35,
+        "3": 35,
+        "4": 35,
+        "5": 35,
+        "6": 35
+      },
+      "orbit_count": {
+        "catalan": 429,
+        "central_binomial": 35,
+        "r_reflect_formula": 232,
+        "orbits_counted": 232,
+        "formula_matches_count": true,
+        "reported_r_positive": 232,
+        "matches_reported_r_positive": true,
+        "caveat": "Every reflection gives this same orbit count, so agreement with r_positive is necessary and not identifying.  What names R is the declared dictionary, not this number.  Agreement here also does not show that the coarsest admissible lumping *is* the orbit partition -- only that the two have the same cardinality."
+      },
+      "lumping": {
+        "D0": {
+          "initial_blocks": 24,
+          "coarsest_blocks": 232,
+          "orbit_blocks": 232,
+          "orbit_partition_is_admissible": true,
+          "coarsest_equals_orbit_partition": true
+        },
+        "all_readouts": {
+          "initial_blocks": 109,
+          "coarsest_blocks": 429,
+          "orbit_blocks": 232,
+          "orbit_partition_is_admissible": true,
+          "coarsest_equals_orbit_partition": false
+        },
+        "baseline_is_pencil_sum": true
+      },
+      "equivariance": {
+        "R_J_R_equals_J": true,
+        "R_D_R_equals_D": true,
+        "R_G0_R_equals_G0": true,
+        "all_moves_map_as_predicted": true,
+        "reflection_is_state_involution": true
+      },
+      "parity_split": {
+        "mirror_partner_point": 5,
+        "mirrored_single_is_the_partner_join": true,
+        "R_Heven_R_equals_plus_Heven": true,
+        "R_Hodd_R_equals_minus_Hodd": true,
+        "even_plus_odd_is_H_single": true,
+        "norm_H_single": 24.372115213907882,
+        "norm_H_even": 20.18662923818635,
+        "norm_H_odd": 13.656500283747663,
+        "odd_share_of_norm": 0.5603329938287268
+      },
+      "selection_rule": {
+        "readout_even_defect": {
+          "blocks": 0.0,
+          "singletons": 0.0,
+          "wrap": 0.0,
+          "max_block": 0.0,
+          "linked_pairs": 0.0,
+          "halves_linked": 0.25034794728042187,
+          "covering_depth": 0.0,
+          "boundary_span": 0.0
+        },
+        "source_even_defect": {
+          "delta_all_singletons": 0.0,
+          "delta_single_block": 0.0,
+          "delta_wrapped_pair": 0.0,
+          "uniform": 0.0
+        },
+        "even_readouts": [
+          "blocks",
+          "boundary_span",
+          "covering_depth",
+          "linked_pairs",
+          "max_block",
+          "singletons",
+          "wrap"
+        ],
+        "odd_containing_readouts": [
+          "halves_linked"
+        ],
+        "even_sources": [
+          "delta_all_singletons",
+          "delta_single_block",
+          "delta_wrapped_pair",
+          "uniform"
+        ],
+        "protected_pairs": 252,
+        "worst_protected_relative_integrand": 1.052297020858767e-15,
+        "protected_all_vanish": true,
+        "exposed_pairs": 36,
+        "largest_exposed_relative_integrand": 0.10691283943577032,
+        "exposed_channel_is_visible": true,
+        "worst_sector_defect": 5.8831720557025494e-15
+      },
+      "second_order": {
+        "readouts_scored": [
+          "blocks",
+          "singletons",
+          "wrap",
+          "max_block",
+          "linked_pairs",
+          "covering_depth",
+          "boundary_span"
+        ],
+        "odd_vs_none": {
+          "points": [
+            {
+              "epsilon": 0.0625,
+              "relative_difference": 6.22327336285666e-05
+            },
+            {
+              "epsilon": 0.125,
+              "relative_difference": 0.0002489943816399529
+            },
+            {
+              "epsilon": 0.25,
+              "relative_difference": 0.0009969938604386407
+            }
+          ],
+          "log_log_slope": 2.0009195480135995,
+          "consistent_with_second_order": true
+        },
+        "single_vs_even": {
+          "points": [
+            {
+              "epsilon": 0.0625,
+              "relative_difference": 6.058647968875179e-05
+            },
+            {
+              "epsilon": 0.125,
+              "relative_difference": 0.00023604787717488326
+            },
+            {
+              "epsilon": 0.25,
+              "relative_difference": 0.0008967721658477353
+            }
+          ],
+          "log_log_slope": 1.943836856677638,
+          "consistent_with_second_order": true
+        },
+        "even_vs_none": {
+          "points": [
+            {
+              "epsilon": 0.0625,
+              "relative_difference": 0.0060706820820070236
+            },
+            {
+              "epsilon": 0.125,
+              "relative_difference": 0.01204283813357221
+            },
+            {
+              "epsilon": 0.25,
+              "relative_difference": 0.023701221612977004
+            }
+          ],
+          "log_log_slope": 0.9825154467530542,
+          "consistent_with_first_order": true
+        }
+      }
+    },
+    {
+      "width": 8,
+      "states": 1430,
+      "task_compatible_reflection": "i -> 7 - i",
+      "reflection_survey": {
+        "all_reflections_have_the_same_fixed_count": true,
+        "central_binomial": 70,
+        "fixed_count_equals_central_binomial": true,
+        "reflections_preserving_D0": [
+          7
+        ],
+        "reflections_preserving_all_readouts": [
+          7
+        ],
+        "task_compatible_k": 7
+      },
+      "per_reflection_fixed_states": {
+        "0": 70,
+        "1": 70,
+        "2": 70,
+        "3": 70,
+        "4": 70,
+        "5": 70,
+        "6": 70,
+        "7": 70
+      },
+      "orbit_count": {
+        "catalan": 1430,
+        "central_binomial": 70,
+        "r_reflect_formula": 750,
+        "orbits_counted": 750,
+        "formula_matches_count": true,
+        "reported_r_positive": 750,
+        "matches_reported_r_positive": true,
+        "caveat": "Every reflection gives this same orbit count, so agreement with r_positive is necessary and not identifying.  What names R is the declared dictionary, not this number.  Agreement here also does not show that the coarsest admissible lumping *is* the orbit partition -- only that the two have the same cardinality."
+      },
+      "lumping": {
+        "D0": {
+          "initial_blocks": 32,
+          "coarsest_blocks": 750,
+          "orbit_blocks": 750,
+          "orbit_partition_is_admissible": true,
+          "coarsest_equals_orbit_partition": true
+        },
+        "all_readouts": {
+          "initial_blocks": 209,
+          "coarsest_blocks": 750,
+          "orbit_blocks": 750,
+          "orbit_partition_is_admissible": true,
+          "coarsest_equals_orbit_partition": true
+        },
+        "baseline_is_pencil_sum": true
+      },
+      "equivariance": {
+        "R_J_R_equals_J": true,
+        "R_D_R_equals_D": true,
+        "R_G0_R_equals_G0": true,
+        "all_moves_map_as_predicted": true,
+        "reflection_is_state_involution": true
+      },
+      "parity_split": {
+        "mirror_partner_point": 6,
+        "mirrored_single_is_the_partner_join": true,
+        "R_Heven_R_equals_plus_Heven": true,
+        "R_Hodd_R_equals_minus_Hodd": true,
+        "even_plus_odd_is_H_single": true,
+        "norm_H_single": 44.74371464239419,
+        "norm_H_even": 37.067505985701274,
+        "norm_H_odd": 25.059928172283335,
+        "odd_share_of_norm": 0.560077060489281
+      },
+      "selection_rule": {
+        "readout_even_defect": {
+          "blocks": 0.0,
+          "singletons": 0.0,
+          "wrap": 0.0,
+          "max_block": 0.0,
+          "linked_pairs": 0.0,
+          "halves_linked": 0.0,
+          "covering_depth": 0.0,
+          "boundary_span": 0.0
+        },
+        "source_even_defect": {
+          "delta_all_singletons": 0.0,
+          "delta_single_block": 0.0,
+          "delta_wrapped_pair": 0.0,
+          "uniform": 0.0
+        },
+        "even_readouts": [
+          "blocks",
+          "boundary_span",
+          "covering_depth",
+          "halves_linked",
+          "linked_pairs",
+          "max_block",
+          "singletons",
+          "wrap"
+        ],
+        "odd_containing_readouts": [],
+        "even_sources": [
+          "delta_all_singletons",
+          "delta_single_block",
+          "delta_wrapped_pair",
+          "uniform"
+        ],
+        "protected_pairs": 288,
+        "worst_protected_relative_integrand": 5.533659645240994e-16,
+        "protected_all_vanish": true,
+        "exposed_pairs": 0,
+        "largest_exposed_relative_integrand": 0.0,
+        "exposed_channel_is_visible": false,
+        "worst_sector_defect": 4.983709208095181e-15
+      },
+      "second_order": {
+        "readouts_scored": [
+          "blocks",
+          "singletons",
+          "wrap",
+          "max_block",
+          "linked_pairs",
+          "halves_linked",
+          "covering_depth",
+          "boundary_span"
+        ],
+        "odd_vs_none": {
+          "points": [
+            {
+              "epsilon": 0.0625,
+              "relative_difference": 6.067563665148401e-05
+            },
+            {
+              "epsilon": 0.125,
+              "relative_difference": 0.00024276954647153064
+            },
+            {
+              "epsilon": 0.25,
+              "relative_difference": 0.0009721514896093204
+            }
+          ],
+          "log_log_slope": 2.0009959495266587,
+          "consistent_with_second_order": true
+        },
+        "single_vs_even": {
+          "points": [
+            {
+              "epsilon": 0.0625,
+              "relative_difference": 5.902152721865003e-05
+            },
+            {
+              "epsilon": 0.125,
+              "relative_difference": 0.00022976496000352075
+            },
+            {
+              "epsilon": 0.25,
+              "relative_difference": 0.0008715323395247225
+            }
+          ],
+          "log_log_slope": 1.9421205208645318,
+          "consistent_with_second_order": true
+        },
+        "even_vs_none": {
+          "points": [
+            {
+              "epsilon": 0.0625,
+              "relative_difference": 0.005605088277195107
+            },
+            {
+              "epsilon": 0.125,
+              "relative_difference": 0.011120881236957869
+            },
+            {
+              "epsilon": 0.25,
+              "relative_difference": 0.02189272593307701
+            }
+          ],
+          "log_log_slope": 0.9828213001247414,
+          "consistent_with_first_order": true
+        }
+      }
+    }
+  ],
+  "decision": {
+    "orbit_count_matches_reported_r_positive": true,
+    "coarsest_lumping_is_the_orbit_partition": true,
+    "baseline_is_R_equivariant": true,
+    "parity_split_is_exact": true,
+    "invariant_tasks_have_zero_first_order_response": true,
+    "an_odd_channel_exists_so_the_test_can_fail": true,
+    "odd_direction_enters_at_second_order": true,
+    "even_direction_enters_at_first_order": true,
+    "verdict": "SYMMETRY_QUOTIENT_PLUS_PARITY_SELECTION_RULE__GATE1_BRANCH_A",
+    "predicted_r_positive": {
+      "9": 2494,
+      "10": 8524
+    },
+    "claim_boundary": "This is an exact finite symmetry statement about P398, not a percolation-threshold result.  The reflection is not a continuum spin label, and the small balanced order remains task-relative.  The orbit-count identity alone identifies nothing -- every reflection gives the same count -- so the load is carried by the partition equality and the selection rule, not by the formula."
+  }
+}
