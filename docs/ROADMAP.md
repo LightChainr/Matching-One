@@ -131,6 +131,34 @@ leakage signs, not bounded.
 orientations per family, which measures `A8` instead of assuming it. One deterministic
 N=580 replay would also settle the single undetermined verdict of §5.2.
 
+### State-object contraction — #582 / #581 / #580
+
+Three zero-new-sampling tests of what the finite "state" actually is, ahead of any
+further large production.
+
+**#580 is complete** (`notes/p398-intervention-transport-20260906.md`). On P398's exact
+noncrossing process a frozen rank-6 observable-Krylov span, with its readout and source
+coordinates and its reduced tangent `B` all fixed at `eta = 0`, predicts the intervened
+response at `eta = ±1/4` at a cost of `+0.006` relative error over its own `eta = 0`
+truncation, stably from width 4 (14 states) to width 8 (1430). It survives an
+intervention deliberately chosen **outside** the operator pencil that built it, so the
+pass is not an algebraic tautology. A random span of the same rank sits at 0.997.
+
+The failure is elsewhere and it is the useful part: the same frozen realization does not
+represent the five readouts it was not built from — `covering_depth` 0.73,
+`halves_linked` 0.52 — and that gap is already there at `eta = 0`. Additive local counts
+transport; nesting and long-range boundary linking are not represented at all. The
+low-dimensional state is real and transportable **relative to a declared observable
+dictionary**, and is not a state of the system.
+
+**Action:** this is the input #275 needs. Score its mechanism classes on dictionaries
+that are known to separate, not on a shared one; two models sharing a dictionary sharing
+an image is the expected outcome and reads `UNIDENTIFIABLE_WITH_CURRENT_ASSETS`. It also
+gives #581 an independent bulk-versus-topology datum from an exactly solvable process.
+
+Not opened by this: any square-site application, which needs a declared intervention with
+common observables before and after and a supplied map between microscopic state spaces.
+
 ## Completed high-information blocks
 
 - **#50 N145->290 full curve:** complete. Corrected slope/root structure survives; a single three-level multiplier shape does not.
