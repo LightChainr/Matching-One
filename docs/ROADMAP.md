@@ -263,6 +263,22 @@ is a symmetry and the surviving descriptions are invariant. The general statemen
 `C2` case of a character selection rule and is the same shape as #244's deck rule — an
 analogy in representation theory, not an identification of the two systems.
 
+**#600 Phase C closes the compute half** (`notes/p598-phase-c-balanced-quotient-20260906.md`).
+The frozen finite-horizon balanced realization was built two ways — on the microscopic
+`Catalan(w)` chain and after exact reduction to the `r_reflect(w)` orbit quotient — and
+compared at `w = 4..8`. Restricted to `D0` and the even readouts the two chains agree
+bit-for-bit in every resolvable Hankel direction (`max |A-B|` from `1.5e-16` at w=4 to
+`2.7e-15` at w=8), the balanced order at the frozen tolerance is preserved, and the odd
+sector (`4/16/56/197/680` states) carries no reach or observe energy (`< 6e-17`). The
+reduction is therefore exact for the invariant task, not an approximation. The control
+that gives the comparison teeth: `halves_linked` is not `R`-even at odd widths, so the
+exposed dictionary breaks the quotient at `w = 5, 7` (`1.8e-2`, `8.7e-3`) and only there,
+and symmetrizing the readout — which removes exactly the odd part — restores agreement to
+`1e-16`. A numpy port of the #588 construction was gated against the committed pure-Python
+numbers first: all differences sit at the artifact's own ten-digit storage precision. The
+claim is bounded to the input/output object; it says nothing about the state space beyond
+the task.
+
 ## Completed high-information blocks
 
 - **#50 N145->290 full curve:** complete. Corrected slope/root structure survives; a single three-level multiplier shape does not.
