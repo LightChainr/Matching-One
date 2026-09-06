@@ -151,6 +151,24 @@ transport; nesting and long-range boundary linking are not represented at all. T
 low-dimensional state is real and transportable **relative to a declared observable
 dictionary**, and is not a state of the system.
 
+**#588 Phase A is complete** (`notes/p398-projected-memory-20260906.md`). The exact
+Mori-Zwanzig kernel of that same frozen span answers the fork #580 opened. On the
+declared dictionary the residual is 96% projected memory, of effective order 3-4,
+decaying in `tau ~ 0.14` — a small state plus three or four poles is a real candidate
+description. On the held-out readouts memory and unrepresented-readout are jointly
+required, ~40% and ~43% of the closure error each, stably from 14 states to 1430.
+Neither repair alone is the object.
+
+Two things this rules out. Memory complexity does **not** grow with width (pole count
+2, 3, 4, 4, 4 and then flat over a factor of 102 in state count), so the predictive
+noncompression branch does not fire here. And the memory description is not an artifact
+of the operator pencil: per unit of perturbation the out-of-pencil intervention moves
+the kernel 1.80 against the declared one's 2.58, where #580's exact lumping went from
+750 blocks to the identity partition under the same probe. The three descriptions of
+one object -- `r_transport`, `r_positive`, memory -- respond differently to the same
+intervention, which is the concrete reason a single "state dimension" cannot be
+reported for it.
+
 **Action:** this is the input #275 needs. Score its mechanism classes on dictionaries
 that are known to separate, not on a shared one; two models sharing a dictionary sharing
 an image is the expected outcome and reads `UNIDENTIFIABLE_WITH_CURRENT_ASSETS`. It also
