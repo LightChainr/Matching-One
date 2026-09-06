@@ -154,11 +154,41 @@ channel too — #205 bounded an offset, never an offset *relative to* the amplit
 
 Cost of fixing it by this route, assuming a zero true offset: `Sp` is the only viable
 channel (~3× the existing 10M/node for a banded reading, ~26× for a clean one); `Dp`
-needs 2.6e4–1.5e6×. So the live options are #589's 3 and 4 — the all-cyclic N=2210
-design, or a crossed design — and one cheap prospective question that changes the cost by
-an order of magnitude: **which channel maximizes `A4` resolution at fixed sample count?**
-`Sp` beats `M` by 4.5× on exactly that figure of merit and nothing has yet been optimized
-for it.
+needs 2.6e4–1.5e6×.
+
+**#596's Gate 2 is now run and answered** (`notes/p205-projective-channel-design-20260906.md`,
+`results/p205-projective-channel-design/latest.json`). The objective was corrected first:
+maximizing `|A4|/se(A4)` is the wrong target, so the design object is the joint
+`(A4, delta)` estimator with its full 2×2 covariance, scored by the sample multiplier
+needed for an α-level **Fieller** set to fit the declared window. The Fieller half-width
+is `z sqrt(var(delta)/n)/|A4|`, so the figure of merit is `A4²/var(delta)` — the *offset*
+variance — and the optimal combination is a matched filter against `S`, not against the
+`A4` covariance.
+
+**The ranking transports; the price does not.** Full-sample cost (multiplier on 10M/node,
+band 0.20) ranks `combination < Sp < S < M < Dp` **identically at both sizes**, which are
+independent by the frozen #205 contract — a replication, not a re-reading. The best
+readout saves 16.4× at N=325 and 3.7× against the historical `M @ p_ref`, whose own cost
+is x66.9 / x42.4. But nested three-fold cross-fitting gives fold-to-fold cost spreads of
+x73 (stabilized) to x527 (raw), and the two variants land on different Gate-2 branches, so
+the script refuses a branch letter.
+
+The reason is structural and is the finding: **the validation statistic is itself a
+weak-denominator ratio** — cost `∝ var(delta)/A4²` and a 33-batch fold cannot resolve
+`A4²` — and **pricing costs more than running**. Since cost `∝ 1/A4²`, knowing it to ±10%
+needs `A4` at ~20σ: at N=325 running the band-0.20 calibration in `Sp` needs x5.4 while
+pricing it needs x31.9; at N=425, x12.7 against x84.5. There is no cheap pilot. The
+2σ-conservative purchase multiplier is x14.5–x28.8 at N=325 and diverges at N=425.
+
+**Action: do not buy N=650 as a pure `A8/A4` experiment.** Effectively Gate-2 branch C,
+with the reason sharpened — not "the nuisance is unbounded" but "the archive can rank
+readouts and cannot price them, and no affordable measurement inside it can fix that".
+The live options stay #589's 3 and 4 (all-cyclic N=2210, or a crossed design), neither of
+which needs this calibration. If the calibration route is taken anyway it must be bought
+at a declared multiplier in `Sp` — within 10–35% of the combination at both sizes, broad
+in `p`, and not dependent on a 4×4 inverse covariance estimated from a third of the block.
+Grid-boundary effects, a shrunk covariance for the combination, and higher tail
+derivatives are handed to **#600** rather than fixed here.
 
 ### State-object contraction — #582 / #581 / #580
 
