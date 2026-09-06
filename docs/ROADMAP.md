@@ -172,6 +172,26 @@ one object -- `r_transport`, `r_positive`, memory -- respond differently to the 
 intervention, which is the concrete reason a single "state dimension" cannot be
 reported for it.
 
+**#588 Phases B and C are complete** (`notes/p398-memory-closure-20260906.md`), and
+they revise the headline above. #580's held-out failure was a property of the *span*,
+not of the dictionary. A finite-horizon balanced realization of **order 4**, built from
+baseline data only and frozen at `eta = 0`, predicts all eight readouts' contrast
+responses at `eta = ±1/4` to 5.9% at width 8 — where the rank-6 Krylov span sits at
+41.8% on the held-out block and never passes at any rank up to 12, and where rank 6
+plus the *exact* memory kernel reaches only 0.245. A four-dimensional Markov state with
+no memory at all beats both, on more readouts, with fewer coordinates.
+
+The Hankel spectrum barely moves with width (D0: `1, 0.45, 0.09` at width 4 and
+`1, 0.58, 0.14` at width 8), so the task exposes 3-4 Markovian input/output coordinates
+independent of state count. That compact object is a state of the triple
+`(sources, readouts, horizon)` — change any of the three and it changes — but it is
+genuinely compact and it transports.
+
+Two secondary findings. The Krylov prefix ladder is **not monotone**: rank 7 is worse
+than rank 6 on the held-out block at widths 5-8, because a rank cutting inside a Krylov
+level adds half a level that the Galerkin closure then misuses. And the memory closure
+saturates at **three poles** — real, exact, and dominated.
+
 **Action:** this is the input #275 needs. Score its mechanism classes on dictionaries
 that are known to separate, not on a shared one; two models sharing a dictionary sharing
 an image is the expected outcome and reads `UNIDENTIFIABLE_WITH_CURRENT_ASSETS`. It also
