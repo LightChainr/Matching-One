@@ -343,6 +343,44 @@ deferred**: the duality-even Betti / ambient-homology tangents are exact only on
 square-bond torus, and the five #582 transitions are square-site with no canonical lift —
 the coupling needs a square-site decomposition that is not built yet.
 
+**The direction Gate 3 kept has a law, and its own curvature falsifies that law**
+(`notes/p582-amplitude-law-20260906.md`, `results/p582-amplitude-law/latest.json`,
+`scripts/p582_amplitude_law.py`, 25 tests). Gate 3 reports the five amplitudes of the
+frozen `g_N` as inputs to a label screen; they are also five numbers spanning a factor of
+2.8, each measured to better than 0.3 % (`z` = 335–659). Fitting **one** exponent to those
+amplitudes — not to any direction, so not the move #584 rules out — gives
+`A(N) ~ N^-omega` with `omega = 0.970`, `chi^2 = 277.4` on 3 df. The fit is rejected and
+the misfit is at most 3.8 % in amplitude; leave-one-transition-out, the exponent predicts a
+transition it never saw to within 5 % (worst case `145→290`, the singleton lineage). The
+exact finite-difference image `sinh(omega h/2)/(omega h/2)` is carried rather than dropped:
+it is 1.9 % at `h = log 2` and 3.3 % at `h = log 2.5`, so dropping it would manufacture the
+`multiplier` label Gate 3 screened. Error budget: `omega = 0.970 ± 0.015` (leave-one-out)
+`± 0.027` (orientation weighting — the naive equal weighting gives 0.997 and moves `g_N` by
+7.8°), combined `± 0.031`, so **`omega = 1` is not excluded**. `N^-1` is `L^-2` on a square
+torus; that is a coincidence of numbers, not a named percolation exponent.
+
+Then the independent check (GOVERNANCE §2 minimum A) **fired**. A second divided difference
+is a different functional of the same productions; freezing `(lambda, omega)` from the five
+*first* differences and predicting it, with no refit, gives measured/predicted = **1.5368**
+(gaussian_13) and **1.5574** (gaussian_17) — the one-exponent law misses the curvature by
+55 %, and misses it by the same amount in two lineages with different parent primes,
+productions and seeds, the two ratios agreeing to 1.3 %. So the natural reading of Gate 3's
+unlabelled remainder is **a second smooth scale, not a discrete fiber** — consistent with
+finding nothing to label, and stronger than "structured but unindexed". Not proof: a
+step-size-dependent reconstruction bias that the first differences cancel would look the
+same.
+
+**One production separates them: `N = 725 = 5^2 · 29`, orientations `(26,7)` and `(23,14)`.**
+It extends `p50` from two sizes to three (`725 = 2.5 · 290`, same parent prime 29), giving a
+**third independent curvature** outside the two lineages that produced the discrepancy; it
+breaks the degeneracy Gate 3 exposed, because on the committed sizes a 5-adic valuation of 2
+and the *absence* of an interpolating spin-0 combination coincide exactly (325 and 425 have
+both, so `multiplier`, `valuation` and `interpolation flag` are one partition), whereas 725
+has valuation 2 **and** admits an interpolating combination — `(26,7)` and `(23,14)` straddle
+zero in `cos 4θ`; and it lengthens the lever arm past the current maximum of 425. `N = 338`
+was the cheaper candidate and is **unusable**: `(17,7)` is its only primitive representative,
+so it has no second orientation at all.
+
 ## Completed high-information blocks
 
 - **#50 N145->290 full curve:** complete. Corrected slope/root structure survives; a single three-level multiplier shape does not.
