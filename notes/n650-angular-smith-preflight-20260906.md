@@ -61,6 +61,32 @@ Thus N=650 remains an efficient angular **design matrix**. The problem is identi
 
 The square and rectangular matrices have the same amplification because their Gaussian directions are related by the same `1+i` arithmetic that exchanges the orientation roles: the 45-degree phase flips H4 and preserves H8.
 
+### Exact loading of a noncyclic-only offset
+
+The inverse matrices make the confound quantitative. Add a response `delta` only to the noncyclic row and leave the two cyclic rows unchanged. The saturated harmonic fit then reports
+
+```text
+square family:
+  Delta C  = +0.4593316585 delta
+  Delta A4 = +0.7717014729 delta
+  Delta A8 = +0.3249364887 delta
+
+rectangle family:
+  Delta C  = +0.4593316585 delta
+  Delta A4 = -0.7717014729 delta
+  Delta A8 = +0.3249364887 delta
+```
+
+The exact coefficients are columns of the committed inverse matrices:
+
+```text
+Delta C  = 477911411/1040449536 * delta
+|Delta A4| = 946294375/1226244096 * delta
+Delta A8 = 11156640625/34334834688 * delta.
+```
+
+So a quotient-specific response does not merely perturb the fit weakly: it creates a same-sign apparent H8 component in both modulus families and opposite-sign apparent H4 components. That is exactly the kind of structure that can masquerade as harmonic/modulus physics unless Smith loading is separately constrained.
+
 ## Existing #205 control: useful, but not enough to erase the confound
 
 #205 already performed the closest prospective quotient control in the repository. At N=325 and N=425 it introduced one noncyclic same-N `C` node against two primitive/cyclic `A/B` nodes and froze a one-harmonic affine angular prediction.
