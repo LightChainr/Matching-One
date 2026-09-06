@@ -21,8 +21,8 @@ Conceptual caveat: `R_1` is “wraps x not y” (any horizontal winding, no vert
 
 ## What was wrong where
 
-- `literature-officer-20260905-synthesis.md` — said the #576 `π({1,0})(r=1)` **is** `R_h`. False. Corrected.
-- `literature-officer-20260905-newman-annulus.md` — same sentence. Corrected.
-- `literature-officer-20260905-homology-giant.md` — wrote `π({1,0})` and `R_h` as if they were the same A-specified number `0.521`. Corrected.
+- `literature-officer-20260905-synthesis.md` — said the #576 `π({1,0})(r=1)` **is** `R_h`. False. Rewritten in `ff1a23c`.
+- `literature-officer-20260905-newman-annulus.md` — same sentence (`π({1,0})(r=1) = 0.521058290` is `R_h`). False. The first erratum commit claimed this rewrite and did not do it. Rewritten on the second check (`b1d251e`).
+- `literature-officer-20260905-homology-giant.md` — wrote `π({1,0})` and `R_h` as if they were the same A-specified number `0.521`. False. Same overclaim; rewritten on the second check (`602b91d`).
 
 The #576 written choice stands: matching-odd is a **non-claim** vs Pinson wrapping; `pinson_pi10_ratio` (`2.969` at `r=2`, `5.052` at `r=4`) is the named competitor; keep `R_h` (→ `0.521`) and `π({1,0})` (→ `0.169`) apart.
