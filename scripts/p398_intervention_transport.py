@@ -979,6 +979,45 @@ def propagator_ladder(
     return [power(int(round(value))) for value in multiples]
 
 
+def balanced_error(
+    truth: Sequence[Sequence[Sequence[float]]],
+    prediction: Sequence[Sequence[Sequence[float]]],
+    columns: Sequence[int],
+) -> float:
+    """Root mean square of the *per readout* relative errors.
+
+    Added after the first reading, at the owner's request on #580, and post-hoc
+    by construction.  The declared pooled relative Frobenius norm is
+    magnitude-weighted: at width 8 the declared block scores 0.068 while the
+    declared ``wrap`` readout inside it is at 0.230, because ``blocks`` and
+    ``singletons`` are ``O(w)`` and ``wrap`` is ``O(1)``.  Multiplying one
+    observable by a constant must not decide whether a state transports.  Each
+    readout carries its own denominator here, so it cannot.
+    """
+
+    values = [relative_error(truth, prediction, (column,)) for column in columns]
+    if not values:
+        return 0.0
+    return math.sqrt(sum(value * value for value in values) / len(values))
+
+
+def contrast_signal(
+    truth: Sequence[Sequence[Sequence[float]]], column: int
+) -> float:
+    """Frobenius norm of one readout's contrast response -- its own denominator.
+
+    A readout with almost no baseline contrast signal gets an unstable relative
+    error, so it is classified as weakly identifiable rather than being given a
+    near-zero denominator and a spectacular score in either direction.
+    """
+
+    total = 0.0
+    for block in truth:
+        for row in block:
+            total += row[column] * row[column]
+    return math.sqrt(total)
+
+
 def reduced_trajectories(
     basis: Sequence[Sequence[float]],
     reduced: Sequence[Sequence[float]],
@@ -1306,16 +1345,471 @@ def flag_invariance(
     }
 
 
+#: A readout whose baseline contrast signal is below this share of the largest
+#: readout's has no stable relative denominator; it is classified as weakly
+#: identifiable rather than scored.
+WEAK_SIGNAL_FLOOR = 1e-3
+#: Modular elimination costs ``r^2 n / 2``, so the whole rank is affordable up
+#: to 429 states and only the largest width needs a floor instead of a value.
+#: A cost control, not a modelling choice.
+LINEAR_RANK_BUDGET_FULL_UP_TO = 429
+LINEAR_RANK_BUDGET_ABOVE = 150
+
+
+def linear_rank_budget(size: int) -> int:
+    return size if size <= LINEAR_RANK_BUDGET_FULL_UP_TO else LINEAR_RANK_BUDGET_ABOVE
+_LINEAR_RANK_CACHE: Dict[Tuple[int, str, int], Dict[str, Any]] = {}
+#: The nested observable dictionaries #588 Phase B declares, built only from
+#: readouts #580 had already declared.
+DICTIONARIES: Dict[str, Tuple[str, ...]] = {
+    "D0_additive_local_counts": ("blocks", "singletons", "wrap"),
+    "D1_plus_size_and_extent": (
+        "blocks",
+        "singletons",
+        "wrap",
+        "max_block",
+        "linked_pairs",
+        "boundary_span",
+    ),
+    "D2_plus_nonlocal_topology": (
+        "blocks",
+        "singletons",
+        "wrap",
+        "max_block",
+        "linked_pairs",
+        "boundary_span",
+        "halves_linked",
+        "covering_depth",
+    ),
+}
+
+
+def classify_readouts(
+    readout_names: Sequence[str],
+    declared: Sequence[str],
+    truth_contrast_at_zero: Sequence[Sequence[Sequence[float]]],
+    baseline_by_readout: Mapping[str, float],
+    model_baseline_by_readout: Mapping[str, float],
+    excess_by_readout: Mapping[str, float],
+) -> Dict[str, Any]:
+    """Separate baseline representability from intervention excess, per readout.
+
+    A readout the frozen span cannot represent at ``eta = 0`` carries no
+    transport verdict at all: its finite-eta error is dominated by a dictionary
+    failure that was there before any intervention was applied.  Counting such a
+    readout as a transport failure -- or, worse, as a success because its excess
+    happens to be small -- is the mistake this classification exists to stop.
+
+    Four bins, at the same 0.10 threshold the run already declared:
+    represented and transports; represented but transport fails; unrepresented
+    at baseline, so not identifiable; and weakly identifiable, where the
+    readout's own baseline contrast signal is too small to be a denominator.
+    """
+
+    signals = {
+        name: contrast_signal(truth_contrast_at_zero, index)
+        for index, name in enumerate(readout_names)
+    }
+    strongest = max(signals.values()) if signals else 0.0
+    rows: Dict[str, Any] = {}
+    for name in readout_names:
+        share = signals[name] / strongest if strongest > 0 else 0.0
+        representability = baseline_by_readout.get(name)
+        excess = excess_by_readout.get(name)
+        if share < WEAK_SIGNAL_FLOOR:
+            bin_name = "weakly_identifiable_baseline_signal"
+        elif representability is None or representability > PASS_THRESHOLD:
+            bin_name = "unrepresented_at_baseline_transport_not_identifiable"
+        elif excess is not None and excess <= PASS_THRESHOLD:
+            bin_name = "represented_and_transports"
+        else:
+            bin_name = "represented_but_transport_fails"
+        rows[name] = {
+            "in_the_declared_dictionary": name in declared,
+            "R_baseline_representability": representability,
+            "R_baseline_of_the_transported_model": model_baseline_by_readout.get(name),
+            "T_intervention_excess": excess,
+            "baseline_contrast_signal_share": share,
+            "bin": bin_name,
+        }
+    tally: Dict[str, int] = {}
+    for row in rows.values():
+        tally[row["bin"]] = tally.get(row["bin"], 0) + 1
+    return {
+        "threshold": PASS_THRESHOLD,
+        "weak_signal_floor": WEAK_SIGNAL_FLOOR,
+        "R_is": "the best in-span reconstruction error for that readout at eta = 0",
+        "T_is": "the transported model's excess over its own eta = 0 error",
+        "by_readout": rows,
+        "tally": tally,
+    }
+
+
+def exact_lumping(
+    generator: Generator,
+    colours: Sequence[Any],
+    operators: Sequence[Mapping[Tuple[str, int], float]],
+    verify_with: Optional[Sequence[float]] = None,
+) -> Dict[str, Any]:
+    """Coarsest exact strong lumping of the chain that keeps the colouring.
+
+    Strong (ordinary) lumpability asks that every state of a block send the same
+    total rate into every other block.  When it holds, the aggregated process is
+    an exact Markov chain **for every initial distribution**, so its block count
+    is a certified positive/Markov realization dimension for any observable
+    constant on the blocks -- not a fitted rank.
+
+    This is the number that separates ``r_linear`` from ``r_positive``.  A
+    signed low-rank realization can be tiny while every genuine positive
+    realization of the same responses is large, and reporting one dimension for
+    both is exactly the conflation #580's frontier update warns about.
+
+    Refining against several operators at once (the baseline generator and the
+    intervention tangent) returns the coarsest lumping valid for the whole
+    affine family, which is the positive analogue of an intervention-stable
+    state.
+    """
+
+    size = generator.size
+    block_of = {}
+    for index, colour in enumerate(sorted(set(colours))):
+        block_of[colour] = index
+    partition = [block_of[colour] for colour in colours]
+    edges: List[List[Tuple[int, Tuple[float, ...]]]] = []
+    for source in range(size):
+        gathered: Dict[int, List[float]] = {}
+        for operator_index, rates in enumerate(operators):
+            for move, rate in rates.items():
+                image = generator.target[move][source]
+                if image is None or rate == 0.0:
+                    continue
+                row = gathered.setdefault(image, [0.0] * len(operators))
+                row[operator_index] += rate
+        edges.append([(image, tuple(row)) for image, row in sorted(gathered.items())])
+
+    rounds = 0
+    while True:
+        rounds += 1
+        signatures: List[Tuple[Any, ...]] = []
+        for source in range(size):
+            totals: Dict[int, List[float]] = {}
+            for image, rates in edges[source]:
+                row = totals.setdefault(partition[image], [0.0] * len(operators))
+                for index, rate in enumerate(rates):
+                    row[index] += rate
+            signatures.append(
+                (partition[source],)
+                + tuple(sorted((block, tuple(row)) for block, row in totals.items()))
+            )
+        ordering = {value: index for index, value in enumerate(sorted(set(signatures)))}
+        refined = [ordering[signature] for signature in signatures]
+        if len(set(refined)) == len(set(partition)):
+            partition = refined
+            break
+        partition = refined
+        if rounds > size:  # pragma: no cover - refinement terminates in <= n rounds
+            break
+    result = {
+        "blocks": len(set(partition)),
+        "states": size,
+        "refinement_rounds": rounds,
+        "compression": len(set(partition)) / size,
+    }
+    if verify_with is not None:
+        result["verified_max_response_drift"] = verify_lumping(
+            generator, partition, operators[0], verify_with, LAGS
+        )
+    return result
+
+
+def verify_lumping(
+    generator: Generator,
+    partition: Sequence[int],
+    rates: Mapping[Tuple[str, int], float],
+    observable: Sequence[float],
+    lags: Sequence[float],
+) -> float:
+    """Check the aggregated chain against the full one, on a function it should keep.
+
+    Strong lumpability says ``exp(t G) f`` stays constant on blocks whenever
+    ``f`` is.  So the lumped generator's own evolution has to reproduce the full
+    chain's, state by state.  Without this the block count would be a number
+    produced by a refinement loop rather than a certified positive realization,
+    and a bug in the signature would show up as a spuriously small
+    ``r_positive`` -- the direction that would most flatter the conclusion.
+    """
+
+    size = generator.size
+    blocks = sorted(set(partition))
+    index_of = {block: index for index, block in enumerate(blocks)}
+    representative = {}
+    for state, block in enumerate(partition):
+        representative.setdefault(block, state)
+    lumped_rows: List[List[Tuple[int, float]]] = []
+    for block in blocks:
+        source = representative[block]
+        entries: Dict[int, float] = {}
+        diagonal = 0.0
+        for move, rate in rates.items():
+            image = generator.target[move][source]
+            if image is None or rate == 0.0:
+                continue
+            entries[index_of[partition[image]]] = (
+                entries.get(index_of[partition[image]], 0.0) + rate
+            )
+            diagonal -= rate
+        entries[index_of[block]] = entries.get(index_of[block], 0.0) + diagonal
+        lumped_rows.append(sorted(entries.items()))
+    lumped_observable = [observable[representative[block]] for block in blocks]
+    exit_rate = max(
+        sum(rate for move, rate in rates.items() if generator.target[move][state] is not None)
+        for state in range(size)
+    )
+    full = evolve_observables(
+        generator.rows(rates), size, exit_rate, [list(observable)], lags
+    )
+    small = evolve_observables(
+        lumped_rows, len(blocks), exit_rate, [lumped_observable], lags
+    )
+    drift = 0.0
+    for lag_index in range(len(lags)):
+        for state in range(size):
+            drift = max(
+                drift,
+                abs(
+                    full[lag_index][0][state]
+                    - small[lag_index][0][index_of[partition[state]]]
+                ),
+            )
+    return drift
+
+
+#: A large Mersenne prime.  The generator and every declared readout are
+#: integer-valued, so linear independence can be decided by exact modular
+#: elimination: no pivot tolerance, no conditioning, and a rank that is a
+#: certified lower bound on the rational rank.
+RANK_PRIME = 2147483647
+
+
+def observable_reachable_dimension(
+    generator: Generator,
+    observables: Sequence[Sequence[float]],
+    budget: int,
+    modulus: int = RANK_PRIME,
+) -> Dict[str, Any]:
+    """``dim span{G_0^k f}`` -- the dimension an ordinary linear realization needs.
+
+    This is the observability side of the minimal realization order.  It neither
+    bounds nor is bounded by ``r_transport``: it is simply the other number, and
+    reporting it beside the rank that actually transports is the point.
+
+    Done by exact elimination over a large prime field rather than in floating
+    point.  Repeated application of the generator collapses onto the dominant
+    direction, so a float elimination silently loses dimensions -- at width 5 it
+    returned 26 where the true answer is 42, and that error is in the direction
+    that would make the linear rank look close to the transported rank.  Integer
+    entries make the modular rank exact, and it is a certified lower bound on
+    the rational rank (equal to it unless the prime divides a maximal minor).
+
+    Block Arnoldi with deflation: each level applies the generator to the
+    directions the previous level added, which is correct because the generator
+    applied to older directions already lies inside the space.
+    """
+
+    size = generator.size
+    limit = min(budget, size)
+    rows: List[List[Tuple[int, int]]] = []
+    for row in generator.rows(generator.baseline_rates()):
+        rows.append([(column, int(round(value)) % modulus) for column, value in row])
+
+    pivots: Dict[int, List[int]] = {}
+
+    def insert(vector: List[int]) -> Optional[List[int]]:
+        working = list(vector)
+        for column, pivot in pivots.items():
+            if working[column]:
+                factor = working[column]
+                working = [
+                    (working[i] - factor * pivot[i]) % modulus for i in range(size)
+                ]
+        column = next((i for i in range(size) if working[i]), None)
+        if column is None:
+            return None
+        inverse = pow(working[column], modulus - 2, modulus)
+        working = [(value * inverse) % modulus for value in working]
+        for other, pivot in list(pivots.items()):
+            if pivot[column]:
+                factor = pivot[column]
+                pivots[other] = [
+                    (pivot[i] - factor * working[i]) % modulus for i in range(size)
+                ]
+        pivots[column] = working
+        return working
+
+    frontier = [
+        [int(round(value)) % modulus for value in vector] for vector in observables
+    ]
+    while frontier and len(pivots) < limit:
+        added: List[List[int]] = []
+        for vector in frontier:
+            inserted = insert(vector)
+            if inserted is not None:
+                added.append(inserted)
+            if len(pivots) >= limit:
+                break
+        if not added:
+            break
+        frontier = [
+            [
+                sum(value * vector[column] for column, value in row) % modulus
+                for row in rows
+            ]
+            for vector in added
+        ]
+    dimension = len(pivots)
+    return {
+        "dimension": dimension,
+        "arithmetic": f"exact modulo the prime {modulus}",
+        "budget": limit,
+        "reached_the_whole_state_space": dimension >= size,
+        "limited_by_budget": dimension >= budget and budget < size,
+        "is_a_certified_lower_bound_on_the_rational_rank": True,
+    }
+
+
 def _prefix(basis: Sequence[Sequence[float]], rank: int) -> List[List[float]]:
     """Leading ``rank`` columns.
 
-    Both span constructions are ordered: block Krylov adds powers in order and
-    orthogonal iteration converges its leading ``k`` columns to the dominant
-    ``k``-dimensional invariant subspace, so a prefix is the same span the
-    construction would have produced had it been asked for rank ``k``.
+    Both span constructions are ordered: block Krylov adds powers in the declared
+    seed order and orthogonal iteration converges its leading ``k`` columns to
+    the dominant ``k``-dimensional invariant subspace, so a prefix is the same
+    span the construction would have produced had it been asked for rank ``k``.
     """
 
     return [list(column) for column in basis[:rank]]
+
+
+def _rms(values: Sequence[float]) -> Optional[float]:
+    values = [value for value in values if value is not None]
+    if not values:
+        return None
+    return math.sqrt(sum(value * value for value in values) / len(values))
+
+
+def dictionary_scores(entry: Mapping[str, Any]) -> Dict[str, Dict[str, Optional[float]]]:
+    """Readout-balanced baseline representability and intervention excess, per dictionary.
+
+    Balanced rather than pooled so that a dictionary's verdict cannot be carried
+    by its largest-magnitude member, and split into ``R`` and ``T`` so that a
+    dictionary the span never represented is not credited with transporting.
+    """
+
+    out: Dict[str, Dict[str, Optional[float]]] = {}
+    zero = entry["etas"].get(_eta_key(0.0))
+    if zero is None:
+        return out
+    baseline = zero["fixed_span"].get("contrast_by_readout", {})
+    model_zero = zero["transported"].get("contrast_by_readout", {})
+    for name, members in DICTIONARIES.items():
+        representability = _rms([baseline.get(member) for member in members])
+        at_zero = _rms([model_zero.get(member) for member in members])
+        excess = None
+        for eta in PRIMARY_ETAS:
+            block = entry["etas"].get(_eta_key(eta))
+            if block is None or at_zero is None:
+                continue
+            moved = _rms(
+                [
+                    block["transported"].get("contrast_by_readout", {}).get(member)
+                    for member in members
+                ]
+            )
+            if moved is None:
+                continue
+            gap = moved - at_zero
+            excess = gap if excess is None else max(excess, gap)
+        out[name] = {
+            "R_baseline_representability": representability,
+            "transported_at_eta_zero": at_zero,
+            "T_intervention_excess": excess,
+        }
+    return out
+
+
+def rank_notions(
+    generator: Generator,
+    intervention: str,
+    observables: Mapping[str, Sequence[float]],
+    spans: Sequence[Mapping[str, Any]],
+    budget: Optional[int] = None,
+    verify: bool = False,
+) -> Dict[str, Any]:
+    """``r_linear``, ``r_positive`` and ``r_transport``, reported as three numbers.
+
+    #580's frontier update asks for exactly this separation, and P398 is one of
+    the few places in the repository where all three are computable rather than
+    fitted.  They are not the same question: an ordinary signed realization, a
+    positive/Markov realization and a frozen realization that survives a change
+    of generator can differ by two orders of magnitude, and calling any one of
+    them "the state dimension" is the conflation the issue warns against.
+    """
+
+    baseline_rates = generator.baseline_rates()
+    tangent_rates = generator.coefficients(intervention)
+    if budget is None:
+        budget = linear_rank_budget(generator.size)
+    rows: Dict[str, Any] = {}
+    for name, members in DICTIONARIES.items():
+        vectors = [observables[member] for member in members]
+        colours = [
+            tuple(observables[member][state] for member in members)
+            for state in range(generator.size)
+        ]
+        key = (generator.width, name, budget)
+        if key not in _LINEAR_RANK_CACHE:
+            _LINEAR_RANK_CACHE[key] = observable_reachable_dimension(
+                generator, vectors, budget
+            )
+        linear = _LINEAR_RANK_CACHE[key]
+        positive_baseline = exact_lumping(
+            generator,
+            colours,
+            [baseline_rates],
+            verify_with=vectors[0] if verify else None,
+        )
+        positive_family = exact_lumping(
+            generator, colours, [baseline_rates, tangent_rates]
+        )
+        transport: Optional[int] = None
+        for span in spans:
+            if span.get("status") != "scored" or span["family"] != "krylov":
+                continue
+            scores = dictionary_scores(span).get(name)
+            if scores is None:
+                continue
+            representability = scores["R_baseline_representability"]
+            excess = scores["T_intervention_excess"]
+            if (
+                representability is not None
+                and representability <= PASS_THRESHOLD
+                and excess is not None
+                and excess <= PASS_THRESHOLD
+            ):
+                rank = span["requested_rank"]
+                transport = rank if transport is None else min(transport, rank)
+        rows[name] = {
+            "readouts": list(members),
+            "r_linear": linear,
+            "r_positive_baseline_lumping": positive_baseline,
+            "r_positive_whole_affine_family": positive_family,
+            "r_transport": transport,
+            "r_transport_note": (
+                "smallest declared Krylov rank whose readout-balanced baseline "
+                "representability and intervention excess are both at or below "
+                f"{PASS_THRESHOLD}; None means no declared rank reached it"
+            ),
+        }
+    return rows
 
 
 def width_experiment(
@@ -1528,7 +2022,13 @@ def width_experiment(
                             squared_norms, projected, trajectories, held_out_columns
                         ),
                     }
-                    if label == "transported" and (
+                    entry[label]["contrast_balanced_primary"] = balanced_error(
+                        truth_contrast, prediction_contrast, primary_columns
+                    )
+                    entry[label]["contrast_balanced_held_out"] = balanced_error(
+                        truth_contrast, prediction_contrast, held_out_columns
+                    )
+                    if label in ("transported", "fixed_span") and (
                         eta in PRIMARY_ETAS or eta == 0.0
                     ):
                         entry[label]["contrast_by_readout"] = {
@@ -1560,10 +2060,52 @@ def width_experiment(
                     "etas": per_eta,
                 }
             )
+    named_observables = {
+        name: observables[index] for index, (name, _) in enumerate(readouts)
+    }
+    for entry in results:
+        if entry.get("status") != "scored":
+            continue
+        zero = entry["etas"].get(_eta_key(0.0))
+        if zero is None:
+            continue
+        baseline_by_readout = zero["fixed_span"].get("contrast_by_readout", {})
+        model_zero = zero["transported"].get("contrast_by_readout", {})
+        excess_by_readout: Dict[str, float] = {}
+        for name in named_observables:
+            base = model_zero.get(name)
+            if base is None:
+                continue
+            for eta in PRIMARY_ETAS:
+                block = entry["etas"].get(_eta_key(eta))
+                if block is None:
+                    continue
+                moved = block["transported"].get("contrast_by_readout", {}).get(name)
+                if moved is None:
+                    continue
+                gap = moved - base
+                excess_by_readout[name] = max(excess_by_readout.get(name, gap), gap)
+        entry["readout_classification"] = classify_readouts(
+            [name for name, _ in readouts],
+            [name for name, _ in PRIMARY_READOUTS],
+            cache[0.0]["contrast"],
+            baseline_by_readout,
+            model_zero,
+            excess_by_readout,
+        )
+        entry["dictionary_scores"] = dictionary_scores(entry)
+
     return {
         "width": generator.width,
         "intervention": intervention,
         "intervention_is_inside_the_baseline_pencil": IN_PENCIL[intervention],
+        "rank_notions": rank_notions(
+            generator,
+            intervention,
+            named_observables,
+            results,
+            verify=intervention == VERDICT_INTERVENTION,
+        ),
         "flag_invariance": flag_invariance(
             baseline_rows, tangent, seeds, sorted(set(ranks) | {len(seeds)})
         ),
@@ -1805,6 +2347,18 @@ def _family_reading(
         "E_transported_with_one_frozen_refinement": augmented,
         "E_fixed_span_generator_fit": fitted,
         "E_random_span_control": control_value,
+        "readout_bins": (entry.get("readout_classification") or {}).get("tally"),
+        "readout_classification": (entry.get("readout_classification") or {}).get(
+            "by_readout"
+        ),
+        "dictionary_scores": entry.get("dictionary_scores"),
+        "rank_notions": width_block.get("rank_notions"),
+        "E_transported_balanced_declared": _worst_primary(
+            entry, "transported", "contrast_balanced_primary"
+        ),
+        "E_transported_balanced_held_out": _worst_primary(
+            entry, "transported", "contrast_balanced_held_out"
+        ),
         "E_transported_worst_declared_readout": worst_declared,
         "E_transported_worst_held_out_readout": worst_held_out,
         "verdict_by_worst_single_readout": _classify(
@@ -2051,6 +2605,8 @@ def render(result: Mapping[str, Any]) -> str:
             "E_transported_at_eta_zero",
             "E_transported_excess_over_eta_zero",
             "E_transported_held_out_excess_over_eta_zero",
+            "E_transported_balanced_declared",
+            "E_transported_balanced_held_out",
         ):
             lines.append(f"    {key:44} {_format(reading.get(key))}")
         lines.append(
@@ -2058,6 +2614,23 @@ def render(result: Mapping[str, Any]) -> str:
             f"{_format(reading.get('refit_span_drift_from_frozen'))} "
             f"(moved={reading.get('the_refit_span_actually_moved')})"
         )
+        bins = reading.get("readout_bins") or {}
+        if bins:
+            lines.append(
+                f"    {'readout bins':44} "
+                + "  ".join(f"{key}={value}" for key, value in sorted(bins.items()))
+            )
+        notions = reading.get("rank_notions") or {}
+        for name, row in sorted(notions.items()):
+            lines.append(
+                f"    {name:44} r_linear="
+                f"{row['r_linear']['dimension']}"
+                f"{'+' if row['r_linear']['limited_by_budget'] else ''}"
+                f"{' (=n)' if row['r_linear']['reached_the_whole_state_space'] else ''}  "
+                f"r_positive={row['r_positive_baseline_lumping']['blocks']}"
+                f"/{row['r_positive_whole_affine_family']['blocks']}  "
+                f"r_transport={row['r_transport']}"
+            )
         worst = reading.get("E_transported_worst_declared_readout")
         held = reading.get("E_transported_worst_held_out_readout")
         if worst or held:

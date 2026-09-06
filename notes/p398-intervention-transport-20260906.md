@@ -101,7 +101,7 @@ refit span (`9.0e-02`). It transports anyway — excess `+0.0016` at rank 6, if
 anything *better* than the in-pencil directions. Transport here is not an
 artifact of where the intervention sits relative to the algebra.
 
-## Result 2 — the state is a state of its readouts, not of the system
+## Result 2 — the state is a state of the observables it represents
 
 The same frozen realization, scored on the five readouts it never saw:
 
@@ -125,9 +125,8 @@ captured; nesting depth and long-range boundary linking are not. `wrap` is the
 warning inside the good news: it is a declared readout, and it fails at 0.230
 while the pooled declared-block score reads 0.068, because the pooled relative
 Frobenius norm is magnitude-weighted and `blocks`/`singletons` are `O(w)` while
-`wrap` is `O(1)`. The artifact therefore carries a second, explicitly post-hoc
-verdict computed one readout at a time at the same threshold; by that reading
-nothing passes.
+`wrap` is `O(1)`. **Result 5 below replaces this table's declared/held-out
+framing**, which turns out to be the wrong cut.
 
 ## Result 3 — the slow-mode subspace is not the state
 
@@ -157,6 +156,136 @@ Moves that do not change the state are dropped rather than recorded: keeping
 them would cancel in the generator but not in the uniformization rate, shifting
 every fitted timescale.
 
+
+## Result 4 — `r_linear`, `r_positive` and `r_transport` are three different numbers
+
+The frontier update on #580 asks that these never be collapsed into one "state
+dimension". P398 is one of the few places in the repository where all three are
+computable rather than fitted.
+
+- **`r_linear`** — `dim span{G_0^k f}`, the observability side of the minimal
+  ordinary realization order. Computed by exact elimination over the prime
+  `2147483647`; the generator and every declared readout are integer-valued, so
+  this is exact and is a certified lower bound on the rational rank. A float
+  elimination is not usable here: repeated application of the generator collapses
+  onto the dominant direction, so a pivot tolerance decides the answer. At width
+  6 the float version returned the full 132 against a true 72 — an error in the
+  direction that would make `r_linear` look like the whole state space and hide
+  the `r_linear` versus `r_positive` comparison below.
+- **`r_positive`** — the block count of the coarsest exact **strong lumping** of
+  the chain that keeps the dictionary's readouts constant on blocks. Strong
+  lumpability asks that every state of a block send the same total rate into
+  every other block; when it holds, the aggregated process is an exact Markov
+  chain **for every initial distribution**, so this is a certified positive
+  realization dimension, not a fitted rank. Verified at every width by
+  reproducing the full chain's evolution from the lumped one, to `2.7e-15`.
+- **`r_transport`** — the smallest declared Krylov rank whose readout-balanced
+  baseline representability *and* intervention excess are both at or below 0.10.
+
+For `D0` (the additive local counts), declared intervention:
+
+| width | states | `r_linear` | `r_positive` | `r_transport` |
+| ---: | ---: | ---: | ---: | ---: |
+| 4 | 14 | 10 | 10 | 4 |
+| 5 | 42 | 26 | 26 | 4 |
+| 6 | 132 | 72 | 76 | 6 |
+| 7 | 429 | 218 | 232 | 6 |
+| 8 | 1430 | ≥150 | 750 | 6 |
+
+`r_linear` and `r_positive` both grow with the state space — roughly half of it —
+while `r_transport` sits at 4 to 6 throughout. At width 8 the gap is a factor of
+125 and widening. **A low signed rank that transports an intervention is not a
+positive state count and not a field count**, and here the two can be exhibited
+side by side rather than argued about.
+
+### The positive realization sees the pencil; the signed one does not
+
+`r_transport` was insensitive to whether the intervention lies inside the
+`span{J, D}` pencil — 6 either way (Result 1). The coarsest lumping valid for the
+**whole affine family** is not:
+
+| width | states | in-pencil (`J-D`) | in-pencil (`D` only) | out-of-pencil (one join) |
+| ---: | ---: | ---: | ---: | ---: |
+| 4 | 14 | 10 | 10 | **14** |
+| 5 | 42 | 26 | 26 | **42** |
+| 6 | 132 | 76 | 76 | **132** |
+| 7 | 429 | 232 | 232 | **429** |
+| 8 | 1430 | 750 | 750 | **1430** |
+
+Under either in-pencil direction the positive realization is unchanged by the
+intervention — the same lumping works for the whole family. Under the
+one-boundary-point tilt it collapses to the identity partition: **no nontrivial
+exact positive realization survives that intervention at all**, at any width.
+
+This is the sharpest thing in the run. The same intervention that the rank-6
+signed transported model handles at a cost of `+0.0016` destroys every exact
+positive aggregation of the chain. The two notions of "the state survived the
+intervention" disagree completely, and only reporting both makes that visible.
+
+## Result 5 — representability, not membership in the training dictionary, predicts transport
+
+At the owner's request the artifact now separates two questions the pooled norm
+was mixing:
+
+```text
+R_o   how well the frozen span represents readout o at eta = 0;
+T_o   the transported model's excess for o over its own eta = 0 error.
+```
+
+A readout the span never represented carries **no transport verdict**: its
+finite-`eta` error is dominated by a dictionary failure that was there before any
+intervention. Counting it as a transport failure — or as a success because both
+numbers are large and close — is the misreading this classification exists to
+stop. Four bins at the same declared 0.10 threshold, plus a weak-signal bin for
+readouts whose own baseline contrast is too small to be a denominator.
+
+Width 8, rank 6, declared intervention:
+
+| readout | declared? | `R` | `T` | signal share | bin |
+| --- | --- | ---: | ---: | ---: | --- |
+| `blocks` | yes | 0.031 | +0.010 | 0.24 | represented and transports |
+| `singletons` | yes | 0.035 | −0.000 | 0.23 | represented and transports |
+| `max_block` | **no** | 0.070 | +0.037 | 0.27 | represented and transports |
+| `linked_pairs` | no | 0.134 | +0.027 | 1.00 | unrepresented at baseline |
+| `wrap` | **yes** | 0.148 | +0.020 | 0.03 | unrepresented at baseline |
+| `boundary_span` | no | 0.179 | +0.044 | 0.25 | unrepresented at baseline |
+| `covering_depth` | no | 0.311 | +0.084 | 0.05 | unrepresented at baseline |
+| `halves_linked` | no | 0.361 | +0.036 | 0.04 | unrepresented at baseline |
+
+The split cuts **across** the declaration. A held-out readout (`max_block`) is
+represented and transports; a declared one (`wrap`) is not represented at all.
+So the correct statement is not "the state is a state of its training readouts".
+It is:
+
+> for every observable the frozen span represents at baseline, changing the
+> generator is cheap — the excess is between `-0.000` and `+0.084` across all
+> eight readouts, in and out of the pencil. What the state does or does not do is
+> decided entirely before any intervention, by whether the observable is in its
+> representable class.
+
+The nested dictionaries make the same point in aggregate, readout-balanced:
+
+| dictionary | `R` | `T` | `r_transport` (width 8) |
+| --- | ---: | ---: | ---: |
+| `D0` additive local counts | 0.090 | +0.011 | 6 |
+| `D1` + size and extent | 0.115 | +0.019 | 8 |
+| `D2` + nonlocal topology | 0.196 | +0.022 | none of the declared ranks |
+
+Representability degrades as the dictionary grows; the intervention excess does
+not move.
+
+### The scale-stable score
+
+The declared metric is a pooled relative Frobenius norm and is therefore
+magnitude-weighted: multiplying one observable by a constant changes the verdict
+it carries. The artifact now also reports a readout-balanced score — the root
+mean square of the per-readout relative errors, each with its own denominator —
+which is invariant under rescaling any single readout. It is **post-hoc by
+construction**, added after the first reading, and it is less flattering: at
+width 8 rank 6 the declared block reads 0.068 pooled and 0.142 balanced, the
+held-out block 0.264 pooled and 0.444 balanced. Both are in the artifact; neither
+replaces the other silently.
+
 ## The decision
 
 Against #580's table, at width 8, rank 6, `eta = ±1/4`:
@@ -175,13 +304,20 @@ together. They do not, and the branch was added rather than folding the case
 into the refinement branch — the one added intervention-generated direction
 lowers the error by 0.003 and closes nothing.
 
+Result 5 narrows the label further: the class that transports is the
+*representable* class, which is not the declared one. And Result 4 adds the
+qualification that matters most — the object that transports is a rank-6 signed
+realization, while the smallest exact positive realization of the same chain is
+750 blocks and does not survive the out-of-pencil intervention at all.
+
 ## What this means for the wider programme
 
 The finite low-dimensional state is real, transportable and cheap to transport —
-**relative to a declared observable dictionary**. It is not a state of the
-system. Change the dictionary from additive counts to nesting or long-range
-linking and the same frozen span stops representing the dynamics at all, before
-any intervention is applied.
+**relative to the class of observables it represents**, which is decided at
+baseline and is not the same as the dictionary it was built from. It is not a
+state of the system: the smallest exact positive realization is 750 blocks at
+width 8 against a transported rank of 6, and that positive realization is
+destroyed by an intervention the rank-6 model handles for free.
 
 That is a direct input to #275. A "mechanism class" defined by a low-rank state
 is identified only up to its observable dictionary, so two mechanism classes

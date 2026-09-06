@@ -383,3 +383,178 @@ class DeclaredManifest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class RankNotions(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.generator = it.Generator(5)
+        cls.observables = {
+            name: [function(state) for state in cls.generator.states]
+            for name, function in list(it.PRIMARY_READOUTS) + list(it.HELD_OUT_READOUTS)
+        }
+
+    def test_the_lumped_chain_reproduces_the_full_one(self) -> None:
+        """Stops a refinement bug being reported as a small positive realization.
+
+        The block count is only a certified positive/Markov realization dimension
+        if the aggregated chain actually reproduces the full chain's evolution of
+        a function constant on blocks.  A signature bug would over-merge and make
+        ``r_positive`` look smaller than it is -- the direction that most
+        flatters the conclusion this artifact draws.
+        """
+
+        rates = self.generator.baseline_rates()
+        for name in ("blocks", "covering_depth"):
+            colours = [(value,) for value in self.observables[name]]
+            result = it.exact_lumping(
+                self.generator, colours, [rates], verify_with=self.observables[name]
+            )
+            self.assertLess(result["verified_max_response_drift"], 1e-10, name)
+            self.assertLessEqual(result["blocks"], self.generator.size)
+
+    def test_a_finer_colouring_can_only_give_a_finer_lumping(self) -> None:
+        """Stops the dictionary ladder reporting a positive dimension that shrinks.
+
+        ``D0`` is a subset of ``D2``, so the coarsest lumping keeping ``D2``
+        refines the one keeping ``D0``.  If the block count ever fell as the
+        dictionary grew, the refinement would not be computing what the artifact
+        says it computes.
+        """
+
+        rates = self.generator.baseline_rates()
+        counts = []
+        for members in (
+            it.DICTIONARIES["D0_additive_local_counts"],
+            it.DICTIONARIES["D2_plus_nonlocal_topology"],
+        ):
+            colours = [
+                tuple(self.observables[member][state] for member in members)
+                for state in range(self.generator.size)
+            ]
+            counts.append(it.exact_lumping(self.generator, colours, [rates])["blocks"])
+        self.assertLessEqual(counts[0], counts[1])
+
+    def test_refining_against_the_intervention_cannot_coarsen_the_lumping(self) -> None:
+        """Stops an intervention-stable positive realization being claimed for free.
+
+        Asking the same partition to lump the baseline generator *and* the
+        intervention tangent is a strictly stronger requirement, so it can only
+        split blocks.  If it ever merged them, the "positive realization survives
+        the whole affine family" line would be meaningless.
+        """
+
+        members = it.DICTIONARIES["D0_additive_local_counts"]
+        colours = [
+            tuple(self.observables[member][state] for member in members)
+            for state in range(self.generator.size)
+        ]
+        rates = self.generator.baseline_rates()
+        alone = it.exact_lumping(self.generator, colours, [rates])["blocks"]
+        for intervention in it.INTERVENTIONS:
+            joint = it.exact_lumping(
+                self.generator,
+                colours,
+                [rates, self.generator.coefficients(intervention)],
+            )["blocks"]
+            self.assertGreaterEqual(joint, alone, intervention)
+
+    def test_the_modular_rank_agrees_with_a_second_prime_and_beats_floating_point(self) -> None:
+        """Stops ``r_linear`` being a number produced by a pivot tolerance.
+
+        Repeated application of the generator collapses onto the dominant
+        direction, so a float elimination loses dimensions: at width 5 it
+        returned 26 against a true 42, and that error runs in the direction that
+        would make the linear rank look close to the transported rank and hide
+        the whole separation.  Two independent primes agreeing is the cheap
+        check that the modular rank is the rational one.
+        """
+
+        vectors = [
+            self.observables[name]
+            for name in it.DICTIONARIES["D0_additive_local_counts"]
+        ]
+        first = it.observable_reachable_dimension(self.generator, vectors, 200)
+        second = it.observable_reachable_dimension(
+            self.generator, vectors, 200, modulus=2147483629
+        )
+        self.assertEqual(first["dimension"], second["dimension"])
+        self.assertFalse(first["limited_by_budget"])
+        self.assertLess(first["dimension"], self.generator.size)
+        self.assertGreater(first["dimension"], 3 * max(it.RANKS[:3]))
+
+
+    def test_the_linear_rank_never_exceeds_the_positive_one(self) -> None:
+        """Stops the three rank notions being reported in an impossible order.
+
+        The lumped chain is itself a realization, and every function in the
+        observable Krylov space is constant on its blocks, so the linear rank
+        cannot exceed the block count.  If the artifact ever printed the reverse,
+        one of the two would be measuring something other than what its name
+        says, and the whole `r_linear` / `r_positive` / `r_transport` separation
+        would be unreadable.
+        """
+
+        rates = self.generator.baseline_rates()
+        for members in it.DICTIONARIES.values():
+            vectors = [self.observables[member] for member in members]
+            colours = [
+                tuple(self.observables[member][state] for member in members)
+                for state in range(self.generator.size)
+            ]
+            linear = it.observable_reachable_dimension(
+                self.generator, vectors, self.generator.size
+            )["dimension"]
+            positive = it.exact_lumping(self.generator, colours, [rates])["blocks"]
+            self.assertLessEqual(linear, positive, members)
+
+
+class ReadoutClassification(unittest.TestCase):
+    def test_an_unrepresented_readout_gets_no_transport_verdict(self) -> None:
+        """Stops a dictionary failure being counted as a transport result.
+
+        A readout the frozen span never represented at ``eta = 0`` can show a
+        tiny finite-``eta`` excess purely because both numbers are large and
+        close.  Binning it as 'transports' would be the most flattering possible
+        misreading of the whole artifact.
+        """
+
+        classification = it.classify_readouts(
+            ("good", "bad", "faint"),
+            ("good",),
+            [[[1.0, 1.0, 1e-9], [2.0, 2.0, 2e-9]]],
+            {"good": 0.01, "bad": 0.60, "faint": 0.01},
+            {"good": 0.02, "bad": 0.61, "faint": 0.01},
+            {"good": 0.005, "bad": 0.004, "faint": 0.0},
+        )
+        rows = classification["by_readout"]
+        self.assertEqual(rows["good"]["bin"], "represented_and_transports")
+        self.assertEqual(
+            rows["bad"]["bin"],
+            "unrepresented_at_baseline_transport_not_identifiable",
+        )
+        self.assertEqual(rows["faint"]["bin"], "weakly_identifiable_baseline_signal")
+
+    def test_the_balanced_score_ignores_a_rescaling(self) -> None:
+        """Stops a coordinate scale deciding whether the state transports.
+
+        The declared pooled Frobenius norm is magnitude-weighted: doubling one
+        readout changes the verdict it carries.  The balanced score gives each
+        readout its own denominator, so it must be invariant under rescaling any
+        single readout -- which the pooled one is not.
+        """
+
+        truth = [[[1.0, 10.0], [2.0, 20.0]]]
+        prediction = [[[1.1, 12.0], [2.2, 24.0]]]
+        scaled_truth = [[[1.0, 1000.0], [2.0, 2000.0]]]
+        scaled_prediction = [[[1.1, 1200.0], [2.2, 2400.0]]]
+        self.assertAlmostEqual(
+            it.balanced_error(truth, prediction, (0, 1)),
+            it.balanced_error(scaled_truth, scaled_prediction, (0, 1)),
+            places=12,
+        )
+        self.assertNotAlmostEqual(
+            it.relative_error(truth, prediction, (0, 1)),
+            it.balanced_error(truth, prediction, (0, 1)),
+            places=3,
+        )
