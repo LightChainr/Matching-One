@@ -1,0 +1,53 @@
+{
+ "schema": "matching-one.probe-invariant-shape.blindness-glift.v1",
+ "g_cited_from": "results/type582-residual/latest.json (PR #605 lineage)",
+ "direction5": {
+  "identity": "F=(1+M)/2 with M=P20-P02: Z is a functional of the odd polynomial M alone; the even sector never enters",
+  "counterexample": "L=3, P11 -> (3/2) P11 with P20, P02 fixed: same M (hence same odd content, M(1/2) unchanged), different F, different Z",
+  "joint_law_moved": true,
+  "M_unchanged": true,
+  "F_moved": true,
+  "Z_moved": true,
+  "Z_before": [
+   -0.4656742910967026,
+   -0.1307604886066927,
+   0.11785131382903015,
+   0.32951190569900896,
+   0.5232434636410629,
+   0.710241538987024,
+   0.9001919302982195,
+   1.1061041758447958,
+   1.3574837904320187
+  ],
+  "Z_after": [
+   -0.437397366148733,
+   -0.12450914469323349,
+   0.11338371098202628,
+   0.3198653504253985,
+   0.5121647758301511,
+   0.7009245679510303,
+   0.8960298413358528,
+   1.1117044751023402,
+   1.3816902421954256
+  ],
+  "verdict": "the odd sector M governs Z; the even sector P11 is invisible to Z but visible to the pair \u2014 so no functional of the pair beyond its odd projection can be recovered from Z (W4's 'governs' direction dies; the converse \u2014 Z does not determine the pair \u2014 is exact)"
+ },
+ "direction6": {
+  "test": "is consensus_g (cited) parallel to deltaZ = Z_{L=4} - Z_{L=3} on the same 9 levels?",
+  "deltaZ": [
+   -0.006797699629817133,
+   0.0002479930160355637,
+   -0.0009907372721496138,
+   -0.003537707044666105,
+   -0.0054824715154933035,
+   -0.005748146216893901,
+   -0.0030877168533604005,
+   0.004938246020020465,
+   0.02583032703854138
+  ],
+  "angle_raw_deg": 93.91923544902247,
+  "angle_after_affine_removal_deg": 159.62484413088862,
+  "levels_note": "census levels are {0.1..0.9}; g's levels are the same deciles; both are 9-vectors in one chart",
+  "caveat": "L=3,4 are toy sizes; a null here separates the objects on the lab, it does not measure the N-regime angle"
+ }
+}
