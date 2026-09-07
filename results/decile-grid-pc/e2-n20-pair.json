@@ -75,5 +75,6 @@
       "m_half_equal": false
     }
   ],
-  "scaling_note": "family gaps fall super-polynomially faster than 1/N: measured ratios 8.18e-4 (L=5, N=10), 6.82e-5 (L=7, N=14), 2.16e-5 (L=8, N=16), 6.92e-6 (L=9, N=18), 2.25e-6 (L=10, N=20) -- roughly one order of magnitude per rung, i.e. ~N^-9 locally. The prior note's 'gap ~ 1/N, 3e-6 needs N >= 50' was wrong; 3e-6 is crossed at N=20."
+  "scaling_note": "family gaps fall super-polynomially faster than 1/N: measured gaps 8.18e-4 (L=5), 2.30e-4 (L=6), 6.82e-5 (L=7), 2.16e-5 (L=8), 6.92e-6 (L=9), 2.25e-6 (L=10) -- roughly one order of magnitude per rung, local exponent ~N^-9 (N=14->18) to ~N^-10 (N=16->20). The prior note's 'gap ~ 1/N, 3e-6 needs N >= 50' was wrong; 3e-6 is crossed at N=20. Trade-off: max decile gap = min root gap exactly for L=7..10 (same order at L=5,6), so growing N shrinks both together -- decile-within-SE needs N>=20, root-beyond-quoted-precision needs N<20, no member of this family satisfies both E2 criteria at once; a decisive instance needs a pair with separations of different orders.",
+  "torus_shape_note": "HNF(2,1,L) is a 2xL cell (N=2L) with a helical vertical wrap: the shortest non-horizontal winding lattice vector is (+-1, L), Manhattan length 2L+1. HNF(2,0,L) is the plain 2xL torus with vertical winding L. Earlier text calling HNF(2,1,L) 'the 3xL torus' was wrong (a 3xL cell would have N=3L)."
 }

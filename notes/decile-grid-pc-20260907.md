@@ -19,10 +19,24 @@ plus one proof that covers the entire class at any N.
 this note claimed `E2 NOT REACHED` and "gap ~ 1/N, 3e-6 needs N ≳ 50". Both
 claims were wrong and were caught by the post-commit self-check: extending
 the (2,1,L)/(2,0,L) family one rung past the sweep cutoff crosses the 3e-6
-SE scale at N = 20, and the family's gap decay is ~N^−9 locally (roughly one
-order of magnitude per rung), not 1/N. `scripts/decile_grid_pc_selfcheck.py`
-is the checking suite that caught this; `results/decile-grid-pc/e2-n20-pair.json`
-is the exact artifact for the E2 pair.
+SE scale at N = 20, and the family's gap decay is ~N^−9 to N^−10 locally
+(roughly one order of magnitude per rung), not 1/N.
+`scripts/decile_grid_pc_selfcheck.py` is the checking suite that caught
+this; `results/decile-grid-pc/e2-n20-pair.json` is the exact artifact for
+the E2 pair.
+
+**Self-check correction (2026-09-07, third revision).** A second pass caught
+three more defects: (a) the first two commits called HNF(2,1,L) "the 3xL
+torus" — wrong, its cell is 2×L with a helical vertical wrap (winding
+(1,L)); (b) the second commit projected a "decisive" E2 instance at
+N ≈ 25–30 in this family — backwards, since decile gap = root gap exactly
+in the family, larger N shrinks both and moves AWAY from the
+root-beyond-precision criterion; no family member satisfies both E2
+criteria at once (see Family scaling); (c) "seven equal-M(1/2) groups,
+all with distinct roots" — the seventh group (eighteen (1,0,L) chains,
+M(1/2) = 0) has p_c = 1/2 for every member, so E3's distinct-roots clause
+fails there; the artifact's six nonzero groups are the ones where the
+clause holds.
 
 ## Rung disposition
 
@@ -40,8 +54,9 @@ E1  NO instance in the swept subclass: across all 5,356 pairs of the 104
     No pair agrees at all nine deciles. (Existence question outside the
     swept subclass stays open; see Boundary.)
 
-E2  REACHED at N = 20: HNF(2,1,10) (the 3x10 torus) vs HNF(2,0,10) (the
-    2x20 torus) have max decile gap
+E2  REACHED at N = 20: HNF(2,1,10) (the 2x10 torus with a helical vertical
+    wrap, winding vector (1,10)) vs HNF(2,0,10) (the plain 2x10 torus)
+    have max decile gap
         648033958315 / 288230376151711744  =  2.2483e-6  <  3e-6,
     the SE scale of the published nine-decile vector, while their p_c
     brackets are disjoint (root gap also 2.2483e-6, exact). Caveat,
@@ -50,19 +65,33 @@ E2  REACHED at N = 20: HNF(2,1,10) (the 3x10 torus) vs HNF(2,0,10) (the
     2.248e-6 is of the same order as the "a few parts in 10^6" precision
     quoted for Q(0.5) in notes/wasserstein-shape-flow-20260906.md. E2 is
     reached on the decile-within-SE criterion; the root-vs-precision
-    criterion is not cleanly separated, it is borderline.
+    criterion is not cleanly separated, it is borderline. Sharper: within
+    this family the decile gap and the root gap are EQUAL (exact, L=7..10;
+    same order at L=5,6), so the two E2 criteria trade off against each
+    other as L grows -- decile-within-SE needs N >= 20, root-beyond-
+    quoted-precision needs N < 20. No member of this family satisfies
+    both criteria at once. A clean E2 instance needs a pair whose decile
+    and root separations differ in order of magnitude, not more rows of
+    this one.
 
-E3  NO instance: seven groups of geometries share M(1/2) exactly
-    (e.g. -21/64 is shared by HNF(3,1,2), HNF(7,2,1), HNF(4,1,2),
-    HNF(3,0,3)), and every pair inside every group has BOTH distinct roots
-    AND distinct decile vectors. E3 needs decile agreement first; that
-    already fails at N <= 18.
+E3  NO instance: six groups of geometries with >1 member share M(1/2)
+    exactly at nonzero values (e.g. -21/64 is shared by HNF(3,1,2),
+    HNF(7,2,1), HNF(4,1,2), HNF(3,0,3); -5/16 by HNF(5,1,1), HNF(5,1,2),
+    HNF(5,2,1)), and every pair inside every one of those six groups has
+    BOTH distinct roots AND distinct decile vectors. A seventh group
+    shares M(1/2) = 0 -- the eighteen (1,0,L) chain geometries, L=1..18 --
+    but every member has p_c = 1/2 exactly, so E3's "different p_c" fails
+    there regardless of deciles; results/decile-grid-pc/e3-groups.json
+    records only the six groups where roots can differ. E3 needs decile
+    agreement first; that already fails at N <= 18.
 ```
 
 ## The headline pair
 
-HNF(2,1,10) vs HNF(2,0,10) — periods {(2,0),(1,10)} (the 3×10 torus, N=20)
-against {(2,0),(0,10)} (the 2×20 torus, N=20), from the closest pair family:
+HNF(2,1,10) vs HNF(2,0,10) — periods {(2,0),(1,10)} (the 2×10 torus with a
+helical vertical wrap, shortest non-horizontal winding (±1,10), Manhattan
+length 11; N=20) against {(2,0),(0,10)} (the plain 2×10 torus, vertical
+winding 10; N=20), from the closest pair family:
 
 - max decile gap, exact: 648033958315/288230376151711744 = 2.2483e-6 (< 3e-6 SE scale);
 - min root gap: 2.2483e-6, exact — same order as the decile gap;
@@ -84,17 +113,23 @@ L=9  (N=18)  6.92e-6   <- prior sweep cutoff; read as "E2 not reached"
 L=10 (N=20)  2.25e-6   <- E2 threshold 3e-6 crossed
 ```
 
-The decay is roughly one order of magnitude per rung, ~N^−9 locally between
-N = 16 and N = 20 — NOT 1/N as the first commit claimed. The first commit's
-"halves per unit L" and "3e-6 needs N ≳ 50" statements were arithmetic
-errors on these same measured numbers (the L=9→L=10 step drops the gap by
-3.1x, not 2x, and 2.25e-6 < 3e-6 already at N = 20). Consequence: **on the admissible class,
+The decay is roughly one order of magnitude per rung, ~N^−9 to N^−10 locally
+(N=14→18 exponent ≈ 9.1, N=16→20 ≈ 10.1, N=18→20 ≈ 10.7) — NOT 1/N as the
+first commit claimed. The first commit's "halves per unit L" and "3e-6
+needs N ≳ 50" statements were arithmetic errors on these same measured
+numbers (the L=9→L=10 step drops the gap by 3.1x, not 2x, and 2.25e-6 <
+3e-6 already at N = 20). Consequence: **on the admissible class,
 decile-vector separation and root separation are the same size and collapse
 super-polynomially fast in N for this family** — the decile grid is a far
-weaker probe of p_c than the first commit stated. A genuinely sharp E2
-instance (deciles agreeing to quoted precision with roots separated well
-beyond it) needs N ≈ 25–30 in this family by the same local scaling, which
-is 2^N configurations and outside this ticket's brute-force budget.
+weaker probe of p_c than the first commit stated. And the trade-off cuts
+sharper than "go to larger N": in this family the decile gap and the root
+gap are exactly equal (L=7..10), so growing N shrinks BOTH together. The
+decile-within-SE criterion is met at N ≥ 20, but the root-beyond-quoted-
+precision criterion (root gap ≫ a few parts in 10^6) is met only at
+N < 20 — no member of this family satisfies both at once. A decisive E2
+instance requires a geometry pair whose decile and root separations have
+different orders of magnitude; this family cannot supply one at any
+enumerable N.
 
 ## What was computed
 
@@ -120,7 +155,11 @@ is 2^N configurations and outside this ticket's brute-force budget.
    threshold, with an exact independent recomputation of the headline gap.
 
 4. **E3 groups** (`results/decile-grid-pc/e3-groups.json`): all pairs
-   sharing M(1/2) exactly, with exact decile/root gaps.
+   sharing M(1/2) exactly with roots able to differ (six nonzero groups),
+   with exact decile/root gaps. The seventh equal-M(1/2) group — the
+   eighteen (1,0,L) chains, all with M(1/2) = 0 and p_c = 1/2 — is excluded
+   there because E3's "different p_c" is impossible inside it; the
+   exclusion is verified, not an oversight.
 
 5. **Governance §2 checks**: (a) regression identity — the sweep's HNF
    builder reproduces the committed reference implementation's Bernstein
@@ -147,9 +186,11 @@ not on a clean finite-geometry counterexample at enumerable sizes.
 
 - E1 is a negative confined to the N ≤ 18 swept subclass (104 geometries);
   E2 is a positive at N = 20, one rung past the cutoff. The knife-edge
-  character of the N = 20 pair (root gap ~ quoted precision) means a
-  *decisive* E2 instance likely sits at N ≈ 25–30 in the closest family,
-  outside this ticket's brute-force budget.
+  character of the N = 20 pair is structural for this family: decile gap =
+  root gap exactly (L=7..10), so the two E2 criteria cross without a
+  simultaneous solution anywhere in the family. A *decisive* E2 instance
+  needs a pair with decile and root separations of different orders, which
+  this ticket does not supply and this family cannot.
 - "Admissible" is taken exactly as the ticket defines it: integer Bernstein
   form arising from D(C) = 1{black wraps} − 1{white NN+NNN wraps} on some
   finite periodic geometry. No toy families, no stretching.
@@ -166,5 +207,6 @@ results/decile-grid-pc/committed-pairwise.json    deliverable 3 artifact (exact)
 results/decile-grid-pc/admissible-sweep.json      sweep artifact (exact pairs, E4 argument)
 results/decile-grid-pc/closest-pair-exact.json    the 6.92e-6 pair, per-decile exact gaps
 results/decile-grid-pc/e2-n20-pair.json           the E2 pair at N=20 + family scaling (exact)
-results/decile-grid-pc/e3-groups.json             the seven equal-M(1/2) groups
+results/decile-grid-pc/e3-groups.json             the six nonzero equal-M(1/2) groups (the
+                                                  M(1/2)=0 chain group is excluded: same p_c)
 ```

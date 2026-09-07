@@ -6,7 +6,8 @@ The N<=18 sweep (decile_grid_pc_admissible_sweep.py) found the closest pair
 HNF(2,1,9) vs HNF(2,0,9) with max decile bracket gap 6.92e-6, above the
 ~3e-6 SE scale of the published nine-decile vector, so E2 looked unreached.
 A post-commit self-check extended the (2,1,L)/(2,0,L) torus family one rung
-further: at L=10, N=20, the pair HNF(2,1,10) vs HNF(2,0,10) has max decile
+further: at L=10, N=20, the pair HNF(2,1,10) (2xL cell, helical vertical
+wrap, winding (1,L)) vs HNF(2,0,10) (plain 2xL torus) has max decile
 bracket gap 648033958315/288230376151711744 = 2.2483e-6 < 3e-6, i.e. two
 admissible finite models whose nine-decile quantile vectors agree to better
 than the quoted SE while their p_c differ.  E2 IS reached -- the N<=18
@@ -158,11 +159,24 @@ def main() -> int:
         "family_scaling": family,
         "scaling_note": (
             "family gaps fall super-polynomially faster than 1/N: measured "
-            "ratios 8.18e-4 (L=5, N=10), 6.82e-5 (L=7, N=14), 2.16e-5 "
-            "(L=8, N=16), 6.92e-6 (L=9, N=18), 2.25e-6 (L=10, N=20) -- "
-            "roughly one order of magnitude per rung, i.e. ~N^-9 locally. "
-            "The prior note's 'gap ~ 1/N, 3e-6 needs N >= 50' was wrong; "
-            "3e-6 is crossed at N=20."
+            "gaps 8.18e-4 (L=5), 2.30e-4 (L=6), 6.82e-5 (L=7), 2.16e-5 "
+            "(L=8), 6.92e-6 (L=9), 2.25e-6 (L=10) -- roughly one order of "
+            "magnitude per rung, local exponent ~N^-9 (N=14->18) to "
+            "~N^-10 (N=16->20). The prior note's 'gap ~ 1/N, 3e-6 needs "
+            "N >= 50' was wrong; 3e-6 is crossed at N=20. Trade-off: max "
+            "decile gap = min root gap exactly for L=7..10 (same order at "
+            "L=5,6), so growing N shrinks both together -- decile-within-SE "
+            "needs N>=20, root-beyond-quoted-precision needs N<20, no "
+            "member of this family satisfies both E2 criteria at once; a "
+            "decisive instance needs a pair with separations of different "
+            "orders."
+        ),
+        "torus_shape_note": (
+            "HNF(2,1,L) is a 2xL cell (N=2L) with a helical vertical wrap: "
+            "the shortest non-horizontal winding lattice vector is (+-1, L), "
+            "Manhattan length 2L+1. HNF(2,0,L) is the plain 2xL torus with "
+            "vertical winding L. Earlier text calling HNF(2,1,L) 'the 3xL "
+            "torus' was wrong (a 3xL cell would have N=3L)."
         ),
     }
     out_dir = ROOT / "results" / "decile-grid-pc"
