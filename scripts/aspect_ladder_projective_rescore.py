@@ -122,17 +122,24 @@ def curvature(vector: Sequence[float], covariance: Sequence[Sequence[float]]) ->
     A linear functional, so this is exact -- no denominator, no matrix inverse,
     and nothing that degrades when one entry is close to zero.
 
-    The value is summed through ``projective_inference``'s mpmath context
-    (``mp.dps = 15``), which is the arithmetic the committed artifact was
-    generated in; a pure-float sum loses the last bit here (-4.6630613986373587e-4
-    instead of -4.663061398637359e-4) and made the bit-exact reproduction test
-    fail.  #643 integration traced the mismatch to this and restored the
+    The value is summed through ``projective_inference``'s mpmath context,
+    which is the arithmetic the committed artifact was generated in; a
+    pure-float sum loses the last bit here (-4.6630613986373587e-4 instead of
+    -4.663061398637359e-4) and made the bit-exact reproduction test fail.
+    #643 integration traced the mismatch to this and restored the
     generation-time arithmetic.
+
+    The context is pinned at 15 dps for the duration of the call: other
+    scripts in this repository escalate the global ``mp.dps`` (and the
+    generation process had it at 15), so the committed artifact is
+    reproducible only at 15, and a leaked higher context from an unrelated
+    import would change the last bits.
     """
-    value = float(sum(
-        (mp.mpf(w) * mp.mpf(x) for w, x in zip(CURVATURE_WEIGHTS, vector)),
-        mp.mpf(0),
-    ))
+    with mp.workdps(15):
+        value = float(sum(
+            (mp.mpf(w) * mp.mpf(x) for w, x in zip(CURVATURE_WEIGHTS, vector)),
+            mp.mpf(0),
+        ))
     variance = sum(
         CURVATURE_WEIGHTS[i] * covariance[i][j] * CURVATURE_WEIGHTS[j]
         for i in range(3) for j in range(3)
@@ -188,6 +195,17 @@ def rescore(competitors: Mapping[str, Sequence[float]],
     scale = math.sqrt(covariance[1][1] * covariance[2][2])
     grid = [low + (high - low) * i / steps for i in range(steps + 1)]
 
+    # Pin the shared mpmath context at the generation-time precision: other
+    # scripts escalate the global mp.dps, and the committed artifact was
+    # produced at 15 dps. Without this, an unrelated import in the same
+    # process changes the last bits of every mpmath-rounded field.
+    with mp.workdps(15):
+        return _rescore_pinned(competitors, response, vector, covariance,
+                               low, high, scale, grid, steps)
+
+
+def _rescore_pinned(competitors, response, vector, covariance, low, high,
+                    scale, grid, steps) -> dict[str, Any]:
     rows: dict[str, Any] = {}
     for name, ray in competitors.items():
         centre = subspace_residual(vector, covariance, [list(ray)])
