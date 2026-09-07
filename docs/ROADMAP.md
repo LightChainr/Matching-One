@@ -409,6 +409,29 @@ numbers first: all differences sit at the artifact's own ten-digit storage preci
 claim is bounded to the input/output object; it says nothing about the state space beyond
 the task.
 
+**#581 first empirical control is complete — the two typed pieces stay distinguishable to
+L=8** (`notes/qtangent-empirical-20260907.md`, `results/qtangent-empirical/latest.json`).
+The exact gate's exhaustive `_conditional_means` cannot run at L≥4, so this block uses an
+**unbiased paired estimator** (`Γ_j = E[Y(c)Y(c′_j)ᵀ] − E[Y(c)Y(c′_{j−1})ᵀ]`, `c′_j` agreeing
+with `c` on the revealed bonds) — no replica-noise bias, telescoping exact to `1e-18`, and
+the L=3 run reproduces the enumerated gate (`Cov(wrap,X)` 0.2895 vs 0.2879, degree-one
+`X` −0.1340 vs −8721/65536).  On L=3/4/8 at `p = 1/2`, 10⁵ configurations each, with the
+frozen readout `wrap_either`:
+
+- **ambient homology `X`** is single-signed and monotone at every scale, its total
+  `Cov(wrap,X)` nearly size-independent (`0.2895 → 0.2973 → 0.3048`);
+- **duality-even `B_even`** alternates in sign, is opposite and 6–11× smaller in magnitude
+  (`−0.0270 → −0.0372 → −0.0499`);
+- the `X` degree-one coefficient decays roughly `∝ 1/L` (`−27/128, −0.1331, −0.0950,
+  −0.0408` for L=2/3/4/8) while `B_even`'s stays at the sampling floor.
+
+So the two pieces form a **typed fingerprint**: a declared response whose Q-score coupling
+loads only when ambient `X` is resolved is topologically organised, against this bulk
+control where the bulk channel alternates and stays small.  **Action:** the square-site
+extension transports only the topological side — scale-resolve `X_site = r − 1` and its
+coupling to a separately-justified original-U / H4 readout; do not call a square-site Euler
+statistic `B_even` until the exact square-bond identity is actually transported.
+
 ## Completed high-information blocks
 
 - **#50 N145->290 full curve:** complete. Corrected slope/root structure survives; a single three-level multiplier shape does not.
