@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matching-One 同调平衡根 · 定理台账与根位移理论</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+:root {
+  --bg: #fbfbf8; --fg: #1a1a1a; --accent: #0b5cad; --muted: #666;
+  --card: #ffffff; --line: #e4e4de; --code: #f4f4ef;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 16px/1.75 -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+}
+.wrap { max-width: 920px; margin: 0 auto; padding: 48px 24px 96px; }
+h1 { font-size: 1.9em; line-height: 1.25; margin: 0 0 .4em; }
+h1 .sub { display:block; font-size:.55em; color:var(--muted); font-weight:400; margin-top:.3em; }
+h2 { font-size: 1.35em; margin: 2.2em 0 .7em; padding-bottom: .3em; border-bottom: 2px solid var(--line); }
+h3 { font-size: 1.1em; margin: 1.6em 0 .5em; color: #222; }
+p { margin: .7em 0; }
+blockquote {
+  margin: 1em 0; padding: .5em 1.1em; border-left: 4px solid var(--accent);
+  background: #f2f6fb; color: #244; border-radius: 0 6px 6px 0;
+}
+blockquote p { margin: .35em 0; }
+table { border-collapse: collapse; width: 100%; margin: 1.1em 0; font-size: .92em; background: var(--card); }
+th, td { border: 1px solid var(--line); padding: 7px 10px; text-align: left; vertical-align: top; }
+th { background: #f0f4f9; font-weight: 600; white-space: nowrap; }
+tr:nth-child(even) td { background: #fafaf7; }
+code {
+  font-family: "SFMono-Regular", "JetBrains Mono", Consolas, monospace;
+  background: var(--code); padding: .12em .4em; border-radius: 4px; font-size: .88em;
+}
+pre { background: #1e1e2e; color: #d6d6e0; padding: 14px 16px; border-radius: 8px; overflow:auto; }
+pre code { background: none; color: inherit; padding: 0; }
+strong { color: #000; }
+mjx-container { overflow-x: auto; overflow-y: hidden; }
+hr { border: none; border-top: 1px solid var(--line); margin: 2.5em 0; }
+em { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Matching-One 同调平衡根：严格定理台账与近临界根位移理论</h1>
+<blockquote>
+<p>研究任务：判定有限 Matching-One 同调平衡根 \(p_L^H\to p_c\) 能否升级为<strong>数学上受控的近临界重整化条件</strong>，并严格分离<strong>热窗口标度</strong>（\(L^{-3/4}\)）与<strong>远小于它的有限尺寸根位移</strong>（经验 \(L^{-4}\)）。</p>
+<p>本文是"定理程序"（theorem program）而非新的 Monte Carlo 运动。严格遵循：三角格点指数 / 共形不变性结论<strong>不</strong>在无显式假设时导入 square-site。</p>
+</blockquote>
+<hr />
+<h2>0. 核心结论（一页版）</h2>
+<ol>
+<li>
+<p><strong>定性收敛 \(p_L^H\to p_c\) 是无条件严格的</strong>（§2）。它只用：次临界指数衰减 + 精确 4/8 匹配对偶 + 秩单调性，不需要 CFT、不需要数值 \(p_c\)。</p>
+</li>
+<li>
+<p><strong>\(L^{-4}\) 根位移当前无法从已知 square-site 输入证明</strong>（§6–7）。它是<strong>两个相互独立的缺失定理</strong>的乘积：</p>
+</li>
+</ol>
+<ul>
+<li><strong>F1（热分母，普适）</strong>：\(M_L'(p_c)\asymp L^{3/4}\)，等价于 square-site 四臂指数 \(\alpha_4(L)\asymp L^{-5/4}\)、等价于 \(\nu=4/3\)。<strong>三角格点已证</strong>（Smirnov/LSW），<strong>square-site 未证</strong>（共形不变性开放）。</li>
+<li><strong>F2（匹配奇临界分子，特殊）</strong>：\(M_L(p_c)\asymp L^{-13/4}\)，需识别首项无关算符为 \(Q_4\varepsilon\) 热下降子（\(x=21/4\)）。<strong>算符/CFT 级猜想</strong>，严格深于 F1。</li>
+</ul>
+<p>由此得到<strong>条件定理</strong>（§5）：F1 + F2 \(\Rightarrow p_L^H-p_c\sim L^{-4}\)，含精确振幅与一致误差条件。</p>
+<ol start="3">
+<li>
+<p><strong>一个结构性定理（本文强调，无条件）</strong>：在<strong>自匹配</strong>格点上（三角 site、正方 bond），同调平衡根<strong>精确等于临界点</strong>，\(p_L^H=p_c=1/2\)，根位移<strong>恒为零</strong>。\(L^{-4}\) 位移是 square-site <strong>非自对偶性</strong>的匹配奇（matching-odd）量度。这解释了为什么该位移是"特殊算符/缺陷信息"而非"通用近临界概率论"。</p>
+</li>
+<li>
+<p><strong>正向控制揭示了一个深层障碍</strong>：唯一具备严格共形不变性的模型（三角 site）<strong>自匹配</strong>，故其 F1 可证但 F2 恒为零；而 F2 非零的 square-site 上 F1 又未证。即 <strong>F1 与 F2 处于"张力"中</strong>——不存在一个"F1 已证且 F2 非平凡"的模型。这是关于 \(L^{-4}\) 可证性的一个精确 <strong>no-go/障碍</strong> 观察（§9）。</p>
+</li>
+</ol>
+<hr />
+<h2>1. 精确出发点（exact starting point）</h2>
+<p><strong>设置</strong>：\(L\times L\) honest 环面 \(T^2\)（每单位格有四个不同角点，\(L\ge 3\)）。占据点 = 黑（4-连通，最近邻 NN）；补集 = 白（8-连通，NN+NNN，即"匹配图" \(\widehat G\)）。定义环境同调秩</p>
+<p>\[r(\omega)=\operatorname{rank}\operatorname{im}\big[H_1(K(\omega))\to H_1(T^2)\big]\in\{0,1,2\},\]</p>
+<p>其中 \(K(\omega)\) 是黑点张成的立方子复形。中心化变量 \(X=r-1\in\{-1,0,+1\}\)，匹配函数</p>
+<p>\[M_L(p)=\mathbb E_p[X]=\mathbb E_p[r]-1=P_2(p)-P_0(p).\]</p>
+<p><strong>同调平衡点</strong> \(p_L^H\) 是唯一满足 \(M_L(p_L^H)=0\) 的点，即 \(P_2(p_L^H)=P_0(p_L^H)\)，等价于 \(\mathbb E_{p_L^H}[r]=1\)。</p>
+<h3>1.1 精确有限恒等式（全部无条件）</h3>
+<p>以下均为<strong>精确有限恒等式</strong>，不涉及任何极限或 CFT：</p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>恒等式</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I1</td>
+<td>\(r_b(\omega)+r_w(\omega^c)=2\)（数字-Alexander 对偶）</td>
+<td>Duncan–Schweinhart 环面 Alexander 对偶 + 数字实现引理（PR #271）</td>
+</tr>
+<tr>
+<td>I2</td>
+<td>\(q=r_b-1=\tfrac12(r_b-r_w)\)，\(M_L=P_2-P_0\)</td>
+<td>I1 的直接推论</td>
+</tr>
+<tr>
+<td>I3</td>
+<td>\(\omega\subseteq\omega'\Rightarrow r(\omega)\le r(\omega')\)，故 \(M_L\) 非降；\(M_L(0)=-1,\ M_L(1)=+1\)</td>
+<td>秩单调性</td>
+</tr>
+<tr>
+<td>I4</td>
+<td>\(M_G(p)=-M_{\widehat G}(1-p)\)，故 \(p_L^H(G)=1-p_L^H(\widehat G)\)</td>
+<td>I1 的矩版本（补集反射）</td>
+</tr>
+<tr>
+<td>I5</td>
+<td>秩一对 \((r_b,r_w)\) 仅取 \((0,2),(1,1),(2,0)\)</td>
+<td>I1 + 秩和 \(=2\)</td>
+</tr>
+<tr>
+<td>I6</td>
+<td>\(X^3=X\)；源代数仅两方向：奇 \(A_{\rm top}=P_2-P_0\)，偶 \(E_{\rm top}=P_2+P_0=1-P_1\)</td>
+<td>源代数（#337）</td>
+</tr>
+<tr>
+<td>I7</td>
+<td>\(Z_{\rm top}(s)=P_0 e^{-s}+P_1+P_2 e^{s}=1+\sinh(s)A_{\rm top}+[\cosh(s)-1]E_{\rm top}\)</td>
+<td>I6</td>
+</tr>
+<tr>
+<td>I8</td>
+<td>平扭转：\(S_n=n^2P_0+nP_1+P_2\)，\(S_n/n=Z_{\rm top}(-\log n)\)</td>
+<td>有限域 \(\mathbb F_n\) 特征和</td>
+</tr>
+<tr>
+<td>I9</td>
+<td>持久化时钟：\(K_1,K_2\)；\(C=\tfrac{K_1+K_2}{2(N+1)}\)（补集奇），\(W=\tfrac{K_2-K_1}{N+1}\)（补集偶）</td>
+<td>#269 持久化 Alexander 时钟</td>
+</tr>
+</tbody>
+</table>
+<p><strong>严格单调性</strong>（\(M_L'(p)>0\) 于 \((0,1)\)，用于唯一性）需要正概率"秩枢轴"配置的存在（或 Russo 恒等式）。这是本质无条件的局部有限构造；本文记为<strong>条件（仅需一个局部有限证书）</strong>。</p>
+<h3>1.2 精确枚举验证（本文新计算）</h3>
+<p>在 \(L=3\)（\(2^9=512\) 配置）与 \(L=4\)（\(2^{16}=65536\) 配置）上穷举，脚本 <code>exact_torus_enum.py</code>：</p>
+<table>
+<thead>
+<tr>
+<th>\(L\)</th>
+<th>对偶失败数 \(r_b+r_w\neq2\)</th>
+<th>秩对分布 \((r_b,r_w)\)</th>
+<th>\(M_L(0)\)</th>
+<th>\(M_L(1)\)</th>
+<th>\(p_L^H\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td><strong>0</strong></td>
+<td>(0,2):259, (1,1):162, (2,0):91</td>
+<td>\(-1\)</td>
+<td>\(+1\)</td>
+<td>0.586511</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>0</strong></td>
+<td>(0,2):36559, (1,1):19932, (2,0):9045</td>
+<td>\(-1\)</td>
+<td>\(+1\)</td>
+<td>0.590672</td>
+</tr>
+</tbody>
+</table>
+<p>验证结论：<br />
+- <strong>I1 零失败</strong>（512 与 65536 配置全对）；I5 仅三种秩对出现（\(0,0\) 与 \(2,2\) 均不出现）。<br />
+- \(p_L^H\) 从下方趋近 square-site \(p_c\approx0.5927460\)，即 <strong>\(M_L(p_c)>0\)、根在 \(p_c\) 下方</strong>（与 \(\delta_L=-M_L(p_c)/M_L'(p_c)<0\) 一致）。<br />
+- \(M_L(p_c\approx0.592746)\)：\(L=3\) 为 \(+0.0250\)，\(L=4\) 为 \(+0.0103\)，<strong>递减趋于 0</strong>，与连续临界平衡 \(M_L(p_c)\to0\) 一致（速率渐近 \(L^{-13/4}\)，但 \(L=3,4\) 太小无法见渐近）。<br />
+- \(M_L(1/2)\neq0\)（\(L=3\) 为 \(-0.328\)，\(L=4\) 为 \(-0.420\)）：<strong>确认 square-site 非自对偶</strong>（自匹配时须精确为 0，见 §3）。</p>
+<hr />
+<h2>2. 定性收敛定理 \(p_L^H\to p_c\)（无条件）</h2>
+<p><strong>定理（qualitative convergence，rigorous）。</strong> 对 honest 方环面序列，\(p_L^H\to p_c(G)\)。</p>
+<p><strong>证明架构</strong>（仓库已有直接证明 #276；此处重构并注明每个输入）：<br />
+- <strong>次临界</strong> \(p=p_c(G)-\varepsilon\)：非零环境同调类强制一个跨越 \(\asymp L\) 距离的占据连接。次临界指数衰减给出 \(P_p(r_B>0)\le C L^2 e^{-cL}\)，故 \(M_L(p)\to-1\)。<br />
+- <strong>超临界</strong> \(p=p_c(G)+\varepsilon\)：白补集密度 \(1-p=p_c(\widehat G)-\varepsilon\) 次临界，其环境秩为 0 以指数高概率成立。由 I1（\(r_b+r_w=2\)）得 \(P_p(r_B=2)\to1\)，故 \(M_L(p)\to+1\)。<br />
+- <strong>单调性 + 正概率秩枢轴配置</strong> \(\Rightarrow M_L'(p)>0\)，根唯一。<br />
+- 联合三点得 \(p_L^H\to p_c\)。</p>
+<p><strong>输入清单（全部为标准/严格）</strong>：square-site 次临界指数衰减（定理）、匹配阈值关系 \(p_c(G)+p_c(\widehat G)=1\)（Kesten）、秩单调性（平凡）、数字-Alexander 对偶 I1（拓扑定理）。<strong>不需要</strong> CFT、不需要数值 \(p_c\)、不需要任何指数拟合。</p>
+<blockquote>
+<p><strong>注意</strong>：该定理<strong>不</strong>给出 \(M_L(p_c)\to0\)。后者（连续临界平衡 \(\pi_2=\pi_0\)）是独立的、共形不变性级的陈述（§6，列 3）。定性收敛只保证根 \(p_L^H\) 落在 \(p_c\) 的任意固定邻域内，不控制 \(M_L\) 在 \(p_c\) 本身的值。</p>
+</blockquote>
+<hr />
+<h2>3. 结构定理：自匹配格点上的精确平衡（无条件）</h2>
+<p>这是本文最想强调的、可从 I1 无条件推出的结构性结果。</p>
+<p><strong>定理（self-matching ⟹ 精确零位移）。</strong> 若格点自匹配（\(\widehat G=G\)，如三角 site、正方 bond），则对<strong>每个</strong> \(L\)，\(p_L^H=p_c=\tfrac12\)，且 \(M_L(\tfrac12)\equiv0\)。</p>
+<p><strong>证明</strong>：自匹配时 \(p_c(G)=p_c(\widehat G)=\tfrac12\)。补集映射 \(\omega\mapsto\omega^c\) 是 \(\mathrm{Bernoulli}(\tfrac12)\to\mathrm{Bernoulli}(\tfrac12)\) 的双射，且由 I1（此时 \(r_w=r_G(\omega^c)\) 与 \(r_G\) 用<strong>同一</strong>连通性）</p>
+<p>\[r_G(\omega)+r_G(\omega^c)=2.\]</p>
+<p>两边取 \(\mathbb E_{1/2}\)（补集不变测度）：</p>
+<p>\[\mathbb E_{1/2}[r]=\mathbb E_{1/2}[2-r]=2-\mathbb E_{1/2}[r]\implies \mathbb E_{1/2}[r]=1.\]</p>
+<p>故 \(M_L(\tfrac12)=0\) 精确成立，\(p_L^H=\tfrac12=p_c\)，<strong>无有限尺寸位移</strong>。\(\blacksquare\)</p>
+<p><strong>推论（square-site 位移是匹配奇量）。</strong> 对 square-site，\(M_L(p_c(G))=-M_L(p_c(\widehat G))\)（由 I4），故 \(p_L^H-p_c(G)\) 在 \(G\) 与 \(\widehat G\) 间反号，是<strong>非自对偶性的量度</strong>。经验 \(L^{-4}\) 位移正是这一匹配奇残差的隐式函数解。</p>
+<blockquote>
+<p><strong>物理含义</strong>：\(L^{-4}\) 位移<strong>不是</strong>通用近临界概率论效应（自匹配模型上它恒为零），而是 square-site 匹配对 \(G\neq\widehat G\) 所携带的"特殊算符/缺陷信息"。这正是 §7 中 F2 的定性内容，独立于 F1。</p>
+</blockquote>
+<hr />
+<h2>4. 三个尺度的严格区分（任务 §23）</h2>
+<p>严格区分以下三个极限，不可混淆：</p>
+<ol>
+<li><strong>固定 \(p\ne p_c\)，\(L\to\infty\)</strong>：\(M_L(p)\to\pm1\)（指数快）。</li>
+<li><strong>\(p-p_c\asymp a_L\)，\(L\to\infty\)</strong>（热窗口）：\(a_L\) 是近临界尺度，预期 \(a_L\asymp L^{-1/\nu}=L^{-3/4}\)。</li>
+<li><strong>根位移 \(p_L^H-p_c\)</strong>：经验 \(\sim L^{-4}\)，<strong>远小于</strong>热窗口（\(L^{-4}\ll L^{-3/4}\)）。</li>
+</ol>
+<p>还要区分纵横比极限顺序：固定纵横比取 \(L\to\infty\)；柱面 \(\rho\to\infty\)；连续极限后再模量退化。#321 已指出改变长度约定可伪造振幅增长。</p>
+<hr />
+<h2>5. 抽象根位移定理（Program E 的干净条件定理）</h2>
+<p>这是本文的<strong>中心定理</strong>：把"热窗口标度"与"临界拓扑失衡"严格解耦，且<strong>不预设指数</strong>。</p>
+<p><strong>精确有限恒等式（Taylor）</strong>。设 \(\delta_L=p_L^H-p_c\)，由 \(M_L(p_L^H)=0\)：</p>
+<p>\[0=M_L(p_c)+\delta_L\,M_L'(\xi_L),\qquad \xi_L\in[p_c\wedge p_L^H,\,p_c\vee p_L^H],\]</p>
+<p>故</p>
+<p>\[\delta_L=-\frac{M_L(p_c)}{M_L'(\xi_L)}.\]</p>
+<p><strong>定理（two-scale root shift）。</strong> 假设：<br />
+- <strong>(H1 分子)</strong> 存在 \(b_L\to0\)、\(A(\tau)\neq0\)，使 \(M_L(p_c)=b_L A(\tau)+o(b_L)\)；<br />
+- <strong>(H2 分母/热标度)</strong> 存在 \(a_L\to0\) 与在 \(0\) 连续、\(M'(0,\tau)\neq0\) 的函数，使 \(a_L M_L'(p_c+\lambda a_L)\to M'(\lambda,\tau)\) 在紧集上一致；<br />
+- <strong>(H3 深度)</strong> \(\delta_L/a_L\to0\)（根渐近深入热窗口内部）。</p>
+<p>则</p>
+<p>\[\boxed{\;p_L^H-p_c=-a_L b_L\,\frac{A(\tau)}{M'(0,\tau)}+o(a_L b_L)\;}\]</p>
+<p><strong>证明</strong>：由 (H3)，\(\xi_L=p_c+o(a_L)\)。由 (H2) 的一致性，\(M_L'(\xi_L)=M_L'(p_c)(1+o(1))=a_L^{-1}M'(0,\tau)(1+o(1))\)。代入精确恒等式并除以 (H1) 得结论。\(\blacksquare\)</p>
+<p><strong>H3 的充分条件（Program J 的一致传输）</strong>：若在窗口 \([p_c,p_c+\delta_L]\) 上有 \(|M_L''(p)|\le B_L\) 且 \(B_L|\delta_L|=o(M_L'(p_c))\)，则 H3 成立。对目标 \(L^{-4}\)：\(\delta_L\sim L^{-4}\)、\(M_L'(p_c)\sim L^{3/4}\)，只需 \(B_L=o(L^{19/4})\)——一个很温和的条件，一旦 F1、F2 成立即满足。故<strong>分母稳定性不是障碍</strong>，真正的障碍在 F1、F2 本身。</p>
+<p><strong>意义</strong>：即使 \(b_L\)（分子残差）未严格已知，该抽象定理也<strong>精确陈述了要得到根位移指数所需证明的全部内容</strong>：分子标度 \(b_L\) + 分母标度 \(a_L\) + 深度条件。这就是"高价值定理 E"。</p>
+<hr />
+<h2>6. 定理台账（Program L 三列）</h2>
+<blockquote>
+<p>分类：EXACT（精确有限恒等式）、RIG（严格渐近定理）、COND（条件定理，列极小假设）、EXT（已知外部输入）、NUM（数值证据）、CONJ（猜想）、OBST（障碍/缺失定理）、CE（反例）。</p>
+</blockquote>
+<h3>列 1 —— UNCONDITIONAL FOR SQUARE-SITE（无条件）</h3>
+<table>
+<thead>
+<tr>
+<th>陈述</th>
+<th>分类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I1 数字-Alexander 对偶 \(r_b+r_w=2\)（honest torus）</td>
+<td><strong>EXACT</strong></td>
+</tr>
+<tr>
+<td>I2–I9（匹配函数、源代数、平扭转、持久化时钟）</td>
+<td><strong>EXACT</strong></td>
+</tr>
+<tr>
+<td>秩单调性；\(M_L(0)=-1,M_L(1)=+1\)</td>
+<td><strong>EXACT</strong></td>
+</tr>
+<tr>
+<td>根唯一（\(M_L'(p)>0\)，需局部秩枢轴证书）</td>
+<td><strong>RIG</strong>（近无条件）</td>
+</tr>
+<tr>
+<td>\(p_L^H\to p_c\)（定性收敛）</td>
+<td><strong>RIG</strong>（次临界衰减+匹配对偶+单调）</td>
+</tr>
+<tr>
+<td>自匹配 \(\Rightarrow p_L^H=p_c=\tfrac12\) 精确、零位移（§3）</td>
+<td><strong>RIG</strong>（新）</td>
+</tr>
+<tr>
+<td>square-site 位移为匹配奇量</td>
+<td><strong>EXACT</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>列 2 —— CONDITIONAL ON STANDARD 2D PERCOLATION（RSW/臂分离/拟乘性）</h3>
+<table>
+<thead>
+<tr>
+<th>陈述</th>
+<th>所需输入</th>
+<th>分类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\(M_L'(p)\asymp L^2\alpha_4(L)\)（秩枢轴质量 \(\asymp\) 四臂质量，Program C）</td>
+<td>RSW + 臂分离 + 拟乘性 + 秩枢轴的拓扑刻画</td>
+<td><strong>COND</strong></td>
+</tr>
+<tr>
+<td>内禀尺度 \(s_L=1/M_L'(p_L^H)\) 与四臂近临界尺度 \(a_L\asymp(L^2\alpha_4)^{-1}\) 渐近等价（Program G/B）</td>
+<td>上式 + RSW 一致界</td>
+<td><strong>COND</strong></td>
+</tr>
+<tr>
+<td>沿子列的紧性：\(\Pi_L(p_c+\lambda a_L,\tau)\) 有子列极限（A1–A3）</td>
+<td>RSW + 紧性（Arzelà–Ascoli）</td>
+<td><strong>COND</strong></td>
+</tr>
+<tr>
+<td>一致传输引理（Program J）</td>
+<td>影响矩/Russo 导数界</td>
+<td><strong>COND</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意</strong>：这些比较<strong>不需要知道数值指数</strong>——它们只把"秩枢轴测度"与"四臂测度"用常数可比，不涉及 \(\alpha_4\) 的精确幂次。这是"无指数近临界标度"（任务 §4、§7）的严格内容。</p>
+<h3>列 3 —— CONDITIONAL ON UNIVERSALITY / CONFORMAL SCALING</h3>
+<table>
+<thead>
+<tr>
+<th>陈述</th>
+<th>缺失输入</th>
+<th>分类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\(M_L(p_c)\to0\)（连续临界平衡 \(\pi_2=\pi_0\)）</td>
+<td>square-site 共形不变性 / Arguin 型 \(Z_{\rm cross}=Q Z_{\rm triv}\)</td>
+<td><strong>OBST</strong>（三角已证，方未证）</td>
+</tr>
+<tr>
+<td><strong>F1</strong>：\(M_L'(p_c)\asymp L^{3/4}\)，等价 \(\alpha_4(L)\asymp L^{-5/4}\)、\(\nu=4/3\)</td>
+<td>square-site 四臂指数（=共形不变性）</td>
+<td><strong>OBST</strong></td>
+</tr>
+<tr>
+<td><strong>F2</strong>：\(M_L(p_c)\asymp L^{-13/4}\)</td>
+<td>\(Q_4\varepsilon\) 热下降子（\(x=21/4\)）算符识别</td>
+<td><strong>CONJ</strong>（更深）</td>
+</tr>
+<tr>
+<td>根位移 \(p_L^H-p_c\sim L^{-4}\)（含振幅 \(-\tfrac{C_u(\tau)}{C_t(\tau)}\)）</td>
+<td><strong>F1+F2</strong>（条件定理 F）</td>
+<td><strong>COND</strong></td>
+</tr>
+<tr>
+<td>模量指纹 \(C_{\rm width}(\rho)/C_{\rm width}(\infty)=E_4(i\rho)\)，\(E_4(i)=1.45576\dots\)</td>
+<td>Brehm–Runkel 环面 Ward 递推 + 透明性</td>
+<td><strong>CONJ</strong></td>
+</tr>
+<tr>
+<td>与周期 TL 估计器同属一个 \(L^{-4}\) 投影子（#321）</td>
+<td>扇区字典 + \(Q_4\)</td>
+<td><strong>CONJ</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>7. 最小缺失定理（Program F：\(L^{-4}\) 需要两个输入）</h2>
+<p>经验/候选结构（<strong>目标现象，非前提</strong>）：</p>
+<p>\[\underbrace{M_L(p_c)}_{\text{临界拓扑失衡}\ \sim L^{-13/4}}\ \times\ \underbrace{\tfrac{1}{M_L'(p_c)}}_{\text{热标度}\ \sim L^{-3/4}}\ =\ \underbrace{p_L^H-p_c}_{\sim L^{-4}}.\]</p>
+<p>把它拆成两个<strong>独立</strong>任务（缺一不可）：</p>
+<h3>F1 —— 热分母（<strong>通用</strong>近临界概率论）</h3>
+<blockquote>
+<p>确立或条件推导 \(M_L'(p_c)\sim C_t(\tau)\,L^{3/4}\)。</p>
+</blockquote>
+<p>等价于 square-site \(\alpha_4(L)\asymp L^{-5/4}\)、等价于 \(\nu=4/3\)。<strong>这是 square-site 普适性猜想</strong>：三角 site 已由 Smirnov/LSW 证明；square-site 共形不变性开放，故 F1 <strong>未证</strong>。它与 Matching-One 无关——任何"导数不消失的临界可观测量"都需要它。</p>
+<h3>F2 —— 匹配奇临界分子（<strong>特殊</strong>算符/缺陷信息）</h3>
+<blockquote>
+<p>确立或条件推导 \(M_L(p_c)\sim C_u(\tau)\,L^{-13/4}\)。</p>
+</blockquote>
+<p>这是 Matching-One <strong>特有</strong>的：分子是匹配奇量（自匹配时恒为零，§3），其首项被识别为 \(Q_4\varepsilon\) 热下降子（\(x=21/4\)，双投影选择阶梯 #275：真空 H4 因 Alexander-偶被杀、四腿 \(V_{2,\pm2}\) 因 Potts [2] 荷被杀，\(Q_4\varepsilon\) 是首个同时幸存的低维 spin-4 态）。<strong>算符/CFT 级猜想，严格深于 F1</strong>。</p>
+<h3>条件定理 F（"高价值定理 F"）</h3>
+<p>\[M_L(p_c)\sim L^{-13/4}\ \text{且}\ M_L'(p_c)\sim L^{3/4}
+\ \Longrightarrow\
+p_L^H-p_c\sim -\frac{C_u(\tau)}{C_t(\tau)}\,L^{-4},\]</p>
+<p>振幅与一致误差条件见 §5。<strong>结论</strong>：\(L^{-4}\) 的<strong>分母部分是通用概率论</strong>（F1），<strong>分子部分是 Matching One 的特殊算符/缺陷信息</strong>（F2）。</p>
+<hr />
+<h2>8. 无指数近临界标度（Program G/H 的严格骨架）</h2>
+<p><strong>两个无指数候选标度</strong>（任务 §4）：<br />
+- (a) 四臂/交叉特征长度：\(a_L\asymp(L^2\alpha_4(L))^{-1}\)；<br />
+- (b) 内禀：\(s_L=1/M_L'(p_L^H)\)（自归一）。</p>
+<p><strong>可证比较（列 2）</strong>：由 Russo 恒等式 \(M_L'(p)=\sum_v\mathbb E_p[\Delta_v r]\)（精确），秩枢轴事件 \(\{\Delta_v r\neq0\}\) 受四臂型事件支配（\(0\to1\) 与 \(1\to2\) 出生各需交替臂）。RSW + 臂分离 + 拟乘性给出 \(M_L'(p)\asymp L^2\alpha_4(L)\)，从而 \(s_L\asymp a_L\)——<strong>不需知道 \(\nu\)</strong>（高价值定理 B）。</p>
+<p><strong>有限根中心坐标（Program H）</strong>：\(\lambda=(p-p_L^H)M_L'(p_L^H)\)，\(\widehat M_L(\lambda)=M_L(p_L^H+\lambda/M_L'(p_L^H))\) 自动满足 \(\widehat M_L(0)=0,\ \widehat M_L'(0)=1\)。其预紧性与普适子列极限是"高价值定理 H"——<strong>不识别 \(\nu\) 的普适子列极限</strong>，是当前最可落地的严格目标。</p>
+<p><strong>特征长度关系（Program G）</strong>：由于根远在热窗口内（\(\delta_L\ll a_L\)），预期 \(L(p_L^H)\gg L\)（特征长度在根处远大于系统尺寸），这是 §4 尺度分离的严格表述。</p>
+<hr />
+<h2>9. 正向控制与一个深层障碍（Program M）</h2>
+<h3>三角 site（正控制，\(p_c=\tfrac12\) 精确、自匹配、共形不变性已证）</h3>
+<ul>
+<li><strong>根精确</strong>：\(p_L^H=\tfrac12=p_c\)，位移恒零（§3 定理，无条件）。</li>
+<li><strong>F1 已证</strong>：\(\nu=4/3\)、\(\alpha_4\asymp L^{-5/4}\)（Smirnov/LSW）。</li>
+<li><strong>F2 平凡</strong>：\(M_L(p_c)\equiv0\)（自匹配），无残差。</li>
+<li>结论：三角 site 上<strong>整个程序严格可走</strong>，但 \(L^{-4}\) 现象<strong>消失</strong>（位移恒零）。</li>
+</ul>
+<h3>障碍观察（no-go，Outcome J 型）</h3>
+<p>唯一具备<strong>严格</strong>共形不变性（即 F1 可证）的平面渗流模型是<strong>自对偶</strong>的（三角 site、FK-Ising），故其分子 F2 <strong>恒为零</strong>；而 F2 非平凡的 square-site（\(G\neq\widehat G\)）上 F1 又未证。因此：</p>
+<blockquote>
+<p><strong>不存在"F1 已证且 F2 非平凡"的模型</strong>。\(L^{-4}\) 定律的两个输入 F1、F2 在现有严格理论中处于"张力"——这解释了为何该定律对 square-site 本质上难以（当前）严格化，是本文给出的一个精确障碍结论。</p>
+<p>（注：严格共形不变性已证的平面渗流模型为<strong>三角 site</strong>（Smirnov）与 <strong>FK-Ising</strong>（Chelkak–Smirnov），二者均自对偶。正方 bond 虽 \(p_c=\tfrac12\) 精确自对偶、根位移恒为零（§3），但其共形不变性<strong>并未</strong>严格证明，四臂指数 \(\alpha_4\asymp L^{-5/4}\) 对其同样开放。）</p>
+</blockquote>
+<p><strong>可用的替代正向控制</strong>：三角 site 上把<strong>秩标度函数</strong>（§8 的 \(\widehat M_L\)）做全严格化（F1 已知，仅剩"秩枢轴测度 \(\asymp\) 四臂测度"这一列-2 比较，可证），作为"哪些是拓扑+单调性、哪些是格点特有"的判定实验室。</p>
+<hr />
+<h2>10. 高价值定理清单（本文已确立/提出的）</h2>
+<table>
+<thead>
+<tr>
+<th>代号</th>
+<th>内容</th>
+<th>本文状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>同调转变窗口 \(\asymp\) 标准交叉近临界窗口（无指数）</td>
+<td>列 2 条件（§8）</td>
+</tr>
+<tr>
+<td>B</td>
+<td>\(s_L=1/M_L'(p_L^H)\) 与传统近临界尺度可比</td>
+<td>列 2 条件（§8）</td>
+</tr>
+<tr>
+<td>C</td>
+<td>\((P_0,P_1,P_2)\) 在臂归一化下的子列标度</td>
+<td>列 2 条件</td>
+</tr>
+<tr>
+<td>D</td>
+<td>极限导数 = 连续标记枢轴测度</td>
+<td>列 2–3</td>
+</tr>
+<tr>
+<td><strong>E</strong></td>
+<td>分离热标度与无关临界残差的抽象根位移定理</td>
+<td><strong>§5 已证（条件）</strong></td>
+</tr>
+<tr>
+<td><strong>F</strong></td>
+<td>F1+F2 \(\Rightarrow L^{-4}\)（精确振幅+一致误差）</td>
+<td><strong>§5/§7 条件定理</strong></td>
+</tr>
+<tr>
+<td>G</td>
+<td>三角→方 的普适性归约（缺一个输入）</td>
+<td>§9</td>
+</tr>
+<tr>
+<td>H</td>
+<td>\(\widehat M_L\) 有非平凡普适子列极限（不识别 \(\nu\)）</td>
+<td>列 3 目标</td>
+</tr>
+<tr>
+<td>I</td>
+<td>#537 所需的一致传输</td>
+<td>§5（H3 充分条件已给）</td>
+</tr>
+<tr>
+<td><strong>J</strong></td>
+<td>某期望断言当前<strong>不可证</strong></td>
+<td><strong>§6–7/§9：\(L^{-4}\) 不可证，障碍精确刻画</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11. 工作记录与下一步</h2>
+<p><strong>第一阶段（任务 §26）执行摘要</strong>：<br />
+1. ✅ 重构 #269/#276 精确同调定理与 \(p_L^H\to p_c\) 证明（§1–2）。<br />
+2. ✅ 审计 square-site 可用的近临界结果（§6 列 1/2/3）。<br />
+3. ✅ 定义两个无指数近临界尺度（§8）。<br />
+4. ✅ 用影响/RSW 机制证明它们之间的比较（§8，列 2）。<br />
+5. ✅ 重构内禀转变曲线 \(\widehat M_L\) 的定义与归一化（§8）。<br />
+6. ✅ 公式化抽象根位移定理（§5）。<br />
+7. ✅ 确定把 \(L^{-4}\) 变成严格 square-site 渐近所需的<strong>确切</strong>附加定理：F1 + F2（§7）。<br />
+8. ✅ 正控制（三角 site）与深层障碍（§9）。<br />
+9. ▶ 下一步深目标排序：<strong>连续枢轴测度（D）</strong> 或 <strong>一致近临界传输（I）</strong> 或 <strong>纵横比标度（K）</strong> 或 <strong>算符特定分子渐近（F2）</strong>——按本文障碍分析，建议<strong>优先 F2 的三角-site 正控制严格化</strong>（唯一可全严格推进的方向），其次 H（普适子列极限）。</p>
+<p><strong>最小缺失定理（最终回答）</strong>：</p>
+<blockquote>
+<p>把 \(p_L^H\to p_c\) 升级为带 \(L^{-4}\) 位移的受控近临界重整化条件，需要<strong>两个</strong>缺失定理：<br />
+<strong>(F1)</strong> square-site 四臂指数 \(\alpha_4(L)\asymp L^{-5/4}\)（\(\nu=4/3\)，通用普适性，三角已证、方未证）；<br />
+<strong>(F2)</strong> square-site 匹配奇临界残差 \(M_L(p_c)\asymp L^{-13/4}\)（\(Q_4\varepsilon\)，\(x=21/4\)，Matching-One 特有算符信息）。<br />
+二者之一不成立，\(L^{-4}\) 即不可证。而由于 F1 仅在自匹配模型上可证、F2 仅在非自匹配模型上非平凡，二者在现有严格理论中无法同时满足——这是 \(L^{-4}\) 当前不可证的结构性根源。</p>
+</blockquote>
+<hr />
+<p><em>计算复现：<code>exact_torus_enum.py</code>（\(L=3,4\) 精确枚举，数字-Alexander 对偶零失败）。仓库依据：issues #269 / #276 / #321 / #337 / #537 / #275，<code>docs/STATUS.md</code>，<code>docs/RESEARCH-MAP.md</code>。</em></p>
+</div>
+</body>
+</html>
