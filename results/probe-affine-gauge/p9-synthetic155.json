@@ -1,0 +1,39 @@
+{
+  "schema": "matching-one.probe-affine-gauge.p9.v1",
+  "issue": 617,
+  "seed": "Q(u) = u + 0.35 sin(pi u), manufactured monotone (self-contained); ray = normalised sin(2 pi u)+0.5, independent of the seed",
+  "family": "Q_N = N^-0.316 * seed + 0.1 N^-0.55 * ray, EXACT (no estimator, identity covariance; rates calibrated to the committed pipeline's beta0 and k before any ratio is computed)",
+  "true_second_difference_of_mu": 0.002029343117642743,
+  "rows": [
+    {
+      "attachment": "middle_chart",
+      "attachment_index": 1,
+      "a0": -0.0017468011624090897,
+      "a1": -0.0010841030640482657,
+      "beta0": -0.2837867753917157,
+      "k": 0.8032939967570337,
+      "measured_curvature": 0.0013550627693630466,
+      "naive_ratio": 1.6454622399967926,
+      "transported_ratio": 0.9999999999999816
+    },
+    {
+      "attachment": "consistent_base",
+      "attachment_index": 0,
+      "a0": -0.0017468011624090897,
+      "a1": -0.0010841030640482657,
+      "beta0": -0.2837867753917157,
+      "k": 0.8032939967570337,
+      "measured_curvature": 0.001236327899787846,
+      "naive_ratio": 1.5012816537728992,
+      "transported_ratio": 0.9123768490584129
+    }
+  ],
+  "manufactured_fake_ratio_middle_chart": 1.6454622399967926,
+  "consistent_attachment_ratio": 1.5012816537728992,
+  "transported_ratio_middle_chart": 0.9999999999999816,
+  "transported_ratio_consistent": 0.9123768490584129,
+  "in_band_1p4_to_1p7": true,
+  "transported_identity_closes_1e2": true,
+  "falls_toward_consistent": true,
+  "verdict": "P9 PASSED: a pure Aff(1)+one-frozen-ray motion MANUFACTURES a 1.6455 naive ratio at the middle-vs-base attachment mismatch (the 1.55-style fake excess, in the brief's [1.4, 1.7] band), the consistent attachment pulls it to 1.5013, and the #612 transported formula returns the middle-chart curvature to 1.84e-14 relative -- 1.55 is coordinate geometry, certified noise-free."
+}

@@ -1,0 +1,160 @@
+{
+  "schema": "matching-one.probe-affine-gauge.p5.v1",
+  "issue": 617,
+  "anchor": {
+    "source": "results/p612-n725-score/latest.json (PR #614), weightings.spin0.p50_curvature",
+    "measured": 0.0010742792352959572,
+    "chart_corrected": 0.001030477413570864,
+    "ratio": 1.0425063384682143
+  },
+  "gate": {
+    "production_readout": {
+      "measured": 0.0010742792352959572,
+      "measured_standard_error": 6.006000164905027e-06,
+      "residual_statistic": 42.798495285424764,
+      "residual_degrees_of_freedom": 6,
+      "first_lower_amplitude": -0.0010459771782841544,
+      "first_upper_amplitude": -0.00048083462846830374,
+      "beta0": -0.3220799015944846,
+      "k_contraction": 0.7767512242947583,
+      "chart_corrected": 0.0010304774135725817,
+      "ratio_measured_over_chart_corrected": 1.0425063384664766,
+      "direction_note": "production frozen g (gate)"
+    },
+    "measured_absolute_error": 0.0,
+    "ratio_absolute_error": 1.737721078143295e-12,
+    "reproduces_committed": true
+  },
+  "recipes": {
+    "R1_shifted": {
+      "grid": [
+        0.12,
+        0.22,
+        0.32,
+        0.42,
+        0.52,
+        0.62,
+        0.72,
+        0.82,
+        0.92
+      ],
+      "rank": 9,
+      "g_grid": [
+        -0.2664724114302006,
+        -0.08450098348523125,
+        0.1020950321679994,
+        0.26564629979742854,
+        0.39806656540895097,
+        0.48862779658689154,
+        0.512995829134953,
+        0.4031388677185968,
+        -0.1340182975493385
+      ],
+      "g_carried_control": [
+        -0.26124527573774303,
+        -0.08221141391199006,
+        0.10520766120578395,
+        0.26900806471207545,
+        0.4017319563040334,
+        0.49206198464139067,
+        0.5160380125761476,
+        0.4029836590721563,
+        -0.11614391112622159
+      ],
+      "primary": {
+        "measured": 0.0010817163901631237,
+        "measured_standard_error": 5.966566281250118e-06,
+        "residual_statistic": 43.22058236316814,
+        "residual_degrees_of_freedom": 6,
+        "first_lower_amplitude": -0.0010552284169375954,
+        "first_upper_amplitude": -0.0004861533243754644,
+        "beta0": -0.32201931808884937,
+        "k_contraction": 0.7767932175808778,
+        "chart_corrected": 0.0010303902610110515,
+        "ratio_measured_over_chart_corrected": 1.0498123197532063,
+        "direction_note": "consensus rebuilt on this grid (primary)"
+      },
+      "control": {
+        "measured": 0.0001953744518423545,
+        "measured_standard_error": 3.1320733893340075e-06,
+        "residual_statistic": 29020.47528573182,
+        "residual_degrees_of_freedom": 6,
+        "first_lower_amplitude": -8.966363756813948e-05,
+        "first_upper_amplitude": -0.0001451449399544524,
+        "beta0": -0.3214534424621969,
+        "k_contraction": 0.7771854526760396,
+        "chart_corrected": 0.0010295766739593145,
+        "ratio_measured_over_chart_corrected": 0.1897619252493623,
+        "direction_note": "production frozen g, u-Lagrange carried (named control)"
+      },
+      "drift_from_production": 0.007305981286729768,
+      "drift_sigma": 0.008215540419593848,
+      "drift_in_sigmas": 0.8892879729865603,
+      "control_drift_in_sigmas": -103.79650877054189
+    },
+    "R2_coarse5": {
+      "grid": [
+        0.1,
+        0.3,
+        0.5,
+        0.7,
+        0.9
+      ],
+      "rank": 5,
+      "g_grid": [
+        -0.3303233085709533,
+        0.14115351643786303,
+        0.5688968685334608,
+        0.7200765772165875,
+        -0.1697299989065897
+      ],
+      "g_carried_control": [
+        -0.2887126766006569,
+        0.06921759100370807,
+        0.3780737808016512,
+        0.518589378735454,
+        0.048264834818264817
+      ],
+      "primary": {
+        "measured": 0.0006457874959853322,
+        "measured_standard_error": 4.372440415734772e-06,
+        "residual_statistic": 34.541210176424165,
+        "residual_degrees_of_freedom": 2,
+        "first_lower_amplitude": -0.0006338232464442906,
+        "first_upper_amplitude": -0.00029767283742772457,
+        "beta0": -0.32342149770829476,
+        "k_contraction": 0.7758213007310206,
+        "chart_corrected": 0.0010324097879639952,
+        "ratio_measured_over_chart_corrected": 0.6255146972781837,
+        "direction_note": "consensus rebuilt on this grid (primary)"
+      },
+      "control": {
+        "measured": 0.001063728183924262,
+        "measured_standard_error": 7.20159338931514e-06,
+        "residual_statistic": 30.8905776559468,
+        "residual_degrees_of_freedom": 2,
+        "first_lower_amplitude": -0.001045130367578289,
+        "first_upper_amplitude": -0.0004901054252364718,
+        "beta0": -0.322047266950662,
+        "k_contraction": 0.7767738449061126,
+        "chart_corrected": 0.0010304304657489476,
+        "ratio_measured_over_chart_corrected": 1.0323143766436609,
+        "direction_note": "production frozen g, u-Lagrange carried (named control)"
+      },
+      "drift_from_production": -0.4169916411882929,
+      "drift_sigma": 0.007209294961791089,
+      "drift_in_sigmas": -57.840835116100564,
+      "control_drift_in_sigmas": -1.4137251807330087
+    }
+  },
+  "leftover_moves_under_reconstruction": true,
+  "stability_sigma": 3.0,
+  "verdict_parts": {
+    "shifted_grid_same_rank": "readout-STABLE: the ratio moves by +0.89 sigma under the shifted nine-node grid with the consensus direction rebuilt on it -- same-rank readout bias is NOT the 4.25%.",
+    "coarse_grid_rank5": "readout-MOVES: the ratio moves by -57.84 sigma under the coarse five-node readout with the consensus direction rebuilt at rank 5 (-1.41 sigma even with the production direction carried over) -- at coarse rank the 4.25% is entangled with the readout.",
+    "direction_transport_law": "the two transport laws for the direction across readout grids -- rebuilding the consensus construction on the grid vs carrying the frozen g by u-interpolation -- disagree badly at both alternate grids (R1: carried 0.190 vs rebuilt 1.050; R2: carried 1.032 vs rebuilt 0.626, in units of the ratio). The frozen direction is GRID-BOUND: its components are not samples of a smooth function of u, and its transport across readout ranks is itself an undetermined choice. This is P1's fibre statement reappearing on the reconstruction axis.",
+    "bottom_line": "the 4.25%% is a property of the DECLARED readout (nine deciles, production binomial-profile CDF, consensus direction); it is stable under a same-rank grid shift and not defined at coarse rank. Reconstruction bias does not manufacture the 4%%, but the 4%% is not a readout invariant either: it lives in the declared readout, and the declared readout must therefore be named in the P7 protocol card."
+  },
+  "reconstruction_toggle": "the production N-normalisation (binomial profile CDF) is frozen with the committed artifacts; the code path exposes no toggle. Recorded as a NAMED HOLE: the N-normalisation axis is NOT swept.",
+  "verdict": "MIXED: the 4.25% is readout-stable under a same-rank grid shift (+0.89 sigma) and readout-BOUND at coarse rank (-57.84 sigma under the rebuilt direction, -1.41 sigma under the carried direction). Reconstruction bias is not the 4%, but the 4% is not a readout invariant: it exists only in the declared readout, which the protocol card must name."
+}

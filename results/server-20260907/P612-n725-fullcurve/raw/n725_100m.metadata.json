@@ -1,0 +1,29 @@
+{
+  "engine": "general integer-period threshold-rank Newman-Ziff",
+  "generated_utc": "2026-09-07T04:07:37Z",
+  "git_commit": "8b5f9d1a",
+  "command": "./build/threshold_rank_integer_period_mc --first-matrix 26 -7 7 26 --second-matrix 23 -14 14 23 --samples 100000000 --batches 100 --seed 2026105011 --replica-offset 7000000000 --threads 8 --git-commit 8b5f9d1a --output-prefix results/server-20260907/P612-n725-fullcurve/raw/n725_100m",
+  "compiler": "16.1.0",
+  "openmp": true,
+  "threads_requested": 8,
+  "samples_per_pair": 100000000,
+  "batches": 100,
+  "seed": 2026105011,
+  "replica_counter_first": 7000000000,
+  "replica_counter_last_exclusive": 7100000000,
+  "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+  "coupling": "same HNF mixed-radix label permutation shared by the pair",
+  "quotient_coordinates": "column-HNF representatives (rx,ry), label=rx+h11*ry",
+  "period_matrix_convention": "row-major matrix; columns are lifted period vectors",
+  "channel": "rank-2 cross wrapping",
+  "K_plus": "first black primal cross rank, 1-based",
+  "K_minus": "first black rank after white matching cross is lost; N-r+1",
+  "sparse_joint_histogram": false,
+  "per_batch_joint_moments": true,
+  "elapsed_seconds": 2013.3861360000001,
+  "designs": [
+    {"id": "custom", "N": 725, "first": [26,7], "second": [23,14], "first_period_matrix": [[26,-7],[7,26]], "second_period_matrix": [[23,-14],[14,23]], "first_HNF": [[725,418],[0,1]], "second_HNF": [[725,157],[0,1]], "first_smith_invariants": [1,725], "second_smith_invariants": [1,725]}
+  ],
+  "histogram_csv": "results/server-20260907/P612-n725-fullcurve/raw/n725_100m.hist.csv",
+  "moments_csv": "results/server-20260907/P612-n725-fullcurve/raw/n725_100m.moments.csv"
+}

@@ -1,0 +1,97 @@
+{
+  "schema": "matching-one.probe-affine-gauge.p0.v1",
+  "issue": 617,
+  "gate": "PASS",
+  "identity_tolerance": 1e-12,
+  "rows": [
+    {
+      "weighting": "spin0",
+      "lineage": "gaussian_13",
+      "sizes": [
+        65,
+        130,
+        325
+      ],
+      "identity_absolute_error": 1.42261636498775e-13,
+      "identity_within_1e-12": true,
+      "chart_share_of_excess": 0.9748827611655023,
+      "chart_share_matches_committed": true,
+      "naive_ratio_no_transport": 1.5368128380876287,
+      "naive_ratio_matches_published": true,
+      "attachment_switch": {
+        "lambda_1_middle_chart_ratio": 1.524257855471565,
+        "lambda_0_consistent_chart_ratio": 1.4028224423123474,
+        "fake_155_on_at_middle": true,
+        "moves_toward_one_at_consistent": true
+      },
+      "leftover_after_transport_percent": 34.39430235439879
+    },
+    {
+      "weighting": "spin0",
+      "lineage": "gaussian_17",
+      "sizes": [
+        85,
+        170,
+        425
+      ],
+      "identity_absolute_error": 2.9050958687271144e-13,
+      "identity_within_1e-12": true,
+      "chart_share_of_excess": 0.9488635834951755,
+      "chart_share_matches_committed": true,
+      "naive_ratio_no_transport": 1.5574408608726849,
+      "naive_ratio_matches_published": true,
+      "attachment_switch": {
+        "lambda_1_middle_chart_ratio": 1.5202565669500563,
+        "lambda_0_consistent_chart_ratio": 1.3955935886755748,
+        "fake_155_on_at_middle": true,
+        "moves_toward_one_at_consistent": true
+      },
+      "leftover_after_transport_percent": 34.22162931312289
+    },
+    {
+      "weighting": "equal",
+      "lineage": "gaussian_13",
+      "sizes": [
+        65,
+        130,
+        325
+      ],
+      "identity_absolute_error": 1.7312323449814038e-13,
+      "identity_within_1e-12": true,
+      "chart_share_of_excess": 0.651657366959515,
+      "chart_share_matches_committed": true,
+      "naive_ratio_no_transport": 1.7896368967983667,
+      "naive_ratio_matches_published": false,
+      "attachment_switch": {
+        "lambda_1_middle_chart_ratio": 1.4966616440187483,
+        "lambda_0_consistent_chart_ratio": 1.3805372847664157,
+        "fake_155_on_at_middle": true,
+        "moves_toward_one_at_consistent": true
+      },
+      "leftover_after_transport_percent": 33.184631008859256
+    },
+    {
+      "weighting": "equal",
+      "lineage": "gaussian_17",
+      "sizes": [
+        85,
+        170,
+        425
+      ],
+      "identity_absolute_error": 3.4188797626288903e-13,
+      "identity_within_1e-12": true,
+      "chart_share_of_excess": 0.8159178517978051,
+      "chart_share_matches_committed": true,
+      "naive_ratio_no_transport": 1.6370300731952343,
+      "naive_ratio_matches_published": false,
+      "attachment_switch": {
+        "lambda_1_middle_chart_ratio": 1.5402261579477345,
+        "lambda_0_consistent_chart_ratio": 1.4106842966736455,
+        "fake_155_on_at_middle": true,
+        "moves_toward_one_at_consistent": true
+      },
+      "leftover_after_transport_percent": 35.07446975628279
+    }
+  ],
+  "verdict": "P0 gate passed: the identity closes at the committed 1e-13 level, the chart shares match, and the 1.55 ratio is turned on at the middle chart and off at the consistent chart -- coordinate geometry, reproducible on demand."
+}

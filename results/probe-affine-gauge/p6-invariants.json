@@ -1,0 +1,1084 @@
+{
+  "schema": "matching-one.probe-affine-gauge.p6.v1",
+  "issue": 617,
+  "astra_negative_control": {
+    "scalar_spin0_chi2": 4.248015954405207,
+    "seven_vector_spin0_chi2": 5025.2531447348165,
+    "scalar_equal_chi2": 2590.1894001433384,
+    "seven_vector_equal_chi2": 9072.088385187202
+  },
+  "results": {
+    "spin0": {
+      "I1_transport_dependence": {
+        "gaussian_13": {
+          "sizes": [
+            65,
+            130,
+            325
+          ],
+          "rows": [
+            {
+              "lambda": 0.0,
+              "residual_transport_pairings": {
+                "ell_lambda_of_d": -0.0015195334223564849,
+                "ell_lambda_of_Q3_minus_attach": -0.0020050787367662777,
+                "ell_lambda_of_Qbase": 3.064215547965432e-14
+              },
+              "curvature_measured": 0.002065715245950922,
+              "curvature_se": 6.234471622063228e-06
+            },
+            {
+              "lambda": 0.5,
+              "residual_transport_pairings": {
+                "ell_lambda_of_d": -0.0017063266636764482,
+                "ell_lambda_of_Q3_minus_attach": -0.0015278112487254218,
+                "ell_lambda_of_Qbase": 0.0008531633317399034
+              },
+              "curvature_measured": 0.0021441367822444156,
+              "curvature_se": 6.232664481421239e-06
+            },
+            {
+              "lambda": 1.0,
+              "residual_transport_pairings": {
+                "ell_lambda_of_d": -0.0019454774206427378,
+                "ell_lambda_of_Q3_minus_attach": -0.000916759466027101,
+                "ell_lambda_of_Qbase": 0.0019454774206502101
+              },
+              "curvature_measured": 0.002244534016448957,
+              "curvature_se": 6.231389268806823e-06
+            }
+          ],
+          "ell_d_span_across_lambda": 0.00042594399828625295,
+          "span_in_curvature_sigmas": 68.32078548226539,
+          "lambda_dependent_after_transport": true
+        },
+        "gaussian_17": {
+          "sizes": [
+            85,
+            170,
+            425
+          ],
+          "rows": [
+            {
+              "lambda": 0.0,
+              "residual_transport_pairings": {
+                "ell_lambda_of_d": -0.0011845747571687954,
+                "ell_lambda_of_Q3_minus_attach": -0.0015636219014136706,
+                "ell_lambda_of_Qbase": 3.6914915568786455e-14
+              },
+              "curvature_measured": 0.0016096358724442205,
+              "curvature_se": 5.830571476979873e-06
+            },
+            {
+              "lambda": 0.5,
+              "residual_transport_pairings": {
+                "ell_lambda_of_d": -0.0013315061762086272,
+                "ell_lambda_of_Q3_minus_attach": -0.0011925982527970953,
+                "ell_lambda_of_Qbase": 0.0006657530880218032
+              },
+              "curvature_measured": 0.0016726104975743352,
+              "curvature_se": 5.830543344730772e-06
+            },
+            {
+              "lambda": 1.0,
+              "residual_transport_pairings": {
+                "ell_lambda_of_d": -0.001520048471968051,
+                "ell_lambda_of_Q3_minus_attach": -0.0007165002736998741,
+                "ell_lambda_of_Qbase": 0.0015200484720019614
+              },
+              "curvature_measured": 0.001753418420189205,
+              "curvature_se": 5.831070850132416e-06
+            }
+          ],
+          "ell_d_span_across_lambda": 0.00033547371479925557,
+          "span_in_curvature_sigmas": 57.53702122060678,
+          "lambda_dependent_after_transport": true
+        }
+      },
+      "I2_I3_z_vectors": {
+        "vector_fits": {
+          "I2": {
+            "delta": 1.525,
+            "conditional_chi2": 261508.9385754484,
+            "residual_dimension": 53,
+            "detail": {
+              "per_coordinate": [
+                {
+                  "level": 0,
+                  "chi2": 17027.645544545998,
+                  "z_inf": -0.779063731741207,
+                  "b": -3.0477696321715864
+                },
+                {
+                  "level": 1,
+                  "chi2": 2391.0295101584206,
+                  "z_inf": -0.5053663030132489,
+                  "b": -3.183406018425809
+                },
+                {
+                  "level": 2,
+                  "chi2": 64182.158955953666,
+                  "z_inf": -0.312789590270167,
+                  "b": -1.8858749680427196
+                },
+                {
+                  "level": 3,
+                  "chi2": 67484.38906247015,
+                  "z_inf": -0.15037236276008714,
+                  "b": -0.7816202561647142
+                },
+                {
+                  "level": 4,
+                  "chi2": 0.0,
+                  "z_inf": 0.0,
+                  "b": 0.0
+                },
+                {
+                  "level": 5,
+                  "chi2": 1303.9797334910768,
+                  "z_inf": 0.14937019042015628,
+                  "b": 0.24593324409624048
+                },
+                {
+                  "level": 6,
+                  "chi2": 9782.998008243889,
+                  "z_inf": 0.3085051995949728,
+                  "b": -0.441234605691282
+                },
+                {
+                  "level": 7,
+                  "chi2": 2609.893699854057,
+                  "z_inf": 0.49460563311952715,
+                  "b": -3.1855078634155842
+                },
+                {
+                  "level": 8,
+                  "chi2": 96726.84406073115,
+                  "z_inf": 0.7530942391787809,
+                  "b": -10.843731255234248
+                }
+              ]
+            }
+          },
+          "I3_low": {
+            "delta": 1.525,
+            "conditional_chi2": 266096.317072678,
+            "residual_dimension": 53,
+            "detail": {
+              "per_coordinate": [
+                {
+                  "level": 0,
+                  "chi2": 7206.920701812809,
+                  "z_inf": -1.2539793092354057,
+                  "b": -1.9326781672291462
+                },
+                {
+                  "level": 1,
+                  "chi2": 20352.743800416338,
+                  "z_inf": -0.8136969889653216,
+                  "b": -2.924148603859803
+                },
+                {
+                  "level": 2,
+                  "chi2": 413.0092812662903,
+                  "z_inf": -0.5033295854028348,
+                  "b": -1.9817902046677722
+                },
+                {
+                  "level": 3,
+                  "chi2": 57212.27275653013,
+                  "z_inf": -0.2420270860484134,
+                  "b": -0.7008657622952934
+                },
+                {
+                  "level": 4,
+                  "chi2": 0.0,
+                  "z_inf": 0.0,
+                  "b": 0.0
+                },
+                {
+                  "level": 5,
+                  "chi2": 8657.738048174593,
+                  "z_inf": 0.2404160032095094,
+                  "b": -0.16195875316536415
+                },
+                {
+                  "level": 6,
+                  "chi2": 435.31786878258356,
+                  "z_inf": 0.49665665076148124,
+                  "b": -1.9817181382996578
+                },
+                {
+                  "level": 7,
+                  "chi2": 64396.40629536906,
+                  "z_inf": 0.7958500356662509,
+                  "b": -6.656790332020842
+                },
+                {
+                  "level": 8,
+                  "chi2": 107421.90832032615,
+                  "z_inf": 1.2121257267680923,
+                  "b": -20.157605050034963
+                }
+              ]
+            }
+          },
+          "I3_high": {
+            "delta": 1.525,
+            "conditional_chi2": 300269.69649422134,
+            "residual_dimension": 53,
+            "detail": {
+              "per_coordinate": [
+                {
+                  "level": 0,
+                  "chi2": 10184.623711267737,
+                  "z_inf": -0.508261037501826,
+                  "b": -4.836426174854829
+                },
+                {
+                  "level": 1,
+                  "chi2": 87571.16330024558,
+                  "z_inf": -0.3299375528457457,
+                  "b": -3.6802927417179867
+                },
+                {
+                  "level": 2,
+                  "chi2": 89557.65677687689,
+                  "z_inf": -0.20413119717337347,
+                  "b": -2.3000164887717487
+                },
+                {
+                  "level": 3,
+                  "chi2": 72703.94355299658,
+                  "z_inf": -0.09813200249641219,
+                  "b": -1.0270098623334345
+                },
+                {
+                  "level": 4,
+                  "chi2": 0.0,
+                  "z_inf": 0.0,
+                  "b": 0.0
+                },
+                {
+                  "level": 5,
+                  "chi2": 20373.45355371127,
+                  "z_inf": 0.09748610208884716,
+                  "b": 0.66440808338544
+                },
+                {
+                  "level": 6,
+                  "chi2": 2246.6234458418953,
+                  "z_inf": 0.2013540577337168,
+                  "b": 0.7445079256678852
+                },
+                {
+                  "level": 7,
+                  "chi2": 5650.908492003414,
+                  "z_inf": 0.3227317781026316,
+                  "b": -0.3251221867510682
+                },
+                {
+                  "level": 8,
+                  "chi2": 11981.323661277995,
+                  "z_inf": 0.4917114708831665,
+                  "b": -4.865548483613315
+                }
+              ]
+            }
+          }
+        },
+        "scalar_fit_g_amplitudes": {
+          "delta": 1.525,
+          "conditional_chi2": 2923.4861793981513,
+          "residual_dimension": 2
+        },
+        "astra_control": {
+          "committed_source": "results/astra610-independent/intrinsic-shape-pilot.json (PR #611 branch)",
+          "scalar_spin0_chi2": 4.248015954405207,
+          "seven_vector_spin0_chi2": 5025.2531447348165,
+          "pattern": "scalar clean, 7-vector catastrophic (5025 vs 4.2)"
+        },
+        "kill_checks": {
+          "I2_vector_chi2_catastrophic": true,
+          "I2_scalar_pretty": false,
+          "I3_delta_dispersions": {
+            "I2": 1.525,
+            "I3_low": 1.525,
+            "I3_high": 1.525
+          },
+          "I3_max_delta_gap": 0.0
+        },
+        "verdict": "I2 KILLED (cherry-pick): the Z-standardization reproduces Astra's pattern -- scalar tolerable, 7-coordinate catastrophic -- so no single-power invariant lives there."
+      },
+      "I4_fieller": {
+        "gaussian_13": {
+          "sizes": [
+            65,
+            130,
+            325
+          ],
+          "rows": [
+            {
+              "lambda": 0.0,
+              "A4": 0.002065715245950922,
+              "var_A4": 3.886863640631169e-11,
+              "delta_width": 0.09191306988776196,
+              "var_delta": -7.286623299836335e-20,
+              "cov_A4_delta": 1.868523892530367e-20,
+              "ratio_point_estimate": 44.49454980202323,
+              "A4_sign": "+"
+            },
+            {
+              "lambda": 0.5,
+              "A4": 0.0021441367822444156,
+              "var_A4": 3.8846106537969876e-11,
+              "delta_width": 0.10320855958629634,
+              "var_delta": -9.234663867521278e-20,
+              "cov_A4_delta": 2.1060859983894733e-20,
+              "ratio_point_estimate": 48.13524978488585,
+              "A4_sign": "+"
+            },
+            {
+              "lambda": 1.0,
+              "A4": 0.002244534016448957,
+              "var_A4": 3.883021221940083e-11,
+              "delta_width": 0.11766911345298252,
+              "var_delta": -1.2079282498513773e-19,
+              "cov_A4_delta": 2.4126317017720207e-20,
+              "ratio_point_estimate": 52.424740543315544,
+              "A4_sign": "+"
+            }
+          ],
+          "A4_sign_flips_along_lambda": false,
+          "rho_span_across_lambda": 7.930190741292314,
+          "rho_relative_span": 0.15126809706840713
+        },
+        "gaussian_17": {
+          "sizes": [
+            85,
+            170,
+            425
+          ],
+          "rows": [
+            {
+              "lambda": 0.0,
+              "A4": 0.0016096358724442205,
+              "var_A4": 3.399556374817126e-11,
+              "delta_width": 0.09459182842965935,
+              "var_delta": 7.398381356858144e-20,
+              "cov_A4_delta": -7.93474816680906e-20,
+              "ratio_point_estimate": 58.76597934290713,
+              "A4_sign": "+"
+            },
+            {
+              "lambda": 0.5,
+              "A4": 0.0016726104975743352,
+              "var_A4": 3.3995235694784295e-11,
+              "delta_width": 0.10632403585043924,
+              "var_delta": 9.241831763392064e-20,
+              "cov_A4_delta": -8.848948676639205e-20,
+              "ratio_point_estimate": 63.56772004279133,
+              "A4_sign": "+"
+            },
+            {
+              "lambda": 1.0,
+              "A4": 0.001753418420189205,
+              "var_A4": 3.4001387259263974e-11,
+              "delta_width": 0.1213785684767523,
+              "var_delta": 1.1869270296754557e-19,
+              "cov_A4_delta": -9.999625438113002e-20,
+              "ratio_point_estimate": 69.22396108035342,
+              "A4_sign": "+"
+            }
+          ],
+          "A4_sign_flips_along_lambda": false,
+          "rho_span_across_lambda": 10.45798173744629,
+          "rho_relative_span": 0.15107459287553524
+        },
+        "kill_sentence": "I4 denominator stable; check the rho span against 1.55 next."
+      },
+      "I5_aff1_quotient": {
+        "transitions": {
+          "65->130": {
+            "pipeline_unit_residual": [
+              -7.059292556227582e-05,
+              1.9066622088820215e-05,
+              4.199476047931162e-05,
+              4.157161886147077e-05,
+              2.9741767465931113e-05,
+              1.1180066908619048e-05,
+              -1.2064136034877165e-05,
+              -3.957428748696457e-05,
+              -7.555433476727875e-05
+            ],
+            "independent_target_based_residual": [
+              -8.97167395109968e-05,
+              2.4853045831528487e-05,
+              5.405324933625479e-05,
+              5.3382210563332366e-05,
+              3.811774342904411e-05,
+              1.423633386059802e-05,
+              -1.5646401409662788e-05,
+              -5.10095297256578e-05,
+              -9.726729765000438e-05
+            ],
+            "gap": 3.7130150524507516e-05,
+            "gap_over_noise": 52021.86583968353,
+            "disagrees_past_noise": true
+          },
+          "130->325": {
+            "pipeline_unit_residual": [
+              8.951602603202853e-06,
+              -1.1888672172952515e-05,
+              -1.7721317747737984e-05,
+              -1.8496565728867178e-05,
+              -1.691635396387053e-05,
+              -1.4005560514032931e-05,
+              -1.0156690824942758e-05,
+              -5.2430653881412614e-06,
+              2.6219642404164716e-06
+            ],
+            "independent_target_based_residual": [
+              1.2551461625453994e-05,
+              -1.6562996260753448e-05,
+              -2.4718769022048535e-05,
+              -2.5811519254338356e-05,
+              -2.361484134930676e-05,
+              -1.9560373141214646e-05,
+              -1.4196826452977207e-05,
+              -7.348450946070137e-06,
+              3.615840251907542e-06
+            ],
+            "gap": 1.532155248062821e-05,
+            "gap_over_noise": 40899.50872778955,
+            "disagrees_past_noise": true
+          },
+          "85->170": {
+            "pipeline_unit_residual": [
+              -4.360717896494491e-05,
+              -2.3058418997452603e-06,
+              1.1545145493577215e-05,
+              1.5805768227657793e-05,
+              1.538357521192505e-05,
+              1.2244450389293897e-05,
+              7.2940061583538595e-06,
+              8.045355339990011e-07,
+              -8.533952190325673e-06
+            ],
+            "independent_target_based_residual": [
+              -5.586815892882738e-05,
+              -2.897483471034792e-06,
+              1.485630197533749e-05,
+              2.0306542402044474e-05,
+              1.974887655080628e-05,
+              1.5704840970340868e-05,
+              9.335420676607645e-06,
+              9.882396886700745e-07,
+              -1.1022549174877796e-05
+            ],
+            "gap": 1.4944122222301115e-05,
+            "gap_over_noise": 50653.25641854411,
+            "disagrees_past_noise": true
+          },
+          "170->425": {
+            "pipeline_unit_residual": [
+              2.204487516862674e-05,
+              -1.3550381379970869e-05,
+              -2.4580112005715505e-05,
+              -2.684909893362278e-05,
+              -2.4821104786575293e-05,
+              -2.0241588404161723e-05,
+              -1.3846076965570687e-05,
+              -5.780678246428296e-06,
+              5.077032600349234e-06
+            ],
+            "independent_target_based_residual": [
+              3.0967645388413444e-05,
+              -1.885336609924679e-05,
+              -3.4308222039888745e-05,
+              -3.7506831631941605e-05,
+              -3.4694351657997254e-05,
+              -2.8313398257482183e-05,
+              -1.9394160854915865e-05,
+              -8.143405131449323e-06,
+              7.002171879464962e-06
+            ],
+            "gap": 2.2774236736856724e-05,
+            "gap_over_noise": 57824.12531403606,
+            "disagrees_past_noise": true
+          },
+          "145->290": {
+            "pipeline_unit_residual": [
+              7.002030119689677e-06,
+              -1.2239698079188426e-05,
+              -1.6324784019081714e-05,
+              -1.5056214595605178e-05,
+              -1.1074372455865441e-05,
+              -5.470816022705184e-06,
+              1.163620042578951e-06,
+              8.418899996977307e-06,
+              1.6284439093790582e-05
+            ],
+            "independent_target_based_residual": [
+              9.07464932693685e-06,
+              -1.5714728389898787e-05,
+              -2.0986274292421914e-05,
+              -1.936352766570823e-05,
+              -1.4246868046482764e-05,
+              -7.042248617961953e-06,
+              1.4890571511527153e-06,
+              1.0818219915901887e-05,
+              2.092920173113105e-05
+            ],
+            "gap": 9.829782169868893e-06,
+            "gap_over_noise": 38816.546526208134,
+            "disagrees_past_noise": true
+          }
+        },
+        "worst_gap_over_noise": 57824.12531403606,
+        "verdict": "I5 KILLED: an independent Aff(1)-quotient disagrees with the pipeline's by 57824.13 sigma on some transition -- the quotient depends on the base choice."
+      }
+    },
+    "equal": {
+      "I1_transport_dependence": {
+        "gaussian_13": {
+          "sizes": [
+            65,
+            130,
+            325
+          ],
+          "rows": [
+            {
+              "lambda": 0.0,
+              "residual_transport_pairings": {
+                "ell_lambda_of_d": -0.0015641121665662845,
+                "ell_lambda_of_Q3_minus_attach": -0.002013228937540249,
+                "ell_lambda_of_Qbase": -1.3988810110276972e-14
+              },
+              "curvature_measured": 0.002195039982104335,
+              "curvature_se": 6.068714911556903e-06
+            },
+            {
+              "lambda": 0.5,
+              "residual_transport_pairings": {
+                "ell_lambda_of_d": -0.0017564903325914087,
+                "ell_lambda_of_Q3_minus_attach": -0.0015219727387304838,
+                "ell_lambda_of_Qbase": 0.0008782451662245894
+              },
+              "curvature_measured": 0.0022760039382395745,
+              "curvature_se": 6.064929585400953e-06
+            },
+            {
+              "lambda": 1.0,
+              "residual_transport_pairings": {
+                "ell_lambda_of_d": -0.0020028280115163347,
+                "ell_lambda_of_Q3_minus_attach": -0.0008929246238618422,
+                "ell_lambda_of_Qbase": 0.0020028280113888464
+              },
+              "curvature_measured": 0.0023796765104095057,
+              "curvature_se": 6.061165427639233e-06
+            }
+          ],
+          "ell_d_span_across_lambda": 0.00043871584495005014,
+          "span_in_curvature_sigmas": 72.29139139730975,
+          "lambda_dependent_after_transport": true
+        },
+        "gaussian_17": {
+          "sizes": [
+            85,
+            170,
+            425
+          ],
+          "rows": [
+            {
+              "lambda": 0.0,
+              "residual_transport_pairings": {
+                "ell_lambda_of_d": -0.001154169852379698,
+                "ell_lambda_of_Q3_minus_attach": -0.0015548114216718256,
+                "ell_lambda_of_Qbase": -1.3933298959045715e-13
+              },
+              "curvature_measured": 0.0015258398786304399,
+              "curvature_se": 5.669016143273171e-06
+            },
+            {
+              "lambda": 0.5,
+              "residual_transport_pairings": {
+                "ell_lambda_of_d": -0.001297340118205344,
+                "ell_lambda_of_Q3_minus_attach": -0.0011933209887486987,
+                "ell_lambda_of_Qbase": 0.0006486700589843075
+              },
+              "curvature_measured": 0.0015872096978182552,
+              "curvature_se": 5.668516693348184e-06
+            },
+            {
+              "lambda": 1.0,
+              "residual_transport_pairings": {
+                "ell_lambda_of_d": -0.0014810580372762675,
+                "ell_lambda_of_Q3_minus_attach": -0.0007294484341441709,
+                "ell_lambda_of_Qbase": 0.0014810580374255977
+              },
+              "curvature_measured": 0.0016659563726965428,
+              "curvature_se": 5.668379801060874e-06
+            }
+          ],
+          "ell_d_span_across_lambda": 0.0003268881848965694,
+          "span_in_curvature_sigmas": 57.66224273050509,
+          "lambda_dependent_after_transport": true
+        }
+      },
+      "I2_I3_z_vectors": {
+        "vector_fits": {
+          "I2": {
+            "delta": 1.525,
+            "conditional_chi2": 314498.444570114,
+            "residual_dimension": 53,
+            "detail": {
+              "per_coordinate": [
+                {
+                  "level": 0,
+                  "chi2": 19905.535324223252,
+                  "z_inf": -0.7786706246279212,
+                  "b": -3.4977618611475534
+                },
+                {
+                  "level": 1,
+                  "chi2": 2883.823082866356,
+                  "z_inf": -0.5051527661856821,
+                  "b": -3.392840435029203
+                },
+                {
+                  "level": 2,
+                  "chi2": 77206.69287029337,
+                  "z_inf": -0.3126412385050935,
+                  "b": -2.009624210292267
+                },
+                {
+                  "level": 3,
+                  "chi2": 82331.82708892885,
+                  "z_inf": -0.1503222875513367,
+                  "b": -0.8179788829294492
+                },
+                {
+                  "level": 4,
+                  "chi2": 0.0,
+                  "z_inf": 0.0,
+                  "b": 0.0
+                },
+                {
+                  "level": 5,
+                  "chi2": 3887.276186974094,
+                  "z_inf": 0.1493655057839973,
+                  "b": 0.24410148260296258
+                },
+                {
+                  "level": 6,
+                  "chi2": 10865.187151558592,
+                  "z_inf": 0.3085690648107638,
+                  "b": -0.5122129488844639
+                },
+                {
+                  "level": 7,
+                  "chi2": 3152.0750564465325,
+                  "z_inf": 0.494816335205653,
+                  "b": -3.384027815201626
+                },
+                {
+                  "level": 8,
+                  "chi2": 114266.02780882295,
+                  "z_inf": 0.7539143653698362,
+                  "b": -11.5529542975331
+                }
+              ]
+            }
+          },
+          "I3_low": {
+            "delta": 1.525,
+            "conditional_chi2": 315166.9090878854,
+            "residual_dimension": 53,
+            "detail": {
+              "per_coordinate": [
+                {
+                  "level": 0,
+                  "chi2": 8752.417354164212,
+                  "z_inf": -1.253524738275055,
+                  "b": -2.519484528683253
+                },
+                {
+                  "level": 1,
+                  "chi2": 23266.412694422306,
+                  "z_inf": -0.8133653719032684,
+                  "b": -3.2719064573313372
+                },
+                {
+                  "level": 2,
+                  "chi2": 502.7932466941398,
+                  "z_inf": -0.5031934923238772,
+                  "b": -2.113630533329963
+                },
+                {
+                  "level": 3,
+                  "chi2": 68794.55305898692,
+                  "z_inf": -0.24197088438796033,
+                  "b": -0.7473706804567776
+                },
+                {
+                  "level": 4,
+                  "chi2": 0.0,
+                  "z_inf": 0.0,
+                  "b": 0.0
+                },
+                {
+                  "level": 5,
+                  "chi2": 9449.260022560478,
+                  "z_inf": 0.24044012980809443,
+                  "b": -0.18851154777101384
+                },
+                {
+                  "level": 6,
+                  "chi2": 528.25971924512,
+                  "z_inf": 0.49678847676262244,
+                  "b": -2.10668267575402
+                },
+                {
+                  "level": 7,
+                  "chi2": 77134.23593307863,
+                  "z_inf": 0.7964089081827566,
+                  "b": -7.146036497553733
+                },
+                {
+                  "level": 8,
+                  "chi2": 126738.97705873357,
+                  "z_inf": 1.2135740145228757,
+                  "b": -21.35134574709858
+                }
+              ]
+            }
+          },
+          "I3_high": {
+            "delta": 1.525,
+            "conditional_chi2": 370532.1361543906,
+            "residual_dimension": 53,
+            "detail": {
+              "per_coordinate": [
+                {
+                  "level": 0,
+                  "chi2": 12234.381308310183,
+                  "z_inf": -0.5079359221916822,
+                  "b": -5.164151242998684
+                },
+                {
+                  "level": 1,
+                  "chi2": 105073.08292716499,
+                  "z_inf": -0.3296741912969791,
+                  "b": -3.8956138026704434
+                },
+                {
+                  "level": 2,
+                  "chi2": 108195.10402580959,
+                  "z_inf": -0.20399669613930704,
+                  "b": -2.3981017607881063
+                },
+                {
+                  "level": 3,
+                  "chi2": 88930.87775783025,
+                  "z_inf": -0.09808113392529322,
+                  "b": -1.0613763730923778
+                },
+                {
+                  "level": 4,
+                  "chi2": 0.0,
+                  "z_inf": 0.0,
+                  "b": 0.0
+                },
+                {
+                  "level": 5,
+                  "chi2": 29020.080631557397,
+                  "z_inf": 0.09745988971209169,
+                  "b": 0.6793987698445809
+                },
+                {
+                  "level": 6,
+                  "chi2": 5894.807538668547,
+                  "z_inf": 0.20133768007949238,
+                  "b": 0.7425726976748066
+                },
+                {
+                  "level": 7,
+                  "chi2": 6754.357161921493,
+                  "z_inf": 0.3228117668576932,
+                  "b": -0.4253422433027104
+                },
+                {
+                  "level": 8,
+                  "chi2": 14429.44480312807,
+                  "z_inf": 0.49204026020737096,
+                  "b": -5.176281380242179
+                }
+              ]
+            }
+          }
+        },
+        "scalar_fit_g_amplitudes": {
+          "delta": 1.5250000000000001,
+          "conditional_chi2": 2270.706205858999,
+          "residual_dimension": 2
+        },
+        "astra_control": {
+          "committed_source": "results/astra610-independent/intrinsic-shape-pilot.json (PR #611 branch)",
+          "scalar_spin0_chi2": 4.248015954405207,
+          "seven_vector_spin0_chi2": 5025.2531447348165,
+          "pattern": "scalar clean, 7-vector catastrophic (5025 vs 4.2)"
+        },
+        "kill_checks": {
+          "I2_vector_chi2_catastrophic": true,
+          "I2_scalar_pretty": false,
+          "I3_delta_dispersions": {
+            "I2": 1.525,
+            "I3_low": 1.525,
+            "I3_high": 1.525
+          },
+          "I3_max_delta_gap": 0.0
+        },
+        "verdict": "I2 KILLED (cherry-pick): the Z-standardization reproduces Astra's pattern -- scalar tolerable, 7-coordinate catastrophic -- so no single-power invariant lives there."
+      },
+      "I4_fieller": {
+        "gaussian_13": {
+          "sizes": [
+            65,
+            130,
+            325
+          ],
+          "rows": [
+            {
+              "lambda": 0.0,
+              "A4": 0.002195039982104335,
+              "var_A4": 3.682930067775312e-11,
+              "delta_width": 0.09218682058692611,
+              "var_delta": -1.7174389892188222e-18,
+              "cov_A4_delta": 3.8069156446087936e-19,
+              "ratio_point_estimate": 41.997786527126806,
+              "A4_sign": "+"
+            },
+            {
+              "lambda": 0.5,
+              "A4": 0.0022760039382395745,
+              "var_A4": 3.6783370875871774e-11,
+              "delta_width": 0.1035249357805805,
+              "var_delta": -2.1631870120119815e-18,
+              "cov_A4_delta": 4.255549348073978e-19,
+              "ratio_point_estimate": 45.48539395790947,
+              "A4_sign": "+"
+            },
+            {
+              "lambda": 1.0,
+              "A4": 0.0023796765104095057,
+              "var_A4": 3.673772634120908e-11,
+              "delta_width": 0.11804310884147601,
+              "var_delta": -2.8079802216423895e-18,
+              "cov_A4_delta": 4.823821264955518e-19,
+              "ratio_point_estimate": 49.60468716025717,
+              "A4_sign": "+"
+            }
+          ],
+          "A4_sign_flips_along_lambda": false,
+          "rho_span_across_lambda": 7.6069006331303655,
+          "rho_relative_span": 0.15335044062579928
+        },
+        "gaussian_17": {
+          "sizes": [
+            85,
+            170,
+            425
+          ],
+          "rows": [
+            {
+              "lambda": 0.0,
+              "A4": 0.0015258398786304399,
+              "var_A4": 3.2137744032691814e-11,
+              "delta_width": 0.09460645126130461,
+              "var_delta": 2.7457450711480285e-19,
+              "cov_A4_delta": -2.2306843104735694e-19,
+              "ratio_point_estimate": 62.002869754735514,
+              "A4_sign": "+"
+            },
+            {
+              "lambda": 0.5,
+              "A4": 0.0015872096978182552,
+              "var_A4": 3.2132081502767035e-11,
+              "delta_width": 0.10633929313446311,
+              "var_delta": 3.4116209021246553e-19,
+              "cov_A4_delta": -2.487441257724631e-19,
+              "ratio_point_estimate": 66.99763319278784,
+              "A4_sign": "+"
+            },
+            {
+              "lambda": 1.0,
+              "A4": 0.0016659563726965428,
+              "var_A4": 3.2130529569074914e-11,
+              "delta_width": 0.1213941469010155,
+              "var_delta": 4.350681948722937e-19,
+              "cov_A4_delta": -2.8105752229763727e-19,
+              "ratio_point_estimate": 72.86754256627084,
+              "A4_sign": "+"
+            }
+          ],
+          "A4_sign_flips_along_lambda": false,
+          "rho_span_across_lambda": 10.864672811535328,
+          "rho_relative_span": 0.14910167722006318
+        },
+        "kill_sentence": "I4 denominator stable; check the rho span against 1.55 next."
+      },
+      "I5_aff1_quotient": {
+        "transitions": {
+          "65->130": {
+            "pipeline_unit_residual": [
+              -1.026042215687585e-05,
+              5.894571910351621e-06,
+              8.696503780361153e-06,
+              5.806706097609327e-06,
+              3.342241876037916e-07,
+              -5.896851960969438e-06,
+              -1.1210586089067038e-05,
+              -1.3145185959146748e-05,
+              -6.73284507314578e-06
+            ],
+            "independent_target_based_residual": [
+              -1.3035411721974207e-05,
+              7.617726382892898e-06,
+              1.1182392138663984e-05,
+              7.462662781654515e-06,
+              4.373804640100368e-07,
+              -7.5590856183923045e-06,
+              -1.438202276757928e-05,
+              -1.688116813192232e-05,
+              -8.700645794051434e-06
+            ],
+            "gap": 7.088944697171866e-06,
+            "gap_over_noise": 32647.533056533142,
+            "disagrees_past_noise": true
+          },
+          "130->325": {
+            "pipeline_unit_residual": [
+              -4.774920199526299e-06,
+              -3.0508369344338474e-08,
+              1.0879253770540556e-06,
+              1.6729569279898313e-06,
+              2.1578832920035453e-06,
+              2.553328009282922e-06,
+              2.6778910712941882e-06,
+              2.0345695884049014e-06,
+              -1.0671265431305e-06
+            ],
+            "independent_target_based_residual": [
+              -6.6434695405506265e-06,
+              -2.647573617863005e-08,
+              1.530197725618256e-06,
+              2.34292700564885e-06,
+              3.0161794568612365e-06,
+              3.564490773262716e-06,
+              3.7342988256001727e-06,
+              2.831214800326069e-06,
+              -1.506336800428979e-06
+            ],
+            "gap": 2.799754751090751e-06,
+            "gap_over_noise": 86566.51202083804,
+            "disagrees_past_noise": true
+          },
+          "85->170": {
+            "pipeline_unit_residual": [
+              -8.059870219303338e-05,
+              2.9776151705086567e-06,
+              2.9818213859664618e-05,
+              3.7545060861833064e-05,
+              3.6013989279371396e-05,
+              2.889631073045937e-05,
+              1.755126823168995e-05,
+              1.6529320100085262e-06,
+              -2.3677447481923942e-05
+            ],
+            "independent_target_based_residual": [
+              -0.00010302611301427921,
+              4.094645482754776e-06,
+              3.8446001279095296e-05,
+              4.8283543250061714e-05,
+              4.624635966341719e-05,
+              3.7040500056065564e-05,
+              2.240512880850051e-05,
+              1.9138909405798997e-06,
+              -3.0715698447707e-05
+            ],
+            "gap": 3.062979749832043e-05,
+            "gap_over_noise": 48060.52873977156,
+            "disagrees_past_noise": true
+          },
+          "170->425": {
+            "pipeline_unit_residual": [
+              2.7447121593986402e-05,
+              -2.0446326776257814e-05,
+              -3.451333736685846e-05,
+              -3.696593024281069e-05,
+              -3.377377686121527e-05,
+              -2.7206688851369714e-05,
+              -1.817520389929872e-05,
+              -6.7162071814070864e-06,
+              9.278507324634518e-06
+            ],
+            "independent_target_based_residual": [
+              3.8645139352274254e-05,
+              -2.8413348837237966e-05,
+              -4.814244872440463e-05,
+              -5.161996694725474e-05,
+              -4.719970288804394e-05,
+              -3.805912351373145e-05,
+              -2.54746148629024e-05,
+              -9.50240612536396e-06,
+              1.2793632339789123e-05
+            ],
+            "gap": 3.099667316000892e-05,
+            "gap_over_noise": 60182.250774617234,
+            "disagrees_past_noise": true
+          },
+          "145->290": {
+            "pipeline_unit_residual": [
+              6.7264156717423815e-06,
+              -1.1303377383353784e-05,
+              -1.5209709733790774e-05,
+              -1.4069786731515812e-05,
+              -1.0353024573130347e-05,
+              -5.096542259883374e-06,
+              1.1199342237594972e-06,
+              7.862475062718824e-06,
+              1.4998371764290977e-05
+            ],
+            "independent_target_based_residual": [
+              8.71215631039652e-06,
+              -1.4514607551382388e-05,
+              -1.9554425827609606e-05,
+              -1.809598994749039e-05,
+              -1.3319411371445442e-05,
+              -6.560463134588464e-06,
+              1.433968143773763e-06,
+              1.0104417713463108e-05,
+              1.927794055022029e-05
+            ],
+            "gap": 9.150091991807171e-06,
+            "gap_over_noise": 39041.32700265881,
+            "disagrees_past_noise": true
+          }
+        },
+        "worst_gap_over_noise": 86566.51202083804,
+        "verdict": "I5 KILLED: an independent Aff(1)-quotient disagrees with the pipeline's by 86566.51 sigma on some transition -- the quotient depends on the base choice."
+      }
+    }
+  },
+  "survivors": [
+    "I4 (projective rho: stable denominator, span 15.1% < 50%)"
+  ],
+  "killed": [
+    "I1 (r_N still lambda-dependent after transport)",
+    "I2 (7-coordinate single-power catastrophic)",
+    "I3 (anchors agree with each other, but every Z-standardized vector is catastrophic like I2)",
+    "I5 (Aff(1) quotient is base-dependent)"
+  ],
+  "verdict": "Survivors: I4 (projective rho: stable denominator, span 15.1% < 50%). The full-law shape supports these invariants; P7 freezes the chart on top of them."
+}

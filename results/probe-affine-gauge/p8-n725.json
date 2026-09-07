@@ -1,0 +1,49 @@
+{
+  "schema": "matching-one.probe-affine-gauge.p8.v1",
+  "issue": 617,
+  "forecast_target_preregistered": -0.000468084248716532,
+  "weightings": {
+    "spin0": {
+      "a_hat_290_725": -0.00048083462846830374,
+      "a_hat_standard_error": 2.29405933679918e-06,
+      "a0_145_290": -0.0010459771782841544,
+      "a_hat_minus_forecast": -1.2750379751771761e-05,
+      "displacement_in_forecast_sigmas": -0.02723949756210081,
+      "displacement_in_measurement_sigmas": -5.557999109805903,
+      "measurement_interval_3se": [
+        -0.0004877168064787013,
+        -0.0004739524504579062
+      ],
+      "preregistered_band_5pct": [
+        -0.0004914884611523586,
+        -0.00044468003628070536
+      ],
+      "inside_band": true,
+      "i4_projective_rho": 651.1464401184116,
+      "residual_statistic": 1447.4790511045424,
+      "residual_degrees_of_freedom": 6
+    },
+    "equal": {
+      "a_hat_290_725": -0.00048092866182572534,
+      "a_hat_standard_error": 2.3018142126143056e-06,
+      "a0_145_290": -0.0010439586586527363,
+      "a_hat_minus_forecast": -1.2844413109193366e-05,
+      "displacement_in_forecast_sigmas": -0.027440387375589386,
+      "displacement_in_measurement_sigmas": -5.580125901909873,
+      "measurement_interval_3se": [
+        -0.00048783410446356825,
+        -0.00047402321918788243
+      ],
+      "preregistered_band_5pct": [
+        -0.0004914884611523586,
+        -0.00044468003628070536
+      ],
+      "inside_band": true,
+      "i4_projective_rho": 651.0060797502568,
+      "residual_statistic": 1495.87979875951,
+      "residual_degrees_of_freedom": 6
+    }
+  },
+  "both_weightings_inside_band": true,
+  "verdict": "BOTH weightings sit inside the pre-registered +/-5% band around the frozen forecast at 3 se: the finite forecast is supported.  This does NOT make the model exact (GOVERNANCE 2C); the displacement is -0.0 forecast-sigmas (spin0) and the residual statistic is 1447 on 6 df, not zero."
+}
