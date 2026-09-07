@@ -1,0 +1,28 @@
+{
+  "schema": "matching-one/decile-grid-pc-pair/v1",
+  "issue": 641,
+  "rung_claimed": "none (E2 fails on the swept subclass; closest pair ~6.9e-6 > 3e-6)",
+  "pair": [
+    "HNF(2,1,9) v1=(2,0) v2=(1,9) N=18",
+    "HNF(2,0,9) v1=(2,0) v2=(0,9) N=18"
+  ],
+  "decile_gaps": {
+    "1/10": "3036185189/288230376151711744",
+    "1/5": "167953825115/1152921504606846976",
+    "3/10": "221265243001/288230376151711744",
+    "2/5": "3510960881683/1152921504606846976",
+    "1/2": "7975980164381/1152921504606846976",
+    "3/5": "346394932063/576460752303423488",
+    "7/10": "72721656335/1152921504606846976",
+    "4/5": "3370057411/576460752303423488",
+    "9/10": "231860443/1152921504606846976"
+  },
+  "max_decile_gap": "7975980164381/1152921504606846976",
+  "max_decile_gap_float": 6.918060017538537e-06,
+  "m_half": [
+    "-8449/131072",
+    "-33/512"
+  ],
+  "m_half_equal": false,
+  "note": "the closest admissible pair by max decile gap in the N<=18 sweep; measured SE ~3e-6 would not separate these two models, but the gap still exceeds the SE, so the pair does NOT reach E2. Gap scales ~1/N in the (2,1,L) vs (2,0,L) family, so reaching 3e-6 needs N>~50, beyond 2^N brute force."
+}
