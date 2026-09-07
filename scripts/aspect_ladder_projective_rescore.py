@@ -43,7 +43,7 @@ import math
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
-from projective_inference import ray_residual, subspace_residual
+from projective_inference import mp, ray_residual, subspace_residual
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -121,8 +121,18 @@ def curvature(vector: Sequence[float], covariance: Sequence[Sequence[float]]) ->
 
     A linear functional, so this is exact -- no denominator, no matrix inverse,
     and nothing that degrades when one entry is close to zero.
+
+    The value is summed through ``projective_inference``'s mpmath context
+    (``mp.dps = 15``), which is the arithmetic the committed artifact was
+    generated in; a pure-float sum loses the last bit here (-4.6630613986373587e-4
+    instead of -4.663061398637359e-4) and made the bit-exact reproduction test
+    fail.  #643 integration traced the mismatch to this and restored the
+    generation-time arithmetic.
     """
-    value = sum(w * x for w, x in zip(CURVATURE_WEIGHTS, vector))
+    value = float(sum(
+        (mp.mpf(w) * mp.mpf(x) for w, x in zip(CURVATURE_WEIGHTS, vector)),
+        mp.mpf(0),
+    ))
     variance = sum(
         CURVATURE_WEIGHTS[i] * covariance[i][j] * CURVATURE_WEIGHTS[j]
         for i in range(3) for j in range(3)
@@ -195,9 +205,10 @@ def rescore(competitors: Mapping[str, Sequence[float]],
             "sigma_over_admissible_correlations": [min(sigmas), max(sigmas)],
             "excluded_at_3_sigma": centre["equivalent_sigma"] >= 3.0,
             "verdict_survives_the_missing_covariance": len(decisions) == 1,
-            "curvature_predicted": sum(
-                w * x for w, x in zip(CURVATURE_WEIGHTS, ray)
-            ),
+            "curvature_predicted": float(sum(
+                (mp.mpf(w) * mp.mpf(x) for w, x in zip(CURVATURE_WEIGHTS, ray)),
+                mp.mpf(0),
+            )),
             "required_abs_A8_over_A4_to_reach_r2": required_spin8_ratio(
                 vector, covariance, ray
             ),
