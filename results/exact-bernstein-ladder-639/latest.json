@@ -1,0 +1,77 @@
+{
+  "ticket": 639,
+  "slug": "exact-bernstein-ladder-639",
+  "branch": "exact-bernstein-ladder-639",
+  "date": "2026-09-07",
+  "claim_level": "computed",
+  "method": "two independent brute-force kernels, exact integer arithmetic throughout; no transfer matrix, no symmetry reduction, no floating point in any exact field",
+  "kernels": {
+    "k1": {
+      "description": "per-configuration rebuild of the displacement-aware union-find (WrapDsu), faithful C++ port of scripts/exact_matching_polynomial.py + scripts/matched_torus_reference.py",
+      "source": "scripts/exact_matching_ladder_bruteforce.cpp",
+      "guards": "N > 40 refuses (Python reference still refuses N > 26)"
+    },
+    "k2": {
+      "description": "DFS over site colors with fully journaled incremental union-find (undo on backtrack); no transfer matrix, no symmetry assumptions; adjacency keeps every directed edge (no dedup), matching the reference",
+      "source": "scripts/exact_matching_ladder_bruteforce.cpp"
+    }
+  },
+  "regression": {
+    "description": "before any new rung was reported, both kernels reproduced all five committed rungs bit-for-bit",
+    "committed_rungs_verified": ["axis L=2", "axis L=3", "axis L=4", "diamond L=2", "diamond L=3"],
+    "authority": "results/exact_small_matching_polynomials.md"
+  },
+  "rungs": {
+    "axis_L5": {
+      "N": 25,
+      "configs": 33554432,
+      "k1_counts": [-1, -25, -300, -2300, -12650, -53120, -176900, -478700, -1068575, -1982325, -3054280, -3863250, -3890950, -2905150, -1290250, 128000, 765475, 709225, 406900, 168100, 52610, 12650, 2300, 300, 25, 1],
+      "k2_counts": [-1, -25, -300, -2300, -12650, -53120, -176900, -478700, -1068575, -1982325, -3054280, -3863250, -3890950, -2905150, -1290250, 128000, 765475, 709225, 406900, 168100, 52610, 12650, 2300, 300, 25, 1],
+      "k1_k2_agree": true,
+      "power_coefficients_ascending": [-1, 0, 0, 0, 0, 10, 0, 100, -200, 300, 240, -3050, 2850, 1950, 6850, -26220, 20450, 3450, -2100, -18650, 22970, -10800, 1650, 300, -100, 2],
+      "irreducible_over_ZZ": true,
+      "physical_root_count_exact": 1,
+      "physical_root_exact_bracket": ["885956409530584551460518474715476525858900307245271/1496577676626844588240573268701473812127674924007424", "110744551191323068932564809339434565732362538405659/187072209578355573530071658587684226515959365500928"],
+      "physical_root_decimal_diagnostic_50d": "0.59198825651833384461096868021192887904787477719722"
+    },
+    "diamond_L4": {
+      "N": 32,
+      "configs": 4294967296,
+      "k2_counts": [-1, -32, -496, -4960, -35960, -201376, -906192, -3365856, -10517732, -28036448, -64383504, -128169312, -221730472, -332706976, -429729648, -470311264, -423397330, -294981856, -133649680, -2692064, 61769064, 67601440, 46308016, 23815392, 9756620, 3263072, 896432, 200800, 35944, 4960, 496, 32, 1],
+      "k1_counts": [-1, -32, -496, -4960, -35960, -201376, -906192, -3365856, -10517732, -28036448, -64383504, -128169312, -221730472, -332706976, -429729648, -470311264, -423397330, -294981856, -133649680, -2692064, 61769064, 67601440, 46308016, 23815392, 9756620, 3263072, 896432, 200800, 35944, 4960, 496, 32, 1],
+      "k1_k2_agree": true,
+      "power_coefficients_ascending": [-1, 0, 0, 0, 0, 0, 0, 0, 568, -1280, 1408, -1600, 2032, -14208, 38496, -45568, 47068, -25536, -18784, -332032, 1329152, -1949824, 1132320, 282112, -784872, 364608, 56704, -123968, 52416, -10048, 896, -64, 6],
+      "irreducible_over_ZZ": true,
+      "physical_root_count_exact": 1,
+      "physical_root_exact_bracket": ["221936196790459456644887221123027167099914820664697/374144419156711147060143317175368453031918731001856", "887744787161837826579548884492108668399659282658789/1496577676626844588240573268701473812127674924007424"],
+      "physical_root_decimal_diagnostic_50d": "0.59318323467361685147129923181974517395503790167638"
+    },
+    "axis_L6": {
+      "N": 36,
+      "configs": 68719476736,
+      "k2_counts": [-1, -36, -630, -7140, -58905, -376992, -1947780, -8347320, -30254904, -94088944, -253787076, -598517136, -1241136966, -2270781504, -3669033924, -5224486248, -6515566902, -7028993232, -6411441404, -4730112864, -2532613932, -581088432, 590206104, 934769520, 771851820, 466782912, 224779968, 89232760, 29670516, 8302104, 1946088, 376992, 58905, 7140, 630, 36, 1],
+      "k1_counts": [-1, -36, -630, -7140, -58905, -376992, -1947780, -8347320, -30254904, -94088944, -253787076, -598517136, -1241136966, -2270781504, -3669033924, -5224486248, -6515566902, -7028993232, -6411441404, -4730112864, -2532613932, -581088432, 590206104, 934769520, 771851820, 466782912, 224779968, 89232760, 29670516, 8302104, 1946088, 376992, 58905, 7140, 630, 36, 1],
+      "k1_k2_agree": true,
+      "power_coefficients_ascending": [-1, 0, 0, 0, 0, 0, 12, 0, 216, -432, 936, -2232, 8034, -25200, 30312, -33168, 88560, -73368, 84124, -573192, 936324, -696432, 2081124, -5248368, 4725768, 739008, -3079584, -2184240, 8559090, -9303912, 5695464, -2188296, 530370, -76272, 5436, -72, -8],
+      "irreducible_over_ZZ": true,
+      "physical_root_count_exact": 1,
+      "physical_root_exact_bracket": ["886565238729554871945691378613039104605661928137703/1496577676626844588240573268701473812127674924007424", "110820654841194358993211422326629888075707741017213/187072209578355573530071658587684226515959365500928"],
+      "physical_root_decimal_diagnostic_50d": "0.59239507081770423769385580764250543411218819923508",
+      "k1_wall_seconds": 5416.498
+    }
+  },
+  "diamond_L5_status": {
+    "N": 50,
+    "configs": 1125899906842624,
+    "measured_rate_configs_per_second": 119000000,
+    "projected_wall_hours_single_machine": 2638,
+    "verdict": "out of independent reach by pure brute force on the available fleet; symmetry reduction (torus automorphism group, order 288 for the axis-like lattice) would bring this to ~9 machine-hours but is NOT implemented here and was NOT run; no symmetry-reduced number is claimed",
+    "no_result_claimed": true
+  },
+  "independent_checks": {
+    "structural": "scripts/verify_power_sums.py — exact checks a_0 = M(0) = -1, a_N = M(1) = +1, integer coefficients, degree exactly N, on all 8 rungs (5 committed + 3 new); passes",
+    "root": "scripts/exact_roots_physical.py — Sturm count_roots for uniqueness, exact rational isolation intervals, 170-round exact Fraction bisection; regression on committed axis L=2 root 0.54119610014619698439972320536638942006107206337802 reproduces the committed diagnostic",
+    "k1_vs_k2": "bit-for-bit agreement on all 5 committed rungs and all 3 new rungs (axis L=5, diamond L=4, axis L=6); diamond L=4 additionally confirmed by a third independent environment (local Mac K1 build, 2753.7 s at 8 threads)"
+  },
+  "exactness_statement": "all counts, power-basis coefficients, brackets, factorizations and root counts are exact integers/rationals; the only decimal in this artifact is the field explicitly named decimal_diagnostic"
+}
