@@ -123,11 +123,40 @@ gaussian_17  +1.75342e-03   +1.12583e-03      1.5574
 p50           two sizes, no second difference
 ```
 
-The one-exponent law misses the curvature by 55%, and it misses it **by the same
-amount in both lineages**: the two ratios agree with each other to 1.3%, far
-more closely than either agrees with one. Different parent primes (13 and 17),
-different productions, different seeds. This is a reproducible falsification,
-not noise.
+The one-exponent law misses the curvature by 55%.
+
+### The two lineages are not as independent as they look
+
+The two ratios agree to 1.3%, and my first reading of that was cross-lineage
+replication. It is not, on its own. Under the primary weighting, **325 and 425
+are the only sizes in the tree whose spin-0 combination extrapolates** (weights
+`1.278 / -0.278` and `-0.026 / 1.026`, both with a negative weight) and they are
+also **the only sizes run at 5M per batch rather than 1M**. They are rung 3 of
+`gaussian_13` and rung 3 of `gaussian_17` respectively — so the two lineages
+share their third-rung structure exactly, and the curvature weight on that rung
+(`c2 = +1.36`) is where a shared systematic would enter.
+
+The control that separates them is the **equal** weighting, which is `0.5/0.5` at
+every size and never extrapolates. Running the same frozen-parameter check under
+both:
+
+```text
+weighting / lineage        ratio
+equal    / gaussian_13     1.5789
+equal    / gaussian_17     1.4439
+spin0    / gaussian_13     1.5368
+spin0    / gaussian_17     1.5574
+                     range 1.4439 - 1.5789, spread 8.8%
+```
+
+**The discrepancy survives**: all four cells sit near 1.5 and none is near 1. So
+the 55% failure is not manufactured by the extrapolating combination. But the
+honest spread is **8.8% over four cells, not 1.3% over two** — the tight
+agreement was the shared structure, and this note's first version over-read it.
+A textbook quantile-estimator bias is the other candidate and is about six
+orders of magnitude too small (`O(1/M)` at `M = 10^8` against the `~7e-4` needed),
+which is why the shared *extrapolation* mattered more than the shared sample
+count.
 
 ## What this changes
 
@@ -165,6 +194,12 @@ Chosen by declared criteria, not preference. It does three things at once:
    `(26, 7)` and `(23, 14)` straddle zero in `cos 4 theta`.
 3. **A longer lever arm** for the exponent than the current maximum of 425.
 
+It also breaks the *systematic* degeneracy above, for exactly the reason it
+breaks the label one: run at 1M per batch like the first two rungs, and with an
+**interpolating** spin-0 combination, `p50` becomes the first lineage whose three
+rungs share their reconstruction structure. That was not the criterion it was
+selected on; it follows from it.
+
 `N = 338` was the cheaper candidate for (2) and is **unusable**: `(17, 7)` is
 its only primitive representative, so it has no second orientation and no spin-0
 combination at all.
@@ -176,4 +211,8 @@ combination at all.
   would produce it; so would a step-size-dependent reconstruction bias.
 - These five transitions are one correlated evidence block with #582 and with
   Gate 3. They are the same histograms read three ways.
+- The two three-size lineages share their third-rung structure (extrapolating
+  spin-0 combination, 5x sample depth), so the primary weighting's 1.3% is not
+  independent replication. The equal-weighting control is what carries the
+  claim, and it gives 8.8%.
 - Nothing here revises Gate 3's verdict. No label was retested.

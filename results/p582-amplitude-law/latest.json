@@ -332,6 +332,7 @@
   "not_established": [
     "The exponent is not identified with any named percolation correction-to-scaling exponent. omega is measured in the site count N, so N^-1 is L^-2 on a square torus; that is a coincidence of numbers until something independent fixes the operator.",
     "The second-difference discrepancy is measured, not explained. Two exponents would produce it; so would a step-size-dependent bias in the quantile reconstruction that the first differences happen to cancel. Only a third three-size lineage separates those.",
+    "The two three-size lineages are NOT structurally independent at their third rung. Under the primary weighting both extrapolate there (325 and 425 are the only extrapolating spin-0 combinations in the tree) and both carry a 5x larger per-batch sample count there. So the closeness of their two ratios under that weighting is not evidence on its own; what carries weight is that the discrepancy survives the equal weighting, which never extrapolates, with a wider spread (1.44 to 1.58 over all four cells rather than 1.54 to 1.56 over two).",
     "The five transitions are one correlated evidence block with #582 and with Gate 3. They are the same histograms read three ways."
   ],
   "one_exponent_fit": {
@@ -503,6 +504,10 @@
         "degrees_of_freedom": 3,
         "omega": 0.9969138416413472,
         "scale_amplitude": 0.17501738650893825,
+        "second_difference_ratios": {
+          "gaussian_13": 1.5789082613504763,
+          "gaussian_17": 1.4438744941463058
+        },
         "statistic": 883.5048943543071
       },
       "spin0": {
@@ -516,8 +521,24 @@
         "degrees_of_freedom": 3,
         "omega": 0.9701785312125983,
         "scale_amplitude": 0.17834759121942037,
+        "second_difference_ratios": {
+          "gaussian_13": 1.5368114942957012,
+          "gaussian_17": 1.5574396136591322
+        },
         "statistic": 277.445236956155
       }
-    }
+    },
+    "second_difference_ratio_cells": {
+      "equal/gaussian_13": 1.5789082613504763,
+      "equal/gaussian_17": 1.4438744941463058,
+      "spin0/gaussian_13": 1.5368114942957012,
+      "spin0/gaussian_17": 1.5574396136591322
+    },
+    "second_difference_ratio_range": [
+      1.4438744941463058,
+      1.5789082613504763
+    ],
+    "second_difference_ratio_spread_over_all_cells": 0.0883001599915787,
+    "the_discrepancy_survives_the_weighting_change": true
   }
 }

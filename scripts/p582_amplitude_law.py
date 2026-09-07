@@ -456,6 +456,17 @@ def weighting_systematic(both: Mapping[str, Mapping[int, Mapping[str, Any]]]
     not a discovery.  The wrong number this stops us believing is a
     statistics-only error bar on ``omega`` -- which would exclude ``omega = 1``
     on a systematic that is larger than it.
+
+    This control also carries the second-difference check, for a reason that is
+    not about ``omega`` at all.  Under the primary weighting the spin-0
+    combination **extrapolates** at 325 and 425 (weights ``1.278 / -0.278`` and
+    ``-0.026 / 1.026``) and interpolates everywhere else -- so rung 3 of *both*
+    three-size lineages is an extrapolation, and the two lineages share that
+    structure exactly, along with a 5x larger per-batch sample count at the same
+    two sizes.  The close agreement of their two ratios is therefore **not**
+    independent evidence on its own.  The equal weighting is ``0.5 / 0.5`` at
+    every size and never extrapolates, so running the check under both is what
+    separates a shared systematic from a shared law.
     """
     report = {}
     directions = {}
@@ -466,22 +477,37 @@ def weighting_systematic(both: Mapping[str, Mapping[int, Mapping[str, Any]]]
         directions[name] = direction
         points = amplitude_points(rows, loaded, direction)
         fitted = fit_exponent(points)
+        check = second_difference_check(loaded, direction,
+                                        fitted["scale_amplitude"], fitted["omega"])
         report[name] = {
             "omega": fitted["omega"],
             "scale_amplitude": fitted["scale_amplitude"],
             "statistic": fitted["statistic"],
             "degrees_of_freedom": fitted["degrees_of_freedom"],
             "amplitudes": [point["amplitude"] for point in points],
+            "second_difference_ratios":
+                {item["lineage"]: item["ratio"]
+                 for item in check["per_lineage"] if item["usable"]},
         }
     cosine = sum(a * b for a, b in zip(directions[PRIMARY_WEIGHTING],
                                        directions[CONTROL_WEIGHTING]))
     cosine = max(-1.0, min(1.0, cosine))
     shift = abs(report[PRIMARY_WEIGHTING]["omega"] - report[CONTROL_WEIGHTING]["omega"])
+    cells = {f"{name}/{lineage}": ratio
+             for name, block in report.items()
+             for lineage, ratio in block["second_difference_ratios"].items()}
+    values = list(cells.values())
     return {
         "per_weighting": report,
         "angle_between_the_two_frozen_directions_degrees":
             math.degrees(math.acos(abs(cosine))),
         "omega_shift": shift,
+        "second_difference_ratio_cells": cells,
+        "second_difference_ratio_range": [min(values), max(values)],
+        "second_difference_ratio_spread_over_all_cells":
+            (max(values) - min(values)) / (sum(values) / len(values)),
+        "the_discrepancy_survives_the_weighting_change":
+            min(values) > 1.2 and max(values) < 2.0,
     }
 
 
@@ -612,7 +638,7 @@ def acquisition(candidates: Sequence[Mapping[str, Any]],
 
 def decide(reproduction: Mapping[str, Any], fit: Mapping[str, Any],
            folds: Mapping[str, Any], budget: Mapping[str, Any],
-           second: Mapping[str, Any]) -> dict[str, Any]:
+           second: Mapping[str, Any], weighting: Mapping[str, Any]) -> dict[str, Any]:
     """Verdict letters, each tied to a number above rather than to a reading."""
     if not reproduction["every_statistic_matches_exactly"]:
         return {"verdict": "REPRODUCTION_CONTROL_FAILED",
@@ -622,7 +648,8 @@ def decide(reproduction: Mapping[str, Any], fit: Mapping[str, Any],
         findings.append("AMPLITUDE_LAW_PREDICTS_A_HELD_OUT_TRANSITION")
     if not budget["unit_exponent_is_excluded"]:
         findings.append("EXPONENT_CONSISTENT_WITH_UNITY")
-    if second["the_discrepancy_reproduces_across_lineages"]:
+    if second["the_discrepancy_reproduces_across_lineages"] and \
+            weighting["the_discrepancy_survives_the_weighting_change"]:
         findings.append("ONE_EXPONENT_FALSIFIED_BY_THE_SECOND_DIFFERENCE")
     verdict = ("ONE_EXPONENT_DESCRIBES_THE_TANGENT_AND_FAILS_THE_CURVATURE"
                if "ONE_EXPONENT_FALSIFIED_BY_THE_SECOND_DIFFERENCE" in findings
@@ -661,7 +688,7 @@ def assemble() -> dict[str, Any]:
         "error_budget": budget,
         "candidate_sizes": candidates,
         "acquisition": acquisition(candidates, second),
-        "decision": decide(reproduction, fit, folds, budget, second),
+        "decision": decide(reproduction, fit, folds, budget, second, weighting),
         "not_established": [
             "The exponent is not identified with any named percolation "
             "correction-to-scaling exponent. omega is measured in the site count "
@@ -671,6 +698,15 @@ def assemble() -> dict[str, Any]:
             "exponents would produce it; so would a step-size-dependent bias in "
             "the quantile reconstruction that the first differences happen to "
             "cancel. Only a third three-size lineage separates those.",
+            "The two three-size lineages are NOT structurally independent at "
+            "their third rung. Under the primary weighting both extrapolate "
+            "there (325 and 425 are the only extrapolating spin-0 combinations "
+            "in the tree) and both carry a 5x larger per-batch sample count "
+            "there. So the closeness of their two ratios under that weighting "
+            "is not evidence on its own; what carries weight is that the "
+            "discrepancy survives the equal weighting, which never "
+            "extrapolates, with a wider spread (1.44 to 1.58 over all four "
+            "cells rather than 1.54 to 1.56 over two).",
             "The five transitions are one correlated evidence block with #582 "
             "and with Gate 3. They are the same histograms read three ways.",
         ],
@@ -717,7 +753,17 @@ def render(report: Mapping[str, Any]) -> str:
     check = report["second_difference_check"]
     if check["relative_spread_between_lineages"] is not None:
         lines.append(f"  the two ratios agree to "
-                     f"{100 * check['relative_spread_between_lineages']:.1f}%")
+                     f"{100 * check['relative_spread_between_lineages']:.1f}% "
+                     f"under the primary weighting alone")
+    weighting = report["weighting_systematic"]
+    lines.append("  all four (weighting x lineage) cells, the honest spread:")
+    for cell, ratio in sorted(weighting["second_difference_ratio_cells"].items()):
+        lines.append(f"    {cell:<24} {ratio:.4f}")
+    lines.append(f"    range {weighting['second_difference_ratio_range'][0]:.4f}"
+                 f"-{weighting['second_difference_ratio_range'][1]:.4f}, spread "
+                 f"{100 * weighting['second_difference_ratio_spread_over_all_cells']:.1f}%"
+                 f", survives the weighting change: "
+                 f"{weighting['the_discrepancy_survives_the_weighting_change']}")
     lines += ["", f"next production: {report['acquisition']['preferred']}",
               "", f"verdict: {report['decision']['verdict']}"]
     for finding in report["decision"]["findings"]:

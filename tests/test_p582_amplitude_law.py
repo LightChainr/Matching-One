@@ -266,7 +266,8 @@ class Verdict(unittest.TestCase):
         outcome = decide({"every_statistic_matches_exactly": False},
                          {"statistic": 1.0}, {"largest_relative_prediction_error": 0.0},
                          {"unit_exponent_is_excluded": False},
-                         {"the_discrepancy_reproduces_across_lineages": True})
+                         {"the_discrepancy_reproduces_across_lineages": True},
+                         {"the_discrepancy_survives_the_weighting_change": True})
         self.assertEqual(outcome["verdict"], "REPRODUCTION_CONTROL_FAILED")
 
     def test_the_headline_verdict_needs_both_halves(self):
@@ -279,19 +280,29 @@ class Verdict(unittest.TestCase):
         both = decide(self.GOOD_CONTROL, {"statistic": 277.0},
                       {"largest_relative_prediction_error": 0.0465},
                       {"unit_exponent_is_excluded": False},
-                      {"the_discrepancy_reproduces_across_lineages": True})
+                      {"the_discrepancy_reproduces_across_lineages": True},
+                      {"the_discrepancy_survives_the_weighting_change": True})
         self.assertEqual(both["verdict"],
                          "ONE_EXPONENT_DESCRIBES_THE_TANGENT_AND_FAILS_THE_CURVATURE")
         without_curvature = decide(self.GOOD_CONTROL, {"statistic": 277.0},
                                    {"largest_relative_prediction_error": 0.0465},
                                    {"unit_exponent_is_excluded": False},
-                                   {"the_discrepancy_reproduces_across_lineages": False})
+                                   {"the_discrepancy_reproduces_across_lineages": False},
+                                   {"the_discrepancy_survives_the_weighting_change": True})
         self.assertEqual(without_curvature["verdict"], "AMPLITUDE_LAW_NOT_ESTABLISHED")
         without_prediction = decide(self.GOOD_CONTROL, {"statistic": 277.0},
                                     {"largest_relative_prediction_error": 0.9},
                                     {"unit_exponent_is_excluded": False},
-                                    {"the_discrepancy_reproduces_across_lineages": True})
+                                    {"the_discrepancy_reproduces_across_lineages": True},
+                                    {"the_discrepancy_survives_the_weighting_change": True})
         self.assertEqual(without_prediction["verdict"], "AMPLITUDE_LAW_NOT_ESTABLISHED")
+        without_weighting = decide(
+            self.GOOD_CONTROL, {"statistic": 277.0},
+            {"largest_relative_prediction_error": 0.0465},
+            {"unit_exponent_is_excluded": False},
+            {"the_discrepancy_reproduces_across_lineages": True},
+            {"the_discrepancy_survives_the_weighting_change": False})
+        self.assertEqual(without_weighting["verdict"], "AMPLITUDE_LAW_NOT_ESTABLISHED")
 
 
 class CommittedArtifact(unittest.TestCase):
@@ -326,6 +337,49 @@ class CommittedArtifact(unittest.TestCase):
         for item in check["per_lineage"]:
             if item["usable"]:
                 self.assertTrue(item["weights_annihilate_constants"])
+
+    def test_the_two_lineages_share_their_third_rung_structure(self):
+        """Stops us believing the 1.3% agreement is independent evidence.
+
+        Under the primary weighting, 325 and 425 are the only sizes in the tree
+        whose spin-0 combination extrapolates (weights 1.278/-0.278 and
+        -0.026/1.026), and they are also the only sizes run at 5M per batch
+        rather than 1M.  They are rung 3 of gaussian_13 and rung 3 of
+        gaussian_17 respectively, so the two "independent" lineages share that
+        structure exactly.  The wrong number is 1.3% quoted as cross-lineage
+        replication when the shared part has not been varied.
+        """
+        sizes = {item["size"]: item for item in self.report["candidate_sizes"]}
+        del sizes  # the committed sizes are pinned by the flow artifact, below
+        flow = json.loads(
+            (Path(DEFAULT_OUTPUT).parent.parent
+             / "wasserstein-shape-flow" / "latest.json").read_text())["sizes"]
+        extrapolating = {int(size) for size, block in flow.items()
+                         if not block["spin4_correction_is_an_interpolation"]}
+        self.assertEqual(extrapolating, {325, 425})
+        deep = {int(size) for size, block in flow.items()
+                if "500m" in block["source"] or "_500m" in block["source"]}
+        self.assertEqual(deep, {325, 425})
+
+    def test_the_discrepancy_survives_the_weighting_that_never_extrapolates(self):
+        """Stops us believing a curvature failure manufactured by extrapolation.
+
+        The equal weighting is 0.5/0.5 at every size, so it never extrapolates
+        and carries none of the shared rung-3 structure above.  The ratio there
+        is 1.58 and 1.44 -- still nowhere near one.  The wrong number this
+        stops us believing is 1.55 read as a systematic of the spin-0
+        combination, and equally 1.3% read as the honest spread: over all four
+        weighting-by-lineage cells it is 8.8%.
+        """
+        weighting = self.report["weighting_systematic"]
+        cells = weighting["second_difference_ratio_cells"]
+        self.assertEqual(len(cells), 4)
+        low, high = weighting["second_difference_ratio_range"]
+        self.assertGreater(low, 1.4)
+        self.assertLess(high, 1.7)
+        self.assertTrue(weighting["the_discrepancy_survives_the_weighting_change"])
+        self.assertGreater(
+            weighting["second_difference_ratio_spread_over_all_cells"], 0.05)
 
     def test_the_held_out_amplitude_prediction_stays_under_five_percent(self):
         """Stops us believing the exponent is only an in-sample description."""
