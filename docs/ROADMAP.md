@@ -363,8 +363,17 @@ Then the independent check (GOVERNANCE §2 minimum A) **fired**. A second divide
 is a different functional of the same productions; freezing `(lambda, omega)` from the five
 *first* differences and predicting it, with no refit, gives measured/predicted = **1.5368**
 (gaussian_13) and **1.5574** (gaussian_17) — the one-exponent law misses the curvature by
-55 %, and misses it by the same amount in two lineages with different parent primes,
-productions and seeds, the two ratios agreeing to 1.3 %. So the natural reading of Gate 3's
+55 %. The two lineages are **not** independent where it matters: under the primary
+weighting, 325 and 425 are the only sizes in the tree whose spin-0 combination
+*extrapolates* (weights `1.278/−0.278` and `−0.026/+1.026`) **and** the only ones run at 5M
+per batch rather than 1M — and they are rung 3 of gaussian_13 and rung 3 of gaussian_17
+respectively, which is exactly where the curvature weight `c2 = +1.36` sits. Their 1.3 %
+agreement is shared structure, not replication; the first version of this entry over-read
+it. The control that carries the claim is the **equal** weighting, `0.5/0.5` at every size
+and never extrapolating: all four weighting×lineage cells give `1.4439, 1.5368, 1.5574,
+1.5789` — **the discrepancy survives, none near one, honest spread 8.8 %**. A textbook
+quantile-estimator bias is the other candidate and is ~6 orders of magnitude too small
+(`O(1/M)` at `M = 10^8` against the `~7e-4` needed). So the natural reading of Gate 3's
 unlabelled remainder is **a second smooth scale, not a discrete fiber** — consistent with
 finding nothing to label, and stronger than "structured but unindexed". Not proof: a
 step-size-dependent reconstruction bias that the first differences cancel would look the
@@ -377,7 +386,10 @@ breaks the degeneracy Gate 3 exposed, because on the committed sizes a 5-adic va
 and the *absence* of an interpolating spin-0 combination coincide exactly (325 and 425 have
 both, so `multiplier`, `valuation` and `interpolation flag` are one partition), whereas 725
 has valuation 2 **and** admits an interpolating combination — `(26,7)` and `(23,14)` straddle
-zero in `cos 4θ`; and it lengthens the lever arm past the current maximum of 425. `N = 338`
+zero in `cos 4θ`; and it lengthens the lever arm past the current maximum of 425. Run at 1M
+per batch with an *interpolating* combination, it also makes `p50` the first lineage whose
+three rungs share their reconstruction structure — not the selection criterion, but it
+follows from it. `N = 338`
 was the cheaper candidate and is **unusable**: `(17,7)` is its only primitive representative,
 so it has no second orientation at all.
 
