@@ -1,0 +1,138 @@
+{
+  "schema": "matching-one.probe-affine-gauge.p3.v1",
+  "issue": 617,
+  "triangles": {
+    "spin0": {
+      "gaussian_13": {
+        "usable": true,
+        "lineage": [
+          65,
+          130,
+          325
+        ],
+        "measured_curvature": 0.002244534016448957,
+        "curvature_se": 6.231389268806823e-06,
+        "D1_holonomy": {
+          "middle_chart_amplitude": 0.002244534016448957,
+          "lower_chart_amplitude": 0.002065715245950922,
+          "absolute": 0.00017881877049803502,
+          "relative_percent": 7.9668549991922815,
+          "much_smaller_than_leftover": false,
+          "reversal_note": "the covector map attachment->attachment is a GLS covector recompute, not an accumulated integrator: a reversed loop is the same recompute, so reversing inverts the holonomy exactly; the connection has no curvature in the formal sense, but the CHOICE of attachment moves the amplitude by the amounts P2 shows",
+          "verdict": "attachment moves the amplitude by 7.97% -- this is P2's attachment share of the fake excess, NOT closed-loop holonomy; the residual after the committed transport is what remains"
+        },
+        "D2_shape_residual": {
+          "residual_statistic": 2200.1875279784167,
+          "degrees_of_freedom": 6,
+          "residual_fits_zero_hypothesis": false,
+          "note": "the curvature residual statistic is the SAME object as #612's full-law residual (1447/6df at the new transition family): it is NOT consistent with zero, so a perpendicular shape component exists in the declared chart -- this is the ~4% left after transport, seen as a residual, and it is measured, not assumed"
+        }
+      },
+      "gaussian_17": {
+        "usable": true,
+        "lineage": [
+          85,
+          170,
+          425
+        ],
+        "measured_curvature": 0.001753418420189205,
+        "curvature_se": 5.831070850132416e-06,
+        "D1_holonomy": {
+          "middle_chart_amplitude": 0.001753418420189205,
+          "lower_chart_amplitude": 0.0016096358724442205,
+          "absolute": 0.00014378254774498442,
+          "relative_percent": 8.200127595868953,
+          "much_smaller_than_leftover": false,
+          "reversal_note": "the covector map attachment->attachment is a GLS covector recompute, not an accumulated integrator: a reversed loop is the same recompute, so reversing inverts the holonomy exactly; the connection has no curvature in the formal sense, but the CHOICE of attachment moves the amplitude by the amounts P2 shows",
+          "verdict": "attachment moves the amplitude by 8.20% -- this is P2's attachment share of the fake excess, NOT closed-loop holonomy; the residual after the committed transport is what remains"
+        },
+        "D2_shape_residual": {
+          "residual_statistic": 869.9771778066497,
+          "degrees_of_freedom": 6,
+          "residual_fits_zero_hypothesis": false,
+          "note": "the curvature residual statistic is the SAME object as #612's full-law residual (1447/6df at the new transition family): it is NOT consistent with zero, so a perpendicular shape component exists in the declared chart -- this is the ~4% left after transport, seen as a residual, and it is measured, not assumed"
+        }
+      },
+      "p50": {
+        "usable": false,
+        "reason": "two sizes only: no triangle, no curvature in the same sense; any 4%-style number here would be invented"
+      }
+    },
+    "equal": {
+      "gaussian_13": {
+        "usable": true,
+        "lineage": [
+          65,
+          130,
+          325
+        ],
+        "measured_curvature": 0.0023796765104095057,
+        "curvature_se": 6.061165427639233e-06,
+        "D1_holonomy": {
+          "middle_chart_amplitude": 0.0023796765104095057,
+          "lower_chart_amplitude": 0.002195039982104335,
+          "absolute": 0.00018463652830517062,
+          "relative_percent": 7.758891912304396,
+          "much_smaller_than_leftover": false,
+          "reversal_note": "the covector map attachment->attachment is a GLS covector recompute, not an accumulated integrator: a reversed loop is the same recompute, so reversing inverts the holonomy exactly; the connection has no curvature in the formal sense, but the CHOICE of attachment moves the amplitude by the amounts P2 shows",
+          "verdict": "attachment moves the amplitude by 7.76% -- this is P2's attachment share of the fake excess, NOT closed-loop holonomy; the residual after the committed transport is what remains"
+        },
+        "D2_shape_residual": {
+          "residual_statistic": 287.19838845604596,
+          "degrees_of_freedom": 6,
+          "residual_fits_zero_hypothesis": false,
+          "note": "the curvature residual statistic is the SAME object as #612's full-law residual (1447/6df at the new transition family): it is NOT consistent with zero, so a perpendicular shape component exists in the declared chart -- this is the ~4% left after transport, seen as a residual, and it is measured, not assumed"
+        }
+      },
+      "gaussian_17": {
+        "usable": true,
+        "lineage": [
+          85,
+          170,
+          425
+        ],
+        "measured_curvature": 0.0016659563726965428,
+        "curvature_se": 5.668379801060874e-06,
+        "D1_holonomy": {
+          "middle_chart_amplitude": 0.0016659563726965428,
+          "lower_chart_amplitude": 0.0015258398786304399,
+          "absolute": 0.00014011649406610294,
+          "relative_percent": 8.410574031978294,
+          "much_smaller_than_leftover": false,
+          "reversal_note": "the covector map attachment->attachment is a GLS covector recompute, not an accumulated integrator: a reversed loop is the same recompute, so reversing inverts the holonomy exactly; the connection has no curvature in the formal sense, but the CHOICE of attachment moves the amplitude by the amounts P2 shows",
+          "verdict": "attachment moves the amplitude by 8.41% -- this is P2's attachment share of the fake excess, NOT closed-loop holonomy; the residual after the committed transport is what remains"
+        },
+        "D2_shape_residual": {
+          "residual_statistic": 3130.7569629396717,
+          "degrees_of_freedom": 6,
+          "residual_fits_zero_hypothesis": false,
+          "note": "the curvature residual statistic is the SAME object as #612's full-law residual (1447/6df at the new transition family): it is NOT consistent with zero, so a perpendicular shape component exists in the declared chart -- this is the ~4% left after transport, seen as a residual, and it is measured, not assumed"
+        }
+      },
+      "p50": {
+        "usable": false,
+        "reason": "two sizes only: no triangle, no curvature in the same sense; any 4%-style number here would be invented"
+      }
+    }
+  },
+  "leftover_reference": 0.0425,
+  "p50_stress_test": "refused: p50 has two sizes; no curvature, no holonomy, no 4%-analogue is emitted",
+  "diagnosis": {
+    "D1_holonomy_of_g": {
+      "holonomy_relative_percent_per_lineage": [
+        7.9668549991922815,
+        8.200127595868953
+      ],
+      "verdict": "holonomy is O(20%) of the amplitude and NOT excluded as a contributor; but it is an attachment choice, not an accumulated path effect"
+    },
+    "D2_shape_residual_perpendicular": {
+      "residual_consistent_with_zero_per_lineage": [
+        false,
+        false
+      ]
+    },
+    "D3_weighting_artefact": {
+      "note": "see p4-weighting.json for the full segment sweep; the 12% spin0->equal amplitude shift is ~25 sigma, which already shows the residual is NOT weighting-stable"
+    }
+  }
+}

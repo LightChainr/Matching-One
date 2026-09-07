@@ -1,0 +1,468 @@
+{
+  "schema": "matching-one.p612-n725-score.v1",
+  "issue": 612,
+  "design": "reanalysis: every target in #612 was public before this run",
+  "preregistration": "notes/p612-preregistration-20260907.md",
+  "production": {
+    "size": 725,
+    "orientations": [
+      [
+        26,
+        7
+      ],
+      [
+        23,
+        14
+      ]
+    ],
+    "batches": 100,
+    "samples_per_batch": 1000000,
+    "paired_configurations": 100000000,
+    "samples_per_orientation": 100000000,
+    "sample_count_correction": "#609 wrote '100 batches x 100M', which is 100x this; n290 metadata says samples_per_pair=100000000, and we match it"
+  },
+  "weightings": {
+    "spin0": {
+      "weighting": "spin0",
+      "reproduction_control": {
+        "per_transition": [
+          {
+            "label": "65->130",
+            "statistic": 435746.10833512194,
+            "published_statistic": 435743.73701554537,
+            "largest_residual_difference": 1.1131984001266915e-08,
+            "statistic_matches_exactly": false
+          },
+          {
+            "label": "130->325",
+            "statistic": 192537.3825442312,
+            "published_statistic": 192536.60599297824,
+            "largest_residual_difference": 3.968037509682887e-09,
+            "statistic_matches_exactly": false
+          },
+          {
+            "label": "85->170",
+            "statistic": 292805.4466750862,
+            "published_statistic": 292804.78526441427,
+            "largest_residual_difference": 1.672081734183095e-08,
+            "statistic_matches_exactly": false
+          },
+          {
+            "label": "170->425",
+            "statistic": 154876.18287209084,
+            "published_statistic": 154876.9786006733,
+            "largest_residual_difference": 2.498627083014071e-09,
+            "statistic_matches_exactly": false
+          },
+          {
+            "label": "145->290",
+            "statistic": 112067.10056745633,
+            "published_statistic": 112067.07911683862,
+            "largest_residual_difference": 4.602327047242838e-09,
+            "statistic_matches_exactly": false
+          }
+        ],
+        "every_statistic_matches_exactly": false
+      },
+      "consensus_direction_frozen_from_five_committed_transitions": [
+        -0.2887126766006569,
+        -0.12066783122729056,
+        0.06921759100370817,
+        0.2385347464569182,
+        0.3780737808016512,
+        0.47827324271813404,
+        0.518589378735454,
+        0.444347665976014,
+        0.048264834818264817
+      ],
+      "transitions_used_to_freeze_g": [
+        "65->130",
+        "130->325",
+        "85->170",
+        "170->425",
+        "145->290"
+      ],
+      "exponent_fit": {
+        "omega": 0.9701786160832164,
+        "scale_amplitude": 0.17834748516661017,
+        "statistic": 277.4447387469764,
+        "degrees_of_freedom": 3,
+        "search_window": [
+          0.25,
+          2.5
+        ]
+      },
+      "amplitude_points": [
+        {
+          "label": "65->130",
+          "sbar": 4.5209608601756095,
+          "h": 0.6931471805599454,
+          "amplitude": -0.0021840521127264637,
+          "standard_error": 3.3168591537998044e-06
+        },
+        {
+          "label": "130->325",
+          "sbar": 5.325679816392659,
+          "h": 0.9162907318741551,
+          "amplitude": -0.0009990705637047735,
+          "standard_error": 2.278425114231401e-06
+        },
+        {
+          "label": "85->170",
+          "sbar": 4.789224846770289,
+          "h": 0.6931471805599454,
+          "amplitude": -0.0017098301794851712,
+          "standard_error": 3.1619659849597208e-06
+        },
+        {
+          "label": "170->425",
+          "sbar": 5.59394380298734,
+          "h": 0.9162907318741551,
+          "amplitude": -0.0007816922794499794,
+          "standard_error": 1.991614454440297e-06
+        },
+        {
+          "label": "145->290",
+          "sbar": 5.323307332700547,
+          "h": 0.6931471805599454,
+          "amplitude": -0.0010459771782841544,
+          "standard_error": 3.1269938468514504e-06
+        }
+      ],
+      "new_transition": {
+        "label": "290->725",
+        "basis": [
+          "1",
+          "Q_290",
+          "g_frozen"
+        ],
+        "observation": "(Q_725 - Q_290)/log(2.5)",
+        "covariance_convention": "(S_290 + S_725)/log(2.5)^2, delete-one jackknife, no cross-size term",
+        "amplitude": -0.00048083462846830374,
+        "standard_error": 2.29405933679918e-06,
+        "significance": -209.59990910226207,
+        "beta_Q290": -0.31309375661279504,
+        "residual_statistic": 1447.4790511045424,
+        "residual_degrees_of_freedom": 6,
+        "predicted_from_the_five_amplitude_fit": -0.00046808377053849824,
+        "forecast_target": -0.0004680842487166532,
+        "forecast_reproduced_by_the_frozen_fit": false
+      },
+      "forecast_verdict": {
+        "measured": -0.00048083462846830374,
+        "standard_error": 2.29405933679918e-06,
+        "sigma_multiple": 3.0,
+        "measurement_interval": [
+          -0.0004877168064787013,
+          -0.0004739524504579062
+        ],
+        "tolerance_band": [
+          -0.0004914884611524859,
+          -0.0004446800362808205
+        ],
+        "displacement_from_the_forecast": -1.2750379751650547e-05,
+        "relative_displacement": -0.0272394975618348,
+        "displacement_in_standard_errors": -5.557999109753064,
+        "outcome": "supports_this_finite_forecast"
+      },
+      "label_crossing": {
+        "size": 725,
+        "five_adic_valuation": 2,
+        "spin0_is_an_interpolation": true,
+        "orientation_cos4theta": {
+          "first": 0.4958535077288942,
+          "second": -0.5780680142687277
+        },
+        "spin0_weights": {
+          "first": 0.5382777069160998,
+          "second": 0.4617222930839002
+        },
+        "net_cos4theta": 0.0,
+        "valuation_two_and_interpolating": true,
+        "breaks_the_committed_identification": true,
+        "note": "on the committed sizes v_5=2, 'no interpolating spin-0 combination' and 'multiplier 2.5' were the same partition; 725 has v_5=2 and an interpolating combination, so they differ"
+      },
+      "p50_curvature": {
+        "sizes": [
+          145,
+          290,
+          725
+        ],
+        "second_difference_weights": [
+          1.7927936576404406,
+          -3.1489897053484666,
+          1.3561960477080257
+        ],
+        "pre_registered_p50_weights": [
+          1.79279,
+          -3.14899,
+          1.3562
+        ],
+        "weights_agree_with_pre_registration": true,
+        "chart_factor": 1.2426698691192235,
+        "measured": 0.0010742792352959572,
+        "standard_error": 6.006000164905027e-06,
+        "residual_statistic": 42.798495285424764,
+        "residual_degrees_of_freedom": 6,
+        "k_145_to_290": 0.7767512242955859,
+        "identity": {
+          "a1_minus_a0_over_k": 0.0008657704948228588,
+          "ell_C_of_r1": 3.88476022848618e-07,
+          "ell_C_of_r0_over_k": 1.6661060359432627e-06,
+          "residual_transport": -1.2776300130946447e-06,
+          "rebuilt": 0.001074279235167652,
+          "absolute_error": 1.2830513561323809e-13
+        },
+        "predictions": {
+          "naive_one_exponent": 0.0006705666740156323,
+          "chart_corrected": 0.001030477413570864,
+          "one_exponent_target_from_609": 0.000670567,
+          "factor_1547_target_from_609": 0.00103745,
+          "chart_corrected_minus_factor_1547_target": -6.972586429135992e-06,
+          "relative_separation_of_the_two_609_targets": 0.5471235536493746,
+          "the_two_targets_are_separated_by_the_chart": true
+        },
+        "measured_over_chart_corrected": 1.0425063384682143,
+        "measured_over_naive": 1.6020468611461498
+      },
+      "cross_size_coupling_290_725": {
+        "batches_compared": 100,
+        "per_level_correlation": [
+          0.061254016673083486,
+          0.1329707934309026,
+          0.16482820666455184,
+          0.17969292344470994,
+          0.17998296509969663,
+          0.16737047802259852,
+          0.1458956377863584,
+          0.11711915799761304,
+          0.06823988879264724
+        ],
+        "largest_absolute_correlation": 0.17998296509969663,
+        "correlation_expected_from_noise_alone": 0.1,
+        "cross_term_droppable": true
+      }
+    },
+    "equal": {
+      "weighting": "equal",
+      "reproduction_control": {
+        "per_transition": [
+          {
+            "label": "65->130",
+            "statistic": 485596.4157884457,
+            "published_statistic": 435743.73701554537,
+            "largest_residual_difference": 0.0002553407953794287,
+            "statistic_matches_exactly": false
+          },
+          {
+            "label": "130->325",
+            "statistic": 229320.92999846398,
+            "published_statistic": 192536.60599297824,
+            "largest_residual_difference": 0.00015766143615295394,
+            "statistic_matches_exactly": false
+          },
+          {
+            "label": "85->170",
+            "statistic": 286445.8667896274,
+            "published_statistic": 292804.78526441427,
+            "largest_residual_difference": 0.00012894948111440694,
+            "statistic_matches_exactly": false
+          },
+          {
+            "label": "170->425",
+            "statistic": 183662.5146111397,
+            "published_statistic": 154876.9786006733,
+            "largest_residual_difference": 0.00010393653091925192,
+            "statistic_matches_exactly": false
+          },
+          {
+            "label": "145->290",
+            "statistic": 111939.90052205008,
+            "published_statistic": 112067.07911683862,
+            "largest_residual_difference": 4.404859992319932e-06,
+            "statistic_matches_exactly": false
+          }
+        ],
+        "every_statistic_matches_exactly": false
+      },
+      "consensus_direction_frozen_from_five_committed_transitions": [
+        -0.35205170895609034,
+        -0.17263175881295056,
+        0.034002391154171537,
+        0.21810771930244544,
+        0.36859647542439916,
+        0.4741820041612947,
+        0.5110723817847157,
+        0.4164258134134481,
+        -0.0470463386552232
+      ],
+      "transitions_used_to_freeze_g": [
+        "65->130",
+        "130->325",
+        "85->170",
+        "170->425",
+        "145->290"
+      ],
+      "exponent_fit": {
+        "omega": 0.9969139954790363,
+        "scale_amplitude": 0.1750176831521591,
+        "statistic": 883.5059538430245,
+        "degrees_of_freedom": 3,
+        "search_window": [
+          0.25,
+          2.5
+        ]
+      },
+      "amplitude_points": [
+        {
+          "label": "65->130",
+          "sbar": 4.5209608601756095,
+          "h": 0.6931471805599454,
+          "amplitude": -0.001988054037439138,
+          "standard_error": 2.8539899515744673e-06
+        },
+        {
+          "label": "130->325",
+          "sbar": 5.325679816392659,
+          "h": 0.9162907318741551,
+          "amplitude": -0.0008601296570641795,
+          "standard_error": 1.796732773906537e-06
+        },
+        {
+          "label": "85->170",
+          "sbar": 4.789224846770289,
+          "h": 0.6931471805599454,
+          "amplitude": -0.0014708951834629805,
+          "standard_error": 2.7575583924192046e-06
+        },
+        {
+          "label": "170->425",
+          "sbar": 5.59394380298734,
+          "h": 0.9162907318741551,
+          "amplitude": -0.0007035668566229976,
+          "standard_error": 1.6503629053676999e-06
+        },
+        {
+          "label": "145->290",
+          "sbar": 5.323307332700547,
+          "h": 0.6931471805599454,
+          "amplitude": -0.0009202824244480423,
+          "standard_error": 2.752233759411831e-06
+        }
+      ],
+      "new_transition": {
+        "label": "290->725",
+        "basis": [
+          "1",
+          "Q_290",
+          "g_frozen"
+        ],
+        "observation": "(Q_725 - Q_290)/log(2.5)",
+        "covariance_convention": "(S_290 + S_725)/log(2.5)^2, delete-one jackknife, no cross-size term",
+        "amplitude": -0.00042426293424081786,
+        "standard_error": 2.0292686905011614e-06,
+        "significance": -209.07183766583375,
+        "beta_Q290": -0.31331889935698737,
+        "residual_statistic": 1438.5190241739558,
+        "residual_degrees_of_freedom": 6,
+        "predicted_from_the_five_amplitude_fit": -0.0004014026456843475,
+        "forecast_target": -0.0004680842487166532,
+        "forecast_reproduced_by_the_frozen_fit": false
+      },
+      "forecast_verdict": {
+        "measured": -0.00042426293424081786,
+        "standard_error": 2.0292686905011614e-06,
+        "sigma_multiple": 3.0,
+        "measurement_interval": [
+          -0.00043035074031232134,
+          -0.00041817512816931437
+        ],
+        "tolerance_band": [
+          -0.0004914884611524859,
+          -0.0004446800362808205
+        ],
+        "displacement_from_the_forecast": 4.382131447583533e-05,
+        "relative_displacement": 0.09361843427968417,
+        "displacement_in_standard_errors": 21.594633909722884,
+        "outcome": "stops_this_forecast"
+      },
+      "label_crossing": {
+        "size": 725,
+        "five_adic_valuation": 2,
+        "spin0_is_an_interpolation": true,
+        "orientation_cos4theta": {
+          "first": 0.4958535077288942,
+          "second": -0.5780680142687277
+        },
+        "spin0_weights": {
+          "first": 0.5,
+          "second": 0.5
+        },
+        "net_cos4theta": -0.04110725326991674,
+        "valuation_two_and_interpolating": true,
+        "breaks_the_committed_identification": true,
+        "note": "on the committed sizes v_5=2, 'no interpolating spin-0 combination' and 'multiplier 2.5' were the same partition; 725 has v_5=2 and an interpolating combination, so they differ"
+      },
+      "p50_curvature": {
+        "sizes": [
+          145,
+          290,
+          725
+        ],
+        "second_difference_weights": [
+          1.7927936576404406,
+          -3.1489897053484666,
+          1.3561960477080257
+        ],
+        "pre_registered_p50_weights": [
+          1.79279,
+          -3.14899,
+          1.3562
+        ],
+        "weights_agree_with_pre_registration": true,
+        "chart_factor": 1.2426698691192235,
+        "measured": 0.0009436528214218184,
+        "standard_error": 5.2942271543016675e-06,
+        "residual_statistic": 65.69914797650888,
+        "residual_degrees_of_freedom": 6,
+        "k_145_to_290": 0.7764862739725764,
+        "identity": {
+          "a1_minus_a0_over_k": 0.0007609253365286936,
+          "ell_C_of_r1": -1.5346441457736494e-08,
+          "ell_C_of_r0_over_k": 1.5346765601048809e-06,
+          "residual_transport": -1.5500230015626174e-06,
+          "rebuilt": 0.0009436528214731291,
+          "absolute_error": 5.1310735174614486e-14
+        },
+        "predictions": {
+          "naive_one_exponent": 0.0005975492226538812,
+          "chart_corrected": 0.0009131395436321741,
+          "one_exponent_target_from_609": 0.000670567,
+          "factor_1547_target_from_609": 0.00103745,
+          "chart_corrected_minus_factor_1547_target": -0.000124310456367826,
+          "relative_separation_of_the_two_609_targets": 0.5471235536493746,
+          "the_two_targets_are_separated_by_the_chart": false
+        },
+        "measured_over_chart_corrected": 1.0334157884218576,
+        "measured_over_naive": 1.5792051694600078
+      },
+      "cross_size_coupling_290_725": {
+        "batches_compared": 100,
+        "per_level_correlation": [
+          0.06609913387397415,
+          0.13732510099884918,
+          0.16763432961525473,
+          0.17945427977605502,
+          0.17595991916528367,
+          0.15956762544312553,
+          0.1345333063541802,
+          0.10224471195678972,
+          0.04951807479256309
+        ],
+        "largest_absolute_correlation": 0.17945427977605502,
+        "correlation_expected_from_noise_alone": 0.1,
+        "cross_term_droppable": true
+      }
+    }
+  }
+}

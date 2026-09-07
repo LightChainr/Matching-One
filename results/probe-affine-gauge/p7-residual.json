@@ -1,0 +1,102 @@
+{
+  "schema": "matching-one.probe-affine-gauge.p7.v1",
+  "issue": 617,
+  "declared_chart": {
+    "attachment": "Q_290",
+    "g_frozen": "consensus from five committed transitions (PR #614, commit f0981a98)",
+    "transport": "#612 identity",
+    "reconstruction": "nine deciles, binomial-profile CDF (P5 named this readout)",
+    "weightings": "spin0 AND equal (paired)"
+  },
+  "weightings": {
+    "spin0": {
+      "declared_chart": {
+        "attachment": "Q_290",
+        "g_frozen": "consensus from five committed transitions (PR #614, commit f0981a98)",
+        "transport": "#612 identity",
+        "reconstruction": "nine deciles, binomial-profile CDF (P5 named this readout)",
+        "weightings": "spin0 AND equal (paired)"
+      },
+      "scalar": {
+        "measured": 0.0010742792352959572,
+        "measured_se": 6.006000164905027e-06,
+        "chart_corrected": 0.0010304774135725817,
+        "ratio_measured_over_chart_corrected": 1.0425063384664766,
+        "excess_percent": 4.250633846647656,
+        "k_contraction": 0.7767512242947583
+      },
+      "residual_vector": {
+        "statistic": 42.798495285424764,
+        "degrees_of_freedom": 6,
+        "projection": {
+          "parallel_norm": 2.2925621735185906e-10,
+          "perpendicular_norm": 5.774533194127356e-11,
+          "total_norm": 2.364168702856099e-10,
+          "perpendicular_share": 0.24425216301828512,
+          "coefficients_on_chart": [
+            -0.00015950231193446915,
+            0.0002851961052971603,
+            -4.647049637532014e-05
+          ]
+        }
+      },
+      "sign_flip_null": {
+        "permutations": 10000,
+        "seed": 6170425,
+        "observed_statistic": 42.798495285424764,
+        "null_median": 47.84438067325227,
+        "null_p_value": 0.6471,
+        "null_max": 107.50503625813428
+      }
+    },
+    "equal": {
+      "declared_chart": {
+        "attachment": "Q_290",
+        "g_frozen": "consensus from five committed transitions (PR #614, commit f0981a98)",
+        "transport": "#612 identity",
+        "reconstruction": "nine deciles, binomial-profile CDF (P5 named this readout)",
+        "weightings": "spin0 AND equal (paired)"
+      },
+      "scalar": {
+        "measured": 0.0010704433475399976,
+        "measured_se": 6.0047003903284245e-06,
+        "chart_corrected": 0.0010304666446091602,
+        "ratio_measured_over_chart_corrected": 1.0387947568608589,
+        "excess_percent": 3.879475686085887,
+        "k_contraction": 0.7767564129286635
+      },
+      "residual_vector": {
+        "statistic": 56.52829722436663,
+        "degrees_of_freedom": 6,
+        "projection": {
+          "parallel_norm": 2.6126346219119994e-10,
+          "perpendicular_norm": 6.578807078037363e-11,
+          "total_norm": 2.694191287436239e-10,
+          "perpendicular_share": 0.24418485460613595,
+          "coefficients_on_chart": [
+            -0.0001814119205173254,
+            0.00032403032576705813,
+            -5.2364668174839285e-05
+          ]
+        }
+      },
+      "sign_flip_null": {
+        "permutations": 10000,
+        "seed": 6170425,
+        "observed_statistic": 56.52829722436663,
+        "null_median": 61.56152436424216,
+        "null_p_value": 0.6291,
+        "null_max": 126.89064092932931
+      }
+    }
+  },
+  "excess_percent_both_weightings": [
+    4.250633846647656,
+    3.879475686085887
+  ],
+  "residual_survives_null": false,
+  "residual_null_p_value": 0.6471,
+  "perpendicular_share_spin0": 0.24425216301828512,
+  "weighting_stable": true,
+  "verdict": "the 4% DIES under the sign-flip null (p=0.6471): the leftover is consistent with the null world of label noise.  Stop hunting; write the death and do not replace it."
+}

@@ -1,0 +1,113 @@
+{
+  "schema": "matching-one.probe-affine-gauge.p1.v1",
+  "issue": 617,
+  "covector_exhibited": {
+    "lineage": [
+      65,
+      130,
+      325
+    ],
+    "lambda": 1.0,
+    "ell_g_in_R9": [
+      4.93120471704441,
+      -30.67836234530675,
+      12.274670352207403,
+      254.44485692033658,
+      -707.2138057465859,
+      841.2708494994889,
+      -508.10544686992193,
+      149.6533024219506,
+      -16.57726894921339
+    ],
+    "biorthogonality": {
+      "ell_times_ones": -4.3520742565306136e-14,
+      "ell_times_middle_Q": -1.0436096431476471e-13,
+      "ell_times_g": 0.9999999999999685,
+      "ell_times_Qbase_e_star": 0.0019454774206502101
+    },
+    "e_star_note": "ell(Q_base) = e* = 1.945477e-03 is NOT zero: Q_base is NOT in span{1, Q_middle} up to the covariance metric's null space, and this single number is what the /k contraction transports"
+  },
+  "transport_check_on_data": {
+    "amplitude_change": -0.0009727387103215001,
+    "covector_prediction_of_change": -0.0009727387103213689,
+    "covector_transport_consistent": true,
+    "covector_max_abs_change": 0.0
+  },
+  "covectors_along_attachment": {
+    "lambda_0.0": {
+      "ell_g": [
+        4.969458201700066,
+        -30.941509185641895,
+        12.81722625994344,
+        254.8731533720944,
+        -710.1674529268216,
+        845.5207261361641,
+        -510.8931972155329,
+        150.49499618304878,
+        -16.67340082495437
+      ],
+      "amplitude": 0.002065715245950922
+    },
+    "lambda_0.5": {
+      "ell_g": [
+        4.952824447515256,
+        -30.82773577891225,
+        12.586498544669611,
+        254.6690588167435,
+        -708.8513552018698,
+        843.6414676017147,
+        -509.6641198213414,
+        150.12450094283176,
+        -16.631139551351378
+      ],
+      "amplitude": 0.0021441367822444156
+    },
+    "lambda_1.0": {
+      "ell_g": [
+        4.93120471704441,
+        -30.67836234530675,
+        12.274670352207403,
+        254.44485692033658,
+        -707.2138057465859,
+        841.2708494994889,
+        -508.10544686992193,
+        149.6533024219506,
+        -16.57726894921339
+      ],
+      "amplitude": 0.002244534016448957
+    }
+  },
+  "committed_collapse_at_lambda_1": {
+    "absolute_error": 1.42261636498775e-13,
+    "expansion_absolute_error": 1.6284759998819176e-13
+  },
+  "generators": {
+    "location": {
+      "matrix": "I_9 with affine part c*1",
+      "acts_on_amplitude_by": "a -> a + c * ell(1)",
+      "ell_1_is_zero_for_gls_covectors": true
+    },
+    "width": {
+      "matrix": "alpha I_9 with affine part beta*1",
+      "acts_on_amplitude_by": "a -> a / alpha (the /k of the committed identity is exactly this inverse at alpha = k = 1 + h0*beta0)",
+      "committed_k": 0.78110375585497,
+      "beta0": -0.3158005258972544,
+      "h0": 0.6931471805599454
+    },
+    "attachment": {
+      "matrix": "Q_A(lam) = (1-lam) Q_base + lam Q_middle",
+      "acts_on_amplitude_by": "the covector expansion (exact, verified to 1e-13 in P0/P2); NOT identity -- this is the generator that manufactures the 1.55",
+      "verified_endpoints": {
+        "lambda_1_ratio_naive": 1.524257855471565
+      }
+    },
+    "weighting": {
+      "matrix": "9x18 block [w0 I, w1 I] on the two-orientation fibre",
+      "acts_on_amplitude_by": "a -> a(w) affine in w; P4 measures the full directional derivative"
+    },
+    "g_ray": {
+      "matrix": "not a gauge generator: g is estimated from the same blocks, so its 'projection' is data-dependent (Gauge in the strict sense is reserved for maps acting on the observer, not on the observed)"
+    }
+  },
+  "lemma_verdict": "ACCEPTED: 'keeping g fixed' is meaningless until the covector being transported is named. The committed identity is the lambda=1 member of the exact attachment family; the covector expansion is the general form, and it reproduces the committed collapse to 1e-13."
+}
