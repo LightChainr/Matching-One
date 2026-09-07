@@ -219,7 +219,9 @@
       "nn_capped": false,
       "nnn_capped": false,
       "nn_milliseconds": 0,
-      "nnn_milliseconds": 0
+      "nnn_milliseconds": 0,
+      "nnn_equals_nn_phase0_elementwise": true,
+      "nnn_subset_nn_strict": true
     },
     {
       "width": 2,
@@ -236,7 +238,9 @@
       "nn_capped": false,
       "nnn_capped": false,
       "nn_milliseconds": 0,
-      "nnn_milliseconds": 0
+      "nnn_milliseconds": 0,
+      "nnn_equals_nn_phase0_elementwise": true,
+      "nnn_subset_nn_strict": true
     },
     {
       "width": 3,
@@ -253,7 +257,9 @@
       "nn_capped": false,
       "nnn_capped": false,
       "nn_milliseconds": 0,
-      "nnn_milliseconds": 0
+      "nnn_milliseconds": 0,
+      "nnn_equals_nn_phase0_elementwise": true,
+      "nnn_subset_nn_strict": true
     },
     {
       "width": 4,
@@ -279,7 +285,9 @@
           0
         ]
       ],
-      "nn_extra_classes": []
+      "nn_extra_classes": [],
+      "nnn_equals_nn_phase0_elementwise": true,
+      "nnn_subset_nn_strict": true
     },
     {
       "width": 5,
@@ -355,7 +363,9 @@
           1
         ]
       ],
-      "nn_extra_classes": []
+      "nn_extra_classes": [],
+      "nnn_equals_nn_phase0_elementwise": true,
+      "nnn_subset_nn_strict": true
     },
     {
       "width": 6,
@@ -727,7 +737,9 @@
           2
         ]
       ],
-      "nn_extra_classes": []
+      "nn_extra_classes": [],
+      "nnn_equals_nn_phase0_elementwise": true,
+      "nnn_subset_nn_strict": true
     },
     {
       "width": 7,
@@ -2520,7 +2532,9 @@
           3
         ]
       ],
-      "nn_extra_classes": []
+      "nn_extra_classes": [],
+      "nnn_equals_nn_phase0_elementwise": true,
+      "nnn_subset_nn_strict": true
     },
     {
       "width": 8,
@@ -10640,7 +10654,9 @@
           4
         ]
       ],
-      "nn_extra_classes": []
+      "nn_extra_classes": [],
+      "nnn_equals_nn_phase0_elementwise": true,
+      "nnn_subset_nn_strict": true
     }
   ],
   "conclusion": "site helical frontier: NN classes 1,2,5,13,34,88,232,620 (all noncrossing, strict subset of Catalan; missing the nested-pocket classes); NNN classes 1,2,5,12,27,61,142,340 = the row-cut class sequence (all noncrossing, zero crossing classes through w=8, NNN strictly inside NN, and NNN-all-phase == NN-row-cut elementwise per width).  Bond anchor with sealed semantics: planar == cylinder == Catalan(w) elementwise for w=1..8 (1,2,5,14,42,132,429,1430).  So the #636 Catalan(w) cost-model premise is CORRECT for the bond boundary-state space, WRONG for the site frontier, and the matching-lattice (NNN) boundary classes stay noncrossing through w=8."

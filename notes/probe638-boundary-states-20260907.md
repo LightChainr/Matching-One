@@ -34,14 +34,20 @@ answered, with one honest split verdict on the control.
 
 Structural facts (all machine-checked in the artifact):
 
-* Site NNN closure ⊂ site NN closure, every width, strictly from w=4.
+* Site NNN closure ⊂ site NN closure, every width, strictly from w=4
+  (fields `nnn_subset_nn_strict`).
 * Site NNN all-phase class set == site NN row-cut (phase-0) class set,
-  elementwise, every width w=2..8.
+  elementwise, every width w=1..8 (fields `nnn_equals_nn_phase0_elementwise`
+  — the equality was verified by code and then recorded explicitly so a
+  reviewer does not have to recompute it).
 * **Zero crossing classes through w=8**, site side, NN or NNN.
 * Bond anchor: planar and cylinder closures are elementwise EQUAL to the
   committed `noncrossing_states(w)` for every width 1..8 — Catalan exactly,
   including on the cylinder (the wrap edge sews the two end ports into one
   block but adds no new classes at w<=8).
+* Determinism: every closure re-run reproduces the artifact integers
+  bit-for-bit (site closures w=1..8, bond closures double-run at w=1..6
+  plus the w=7..8 standalone runs).
 
 ## The control verdict, stated honestly
 

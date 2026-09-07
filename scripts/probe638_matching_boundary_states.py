@@ -161,13 +161,13 @@ def step(state: State, occupied: bool, width: int, diag: bool) -> State:
             if y <= width - 2 and slots[y + 1] != EMPTY:
                 partners.append(slots[y + 1])  # (1,1)-family: (x,y)-(x-1,y+1)
             if y == 0 and slots[width - 1] != EMPTY:
-                partners.append(slots[width - 1])  # (1,1)-family wrap
+                partners.append(slots[width - 1])  # (1,-1)-family wrap: (x,0)-(x-1,w-1)
             if y >= 1:
                 shadow = sh0 if y == 1 else shprev
                 if shadow != EMPTY:
                     partners.append(shadow)  # (1,-1)-family: (x,y)-(x-1,y-1)
             if y == width - 1 and sh0 != EMPTY:
-                partners.append(sh0)  # (1,-1)-family wrap: (x,w-1)-(x-1,0)
+                partners.append(sh0)  # (1,1)-family wrap: (x,w-1)-(x-1,0)
 
         if partners:
             root = partners[0]

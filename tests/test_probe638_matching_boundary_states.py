@@ -31,7 +31,6 @@ from probe638_matching_boundary_states import (  # noqa: E402
     EMPTY,
 )
 
-CROSSING_AT_W4 = (0, 1, 0, 1)  # blocks {0,2},{1,3}: alternating, crosses
 NESTED_AT_W4 = (0, 1, 1, 0)  # blocks {0,3},{1,2}: nested noncrossing pair
 DOUBLE_PAIR_W4 = (0, 0, 1, 1)  # blocks {0,1},{2,3}
 
