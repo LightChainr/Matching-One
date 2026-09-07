@@ -1,0 +1,31 @@
+{
+  "L": 3,
+  "M_bond_half_by_rank_counts": "0",
+  "M_bond_half_exact": "0",
+  "P_r_at_half": {
+    "0": 0.2878570556640625,
+    "1": 0.424285888671875,
+    "2": 0.2878570556640625
+  },
+  "X_law_at_half_jumps": {
+    "P(X=+1)=P(r=2)": 0.2878570556640625,
+    "P(X=-1)=P(r=0)": 0.2878570556640625,
+    "P(X=0)=P(r=1)": 0.424285888671875
+  },
+  "Z_bond_undefined": true,
+  "bonds": 18,
+  "configs": 262144,
+  "duality_odd_checked": true,
+  "issue": 625,
+  "note": "rank convention = #608/#627 bond ambient rank (single-BFS lift); Cov(O,X)=P(r=2)=Var(X)/2 identity imported from #627 C6 as the same-r sanity check, not re-derived",
+  "p_wrap_half": 0.41964924845800616,
+  "rank_counts": [
+    75460,
+    111224,
+    75460
+  ],
+  "schema": "matching-one.probe-mhalf-vs-shape.bondL3.v1",
+  "seconds_enumeration": 3.3,
+  "seconds_total": 3.4,
+  "verdict_comparability": "INCOMPARABLE: the bond X-law at p=1/2 is the 3-atom measure ((r-1) in {-1,0,1}); its inverse-CDF is a staircase, so Z_bond is undefined by the probe's own rule.  Site Z exists.  The self-dual checks that DID run: M_bond(1/2)=0 exact and P(r=0)=P(r=2) exact."
+}
