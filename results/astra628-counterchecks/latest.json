@@ -1,0 +1,123 @@
+{
+  "reviewed_commit": "a4a1d1f70f82106dd112ee075289e8c0fbaeae4a",
+  "contractible_plaquette": {
+    "edges": [
+      [
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        4,
+        0,
+        1
+      ],
+      [
+        3,
+        4,
+        1,
+        0
+      ],
+      [
+        0,
+        3,
+        0,
+        1
+      ]
+    ],
+    "reviewed_rank": 1,
+    "correct_rank": 0
+  },
+  "float_cdf_at_half_on_site_L3": {
+    "rational": "43/128",
+    "reviewed_float": 115.93650793650792
+  },
+  "reweighted_mass_at_half": {
+    "total_mass": "593/512",
+    "unnormalized_M": "-21/64",
+    "reported_F": "425/1024",
+    "contract_F_if_M_kept": "43/128",
+    "normalized_M": "-168/593",
+    "normalized_F": "425/1186"
+  },
+  "n725_orientation": {
+    "reviewed_cos4": [
+      0.8648275862068966,
+      0.4593103448275862
+    ],
+    "actual_cos4": [
+      0.4958535077288942,
+      -0.5780680142687277
+    ],
+    "reviewed_weights": [
+      -1.1326530612244896,
+      2.13265306122449
+    ],
+    "actual_weights": [
+      0.5382777069160998,
+      0.4617222930839002
+    ],
+    "actual_spin4_leakage_of_reviewed_weights": -1.7944485136741972,
+    "reviewed_levels": [
+      0.1,
+      0.2,
+      0.3,
+      0.25,
+      0.5,
+      0.75,
+      0.7,
+      0.8,
+      0.9
+    ],
+    "missing_deciles": [
+      0.4,
+      0.6
+    ]
+  },
+  "L3_bond_census": {
+    "configurations": 262144,
+    "identity_failures": {
+      "bad_rank/naive_complement": 117426,
+      "bad_rank/geometric_dual": 97354,
+      "fixed_rank/naive_complement": 115608,
+      "fixed_rank/geometric_dual": 0
+    },
+    "reviewed_edge_order_identity_failures": 118133,
+    "fixed_forest_vs_union_find_mismatches": 0,
+    "correct_rank_pair_counts": {
+      "0,0": 0,
+      "0,1": 0,
+      "0,2": 75460,
+      "1,0": 0,
+      "1,1": 111224,
+      "1,2": 0,
+      "2,0": 75460,
+      "2,1": 0,
+      "2,2": 0
+    },
+    "correct_F_at_half": "1/2",
+    "correct_F_raw_count_coefficients": [
+      "0",
+      "0",
+      "0",
+      "3",
+      "45",
+      "333",
+      "1599",
+      "5463",
+      "13608",
+      "24310",
+      "30150",
+      "26361",
+      "16965",
+      "8235",
+      "3015",
+      "813",
+      "153",
+      "18",
+      "1"
+    ]
+  }
+}
