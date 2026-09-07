@@ -42,6 +42,17 @@ except ModuleNotFoundError:
 ROOT=Path(__file__).resolve().parents[1]
 DEFAULT_CONTRACT=ROOT/"analysis"/"pslq_search_contract.json"
 SCHEMA="matching-one/degree6-low-height-exclusion/v1"
+MOTIVATION={
+    # Kept verbatim so the committed height-3 artifacts stay byte-identical. It
+    # records what we believed when that census was run, and it was wrong: see
+    # the height-4 entry. The correction belongs in the manuscript, not in a
+    # rewrite of an artifact the manuscript already pins by digest.
+    3:"every exactly-known planar percolation threshold has degree <= 6 and height <= 3; "
+      "the (3,12^2) site value x^6-3x^4+1 is the one such form outside C(<=4, <=100)",
+    4:"the true complexity range of the exactly-known planar thresholds. The Ziff 2006 "
+      "'A lattice' bond threshold is a root of the irreducible quintic x^5-4x^4+3x^3+2x^2-1, "
+      "of height 4, so a height-3 census does not cover the historical record",
+}
 ISSUE=559
 HEIGHT=3
 DEGREE_MAX=6
@@ -60,8 +71,15 @@ def _digest(path:Path)->str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def output_path(interval_id:str)->Path:
-    return ROOT/"results"/f"pslq-degree6-low-height-{interval_id}"/"latest.json"
+def output_path(interval_id:str,height:int=HEIGHT)->Path:
+    """Height 3 keeps its original path; other heights get their own directory.
+
+    The height-3 artifacts are cited by the manuscript and pinned by digest, so a
+    wider census is a new result committed beside them, not a rewrite of them.
+    """
+    if height==HEIGHT:
+        return ROOT/"results"/f"pslq-degree6-low-height-{interval_id}"/"latest.json"
+    return ROOT/"results"/f"pslq-degree6-height{height}-{interval_id}"/"latest.json"
 
 
 def derivative_bound(degree:int,height:int=HEIGHT)->int:
@@ -100,14 +118,14 @@ def _generate_class(degree:int,height:int)->Iterator[tuple[int,...]]:
     yield from rec(())
 
 
-def _scan_degree(degree:int,lower:Fraction,upper:Fraction)->dict[str,Any]:
+def _scan_degree(degree:int,lower:Fraction,upper:Fraction,height:int=HEIGHT)->dict[str,Any]:
     denominator=lower.denominator*upper.denominator//gcd(lower.denominator,upper.denominator)
     low_numerator=lower.numerator*(denominator//lower.denominator)
     high_numerator=upper.numerator*(denominator//upper.denominator)
     scale=denominator**degree
     low_weights=[low_numerator**k*denominator**(degree-k) for k in range(degree+1)]
     high_weights=[high_numerator**k*denominator**(degree-k) for k in range(degree+1)]
-    bound=derivative_bound(degree)
+    bound=derivative_bound(degree,height)
     # |P(l)| > D*(u-l)  =>  no root in [l, u];  scaled by denominator**degree.
     screen_limit=bound*(high_numerator-low_numerator)*denominator**(degree-1)
 
@@ -118,7 +136,7 @@ def _scan_degree(degree:int,lower:Fraction,upper:Fraction)->dict[str,Any]:
     witnesses:list[dict[str,Any]]=[]
     best:tuple[int,tuple[int,...],int,int]|None=None
 
-    for coefficients in enumerate_class(degree):
+    for coefficients in enumerate_class(degree,height):
         counted+=1
         at_low=0
         at_high=0
@@ -142,7 +160,7 @@ def _scan_degree(degree:int,lower:Fraction,upper:Fraction)->dict[str,Any]:
         if best is None or candidate[:2]<best[:2]:
             best=candidate
 
-    _require(counted==primitive_polynomial_count(degree,HEIGHT),
+    _require(counted==primitive_polynomial_count(degree,height),
              f"degree {degree} enumeration size disagrees with the committed counter")
     assert best is not None
     minimum=Fraction(best[0],scale)
@@ -167,10 +185,10 @@ def _scan_degree(degree:int,lower:Fraction,upper:Fraction)->dict[str,Any]:
     }
 
 
-def run_search(interval:Mapping[str,Any])->dict[str,Any]:
+def run_search(interval:Mapping[str,Any],height:int=HEIGHT)->dict[str,Any]:
     lower,upper=Fraction(interval["lower"]),Fraction(interval["upper"])
     _require(0<lower<upper<1,"interval must be a nonempty subinterval of (0,1)")
-    degrees=[_scan_degree(degree,lower,upper) for degree in range(1,DEGREE_MAX+1)]
+    degrees=[_scan_degree(degree,lower,upper,height) for degree in range(1,DEGREE_MAX+1)]
     return {
         "interval_id":interval["id"],"source_id":interval["source_id"],
         "lower":interval["lower"],"upper":interval["upper"],
@@ -183,12 +201,12 @@ def run_search(interval:Mapping[str,Any])->dict[str,Any]:
     }
 
 
-def build_result(interval_id:str,contract_path:Path=DEFAULT_CONTRACT)->dict[str,Any]:
-    return _build_result(interval_id,Path(contract_path).resolve())
+def build_result(interval_id:str,contract_path:Path=DEFAULT_CONTRACT,height:int=HEIGHT)->dict[str,Any]:
+    return _build_result(interval_id,Path(contract_path).resolve(),height)
 
 
 @lru_cache(maxsize=8)
-def _build_result(interval_id:str,contract_path:Path)->dict[str,Any]:
+def _build_result(interval_id:str,contract_path:Path,height:int=HEIGHT)->dict[str,Any]:
     raw=contract_path.read_bytes()
     contract=json.loads(raw)
     provenance=contract["provenance"]
@@ -200,16 +218,16 @@ def _build_result(interval_id:str,contract_path:Path)->dict[str,Any]:
         "schema":SCHEMA,"issue":ISSUE,"status":"degree6_low_height_exclusion_complete",
         "contract_sha256":hashlib.sha256(raw).hexdigest(),"provenance_sha256":provenance_digest,
         "search":{
-            "degree_min":1,"degree_max":DEGREE_MAX,"coefficient_height_max":HEIGHT,
+            "degree_min":1,"degree_max":DEGREE_MAX,"coefficient_height_max":height,
             "primitive_coefficients_only":True,"nonzero_leading_coefficient":True,
             "sign_normalization":"leading_positive",
             "decision":"exact integer endpoint evaluation, certified derivative screen, exact Sturm isolation",
-            "motivation":"every exactly-known planar percolation threshold has degree <= 6 and height <= 3; "
-                         "the (3,12^2) site value x^6-3x^4+1 is the one such form outside C(<=4, <=100)",
+            "motivation":MOTIVATION[height] if height in MOTIVATION else
+                         f"exhaustive degree-1..{DEGREE_MAX} census at height {height}",
         },
-        "interval_result":run_search(rows[0]),
+        "interval_result":run_search(rows[0],height),
         "claim_boundary":{
-            "included":f"exhaustive degree-1..{DEGREE_MAX} height-{HEIGHT} exclusion on {interval_id} only",
+            "included":f"exhaustive degree-1..{DEGREE_MAX} height-{height} exclusion on {interval_id} only",
             "excluded":"other method intervals, higher degree or height, near-hit promotion, p-values, "
                        "closed forms, or transcendence",
             "parent_issue":"remain open",
@@ -219,7 +237,7 @@ def _build_result(interval_id:str,contract_path:Path)->dict[str,Any]:
 
 def validate_result(result:Mapping[str,Any],contract_path:Path=DEFAULT_CONTRACT)->Mapping[str,Any]:
     interval_id=result["interval_result"]["interval_id"]
-    expected=build_result(interval_id,contract_path)
+    expected=build_result(interval_id,contract_path,result["search"]["coefficient_height_max"])
     if result!=expected:raise ValueError("degree-6 low-height exclusion does not exactly reproduce")
     return {"schema":SCHEMA,"status":"valid","interval_id":interval_id,
             "excluded":expected["interval_result"]["excluded"]}
@@ -232,6 +250,8 @@ def main(argv:Optional[Sequence[str]]=None)->int:
     parser.add_argument("--contract",type=Path,default=DEFAULT_CONTRACT)
     parser.add_argument("--output",type=Path)
     parser.add_argument("--validate",type=Path)
+    parser.add_argument("--height",type=int,default=HEIGHT,
+                        help=f"coefficient height bound (default {HEIGHT}); 4 is the true historical range")
     args=parser.parse_args(argv)
     if args.validate:
         print(json.dumps(validate_result(json.loads(args.validate.read_text(encoding="utf-8")),args.contract),indent=2,sort_keys=True))
@@ -240,8 +260,8 @@ def main(argv:Optional[Sequence[str]]=None)->int:
     targets=[row["id"] for row in contract["intervals"]] if args.all else [args.interval]
     _require(all(targets),"an interval id or --all is required")
     for interval_id in targets:
-        rendered=json.dumps(build_result(interval_id,args.contract),indent=2,sort_keys=True)+"\n"
-        destination=args.output if (args.output and not args.all) else output_path(interval_id)
+        rendered=json.dumps(build_result(interval_id,args.contract,args.height),indent=2,sort_keys=True)+"\n"
+        destination=args.output if (args.output and not args.all) else output_path(interval_id,args.height)
         destination.parent.mkdir(parents=True,exist_ok=True)
         destination.write_text(rendered,encoding="utf-8")
         print(f"wrote {destination.relative_to(ROOT)}")

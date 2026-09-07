@@ -60,9 +60,12 @@ expensive; disk is not.
 was not, don't imply it was. This is a sentence, not a process — but it is the one
 fact that cannot be recovered afterwards, which is why it survives the cut.
 
-**D. Say which observable.** When comparing two numbers, name the convention each
-uses. If they differ, say what the map is. A wrong comparison is worse than no
-comparison and much harder to notice later.
+**D. Say which observable, and which test.** When comparing two numbers, name the
+convention each uses. If they differ, say what the map is. A wrong comparison is worse
+than no comparison and much harder to notice later. A frozen prediction that names a
+threshold but not the statistic it is applied to has not been frozen: the statistic is
+where the discretion lives, and it can be chosen after the data without anyone editing
+the freeze. Name it in the prediction, not only in the runner.
 
 **E. Count one random block once.** Roots, slopes, derivatives, quantiles and score
 modes taken from the same histograms are all useful, and they are all the same block.

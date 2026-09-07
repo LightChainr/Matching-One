@@ -111,7 +111,13 @@ Minimal polynomials are taken from the committed lattice-native candidate artifa
 | martini bond | `1/sqrt(2)` | `2x^2 - 1` | 2 | 2 | yes |
 | martini descendant | `(sqrt(5)-1)/2` | `x^2 + x - 1` | 2 | 1 | yes |
 
-Maximum degree 6, maximum height 3. Outside the census class: (3,12^2) site.
+Maximum degree 6, maximum height 3 **over this artifact's rows**. Outside the census class: (3,12^2) site.
+
+This table is not the whole historical record, and one omission matters. Ziff 2006 'A lattice', bond percolation has minimal polynomial `p^5 - 4p^4 + 3p^3 + 2p^2 - 1`, irreducible over `Q`, of degree 5 and height **4** (`results/ziff-a-lattice-complexity/latest.json`). Its height exceeds every row above, which is why the exhaustion is carried out twice: at height 3 in Table 8, as it was first run, and again at height 4 in Table 10.
+
+Height 4 is not a bound either, and this table should not be read as one. that height <= 4 bounds the exactly-known planar thresholds. It does not. See LightChainr/Matching-One#574 Q3 and the manuscript's 4.2
+
+Status of that row: `PRIMARY_TEXT_READ` (Ziff, Phys. Rev. E 73, 016134 (2006); arXiv cond-mat/0510245, read 2026-09-05 under LightChainr/Matching-One#574). Still owed: nothing on the sourcing of this row; the primary text has been read. What remains owed is elsewhere: the manuscript must not present height <= 4 as a bound on the record.
 
 ## Table 7 — Quartic-census sensitivity where the census returned a null
 
@@ -145,24 +151,49 @@ All 4 positive and 4 negative trials behaved as required (`all_trials_passed = t
 
 Sensitivity control: the planted `sqrt(1-2*sin(pi/18))` polynomial `x^6 - 3x^4 + 1` was recovered in all 4 positive trials and reported in none of the 4 negative trials (`all_trials_passed = true`).
 
-## Table 9 — Agreement of two independent implementations (degree ≤ 6, height ≤ 3)
+## Table 9 — Agreement of two independent implementations (degree ≤ 6, height ≤ 3 and 4)
 
-Scope: degree 1..6 at height 3 only. Not replicated: the degree-4 height-100 census of sections 6.1-6.3.
+Scope: degree 1..6 at height 3 and height 4. Not replicated: the degree-4 height-100 census of sections 6.1-6.3.
 
 | Implementation | Screen |
 |---|---|
 | `scripts/degree6_low_height_exclusion.py` | exact integer evaluation at both endpoints; excludes when |P(l)| > D*(u-l) |
 | `scripts/degree6_independent_replication.py` | exact rational evaluation at the midpoint; excludes when |P(m)| > D*(u-l)/2 |
 
-Compared per cell: `polynomials_in_class`, `screen_survivors`, `root_containing_polynomials`, `distinct_roots_in_interval`. Cells in agreement: **24 of 24**.
+Compared per cell: `polynomials_in_class`, `screen_survivors`, `root_containing_polynomials`, `distinct_roots_in_interval`. Cells in agreement: **48 of 48**.
 
-| Interval | Cells | Verdicts agree | Closest member | Residual gap | Mean-value allowance |
-|---|---:|---|---|---:|---:|
-| `jacobsen-2015-eigenvalue` | 6/6 | yes | same: `x^6 + 2x^5 - x^4 + 2x^3 + 2x^2 - 2x` | `0.000000000000066390298964` | `0.00000000000064` |
-| `mertens-2022-p-med` | 6/6 | yes | same: `x^6 + 2x^5 - x^4 + 2x^3 + 2x^2 - 2x` | `0.000000000009958544844462` | `0.000000000096` |
-| `mertens-2022-p-cell` | 6/6 | yes | same: `x^6 + 2x^5 - x^4 + 2x^3 + 2x^2 - 2x` | `0.000000000265561195628943` | `0.00000000256` |
-| `yang-zhou-2024-corrected` | 6/6 | yes | same: `x^6 + 2x^5 - x^4 + 2x^3 + 2x^2 - 2x` | `0.000000000000331951494819` | `0.0000000000032` |
+| Interval | h | Cells | Verdicts agree | Closest member | Residual gap | Mean-value allowance |
+|---|---|---:|---|---|---:|---:|
+| `jacobsen-2015-eigenvalue` | 3 | 6/6 | yes | same: `x^6 + 2x^5 - x^4 + 2x^3 + 2x^2 - 2x` | `0.000000000000066390298964` | `0.00000000000064` |
+| `mertens-2022-p-med` | 3 | 6/6 | yes | same: `x^6 + 2x^5 - x^4 + 2x^3 + 2x^2 - 2x` | `0.000000000009958544844462` | `0.000000000096` |
+| `mertens-2022-p-cell` | 3 | 6/6 | yes | same: `x^6 + 2x^5 - x^4 + 2x^3 + 2x^2 - 2x` | `0.000000000265561195628943` | `0.00000000256` |
+| `yang-zhou-2024-corrected` | 3 | 6/6 | yes | same: `x^6 + 2x^5 - x^4 + 2x^3 + 2x^2 - 2x` | `0.000000000000331951494819` | `0.0000000000032` |
+| `jacobsen-2015-eigenvalue` | 4 | 6/6 | yes | same: `4x^6 + 4x^5 + 2x^4 + 2x^3 - x^2 - 3x + 1` | `0.000000000000076274080197` | `0.00000000000126` |
+| `mertens-2022-p-med` | 4 | 6/6 | yes | same: `4x^6 + 4x^5 + 2x^4 + 2x^3 - x^2 - 3x + 1` | `0.000000000011441112028581` | `0.000000000189` |
+| `mertens-2022-p-cell` | 4 | 6/6 | yes | same: `4x^6 + 4x^5 + 2x^4 + 2x^3 - x^2 - 3x + 1` | `0.000000000305096319953612` | `0.00000000504` |
+| `yang-zhou-2024-corrected` | 4 | 6/6 | yes | same: `4x^6 + 4x^5 + 2x^4 + 2x^3 - x^2 - 3x + 1` | `0.000000000000381370400975` | `0.0000000000063` |
 
-The two implementations evaluate the closest member at different points, so the residual gap must be non-zero; the mean value theorem caps it at `D(u-l)/2` with `D = 32` for that polynomial. Every interval is inside its allowance, so the agreement is between two implementations of the same quantity (`implementations_agree = true`).
+The two implementations evaluate the closest member at different points, so the residual gap must be non-zero; the mean value theorem caps it at `D(u-l)/2` with `D` the derivative bound of each row's closest member. Every interval, at both heights, is inside its allowance, so the agreement is between two implementations of the same quantity (`implementations_agree = true`).
 
-`scripts/exact_polynomial_root_certificate.py` is imported unchanged by both, so the Sturm path is shared, not replicated. Its contribution here: none: both screens retain zero candidates at every degree on every interval, so root isolation never runs during either census.
+`scripts/exact_polynomial_root_certificate.py` is imported unchanged by both, so the Sturm path is shared, not replicated. Its contribution here: none: both screens retain zero candidates at every degree on every interval at both heights, so root isolation never runs during either census.
+
+## Table 10 — Exhaustion of the corrected historical range (degree ≤ 6, height ≤ 4)
+
+Table 8's class was chosen from a claim that turned out to be false. Ziff 2006 'A lattice', bond percolation has minimal polynomial `p^5 - 4p^4 + 3p^3 + 2p^2 - 1` — degree 5, height 4 (`PRIMARY_TEXT_READ`, `results/ziff-a-lattice-complexity/latest.json`) — so the census was re-run one unit higher, and this table exhausts that class.
+
+This class is a choice, not the record: published thresholds sit outside this class: Wierman 1984 bow-tie bond is degree 5 height 6, and the Ziff-Scullard 2006 generalized bow-ties reach degree 11 at heights 35 and 36. It is the largest class in this family whose certified approach resolution still clears every published interval width, which is the reason to stop here rather than higher.
+
+2,351,328 primitive polynomials per interval, 5.7 times Table 8's class. Excluded on every interval: **true**. The certified screen retained no candidate at any degree on any interval: **true**.
+
+| Degree | Class | Closest polynomial | Distance floor | Floor / width (min–max over the four) |
+|---:|---:|---|---:|---:|
+| 1 | 23 | `2x - 1` | `0.04637302539604` | 289831407.875 – 1159325634901 |
+| 2 | 265 | `4x^2 + x - 2` | `0.000155202190771832373515301866` | 970014.027 – 3880054769.295 |
+| 3 | 2,639 | `4x^3 - 3x^2 - 3x + 2` | `0.000031603352558771761748899105` | 197521.021 – 790083813.969 |
+| 4 | 24,913 | `x^4 + x^3 - 2x^2 + 4x - 2` | `0.000000153906023149301453208663` | 961.974 – 3847650.578 |
+| 5 | 229,703 | `x^5 + x^4 - 2x^3 + 4x^2 - 2x` | `0.000000060818124943246023803813` | 380.137 – 1520453.123 |
+| 6 | 2,093,785 | `4x^6 + 4x^5 + 2x^4 + 2x^3 - x^2 - 3x + 1` | `0.000000008704058151401043652794` | 54.323 – 217601.453 |
+
+The narrowest margin anywhere in the table is 54.323 interval widths, at degree 6, so the null is not a width artifact: the published intervals would have to be some fifty times wider before the closest height-4 polynomial of that degree could reach one.
+
+Sensitivity control: the same planted-root control as Table 8 (`x^6 - 3x^4 + 1`, planted at height 3). The planted-root control exercises the scan path, not the enumeration bound: the same screen and the same exact Sturm decision run here, over a strictly larger class. It certifies that a root inside a frozen-width interval is reported; it does not certify the height-4 enumeration, which is checked instead by the committed class sizes.

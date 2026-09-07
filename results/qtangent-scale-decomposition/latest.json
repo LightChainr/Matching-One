@@ -1,0 +1,470 @@
+{
+  "issue": 581,
+  "not_established": [
+    "that any lattice response loads on one piece rather than the other. This gate establishes that the two pieces are a decomposition, nothing more",
+    "that B_even is a local energy field. It is a duality-even measure tangent",
+    "that a covariance with X demonstrates a topological defect theory",
+    "anything about square-site matching-odd H4, which has no canonical lift to a square-bond torus of side 2 or 3 and is deliberately absent here"
+  ],
+  "schema": "matching-one.qtangent-scale-decomposition.v1",
+  "tori": {
+    "2": {
+      "bonds": 8,
+      "configurations": 256,
+      "covariance_split": [
+        {
+          "ambient_homology_piece": "69/512",
+          "betti_even_piece": "-427/65536",
+          "cov_with_q_score": "8405/65536",
+          "observable": "wrap_either",
+          "split_is_exact": true,
+          "topological_fraction": 1.0508030933967876
+        },
+        {
+          "ambient_homology_piece": "69/512",
+          "betti_even_piece": "427/65536",
+          "cov_with_q_score": "9259/65536",
+          "observable": "wrap_cross",
+          "split_is_exact": true,
+          "topological_fraction": 0.953882708715844
+        },
+        {
+          "ambient_homology_piece": "69/512",
+          "betti_even_piece": "-81/32768",
+          "cov_with_q_score": "4335/32768",
+          "observable": "wrap_direction_0",
+          "split_is_exact": true,
+          "topological_fraction": 1.0186851211072665
+        },
+        {
+          "ambient_homology_piece": "27/64",
+          "betti_even_piece": "0",
+          "cov_with_q_score": "27/64",
+          "observable": "open_edges",
+          "split_is_exact": true,
+          "topological_fraction": 1.0
+        },
+        {
+          "ambient_homology_piece": "-39/512",
+          "betti_even_piece": "7903/65536",
+          "cov_with_q_score": "2911/65536",
+          "observable": "components",
+          "split_is_exact": true,
+          "topological_fraction": -1.7148746135348678
+        },
+        {
+          "ambient_homology_piece": "177/512",
+          "betti_even_piece": "7903/65536",
+          "cov_with_q_score": "30559/65536",
+          "observable": "cycle_rank",
+          "split_is_exact": true,
+          "topological_fraction": 0.7413855165417716
+        }
+      ],
+      "degree_one_parity": {
+        "crossing_map_is_a_bijection": true,
+        "mechanism": "chi_i -> -chi_sigma(i) under the dual transport, so the duality-even piece keeps the antisymmetric degree-one combination and the odd piece the symmetric one. Verified exhaustively at L=2 and L=3; not proved here for general L",
+        "pieces": {
+          "twice_b_even": {
+            "all_degree_one_coefficients_vanish": true,
+            "distinct_values": [
+              "0"
+            ],
+            "invariant_under_the_crossing_map": true
+          },
+          "x_source": {
+            "all_degree_one_coefficients_vanish": false,
+            "distinct_values": [
+              "-27/128"
+            ],
+            "invariant_under_the_crossing_map": true
+          }
+        }
+      },
+      "identity_gate": {
+        "configurations": 256,
+        "failures": {
+          "b_minus_b_dual_is_two_x": 0,
+          "span_rank_differs_from_max": 0,
+          "t_is_half_v_plus_half_b": 0,
+          "t_minus_t_dual_is_x": 0
+        },
+        "what_span_rank_agreement_means": "two disjoint non-contractible cycles on a torus must be parallel, so the image rank equals the largest component's rank. That is an argument; this counts the configurations where it fails, and the count is the evidence",
+        "x_values_realised": [
+          -1,
+          0,
+          1
+        ]
+      },
+      "scale_decomposition": {
+        "coordinates": [
+          "wrap_either",
+          "twice_b_even",
+          "x_source"
+        ],
+        "levels": [
+          {
+            "gamma": [
+              [
+                "4023/65536",
+                "597/16384",
+                "27/256"
+              ],
+              [
+                "597/16384",
+                "1551/4096",
+                "23/256"
+              ],
+              [
+                "27/256",
+                "23/256",
+                "105/512"
+              ]
+            ],
+            "is_positive_semidefinite": true,
+            "level": 0,
+            "revealed_bonds": 4
+          },
+          {
+            "gamma": [
+              [
+                "555/4096",
+                "-1/16",
+                "21/128"
+              ],
+              [
+                "-1/16",
+                "397/256",
+                "-23/256"
+              ],
+              [
+                "21/128",
+                "-23/256",
+                "171/512"
+              ]
+            ],
+            "is_positive_semidefinite": true,
+            "level": 1,
+            "revealed_bonds": 8
+          }
+        ],
+        "telescopes_to_the_total_covariance": true,
+        "total_covariance": [
+          [
+            "12903/65536",
+            "-427/16384",
+            "69/256"
+          ],
+          [
+            "-427/16384",
+            "7903/4096",
+            "0"
+          ],
+          [
+            "69/256",
+            "0",
+            "69/128"
+          ]
+        ]
+      },
+      "vertices": 4,
+      "walsh_cross_spectrum": [
+        {
+          "agrees_with_the_direct_covariance": true,
+          "by_degree": {
+            "1": "0",
+            "2": "-323/4096",
+            "3": "9/128",
+            "4": "-239/8192",
+            "5": "1/128",
+            "6": "13/4096",
+            "7": "0",
+            "8": "11/16384"
+          },
+          "direct_covariance": "-427/16384",
+          "left": "wrap_either",
+          "right": "twice_b_even",
+          "sum_over_degrees": "-427/16384"
+        },
+        {
+          "agrees_with_the_direct_covariance": true,
+          "by_degree": {
+            "1": "729/4096",
+            "2": "49/1024",
+            "3": "135/4096",
+            "4": "3/512",
+            "5": "15/4096",
+            "6": "1/1024",
+            "7": "1/4096",
+            "8": "0"
+          },
+          "direct_covariance": "69/256",
+          "left": "wrap_either",
+          "right": "x_source",
+          "sum_over_degrees": "69/256"
+        }
+      ]
+    },
+    "3": {
+      "bonds": 18,
+      "configurations": 262144,
+      "covariance_split": [
+        {
+          "ambient_homology_piece": "18865/131072",
+          "betti_even_piece": "-116247365/8589934592",
+          "cov_with_q_score": "1120089275/8589934592",
+          "observable": "wrap_either",
+          "split_is_exact": true,
+          "topological_fraction": 1.1037840175730635
+        },
+        {
+          "ambient_homology_piece": "18865/131072",
+          "betti_even_piece": "116247365/8589934592",
+          "cov_with_q_score": "1352584005/8589934592",
+          "observable": "wrap_cross",
+          "split_is_exact": true,
+          "topological_fraction": 0.9140553454940493
+        },
+        {
+          "ambient_homology_piece": "18865/131072",
+          "betti_even_piece": "-644229/134217728",
+          "cov_with_q_score": "18673531/134217728",
+          "observable": "wrap_direction_0",
+          "split_is_exact": true,
+          "topological_fraction": 1.0344995812522013
+        },
+        {
+          "ambient_homology_piece": "78489/131072",
+          "betti_even_piece": "0",
+          "cov_with_q_score": "78489/131072",
+          "observable": "open_edges",
+          "split_is_exact": true,
+          "topological_fraction": 1.0
+        },
+        {
+          "ambient_homology_piece": "-40759/262144",
+          "betti_even_piece": "5375410375/17179869184",
+          "cov_with_q_score": "2704228551/17179869184",
+          "observable": "components",
+          "split_is_exact": true,
+          "topological_fraction": -0.987779610200558
+        },
+        {
+          "ambient_homology_piece": "116219/262144",
+          "betti_even_piece": "5375410375/17179869184",
+          "cov_with_q_score": "12991938759/17179869184",
+          "observable": "cycle_rank",
+          "split_is_exact": true,
+          "topological_fraction": 0.5862503299381508
+        }
+      ],
+      "degree_one_parity": {
+        "crossing_map_is_a_bijection": true,
+        "mechanism": "chi_i -> -chi_sigma(i) under the dual transport, so the duality-even piece keeps the antisymmetric degree-one combination and the odd piece the symmetric one. Verified exhaustively at L=2 and L=3; not proved here for general L",
+        "pieces": {
+          "twice_b_even": {
+            "all_degree_one_coefficients_vanish": true,
+            "distinct_values": [
+              "0"
+            ],
+            "invariant_under_the_crossing_map": true
+          },
+          "x_source": {
+            "all_degree_one_coefficients_vanish": false,
+            "distinct_values": [
+              "-8721/65536"
+            ],
+            "invariant_under_the_crossing_map": true
+          }
+        }
+      },
+      "identity_gate": {
+        "configurations": 262144,
+        "failures": {
+          "b_minus_b_dual_is_two_x": 0,
+          "span_rank_differs_from_max": 0,
+          "t_is_half_v_plus_half_b": 0,
+          "t_minus_t_dual_is_x": 0
+        },
+        "what_span_rank_agreement_means": "two disjoint non-contractible cycles on a torus must be parallel, so the image rank equals the largest component's rank. That is an argument; this counts the configurations where it fails, and the count is the evidence",
+        "x_values_realised": [
+          -1,
+          0,
+          1
+        ]
+      },
+      "scale_decomposition": {
+        "coordinates": [
+          "wrap_either",
+          "twice_b_even",
+          "x_source"
+        ],
+        "levels": [
+          {
+            "gamma": [
+              [
+                "87662655/4294967296",
+                "20508663/2147483648",
+                "21112245/536870912"
+              ],
+              [
+                "20508663/2147483648",
+                "320594263/1073741824",
+                "7870347/268435456"
+              ],
+              [
+                "21112245/536870912",
+                "7870347/268435456",
+                "10403235/134217728"
+              ]
+            ],
+            "is_positive_semidefinite": true,
+            "level": 0,
+            "revealed_bonds": 4
+          },
+          {
+            "gamma": [
+              [
+                "8240539/134217728",
+                "-47733839/536870912",
+                "55512843/536870912"
+              ],
+              [
+                "-47733839/536870912",
+                "111655223/67108864",
+                "-34552971/268435456"
+              ],
+              [
+                "55512843/536870912",
+                "-34552971/268435456",
+                "28817533/134217728"
+              ]
+            ],
+            "is_positive_semidefinite": true,
+            "level": 1,
+            "revealed_bonds": 12
+          },
+          {
+            "gamma": [
+              [
+                "30893/1048576",
+                "97719/4194304",
+                "338553/8388608"
+              ],
+              [
+                "97719/4194304",
+                "947475/1048576",
+                "75933/1048576"
+              ],
+              [
+                "338553/8388608",
+                "75933/1048576",
+                "318055/4194304"
+              ]
+            ],
+            "is_positive_semidefinite": true,
+            "level": 2,
+            "revealed_bonds": 14
+          },
+          {
+            "gamma": [
+              [
+                "98279/1048576",
+                "2025/1048576",
+                "219725/2097152"
+              ],
+              [
+                "2025/1048576",
+                "70133/32768",
+                "3537/131072"
+              ],
+              [
+                "219725/2097152",
+                "3537/131072",
+                "108877/524288"
+              ]
+            ],
+            "is_positive_semidefinite": true,
+            "level": 3,
+            "revealed_bonds": 18
+          }
+        ],
+        "telescopes_to_the_total_covariance": true,
+        "total_covariance": [
+          [
+            "880448415/4294967296",
+            "-116247365/2147483648",
+            "18865/65536"
+          ],
+          [
+            "-116247365/2147483648",
+            "5375410375/1073741824",
+            "0"
+          ],
+          [
+            "18865/65536",
+            "0",
+            "18865/32768"
+          ]
+        ]
+      },
+      "vertices": 9,
+      "walsh_cross_spectrum": [
+        {
+          "agrees_with_the_direct_covariance": true,
+          "by_degree": {
+            "1": "0",
+            "10": "441189/536870912",
+            "11": "77031/134217728",
+            "12": "154059/536870912",
+            "13": "10287/67108864",
+            "14": "11637/134217728",
+            "15": "3861/134217728",
+            "16": "59301/2147483648",
+            "17": "0",
+            "18": "5537/1073741824",
+            "2": "-115478883/1073741824",
+            "3": "5886513/134217728",
+            "4": "-2414565/536870912",
+            "5": "281655/67108864",
+            "6": "132249/67108864",
+            "7": "287091/134217728",
+            "8": "2470527/1073741824",
+            "9": "49125/33554432"
+          },
+          "direct_covariance": "-116247365/2147483648",
+          "left": "wrap_either",
+          "right": "twice_b_even",
+          "sum_over_degrees": "-116247365/2147483648"
+        },
+        {
+          "agrees_with_the_direct_covariance": true,
+          "by_degree": {
+            "1": "684502569/4294967296",
+            "10": "155331/536870912",
+            "11": "76905/536870912",
+            "12": "25929/536870912",
+            "13": "26451/1073741824",
+            "14": "4059/536870912",
+            "15": "1731/536870912",
+            "16": "441/536870912",
+            "17": "729/4294967296",
+            "18": "0",
+            "2": "20820969/536870912",
+            "3": "23692215/536870912",
+            "4": "11381067/536870912",
+            "5": "13189995/1073741824",
+            "6": "3223929/536870912",
+            "7": "1913805/536870912",
+            "8": "674739/536870912",
+            "9": "1599299/2147483648"
+          },
+          "direct_covariance": "18865/65536",
+          "left": "wrap_either",
+          "right": "x_source",
+          "sum_over_degrees": "18865/65536"
+        }
+      ]
+    }
+  }
+}

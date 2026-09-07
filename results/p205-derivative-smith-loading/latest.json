@@ -1,0 +1,548 @@
+{
+  "schema": "matching-one.p205-derivative-smith-loading.v1",
+  "issue": 589,
+  "status": "re-view of the frozen #205 block in additional channels; no new sampling, no refit",
+  "fixed_probability": "0.59274605079",
+  "geometry_order": [
+    "C",
+    "A",
+    "B"
+  ],
+  "channels": [
+    "M",
+    "S",
+    "D",
+    "Sp",
+    "Dp"
+  ],
+  "control_channel": "M",
+  "generators": {
+    "325": {
+      "C": [
+        15,
+        10
+      ],
+      "A": [
+        17,
+        6
+      ],
+      "B": [
+        18,
+        1
+      ]
+    },
+    "425": {
+      "C": [
+        20,
+        5
+      ],
+      "A": [
+        16,
+        13
+      ],
+      "B": [
+        19,
+        8
+      ]
+    }
+  },
+  "frozen_H4_null_is_the_cos4_interpolant_defect": {
+    "325": "0.0",
+    "425": "0.0"
+  },
+  "n650_leakage": {
+    "square": {
+      "C": "477911411/1040449536",
+      "A4": "946294375/1226244096",
+      "A8": "11156640625/34334834688"
+    },
+    "rectangle": {
+      "C": "477911411/1040449536",
+      "A4": "-946294375/1226244096",
+      "A8": "11156640625/34334834688"
+    },
+    "square_float": {
+      "C": 0.4593316585418709,
+      "A4": 0.7717014728852158,
+      "A8": 0.3249364887403765
+    },
+    "matches_issue_591": true,
+    "note": "The A4 leakage flips sign between the two modulus families and the A8 leakage does not, which is why a quotient-only response reads as a same-sign apparent H8 in both."
+  },
+  "published_M_control": {
+    "model_order": [
+      "H4",
+      "H12",
+      "H8"
+    ],
+    "models": [
+      {
+        "name": "H4",
+        "by_size": {
+          "325": {
+            "residual": "0.00051196534595349809785",
+            "standard_error": "0.00043409061643814483576",
+            "signed_z": "1.17939740359821834"
+          },
+          "425": {
+            "residual": "-0.00034156437826482676198",
+            "standard_error": "0.00029596646380110545834",
+            "signed_z": "-1.15406446351423074"
+          }
+        },
+        "joint_chi_square": "2.7228430215606079375",
+        "chi_square_survival_df2": "0.256296190085709881"
+      },
+      {
+        "name": "H12",
+        "by_size": {
+          "325": {
+            "residual": "-7.6268441128924383237e-6",
+            "standard_error": "0.00023740069270341735401",
+            "signed_z": "-0.032126461073222685"
+          },
+          "425": {
+            "residual": "0.00047085117520390317572",
+            "standard_error": "0.00055846094473842439428",
+            "signed_z": "0.843122835428435451"
+          }
+        },
+        "joint_chi_square": "0.71188822512197394178",
+        "chi_square_survival_df2": "0.700511768950046609"
+      },
+      {
+        "name": "H8",
+        "by_size": {
+          "325": {
+            "residual": "0.00010160793060932324956",
+            "standard_error": "0.00020334707731655011398",
+            "signed_z": "0.499677359272542307"
+          },
+          "425": {
+            "residual": "-0.000089894220566038243792",
+            "standard_error": "0.00019153794503947763525",
+            "signed_z": "-0.469328521549660897"
+          }
+        },
+        "joint_chi_square": "0.46994672450957183441",
+        "chi_square_survival_df2": "0.790591908934086601"
+      }
+    ]
+  },
+  "exact_rescaling_control": {
+    "checks": [
+      {
+        "pair": "M/D",
+        "N": 325,
+        "absolute_difference": "0.0",
+        "agrees": true
+      },
+      {
+        "pair": "M/D",
+        "N": 425,
+        "absolute_difference": "0.0",
+        "agrees": true
+      }
+    ],
+    "all_agree": true,
+    "why": "obs() defines D = M/2 exactly, so rho -- a ratio of two linear functionals of the same channel -- must be identical.  A disagreement would mean the functionals and the jackknife covariance were built from differently scaled quantities."
+  },
+  "by_channel": {
+    "M": {
+      "325": {
+        "raw": {
+          "C": "0.0001844861402178867",
+          "A": "-3.735988091960265e-5",
+          "B": "0.0002044062230937379"
+        },
+        "delta": "0.0005119653459534981",
+        "delta_standard_error": "0.000434090616438",
+        "delta_z": "1.1793974",
+        "A4": "0.00031667342183047",
+        "A4_standard_error": "0.000309348299694",
+        "A4_z": "1.0236792",
+        "delta_A4_correlation": "0.88435813",
+        "rho": "1.61669818387",
+        "rho_standard_error": "0.737686559025",
+        "rho_bound_2sigma": "3.09207130192",
+        "rho_well_posed": true,
+        "induced_A8_over_A4_at_point": {
+          "square": "0.233725874267",
+          "rectangle": "-2.12159319109"
+        },
+        "induced_A8_over_A4_at_2sigma": {
+          "square": "0.296716039758",
+          "rectangle": "0.724829534163"
+        },
+        "two_sigma_interval_contains_fitted_A4_pole": {
+          "square": false,
+          "rectangle": true
+        },
+        "samples_multiple_for_banded": "12.5002",
+        "samples_multiple_for_clean": "115.06"
+      },
+      "425": {
+        "raw": {
+          "C": "-0.0001308517474060682",
+          "A": "-0.0001966717149568152",
+          "B": "5.022788856777495e-5"
+        },
+        "delta": "-0.0003415643782648268",
+        "delta_standard_error": "0.000295966463801",
+        "delta_z": "-1.1540645",
+        "A4": "0.0002765143904180871",
+        "A4_standard_error": "0.000255393542661",
+        "A4_z": "1.0826992",
+        "delta_A4_correlation": "-0.76269102",
+        "rho": "-1.23524991863",
+        "rho_standard_error": "0.76456579991",
+        "rho_bound_2sigma": "2.76438151845",
+        "rho_well_posed": true,
+        "induced_A8_over_A4_at_point": {
+          "square": "-8.58455236014",
+          "rectangle": "-0.205492879518"
+        },
+        "induced_A8_over_A4_at_2sigma": {
+          "square": "0.792611333996",
+          "rectangle": "0.286680156647"
+        },
+        "two_sigma_interval_contains_fitted_A4_pole": {
+          "square": true,
+          "rectangle": false
+        },
+        "samples_multiple_for_banded": "13.4277",
+        "samples_multiple_for_clean": "123.598"
+      }
+    },
+    "S": {
+      "325": {
+        "raw": {
+          "C": "0.3104120673390488",
+          "A": "0.3103704758951716",
+          "B": "0.3104100746656028"
+        },
+        "delta": "8.910996839472331e-5",
+        "delta_standard_error": "0.000115174684733",
+        "delta_z": "0.77369405",
+        "A4": "5.186780911210434e-5",
+        "A4_standard_error": "8.75915856085e-5",
+        "A4_z": "0.59215516",
+        "delta_A4_correlation": "0.88685259",
+        "rho": "1.71802067448",
+        "rho_standard_error": "1.38612008757",
+        "rho_bound_2sigma": "4.49026084963",
+        "rho_well_posed": true,
+        "induced_A8_over_A4_at_point": {
+          "square": "0.240024002573",
+          "rectangle": "-1.71347198732"
+        },
+        "induced_A8_over_A4_at_2sigma": {
+          "square": "0.326764512698",
+          "rectangle": "0.591872694709"
+        },
+        "two_sigma_interval_contains_fitted_A4_pole": {
+          "square": false,
+          "rectangle": true
+        },
+        "samples_multiple_for_banded": "44.1341",
+        "samples_multiple_for_clean": "406.239"
+      },
+      "425": {
+        "raw": {
+          "C": "0.310234065830407",
+          "A": "0.3102513690512857",
+          "B": "0.3101728735013917"
+        },
+        "delta": "0.0001122144364463291",
+        "delta_standard_error": "8.72429655621e-5",
+        "delta_z": "1.286229",
+        "A4": "-8.791083023066851e-5",
+        "A4_standard_error": "7.14314175331e-5",
+        "A4_z": "-1.2307026",
+        "delta_A4_correlation": "-0.76156275",
+        "rho": "-1.27645747574",
+        "rho_standard_error": "0.702033425885",
+        "rho_bound_2sigma": "2.68052432751",
+        "rho_well_posed": true,
+        "induced_A8_over_A4_at_point": {
+          "square": "-27.7327343259",
+          "rectangle": "-0.208946293559"
+        },
+        "induced_A8_over_A4_at_2sigma": {
+          "square": "0.815112334882",
+          "rectangle": "0.283846124997"
+        },
+        "two_sigma_interval_contains_fitted_A4_pole": {
+          "square": true,
+          "rectangle": false
+        },
+        "samples_multiple_for_banded": "11.3211",
+        "samples_multiple_for_clean": "104.207"
+      }
+    },
+    "D": {
+      "325": {
+        "raw": {
+          "C": "9.224307010894336e-5",
+          "A": "-1.867994045980133e-5",
+          "B": "0.000102203111546869"
+        },
+        "delta": "0.000255982672976749",
+        "delta_standard_error": "0.000217045308219",
+        "delta_z": "1.1793974",
+        "A4": "0.000158336710915235",
+        "A4_standard_error": "0.000154674149847",
+        "A4_z": "1.0236792",
+        "delta_A4_correlation": "0.88435813",
+        "rho": "1.61669818387",
+        "rho_standard_error": "0.737686559025",
+        "rho_bound_2sigma": "3.09207130192",
+        "rho_well_posed": true,
+        "induced_A8_over_A4_at_point": {
+          "square": "0.233725874267",
+          "rectangle": "-2.12159319109"
+        },
+        "induced_A8_over_A4_at_2sigma": {
+          "square": "0.296716039758",
+          "rectangle": "0.724829534163"
+        },
+        "two_sigma_interval_contains_fitted_A4_pole": {
+          "square": false,
+          "rectangle": true
+        },
+        "samples_multiple_for_banded": "12.5002",
+        "samples_multiple_for_clean": "115.06"
+      },
+      "425": {
+        "raw": {
+          "C": "-6.542587370303412e-5",
+          "A": "-9.833585747840758e-5",
+          "B": "2.511394428388747e-5"
+        },
+        "delta": "-0.0001707821891324134",
+        "delta_standard_error": "0.000147983231901",
+        "delta_z": "-1.1540645",
+        "A4": "0.0001382571952090435",
+        "A4_standard_error": "0.000127696771331",
+        "A4_z": "1.0826992",
+        "delta_A4_correlation": "-0.76269102",
+        "rho": "-1.23524991863",
+        "rho_standard_error": "0.76456579991",
+        "rho_bound_2sigma": "2.76438151845",
+        "rho_well_posed": true,
+        "induced_A8_over_A4_at_point": {
+          "square": "-8.58455236014",
+          "rectangle": "-0.205492879518"
+        },
+        "induced_A8_over_A4_at_2sigma": {
+          "square": "0.792611333996",
+          "rectangle": "0.286680156647"
+        },
+        "two_sigma_interval_contains_fitted_A4_pole": {
+          "square": true,
+          "rectangle": false
+        },
+        "samples_multiple_for_banded": "13.4277",
+        "samples_multiple_for_clean": "123.598"
+      }
+    },
+    "Sp": {
+      "325": {
+        "raw": {
+          "C": "0.001487987760008286",
+          "A": "2.053152682764832e-5",
+          "B": "0.003192391043304527"
+        },
+        "delta": "0.005273687652952892",
+        "delta_standard_error": "0.0028879738587",
+        "delta_z": "1.8260857",
+        "A4": "0.004154608896674979",
+        "A4_standard_error": "0.00190365036671",
+        "A4_z": "2.1824433",
+        "delta_A4_correlation": "0.86508388",
+        "rho": "1.26935838826",
+        "rho_standard_error": "0.349250922565",
+        "rho_bound_2sigma": "1.96786023339",
+        "rho_well_posed": true,
+        "induced_A8_over_A4_at_point": {
+          "square": "0.208359262717",
+          "rectangle": "20.1847688194"
+        },
+        "induced_A8_over_A4_at_2sigma": {
+          "square": "0.253882884121",
+          "rectangle": "1.23299036789"
+        },
+        "two_sigma_interval_contains_fitted_A4_pole": {
+          "square": false,
+          "rectangle": true
+        },
+        "samples_multiple_for_banded": "2.80187",
+        "samples_multiple_for_clean": "25.7902"
+      },
+      "425": {
+        "raw": {
+          "C": "-0.0002660810003017303",
+          "A": "-0.002783986329619758",
+          "B": "7.351465465977167e-5"
+        },
+        "delta": "-0.002196971294743196",
+        "delta_standard_error": "0.00263630093149",
+        "delta_z": "-0.83335376",
+        "A4": "0.003200248730688802",
+        "A4_standard_error": "0.0019966476185",
+        "A4_z": "1.602811",
+        "delta_A4_correlation": "-0.82359457",
+        "rho": "-0.686500169089",
+        "rho_standard_error": "0.529980996875",
+        "rho_bound_2sigma": "1.74646216284",
+        "rho_well_posed": true,
+        "induced_A8_over_A4_at_point": {
+          "square": "-0.474385871857",
+          "rectangle": "-0.145818318483"
+        },
+        "induced_A8_over_A4_at_2sigma": {
+          "square": "1.63190075533",
+          "rectangle": "0.241716496951"
+        },
+        "two_sigma_interval_contains_fitted_A4_pole": {
+          "square": true,
+          "rectangle": false
+        },
+        "samples_multiple_for_banded": "6.45199",
+        "samples_multiple_for_clean": "59.3883"
+      }
+    },
+    "Dp": {
+      "325": {
+        "raw": {
+          "C": "7.632680972637282",
+          "A": "7.631642331774481",
+          "B": "7.631831702082285"
+        },
+        "delta": "0.001265885232165643",
+        "delta_standard_error": "0.00300135129512",
+        "delta_z": "0.42177176",
+        "A4": "0.0002480436354389286",
+        "A4_standard_error": "0.00212882027153",
+        "A4_z": "0.11651695",
+        "delta_A4_correlation": "0.89658015",
+        "rho": "5.10347798252",
+        "rho_standard_error": "33.3845179147",
+        "rho_bound_2sigma": "71.8725138119",
+        "rho_well_posed": true,
+        "induced_A8_over_A4_at_point": {
+          "square": "0.335800897541",
+          "rectangle": "-0.564364265452"
+        },
+        "induced_A8_over_A4_at_2sigma": {
+          "square": "0.413607797353",
+          "rectangle": "0.42879606299"
+        },
+        "two_sigma_interval_contains_fitted_A4_pole": {
+          "square": true,
+          "rectangle": true
+        },
+        "samples_multiple_for_banded": "25601.4",
+        "samples_multiple_for_clean": "235652.0"
+      },
+      "425": {
+        "raw": {
+          "C": "8.436015648501239",
+          "A": "8.437720638430317",
+          "B": "8.437827139863135"
+        },
+        "delta": "-0.001880717293228606",
+        "delta_standard_error": "0.00281597956938",
+        "delta_z": "-0.6678732",
+        "A4": "0.0001192759257364284",
+        "A4_standard_error": "0.00204997645676",
+        "A4_z": "0.058184047",
+        "delta_A4_correlation": "-0.76064183",
+        "rho": "-15.7677861783",
+        "rho_standard_error": "253.504208157",
+        "rho_bound_2sigma": "522.776202493",
+        "rho_well_posed": true,
+        "induced_A8_over_A4_at_point": {
+          "square": "0.458767742576",
+          "rectangle": "-0.389088685351"
+        },
+        "induced_A8_over_A4_at_2sigma": {
+          "square": "0.42211132403",
+          "rectangle": "0.420023871158"
+        },
+        "two_sigma_interval_contains_fitted_A4_pole": {
+          "square": true,
+          "rectangle": true
+        },
+        "samples_multiple_for_banded": "1.47619e+6",
+        "samples_multiple_for_clean": "1.35878e+7"
+      }
+    }
+  },
+  "decision": {
+    "verdict_channels": [
+      "Sp",
+      "Dp"
+    ],
+    "worst_induced_A8_over_A4_at_2sigma": {
+      "Sp": "1.63190075533",
+      "Dp": "0.42879606299"
+    },
+    "worst_overall": "1.63190075533",
+    "bands": {
+      "clean_below": "0.05",
+      "banded_below": "0.2"
+    },
+    "verdict": "DERIVATIVE_SMITH_LOADING_UNCONSTRAINED__N650_NEEDS_AN_INDEPENDENT_QUOTIENT_CONTROL",
+    "two_sigma_intervals_containing_the_fitted_A4_pole": [
+      "Sp N325 rectangle",
+      "Sp N425 square",
+      "Dp N325 square",
+      "Dp N325 rectangle",
+      "Dp N425 square",
+      "Dp N425 rectangle"
+    ],
+    "cheapest_banded_sample_multiple": "2.80187",
+    "what_this_cannot_do": "This is the #205 evidence block re-read in another channel, not a new independent vote (GOVERNANCE 2E).  It cannot move #205's H4 verdict, and the transfer of rho from N=325/425 to N=650 is an assumption stated here, not a result shown here."
+  },
+  "provenance": {
+    "prediction": "predictions/norm5_conjugate_coalescence_20260829.yaml",
+    "prediction_sha256": "157e65eba43de09495f527c3a153c1867a45e994295a792ee27d631a0139abe4",
+    "experiment": "experiments/p205_norm5_conjugate_coalescence_20260829.yaml",
+    "experiment_sha256": "677f125c0e1d9d78ca1bcebc87bf5320d7cb62e4476afaa7f95f7a14b401b6f8",
+    "inputs": [
+      {
+        "N": 325,
+        "pair": "C-A",
+        "histogram": "results/server-20260829/P205-norm5-conjugate-coalescence/raw/n325_C_A_10m.hist.csv",
+        "histogram_sha256": "284527458bcc6106b56b151d744933bfaff5a89f2f5415dbc5aeef31019f2d26",
+        "metadata_sha256": "fc5a943f0e238bae4a3ccae7532a0b8325f667ad0b00cf658e8f2c5ac6cc4b96",
+        "git_commit": "1668bddd9e8b10cbe5c57add79eb61f74861fb4b"
+      },
+      {
+        "N": 325,
+        "pair": "C-B",
+        "histogram": "results/server-20260829/P205-norm5-conjugate-coalescence/raw/n325_C_B_10m.hist.csv",
+        "histogram_sha256": "96c00bfad4f4a452b9e68b8fed6caa8f474450f3fbdd30439df013cb30b6a572",
+        "metadata_sha256": "54f3bf75adcead0976cad93cddbb03401bfd4bbe829506859fb74963363cfb56",
+        "git_commit": "1668bddd9e8b10cbe5c57add79eb61f74861fb4b"
+      },
+      {
+        "N": 425,
+        "pair": "C-A",
+        "histogram": "results/server-20260829/P205-norm5-conjugate-coalescence/raw/n425_C_A_10m.hist.csv",
+        "histogram_sha256": "d6296347dd36cbb5c89c337926160686147f5f23c67189f1b5c5f5866931ff18",
+        "metadata_sha256": "6a09c4aa7c9d3275de4c2a030562dd5044ab03b2e14f4759675c0414c43f4c6e",
+        "git_commit": "1668bddd9e8b10cbe5c57add79eb61f74861fb4b"
+      },
+      {
+        "N": 425,
+        "pair": "C-B",
+        "histogram": "results/server-20260829/P205-norm5-conjugate-coalescence/raw/n425_C_B_10m.hist.csv",
+        "histogram_sha256": "e49ee5594705eb13c30c91b7966ec7072183652df4a06df35ccccd459c5399ae",
+        "metadata_sha256": "1fa3ef07b1f058836fc918c25b14137b9619e9a698cf366d7e730444febd04d1",
+        "git_commit": "1668bddd9e8b10cbe5c57add79eb61f74861fb4b"
+      }
+    ]
+  }
+}

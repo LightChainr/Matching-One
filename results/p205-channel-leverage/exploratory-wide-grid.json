@@ -1,0 +1,585 @@
+{
+  "schema": "matching-one.p205-channel-leverage.v1",
+  "issue": 595,
+  "status": "design scan over archived histograms; angular resolution only, no verdict-bearing statistic",
+  "basis_channels": [
+    "M",
+    "S",
+    "Sp",
+    "Dp"
+  ],
+  "baseline_channel": "M",
+  "p_ref": "0.59274605079",
+  "grid": {
+    "half_width": "0.10",
+    "points": 21,
+    "values": [
+      "0.49274605079",
+      "0.50274605079",
+      "0.51274605079",
+      "0.52274605079",
+      "0.53274605079",
+      "0.54274605079",
+      "0.55274605079",
+      "0.56274605079",
+      "0.57274605079",
+      "0.58274605079",
+      "0.59274605079",
+      "0.60274605079",
+      "0.61274605079",
+      "0.62274605079",
+      "0.63274605079",
+      "0.64274605079",
+      "0.65274605079",
+      "0.66274605079",
+      "0.67274605079",
+      "0.68274605079",
+      "0.69274605079"
+    ],
+    "predeclared": false,
+    "verdict_bearing": false
+  },
+  "excluded_channel": {
+    "D": "exactly M/2 in obs(), so linearly dependent and singular in the combination"
+  },
+  "by_size": {
+    "325": {
+      "batches": 100,
+      "cost_table": {
+        "baseline": "M @ 0.59274605079",
+        "baseline_leverage": "1.0236792",
+        "by_readout": {
+          "M": {
+            "best_p": "0.69274605079",
+            "leverage": "5.0382255",
+            "leverage_at_p_ref": "1.0236792",
+            "amplification_vs_baseline": "4.92168",
+            "sample_cost_ratio_vs_baseline": "0.0412831"
+          },
+          "S": {
+            "best_p": "0.69274605079",
+            "leverage": "4.9241029",
+            "leverage_at_p_ref": "0.59215516",
+            "amplification_vs_baseline": "4.8102",
+            "sample_cost_ratio_vs_baseline": "0.0432189"
+          },
+          "Sp": {
+            "best_p": "0.56274605079",
+            "leverage": "3.5384846",
+            "leverage_at_p_ref": "2.1824433",
+            "amplification_vs_baseline": "3.45663",
+            "sample_cost_ratio_vs_baseline": "0.0836938"
+          },
+          "Dp": {
+            "best_p": "0.69274605079",
+            "leverage": "2.1922803",
+            "leverage_at_p_ref": "0.11651695",
+            "amplification_vs_baseline": "2.14157",
+            "sample_cost_ratio_vs_baseline": "0.21804"
+          },
+          "combination": {
+            "best_p": "0.69274605079",
+            "leverage": "6.088937",
+            "leverage_at_p_ref": "2.3602328",
+            "amplification_vs_baseline": "5.94809",
+            "sample_cost_ratio_vs_baseline": "0.0282647"
+          }
+        },
+        "caveat": "These are in-sample maxima over the grid and carry selection optimism; the held-out control is the number to plan with."
+      },
+      "selection_control": {
+        "baseline": "M @ 0.59274605079",
+        "directions": [
+          {
+            "selected_on": "half_0",
+            "reported_on": "half_1",
+            "readout": "combination",
+            "p": "0.55274605079",
+            "in_sample_leverage": "5.0019401",
+            "held_out_leverage": "3.8680427",
+            "in_sample_amplification": "6.89374",
+            "held_out_amplification": "5.40856",
+            "optimism_factor": "1.29315",
+            "transports": true
+          },
+          {
+            "selected_on": "half_1",
+            "reported_on": "half_0",
+            "readout": "combination",
+            "p": "0.69274605079",
+            "in_sample_leverage": "4.9881612",
+            "held_out_leverage": "4.2320455",
+            "in_sample_amplification": "6.97479",
+            "held_out_amplification": "5.83266",
+            "optimism_factor": "1.17866",
+            "transports": true
+          }
+        ],
+        "both_directions_transport": true,
+        "why": "A readout selected on a half-sample and validated on the other half carries no selection optimism into the reported amplification.  The in-sample column is shown only so the size of the optimism is visible."
+      },
+      "grid_boundary_binds": {
+        "M": true,
+        "S": true,
+        "Sp": false,
+        "Dp": true,
+        "combination": true
+      },
+      "full_sample_leverage": {
+        "0.49274605079": {
+          "M": "3.0006587",
+          "S": "3.6702008",
+          "Sp": "2.9784036",
+          "Dp": "2.0620642",
+          "combination": "3.876344",
+          "combination_retained": 4
+        },
+        "0.50274605079": {
+          "M": "2.9673764",
+          "S": "3.7396825",
+          "Sp": "2.4943521",
+          "Dp": "1.6925497",
+          "combination": "3.918684",
+          "combination_retained": 4
+        },
+        "0.51274605079": {
+          "M": "2.8447437",
+          "S": "3.681773",
+          "Sp": "1.6836615",
+          "Dp": "1.1937768",
+          "combination": "4.013276",
+          "combination_retained": 4
+        },
+        "0.52274605079": {
+          "M": "2.6156568",
+          "S": "3.457069",
+          "Sp": "0.56667573",
+          "Dp": "0.63498429",
+          "combination": "4.2134471",
+          "combination_retained": 4
+        },
+        "0.53274605079": {
+          "M": "2.3012205",
+          "S": "3.0648839",
+          "Sp": "0.78968203",
+          "Dp": "0.097590645",
+          "combination": "4.4743289",
+          "combination_retained": 4
+        },
+        "0.54274605079": {
+          "M": "1.9501186",
+          "S": "2.5358413",
+          "Sp": "2.191233",
+          "Dp": "0.33969226",
+          "combination": "4.6260062",
+          "combination_retained": 4
+        },
+        "0.55274605079": {
+          "M": "1.6164582",
+          "S": "1.9142648",
+          "Sp": "3.2274011",
+          "Dp": "0.61691661",
+          "combination": "4.4878398",
+          "combination_retained": 4
+        },
+        "0.56274605079": {
+          "M": "1.3418239",
+          "S": "1.245318",
+          "Sp": "3.5384846",
+          "Dp": "0.69706042",
+          "combination": "4.0361814",
+          "combination_retained": 4
+        },
+        "0.57274605079": {
+          "M": "1.1485905",
+          "S": "0.57376999",
+          "Sp": "3.2562674",
+          "Dp": "0.56531648",
+          "combination": "3.4157992",
+          "combination_retained": 4
+        },
+        "0.58274605079": {
+          "M": "1.0431275",
+          "S": "0.052515428",
+          "Sp": "2.7366717",
+          "Dp": "0.25847667",
+          "combination": "2.8138794",
+          "combination_retained": 4
+        },
+        "0.59274605079": {
+          "M": "1.0236792",
+          "S": "0.59215516",
+          "Sp": "2.1824433",
+          "Dp": "0.11651695",
+          "combination": "2.3602328",
+          "combination_retained": 4
+        },
+        "0.60274605079": {
+          "M": "1.0878308",
+          "S": "1.0339308",
+          "Sp": "1.6695385",
+          "Dp": "0.45601753",
+          "combination": "2.1293001",
+          "combination_retained": 4
+        },
+        "0.61274605079": {
+          "M": "1.2364279",
+          "S": "1.4040878",
+          "Sp": "1.2727929",
+          "Dp": "0.71411746",
+          "combination": "2.1880899",
+          "combination_retained": 4
+        },
+        "0.62274605079": {
+          "M": "1.4729229",
+          "S": "1.7445768",
+          "Sp": "1.0544294",
+          "Dp": "0.87147369",
+          "combination": "2.547179",
+          "combination_retained": 4
+        },
+        "0.63274605079": {
+          "M": "1.7992674",
+          "S": "2.0881193",
+          "Sp": "0.98625207",
+          "Dp": "0.90016707",
+          "combination": "3.0926221",
+          "combination_retained": 4
+        },
+        "0.64274605079": {
+          "M": "2.2112256",
+          "S": "2.4518762",
+          "Sp": "0.96536972",
+          "Dp": "0.76095171",
+          "combination": "3.6957384",
+          "combination_retained": 4
+        },
+        "0.65274605079": {
+          "M": "2.6962137",
+          "S": "2.8461711",
+          "Sp": "0.84085075",
+          "Dp": "0.4244295",
+          "combination": "4.2812116",
+          "combination_retained": 4
+        },
+        "0.66274605079": {
+          "M": "3.235645",
+          "S": "3.2816641",
+          "Sp": "0.4589616",
+          "Dp": "0.10456589",
+          "combination": "4.8123245",
+          "combination_retained": 4
+        },
+        "0.67274605079": {
+          "M": "3.8116324",
+          "S": "3.7688065",
+          "Sp": "0.19223068",
+          "Dp": "0.77328445",
+          "combination": "5.2802499",
+          "combination_retained": 4
+        },
+        "0.68274605079": {
+          "M": "4.4137484",
+          "S": "4.3155722",
+          "Sp": "0.95732366",
+          "Dp": "1.4930602",
+          "combination": "5.6963111",
+          "combination_retained": 4
+        },
+        "0.69274605079": {
+          "M": "5.0382255",
+          "S": "4.9241029",
+          "Sp": "1.7106459",
+          "Dp": "2.1922803",
+          "combination": "6.088937",
+          "combination_retained": 4
+        }
+      }
+    },
+    "425": {
+      "batches": 100,
+      "cost_table": {
+        "baseline": "M @ 0.59274605079",
+        "baseline_leverage": "1.0826992",
+        "by_readout": {
+          "M": {
+            "best_p": "0.69274605079",
+            "leverage": "2.0067301",
+            "leverage_at_p_ref": "1.0826992",
+            "amplification_vs_baseline": "1.85345",
+            "sample_cost_ratio_vs_baseline": "0.291097"
+          },
+          "S": {
+            "best_p": "0.69274605079",
+            "leverage": "2.2882265",
+            "leverage_at_p_ref": "1.2307026",
+            "amplification_vs_baseline": "2.11345",
+            "sample_cost_ratio_vs_baseline": "0.223881"
+          },
+          "Sp": {
+            "best_p": "0.61274605079",
+            "leverage": "2.1740838",
+            "leverage_at_p_ref": "1.602811",
+            "amplification_vs_baseline": "2.00802",
+            "sample_cost_ratio_vs_baseline": "0.248007"
+          },
+          "Dp": {
+            "best_p": "0.69274605079",
+            "leverage": "1.1909783",
+            "leverage_at_p_ref": "0.058184047",
+            "amplification_vs_baseline": "1.10001",
+            "sample_cost_ratio_vs_baseline": "0.826434"
+          },
+          "combination": {
+            "best_p": "0.49274605079",
+            "leverage": "2.9658128",
+            "leverage_at_p_ref": "1.9177174",
+            "amplification_vs_baseline": "2.73928",
+            "sample_cost_ratio_vs_baseline": "0.133269"
+          }
+        },
+        "caveat": "These are in-sample maxima over the grid and carry selection optimism; the held-out control is the number to plan with."
+      },
+      "selection_control": {
+        "baseline": "M @ 0.59274605079",
+        "directions": [
+          {
+            "selected_on": "half_0",
+            "reported_on": "half_1",
+            "readout": "combination",
+            "p": "0.62274605079",
+            "in_sample_leverage": "1.9965967",
+            "held_out_leverage": "1.7202256",
+            "in_sample_amplification": "2.97963",
+            "held_out_amplification": "2.00826",
+            "optimism_factor": "1.16066",
+            "transports": true
+          },
+          {
+            "selected_on": "half_1",
+            "reported_on": "half_0",
+            "readout": "combination",
+            "p": "0.69274605079",
+            "in_sample_leverage": "3.684516",
+            "held_out_leverage": "1.1324708",
+            "in_sample_amplification": "4.30146",
+            "held_out_amplification": "1.69005",
+            "optimism_factor": "3.25352",
+            "transports": true
+          }
+        ],
+        "both_directions_transport": true,
+        "why": "A readout selected on a half-sample and validated on the other half carries no selection optimism into the reported amplification.  The in-sample column is shown only so the size of the optimism is visible."
+      },
+      "grid_boundary_binds": {
+        "M": true,
+        "S": true,
+        "Sp": false,
+        "Dp": true,
+        "combination": true
+      },
+      "full_sample_leverage": {
+        "0.49274605079": {
+          "M": "1.7147636",
+          "S": "2.2506256",
+          "Sp": "0.68584768",
+          "Dp": "0.21937025",
+          "combination": "2.9658128",
+          "combination_retained": 4
+        },
+        "0.50274605079": {
+          "M": "1.3992754",
+          "S": "1.9797896",
+          "Sp": "0.55311323",
+          "Dp": "0.091775059",
+          "combination": "2.6713458",
+          "combination_retained": 4
+        },
+        "0.51274605079": {
+          "M": "1.1595366",
+          "S": "1.7654406",
+          "Sp": "0.5794824",
+          "Dp": "0.1211941",
+          "combination": "2.3250862",
+          "combination_retained": 4
+        },
+        "0.52274605079": {
+          "M": "1.0070091",
+          "S": "1.6306522",
+          "Sp": "0.6935301",
+          "Dp": "0.24472195",
+          "combination": "2.0150304",
+          "combination_retained": 4
+        },
+        "0.53274605079": {
+          "M": "0.93299005",
+          "S": "1.5716992",
+          "Sp": "0.81751864",
+          "Dp": "0.40639869",
+          "combination": "1.8106321",
+          "combination_retained": 4
+        },
+        "0.54274605079": {
+          "M": "0.92114214",
+          "S": "1.5708835",
+          "Sp": "0.86118663",
+          "Dp": "0.56337521",
+          "combination": "1.7404887",
+          "combination_retained": 4
+        },
+        "0.55274605079": {
+          "M": "0.95190506",
+          "S": "1.6034393",
+          "Sp": "0.70978023",
+          "Dp": "0.68198517",
+          "combination": "1.7722578",
+          "combination_retained": 4
+        },
+        "0.56274605079": {
+          "M": "1.002095",
+          "S": "1.6363713",
+          "Sp": "0.28410115",
+          "Dp": "0.7321948",
+          "combination": "1.8321376",
+          "combination_retained": 4
+        },
+        "0.57274605079": {
+          "M": "1.0486187",
+          "S": "1.624382",
+          "Sp": "0.35273769",
+          "Dp": "0.67131159",
+          "combination": "1.8633973",
+          "combination_retained": 4
+        },
+        "0.58274605079": {
+          "M": "1.0762371",
+          "S": "1.5089525",
+          "Sp": "1.0275013",
+          "Dp": "0.44191301",
+          "combination": "1.8689107",
+          "combination_retained": 4
+        },
+        "0.59274605079": {
+          "M": "1.0826992",
+          "S": "1.2307026",
+          "Sp": "1.602811",
+          "Dp": "0.058184047",
+          "combination": "1.9177174",
+          "combination_retained": 4
+        },
+        "0.60274605079": {
+          "M": "1.0801406",
+          "S": "0.76641868",
+          "Sp": "2.0045939",
+          "Dp": "0.25807369",
+          "combination": "2.0527206",
+          "combination_retained": 4
+        },
+        "0.61274605079": {
+          "M": "1.0931827",
+          "S": "0.16763423",
+          "Sp": "2.1740838",
+          "Dp": "0.34042529",
+          "combination": "2.2024259",
+          "combination_retained": 4
+        },
+        "0.62274605079": {
+          "M": "1.1503124",
+          "S": "0.46071295",
+          "Sp": "2.0578642",
+          "Dp": "0.28227374",
+          "combination": "2.2811412",
+          "combination_retained": 4
+        },
+        "0.63274605079": {
+          "M": "1.2668324",
+          "S": "1.0292586",
+          "Sp": "1.6334481",
+          "Dp": "0.23443114",
+          "combination": "2.2830565",
+          "combination_retained": 4
+        },
+        "0.64274605079": {
+          "M": "1.4270745",
+          "S": "1.4922144",
+          "Sp": "0.9869637",
+          "Dp": "0.28905387",
+          "combination": "2.2486372",
+          "combination_retained": 4
+        },
+        "0.65274605079": {
+          "M": "1.5866442",
+          "S": "1.828742",
+          "Sp": "0.29400149",
+          "Dp": "0.46125762",
+          "combination": "2.2374563",
+          "combination_retained": 4
+        },
+        "0.66274605079": {
+          "M": "1.7096946",
+          "S": "2.0386632",
+          "Sp": "0.33467499",
+          "Dp": "0.69623572",
+          "combination": "2.278087",
+          "combination_retained": 4
+        },
+        "0.67274605079": {
+          "M": "1.8031938",
+          "S": "2.1549069",
+          "Sp": "0.84914658",
+          "Dp": "0.90273587",
+          "combination": "2.337728",
+          "combination_retained": 4
+        },
+        "0.68274605079": {
+          "M": "1.8979995",
+          "S": "2.2275112",
+          "Sp": "1.211865",
+          "Dp": "1.0469534",
+          "combination": "2.389583",
+          "combination_retained": 4
+        },
+        "0.69274605079": {
+          "M": "2.0067301",
+          "S": "2.2882265",
+          "Sp": "1.4573486",
+          "Dp": "1.1909783",
+          "combination": "2.4420833",
+          "combination_retained": 4
+        }
+      }
+    }
+  },
+  "decision": {
+    "verdict": "POST_HOC_GRID__EXPLORATORY_ONLY_NO_VERDICT",
+    "why": "The probability grid was widened after the predeclared grid was scored.  Leverage numbers from this run describe where the optimum lies; they may not be used to justify a design choice on their own (GOVERNANCE 2D)."
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "N": 325,
+        "pair": "C-A",
+        "histogram_sha256": "284527458bcc6106b56b151d744933bfaff5a89f2f5415dbc5aeef31019f2d26",
+        "git_commit": "1668bddd9e8b10cbe5c57add79eb61f74861fb4b"
+      },
+      {
+        "N": 325,
+        "pair": "C-B",
+        "histogram_sha256": "96c00bfad4f4a452b9e68b8fed6caa8f474450f3fbdd30439df013cb30b6a572",
+        "git_commit": "1668bddd9e8b10cbe5c57add79eb61f74861fb4b"
+      },
+      {
+        "N": 425,
+        "pair": "C-A",
+        "histogram_sha256": "d6296347dd36cbb5c89c337926160686147f5f23c67189f1b5c5f5866931ff18",
+        "git_commit": "1668bddd9e8b10cbe5c57add79eb61f74861fb4b"
+      },
+      {
+        "N": 425,
+        "pair": "C-B",
+        "histogram_sha256": "e49ee5594705eb13c30c91b7966ec7072183652df4a06df35ccccd459c5399ae",
+        "git_commit": "1668bddd9e8b10cbe5c57add79eb61f74861fb4b"
+      }
+    ]
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "before_running": [
+    "size the budget from a pilot at this site count, not from an extrapolation. A 200000-sample pilot of the N=290 channel returned an amplitude five times its 20M value; standard errors do extrapolate as one over root n, central values at small counts do not",
+    "declare no optional stopping, and place the replica offset past every committed stream so the pilot can never be pooled into the run"
+  ],
+  "candidate_search": {
+    "best_five": [
+      {
+        "leakage_cancels_in_the_r4_over_r1_ratio": true,
+        "leverage": "8064/4205",
+        "leverage_is_shared": true,
+        "max_abs_leakage": "1148/21025",
+        "site_count": 580
+      },
+      {
+        "leakage_cancels_in_the_r4_over_r1_ratio": true,
+        "leverage": "1152/625",
+        "leverage_is_shared": true,
+        "max_abs_leakage": "196/625",
+        "site_count": 100
+      },
+      {
+        "leakage_cancels_in_the_r4_over_r1_ratio": true,
+        "leverage": "1152/625",
+        "leverage_is_shared": true,
+        "max_abs_leakage": "196/625",
+        "site_count": 200
+      },
+      {
+        "leakage_cancels_in_the_r4_over_r1_ratio": true,
+        "leverage": "1152/625",
+        "leverage_is_shared": true,
+        "max_abs_leakage": "196/625",
+        "site_count": 400
+      },
+      {
+        "leakage_cancels_in_the_r4_over_r1_ratio": true,
+        "leverage": "1152/625",
+        "leverage_is_shared": true,
+        "max_abs_leakage": "196/625",
+        "site_count": 800
+      }
+    ],
+    "candidates_found": 16,
+    "ceiling": 1000,
+    "objective": "maximum shared angular leverage first, because it divides into every amplitude and sets the sample budget; then minimum spin-8 leakage, because that one does not shrink with samples"
+  },
+  "estimator": "per rung, one paired run gives (O_first - O_second) / delta_cos4 = A4 + A8 * leakage; the score is the vector (A4(2i)/A4(i), A4(4i)/A4(i))",
+  "leverage_is_shared_across_rungs": true,
+  "modular_shape_predictions": {
+    "rows": [
+      {
+        "amplitude_ratio_by_aspect": {
+          "1": "1.0",
+          "2": "2.75",
+          "4": "10.9908008589"
+        },
+        "modular_weight": 4,
+        "on_the_list_because": "the Q4-Jordan prediction",
+        "shape": "E4",
+        "usable": true
+      },
+      {
+        "amplitude_ratio_by_aspect": {
+          "1": "1.0",
+          "2": "7.5625",
+          "4": "120.79770352"
+        },
+        "modular_weight": 8,
+        "on_the_list_because": "the next even weight; equals E4^2",
+        "shape": "E8",
+        "usable": true
+      },
+      {
+        "amplitude_ratio_by_aspect": {
+          "1": "1.0",
+          "2": "32.515625",
+          "4": "2080.30719731"
+        },
+        "modular_weight": 12,
+        "on_the_list_because": "weight-12 Eisenstein",
+        "shape": "E12",
+        "usable": true
+      },
+      {
+        "amplitude_ratio_by_aspect": {
+          "1": "1.0",
+          "2": "20.796875",
+          "4": "1327.6635036"
+        },
+        "modular_weight": 12,
+        "on_the_list_because": "a weight-12 power of the same shape",
+        "shape": "E4^3",
+        "usable": true
+      },
+      {
+        "amplitude_ratio_by_aspect": {
+          "1": "1.0",
+          "2": "0.125",
+          "4": "2.79010739704e-5"
+        },
+        "modular_weight": 12,
+        "on_the_list_because": "the weight-12 cusp form",
+        "shape": "Delta",
+        "usable": true
+      },
+      {
+        "modular_weight": 6,
+        "on_the_list_because": "an odd-spin weight, for contrast",
+        "shape": "E6",
+        "usable": false,
+        "why_not": "the shape vanishes at the square point, so the ratio is undefined"
+      }
+    ]
+  },
+  "non_modular_competitors": [
+    {
+      "formula": "A(r)/A(1) = r",
+      "law": "bare_aspect_ratio",
+      "predicted_by_aspect": {
+        "1": "1.0",
+        "2": "2.0",
+        "4": "4.0"
+      },
+      "standing": "post-hoc on the N=290 point (z = -0.68 there), prospective from this design forward"
+    },
+    {
+      "formula": "A(r)/A(1) = r^2",
+      "law": "plain_area_scaling",
+      "predicted_by_aspect": {
+        "1": "1.0",
+        "2": "4.0",
+        "4": "16.0"
+      },
+      "standing": "prospective; excluded at 12 sigma by the N=290 run"
+    },
+    {
+      "formula": "A(r)/A(1) = 1",
+      "law": "no_modulus_dependence",
+      "predicted_by_aspect": {
+        "1": "1.0",
+        "2": "1.0",
+        "4": "1.0"
+      },
+      "standing": "prospective; excluded at 5.0 sigma by the N=290 run"
+    }
+  ],
+  "not_established_by_this_design": [
+    "anything at all: no scoring block has been run",
+    "identification of the Q4 Jordan module, which the ratio cannot decide on its own (docs/astra/Q2-additive-shape-ambiguity.md)",
+    "that the fitted A4 is the log slope rather than a leading amplitude",
+    "freedom from spin-8 in the r=2/r=1 entry, where the leakage does not cancel; only the r=4/r=1 entry is clean"
+  ],
+  "rejected_alternative": {
+    "shape": "three orientations per rung, spin-8 fitted rather than bounded",
+    "site_count": 1300,
+    "what_the_pilot_also_found": "the analysis path returned zeros at N=1300: the binomial tail's recurrence starts at (1-p)^N, which underflows to exactly zero near 790 sites at the percolation threshold, and then stays zero. Fixed in analyze_p48_retrospective by anchoring the recurrence at the mode",
+    "why_rejected": "measured, not estimated. A 1M pilot at N=1300 gave a per-difference noise of 0.0131 against 0.0065 at N=290, a factor of 2.0 for a 4.5 times larger torus, while the amplitude falls roughly as N^-5/4. Reaching a decisive ratio there is about three orders of magnitude beyond what we can spend"
+  },
+  "roadmap_item": 2,
+  "rungs": [
+    {
+      "aspect_ratio": 1,
+      "delta_cos4": "8064/4205",
+      "delta_cos8": "-9257472/88410125",
+      "first_matrix_row_major": [
+        2,
+        -24,
+        24,
+        2
+      ],
+      "first_rep": [
+        2,
+        24
+      ],
+      "gaussian_norm": 580,
+      "modulus": "i",
+      "orientations_available": 2,
+      "second_matrix_row_major": [
+        16,
+        -18,
+        18,
+        16
+      ],
+      "second_rep": [
+        16,
+        18
+      ],
+      "spin8_leakage": "-1148/21025"
+    },
+    {
+      "aspect_ratio": 2,
+      "delta_cos4": "8064/4205",
+      "delta_cos8": "9257472/88410125",
+      "first_matrix_row_major": [
+        1,
+        -34,
+        17,
+        2
+      ],
+      "first_rep": [
+        1,
+        17
+      ],
+      "gaussian_norm": 290,
+      "modulus": "2i",
+      "orientations_available": 2,
+      "second_matrix_row_major": [
+        11,
+        -26,
+        13,
+        22
+      ],
+      "second_rep": [
+        11,
+        13
+      ],
+      "spin8_leakage": "1148/21025"
+    },
+    {
+      "aspect_ratio": 4,
+      "delta_cos4": "8064/4205",
+      "delta_cos8": "-9257472/88410125",
+      "first_matrix_row_major": [
+        1,
+        -48,
+        12,
+        4
+      ],
+      "first_rep": [
+        1,
+        12
+      ],
+      "gaussian_norm": 145,
+      "modulus": "4i",
+      "orientations_available": 2,
+      "second_matrix_row_major": [
+        8,
+        -36,
+        9,
+        32
+      ],
+      "second_rep": [
+        8,
+        9
+      ],
+      "spin8_leakage": "-1148/21025"
+    }
+  ],
+  "runs_total": 3,
+  "schema": "matching-one/aspect-ladder-design/v2",
+  "score_is_amplitude_free": "both entries are ratios of A4 within one observable, so the unknown non-universal overlap constant and the additive constant cancel",
+  "shared_leverage": "8064/4205",
+  "site_count": 580,
+  "spin8_cancels_in_the_discriminating_ratio": true,
+  "status": "design_only_no_measurement",
+  "what_separates_at_r4": "at r=2 the weight-4 shape predicts 2.75 and the bare aspect ratio 2.00, which the existing 9 percent measurement cannot split; at r=4 they predict 10.99 and 4.00, a factor of 2.7 apart, so about 30 percent relative precision on the r=1 amplitude decides it either way",
+  "what_the_r2_rung_adds": "a replication of the N=290 number at a different site count, in a geometry where the leakage enters the r=2/r=1 ratio once rather than twice",
+  "why_that_matters": "the estimator is A4 + A8 * leakage. When the r=1 and r=4 rungs carry the same leakage, the ratio A4(4i)/A4(i) -- the one that discriminates -- has that bias cancel to leading order instead of compounding, which is what the N=290 pair could not do: its two families had equal and *opposite* leakage, so the systematic entered the score twice"
+}

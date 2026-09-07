@@ -48,6 +48,15 @@ SCHEMA="matching-one/degree6-implementation-agreement/v1"
 ISSUE=559
 PRIMARY="scripts/degree6_low_height_exclusion.py"
 REPLICATION="scripts/degree6_independent_replication.py"
+# Artifact directories per coefficient height.  Height 3 is Result F (the
+# committed low-height census); height 4 is Result F' and covers the Ziff
+# "A lattice" quintic, which is why the replication was extended to it.
+HEIGHT_DIRS = {
+    3: {"primary": "pslq-degree6-low-height-{id}",
+        "replication": "pslq-degree6-low-height-replication-{id}"},
+    4: {"primary": "pslq-degree6-height4-{id}",
+        "replication": "pslq-degree6-height4-replication-{id}"},
+}
 
 
 def _require(condition:bool,message:str)->None:
@@ -128,29 +137,31 @@ def build_result(contract_path:Path=DEFAULT_CONTRACT)->dict[str,Any]:
     _require(provenance_digest==provenance["sha256"],"provenance digest drift")
 
     intervals=[]
-    for row in contract["intervals"]:
-        interval_id=row["id"]
-        lower,upper=Fraction(row["lower"]),Fraction(row["upper"])
-        primary=_load(f"pslq-degree6-low-height-{interval_id}")
-        replication=_load(f"pslq-degree6-low-height-replication-{interval_id}")
-        left,right=primary["interval_result"],replication["interval_result"]
-        _require(left["interval_id"]==right["interval_id"]==interval_id,"artifact interval mismatch")
-        for artifact in (primary,replication):
-            _require(artifact["contract_sha256"]==hashlib.sha256(raw).hexdigest(),
-                     f"{interval_id}: artifact was built against a different contract")
-            _require(artifact["provenance_sha256"]==provenance_digest,
-                     f"{interval_id}: artifact was built against a different provenance manifest")
-        cells=_cells(left,right)
-        intervals.append({
-            "interval_id":interval_id,
-            "width_text":_text(upper-lower),
-            "by_degree":cells,
-            "cells_compared":len(cells),
-            "cells_in_agreement":sum(1 for cell in cells if cell["agree"]),
-            "exclusion_verdict":left["excluded"],
-            "exclusion_verdicts_agree":left["excluded"]==right["excluded"],
-            "closest_member":_closest(left,right,lower,upper),
-        })
+    for height, dirs in HEIGHT_DIRS.items():
+        for row in contract["intervals"]:
+            interval_id=row["id"]
+            lower,upper=Fraction(row["lower"]),Fraction(row["upper"])
+            primary=_load(dirs["primary"].format(id=interval_id))
+            replication=_load(dirs["replication"].format(id=interval_id))
+            left,right=primary["interval_result"],replication["interval_result"]
+            _require(left["interval_id"]==right["interval_id"]==interval_id,"artifact interval mismatch")
+            for artifact in (primary,replication):
+                _require(artifact["contract_sha256"]==hashlib.sha256(raw).hexdigest(),
+                         f"{interval_id}: artifact was built against a different contract")
+                _require(artifact["provenance_sha256"]==provenance_digest,
+                         f"{interval_id}: artifact was built against a different provenance manifest")
+            cells=_cells(left,right)
+            intervals.append({
+                "coefficient_height_max":height,
+                "interval_id":interval_id,
+                "width_text":_text(upper-lower),
+                "by_degree":cells,
+                "cells_compared":len(cells),
+                "cells_in_agreement":sum(1 for cell in cells if cell["agree"]),
+                "exclusion_verdict":left["excluded"],
+                "exclusion_verdicts_agree":left["excluded"]==right["excluded"],
+                "closest_member":_closest(left,right,lower,upper),
+            })
 
     cells_compared=sum(row["cells_compared"] for row in intervals)
     cells_agreed=sum(row["cells_in_agreement"] for row in intervals)
@@ -168,9 +179,10 @@ def build_result(contract_path:Path=DEFAULT_CONTRACT)->dict[str,Any]:
             "sha256":_digest(ROOT/"scripts"/"exact_polynomial_root_certificate.py"),
             "role":"exact Sturm isolation, imported unchanged by both",
             "contribution_to_this_result":"none: both screens retain zero candidates at every "
-                                          "degree on every interval, so root isolation never runs "
-                                          "during either census",
+                                          "degree on every interval at both heights, so root "
+                                          "isolation never runs during either census",
         },
+        "heights_compared":[3,4],
         "fields_compared_per_cell":["polynomials_in_class","screen_survivors",
                                     "root_containing_polynomials","distinct_roots_in_interval"],
         "cells_compared":cells_compared,
@@ -181,8 +193,9 @@ def build_result(contract_path:Path=DEFAULT_CONTRACT)->dict[str,Any]:
                                  and all(row["closest_member"]["coefficients_agree"] for row in intervals)
                                  and all(row["closest_member"]["within_mean_value_bound"] for row in intervals)),
         "claim_boundary":{
-            "included":"the degree-1..6 height-3 census of section 6.5 is reproduced by a second "
-                       "independently written enumeration and certified screen",
+            "included":"the degree-1..6 censuses of section 6.5 (height 3) and section 6.6 "
+                       "(height 4) are each reproduced by a second independently written "
+                       "enumeration and certified screen",
             "excluded":"the degree-4 height-100 census, whose C++ meet-in-the-middle screen and "
                        "retained-candidate Sturm decisions have no second implementation; also "
                        "higher degree or height, closed forms, or transcendence",

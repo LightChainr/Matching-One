@@ -1,0 +1,65 @@
+{
+  "batches": 20,
+  "budget": {
+    "20_percent_relative_on_A4_at_r1": {
+      "hours_per_rung": 1.8,
+      "samples_per_rung": 193000000
+    },
+    "recommended": {
+      "hours_total": 5.5,
+      "runs": 3,
+      "samples_per_rung": 200000000
+    }
+  },
+  "engine": "src/threshold_rank_integer_period_mc.cpp",
+  "may_not_be_pooled_into_the_scoring_run": "replica offset 800000000; the scoring run must use a different, disjoint offset",
+  "replica_offset": 800000000,
+  "rungs": {
+    "r1": {
+      "Mbar_prime": {
+        "standard_error": 0.0022745979755969667,
+        "value": 18.960567013566607
+      },
+      "P4_S_prime": {
+        "standard_error": 0.0010236664831014919,
+        "value": 0.0031188425090466075
+      },
+      "delta_cos4": 1.9177170035671818,
+      "histogram_sha256": "67af881c7de42bfda7c03049e7c8e0711c655e60052da0ba164ad74d737a5dab",
+      "per_difference_noise": 0.001963102620625548
+    },
+    "r2": {
+      "Mbar_prime": {
+        "standard_error": 0.002229572815951751,
+        "value": 15.258067853993914
+      },
+      "P4_S_prime": {
+        "standard_error": 0.0012766336268743284,
+        "value": 9.01857567536727e-05
+      },
+      "delta_cos4": 1.9177170035671818,
+      "histogram_sha256": "45ffcd49dfb594cb97169a10ad9b302c4bc2e7c6469fd6d1831da343119d5ecf",
+      "per_difference_noise": 0.002448222013582541
+    },
+    "r4": {
+      "Mbar_prime": {
+        "standard_error": 0.0021105598353386035,
+        "value": 6.324053317488565
+      },
+      "P4_S_prime": {
+        "standard_error": 0.000928865052807328,
+        "value": 0.004157714361921198
+      },
+      "delta_cos4": 1.9177170035671818,
+      "histogram_sha256": "9727b4ffd4bb7ec22401f990b43cb2ac83085f00f86275fe09798a8148e25400",
+      "per_difference_noise": 0.0017813003057879412
+    }
+  },
+  "samples_per_rung": 10000000,
+  "schema": "matching-one/aspect-ladder-n580-pilot/v1",
+  "seed": "20260905",
+  "site_count": 580,
+  "status": "pilot_only_standard_errors_usable_central_values_are_not",
+  "throughput_seconds_per_million_samples": 33,
+  "why_the_central_values_may_not_be_read": "a 200000-sample pilot of this channel once returned an amplitude five times its 20M value. Relative errors here are 33, 1400 and 22 percent. Standard errors do extrapolate as one over root n -- a 1M pilot at N=290 predicted the committed 200M standard error to within 22 percent -- and they are the only output of this run that may be used."
+}

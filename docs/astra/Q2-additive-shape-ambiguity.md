@@ -96,6 +96,13 @@ asking to have it rationalized. If a linear-in-`r` law falls out of a correct
 treatment, that is informative; if it does not, please say so plainly rather than
 constructing one.
 
+We have since frozen the design that gives that reading its one chance to lose:
+an aspect ladder `r = 1, 2, 4` at a single site count, with the bare aspect ratio
+named as a competitor before any block runs
+(`predictions/aspect_ladder_n1300_20260905.yaml`). At `r = 4` the weight-4 shape
+predicts `10.99` and the bare ratio `4.00`. So the measurement is being taken
+either way, and an answer here is worth more before it than after.
+
 ## The question
 
 > Fix the two-parameter ambiguity `(α, C)`: `α` the Jordan gauge `q~ → q~ + α q`, and

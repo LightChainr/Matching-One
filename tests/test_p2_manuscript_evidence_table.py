@@ -247,14 +247,17 @@ class P2ManuscriptEvidenceTests(unittest.TestCase):
         """Section 7's second-implementation claim, and the limit on it."""
         agreement = self.result["implementation_agreement"]
         self.assertTrue(agreement["implementations_agree"])
-        self.assertEqual(agreement["cells_compared"], 24)
-        self.assertEqual(agreement["cells_in_agreement"], 24)
+        self.assertEqual(agreement["heights_compared"], [3, 4])
+        self.assertEqual(agreement["cells_compared"], 48)
+        self.assertEqual(agreement["cells_in_agreement"], 48)
         self.assertTrue(agreement["partial"])
         self.assertIn("degree-4 height-100", agreement["not_replicated"])
         screens = {row["screen"] for row in agreement["implementations"]}
         self.assertEqual(len(screens), 2)
+        self.assertEqual({row["coefficient_height_max"] for row in agreement["rows"]}, {3, 4})
+        self.assertEqual(len(agreement["rows"]), 8)
         for row in agreement["rows"]:
-            with self.subTest(interval=row["interval_id"]):
+            with self.subTest(height=row["coefficient_height_max"], interval=row["interval_id"]):
                 self.assertEqual(row["cells_in_agreement"], row["cells_compared"])
                 self.assertTrue(row["exclusion_verdicts_agree"])
                 self.assertTrue(row["closest_coefficients_agree"])

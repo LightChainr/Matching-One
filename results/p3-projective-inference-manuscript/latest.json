@@ -1,0 +1,362 @@
+{
+  "admissible_corr_r2_r4": [
+    -0.985,
+    0.98
+  ],
+  "batches": 100,
+  "channel": "P4_S_prime",
+  "covariance_is_complete": false,
+  "curvature": {
+    "at_least_one_competitor_predicts_a_positive_curvature": true,
+    "measured": {
+      "definition": "second divided difference on r = 1, 2, 4: (m4 - 3 m2 + 2 m1) / 6",
+      "sign_predicted_by_every_competitor": "zero for the two families linear in r, strictly positive for every modular family; the measurement is negative",
+      "standard_error": 0.00015296870813746256,
+      "value": -0.0004663061398637359,
+      "why_it_is_safe": "a linear functional of the response, so it has no denominator and no matrix inverse; nothing about it degrades when one rung is close to zero, which is what broke the ratio test",
+      "z": -3.0483760080179167,
+      "z_over_admissible_correlations": [
+        -3.7895654133864847,
+        -2.619049652883127
+      ]
+    },
+    "no_competitor_predicts_a_negative_curvature": true,
+    "predicted": [
+      {
+        "competitor": "bare_aspect_ratio",
+        "curvature_predicted": -1.1102230246251565e-16
+      },
+      {
+        "competitor": "no_modulus_dependence",
+        "curvature_predicted": -2.7755575615628914e-17
+      },
+      {
+        "competitor": "plain_area_scaling",
+        "curvature_predicted": 0.9999999999999998
+      },
+      {
+        "competitor": "q4_jordan_weight4",
+        "curvature_predicted": 0.7901334764833332
+      },
+      {
+        "competitor": "weight12_E12",
+        "curvature_predicted": 330.7933870516666
+      },
+      {
+        "competitor": "weight12_E4_cubed",
+        "curvature_predicted": 211.21214643333334
+      },
+      {
+        "competitor": "weight12_delta",
+        "curvature_predicted": 0.2708379835123284
+      },
+      {
+        "competitor": "weight8_E8",
+        "curvature_predicted": 16.68503392
+      }
+    ],
+    "weights": [
+      0.3333333333333333,
+      -0.5,
+      0.16666666666666666
+    ]
+  },
+  "fieller_interval_3sigma": {
+    "r2_over_r1": {
+      "lower": 1.6364674379955721,
+      "upper": 18.908043339734434
+    },
+    "r4_over_r1": {
+      "lower": 2.3946684331198034,
+      "upper": 27.4683890189934
+    }
+  },
+  "issue": 579,
+  "response": [
+    {
+      "rung": 1,
+      "sigma_from_zero": 3.6190381588102256,
+      "standard_error": 0.00024913893253110386,
+      "value": 0.0009016433036753112
+    },
+    {
+      "rung": 2,
+      "sigma_from_zero": 11.234491908622456,
+      "standard_error": 0.00025911069679858926,
+      "value": 0.0029109770266212776
+    },
+    {
+      "rung": 4,
+      "sigma_from_zero": 21.174799190726386,
+      "standard_error": 0.00019512853917124002,
+      "value": 0.004131807633330795
+    }
+  ],
+  "samples_per_rung": 200000000,
+  "schema": "matching-one/p3-projective-inference-manuscript/v1",
+  "site_count": 580,
+  "sources": {
+    "frozen_design": "predictions/aspect_ladder_n580_20260905.yaml",
+    "frozen_scoring": "results/aspect-ladder-n580/latest.json",
+    "projective_scoring": "results/aspect-ladder-n580-projective/latest.json"
+  },
+  "spin8": {
+    "assumed_by_the_frozen_design": "|A8/A4| well below 1",
+    "how_the_requirement_is_solved": "from the per-rung leakage signs the frozen design records -- r=1 and r=4 carry -1148/21025 and r=2 carries +1148/21025 -- so with rho = A8/A4 the same at all three rungs, u = m(2) / (v2 * amplitude fitted from r=1 and r=4) equals (1 + lambda rho) / (1 - lambda rho) and rho = (u-1)/(lambda(u+1))",
+    "largest_requirement": 17.4975818194515,
+    "leakage_coefficient": 0.05460166468489893,
+    "provenance": {
+      "assumed_by_the_frozen_design": "|A8/A4| well below 1",
+      "how_the_requirement_is_solved": "from the per-rung leakage signs the frozen design records -- r=1 and r=4 carry -1148/21025 and r=2 carries +1148/21025 -- so with rho = A8/A4 the same at all three rungs, u = m(2) / (v2 * amplitude fitted from r=1 and r=4) equals (1 + lambda rho) / (1 - lambda rho) and rho = (u-1)/(lambda(u+1))",
+      "traces_to": "predictions/modulus_fingerprint_n290_v2_20260905.yaml, quoting the committed H4-beats-H8 results as H4 0.4163/2 against H8 16.0120/2",
+      "what_that_actually_is": "a model-selection result on a homology character, not a measurement of the angular spin-8 to spin-4 amplitude ratio. The inference from one to the other is a plausibility argument and is not quantified anywhere in the repository",
+      "what_that_solution_assumes": "that A8/A4 is the same at all three aspect ratios. That is what a single bound on |A8/A4| presupposes when it is applied to every rung at once, so it is the design's own assumption rather than a new one -- but it is an assumption, and a rung-dependent ratio would change these numbers"
+    },
+    "rows": [
+      {
+        "competitor": "bare_aspect_ratio",
+        "required_abs_A8_over_A4_to_reach_r2": 3.1824107160344903
+      },
+      {
+        "competitor": "no_modulus_dependence",
+        "required_abs_A8_over_A4_to_reach_r2": 0.1927917002925078
+      },
+      {
+        "competitor": "plain_area_scaling",
+        "required_abs_A8_over_A4_to_reach_r2": 8.540981609702602
+      },
+      {
+        "competitor": "q4_jordan_weight4",
+        "required_abs_A8_over_A4_to_reach_r2": 8.554041060067567
+      },
+      {
+        "competitor": "weight12_E12",
+        "required_abs_A8_over_A4_to_reach_r2": 17.4975818194515
+      },
+      {
+        "competitor": "weight12_E4_cubed",
+        "required_abs_A8_over_A4_to_reach_r2": 17.495842070093417
+      },
+      {
+        "competitor": "weight12_delta",
+        "required_abs_A8_over_A4_to_reach_r2": 15.725529111410033
+      },
+      {
+        "competitor": "weight8_E8",
+        "required_abs_A8_over_A4_to_reach_r2": 15.248255876821228
+      }
+    ],
+    "smallest_requirement": 0.1927917002925078,
+    "what_that_solution_assumes": "that A8/A4 is the same at all three aspect ratios. That is what a single bound on |A8/A4| presupposes when it is applied to every rung at once, so it is the design's own assumption rather than a new one -- but it is an assumption, and a rung-dependent ratio would change these numbers"
+  },
+  "two_entry_control": {
+    "entry": "r4_over_r1",
+    "largest_relative_deviation": 1.5427667281073732e-15,
+    "rows": [
+      {
+        "competitor": "bare_aspect_ratio",
+        "fieller_z": 0.5018674220172588,
+        "fieller_z_squared": 0.2518709092822493,
+        "projective_statistic_two_entries": 0.2518709092822489,
+        "relative_deviation": 1.5427667281073732e-15
+      },
+      {
+        "competitor": "no_modulus_dependence",
+        "fieller_z": 9.47723901832477,
+        "fieller_z_squared": 89.81805941045745,
+        "projective_statistic_two_entries": 89.81805941045744,
+        "relative_deviation": 1.5821823371021802e-16
+      },
+      {
+        "competitor": "plain_area_scaling",
+        "fieller_z": -2.5589172641951103,
+        "fieller_z_squared": 6.548057564995788,
+        "projective_statistic_two_entries": 6.548057564995789,
+        "relative_deviation": 1.3563998344304362e-16
+      },
+      {
+        "competitor": "q4_jordan_weight4",
+        "fieller_z": -2.080601604685513,
+        "fieller_z_squared": 4.3289030374199315,
+        "projective_statistic_two_entries": 4.328903037419931,
+        "relative_deviation": 2.0517401568538903e-16
+      },
+      {
+        "competitor": "weight12_E12",
+        "fieller_z": -3.6108418170330143,
+        "fieller_z_squared": 13.03817862763428,
+        "projective_statistic_two_entries": 13.038178627634284,
+        "relative_deviation": 2.7248542762488023e-16
+      },
+      {
+        "competitor": "weight12_E4_cubed",
+        "fieller_z": -3.6061955962333316,
+        "fieller_z_squared": 13.004646678292675,
+        "projective_statistic_two_entries": 13.004646678292675,
+        "relative_deviation": 0.0
+      },
+      {
+        "competitor": "weight12_delta",
+        "fieller_z": 21.174545947690643,
+        "fieller_z_squared": 448.36139609086223,
+        "projective_statistic_two_entries": 448.3613960908622,
+        "relative_deviation": 1.2678035922898337e-16
+      },
+      {
+        "competitor": "weight8_E8",
+        "fieller_z": -3.477960791241494,
+        "fieller_z_squared": 12.09621126541316,
+        "projective_statistic_two_entries": 12.096211265413158,
+        "relative_deviation": 1.468523325546908e-16
+      }
+    ],
+    "what_it_shows": "on the two rungs the frozen test used, the projective statistic is Fieller's z squared to machine precision, so no verdict below moves because the statistic changed"
+  },
+  "verdicts": [
+    {
+      "competitor": "bare_aspect_ratio",
+      "fieller_sigma_one_entry": 0.5018674220172588,
+      "frozen_verdict": "compatible",
+      "projective_sigma_three_rungs": 2.7416123268017065,
+      "projective_verdict": "compatible",
+      "ray": [
+        1.0,
+        2.0,
+        4.0
+      ],
+      "sigma_over_admissible_correlations": [
+        2.1440765898340355,
+        4.7688492476881645
+      ],
+      "verdict_changed": false,
+      "verdict_survives_the_missing_covariance": false
+    },
+    {
+      "competitor": "no_modulus_dependence",
+      "fieller_sigma_one_entry": 9.47723901832477,
+      "frozen_verdict": "excluded",
+      "projective_sigma_three_rungs": 9.220248446442094,
+      "projective_verdict": "excluded",
+      "ray": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sigma_over_admissible_correlations": [
+        9.214918506995293,
+        Infinity
+      ],
+      "verdict_changed": false,
+      "verdict_survives_the_missing_covariance": true
+    },
+    {
+      "competitor": "plain_area_scaling",
+      "fieller_sigma_one_entry": 2.5589172641951103,
+      "frozen_verdict": "compatible",
+      "projective_sigma_three_rungs": 7.133738711613244,
+      "projective_verdict": "excluded",
+      "ray": [
+        1.0,
+        4.0,
+        16.0
+      ],
+      "sigma_over_admissible_correlations": [
+        6.104937105992065,
+        8.93392019413982
+      ],
+      "verdict_changed": true,
+      "verdict_survives_the_missing_covariance": true
+    },
+    {
+      "competitor": "q4_jordan_weight4",
+      "fieller_sigma_one_entry": 2.080601604685513,
+      "frozen_verdict": "compatible",
+      "projective_sigma_three_rungs": 6.997859679376489,
+      "projective_verdict": "excluded",
+      "ray": [
+        1.0,
+        2.75,
+        10.9908008589
+      ],
+      "sigma_over_admissible_correlations": [
+        5.933602731446329,
+        8.858616104770292
+      ],
+      "verdict_changed": true,
+      "verdict_survives_the_missing_covariance": true
+    },
+    {
+      "competitor": "weight12_E12",
+      "fieller_sigma_one_entry": 3.6108418170330143,
+      "frozen_verdict": "excluded",
+      "projective_sigma_three_rungs": 11.253750988906026,
+      "projective_verdict": "excluded",
+      "ray": [
+        1.0,
+        32.515625,
+        2080.30719731
+      ],
+      "sigma_over_admissible_correlations": [
+        11.133083476071072,
+        11.378149352382191
+      ],
+      "verdict_changed": false,
+      "verdict_survives_the_missing_covariance": true
+    },
+    {
+      "competitor": "weight12_E4_cubed",
+      "fieller_sigma_one_entry": 3.6061955962333316,
+      "frozen_verdict": "excluded",
+      "projective_sigma_three_rungs": 11.251829761007931,
+      "projective_verdict": "excluded",
+      "ray": [
+        1.0,
+        20.796875,
+        1327.6635036
+      ],
+      "sigma_over_admissible_correlations": [
+        11.130227368349383,
+        11.377193844580397
+      ],
+      "verdict_changed": false,
+      "verdict_survives_the_missing_covariance": true
+    },
+    {
+      "competitor": "weight12_delta",
+      "fieller_sigma_one_entry": 21.174545947690643,
+      "frozen_verdict": "excluded",
+      "projective_sigma_three_rungs": Infinity,
+      "projective_verdict": "excluded",
+      "ray": [
+        1.0,
+        0.125,
+        2.79010739704e-05
+      ],
+      "sigma_over_admissible_correlations": [
+        Infinity,
+        Infinity
+      ],
+      "verdict_changed": false,
+      "verdict_survives_the_missing_covariance": true
+    },
+    {
+      "competitor": "weight8_E8",
+      "fieller_sigma_one_entry": 3.477960791241494,
+      "frozen_verdict": "excluded",
+      "projective_sigma_three_rungs": 10.46511341805997,
+      "projective_verdict": "excluded",
+      "ray": [
+        1.0,
+        7.5625,
+        120.79770352
+      ],
+      "sigma_over_admissible_correlations": [
+        10.025962742762978,
+        10.968462543592507
+      ],
+      "verdict_changed": false,
+      "verdict_survives_the_missing_covariance": true
+    }
+  ],
+  "what_this_does_not_separate": "a spin-8 amplitude comparable to spin-4, and a C + A4 cos4 + A8 cos8 form that is simply wrong, produce the same arithmetic here. Two orientations per rung determine C and A4 exactly with nothing left over, so this run cannot tell them apart. Three orientations per rung can, and the design already costed that at N=650"
+}

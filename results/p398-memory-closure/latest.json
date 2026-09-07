@@ -1,0 +1,6540 @@
+{
+  "blocks": [
+    {
+      "intervention": "uniform_join_minus_detach",
+      "phase_b_dictionaries": [
+        {
+          "achieved_span": 10,
+          "dictionary": "D0_additive_local_counts",
+          "ladder": [
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.4510885837,
+                  "pooled": 0.1838473317
+                },
+                "+0.250": {
+                  "balanced": 0.4410424739,
+                  "pooled": 0.1949607345
+                },
+                "-0.250": {
+                  "balanced": 0.4656385385,
+                  "pooled": 0.1746277217
+                }
+              },
+              "rank": 3,
+              "worst_primary_balanced": 0.4656385385
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.06869060242,
+                  "pooled": 0.05616641072
+                },
+                "+0.250": {
+                  "balanced": 0.08078135641,
+                  "pooled": 0.06276264477
+                },
+                "-0.250": {
+                  "balanced": 0.05616159192,
+                  "pooled": 0.04849764267
+                }
+              },
+              "rank": 4,
+              "worst_primary_balanced": 0.08078135641
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.05508179031,
+                  "pooled": 0.02455915998
+                },
+                "+0.250": {
+                  "balanced": 0.06040859005,
+                  "pooled": 0.02885559334
+                },
+                "-0.250": {
+                  "balanced": 0.04755775062,
+                  "pooled": 0.01946811306
+                }
+              },
+              "rank": 6,
+              "worst_primary_balanced": 0.06040859005
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 9.934984556e-05,
+                  "pooled": 3.861112505e-05
+                },
+                "+0.250": {
+                  "balanced": 8.156017333e-05,
+                  "pooled": 3.440292082e-05
+                },
+                "-0.250": {
+                  "balanced": 9.27882196e-05,
+                  "pooled": 3.336861154e-05
+                }
+              },
+              "rank": 8,
+              "worst_primary_balanced": 9.27882196e-05
+            },
+            {
+              "rank": 12,
+              "status": "span_degenerate_at_this_width"
+            }
+          ],
+          "members": [
+            "blocks",
+            "singletons",
+            "wrap"
+          ],
+          "memory": {
+            "4": {
+              "M_memory": 0.6227356283,
+              "M_memory_over_markov": 0.07929437197,
+              "coupling_rank": {
+                "column_norms": [
+                  4.01479167e-16,
+                  0.4803844614,
+                  1.217873878,
+                  0.5763400317
+                ],
+                "rank": 3,
+                "vanishing_columns": 1
+              },
+              "decay_time": 0.1352165681,
+              "r_memory_effective": {
+                "0.99": 2,
+                "0.999": 3
+              },
+              "r_memory_numerical": 6,
+              "tail_mass_fraction": 4.615609408e-05
+            },
+            "6": {
+              "M_memory": 0.8755423555,
+              "M_memory_over_markov": 0.06738841194,
+              "coupling_rank": {
+                "column_norms": [
+                  2.808666775e-16,
+                  3.726160183e-16,
+                  1.658813575e-15,
+                  0.5038314737,
+                  0.9210733241,
+                  1.6
+                ],
+                "rank": 2,
+                "vanishing_columns": 3
+              },
+              "decay_time": 0.06256022084,
+              "r_memory_effective": {
+                "0.99": 2,
+                "0.999": 2
+              },
+              "r_memory_numerical": 4,
+              "tail_mass_fraction": 1.746212796e-06
+            }
+          },
+          "r_linear": {
+            "arithmetic": "exact modulo the prime 2147483647",
+            "budget": 14,
+            "dimension": 10,
+            "is_a_certified_lower_bound_on_the_rational_rank": true,
+            "limited_by_budget": false,
+            "reached_the_whole_state_space": false
+          },
+          "r_transport": 4,
+          "seed_span_dimension": 4
+        },
+        {
+          "achieved_span": 10,
+          "dictionary": "D1_plus_size_and_extent",
+          "ladder": [
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.3792691074,
+                  "pooled": 0.2060626992
+                },
+                "+0.250": {
+                  "balanced": 0.3826856165,
+                  "pooled": 0.2112160618
+                },
+                "-0.250": {
+                  "balanced": 0.3825185771,
+                  "pooled": 0.2029586206
+                }
+              },
+              "rank": 3,
+              "worst_primary_balanced": 0.3826856165
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.1194439067,
+                  "pooled": 0.1101039985
+                },
+                "+0.250": {
+                  "balanced": 0.1217882599,
+                  "pooled": 0.1115664773
+                },
+                "-0.250": {
+                  "balanced": 0.1226944902,
+                  "pooled": 0.1113313686
+                }
+              },
+              "rank": 4,
+              "worst_primary_balanced": 0.1226944902
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.06374898436,
+                  "pooled": 0.05274646226
+                },
+                "+0.250": {
+                  "balanced": 0.07446290953,
+                  "pooled": 0.06045087659
+                },
+                "-0.250": {
+                  "balanced": 0.05122147678,
+                  "pooled": 0.04329375282
+                }
+              },
+              "rank": 6,
+              "worst_primary_balanced": 0.07446290953
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.02312501595,
+                  "pooled": 0.008985579562
+                },
+                "+0.250": {
+                  "balanced": 0.02512612718,
+                  "pooled": 0.009787379535
+                },
+                "-0.250": {
+                  "balanced": 0.01984590783,
+                  "pooled": 0.007677241046
+                }
+              },
+              "rank": 8,
+              "worst_primary_balanced": 0.02512612718
+            },
+            {
+              "rank": 12,
+              "status": "span_degenerate_at_this_width"
+            }
+          ],
+          "members": [
+            "blocks",
+            "singletons",
+            "wrap",
+            "max_block",
+            "linked_pairs",
+            "boundary_span"
+          ],
+          "memory": {
+            "6": {
+              "M_memory": 0.6510983587,
+              "M_memory_over_markov": 0.04454482184,
+              "coupling_rank": {
+                "column_norms": [
+                  2.517749163e-16,
+                  0.4140393356,
+                  1.044465936,
+                  0.5381314101,
+                  0.2976443273,
+                  0.9243282624
+                ],
+                "rank": 4,
+                "vanishing_columns": 1
+              },
+              "decay_time": 0.1315153813,
+              "r_memory_effective": {
+                "0.99": 1,
+                "0.999": 2
+              },
+              "r_memory_numerical": 4,
+              "tail_mass_fraction": 1.466725272e-05
+            }
+          },
+          "r_linear": {
+            "arithmetic": "exact modulo the prime 2147483647",
+            "budget": 14,
+            "dimension": 10,
+            "is_a_certified_lower_bound_on_the_rational_rank": true,
+            "limited_by_budget": false,
+            "reached_the_whole_state_space": false
+          },
+          "r_transport": 6,
+          "seed_span_dimension": 7
+        },
+        {
+          "achieved_span": 10,
+          "dictionary": "D2_plus_nonlocal_topology",
+          "ladder": [
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.4953270179,
+                  "pooled": 0.228416784
+                },
+                "+0.250": {
+                  "balanced": 0.4948153757,
+                  "pooled": 0.2339110858
+                },
+                "-0.250": {
+                  "balanced": 0.4977987443,
+                  "pooled": 0.2267254097
+                }
+              },
+              "rank": 3,
+              "worst_primary_balanced": 0.4977987443
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.2503456447,
+                  "pooled": 0.128984094
+                },
+                "+0.250": {
+                  "balanced": 0.2239273238,
+                  "pooled": 0.1253122721
+                },
+                "-0.250": {
+                  "balanced": 0.2946834455,
+                  "pooled": 0.1387821447
+                }
+              },
+              "rank": 4,
+              "worst_primary_balanced": 0.2946834455
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.1418299998,
+                  "pooled": 0.06376387893
+                },
+                "+0.250": {
+                  "balanced": 0.1495012508,
+                  "pooled": 0.07154486966
+                },
+                "-0.250": {
+                  "balanced": 0.1252616657,
+                  "pooled": 0.05367774322
+                }
+              },
+              "rank": 6,
+              "worst_primary_balanced": 0.1495012508
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.0804274039,
+                  "pooled": 0.04287178233
+                },
+                "+0.250": {
+                  "balanced": 0.06055781726,
+                  "pooled": 0.04420065317
+                },
+                "-0.250": {
+                  "balanced": 0.1049387827,
+                  "pooled": 0.04223771265
+                }
+              },
+              "rank": 8,
+              "worst_primary_balanced": 0.1049387827
+            },
+            {
+              "rank": 12,
+              "status": "span_degenerate_at_this_width"
+            }
+          ],
+          "members": [
+            "blocks",
+            "singletons",
+            "wrap",
+            "max_block",
+            "linked_pairs",
+            "boundary_span",
+            "halves_linked",
+            "covering_depth"
+          ],
+          "memory": {
+            "6": {
+              "M_memory": 0.6510983587,
+              "M_memory_over_markov": 0.04454482184,
+              "coupling_rank": {
+                "column_norms": [
+                  2.517749163e-16,
+                  0.4140393356,
+                  1.044465936,
+                  0.5381314101,
+                  0.2976443273,
+                  0.9243282624
+                ],
+                "rank": 4,
+                "vanishing_columns": 1
+              },
+              "decay_time": 0.1315153813,
+              "r_memory_effective": {
+                "0.99": 1,
+                "0.999": 2
+              },
+              "r_memory_numerical": 4,
+              "tail_mass_fraction": 1.466725272e-05
+            }
+          },
+          "r_linear": {
+            "arithmetic": "exact modulo the prime 2147483647",
+            "budget": 14,
+            "dimension": 10,
+            "is_a_certified_lower_bound_on_the_rational_rank": true,
+            "limited_by_budget": false,
+            "reached_the_whole_state_space": false
+          },
+          "r_transport": null,
+          "seed_span_dimension": 9
+        }
+      ],
+      "phase_c_balanced": {
+        "D0_additive_local_counts": {
+          "hankel_singular_values": [
+            1.0,
+            0.4455380371,
+            0.09060541482,
+            0.01403234877,
+            0.002184136835,
+            0.0003781818886,
+            0.0001459604815,
+            1.129093216e-06,
+            4.256099253e-07,
+            3.481088819e-09,
+            2.565917288e-09,
+            1.544573025e-09,
+            1.109895046e-09,
+            1.043330247e-09,
+            9.181770882e-10,
+            7.102526659e-10
+          ],
+          "orders": {
+            "12": {
+              "status": "gramian_rank_deficient"
+            },
+            "3": {
+              "+0.000": {
+                "balanced": 0.01867885666,
+                "pooled": 0.01184007821
+              },
+              "+0.250": {
+                "balanced": 0.02414013848,
+                "pooled": 0.01479953817
+              },
+              "-0.250": {
+                "balanced": 0.0126601568,
+                "pooled": 0.009075014325
+              },
+              "biorthogonality_defect": 5.107025913e-15,
+              "biorthogonality_defect_before_correction": 8.215650382e-15,
+              "long_horizon_growth": 2.615156804e-09
+            },
+            "4": {
+              "+0.000": {
+                "balanced": 0.00392519447,
+                "pooled": 0.004481522897
+              },
+              "+0.250": {
+                "balanced": 0.007129102091,
+                "pooled": 0.00685710497
+              },
+              "-0.250": {
+                "balanced": 0.003908603327,
+                "pooled": 0.004778872715
+              },
+              "biorthogonality_defect": 8.499451143e-14,
+              "biorthogonality_defect_before_correction": 4.59188243e-13,
+              "long_horizon_growth": 5.509636233e-09
+            },
+            "6": {
+              "+0.000": {
+                "balanced": 0.0007761300943,
+                "pooled": 0.0005090498767
+              },
+              "+0.250": {
+                "balanced": 0.001884331603,
+                "pooled": 0.001254505306
+              },
+              "-0.250": {
+                "balanced": 0.001041491024,
+                "pooled": 0.0007835314794
+              },
+              "biorthogonality_defect": 3.696820627e-11,
+              "biorthogonality_defect_before_correction": 3.698019668e-11,
+              "long_horizon_growth": 6.381084297e-09
+            },
+            "8": {
+              "+0.000": {
+                "balanced": 3.377440175e-06,
+                "pooled": 3.079500204e-06
+              },
+              "+0.250": {
+                "balanced": 3.750530409e-05,
+                "pooled": 2.045240943e-05
+              },
+              "-0.250": {
+                "balanced": 8.746351942e-06,
+                "pooled": 4.870349226e-06
+              },
+              "biorthogonality_defect": 5.504814453e-07,
+              "biorthogonality_defect_before_correction": 4.121247258e-06,
+              "long_horizon_growth": 7.313945326e-09
+            }
+          }
+        },
+        "D1_plus_size_and_extent": {
+          "hankel_singular_values": [
+            1.0,
+            0.3517714245,
+            0.1696832521,
+            0.01941265365,
+            0.009278009142,
+            0.001860190976,
+            0.0003989623457,
+            5.73770262e-05,
+            8.029151148e-06,
+            5.327050977e-09,
+            3.730033488e-09,
+            1.022327268e-09,
+            8.740103652e-10,
+            6.135066223e-10,
+            4.253441826e-10,
+            3.486231966e-10
+          ],
+          "orders": {
+            "12": {
+              "status": "gramian_rank_deficient"
+            },
+            "3": {
+              "+0.000": {
+                "balanced": 0.02949094635,
+                "pooled": 0.02912807869
+              },
+              "+0.250": {
+                "balanced": 0.03317521912,
+                "pooled": 0.03419483274
+              },
+              "-0.250": {
+                "balanced": 0.0265046232,
+                "pooled": 0.02550935862
+              },
+              "biorthogonality_defect": 7.327471963e-15,
+              "biorthogonality_defect_before_correction": 7.327471963e-15,
+              "long_horizon_growth": 2.205792499e-09
+            },
+            "4": {
+              "+0.000": {
+                "balanced": 0.01643915336,
+                "pooled": 0.01898560706
+              },
+              "+0.250": {
+                "balanced": 0.02160438637,
+                "pooled": 0.02691213583
+              },
+              "-0.250": {
+                "balanced": 0.01386839109,
+                "pooled": 0.01447635545
+              },
+              "biorthogonality_defect": 7.438494265e-14,
+              "biorthogonality_defect_before_correction": 2.522426712e-13,
+              "long_horizon_growth": 5.574727538e-09
+            },
+            "6": {
+              "+0.000": {
+                "balanced": 0.001096120315,
+                "pooled": 0.0009466815848
+              },
+              "+0.250": {
+                "balanced": 0.002199500508,
+                "pooled": 0.001812767608
+              },
+              "-0.250": {
+                "balanced": 0.001892942416,
+                "pooled": 0.001854398589
+              },
+              "biorthogonality_defect": 3.273381566e-12,
+              "biorthogonality_defect_before_correction": 9.271472479e-12,
+              "long_horizon_growth": 6.014431208e-09
+            },
+            "8": {
+              "+0.000": {
+                "balanced": 2.073972222e-05,
+                "pooled": 1.258984046e-05
+              },
+              "+0.250": {
+                "balanced": 6.206167859e-05,
+                "pooled": 3.690534249e-05
+              },
+              "-0.250": {
+                "balanced": 1.908668217e-05,
+                "pooled": 1.387119485e-05
+              },
+              "biorthogonality_defect": 1.191494903e-09,
+              "biorthogonality_defect_before_correction": 1.391491367e-09,
+              "long_horizon_growth": 6.877498174e-09
+            }
+          }
+        },
+        "D2_plus_nonlocal_topology": {
+          "hankel_singular_values": [
+            1.0,
+            0.5159782858,
+            0.2290088567,
+            0.03444355849,
+            0.02235479891,
+            0.002033968867,
+            0.0008278303318,
+            0.0004820390774,
+            2.905801472e-05,
+            9.149569919e-09,
+            7.416844096e-09,
+            2.246553393e-09,
+            1.416585554e-09,
+            2.525514021e-10,
+            2.068656223e-10,
+            8.730862103e-11
+          ],
+          "orders": {
+            "12": {
+              "status": "gramian_rank_deficient"
+            },
+            "3": {
+              "+0.000": {
+                "balanced": 0.05341783192,
+                "pooled": 0.05901921061
+              },
+              "+0.250": {
+                "balanced": 0.0671898148,
+                "pooled": 0.07239403816
+              },
+              "-0.250": {
+                "balanced": 0.04759587342,
+                "pooled": 0.04687543621
+              },
+              "biorthogonality_defect": 1.970645869e-15,
+              "biorthogonality_defect_before_correction": 4.218847494e-15,
+              "long_horizon_growth": 1.599678791e-09
+            },
+            "4": {
+              "+0.000": {
+                "balanced": 0.03593379621,
+                "pooled": 0.04496797613
+              },
+              "+0.250": {
+                "balanced": 0.05537790324,
+                "pooled": 0.06177281535
+              },
+              "-0.250": {
+                "balanced": 0.02672087933,
+                "pooled": 0.03167396971
+              },
+              "biorthogonality_defect": 5.306866058e-14,
+              "biorthogonality_defect_before_correction": 6.261657859e-14,
+              "long_horizon_growth": 7.953605851e-09
+            },
+            "6": {
+              "+0.000": {
+                "balanced": 0.002150917205,
+                "pooled": 0.002250956028
+              },
+              "+0.250": {
+                "balanced": 0.002771166835,
+                "pooled": 0.002341335015
+              },
+              "-0.250": {
+                "balanced": 0.004286149629,
+                "pooled": 0.005209133004
+              },
+              "biorthogonality_defect": 4.120148667e-12,
+              "biorthogonality_defect_before_correction": 4.370726003e-12,
+              "long_horizon_growth": 7.890261375e-09
+            },
+            "8": {
+              "+0.000": {
+                "balanced": 9.026587153e-05,
+                "pooled": 4.406951821e-05
+              },
+              "+0.250": {
+                "balanced": 0.0002078503415,
+                "pooled": 0.0001094928882
+              },
+              "-0.250": {
+                "balanced": 0.0001179521994,
+                "pooled": 6.911317738e-05
+              },
+              "biorthogonality_defect": 4.967072587e-11,
+              "biorthogonality_defect_before_correction": 1.289692797e-10,
+              "long_horizon_growth": 7.463881881e-09
+            }
+          }
+        }
+      },
+      "phase_c_memory_closure": {
+        "+0.000": {
+          "exact_kernel": {
+            "declared": {
+              "balanced": 0.04870931122,
+              "pooled": 0.02195851735
+            },
+            "held_out": {
+              "balanced": 0.1482136136,
+              "pooled": 0.07359867261
+            }
+          },
+          "exact_kernel_with_forcing": {
+            "declared": {
+              "balanced": 0.04870931122,
+              "pooled": 0.02195851735
+            },
+            "held_out": {
+              "balanced": 0.1265007722,
+              "pooled": 0.06046225855
+            }
+          },
+          "markov_only": {
+            "declared": {
+              "balanced": 0.0573019096,
+              "pooled": 0.02644991132
+            },
+            "held_out": {
+              "balanced": 0.1608462584,
+              "pooled": 0.07809392409
+            }
+          },
+          "poles_1": {
+            "declared": {
+              "balanced": 0.05324458514,
+              "pooled": 0.02349500928
+            },
+            "held_out": {
+              "balanced": 0.1518451089,
+              "pooled": 0.07507015482
+            }
+          },
+          "poles_1_with_forcing": {
+            "declared": {
+              "balanced": 0.05324458514,
+              "pooled": 0.02349500928
+            },
+            "held_out": {
+              "balanced": 0.1306178333,
+              "pooled": 0.06214649192
+            }
+          },
+          "poles_2": {
+            "declared": {
+              "balanced": 0.048709806,
+              "pooled": 0.02195868312
+            },
+            "held_out": {
+              "balanced": 0.1482134806,
+              "pooled": 0.07359858596
+            }
+          },
+          "poles_2_with_forcing": {
+            "declared": {
+              "balanced": 0.048709806,
+              "pooled": 0.02195868312
+            },
+            "held_out": {
+              "balanced": 0.1265006235,
+              "pooled": 0.06046214549
+            }
+          },
+          "poles_3": {
+            "declared": {
+              "balanced": 0.048709319,
+              "pooled": 0.02195851995
+            },
+            "held_out": {
+              "balanced": 0.1482136152,
+              "pooled": 0.07359867276
+            }
+          },
+          "poles_3_with_forcing": {
+            "declared": {
+              "balanced": 0.048709319,
+              "pooled": 0.02195851995
+            },
+            "held_out": {
+              "balanced": 0.1265007739,
+              "pooled": 0.06046225857
+            }
+          },
+          "poles_4": {
+            "declared": {
+              "balanced": 0.04870931122,
+              "pooled": 0.02195851735
+            },
+            "held_out": {
+              "balanced": 0.1482136136,
+              "pooled": 0.07359867261
+            }
+          },
+          "poles_4_with_forcing": {
+            "declared": {
+              "balanced": 0.04870931122,
+              "pooled": 0.02195851735
+            },
+            "held_out": {
+              "balanced": 0.1265007722,
+              "pooled": 0.06046225855
+            }
+          },
+          "poles_6": {
+            "declared": {
+              "balanced": 0.04870931122,
+              "pooled": 0.02195851735
+            },
+            "held_out": {
+              "balanced": 0.1482136136,
+              "pooled": 0.07359867261
+            }
+          },
+          "poles_6_with_forcing": {
+            "declared": {
+              "balanced": 0.04870931122,
+              "pooled": 0.02195851735
+            },
+            "held_out": {
+              "balanced": 0.1265007722,
+              "pooled": 0.06046225855
+            }
+          },
+          "poles_8": {
+            "declared": {
+              "balanced": 0.04870931122,
+              "pooled": 0.02195851735
+            },
+            "held_out": {
+              "balanced": 0.1482136136,
+              "pooled": 0.07359867261
+            }
+          },
+          "poles_8_with_forcing": {
+            "declared": {
+              "balanced": 0.04870931122,
+              "pooled": 0.02195851735
+            },
+            "held_out": {
+              "balanced": 0.1265007722,
+              "pooled": 0.06046225855
+            }
+          }
+        },
+        "+0.250": {
+          "exact_kernel": {
+            "declared": {
+              "balanced": 0.05970647207,
+              "pooled": 0.02889714989
+            },
+            "held_out": {
+              "balanced": 0.1571345058,
+              "pooled": 0.07004952898
+            }
+          },
+          "exact_kernel_with_forcing": {
+            "declared": {
+              "balanced": 0.05970647207,
+              "pooled": 0.02889714989
+            },
+            "held_out": {
+              "balanced": 0.1485399303,
+              "pooled": 0.06672324222
+            }
+          },
+          "markov_only": {
+            "declared": {
+              "balanced": 0.06268065446,
+              "pooled": 0.03073173934
+            },
+            "held_out": {
+              "balanced": 0.1608431665,
+              "pooled": 0.0715018789
+            }
+          },
+          "poles_1": {
+            "declared": {
+              "balanced": 0.05924642504,
+              "pooled": 0.02809507728
+            },
+            "held_out": {
+              "balanced": 0.1541447889,
+              "pooled": 0.06901620267
+            }
+          },
+          "poles_1_with_forcing": {
+            "declared": {
+              "balanced": 0.05924642504,
+              "pooled": 0.02809507728
+            },
+            "held_out": {
+              "balanced": 0.1457842635,
+              "pooled": 0.06580099531
+            }
+          },
+          "poles_2": {
+            "declared": {
+              "balanced": 0.0548503584,
+              "pooled": 0.02645922915
+            },
+            "held_out": {
+              "balanced": 0.1503131971,
+              "pooled": 0.0674258742
+            }
+          },
+          "poles_2_with_forcing": {
+            "declared": {
+              "balanced": 0.0548503584,
+              "pooled": 0.02645922915
+            },
+            "held_out": {
+              "balanced": 0.1417736466,
+              "pooled": 0.06413447339
+            }
+          },
+          "poles_3": {
+            "declared": {
+              "balanced": 0.05485013361,
+              "pooled": 0.02645914624
+            },
+            "held_out": {
+              "balanced": 0.1503134735,
+              "pooled": 0.06742600005
+            }
+          },
+          "poles_3_with_forcing": {
+            "declared": {
+              "balanced": 0.05485013361,
+              "pooled": 0.02645914624
+            },
+            "held_out": {
+              "balanced": 0.1417739586,
+              "pooled": 0.06413461662
+            }
+          },
+          "poles_4": {
+            "declared": {
+              "balanced": 0.05485012776,
+              "pooled": 0.02645914408
+            },
+            "held_out": {
+              "balanced": 0.1503134729,
+              "pooled": 0.06742600007
+            }
+          },
+          "poles_4_with_forcing": {
+            "declared": {
+              "balanced": 0.05485012776,
+              "pooled": 0.02645914408
+            },
+            "held_out": {
+              "balanced": 0.1417739582,
+              "pooled": 0.06413461672
+            }
+          },
+          "poles_6": {
+            "declared": {
+              "balanced": 0.05485012776,
+              "pooled": 0.02645914408
+            },
+            "held_out": {
+              "balanced": 0.1503134729,
+              "pooled": 0.06742600007
+            }
+          },
+          "poles_6_with_forcing": {
+            "declared": {
+              "balanced": 0.05485012776,
+              "pooled": 0.02645914408
+            },
+            "held_out": {
+              "balanced": 0.1417739582,
+              "pooled": 0.06413461672
+            }
+          },
+          "poles_8": {
+            "declared": {
+              "balanced": 0.05485012776,
+              "pooled": 0.02645914408
+            },
+            "held_out": {
+              "balanced": 0.1503134729,
+              "pooled": 0.06742600007
+            }
+          },
+          "poles_8_with_forcing": {
+            "declared": {
+              "balanced": 0.05485012776,
+              "pooled": 0.02645914408
+            },
+            "held_out": {
+              "balanced": 0.1417739582,
+              "pooled": 0.06413461672
+            }
+          }
+        },
+        "-0.250": {
+          "exact_kernel": {
+            "declared": {
+              "balanced": 0.03769149654,
+              "pooled": 0.01575087647
+            },
+            "held_out": {
+              "balanced": 0.1427287649,
+              "pooled": 0.08204477142
+            }
+          },
+          "exact_kernel_with_forcing": {
+            "declared": {
+              "balanced": 0.03769149654,
+              "pooled": 0.01575087647
+            },
+            "held_out": {
+              "balanced": 0.1034858909,
+              "pooled": 0.05462211999
+            }
+          },
+          "markov_only": {
+            "declared": {
+              "balanced": 0.04964161766,
+              "pooled": 0.02127441217
+            },
+            "held_out": {
+              "balanced": 0.1597748533,
+              "pooled": 0.08777080234
+            }
+          },
+          "poles_1": {
+            "declared": {
+              "balanced": 0.04484850733,
+              "pooled": 0.01826658923
+            },
+            "held_out": {
+              "balanced": 0.1490120548,
+              "pooled": 0.08444811548
+            }
+          },
+          "poles_1_with_forcing": {
+            "declared": {
+              "balanced": 0.04484850733,
+              "pooled": 0.01826658923
+            },
+            "held_out": {
+              "balanced": 0.1108483464,
+              "pooled": 0.05751884626
+            }
+          },
+          "poles_2": {
+            "declared": {
+              "balanced": 0.04015948473,
+              "pooled": 0.01679636291
+            },
+            "held_out": {
+              "balanced": 0.1458972138,
+              "pooled": 0.08315268289
+            }
+          },
+          "poles_2_with_forcing": {
+            "declared": {
+              "balanced": 0.04015948473,
+              "pooled": 0.01679636291
+            },
+            "held_out": {
+              "balanced": 0.1068159711,
+              "pooled": 0.0558249065
+            }
+          },
+          "poles_3": {
+            "declared": {
+              "balanced": 0.04015887085,
+              "pooled": 0.01679617308
+            },
+            "held_out": {
+              "balanced": 0.145897362,
+              "pooled": 0.08315278794
+            }
+          },
+          "poles_3_with_forcing": {
+            "declared": {
+              "balanced": 0.04015887085,
+              "pooled": 0.01679617308
+            },
+            "held_out": {
+              "balanced": 0.1068161307,
+              "pooled": 0.05582506058
+            }
+          },
+          "poles_4": {
+            "declared": {
+              "balanced": 0.04015886208,
+              "pooled": 0.01679617037
+            },
+            "held_out": {
+              "balanced": 0.145897361,
+              "pooled": 0.08315278809
+            }
+          },
+          "poles_4_with_forcing": {
+            "declared": {
+              "balanced": 0.04015886208,
+              "pooled": 0.01679617037
+            },
+            "held_out": {
+              "balanced": 0.1068161292,
+              "pooled": 0.05582506104
+            }
+          },
+          "poles_6": {
+            "declared": {
+              "balanced": 0.04015886208,
+              "pooled": 0.01679617037
+            },
+            "held_out": {
+              "balanced": 0.145897361,
+              "pooled": 0.08315278809
+            }
+          },
+          "poles_6_with_forcing": {
+            "declared": {
+              "balanced": 0.04015886208,
+              "pooled": 0.01679617037
+            },
+            "held_out": {
+              "balanced": 0.1068161292,
+              "pooled": 0.05582506104
+            }
+          },
+          "poles_8": {
+            "declared": {
+              "balanced": 0.04015886208,
+              "pooled": 0.01679617037
+            },
+            "held_out": {
+              "balanced": 0.145897361,
+              "pooled": 0.08315278809
+            }
+          },
+          "poles_8_with_forcing": {
+            "declared": {
+              "balanced": 0.04015886208,
+              "pooled": 0.01679617037
+            },
+            "held_out": {
+              "balanced": 0.1068161292,
+              "pooled": 0.05582506104
+            }
+          }
+        },
+        "baseline_fit_relative_error": {
+          "1": 0.05559235674,
+          "2": 0.0001874219305,
+          "3": 4.955353617e-06,
+          "4": 2.064360531e-12,
+          "6": 5.097335548e-13,
+          "8": 4.572335708e-12
+        },
+        "rank": 6
+      },
+      "phase_c_state_augmentation": [
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.05508179031,
+              "pooled": 0.02455915998
+            },
+            "held_out": {
+              "balanced": 0.1588830977,
+              "pooled": 0.07719882532
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.06040859005,
+              "pooled": 0.02885559334
+            },
+            "held_out": {
+              "balanced": 0.1590545936,
+              "pooled": 0.07071197969
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.04755775062,
+              "pooled": 0.01946811306
+            },
+            "held_out": {
+              "balanced": 0.1579279096,
+              "pooled": 0.0868390612
+            }
+          },
+          "added_degrees_of_freedom": 0,
+          "coupling_rank": 2,
+          "rank": 6
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.01987616323,
+              "pooled": 0.013978921
+            },
+            "held_out": {
+              "balanced": 0.148756298,
+              "pooled": 0.06645285181
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.02493512941,
+              "pooled": 0.01735830622
+            },
+            "held_out": {
+              "balanced": 0.144947869,
+              "pooled": 0.06011120982
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.01423208126,
+              "pooled": 0.01002393276
+            },
+            "held_out": {
+              "balanced": 0.1517953205,
+              "pooled": 0.07579555305
+            }
+          },
+          "added_degrees_of_freedom": 1,
+          "coupling_rank": 3,
+          "rank": 7
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 9.934984556e-05,
+              "pooled": 3.861112505e-05
+            },
+            "held_out": {
+              "balanced": 0.004066742863,
+              "pooled": 0.00168811833
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 8.156017333e-05,
+              "pooled": 3.440292082e-05
+            },
+            "held_out": {
+              "balanced": 0.004419065472,
+              "pooled": 0.0015832583
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 9.27882196e-05,
+              "pooled": 3.336861154e-05
+            },
+            "held_out": {
+              "balanced": 0.003346165175,
+              "pooled": 0.001598119569
+            }
+          },
+          "added_degrees_of_freedom": 2,
+          "coupling_rank": 2,
+          "rank": 8
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 4.202654706e-05,
+              "pooled": 1.63331131e-05
+            },
+            "held_out": {
+              "balanced": 0.00786371315,
+              "pooled": 0.002661631768
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 4.943147595e-05,
+              "pooled": 2.085070548e-05
+            },
+            "held_out": {
+              "balanced": 0.008561835305,
+              "pooled": 0.002596167852
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 2.585229374e-05,
+              "pooled": 9.297033083e-06
+            },
+            "held_out": {
+              "balanced": 0.006471526052,
+              "pooled": 0.002422517941
+            }
+          },
+          "added_degrees_of_freedom": 3,
+          "coupling_rank": 1,
+          "rank": 9
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 2.535966495e-15,
+              "pooled": 2.664250453e-15
+            },
+            "held_out": {
+              "balanced": 2.810562258e-15,
+              "pooled": 2.854301149e-15
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 2.306270478e-15,
+              "pooled": 2.454209041e-15
+            },
+            "held_out": {
+              "balanced": 2.580116677e-15,
+              "pooled": 2.337646525e-15
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 2.4013455e-15,
+              "pooled": 2.411271504e-15
+            },
+            "held_out": {
+              "balanced": 1.704332412e-15,
+              "pooled": 1.587362594e-15
+            }
+          },
+          "added_degrees_of_freedom": 4,
+          "coupling_rank": 3,
+          "rank": 10
+        },
+        {
+          "rank": 12,
+          "status": "span_degenerate_at_this_width"
+        }
+      ],
+      "states": 14,
+      "width": 4
+    },
+    {
+      "intervention": "uniform_join_minus_detach",
+      "phase_b_dictionaries": [
+        {
+          "achieved_span": 12,
+          "dictionary": "D0_additive_local_counts",
+          "ladder": [
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.5145739904,
+                  "pooled": 0.1774349462
+                },
+                "+0.250": {
+                  "balanced": 0.5021249915,
+                  "pooled": 0.1878745996
+                },
+                "-0.250": {
+                  "balanced": 0.5311668878,
+                  "pooled": 0.1654897637
+                }
+              },
+              "rank": 3,
+              "worst_primary_balanced": 0.5311668878
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.0980562105,
+                  "pooled": 0.09081617491
+                },
+                "+0.250": {
+                  "balanced": 0.1113366874,
+                  "pooled": 0.09578028699
+                },
+                "-0.250": {
+                  "balanced": 0.08192067811,
+                  "pooled": 0.08042580598
+                }
+              },
+              "rank": 4,
+              "worst_primary_balanced": 0.1113366874
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.08513350117,
+                  "pooled": 0.03481609433
+                },
+                "+0.250": {
+                  "balanced": 0.09315130788,
+                  "pooled": 0.0398296873
+                },
+                "-0.250": {
+                  "balanced": 0.07325122813,
+                  "pooled": 0.02768885242
+                }
+              },
+              "rank": 6,
+              "worst_primary_balanced": 0.09315130788
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.01434672188,
+                  "pooled": 0.008814659713
+                },
+                "+0.250": {
+                  "balanced": 0.02131834918,
+                  "pooled": 0.009844154498
+                },
+                "-0.250": {
+                  "balanced": 0.009342423053,
+                  "pooled": 0.008842622002
+                }
+              },
+              "rank": 8,
+              "worst_primary_balanced": 0.02131834918
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.00573387616,
+                  "pooled": 0.001668066492
+                },
+                "+0.250": {
+                  "balanced": 0.004275773502,
+                  "pooled": 0.001546099596
+                },
+                "-0.250": {
+                  "balanced": 0.0119290326,
+                  "pooled": 0.003297321066
+                }
+              },
+              "rank": 12,
+              "worst_primary_balanced": 0.0119290326
+            }
+          ],
+          "members": [
+            "blocks",
+            "singletons",
+            "wrap"
+          ],
+          "memory": {
+            "6": {
+              "M_memory": 1.016175157,
+              "M_memory_over_markov": 0.08107695194,
+              "coupling_rank": {
+                "column_norms": [
+                  1.844758008e-16,
+                  1.611009337e-15,
+                  2.049288938e-15,
+                  0.6697371694,
+                  1.050210493,
+                  1.900294841
+                ],
+                "rank": 3,
+                "vanishing_columns": 3
+              },
+              "decay_time": 0.08911461074,
+              "r_memory_effective": {
+                "0.99": 3,
+                "0.999": 3
+              },
+              "r_memory_numerical": 9,
+              "tail_mass_fraction": 3.65351606e-05
+            }
+          },
+          "r_linear": {
+            "arithmetic": "exact modulo the prime 2147483647",
+            "budget": 42,
+            "dimension": 26,
+            "is_a_certified_lower_bound_on_the_rational_rank": true,
+            "limited_by_budget": false,
+            "reached_the_whole_state_space": false
+          },
+          "r_transport": 6,
+          "seed_span_dimension": 4
+        },
+        {
+          "achieved_span": 12,
+          "dictionary": "D1_plus_size_and_extent",
+          "ladder": [
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.4364479746,
+                  "pooled": 0.2391986012
+                },
+                "+0.250": {
+                  "balanced": 0.4451008809,
+                  "pooled": 0.2529382033
+                },
+                "-0.250": {
+                  "balanced": 0.4368935203,
+                  "pooled": 0.2246690359
+                }
+              },
+              "rank": 3,
+              "worst_primary_balanced": 0.4451008809
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.181269572,
+                  "pooled": 0.1865953873
+                },
+                "+0.250": {
+                  "balanced": 0.1869912125,
+                  "pooled": 0.1962055674
+                },
+                "-0.250": {
+                  "balanced": 0.1804503093,
+                  "pooled": 0.1761746006
+                }
+              },
+              "rank": 4,
+              "worst_primary_balanced": 0.1869912125
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.1155027724,
+                  "pooled": 0.09439857115
+                },
+                "+0.250": {
+                  "balanced": 0.1322013608,
+                  "pooled": 0.1058126951
+                },
+                "-0.250": {
+                  "balanced": 0.09183125121,
+                  "pooled": 0.07670683543
+                }
+              },
+              "rank": 6,
+              "worst_primary_balanced": 0.1322013608
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.03653994072,
+                  "pooled": 0.01506241465
+                },
+                "+0.250": {
+                  "balanced": 0.04234242514,
+                  "pooled": 0.01778638052
+                },
+                "-0.250": {
+                  "balanced": 0.02939835006,
+                  "pooled": 0.01230910311
+                }
+              },
+              "rank": 8,
+              "worst_primary_balanced": 0.04234242514
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.007182336174,
+                  "pooled": 0.003745587161
+                },
+                "+0.250": {
+                  "balanced": 0.01489229623,
+                  "pooled": 0.006729373863
+                },
+                "-0.250": {
+                  "balanced": 0.003939908032,
+                  "pooled": 0.0031957073
+                }
+              },
+              "rank": 12,
+              "worst_primary_balanced": 0.01489229623
+            }
+          ],
+          "members": [
+            "blocks",
+            "singletons",
+            "wrap",
+            "max_block",
+            "linked_pairs",
+            "boundary_span"
+          ],
+          "memory": {
+            "6": {
+              "M_memory": 1.773200675,
+              "M_memory_over_markov": 0.1246437935,
+              "coupling_rank": {
+                "column_norms": [
+                  2.182073567e-16,
+                  0.524462701,
+                  1.197091724,
+                  0.6995476612,
+                  3.277062564,
+                  1.535005911
+                ],
+                "rank": 5,
+                "vanishing_columns": 1
+              },
+              "decay_time": 0.09598357703,
+              "r_memory_effective": {
+                "0.99": 3,
+                "0.999": 4
+              },
+              "r_memory_numerical": 8,
+              "tail_mass_fraction": 4.951549599e-05
+            },
+            "8": {
+              "M_memory": 1.46033835,
+              "M_memory_over_markov": 0.08992841004,
+              "coupling_rank": {
+                "column_norms": [
+                  1.789463167e-16,
+                  1.362813296e-15,
+                  0.3447351331,
+                  0.5472749112,
+                  3.142122617,
+                  1.474239682,
+                  1.096015472,
+                  1.240313109
+                ],
+                "rank": 6,
+                "vanishing_columns": 2
+              },
+              "decay_time": 0.08577308087,
+              "r_memory_effective": {
+                "0.99": 4,
+                "0.999": 5
+              },
+              "r_memory_numerical": 10,
+              "tail_mass_fraction": 0.0001678888252
+            }
+          },
+          "r_linear": {
+            "arithmetic": "exact modulo the prime 2147483647",
+            "budget": 42,
+            "dimension": 26,
+            "is_a_certified_lower_bound_on_the_rational_rank": true,
+            "limited_by_budget": false,
+            "reached_the_whole_state_space": false
+          },
+          "r_transport": 8,
+          "seed_span_dimension": 7
+        },
+        {
+          "achieved_span": 12,
+          "dictionary": "D2_plus_nonlocal_topology",
+          "ladder": [
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.5323760055,
+                  "pooled": 0.248351004
+                },
+                "+0.250": {
+                  "balanced": 0.5333013274,
+                  "pooled": 0.2606461375
+                },
+                "-0.250": {
+                  "balanced": 0.5338064172,
+                  "pooled": 0.237173778
+                }
+              },
+              "rank": 3,
+              "worst_primary_balanced": 0.5338064172
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.3949199548,
+                  "pooled": 0.1979945792
+                },
+                "+0.250": {
+                  "balanced": 0.3436300359,
+                  "pooled": 0.2031705846
+                },
+                "-0.250": {
+                  "balanced": 0.436335637,
+                  "pooled": 0.1948937583
+                }
+              },
+              "rank": 4,
+              "worst_primary_balanced": 0.436335637
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.2924872972,
+                  "pooled": 0.1063813265
+                },
+                "+0.250": {
+                  "balanced": 0.2808989083,
+                  "pooled": 0.1151132914
+                },
+                "-0.250": {
+                  "balanced": 0.2610545841,
+                  "pooled": 0.0909254675
+                }
+              },
+              "rank": 6,
+              "worst_primary_balanced": 0.2808989083
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.1630268055,
+                  "pooled": 0.06773965942
+                },
+                "+0.250": {
+                  "balanced": 0.1242070898,
+                  "pooled": 0.07411546183
+                },
+                "-0.250": {
+                  "balanced": 0.1838557786,
+                  "pooled": 0.06073363493
+                }
+              },
+              "rank": 8,
+              "worst_primary_balanced": 0.1838557786
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.05129837242,
+                  "pooled": 0.01310837687
+                },
+                "+0.250": {
+                  "balanced": 0.04421582503,
+                  "pooled": 0.0119463263
+                },
+                "-0.250": {
+                  "balanced": 0.05279125735,
+                  "pooled": 0.01567831768
+                }
+              },
+              "rank": 12,
+              "worst_primary_balanced": 0.05279125735
+            }
+          ],
+          "members": [
+            "blocks",
+            "singletons",
+            "wrap",
+            "max_block",
+            "linked_pairs",
+            "boundary_span",
+            "halves_linked",
+            "covering_depth"
+          ],
+          "memory": {
+            "12": {
+              "M_memory": 2.463084627,
+              "M_memory_over_markov": 0.1119267258,
+              "coupling_rank": {
+                "column_norms": [
+                  1.693293902e-16,
+                  1.191768858e-15,
+                  6.886785112e-16,
+                  7.493768922e-16,
+                  3.107071983,
+                  1.334235923,
+                  0.985384603,
+                  1.671901886,
+                  1.105063686,
+                  1.633724687,
+                  3.68389271,
+                  2.217563234
+                ],
+                "rank": 8,
+                "vanishing_columns": 4
+              },
+              "decay_time": 0.09603999413,
+              "r_memory_effective": {
+                "0.99": 5,
+                "0.999": 6
+              },
+              "r_memory_numerical": 15,
+              "tail_mass_fraction": 0.000145765169
+            },
+            "6": {
+              "M_memory": 1.773200675,
+              "M_memory_over_markov": 0.1246437935,
+              "coupling_rank": {
+                "column_norms": [
+                  2.182073567e-16,
+                  0.524462701,
+                  1.197091724,
+                  0.6995476612,
+                  3.277062564,
+                  1.535005911
+                ],
+                "rank": 5,
+                "vanishing_columns": 1
+              },
+              "decay_time": 0.09598357703,
+              "r_memory_effective": {
+                "0.99": 3,
+                "0.999": 4
+              },
+              "r_memory_numerical": 8,
+              "tail_mass_fraction": 4.951549599e-05
+            }
+          },
+          "r_linear": {
+            "arithmetic": "exact modulo the prime 2147483647",
+            "budget": 42,
+            "dimension": 42,
+            "is_a_certified_lower_bound_on_the_rational_rank": true,
+            "limited_by_budget": false,
+            "reached_the_whole_state_space": true
+          },
+          "r_transport": 12,
+          "seed_span_dimension": 9
+        }
+      ],
+      "phase_c_balanced": {
+        "D0_additive_local_counts": {
+          "hankel_singular_values": [
+            1.0,
+            0.5139367285,
+            0.1033946281,
+            0.02582164151,
+            0.001372242443,
+            0.0004044800217,
+            0.0001709497324,
+            3.727069289e-05,
+            3.033633684e-05,
+            5.456672578e-06,
+            5.326624269e-07,
+            1.829323075e-08,
+            1.605585627e-08,
+            3.469295742e-09,
+            9.742282175e-10,
+            8.473581661e-10
+          ],
+          "orders": {
+            "12": {
+              "status": "gramian_rank_deficient"
+            },
+            "3": {
+              "+0.000": {
+                "balanced": 0.02913481927,
+                "pooled": 0.01794437275
+              },
+              "+0.250": {
+                "balanced": 0.0382435925,
+                "pooled": 0.02209347928
+              },
+              "-0.250": {
+                "balanced": 0.01946939918,
+                "pooled": 0.01391953925
+              },
+              "biorthogonality_defect": 2.942091015e-15,
+              "biorthogonality_defect_before_correction": 2.664535259e-15,
+              "long_horizon_growth": 4.453498188e-08
+            },
+            "4": {
+              "+0.000": {
+                "balanced": 0.002857522351,
+                "pooled": 0.003187657576
+              },
+              "+0.250": {
+                "balanced": 0.007697942215,
+                "pooled": 0.007118924592
+              },
+              "-0.250": {
+                "balanced": 0.004102011716,
+                "pooled": 0.004225826434
+              },
+              "biorthogonality_defect": 1.194322419e-13,
+              "biorthogonality_defect_before_correction": 1.229849556e-13,
+              "long_horizon_growth": 1.667146014e-07
+            },
+            "6": {
+              "+0.000": {
+                "balanced": 0.001052154959,
+                "pooled": 0.0007019858191
+              },
+              "+0.250": {
+                "balanced": 0.006665315566,
+                "pooled": 0.002562786941
+              },
+              "-0.250": {
+                "balanced": 0.002963595282,
+                "pooled": 0.001453727135
+              },
+              "biorthogonality_defect": 4.755573713e-11,
+              "biorthogonality_defect_before_correction": 8.654410522e-11,
+              "long_horizon_growth": 2.045435833e-07
+            },
+            "8": {
+              "+0.000": {
+                "balanced": 0.0001153652405,
+                "pooled": 0.0001318617988
+              },
+              "+0.250": {
+                "balanced": 0.003301785373,
+                "pooled": 0.001731941153
+              },
+              "-0.250": {
+                "balanced": 0.00157169858,
+                "pooled": 0.001046391429
+              },
+              "biorthogonality_defect": 3.813966032e-09,
+              "biorthogonality_defect_before_correction": 8.275208074e-09,
+              "long_horizon_growth": 2.046137733e-07
+            }
+          }
+        },
+        "D1_plus_size_and_extent": {
+          "hankel_singular_values": [
+            1.0,
+            0.3800627629,
+            0.2165783949,
+            0.03985858623,
+            0.01096452042,
+            0.002938209361,
+            0.0005448905622,
+            0.0001358672322,
+            0.0001271850034,
+            7.699549949e-05,
+            1.29733035e-05,
+            9.954100735e-07,
+            4.700767001e-07,
+            4.680246057e-08,
+            2.037602107e-08,
+            1.111533729e-08
+          ],
+          "orders": {
+            "12": {
+              "status": "gramian_rank_deficient"
+            },
+            "3": {
+              "+0.000": {
+                "balanced": 0.04723455032,
+                "pooled": 0.04197836817
+              },
+              "+0.250": {
+                "balanced": 0.05047710644,
+                "pooled": 0.04598532078
+              },
+              "-0.250": {
+                "balanced": 0.04289974969,
+                "pooled": 0.03904146286
+              },
+              "biorthogonality_defect": 2.609024108e-15,
+              "biorthogonality_defect_before_correction": 3.330669074e-15,
+              "long_horizon_growth": 2.938367791e-08
+            },
+            "4": {
+              "+0.000": {
+                "balanced": 0.01783404001,
+                "pooled": 0.0190401146
+              },
+              "+0.250": {
+                "balanced": 0.02351353179,
+                "pooled": 0.02927286826
+              },
+              "-0.250": {
+                "balanced": 0.01725145388,
+                "pooled": 0.01741007536
+              },
+              "biorthogonality_defect": 3.996802889e-14,
+              "biorthogonality_defect_before_correction": 5.007105841e-14,
+              "long_horizon_growth": 1.949607682e-07
+            },
+            "6": {
+              "+0.000": {
+                "balanced": 0.001357900803,
+                "pooled": 0.001333995018
+              },
+              "+0.250": {
+                "balanced": 0.006319083176,
+                "pooled": 0.004930339258
+              },
+              "-0.250": {
+                "balanced": 0.004747534018,
+                "pooled": 0.004215909905
+              },
+              "biorthogonality_defect": 3.468864085e-12,
+              "biorthogonality_defect_before_correction": 1.638555958e-11,
+              "long_horizon_growth": 1.834240959e-07
+            },
+            "8": {
+              "+0.000": {
+                "balanced": 0.0007206432471,
+                "pooled": 0.0006685946485
+              },
+              "+0.250": {
+                "balanced": 0.005631968805,
+                "pooled": 0.003985282888
+              },
+              "-0.250": {
+                "balanced": 0.004017727316,
+                "pooled": 0.003836680444
+              },
+              "biorthogonality_defect": 2.850413239e-10,
+              "biorthogonality_defect_before_correction": 3.798295012e-10,
+              "long_horizon_growth": 2.10949186e-07
+            }
+          }
+        },
+        "D2_plus_nonlocal_topology": {
+          "hankel_singular_values": [
+            1.0,
+            0.4903267533,
+            0.3113748017,
+            0.06436038934,
+            0.02238113316,
+            0.003658124059,
+            0.00145528991,
+            0.0006048931616,
+            0.0003637368972,
+            9.896652952e-05,
+            2.68611677e-05,
+            5.594310033e-06,
+            1.085067711e-06,
+            2.284738222e-07,
+            5.039345564e-08,
+            3.0725705e-08
+          ],
+          "orders": {
+            "12": {
+              "+0.000": {
+                "balanced": 2.788628697e-05,
+                "pooled": 1.976724311e-05
+              },
+              "+0.250": {
+                "balanced": 0.0006000402368,
+                "pooled": 0.0002861265701
+              },
+              "-0.250": {
+                "balanced": 0.0004433127116,
+                "pooled": 0.0002013702651
+              },
+              "biorthogonality_defect": 5.446128171e-08,
+              "biorthogonality_defect_before_correction": 1.465075291e-07,
+              "long_horizon_growth": 2.415724144e-07
+            },
+            "3": {
+              "+0.000": {
+                "balanced": 0.07443144459,
+                "pooled": 0.07999051267
+              },
+              "+0.250": {
+                "balanced": 0.08171391401,
+                "pooled": 0.08678515286
+              },
+              "-0.250": {
+                "balanced": 0.07092023662,
+                "pooled": 0.06773612634
+              },
+              "biorthogonality_defect": 1.720845688e-15,
+              "biorthogonality_defect_before_correction": 1.776356839e-15,
+              "long_horizon_growth": 2.101295544e-08
+            },
+            "4": {
+              "+0.000": {
+                "balanced": 0.03415803915,
+                "pooled": 0.02858344698
+              },
+              "+0.250": {
+                "balanced": 0.04854296137,
+                "pooled": 0.04080518453
+              },
+              "-0.250": {
+                "balanced": 0.02934843127,
+                "pooled": 0.02557177845
+              },
+              "biorthogonality_defect": 4.182765245e-14,
+              "biorthogonality_defect_before_correction": 4.52970994e-14,
+              "long_horizon_growth": 2.746374833e-07
+            },
+            "6": {
+              "+0.000": {
+                "balanced": 0.005382721014,
+                "pooled": 0.002655321865
+              },
+              "+0.250": {
+                "balanced": 0.01408586011,
+                "pooled": 0.00982108757
+              },
+              "-0.250": {
+                "balanced": 0.009727205944,
+                "pooled": 0.009131406086
+              },
+              "biorthogonality_defect": 2.026649681e-12,
+              "biorthogonality_defect_before_correction": 5.69899683e-12,
+              "long_horizon_growth": 2.461623549e-07
+            },
+            "8": {
+              "+0.000": {
+                "balanced": 0.0009375174267,
+                "pooled": 0.0006986289842
+              },
+              "+0.250": {
+                "balanced": 0.006396971446,
+                "pooled": 0.004526817552
+              },
+              "-0.250": {
+                "balanced": 0.005696074809,
+                "pooled": 0.00489241958
+              },
+              "biorthogonality_defect": 2.377298358e-11,
+              "biorthogonality_defect_before_correction": 4.075806359e-11,
+              "long_horizon_growth": 2.414439805e-07
+            }
+          }
+        }
+      },
+      "phase_c_memory_closure": {
+        "+0.000": {
+          "exact_kernel": {
+            "declared": {
+              "balanced": 0.06740266074,
+              "pooled": 0.02627998607
+            },
+            "held_out": {
+              "balanced": 0.2043710721,
+              "pooled": 0.08627159446
+            }
+          },
+          "exact_kernel_with_forcing": {
+            "declared": {
+              "balanced": 0.06740266074,
+              "pooled": 0.02627998607
+            },
+            "held_out": {
+              "balanced": 0.1629460288,
+              "pooled": 0.06784906901
+            }
+          },
+          "markov_only": {
+            "declared": {
+              "balanced": 0.08737250051,
+              "pooled": 0.03667306183
+            },
+            "held_out": {
+              "balanced": 0.2315991085,
+              "pooled": 0.09525304358
+            }
+          },
+          "poles_1": {
+            "declared": {
+              "balanced": 0.07738905861,
+              "pooled": 0.02963663318
+            },
+            "held_out": {
+              "balanced": 0.2139199365,
+              "pooled": 0.09075004409
+            }
+          },
+          "poles_1_with_forcing": {
+            "declared": {
+              "balanced": 0.07738905861,
+              "pooled": 0.02963663318
+            },
+            "held_out": {
+              "balanced": 0.1731449431,
+              "pooled": 0.07187832444
+            }
+          },
+          "poles_2": {
+            "declared": {
+              "balanced": 0.07603575213,
+              "pooled": 0.02822458166
+            },
+            "held_out": {
+              "balanced": 0.2096317131,
+              "pooled": 0.08809719435
+            }
+          },
+          "poles_2_with_forcing": {
+            "declared": {
+              "balanced": 0.07603575213,
+              "pooled": 0.02822458166
+            },
+            "held_out": {
+              "balanced": 0.1685549612,
+              "pooled": 0.0698864947
+            }
+          },
+          "poles_3": {
+            "declared": {
+              "balanced": 0.06751052978,
+              "pooled": 0.02632975931
+            },
+            "held_out": {
+              "balanced": 0.2047083787,
+              "pooled": 0.08637686625
+            }
+          },
+          "poles_3_with_forcing": {
+            "declared": {
+              "balanced": 0.06751052978,
+              "pooled": 0.02632975931
+            },
+            "held_out": {
+              "balanced": 0.1633176712,
+              "pooled": 0.06791533304
+            }
+          },
+          "poles_4": {
+            "declared": {
+              "balanced": 0.06739756001,
+              "pooled": 0.02626710317
+            },
+            "held_out": {
+              "balanced": 0.2044145022,
+              "pooled": 0.08626792862
+            }
+          },
+          "poles_4_with_forcing": {
+            "declared": {
+              "balanced": 0.06739756001,
+              "pooled": 0.02626710317
+            },
+            "held_out": {
+              "balanced": 0.1630020984,
+              "pooled": 0.06785151444
+            }
+          },
+          "poles_6": {
+            "declared": {
+              "balanced": 0.06740382215,
+              "pooled": 0.02628023523
+            },
+            "held_out": {
+              "balanced": 0.2043714447,
+              "pooled": 0.08627174158
+            }
+          },
+          "poles_6_with_forcing": {
+            "declared": {
+              "balanced": 0.06740382215,
+              "pooled": 0.02628023523
+            },
+            "held_out": {
+              "balanced": 0.1629464586,
+              "pooled": 0.06784927095
+            }
+          },
+          "poles_8": {
+            "declared": {
+              "balanced": 0.06740266129,
+              "pooled": 0.02627998619
+            },
+            "held_out": {
+              "balanced": 0.2043710721,
+              "pooled": 0.08627159438
+            }
+          },
+          "poles_8_with_forcing": {
+            "declared": {
+              "balanced": 0.06740266129,
+              "pooled": 0.02627998619
+            },
+            "held_out": {
+              "balanced": 0.1629460289,
+              "pooled": 0.06784906893
+            }
+          }
+        },
+        "+0.250": {
+          "exact_kernel": {
+            "declared": {
+              "balanced": 0.08463505205,
+              "pooled": 0.03519648638
+            },
+            "held_out": {
+              "balanced": 0.2236780379,
+              "pooled": 0.08494897749
+            }
+          },
+          "exact_kernel_with_forcing": {
+            "declared": {
+              "balanced": 0.08463505205,
+              "pooled": 0.03519648638
+            },
+            "held_out": {
+              "balanced": 0.197772393,
+              "pooled": 0.0714953666
+            }
+          },
+          "markov_only": {
+            "declared": {
+              "balanced": 0.09549084561,
+              "pooled": 0.04168365568
+            },
+            "held_out": {
+              "balanced": 0.2362249511,
+              "pooled": 0.09400748855
+            }
+          },
+          "poles_1": {
+            "declared": {
+              "balanced": 0.08750893769,
+              "pooled": 0.03557312882
+            },
+            "held_out": {
+              "balanced": 0.2256018977,
+              "pooled": 0.08905701127
+            }
+          },
+          "poles_1_with_forcing": {
+            "declared": {
+              "balanced": 0.08750893769,
+              "pooled": 0.03557312882
+            },
+            "held_out": {
+              "balanced": 0.2000440318,
+              "pooled": 0.07433568743
+            }
+          },
+          "poles_2": {
+            "declared": {
+              "balanced": 0.08611851911,
+              "pooled": 0.03398839965
+            },
+            "held_out": {
+              "balanced": 0.2233943945,
+              "pooled": 0.08550548012
+            }
+          },
+          "poles_2_with_forcing": {
+            "declared": {
+              "balanced": 0.08611851911,
+              "pooled": 0.03398839965
+            },
+            "held_out": {
+              "balanced": 0.1965134509,
+              "pooled": 0.07190609754
+            }
+          },
+          "poles_3": {
+            "declared": {
+              "balanced": 0.07777765847,
+              "pooled": 0.03189531598
+            },
+            "held_out": {
+              "balanced": 0.2174315006,
+              "pooled": 0.08376129561
+            }
+          },
+          "poles_3_with_forcing": {
+            "declared": {
+              "balanced": 0.07777765847,
+              "pooled": 0.03189531598
+            },
+            "held_out": {
+              "balanced": 0.1906074476,
+              "pooled": 0.06986929124
+            }
+          },
+          "poles_4": {
+            "declared": {
+              "balanced": 0.07768980699,
+              "pooled": 0.03183285475
+            },
+            "held_out": {
+              "balanced": 0.2172512278,
+              "pooled": 0.08361505972
+            }
+          },
+          "poles_4_with_forcing": {
+            "declared": {
+              "balanced": 0.07768980699,
+              "pooled": 0.03183285475
+            },
+            "held_out": {
+              "balanced": 0.1903867377,
+              "pooled": 0.06977609073
+            }
+          },
+          "poles_6": {
+            "declared": {
+              "balanced": 0.07769469287,
+              "pooled": 0.03184243813
+            },
+            "held_out": {
+              "balanced": 0.2171737637,
+              "pooled": 0.08362134625
+            }
+          },
+          "poles_6_with_forcing": {
+            "declared": {
+              "balanced": 0.07769469287,
+              "pooled": 0.03184243813
+            },
+            "held_out": {
+              "balanced": 0.1903152773,
+              "pooled": 0.06977417153
+            }
+          },
+          "poles_8": {
+            "declared": {
+              "balanced": 0.07769378639,
+              "pooled": 0.03184222454
+            },
+            "held_out": {
+              "balanced": 0.217173088,
+              "pooled": 0.08362131268
+            }
+          },
+          "poles_8_with_forcing": {
+            "declared": {
+              "balanced": 0.07769378639,
+              "pooled": 0.03184222454
+            },
+            "held_out": {
+              "balanced": 0.1903147209,
+              "pooled": 0.0697740249
+            }
+          }
+        },
+        "-0.250": {
+          "exact_kernel": {
+            "declared": {
+              "balanced": 0.0506923804,
+              "pooled": 0.0190677099
+            },
+            "held_out": {
+              "balanced": 0.1907260903,
+              "pooled": 0.09694129952
+            }
+          },
+          "exact_kernel_with_forcing": {
+            "declared": {
+              "balanced": 0.0506923804,
+              "pooled": 0.0190677099
+            },
+            "held_out": {
+              "balanced": 0.1265703116,
+              "pooled": 0.06618343547
+            }
+          },
+          "markov_only": {
+            "declared": {
+              "balanced": 0.07532001569,
+              "pooled": 0.02951125405
+            },
+            "held_out": {
+              "balanced": 0.222010879,
+              "pooled": 0.1035549117
+            }
+          },
+          "poles_1": {
+            "declared": {
+              "balanced": 0.06316120664,
+              "pooled": 0.02267736357
+            },
+            "held_out": {
+              "balanced": 0.201198304,
+              "pooled": 0.09973767093
+            }
+          },
+          "poles_1_with_forcing": {
+            "declared": {
+              "balanced": 0.06316120664,
+              "pooled": 0.02267736357
+            },
+            "held_out": {
+              "balanced": 0.1379368811,
+              "pooled": 0.06897738399
+            }
+          },
+          "poles_2": {
+            "declared": {
+              "balanced": 0.0619648298,
+              "pooled": 0.02159415504
+            },
+            "held_out": {
+              "balanced": 0.1961872407,
+              "pooled": 0.09780350806
+            }
+          },
+          "poles_2_with_forcing": {
+            "declared": {
+              "balanced": 0.0619648298,
+              "pooled": 0.02159415504
+            },
+            "held_out": {
+              "balanced": 0.1335757478,
+              "pooled": 0.06751019536
+            }
+          },
+          "poles_3": {
+            "declared": {
+              "balanced": 0.05327618202,
+              "pooled": 0.0198655292
+            },
+            "held_out": {
+              "balanced": 0.1926506623,
+              "pooled": 0.09620679818
+            }
+          },
+          "poles_3_with_forcing": {
+            "declared": {
+              "balanced": 0.05327618202,
+              "pooled": 0.0198655292
+            },
+            "held_out": {
+              "balanced": 0.1291481105,
+              "pooled": 0.06559061792
+            }
+          },
+          "poles_4": {
+            "declared": {
+              "balanced": 0.05313490748,
+              "pooled": 0.01981648159
+            },
+            "held_out": {
+              "balanced": 0.1923103685,
+              "pooled": 0.09613919942
+            }
+          },
+          "poles_4_with_forcing": {
+            "declared": {
+              "balanced": 0.05313490748,
+              "pooled": 0.01981648159
+            },
+            "held_out": {
+              "balanced": 0.1288185593,
+              "pooled": 0.06558174751
+            }
+          },
+          "poles_6": {
+            "declared": {
+              "balanced": 0.0531384522,
+              "pooled": 0.01982694975
+            },
+            "held_out": {
+              "balanced": 0.1922984903,
+              "pooled": 0.09614046434
+            }
+          },
+          "poles_6_with_forcing": {
+            "declared": {
+              "balanced": 0.0531384522,
+              "pooled": 0.01982694975
+            },
+            "held_out": {
+              "balanced": 0.1287785039,
+              "pooled": 0.06557639499
+            }
+          },
+          "poles_8": {
+            "declared": {
+              "balanced": 0.05313721221,
+              "pooled": 0.01982672006
+            },
+            "held_out": {
+              "balanced": 0.1922984163,
+              "pooled": 0.09614034018
+            }
+          },
+          "poles_8_with_forcing": {
+            "declared": {
+              "balanced": 0.05313721221,
+              "pooled": 0.01982672006
+            },
+            "held_out": {
+              "balanced": 0.1287783041,
+              "pooled": 0.06557625479
+            }
+          }
+        },
+        "baseline_fit_relative_error": {
+          "1": 0.2015590609,
+          "2": 0.09287647084,
+          "3": 0.03667618668,
+          "4": 0.008797397317,
+          "6": 0.0007333119993,
+          "8": 3.662738713e-06
+        },
+        "rank": 6
+      },
+      "phase_c_state_augmentation": [
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.08513350117,
+              "pooled": 0.03481609433
+            },
+            "held_out": {
+              "balanced": 0.2296149783,
+              "pooled": 0.09381936434
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.09315130788,
+              "pooled": 0.0398296873
+            },
+            "held_out": {
+              "balanced": 0.2341494594,
+              "pooled": 0.09281199563
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.07325122813,
+              "pooled": 0.02768885242
+            },
+            "held_out": {
+              "balanced": 0.2205983424,
+              "pooled": 0.1021380856
+            }
+          },
+          "added_degrees_of_freedom": 0,
+          "coupling_rank": 3,
+          "rank": 6
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.03039675199,
+              "pooled": 0.02259683187
+            },
+            "held_out": {
+              "balanced": 0.2531197478,
+              "pooled": 0.09439817878
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.03669052655,
+              "pooled": 0.02552055523
+            },
+            "held_out": {
+              "balanced": 0.2388366505,
+              "pooled": 0.08865497801
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.02369564633,
+              "pooled": 0.01802493228
+            },
+            "held_out": {
+              "balanced": 0.2584387614,
+              "pooled": 0.1076132512
+            }
+          },
+          "added_degrees_of_freedom": 1,
+          "coupling_rank": 3,
+          "rank": 7
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.01434672188,
+              "pooled": 0.008814659713
+            },
+            "held_out": {
+              "balanced": 0.09341866741,
+              "pooled": 0.05441918679
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.02131834918,
+              "pooled": 0.009844154498
+            },
+            "held_out": {
+              "balanced": 0.1127205579,
+              "pooled": 0.05657255902
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.009342423053,
+              "pooled": 0.008842622002
+            },
+            "held_out": {
+              "balanced": 0.08387225525,
+              "pooled": 0.05828527353
+            }
+          },
+          "added_degrees_of_freedom": 2,
+          "coupling_rank": 3,
+          "rank": 8
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.01302388608,
+              "pooled": 0.004948640935
+            },
+            "held_out": {
+              "balanced": 0.08822955568,
+              "pooled": 0.03581811897
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.02118858959,
+              "pooled": 0.008414756497
+            },
+            "held_out": {
+              "balanced": 0.1059203505,
+              "pooled": 0.0347734517
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.005707588529,
+              "pooled": 0.002514051605
+            },
+            "held_out": {
+              "balanced": 0.08015972819,
+              "pooled": 0.0438557616
+            }
+          },
+          "added_degrees_of_freedom": 3,
+          "coupling_rank": 3,
+          "rank": 9
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.009863782167,
+              "pooled": 0.00416731816
+            },
+            "held_out": {
+              "balanced": 0.1058360292,
+              "pooled": 0.04048047771
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.01045738306,
+              "pooled": 0.005855863756
+            },
+            "held_out": {
+              "balanced": 0.11043872,
+              "pooled": 0.03764755886
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.0145703663,
+              "pooled": 0.004322239995
+            },
+            "held_out": {
+              "balanced": 0.1125806298,
+              "pooled": 0.05114547345
+            }
+          },
+          "added_degrees_of_freedom": 4,
+          "coupling_rank": 3,
+          "rank": 10
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.00573387616,
+              "pooled": 0.001668066492
+            },
+            "held_out": {
+              "balanced": 0.03727426254,
+              "pooled": 0.01665022563
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.004275773502,
+              "pooled": 0.001546099596
+            },
+            "held_out": {
+              "balanced": 0.02908822923,
+              "pooled": 0.01398044418
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.0119290326,
+              "pooled": 0.003297321066
+            },
+            "held_out": {
+              "balanced": 0.0509478942,
+              "pooled": 0.02372955708
+            }
+          },
+          "added_degrees_of_freedom": 6,
+          "coupling_rank": 2,
+          "rank": 12
+        }
+      ],
+      "states": 42,
+      "width": 5
+    },
+    {
+      "intervention": "uniform_join_minus_detach",
+      "phase_b_dictionaries": [
+        {
+          "achieved_span": 12,
+          "dictionary": "D0_additive_local_counts",
+          "ladder": [
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.555599817,
+                  "pooled": 0.1782576557
+                },
+                "+0.250": {
+                  "balanced": 0.5415263456,
+                  "pooled": 0.1869957855
+                },
+                "-0.250": {
+                  "balanced": 0.5728914423,
+                  "pooled": 0.1638562733
+                }
+              },
+              "rank": 3,
+              "worst_primary_balanced": 0.5728914423
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.1193277709,
+                  "pooled": 0.11814161
+                },
+                "+0.250": {
+                  "balanced": 0.1318257949,
+                  "pooled": 0.1215815598
+                },
+                "-0.250": {
+                  "balanced": 0.1010627177,
+                  "pooled": 0.1052322267
+                }
+              },
+              "rank": 4,
+              "worst_primary_balanced": 0.1318257949
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.1051940782,
+                  "pooled": 0.04457797301
+                },
+                "+0.250": {
+                  "balanced": 0.1147615047,
+                  "pooled": 0.04965734115
+                },
+                "-0.250": {
+                  "balanced": 0.09022859552,
+                  "pooled": 0.03591537162
+                }
+              },
+              "rank": 6,
+              "worst_primary_balanced": 0.1147615047
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.02527447868,
+                  "pooled": 0.01518999446
+                },
+                "+0.250": {
+                  "balanced": 0.03523364346,
+                  "pooled": 0.01536158247
+                },
+                "-0.250": {
+                  "balanced": 0.01800753122,
+                  "pooled": 0.0167594943
+                }
+              },
+              "rank": 8,
+              "worst_primary_balanced": 0.03523364346
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.004553693902,
+                  "pooled": 0.002179742576
+                },
+                "+0.250": {
+                  "balanced": 0.01176713557,
+                  "pooled": 0.007757518691
+                },
+                "-0.250": {
+                  "balanced": 0.01603776079,
+                  "pooled": 0.006362746748
+                }
+              },
+              "rank": 12,
+              "worst_primary_balanced": 0.01603776079
+            }
+          ],
+          "members": [
+            "blocks",
+            "singletons",
+            "wrap"
+          ],
+          "memory": {
+            "6": {
+              "M_memory": 1.206826137,
+              "M_memory_over_markov": 0.09769634738,
+              "coupling_rank": {
+                "column_norms": [
+                  2.711280471e-16,
+                  2.024686492e-15,
+                  1.382745248e-15,
+                  0.7464903879,
+                  1.139084723,
+                  2.439403684
+                ],
+                "rank": 3,
+                "vanishing_columns": 3
+              },
+              "decay_time": 0.1048458784,
+              "r_memory_effective": {
+                "0.99": 3,
+                "0.999": 4
+              },
+              "r_memory_numerical": 12,
+              "tail_mass_fraction": 0.0001429916038
+            },
+            "8": {
+              "M_memory": 1.467655583,
+              "M_memory_over_markov": 0.09296461835,
+              "coupling_rank": {
+                "column_norms": [
+                  2.600160472e-16,
+                  1.885561335e-15,
+                  1.348152311e-15,
+                  2.038441615e-15,
+                  6.656114241e-15,
+                  2.318108361,
+                  2.084821515,
+                  2.322568348
+                ],
+                "rank": 3,
+                "vanishing_columns": 5
+              },
+              "decay_time": 0.1035770714,
+              "r_memory_effective": {
+                "0.99": 3,
+                "0.999": 5
+              },
+              "r_memory_numerical": 13,
+              "tail_mass_fraction": 0.00020676531
+            }
+          },
+          "r_linear": {
+            "arithmetic": "exact modulo the prime 2147483647",
+            "budget": 132,
+            "dimension": 72,
+            "is_a_certified_lower_bound_on_the_rational_rank": true,
+            "limited_by_budget": false,
+            "reached_the_whole_state_space": false
+          },
+          "r_transport": 8,
+          "seed_span_dimension": 4
+        },
+        {
+          "achieved_span": 12,
+          "dictionary": "D1_plus_size_and_extent",
+          "ladder": [
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.4754840944,
+                  "pooled": 0.2906989805
+                },
+                "+0.250": {
+                  "balanced": 0.4863397202,
+                  "pooled": 0.3126936683
+                },
+                "-0.250": {
+                  "balanced": 0.4741793084,
+                  "pooled": 0.2639097103
+                }
+              },
+              "rank": 3,
+              "worst_primary_balanced": 0.4863397202
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.2358119954,
+                  "pooled": 0.2632989023
+                },
+                "+0.250": {
+                  "balanced": 0.2434527512,
+                  "pooled": 0.2806063391
+                },
+                "-0.250": {
+                  "balanced": 0.2300997756,
+                  "pooled": 0.2414694775
+                }
+              },
+              "rank": 4,
+              "worst_primary_balanced": 0.2434527512
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.1918382164,
+                  "pooled": 0.1431149998
+                },
+                "+0.250": {
+                  "balanced": 0.207343537,
+                  "pooled": 0.1513932918
+                },
+                "-0.250": {
+                  "balanced": 0.1670346177,
+                  "pooled": 0.1298624566
+                }
+              },
+              "rank": 6,
+              "worst_primary_balanced": 0.207343537
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.07309355752,
+                  "pooled": 0.04726639504
+                },
+                "+0.250": {
+                  "balanced": 0.08104710567,
+                  "pooled": 0.05059221406
+                },
+                "-0.250": {
+                  "balanced": 0.06238238908,
+                  "pooled": 0.04426819013
+                }
+              },
+              "rank": 8,
+              "worst_primary_balanced": 0.08104710567
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.02977275272,
+                  "pooled": 0.02177551923
+                },
+                "+0.250": {
+                  "balanced": 0.03921524585,
+                  "pooled": 0.0273036015
+                },
+                "-0.250": {
+                  "balanced": 0.02165435458,
+                  "pooled": 0.01735671144
+                }
+              },
+              "rank": 12,
+              "worst_primary_balanced": 0.03921524585
+            }
+          ],
+          "members": [
+            "blocks",
+            "singletons",
+            "wrap",
+            "max_block",
+            "linked_pairs",
+            "boundary_span"
+          ],
+          "memory": {
+            "6": {
+              "M_memory": 2.844354202,
+              "M_memory_over_markov": 0.213027109,
+              "coupling_rank": {
+                "column_norms": [
+                  3.458207068e-16,
+                  0.5719453271,
+                  1.215883196,
+                  0.7709548627,
+                  4.053736373,
+                  2.3829374
+                ],
+                "rank": 5,
+                "vanishing_columns": 1
+              },
+              "decay_time": 0.09883544601,
+              "r_memory_effective": {
+                "0.99": 4,
+                "0.999": 4
+              },
+              "r_memory_numerical": 14,
+              "tail_mass_fraction": 0.000151079818
+            },
+            "8": {
+              "M_memory": 2.535696142,
+              "M_memory_over_markov": 0.1646364841,
+              "coupling_rank": {
+                "column_norms": [
+                  2.708254258e-16,
+                  1.665365542e-15,
+                  0.4698446218,
+                  0.6372368698,
+                  3.931290047,
+                  2.365272014,
+                  1.099385938,
+                  1.421553328
+                ],
+                "rank": 6,
+                "vanishing_columns": 2
+              },
+              "decay_time": 0.08006594741,
+              "r_memory_effective": {
+                "0.99": 5,
+                "0.999": 6
+              },
+              "r_memory_numerical": 19,
+              "tail_mass_fraction": 0.0002489927536
+            }
+          },
+          "r_linear": {
+            "arithmetic": "exact modulo the prime 2147483647",
+            "budget": 132,
+            "dimension": 76,
+            "is_a_certified_lower_bound_on_the_rational_rank": true,
+            "limited_by_budget": false,
+            "reached_the_whole_state_space": false
+          },
+          "r_transport": 8,
+          "seed_span_dimension": 7
+        },
+        {
+          "achieved_span": 12,
+          "dictionary": "D2_plus_nonlocal_topology",
+          "ladder": [
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.5672806906,
+                  "pooled": 0.2960281313
+                },
+                "+0.250": {
+                  "balanced": 0.5651387619,
+                  "pooled": 0.316072331
+                },
+                "-0.250": {
+                  "balanced": 0.5694096623,
+                  "pooled": 0.2727892383
+                }
+              },
+              "rank": 3,
+              "worst_primary_balanced": 0.5694096623
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.4825459133,
+                  "pooled": 0.2709362677
+                },
+                "+0.250": {
+                  "balanced": 0.4453632151,
+                  "pooled": 0.2848816748
+                },
+                "-0.250": {
+                  "balanced": 0.4957181487,
+                  "pooled": 0.2545302763
+                }
+              },
+              "rank": 4,
+              "worst_primary_balanced": 0.4957181487
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.446967236,
+                  "pooled": 0.1557626683
+                },
+                "+0.250": {
+                  "balanced": 0.423993012,
+                  "pooled": 0.159467636
+                },
+                "-0.250": {
+                  "balanced": 0.420231362,
+                  "pooled": 0.1476795903
+                }
+              },
+              "rank": 6,
+              "worst_primary_balanced": 0.423993012
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.239987037,
+                  "pooled": 0.08942755178
+                },
+                "+0.250": {
+                  "balanced": 0.2095842966,
+                  "pooled": 0.1020931529
+                },
+                "-0.250": {
+                  "balanced": 0.2404230666,
+                  "pooled": 0.07645112906
+                }
+              },
+              "rank": 8,
+              "worst_primary_balanced": 0.2404230666
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.1243015822,
+                  "pooled": 0.03485360269
+                },
+                "+0.250": {
+                  "balanced": 0.1194883918,
+                  "pooled": 0.03285335979
+                },
+                "-0.250": {
+                  "balanced": 0.1182451936,
+                  "pooled": 0.03982508639
+                }
+              },
+              "rank": 12,
+              "worst_primary_balanced": 0.1194883918
+            }
+          ],
+          "members": [
+            "blocks",
+            "singletons",
+            "wrap",
+            "max_block",
+            "linked_pairs",
+            "boundary_span",
+            "halves_linked",
+            "covering_depth"
+          ],
+          "memory": {
+            "6": {
+              "M_memory": 2.844354202,
+              "M_memory_over_markov": 0.213027109,
+              "coupling_rank": {
+                "column_norms": [
+                  3.458207068e-16,
+                  0.5719453271,
+                  1.215883196,
+                  0.7709548627,
+                  4.053736373,
+                  2.3829374
+                ],
+                "rank": 5,
+                "vanishing_columns": 1
+              },
+              "decay_time": 0.09883544601,
+              "r_memory_effective": {
+                "0.99": 4,
+                "0.999": 4
+              },
+              "r_memory_numerical": 14,
+              "tail_mass_fraction": 0.000151079818
+            }
+          },
+          "r_linear": {
+            "arithmetic": "exact modulo the prime 2147483647",
+            "budget": 132,
+            "dimension": 76,
+            "is_a_certified_lower_bound_on_the_rational_rank": true,
+            "limited_by_budget": false,
+            "reached_the_whole_state_space": false
+          },
+          "r_transport": null,
+          "seed_span_dimension": 9
+        }
+      ],
+      "phase_c_balanced": {
+        "D0_additive_local_counts": {
+          "hankel_singular_values": [
+            1.0,
+            0.5501805334,
+            0.114564521,
+            0.03334185124,
+            0.001613774207,
+            0.0008985465359,
+            0.0002936587274,
+            5.566232808e-05,
+            1.820030054e-05,
+            1.253349778e-05,
+            1.120903734e-06,
+            1.738754156e-07,
+            1.012541872e-07,
+            8.674729851e-09,
+            6.968922499e-09,
+            5.012112684e-09
+          ],
+          "orders": {
+            "12": {
+              "status": "gramian_rank_deficient"
+            },
+            "3": {
+              "+0.000": {
+                "balanced": 0.03543412265,
+                "pooled": 0.02242338246
+              },
+              "+0.250": {
+                "balanced": 0.04788438181,
+                "pooled": 0.02766131512
+              },
+              "-0.250": {
+                "balanced": 0.02391682041,
+                "pooled": 0.01941058937
+              },
+              "biorthogonality_defect": 1.376676551e-14,
+              "biorthogonality_defect_before_correction": 1.521005544e-14,
+              "long_horizon_growth": 3.773358928e-07
+            },
+            "4": {
+              "+0.000": {
+                "balanced": 0.004556385695,
+                "pooled": 0.005122606712
+              },
+              "+0.250": {
+                "balanced": 0.008921657585,
+                "pooled": 0.008697353788
+              },
+              "-0.250": {
+                "balanced": 0.006271150089,
+                "pooled": 0.00606652924
+              },
+              "biorthogonality_defect": 6.128431096e-14,
+              "biorthogonality_defect_before_correction": 7.68274333e-14,
+              "long_horizon_growth": 1.77940079e-06
+            },
+            "6": {
+              "+0.000": {
+                "balanced": 0.0003899143492,
+                "pooled": 0.0003129833979
+              },
+              "+0.250": {
+                "balanced": 0.00623109546,
+                "pooled": 0.00171045542
+              },
+              "-0.250": {
+                "balanced": 0.00814057223,
+                "pooled": 0.002566199248
+              },
+              "biorthogonality_defect": 2.044231451e-11,
+              "biorthogonality_defect_before_correction": 7.884182196e-11,
+              "long_horizon_growth": 2.150172217e-06
+            },
+            "8": {
+              "+0.000": {
+                "balanced": 9.888568076e-05,
+                "pooled": 8.396206867e-05
+              },
+              "+0.250": {
+                "balanced": 0.006239648653,
+                "pooled": 0.002210318172
+              },
+              "-0.250": {
+                "balanced": 0.006039174709,
+                "pooled": 0.001794267006
+              },
+              "biorthogonality_defect": 1.228272595e-09,
+              "biorthogonality_defect_before_correction": 2.815724542e-09,
+              "long_horizon_growth": 2.251443989e-06
+            }
+          }
+        },
+        "D1_plus_size_and_extent": {
+          "hankel_singular_values": [
+            1.0,
+            0.3870152916,
+            0.2531398842,
+            0.05843949016,
+            0.0105841119,
+            0.004370665811,
+            0.001032651915,
+            0.0004611497689,
+            0.0002885567697,
+            8.929243209e-05,
+            4.086132939e-05,
+            2.911890023e-06,
+            9.737075091e-07,
+            5.062408328e-07,
+            2.87299499e-07,
+            7.365890654e-08
+          ],
+          "orders": {
+            "12": {
+              "+0.000": {
+                "balanced": 3.546680897e-05,
+                "pooled": 3.280650672e-05
+              },
+              "+0.250": {
+                "balanced": 0.001326523841,
+                "pooled": 0.0008473845915
+              },
+              "-0.250": {
+                "balanced": 0.0009884684657,
+                "pooled": 0.0008414936021
+              },
+              "biorthogonality_defect": 2.221849366e-07,
+              "biorthogonality_defect_before_correction": 6.604755132e-07,
+              "long_horizon_growth": 2.305545555e-06
+            },
+            "3": {
+              "+0.000": {
+                "balanced": 0.06175492743,
+                "pooled": 0.05238828406
+              },
+              "+0.250": {
+                "balanced": 0.06479499664,
+                "pooled": 0.05529983885
+              },
+              "-0.250": {
+                "balanced": 0.0554404849,
+                "pooled": 0.04999432298
+              },
+              "biorthogonality_defect": 2.609024108e-15,
+              "biorthogonality_defect_before_correction": 3.330669074e-15,
+              "long_horizon_growth": 1.847314949e-07
+            },
+            "4": {
+              "+0.000": {
+                "balanced": 0.01798678624,
+                "pooled": 0.01733706642
+              },
+              "+0.250": {
+                "balanced": 0.02385264974,
+                "pooled": 0.02922312378
+              },
+              "-0.250": {
+                "balanced": 0.01934755379,
+                "pooled": 0.02110206507
+              },
+              "biorthogonality_defect": 4.191091918e-15,
+              "biorthogonality_defect_before_correction": 2.498001805e-14,
+              "long_horizon_growth": 2.328822948e-06
+            },
+            "6": {
+              "+0.000": {
+                "balanced": 0.002461569496,
+                "pooled": 0.002011788242
+              },
+              "+0.250": {
+                "balanced": 0.01160567454,
+                "pooled": 0.01121069189
+              },
+              "-0.250": {
+                "balanced": 0.00948685937,
+                "pooled": 0.01179105897
+              },
+              "biorthogonality_defect": 9.485745522e-13,
+              "biorthogonality_defect_before_correction": 6.431299937e-12,
+              "long_horizon_growth": 2.084862413e-06
+            },
+            "8": {
+              "+0.000": {
+                "balanced": 0.0009005041916,
+                "pooled": 0.000915285375
+              },
+              "+0.250": {
+                "balanced": 0.007237768126,
+                "pooled": 0.007184609799
+              },
+              "-0.250": {
+                "balanced": 0.005658662765,
+                "pooled": 0.00522853035
+              },
+              "biorthogonality_defect": 6.699271693e-11,
+              "biorthogonality_defect_before_correction": 7.485359554e-11,
+              "long_horizon_growth": 2.244249301e-06
+            }
+          }
+        },
+        "D2_plus_nonlocal_topology": {
+          "hankel_singular_values": [
+            1.0,
+            0.440238202,
+            0.3420244717,
+            0.09095193495,
+            0.0214608854,
+            0.007318946754,
+            0.002423138463,
+            0.0008483302682,
+            0.0003611229278,
+            0.0002704318829,
+            0.0001578222973,
+            1.232731446e-05,
+            7.021585584e-06,
+            2.291750774e-06,
+            1.512573961e-06,
+            2.796781029e-07
+          ],
+          "orders": {
+            "12": {
+              "+0.000": {
+                "balanced": 0.0001029366095,
+                "pooled": 6.986484863e-05
+              },
+              "+0.250": {
+                "balanced": 0.002907142318,
+                "pooled": 0.001347030663
+              },
+              "-0.250": {
+                "balanced": 0.00255222056,
+                "pooled": 0.001405911554
+              },
+              "biorthogonality_defect": 2.942807598e-08,
+              "biorthogonality_defect_before_correction": 3.623006783e-08,
+              "long_horizon_growth": 2.702852511e-06
+            },
+            "3": {
+              "+0.000": {
+                "balanced": 0.09565091915,
+                "pooled": 0.09473822975
+              },
+              "+0.250": {
+                "balanced": 0.1044320592,
+                "pooled": 0.1027334415
+              },
+              "-0.250": {
+                "balanced": 0.08828219006,
+                "pooled": 0.07923587561
+              },
+              "biorthogonality_defect": 2.79984369e-15,
+              "biorthogonality_defect_before_correction": 2.664535259e-15,
+              "long_horizon_growth": 2.134312322e-07
+            },
+            "4": {
+              "+0.000": {
+                "balanced": 0.0373154511,
+                "pooled": 0.02415809449
+              },
+              "+0.250": {
+                "balanced": 0.04965133669,
+                "pooled": 0.03652603877
+              },
+              "-0.250": {
+                "balanced": 0.03781520424,
+                "pooled": 0.03208618966
+              },
+              "biorthogonality_defect": 6.439293543e-15,
+              "biorthogonality_defect_before_correction": 1.310063169e-14,
+              "long_horizon_growth": 3.114801486e-06
+            },
+            "6": {
+              "+0.000": {
+                "balanced": 0.005579665618,
+                "pooled": 0.00423598824
+              },
+              "+0.250": {
+                "balanced": 0.01880993862,
+                "pooled": 0.01974660195
+              },
+              "-0.250": {
+                "balanced": 0.01241868388,
+                "pooled": 0.01925124001
+              },
+              "biorthogonality_defect": 1.36168854e-13,
+              "biorthogonality_defect_before_correction": 4.021227795e-12,
+              "long_horizon_growth": 2.94804369e-06
+            },
+            "8": {
+              "+0.000": {
+                "balanced": 0.001821173984,
+                "pooled": 0.001031895825
+              },
+              "+0.250": {
+                "balanced": 0.007737227418,
+                "pooled": 0.005111282958
+              },
+              "-0.250": {
+                "balanced": 0.006787336086,
+                "pooled": 0.005453854142
+              },
+              "biorthogonality_defect": 5.758121757e-11,
+              "biorthogonality_defect_before_correction": 6.681266651e-11,
+              "long_horizon_growth": 2.656758838e-06
+            }
+          }
+        }
+      },
+      "phase_c_memory_closure": {
+        "+0.000": {
+          "exact_kernel": {
+            "declared": {
+              "balanced": 0.07849589013,
+              "pooled": 0.03025716092
+            },
+            "held_out": {
+              "balanced": 0.2449263182,
+              "pooled": 0.1107502676
+            }
+          },
+          "exact_kernel_with_forcing": {
+            "declared": {
+              "balanced": 0.07849589013,
+              "pooled": 0.03025716092
+            },
+            "held_out": {
+              "balanced": 0.1884426543,
+              "pooled": 0.08250288452
+            }
+          },
+          "markov_only": {
+            "declared": {
+              "balanced": 0.1074171419,
+              "pooled": 0.04626988391
+            },
+            "held_out": {
+              "balanced": 0.2960419038,
+              "pooled": 0.1308966747
+            }
+          },
+          "poles_1": {
+            "declared": {
+              "balanced": 0.09483358065,
+              "pooled": 0.03749169662
+            },
+            "held_out": {
+              "balanced": 0.2671041611,
+              "pooled": 0.1217926249
+            }
+          },
+          "poles_1_with_forcing": {
+            "declared": {
+              "balanced": 0.09483358065,
+              "pooled": 0.03749169662
+            },
+            "held_out": {
+              "balanced": 0.2084149926,
+              "pooled": 0.09173410662
+            }
+          },
+          "poles_2": {
+            "declared": {
+              "balanced": 0.08939452375,
+              "pooled": 0.03184823896
+            },
+            "held_out": {
+              "balanced": 0.2474784158,
+              "pooled": 0.1118138654
+            }
+          },
+          "poles_2_with_forcing": {
+            "declared": {
+              "balanced": 0.08939452375,
+              "pooled": 0.03184823896
+            },
+            "held_out": {
+              "balanced": 0.1916449991,
+              "pooled": 0.08378260651
+            }
+          },
+          "poles_3": {
+            "declared": {
+              "balanced": 0.07864463715,
+              "pooled": 0.03031638353
+            },
+            "held_out": {
+              "balanced": 0.2453516777,
+              "pooled": 0.1107803277
+            }
+          },
+          "poles_3_with_forcing": {
+            "declared": {
+              "balanced": 0.07864463715,
+              "pooled": 0.03031638353
+            },
+            "held_out": {
+              "balanced": 0.1888809086,
+              "pooled": 0.08249801483
+            }
+          },
+          "poles_4": {
+            "declared": {
+              "balanced": 0.07849073859,
+              "pooled": 0.03023466465
+            },
+            "held_out": {
+              "balanced": 0.2448566018,
+              "pooled": 0.1107316125
+            }
+          },
+          "poles_4_with_forcing": {
+            "declared": {
+              "balanced": 0.07849073859,
+              "pooled": 0.03023466465
+            },
+            "held_out": {
+              "balanced": 0.1883801543,
+              "pooled": 0.08248584025
+            }
+          },
+          "poles_6": {
+            "declared": {
+              "balanced": 0.07850918759,
+              "pooled": 0.03025676097
+            },
+            "held_out": {
+              "balanced": 0.244924734,
+              "pooled": 0.1107486742
+            }
+          },
+          "poles_6_with_forcing": {
+            "declared": {
+              "balanced": 0.07850918759,
+              "pooled": 0.03025676097
+            },
+            "held_out": {
+              "balanced": 0.1884480543,
+              "pooled": 0.08250294691
+            }
+          },
+          "poles_8": {
+            "declared": {
+              "balanced": 0.07849718883,
+              "pooled": 0.03025675153
+            },
+            "held_out": {
+              "balanced": 0.2449252774,
+              "pooled": 0.110750751
+            }
+          },
+          "poles_8_with_forcing": {
+            "declared": {
+              "balanced": 0.07849718883,
+              "pooled": 0.03025675153
+            },
+            "held_out": {
+              "balanced": 0.1884423394,
+              "pooled": 0.08250335183
+            }
+          }
+        },
+        "+0.250": {
+          "exact_kernel": {
+            "declared": {
+              "balanced": 0.09988321107,
+              "pooled": 0.04083640296
+            },
+            "held_out": {
+              "balanced": 0.2732918722,
+              "pooled": 0.1193018952
+            }
+          },
+          "exact_kernel_with_forcing": {
+            "declared": {
+              "balanced": 0.09988321107,
+              "pooled": 0.04083640296
+            },
+            "held_out": {
+              "balanced": 0.2389640796,
+              "pooled": 0.08020190207
+            }
+          },
+          "markov_only": {
+            "declared": {
+              "balanced": 0.1171079485,
+              "pooled": 0.05135680472
+            },
+            "held_out": {
+              "balanced": 0.3021923194,
+              "pooled": 0.1399929929
+            }
+          },
+          "poles_1": {
+            "declared": {
+              "balanced": 0.1073516538,
+              "pooled": 0.04408546434
+            },
+            "held_out": {
+              "balanced": 0.279765505,
+              "pooled": 0.1302472227
+            }
+          },
+          "poles_1_with_forcing": {
+            "declared": {
+              "balanced": 0.1073516538,
+              "pooled": 0.04408546434
+            },
+            "held_out": {
+              "balanced": 0.2454117466,
+              "pooled": 0.08851169399
+            }
+          },
+          "poles_2": {
+            "declared": {
+              "balanced": 0.1021401023,
+              "pooled": 0.0381827326
+            },
+            "held_out": {
+              "balanced": 0.2665968981,
+              "pooled": 0.1172059634
+            }
+          },
+          "poles_2_with_forcing": {
+            "declared": {
+              "balanced": 0.1021401023,
+              "pooled": 0.0381827326
+            },
+            "held_out": {
+              "balanced": 0.2325753126,
+              "pooled": 0.07903156117
+            }
+          },
+          "poles_3": {
+            "declared": {
+              "balanced": 0.09158281962,
+              "pooled": 0.03645442042
+            },
+            "held_out": {
+              "balanced": 0.2627118402,
+              "pooled": 0.1162297926
+            }
+          },
+          "poles_3_with_forcing": {
+            "declared": {
+              "balanced": 0.09158281962,
+              "pooled": 0.03645442042
+            },
+            "held_out": {
+              "balanced": 0.2283488833,
+              "pooled": 0.07751389453
+            }
+          },
+          "poles_4": {
+            "declared": {
+              "balanced": 0.09146781159,
+              "pooled": 0.03636700148
+            },
+            "held_out": {
+              "balanced": 0.2623249692,
+              "pooled": 0.1161338345
+            }
+          },
+          "poles_4_with_forcing": {
+            "declared": {
+              "balanced": 0.09146781159,
+              "pooled": 0.03636700148
+            },
+            "held_out": {
+              "balanced": 0.2279533536,
+              "pooled": 0.07741685607
+            }
+          },
+          "poles_6": {
+            "declared": {
+              "balanced": 0.09148316905,
+              "pooled": 0.03639245598
+            },
+            "held_out": {
+              "balanced": 0.2623817151,
+              "pooled": 0.116159152
+            }
+          },
+          "poles_6_with_forcing": {
+            "declared": {
+              "balanced": 0.09148316905,
+              "pooled": 0.03639245598
+            },
+            "held_out": {
+              "balanced": 0.2280131348,
+              "pooled": 0.07744495419
+            }
+          },
+          "poles_8": {
+            "declared": {
+              "balanced": 0.09146992737,
+              "pooled": 0.03638971753
+            },
+            "held_out": {
+              "balanced": 0.2623732572,
+              "pooled": 0.1161611648
+            }
+          },
+          "poles_8_with_forcing": {
+            "declared": {
+              "balanced": 0.09146992737,
+              "pooled": 0.03638971753
+            },
+            "held_out": {
+              "balanced": 0.2280008638,
+              "pooled": 0.07744323791
+            }
+          }
+        },
+        "-0.250": {
+          "exact_kernel": {
+            "declared": {
+              "balanced": 0.05843589421,
+              "pooled": 0.02308639824
+            },
+            "held_out": {
+              "balanced": 0.2335932769,
+              "pooled": 0.1182687956
+            }
+          },
+          "exact_kernel_with_forcing": {
+            "declared": {
+              "balanced": 0.05843589421,
+              "pooled": 0.02308639824
+            },
+            "held_out": {
+              "balanced": 0.1454511201,
+              "pooled": 0.09022354411
+            }
+          },
+          "markov_only": {
+            "declared": {
+              "balanced": 0.09227378421,
+              "pooled": 0.03759605846
+            },
+            "held_out": {
+              "balanced": 0.2827851297,
+              "pooled": 0.1304845524
+            }
+          },
+          "poles_1": {
+            "declared": {
+              "balanced": 0.07668959004,
+              "pooled": 0.02909145895
+            },
+            "held_out": {
+              "balanced": 0.2543878152,
+              "pooled": 0.1228700639
+            }
+          },
+          "poles_1_with_forcing": {
+            "declared": {
+              "balanced": 0.07668959004,
+              "pooled": 0.02909145895
+            },
+            "held_out": {
+              "balanced": 0.164655215,
+              "pooled": 0.09390705743
+            }
+          },
+          "poles_2": {
+            "declared": {
+              "balanced": 0.07151838705,
+              "pooled": 0.02480069963
+            },
+            "held_out": {
+              "balanced": 0.2362940544,
+              "pooled": 0.1163558716
+            }
+          },
+          "poles_2_with_forcing": {
+            "declared": {
+              "balanced": 0.07151838705,
+              "pooled": 0.02480069963
+            },
+            "held_out": {
+              "balanced": 0.1499264483,
+              "pooled": 0.08860072739
+            }
+          },
+          "poles_3": {
+            "declared": {
+              "balanced": 0.06068831713,
+              "pooled": 0.02347527029
+            },
+            "held_out": {
+              "balanced": 0.2350987394,
+              "pooled": 0.1152780018
+            }
+          },
+          "poles_3_with_forcing": {
+            "declared": {
+              "balanced": 0.06068831713,
+              "pooled": 0.02347527029
+            },
+            "held_out": {
+              "balanced": 0.1478228839,
+              "pooled": 0.08745870482
+            }
+          },
+          "poles_4": {
+            "declared": {
+              "balanced": 0.06049567644,
+              "pooled": 0.02344976204
+            },
+            "held_out": {
+              "balanced": 0.2346217641,
+              "pooled": 0.1153218899
+            }
+          },
+          "poles_4_with_forcing": {
+            "declared": {
+              "balanced": 0.06049567644,
+              "pooled": 0.02344976204
+            },
+            "held_out": {
+              "balanced": 0.1473663386,
+              "pooled": 0.0875784762
+            }
+          },
+          "poles_6": {
+            "declared": {
+              "balanced": 0.06051625674,
+              "pooled": 0.02346249053
+            },
+            "held_out": {
+              "balanced": 0.2346865098,
+              "pooled": 0.1153303324
+            }
+          },
+          "poles_6_with_forcing": {
+            "declared": {
+              "balanced": 0.06051625674,
+              "pooled": 0.02346249053
+            },
+            "held_out": {
+              "balanced": 0.1474209164,
+              "pooled": 0.08758405421
+            }
+          },
+          "poles_8": {
+            "declared": {
+              "balanced": 0.06050386504,
+              "pooled": 0.02346295363
+            },
+            "held_out": {
+              "balanced": 0.2346905787,
+              "pooled": 0.1153311615
+            }
+          },
+          "poles_8_with_forcing": {
+            "declared": {
+              "balanced": 0.06050386504,
+              "pooled": 0.02346295363
+            },
+            "held_out": {
+              "balanced": 0.1474192437,
+              "pooled": 0.0875839196
+            }
+          }
+        },
+        "baseline_fit_relative_error": {
+          "1": 0.2778912313,
+          "2": 0.1053255239,
+          "3": 0.05564824286,
+          "4": 0.006933446459,
+          "6": 0.002371905018,
+          "8": 0.0006206127723
+        },
+        "rank": 6
+      },
+      "phase_c_state_augmentation": [
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.1051940782,
+              "pooled": 0.04457797301
+            },
+            "held_out": {
+              "balanced": 0.2941582421,
+              "pooled": 0.1292797777
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.1147615047,
+              "pooled": 0.04965734115
+            },
+            "held_out": {
+              "balanced": 0.2996658734,
+              "pooled": 0.1388455631
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.09022859552,
+              "pooled": 0.03591537162
+            },
+            "held_out": {
+              "balanced": 0.2816470194,
+              "pooled": 0.1286808066
+            }
+          },
+          "added_degrees_of_freedom": 0,
+          "coupling_rank": 3,
+          "rank": 6
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.04042279399,
+              "pooled": 0.03414817334
+            },
+            "held_out": {
+              "balanced": 0.3453717963,
+              "pooled": 0.1380920363
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.04670132498,
+              "pooled": 0.03705518513
+            },
+            "held_out": {
+              "balanced": 0.3347778219,
+              "pooled": 0.1403994445
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.03249411121,
+              "pooled": 0.02826369792
+            },
+            "held_out": {
+              "balanced": 0.341609119,
+              "pooled": 0.144843888
+            }
+          },
+          "added_degrees_of_freedom": 1,
+          "coupling_rank": 3,
+          "rank": 7
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.02527447868,
+              "pooled": 0.01518999446
+            },
+            "held_out": {
+              "balanced": 0.1343910944,
+              "pooled": 0.1026035909
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.03523364346,
+              "pooled": 0.01536158247
+            },
+            "held_out": {
+              "balanced": 0.1649843226,
+              "pooled": 0.1086276989
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.01800753122,
+              "pooled": 0.0167594943
+            },
+            "held_out": {
+              "balanced": 0.1234245654,
+              "pooled": 0.1037208251
+            }
+          },
+          "added_degrees_of_freedom": 2,
+          "coupling_rank": 3,
+          "rank": 8
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.02296484429,
+              "pooled": 0.008855929156
+            },
+            "held_out": {
+              "balanced": 0.1691891414,
+              "pooled": 0.063445163
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.03484047667,
+              "pooled": 0.01438422108
+            },
+            "held_out": {
+              "balanced": 0.2297976896,
+              "pooled": 0.06352924341
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.01315244829,
+              "pooled": 0.007197593042
+            },
+            "held_out": {
+              "balanced": 0.1490710915,
+              "pooled": 0.07500534533
+            }
+          },
+          "added_degrees_of_freedom": 3,
+          "coupling_rank": 3,
+          "rank": 9
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.01475781674,
+              "pooled": 0.006691299542
+            },
+            "held_out": {
+              "balanced": 0.1901410227,
+              "pooled": 0.06677939946
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.01664674614,
+              "pooled": 0.0111728991
+            },
+            "held_out": {
+              "balanced": 0.2349775343,
+              "pooled": 0.06275415253
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.02436097404,
+              "pooled": 0.007870446553
+            },
+            "held_out": {
+              "balanced": 0.187139237,
+              "pooled": 0.08255147671
+            }
+          },
+          "added_degrees_of_freedom": 4,
+          "coupling_rank": 3,
+          "rank": 10
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.004553693902,
+              "pooled": 0.002179742576
+            },
+            "held_out": {
+              "balanced": 0.1121533507,
+              "pooled": 0.05366517875
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.01176713557,
+              "pooled": 0.007757518691
+            },
+            "held_out": {
+              "balanced": 0.1512532843,
+              "pooled": 0.05234050975
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.01603776079,
+              "pooled": 0.006362746748
+            },
+            "held_out": {
+              "balanced": 0.1177292076,
+              "pooled": 0.07088753284
+            }
+          },
+          "added_degrees_of_freedom": 6,
+          "coupling_rank": 3,
+          "rank": 12
+        }
+      ],
+      "states": 132,
+      "width": 6
+    },
+    {
+      "intervention": "uniform_join_minus_detach",
+      "phase_b_dictionaries": [
+        {
+          "achieved_span": 12,
+          "dictionary": "D0_additive_local_counts",
+          "ladder": [
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.5842126966,
+                  "pooled": 0.1830632536
+                },
+                "+0.250": {
+                  "balanced": 0.569097989,
+                  "pooled": 0.1903150278
+                },
+                "-0.250": {
+                  "balanced": 0.6016119608,
+                  "pooled": 0.1664065559
+                }
+              },
+              "rank": 3,
+              "worst_primary_balanced": 0.6016119608
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.1354306916,
+                  "pooled": 0.1393323727
+                },
+                "+0.250": {
+                  "balanced": 0.1470327596,
+                  "pooled": 0.1418726534
+                },
+                "-0.250": {
+                  "balanced": 0.1156086329,
+                  "pooled": 0.1241168001
+                }
+              },
+              "rank": 4,
+              "worst_primary_balanced": 0.1470327596
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.119800702,
+                  "pooled": 0.05392715838
+                },
+                "+0.250": {
+                  "balanced": 0.1304293647,
+                  "pooled": 0.05923726616
+                },
+                "-0.250": {
+                  "balanced": 0.1024347885,
+                  "pooled": 0.04368338453
+                }
+              },
+              "rank": 6,
+              "worst_primary_balanced": 0.1304293647
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.0336504684,
+                  "pooled": 0.02093291081
+                },
+                "+0.250": {
+                  "balanced": 0.04538386609,
+                  "pooled": 0.02074807766
+                },
+                "-0.250": {
+                  "balanced": 0.02518740046,
+                  "pooled": 0.02367404298
+                }
+              },
+              "rank": 8,
+              "worst_primary_balanced": 0.04538386609
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.005071786059,
+                  "pooled": 0.00410575953
+                },
+                "+0.250": {
+                  "balanced": 0.0176319433,
+                  "pooled": 0.01250474851
+                },
+                "-0.250": {
+                  "balanced": 0.01930850902,
+                  "pooled": 0.009220138807
+                }
+              },
+              "rank": 12,
+              "worst_primary_balanced": 0.01930850902
+            }
+          ],
+          "members": [
+            "blocks",
+            "singletons",
+            "wrap"
+          ],
+          "memory": {
+            "6": {
+              "M_memory": 1.455709693,
+              "M_memory_over_markov": 0.1173744307,
+              "coupling_rank": {
+                "column_norms": [
+                  4.314312222e-16,
+                  1.451230937e-15,
+                  1.968858739e-15,
+                  0.7901909237,
+                  1.195366415,
+                  2.647758615
+                ],
+                "rank": 3,
+                "vanishing_columns": 3
+              },
+              "decay_time": 0.1192398803,
+              "r_memory_effective": {
+                "0.99": 3,
+                "0.999": 4
+              },
+              "r_memory_numerical": 13,
+              "tail_mass_fraction": 0.0003204396798
+            },
+            "8": {
+              "M_memory": 1.981447423,
+              "M_memory_over_markov": 0.1267318306,
+              "coupling_rank": {
+                "column_norms": [
+                  4.306690643e-16,
+                  1.423600021e-15,
+                  1.962656313e-15,
+                  2.318663959e-15,
+                  4.820469988e-15,
+                  2.594866191,
+                  2.152252297,
+                  2.593055352
+                ],
+                "rank": 3,
+                "vanishing_columns": 5
+              },
+              "decay_time": 0.1276571455,
+              "r_memory_effective": {
+                "0.99": 3,
+                "0.999": 5
+              },
+              "r_memory_numerical": 14,
+              "tail_mass_fraction": 0.0003843559983
+            }
+          },
+          "r_linear": {
+            "arithmetic": "exact modulo the prime 2147483647",
+            "budget": 429,
+            "dimension": 218,
+            "is_a_certified_lower_bound_on_the_rational_rank": true,
+            "limited_by_budget": false,
+            "reached_the_whole_state_space": false
+          },
+          "r_transport": 8,
+          "seed_span_dimension": 4
+        },
+        {
+          "achieved_span": 12,
+          "dictionary": "D1_plus_size_and_extent",
+          "ladder": [
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.505420186,
+                  "pooled": 0.3478629202
+                },
+                "+0.250": {
+                  "balanced": 0.5161946742,
+                  "pooled": 0.3756525507
+                },
+                "-0.250": {
+                  "balanced": 0.5030047388,
+                  "pooled": 0.312191156
+                }
+              },
+              "rank": 3,
+              "worst_primary_balanced": 0.5161946742
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.28308537,
+                  "pooled": 0.3338085261
+                },
+                "+0.250": {
+                  "balanced": 0.2925224198,
+                  "pooled": 0.3568442083
+                },
+                "-0.250": {
+                  "balanced": 0.2722880013,
+                  "pooled": 0.3035851666
+                }
+              },
+              "rank": 4,
+              "worst_primary_balanced": 0.2925224198
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.2712156819,
+                  "pooled": 0.1868819392
+                },
+                "+0.250": {
+                  "balanced": 0.2982049259,
+                  "pooled": 0.1979580118
+                },
+                "-0.250": {
+                  "balanced": 0.23574789,
+                  "pooled": 0.1727058846
+                }
+              },
+              "rank": 6,
+              "worst_primary_balanced": 0.2982049259
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.116165961,
+                  "pooled": 0.08879551003
+                },
+                "+0.250": {
+                  "balanced": 0.1319845451,
+                  "pooled": 0.09691656587
+                },
+                "-0.250": {
+                  "balanced": 0.09611054132,
+                  "pooled": 0.08109492302
+                }
+              },
+              "rank": 8,
+              "worst_primary_balanced": 0.1319845451
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.05170432704,
+                  "pooled": 0.03615237803
+                },
+                "+0.250": {
+                  "balanced": 0.06349927108,
+                  "pooled": 0.04448348298
+                },
+                "-0.250": {
+                  "balanced": 0.03823704382,
+                  "pooled": 0.02907826315
+                }
+              },
+              "rank": 12,
+              "worst_primary_balanced": 0.06349927108
+            }
+          ],
+          "members": [
+            "blocks",
+            "singletons",
+            "wrap",
+            "max_block",
+            "linked_pairs",
+            "boundary_span"
+          ],
+          "memory": {
+            "12": {
+              "M_memory": 3.762775135,
+              "M_memory_over_markov": 0.1548845531,
+              "coupling_rank": {
+                "column_norms": [
+                  4.090697135e-16,
+                  8.335331781e-16,
+                  1.522124021e-15,
+                  2.108985446e-15,
+                  3.750980922e-15,
+                  2.721751401e-15,
+                  1.073329682,
+                  1.239773439,
+                  2.787028151,
+                  2.097056783,
+                  4.470660513,
+                  2.153144797
+                ],
+                "rank": 6,
+                "vanishing_columns": 6
+              },
+              "decay_time": 0.09247357371,
+              "r_memory_effective": {
+                "0.99": 5,
+                "0.999": 6
+              },
+              "r_memory_numerical": 23,
+              "tail_mass_fraction": 0.0004026711167
+            },
+            "6": {
+              "M_memory": 3.665368015,
+              "M_memory_over_markov": 0.2769345728,
+              "coupling_rank": {
+                "column_norms": [
+                  4.769379204e-16,
+                  0.6026534771,
+                  1.223377427,
+                  0.8095042643,
+                  3.70318667,
+                  2.802634593
+                ],
+                "rank": 5,
+                "vanishing_columns": 1
+              },
+              "decay_time": 0.1163261272,
+              "r_memory_effective": {
+                "0.99": 4,
+                "0.999": 4
+              },
+              "r_memory_numerical": 16,
+              "tail_mass_fraction": 0.0003849215881
+            }
+          },
+          "r_linear": {
+            "arithmetic": "exact modulo the prime 2147483647",
+            "budget": 429,
+            "dimension": 232,
+            "is_a_certified_lower_bound_on_the_rational_rank": true,
+            "limited_by_budget": false,
+            "reached_the_whole_state_space": false
+          },
+          "r_transport": 12,
+          "seed_span_dimension": 7
+        },
+        {
+          "achieved_span": 12,
+          "dictionary": "D2_plus_nonlocal_topology",
+          "ladder": [
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.5934960801,
+                  "pooled": 0.3511761328
+                },
+                "+0.250": {
+                  "balanced": 0.5914621725,
+                  "pooled": 0.3774939137
+                },
+                "-0.250": {
+                  "balanced": 0.5940714847,
+                  "pooled": 0.3180523555
+                }
+              },
+              "rank": 3,
+              "worst_primary_balanced": 0.5940714847
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.5188114374,
+                  "pooled": 0.3386187932
+                },
+                "+0.250": {
+                  "balanced": 0.5012810053,
+                  "pooled": 0.3594906626
+                },
+                "-0.250": {
+                  "balanced": 0.5185923674,
+                  "pooled": 0.3118591146
+                }
+              },
+              "rank": 4,
+              "worst_primary_balanced": 0.5185923674
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.5508914312,
+                  "pooled": 0.1980608974
+                },
+                "+0.250": {
+                  "balanced": 0.5485930807,
+                  "pooled": 0.2048343366
+                },
+                "-0.250": {
+                  "balanced": 0.5188098508,
+                  "pooled": 0.1890992416
+                }
+              },
+              "rank": 6,
+              "worst_primary_balanced": 0.5485930807
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.2969317045,
+                  "pooled": 0.1156310804
+                },
+                "+0.250": {
+                  "balanced": 0.2817793541,
+                  "pooled": 0.1371253601
+                },
+                "-0.250": {
+                  "balanced": 0.286436872,
+                  "pooled": 0.09457129814
+                }
+              },
+              "rank": 8,
+              "worst_primary_balanced": 0.286436872
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.1709300802,
+                  "pooled": 0.0596570509
+                },
+                "+0.250": {
+                  "balanced": 0.1757016519,
+                  "pooled": 0.05707347435
+                },
+                "-0.250": {
+                  "balanced": 0.1555069928,
+                  "pooled": 0.0645014302
+                }
+              },
+              "rank": 12,
+              "worst_primary_balanced": 0.1757016519
+            }
+          ],
+          "members": [
+            "blocks",
+            "singletons",
+            "wrap",
+            "max_block",
+            "linked_pairs",
+            "boundary_span",
+            "halves_linked",
+            "covering_depth"
+          ],
+          "memory": {
+            "6": {
+              "M_memory": 3.665368015,
+              "M_memory_over_markov": 0.2769345728,
+              "coupling_rank": {
+                "column_norms": [
+                  4.769379204e-16,
+                  0.6026534771,
+                  1.223377427,
+                  0.8095042643,
+                  3.70318667,
+                  2.802634593
+                ],
+                "rank": 5,
+                "vanishing_columns": 1
+              },
+              "decay_time": 0.1163261272,
+              "r_memory_effective": {
+                "0.99": 4,
+                "0.999": 4
+              },
+              "r_memory_numerical": 16,
+              "tail_mass_fraction": 0.0003849215881
+            }
+          },
+          "r_linear": {
+            "arithmetic": "exact modulo the prime 2147483647",
+            "budget": 429,
+            "dimension": 415,
+            "is_a_certified_lower_bound_on_the_rational_rank": true,
+            "limited_by_budget": false,
+            "reached_the_whole_state_space": false
+          },
+          "r_transport": null,
+          "seed_span_dimension": 9
+        }
+      ],
+      "phase_c_balanced": {
+        "D0_additive_local_counts": {
+          "hankel_singular_values": [
+            1.0,
+            0.5707646246,
+            0.1253236868,
+            0.03769879951,
+            0.003846417321,
+            0.002056524079,
+            0.0006260197214,
+            4.508372328e-05,
+            1.317232599e-05,
+            6.885898179e-06,
+            1.110452078e-06,
+            2.64122759e-07,
+            1.260388481e-07,
+            8.458212032e-08,
+            3.737474673e-08,
+            1.410384032e-08
+          ],
+          "orders": {
+            "12": {
+              "status": "gramian_rank_deficient"
+            },
+            "3": {
+              "+0.000": {
+                "balanced": 0.03849647917,
+                "pooled": 0.02526389092
+              },
+              "+0.250": {
+                "balanced": 0.05393911469,
+                "pooled": 0.03192184624
+              },
+              "-0.250": {
+                "balanced": 0.02698212347,
+                "pooled": 0.02467142402
+              },
+              "biorthogonality_defect": 2.109423747e-15,
+              "biorthogonality_defect_before_correction": 1.998401444e-15,
+              "long_horizon_growth": 2.017692728e-06
+            },
+            "4": {
+              "+0.000": {
+                "balanced": 0.007172938479,
+                "pooled": 0.00783260392
+              },
+              "+0.250": {
+                "balanced": 0.01100872119,
+                "pooled": 0.01141982173
+              },
+              "-0.250": {
+                "balanced": 0.009162874437,
+                "pooled": 0.009029503741
+              },
+              "biorthogonality_defect": 2.509104036e-14,
+              "biorthogonality_defect_before_correction": 7.926992396e-14,
+              "long_horizon_growth": 9.55961638e-06
+            },
+            "6": {
+              "+0.000": {
+                "balanced": 0.001150401048,
+                "pooled": 0.0005200029992
+              },
+              "+0.250": {
+                "balanced": 0.005062678033,
+                "pooled": 0.001602263346
+              },
+              "-0.250": {
+                "balanced": 0.006310411623,
+                "pooled": 0.001950594191
+              },
+              "biorthogonality_defect": 4.023448241e-12,
+              "biorthogonality_defect_before_correction": 5.21538368e-12,
+              "long_horizon_growth": 1.170475376e-05
+            },
+            "8": {
+              "+0.000": {
+                "balanced": 0.0001138199983,
+                "pooled": 8.013648737e-05
+              },
+              "+0.250": {
+                "balanced": 0.00413308219,
+                "pooled": 0.001282667734
+              },
+              "-0.250": {
+                "balanced": 0.003858807194,
+                "pooled": 0.000957751274
+              },
+              "biorthogonality_defect": 1.073196643e-09,
+              "biorthogonality_defect_before_correction": 1.397381766e-08,
+              "long_horizon_growth": 1.273872057e-05
+            }
+          }
+        },
+        "D1_plus_size_and_extent": {
+          "hankel_singular_values": [
+            1.0,
+            0.3882797747,
+            0.2798906232,
+            0.07463593205,
+            0.009926775454,
+            0.006254654455,
+            0.001850433407,
+            0.0009558780746,
+            0.0004998047826,
+            7.193765748e-05,
+            6.114486486e-05,
+            4.819706553e-06,
+            3.915138809e-06,
+            1.4200569e-06,
+            6.809086926e-07,
+            2.689991847e-07
+          ],
+          "orders": {
+            "12": {
+              "+0.000": {
+                "balanced": 8.337617877e-05,
+                "pooled": 7.776878986e-05
+              },
+              "+0.250": {
+                "balanced": 0.004111118132,
+                "pooled": 0.00300874773
+              },
+              "-0.250": {
+                "balanced": 0.00283157947,
+                "pooled": 0.002577662484
+              },
+              "biorthogonality_defect": 2.015311118e-07,
+              "biorthogonality_defect_before_correction": 3.863309668e-07,
+              "long_horizon_growth": 1.348606466e-05
+            },
+            "3": {
+              "+0.000": {
+                "balanced": 0.07366055471,
+                "pooled": 0.06151183276
+              },
+              "+0.250": {
+                "balanced": 0.07692863716,
+                "pooled": 0.06418069729
+              },
+              "-0.250": {
+                "balanced": 0.06543519076,
+                "pooled": 0.05958993326
+              },
+              "biorthogonality_defect": 8.326672685e-16,
+              "biorthogonality_defect_before_correction": 2.553512957e-15,
+              "long_horizon_growth": 7.47305414e-07
+            },
+            "4": {
+              "+0.000": {
+                "balanced": 0.01854883402,
+                "pooled": 0.0160995896
+              },
+              "+0.250": {
+                "balanced": 0.02493782348,
+                "pooled": 0.02923218592
+              },
+              "-0.250": {
+                "balanced": 0.02151496052,
+                "pooled": 0.02615061731
+              },
+              "biorthogonality_defect": 7.993605777e-15,
+              "biorthogonality_defect_before_correction": 2.431388424e-14,
+              "long_horizon_growth": 1.373471008e-05
+            },
+            "6": {
+              "+0.000": {
+                "balanced": 0.003972512676,
+                "pooled": 0.003593665544
+              },
+              "+0.250": {
+                "balanced": 0.0153493511,
+                "pooled": 0.01773085975
+              },
+              "-0.250": {
+                "balanced": 0.01364118312,
+                "pooled": 0.01978078801
+              },
+              "biorthogonality_defect": 7.397971125e-13,
+              "biorthogonality_defect_before_correction": 7.451816941e-13,
+              "long_horizon_growth": 1.222638533e-05
+            },
+            "8": {
+              "+0.000": {
+                "balanced": 0.001105416261,
+                "pooled": 0.001226544843
+              },
+              "+0.250": {
+                "balanced": 0.01188585934,
+                "pooled": 0.01200036321
+              },
+              "-0.250": {
+                "balanced": 0.008097099803,
+                "pooled": 0.008702547292
+              },
+              "biorthogonality_defect": 9.19744142e-12,
+              "biorthogonality_defect_before_correction": 3.367661705e-11,
+              "long_horizon_growth": 1.301160737e-05
+            }
+          }
+        },
+        "D2_plus_nonlocal_topology": {
+          "hankel_singular_values": [
+            1.0,
+            0.4177990704,
+            0.3399108814,
+            0.1078586845,
+            0.02020832685,
+            0.01152157149,
+            0.003361994732,
+            0.001397004429,
+            0.0007359307765,
+            0.000365548335,
+            0.0001723840672,
+            3.290630771e-05,
+            1.314133791e-05,
+            5.084860331e-06,
+            1.738424575e-06,
+            6.704804359e-07
+          ],
+          "orders": {
+            "12": {
+              "+0.000": {
+                "balanced": 0.0001410651142,
+                "pooled": 8.750304902e-05
+              },
+              "+0.250": {
+                "balanced": 0.004989392831,
+                "pooled": 0.002523363938
+              },
+              "-0.250": {
+                "balanced": 0.004017461506,
+                "pooled": 0.002545355104
+              },
+              "biorthogonality_defect": 4.129396936e-09,
+              "biorthogonality_defect_before_correction": 1.907477643e-08,
+              "long_horizon_growth": 1.53071854e-05
+            },
+            "3": {
+              "+0.000": {
+                "balanced": 0.1085235423,
+                "pooled": 0.1008036383
+              },
+              "+0.250": {
+                "balanced": 0.1212016469,
+                "pooled": 0.1120273303
+              },
+              "-0.250": {
+                "balanced": 0.09749651418,
+                "pooled": 0.08196101756
+              },
+              "biorthogonality_defect": 2.356621842e-15,
+              "biorthogonality_defect_before_correction": 2.442490654e-15,
+              "long_horizon_growth": 1.120034383e-06
+            },
+            "4": {
+              "+0.000": {
+                "balanced": 0.04139881848,
+                "pooled": 0.02425231591
+              },
+              "+0.250": {
+                "balanced": 0.05285696134,
+                "pooled": 0.03893172947
+              },
+              "-0.250": {
+                "balanced": 0.04622521295,
+                "pooled": 0.03912238742
+              },
+              "biorthogonality_defect": 8.049116929e-15,
+              "biorthogonality_defect_before_correction": 6.217248938e-15,
+              "long_horizon_growth": 1.624128346e-05
+            },
+            "6": {
+              "+0.000": {
+                "balanced": 0.006736655578,
+                "pooled": 0.005687238557
+              },
+              "+0.250": {
+                "balanced": 0.02129703411,
+                "pooled": 0.02528605808
+              },
+              "-0.250": {
+                "balanced": 0.01657803513,
+                "pooled": 0.02675743042
+              },
+              "biorthogonality_defect": 1.07913678e-13,
+              "biorthogonality_defect_before_correction": 3.113065361e-13,
+              "long_horizon_growth": 1.609055948e-05
+            },
+            "8": {
+              "+0.000": {
+                "balanced": 0.002589048484,
+                "pooled": 0.002031797318
+              },
+              "+0.250": {
+                "balanced": 0.01290374189,
+                "pooled": 0.01003009921
+              },
+              "-0.250": {
+                "balanced": 0.01004978443,
+                "pooled": 0.01041901653
+              },
+              "biorthogonality_defect": 3.694378137e-12,
+              "biorthogonality_defect_before_correction": 6.21347418e-12,
+              "long_horizon_growth": 1.509821531e-05
+            }
+          }
+        }
+      },
+      "phase_c_state_augmentation": [
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.119800702,
+              "pooled": 0.05392715838
+            },
+            "held_out": {
+              "balanced": 0.3579781783,
+              "pooled": 0.1822310861
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.1304293647,
+              "pooled": 0.05923726616
+            },
+            "held_out": {
+              "balanced": 0.3740912613,
+              "pooled": 0.2006839948
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.1024347885,
+              "pooled": 0.04368338453
+            },
+            "held_out": {
+              "balanced": 0.335602331,
+              "pooled": 0.1717922076
+            }
+          },
+          "added_degrees_of_freedom": 0,
+          "coupling_rank": 3,
+          "rank": 6
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.04899665003,
+              "pooled": 0.04512446321
+            },
+            "held_out": {
+              "balanced": 0.4196913656,
+              "pooled": 0.1926489159
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.05543135697,
+              "pooled": 0.0485443146
+            },
+            "held_out": {
+              "balanced": 0.4264529327,
+              "pooled": 0.2036388883
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.03963754128,
+              "pooled": 0.0375266157
+            },
+            "held_out": {
+              "balanced": 0.4023544633,
+              "pooled": 0.1902054768
+            }
+          },
+          "added_degrees_of_freedom": 1,
+          "coupling_rank": 3,
+          "rank": 7
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.0336504684,
+              "pooled": 0.02093291081
+            },
+            "held_out": {
+              "balanced": 0.1757507777,
+              "pooled": 0.157771743
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.04538386609,
+              "pooled": 0.02074807766
+            },
+            "held_out": {
+              "balanced": 0.2091608391,
+              "pooled": 0.1684175011
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.02518740046,
+              "pooled": 0.02367404298
+            },
+            "held_out": {
+              "balanced": 0.1635778389,
+              "pooled": 0.1553387454
+            }
+          },
+          "added_degrees_of_freedom": 2,
+          "coupling_rank": 3,
+          "rank": 8
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.03101485339,
+              "pooled": 0.01335723852
+            },
+            "held_out": {
+              "balanced": 0.1948878034,
+              "pooled": 0.09720459525
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.04566176163,
+              "pooled": 0.02173659962
+            },
+            "held_out": {
+              "balanced": 0.2616328966,
+              "pooled": 0.09825553546
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.01913272005,
+              "pooled": 0.01090729272
+            },
+            "held_out": {
+              "balanced": 0.1783964065,
+              "pooled": 0.1097283409
+            }
+          },
+          "added_degrees_of_freedom": 3,
+          "coupling_rank": 3,
+          "rank": 9
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.01967146476,
+              "pooled": 0.01048113325
+            },
+            "held_out": {
+              "balanced": 0.2428995662,
+              "pooled": 0.1033320604
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.02348493772,
+              "pooled": 0.0184276912
+            },
+            "held_out": {
+              "balanced": 0.2897573412,
+              "pooled": 0.0996537907
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.03168874731,
+              "pooled": 0.01072813556
+            },
+            "held_out": {
+              "balanced": 0.2400261355,
+              "pooled": 0.1189054802
+            }
+          },
+          "added_degrees_of_freedom": 4,
+          "coupling_rank": 3,
+          "rank": 10
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.005071786059,
+              "pooled": 0.00410575953
+            },
+            "held_out": {
+              "balanced": 0.1312976547,
+              "pooled": 0.09485277101
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.0176319433,
+              "pooled": 0.01250474851
+            },
+            "held_out": {
+              "balanced": 0.1993116986,
+              "pooled": 0.09341141393
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.01930850902,
+              "pooled": 0.009220138807
+            },
+            "held_out": {
+              "balanced": 0.1482643693,
+              "pooled": 0.1181631039
+            }
+          },
+          "added_degrees_of_freedom": 6,
+          "coupling_rank": 3,
+          "rank": 12
+        }
+      ],
+      "states": 429,
+      "width": 7
+    },
+    {
+      "intervention": "uniform_join_minus_detach",
+      "phase_b_dictionaries": [
+        {
+          "achieved_span": 12,
+          "dictionary": "D0_additive_local_counts",
+          "ladder": [
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.6052464217,
+                  "pooled": 0.1893141885
+                },
+                "+0.250": {
+                  "balanced": 0.5894449991,
+                  "pooled": 0.1955227875
+                },
+                "-0.250": {
+                  "balanced": 0.6225152656,
+                  "pooled": 0.170610209
+                }
+              },
+              "rank": 3,
+              "worst_primary_balanced": 0.6225152656
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.1479020727,
+                  "pooled": 0.1560367987
+                },
+                "+0.250": {
+                  "balanced": 0.1588358044,
+                  "pooled": 0.1581492972
+                },
+                "-0.250": {
+                  "balanced": 0.1268566929,
+                  "pooled": 0.1387161321
+                }
+              },
+              "rank": 4,
+              "worst_primary_balanced": 0.1588358044
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.1309967001,
+                  "pooled": 0.0625049393
+                },
+                "+0.250": {
+                  "balanced": 0.1424360881,
+                  "pooled": 0.06825047433
+                },
+                "-0.250": {
+                  "balanced": 0.1116678877,
+                  "pooled": 0.05060193949
+                }
+              },
+              "rank": 6,
+              "worst_primary_balanced": 0.1424360881
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.0404247075,
+                  "pooled": 0.02621231993
+                },
+                "+0.250": {
+                  "balanced": 0.05332237564,
+                  "pooled": 0.02614011319
+                },
+                "-0.250": {
+                  "balanced": 0.03112651624,
+                  "pooled": 0.02958063858
+                }
+              },
+              "rank": 8,
+              "worst_primary_balanced": 0.05332237564
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.00659609459,
+                  "pooled": 0.006000927006
+                },
+                "+0.250": {
+                  "balanced": 0.02293080479,
+                  "pooled": 0.01735042511
+                },
+                "-0.250": {
+                  "balanced": 0.02187900584,
+                  "pooled": 0.01164171297
+                }
+              },
+              "rank": 12,
+              "worst_primary_balanced": 0.02293080479
+            }
+          ],
+          "members": [
+            "blocks",
+            "singletons",
+            "wrap"
+          ],
+          "memory": {
+            "6": {
+              "M_memory": 1.680598183,
+              "M_memory_over_markov": 0.1338083821,
+              "coupling_rank": {
+                "column_norms": [
+                  3.641850664e-16,
+                  2.618066905e-15,
+                  2.73654005e-15,
+                  0.8182275514,
+                  1.233162754,
+                  2.746104397
+                ],
+                "rank": 3,
+                "vanishing_columns": 3
+              },
+              "decay_time": 0.1362864741,
+              "r_memory_effective": {
+                "0.99": 3,
+                "0.999": 4
+              },
+              "r_memory_numerical": 14,
+              "tail_mass_fraction": 0.000572922871
+            },
+            "8": {
+              "M_memory": 2.374869797,
+              "M_memory_over_markov": 0.1516278661,
+              "coupling_rank": {
+                "column_norms": [
+                  3.630258164e-16,
+                  2.609994563e-15,
+                  2.717836148e-15,
+                  2.754248756e-15,
+                  7.258984743e-15,
+                  2.717649223,
+                  2.180163976,
+                  2.710476073
+                ],
+                "rank": 3,
+                "vanishing_columns": 5
+              },
+              "decay_time": 0.1470112368,
+              "r_memory_effective": {
+                "0.99": 3,
+                "0.999": 5
+              },
+              "r_memory_numerical": 15,
+              "tail_mass_fraction": 0.000686605753
+            }
+          },
+          "r_linear": {
+            "arithmetic": "exact modulo the prime 2147483647",
+            "budget": 150,
+            "dimension": 150,
+            "is_a_certified_lower_bound_on_the_rational_rank": true,
+            "limited_by_budget": true,
+            "reached_the_whole_state_space": false
+          },
+          "r_transport": 8,
+          "seed_span_dimension": 4
+        },
+        {
+          "achieved_span": 12,
+          "dictionary": "D1_plus_size_and_extent",
+          "ladder": [
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.5312846557,
+                  "pooled": 0.4035490943
+                },
+                "+0.250": {
+                  "balanced": 0.5405024696,
+                  "pooled": 0.4349325554
+                },
+                "-0.250": {
+                  "balanced": 0.528333626,
+                  "pooled": 0.3626344347
+                }
+              },
+              "rank": 3,
+              "worst_primary_balanced": 0.5405024696
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.3249832912,
+                  "pooled": 0.3966930293
+                },
+                "+0.250": {
+                  "balanced": 0.3357232919,
+                  "pooled": 0.4235812829
+                },
+                "-0.250": {
+                  "balanced": 0.3101751793,
+                  "pooled": 0.3611838138
+                }
+              },
+              "rank": 4,
+              "worst_primary_balanced": 0.3357232919
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.337697791,
+                  "pooled": 0.2199795699
+                },
+                "+0.250": {
+                  "balanced": 0.3851656504,
+                  "pooled": 0.238590588
+                },
+                "-0.250": {
+                  "balanced": 0.2865119585,
+                  "pooled": 0.2008968675
+                }
+              },
+              "rank": 6,
+              "worst_primary_balanced": 0.3851656504
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.1599204413,
+                  "pooled": 0.1328379208
+                },
+                "+0.250": {
+                  "balanced": 0.1879147033,
+                  "pooled": 0.1528278133
+                },
+                "-0.250": {
+                  "balanced": 0.1278863121,
+                  "pooled": 0.1151986224
+                }
+              },
+              "rank": 8,
+              "worst_primary_balanced": 0.1879147033
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.0805498403,
+                  "pooled": 0.05481520217
+                },
+                "+0.250": {
+                  "balanced": 0.09364801252,
+                  "pooled": 0.0689012926
+                },
+                "-0.250": {
+                  "balanced": 0.06249067301,
+                  "pooled": 0.04422480215
+                }
+              },
+              "rank": 12,
+              "worst_primary_balanced": 0.09364801252
+            }
+          ],
+          "members": [
+            "blocks",
+            "singletons",
+            "wrap",
+            "max_block",
+            "linked_pairs",
+            "boundary_span"
+          ],
+          "memory": {
+            "12": {
+              "M_memory": 4.259524021,
+              "M_memory_over_markov": 0.1745883331,
+              "coupling_rank": {
+                "column_norms": [
+                  8.336929196e-16,
+                  1.440590077e-15,
+                  2.556001543e-15,
+                  1.834109825e-15,
+                  1.053556901e-14,
+                  4.328808162e-15,
+                  1.115611679,
+                  1.282778779,
+                  2.778910647,
+                  2.129653776,
+                  4.656234216,
+                  2.817444241
+                ],
+                "rank": 6,
+                "vanishing_columns": 6
+              },
+              "decay_time": 0.100430466,
+              "r_memory_effective": {
+                "0.99": 5,
+                "0.999": 6
+              },
+              "r_memory_numerical": 25,
+              "tail_mass_fraction": 0.0007310893841
+            },
+            "6": {
+              "M_memory": 4.245331273,
+              "M_memory_over_markov": 0.3183767063,
+              "coupling_rank": {
+                "column_norms": [
+                  8.547972268e-16,
+                  0.6208975884,
+                  1.222330098,
+                  0.8340001339,
+                  3.654813814,
+                  3.059824719
+                ],
+                "rank": 5,
+                "vanishing_columns": 1
+              },
+              "decay_time": 0.134833771,
+              "r_memory_effective": {
+                "0.99": 3,
+                "0.999": 5
+              },
+              "r_memory_numerical": 17,
+              "tail_mass_fraction": 0.0008272144819
+            }
+          },
+          "r_linear": {
+            "arithmetic": "exact modulo the prime 2147483647",
+            "budget": 150,
+            "dimension": 150,
+            "is_a_certified_lower_bound_on_the_rational_rank": true,
+            "limited_by_budget": true,
+            "reached_the_whole_state_space": false
+          },
+          "r_transport": 12,
+          "seed_span_dimension": 7
+        },
+        {
+          "achieved_span": 12,
+          "dictionary": "D2_plus_nonlocal_topology",
+          "ladder": [
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.6181522162,
+                  "pooled": 0.4057593724
+                },
+                "+0.250": {
+                  "balanced": 0.6162431691,
+                  "pooled": 0.4360995644
+                },
+                "-0.250": {
+                  "balanced": 0.6174496338,
+                  "pooled": 0.3666104929
+                }
+              },
+              "rank": 3,
+              "worst_primary_balanced": 0.6174496338
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.5459421527,
+                  "pooled": 0.3998774708
+                },
+                "+0.250": {
+                  "balanced": 0.5390086187,
+                  "pooled": 0.4253367057
+                },
+                "-0.250": {
+                  "balanced": 0.5395092351,
+                  "pooled": 0.3666448706
+                }
+              },
+              "rank": 4,
+              "worst_primary_balanced": 0.5395092351
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.6051634586,
+                  "pooled": 0.2286900954
+                },
+                "+0.250": {
+                  "balanced": 0.6279644326,
+                  "pooled": 0.2438931464
+                },
+                "-0.250": {
+                  "balanced": 0.5618489398,
+                  "pooled": 0.2138364394
+                }
+              },
+              "rank": 6,
+              "worst_primary_balanced": 0.6279644326
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.3261871052,
+                  "pooled": 0.1428614871
+                },
+                "+0.250": {
+                  "balanced": 0.3255857844,
+                  "pooled": 0.1775547512
+                },
+                "-0.250": {
+                  "balanced": 0.3058725081,
+                  "pooled": 0.1108977154
+                }
+              },
+              "rank": 8,
+              "worst_primary_balanced": 0.3255857844
+            },
+            {
+              "E_markov": {
+                "+0.000": {
+                  "balanced": 0.1996341972,
+                  "pooled": 0.08427083816
+                },
+                "+0.250": {
+                  "balanced": 0.207450809,
+                  "pooled": 0.08325260273
+                },
+                "-0.250": {
+                  "balanced": 0.1786432285,
+                  "pooled": 0.08719307503
+                }
+              },
+              "rank": 12,
+              "worst_primary_balanced": 0.207450809
+            }
+          ],
+          "members": [
+            "blocks",
+            "singletons",
+            "wrap",
+            "max_block",
+            "linked_pairs",
+            "boundary_span",
+            "halves_linked",
+            "covering_depth"
+          ],
+          "memory": {
+            "6": {
+              "M_memory": 4.245331273,
+              "M_memory_over_markov": 0.3183767063,
+              "coupling_rank": {
+                "column_norms": [
+                  8.547972268e-16,
+                  0.6208975884,
+                  1.222330098,
+                  0.8340001339,
+                  3.654813814,
+                  3.059824719
+                ],
+                "rank": 5,
+                "vanishing_columns": 1
+              },
+              "decay_time": 0.134833771,
+              "r_memory_effective": {
+                "0.99": 3,
+                "0.999": 5
+              },
+              "r_memory_numerical": 17,
+              "tail_mass_fraction": 0.0008272144819
+            }
+          },
+          "r_linear": {
+            "arithmetic": "exact modulo the prime 2147483647",
+            "budget": 150,
+            "dimension": 150,
+            "is_a_certified_lower_bound_on_the_rational_rank": true,
+            "limited_by_budget": true,
+            "reached_the_whole_state_space": false
+          },
+          "r_transport": null,
+          "seed_span_dimension": 9
+        }
+      ],
+      "phase_c_balanced": {
+        "D0_additive_local_counts": {
+          "hankel_singular_values": [
+            1.0,
+            0.5830186106,
+            0.1356191149,
+            0.04016053942,
+            0.006367761504,
+            0.00306044104,
+            0.001015011795,
+            7.073570504e-05,
+            2.873250648e-05,
+            1.860072311e-05,
+            4.680788451e-06,
+            4.315016107e-07,
+            1.752031892e-07,
+            9.236507905e-08,
+            5.858613658e-08,
+            1.703820027e-08
+          ],
+          "orders": {
+            "12": {
+              "status": "gramian_rank_deficient"
+            },
+            "3": {
+              "+0.000": {
+                "balanced": 0.03980624927,
+                "pooled": 0.0272400566
+              },
+              "+0.250": {
+                "balanced": 0.05768989246,
+                "pooled": 0.03546316934
+              },
+              "-0.250": {
+                "balanced": 0.02958887063,
+                "pooled": 0.02948121844
+              },
+              "biorthogonality_defect": 1.731947918e-14,
+              "biorthogonality_defect_before_correction": 1.665334537e-14,
+              "long_horizon_growth": 7.594730184e-06
+            },
+            "4": {
+              "+0.000": {
+                "balanced": 0.009722619971,
+                "pooled": 0.01028113257
+              },
+              "+0.250": {
+                "balanced": 0.01345052632,
+                "pooled": 0.01446562152
+              },
+              "-0.250": {
+                "balanced": 0.0119787332,
+                "pooled": 0.01195640371
+              },
+              "biorthogonality_defect": 2.842170943e-14,
+              "biorthogonality_defect_before_correction": 4.121702979e-14,
+              "long_horizon_growth": 3.313816083e-05
+            },
+            "6": {
+              "+0.000": {
+                "balanced": 0.001817389819,
+                "pooled": 0.0007299431315
+              },
+              "+0.250": {
+                "balanced": 0.005052727946,
+                "pooled": 0.002067445527
+              },
+              "-0.250": {
+                "balanced": 0.005439051931,
+                "pooled": 0.002338630105
+              },
+              "biorthogonality_defect": 2.495781359e-12,
+              "biorthogonality_defect_before_correction": 1.013944484e-11,
+              "long_horizon_growth": 4.36399243e-05
+            },
+            "8": {
+              "+0.000": {
+                "balanced": 0.000184248179,
+                "pooled": 0.0001903490303
+              },
+              "+0.250": {
+                "balanced": 0.003409430618,
+                "pooled": 0.001515845654
+              },
+              "-0.250": {
+                "balanced": 0.002781046925,
+                "pooled": 0.001405562067
+              },
+              "biorthogonality_defect": 1.137074435e-09,
+              "biorthogonality_defect_before_correction": 3.566071882e-09,
+              "long_horizon_growth": 4.827403466e-05
+            }
+          }
+        },
+        "D1_plus_size_and_extent": {
+          "hankel_singular_values": [
+            1.0,
+            0.3913880965,
+            0.2963478944,
+            0.08871732191,
+            0.009419271617,
+            0.008483004799,
+            0.002722657591,
+            0.00142750576,
+            0.0007265862755,
+            8.263861062e-05,
+            6.478438365e-05,
+            1.238234332e-05,
+            7.190677743e-06,
+            3.148250917e-06,
+            7.681034326e-07,
+            5.590330358e-07
+          ],
+          "orders": {
+            "12": {
+              "+0.000": {
+                "balanced": 9.330918806e-05,
+                "pooled": 0.0001023549648
+              },
+              "+0.250": {
+                "balanced": 0.004406032038,
+                "pooled": 0.002197534036
+              },
+              "-0.250": {
+                "balanced": 0.004794840569,
+                "pooled": 0.004290204253
+              },
+              "biorthogonality_defect": 2.465382209e-08,
+              "biorthogonality_defect_before_correction": 6.380296558e-08,
+              "long_horizon_growth": 5.173790018e-05
+            },
+            "3": {
+              "+0.000": {
+                "balanced": 0.08351788489,
+                "pooled": 0.06920415508
+              },
+              "+0.250": {
+                "balanced": 0.08752631846,
+                "pooled": 0.07270799451
+              },
+              "-0.250": {
+                "balanced": 0.07371670833,
+                "pooled": 0.06813837333
+              },
+              "biorthogonality_defect": 2.867497906e-15,
+              "biorthogonality_defect_before_correction": 7.26155247e-15,
+              "long_horizon_growth": 2.277753421e-06
+            },
+            "4": {
+              "+0.000": {
+                "balanced": 0.01972745156,
+                "pooled": 0.01583339064
+              },
+              "+0.250": {
+                "balanced": 0.02727360221,
+                "pooled": 0.02996286199
+              },
+              "-0.250": {
+                "balanced": 0.02400513938,
+                "pooled": 0.03194397839
+              },
+              "biorthogonality_defect": 2.375877273e-14,
+              "biorthogonality_defect_before_correction": 2.664535259e-14,
+              "long_horizon_growth": 5.153390256e-05
+            },
+            "6": {
+              "+0.000": {
+                "balanced": 0.005384489942,
+                "pooled": 0.005094977382
+              },
+              "+0.250": {
+                "balanced": 0.01840522303,
+                "pooled": 0.02321047854
+              },
+              "-0.250": {
+                "balanced": 0.0171543445,
+                "pooled": 0.02663909227
+              },
+              "biorthogonality_defect": 3.452793607e-13,
+              "biorthogonality_defect_before_correction": 7.442935157e-13,
+              "long_horizon_growth": 4.602147581e-05
+            },
+            "8": {
+              "+0.000": {
+                "balanced": 0.001313335204,
+                "pooled": 0.001666836244
+              },
+              "+0.250": {
+                "balanced": 0.01566068372,
+                "pooled": 0.01678203103
+              },
+              "-0.250": {
+                "balanced": 0.01055134783,
+                "pooled": 0.01329578803
+              },
+              "biorthogonality_defect": 8.262487916e-12,
+              "biorthogonality_defect_before_correction": 1.090760815e-11,
+              "long_horizon_growth": 4.991005766e-05
+            }
+          }
+        },
+        "D2_plus_nonlocal_topology": {
+          "hankel_singular_values": [
+            1.0,
+            0.4179812325,
+            0.324944857,
+            0.120361171,
+            0.02123639836,
+            0.0142908667,
+            0.005481536895,
+            0.001794250411,
+            0.001165493063,
+            0.0006126481186,
+            0.0001910282975,
+            4.655349679e-05,
+            2.031426981e-05,
+            8.005467226e-06,
+            2.436482476e-06,
+            1.512750721e-06
+          ],
+          "orders": {
+            "12": {
+              "+0.000": {
+                "balanced": 0.0002401343977,
+                "pooled": 0.0001475947385
+              },
+              "+0.250": {
+                "balanced": 0.008690089913,
+                "pooled": 0.003996500617
+              },
+              "-0.250": {
+                "balanced": 0.007050974416,
+                "pooled": 0.004561230539
+              },
+              "biorthogonality_defect": 2.655543785e-09,
+              "biorthogonality_defect_before_correction": 9.684087754e-09,
+              "long_horizon_growth": 5.812861965e-05
+            },
+            "3": {
+              "+0.000": {
+                "balanced": 0.1174514626,
+                "pooled": 0.1008040852
+              },
+              "+0.250": {
+                "balanced": 0.1339736177,
+                "pooled": 0.1154940614
+              },
+              "-0.250": {
+                "balanced": 0.1045901142,
+                "pooled": 0.08000104768
+              },
+              "biorthogonality_defect": 4.801714582e-15,
+              "biorthogonality_defect_before_correction": 9.992007222e-15,
+              "long_horizon_growth": 4.06017952e-06
+            },
+            "4": {
+              "+0.000": {
+                "balanced": 0.04695628033,
+                "pooled": 0.02816631915
+              },
+              "+0.250": {
+                "balanced": 0.05908642397,
+                "pooled": 0.04620750352
+              },
+              "-0.250": {
+                "balanced": 0.05548238726,
+                "pooled": 0.04811264403
+              },
+              "biorthogonality_defect": 1.348920975e-14,
+              "biorthogonality_defect_before_correction": 9.992007222e-15,
+              "long_horizon_growth": 5.825825561e-05
+            },
+            "6": {
+              "+0.000": {
+                "balanced": 0.009152934705,
+                "pooled": 0.006942863187
+              },
+              "+0.250": {
+                "balanced": 0.0240735922,
+                "pooled": 0.02974952516
+              },
+              "-0.250": {
+                "balanced": 0.02164330117,
+                "pooled": 0.0347311589
+              },
+              "biorthogonality_defect": 1.888489365e-13,
+              "biorthogonality_defect_before_correction": 1.489919299e-13,
+              "long_horizon_growth": 5.662866287e-05
+            },
+            "8": {
+              "+0.000": {
+                "balanced": 0.003584477084,
+                "pooled": 0.003139927725
+              },
+              "+0.250": {
+                "balanced": 0.0169222061,
+                "pooled": 0.01554873127
+              },
+              "-0.250": {
+                "balanced": 0.01330217572,
+                "pooled": 0.01605314116
+              },
+              "biorthogonality_defect": 8.019473974e-12,
+              "biorthogonality_defect_before_correction": 9.026335235e-12,
+              "long_horizon_growth": 5.734819386e-05
+            }
+          }
+        }
+      },
+      "phase_c_state_augmentation": [
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.1309967001,
+              "pooled": 0.0625049393
+            },
+            "held_out": {
+              "balanced": 0.4175914947,
+              "pooled": 0.2395949627
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.1424360881,
+              "pooled": 0.06825047433
+            },
+            "held_out": {
+              "balanced": 0.4439373466,
+              "pooled": 0.2643400546
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.1116678877,
+              "pooled": 0.05060193949
+            },
+            "held_out": {
+              "balanced": 0.3886886343,
+              "pooled": 0.2223096269
+            }
+          },
+          "added_degrees_of_freedom": 0,
+          "coupling_rank": 3,
+          "rank": 6
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.05626926728,
+              "pooled": 0.05492682443
+            },
+            "held_out": {
+              "balanced": 0.4846769749,
+              "pooled": 0.2496035727
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.06301997355,
+              "pooled": 0.05906378895
+            },
+            "held_out": {
+              "balanced": 0.5054214022,
+              "pooled": 0.2674347963
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.04559451479,
+              "pooled": 0.04547565052
+            },
+            "held_out": {
+              "balanced": 0.4578484789,
+              "pooled": 0.239921109
+            }
+          },
+          "added_degrees_of_freedom": 1,
+          "coupling_rank": 3,
+          "rank": 7
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.0404247075,
+              "pooled": 0.02621231993
+            },
+            "held_out": {
+              "balanced": 0.2349748194,
+              "pooled": 0.2143943812
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.05332237564,
+              "pooled": 0.02614011319
+            },
+            "held_out": {
+              "balanced": 0.2744606294,
+              "pooled": 0.2294953103
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.03112651624,
+              "pooled": 0.02958063858
+            },
+            "held_out": {
+              "balanced": 0.2178708446,
+              "pooled": 0.2088835755
+            }
+          },
+          "added_degrees_of_freedom": 2,
+          "coupling_rank": 3,
+          "rank": 8
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.037327392,
+              "pooled": 0.01746266848
+            },
+            "held_out": {
+              "balanced": 0.2516822776,
+              "pooled": 0.1389762319
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.05423183193,
+              "pooled": 0.02858929282
+            },
+            "held_out": {
+              "balanced": 0.343895974,
+              "pooled": 0.1411779569
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.02371682601,
+              "pooled": 0.01404183965
+            },
+            "held_out": {
+              "balanced": 0.2258923783,
+              "pooled": 0.151405529
+            }
+          },
+          "added_degrees_of_freedom": 3,
+          "coupling_rank": 3,
+          "rank": 9
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.02331618852,
+              "pooled": 0.01418294787
+            },
+            "held_out": {
+              "balanced": 0.313562785,
+              "pooled": 0.146093708
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.02905290479,
+              "pooled": 0.02521103956
+            },
+            "held_out": {
+              "balanced": 0.3832890633,
+              "pooled": 0.1434934857
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.03668607424,
+              "pooled": 0.01326394459
+            },
+            "held_out": {
+              "balanced": 0.2985279571,
+              "pooled": 0.1605612483
+            }
+          },
+          "added_degrees_of_freedom": 4,
+          "coupling_rank": 3,
+          "rank": 10
+        },
+        {
+          "+0.000": {
+            "declared": {
+              "balanced": 0.00659609459,
+              "pooled": 0.006000927006
+            },
+            "held_out": {
+              "balanced": 0.1843917885,
+              "pooled": 0.1408007176
+            }
+          },
+          "+0.250": {
+            "declared": {
+              "balanced": 0.02293080479,
+              "pooled": 0.01735042511
+            },
+            "held_out": {
+              "balanced": 0.3030108485,
+              "pooled": 0.1392735759
+            }
+          },
+          "-0.250": {
+            "declared": {
+              "balanced": 0.02187900584,
+              "pooled": 0.01164171297
+            },
+            "held_out": {
+              "balanced": 0.1953773768,
+              "pooled": 0.169348293
+            }
+          },
+          "added_degrees_of_freedom": 6,
+          "coupling_rank": 3,
+          "rank": 12
+        }
+      ],
+      "states": 1430,
+      "width": 8
+    }
+  ],
+  "claim_boundary": "Dictionary growth and repair comparison for one declared projection and source set on one exactly known finite process.  Not a percolation statement, and not transportable to square-site Matching One without a declared map between microscopic state spaces.",
+  "decision": {
+    "balanced_transport_order": {
+      "D0_additive_local_counts": {
+        "4": 3,
+        "5": 3,
+        "6": 3,
+        "7": 3,
+        "8": 3
+      },
+      "D1_plus_size_and_extent": {
+        "4": 3,
+        "5": 3,
+        "6": 3,
+        "7": 3,
+        "8": 3
+      },
+      "D2_plus_nonlocal_topology": {
+        "4": 3,
+        "5": 3,
+        "6": 4,
+        "7": 4,
+        "8": 4
+      }
+    },
+    "dictionary_growth": {
+      "D0_additive_local_counts": {
+        "r_linear_by_width": [
+          10,
+          26,
+          72,
+          218,
+          150
+        ],
+        "r_memory_numerical_by_width": [
+          4,
+          9,
+          12,
+          13,
+          14
+        ],
+        "r_transport_by_width": [
+          4,
+          6,
+          8,
+          8,
+          8
+        ]
+      },
+      "D1_plus_size_and_extent": {
+        "r_linear_by_width": [
+          10,
+          26,
+          76,
+          232,
+          150
+        ],
+        "r_memory_numerical_by_width": [
+          4,
+          8,
+          14,
+          16,
+          17
+        ],
+        "r_transport_by_width": [
+          6,
+          8,
+          8,
+          12,
+          12
+        ]
+      },
+      "D2_plus_nonlocal_topology": {
+        "r_linear_by_width": [
+          10,
+          42,
+          76,
+          415,
+          150
+        ],
+        "r_memory_numerical_by_width": [
+          4,
+          8,
+          14,
+          16,
+          17
+        ],
+        "r_transport_by_width": [
+          null,
+          12,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "dictionary_profile": {
+      "D0_additive_local_counts": [
+        {
+          "M_memory": 0.8755423555,
+          "coupling_rank": 2,
+          "r_linear": 10,
+          "r_memory_effective_999": 2,
+          "r_memory_numerical": 4,
+          "r_transport": 4,
+          "width": 4
+        },
+        {
+          "M_memory": 1.016175157,
+          "coupling_rank": 3,
+          "r_linear": 26,
+          "r_memory_effective_999": 3,
+          "r_memory_numerical": 9,
+          "r_transport": 6,
+          "width": 5
+        },
+        {
+          "M_memory": 1.206826137,
+          "coupling_rank": 3,
+          "r_linear": 72,
+          "r_memory_effective_999": 4,
+          "r_memory_numerical": 12,
+          "r_transport": 8,
+          "width": 6
+        },
+        {
+          "M_memory": 1.455709693,
+          "coupling_rank": 3,
+          "r_linear": 218,
+          "r_memory_effective_999": 4,
+          "r_memory_numerical": 13,
+          "r_transport": 8,
+          "width": 7
+        },
+        {
+          "M_memory": 1.680598183,
+          "coupling_rank": 3,
+          "r_linear": 150,
+          "r_memory_effective_999": 4,
+          "r_memory_numerical": 14,
+          "r_transport": 8,
+          "width": 8
+        }
+      ],
+      "D1_plus_size_and_extent": [
+        {
+          "M_memory": 0.6510983587,
+          "coupling_rank": 4,
+          "r_linear": 10,
+          "r_memory_effective_999": 2,
+          "r_memory_numerical": 4,
+          "r_transport": 6,
+          "width": 4
+        },
+        {
+          "M_memory": 1.773200675,
+          "coupling_rank": 5,
+          "r_linear": 26,
+          "r_memory_effective_999": 4,
+          "r_memory_numerical": 8,
+          "r_transport": 8,
+          "width": 5
+        },
+        {
+          "M_memory": 2.844354202,
+          "coupling_rank": 5,
+          "r_linear": 76,
+          "r_memory_effective_999": 4,
+          "r_memory_numerical": 14,
+          "r_transport": 8,
+          "width": 6
+        },
+        {
+          "M_memory": 3.665368015,
+          "coupling_rank": 5,
+          "r_linear": 232,
+          "r_memory_effective_999": 4,
+          "r_memory_numerical": 16,
+          "r_transport": 12,
+          "width": 7
+        },
+        {
+          "M_memory": 4.245331273,
+          "coupling_rank": 5,
+          "r_linear": 150,
+          "r_memory_effective_999": 5,
+          "r_memory_numerical": 17,
+          "r_transport": 12,
+          "width": 8
+        }
+      ],
+      "D2_plus_nonlocal_topology": [
+        {
+          "M_memory": 0.6510983587,
+          "coupling_rank": 4,
+          "r_linear": 10,
+          "r_memory_effective_999": 2,
+          "r_memory_numerical": 4,
+          "r_transport": null,
+          "width": 4
+        },
+        {
+          "M_memory": 1.773200675,
+          "coupling_rank": 5,
+          "r_linear": 42,
+          "r_memory_effective_999": 4,
+          "r_memory_numerical": 8,
+          "r_transport": 12,
+          "width": 5
+        },
+        {
+          "M_memory": 2.844354202,
+          "coupling_rank": 5,
+          "r_linear": 76,
+          "r_memory_effective_999": 4,
+          "r_memory_numerical": 14,
+          "r_transport": null,
+          "width": 6
+        },
+        {
+          "M_memory": 3.665368015,
+          "coupling_rank": 5,
+          "r_linear": 415,
+          "r_memory_effective_999": 4,
+          "r_memory_numerical": 16,
+          "r_transport": null,
+          "width": 7
+        },
+        {
+          "M_memory": 4.245331273,
+          "coupling_rank": 5,
+          "r_linear": 150,
+          "r_memory_effective_999": 5,
+          "r_memory_numerical": 17,
+          "r_transport": null,
+          "width": 8
+        }
+      ]
+    },
+    "pass_threshold": 0.1
+  },
+  "declared": {
+    "augmentation_ranks": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      12
+    ],
+    "balanced_orders": [
+      3,
+      4,
+      6,
+      8,
+      12
+    ],
+    "closure_substeps": 4,
+    "dictionary_ranks": [
+      3,
+      4,
+      6,
+      8,
+      12
+    ],
+    "era_blocks": 10,
+    "etas": [
+      -0.25,
+      0.0,
+      0.25
+    ],
+    "intervention": "uniform_join_minus_detach",
+    "memory_orders": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8
+    ],
+    "pass_threshold": 0.1,
+    "widths": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "frozen_from": {
+    "issue": 580,
+    "note": "notes/p398-projected-memory-20260906.md",
+    "rank": 6
+  },
+  "issue": 588,
+  "phase": "B+C",
+  "schema": "matching-one.p398-memory-closure.v1"
+}

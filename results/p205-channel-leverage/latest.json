@@ -1,0 +1,588 @@
+{
+  "schema": "matching-one.p205-channel-leverage.v1",
+  "issue": 595,
+  "status": "design scan over archived histograms; angular resolution only, no verdict-bearing statistic",
+  "basis_channels": [
+    "M",
+    "S",
+    "Sp",
+    "Dp"
+  ],
+  "baseline_channel": "M",
+  "p_ref": "0.59274605079",
+  "grid": {
+    "half_width": "0.035",
+    "points": 21,
+    "values": [
+      "0.55774605079",
+      "0.56124605079",
+      "0.56474605079",
+      "0.56824605079",
+      "0.57174605079",
+      "0.57524605079",
+      "0.57874605079",
+      "0.58224605079",
+      "0.58574605079",
+      "0.58924605079",
+      "0.59274605079",
+      "0.59624605079",
+      "0.59974605079",
+      "0.60324605079",
+      "0.60674605079",
+      "0.61024605079",
+      "0.61374605079",
+      "0.61724605079",
+      "0.62074605079",
+      "0.62424605079",
+      "0.62774605079"
+    ],
+    "predeclared": true,
+    "verdict_bearing": true
+  },
+  "excluded_channel": {
+    "D": "exactly M/2 in obs(), so linearly dependent and singular in the combination"
+  },
+  "by_size": {
+    "325": {
+      "batches": 100,
+      "cost_table": {
+        "baseline": "M @ 0.59274605079",
+        "baseline_leverage": "1.0236792",
+        "by_readout": {
+          "M": {
+            "best_p": "0.62774605079",
+            "leverage": "1.6249396",
+            "leverage_at_p_ref": "1.0236792",
+            "amplification_vs_baseline": "1.58735",
+            "sample_cost_ratio_vs_baseline": "0.396875"
+          },
+          "S": {
+            "best_p": "0.62774605079",
+            "leverage": "1.9145975",
+            "leverage_at_p_ref": "0.59215516",
+            "amplification_vs_baseline": "1.87031",
+            "sample_cost_ratio_vs_baseline": "0.285873"
+          },
+          "Sp": {
+            "best_p": "0.56124605079",
+            "leverage": "3.5383004",
+            "leverage_at_p_ref": "2.1824433",
+            "amplification_vs_baseline": "3.45645",
+            "sample_cost_ratio_vs_baseline": "0.0837025"
+          },
+          "Dp": {
+            "best_p": "0.62774605079",
+            "leverage": "0.90426813",
+            "leverage_at_p_ref": "0.11651695",
+            "amplification_vs_baseline": "0.883351",
+            "sample_cost_ratio_vs_baseline": "1.28154"
+          },
+          "combination": {
+            "best_p": "0.55774605079",
+            "leverage": "4.294847",
+            "leverage_at_p_ref": "2.3602328",
+            "amplification_vs_baseline": "4.1955",
+            "sample_cost_ratio_vs_baseline": "0.056811"
+          }
+        },
+        "caveat": "These are in-sample maxima over the grid and carry selection optimism; the held-out control is the number to plan with."
+      },
+      "selection_control": {
+        "baseline": "M @ 0.59274605079",
+        "directions": [
+          {
+            "selected_on": "half_0",
+            "reported_on": "half_1",
+            "readout": "combination",
+            "p": "0.55774605079",
+            "in_sample_leverage": "5.0129171",
+            "held_out_leverage": "3.9743022",
+            "in_sample_amplification": "6.90887",
+            "held_out_amplification": "5.55714",
+            "optimism_factor": "1.26133",
+            "transports": true
+          },
+          {
+            "selected_on": "half_1",
+            "reported_on": "half_0",
+            "readout": "combination",
+            "p": "0.56474605079",
+            "in_sample_leverage": "4.016068",
+            "held_out_leverage": "4.8576142",
+            "in_sample_amplification": "5.61554",
+            "held_out_amplification": "6.69483",
+            "optimism_factor": "0.826757",
+            "transports": true
+          }
+        ],
+        "both_directions_transport": true,
+        "why": "A readout selected on a half-sample and validated on the other half carries no selection optimism into the reported amplification.  The in-sample column is shown only so the size of the optimism is visible."
+      },
+      "grid_boundary_binds": {
+        "M": true,
+        "S": true,
+        "Sp": false,
+        "Dp": true,
+        "combination": true
+      },
+      "full_sample_leverage": {
+        "0.55774605079": {
+          "M": "1.4699144",
+          "S": "1.5829624",
+          "Sp": "3.4775211",
+          "Dp": "0.68320529",
+          "combination": "4.294847",
+          "combination_retained": 4
+        },
+        "0.56124605079": {
+          "M": "1.3781631",
+          "S": "1.3469483",
+          "Sp": "3.5383004",
+          "Dp": "0.69853023",
+          "combination": "4.1194002",
+          "combination_retained": 4
+        },
+        "0.56474605079": {
+          "M": "1.2962748",
+          "S": "1.1097323",
+          "Sp": "3.5176025",
+          "Dp": "0.68754441",
+          "combination": "3.9193332",
+          "combination_retained": 4
+        },
+        "0.56824605079": {
+          "M": "1.2247787",
+          "S": "0.87329276",
+          "Sp": "3.4323421",
+          "Dp": "0.65025477",
+          "combination": "3.703245",
+          "combination_retained": 4
+        },
+        "0.57174605079": {
+          "M": "1.1639773",
+          "S": "0.63969381",
+          "Sp": "3.3002997",
+          "Dp": "0.5876022",
+          "combination": "3.4798228",
+          "combination_retained": 4
+        },
+        "0.57524605079": {
+          "M": "1.1139917",
+          "S": "0.41106173",
+          "Sp": "3.1372548",
+          "Dp": "0.50179568",
+          "combination": "3.2571787",
+          "combination_retained": 4
+        },
+        "0.57874605079": {
+          "M": "1.0748092",
+          "S": "0.18950841",
+          "Sp": "2.9556444",
+          "Dp": "0.39646746",
+          "combination": "3.042381",
+          "combination_retained": 4
+        },
+        "0.58224605079": {
+          "M": "1.0463303",
+          "S": "0.022997906",
+          "Sp": "2.7644007",
+          "Dp": "0.27649033",
+          "combination": "2.8412237",
+          "combination_retained": 4
+        },
+        "0.58574605079": {
+          "M": "1.0284114",
+          "S": "0.22479771",
+          "Sp": "2.5694692",
+          "Dp": "0.14743368",
+          "combination": "2.6582451",
+          "combination_retained": 4
+        },
+        "0.58924605079": {
+          "M": "1.0209028",
+          "S": "0.41470828",
+          "Sp": "2.3746339",
+          "Dp": "0.014824383",
+          "combination": "2.4969593",
+          "combination_retained": 4
+        },
+        "0.59274605079": {
+          "M": "1.0236792",
+          "S": "0.59215516",
+          "Sp": "2.1824433",
+          "Dp": "0.11651695",
+          "combination": "2.3602328",
+          "combination_retained": 4
+        },
+        "0.59624605079": {
+          "M": "1.0366617",
+          "S": "0.75723391",
+          "Sp": "1.9951089",
+          "Dp": "0.24285489",
+          "combination": "2.2507143",
+          "combination_retained": 4
+        },
+        "0.59974605079": {
+          "M": "1.0598311",
+          "S": "0.91068718",
+          "Sp": "1.815238",
+          "Dp": "0.36158596",
+          "combination": "2.1712073",
+          "combination_retained": 4
+        },
+        "0.60324605079": {
+          "M": "1.0932321",
+          "S": "1.0538036",
+          "Sp": "1.6462007",
+          "Dp": "0.47104208",
+          "combination": "2.1248253",
+          "combination_retained": 4
+        },
+        "0.60674605079": {
+          "M": "1.1369679",
+          "S": "1.1882623",
+          "Sp": "1.4919657",
+          "Dp": "0.57018466",
+          "combination": "2.1147388",
+          "combination_retained": 4
+        },
+        "0.61024605079": {
+          "M": "1.1911866",
+          "S": "1.3159531",
+          "Sp": "1.356437",
+          "Dp": "0.65829517",
+          "combination": "2.1434095",
+          "combination_retained": 4
+        },
+        "0.61374605079": {
+          "M": "1.2560611",
+          "S": "1.4388031",
+          "Sp": "1.2425949",
+          "Dp": "0.73471856",
+          "combination": "2.2115106",
+          "combination_retained": 4
+        },
+        "0.61724605079": {
+          "M": "1.3317632",
+          "S": "1.5586294",
+          "Sp": "1.1518453",
+          "Dp": "0.79867809",
+          "combination": "2.3170998",
+          "combination_retained": 4
+        },
+        "0.62074605079": {
+          "M": "1.4184353",
+          "S": "1.6770333",
+          "Sp": "1.0838116",
+          "Dp": "0.84916199",
+          "combination": "2.4556212",
+          "combination_retained": 4
+        },
+        "0.62424605079": {
+          "M": "1.5161611",
+          "S": "1.7953421",
+          "Sp": "1.0365182",
+          "Dp": "0.88487759",
+          "combination": "2.6207949",
+          "combination_retained": 4
+        },
+        "0.62774605079": {
+          "M": "1.6249396",
+          "S": "1.9145975",
+          "Sp": "1.0067468",
+          "Dp": "0.90426813",
+          "combination": "2.805867",
+          "combination_retained": 4
+        }
+      }
+    },
+    "425": {
+      "batches": 100,
+      "cost_table": {
+        "baseline": "M @ 0.59274605079",
+        "baseline_leverage": "1.0826992",
+        "by_readout": {
+          "M": {
+            "best_p": "0.62774605079",
+            "leverage": "1.2012635",
+            "leverage_at_p_ref": "1.0826992",
+            "amplification_vs_baseline": "1.10951",
+            "sample_cost_ratio_vs_baseline": "0.812342"
+          },
+          "S": {
+            "best_p": "0.56474605079",
+            "leverage": "1.6392688",
+            "leverage_at_p_ref": "1.2307026",
+            "amplification_vs_baseline": "1.51406",
+            "sample_cost_ratio_vs_baseline": "0.43623"
+          },
+          "Sp": {
+            "best_p": "0.61374605079",
+            "leverage": "2.1760948",
+            "leverage_at_p_ref": "1.602811",
+            "amplification_vs_baseline": "2.00988",
+            "sample_cost_ratio_vs_baseline": "0.247548"
+          },
+          "Dp": {
+            "best_p": "0.56474605079",
+            "leverage": "0.73066171",
+            "leverage_at_p_ref": "0.058184047",
+            "amplification_vs_baseline": "0.674852",
+            "sample_cost_ratio_vs_baseline": "2.19575"
+          },
+          "combination": {
+            "best_p": "0.62774605079",
+            "leverage": "2.2897347",
+            "leverage_at_p_ref": "1.9177174",
+            "amplification_vs_baseline": "2.11484",
+            "sample_cost_ratio_vs_baseline": "0.223586"
+          }
+        },
+        "caveat": "These are in-sample maxima over the grid and carry selection optimism; the held-out control is the number to plan with."
+      },
+      "selection_control": {
+        "baseline": "M @ 0.59274605079",
+        "directions": [
+          {
+            "selected_on": "half_0",
+            "reported_on": "half_1",
+            "readout": "combination",
+            "p": "0.62774605079",
+            "in_sample_leverage": "2.0103644",
+            "held_out_leverage": "1.9842886",
+            "in_sample_amplification": "3.00018",
+            "held_out_amplification": "2.31654",
+            "optimism_factor": "1.01314",
+            "transports": true
+          },
+          {
+            "selected_on": "half_1",
+            "reported_on": "half_0",
+            "readout": "combination",
+            "p": "0.62774605079",
+            "in_sample_leverage": "1.9842886",
+            "held_out_leverage": "2.0103644",
+            "in_sample_amplification": "2.31654",
+            "held_out_amplification": "3.00018",
+            "optimism_factor": "0.987029",
+            "transports": true
+          }
+        ],
+        "both_directions_transport": true,
+        "why": "A readout selected on a half-sample and validated on the other half carries no selection optimism into the reported amplification.  The in-sample column is shown only so the size of the optimism is visible."
+      },
+      "grid_boundary_binds": {
+        "M": true,
+        "S": false,
+        "Sp": false,
+        "Dp": false,
+        "combination": true
+      },
+      "full_sample_leverage": {
+        "0.55774605079": {
+          "M": "0.97610679",
+          "S": "1.6223586",
+          "Sp": "0.53135839",
+          "Dp": "0.71781293",
+          "combination": "1.8032589",
+          "combination_retained": 4
+        },
+        "0.56124605079": {
+          "M": "0.9942875",
+          "S": "1.6330272",
+          "Sp": "0.36488445",
+          "Dp": "0.73045606",
+          "combination": "1.8241185",
+          "combination_retained": 4
+        },
+        "0.56474605079": {
+          "M": "1.0123406",
+          "S": "1.6392688",
+          "Sp": "0.16871011",
+          "Dp": "0.73066171",
+          "combination": "1.8416359",
+          "combination_retained": 4
+        },
+        "0.56824605079": {
+          "M": "1.0293769",
+          "S": "1.6388169",
+          "Sp": "0.050436104",
+          "Dp": "0.7160905",
+          "combination": "1.8544172",
+          "combination_retained": 4
+        },
+        "0.57174605079": {
+          "M": "1.044658",
+          "S": "1.6291881",
+          "Sp": "0.28437307",
+          "Dp": "0.68406457",
+          "combination": "1.8620737",
+          "combination_retained": 4
+        },
+        "0.57524605079": {
+          "M": "1.0576258",
+          "S": "1.6077165",
+          "Sp": "0.52468142",
+          "Dp": "0.6317697",
+          "combination": "1.8653825",
+          "combination_retained": 4
+        },
+        "0.57874605079": {
+          "M": "1.0679218",
+          "S": "1.5716267",
+          "Sp": "0.76374314",
+          "Dp": "0.55675815",
+          "combination": "1.8663915",
+          "combination_retained": 4
+        },
+        "0.58224605079": {
+          "M": "1.075398",
+          "S": "1.5181618",
+          "Sp": "0.99532404",
+          "Dp": "0.4579248",
+          "combination": "1.86833",
+          "combination_retained": 4
+        },
+        "0.58574605079": {
+          "M": "1.0801233",
+          "S": "1.4447758",
+          "Sp": "1.2146478",
+          "Dp": "0.33699699",
+          "combination": "1.8751639",
+          "combination_retained": 4
+        },
+        "0.58924605079": {
+          "M": "1.082387",
+          "S": "1.3493918",
+          "Sp": "1.4181045",
+          "Dp": "0.20009481",
+          "combination": "1.8907423",
+          "combination_retained": 4
+        },
+        "0.59274605079": {
+          "M": "1.0826992",
+          "S": "1.2307026",
+          "Sp": "1.602811",
+          "Dp": "0.058184047",
+          "combination": "1.9177174",
+          "combination_retained": 4
+        },
+        "0.59624605079": {
+          "M": "1.0817865",
+          "S": "1.0884675",
+          "Sp": "1.766208",
+          "Dp": "0.074842269",
+          "combination": "1.9566414",
+          "combination_retained": 4
+        },
+        "0.59974605079": {
+          "M": "1.080578",
+          "S": "0.9237344",
+          "Sp": "1.9058009",
+          "Dp": "0.1861645",
+          "combination": "2.0056379",
+          "combination_retained": 4
+        },
+        "0.60324605079": {
+          "M": "1.080179",
+          "S": "0.7389117",
+          "Sp": "2.0190668",
+          "Dp": "0.26777949",
+          "combination": "2.0607914",
+          "combination_retained": 4
+        },
+        "0.60674605079": {
+          "M": "1.0818278",
+          "S": "0.53763814",
+          "Sp": "2.1034825",
+          "Dp": "0.3177909",
+          "combination": "2.1170867",
+          "combination_retained": 4
+        },
+        "0.61024605079": {
+          "M": "1.0868323",
+          "S": "0.32445224",
+          "Sp": "2.1565982",
+          "Dp": "0.33927676",
+          "combination": "2.1695491",
+          "combination_retained": 4
+        },
+        "0.61374605079": {
+          "M": "1.0964885",
+          "S": "0.10432389",
+          "Sp": "2.1760948",
+          "Dp": "0.33824168",
+          "combination": "2.214226",
+          "combination_retained": 4
+        },
+        "0.61724605079": {
+          "M": "1.1119804",
+          "S": "0.11784446",
+          "Sp": "2.1598329",
+          "Dp": "0.3218595",
+          "combination": "2.2487476",
+          "combination_retained": 4
+        },
+        "0.62074605079": {
+          "M": "1.1342687",
+          "S": "0.33763482",
+          "Sp": "2.1059895",
+          "Dp": "0.29734625",
+          "combination": "2.2723718",
+          "combination_retained": 4
+        },
+        "0.62424605079": {
+          "M": "1.1639735",
+          "S": "0.55137114",
+          "Sp": "2.0134253",
+          "Dp": "0.27132822",
+          "combination": "2.2856152",
+          "combination_retained": 4
+        },
+        "0.62774605079": {
+          "M": "1.2012635",
+          "S": "0.75619431",
+          "Sp": "1.8823432",
+          "Dp": "0.24950126",
+          "combination": "2.2897347",
+          "combination_retained": 4
+        }
+      }
+    }
+  },
+  "decision": {
+    "both_sizes_transport": true,
+    "worst_held_out_amplification": "2.31654",
+    "worst_held_out_sample_cost_ratio": "0.186346",
+    "verdict": "CHANNEL_CHOICE_TRANSPORTS__SELECT_THE_READOUT_BEFORE_BUYING_SAMPLES",
+    "what_this_cannot_do": "This scan reports angular resolution only.  It deliberately does not compute delta, rho, or any contamination bound for a readout it selected: those would be numbers the selection had already seen (GOVERNANCE 2E).  A selected readout must be declared prospectively and bought with new samples before it carries a verdict."
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "N": 325,
+        "pair": "C-A",
+        "histogram_sha256": "284527458bcc6106b56b151d744933bfaff5a89f2f5415dbc5aeef31019f2d26",
+        "git_commit": "1668bddd9e8b10cbe5c57add79eb61f74861fb4b"
+      },
+      {
+        "N": 325,
+        "pair": "C-B",
+        "histogram_sha256": "96c00bfad4f4a452b9e68b8fed6caa8f474450f3fbdd30439df013cb30b6a572",
+        "git_commit": "1668bddd9e8b10cbe5c57add79eb61f74861fb4b"
+      },
+      {
+        "N": 425,
+        "pair": "C-A",
+        "histogram_sha256": "d6296347dd36cbb5c89c337926160686147f5f23c67189f1b5c5f5866931ff18",
+        "git_commit": "1668bddd9e8b10cbe5c57add79eb61f74861fb4b"
+      },
+      {
+        "N": 425,
+        "pair": "C-B",
+        "histogram_sha256": "e49ee5594705eb13c30c91b7966ec7072183652df4a06df35ccccd459c5399ae",
+        "git_commit": "1668bddd9e8b10cbe5c57add79eb61f74861fb4b"
+      }
+    ]
+  }
+}

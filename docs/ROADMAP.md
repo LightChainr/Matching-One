@@ -39,7 +39,23 @@ Scale-log behavior is no longer enough to identify the Q4 Jordan module. Use exa
 
 **Run, and negative** — see `notes/modulus-fingerprint-n290-result-20260905.md`. The N=290 square-vs-rectangular ratio is `1.880 +/- 0.177`, which excludes `11/4` at 4.9 sigma along with every other prediction on the frozen list. The hypothesis tested was a conjunction — weight-4 shape *and* a normalization that removes the same block — so what died is the cheap version of the fingerprint, not the module. The known spin-8 systematic would need `A8/A4 = 3.44` to explain the gap and is ruled out by the committed H4-beats-H8 results.
 
-**Action:** freeze and run aspect ratio **4 at N=3380**. It has three orientations in *both* families (square `|w|^2=3380`: `58+4i`, `52+26i`, `44+38i`; rectangular `|w|^2=845`: `29+2i`, `26+13i`, `22+19i`), so it fits `C`, `A4` and `A8` together and removes the spin-8 systematic rather than bounding it, and it separates linear-in-`r` (4.0) from weight 4 (10.99) from area (16). Name the linear-in-`r` law as a competitor **before** the run: it is a post-hoc reading of the N=290 point and has no standing yet.
+**Designed and frozen, not yet scored — `predictions/aspect_ladder_n580_20260905.yaml`.** The design is the *ladder* `r = 1, 2, 4` at one site count, and it lives at **N=580** — not the N=3380 this item first named, nor the N=1300 of the two superseded prediction files.
+
+Each rung is one paired run: two orientations of the same norm, giving `(O₁−O₂)/Δcos4 = A4 + A8·(Δcos8/Δcos4)`. Three runs in all. N=580 is picked by a stated objective over the sixteen site counts up to 1000 that carry the ladder — **maximum shared angular leverage first, then minimum spin-8 leakage** — and it wins on both: `Δcos4 = 8064/4205` in all three rungs, the same maximum the N=290 design had, and leakage `1148/21025 ≈ 0.055` against `196/625 ≈ 0.31` for the runners-up. The search is in `results/aspect-ladder-design/latest.json`, not asserted here.
+
+The property that makes it better than a bigger, more expensive design: **the r=1 and r=4 rungs carry the *same* leakage**, so the spin-8 bias cancels to leading order in `A4(4i)/A4(i)` — the ratio that discriminates. The N=290 pair could not do this; its two families had equal and *opposite* leakage, so the systematic entered the score twice. It still does not cancel in the `r=2/r=1` entry, and the frozen file says so.
+
+`r=4` is where the live hypotheses separate: weight 4 predicts `10.99`, the bare aspect ratio `4.00`, area `16`, none `1`. At `r=2` the first two are `2.75` and `2.00`, which the existing 9 % measurement cannot split — which is why the ladder goes to 4. The `r=2` rung is separately a replication of the N=290 number.
+
+The linear-in-`r` law is named in the frozen file as `bare_aspect_ratio` **before** any block runs, which is the whole point: it is a post-hoc reading of the N=290 point and this is its one chance to lose.
+
+**Why not N=1300, measured rather than guessed.** A 1M pilot there returned a per-difference noise of `0.0131` against `0.0065` at N=290 — a factor 2.0 for a 4.5× larger torus — while the amplitude falls roughly as `N^-5/4`. A decisive ratio at N=1300 is about three orders of magnitude beyond what we can spend. The same pilot found that **the analysis path returned zeros at N=1300**: the binomial tail's recurrence starts at `(1−p)^N`, which underflows to exactly zero near **790 sites** at the percolation threshold and then stays zero, silently. That bound had never been noticed, and it capped every future large-`N` plan in this repository. It is fixed (`analyze_p48_retrospective` now anchors the recurrence at the mode) and `N ≳ 4000` is analyzable.
+
+**Piloted 2026-09-05** — `notes/aspect-ladder-n580-pilot-20260905.md`. Measured throughput 33 s/M samples and per-difference noise 0.0018–0.0024 per 10M, comparable across all three rungs. **200 M samples per rung, three rungs, about 5.5 hours** puts ~20 % on the denominator of both score entries, which separates 4.00 from 10.99 at r=4 with room to spare. The pilot's central values are noise (33 %, 1416 %, 22 % relative) and may not be read or pooled.
+
+**Action:** run the three rungs — ticket #567.
+
+**Run, 2026-09-05 — underpowered** — `notes/aspect-ladder-n580-result-20260905.md`. `A4(4i)/A4(i) = 4.58`, scored by Fieller contrast because the denominator `A4(i)` is only 3.6σ from zero (the ratio z is recorded but not used). `no_modulus_dependence` `1.00` is excluded at `9.5` sigma; the bare aspect ratio `4.00` (z=+0.50), the weight-4 shape `10.99` (z=−2.08) and area scaling `16` (z=−2.56) all survive — underpowered, three survivors. The 3σ Fieller interval is `[2.40, 27.47]`. The cross-rung covariance was measured by the #575 deterministic replay (`ρ=−0.1648`, reconstructed was −0.1526) and moves no verdict. The r=2 entry (`3.23 +/- 0.93`) cannot split `2.75` from `2.00`, which is why the ladder went to r=4. No optional stopping: any further run is a new frozen design.
 
 Aspect ratio **3 is arithmetically impossible** here: `N = 3|w|^2` and 3 is inert in `Z[i]`, so no 3:1 rectangle shares a site count with a square torus. The reachable ladder is `r` that are themselves sums of two squares.
 
@@ -72,6 +88,310 @@ The N145->290 quantile-center `N^-3/4` transfer passed while the width metric dr
 ### Boolean/noise and energy-log-pair exact programs — #227/#234
 
 The exact/no-new-compute programs in open PRs #245/#246 can proceed in parallel. Treat them as mechanism-discovery tools. They do not block the active compute choices above.
+
+### Publication track P2 — the algebraic exclusion manuscript
+
+`docs/manuscripts/p2-algebraic-exclusion/` is drafted end to end, with every number
+generated from committed artifacts. It needs no new compute.
+
+The blocker is cleared. [#574](https://github.com/LightChainr/Matching-One/issues/574)
+returned the primary reading: Ziff, Phys. Rev. E **73**, 016134 (2006) prints the "A
+lattice" quintic and its own statement that the method does not reach square site, both
+now quoted verbatim in §1.1; the Suding–Ziff sentence is quoted as printed rather than
+as the shortened paraphrase we had. That reading also corrected §4.2 — the historical
+exact-bond record reaches height **6** (Wierman 1984), not 4, so the class the paper
+exhausts is a choice we defend rather than a bound the literature hands us, and §4.2 and
+§8.1 now say so.
+
+**One `[LIT]` marker remains:** Scullard 2006 (martini lattices), which #574 did not
+cover. It supports a background sentence, not a result.
+
+**Action:** read Scullard 2006, or weaken the sentence that cites it; then submittable.
+
+### Publication track P3 — denominator-free projective inference
+
+`docs/manuscripts/p3-projective-inference/` is drafted end to end from committed
+artifacts and needs no new compute. Target: *Physical Review E*.
+
+The methodological claim is that a model predicting proportions predicts a **ray**, so
+the test is the covariance-weighted distance to that ray and no coordinate should be
+nominated as a denominator; for two entries and one ray this is exactly Fieller's `z`
+squared, verified to `1.5e-15` on the real N=580 covariance, so every verdict change is
+attributable to the third rung and not to a change of statistic. Using all three rungs
+flips two of eight frozen verdicts from compatible to excluded, at 7.0σ and 7.1σ.
+
+The physical finding is that no competitor's class can produce the measured concavity:
+`f[1,2,4] = -4.66e-04 ± 1.53e-04`, `z = -3.05`, against zero or strictly positive for
+every frozen ray. Reconciling the rung the design dropped needs `|A8/A4|` between 3.2 and
+17.5 against the `<< 1` under which it was dropped -- solved exactly from the per-rung
+leakage signs, not bounded.
+
+**Action:** the draft's own §6 —
+[#583](https://github.com/LightChainr/Matching-One/issues/583), N=650 with three
+orientations per family, which measures `A8` instead of assuming it. One deterministic
+N=580 replay would also settle the single undetermined verdict of §5.2.
+
+**#583 is now blocked on an identifiability problem, and the cheap fix has been tried
+and failed.** [#589](https://github.com/LightChainr/Matching-One/issues/589) showed the
+N=650 design moves the lattice angle and the Smith/quotient class together, so its third
+fitted coefficient absorbs any noncyclic offset;
+[#591](https://github.com/LightChainr/Matching-One/issues/591) made the leakage exact
+(`0.32494 delta` into `A8`, `±0.77170 delta` into `A4`, same-sign `A8` in both modulus
+families). #589's option 2 was to calibrate that offset from #205's archived histograms
+in the derivative channel — no new sampling.
+
+That attempt is complete and negative (`notes/p205-derivative-smith-loading-20260906.md`,
+`results/p205-derivative-smith-loading/latest.json`). Rescoring the frozen #205 block in
+`M`/`S`/`D`/`Sp`/`Dp` at the same `p_ref` with the same aligned jackknife — the `M`
+channel reproduces the published `analysis/score.json` exactly, as the control that this
+is the same pipeline — gives a noncyclic offset consistent with zero everywhere
+(`max |delta_z| = 1.83`) but an angular amplitude that is *also* barely resolved
+(`|A4_z|` from 0.06 to 2.18). The exported ratio `rho = delta / A4` is therefore
+unconstrained: in **all ten** channel×size cells the 2σ interval for `rho` reaches the
+pole `rho = ∓1.29584` at which the quotient response annihilates N=650's fitted `A4`
+entirely. This is a power failure, not a detection, and it holds in the published `M`
+channel too — #205 bounded an offset, never an offset *relative to* the amplitude.
+
+Cost of fixing it by this route, assuming a zero true offset: `Sp` is the only viable
+channel (~3× the existing 10M/node for a banded reading, ~26× for a clean one); `Dp`
+needs 2.6e4–1.5e6×.
+
+**#596's Gate 2 is now run and answered** (`notes/p205-projective-channel-design-20260906.md`,
+`results/p205-projective-channel-design/latest.json`). The objective was corrected first:
+maximizing `|A4|/se(A4)` is the wrong target, so the design object is the joint
+`(A4, delta)` estimator with its full 2×2 covariance, scored by the sample multiplier
+needed for an α-level **Fieller** set to fit the declared window. The Fieller half-width
+is `z sqrt(var(delta)/n)/|A4|`, so the figure of merit is `A4²/var(delta)` — the *offset*
+variance — and the optimal combination is a matched filter against `S`, not against the
+`A4` covariance.
+
+**The ranking transports; the price does not.** Full-sample cost (multiplier on 10M/node,
+band 0.20) ranks `combination < Sp < S < M < Dp` **identically at both sizes**, which are
+independent by the frozen #205 contract — a replication, not a re-reading. The best
+readout saves 16.4× at N=325 and 3.7× against the historical `M @ p_ref`, whose own cost
+is x66.9 / x42.4. But nested three-fold cross-fitting gives fold-to-fold cost spreads of
+x73 (stabilized) to x527 (raw), and the two variants land on different Gate-2 branches, so
+the script refuses a branch letter.
+
+The reason is structural and is the finding: **the validation statistic is itself a
+weak-denominator ratio** — cost `∝ var(delta)/A4²` and a 33-batch fold cannot resolve
+`A4²` — and **pricing costs more than running**. Since cost `∝ 1/A4²`, knowing it to ±10%
+needs `A4` at ~20σ: at N=325 running the band-0.20 calibration in `Sp` needs x5.4 while
+pricing it needs x31.9; at N=425, x12.7 against x84.5. There is no cheap pilot. The
+2σ-conservative purchase multiplier is x14.5–x28.8 at N=325 and diverges at N=425.
+
+**Action: do not buy N=650 as a pure `A8/A4` experiment.** Effectively Gate-2 branch C,
+with the reason sharpened — not "the nuisance is unbounded" but "the archive can rank
+readouts and cannot price them, and no affordable measurement inside it can fix that".
+The live options stay #589's 3 and 4 (all-cyclic N=2210, or a crossed design), neither of
+which needs this calibration. If the calibration route is taken anyway it must be bought
+at a declared multiplier in `Sp` — within 10–35% of the combination at both sizes, broad
+in `p`, and not dependent on a 4×4 inverse covariance estimated from a third of the block.
+Grid-boundary effects, a shrunk covariance for the combination, and higher tail
+derivatives are handed to **#600** rather than fixed here.
+
+### State-object contraction — #582 / #581 / #580
+
+Three zero-new-sampling tests of what the finite "state" actually is, ahead of any
+further large production.
+
+**#580 is complete** (`notes/p398-intervention-transport-20260906.md`). On P398's exact
+noncrossing process a frozen rank-6 observable-Krylov span, with its readout and source
+coordinates and its reduced tangent `B` all fixed at `eta = 0`, predicts the intervened
+response at `eta = ±1/4` at a cost of `+0.006` relative error over its own `eta = 0`
+truncation, stably from width 4 (14 states) to width 8 (1430). It survives an
+intervention deliberately chosen **outside** the operator pencil that built it, so the
+pass is not an algebraic tautology. A random span of the same rank sits at 0.997.
+
+The failure is elsewhere and it is the useful part: the same frozen realization does not
+represent the five readouts it was not built from — `covering_depth` 0.73,
+`halves_linked` 0.52 — and that gap is already there at `eta = 0`. Additive local counts
+transport; nesting and long-range boundary linking are not represented at all. The
+low-dimensional state is real and transportable **relative to a declared observable
+dictionary**, and is not a state of the system.
+
+**#588 Phase A is complete** (`notes/p398-projected-memory-20260906.md`). The exact
+Mori-Zwanzig kernel of that same frozen span answers the fork #580 opened. On the
+declared dictionary the residual is 96% projected memory, of effective order 3-4,
+decaying in `tau ~ 0.14` — a small state plus three or four poles is a real candidate
+description. On the held-out readouts memory and unrepresented-readout are jointly
+required, ~40% and ~43% of the closure error each, stably from 14 states to 1430.
+Neither repair alone is the object.
+
+Two qualifications carried in the note. The memory order is bounded only relative to
+an accuracy target: four poles reproduce 99.9% of the kernel at every width, but the
+exact numerical degree goes 4, 9, 12, 13, 14 — sublinear and apparently flattening, not
+flat. And the small leading order is partly arithmetic: `rank C = 3` uniformly, because
+a rank-6 Krylov prefix over a 3-dimensional seed span contains its own first level, so
+`rank K(tau) <= 3` for structural reasons. What is not an artifact is the pencil
+comparison: per unit of perturbation the out-of-pencil intervention moves
+the kernel 1.80 against the declared one's 2.58, where #580's exact lumping went from
+750 blocks to the identity partition under the same probe. The three descriptions of
+one object -- `r_transport`, `r_positive`, memory -- respond differently to the same
+intervention, which is the concrete reason a single "state dimension" cannot be
+reported for it.
+
+**#588 Phases B and C are complete** (`notes/p398-memory-closure-20260906.md`), and
+they revise the headline above. #580's held-out failure was a property of the *span*,
+not of the dictionary. A finite-horizon balanced realization of **order 4**, built from
+baseline data only and frozen at `eta = 0`, predicts all eight readouts' contrast
+responses at `eta = ±1/4` to 5.9% at width 8 — where the rank-6 Krylov span sits at
+41.8% on the held-out block and never passes at any rank up to 12, and where rank 6
+plus the *exact* memory kernel reaches only 0.245. A four-dimensional Markov state with
+no memory at all beats both, on more readouts, with fewer coordinates.
+
+The Hankel spectrum barely moves with width (D0: `1, 0.45, 0.09` at width 4 and
+`1, 0.58, 0.14` at width 8), so the task exposes 3-4 Markovian input/output coordinates
+independent of state count. That compact object is a state of the triple
+`(sources, readouts, horizon)` — change any of the three and it changes — but it is
+genuinely compact and it transports.
+
+Two secondary findings. The Krylov prefix ladder is **not monotone**: rank 7 is worse
+than rank 6 on the held-out block at widths 5-8, because a rank cutting inside a Krylov
+level adds half a level that the Galerkin closure then misuses. And the memory closure
+saturates at **three poles** — real, exact, and dominated.
+
+**Action:** this is the input #275 needs. Score its mechanism classes on dictionaries
+that are known to separate, not on a shared one; two models sharing a dictionary sharing
+an image is the expected outcome and reads `UNIDENTIFIABLE_WITH_CURRENT_ASSETS`. It also
+gives #581 an independent bulk-versus-topology datum from an exactly solvable process.
+
+Not opened by this: any square-site application, which needs a declared intervention with
+common observables before and after and a supplied map between microscopic state spaces.
+
+**#598 is complete, and it revises #580's headline** (`notes/p398-reflection-parity-20260906.md`).
+The exact positive quotient was never a fragile emergent state. It **is** the orbit
+partition of one reflection — checked as the same partition, not merely the same block
+count, by exact refinement at every width 4-8 (`10, 26, 76, 232, 750` = R-orbits exactly).
+The reflection is identified by the task, not assumed: seven of the eight declared
+readouts are fully dihedral-invariant and `wrap` fixes the remaining freedom, so
+`R: i -> (w-1) - i` is the unique reflection preserving `D0`. The orbit-count formula
+`[Catalan(w) + C(w,floor(w/2))]/2` matches all five widths but identifies nothing on its
+own — every reflection has the same fixed-point count, and that caveat is part of the
+result.
+
+The collapse under a localized tilt then needs no explanation, but the *survival of the
+task* does, and parity supplies it exactly. `H_single` splits into `H_even + H_odd` with
+`||H_odd||/||H_single|| = 0.56` — the odd part is over half the perturbation — yet for
+`R`-even sources and readouts the first-order integrand
+`mu^T e^{(t-s)G} H_odd e^{sG} f` vanishes **pointwise**, to `6.6e-15` over 288 declared
+pairs at width 4 and `5.5e-16` over 288 at width 8. The consequence checks out on a
+declared epsilon ladder: log-log slopes `2.0006 -> 2.0010` for the odd direction against
+`0.980 -> 0.983` for the even one, the latter being the control that a first-order effect
+is visible at all. At `eta = 1/4`, width 8, the odd direction moves an invariant task 26x
+less than the even one.
+
+The test is falsifiable and fires: `halves_linked` is not `R`-even at odd widths, so the
+rule *requires* a nonzero first-order response there, and one appears at `0.292` (w=5)
+and `0.107` (w=7). Demanding the lumping carry all eight readouts at w=5 collapses it to
+the identity, as it must.
+
+**#598 Phase C is now closed too, by #600 / PR #603.** The frozen finite-horizon balanced
+realization was built twice — on the microscopic `Catalan(w)` chain and after exact
+reduction to the `R`-orbit quotient — and they agree on the protected `D0` dictionary to
+`1.5e-16`–`2.7e-15` in the Hankel spectrum at `w = 4..8`, with balanced order and
+numerical rank preserved. The reason the reduction is exact rather than merely accurate is
+that the **odd sector is inert**: reach and observe energy `1.7e-17`–`5.7e-17` across
+`dim = 4/16/56/197/680`, i.e. exactly uncontrollable and unobservable. The declared trap
+fired — `halves_linked` breaks the agreement at `w = 5, 7` only (`1.8e-2`, `8.7e-3`) and
+symmetrization restores `1e-16`, so the break is the `R`-odd part and nothing else. A
+continuity gate against the committed pure-Python #588 numbers was run before any quotient
+result was read.
+
+So the two-step picture is now established end to end and in the right order:
+
+```text
+exact task symmetry quotient   (a first factor, not an approximation)
+  -> task-relative balanced reduction   (a second, lossy, task-relative compression)
+```
+
+**Action:** #593 changes character — it is no longer "two more rows" but a falsification
+of a closed form declared in advance, `r_positive(9) = 2494` and `r_positive(10) = 8524`.
+And #594's Q1 no longer needs the codimension conjecture in its body: the closed condition
+is a symmetry and the surviving descriptions are invariant. The general statement is the
+`C2` case of a character selection rule and is the same shape as #244's deck rule — an
+analogy in representation theory, not an identification of the two systems.
+
+**#584 (Gate 3) is complete — no pre-existing discrete label indexes #582's remainder**
+(`notes/type582-residual-20260906.md`, `results/type582-residual/latest.json`). Re-freezing
+the five #582 transitions reproduces the affine statistics bit-for-bit (`435 746, 192 537,
+292 805, 154 876, 112 067` on 7 df) and the frozen consensus direction `g_N` carrying
+99.5–99.9 % of each transition's `chi^2`. Against an **exact** permutation null over every
+class-consistent relabelling (≤30 for five transitions), **no label beats the null**:
+lineage p=.133 (closest, and only the amplitude effect #582 already saw), multiplier and
+target-interpolation p=.300, prime dominant-parity and min-component p=.700, prime
+cos4-sign p=.600. The one genuinely new arithmetic label — the parent Gaussian prime's
+**dominant-component parity** (13=3+2i and 29=5+2i odd, 17=4+i even), which coarsens
+lineage 3→2 and could have matched #582's `{65,145}` vs `{85,170}` split — does not
+survive. Smith/cyclic is degenerate on these sizes (all primitive), deck/scale-word labels
+are missing, and primitive homology is too fine (16 values over 5 transitions).
+
+The remainder after removing `g_N` is a different, weaker object from #582's clusters: its
+tight pair is now `{130→325, 170→425}` — the two `m=2.5` transitions, 10.2° — not the
+`{85→170, 170→425}` lineage pair, so #582's apparent cluster structure was largely the
+dominant direction's amplitude varying across lineages. A Taylor second-difference
+curvature null is strongly resolved (stat 1.82e6 / 1.19e6 on 7 df) but does **not** unify
+the remainder: the two lineages' curvatures are 78.5° apart and each sits 43–80° from the
+transitions' own `r_N` (4–53 % shared variance, never dominant). The remainder is therefore
+neither noise nor a smooth one-parameter-law curvature artifact.
+
+**Verdict: "downgrade the fiber."** Keep the dominant transferable #582 direction as the
+robust finite object; do not fit a free third direction or exponent to five residuals;
+resolve the remainder with one strategically crossed transition or a changed readout, not
+with another rank. **#584 step 4 (couple base/fiber to #581's typed channels) is
+deferred**: the duality-even Betti / ambient-homology tangents are exact only on the
+square-bond torus, and the five #582 transitions are square-site with no canonical lift —
+the coupling needs a square-site decomposition that is not built yet.
+
+**The direction Gate 3 kept has a law, and its own curvature falsifies that law**
+(`notes/p582-amplitude-law-20260906.md`, `results/p582-amplitude-law/latest.json`,
+`scripts/p582_amplitude_law.py`, 25 tests). Gate 3 reports the five amplitudes of the
+frozen `g_N` as inputs to a label screen; they are also five numbers spanning a factor of
+2.8, each measured to better than 0.3 % (`z` = 335–659). Fitting **one** exponent to those
+amplitudes — not to any direction, so not the move #584 rules out — gives
+`A(N) ~ N^-omega` with `omega = 0.970`, `chi^2 = 277.4` on 3 df. The fit is rejected and
+the misfit is at most 3.8 % in amplitude; leave-one-transition-out, the exponent predicts a
+transition it never saw to within 5 % (worst case `145→290`, the singleton lineage). The
+exact finite-difference image `sinh(omega h/2)/(omega h/2)` is carried rather than dropped:
+it is 1.9 % at `h = log 2` and 3.3 % at `h = log 2.5`, so dropping it would manufacture the
+`multiplier` label Gate 3 screened. Error budget: `omega = 0.970 ± 0.015` (leave-one-out)
+`± 0.027` (orientation weighting — the naive equal weighting gives 0.997 and moves `g_N` by
+7.8°), combined `± 0.031`, so **`omega = 1` is not excluded**. `N^-1` is `L^-2` on a square
+torus; that is a coincidence of numbers, not a named percolation exponent.
+
+Then the independent check (GOVERNANCE §2 minimum A) **fired**. A second divided difference
+is a different functional of the same productions; freezing `(lambda, omega)` from the five
+*first* differences and predicting it, with no refit, gives measured/predicted = **1.5368**
+(gaussian_13) and **1.5574** (gaussian_17) — the one-exponent law misses the curvature by
+55 %. The two lineages are **not** independent where it matters: under the primary
+weighting, 325 and 425 are the only sizes in the tree whose spin-0 combination
+*extrapolates* (weights `1.278/−0.278` and `−0.026/+1.026`) **and** the only ones run at 5M
+per batch rather than 1M — and they are rung 3 of gaussian_13 and rung 3 of gaussian_17
+respectively, which is exactly where the curvature weight `c2 = +1.36` sits. Their 1.3 %
+agreement is shared structure, not replication; the first version of this entry over-read
+it. The control that carries the claim is the **equal** weighting, `0.5/0.5` at every size
+and never extrapolating: all four weighting×lineage cells give `1.4439, 1.5368, 1.5574,
+1.5789` — **the discrepancy survives, none near one, honest spread 8.8 %**. A textbook
+quantile-estimator bias is the other candidate and is ~6 orders of magnitude too small
+(`O(1/M)` at `M = 10^8` against the `~7e-4` needed). So the natural reading of Gate 3's
+unlabelled remainder is **a second smooth scale, not a discrete fiber** — consistent with
+finding nothing to label, and stronger than "structured but unindexed". Not proof: a
+step-size-dependent reconstruction bias that the first differences cancel would look the
+same.
+
+**One production separates them: `N = 725 = 5^2 · 29`, orientations `(26,7)` and `(23,14)`.**
+It extends `p50` from two sizes to three (`725 = 2.5 · 290`, same parent prime 29), giving a
+**third independent curvature** outside the two lineages that produced the discrepancy; it
+breaks the degeneracy Gate 3 exposed, because on the committed sizes a 5-adic valuation of 2
+and the *absence* of an interpolating spin-0 combination coincide exactly (325 and 425 have
+both, so `multiplier`, `valuation` and `interpolation flag` are one partition), whereas 725
+has valuation 2 **and** admits an interpolating combination — `(26,7)` and `(23,14)` straddle
+zero in `cos 4θ`; and it lengthens the lever arm past the current maximum of 425. Run at 1M
+per batch with an *interpolating* combination, it also makes `p50` the first lineage whose
+three rungs share their reconstruction structure — not the selection criterion, but it
+follows from it. `N = 338`
+was the cheaper candidate and is **unusable**: `(17,7)` is its only primitive representative,
+so it has no second orientation at all.
 
 ## Completed high-information blocks
 
