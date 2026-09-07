@@ -303,30 +303,51 @@ def _edges_of(occ: list[int], order) -> list[tuple[int, int, int, int]]:
             for i in order if occ[i]]
 
 
-def _dual_edges_of(occ: list[int]) -> list[tuple[int, int, int, int]]:
-    """Occupied dual bonds transported to primal coordinates (PR #628 scheme).
+def _dual_edges_of(occ: list[int], geometric: bool = False
+                   ) -> list[tuple[int, int, int, int]]:
+    """Occupied dual bonds transported to primal coordinates.
 
-    Mirrors exact_rank_census.bond_census exactly: iterate i ascending, map
-    the dual of pair i to its primal index pi, keep pi when primal pi is
-    vacant.  Because dual_to_primal is a derangement this enumerates the
-    complement of the occupied primal set, in dual-crossing order.
+    Two conventions, both audited:
+
+    - ``geometric=False`` (PR #628's code path): iterate i ascending, map the
+      dual of pair i to its primal index pi = DUAL_TO_PRIMAL[i], keep pi when
+      *primal pi is vacant*.  Because DUAL_TO_PRIMAL is a fixed-point-free
+      map on bond indices, this enumerates ``{pi : occ[pi] == 0}`` -- the
+      plain bit-complement of the occupied set, NOT the transported geometric
+      dual.  This is the convention error #42's note already flagged; it is
+      reproduced here verbatim so the causal chain to the published numbers
+      is closed.
+    - ``geometric=True`` (the correct crossing-dual transport): dual bond i
+      is occupied iff primal bond i is vacant, and the occupied dual bond is
+      transported to the primal edge ``DUAL_TO_PRIMAL[i]``.  This is
+      ``{DUAL_TO_PRIMAL[i] : occ[i] == 0}``, which differs from the
+      complement on every configuration (DUAL_TO_PRIMAL is a derangement but
+      NOT an involution on L=3).
     """
     out = []
-    for i in range(NB):
-        pi = DUAL_TO_PRIMAL[i]
-        if not occ[pi]:
-            out.append((BOND_UV[pi][0], BOND_UV[pi][1],
-                        BOND_STEP[pi][0], BOND_STEP[pi][1]))
+    if geometric:
+        for i in range(NB):
+            if not occ[i]:
+                pi = DUAL_TO_PRIMAL[i]
+                out.append((BOND_UV[pi][0], BOND_UV[pi][1],
+                            BOND_STEP[pi][0], BOND_STEP[pi][1]))
+    else:
+        for i in range(NB):
+            pi = DUAL_TO_PRIMAL[i]
+            if not occ[pi]:
+                out.append((BOND_UV[pi][0], BOND_UV[pi][1],
+                            BOND_STEP[pi][0], BOND_STEP[pi][1]))
     return out
 
 
 _DESC = list(range(NB - 1, -1, -1))
 
 
-def census_chunk(args: tuple[str, list[int]]) -> dict:
-    which, masks = args
+def census_chunk(args: tuple[str, str, list[int]]) -> dict:
+    which, dual_mode, masks = args
     rank_fn = {"e628": bond_ambient_rank_e628,
                "fixed": bond_ambient_rank_fixed}[which]
+    geometric = (dual_mode == "geometric")
     comp: dict[tuple[int, int], list[int]] = {}
     pair_counts: dict[tuple[int, int], int] = {}
     dual_fail = 0
@@ -334,10 +355,10 @@ def census_chunk(args: tuple[str, list[int]]) -> dict:
     for mask in masks:
         occ = [(mask >> i) & 1 for i in range(NB)]
         edges = _edges_of(occ, range(NB))
-        dedges = _dual_edges_of(occ)
+        dedges = _dual_edges_of(occ, geometric=geometric)
         rb = rank_fn(edges)
         rw = rank_fn(dedges)
-        if which == "e628":
+        if which == "e628" and not geometric:
             # order-instability probe on the same function: descending order
             if rank_fn(_edges_of(occ, _DESC)) != rb:
                 order_unstable += 1
@@ -362,11 +383,13 @@ def _merge(target: dict, chunk: dict) -> None:
             tp[k] += poly[k]
 
 
-def run_census(which: str, workers: int) -> dict:
+def run_census(which: str, workers: int, dual_mode: str = "e628-complement"
+               ) -> dict:
     out = {"comp": {}, "pair_counts": {}, "dual_fail": 0,
            "order_unstable": 0}
     chunk_size = 2048
-    chunks = [(which, list(range(a, min(a + chunk_size, NCONF))))
+    chunks = [(which, dual_mode,
+               list(range(a, min(a + chunk_size, NCONF))))
               for a in range(0, NCONF, chunk_size)]
     with mp.get_context("fork").Pool(workers) as pool:
         for chunk in pool.imap_unordered(census_chunk, chunks):
@@ -432,7 +455,31 @@ def main() -> None:
         (census_e628["dual_fail"],)
     assert got_counts == PUBLISHED_E628["pair_counts"], got_counts
 
-    census_fixed = run_census("fixed", workers)
+    census_fixed = run_census("fixed", workers, dual_mode="e628-complement")
+    census_geo_fixed = run_census("fixed", workers, dual_mode="geometric")
+    census_geo_e628 = run_census("e628", workers, dual_mode="geometric")
+
+    # 2x2 attribution: the published dual_fail decomposes over the two
+    # independent defects (dual-occupation convention, rank winding sign).
+    fail_complement_e628 = census_e628["dual_fail"]     # published: 118133
+    fail_complement_fixed = census_fixed["dual_fail"]
+    fail_geometric_e628 = census_geo_e628["dual_fail"]
+    fail_geometric_fixed = census_geo_fixed["dual_fail"]
+    # Exact duality law on the corrected path: r_b + r_w = 2 must hold on
+    # every configuration, and per-k the three rank pairs must partition
+    # C(18, k); (0,2)<->(2,0) mirror under k -> 18-k, (1,1) symmetric.
+    assert fail_geometric_fixed == 0, fail_geometric_fixed
+    from math import comb
+    kmasses = {pair: dict(enumerate(poly))
+               for pair, poly in census_geo_fixed["comp"].items()}
+    for k in range(NB + 1):
+        s = sum(kmasses.get(p, {}).get(k, 0) for p in kmasses)
+        assert s == comb(NB, k), (k, s, comb(NB, k))
+    m02 = kmasses.get((0, 2), {})
+    m20 = kmasses.get((2, 0), {})
+    m11 = kmasses.get((1, 1), {})
+    assert all(m02[k] == m20.get(NB - k, 0) for k in m02)
+    assert all(m11[k] == m11[NB - k] for k in m11)
 
     def polys(cens: dict) -> dict:
         comp = cens["comp"]
@@ -455,6 +502,10 @@ def main() -> None:
 
     counts_fixed = {f"{a},{b}": n for (a, b), n
                     in census_fixed["pair_counts"].items()}
+    counts_geo_fixed = {f"{a},{b}": n for (a, b), n
+                        in census_geo_fixed["pair_counts"].items()}
+    counts_geo_e628 = {f"{a},{b}": n for (a, b), n
+                       in census_geo_e628["pair_counts"].items()}
     diff_pairs = {k: (PUBLISHED_E628["pair_counts"].get(k, 0),
                       counts_fixed.get(k, 0))
                   for k in sorted(set(PUBLISHED_E628["pair_counts"])
@@ -462,8 +513,16 @@ def main() -> None:
                   if PUBLISHED_E628["pair_counts"].get(k, 0)
                   != counts_fixed.get(k, 0)}
 
+    # M coefficients of the corrected geometric-dual census (the one that
+    # satisfies exact duality): P20 - P02, exact, antisymmetric.
+    comp_geo = census_geo_fixed["comp"]
+    getp = lambda name: comp_geo.get(name, [0] * (NB + 1))
+    M_geo = [getp((2, 0))[k] - getp((0, 2))[k] for k in range(NB + 1)]
+    assert all(M_geo[k] + M_geo[NB - k] == 0 for k in range(NB + 1))
+    assert M_geo[0] == -1 and M_geo[NB] == 1
+
     out = {
-        "schema": "matching-one.probe635.bond-rank-audit.v1",
+        "schema": "matching-one.probe635.bond-rank-audit.v2",
         "scope": "L=3 square bond torus, 2^18 configs, exact integer ranks",
         "suspicion": ("exact_rank_census.bond_ambient_rank adds the edge "
                       "displacement to the tree-lift displacement of the "
@@ -490,6 +549,37 @@ def main() -> None:
                                  for k, c in enumerate(M))),
             "M_half": str(sum(Fraction(c) * Fraction(1, 2) ** NB
                               for c in M)),
+            "caveat": ("same complement dual-occupation convention as #628; "
+                       "isolates the rank-sign bug only"),
+        },
+        "census_geometric_dual": {
+            "with_fixed_rank": {
+                "dual_fail": fail_geometric_fixed,
+                "pair_counts": counts_geo_fixed,
+                "k_masses": {f"{a},{b}": [str(x) for x in poly]
+                             for (a, b), poly in census_geo_fixed["comp"].items()},
+                "M_coeffs": [str(x) for x in M_geo],
+                "M_half": str(sum(Fraction(c) * Fraction(1, 2) ** NB
+                                  for c in M_geo)),
+            },
+            "with_e628_rank": {
+                "dual_fail": fail_geometric_e628,
+                "pair_counts": counts_geo_e628,
+            },
+        },
+        "attribution_2x2": {
+            "complement + e628 rank": fail_complement_e628,
+            "complement + fixed rank": fail_complement_fixed,
+            "geometric + e628 rank": fail_geometric_e628,
+            "geometric + fixed rank": fail_geometric_fixed,
+            "reading": ("the published 118133 duality failures are a "
+                        "compound artifact of two independent defects: the "
+                        "complement dual-occupation convention (#42's "
+                        "known convention error) and the rank winding-sign "
+                        "bug.  Under the geometric crossing-dual transport "
+                        "with the corrected rank, r_b + r_w = 2 holds on "
+                        "all 262144 configurations; exact bond duality "
+                        "does NOT break on the L=3 square bond torus"),
         },
         "pair_count_differences_e628_vs_fixed": {k: {"e628": a, "fixed": b}
                                                  for k, (a, b) in diff_pairs.items()},

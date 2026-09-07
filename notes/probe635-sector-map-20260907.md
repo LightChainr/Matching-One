@@ -104,31 +104,74 @@ assignments are tree-order artifacts.
 (`bond_ambient_rank_fixed`), certified against an independent
 spanning-tree-free implementation (exact rational elimination on the
 incidence matrix: rank[winding image] = rank[B; W] − rank[B]; 42,048
-comparisons, 0 disagreements), the full L=3 bond census is:
+comparisons, 0 disagreements), the full L=3 census *under #628's own
+dual-occupation convention* is:
 
-    dual_fail = 115608   (still nonzero — the qualitative #628 finding survives)
+    dual_fail = 115608
     (0,0):4356  (0,1):26724  (0,2):44380
     (1,0):26724 (1,1):57776  (1,2):26724
     (2,0):44380 (2,1):26724 (2,2):4356
 
-The corrected census satisfies the sanity laws the buggy one could not:
-pair counts symmetric under (a,b) ↔ (b,a); M_bond = P20 − P02 antisymmetric
-around k=9 with M(0)=−1, M(1)=+1, M(1/2)=0 exactly, coefficients
+with pair counts symmetric under (a,b) ↔ (b,a) and M_bond = P20 − P02
+antisymmetric around k=9, M(0)=−1, M(1)=+1, M(1/2)=0 exactly, coefficients
 
     [-1,-18,-153,-804,-2880,-7254,-12552,-13356,-6498, 0,
       6498,13356,12552,7254,2880,804,153,18,1].
 
-(The earlier probe's wrap-gap polynomial `gap` differs from this rank-gap
-M_bond from k=3 up — e.g. −810 vs −804 at k=3 — which is expected: wrap
-*events* and rank-*pairs* are different observables; the discrepancy is
-recorded here so nobody reads one as the other.)
+(This census keeps #628's dual-occupation convention and therefore isolates
+the rank-sign bug alone; see below for why that convention is itself wrong.)
 
-**Impact statement for #628.** The qualitative claim "`r_b + r_w = 2` breaks
-on the bond torus" survives the fix (115,608 failures), but every published
-per-(r_b, r_w) count is wrong, wrong by tree order, and the correct table
-has a different shape (nonzero (0,0)/(2,2) mass, all mixed pairs exactly
-26,724). Any downstream use of #628's bond rank-pair table should be
-recomputed from `results/probe635-bond-rank-audit/latest.json`.
+**Second defect: the dual occupation is the bit-complement, not the
+geometric dual.** While self-checking the first revision we found that
+#628's dual edge set is ``{pi : occ[pi] = 0}`` — since DUAL_TO_PRIMAL is a
+fixed-point-free map (and on L=3 *not* an involution), this is the plain
+bit-complement of the occupied set, not the transported geometric dual
+``{DUAL_TO_PRIMAL[i] : occ[i] = 0}``; the two differ on *every*
+configuration.  This is exactly the convention error #42's note
+(``notes/square-bond-duality-tiny-torus.md``) already flagged, now shown to
+be live inside #628's census.
+
+**2×2 attribution of the published 118133.** Running all four
+convention × rank combinations over 2^18:
+
+    complement + e628 rank   : 118133  (the published #628 number, reproduced)
+    complement + fixed rank  : 115608  (rank bug alone)
+    geometric  + e628 rank   :  99315  (convention bug alone)
+    geometric  + fixed rank  :      0  ← exact
+
+Under the correct crossing-dual transport with the corrected rank,
+**`r_b + r_w = 2` holds on all 262,144 configurations**: exact bond duality
+does **not** break on the L=3 square bond torus.  The published "duality
+failure" was a compound artifact of two independent defects.  The corrected
+census passes every structural law the broken one violated: only three rank
+pairs occur, (0,2)/(1,1)/(2,0) = 75,460/111,224/75,460; per-k masses
+partition C(18,k) at every k; (0,2)↔(2,0) mirror under k→18−k; (1,1) is
+symmetric around k=9; M_bond coefficients are exactly antisymmetric with
+M(1/2)=0:
+
+    [-1,-18,-153,-810,-2970,-7902,-15366,-20898,-16542, 0,
+      16542,20898,15366,7902,2970,810,153,18,1].
+
+Independent cross-check: this M_bond equals, coefficient-for-coefficient,
+the wrap-gap polynomial `gap` produced by the separate union-find
+wrap-event script (`probe635_bond_sector_map.py`, L=3 run) — two
+independent observables paths agreeing exactly.
+
+(The corrected-rank census under #628's complement convention differs from
+this from k=3 up — e.g. −804 vs −810 at k=3 — because the complement
+convention transports the dual set differently; the discrepancy between the
+two conventions is itself part of the 2×2 attribution above.)
+
+**Impact statement for #628.** Both the qualitative claim ("`r_b + r_w = 2`
+breaks on the bond torus", 118,133 failures) and every published
+per-(r_b, r_w) count are wrong: the qualitative failure was the compound
+artifact of the complement convention and the rank sign; with both fixed,
+duality is exact.  The site side of #628/#606 is *not* implicated — the
+site `ambient_rank` closes its cycles with the correct sign
+(`lift_step(w, v)`), and its site duality numbers reproduce.  Downstream
+uses of the #628 bond rank-pair table or of the "bond duality breaks"
+claim should be recomputed from
+`results/probe635-bond-rank-audit/latest.json` (v2, attribution_2x2).
 
 ## 5. Claim boundary
 
