@@ -22,11 +22,12 @@ from noncrossing_connectivity_codec import (  # noqa: E402
 from probe638_matching_boundary_states import (  # noqa: E402
     bond_closure,
     bond_step,
+    class_rgs,
+    canonical,
     closure,
     direct_class,
     rgs_blocks,
     step,
-    canonical,
     EMPTY,
 )
 
@@ -50,7 +51,24 @@ class Probe638BoundaryStateTests(unittest.TestCase):
         """Stops us believing 'row-cut classes = 13 too': at phase 0 the
         closure gives exactly 12, missing BOTH (0,1,1,0) and (0,0,1,1) --
         the original straight-row result that started probe638."""
+        _classes, p0, _n, _parent, _cap = closure(4, False)
+        self.assertEqual(len(p0), 12)
+        self.assertNotIn(NESTED_AT_W4, set(p0))
+        self.assertNotIn(DOUBLE_PAIR_W4, set(p0))
 
+    def test_rowcut_crosscheck_w4_no_violations(self) -> None:
+        """Stops us believing 'the closure's phase-0 set could drift away
+        from what the lattice actually produces at a row cut': every
+        depth-3 full-row pattern (3*2^4 = 3072 patterns) classified by
+        the INDEPENDENT direct classifier must land in the closure's
+        phase-0 class set.  The guarded wrong claim: a closure p0 set
+        that misses a class the raw lattice demonstrably produces."""
+        from probe638_matching_boundary_states import rowcut_crosscheck
+
+        _classes, p0, _n, _parent, _cap = closure(4, False)
+        rec = rowcut_crosscheck(4, set(p0))
+        self.assertEqual(rec["violations"], 0, rec)
+        self.assertEqual(rec["patterns_checked"], (1 << 4) ** 3)  # 4096
     def test_bond_anchor_hits_catalan_exactly_through_w7(self) -> None:
         """Stops us believing 'Catalan(w) is unreachable by any transfer'
         (the 12-at-w=4 reading of the first draft) AND its mirror 'the
@@ -66,13 +84,12 @@ class Probe638BoundaryStateTests(unittest.TestCase):
                 self.assertEqual(got, want)
                 self.assertEqual(len(got), catalan(width))
 
-    def test_crossing_class_needs_the_wrap_edge_on_bonds(self) -> None:
-        """Stops us believing 'the bond closure on the w=4 cylinder is 14
-        like the planar strip': actually wait -- this test asserts the
-        cylinder count CAN exceed the planar count on wider cylinders only
-        through the wrap edge; at w=4 with sewn-shut semantics the wrap
-        merges the two end blocks and the count stays 14.  The guarded
-        wrong number: 15 (the old dangling-reconnect closure)."""
+    def test_cylinder_bond_closure_stays_14_at_w4(self) -> None:
+        """Stops us believing 'the wrap edge on the cylinder adds crossing
+        classes at w=4' (the guarded wrong number: 15, from the old
+        dangling-reconnect semantics): with the sealed semantics the wrap
+        merely merges the two end ports' blocks, and the w=4 cylinder
+        closure equals the planar strip exactly, 14 classes."""
         # with sealed semantics the w=4 cylinder equals the planar strip
         self.assertEqual(len(bond_closure(4, periodic=True)), 14)
 
@@ -104,7 +121,7 @@ class Probe638BoundaryStateTests(unittest.TestCase):
         state = canonical(0, [EMPTY] * w, EMPTY, EMPTY)
         for b in bits:
             state = step(state, b == 1, w, True)
-        self.assertEqual(class_rgs_of(state, w), want)
+        self.assertEqual(class_rgs(state, w), want)
 
     def test_site_closure_state_space_stays_finite_and_small(self) -> None:
         """Stops us believing 'the helical state space can drift unbounded
@@ -146,12 +163,6 @@ class Probe638BoundaryStateTests(unittest.TestCase):
         # singletons (which would mean connectivity dies at every row).
         full = bond_step(NESTED_AT_W4, 0b1111, 0b0000, w, periodic=False)
         self.assertEqual(full, (0, 1, 1, 0))  # same partition, canonical order
-
-
-def class_rgs_of(state, width):
-    from probe638_matching_boundary_states import class_rgs
-
-    return class_rgs(state, width)
 
 
 if __name__ == "__main__":

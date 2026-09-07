@@ -31,12 +31,13 @@ number of slots plus shadows.  Classes are recorded at EVERY scan phase
 (row boundaries, the straight-cut states) are recorded separately.
 
 Controls and independent checks (GOVERNANCE 2):
-  (a) NN control: the reachable all-phase class set must equal the
-      committed noncrossing_states(w) elementwise for every width, so the
-      count must be Catalan(w) = 1, 2, 5, 14, 42, 132, 429, 1430 for
-      w = 1..8.  (A straight-cut row transfer provably misses the
-      double-pair classes -- 12 not 14 at w = 4 -- which is why the scan
-      is helical and classes are read at every phase.)
+  (a) site control (informational, not the ticket's Catalan gate): the
+      site NN closure is compared elementwise against the committed
+      noncrossing_states(w).  It is a STRICT SUBSET from w = 4 on --
+      the nested-pocket classes are structurally unreachable by the
+      site frontier (13 not 14 at w = 4, missing (0,1,1,0)).  That is
+      a finding of this probe, not an enumerator defect; the Catalan
+      gate is carried by the bond anchor (e).
   (b) transfer-vs-direct agreement: for w <= 5 and scan prefixes of
       length up to w*r (r = max(3, 18//w)), EVERY prefix of EVERY
       occupancy pattern is classified twice -- once by the transfer
@@ -47,21 +48,29 @@ Controls and independent checks (GOVERNANCE 2):
   (c) every crossing class reported on the NNN side is witnessed by a
       shortest occupancy sequence, and the witness is REPLAYED through
       the independent direct classifier, which must return the claimed
-      crossing class.
-  (d) row-boundary cross-check: for w <= 5, the classes of ALL full-row
-      occupancy patterns to depth 3 rows, computed by the direct
-      classifier alone, must be a subset of the closure's phase-0 class
-      set (two disjoint routes to the same row-cut classes).
-  (e) bond anchor: a bond-percolation row transfer on the same cylinder
-      (w dangling bonds, one per column, never vacated) must reach
-      EXACTLY the committed noncrossing_states(w) -- elementwise for
-      w <= 6 and by count for w = 7 -- so the Catalan(w) control holds
-      in the bond representation and its failure on sites is a theorem
-      of the site frontier, not an enumerator defect.
+      crossing class.  (Through w = 8 there are none; the artifact
+      records smallest_crossing_width = null.)
+  (d) row-boundary cross-check: for w <= 5, the row-cut class of ALL
+      full-row occupancy patterns to depth 3 rows (3 * 2^w patterns),
+      computed by the direct classifier alone, must be a subset of the
+      closure's phase-0 class set (two disjoint routes to the same
+      row-cut classes).
+  (e) bond anchor (the Catalan gate): the classic bond-percolation row
+      transfer on the same w columns -- w cut ports, one per column;
+      a port whose vertical bond is absent becomes its own isolated
+      singleton and its old block is sealed shut -- must reach EXACTLY
+      the committed noncrossing_states(w), elementwise, on BOTH the
+      planar strip and the cylinder, for every width computed
+      (w = 1..7 in the default run; w = 8 via the standalone exact
+      run recorded in the artifact).  With the WRONG semantics (an
+      absent port keeps its old block) the closure grows phantom
+      crossing classes (15, 52, 203, ... at w = 4,5,6); that dead end
+      is pinned by a test.
 
-Exact integer arithmetic only; the output artifact contains no floats.
-Outputs results/probe638-matching-boundary-states/latest.json and prints
-the ticket table.
+Exact integer arithmetic only; every exact claim in the artifact is
+integral (timing fields are integer milliseconds).  Outputs
+results/probe638-matching-boundary-states/latest.json and prints the
+ticket table.
 """
 
 from __future__ import annotations
@@ -372,22 +381,24 @@ def bond_step(
     """One full row of the bond-percolation transfer.
 
     periodic=True  : the ticket's cylinder; the wrap horizontal bond
-        (x, w-1)-(x, 0) is available, and crossing partitions such as
-        {0,2},{1,3} become reachable -- the honest cylinder state space
-        is LARGER than Catalan(w).
-    periodic=False : the PLANAR strip (cut open between w-1 and 0); with
-        no wrap edge the reachable partitions are exactly the noncrossing
-        ones, Catalan(w) -- the control the ticket quotes.
+        (x, w-1)-(x, 0) is available.  With the sealed semantics below
+        the cylinder closure equals the planar one elementwise through
+        w = 8 (the wrap merely merges the two end ports' blocks).
+    periodic=False : the PLANAR strip (cut open between w-1 and 0).
 
     The state is the partition of the w cut ports; port y is the upper
-    end of the previous row's vertical bond at column y.  Laying the next
-    row consumes two w-bit masks: vrow (vertical bonds (x-1,y)-(x,y)) and
-    hrow (horizontal bonds (x,y)-(x,y+1), periodic).  A present vertical
-    bond merges port y with the fresh site (x, y); an absent one leaves
-    port y carrying its old block while (x, y) starts fresh -- this is
-    the degree of freedom that lets a path sneak UNDER a port without
-    touching it.  Horizontal bonds merge fresh sites.  The new port y is
-    the fresh site's block if v_y is present, else the old block.
+    end of the previous row's vertical bond at column y.  Laying the
+    next row consumes two w-bit masks: vrow (vertical bonds
+    (x-1,y)-(x,y)) and hrow (horizontal bonds (x,y)-(x,y+1)).  SEALED
+    SEMANTICS (the ones that make the control exact): a port whose
+    vertical bond is ABSENT becomes its own isolated singleton and the
+    old block it used to carry is sealed shut -- it can never be
+    reconnected from the new side, because no lattice path reaches past
+    the cut.  A port with a present vertical bond carries the fresh
+    site's cluster.  Horizontal bonds merge fresh sites.  (The WRONG
+    alternative -- an absent port keeps its old block -- lets components
+    reconnect across the cut without a path, and yields the phantom
+    closures 15, 52, 203, ... with crossing classes; pinned by a test.)
     """
 
     parent: Dict[int, int] = {v: v for v in range(2 * width)}
@@ -496,6 +507,26 @@ def selfcheck_prefix_agreement(width: int, diag: bool) -> Dict[str, object]:
     }
 
 
+def rowcut_crosscheck(width: int, phase0_classes: Set[FullRGS]) -> Dict[str, object]:
+    """Check (d): every depth-3 full-row pattern's direct row-cut class
+    must land in the closure's phase-0 class set."""
+
+    bad: List[List[int]] = []
+    checked = 0
+    for r0 in range(1 << width):
+        for r1 in range(1 << width):
+            for r2 in range(1 << width):
+                bits: List[int] = []
+                for m in (r0, r1, r2):
+                    for y in range(width):
+                        bits.append((m >> y) & 1)
+                checked += 1
+                cls = direct_class(bits, width, False)
+                if cls not in phase0_classes:
+                    bad.append(bits)
+    return {"width": width, "patterns_checked": checked, "violations": len(bad), "first_violation_bits": bad[0] if bad else None}
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--widths", type=int, nargs="+", default=list(range(1, 9)))
@@ -509,6 +540,7 @@ def main() -> int:
 
     runs: List[dict] = []
     selfchecks: List[dict] = []
+    rowcuts: List[dict] = []
     control_ok = True
     smallest_crossing_width: Optional[int] = None
     witness: Optional[dict] = None
@@ -566,8 +598,8 @@ def main() -> int:
             "nnn_all_noncrossing": not crossing,
             "nn_capped": nn_capped,
             "nnn_capped": nnn_capped,
-            "nn_seconds": round(t_nn, 1),
-            "nnn_seconds": round(t_nnn, 1),
+            "nn_milliseconds": int(t_nn * 1000),
+            "nnn_milliseconds": int(t_nnn * 1000),
         }
         if not nn_matches:
             run["nn_missing_classes"] = [list(c) for c in sorted(set(committed) - set(got))]
@@ -582,13 +614,22 @@ def main() -> int:
             flush=True,
         )
 
-    if max(args.widths) <= 5:
-        for width in args.widths:
-            for diag in (False, True):
-                selfchecks.append(selfcheck_prefix_agreement(width, diag))
-                if not selfchecks[-1]["agrees"]:
-                    control_ok = False
-        print("prefix agreement checks done", flush=True)
+    for width in args.widths:
+        if width > 5:
+            continue
+        for diag in (False, True):
+            t0 = time.time()
+            rec = selfcheck_prefix_agreement(width, diag)
+            rec["milliseconds"] = int((time.time() - t0) * 1000)
+            selfchecks.append(rec)
+            if not rec["agrees"]:
+                control_ok = False
+        nn_c, nn_p0, *_rest = closure(width, False)
+        rec = rowcut_crosscheck(width, set(nn_p0))
+        rowcuts.append(rec)
+        if rec["violations"]:
+            control_ok = False
+    print("prefix agreement + row-cut cross-checks done", flush=True)
 
     # bond anchor (e): Catalan control in the bond representation.
     # planar  = cut open between w-1 and 0 (no wrap horizontal bond);
@@ -617,8 +658,8 @@ def main() -> int:
                 "bond_cylinder_crossing_class_count": sum(
                     1 for c in cyl if not is_noncrossing_blocks(rgs_blocks(c))
                 ),
-                "bond_planar_seconds": round(t_planar, 1),
-                "bond_cylinder_seconds": round(t_cyl, 1),
+                "bond_planar_milliseconds": int(t_planar * 1000),
+                "bond_cylinder_milliseconds": int(t_cyl * 1000),
             }
         )
         print(
@@ -642,6 +683,7 @@ def main() -> int:
         ),
         "control_ok": control_ok,
         "bond_anchor": bond_anchor,
+        "rowcut_crosschecks": rowcuts,
         "smallest_crossing_width": smallest_crossing_width,
         "crossing_witness": witness,
         "selfchecks": selfchecks,

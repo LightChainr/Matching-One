@@ -12,8 +12,8 @@
       "catalan": 1,
       "bond_planar_equals_noncrossing_states_elementwise": true,
       "bond_cylinder_crossing_class_count": 0,
-      "bond_planar_seconds": 0.0,
-      "bond_cylinder_seconds": 0.0
+      "bond_planar_milliseconds": 0,
+      "bond_cylinder_milliseconds": 0
     },
     {
       "width": 2,
@@ -22,8 +22,8 @@
       "catalan": 2,
       "bond_planar_equals_noncrossing_states_elementwise": true,
       "bond_cylinder_crossing_class_count": 0,
-      "bond_planar_seconds": 0.0,
-      "bond_cylinder_seconds": 0.0
+      "bond_planar_milliseconds": 0,
+      "bond_cylinder_milliseconds": 0
     },
     {
       "width": 3,
@@ -32,8 +32,8 @@
       "catalan": 5,
       "bond_planar_equals_noncrossing_states_elementwise": true,
       "bond_cylinder_crossing_class_count": 0,
-      "bond_planar_seconds": 0.0,
-      "bond_cylinder_seconds": 0.0
+      "bond_planar_milliseconds": 0,
+      "bond_cylinder_milliseconds": 1
     },
     {
       "width": 4,
@@ -42,8 +42,8 @@
       "catalan": 14,
       "bond_planar_equals_noncrossing_states_elementwise": true,
       "bond_cylinder_crossing_class_count": 0,
-      "bond_planar_seconds": 0.0,
-      "bond_cylinder_seconds": 0.0
+      "bond_planar_milliseconds": 16,
+      "bond_cylinder_milliseconds": 16
     },
     {
       "width": 5,
@@ -52,8 +52,8 @@
       "catalan": 42,
       "bond_planar_equals_noncrossing_states_elementwise": true,
       "bond_cylinder_crossing_class_count": 0,
-      "bond_planar_seconds": 0.2,
-      "bond_cylinder_seconds": 0.2
+      "bond_planar_milliseconds": 220,
+      "bond_cylinder_milliseconds": 234
     },
     {
       "width": 6,
@@ -62,8 +62,8 @@
       "catalan": 132,
       "bond_planar_equals_noncrossing_states_elementwise": true,
       "bond_cylinder_crossing_class_count": 0,
-      "bond_planar_seconds": 3.1,
-      "bond_cylinder_seconds": 2.9
+      "bond_planar_milliseconds": 3282,
+      "bond_cylinder_milliseconds": 3425
     },
     {
       "width": 7,
@@ -72,8 +72,8 @@
       "catalan": 429,
       "bond_planar_equals_noncrossing_states_elementwise": true,
       "bond_cylinder_crossing_class_count": 0,
-      "bond_planar_seconds": 39.6,
-      "bond_cylinder_seconds": 36.3
+      "bond_planar_milliseconds": 50132,
+      "bond_cylinder_milliseconds": 53478
     },
     {
       "width": 8,
@@ -82,9 +82,41 @@
       "catalan": 1430,
       "bond_planar_equals_noncrossing_states_elementwise": true,
       "bond_cylinder_crossing_class_count": 0,
-      "bond_planar_seconds": 483.8,
-      "bond_cylinder_seconds": 720.3,
+      "bond_planar_milliseconds": 483800,
+      "bond_cylinder_milliseconds": 720300,
       "note": "bond closure at w=8 computed by the standalone exact run; 2^16 row configs per state, ~10 min each variant"
+    }
+  ],
+  "rowcut_crosschecks": [
+    {
+      "width": 1,
+      "patterns_checked": 8,
+      "violations": 0,
+      "first_violation_bits": null
+    },
+    {
+      "width": 2,
+      "patterns_checked": 64,
+      "violations": 0,
+      "first_violation_bits": null
+    },
+    {
+      "width": 3,
+      "patterns_checked": 512,
+      "violations": 0,
+      "first_violation_bits": null
+    },
+    {
+      "width": 4,
+      "patterns_checked": 4096,
+      "violations": 0,
+      "first_violation_bits": null
+    },
+    {
+      "width": 5,
+      "patterns_checked": 32768,
+      "violations": 0,
+      "first_violation_bits": null
     }
   ],
   "smallest_crossing_width": null,
@@ -96,7 +128,7 @@
       "prefix_length": 18,
       "prefixes_checked": 4718592,
       "agrees": true,
-      "seconds": 25.1
+      "milliseconds": 48871
     },
     {
       "width": 1,
@@ -104,7 +136,7 @@
       "prefix_length": 18,
       "prefixes_checked": 4718592,
       "agrees": true,
-      "seconds": 29.1
+      "milliseconds": 54024
     },
     {
       "width": 2,
@@ -112,7 +144,7 @@
       "prefix_length": 18,
       "prefixes_checked": 4718592,
       "agrees": true,
-      "seconds": 26.4
+      "milliseconds": 48411
     },
     {
       "width": 2,
@@ -120,7 +152,7 @@
       "prefix_length": 18,
       "prefixes_checked": 4718592,
       "agrees": true,
-      "seconds": 30.2
+      "milliseconds": 55914
     },
     {
       "width": 3,
@@ -128,7 +160,7 @@
       "prefix_length": 18,
       "prefixes_checked": 4718592,
       "agrees": true,
-      "seconds": 28.7
+      "milliseconds": 54114
     },
     {
       "width": 3,
@@ -136,7 +168,7 @@
       "prefix_length": 18,
       "prefixes_checked": 4718592,
       "agrees": true,
-      "seconds": 37.6
+      "milliseconds": 62982
     },
     {
       "width": 4,
@@ -144,7 +176,7 @@
       "prefix_length": 16,
       "prefixes_checked": 1048576,
       "agrees": true,
-      "seconds": 8.9
+      "milliseconds": 12876
     },
     {
       "width": 4,
@@ -152,7 +184,7 @@
       "prefix_length": 16,
       "prefixes_checked": 1048576,
       "agrees": true,
-      "seconds": 10.0
+      "milliseconds": 14541
     },
     {
       "width": 5,
@@ -160,7 +192,7 @@
       "prefix_length": 15,
       "prefixes_checked": 491520,
       "agrees": true,
-      "seconds": 4.4
+      "milliseconds": 6520
     },
     {
       "width": 5,
@@ -168,7 +200,7 @@
       "prefix_length": 15,
       "prefixes_checked": 491520,
       "agrees": true,
-      "seconds": 5.5
+      "milliseconds": 7198
     }
   ],
   "runs": [
@@ -186,8 +218,8 @@
       "nnn_all_noncrossing": true,
       "nn_capped": false,
       "nnn_capped": false,
-      "nn_seconds": 0.0,
-      "nnn_seconds": 0.0
+      "nn_milliseconds": 0,
+      "nnn_milliseconds": 0
     },
     {
       "width": 2,
@@ -203,8 +235,8 @@
       "nnn_all_noncrossing": true,
       "nn_capped": false,
       "nnn_capped": false,
-      "nn_seconds": 0.0,
-      "nnn_seconds": 0.0
+      "nn_milliseconds": 0,
+      "nnn_milliseconds": 0
     },
     {
       "width": 3,
@@ -220,8 +252,8 @@
       "nnn_all_noncrossing": true,
       "nn_capped": false,
       "nnn_capped": false,
-      "nn_seconds": 0.0,
-      "nnn_seconds": 0.0
+      "nn_milliseconds": 0,
+      "nnn_milliseconds": 0
     },
     {
       "width": 4,
@@ -237,8 +269,8 @@
       "nnn_all_noncrossing": true,
       "nn_capped": false,
       "nnn_capped": false,
-      "nn_seconds": 0.0,
-      "nnn_seconds": 0.0,
+      "nn_milliseconds": 0,
+      "nnn_milliseconds": 1,
       "nn_missing_classes": [
         [
           0,
@@ -263,8 +295,8 @@
       "nnn_all_noncrossing": true,
       "nn_capped": false,
       "nnn_capped": false,
-      "nn_seconds": 0.0,
-      "nnn_seconds": 0.0,
+      "nn_milliseconds": 2,
+      "nnn_milliseconds": 8,
       "nn_missing_classes": [
         [
           0,
@@ -339,8 +371,8 @@
       "nnn_all_noncrossing": true,
       "nn_capped": false,
       "nnn_capped": false,
-      "nn_seconds": 0.0,
-      "nnn_seconds": 0.0,
+      "nn_milliseconds": 16,
+      "nnn_milliseconds": 23,
       "nn_missing_classes": [
         [
           0,
@@ -711,8 +743,8 @@
       "nnn_all_noncrossing": true,
       "nn_capped": false,
       "nnn_capped": false,
-      "nn_seconds": 0.0,
-      "nnn_seconds": 0.0,
+      "nn_milliseconds": 32,
+      "nnn_milliseconds": 89,
       "nn_missing_classes": [
         [
           0,
@@ -2504,8 +2536,8 @@
       "nnn_all_noncrossing": true,
       "nn_capped": false,
       "nnn_capped": false,
-      "nn_seconds": 0.1,
-      "nnn_seconds": 0.1,
+      "nn_milliseconds": 120,
+      "nnn_milliseconds": 374,
       "nn_missing_classes": [
         [
           0,

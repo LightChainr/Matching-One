@@ -95,9 +95,15 @@ anything."  What the probe actually found is sharper:
   (explicit graph search, no union-find, no shadows) over every occupancy
   prefix of length up to w·max(3,18/w) for w=1..5 — 4718592 prefixes each
   at w<=3, 1048576 at w=4, 491520 at w=5; all agree bit-for-bit.
+* Row-cut cross-check: for w=1..5, every depth-3 full-row pattern (2^(3w)
+  patterns; 32768 at w=5) classified by the direct classifier alone lands
+  in the closure's phase-0 class set — zero violations (field
+  `rowcut_crosschecks` in the artifact).
 * Bond anchor: counts compared against `noncrossing_states(w)` from the
   committed codec, which itself cross-checks two internal enumerators
   (RGS generation and block-insertion generation).
+* No-floats audit: the artifact was machine-walked field by field; it
+  contains zero floating-point numbers (timings are integer milliseconds).
 * Two transfer bugs were caught and fixed by these checks in this probe:
   the slot-merge bug (merged partner slots kept stale labels) and the
   shadow-merge bug (merged shadows not relabelled).  Both are pinned by
