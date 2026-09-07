@@ -164,11 +164,24 @@ same pTL operator, as in Jacobsen's Λ_open − Λ_closed). In particular:
   critical polynomial as R_2 − R_0 (two-direction wrapping minus no-wrapping) —
   that is a difference of two *wrapping-type* probabilities of the same lattice,
   not of two connectivity classes, and not a matching function.
-- Pinson (J. Stat. Phys. 2011, arXiv:1006.1307 context) gives exact torus
-  wrapping probabilities by homology subgroup (π_G = Z_G/Z), later extended by
-  Arguin to Q-Potts FK clusters; these are sector-resolved amplitudes of the SAME
-  model, with no matching-lattice side. The Ising/Potts-spin-cluster versions
-  (arXiv:1402.0879 and follow-ups) likewise stay within one connectivity.
+- **Pinson 1994** (H. T. Pinson, "Critical percolation on the torus," J. Stat.
+  Phys. 75 (1994) 1167–1177, doi:10.1007/BF02186762 — **round-2 correction: the
+  earlier draft here cited "Pinson 2011 / arXiv:1006.1307"; that arXiv ID is an
+  unrelated matrix-algorithms paper, and Pinson's paper predates arXiv usage in
+  this field.**) gives exact torus wrapping probabilities by homology subgroup
+  (π_G = Z_G/Z), later extended by Arguin to Q-Potts FK clusters. Crucially for
+  Q1, Pinson's crossing-probability formulas are THEMSELVES signed linear
+  combinations of sector amplitudes Z_{m,n} (his torus partition functions
+  Z_{a,b} indexed by boundary homology classes), e.g. P_{a,b}(r) =
+  Σ[3al,3bl] − Σ[2al,2bl] − ½Z_{(3l+1)a,(3l+1)b} − ½Z_{(3l+2)a,(3l+2)b} +
+  Z_{(2l+1)a,(2l+1)b}; P_X(r) = ½[Z(8/3,1;r) − Z(8/3,1/2;r)]. These are
+  sector-resolved amplitudes of the SAME model on the SAME lattice, combined
+  with integer/half-integer coefficients — structurally the closest published
+  object to "signed combination of sector amplitudes," but with no
+  matching-lattice side and no eigenvalue identification. The Ising/Potts-spin-
+  cluster versions (arXiv:1402.0879 and follow-ups) likewise stay within one
+  connectivity. Pinson is rigorous except the mesh→0 step (Nienhuis RG
+  argument); Arguin extended it to Q = 1,2,3,4.
 - No source found that writes a signed combination "primary wrapping −
   matching-lattice wrapping" and identifies it with two transfer-matrix sectors.
   Scullard–Jacobsen's own probabilistic definition of P_B is the closest published
@@ -415,10 +428,78 @@ the Hamiltonian and master-equation cases are classical.**
   percolation-threshold table and OEIS A377420, and the two DOIs are verified;
   the Reply's internal argument is not, and the note above quotes the secondary
   sources for the Reply's number.
-- I did not fetch Pinson 2011 at first hand; the sector structure is quoted
-  from the Langlands/Arguin descendants (arXiv:0812.2925, arXiv:1402.0879) and
-  from secondary citations of Pinson. If the sector claim in Q1 is load-bearing
-  for a decision, Pinson's paper itself should be pulled before #636 is funded.
+- I did not fetch Pinson 1994 (J. Stat. Phys. 75, 1167) at first hand either —
+  paywalled at Springer; the crossing-probability formulas quoted above are from
+  the Langlands/Arguin descendants (arXiv:0812.2925, arXiv:1402.0879) and
+  secondary citations. If the sector claim in Q1 is load-bearing for a decision,
+  Pinson's paper itself should be pulled before #636 is funded.
 - This was a retrieval ticket; no enumeration or computation was attempted, so
   no Q2 count can be produced here. #638 remains the right instrument for the
   state-space question.
+
+## Round 2 — extensive follow-up (2026-09-07, same ticket)
+
+Second-pass search, wider net. Findings, per question:
+
+**R2.1 — Pinson citation corrected (Q1).** The round-1 note cited "Pinson 2011
+/ arXiv:1006.1307". That arXiv ID is an unrelated matrix-algorithms paper
+(I/O-efficient matrix operations). The correct reference is H. T. Pinson,
+"Critical percolation on the torus," J. Stat. Phys. 75 (1994) 1167–1177,
+doi:10.1007/BF02186762. No arXiv preprint exists for it. Substance unchanged in
+Q1's favor — and strengthened: Pinson's torus crossing probabilities P_{a,b}(r),
+P_X(r) are explicitly signed linear combinations of his sector partition
+functions Z_{m,n} (formulas quoted in the Q1 section above). So
+"observable = signed combination of sector amplitudes" IS published (1994);
+what remains unpublished is specifically (a) the two sectors being the OPEN vs
+CLOSED eigenvalues of one transfer-matrix operator (Jacobsen's Λ_open −
+Λ_closed), and (b) a matching-function interpretation. Citation obligation for
+#636 must include Pinson 1994, Mertens–Ziff 2016, and Jacobsen 2015.
+
+**R2.2 — Scullard–Jacobsen 2020 is bond-only (Q1/Q4).** J. T. Scullard &
+J. L. Jacobsen, PRR 2, 012050 (2020): "Exact critical polynomials ... Archimedean
+lattices" — BOND percolation only. Its correction towers are Δ = 6,7,8 (bond-
+and site-equivalent Archimedeans) and Δ = 4,6,8; benchmark kagome bond
+p_c = 0.52440499916744820(1). No site-matching-lattice content anywhere in it.
+This confirms the Q1 narrow-novelty phrasing and removes one candidate the
+ticket asked us to check.
+
+**R2.3 — Yang–Zhou 2024 has no preprint (Q3).** Yang & Zhou, J. Phys. A 57,
+258001 (2024), doi:10.1088/1751-8121/ad4d2c — published as a Comment only; no
+separate arXiv preprint found (cited-doi search and INSPIRE check). Their
+cylindrical site p_c(n) goes to n = 24, c ≈ 2.7459, and their published value
+0.5927460507896(1) differs from Jacobsen 2015's 0.59274605079210(2) at the
+ninth digit. The Jacobsen Reply (J. Phys. A 57, 258002, doi:10.1088/1751-8121/
+ad4d33) re-extrapolates to 0.59274605079016(1). Mertens 2022 (arXiv:2109.12102,
+JPA 55, 334002) gives 0.592746050786(3) from transfer matrices with
+"signature" (balanced-parenthesis) state counting. Three independent values;
+the 2015 interval in docs/astra/Q4-why-square-site-resists.md
+([0.59274605079208, 0.59274605079212]) sits OUTSIDE all three. Re-referencing
+obligation stands.
+
+**R2.4 — union-jack / 4-8 handled only for bond (Q2).** Jacobsen 2014
+(arXiv:1401.7847, JPA 47, 135001) covers the 4-8 and union-jack lattices, but
+only for bond percolation (site percolation on cubic/quartic-vertex
+transformations) with critical polynomials to 10⁻⁹. Mertens–Ziff 2016 confirms
+union-jack bond is self-matching (p_c = 1/2). The project's matching lattice —
+square SITE percolation with both diagonals (NN+NNN), viewed as a strip
+connectivity problem — is the dual question and is NOT covered by any of these.
+The Q2 gap (noncrossing/Catalan state space likely fails for NN+NNN frontier
+connectivity, since a distance-2 NNN bond on the frontier forces crossing
+structure; K4 per face makes the strip graph non-planar in the connectivity
+sense) survives round 2 intact. No published boundary-state count for the
+matching strip was found.
+
+**R2.5 — Q4 gap re-confirmed as the only plausible novelty direction.** Searched
+for any work comparing a sector-crossing criterion's finite-size corrections
+against an independent finite-size observable of a different kind (eigenvalue
+vs wrapping probability vs polynomial root). Jacobsen 2015 checks its criterion
+only against its OWN endpoint data (and its square-site digits were later shown
+partly wrong at n = 21 — see R2.3); Yang–Zhou checks transfer-matrix roots
+against roots; Mertens–Ziff checks one identity by another exact identity at
+the SAME size. Nothing published matches the criterion against an observable of
+a DIFFERENT kind at finite size. Q4 remains a genuine gap.
+
+**Round-2 net effect on the five verdicts: Q1 verdict unchanged but narrowed
+and citation list grows (Pinson 1994 added; Mertens–Ziff 2016 covers the SITE
+side); Q2 gap intact; Q3 sources corrected/completed; Q4 gap intact and
+strengthened; Q5 unchanged.**
