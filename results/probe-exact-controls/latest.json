@@ -1,0 +1,297 @@
+{
+  "C10_tests": "7 tests OK (1 slow skip): C1/C2/C3/C5/C6/C8",
+  "C1_census": {
+    "3": {
+      "M_half": "-21/64",
+      "configs": 512,
+      "dual_fail": 0,
+      "p_L_H": 0.5865114551126757,
+      "rank_pairs": {
+        "0,2": 259,
+        "1,1": 162,
+        "2,0": 91
+      }
+    },
+    "4": {
+      "M_half": "-13757/32768",
+      "configs": 65536,
+      "dual_fail": 0,
+      "p_L_H": 0.5906721123310283,
+      "rank_pairs": {
+        "0,2": 36559,
+        "1,1": 19932,
+        "2,0": 9045
+      }
+    },
+    "winding_mismatch": {
+      "L3": 0,
+      "L4": 0
+    }
+  },
+  "C2_M_poly": {
+    "3": {
+      "M_half": "-21/64",
+      "Mp_half": "225/64",
+      "coeffs": [
+        {
+          "c": "-1",
+          "k": 0
+        },
+        {
+          "c": "0",
+          "k": 1
+        },
+        {
+          "c": "0",
+          "k": 2
+        },
+        {
+          "c": "6",
+          "k": 3
+        },
+        {
+          "c": "0",
+          "k": 4
+        },
+        {
+          "c": "0",
+          "k": 5
+        },
+        {
+          "c": "0",
+          "k": 6
+        },
+        {
+          "c": "-18",
+          "k": 7
+        },
+        {
+          "c": "18",
+          "k": 8
+        },
+        {
+          "c": "-4",
+          "k": 9
+        }
+      ],
+      "sturm_roots": 1
+    },
+    "4": {
+      "M_half": "-13757/32768",
+      "Mp_half": "4209/1024",
+      "coeffs": [
+        {
+          "c": "-1",
+          "k": 0
+        },
+        {
+          "c": "0",
+          "k": 1
+        },
+        {
+          "c": "0",
+          "k": 2
+        },
+        {
+          "c": "0",
+          "k": 3
+        },
+        {
+          "c": "8",
+          "k": 4
+        },
+        {
+          "c": "0",
+          "k": 5
+        },
+        {
+          "c": "32",
+          "k": 6
+        },
+        {
+          "c": "-64",
+          "k": 7
+        },
+        {
+          "c": "172",
+          "k": 8
+        },
+        {
+          "c": "-704",
+          "k": 9
+        },
+        {
+          "c": "1104",
+          "k": 10
+        },
+        {
+          "c": "-608",
+          "k": 11
+        },
+        {
+          "c": "-56",
+          "k": 12
+        },
+        {
+          "c": "128",
+          "k": 13
+        },
+        {
+          "c": "16",
+          "k": 14
+        },
+        {
+          "c": "-32",
+          "k": 15
+        },
+        {
+          "c": "6",
+          "k": 16
+        }
+      ],
+      "sturm_roots": 1
+    }
+  },
+  "C3_quantiles": {
+    "3": {
+      "Q_plus_Q1minus_1": {
+        "0.1": 0.13201945746954502,
+        "0.2": 0.15416354256736864,
+        "0.3": 0.1654827717971168,
+        "0.4": 0.1712379307414258
+      },
+      "max_selfsymmetry_deviation": 0.1712379307414258,
+      "quantiles": {
+        "0.1": 0.32435916195644215,
+        "0.2": 0.41314149083242485,
+        "0.3": 0.4790460150479029,
+        "0.4": 0.5351551396577962,
+        "0.5": 0.5865114551126757,
+        "0.6": 0.6360827910836296,
+        "0.7": 0.6864367567492139,
+        "0.8": 0.7410220517349437,
+        "0.9": 0.8076602955131029
+      }
+    },
+    "4": {
+      "Q_plus_Q1minus_1": {
+        "0.1": 0.15463318901040157,
+        "0.2": 0.16956289245210154,
+        "0.3": 0.1767258765530797,
+        "0.4": 0.1802613868269045
+      },
+      "max_selfsymmetry_deviation": 0.1802613868269045,
+      "quantiles": {
+        "0.1": 0.37852759246017675,
+        "0.2": 0.4517879606433589,
+        "0.3": 0.504784419586351,
+        "0.4": 0.5495842896437478,
+        "0.5": 0.5906721123310283,
+        "0.6": 0.6306770971831568,
+        "0.7": 0.6719414569667288,
+        "0.8": 0.7177749318087426,
+        "0.9": 0.7761055965502248
+      }
+    }
+  },
+  "C4_C5_joints": {
+    "3": {
+      "confusion": [
+        [
+          259,
+          0,
+          0
+        ],
+        [
+          0,
+          162,
+          0
+        ],
+        [
+          0,
+          0,
+          91
+        ]
+      ],
+      "dual_fail": 0,
+      "max_abs_rank_diff": 0,
+      "mismatch": 0
+    },
+    "4": {
+      "confusion": [
+        [
+          36559,
+          0,
+          0
+        ],
+        [
+          0,
+          19932,
+          0
+        ],
+        [
+          0,
+          0,
+          9045
+        ]
+      ],
+      "dual_fail": 0,
+      "max_abs_rank_diff": 0,
+      "mismatch": 0
+    },
+    "checkerboard_intuition_lost": false,
+    "hand_configs_sum_2": true
+  },
+  "C6_C7_bond_L3": {
+    "Cov_OX": 0.2878570556640625,
+    "P_r": {
+      "r0": 0.2878570556640625,
+      "r1": 0.424285888671875,
+      "r2": 0.2878570556640625
+    },
+    "P_r2": 0.2878570556640625,
+    "Var_X_half": 0.2878570556640625,
+    "cov_equalities": {
+      "CovOX_eq_P2": true,
+      "CovOX_eq_VarX_half": true,
+      "P2_eq_VarX_half": true
+    },
+    "harris_nonneg": true,
+    "min_cross_increment_OX": 0.039324620738625526,
+    "telescoping_residual": 0.0,
+    "wrap_identity_failures": 0
+  },
+  "C8_matching_involution": {
+    "3": {
+      "N": 9,
+      "bad_entries": [],
+      "coeff_w_k_eq_minus_coeff_b_Nk": true,
+      "identity_fail_examples": [],
+      "poly_identity_Mb_p_plus_Mw_1mp": true
+    },
+    "4": {
+      "N": 16,
+      "bad_entries": [],
+      "coeff_w_k_eq_minus_coeff_b_Nk": true,
+      "identity_fail_examples": [],
+      "poly_identity_Mb_p_plus_Mw_1mp": true
+    }
+  },
+  "artifacts": [
+    "M_poly_L3.json",
+    "M_poly_L4.json",
+    "bond_L3_wrap.json",
+    "joints.json",
+    "matching_involution.json"
+  ],
+  "issue": 619,
+  "schema": "matching-one.probe-exact-controls.new-map.v1",
+  "status": "all C1-C10 executed; all identities hold; no Monte Carlo; no L=4 bond",
+  "verdict": {
+    "fact1_M_half_nonzero": "HOLDS (-21/64 L3, -13757/32768 L4)",
+    "fact2_Q_plus_Q1minus1_nonzero": "HOLDS (max ~0.17-0.18)",
+    "fact3_pLH_eq_Qhalf_ne_half": "HOLDS (0.5865, 0.5907)",
+    "fact4_wrap_X_identity_and_cov": "HOLDS (0 config failures; Cov(O,X)=P(r=2)=Var(X)/2=0.287857056)"
+  },
+  "verified": "2026-09-07 exact rerun"
+}
