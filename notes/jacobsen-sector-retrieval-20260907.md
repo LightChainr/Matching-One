@@ -75,8 +75,8 @@ Read from the arXiv HTML (v1, 33 pages, 7 figures, 5 tables). This is the paper
   repository:** the "Jacobsen 2015 interval [0.59274605079208, 0.59274605079212]"
   quoted in `docs/astra/Q4-why-square-site-resists.md` and used by
   `scripts/threshold_claim_intake.py` as a published interval is **not the current
-  state of the literature**; the Yang–Zhou and Jacobsen-Reply values sit ~2e-12 to
-  ~2e-11 BELOW it, outside the 2015 interval. The census results referenced
+  state of the literature**; the corrected values sit BELOW it — Jacobsen Reply by ~1.9×10⁻¹², Yang–Zhou
+  by ~2.5×10⁻¹², Mertens 2022 by ~6×10⁻¹² — all outside the 2015 interval. The census results referenced
   against the 2015 interval should be re-referenced against both newer values
   before any claim of non-membership is reused. This is a status-relevant finding
   but per ticket boundaries it is recorded here, not in docs/STATUS.md.
@@ -113,14 +113,15 @@ Read from the arXiv HTML (v1, 33 pages, 7 figures, 5 tables). This is the paper
 ### 4. Square-site specifically (feeds Q3)
 
 - Handled inside pTL via the FK (q=1) formulation with the site-specific R-matrix
-  `check R_i = E_{i+2}E_i + v E_{i+1}`, p = v/(1+v). Site percolation is treated
+  `R_i = E_{i+2}E_i + v E_{i+1}`, p = v/(1+v). Site percolation is treated
   on the same cylinder geometry, s=0 sector, reduced state space.
 - Scale reached: n×∞ bases up to **n_max = 21** in 2015 (Table 2 gives p_c(21) =
   0.592744551481371482002735520463 unextrapolated); extended to **n = 24** by
   Yang–Zhou 2024. Best current published value: **0.59274605079016(1)** (Jacobsen
   Reply 2024) with Yang–Zhou at 0.5927460507896(1) and Mertens 2022 at
-  0.592746050786(3) — all three agree pairwise at their own quoted precisions,
-  and all three sit outside the 2015 quoted interval.
+  0.592746050786(3) — consistent within 1–2σ of their quoted uncertainties
+  (pairwise differences ≤ 4.2×10⁻¹²; Reply−Mertens is the loosest pair at
+  ~1.4σ), and all three sit outside the 2015 quoted interval.
 - The paper's own statement on solvability: "Site percolation on the square
   lattice. This renowned problem is unsolved essentially because the four-regular
   square-lattice hypergraph is not selfdual." Site square is listed among the
@@ -224,7 +225,9 @@ strong circumstantial evidence.**
   matching side.
 - Prior art found, and what it settles:
   - **Pinson's homology/sector work and its descendants** (Langlands–Pinson–
-    Saint-Aubin; Arguin 2006; arXiv:0812.2925 etc.) handle wrapping probabilities
+    Saint-Aubin; Arguin 2002, arXiv:hep-th/0111193, J. Stat. Phys. 109, 301;
+    Morin-Duchesne–Saint-Aubin arXiv:0812.2925; Blanchard arXiv:1402.0879 etc.)
+    handle wrapping probabilities
     on the torus for percolation, i.e. plane triangulation-era connectivity —
     they do not provide strip boundary-state counts.
   - **Mertens 2022 (arXiv:2109.12102)**, "Exact site-percolation probability on
@@ -467,8 +470,9 @@ ticket asked us to check.
 258001 (2024), doi:10.1088/1751-8121/ad4d2c — published as a Comment only; no
 separate arXiv preprint found (cited-doi search and INSPIRE check). Their
 cylindrical site p_c(n) goes to n = 24, c ≈ 2.7459, and their published value
-0.5927460507896(1) differs from Jacobsen 2015's 0.59274605079210(2) at the
-ninth digit. The Jacobsen Reply (J. Phys. A 57, 258002, doi:10.1088/1751-8121/
+0.5927460507896(1) differs from Jacobsen 2015's 0.59274605079210(2) from the
+11th decimal onward (the first ten decimals are shared). The Jacobsen Reply
+(J. Phys. A 57, 258002, doi:10.1088/1751-8121/
 ad4d33) re-extrapolates to 0.59274605079016(1). Mertens 2022 (arXiv:2109.12102,
 JPA 55, 334002) gives 0.592746050786(3) from transfer matrices with
 "signature" (balanced-parenthesis) state counting. Three independent values;
@@ -493,8 +497,10 @@ matching strip was found.
 for any work comparing a sector-crossing criterion's finite-size corrections
 against an independent finite-size observable of a different kind (eigenvalue
 vs wrapping probability vs polynomial root). Jacobsen 2015 checks its criterion
-only against its OWN endpoint data (and its square-site digits were later shown
-partly wrong at n = 21 — see R2.3); Yang–Zhou checks transfer-matrix roots
+only against its OWN endpoint data (and its extrapolated square-site value
+0.59274605079210(2) was later shown incorrect from the 11th decimal onward —
+the underlying n = 21 data were not the issue; see R2.3); Yang–Zhou checks
+transfer-matrix roots
 against roots; Mertens–Ziff checks one identity by another exact identity at
 the SAME size. Nothing published matches the criterion against an observable of
 a DIFFERENT kind at finite size. Q4 remains a genuine gap.
