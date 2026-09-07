@@ -1,0 +1,48 @@
+{
+  "schema": "matching-one.probe-group-selection.v1",
+  "probe_issue": 599,
+  "group": "C3",
+  "state_count": 6,
+  "isotypic_decomposition": {
+    "triv": 2,
+    "W": 4
+  },
+  "perturbation_representation": "W",
+  "cases": [
+    {
+      "case": "triv src / triv readout",
+      "expectation": "ZERO expected: triv not in W (x) triv",
+      "peak_abs_integrand": 2.6454533008646308e-17
+    },
+    {
+      "case": "triv src / W readout",
+      "expectation": "nonzero expected: triv in W (x) W",
+      "peak_abs_integrand": 0.01343018915772267
+    },
+    {
+      "case": "W src / triv readout",
+      "expectation": "nonzero expected: triv in W (x) W",
+      "peak_abs_integrand": 0.07104067936258986
+    },
+    {
+      "case": "W src / W readout",
+      "expectation": "nonzero expected (generic)",
+      "peak_abs_integrand": 0.015415767043755992
+    }
+  ],
+  "second_order": {
+    "task": "triv source / triv readout",
+    "eps_ladder": [
+      0.02,
+      0.04,
+      0.08
+    ],
+    "W_perturbation_abs_diffs": [
+      7.773059467752752e-07,
+      3.1177153577144345e-06,
+      1.254025265301495e-05
+    ],
+    "W_perturbation_loglog_slope": 2.0059700255473585,
+    "triv_perturbation_loglog_slope_control": 1.0218207522754355
+  }
+}
