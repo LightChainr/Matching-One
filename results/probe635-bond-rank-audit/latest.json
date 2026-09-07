@@ -1,0 +1,175 @@
+{
+ "schema": "matching-one.probe635.bond-rank-audit.v1",
+ "scope": "L=3 square bond torus, 2^18 configs, exact integer ranks",
+ "suspicion": "exact_rank_census.bond_ambient_rank adds the edge displacement to the tree-lift displacement of the fundamental cycle (ax+dx instead of ax-dx); the result then depends on edge order, so it is not a topological invariant of the subgraph",
+ "counterexample_mask63": {
+  "mask": 63,
+  "side": "dual (transported)",
+  "e628_ascending": 2,
+  "e628_descending": 1,
+  "fixed": 1,
+  "linalg": 1
+ },
+ "independent_check": {
+  "masks_sampled": 20000,
+  "extra_structured": 1024,
+  "rank_comparisons": 42048,
+  "disagreements": [],
+  "n_disagreements": 0
+ },
+ "census_e628_verbatim": {
+  "dual_fail": 118133,
+  "pair_counts": {
+   "0,2": 51704,
+   "1,2": 49263,
+   "0,1": 4397,
+   "1,1": 41839,
+   "1,0": 5633,
+   "2,2": 12183,
+   "2,1": 46657,
+   "2,0": 50468
+  },
+  "order_unstable_configs": 25090,
+  "matches_published": true
+ },
+ "census_fixed": {
+  "dual_fail": 115608,
+  "pair_counts": {
+   "0,2": 44380,
+   "1,2": 26724,
+   "0,1": 26724,
+   "1,1": 57776,
+   "0,0": 4356,
+   "1,0": 26724,
+   "2,2": 4356,
+   "2,1": 26724,
+   "2,0": 44380
+  },
+  "components": {
+   "1,1": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "18",
+    "366",
+    "3024",
+    "12996",
+    "24968",
+    "12996",
+    "3024",
+    "366",
+    "18",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "2,0": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "36",
+    "792",
+    "6534",
+    "13356",
+    "12552",
+    "7254",
+    "2880",
+    "804",
+    "153",
+    "18",
+    "1"
+   ],
+   "0,2": [
+    "1",
+    "18",
+    "153",
+    "804",
+    "2880",
+    "7254",
+    "12552",
+    "13356",
+    "6534",
+    "792",
+    "36",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ]
+  },
+  "M_coeffs": [
+   "-1",
+   "-18",
+   "-153",
+   "-804",
+   "-2880",
+   "-7254",
+   "-12552",
+   "-13356",
+   "-6498",
+   "0",
+   "6498",
+   "13356",
+   "12552",
+   "7254",
+   "2880",
+   "804",
+   "153",
+   "18",
+   "1"
+  ],
+  "M_quarter": "-3469505837/4294967296",
+  "M_half": "0"
+ },
+ "pair_count_differences_e628_vs_fixed": {
+  "0,0": {
+   "e628": 0,
+   "fixed": 4356
+  },
+  "0,1": {
+   "e628": 4397,
+   "fixed": 26724
+  },
+  "0,2": {
+   "e628": 51704,
+   "fixed": 44380
+  },
+  "1,0": {
+   "e628": 5633,
+   "fixed": 26724
+  },
+  "1,1": {
+   "e628": 41839,
+   "fixed": 57776
+  },
+  "1,2": {
+   "e628": 49263,
+   "fixed": 26724
+  },
+  "2,0": {
+   "e628": 50468,
+   "fixed": 44380
+  },
+  "2,1": {
+   "e628": 46657,
+   "fixed": 26724
+  },
+  "2,2": {
+   "e628": 12183,
+   "fixed": 4356
+  }
+ }
+}
