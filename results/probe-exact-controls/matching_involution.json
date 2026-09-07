@@ -1,0 +1,22 @@
+{
+  "by_L": {
+    "3": {
+      "N": 9,
+      "bad_entries": [],
+      "coeff_w_k_eq_minus_coeff_b_Nk": true,
+      "identity_fail_examples": [],
+      "poly_identity_Mb_p_plus_Mw_1mp": true
+    },
+    "4": {
+      "N": 16,
+      "bad_entries": [],
+      "coeff_w_k_eq_minus_coeff_b_Nk": true,
+      "identity_fail_examples": [],
+      "poly_identity_Mb_p_plus_Mw_1mp": true
+    }
+  },
+  "coupling_used": "site black=4-connect (G), white=8-connect (Ghat); r_b+r_w=2 configuration-wise (Alexander)",
+  "lemma": "M_Ghat(p) = -M_G(1-p); F_Ghat(p) = 1-F_G(1-p); Q_Ghat(u) = 1-Q_G(1-u)",
+  "result": "M_black(p) + M_white(1-p) = 0 exactly, L=3 and L=4",
+  "schema": "matching-one.probe-exact-controls.matching-involution.v1"
+}
