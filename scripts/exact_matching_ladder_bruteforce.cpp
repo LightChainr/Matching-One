@@ -247,9 +247,6 @@ void kernel1_threaded(const Geometry& g, int threads,
         for (const Edge& e : g.matching)
           if (white[e.i] && white[e.j]) dsu.add_edge(e.i, e.j, e.dx, e.dy);
         const int ww = dsu.any_wrap(white) ? 1 : 0;
-        if (getenv("LADDER_TRACE") && static_cast<int>(mask) < 4096)
-          std::printf("mask=%llu k=%d bw=%d ww=%d d=%d\n",
-                      (unsigned long long)mask, k, bw, ww, bw - ww);
         local[k] += bw - ww;
       }
       dones[t] = static_cast<long long>(end - begin);
@@ -419,15 +416,6 @@ struct K2Ctx {
 
 void dfs(K2Ctx& ctx, int idx, int black_cnt) {
   if (idx == ctx.n) {
-    if (const char* tr = getenv("LADDER_TRACE2")) {
-      if (atoi(tr)) {
-        unsigned long long m = 0;
-        for (int i = 0; i < ctx.n; ++i)
-          if (ctx.color[i] == 1) m |= (1ULL << i);
-        std::printf("k2mask=%llu k=%d bw=%d ww=%d\n", m, black_cnt,
-                    ctx.black->any_wrap() ? 1 : 0, ctx.white->any_wrap() ? 1 : 0);
-      }
-    }
     ctx.counts[black_cnt] +=
         (ctx.black->any_wrap() ? 1 : 0) - (ctx.white->any_wrap() ? 1 : 0);
     return;

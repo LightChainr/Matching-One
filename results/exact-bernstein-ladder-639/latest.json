@@ -28,6 +28,8 @@
       "k1_counts": [-1, -25, -300, -2300, -12650, -53120, -176900, -478700, -1068575, -1982325, -3054280, -3863250, -3890950, -2905150, -1290250, 128000, 765475, 709225, 406900, 168100, 52610, 12650, 2300, 300, 25, 1],
       "k2_counts": [-1, -25, -300, -2300, -12650, -53120, -176900, -478700, -1068575, -1982325, -3054280, -3863250, -3890950, -2905150, -1290250, 128000, 765475, 709225, 406900, 168100, 52610, 12650, 2300, 300, 25, 1],
       "k1_k2_agree": true,
+      "k1_wall_seconds_fleet_14thr": 2.058,
+      "k2_wall_seconds_fleet_14thr": 0.264,
       "power_coefficients_ascending": [-1, 0, 0, 0, 0, 10, 0, 100, -200, 300, 240, -3050, 2850, 1950, 6850, -26220, 20450, 3450, -2100, -18650, 22970, -10800, 1650, 300, -100, 2],
       "irreducible_over_ZZ": true,
       "physical_root_count_exact": 1,
@@ -40,6 +42,9 @@
       "k2_counts": [-1, -32, -496, -4960, -35960, -201376, -906192, -3365856, -10517732, -28036448, -64383504, -128169312, -221730472, -332706976, -429729648, -470311264, -423397330, -294981856, -133649680, -2692064, 61769064, 67601440, 46308016, 23815392, 9756620, 3263072, 896432, 200800, 35944, 4960, 496, 32, 1],
       "k1_counts": [-1, -32, -496, -4960, -35960, -201376, -906192, -3365856, -10517732, -28036448, -64383504, -128169312, -221730472, -332706976, -429729648, -470311264, -423397330, -294981856, -133649680, -2692064, 61769064, 67601440, 46308016, 23815392, 9756620, 3263072, 896432, 200800, 35944, 4960, 496, 32, 1],
       "k1_k2_agree": true,
+      "k1_wall_seconds_fleet_7thr": 961.746,
+      "k1_wall_seconds_local_8thr": 2753.684,
+      "k2_wall_seconds_fleet_14thr": 36.230,
       "power_coefficients_ascending": [-1, 0, 0, 0, 0, 0, 0, 0, 568, -1280, 1408, -1600, 2032, -14208, 38496, -45568, 47068, -25536, -18784, -332032, 1329152, -1949824, 1132320, 282112, -784872, 364608, 56704, -123968, 52416, -10048, 896, -64, 6],
       "irreducible_over_ZZ": true,
       "physical_root_count_exact": 1,
@@ -57,15 +62,17 @@
       "physical_root_count_exact": 1,
       "physical_root_exact_bracket": ["886565238729554871945691378613039104605661928137703/1496577676626844588240573268701473812127674924007424", "110820654841194358993211422326629888075707741017213/187072209578355573530071658587684226515959365500928"],
       "physical_root_decimal_diagnostic_50d": "0.59239507081770423769385580764250543411218819923508",
-      "k1_wall_seconds": 5416.498
+      "k1_wall_seconds_fleet_14thr": 5416.498,
+      "k2_wall_seconds_fleet_14thr": 526.241
     }
   },
   "diamond_L5_status": {
     "N": 50,
     "configs": 1125899906842624,
-    "measured_rate_configs_per_second": 119000000,
-    "projected_wall_hours_single_machine": 2638,
-    "verdict": "out of independent reach by pure brute force on the available fleet; symmetry reduction (torus automorphism group, order 288 for the axis-like lattice) would bring this to ~9 machine-hours but is NOT implemented here and was NOT run; no symmetry-reduced number is claimed",
+    "measured_rate_source": "diamond L=4 K2 on one fleet box: 2^32 configs in 36.230 s at 14 threads = 1.185e8 configs/s aggregate (same geometry as the target rung; K2-only since it is the faster kernel)",
+    "measured_rate_configs_per_second": 118500000,
+    "projected_wall_hours_single_machine_14thr": 2638,
+    "verdict": "out of independent reach by pure brute force on the available fleet; symmetry reduction (torus automorphism group, order 288) would bring this to ~9.2 machine-hours but is NOT implemented here and was NOT run; no symmetry-reduced number is claimed",
     "no_result_claimed": true
   },
   "independent_checks": {

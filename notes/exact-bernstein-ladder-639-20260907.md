@@ -66,10 +66,12 @@ it, and at L=5/6 the axis estimator has not crossed the diamond estimator.
 
 ## diamond L=5 is out of independent reach — reported, not worked around
 
-N=50 means 2^50 configurations. Measured K2 rate on one 16-vCPU box:
-~1.19e8 configs/s. One machine would need ~2638 hours. Splitting across the
-ten-box fleet by precomputed prefix colors (the `--split` decomposition) is
-bounded below by the same total CPU, still far out of reach for this rung.
+N=50 means 2^50 configurations. Measured K2 rate on one 16-vCPU box,
+same geometry (diamond L=4: 2^32 configs in 36.2 s at 14 threads, i.e.
+~1.19e8 configs/s aggregate): one machine would need ~2638 hours.
+Splitting across the ten-box fleet by precomputed prefix colors (the
+`--split` decomposition) is bounded below by the same total CPU, still far
+out of reach for this rung.
 
 The known symmetry reduction (torus automorphism group, order 288) would
 bring this to roughly 9 machine-hours, but that harness is not built here,

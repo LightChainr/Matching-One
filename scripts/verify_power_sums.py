@@ -19,9 +19,6 @@ Also serves as a regression harness: the five committed rungs
 future edit that changes a committed integer fails here loudly.
 """
 import sys
-import json
-from fractions import Fraction
-from math import comb
 
 # Committed ladder from results/exact_small_matching_polynomials.md
 COMMITTED = {
@@ -58,12 +55,9 @@ NEW = {
 ALL = dict(COMMITTED)
 ALL.update(NEW)
 
-def n_of(geom, L):
-    return 2 * L * L if geom == "axis" else 8 * L * L  # axis N=2L^2? no: axis N=2L^2 is wrong
-
-# axis N = 2 L^2? committed axis L=2 has N=8 -> len 5 -> N=4? len(a)=N+1=5 -> N=4.
-# Actually axis N = 2L^2 was wrong above; from len(a): axis L=2 N=4, L=3 N=9, L=4 N=16
-# -> axis N = L^2. diamond: L=2 N=8, L=3 N=18, L=4 N=32 -> diamond N = 2L^2.
+# axis N = L^2 (L=2 -> 4, L=3 -> 9, L=4 -> 16); diamond N = 2 L^2 (L=2 -> 8,
+# L=3 -> 18, L=4 -> 32), matching matched_torus_reference.axis_geometry /
+# diamond_geometry.
 def N_of(geom, L):
     return L * L if geom == "axis" else 2 * L * L
 

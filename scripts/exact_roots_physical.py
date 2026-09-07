@@ -29,7 +29,7 @@ from fractions import Fraction
 
 import mpmath as mp
 import sympy as sp
-from sympy import Poly, symbols, Rational
+from sympy import Poly, symbols
 
 
 def bernstein_to_power(a: list[int]) -> list[int]:
@@ -115,18 +115,17 @@ def main() -> int:
     lo, hi = physical[0]
     loR, hiR = Fraction(str(lo)), Fraction(str(hi))
 
-    p = sp.Poly(poly.as_expr(), x)
     BISECT_STEPS = 170
+    # invariant maintained across rounds: sign(loR) is the sign of M(loR)
+    def sign_at(fr: Fraction) -> int:
+        val = sum(sp.Integer(c) * sp.Rational(fr.numerator, fr.denominator) ** i
+                  for i, c in enumerate(pw))
+        return 1 if val > 0 else (-1 if val < 0 else 0)
+
+    s_lo = sign_at(loR)
     for _ in range(BISECT_STEPS):
         mid = (loR + hiR) / 2
-        # exact sign check
-        val = sum(sp.Integer(c) * Rational(mid.numerator, mid.denominator) ** i
-                  for i, c in enumerate(pw))
-        s = 1 if val > 0 else (-1 if val < 0 else 0)
-        s_lo = None
-        val_lo = sum(sp.Integer(c) * Rational(loR.numerator, loR.denominator) ** i
-                     for i, c in enumerate(pw))
-        s_lo = 1 if val_lo > 0 else (-1 if val_lo < 0 else 0)
+        s = sign_at(mid)
         if s == 0:
             loR = hiR = mid
             break
@@ -136,8 +135,7 @@ def main() -> int:
             hiR = mid
     print(f"exact_bracket: [{loR.numerator}/{loR.denominator}, {hiR.numerator}/{hiR.denominator}]")
     width = hiR - loR
-    print(f"bracket_width_lt: 2^-{BISECT_STEPS} (width < {sp.nsimplify(str(width))})" if False else
-          f"bracket_width_exact: {width.numerator}/{width.denominator}")
+    print(f"bracket_width_exact: {width.numerator}/{width.denominator}")
 
     mp.mp.dps = args.digits
     mid_dec = mp.mpf(loR.numerator) / mp.mpf(loR.denominator)
