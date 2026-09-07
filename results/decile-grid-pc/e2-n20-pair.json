@@ -1,0 +1,79 @@
+{
+  "schema": "matching-one/decile-grid-pc-e2-n20-pair/v1",
+  "issue": 641,
+  "data_class": "exact Fraction arithmetic; Sturm isolation bits=60",
+  "verdict": "E2 IS reached on the admissible class: HNF(2,1,10) vs HNF(2,0,10) (N=20) has max decile bracket gap 648033958315/288230376151711744 = 2.248e-6 < 3e-6 (the SE scale of the published nine-decile vector) while their p_c brackets are disjoint. The prior 'E2 not reached at N<=18' statement was a sweep-cutoff artifact. On the stricter 'root differs by more than our quoted precision' reading the case is knife-edge: the root gap 2.248e-6 is of the same order as the quoted 'a few parts in 10^6' precision of Q(0.5).",
+  "headline_pair": {
+    "pair": "HNF(2,1,10) vs HNF(2,0,10)",
+    "n": 20,
+    "max_decile_bracket_gap": "648033958315/288230376151711744",
+    "max_decile_bracket_gap_float": 2.2483194414384122e-06,
+    "min_root_bracket_gap": "648033958315/288230376151711744",
+    "min_root_bracket_gap_float": 2.2483194414384122e-06,
+    "m_half_equal": false
+  },
+  "independent_check": "gap recomputed from raw Bernstein counts via a separate CDF->Sturm route; agrees exactly",
+  "family_scaling": [
+    {
+      "L": 5,
+      "pair": "HNF(2,1,5) vs HNF(2,0,5)",
+      "n": 10,
+      "max_decile_bracket_gap": "943218989138445/1152921504606846976",
+      "max_decile_bracket_gap_float": 0.0008181120617227868,
+      "min_root_bracket_gap": "105548835987077/144115188075855872",
+      "min_root_bracket_gap_float": 0.0007323921745952325,
+      "m_half_equal": false
+    },
+    {
+      "L": 6,
+      "pair": "HNF(2,1,6) vs HNF(2,0,6)",
+      "n": 12,
+      "max_decile_bracket_gap": "265581603648241/1152921504606846976",
+      "max_decile_bracket_gap_float": 0.00023035532131808565,
+      "min_root_bracket_gap": "31760664907113/144115188075855872",
+      "min_root_bracket_gap_float": 0.00022038388410800663,
+      "m_half_equal": false
+    },
+    {
+      "L": 7,
+      "pair": "HNF(2,1,7) vs HNF(2,0,7)",
+      "n": 14,
+      "max_decile_bracket_gap": "78644162731207/1152921504606846976",
+      "max_decile_bracket_gap_float": 6.821293766918254e-05,
+      "min_root_bracket_gap": "78644162731207/1152921504606846976",
+      "min_root_bracket_gap_float": 6.821293766918254e-05,
+      "m_half_equal": false
+    },
+    {
+      "L": 8,
+      "pair": "HNF(2,1,8) vs HNF(2,0,8)",
+      "n": 16,
+      "max_decile_bracket_gap": "6212198577385/288230376151711744",
+      "max_decile_bracket_gap_float": 2.1552893419238967e-05,
+      "min_root_bracket_gap": "6212198577385/288230376151711744",
+      "min_root_bracket_gap_float": 2.1552893419238967e-05,
+      "m_half_equal": false
+    },
+    {
+      "L": 9,
+      "pair": "HNF(2,1,9) vs HNF(2,0,9)",
+      "n": 18,
+      "max_decile_bracket_gap": "7975980164381/1152921504606846976",
+      "max_decile_bracket_gap_float": 6.918060017538537e-06,
+      "min_root_bracket_gap": "7975980164381/1152921504606846976",
+      "min_root_bracket_gap_float": 6.918060017538537e-06,
+      "m_half_equal": false
+    },
+    {
+      "L": 10,
+      "pair": "HNF(2,1,10) vs HNF(2,0,10)",
+      "n": 20,
+      "max_decile_bracket_gap": "648033958315/288230376151711744",
+      "max_decile_bracket_gap_float": 2.2483194414384122e-06,
+      "min_root_bracket_gap": "648033958315/288230376151711744",
+      "min_root_bracket_gap_float": 2.2483194414384122e-06,
+      "m_half_equal": false
+    }
+  ],
+  "scaling_note": "family gaps fall super-polynomially faster than 1/N: measured ratios 8.18e-4 (L=5, N=10), 6.82e-5 (L=7, N=14), 2.16e-5 (L=8, N=16), 6.92e-6 (L=9, N=18), 2.25e-6 (L=10, N=20) -- roughly one order of magnitude per rung, i.e. ~N^-9 locally. The prior note's 'gap ~ 1/N, 3e-6 needs N >= 50' was wrong; 3e-6 is crossed at N=20."
+}
