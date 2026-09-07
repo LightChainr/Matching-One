@@ -98,8 +98,8 @@ Read from the arXiv HTML (v1, 33 pages, 7 figures, 5 tables). This is the paper
   not a theorem.
 - Scullard–Jacobsen arXiv:1209.1451 independently discusses the same convergence
   behavior for the critical polynomial (the "probabilistic definition" paper) and
-  is where the R_2−R_0 form and its very fast convergence are documented; Xu et
-  al. 2021 (patchy particles on Archimedean lattices) use the FSS form
+  is where the R_2−R_0 form and its very fast convergence are documented; Wang–He–Wang–Hu 2021
+  (arXiv:2111.12568, PRE 105, 034118; patchy particles on Archimedean lattices) use the FSS form
   `P_B ≃ a_1 (p−p_c) L^{y_t} + b_1 L^{y_1} + b_2 L^{y_2}` and report the critical
   polynomial's finite-size corrections are "much smaller" than for other wrapping
   quantities. None of these works match the correction structure against an
@@ -112,8 +112,8 @@ Read from the arXiv HTML (v1, 33 pages, 7 figures, 5 tables). This is the paper
 
 ### 4. Square-site specifically (feeds Q3)
 
-- Handled inside pTL via the FK (q=1) formulation with the site-specific R-matrix
-  `R_i = E_{i+2}E_i + v E_{i+1}`, p = v/(1+v). Site percolation is treated
+- Handled inside pTL via the FK (q=1) formulation with the site-specific Čʹ R-matrix
+  (“check-R”, the paper's Eq. 32: `Ř_i = E_{i+2}E_i + v E_{i+1}`), p = v/(1+v). Site percolation is treated
   on the same cylinder geometry, s=0 sector, reduced state space.
 - Scale reached: n×∞ bases up to **n_max = 21** in 2015 (Table 2 gives p_c(21) =
   0.592744551481371482002735520463 unextrapolated); extended to **n = 24** by
@@ -337,8 +337,8 @@ What exists:
   leading 1/n^4, CFT-motivated via x_m = 5/48 and c = 0 cylinder scaling
   (eqs. 46–50). This is a correction analysis of the CRITERION against a known
   pc — the "known answer" mode.
-- Xu–Chen– Cummings-style FSS of P_B in MC contexts (arXiv:2111.12568 and
-  references): `P_B ≃ a_1(p−p_c)L^{y_t} + b_1 L^{y_1} + b_2 L^{y_2}`, i.e. the
+- Wang–He–Wang–Hu 2021 (arXiv:2111.12568, PRE 105, 034118) FSS of P_B in MC/critical-polynomial
+  contexts (and their references): `P_B ≃ a_1(p−p_c)L^{y_t} + b_1 L^{y_1} + b_2 L^{y_2}`, i.e. the
   crossing probability itself has an FSS correction structure; again consumed
   against known thresholds.
 - Mertens–Ziff 2016: exact finite-size identity (their eq. 4) — the one place
