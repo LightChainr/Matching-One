@@ -32,4 +32,11 @@ epistemic rule in [`README.md`](README.md). Record the answer before assessing i
 
 ## Log
 
-*(none yet)*
+### #610 — 2026-09-07, Codex / GPT-6
+
+[Answer and local calculations](ANSWER-610-20260907.md), based on workspace
+`8b5f9d1a`. The 55% curvature comparison changes affine chart; transporting the
+chart explains most of its excess. Includes exact square-bond covariance
+identities, the transfer-matrix selection lemma, and a conditional quantile
+convergence proof for #276. Local verification and unverified scope are stated
+in the answer. Independent team assessment is pending; no C3/C4 promotion.
