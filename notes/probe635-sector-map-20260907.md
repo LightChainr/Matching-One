@@ -72,7 +72,7 @@ position-by-position; likewise `verify()` in the script asserts checksum
 equality against `scripts/exact_matching_polynomial.py` output before any
 sector table is printed.
 
-## 4. Bond lab and the #628 rank defect (near-miss ruled out)
+## 4. Bond lab and the two #628 defects (rank sign + dual convention)
 
 The bond analogue was probed with the wrap-gap observable
 `G = 1{primal wraps} − 1{dual wraps}` (L=2, L=3; antisymmetric around 1/2,
@@ -103,9 +103,9 @@ assignments are tree-order artifacts.
 **Independent recomputation.** With the sign corrected
 (`bond_ambient_rank_fixed`), certified against an independent
 spanning-tree-free implementation (exact rational elimination on the
-incidence matrix: rank[winding image] = rank[B; W] − rank[B]; 42,048
-comparisons, 0 disagreements), the full L=3 census *under #628's own
-dual-occupation convention* is:
+incidence matrix: rank[winding image] = rank[B; W] − rank[B]; 48,048
+comparisons across primal and geometric-dual edge sets, 0 disagreements),
+the full L=3 census *under #628's own dual-occupation convention* is:
 
     dual_fail = 115608
     (0,0):4356  (0,1):26724  (0,2):44380
@@ -177,10 +177,10 @@ claim should be recomputed from
 
 Verdict A is a finite-size exact statement on L ≤ 4 site (2^16) plus
 diamond L=2; it is not a proof for all L, and the both-two emptiness at
-reachable L is an observation, not a theorem. The bond rank defect is a
+reachable L is an observation, not a theorem. The bond defects are a
 statement about PR #628's artifact `results/probe-invariant-shape/
 census-exact.json` (bond section) and about the #622-inherited
-`bond_ambient_rank` implementation; the site side of #628/#606 is *not*
-implicated — the site `ambient_rank` closes its cycles with the correct
-sign (`lift_step(w, v)`), which is why its census satisfies symmetry and
-the bond one could not.
+`bond_ambient_rank` implementation plus its dual-occupation convention;
+the site side of #628/#606 is *not* implicated — the site `ambient_rank`
+closes its cycles with the correct sign (`lift_step(w, v)`) and its site
+duality numbers reproduce.
