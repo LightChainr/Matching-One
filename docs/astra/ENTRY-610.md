@@ -1,205 +1,191 @@
-# Entry prompt for #610 — what to read, in what order, and how to answer
+# Entry note for #610 — orientation, not instructions
 
-**This file changes the mode of the pack.** Every other file in `docs/astra/` is written
-for a model that **cannot be shown the repository**: self-contained, one file, no context.
-[#610](https://github.com/LightChainr/Matching-One/issues/610) is written for one that
-**can** read it. If you are answering #610, read this first; if you are answering Q1–Q4,
-ignore this file entirely and read only the one you were given.
+**This file changes the mode of the pack.** Every other file in `docs/astra/` is written for
+a model that **cannot** be shown the repository: self-contained, one file, no context.
+[#610](https://github.com/LightChainr/Matching-One/issues/610) assumes you **can** read the
+tree, and that you should read whatever you judge to be worth reading.
 
-**Branch.** Read `claude/matching-one-workspace-pwr5pv`, not `main`. `main` is several days
-behind and none of the four gates #610 is about have landed there. Two files live on other
-branches and are marked below.
-
-**Budget.** The minimum honest path is §1 plus §2c–d, about 40 KB. The full path is about
-250 KB. §2 is the only section where reading the *code* matters; everywhere else the note
-is enough.
+Everything below is *information*, not a route. There is no required reading order, no
+budget, no file you are supposed to stay out of, and no format your answer has to take. The
+one thing this file is for is keeping you from wasting effort on things that are already
+settled or already known to be stale. If any of it turns out to be wrong, say so — that is
+a result too.
 
 ---
 
-## §1 — Orientation. Four things, ~25 KB. Do not skip.
+## The one navigational fact
 
-Read in this order:
+**Read `claude/matching-one-workspace-pwr5pv`.** `main` is several days behind and none of
+the four gates #610 is about have landed there. Two other branches carry work that has not
+been merged yet:
 
-1. **`GOVERNANCE.md`, section 2 only** (lines 44–78). Five minimums. Two of them decide how
-   to read everything else: *don't fool yourself about a number — check once by independent
-   means*, and *count one random block once*. When #610 says a check "fired," it means the
-   independent check under minimum A returned a contradiction and was reported rather than
-   absorbed.
-2. **`docs/STATUS.md`, the "Strongest current evidence" table only.** The `Level` column is
-   the grammar of this project: `C3` is a scored prospective test, `C2` is reanalysis of
-   committed productions, and a row can be *negative* and still be the strongest thing in
-   its line. Note how many rows read "negative." That is the house style, not modesty.
-3. **`docs/astra/README.md`.** The four-part selection rule for what belongs in this pack,
-   and the requirement that a question's decision rule differ between yes and no. #610 is
-   held to it too — if one of its questions fails that test, say so.
-4. **The body of #610 itself.** Facts 1–6 and Q1–Q4. That is the question; everything below
-   is evidence for it.
+- `claude/p581-empirical` — Gate 4, the typed `Q`-score control on square bond.
+- `docs/literature-officer-20260906-issue601` — the literature answers to #601.
 
-**Stop here and check.** If after these four you believe one of the questions is malformed
-— wrong object, false premise, a distinction I have collapsed — say that now, before
-reading further. That correction is worth more than an answer to the wrong question, and it
-costs the least.
+Anything else you find on `main` is real but old. Open pull requests are the best index of
+what is in flight.
 
 ---
 
-## §2 — Q1: the tangent that obeys one exponent and the curvature that refuses it
+## What the vocabulary means here
 
-Q1 is the only question where the repository holds data you can overturn, so read the
-**definitions before the numbers, and the numbers before my prose**. The order matters: the
-definitions decide whether the numbers mean what I claim.
+Worth two minutes because it changes how the evidence reads.
 
-**a. `scripts/threshold_quantile_lineage.py`** (381 lines) — read `rank_cdf`,
-`_binomial_weights`, `profile_cdf`, `quantile`, `jackknife_quantiles`,
-`jackknife_covariance`, `spin_zero_weights`, `is_interpolation`.
+`GOVERNANCE.md` §2 is the whole rule set while exploring — five items. Two of them shape
+almost every artifact you will open: *don't fool yourself about a number, check once by
+independent means*, and *count one random block once*. When something in this repository
+says a check "fired," it means an independent check returned a contradiction and it was
+reported rather than absorbed.
 
-This is the file where a reconstruction artefact would live. The threshold CDF is an exact
-binomial convolution of the empirical rank CDF, bisected; the jackknife deletes a batch from
-every level at once. **If your answer to Q1(b) is "it is an artefact," this file is where
-you have to point, and `quantile` / `profile_cdf` are the two candidates.** I have argued
-the textbook quantile-estimator bias is ~6 orders of magnitude too small; check that
-arithmetic, it is the load-bearing step of my dismissal.
+`docs/STATUS.md` carries claim levels. `C3` is a scored prospective test, `C2` is
+reanalysis of committed productions. A row can read **negative** and still be the strongest
+thing on its line — a large fraction of them do. That is the house style, not modesty, and
+a negative answer from you is treated the same way.
 
-**b. `scripts/score_wasserstein_shape_flow.py`** (510 lines) — read `shape_flow`,
-`load_sizes`, `cross_size_coupling`, `same_production_null_control`.
-
-`shape_flow` is the affine projection: basis `[1, Q_base]`, covariance
-`(S_base + S_target)/log(m)^2`, weighted by the spectral pseudo-inverse.
-`cross_size_coupling` measures the batch-by-batch correlation between the two sizes rather
-than assuming the cross term away — two lineages reuse a seed across sizes, which is why it
-exists. `same_production_null_control` scores two halves of one production as if they were
-a transition; it must come back consistent with zero, and does.
-
-**c. `notes/p582-amplitude-law-20260906.md`** (218 lines) — the result in prose, including
-the four-cell weighting table and the section "The two lineages are not as independent as
-they look," which is a correction to my own first reading. Read that section carefully: it
-is the part most likely to contain a second error of the same kind.
-
-**d. `results/p582-amplitude-law/latest.json`** (544 lines) — the numbers. Keys worth
-opening: `amplitudes`, `one_exponent_fit`, `leave_one_transition_out`,
-`second_difference_check`, `weighting_systematic.second_difference_ratio_cells`,
-`error_budget`, and `not_established` (which lists what I already believe is unestablished,
-so you need not spend the answer telling me).
-
-**e. `scripts/p582_amplitude_law.py`** — only if you dispute a specific number. The four
-functions that carry Q1 are `first_difference_image`, `second_difference_weights`,
-`second_difference_image`, and `second_difference_check`. The first is the exact
-finite-difference image of an exponential, *not* its derivative; the second's weights
-annihilate constants; the fourth freezes the parameters fitted on first differences and
-never refits.
-
-**f. `results/wasserstein-shape-flow/latest.json`** (2242 lines) — the raw material.
-`sizes.<N>.quantiles_spin0`, `.standard_errors_spin0`, `.spin0_weights`,
-`.orientation_cos4theta`, `.source`, `.batches`.
-
-**You can rebuild the entire Q1 dataset from this one file.** Nine quantiles and their
-standard errors at eight sizes, plus the log geometry, is everything the exponent fit and
-the curvature check consume. If you would rather not trust my pipeline at all, this is the
-offer: recompute from here and tell me what you get.
+Scripts in this repository are written to be read: the module docstring usually states what
+the object is and what the wrong answer would look like, and test docstrings name the
+specific wrong number the test exists to stop us believing. If you want to know what
+someone thought they were measuring, the docstring is normally more honest than the note.
 
 ---
 
-## §3 — Q2: is the square-site flow the even sector of an involution
+## Where things are
 
-1. **`docs/STATUS.md`, "Exact semantics and controls."** The two exact finite relations the
-   whole conjecture rests on: `DeltaS_cross = -DeltaS_either` (corrected score `0.5700/2`)
-   and the finite Russo identity
-   `M'(p) = pivotal_mass_primal(p) + pivotal_mass_matching(1-p)`. These are exact at finite
-   `N`, not asymptotic. If the involution is going to act anywhere, it acts here.
-2. **Gate 4 — on branch `claude/p581-empirical`:** `notes/qtangent-empirical-20260907.md`
-   (~6.6 KB), then `results/qtangent-empirical/latest.json` if you want the per-scale
-   numbers. This is the even/odd-looking sign pattern: `X` single-signed and monotone,
-   `B_even` alternating and 6–11× smaller.
-   **Warning, and please act on it:** I called that second channel `B_even`, "duality-even."
-   Check whether the *construction* earns the name before you let the naming do any work in
-   your argument. If it does not, Q2's supporting evidence is one item shorter and I want
-   to know.
-3. **`notes/p398-reflection-parity-20260906.md`** (177 lines) — the exactly-solvable
-   analogy in full, including the Phase C section at the end (the balanced realization
-   factors through the quotient; the odd sector is exactly inert). This is what the
-   square-site structure is being compared *to*.
+Not a reading list — a map, so you can go straight to whatever you actually want.
 
----
-
-## §4 — Q3: state the selection rule as a lemma
-
-1. **`notes/p398-reflection-parity-20260906.md`** — already read in §3.
-2. **`scripts/p398_reflection_parity.py`** (1016 lines) — do not read it all. Read
-   `reflection`, `state_permutation`, `parity_split`, `selection_rule`, `responses`,
-   `second_order`. `selection_rule` is the exact object: it is where the Duhamel integrand
-   is evaluated pointwise in `tau` and returns `5.5e-16`.
-3. **On branch `docs/literature-officer-20260906-issue601`:**
-   `notes/literature-officer-20260906-issue601.md` — read **the decision table at the top
-   and the Q2 and Q3 rows only** (the file is 39 KB and most of it is bibliography).
-
-   **Do not re-derive Callan–Smiley.** The reflection-fixed count is already cited and
-   settled. The live gap is exactly the Q3 row: *no named selection rule for equivariant
-   Markov generators was found.* That is what #610's Q3 asks you to state.
-
----
-
-## §5 — Q4: what any of this is worth
-
-1. **`docs/ROADMAP.md`** — 435 lines; do **not** read it whole. Read the "Theory-bound
-   questions" section at the top, then search for `Gate 3` and read the block that follows
-   it through the `N = 725` paragraph.
-2. **`docs/astra/Q4-why-square-site-resists.md`** (122 lines) — an older question, still
-   unasked, aimed at the same target: whether the low degree/height of every exactly-known
-   threshold is a theorem about the three solvable mechanisms, and whether square-site is
-   provably outside them.
-
-   **If your Q4 answer would duplicate that one, say so and answer that one instead.** It
-   is the better-posed version and it was written first.
-
----
-
-## §6 — How to answer
-
-**Order.** Answer Q1 first and as a separate unit. It is the only question where I hold
-data you can overturn, and its answer changes what Q2 and Q4 are even about: if the 1.5 is
-an artefact, the "second smooth scale" reading of the #582 remainder dies and Q2 loses half
-its motivation.
-
-**Shape, per question.**
+**The five #582 transitions and everything built on them** (this is what Q1 is about):
 
 ```text
-verdict          one line, plain, before any argument
-argument         with hypotheses stated as hypotheses
-status           proof / conditional proof / conjecture / heuristic -- mark every claim
-what it changes  what I should do differently, in one sentence
+scripts/threshold_quantile_lineage.py       quantile reconstruction, jackknife,
+                                            spin-0 orientation weighting
+scripts/score_wasserstein_shape_flow.py     the affine projection and the shape flow
+scripts/score_type582_residual.py           Gate 3: the label screen, exact permutation null
+scripts/p582_amplitude_law.py               the exponent, the curvature check, the four-cell
+                                            weighting control
+notes/p582-amplitude-law-20260906.md        the result in prose, including a correction to
+                                            my own first reading of it
+notes/type582-residual-20260906.md          Gate 3 in prose
+results/wasserstein-shape-flow/latest.json  the raw material: per-size quantiles, standard
+                                            errors, covariance inputs, orientation data
+results/p582-amplitude-law/latest.json      every number quoted in #610's Facts 3 and 4
+results/type582-residual/latest.json        the label screen's full output
 ```
 
-**The single most valuable thing you can produce is a computation I can run.** Not "this
-would be consistent with two exponents" but:
+`results/wasserstein-shape-flow/latest.json` is worth knowing about specifically: nine
+quantiles and their standard errors at eight sizes, plus the log geometry, is the **entire**
+input to the exponent fit and the curvature check. If you would rather not trust our
+pipeline at all, you can rebuild all of Q1 from that one file.
+
+**The exactly-solvable side** (Facts 5, and Q3):
 
 ```text
-compute:      <quantity>, from <committed file / exact object>
-expected:     <value or range> if the claim holds
-falsified if: <value or range>
+scripts/p398_reflection_parity.py           Gate 1: the reflection, the parity split, and
+                                            selection_rule(), where the Duhamel integrand
+                                            is evaluated pointwise in tau
+scripts/p398_intervention_transport.py      #580, the frozen-realization transport
+scripts/noncrossing_connectivity_codec.py   the state space itself
+notes/p398-reflection-parity-20260906.md    Gate 1 and Phase C in prose
 ```
 
-I have the exact P398 generator, exact lumping refinement, the matrix-free memory kernel,
-exact enumeration on square bond to `L = 4`, the eight committed square-site productions
-with full jackknife covariances, and budget for about one new production. A prediction I
-can kill in an afternoon outranks a correct but unfalsifiable argument.
+**The typed decomposition** (Fact 6, Q2), on `claude/p581-empirical`:
 
-**If you find an error in my arithmetic, lead with it.** That outranks every question here.
-The four-cell correction in §2c is one I found myself; assume there is another.
+```text
+notes/qtangent-empirical-20260907.md
+scripts/score_qtangent_empirical.py
+results/qtangent-empirical/latest.json
+scripts/qtangent_scale_decomposition.py     (on the main workspace branch — the exact gate)
+```
 
-**Negative answers are the point.** "Q1(b): a log correction is not excluded and here is
-why your `s`-dependence argument fails," "Q2: the matching involution does not act on this
-functional and the resemblance is superficial," "Q4: that is a category error and the
-shortest path is X" — each of those closes a line of work and is worth more than a
-hedged yes.
+**Context you may or may not want:** `docs/ROADMAP.md` ranks work by information gained per
+unit effort and is the closest thing to a narrative; `docs/STATUS.md` is the claim ledger;
+`docs/astra/Q1`–`Q4` are four older questions in the self-contained mode, of which
+`Q4-why-square-site-resists.md` is aimed at the same target as #610's Q4 and is arguably
+better posed. `docs/PUBLICATION-CHECKLIST.md`, the cut-network no-go results (#435, #491,
+#549, #550) and the exhaustive censuses are all there and none of the four questions touch
+them.
 
-**Constraints.**
+---
 
-- Your answer is a **theory input**. It does not enter `docs/STATUS.md`, does not score a
-  frozen block, and does not close a ticket. It is recorded in `docs/astra/ANSWERS.md`.
-- If your answer contains a claimed **exact threshold value**, it goes through the filter
-  before anything else is written down:
-  `python3 scripts/threshold_claim_intake.py --expression "<closed form>"` (or
-  `--polynomial` / `--decimal`). It never confirms; it only tells us whether the claim is
-  already dead.
-- **Say what you did not read.** If you answered Q1 from the note without opening
-  `threshold_quantile_lineage.py`, say so — then I know the artefact branch of Q1(b) is
-  unexamined rather than dismissed.
+## What is already settled, so you need not spend effort on it
+
+Offered so you can skip it, not to fence it off. If you think any of it is wrong, that
+outranks the questions.
+
+- **The noncrossing reflection-fixed count is classical.** Callan–Smiley, arXiv:math/0510447,
+  Theorem 1, plus Burnside. Ding 2016 supplies the Kreweras anti-isomorphism showing both
+  even-`n` reflection classes give the same count. Cyclic sieving (Reiner–Stanton–White) is
+  the *rotation* action and is not the reflection theorem.
+- **"Coarsest lumping = automorphism-orbit partition" is not a theorem** without extra
+  hypotheses. Kemeny–Snell Thm 6.3.2 is the criterion; D'Angeli–Donno 2013 Prop. 13 is a
+  counterexample and Thm 12 gives conditions. Our `w = 4..8` agreement is an instance.
+- **No named selection rule for equivariant Markov generators was found** in a deliberate
+  search. The abstract vanishing is Schur / Wigner–Eckart; Hänggi 1978 covers symmetries of
+  the master equation but not this. That gap is why #610's Q3 exists.
+- **Fieller sample-size for a ratio of means is standard**; choosing among *observables* by
+  a Fieller criterion was not found as a named method.
+
+---
+
+## What you can have
+
+- **The whole repository**, including the branches above and anything on `main`.
+- **All the underlying data.** The eight square-site productions are committed as raw batch
+  histograms under `results/server-*/`, with full delete-one jackknife covariance
+  reconstructible from them. Nothing in Q1 rests on a number you cannot recompute.
+- **Compute, if you want a specific thing measured.** We have the exact P398 generator, the
+  exact lumping refinement by partition refinement, a matrix-free memory kernel, exact
+  enumeration on square bond to `L = 4`, Monte Carlo beyond that, and budget for roughly one
+  new production run of a new site count. If your answer needs a number we do not have,
+  name it precisely and we will get it.
+- **Permission to reject the questions.** The four in #610 are what we currently believe is
+  blocking. If the material suggests a better question, answer that one and say why. If a
+  question is malformed — wrong object, false premise, a distinction we collapsed — saying
+  so is more valuable than answering it as asked. If you want to go somewhere the four
+  questions do not point, go.
+
+---
+
+## Three things we would rather you heard from us than discovered late
+
+Observations, not instructions.
+
+1. **If Q1's answer is "reconstruction artefact," it lives in
+   `scripts/threshold_quantile_lineage.py`** — most likely `quantile` or `profile_cdf`. We
+   argued the textbook quantile-estimator bias is about six orders of magnitude too small
+   (`O(1/M)` at `M = 10^8`, against the `~7e-4` per-size bias the discrepancy needs). That
+   arithmetic is the load-bearing step of our dismissal and it has not been independently
+   checked.
+
+2. **We named a channel `B_even`, meaning "duality-even."** Whether the construction earns
+   that name is not something we have verified as carefully as the name implies. Q2 leans on
+   its sign behaviour, so if the naming is doing work it has not earned, Q2's support is one
+   item shorter.
+
+3. **`notes/p582-amplitude-law-20260906.md` contains a correction we made to ourselves** —
+   the section "The two lineages are not as independent as they look." We first read a 1.3%
+   agreement as cross-lineage replication; it was shared structure at the third rung. We
+   found that one. We do not assume it was the only one of its kind.
+
+---
+
+## What happens to your answer on our side
+
+So you know the shape of the container, not to constrain what goes in it.
+
+Your answer is recorded as a **theory input** in `docs/astra/ANSWERS.md`. It does not enter
+`docs/STATUS.md`, does not score a frozen block, and does not by itself close a ticket —
+the same standing as a literature packet. That is about our evidence accounting, not about
+how seriously it is taken; several of the project's turns have come from exactly this
+channel.
+
+Two practical notes. If you propose a computation with a stated expected value and a stated
+falsifier, we will run it and report the result whichever way it goes — that is the highest-
+leverage form an answer can take here, and it is why the compute offer above is real. And
+if an answer contains a claimed *exact threshold value*, we put it through
+`scripts/threshold_claim_intake.py` before anything else is written down; the filter never
+confirms, it only reports whether the claim is already dead against the committed
+certificates and censuses.
+
+It also helps to know roughly what you looked at — not as an audit, but because "I answered
+this from the note without opening the reconstruction code" and "I read the code and the
+artefact branch is still open" are different answers, and we would act on them differently.

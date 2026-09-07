@@ -4,11 +4,13 @@ A small set of questions for an expensive external mathematical model (GPT‑6 A
 
 **Two modes.** Q1–Q4 below are *self-contained-file* mode: the model cannot be shown the
 repository, and is shown exactly one of these files. [#610](https://github.com/LightChainr/Matching-One/issues/610)
-is *repository* mode — it assumes the model can read the tree, and
-[`ENTRY-610.md`](ENTRY-610.md) is its reading order and answer protocol. The selection rule
-below still applies to both; only criterion 3 relaxes, and it relaxes deliberately, because
-#610's Q1 asks the model to check numbers we produced rather than to answer from first
-principles.
+is *repository* mode — it assumes the model can read the tree, has access to everything in
+it, and should read whatever it judges worth reading. [`ENTRY-610.md`](ENTRY-610.md) is its
+orientation note: a map and a list of what is already settled, deliberately **not** a
+reading order or an answer format. Criterion 3 below relaxes for that mode, because #610's
+Q1 asks the model to check numbers we produced rather than to answer from first principles;
+criterion 4 relaxes too, because a model that can see the whole tree may find a better
+question than the ones we asked, and is invited to answer that instead.
 
 ## The selection rule
 
