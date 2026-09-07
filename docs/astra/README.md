@@ -1,7 +1,14 @@
 # Astra query pack
 
 A small set of questions for an expensive external mathematical model (GPT‑6 Astra).
-The model cannot be shown the repository. It can be shown one of these files.
+
+**Two modes.** Q1–Q4 below are *self-contained-file* mode: the model cannot be shown the
+repository, and is shown exactly one of these files. [#610](https://github.com/LightChainr/Matching-One/issues/610)
+is *repository* mode — it assumes the model can read the tree, and
+[`ENTRY-610.md`](ENTRY-610.md) is its reading order and answer protocol. The selection rule
+below still applies to both; only criterion 3 relaxes, and it relaxes deliberately, because
+#610's Q1 asks the model to check numbers we produced rather than to answer from first
+principles.
 
 ## The selection rule
 
@@ -28,6 +35,8 @@ Each file states its decision rule explicitly. If a question's decision rule rea
 | [Q1](Q1-descendant-log-coupling.md) | Does the `h=5/8` logarithmic coupling descend to the level‑4 `x=21/4, s=4` state? | issue #275, the project's only P0 | unasked |
 | [Q2](Q2-additive-shape-ambiguity.md) | What admissible additive shape carries the measured ratio from `11/4` to `1.88 ± 0.18`? | `ROADMAP` item 2 — **the block has been run and came back negative** | unasked, and sharper than when written |
 | [Q3](Q3-unit-automorphism-escape.md) | What is the smallest escape from the Gaussian-unit no-go? | the Gaussian-cover production line, declared dead by a theorem | unasked |
+
+| [#610](https://github.com/LightChainr/Matching-One/issues/610) | Why does a tangent obey one exponent while its own curvature refuses it by a factor of 1.5, is the square-site shape flow the even sector of an involution, and what is any of it worth? | #584/#582 interpretation, and #598's selection rule as a stateable lemma | **asked**, repository mode — see [`ENTRY-610.md`](ENTRY-610.md) |
 
 **Q4 first.** It is the one aimed at the problem the project was started for, it is
 the only one whose answer changes a manuscript already drafted, and it is the only one
