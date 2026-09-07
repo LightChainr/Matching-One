@@ -1,6 +1,6 @@
 # Literature officer — Newman–Ziff four wrappings, annulus complex roots, 2026-09-05
 
-Repo search for `0.521058290` / `2410.04767` returned **zero** (Pinson `R_h` was computed in the #576 note; the other three Newman–Ziff numbers were not frozen). Theory input; **does not enter** `docs/STATUS.md`.
+Repo search for `0.521058290` / `2410.04767` returned **zero** (the four Newman–Ziff numbers were not frozen; #576 computed `π({1,0})`, not `R_h`). Theory input; **does not enter** `docs/STATUS.md`.
 
 X since 2026-06: empty for Deng / wrapping / exact threshold / LCFT.
 
@@ -14,16 +14,18 @@ Do not re-read as new: Pinson `π({1,0})` at `r=1,2,4`, Duncan–Kahle A vs S, N
 
 | symbol | event (their words) | Pinson value |
 |---|---|---|
-| `R_h` | wraps horizontally (specified direction) | **0.521 058 290** |
+| `R_h` | wraps horizontally (specified direction, **including** the other) | **0.521 058 290** |
 | `R_e` | wraps either horizontally or vertically, or both | **0.690 473 725** |
 | `R_b` | wraps in both directions | **0.351 642 855** |
 | `R_1` | wraps around one specified axis but not the other | **0.169 415 435** |
 
-Identities: `R_b = R_e − 2 R_1`, `R_h = R_e − R_1`. The #576 note’s `π({1,0})(r=1) = 0.521058290` is `R_h`. Duncan–Kahle **A** is “at least one giant 1-cycle” ≈ `R_e`; **S** (homology basis) ≈ `R_b`. Specified-direction A is `R_h`.
+Identities: `R_b = R_e − 2 R_1`, `R_h = R_e − R_1`.
+
+The #576 note’s `π({1,0})(r=1) = 0.169415435321` matches `R_1` to 12 digits. It is **not** `R_h`. See `notes/literature-officer-20260905-erratum-pi-vs-Rh.md`. Duncan–Kahle **A** (“at least one giant 1-cycle”) is an analogue of `R_e`; **S** (homology basis) is an analogue of `R_b`. Specified-direction wrap *including* both is `R_h`; specified-direction wrap *excluding* the other is `R_1`. Freeze the five names `{π({1,0}), R_1, R_h, R_e, R_b}` as distinct.
 
 They then invert `R_L(p) = R_∞(p_c)` to estimate square-site `p_c = 0.59274621(13)` from `R_h`. That is an estimator, not an exact form (Jacobsen 2015 already classified square site as the finite-size-dependent class).
 
-**#576 freeze.** The wrapping channel on the next ladder is one of these four, or it is matching-odd and not wrapping. Write which. Comparing an unnamed mixture to `E₄` `11/4` or to a single Pinson number is how the last fingerprint excluded a list that did not contain the observable.
+**#576 freeze.** The wrapping channel on the next ladder is one of these four (or `π({1,0})`), or it is matching-odd and not wrapping. Write which. Comparing an unnamed mixture to `E₄` `11/4` or to a single Pinson number is how the last fingerprint excluded a list that did not contain the observable.
 
 ---
 
@@ -51,7 +53,7 @@ Nolin–Qian–Sun–Zhuang PRL **134**, 117101 (2025) is the letter version of 
 
 ## Opinions
 
-1. **#576 / #567.** Freeze `R_h` / `R_e` / `R_b` / `R_1`. The numbers are in Newman–Ziff. Aspect `r=2,4` changes them (Pinson `π({1,0})` ratio 2.969 at `r=2`); the square-aspect table above is `r=1` only.
+1. **#576 / #567.** Freeze `{π({1,0}), R_1, R_h, R_e, R_b}` as distinct. The four `R` numbers are in Newman–Ziff. Aspect `r=2,4` changes them (Pinson `π({1,0})` ratio 2.969 at `r=2`); the square-aspect table above is `r=1` only. Do not score `R_h` against the `π({1,0})` table.
 2. **Q1.** Colour first. The monochromatic-two-arm CFT is not a real Kac table. A paid query is still only the level-4 spin-4 question He left open.
 3. **P2.** Newman–Ziff `p_c` from wrapping is an estimator. Keep out of the exact table.
 4. **X.** Dead since June. arXiv remains the channel.

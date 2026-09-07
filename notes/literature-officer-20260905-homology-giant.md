@@ -33,15 +33,15 @@ For `d=2,i=1`, a giant 1-cycle **is** a wrapping path on `T^2`. That is the homo
 
 On the `2i`-torus, `ℙ_p(A)→0` for `p<1/2` and `ℙ_p(S)→1` for `p>1/2`.
 
-**Why #576 has to name A vs S.** Pinson `π({1,0})` (and Newman–Ziff `R_h`) is A-type: wrapping in a specified direction, evaluated **at criticality**, not as a threshold. Both-direction wrapping `R_b` is closer to S. They are different numbers (Pinson `R_h(r=1) ≈ 0.521058290` vs `R_b` smaller). The #576 note already computed `π({1,0})` at `r=1,2,4`. If the engine wrapping channel is “any wrapping” vs “specified direction” vs “both axes”, those three are A, A-specified, and S. Comparing any of them to `E₄` `11/4` is still the wrong function space (Ridout / Diamantis–Kleban / SKZ). Comparing A to S without naming which is how a later ladder fights the published number.
+**Why #576 has to name A vs S.** Analogues, not identities. Duncan **A** (at least one giant 1-cycle) is closer to Newman–Ziff `R_e` (`0.690…`). Event **S** (homology basis, both directions) is closer to `R_b` (`0.352…`). Specified-direction wrap *including* the other axis is `R_h` (`0.521…`). Pinson `π({1,0})` is the rank-1 class `{1,0}`; at `r=1` it is **0.169415435321**, matching `R_1`, **not** `R_h`. Do not write `π({1,0})` and `R_h` as one A-specified number `0.521`. See `notes/literature-officer-20260905-erratum-pi-vs-Rh.md`. The #576 note already computed `π({1,0})` at `r=1,2,4`. If the engine wrapping channel is “any wrapping” vs “specified direction including both” vs “specified direction excluding the other” vs “both axes”, those four are A, `R_h`, `R_1`/`π`, and S. Comparing any of them to `E₄` `11/4` is still the wrong function space (Ridout / Diamantis–Kleban / SKZ). Comparing A to S without naming which is how a later ladder fights the published number.
 
-Matching-odd is **not** claimed to be A or S. If a later readout *is* wrapping-flavoured, write which event, then score it against Pinson / Akhunzhanov, not against `11/4`.
+Matching-odd is **not** claimed to be A or S. If a later readout *is* wrapping-flavoured, write which event, then score it against Pinson / Akhunzhanov, not against `11/4`. Score Akhunzhanov against `R_h`; score `pinson_pi10_ratio` against `π({1,0})`.
 
 ---
 
 ## Opinions
 
-1. **#576 / #567.** Freeze the wrapping observable as A-specified (`π({1,0})` / `R_h`), A-any, or S. The published numbers already exist for A-specified. Do not leave it unnamed.
+1. **#576 / #567.** Freeze the wrapping observable by name among `{π({1,0}), R_1, R_h, R_e, R_b}`. They are not the same object. A-any ≈ `R_e`; S ≈ `R_b`; A-specified-including-both = `R_h`; `{1,0}` class = `π` ≈ `R_1` at `r=1`. The published numbers already exist. Do not leave it unnamed.
 2. **Matching-odd homology ticket.** Duncan–Kahle is giant cycles, not matching-odd. Matching-odd remains the Sq/Sq8 involution on the engine’s homology readout. Do not cite `p_c=1/2` as if it applied to square site.
 3. **Q2.** Unchanged: wrapping-flavoured leftovers live with Pinson / Cardy–Watts / Ridout-`t`, not holomorphic `E₄`.
 4. **P2.** Unchanged. Homological `p_c=1/2` is bond/triangular/Voronoi self-dual, not an algebraic form for square site.
@@ -50,4 +50,5 @@ Matching-odd is **not** claimed to be A or S. If a later readout *is* wrapping-f
 
 - matching-odd = giant 1-cycle;
 - square-site wrapping threshold equals `1/2`;
+- `π({1,0}) = R_h`;
 - anything in the claim ledger.
