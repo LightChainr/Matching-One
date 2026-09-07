@@ -1,0 +1,535 @@
+{
+  "schema": "matching-one.p612-chart-identity.v1",
+  "issue": 612,
+  "weightings": {
+    "spin0": {
+      "reproduction_control": {
+        "per_transition": [
+          {
+            "label": "65->130",
+            "statistic": 435746.10833512194,
+            "published_statistic": 435743.73701554537,
+            "largest_residual_difference": 1.1131984001266915e-08,
+            "statistic_matches_exactly": false
+          },
+          {
+            "label": "130->325",
+            "statistic": 192537.3825442312,
+            "published_statistic": 192536.60599297824,
+            "largest_residual_difference": 3.968037509682887e-09,
+            "statistic_matches_exactly": false
+          },
+          {
+            "label": "85->170",
+            "statistic": 292805.4466750862,
+            "published_statistic": 292804.78526441427,
+            "largest_residual_difference": 1.672081734183095e-08,
+            "statistic_matches_exactly": false
+          },
+          {
+            "label": "170->425",
+            "statistic": 154876.18287209084,
+            "published_statistic": 154876.9786006733,
+            "largest_residual_difference": 2.498627083014071e-09,
+            "statistic_matches_exactly": false
+          },
+          {
+            "label": "145->290",
+            "statistic": 112067.10056745633,
+            "published_statistic": 112067.07911683862,
+            "largest_residual_difference": 4.602327047242838e-09,
+            "statistic_matches_exactly": false
+          }
+        ],
+        "every_statistic_matches_exactly": false
+      },
+      "consensus_direction": [
+        -0.2887126766006569,
+        -0.12066783122729056,
+        0.06921759100370817,
+        0.2385347464569182,
+        0.3780737808016512,
+        0.47827324271813404,
+        0.518589378735454,
+        0.444347665976014,
+        0.048264834818264817
+      ],
+      "exponent_fit": {
+        "omega": 0.9701786160832164,
+        "scale_amplitude": 0.17834748516661017,
+        "statistic": 277.4447387469764,
+        "degrees_of_freedom": 3,
+        "search_window": [
+          0.25,
+          2.5
+        ]
+      },
+      "amplitude_points": [
+        {
+          "label": "65->130",
+          "sbar": 4.5209608601756095,
+          "h": 0.6931471805599454,
+          "amplitude": -0.0021840521127264637,
+          "standard_error": 3.3168591537998044e-06,
+          "significance": -658.4699595170952
+        },
+        {
+          "label": "130->325",
+          "sbar": 5.325679816392659,
+          "h": 0.9162907318741551,
+          "amplitude": -0.0009990705637047735,
+          "standard_error": 2.278425114231401e-06,
+          "significance": -438.4917272305427
+        },
+        {
+          "label": "85->170",
+          "sbar": 4.789224846770289,
+          "h": 0.6931471805599454,
+          "amplitude": -0.0017098301794851712,
+          "standard_error": 3.1619659849597208e-06,
+          "significance": -540.749074347475
+        },
+        {
+          "label": "170->425",
+          "sbar": 5.59394380298734,
+          "h": 0.9162907318741551,
+          "amplitude": -0.0007816922794499794,
+          "standard_error": 1.991614454440297e-06,
+          "significance": -392.49176852839133
+        },
+        {
+          "label": "145->290",
+          "sbar": 5.323307332700547,
+          "h": 0.6931471805599454,
+          "amplitude": -0.0010459771782841544,
+          "standard_error": 3.1269938468514504e-06,
+          "significance": -334.49927614579155
+        }
+      ],
+      "per_lineage": [
+        {
+          "lineage_sizes": [
+            65,
+            130,
+            325
+          ],
+          "h0": 0.6931471805599454,
+          "h1": 0.9162907318741551,
+          "chart_factor": 1.2426698691192235,
+          "second_difference_weights": [
+            1.7927936576404406,
+            -3.1489897053484666,
+            1.3561960477080257
+          ],
+          "lower_transition": {
+            "base": 65,
+            "target": 130,
+            "step": 0.6931471805599454,
+            "alpha": 0.1879755860010525,
+            "beta": -0.31580048538017885,
+            "amplitude": -0.0021840521115466024,
+            "standard_error": 3.316859129904575e-06,
+            "residual_statistic": 2163.4156586284653,
+            "residual_degrees_of_freedom": 6
+          },
+          "upper_transition": {
+            "base": 130,
+            "target": 325,
+            "step": 0.9162907318741551,
+            "alpha": 0.1839615528579384,
+            "beta": -0.30968853593260415,
+            "amplitude": -0.0009990705637047735,
+            "standard_error": 2.2784251117028533e-06,
+            "residual_statistic": 262.38726784118063,
+            "residual_degrees_of_freedom": 6
+          },
+          "k": 0.7811037839392667,
+          "k_is_the_width_contraction": true,
+          "curvature_measured": 0.002244531842372553,
+          "curvature_standard_error": 6.2313832401404655e-06,
+          "curvature_residual_statistic": 2200.1878242552184,
+          "curvature_residual_degrees_of_freedom": 6,
+          "identity": {
+            "a1_minus_a0_over_k": 0.0017970394493999886,
+            "ell_C_of_r1": -1.4400247459611732e-06,
+            "ell_C_of_r0_over_k": -1.061789662146554e-05,
+            "residual_transport": 9.177871875504367e-06,
+            "rebuilt_curvature": 0.0022445318422302913,
+            "measured_curvature": 0.002244531842372553,
+            "absolute_error": 1.42261636498775e-13,
+            "relative_error": 6.338142939794483e-11,
+            "closes_within_tolerance": true,
+            "tolerance": 1e-09
+          },
+          "decomposition": {
+            "naive_C_times_a1_minus_a0": 0.0014725408649653004,
+            "chart_transported_C_times_a1_minus_a0_over_k": 0.0022331267773879654,
+            "residual_transport_term": 1.1405064842326014e-05,
+            "model_first_amplitude_lower": -0.002194800973650225,
+            "model_first_amplitude_upper": -0.001019499059099537,
+            "one_exponent_prediction": 0.0014605122763302776,
+            "chart_corrected_prediction": 0.002224841429606659,
+            "chart_term": 0.0007643291532763812,
+            "excess_over_the_one_exponent_prediction": 0.0007840195660422753,
+            "fraction_of_excess_from_the_chart_term": 0.97488530437411,
+            "ratio_measured_over_one_exponent": 1.5368113495165026,
+            "ratio_measured_over_chart_corrected": 1.0088502544513365
+          },
+          "lineage": "gaussian_13",
+          "usable": true
+        },
+        {
+          "lineage_sizes": [
+            85,
+            170,
+            425
+          ],
+          "h0": 0.6931471805599454,
+          "h1": 0.9162907318741551,
+          "chart_factor": 1.2426698691192235,
+          "second_difference_weights": [
+            1.7927936576404406,
+            -3.1489897053484666,
+            1.3561960477080257
+          ],
+          "lower_transition": {
+            "base": 85,
+            "target": 170,
+            "step": 0.6931471805599454,
+            "alpha": 0.1893760451540881,
+            "beta": -0.31843659773163585,
+            "amplitude": -0.0017098301791155309,
+            "standard_error": 3.1619659670421757e-06,
+            "residual_statistic": 395.88261867094207,
+            "residual_degrees_of_freedom": 6
+          },
+          "upper_transition": {
+            "base": 170,
+            "target": 425,
+            "step": 0.9162907318741551,
+            "alpha": 0.18463832664528987,
+            "beta": -0.3109561047362828,
+            "amplitude": -0.0007816922794499794,
+            "standard_error": 1.9916144528679712e-06,
+            "residual_statistic": 826.3942663102574,
+            "residual_degrees_of_freedom": 6
+          },
+          "k": 0.7792765700952151,
+          "k_is_the_width_contraction": true,
+          "curvature_measured": 0.0017534167057866635,
+          "curvature_standard_error": 5.831065154046511e-06,
+          "curvature_residual_statistic": 869.9773401926464,
+          "curvature_residual_degrees_of_freedom": 6,
+          "identity": {
+            "a1_minus_a0_over_k": 0.001412432688155061,
+            "ell_C_of_r1": -2.643085535037696e-07,
+            "ell_C_of_r0_over_k": 1.160718073602645e-06,
+            "residual_transport": -1.4250266271064147e-06,
+            "rebuilt_curvature": 0.001753416706077165,
+            "measured_curvature": 0.0017534167057866635,
+            "absolute_error": 2.9050156377663505e-13,
+            "relative_error": 1.6567742443534133e-10,
+            "closes_within_tolerance": true,
+            "tolerance": 1e-09
+          },
+          "decomposition": {
+            "naive_C_times_a1_minus_a0": 0.0011533690023019817,
+            "chart_transported_C_times_a1_minus_a0_over_k": 0.0017551875437293628,
+            "residual_transport_term": -1.770837652197737e-06,
+            "model_first_amplitude_lower": -0.001691858090087584,
+            "model_first_amplitude_upper": -0.0007858788799904691,
+            "one_exponent_prediction": 0.0011258330664361198,
+            "chart_corrected_prediction": 0.0017213258706427446,
+            "chart_term": 0.0005954928042066249,
+            "excess_over_the_one_exponent_prediction": 0.0006275836393505438,
+            "fraction_of_excess_from_the_chart_term": 0.9488660424973344,
+            "ratio_measured_over_one_exponent": 1.557439338086943,
+            "ratio_measured_over_chart_corrected": 1.018643091172467
+          },
+          "lineage": "gaussian_17",
+          "usable": true
+        },
+        {
+          "lineage": "p50",
+          "sizes": [
+            145,
+            290
+          ],
+          "usable": false,
+          "reason": "a second difference needs three sizes"
+        }
+      ],
+      "every_identity_closes": true,
+      "largest_absolute_identity_error": 2.9050156377663505e-13,
+      "chart_fraction_of_excess": [
+        0.97488530437411,
+        0.9488660424973344
+      ]
+    },
+    "equal": {
+      "reproduction_control": {
+        "per_transition": [
+          {
+            "label": "65->130",
+            "statistic": 485596.4157884457,
+            "published_statistic": 435743.73701554537,
+            "largest_residual_difference": 0.0002553407953794287,
+            "statistic_matches_exactly": false
+          },
+          {
+            "label": "130->325",
+            "statistic": 229320.92999846398,
+            "published_statistic": 192536.60599297824,
+            "largest_residual_difference": 0.00015766143615295394,
+            "statistic_matches_exactly": false
+          },
+          {
+            "label": "85->170",
+            "statistic": 286445.8667896274,
+            "published_statistic": 292804.78526441427,
+            "largest_residual_difference": 0.00012894948111440694,
+            "statistic_matches_exactly": false
+          },
+          {
+            "label": "170->425",
+            "statistic": 183662.5146111397,
+            "published_statistic": 154876.9786006733,
+            "largest_residual_difference": 0.00010393653091925192,
+            "statistic_matches_exactly": false
+          },
+          {
+            "label": "145->290",
+            "statistic": 111939.90052205008,
+            "published_statistic": 112067.07911683862,
+            "largest_residual_difference": 4.404859992319932e-06,
+            "statistic_matches_exactly": false
+          }
+        ],
+        "every_statistic_matches_exactly": false
+      },
+      "consensus_direction": [
+        -0.35205170895609034,
+        -0.17263175881295056,
+        0.034002391154171537,
+        0.21810771930244544,
+        0.36859647542439916,
+        0.4741820041612947,
+        0.5110723817847157,
+        0.4164258134134481,
+        -0.0470463386552232
+      ],
+      "exponent_fit": {
+        "omega": 0.9969139954790363,
+        "scale_amplitude": 0.1750176831521591,
+        "statistic": 883.5059538430245,
+        "degrees_of_freedom": 3,
+        "search_window": [
+          0.25,
+          2.5
+        ]
+      },
+      "amplitude_points": [
+        {
+          "label": "65->130",
+          "sbar": 4.5209608601756095,
+          "h": 0.6931471805599454,
+          "amplitude": -0.001988054037439138,
+          "standard_error": 2.8539899515744673e-06,
+          "significance": -696.5876093370209
+        },
+        {
+          "label": "130->325",
+          "sbar": 5.325679816392659,
+          "h": 0.9162907318741551,
+          "amplitude": -0.0008601296570641795,
+          "standard_error": 1.796732773906537e-06,
+          "significance": -478.71874413135293
+        },
+        {
+          "label": "85->170",
+          "sbar": 4.789224846770289,
+          "h": 0.6931471805599454,
+          "amplitude": -0.0014708951834629805,
+          "standard_error": 2.7575583924192046e-06,
+          "significance": -533.4049090335183
+        },
+        {
+          "label": "170->425",
+          "sbar": 5.59394380298734,
+          "h": 0.9162907318741551,
+          "amplitude": -0.0007035668566229976,
+          "standard_error": 1.6503629053676999e-06,
+          "significance": -426.31039169305814
+        },
+        {
+          "label": "145->290",
+          "sbar": 5.323307332700547,
+          "h": 0.6931471805599454,
+          "amplitude": -0.0009202824244480423,
+          "standard_error": 2.752233759411831e-06,
+          "significance": -334.37654824956155
+        }
+      ],
+      "per_lineage": [
+        {
+          "lineage_sizes": [
+            65,
+            130,
+            325
+          ],
+          "h0": 0.6931471805599454,
+          "h1": 0.9162907318741551,
+          "chart_factor": 1.2426698691192235,
+          "second_difference_weights": [
+            1.7927936576404406,
+            -3.1489897053484666,
+            1.3561960477080257
+          ],
+          "lower_transition": {
+            "base": 65,
+            "target": 130,
+            "step": 0.6931471805599454,
+            "alpha": 0.1884303626585199,
+            "beta": -0.31663063443072487,
+            "amplitude": -0.001988054037383907,
+            "standard_error": 2.853989957053853e-06,
+            "residual_statistic": 362.120722619256,
+            "residual_degrees_of_freedom": 6
+          },
+          "upper_transition": {
+            "base": 130,
+            "target": 325,
+            "step": 0.9162907318741551,
+            "alpha": 0.1840726942769395,
+            "beta": -0.3100240997568847,
+            "amplitude": -0.0008601296570641795,
+            "standard_error": 1.7967327704527429e-06,
+            "residual_statistic": 149.29313470761898,
+            "residual_degrees_of_freedom": 6
+          },
+          "k": 0.7805283684654363,
+          "k_is_the_width_contraction": true,
+          "curvature_measured": 0.0020994708287391936,
+          "curvature_standard_error": 5.347653219378913e-06,
+          "curvature_residual_statistic": 297.9724460294547,
+          "curvature_residual_degrees_of_freedom": 6,
+          "identity": {
+            "a1_minus_a0_over_k": 0.0016869322021896178,
+            "ell_C_of_r1": 3.734431937883242e-07,
+            "ell_C_of_r0_over_k": -2.1783286504798974e-06,
+            "residual_transport": 2.5517718442682217e-06,
+            "rebuilt_curvature": 0.002099470828891715,
+            "measured_curvature": 0.0020994708287391936,
+            "absolute_error": 1.5252122481657082e-13,
+            "relative_error": 7.264746084048484e-11,
+            "closes_within_tolerance": true,
+            "tolerance": 1e-09
+          },
+          "decomposition": {
+            "naive_C_times_a1_minus_a0": 0.0014016376420682972,
+            "chart_transported_C_times_a1_minus_a0_over_k": 0.002096299818907976,
+            "residual_transport_term": 3.1710099837389106e-06,
+            "model_first_amplitude_lower": -0.001963255417678461,
+            "model_first_amplitude_upper": -0.0008932222723980842,
+            "one_exponent_prediction": 0.0013296979485987973,
+            "chart_corrected_prediction": 0.0020156950374563237,
+            "chart_term": 0.0006859970888575264,
+            "excess_over_the_one_exponent_prediction": 0.0007697728801403963,
+            "fraction_of_excess_from_the_chart_term": 0.8911681699313825,
+            "ratio_measured_over_one_exponent": 1.578908075290004,
+            "ratio_measured_over_chart_corrected": 1.0415617391153522
+          },
+          "lineage": "gaussian_13",
+          "usable": true
+        },
+        {
+          "lineage_sizes": [
+            85,
+            170,
+            425
+          ],
+          "h0": 0.6931471805599454,
+          "h1": 0.9162907318741551,
+          "chart_factor": 1.2426698691192235,
+          "second_difference_weights": [
+            1.7927936576404406,
+            -3.1489897053484666,
+            1.3561960477080257
+          ],
+          "lower_transition": {
+            "base": 85,
+            "target": 170,
+            "step": 0.6931471805599454,
+            "alpha": 0.1895724484574898,
+            "beta": -0.3190076683249407,
+            "amplitude": -0.00147089518359845,
+            "standard_error": 2.757558389018922e-06,
+            "residual_statistic": 1925.0689115440139,
+            "residual_degrees_of_freedom": 6
+          },
+          "upper_transition": {
+            "base": 170,
+            "target": 425,
+            "step": 0.9162907318741551,
+            "alpha": 0.18481737535734347,
+            "beta": -0.31130159467256013,
+            "amplitude": -0.0007035668566229976,
+            "standard_error": 1.6503629021226724e-06,
+            "residual_statistic": 1921.963830956041,
+            "residual_degrees_of_freedom": 6
+          },
+          "k": 0.7788807341235652,
+          "k_is_the_width_contraction": true,
+          "curvature_measured": 0.0014693877420398549,
+          "curvature_standard_error": 5.001841748550493e-06,
+          "curvature_residual_statistic": 3209.569908951913,
+          "curvature_residual_degrees_of_freedom": 6,
+          "identity": {
+            "a1_minus_a0_over_k": 0.001184906075312562,
+            "ell_C_of_r1": 9.220054112325301e-07,
+            "ell_C_of_r0_over_k": 3.3839109136005785e-06,
+            "residual_transport": -2.4619055023680485e-06,
+            "rebuilt_curvature": 0.0014693877417388227,
+            "measured_curvature": 0.0014693877420398549,
+            "absolute_error": 3.0103220263755226e-13,
+            "relative_error": 2.0486913972730503e-10,
+            "closes_within_tolerance": true,
+            "tolerance": 1e-09
+          },
+          "decomposition": {
+            "naive_C_times_a1_minus_a0": 0.0009535357916540583,
+            "chart_transported_C_times_a1_minus_a0_over_k": 0.0014724470775272342,
+            "residual_transport_term": -3.059335788411599e-06,
+            "model_first_amplitude_lower": -0.0015025563638415389,
+            "model_first_amplitude_upper": -0.0006836180344296643,
+            "one_exponent_prediction": 0.0010176699866269706,
+            "chart_corrected_prediction": 0.0015477508948739237,
+            "chart_term": 0.0005300809082469532,
+            "excess_over_the_one_exponent_prediction": 0.0004517177554128843,
+            "fraction_of_excess_from_the_chart_term": 1.1734781329603536,
+            "ratio_measured_over_one_exponent": 1.443874498952343,
+            "ratio_measured_over_chart_corrected": 0.949369660780941
+          },
+          "lineage": "gaussian_17",
+          "usable": true
+        },
+        {
+          "lineage": "p50",
+          "sizes": [
+            145,
+            290
+          ],
+          "usable": false,
+          "reason": "a second difference needs three sizes"
+        }
+      ],
+      "every_identity_closes": true,
+      "largest_absolute_identity_error": 3.0103220263755226e-13,
+      "chart_fraction_of_excess": [
+        0.8911681699313825,
+        1.1734781329603536
+      ]
+    }
+  },
+  "identity_tolerance": 1e-09
+}

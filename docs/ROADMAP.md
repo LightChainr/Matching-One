@@ -432,6 +432,99 @@ extension transports only the topological side — scale-resolve `X_site = r −
 coupling to a separately-justified original-U / H4 readout; do not call a square-site Euler
 statistic `B_even` until the exact square-bond identity is actually transported.
 
+**The production ran once, and the chart, not a second scale, absorbed the 55%**
+(`notes/p612-n725-decision-20260907.md`, `notes/p612-preregistration-20260907.md`,
+`results/p612-chart-identity/latest.json`, `results/p612-n725-score/latest.json`,
+`results/server-20260907/P612-n725-fullcurve/raw/n725_100m.*`, 20 tests).
+
+Before any scoring, the exact chart identity was re-derived on the **eight committed
+productions** with the published `g` fixed, production mpmath path, middle-chart curvature
+covector included:
+
+```text
+a_curv = 2/(h0+h1) [ a1 - a0/k + ell_C(r1) - ell_C(r0)/k ],   k = 2^(log(N1)/log(N0) - 1)
+```
+
+It closes to **1.4e-13 / 2.9e-13 / 3.0e-13** absolute across the spin0/equal weightings and
+reproduces the published curvature ratios **exactly**: 1.53681 / 1.55744 (spin0,
+gaussian_13/17) and 1.57891 / 1.44387 (equal). The chart term carries **97.5% / 94.9%** of
+the old excess on the primary weighting (89–117% across the four weighting×lineage cells) —
+inside the 95–98% band the ticket asked to confirm, with nothing forced and nothing stopped.
+
+The production itself: `n725_100m`, `(26,7)`/`(23,14)`, **100 batches × 1,000,000 paired
+configurations = 1e8 per orientation**, seed `2026105011`, replicas `7.0e9–7.1e9`, 8 threads,
+2013 s. #609's "100 batches × 100M" is **100×** this run; `n290`'s metadata says
+`samples_per_pair = 1e8`, and that is what was matched. Sample-size wording corrected on the
+ticket, not multiplied out.
+
+Scored against the pre-registered rule (frozen `g`, frozen fit, ±5% = ±3se of the band):
+
+```text
+a_hat(290->725) = -4.8083463e-04   se = 2.2941e-06     (beta(Q290) = 2.1644, resid 1447/6 df)
+a0              = -4.6808425e-04   (frozen fit reproduces the committed amplitude to 7 s.f.)
+a_hat - a0      = -1.2750e-05  = -5.56 se  = -2.72%
+3se interval    = [-4.877168e-04, -4.739525e-04]  <- wholly inside
+tolerance band  = [-4.914885e-04, -4.446800e-04]
+outcome         = supports_this_finite_forecast
+```
+
+Two caveats carried with the verdict, both pre-registered as reportable:
+
+- **A 5% band is not a nominal pass.** The band is ±10.2 se wide, so a 5.56 se point miss
+  still sits inside. Either the jackknife error understates the real uncertainty ~10×, or
+  the law has a genuine 2.7% bias at this step.
+- **The verdict is weighting-conditional.** The `equal` sensitivity gives
+  `a_hat = -4.24263e-04`, 3se interval wholly **outside** the band → *stops*. The
+  spin0→equal shift is 5.66e-05 = 12% of the amplitude (~25 se), twice the band width; the
+  equal fit's own prediction is `-4.01403e-04`, so that row measures the weighting
+  systematic, not the law.
+
+Curvature at the new rung — the second-scale question, answered **no**:
+
+```text
+k(145->290)             = 0.7767512        (matches the stated value exactly)
+naive one-exponent      = 6.7056667e-04    (#609: 6.70567e-04)
+chart-corrected P'      = 1.0304774e-03    (#612: 1.03047842e-03)
+1.547 factor target     = 1.0374500e-03
+measured raw curvature  = 1.0742792e-03    se = 6.006e-06   (resid 8.05/4 df)
+```
+
+`P'` vs the 1.547 target is **−0.672%**: the two #609 targets — 55% apart as written — are
+**not separated** once the chart is transported, so this run supplies no second-scale
+evidence. What transport does not absorb is a **~4.25%** residual misfit (7.3 se of the
+curvature; residual-transport terms are `+3.88e-07` and `+1.67e-06`, 0.12% of the curvature,
+reported not assumed). The full-law residual stays structured (1447/6 df), and 725 does
+break the committed label identification — `v_5 = 2` **and** an interpolating spin-0
+combination (`cos4θ = +0.4959/−0.5781`, weights `0.5383/0.4617`), so the new rung is not
+observationally identical to the negative control. Cross-size batch correlation 290↔725 is
+0.180 against a 0.100 noise floor (distinct seeds), so the joint covariance `S_290 + S_725`
+stands as measured. Reproducibility, on the record rather than hidden: displacement vectors
+are bit-identical to the committed #582 artifacts, with 1.1e-08 drift entering at the
+mpmath pseudo-inverse of a covariance with condition number 1.5e10; downstream amplitudes
+agree to ~1e-06 relative — three orders below the 2.7% effect tested.
+
+**The `Q_N(u) -> p_c` bridge is verified as a scoped corollary, not a theorem**
+(`notes/p613-quantile-convergence-20260907.md`). Theorem L: for honest periodic square-cell
+tori with shortest period `ell_N`, `ell_N > sqrt(2)` and `ell_N/log N -> infinity`, under
+(H1) `r_G + r_hat = 2`, (H2) exponential decay below `p_c` on both graphs, (H3)
+`p_c(G) + p_c(Ghat) = 1`, every fixed interior quantile converges to `p_c` uniformly on
+compact subintervals of `(0,1)`, and bounded orientation-weight combinations inherit it.
+Conservative radius `R_N = floor(ell_N/4)` serves both NN and NN+NNN adjacency
+(`|y|_2 <= d_G <= |y|_1`, `|y|_2/sqrt(2) <= d_Ghat <= sqrt(2)|y|_2`); the union bound
+`N·A(p)e^{c(p)}e^{-c(p)ell_N/4}` vanishes exactly under the geometry hypothesis, per fixed
+`p` and never uniformly up to `p_c`. (H2) is Duminil-Copin–Tassion Theorem 1.1(3) with
+their §1.2 site adaptation (`[AB87]` discharges it); (H3) is Grimmett–Li (1.3) **plus**
+`p_c = p_u` for amenable `G` (Burton–Keane), equivalently van den Berg (1981) + sharpness —
+with van den Berg's counterexample on record, so (H3) stays a genuine hypothesis outside
+the amenable class. **No novelty claim**: Duncan–Kahle–Schweinhart (arXiv:2011.11903)
+already hold the sharp threshold for giant cycles (in `d=2, i=1` that *is* the square-bond
+torus); the additions are the square-site matching instance and the passage to quantile
+convergence. Fails outside scope: thin tori (`ell_N = O(log N)`, and `ell_N <= sqrt(2)` is
+not even honest), unbounded extrapolation weights (mixed signs are fine — quantile
+functions, not CDFs), and `u -> 0/1`. Not claimed: any rate, any `p_c` value, any
+correction shape — which is exactly what frees #610 to study the correction without
+pretending to locate `p_c`.
+
 ## Completed high-information blocks
 
 - **#50 N145->290 full curve:** complete. Corrected slope/root structure survives; a single three-level multiplier shape does not.
