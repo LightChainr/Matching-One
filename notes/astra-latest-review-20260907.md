@@ -13,6 +13,13 @@ are two bounded repairs of #628, using existing data, rather than more probes.
 The findings below invalidate specific reported controls and interpretations;
 they do not settle existence or dimension of the asymptotic shape limit.
 
+Dispatch: [#632](https://github.com/LightChainr/Matching-One/issues/632)
+(DeepSeek: exact laboratory and probability normalization),
+[#633](https://github.com/LightChainr/Matching-One/issues/633)
+(Grok: existing-block N725 and tangent-chart reanalysis).
+Audit delivery: draft [#631](https://github.com/LightChainr/Matching-One/pull/631).
+Tasks are opened for the user's teams; this audit has not started cloud jobs.
+
 ## Independently checked failures in PR #628
 
 ### 1. The reported bond-duality failure is an implementation failure
