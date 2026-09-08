@@ -1,0 +1,274 @@
+{
+ "schema": "matching-one.probe-invariant-shape.n725-zflow-corrected.v1",
+ "issue": 633,
+ "histogram": "results/server-20260907/P612-n725-fullcurve/raw/n725_100m.hist.csv",
+ "histogram_git_commit": "8b5f9d1a",
+ "n": 725,
+ "levels_11": [
+  0.1,
+  0.2,
+  0.25,
+  0.3,
+  0.4,
+  0.5,
+  0.6,
+  0.7,
+  0.75,
+  0.8,
+  0.9
+ ],
+ "deciles": [
+  0.1,
+  0.2,
+  0.3,
+  0.4,
+  0.5,
+  0.6,
+  0.7,
+  0.8,
+  0.9
+ ],
+ "z_anchors": [
+  0.25,
+  0.75
+ ],
+ "g_anchors": [
+  0.2,
+  0.8
+ ],
+ "orientation_representative": {
+  "first": [
+   26,
+   7
+  ],
+  "second": [
+   23,
+   14
+  ]
+ },
+ "orientation_cos4theta": {
+  "first": 0.4958535077288942,
+  "second": -0.5780680142687277
+ },
+ "spin0_weights": {
+  "first": 0.5382777069160998,
+  "second": 0.4617222930839002
+ },
+ "spin0_is_interpolation": true,
+ "weight_checks": {
+  "sum_w": 1.0,
+  "sum_w_cos4": 0.0,
+  "agrees_with_p612_weights": true,
+  "agrees_with_p612_cos4": true
+ },
+ "withdrawn_n725_zflow": {
+  "file": "results/probe-invariant-shape/n725-zflow.json",
+  "formula": "Re(w^2)/|w|^2 = cos(2 theta), misnamed cos_four_theta",
+  "reported_cos4": {
+   "first": 0.8648275862068966,
+   "second": 0.4593103448275862
+  },
+  "reported_weights": {
+   "first": -1.1326530612244896,
+   "second": 2.13265306122449
+  },
+  "true_spin4_leakage_of_those_weights": -1.7944485136741972,
+  "cdf_then_invert": true,
+  "replaced_0.4_and_0.6_with_quarter_anchors": true,
+  "mean_of_batchwise_Z_was_reported_as_shape": true
+ },
+ "retractions": {
+  "full_rank_batch_noise_does_not_kill_one_parameter_mean": "Counterexample: y_N = m + f(N) g + epsilon with epsilon uniform on {\u00b1e_i}. Mean lies on a line; noise covariance is I/d. Withdrawn from #628 \u00a7W3 / #622.",
+  "159.6_deg_is_not_almost_orthogonal": "Affine-removed angle 159.6248\u00b0 between g and \u0394Z_{L=4-L=3} is 20.375\u00b0 between unoriented lines. Use abs cosine. Tiny-torus \u0394Z cannot prove an asymptotic mismatch."
+ },
+ "weightings": {
+  "spin0": {
+   "weights": {
+    "first": 0.5382777069160998,
+    "second": 0.4617222930839002
+   },
+   "Q_pooled": [
+    0.5418336218910869,
+    0.5597068065994498,
+    0.5663656171761691,
+    0.5722960076752488,
+    0.582909585882762,
+    0.5927464521537054,
+    0.6025341207843034,
+    0.6129854231453626,
+    0.6187764349360221,
+    0.6252375697608342,
+    0.642367299065417
+   ],
+   "Z_pooled_quarter_anchors": [
+    -0.4680712176155713,
+    -0.1270503087211879,
+    0.0,
+    0.11315203144230356,
+    0.31565942707472294,
+    0.5033471352882452,
+    0.6900961510247521,
+    0.8895073185617152,
+    1.0,
+    1.1232786493509248,
+    1.4501144064854807
+   ],
+   "Q_se": [
+    2.73644662281879e-06,
+    2.3514597269879632e-06,
+    2.265774742800073e-06,
+    2.2023824269102545e-06,
+    2.1161444359437407e-06,
+    2.0754989975560686e-06,
+    2.0731311521363245e-06,
+    2.099145547137414e-06,
+    2.1259320823291476e-06,
+    2.1734829641163383e-06,
+    2.4458593294712768e-06
+   ],
+   "Z_se": [
+    2.3760189168853775e-05,
+    4.912613057784862e-06,
+    0.0,
+    3.4009789295155714e-06,
+    7.322475908201013e-06,
+    8.601512372777377e-06,
+    7.539225330619552e-06,
+    3.5337233425040574e-06,
+    0.0,
+    4.938731967303258e-06,
+    2.175659724323453e-05
+   ],
+   "Q_deciles": [
+    0.5418336218910869,
+    0.5597068065994498,
+    0.5722960076752488,
+    0.582909585882762,
+    0.5927464521537054,
+    0.6025341207843034,
+    0.6129854231453626,
+    0.6252375697608342,
+    0.642367299065417
+   ],
+   "g_lift_DZ_Q_anchors_0.2_0.8": [
+    -0.21272027493304035,
+    0.0,
+    1.2412422534636602,
+    2.428553083731784,
+    3.263644590503705,
+    3.50488701715073,
+    2.7449924738210703,
+    0.0,
+    -8.298053476346686
+   ],
+   "angle_g_lift_vs_Z_in_0.2_0.8_chart": {
+    "undetermined": false,
+    "abs_cosine": 0.1489195537575465,
+    "unoriented_angle_deg": 81.43568168217404,
+    "oriented_angle_deg": 98.56431831782596,
+    "supplement_deg": 81.43568168217404
+   },
+   "batches": 100,
+   "note": "Z_pooled is from the pooled histogram, not the mean of batchwise Z"
+  },
+  "equal": {
+   "weights": {
+    "first": 0.5,
+    "second": 0.5
+   },
+   "Q_pooled": [
+    0.5418342329710413,
+    0.5597071641375351,
+    0.5663659151254876,
+    0.572296259747219,
+    0.5829097663412028,
+    0.5927465782512797,
+    0.6025342095906012,
+    0.612985496943196,
+    0.6187765129902232,
+    0.6252376637635848,
+    0.6423674978344991
+   ],
+   "Z_pooled_quarter_anchors": [
+    -0.46806720689886405,
+    -0.12704970481614902,
+    0.0,
+    0.11315163084070815,
+    0.3156585097237889,
+    0.503345968192863,
+    0.6900950559361854,
+    0.8895067737640974,
+    1.0,
+    1.1232794708817662,
+    1.4501185982491738
+   ],
+   "Q_se": [
+    2.7197749916869554e-06,
+    2.321661378254843e-06,
+    2.2346791468703784e-06,
+    2.1718708531769862e-06,
+    2.0890560822564635e-06,
+    2.0517412012278993e-06,
+    2.0507203615553514e-06,
+    2.0760822464724183e-06,
+    2.10257963819614e-06,
+    2.150874948842966e-06,
+    2.433992792523544e-06
+   ],
+   "Z_se": [
+    2.3623206077040243e-05,
+    4.916990823104154e-06,
+    0.0,
+    3.411636919986221e-06,
+    7.352113507333939e-06,
+    8.642322757060646e-06,
+    7.579395838977281e-06,
+    3.5537193800012226e-06,
+    0.0,
+    4.967359154525975e-06,
+    2.1908291176929045e-05
+   ],
+   "Q_deciles": [
+    0.5418342329710413,
+    0.5597071641375351,
+    0.572296259747219,
+    0.5829097663412028,
+    0.5927465782512797,
+    0.6025342095906012,
+    0.612985496943196,
+    0.6252376637635848,
+    0.6423674978344991
+   ],
+   "g_lift_DZ_Q_anchors_0.2_0.8": [
+    -0.21274503283584156,
+    0.0,
+    1.2412544605129239,
+    2.428573872159751,
+    3.2636706848033024,
+    3.5049138092185386,
+    2.7450126545036646,
+    0.0,
+    -8.298109696111137
+   ],
+   "angle_g_lift_vs_Z_in_0.2_0.8_chart": {
+    "undetermined": false,
+    "abs_cosine": 0.1489207304335024,
+    "unoriented_angle_deg": 81.43561350336135,
+    "oriented_angle_deg": 98.56438649663865,
+    "supplement_deg": 81.43561350336135
+   },
+   "batches": 100,
+   "note": "Z_pooled is from the pooled histogram, not the mean of batchwise Z"
+  }
+ },
+ "tiny_torus_g_vs_deltaZ": {
+  "source": "results/probe-invariant-shape/blindness-and-glift.json",
+  "raw_deg": 93.91923544902247,
+  "affine_removed_deg": 159.62484413088862,
+  "unoriented_deg": 20.37515586911138,
+  "claim": "report unoriented 20.4\u00b0, not 159.6\u00b0 as almost-orthogonal"
+ },
+ "exact_lab_census_present": true,
+ "exact_lab_dual_fail_site": null,
+ "exact_lab_note": "g vs exact-lab \u0394Z uses this branch's repaired census; do not copy PR #628's broken bond Z."
+}
