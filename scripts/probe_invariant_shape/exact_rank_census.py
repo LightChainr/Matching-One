@@ -142,9 +142,9 @@ def bond_ambient_rank(edges: list[tuple[int, int, int, int]]) -> int:
     windings: list[tuple[int, int]] = []
     for (u, v, dx, dy) in nontree:
         (ax, ay) = tree_lift(u, v)
-        # fundamental cycle: lift path u->v in tree, then the edge v->u with
-        # displacement -(dx,dy) as stored directed u->v.
-        sx, sy = ax + dx, ay + dy
+        # Close the reverse non-tree edge: path u→v in the tree, then v→u.
+        # The stored directed edge is u→v with (dx,dy), so the return is -d.
+        sx, sy = ax - dx, ay - dy
         if sx or sy:
             windings.append((sx, sy))
     indep: list[tuple[int, int]] = []
@@ -242,7 +242,7 @@ def bond_census(L: int) -> dict[str, object]:
             (du, dv) = pairs[i].dual[0], pairs[i].dual[1]
             dkey = (min(du, dv), max(du, dv))
             pi = dual_to_primal[dkey]
-            if not occ[pi]:
+            if not occ[i]:
                 dedges.append((pairs[pi].primal[0], pairs[pi].primal[1],
                                *lift_step[pi]))
         rw = bond_ambient_rank(dedges)
@@ -288,25 +288,31 @@ def eval_F(F: list[Fraction], p: Fraction) -> Fraction:
 
 
 def eval_F_float(F: list[Fraction], p: float) -> float:
-    """F(p) in floats, log-space anchored, for the bisection quantiles."""
+    """F(p) in floats. ``F[k]`` are already configuration counts of size k.
+
+    Evaluates ``sum_k F[k] p^k (1-p)^{N-k}``. Do not insert another binomial.
+    """
     N = len(F) - 1
     if p <= 0.0:
-        return 0.0
+        return float(F[0])
     if p >= 1.0:
-        return 1.0
+        return float(F[N])
     lp, lq = math.log(p), math.log1p(-p)
-    lf = math.lgamma(N + 1)
-    mode = min(N, max(0, int((N + 1) * p)))
-    peak = lf - math.lgamma(mode + 1) - math.lgamma(N - mode + 1) \
-        + mode * lp + (N - mode) * lq
-    total = 0.0
-    for k in range(N + 1):
-        logw = lf - math.lgamma(k + 1) - math.lgamma(N - k + 1) \
-            + k * lp + (N - k) * lq
-        if peak - logw > 700.0:
+    logs: list[float | None] = []
+    for coeff in F:
+        fk = float(coeff)
+        if fk == 0.0:
+            logs.append(None)
             continue
-        total += float(F[k]) * math.exp(logw - peak)
-    return total
+        k = len(logs)
+        logs.append(math.log(abs(fk)) + k * lp + (N - k) * lq)
+    peak = max(value for value in logs if value is not None)
+    total = 0.0
+    for k, logw in enumerate(logs):
+        if logw is None or peak - logw > 700.0:
+            continue
+        total += math.copysign(1.0, float(F[k])) * math.exp(logw - peak)
+    return total * math.exp(peak)
 
 
 def quantile_exact(F: list[Fraction], u: Fraction,
