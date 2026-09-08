@@ -10,7 +10,7 @@ Read this session, at first hand unless marked:
 - Repository notes already on published wrapping ground: `notes/literature-officer-20260905-issue576-wrapping.md`, `notes/pinson-arguin-primitive-baseline.md`
 - This session’s axis/diamond wrapping-type census: `results/wrapping-type-census/`, `notes/wrapping-type-census-l3l4-20260908.md`
 
-Pinson, *Critical percolation on the torus*, J. Stat. Phys. **75**, 1167 (1994) is **not** opened as a PDF this session. Formulae and ten-figure values below are quoted from Newman–Ziff and Pruessner–Moloney, who attribute them to Pinson. That is a read-through, not a primary-page check.
+Pinson, *Critical percolation on the torus*, J. Stat. Phys. **75**, 1167–**1177** (1994) is **not** opened as a PDF this session (Short Communication; no arXiv version; `hep-th/9309029` is a different paper). Formulae and ten-figure values below are quoted from Newman–Ziff and Pruessner–Moloney, who attribute them to Pinson. That is a read-through, not a primary-page check.
 
 ---
 
@@ -78,7 +78,7 @@ with Z_{m,n}(g; r) as in that paper (g=2/3 in **this** normalization). This is A
 
 ## Q2 — joint law of primal vs matching wrapping
 
-**Cite, combinatorial, all finite L.** Mertens–Ziff §II, not a CFT formula. On a torus, Euler’s formula plus the matching construction give, configuration-wise (their (9)–(11)):
+**Cite, combinatorial, all finite L.** Mertens–Ziff §II, not a CFT formula. Notation trap: \(\hat R(1-p)\) is wrapping of the **vacant** matching colouring at black density \(p\), i.e. it is an equal-configuration (equal-\(p\)) statement. It is not a second independent copy of the primal lattice occupied at \(1-p\). On a torus, Euler’s formula plus the matching construction give, configuration-wise (their (9)–(11)):
 
 ```text
 N_black − N_white − (V − E + F0)
@@ -116,9 +116,9 @@ M(p) = E_p[D] = Σ_k a_k p^k (1−p)^{N−k}
 
 “Wraps” here is Newman–Ziff **either** (any nontrivial homology). By MZ (20) that equals the **cross** difference. `scripts/matched_torus_reference.py` already names the equality as the Mertens–Ziff finite matching relation.
 
-**What is not published.** A closed modular/CFT formula for the **joint** law (primal type, matching type) at p_c, beyond the combinatorial support and the one-dimensional difference M. Pinson does not treat the matching colouring. That is a real gap for a continuum joint, and it is **not** a gap for the finite-L pairing.
+**What is not published.** A closed modular/CFT formula for the **joint** law (primal type, matching type) at p_c, beyond the combinatorial support and the one-dimensional difference M. Pinson does not treat the matching colouring. The equal-occupancy difference R(p)−R̂(p) (matching occupied at p, not vacant at 1−p) is a different observable and is also unpublished. Those are real gaps for a continuum joint. They are **not** a gap for the finite-L pairing.
 
-**#640 is therefore a verification of a published pairing, not a rediscovery of the pairing**, if the wrapping classifier implements MZ types. The L=3,4 census (`notes/wrapping-type-census-l3l4-20260908.md`) finds **exactly five nonempty cells** and **zero MZ-forbidden cells**. D mass lives only on `neither×both` and `both×neither`. Complement-transpose of the 4×4 **fails** (NN ≠ NN+NNN), which is the finite-L source of `M(p)+M(1−p)≠0`.
+**#640 is a type-resolved census of a published pairing**, not a rediscovery of an unknown identity. If the wrapping classifier implements MZ types, the 4×4 can only be supported on the five cells the pairing allows. The L=3,4 census (`notes/wrapping-type-census-l3l4-20260908.md`) finds exactly those cells and zero MZ-forbidden cells. Axis L=5 (2^25, tripwire vs PR #649 Bernstein pass) and diamond L=4 K2 (2^32, tripwire pass) repeat the same five cells; `both-two` mass is zero (#651 A-continues). D mass lives only on `neither×both` / `none×both-same` and `both×neither` / `both-same×none`. Complement-transpose of the 4×4 **fails** (NN ≠ NN+NNN), which is the finite-L source of `M(p)+M(1−p)≠0`.
 
 **Do not cite #628’s 118133 bond dual_fail as physics.** That count is an implementation artifact, repaired in PR #653. Site `M(p)+M(1−p)≠0` still stands, and is the expected square-site (non-self-matching) statement.
 
