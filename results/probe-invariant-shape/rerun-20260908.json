@@ -1,0 +1,204 @@
+{
+ "schema": "matching-one.probe-invariant-shape.rerun.v2",
+ "issue": 622,
+ "run": "2026-09-08 re-run on repaired inputs (PR #653 bond lab, PR #655 spin-0 N725)",
+ "cited_inputs": {
+  "census": "origin/repair/632-bond-lab-and-wrapping-l3l4:results/probe-invariant-shape/census-exact.json",
+  "n725": "origin/analysis/633-n725-spin0:results/probe-invariant-shape/n725-zflow-corrected.json",
+  "toy_location_theorem": "results/probe-invariant-shape/toy-families.json (merged #628)",
+  "consensus_g": "results/type582-residual/latest.json (merged #605 lineage)"
+ },
+ "T1_duality_symmetry_theorem": {
+  "dual_fail": 0,
+  "rank_pair_counts": {
+   "0,2": 75460,
+   "1,1": 111224,
+   "2,0": 75460
+  },
+  "pairs_symmetric": true,
+  "M_half_is_zero": true,
+  "self_dual_p_half": true,
+  "Z_antisymmetry_max_err": 9.992007221626409e-16,
+  "Z_half_is_half": true,
+  "verdict": "proved (T1) and machine-checked: dual_fail=0 => M antisymmetric, F self-complementing, Z(u)+Z(1-u)=1"
+ },
+ "T2_duality_does_not_pin_shape": {
+  "family": "symmetric densities: f \u221d exp(-(p-1/2)\u00b2/2s\u00b2)(1+h tanh\u00b2((p-1/2)/s))",
+  "Z_scale0_hollow0": [
+   -0.45023169601482965,
+   -0.1240037071362369,
+   0.1112140871177018,
+   0.31214087117701544,
+   0.499907321594068,
+   0.6878591288229845,
+   0.8887859128822982,
+   1.124003707136239,
+   1.4502316960148318
+  ],
+  "Z_scale0_hollow3": [
+   -0.29993626513703053,
+   -0.08616953473550015,
+   0.08260038240917833,
+   0.2587635436583809,
+   0.4999362651370288,
+   0.7412364563416192,
+   0.9173996175908217,
+   1.0861695347354987,
+   1.2999362651370305
+  ],
+  "T1_constraint_max_err_A": 0.00018535681186404585,
+  "T1_constraint_max_err_B": 0.00012746972594235295,
+  "shape_spread_within_duality_class": 0.15029543087780128,
+  "verdict": "W2's pinning mechanism dies: the duality class is the symmetric-density class and Z still ranges freely inside it (spread ~0.15 at u=0.9)"
+ },
+ "T3_decomposition_and_rigidity": {
+  "decomposition": "Z = A + S; A(u)=(Z(u)-Z(1-u)+1)/2; S(u)=(Z(u)+Z(1-u)-1)/2",
+  "Z_by_object": {
+   "site_L3": [
+    -0.4656742910967026,
+    -0.1307604886066927,
+    0.11785131382903015,
+    0.32951190569900896,
+    0.5232434636410629,
+    0.710241538987024,
+    0.9001919302982195,
+    1.1061041758447958,
+    1.3574837904320187
+   ],
+   "site_L4": [
+    -0.47247199072651974,
+    -0.13051249559065714,
+    0.11686057655688054,
+    0.32597419865434285,
+    0.5177609921255696,
+    0.7044933927701301,
+    0.8971042134448591,
+    1.1110424218648163,
+    1.38331411747056
+   ],
+   "bond_L3_selfdual": [
+    -0.4351929790516855,
+    -0.12188426707886556,
+    0.11038357169268018,
+    0.31127822617880646,
+    0.4999999999999995,
+    0.688721773821193,
+    0.8896164283073188,
+    1.1218842670788656,
+    1.435192979051685
+   ],
+   "N725_spin0": [
+    -0.4680712176155713,
+    -0.1270503087211879,
+    0.11315203144230356,
+    0.31565942707472294,
+    0.5033471352882452,
+    0.6900961510247521,
+    0.8895073185617152,
+    1.1232786493509248,
+    1.4501144064854807
+   ]
+  },
+  "antisymmetric_part_A_u0.1_to_0.5": {
+   "site_L3": [
+    -0.4115790407643607,
+    -0.11843233222574423,
+    0.1088296917654053,
+    0.3096351833559925,
+    0.5
+   ],
+   "site_L4": [
+    -0.42789305409853995,
+    -0.12077745872773671,
+    0.1098781815560107,
+    0.31074040294210636,
+    0.5
+   ],
+   "bond_L3_selfdual": [
+    -0.4351929790516853,
+    -0.12188426707886557,
+    0.1103835716926807,
+    0.31127822617880674,
+    0.5
+   ],
+   "N725_spin0": [
+    -0.459092812050526,
+    -0.12516447903605632,
+    0.1118223564402942,
+    0.31278163802498543,
+    0.5
+   ]
+  },
+  "symmetric_part_S_u0.1_to_0.5": {
+   "site_L3": [
+    -0.05409525033234197,
+    -0.012328156380948418,
+    0.00902162206362489,
+    0.019876722343016517,
+    0.02324346364106289
+   ],
+   "site_L4": [
+    -0.04457893662797985,
+    -0.009735036862920432,
+    0.006982395000869834,
+    0.015233795712236486,
+    0.017760992125569586
+   ],
+   "bond_L3_selfdual": [
+    -2.220446049250313e-16,
+    0.0,
+    -4.996003610813204e-16,
+    -2.220446049250313e-16,
+    -4.996003610813204e-16
+   ],
+   "N725_spin0": [
+    -0.008978405565045255,
+    -0.0018858296851315126,
+    0.0013296750020093118,
+    0.002877789049737567,
+    0.003347135288245151
+   ]
+  },
+  "pairwise_max_spread_A": {
+   "site_L3|site_L4": 0.016314013334179256,
+   "site_L3|bond_L3_selfdual": 0.02361393828732461,
+   "site_L3|N725_spin0": 0.047513771286165296,
+   "site_L4|bond_L3_selfdual": 0.007299924953145354,
+   "site_L4|N725_spin0": 0.03119975795198604,
+   "bond_L3_selfdual|N725_spin0": 0.023899832998840687
+  },
+  "pairwise_max_spread_S": {
+   "site_L3|site_L4": 0.009516313704362123,
+   "site_L3|bond_L3_selfdual": 0.05409525033234175,
+   "site_L3|N725_spin0": 0.045116844767296715,
+   "site_L4|bond_L3_selfdual": 0.044578936627979626,
+   "site_L4|N725_spin0": 0.03560053106293459,
+   "bond_L3_selfdual|N725_spin0": 0.008978405565045033
+  },
+  "max_spread_A_overall": 0.047513771286165296,
+  "max_spread_S_overall": 0.05409525033234175,
+  "S_collapse_reading": [
+   "S(0.1): site3 -0.0541 -> site4 -0.0446 -> bond3 0 (exact) -> N725 -0.0090",
+   "A(0.1): site3 -0.4116 -> site4 -0.4279 -> bond3 -0.4352 -> N725 -0.4591 (monotone in this ordering)"
+  ],
+  "verdict": "observation, not theorem: the symmetric part S of Z collapses toward 0 while the antisymmetric part A drifts slowly (total spread <= 0.048 over L=3..N=725 and site/bond); no exponent fitted, four sizes do not make a limit"
+ },
+ "T4_conjecture_C3": {
+  "conjecture": "C3 (self-matching restoration): sup_{p in K} |M_N(p) + M_N(1-p)| -> 0 for every compact K \u2282 (0,1); equivalently S_N -> 0 on the level grid",
+  "status": "OPEN \u2014 neither proved nor refuted; not implied by Theorem L",
+  "equivalence": "S_N -> 0 on the grid <=> C3 in the grid's p-window (both sides exact at finite N via F = (1+M)/2)",
+  "finite-N_witnesses_M_half": {
+   "site_L3_M_half_exact": "-21/64",
+   "site_L4_M_half_exact": "-13757/32768"
+  },
+  "bond_witness": "bond L=3 (dual_fail=0): M(1/2)=0 exactly, S \u2261 0",
+  "role": "under C3 the limit shape, if it exists, is antisymmetric; the open object is A_\u221e = lim A_N"
+ },
+ "standing": {
+  "no_new_production": true,
+  "no_status_edit": true,
+  "no_issue_closed": true,
+  "no_exponent_fit": true,
+  "n725_not_scored": true
+ }
+}

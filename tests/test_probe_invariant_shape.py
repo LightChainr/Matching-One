@@ -104,7 +104,12 @@ class TestResultFiles(unittest.TestCase):
                                places=12)
         b = self.census_json["bond"]["3"]
         self.assertEqual(b["configs"], 262144)
-        self.assertEqual(b["dual_fail"], 118133)
+        # repaired laboratory (PR #653): the pre-repair dual_fail=118133 was
+        # a compound of a forest sign and dual-occupancy bug; withdrawn.
+        self.assertEqual(b["dual_fail"], 0)
+        self.assertEqual(b["rank_pair_counts"]["0,2"], 75460)
+        self.assertEqual(b["rank_pair_counts"]["1,1"], 111224)
+        self.assertEqual(b["rank_pair_counts"]["2,0"], 75460)
 
     def test_toy_families_separated(self) -> None:
         a = self.toy["families"]["A_scale_linear"][-1]["Z"]
