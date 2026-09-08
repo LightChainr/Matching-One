@@ -1,0 +1,38 @@
+{
+  "schema": "matching-one/p429-validation/v1",
+  "issue": 429,
+  "repository": "LightChainr/Matching-One",
+  "read_main": "c64bfabde8c8bb13290d4f5d8e5f44c1779d4d30",
+  "branch_base": "f854f823a90be3395178fdfce04f1bae21435d46",
+  "arithmetic": "Python integers and fractions.Fraction; C++ integer enumeration",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+  "compiler_flags": [
+    "-std=c++17",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic"
+  ],
+  "commands": [
+    "python scripts/p429_branching_continuation.py --output results/p429-branching-continuation/exact.json",
+    "python -m unittest discover -s tests -p test_p429*.py -v",
+    "python -m compileall -q scripts tests"
+  ],
+  "focused_tests": {
+    "passed": 13,
+    "skipped": 0
+  },
+  "n16_independent_topology_states": 65536,
+  "n16_selected_prefixes": 7741440,
+  "n16_future_suffixes": 80640,
+  "new_monte_carlo": false,
+  "repository_wide_ci_run": false,
+  "development_correction": "JSON coordinate lists normalized from tuples; no scientific counts changed",
+  "source_sha256": {
+    "scripts/p334_birth_age_collision_review_20260830.py": "9730143009f4f662e746d9bb577c4a51e6cf2fbc4d5e0b0987a1399a19d24fbd",
+    "scripts/p429_branching_continuation.py": "8644870c05eff39ef074b9e643ea7163cd80f16deb0a2848e95dc842d64338b5",
+    "scripts/verify_p429_n16.cpp": "44b5516d3592caf6e3e0b2dfbee68e0aca0683f5999699d63e21feb950db3607"
+  }
+}
