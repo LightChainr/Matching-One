@@ -1,0 +1,20 @@
+{
+  "schema": "matching-one.issue674.imported-provenance.v1",
+  "ticket": 674,
+  "imported_from": {
+    "pull_request": 668,
+    "repo": "LightChainr/Matching-One",
+    "fetched_at": "2026-09-08",
+    "method": "gh api repos/LightChainr/Matching-One/pulls/668/files (raw_url download); no recompute of the joint census",
+    "files": {
+      "imported-issue668-axis-L3.json": "results/issue665-joint-rank-wrap/axis-L3.json @ PR #668 head",
+      "imported-issue668-axis-L4.json": "results/issue665-joint-rank-wrap/axis-L4.json @ PR #668 head"
+    }
+  },
+  "why_imported": "Ticket #674 forbids redoing the joint census; L=4 is 2^16 and L=5 is 2^25 (NEED_HUAWEI). Only the question cell both-same x both-same (rank-1 spirals) is re-derived, from the imported integers plus fresh L=3 2^9 stream (Mac-OK).",
+  "integrity_checks": {
+    "L3_bs_bs_by_rank_pair": {"expected": {"1,1": 6}, "matches_ticket": true},
+    "L4_bs_bs_masses_k_8_to_12": {"expected": [120, 416, 448, 128, 8], "matches_ticket": true},
+    "L4_total_bs_bs": {"expected": 1120, "matches_ticket": true}
+  }
+}
