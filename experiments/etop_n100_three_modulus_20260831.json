@@ -1,0 +1,25 @@
+{
+  "status": "frozen_before_new_N100_acquisition",
+  "question": "Does an affine-E4 shape law organize the actual A/E/C/W response, or does the new shear require a different direction?",
+  "geometry_commit": "b9e4ea19bc585cbed18ec6ba1d13e85f2b5accc7",
+  "same_area_null_commit": "964d770",
+  "source_prediction_path": "results/etop-modulus-survivors/latest.json",
+  "fixed_p": 0.59274605079,
+  "area": 100,
+  "fields": ["A_top", "E_top", "C", "W"],
+  "samples_per_shape_pair": 2000000,
+  "batches": 200,
+  "seed": 20260831125401,
+  "replica_offset": 267100000000,
+  "primary": "joint 4-coordinate affine-E4 same-N100 three-shape null, alpha=.01; full same-stream 12x12 covariance",
+  "fixed_comparators": ["affine_log_height", "affine_height_squared", "affine_height_E4"],
+  "source_informed_secondary": "N50-to-N100 coordinatewise profile transfer, with source uncertainty and free coordinate-specific area gains",
+  "sampling": "Same seed and counter block for all three shapes supplies common random permutations; no adaptively chosen support or new repetitions. Target comparisons share one dependency group.",
+  "resource": "Local Mac; three independent single-threaded engine processes. No Huawei access or rental.",
+  "shapes": [
+    {"name":"tau_2i", "first":[7,-2,1,14], "second":[5,-10,5,10], "delta_cos4":"1152/625"},
+    {"name":"tau_4i", "first":[4,12,-3,16], "second":[5,0,0,20], "delta_cos4":"-1152/625"},
+    {"name":"tau_half_plus_i", "first":[8,10,-6,5], "second":[10,5,0,10], "delta_cos4":"-1152/625"}
+  ],
+  "boundary": "A new finite-N100 test. Neither a pass nor a failure identifies a continuum field. This freeze does not turn the old N50 model discovery into preregistered evidence. No broad validation campaign is assigned."
+}

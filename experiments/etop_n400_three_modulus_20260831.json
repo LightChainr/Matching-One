@@ -1,0 +1,28 @@
+{
+  "status": "frozen_before_new_N400_acquisition",
+  "question": "Does the relative odd/even thermal shape and common-profile-coordinate failure persist when all periods are doubled?",
+  "source_N100_commit": "7b30648be558df0652a7ff22143cc87ed399d042",
+  "source_finite_transport_commit": "2f37ec77eb6c731d6154f1efe32630972c99addd",
+  "fixed_p": 0.59274605079,
+  "area": 400,
+  "fields": ["A_top", "E_top", "C", "W"],
+  "samples_per_shape_pair": 8000000,
+  "batches": 400,
+  "seed": 20260831134001,
+  "replica_offset": 267400000000,
+  "primary_readout": "Same-area finite common profile transport J_m(U)-r_E J_m(D), m=1..6, with complete paired-batch covariance and fitted r_A/r_E uncertainty; use quotient-free polynomial form if source area is weak.",
+  "additional_readouts": [
+    "fixed-p A/E/C/W response and previously defined affine-E4 and free-common-secant scores",
+    "full-p and central thermal-window residual moments, keeping the two scopes separate",
+    "N100-to-N400 relative-shape change with independent source-block covariance; no imposed area power"
+  ],
+  "sampling": "Same seed and counter block across the three N400 shapes. Independent of the N100 seed/block. One correlated N400 dependency group; no adaptive sample extension in this run.",
+  "resource": "Local Mac, three single-threaded engine processes. No new server or GPU rental.",
+  "geometry": "Every N100 period entry is multiplied by two. Same tau and rational O; first Smith(2,200), second Smith(10,40) for every pair. This is a homothetic scale, not an N200 Gaussian-norm change.",
+  "shapes": [
+    {"name":"tau_2i", "first":[14,-4,2,28], "second":[10,-20,10,20], "delta_cos4":"1152/625"},
+    {"name":"tau_4i", "first":[8,24,-6,32], "second":[10,0,0,40], "delta_cos4":"-1152/625"},
+    {"name":"tau_half_plus_i", "first":[16,20,-12,10], "second":[20,10,0,20], "delta_cos4":"-1152/625"}
+  ],
+  "boundary": "A prospective scale follow-up to an exploratory N100 mechanism. Numerical outcomes are not presumed; a weak target does not establish recovery of a model. Full-p results do not by themselves identify a critical-window field. No old-test campaign is assigned."
+}
