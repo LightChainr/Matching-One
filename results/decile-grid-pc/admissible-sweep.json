@@ -1,0 +1,210 @@
+{
+  "schema": "matching-one/decile-grid-pc-admissible-sweep/v1",
+  "issue": 641,
+  "data_class": "exact Fraction arithmetic; Sturm isolation bits=60",
+  "n_max": 18,
+  "geometries_tested": 104,
+  "e4_argument": "E4 fails for every admissible pair with M1 != M2: if two CDF polynomials agree on an interval [p1,p2] with nonempty interior, they are the same polynomial, hence M1 = M2 and the physical roots coincide. E4 succeeding would need one geometry's M to have a different root than itself. Settled by polynomial identity, not by the sweep.",
+  "best_pairs": [
+    {
+      "pair": "HNF(2,1,9) vs HNF(2,0,9)",
+      "max_decile_bracket_gap": "7975980164381/1152921504606846976",
+      "max_decile_bracket_gap_float": 6.918060017538537e-06,
+      "min_root_bracket_gap": "7975980164381/1152921504606846976",
+      "min_root_bracket_gap_float": 6.918060017538537e-06,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(2,1,8) vs HNF(2,0,8)",
+      "max_decile_bracket_gap": "6212198577385/288230376151711744",
+      "max_decile_bracket_gap_float": 2.1552893419238967e-05,
+      "min_root_bracket_gap": "6212198577385/288230376151711744",
+      "min_root_bracket_gap_float": 2.1552893419238967e-05,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(2,1,7) vs HNF(2,0,7)",
+      "max_decile_bracket_gap": "78644162731207/1152921504606846976",
+      "max_decile_bracket_gap_float": 6.821293766918254e-05,
+      "min_root_bracket_gap": "78644162731207/1152921504606846976",
+      "min_root_bracket_gap_float": 6.821293766918254e-05,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(3,1,6) vs HNF(3,0,6)",
+      "max_decile_bracket_gap": "64800701979547/576460752303423488",
+      "max_decile_bracket_gap_float": 0.00011241129898369694,
+      "min_root_bracket_gap": "434985489321/18014398509481984",
+      "min_root_bracket_gap_float": 2.4146545281100718e-05,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(16,7,1) vs HNF(8,2,2)",
+      "max_decile_bracket_gap": "90762045379999/576460752303423488",
+      "max_decile_bracket_gap_float": 0.00015744705084835657,
+      "min_root_bracket_gap": "65612918587797/1152921504606846976",
+      "min_root_bracket_gap_float": 5.6910135100803234e-05,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(2,1,6) vs HNF(2,0,6)",
+      "max_decile_bracket_gap": "265581603648241/1152921504606846976",
+      "max_decile_bracket_gap_float": 0.00023035532131808565,
+      "min_root_bracket_gap": "31760664907113/144115188075855872",
+      "min_root_bracket_gap_float": 0.00022038388410800663,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(13,3,1) vs HNF(16,3,1)",
+      "max_decile_bracket_gap": "75173946517241/144115188075855872",
+      "max_decile_bracket_gap_float": 0.0005216240392211316,
+      "min_root_bracket_gap": "6283574752061/144115188075855872",
+      "min_root_bracket_gap_float": 4.360105854182145e-05,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(3,1,5) vs HNF(3,0,5)",
+      "max_decile_bracket_gap": "665495743653297/1152921504606846976",
+      "max_decile_bracket_gap_float": 0.0005772255448390088,
+      "min_root_bracket_gap": "145018177625031/1152921504606846976",
+      "min_root_bracket_gap_float": 0.0001257832185847579,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(13,3,1) vs HNF(5,1,3)",
+      "max_decile_bracket_gap": "856346842435201/1152921504606846976",
+      "max_decile_bracket_gap_float": 0.0007427624855754775,
+      "min_root_bracket_gap": "35513506878175/1152921504606846976",
+      "min_root_bracket_gap_float": 3.080305704791699e-05,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(2,1,5) vs HNF(2,0,5)",
+      "max_decile_bracket_gap": "943218989138445/1152921504606846976",
+      "max_decile_bracket_gap_float": 0.0008181120617227868,
+      "min_root_bracket_gap": "105548835987077/144115188075855872",
+      "min_root_bracket_gap_float": 0.0007323921745952325,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(14,3,1) vs HNF(5,1,3)",
+      "max_decile_bracket_gap": "993722299903591/1152921504606846976",
+      "max_decile_bracket_gap_float": 0.0008619167011222123,
+      "min_root_bracket_gap": "60839585990505/576460752303423488",
+      "min_root_bracket_gap_float": 0.00010553985808643869,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(17,5,1) vs HNF(6,2,3)",
+      "max_decile_bracket_gap": "124977528185051/144115188075855872",
+      "max_decile_bracket_gap_float": 0.0008672058084486442,
+      "min_root_bracket_gap": "96365103996839/1152921504606846976",
+      "min_root_bracket_gap_float": 8.358340408413153e-05,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(5,1,3) vs HNF(16,3,1)",
+      "max_decile_bracket_gap": "1237322967931531/1152921504606846976",
+      "max_decile_bracket_gap_float": 0.0010732065999180624,
+      "min_root_bracket_gap": "1844386392289/144115188075855872",
+      "min_root_bracket_gap_float": 1.2798001493903588e-05,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(4,1,3) vs HNF(17,3,1)",
+      "max_decile_bracket_gap": "641258175796951/576460752303423488",
+      "max_decile_bracket_gap_float": 0.0011124056117170333,
+      "min_root_bracket_gap": "7911263808423/36028797018963968",
+      "min_root_bracket_gap_float": 0.00021958168084987295,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(13,3,1) vs HNF(14,3,1)",
+      "max_decile_bracket_gap": "814826847848597/576460752303423488",
+      "max_decile_bracket_gap_float": 0.001413499261819143,
+      "min_root_bracket_gap": "78596339429593/576460752303423488",
+      "min_root_bracket_gap_float": 0.00013634291513435655,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(8,3,2) vs HNF(17,5,1)",
+      "max_decile_bracket_gap": "1730803167412057/1152921504606846976",
+      "max_decile_bracket_gap_float": 0.0015012324434023555,
+      "min_root_bracket_gap": "55192703206967/1152921504606846976",
+      "min_root_bracket_gap_float": 4.787203897787303e-05,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(12,5,1) vs HNF(6,2,2)",
+      "max_decile_bracket_gap": "1855705200246727/1152921504606846976",
+      "max_decile_bracket_gap_float": 0.0016095676876801196,
+      "min_root_bracket_gap": "714805771198591/1152921504606846976",
+      "min_root_bracket_gap_float": 0.000619995176030951,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(16,3,1) vs HNF(17,3,1)",
+      "max_decile_bracket_gap": "240523637613137/144115188075855872",
+      "max_decile_bracket_gap_float": 0.0016689680027793877,
+      "min_root_bracket_gap": "24044936691875/1152921504606846976",
+      "min_root_bracket_gap_float": 2.0855658078885835e-05,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(11,3,1) vs HNF(6,1,3)",
+      "max_decile_bracket_gap": "522339332720661/288230376151711744",
+      "max_decile_bracket_gap_float": 0.001812228605793182,
+      "min_root_bracket_gap": "273336540032587/576460752303423488",
+      "min_root_bracket_gap_float": 0.000474163312836803,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(4,1,3) vs HNF(6,1,3)",
+      "max_decile_bracket_gap": "2123254226202811/1152921504606846976",
+      "max_decile_bracket_gap_float": 0.001841629475830493,
+      "min_root_bracket_gap": "236529199916959/1152921504606846976",
+      "min_root_bracket_gap_float": 0.00020515637792498011,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(14,3,1) vs HNF(16,3,1)",
+      "max_decile_bracket_gap": "2231045267835123/1152921504606846976",
+      "max_decile_bracket_gap_float": 0.0019351233010402756,
+      "min_root_bracket_gap": "106924080842697/1152921504606846976",
+      "min_root_bracket_gap_float": 9.274185659253423e-05,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(5,2,2) vs HNF(6,2,2)",
+      "max_decile_bracket_gap": "1143770145580163/576460752303423488",
+      "max_decile_bracket_gap_float": 0.001984124922659319,
+      "min_root_bracket_gap": "222249983501707/1152921504606846976",
+      "min_root_bracket_gap_float": 0.0001927711319579346,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(13,3,1) vs HNF(17,3,1)",
+      "max_decile_bracket_gap": "2525580673043025/1152921504606846976",
+      "max_decile_bracket_gap_float": 0.00219059204200052,
+      "min_root_bracket_gap": "18578383677091/288230376151711744",
+      "min_root_bracket_gap_float": 6.445671662070815e-05,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(3,1,2) vs HNF(9,2,1)",
+      "max_decile_bracket_gap": "2526676141605645/1152921504606846976",
+      "max_decile_bracket_gap_float": 0.002191542209516906,
+      "min_root_bracket_gap": "2214147954563781/1152921504606846976",
+      "min_root_bracket_gap_float": 0.0019204672180339099,
+      "m_half_equal": false
+    },
+    {
+      "pair": "HNF(4,1,3) vs HNF(16,3,1)",
+      "max_decile_bracket_gap": "655221902813187/288230376151711744",
+      "max_decile_bracket_gap_float": 0.002273257633568459,
+      "min_root_bracket_gap": "57278876294415/288230376151711744",
+      "min_root_bracket_gap_float": 0.00019872602277098625,
+      "m_half_equal": false
+    }
+  ]
+}
