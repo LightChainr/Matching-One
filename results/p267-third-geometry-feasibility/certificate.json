@@ -1,0 +1,1335 @@
+{
+  "schema": "matching-one/p267-third-geometry-feasibility/v1",
+  "status": "exact finite-geometry certificate plus conditional model coordinates; no MC",
+  "factorial_source_commit": "ce01e4d10abb03abf1b278192510937ee96db29d",
+  "map": [
+    [
+      "4/5",
+      "-3/5"
+    ],
+    [
+      "3/5",
+      "4/5"
+    ]
+  ],
+  "proof": "P'=5B, det(B)=N/25; primitive B plus gcd((5O^-1)B)=1 are necessary and sufficient. Column HNF enumerates all target sublattices.",
+  "N50_third_shape_impossible_even_if_map_changes": true,
+  "minimum_N_with_three_shapes_in_fixed_map_smith_family": 100,
+  "families": {
+    "25": {
+      "source_smith": [
+        1,
+        25
+      ],
+      "target_smith": [
+        5,
+        5
+      ],
+      "admissible_hnf_count": 1,
+      "distinct_shape_count": 1,
+      "shapes": [
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "complete_hnf_rows": [
+        {
+          "target_divided_by_5_hnf": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_periods": [
+            [
+              4,
+              3
+            ],
+            [
+              -3,
+              4
+            ]
+          ],
+          "shape": [
+            "0",
+            "1"
+          ]
+        }
+      ]
+    },
+    "50": {
+      "source_smith": [
+        1,
+        50
+      ],
+      "target_smith": [
+        5,
+        10
+      ],
+      "admissible_hnf_count": 3,
+      "distinct_shape_count": 2,
+      "shapes": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "2"
+        ]
+      ],
+      "complete_hnf_rows": [
+        {
+          "target_divided_by_5_hnf": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "source_periods": [
+            [
+              4,
+              6
+            ],
+            [
+              -3,
+              8
+            ]
+          ],
+          "shape": [
+            "0",
+            "2"
+          ]
+        },
+        {
+          "target_divided_by_5_hnf": [
+            [
+              2,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_periods": [
+            [
+              8,
+              3
+            ],
+            [
+              -6,
+              4
+            ]
+          ],
+          "shape": [
+            "0",
+            "2"
+          ]
+        },
+        {
+          "target_divided_by_5_hnf": [
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_periods": [
+            [
+              8,
+              7
+            ],
+            [
+              -6,
+              1
+            ]
+          ],
+          "shape": [
+            "0",
+            "1"
+          ]
+        }
+      ]
+    },
+    "75": {
+      "source_smith": [
+        1,
+        75
+      ],
+      "target_smith": [
+        5,
+        15
+      ],
+      "admissible_hnf_count": 4,
+      "distinct_shape_count": 2,
+      "shapes": [
+        [
+          "0",
+          "3"
+        ],
+        [
+          "1/2",
+          "3/2"
+        ]
+      ],
+      "complete_hnf_rows": [
+        {
+          "target_divided_by_5_hnf": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "source_periods": [
+            [
+              4,
+              9
+            ],
+            [
+              -3,
+              12
+            ]
+          ],
+          "shape": [
+            "0",
+            "3"
+          ]
+        },
+        {
+          "target_divided_by_5_hnf": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_periods": [
+            [
+              12,
+              3
+            ],
+            [
+              -9,
+              4
+            ]
+          ],
+          "shape": [
+            "0",
+            "3"
+          ]
+        },
+        {
+          "target_divided_by_5_hnf": [
+            [
+              3,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_periods": [
+            [
+              12,
+              7
+            ],
+            [
+              -9,
+              1
+            ]
+          ],
+          "shape": [
+            "1/2",
+            "3/2"
+          ]
+        },
+        {
+          "target_divided_by_5_hnf": [
+            [
+              3,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_periods": [
+            [
+              12,
+              11
+            ],
+            [
+              -9,
+              -2
+            ]
+          ],
+          "shape": [
+            "1/2",
+            "3/2"
+          ]
+        }
+      ]
+    },
+    "100": {
+      "source_smith": [
+        1,
+        100
+      ],
+      "target_smith": [
+        5,
+        20
+      ],
+      "admissible_hnf_count": 6,
+      "distinct_shape_count": 3,
+      "shapes": [
+        [
+          "0",
+          "2"
+        ],
+        [
+          "0",
+          "4"
+        ],
+        [
+          "1/2",
+          "1"
+        ]
+      ],
+      "complete_hnf_rows": [
+        {
+          "target_divided_by_5_hnf": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              4
+            ]
+          ],
+          "source_periods": [
+            [
+              4,
+              12
+            ],
+            [
+              -3,
+              16
+            ]
+          ],
+          "shape": [
+            "0",
+            "4"
+          ]
+        },
+        {
+          "target_divided_by_5_hnf": [
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "source_periods": [
+            [
+              8,
+              10
+            ],
+            [
+              -6,
+              5
+            ]
+          ],
+          "shape": [
+            "1/2",
+            "1"
+          ]
+        },
+        {
+          "target_divided_by_5_hnf": [
+            [
+              4,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_periods": [
+            [
+              16,
+              3
+            ],
+            [
+              -12,
+              4
+            ]
+          ],
+          "shape": [
+            "0",
+            "4"
+          ]
+        },
+        {
+          "target_divided_by_5_hnf": [
+            [
+              4,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_periods": [
+            [
+              16,
+              7
+            ],
+            [
+              -12,
+              1
+            ]
+          ],
+          "shape": [
+            "0",
+            "2"
+          ]
+        },
+        {
+          "target_divided_by_5_hnf": [
+            [
+              4,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_periods": [
+            [
+              16,
+              11
+            ],
+            [
+              -12,
+              -2
+            ]
+          ],
+          "shape": [
+            "1/2",
+            "1"
+          ]
+        },
+        {
+          "target_divided_by_5_hnf": [
+            [
+              4,
+              3
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_periods": [
+            [
+              16,
+              15
+            ],
+            [
+              -12,
+              -5
+            ]
+          ],
+          "shape": [
+            "0",
+            "2"
+          ]
+        }
+      ]
+    },
+    "125": {
+      "source_smith": [
+        1,
+        125
+      ],
+      "target_smith": [
+        5,
+        25
+      ],
+      "admissible_hnf_count": 5,
+      "distinct_shape_count": 3,
+      "shapes": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "5"
+        ],
+        [
+          "1/2",
+          "5/2"
+        ]
+      ],
+      "complete_hnf_rows": [
+        {
+          "target_divided_by_5_hnf": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              5
+            ]
+          ],
+          "source_periods": [
+            [
+              4,
+              15
+            ],
+            [
+              -3,
+              20
+            ]
+          ],
+          "shape": [
+            "0",
+            "5"
+          ]
+        },
+        {
+          "target_divided_by_5_hnf": [
+            [
+              5,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_periods": [
+            [
+              20,
+              3
+            ],
+            [
+              -15,
+              4
+            ]
+          ],
+          "shape": [
+            "0",
+            "5"
+          ]
+        },
+        {
+          "target_divided_by_5_hnf": [
+            [
+              5,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_periods": [
+            [
+              20,
+              7
+            ],
+            [
+              -15,
+              1
+            ]
+          ],
+          "shape": [
+            "1/2",
+            "5/2"
+          ]
+        },
+        {
+          "target_divided_by_5_hnf": [
+            [
+              5,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_periods": [
+            [
+              20,
+              11
+            ],
+            [
+              -15,
+              -2
+            ]
+          ],
+          "shape": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "target_divided_by_5_hnf": [
+            [
+              5,
+              4
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_periods": [
+            [
+              20,
+              19
+            ],
+            [
+              -15,
+              -8
+            ]
+          ],
+          "shape": [
+            "1/2",
+            "5/2"
+          ]
+        }
+      ]
+    }
+  },
+  "cells": [
+    {
+      "N": 50,
+      "tau": "i",
+      "tau_exact": [
+        "0",
+        "1"
+      ],
+      "first_period_matrix": [
+        [
+          7,
+          -1
+        ],
+        [
+          1,
+          7
+        ]
+      ],
+      "second_period_matrix": [
+        [
+          5,
+          -5
+        ],
+        [
+          5,
+          5
+        ]
+      ],
+      "first_smith": [
+        1,
+        50
+      ],
+      "second_smith": [
+        5,
+        10
+      ],
+      "gram": [
+        [
+          50,
+          0
+        ],
+        [
+          0,
+          50
+        ]
+      ],
+      "shortest_period_squared": 50,
+      "first_chi4": "527/625",
+      "second_chi4": "-1",
+      "delta_chi4": "1152/625",
+      "spin4_projector_degenerate": false,
+      "immediate_graph_alias": false,
+      "conditional_E4_shape_g": 1.0,
+      "affine_E4_old_i_weight": 1.0,
+      "affine_E4_old_2i_weight": 0.0,
+      "runner_matrix_arguments": [
+        "--first-matrix",
+        7,
+        -1,
+        1,
+        7,
+        "--second-matrix",
+        5,
+        -5,
+        5,
+        5
+      ]
+    },
+    {
+      "N": 50,
+      "tau": "2i",
+      "tau_exact": [
+        "0",
+        "2"
+      ],
+      "first_period_matrix": [
+        [
+          3,
+          -8
+        ],
+        [
+          4,
+          6
+        ]
+      ],
+      "second_period_matrix": [
+        [
+          0,
+          -10
+        ],
+        [
+          5,
+          0
+        ]
+      ],
+      "first_smith": [
+        1,
+        50
+      ],
+      "second_smith": [
+        5,
+        10
+      ],
+      "gram": [
+        [
+          25,
+          0
+        ],
+        [
+          0,
+          100
+        ]
+      ],
+      "shortest_period_squared": 25,
+      "first_chi4": "-527/625",
+      "second_chi4": "1",
+      "delta_chi4": "-1152/625",
+      "spin4_projector_degenerate": false,
+      "immediate_graph_alias": false,
+      "conditional_E4_shape_g": 2.7499999999999996,
+      "affine_E4_old_i_weight": 2.220446049250313e-16,
+      "affine_E4_old_2i_weight": 0.9999999999999998,
+      "runner_matrix_arguments": [
+        "--first-matrix",
+        3,
+        -8,
+        4,
+        6,
+        "--second-matrix",
+        0,
+        -10,
+        5,
+        0
+      ]
+    },
+    {
+      "N": 75,
+      "tau": "3i",
+      "tau_exact": [
+        "0",
+        "3"
+      ],
+      "first_period_matrix": [
+        [
+          4,
+          9
+        ],
+        [
+          -3,
+          12
+        ]
+      ],
+      "second_period_matrix": [
+        [
+          5,
+          0
+        ],
+        [
+          0,
+          15
+        ]
+      ],
+      "first_smith": [
+        1,
+        75
+      ],
+      "second_smith": [
+        5,
+        15
+      ],
+      "gram": [
+        [
+          25,
+          0
+        ],
+        [
+          0,
+          225
+        ]
+      ],
+      "shortest_period_squared": 25,
+      "first_chi4": "-527/625",
+      "second_chi4": "1",
+      "delta_chi4": "-1152/625",
+      "spin4_projector_degenerate": false,
+      "immediate_graph_alias": false,
+      "conditional_E4_shape_g": 6.182335127930838,
+      "affine_E4_old_i_weight": -1.9613343588176213,
+      "affine_E4_old_2i_weight": 2.9613343588176213,
+      "runner_matrix_arguments": [
+        "--first-matrix",
+        4,
+        9,
+        -3,
+        12,
+        "--second-matrix",
+        5,
+        0,
+        0,
+        15
+      ]
+    },
+    {
+      "N": 75,
+      "tau": "1/2+3i/2",
+      "tau_exact": [
+        "1/2",
+        "3/2"
+      ],
+      "first_period_matrix": [
+        [
+          7,
+          2
+        ],
+        [
+          1,
+          11
+        ]
+      ],
+      "second_period_matrix": [
+        [
+          5,
+          -5
+        ],
+        [
+          5,
+          10
+        ]
+      ],
+      "first_smith": [
+        1,
+        75
+      ],
+      "second_smith": [
+        5,
+        15
+      ],
+      "gram": [
+        [
+          50,
+          25
+        ],
+        [
+          25,
+          125
+        ]
+      ],
+      "shortest_period_squared": 50,
+      "first_chi4": "527/625",
+      "second_chi4": "-1",
+      "delta_chi4": "1152/625",
+      "spin4_projector_degenerate": false,
+      "immediate_graph_alias": false,
+      "conditional_E4_shape_g": 1.5156684612641713,
+      "affine_E4_old_i_weight": 0.705332307849045,
+      "affine_E4_old_2i_weight": 0.29466769215095506,
+      "runner_matrix_arguments": [
+        "--first-matrix",
+        7,
+        2,
+        1,
+        11,
+        "--second-matrix",
+        5,
+        -5,
+        5,
+        10
+      ]
+    },
+    {
+      "N": 100,
+      "tau": "2i",
+      "tau_exact": [
+        "0",
+        "2"
+      ],
+      "first_period_matrix": [
+        [
+          7,
+          -2
+        ],
+        [
+          1,
+          14
+        ]
+      ],
+      "second_period_matrix": [
+        [
+          5,
+          -10
+        ],
+        [
+          5,
+          10
+        ]
+      ],
+      "first_smith": [
+        1,
+        100
+      ],
+      "second_smith": [
+        5,
+        20
+      ],
+      "gram": [
+        [
+          50,
+          0
+        ],
+        [
+          0,
+          200
+        ]
+      ],
+      "shortest_period_squared": 50,
+      "first_chi4": "527/625",
+      "second_chi4": "-1",
+      "delta_chi4": "1152/625",
+      "spin4_projector_degenerate": false,
+      "immediate_graph_alias": false,
+      "conditional_E4_shape_g": 2.7499999999999996,
+      "affine_E4_old_i_weight": 2.220446049250313e-16,
+      "affine_E4_old_2i_weight": 0.9999999999999998,
+      "runner_matrix_arguments": [
+        "--first-matrix",
+        7,
+        -2,
+        1,
+        14,
+        "--second-matrix",
+        5,
+        -10,
+        5,
+        10
+      ]
+    },
+    {
+      "N": 100,
+      "tau": "4i",
+      "tau_exact": [
+        "0",
+        "4"
+      ],
+      "first_period_matrix": [
+        [
+          4,
+          12
+        ],
+        [
+          -3,
+          16
+        ]
+      ],
+      "second_period_matrix": [
+        [
+          5,
+          0
+        ],
+        [
+          0,
+          20
+        ]
+      ],
+      "first_smith": [
+        1,
+        100
+      ],
+      "second_smith": [
+        5,
+        20
+      ],
+      "gram": [
+        [
+          25,
+          0
+        ],
+        [
+          0,
+          400
+        ]
+      ],
+      "shortest_period_squared": 25,
+      "first_chi4": "-527/625",
+      "second_chi4": "1",
+      "delta_chi4": "-1152/625",
+      "spin4_projector_degenerate": false,
+      "immediate_graph_alias": false,
+      "conditional_E4_shape_g": 10.990800858899105,
+      "affine_E4_old_i_weight": -4.70902906222806,
+      "affine_E4_old_2i_weight": 5.70902906222806,
+      "runner_matrix_arguments": [
+        "--first-matrix",
+        4,
+        12,
+        -3,
+        16,
+        "--second-matrix",
+        5,
+        0,
+        0,
+        20
+      ]
+    },
+    {
+      "N": 100,
+      "tau": "1/2+i",
+      "tau_exact": [
+        "1/2",
+        "1"
+      ],
+      "first_period_matrix": [
+        [
+          8,
+          10
+        ],
+        [
+          -6,
+          5
+        ]
+      ],
+      "second_period_matrix": [
+        [
+          10,
+          5
+        ],
+        [
+          0,
+          10
+        ]
+      ],
+      "first_smith": [
+        1,
+        100
+      ],
+      "second_smith": [
+        5,
+        20
+      ],
+      "gram": [
+        [
+          100,
+          50
+        ],
+        [
+          50,
+          125
+        ]
+      ],
+      "shortest_period_squared": 100,
+      "first_chi4": "-527/625",
+      "second_chi4": "1",
+      "delta_chi4": "-1152/625",
+      "spin4_projector_degenerate": false,
+      "immediate_graph_alias": false,
+      "conditional_E4_shape_g": 0.3841991411008934,
+      "affine_E4_old_i_weight": 1.3518862050852039,
+      "affine_E4_old_2i_weight": -0.3518862050852038,
+      "runner_matrix_arguments": [
+        "--first-matrix",
+        8,
+        10,
+        -6,
+        5,
+        "--second-matrix",
+        10,
+        5,
+        0,
+        10
+      ]
+    },
+    {
+      "N": 125,
+      "tau": "i",
+      "tau_exact": [
+        "0",
+        "1"
+      ],
+      "first_period_matrix": [
+        [
+          11,
+          2
+        ],
+        [
+          -2,
+          11
+        ]
+      ],
+      "second_period_matrix": [
+        [
+          10,
+          -5
+        ],
+        [
+          5,
+          10
+        ]
+      ],
+      "first_smith": [
+        1,
+        125
+      ],
+      "second_smith": [
+        5,
+        25
+      ],
+      "gram": [
+        [
+          125,
+          0
+        ],
+        [
+          0,
+          125
+        ]
+      ],
+      "shortest_period_squared": 125,
+      "first_chi4": "11753/15625",
+      "second_chi4": "-7/25",
+      "delta_chi4": "16128/15625",
+      "spin4_projector_degenerate": false,
+      "immediate_graph_alias": false,
+      "conditional_E4_shape_g": 1.0,
+      "affine_E4_old_i_weight": 1.0,
+      "affine_E4_old_2i_weight": 0.0,
+      "runner_matrix_arguments": [
+        "--first-matrix",
+        11,
+        2,
+        -2,
+        11,
+        "--second-matrix",
+        10,
+        -5,
+        5,
+        10
+      ]
+    },
+    {
+      "N": 125,
+      "tau": "5i",
+      "tau_exact": [
+        "0",
+        "5"
+      ],
+      "first_period_matrix": [
+        [
+          4,
+          15
+        ],
+        [
+          -3,
+          20
+        ]
+      ],
+      "second_period_matrix": [
+        [
+          5,
+          0
+        ],
+        [
+          0,
+          25
+        ]
+      ],
+      "first_smith": [
+        1,
+        125
+      ],
+      "second_smith": [
+        5,
+        25
+      ],
+      "gram": [
+        [
+          25,
+          0
+        ],
+        [
+          0,
+          625
+        ]
+      ],
+      "shortest_period_squared": 25,
+      "first_chi4": "-527/625",
+      "second_chi4": "1",
+      "delta_chi4": "-1152/625",
+      "spin4_projector_degenerate": false,
+      "immediate_graph_alias": false,
+      "conditional_E4_shape_g": 17.17312629199899,
+      "affine_E4_old_i_weight": -8.241786452570851,
+      "affine_E4_old_2i_weight": 9.241786452570851,
+      "runner_matrix_arguments": [
+        "--first-matrix",
+        4,
+        15,
+        -3,
+        20,
+        "--second-matrix",
+        5,
+        0,
+        0,
+        25
+      ]
+    },
+    {
+      "N": 125,
+      "tau": "1/2+5i/2",
+      "tau_exact": [
+        "1/2",
+        "5/2"
+      ],
+      "first_period_matrix": [
+        [
+          7,
+          1
+        ],
+        [
+          1,
+          18
+        ]
+      ],
+      "second_period_matrix": [
+        [
+          5,
+          -10
+        ],
+        [
+          5,
+          15
+        ]
+      ],
+      "first_smith": [
+        1,
+        125
+      ],
+      "second_smith": [
+        5,
+        25
+      ],
+      "gram": [
+        [
+          50,
+          25
+        ],
+        [
+          25,
+          325
+        ]
+      ],
+      "shortest_period_squared": 50,
+      "first_chi4": "527/625",
+      "second_chi4": "-1",
+      "delta_chi4": "1152/625",
+      "spin4_projector_degenerate": false,
+      "immediate_graph_alias": false,
+      "conditional_E4_shape_g": 4.293126291998989,
+      "affine_E4_old_i_weight": -0.8817864525708512,
+      "affine_E4_old_2i_weight": 1.8817864525708512,
+      "runner_matrix_arguments": [
+        "--first-matrix",
+        7,
+        1,
+        1,
+        18,
+        "--second-matrix",
+        5,
+        -10,
+        5,
+        15
+      ]
+    }
+  ],
+  "conditional_covector": {
+    "basis_invariant_complex": "Phi4(P)=Im(tau)^2 exp(-4i arg(omega1)) E4(tau)",
+    "normalized_difference": "Re(Phi4(P)-Phi4(OP))/(chi4(P)-chi4(OP))/E4(i)",
+    "boundary_simplification": "g(tau)=Im(tau)^2 E4(tau)/E4(i) when Re(tau)=0 or 1/2",
+    "third_cell_predictor": "v(N,tau)=s_N*((1-t)*v(50,i)+t*v(50,2i)), t=(g(tau)-1)/(7/4)",
+    "scale_boundary": "s_N is an explicit additional hypothesis or requires a new-area bridge cell; no scalar or exponent is inferred here"
+  },
+  "exact_conditional_E4_relations": [
+    {
+      "identity": "g(2i)=11/4",
+      "rational_rhs": "11/4",
+      "display_residual": -4.440892098500626e-16
+    },
+    {
+      "identity": "g(4i)+g(1/2+i)=91/8",
+      "rational_rhs": "91/8",
+      "display_residual": -1.7763568394002505e-15
+    },
+    {
+      "identity": "g(5i)-g(1/2+5i/2)=322/25",
+      "rational_rhs": "322/25",
+      "display_residual": 0.0
+    }
+  ],
+  "scientific_boundary": "Feasibility and normalization are exact. E4 predictions are conditional, not established amplitudes for A/E/C/W, and do not identify a continuum field. Finite widths differ. No samples or additional model fitting."
+}
