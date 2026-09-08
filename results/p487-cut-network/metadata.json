@@ -1,0 +1,28 @@
+{
+  "change": "exact embedded cut theorem and deterministic checkpoint explanation",
+  "commands": [
+    "python -m compileall -q scripts tests",
+    "python -m unittest discover -s tests -p test_p487_cut_network.py -v",
+    "python scripts/p487_check_cut_network.py --verify results/p487-cut-network/exact.json"
+  ],
+  "full_repository_suite_run": false,
+  "initial_main": "e30060995a9eb5c4d93f565ae09af4f54a56270f",
+  "issue": 487,
+  "navigation_head": "5b8ac329ea980c362fa2cd517e152be016532536",
+  "new_random_samples": 0,
+  "original_checkpoint_commit": "1b5a9dea07e1c62f69798fddbf4899ff986c0b72",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "remote_server_access": false,
+  "sha256": {
+    "notes/p487-cut-network-theorem.md": "1cc0d0222f488d2e22990c6cdbe33cd78b931015229e74ffbde7a33d8aadd998",
+    "results/p487-cut-network/exact.json": "4beaea41bfa747fabbc8222b7041cc81f5da673d225e11a2d847a52eed55e848",
+    "results/p487-cut-network/inputs.json": "b7ce8999917194adcf4f4c751e88d5b2e94fbdf1ceb130436d0cda8a1b592d1e",
+    "results/p487-cut-network/tests.log": "effc0a3e5a5ffde8bc066970802e8f9d30fcac70f0029e79402ce183fb892ccb",
+    "scripts/p487_check_cut_network.py": "be091705f08294c799193adf19c77bc969c67fd5efaacd24f189c87c1fffaa74",
+    "scripts/p487_rank_one_cut_network.py": "e361947dfb29b99773db9e220377fc3c4686fbb9ef61b54e457a3eab90946843",
+    "tests/test_p487_cut_network.py": "3248ead5f90ad86c7e88404ef79f44c9f9994936b3f912851028574c017823e6"
+  },
+  "standalone_bundle": true,
+  "tests_passed": 14
+}

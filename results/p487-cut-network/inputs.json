@@ -1,0 +1,36 @@
+{
+  "source_commit": "1b5a9dea07e1c62f69798fddbf4899ff986c0b72",
+  "mask_source_path": "results/local-20260831/P334-cooperative-closure/scalar_state_collisions.json",
+  "mask_source_git_blob": "5d045e3f5f8014d8e1a8a241c3a88d3129988574",
+  "mask_extraction": "Exact hexadecimal masks transcribed from environments.N425_second.witness.A/B.replay. The two complete original graph JSON blobs were separately recovered and their bytes checked against Git blob SHA; no pair edges are inputs to the cut construction.",
+  "rows": [
+    {
+      "name": "A",
+      "N": 425,
+      "h12": 268,
+      "k0": 252,
+      "seed": 20260831430425,
+      "replica_counter": 43042514269,
+      "ell": [12, -19],
+      "occupied_mask_hex": "0x1bb35b1ade320f2f4a3afab3073127faaffb4aa573bf4bdf93abfff64dbc5d8a57b7676ee6d951e31f397d69c66955b763bb0d52dad",
+      "graph_source_path": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N425-second-43042514269.json",
+      "graph_source_git_blob": "4f484aa27191f4e8f37e8fdab9ad213c1536d862",
+      "expected_wedges": 926,
+      "expected_minimal_triples": 583
+    },
+    {
+      "name": "B",
+      "N": 425,
+      "h12": 268,
+      "k0": 252,
+      "seed": 20260831430425,
+      "replica_counter": 43042505280,
+      "ell": [12, -19],
+      "occupied_mask_hex": "0x7a9137ae2af1915ebcd8d2fe30966f5bf6cadfbc5d8ac3e5a379d7701ea48ffbbe6ed2b37cfdcb5b8536f4879b7797dbf4ca1b1eff",
+      "graph_source_path": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N425-second-43042505280.json",
+      "graph_source_git_blob": "c6edef99a94971fd106f8daaac1ea84737c6067f",
+      "expected_wedges": 1466,
+      "expected_minimal_triples": 509
+    }
+  ]
+}
