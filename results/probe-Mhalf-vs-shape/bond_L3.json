@@ -1,31 +1,32 @@
 {
-  "L": 3,
-  "M_bond_half_by_rank_counts": "0",
-  "M_bond_half_exact": "0",
-  "P_r_at_half": {
-    "0": 0.2878570556640625,
-    "1": 0.424285888671875,
-    "2": 0.2878570556640625
-  },
-  "X_law_at_half_jumps": {
+  "M_half": "0",
+  "M_half_float": 0.0,
+  "P_r0_eq_P_r2_exact": true,
+  "P_wrap_at_p_half": 0.7121429443359375,
+  "P_wrap_at_p_half_frac": "46671/65536",
+  "X_law_jumps": {
     "P(X=+1)=P(r=2)": 0.2878570556640625,
     "P(X=-1)=P(r=0)": 0.2878570556640625,
     "P(X=0)=P(r=1)": 0.424285888671875
   },
-  "Z_bond_undefined": true,
-  "bonds": 18,
+  "Z_undefined": true,
+  "Z_undefined_reason": "X-law at p=1/2 is 3-atom on {r-1 in {-1,0,1}}; inverse CDF is a staircase, not strictly increasing",
+  "bond_vs_site": "INCOMPARABLE at L=3: different edge sets (18 bonds vs 9 sites), different N, and Z_bond undefined; Z_site well-defined",
+  "cited_from_full_enumeration": {
+    "p_wrap_median_crossing": 0.41964924845800616,
+    "source": "main results/probe-Mhalf-vs-shape/bond_L3.json (2^18 enum, 3.3 s)"
+  },
   "configs": 262144,
   "duality_odd_checked": true,
+  "imported_from": "PR #653 (repair/632-bond-lab-and-wrapping-l3l4 @ 7109b174)",
+  "imported_sha": "PR #653 (repair/632-bond-lab-and-wrapping-l3l4 @ 7109b174)",
   "issue": 625,
-  "note": "rank convention = #608/#627 bond ambient rank (single-BFS lift); Cov(O,X)=P(r=2)=Var(X)/2 identity imported from #627 C6 as the same-r sanity check, not re-derived",
-  "p_wrap_half": 0.41964924845800616,
+  "mode": "imported-census (PR #653), no 2^18 enumeration on this machine",
   "rank_counts": [
     75460,
     111224,
     75460
   ],
-  "schema": "matching-one.probe-mhalf-vs-shape.bondL3.v1",
-  "seconds_enumeration": 3.3,
-  "seconds_total": 3.4,
-  "verdict_comparability": "INCOMPARABLE: the bond X-law at p=1/2 is the 3-atom measure ((r-1) in {-1,0,1}); its inverse-CDF is a staircase, so Z_bond is undefined by the probe's own rule.  Site Z exists.  The self-dual checks that DID run: M_bond(1/2)=0 exact and P(r=0)=P(r=2) exact."
+  "schema": "matching-one.probe-mhalf-vs-shape.bondL3.v2",
+  "seconds": 0.0
 }
