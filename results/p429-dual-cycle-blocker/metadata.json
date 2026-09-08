@@ -1,0 +1,14 @@
+{
+  "new_monte_carlo": false,
+  "python": "3.13.5",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "arithmetic": "integers only",
+  "focused_tests": 12,
+  "full_safe_pair_checks": 29756,
+  "repository_wide_suite_run": false,
+  "commands": [
+    "python -m compileall -q scripts tests",
+    "python scripts/verify_p429_dual_cycle_blocker.py --full-pairs",
+    "python -m unittest discover -s tests -p test_p429_dual_cycle_blocker.py -v"
+  ]
+}

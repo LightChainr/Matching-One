@@ -1,0 +1,206 @@
+{
+  "schema": "matching-one/p429-dual-cycle-blocker/v1",
+  "status": "exact_certificates_on_two_previously_selected_archived_checkpoints",
+  "source": {
+    "repository": "LightChainr/Matching-One",
+    "commit": "6147e22f53902a94e5f133739f2c1d423691d0b8",
+    "path": "results/local-20260831/P334-cooperative-closure/scalar_state_collisions.json",
+    "selection": "The two N425 second-geometry witnesses already used by 1b5a9de; no new sampling or graph-property selection."
+  },
+  "boundary": "Two sufficient geometric certificates, not a theorem of existence for every HNF or a new independent statistical block.",
+  "cases": [
+    {
+      "id": "43042514269",
+      "periods": [
+        [
+          425,
+          268
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "occupied_mask_hex": "0x1bb35b1ade320f2f4a3afab3073127faaffb4aa573bf4bdf93abfff64dbc5d8a57b7676ee6d951e31f397d69c66955b763bb0d52dad",
+      "occupied_count": 252,
+      "singleton_triggers": [],
+      "cycles": [
+        {
+          "vertices": [
+            27,
+            296,
+            140,
+            409,
+            251,
+            94,
+            363,
+            207,
+            50,
+            317,
+            318,
+            162,
+            6,
+            274,
+            117,
+            386,
+            230,
+            73,
+            342,
+            185
+          ],
+          "winding": [
+            12,
+            -19
+          ]
+        },
+        {
+          "vertices": [
+            241,
+            398,
+            129,
+            286,
+            19,
+            177,
+            335,
+            67,
+            224,
+            380,
+            112,
+            269,
+            1,
+            159,
+            315,
+            47,
+            204,
+            360,
+            91,
+            358,
+            200,
+            356,
+            355,
+            354,
+            85
+          ],
+          "winding": [
+            -12,
+            19
+          ]
+        }
+      ],
+      "expected_pair_graph": {
+        "trigger_edges": 108,
+        "two_stars": 926,
+        "side_sizes": [
+          12,
+          14
+        ],
+        "isolated_safe_vertices": 147
+      }
+    },
+    {
+      "id": "43042505280",
+      "periods": [
+        [
+          425,
+          268
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "occupied_mask_hex": "0x7a9137ae2af1915ebcd8d2fe30966f5bf6cadfbc5d8ac3e5a379d7701ea48ffbbe6ed2b37cfdcb5b8536f4879b7797dbf4ca1b1eff",
+      "occupied_count": 252,
+      "singleton_triggers": [],
+      "cycles": [
+        {
+          "vertices": [
+            144,
+            413,
+            257,
+            101,
+            369,
+            211,
+            54,
+            323,
+            166,
+            8,
+            277,
+            121,
+            390,
+            233,
+            76,
+            344,
+            188,
+            32,
+            301
+          ],
+          "winding": [
+            12,
+            -19
+          ]
+        },
+        {
+          "vertices": [
+            142,
+            298,
+            29,
+            185,
+            184,
+            26,
+            182,
+            24,
+            291,
+            135,
+            403,
+            245,
+            244,
+            243,
+            242,
+            398,
+            129,
+            285,
+            284,
+            15,
+            14,
+            13,
+            170,
+            327,
+            59,
+            217,
+            374,
+            106,
+            264,
+            265,
+            423,
+            156,
+            312,
+            45,
+            202,
+            360,
+            91,
+            248,
+            406,
+            250,
+            94,
+            252,
+            409
+          ],
+          "winding": [
+            -12,
+            19
+          ]
+        }
+      ],
+      "expected_pair_graph": {
+        "trigger_edges": 108,
+        "two_stars": 1466,
+        "side_sizes": [
+          5,
+          29
+        ],
+        "isolated_safe_vertices": 139
+      }
+    }
+  ]
+}
