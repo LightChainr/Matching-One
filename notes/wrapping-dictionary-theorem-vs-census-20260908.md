@@ -1,0 +1,72 @@
+# Wrapping-form A′ — one dictionary sheet: theorem vs census after #673/#677/#679
+
+**Date:** 2026-09-08 · **Machine:** local (Mac, read-only session) · **Ticket:** #686 (parent #650) · **Deliverable:** this file only. No new census, no L=5 joint, no Huawei, no STATUS edit, no ticket closed, #636 not funded.
+
+**Purpose.** The wrapping line now has too many notes (#668 dictionary, #676 A′ rewrite, #675 obstruction, #684 F=(1+M)/2, #683 spirals, #690 Fact 2, #691 rank sum, #692 onsets). A later reader cannot see which statements are theorems on all honest tori and which are axis L=3,4 integers. This sheet is that table. Every row quotes the carrying PR's own verdict; nothing re-enumerated, nothing recomputed — this note is pure provenance curation.
+
+**Verdict vocabulary** (as enforced by #677 and this sheet): **theorem** (proved for the stated scope, no tables needed) · **theorem-with-caveat** (proved modulo a named conjecture) · **census-only** (integer facts at named L) · **OPEN**.
+
+---
+
+## 0. Standing scope facts (used by every row)
+
+- **Honest torus.** A square-cell torus with `ell_N > sqrt(2)` — equivalently all four corners of every unit cell distinct. Axis L×L honest iff L ≥ 2. (PR #691, §1.)
+- **Rank law `r_b + r_w = 2`** is a theorem on every honest torus (PR #271's digital-Alexander duality, scope note PR #691): white NN+NNN image = symplectic orthogonal of black NN image, `C = A^perp`, `dim H_1(T²;Q) = 2`. The site L=3,4 census rows are finite *checks*, not its evidence base. Structural corollary used throughout: rank-2 on both colourings is impossible at any L, so `both-same × both-same` is structurally rank-1 × rank-1 (PR #668 observed it at L=3,4; the reason is the #271/#691 theorem).
+- **A′ (PR #676), consumption language.** The wrapping line `a_k = #cross_k − #none_k` is re-expressed in the joint `(rank pair × wrap × 5-name)` language of PR #668. The D-carrying cells are the **exclusive crosses**: `neither × both = (0,2)` (D = −1) and `both × neither = (2,0)` (D = +1); `both-same × both-same` is exactly `(1,1)`, D = 0.
+- **Conjecture 3.1 (directional duality)** — `(d_0,d_1)(G_b) = (d_0,d_1)(G_w)` config-wise — is the one open conjecture that several theorem-with-caveat rows hang on. Verified with zero violations at axis L=2,3,4 and diamond L=2 config-wise (PR #690) and at five-cell-support level at axis L=5 / diamond L=4 (PR #657 aggregates).
+
+## 1. The table
+
+| # | Row | Verdict | Scope | Carrying PR (quoted) |
+|---|-----|---------|-------|----------------------|
+| 1 | **Five-cell support** — only the five joint cells `(0,2) both`, `(2,0) both`, `(1,1) both-same ×2`, `(0,2)/(2,0) neither` carry mass; no other black-label × white-label cell is nonempty | theorem-with-caveat — **theorem at every L modulo Conjecture 3.1** (so A′'s support is forced and #673's onsets become corollaries modulo the conjecture); census-only at axis L=2,3,4,5 and diamond L=2,3,4 | #690: "Five-cell support ('no other joint cell has mass'): theorem at every L modulo Conjecture 3.1, so A′'s support (PR #676) is forced and #673's onsets become corollaries modulo the conjecture." |
+| 2 | **`r_b + r_w = 2`** | **theorem** on every honest torus, configurationwise; not a small-L census fact | #691: "Yes — `r_NN + r_NN+NNN = 2` is a theorem, configurationwise, on every honest square-cell torus. Proved in PR #271 … The site L=3,4 and bond L=3 census rows are finite *checks* of it, not its evidence base." |
+| 3 | **White label = f(black label) (Fact 2)**, row by row | see sub-rows | #690 verdict `theorem-with-caveat` |
+| 3a | — `none ↔ cross` | **theorem** at every honest L, both geometries, config-wise (from #271 duality + rank law + #683's `both-two ≡ 0`; no tables used) | #690: "`none ↔ cross` row: theorem at every L, both geometries, config-wise. Proved from the digital-Alexander duality already on main … No table used." |
+| 3b | — `x ↔ x`, `y ↔ y` | **theorem conditional on Conjecture 3.1** (directional duality); the naive symplectic computation gives the wrong axis — the 90° + matching-adjacency route is the correct one and is where the one-line argument dies | #690: "theorem conditional on Conjecture 3.1 (directional duality: `(d_0,d_1)(G_b) = (d_0,d_1)(G_w)` config-wise). The naive symplectic computation alone gives the wrong axis … Conjecture 3.1 verified config-wise with zero violations at axis L=2,3,4 and diamond L=2." |
+| 3c | — `spiral ↔ spiral` | **theorem for the structural half** (rank-1 both-directions both sides, never none/cross, via (†) + Conjecture 3.1); **census-only for the set-identity mechanism** at axis L=3,4 (PR #683) and config-wise axis L=2,3,4 / diamond L=2 (PR #690) — mechanism marked conjecture | #690: "`spiral ↔ spiral`: theorem for the structural half …; census-only for the set-identity mechanism … Marked conjecture." |
+| 4 | **D-carrying cells = exclusive crosses** (`neither × both = (0,2)`, D=−1; `both × neither = (2,0)`, D=+1) | **census-only** at axis L=3 (259 / 91) and L=4 (36 559 / 9 045); structurally forced at all L by row 2 (rank law) modulo Conjecture 3.1 for the label map | #676: "The D-carrying cells are named as exclusive crosses: `neither × both = (0,2)` (D=−1, 259 at L=3 / 36 559 at L=4) and `both × neither = (2,0)` (D=+1, 91 / 9 045)." |
+| 5 | **Spiral cell D = 0, config-wise** (`both-same × both-same` = exactly `(1,1)`, pure spiral, D=0 term-by-term; no involution needed — set identity: black-side and white-side rank-1 both-same are the *same configuration set*) | **census-only** — set identity verified at axis L=3 (6 = 6 = 6) and L=4 (1120 = 1120 = 1120, identical per-k masses `[120,416,448,128,8]` at k=8..12); the matching-lattice self-duality *mechanism* of the diagonal-winding event is a conjecture (verified as identity at L=3,4 only). Colour-flip is **dead** as the mechanism at L=4 (masses not palindromic) | #683: "**`cardinality-only`, sharpened: the equal cardinality is set identity, and D = 0 on `both-same × both-same` is config-wise — no involution pairing is needed.**" |
+| 6 | **`both-two = 0` from intersection number** (x-wrapping and y-wrapping clusters have homology-intersection number 1, so cannot be disjoint; they merge into one `both-same` cluster) | **theorem** (structural, geometry argument) + census verification: 0 violations at L=2 primal 5/matching 7, L=3 primal 97/matching 265, L=4 primal 10165/matching 37679. Independent of the spiral mechanism, so A-continues (#651) is forced | #683: "Q3: `both-two = 0` is independent and structural. An x-wrapping and a y-wrapping cluster have homology-intersection number 1, so they cannot be disjoint … Exhaustively verified (0 violations)." |
+| 7 | **Onset I1** (axis: `n×b = C(N,k)` for `k < L`; diamond: for `k < 2L`) | **theorem** (both geometries), thresholds sharp | #692: "**I1 (both geometries).** `n×b = C(N,k)` for `k < L` (axis) / `k < 2L` (diamond): below the minimal winding mass black wraps neither, duality forces the cell. Thresholds sharp." |
+| 8 | **Onset I2** (axis: `b×n = C(N,k)` for `k ≥ N−L+1`, strict at `k = N−L`) | **theorem** (both geometries, diamond included — complement bound is L, not 2L) | #692: "**I2 (both geometries).** … with ≤ L−1 missing sites, some full straight line is black on **both** tori (diamond included — the complement bound is L, not 2L); white (≤ L−1 sites) cannot wind either lattice." |
+| 9 | **Onset axis I3** (`d0(L) = d1(L) = L`; `b×n(2L−1) = L²`; `b×n = 0` below `2L−1`) | **theorem** (axis) | #692: "**Axis I3.** `d0(L) = d1(L) = L` — every `k=L` dir0-wrapping black set **is** a full row (minimum-cycle equality case); white side direct (barrier band). `b×n(2L−1) = L²` … Onset `b×n = 0` below `2L−1` proved by the shared-vertex union bound." |
+| 10 | **Onset axis I4** (`C − n×b = d0 + d1` for `L ≤ k < 2L−1`) | **theorem** (axis) | #692: "**Axis I4.** `C − n×b = d0 + d1` for `L ≤ k < 2L−1` (b×n = b×b = 0 there, by the onset proof)." |
+| 11 | **Diamond `b×b(2L) = 2L`** | **theorem** (corrects #669's conjecture) | #692: "**`b×b(2L) = 2L` — PROVED.** At `k = 2L` the only black-both sets are the `2L` straight diagonal lines …; white's **sibling lines** are fully white and wind both, forcing cell `b×b`." |
+| 12 | **Diamond `d0(2L) = L·C(2L,L)`** — **and the kill of #669's `4·C(2L,4)`** | **theorem** (black side): the dir0-winding 2L-site black sets are exactly the drift-0 mixed cycles, bijective with (start parity: L choices) × (step word with L ups/L downs: `C(2L,L)`). Values 12 (L=2, brute), 60, 280 — committed tables confirm 60 and 280. **`4·C(2L,4)` fails at L=2 (4 ≠ 12): a two-point coincidence, KILLED.** Corrected diamond L=5 prediction: `d0(10) = 5·C(10,5) = 1260`, not 840 | #692: "**`d0(2L) = L·C(2L,L)` — PROVED (black side), and #669's `4·C(2L,4)` is KILLED.** … it was a two-point coincidence." |
+| 13 | **Diamond `b×n` onset `3L−1` / value `4L²`** | **OPEN** with geometric reading (full diagonal line + (L−1)-site NN plug; count `4L² = 2 × L × 2L`); brute-exact at L=2,3; consistent with committed L=4 value 64. General onset for `2L ≤ k < 3L−1` and the plug classification open, pointed at the #669 falsification kit (diamond L=5: onset `k=14`, value 100) | #692: "**Diamond `b×n` onset `3L−1` / value `4L²` — OPEN**, with a geometric reading. … The general onset … and the plug classification are left **OPEN**, pointed at the #669 falsification kit." |
+| 14 | **`F_L = (1 + M_L)/2`** — exact polynomial identity of the rank triple | **theorem** on the committed axis L=3,4 tables, coefficientwise over `Fraction`: `P_0+P_1+P_2 = 1`; `M = P_2 − P_0` reproduces committed `M_poly_L{3,4}` bit-for-bit; per-configuration `D = r − 1` on `r ∈ {0,1,2}` is the structural reason. Boundaries: `F_3(1/2) = 43/128`, `F_4(1/2) = 19011/65536`. **All-L status: not asserted** (the note works on committed tables; whether the identity is config-wise forced at every L follows from row 2's per-configuration `D = r−1` — it is a theorem at every honest L by the same pointwise argument) | #684: "`F_L = (1 + M_L)/2` is a **theorem — an exact polynomial identity of the rank triple**, not a coding convention, on the committed axis L=3,4 tables … Structural reason: per configuration `D = 1{r=2} − 1{r=0} = r − 1` pointwise." |
+| 15 | **Corollary `p*_L = Q_L(1/2)`** | **theorem-level consequence** of row 14 on the same tables: committed `Q_L(0.5)` equals `p_L^H` bit-for-bit at both L; reconciled with `M_L(1/2) ≠ 0` ⇒ `p*_L ≠ 1/2` | #684: "Corollary `p*_L = Q_L(1/2)`: recorded; committed `Q_L(0.5)` equals `p_L^H` bit-for-bit at both L." |
+| 16 | **One-operator map at finite L — obstruction** (`D`-carrying amplitudes are probability counts, not eigenvalues; no one-operator finite-L reading exists) | **theorem** (exact, at every finite L): O1 type mismatch, O2 one operator ⇒ one graph (neither black NN wrap nor white NN+NNN wrap is measurable on one graph's connectivity algebra), O3 limits-first is the only surviving reading | #675: "**O1 (type mismatch, exact).** … **O2 (one operator ⇒ one graph, exact).** … **O3 (limits-first).** The only surviving reading: after m→∞ at fixed n." |
+
+## 2. What is NOT in the table (scope discipline)
+
+- **Axis L=5 joint config-level census** — not run anywhere (NEED_HUAWEI in #668/#683/#690); only PR #657's aggregate five-cell support tables exist, used as checks in #690.
+- **Diamond L=4/L=5 config-level** — not enumerated here; PR #657 aggregates + #692's brute-exact small-L checks are the only diamond facts quoted.
+- **#636 (sector-level transfer matrix) — not funded.** On the contrary, PR #676's §5 is *strengthened*: the sector amplitudes are not rank-pure (#668), so any future sector-level TM reading must first split `both-same` by rank, an extra cost the old dictionary hid. PR #675's Lemma A (NN+NNN frontier states are noncrossing, verified w≤6) is *evidence against* the feared cost blow-up, but the ticket's obstruction verdict stands.
+- **`M_L` irreducibility over ℚ** — a factorization fact at the five committed sizes, not a wrapping theorem; recorded in #692, not pursued.
+
+## 3. Reader's digest — one line per row
+
+1. Five-cell support: theorem modulo Conjecture 3.1 (#690); census at axis L=2–4, diamond L=2 (#690 fresh) and L=5/diamond L=4 aggregates (#657).
+2. Rank sum = 2: theorem, all honest tori (#271 via #691).
+3. Fact 2 label map: none↔cross theorem (#690); x↔x, y↔y theorem modulo Conjecture 3.1 (#690); spiral↔spiral structural half theorem, set-identity mechanism census-only L=3,4 (#683, #690).
+4. D-cells = exclusive crosses: census L=3,4 (#668, #676); forced at all L by rows 1–2.
+5. Spiral D=0 config-wise: census L=3,4 as set identity (#683); mechanism conjectural.
+6. both-two = 0: theorem (intersection number) + census 0 violations (#683).
+7–10. Axis onsets I1–I4: theorems (#692).
+11–12. Diamond `b×b(2L) = 2L` and `d0(2L) = L·C(2L,L)`: theorems (#692); #669's `4·C(2L,4)` killed at L=2; diamond L=5 prediction corrected 840 → 1260.
+13. Diamond `b×n` onset `3L−1`/`4L²`: OPEN (#692).
+14–15. `F = (1+M)/2`, `p*_L = Q_L(1/2)`: exact identity on committed L=3,4 tables (#684); all-L status follows config-wise from row 2.
+16. One-operator obstruction: theorem, exact (#675).
+
+## 4. Open items a future sheet must resolve
+
+- **Conjecture 3.1** (directional duality) — the single hinge on which rows 1, 3b, 3c and the all-L corollaries of rows 4–5 turn. Any proof or L≥5 counterexample re-labels four rows at once.
+- **Diamond `b×n` general onset and plug classification** (row 13) — falsification kit live at diamond L=5 (`k=14`, value 100).
+- **Spiral set-identity mechanism** (row 5/3c) — matching-lattice self-duality of the diagonal-winding event, verified only at L=3,4.
+- **`F = (1+M)/2` beyond the committed tables** — the pointwise `D = r−1` argument makes it all-L modulo nothing (it uses only the rank law), but the row-14 note scoped its checks to L=3,4; a one-line all-L restatement is free but unrecorded in the carrying PR.
+
+## Provenance
+
+Read only: issue #686 body + comments; PR bodies #668, #675, #676, #683, #684, #690, #691, #692 (all OPEN, base main, as of 2026-09-08); the memory of prior sessions only for workflow convention, not for content. No census re-run, no script executed, no computation performed. All integers quoted verbatim from the carrying PRs' own texts. Boundaries honored: no STATUS edit, no ticket closed or commented-closed, no merge, #636 not funded, no Huawei, no new census, no L=5 joint.
