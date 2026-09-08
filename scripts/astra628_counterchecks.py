@@ -32,10 +32,10 @@ def main():
     contractible=[(0,1,1,0),(1,4,0,1),(3,4,1,0),(0,3,0,1)]
     namespace={}
     code=inspect.getsource(c.bond_ambient_rank)
-    assert 'sx, sy = ax + dx, ay + dy' in code
-    exec(code.replace('sx, sy = ax + dx, ay + dy','sx, sy = ax - dx, ay - dy'),namespace)
-    fixed=namespace['bond_ambient_rank']
-    assert c.bond_ambient_rank(contractible)==1 and fixed(contractible)==0
+    assert 'sx, sy = ax - dx, ay - dy' in code
+    exec(code.replace('sx, sy = ax - dx, ay - dy','sx, sy = ax + dx, ay + dy'),namespace)
+    broken=namespace['bond_ambient_rank']
+    assert c.bond_ambient_rank(contractible)==0 and broken(contractible)==1
     comps=c.site_rank_pair_components(3);m,f=c.M_and_F_from_components(comps)
     alt={**comps,'P11':[F(3,2)*v for v in comps['P11']]}
     m1,f1=c.M_and_F_from_components(alt)
@@ -64,7 +64,7 @@ def main():
         oracle_mismatches=0
         for mask in range(count):
             edges=[p.primal for i,p in enumerate(pairs) if mask>>i&1]
-            bad[mask]=c.bond_ambient_rank(edges);good[mask]=fixed(edges)
+            bad[mask]=broken(edges);good[mask]=c.bond_ambient_rank(edges)
             uf=HomologyUnionFind(9,(3,3))
             for edge in edges:uf.add_edge(*edge)
             basis=[]
@@ -91,7 +91,7 @@ def main():
         for mask in range(count):
             dedges=[pairs[dest[i]].primal for i in range(nb)
                     if not(mask>>dest[i]&1)]
-            as_written_failures+=int(bad[mask]+c.bond_ambient_rank(dedges)!=2)
+            as_written_failures+=int(bad[mask]+broken(dedges)!=2)
         assert as_written_failures==118133
         # The correct float CDF uses raw count coefficients without another binomial factor.
         coefficients=[F(0)]*(nb+1)
