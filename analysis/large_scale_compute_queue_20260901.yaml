@@ -1,0 +1,123 @@
+schema_version: 1
+as_of: '2026-09-01'
+purpose: >-
+  Machine-readable inventory of genuinely unacquired large-scale computation.
+  Presence in this file is not permission to launch a run; each entry carries
+  its own activation gate and stop rule.
+
+current_p0:
+  issue: 275
+  state: theory_and_existing_assets_first
+  large_production_queued: false
+  next_action: >-
+    Derive and score same-source, same-observer, same-normalizer restricted
+    rank-0/rank-2 source-thermal columns using existing covariance. Authorize
+    one fresh block only if a unique indispensable coordinate is absent.
+
+unacquired_large_scale:
+  - id: pell_hexagonal_character
+    issues: [156, 159]
+    acquisition_state: not_started
+    proposed_sizes: [418, 780]
+    first_population: square_bond_control
+    later_population: square_site_matching_full_curve
+    activation_gate: >-
+      Freeze a typed C3/H4 projector, continuum baseline at the actual Pell
+      modulus, covariance construction, and an exact/control demonstration.
+    hardware: cpu_parallel
+    recommended_pool: huawei_16vcpu_32g
+    priority_if_gate_passes: highest_unacquired_large_scale
+    stop_rule: >-
+      Do not promote to square-site production if the control does not recover
+      the predicted character organization after continuum-shape subtraction.
+
+  - id: gaussian_commuting_square
+    issues: [158]
+    acquisition_state: zero_target_data_cost_gated_closed
+    proposed_sizes: [650, 850]
+    signal_target: root_character_7_over_1250
+    power_projection:
+      samples_N650: 27210000000
+      samples_N850: 55180000000
+      joint_direction_samples_per_stream: 17880000000
+    hardware: cpu_parallel_but_impractical_at_current_budget
+    priority_if_reopened: do_not_launch_without_new_variance_or_signal_leverage
+    stop_rule: >-
+      The existing power gate closes nominal 500M production. Reopen only with
+      a prospective discriminator and a material cost reduction; Gaussian CRN
+      can improve variance by at most about 2.34 percent under the audited bound.
+
+  - id: transfer_matrix_frontier
+    issues: [11, 31]
+    acquisition_state: subfrontier_reproduction_and_profile_not_completed
+    reproduce_through_width: 24
+    frontier_widths: [25, 26, 27, 28]
+    activation_gate: >-
+      Reproduce declared published widths and digits, independently validate
+      state canonicalization, and measure state counts, bytes per state, peak
+      RSS, transition cost, eigensolver convergence, and checkpoint restart.
+    hardware: high_memory_cpu
+    current_huawei_role: subfrontier_reproduction_and_resource_model_only
+    likely_frontier_memory: 256_GB_or_more_to_be_measured
+    gpu_role: none_unless_profiling_finds_a_regular_arithmetic_kernel
+    stop_rule: >-
+      Do not rent frontier memory or claim width extension from extrapolation
+      alone; the measured probe must select 32 GB, 128/256/512 GB, or an
+      algorithm-improvement decision.
+
+  - id: rigorous_block_event_confidence
+    issues: [112]
+    acquisition_state: evaluator_and_preregistration_complete_real_iid_zero
+    trials_per_attempt: 400
+    success_cutoff: 373
+    maximum_attempts_per_side: 3
+    sides: [square_upper, matching_lower]
+    activation_gate: >-
+      Freeze a scientifically useful geometric cell size, genuine-IID/randomness
+      provenance, exploratory power estimate, and final domain separation.
+    hardware: cpu_parallel
+    recommended_pool: huawei_16vcpu_32g
+    priority_if_gate_passes: long_horizon_P2
+    stop_rule: >-
+      Do not spend production compute if the chosen scale is not expected to
+      put the block-event probability in the high-power regime; do not reuse
+      exploratory samples in the final confidence ledger.
+
+unacquired_medium_scale:
+  - id: boolean_spectral_sample_pilot
+    issues: [227]
+    acquisition_state: exact_oracles_exist_large_pilot_not_started
+    proposed_size: 65
+    base_configurations: [100000, 1000000]
+    noise_grid_points: [5, 7]
+    activation_gate: >-
+      Freeze the observable family, noise grid, counter domain, and one
+      covariance-aware curve score rather than scoring rho points separately.
+    hardware: cpu_parallel
+    recommended_pool: huawei_16vcpu_32g
+
+conditional_not_queued:
+  - issue: 275
+    reason: existing_algebra_and_covariance_first
+    forbidden_duplicate: gaussian_ideal_angle_extension_with_same_character
+  - issue: 537
+    reason: proof_first_after_N65_20M_and_N145_200M
+    forbidden_duplicate: new_size_topup_radius_distance_momentum_or_descriptor_grid
+
+completed_do_not_repeat:
+  - p57_norm5_N325_N425_500M
+  - p50_N145_N290_full_curve
+  - p154_N85_5M_N340_160M_prospective_transmission
+  - p334_N325_N425_independent_interventions
+  - p537_N65_20M_contact_stage
+  - p537_N145_200M_full_T
+  - p267_N100_N400_N900_shape_clock_production
+  - gaussian_ideal_C3_N65_N145
+  - hnf_exact_frontier_through_index_13
+
+execution_policy:
+  default_large_run_location: huawei_cloud_cpu
+  local_machine_role: contracts_smoke_scoring_and_small_exact_work
+  gpu_rental_needed: false
+  raw_block_coordination: one_covariance_owner_per_random_block
+  launch_rule: freeze_observable_prediction_covariance_budget_and_stop_rule_first
