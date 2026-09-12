@@ -1,0 +1,48 @@
+{
+  "schema": "matching-one.n580-complete-covariance-summary.20260912",
+  "provenance": {
+    "origin": "Selected fields extracted from successful GitHub Actions stdout; eight D scores independently recomputed locally from the recovered vector and covariance, not from a local shard checkout.",
+    "run_id": 34679359201,
+    "job_id": 103514945963,
+    "head_sha": "eb78265a7016c99c75f5ecc4a162973c448bf4ee",
+    "checkout_sha": "dda2a8e2dcb9e5a4a9215cb1f1877a4aa016b189",
+    "command": "python scripts/recover_n580_covariance.py",
+    "runner_python": "3.11.16",
+    "runner_mpmath": "1.4.1",
+    "local_max_statistic_difference": 0.0
+  },
+  "standing": "Retrospective three-rung reanalysis of the same existing block. Original frozen two-rung verdict unchanged.",
+  "batches": 100,
+  "rungs": [1, 2, 4],
+  "response_vector": [0.0009016433036753112, 0.0029109770266212776, 0.004131807633330795],
+  "covariance": [
+    [6.207020770273794e-8, 1.3480872826970252e-9, -8.011196220988015e-9],
+    [1.3480872826970252e-9, 6.713835319545046e-8, 5.5621485097801135e-9],
+    [-8.011196220988015e-9, 5.5621485097801135e-9, 3.807514679910218e-8]
+  ],
+  "covariance_rank": 3,
+  "covariance_condition_number": 1.9678931965099733,
+  "correlation_r2_r4": 0.11001108422637242,
+  "curvature": {
+    "value": -0.00046630613986373587,
+    "standard_error": 0.0001499079748299409,
+    "z_nominal": -3.110615965513005
+  },
+  "competitors": {
+    "bare_aspect_ratio": {"ray": [1,2,4], "statistic": 10.86445991488253, "degrees_of_freedom": 2, "p_value_nominal": 0.004373332575404287, "equivalent_sigma_diagnostic": 2.849897460536986, "excluded_at_nominal_3_sigma": false},
+    "no_modulus_dependence": {"ray": [1,1,1], "statistic": 89.85851023621422, "degrees_of_freedom": 2, "p_value_nominal": 3.072362291533769e-20, "equivalent_sigma_diagnostic": 9.216402139538845, "excluded_at_nominal_3_sigma": true},
+    "plain_area_scaling": {"ray": [1,4,16], "statistic": 57.512493327374884, "degrees_of_freedom": 2, "p_value_nominal": 3.245792509791233e-13, "equivalent_sigma_diagnostic": 7.2837862071923, "excluded_at_nominal_3_sigma": true},
+    "q4_jordan_weight4": {"ray": [1,2.75,10.9908008589], "statistic": 55.58771053243131, "degrees_of_freedom": 2, "p_value_nominal": 8.497321045543934e-13, "equivalent_sigma_diagnostic": 7.1528843204156916, "excluded_at_nominal_3_sigma": true},
+    "weight12_E12": {"ray": [1,32.515625,2080.30719731], "statistic": 132.26732359383956, "degrees_of_freedom": 2, "p_value_nominal": 1.898959111319179e-29, "equivalent_sigma_diagnostic": 11.267494938720372, "excluded_at_nominal_3_sigma": true},
+    "weight12_E4_cubed": {"ray": [1,20.796875,1327.6635036], "statistic": 132.22611687853123, "degrees_of_freedom": 2, "p_value_nominal": 1.938489879957022e-29, "equivalent_sigma_diagnostic": 11.265680304319943, "excluded_at_nominal_3_sigma": true},
+    "weight12_delta": {"ray": [1,0.125,2.79010739704e-5], "statistic": 513.6592181764852, "degrees_of_freedom": 2, "p_value_nominal": 2.8861439189966654e-112, "equivalent_sigma_diagnostic": null, "excluded_at_nominal_3_sigma": true},
+    "weight8_E8": {"ray": [1,7.5625,120.79770352], "statistic": 115.80437790454678, "degrees_of_freedom": 2, "p_value_nominal": 7.135080016926461e-26, "equivalent_sigma_diagnostic": 10.518028644032594, "excluded_at_nominal_3_sigma": true}
+  },
+  "boundaries": [
+    "Not rejected at the declared nominal 3-sigma threshold does not establish a law.",
+    "Pure-line decisions are conditional on the declared amplitude/readout contract.",
+    "A common H8/H4 ratio is stronger than a uniform bound on rung-specific ratios.",
+    "Estimated jackknife covariance; Gaussian-reference p-values, not exact finite-sample coverage.",
+    "Null extreme-tail sigma is an unresolved numerical conversion, not infinite evidence."
+  ]
+}
