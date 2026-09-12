@@ -1,0 +1,210 @@
+{
+  "schema": "matching-one.thin-torus-geometric-controls.v1",
+  "standing": "Exact finite controls; the all-width asymptotic proof is in the note.",
+  "motifs": [
+    {
+      "width": 2,
+      "length": 5,
+      "subsets_checked": 45,
+      "central_trinomial": 3,
+      "minimal_cycle_sets": 15,
+      "classification_exact": true,
+      "unordered_overlapping_pairs_by_union_size": {
+        "3": 30
+      }
+    },
+    {
+      "width": 3,
+      "length": 7,
+      "subsets_checked": 1330,
+      "central_trinomial": 7,
+      "minimal_cycle_sets": 49,
+      "classification_exact": true,
+      "unordered_overlapping_pairs_by_union_size": {
+        "4": 105,
+        "5": 231
+      }
+    },
+    {
+      "width": 4,
+      "length": 9,
+      "subsets_checked": 58905,
+      "central_trinomial": 19,
+      "minimal_cycle_sets": 171,
+      "classification_exact": true,
+      "unordered_overlapping_pairs_by_union_size": {
+        "5": 468,
+        "6": 1296,
+        "7": 2160
+      }
+    }
+  ],
+  "barriers": [
+    {
+      "width": 2,
+      "length": 3,
+      "configurations_checked": 64,
+      "full_and_empty_row_cases": 18,
+      "rank_one_in_every_case": true
+    },
+    {
+      "width": 3,
+      "length": 4,
+      "configurations_checked": 4096,
+      "full_and_empty_row_cases": 590,
+      "rank_one_in_every_case": true
+    }
+  ],
+  "births": [
+    {
+      "width": 2,
+      "length": 3,
+      "sites": 6,
+      "permutations_counted": 720,
+      "joint_K1_K2": [
+        [
+          2,
+          4,
+          48
+        ],
+        [
+          2,
+          5,
+          96
+        ],
+        [
+          3,
+          4,
+          168
+        ],
+        [
+          3,
+          5,
+          192
+        ],
+        [
+          4,
+          4,
+          72
+        ],
+        [
+          4,
+          5,
+          144
+        ]
+      ],
+      "continuous_birth_mean_T1": "31/70",
+      "continuous_birth_mean_T2": "23/35",
+      "continuous_birth_covariance": "1123/58800",
+      "finite_births_claimed_independent": false,
+      "rank_CDF_reconstruction": [
+        {
+          "p": "1/3",
+          "F_exact": "5/27"
+        },
+        {
+          "p": "1/2",
+          "F_exact": "13/32"
+        },
+        {
+          "p": "2/3",
+          "F_exact": "2/3"
+        }
+      ]
+    },
+    {
+      "width": 3,
+      "length": 3,
+      "sites": 9,
+      "permutations_counted": 362880,
+      "joint_K1_K2": [
+        [
+          3,
+          5,
+          5184
+        ],
+        [
+          3,
+          6,
+          10368
+        ],
+        [
+          3,
+          7,
+          10368
+        ],
+        [
+          4,
+          5,
+          15552
+        ],
+        [
+          4,
+          6,
+          31104
+        ],
+        [
+          4,
+          7,
+          31104
+        ],
+        [
+          5,
+          5,
+          5184
+        ],
+        [
+          5,
+          6,
+          62208
+        ],
+        [
+          5,
+          7,
+          62208
+        ],
+        [
+          6,
+          6,
+          25920
+        ],
+        [
+          6,
+          7,
+          103680
+        ]
+      ],
+      "continuous_birth_mean_T1": "1/2",
+      "continuous_birth_mean_T2": "13/20",
+      "continuous_birth_covariance": "1/56",
+      "finite_births_claimed_independent": false,
+      "rank_CDF_reconstruction": [
+        {
+          "p": "1/3",
+          "F_exact": "2131/19683"
+        },
+        {
+          "p": "1/2",
+          "F_exact": "43/128"
+        },
+        {
+          "p": "2/3",
+          "F_exact": "13016/19683"
+        }
+      ]
+    }
+  ],
+  "permutation_control": {
+    "width": 2,
+    "length": 3,
+    "permutations_explicitly_checked": 720,
+    "DP_matches_explicit_permutations": true
+  },
+  "elapsed_seconds": 0.3685099869999817,
+  "limits": [
+    "No new Monte Carlo.",
+    "Motif checks do not replace the all-width proof.",
+    "Finite joint birth times are not asserted independent.",
+    "Thin rectangles are not the existing Gaussian square-size lineage."
+  ]
+}
