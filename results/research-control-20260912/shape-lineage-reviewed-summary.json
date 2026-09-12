@@ -1,0 +1,79 @@
+{
+  "schema": "matching-one.shape-lineage-reviewed-summary.v1",
+  "provenance": {
+    "source_pr": 706,
+    "original_head": "b52e3a35d2c88dfc1bf0c17508d3dc4ce5d570f1",
+    "analysis_head": "eff8c5e158fb9be93ffde27ba80bc958eff34573",
+    "tested_checkout": "51f9817c59fcf757858c0338ec724aa4992e0d94",
+    "run_id": 34684353419,
+    "job_id": 103528608026,
+    "extraction": "Selected fields from successful workflow stdout; no local raw-histogram execution claimed.",
+    "commands": ["python scripts/shape_lineage_review.py --compact", "python scripts/shape_lineage_nonlinear_jackknife.py"],
+    "python": "3.11.16", "numpy": "2.4.6", "mpmath": "1.4.1",
+    "nonlinear_jackknife_seconds": 94.701292925,
+    "sizes": [145,290,725], "batches_each": 100,
+    "pooled_Q_reproduction_max_error_each": [0.0,0.0,0.0],
+    "new_mathematical_tests_in_job": 7
+  },
+  "standing": "Same-block retrospective C2. No new Monte Carlo. Primary means remain pooled. Separate-size nonlinear jackknife preserves shared source-parameter uncertainty.",
+  "spin0": {
+    "W": [0.1192132990525685,0.09220375008670778,0.0655307631613844],
+    "W_se_corrected_nonlinear_jackknife": [3.673003868245788e-6,2.7376743352140806e-6,2.3225615714368353e-6],
+    "original_W_se_underestimate_factor": 99,
+    "A_norm_over_W": [0.25596347088939625,0.2563966099148876,0.25684652426999793],
+    "median_K": [-0.5114744326734895,-0.5106359059300316,-0.5109381126012549],
+    "median_K_se_delta_method": [0.000497740271566851,0.000716199904923753,0.0012305448618028223],
+    "interval_norm_difference": {
+      "order": ["Z", "A"],
+      "values": [-0.0003775391993112113,-0.00006467749063354157],
+      "se_nonlinear_jackknife": [0.000041770605874472596,0.00007209952865886088],
+      "z_absolute_delta_method": [9.038398095446796,0.8970578664077554],
+      "covariance_nonlinear_jackknife": [[1.7447835151205247e-9,2.8745450229616183e-9],[2.8745450229616183e-9,5.198342032829903e-9]]
+    },
+    "constant_A_over_W": {
+      "statistic_nonlinear_jackknife": 309.74894908592194, "df": 8,
+      "log10_p_nominal": -61.46090207508884,
+      "covariance_condition": 250347341.41731784,
+      "jk_vs_delta_generalized_eigenvalue_range": [0.999996433054753,1.0000050927779291]
+    },
+    "source_fixed_quadratic_chart": {
+      "formula": "phi(p)=p+beta*(p-.5)^2; beta from N145 median only, unchanged on N290/N725",
+      "beta": 0.2684067158014451,
+      "beta_se_nonlinear_jackknife": 0.0002742088523676437,
+      "minimum_derivative_on_unit_interval": 0.7315932841985548,
+      "target_sizes": [290,725],
+      "target_residual_norm_divided_by_raw_A_norm": [0.002670812060269795,0.0006801362114115651],
+      "target_residual_vector": [-0.00005862603142836598,-0.000004362474088637214,-0.000014161819340108295,-0.000018167351405695698,-0.00000287057258496759,-0.0000045768900747145125,-0.000006855162828056649,-0.000007407185860897059],
+      "target_joint_statistic_nonlinear_jackknife": 105.90800198575138,
+      "target_df": 8, "target_log10_p_nominal": -18.579257848266177,
+      "target_covariance_condition": 130773158.93150532,
+      "target_jk_vs_delta_generalized_eigenvalue_range": [0.9999982110684118,1.0000023844390982],
+      "source_other_three_coordinates_statistic": 797.3429633626016,
+      "source_df": 3, "source_log10_p_nominal": -171.7875182857999
+    },
+    "leading_smooth_chart_normal_form": {
+      "formula": "A/W = K*(X^2-1/4) + O(W^2), X=(Z-Z_reflected)/2, K_mid=-4*A(.5)/W",
+      "exact_zero_statistics_nonlinear_jackknife": [916.9528728644561,86.07696959293801,7.307863800794209],
+      "df_each": 3,
+      "log10_p_nominal_each": [-197.73020000037718,-17.817032607924222,-1.202688807407164],
+      "interpretation": "The asymptotic lemma permits O(W^2) residuals. Finite exact-zero rejection is NOT rejection of all smooth coordinates; N725 compatibility is NOT proof of one."
+    }
+  },
+  "equal_weighting_sensitivity_delta_method": {
+    "A_norm_over_W": [0.25577603926914116,0.2564966342055952,0.25674110309636516],
+    "beta": 0.2682159071760094, "beta_se": 0.00027394126616631315,
+    "target_residual_norm_divided_by_raw_A_norm": [0.0032368146837867453,0.0005224651743859779],
+    "target_quadratic_joint_statistic": 117.19095228683081, "df": 8,
+    "target_log10_p_nominal": -20.8998325347859,
+    "constant_A_over_W_statistic": 333.06329208857824,
+    "interval_change_absolute_z": [8.386138607596148,0.2331320501361479],
+    "standing": "Same random blocks; not an independent vote. Full nonlinear second pass was primary spin0 only."
+  },
+  "limits": [
+    "Norm reduction is not explained variance, a causal attribution, or operator identification.",
+    "A common quadratic chart removes most raw asymmetry but is not an exact full-vector law.",
+    "The high-condition covariance diagnostics are nominal Gaussian-reference values; nonlinear-jackknife agreement checks propagation, not exact finite-sample tail calibration.",
+    "Do not fit successive higher-degree polynomials to rescue the null.",
+    "Original v1 source artifact is preserved; its W_se and interval-to-interval independent-error fields are superseded."
+  ]
+}
