@@ -1,0 +1,334 @@
+{
+  "schema": "matching-one.rectangle-rank-odds-controls.v1",
+  "status": "finite controls for a proof using Harris association and subcritical one-arm decay",
+  "sign_certificates": [
+    {
+      "width": 16,
+      "radius": 2,
+      "one_arm_upper_bound": "3/250",
+      "slab_upper_bound": "24/125",
+      "comparison_exponent": 96,
+      "exact_margin_positive": true,
+      "uniform_sign_certified": true,
+      "exact_margin_expression": "(1-alpha)^(2*w*(R+1))-w*alpha",
+      "margin_numerator_bits": 762,
+      "margin_denominator_bits": 765,
+      "gamma_diagnostic": 0.08188201807741816,
+      "scope": "all integer lengths m>=width, if the supplied one-arm upper bound is valid",
+      "p": "1/10",
+      "graph_degree": 4,
+      "input_certificate": "simple-path union bound; no unknown empirical constant"
+    },
+    {
+      "width": 16,
+      "radius": 2,
+      "one_arm_upper_bound": "7/1000",
+      "slab_upper_bound": "14/125",
+      "comparison_exponent": 96,
+      "exact_margin_positive": true,
+      "uniform_sign_certified": true,
+      "exact_margin_expression": "(1-alpha)^(2*w*(R+1))-w*alpha",
+      "margin_numerator_bits": 956,
+      "margin_denominator_bits": 957,
+      "gamma_diagnostic": 0.2524822289564091,
+      "scope": "all integer lengths m>=width, if the supplied one-arm upper bound is valid",
+      "p": "1/20",
+      "graph_degree": 8,
+      "input_certificate": "simple-path union bound; no unknown empirical constant"
+    },
+    {
+      "width": 256,
+      "radius": 32,
+      "one_arm_upper_bound": "617673396283947/18446744073709551616",
+      "slab_upper_bound": "617673396283947/72057594037927936",
+      "comparison_exponent": 16896,
+      "exact_margin_positive": true,
+      "uniform_sign_certified": true,
+      "exact_margin_expression": "(1-alpha)^(2*w*(R+1))-w*alpha",
+      "margin_numerator_bits": 1081344,
+      "margin_denominator_bits": 1081345,
+      "gamma_diagnostic": 0.0635379337724439,
+      "scope": "all integer lengths m>=width, if the supplied one-arm upper bound is valid",
+      "p": "1/4",
+      "graph_degree": 4,
+      "input_certificate": "simple-path union bound; no unknown empirical constant"
+    }
+  ],
+  "tiny_controls": {
+    "exhaustive_graph_configurations": 131072,
+    "models": [
+      {
+        "graph": "NN",
+        "width": 4,
+        "length": 4,
+        "configurations_checked": 65536,
+        "rank_totals": [
+          36559,
+          19932,
+          9045
+        ],
+        "rank_counts_by_occupation": [
+          [
+            1,
+            16,
+            120,
+            560,
+            1812,
+            4272,
+            7448,
+            9440,
+            8082,
+            3984,
+            792,
+            32,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            8,
+            96,
+            560,
+            1984,
+            4580,
+            6368,
+            4704,
+            1472,
+            160,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            16,
+            208,
+            1088,
+            2512,
+            2864,
+            1660,
+            560,
+            120,
+            16,
+            1
+          ]
+        ],
+        "comparisons": [
+          {
+            "p": "1/10",
+            "P0": "9991754668952271/10000000000000000",
+            "P2": "21871721557/10000000000000000",
+            "all_no_arm_probability": "7757756385390567/10000000000000000",
+            "FKG_P0_lower": "57125244999226064840458852424351587369729378632991366165872845135126086326536961/100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "exact_slab_crossing_probability": "3940399/100000000",
+            "independent_slab_P2_upper": "15526744279201/10000000000000000",
+            "one_arm_slab_P2_upper": "11826721/625000000",
+            "inequalities_exact": true,
+            "information": {
+              "E": "2497944135168457/2500000000000000",
+              "conditional_H": "21871721557/9991776540673828",
+              "H_derivative": "987191831432577261272963400/6239724902422490575327767760849",
+              "rank_Fisher_information": "6143435284913078065077485213751278592999/4529984725189184474100677907769531250000",
+              "activity_information": "1052561389234309746278400/782721459937802876426191",
+              "conditional_information_per_original_snapshot": "412601276925606715777222030116677861151333561/36112282522064154182569722327247124105468750000",
+              "exact_decomposition": true
+            }
+          },
+          {
+            "p": "1/3",
+            "P0": "38405120/43046721",
+            "P2": "484673/43046721",
+            "all_no_arm_probability": "4997632/43046721",
+            "FKG_P0_lower": "1015593790680526778210669542150045696/147808829414345923316083210206383297601",
+            "exact_slab_crossing_probability": "2465/6561",
+            "independent_slab_P2_upper": "6076225/43046721",
+            "one_arm_slab_P2_upper": "1",
+            "inequalities_exact": true,
+            "information": {
+              "E": "38889793/43046721",
+              "conditional_H": "484673/38889793",
+              "H_derivative": "397877045796864/1512415999582849",
+              "rank_Fisher_information": "1336299246146238349312/78432416299914739335",
+              "activity_information": "3775488196608/315746229367",
+              "conditional_information_per_original_snapshot": "1908590658420618885136384/375689177779715498261745",
+              "exact_decomposition": true
+            }
+          },
+          {
+            "p": "1/2",
+            "P0": "36559/65536",
+            "P2": "9045/65536",
+            "all_no_arm_probability": "743/65536",
+            "FKG_P0_lower": "48661191875666868481/1208925819614629174706176",
+            "exact_slab_crossing_probability": "175/256",
+            "independent_slab_P2_upper": "30625/65536",
+            "one_arm_slab_P2_upper": "1",
+            "inequalities_exact": true,
+            "information": {
+              "E": "11401/16384",
+              "conditional_H": "9045/45604",
+              "H_derivative": "324024008/129982801",
+              "rank_Fisher_information": "285878389994501/8788049495280",
+              "activity_information": "303038464/56811183",
+              "conditional_information_per_original_snapshot": "1640493090006001/60320621490480",
+              "exact_decomposition": true
+            }
+          }
+        ]
+      },
+      {
+        "graph": "NN+NNN",
+        "width": 4,
+        "length": 4,
+        "configurations_checked": 65536,
+        "rank_totals": [
+          9045,
+          19932,
+          36559
+        ],
+        "rank_counts_by_occupation": [
+          [
+            1,
+            16,
+            120,
+            560,
+            1660,
+            2864,
+            2512,
+            1088,
+            208,
+            16,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            160,
+            1472,
+            4704,
+            6368,
+            4580,
+            1984,
+            560,
+            96,
+            8,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            32,
+            792,
+            3984,
+            8082,
+            9440,
+            7448,
+            4272,
+            1812,
+            560,
+            120,
+            16,
+            1
+          ]
+        ],
+        "comparisons": [
+          {
+            "p": "1/10",
+            "P0": "9883835992257237/10000000000000000",
+            "P2": "5706487944271/10000000000000000",
+            "all_no_arm_probability": "1310755478808321/2000000000000000",
+            "FKG_P0_lower": "391319373606687166436978500344352160054307264910131730112040840907935053064903471120510245371570176092135566619752440438163794319228883299435521/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "exact_slab_crossing_probability": "9700957/100000000",
+            "independent_slab_P2_upper": "94108566715849/10000000000000000",
+            "one_arm_slab_P2_upper": "3243675988851841/62500000000000000",
+            "inequalities_exact": true,
+            "information": {
+              "E": "2472385620050377/2500000000000000",
+              "conditional_H": "5706487944271/9889542480201508",
+              "H_derivative": "183365646427128935448645251400/6112690654231887140760017842129",
+              "rank_Fisher_information": "3019210155746209482514285419839936789062839/193875156471805977026690640186207031250000",
+              "activity_information": "145993522681620331613798400/10405943590009961780213711",
+              "conditional_information_per_original_snapshot": "175743143482839124245345308494994274726958713321/113886727023072268204288429584738295667968750000",
+              "exact_decomposition": true
+            }
+          },
+          {
+            "p": "1/3",
+            "P0": "22992896/43046721",
+            "P2": "6841025/43046721",
+            "all_no_arm_probability": "1949696/43046721",
+            "FKG_P0_lower": "1052589578584345138319489682257975621399266243613939167696320004096/507528786056415600719754159741696356908742250191663887263627442114881",
+            "exact_slab_crossing_probability": "49/81",
+            "independent_slab_P2_upper": "2401/6561",
+            "one_arm_slab_P2_upper": "1",
+            "inequalities_exact": true,
+            "information": {
+              "E": "29833921/43046721",
+              "conditional_H": "6841025/29833921",
+              "H_derivative": "2634327093869568/890062842234241",
+              "rank_Fisher_information": "6839207869549555816448/168532956573741168075",
+              "activity_information": "19176971309568/3079606495225",
+              "conditional_information_per_original_snapshot": "41833521638064740867138048/1217728000076876890965675",
+              "exact_decomposition": true
+            }
+          },
+          {
+            "p": "1/2",
+            "P0": "9045/65536",
+            "P2": "36559/65536",
+            "all_no_arm_probability": "133/65536",
+            "FKG_P0_lower": "362184594182720980613658216570962841601/22300745198530623141535718272648361505980416",
+            "exact_slab_crossing_probability": "221/256",
+            "independent_slab_P2_upper": "48841/65536",
+            "one_arm_slab_P2_upper": "1",
+            "inequalities_exact": true,
+            "information": {
+              "E": "11401/16384",
+              "conditional_H": "36559/45604",
+              "H_derivative": "324024008/129982801",
+              "rank_Fisher_information": "285878389994501/8788049495280",
+              "activity_information": "303038464/56811183",
+              "conditional_information_per_original_snapshot": "1640493090006001/60320621490480",
+              "exact_decomposition": true
+            }
+          }
+        ]
+      }
+    ],
+    "complementary_rank_sum_checked": 65536,
+    "additional_structural_graph_cases": 236
+  },
+  "limits": [
+    "No numerical p_c interval or rate near criticality is inferred.",
+    "The all-aspect root theorem is proved in the accompanying note, not from these sizes.",
+    "Fisher decomposition concerns independent one-p snapshots, not full permutation paths."
+  ],
+  "elapsed_seconds": 1.4845421620000252
+}
