@@ -9,38 +9,174 @@
   "mpmath": "1.3.0",
   "patch_sha256": "4f71286c2c58d316ea9c582273874cd8ac87a026db2528318ecbf007183fe7b5",
   "inputs": [
-    {"file": "width4-rank-closure-certificate.json", "sha256": "508640f6a6be1461ca4738acdcf3226790f485dbaa3c43b8a00966c143f3f890"},
-    {"file": "width4-parametric-definition.json", "sha256": "5edc624377399ad0878c7a608e722ebb65a7be454a6f022a1b6382a0661e91b0"}
+    {
+      "file": "width4-rank-closure-certificate.json",
+      "sha256": "508640f6a6be1461ca4738acdcf3226790f485dbaa3c43b8a00966c143f3f890"
+    },
+    {
+      "file": "width4-parametric-definition.json",
+      "sha256": "5edc624377399ad0878c7a608e722ebb65a7be454a6f022a1b6382a0661e91b0"
+    }
   ],
   "files": [
-    {"path": "notes/annealed-quenched-root-20260913.md", "sha256": "3f633592d3084948357bd4b264966c3f95f6fb43feba13ac17d08cac50376840", "bytes": 4753, "applied_byte_identical": true},
-    {"path": "notes/conditional-odds-integration-20260913.md", "sha256": "234e3430c455549fece5a3258c1a6def9141fadf4b154ed2f60245910722cc4b", "bytes": 3578, "applied_byte_identical": true},
-    {"path": "notes/invisible-spatial-marks-20260913.md", "sha256": "79b6dd273a486251a3179832a75c9ecc97ef7a8c60a99a4ef4a014e1e908ab7e", "bytes": 4777, "applied_byte_identical": true},
-    {"path": "notes/limit-order-readout-audit-20260913.md", "sha256": "f85d8ac364fb452319004ed92d8f04232c2e7d35cbf1e63db77039697251de9a", "bytes": 5206, "applied_byte_identical": true},
-    {"path": "notes/multi-advance-handoff-20260913.md", "sha256": "a036b32124d7832b3e434e3352a7daaef11e12a78880c6c9ab6ec54b8dee962a", "bytes": 3099, "applied_byte_identical": true},
-    {"path": "notes/multi-advance-review-20260913-zh.md", "sha256": "03321776c3cb0f68764ec8f74d7251486a253bd9028e09c5448c47e698a988a0", "bytes": 5905, "applied_byte_identical": true},
-    {"path": "notes/rank-source-zero-free-strip-20260913.md", "sha256": "20cd1e5508948abcd11280555e918f0b7e00644da79d8c1d46ec7faeb15fb6f2", "bytes": 5417, "applied_byte_identical": true},
-    {"path": "notes/spatial-source-hessian-20260913.md", "sha256": "32d326df2090f8802c0e9c417603715ce72119bd1557a147ad062d74d3c9a273", "bytes": 8041, "applied_byte_identical": true},
-    {"path": "results/research-control-20260912/conditional-odds-integration.json", "sha256": "02cfa3456fcbb66005287282ddb4295c5a6fc502256c79047df8aacbbdf20694", "bytes": 3728, "applied_byte_identical": true},
-    {"path": "results/research-control-20260912/full-site-hessian-independent.json", "sha256": "598e4cead845f509d44835beaad764b01c866d538187f829f5757080ca1ed247", "bytes": 14803, "applied_byte_identical": true},
-    {"path": "results/research-control-20260912/full-site-hessian.json", "sha256": "b5caac534fa720a2ab0b84b9e7ca5fd09514df4a0d7bbda7f1918292a1b00190", "bytes": 118841, "applied_byte_identical": true},
-    {"path": "results/research-control-20260912/invisible-spatial-marks.json", "sha256": "67ba43b3c4b597687e8a11ba9194457c23d79b6316c3700cf8f42e7415cc2530", "bytes": 10631, "applied_byte_identical": true},
-    {"path": "results/research-control-20260912/topological-source-zeros.json", "sha256": "657171582ede2fc23dab31fdc2e52ad8e9771e01c3d3c100f1a0a5d1d80da111", "bytes": 41798, "applied_byte_identical": true},
-    {"path": "scripts/conditional_odds_integration.py", "sha256": "f424b41b0051ee30cf0db37c14edf141ef9e5036876779077056ddda64cb51f1", "bytes": 4503, "applied_byte_identical": true},
-    {"path": "scripts/invisible_spatial_marks.py", "sha256": "faae8b5d8a37262bdd99e0388efba3e577a571f165db4a4f81f36163f04f05ed", "bytes": 5923, "applied_byte_identical": true},
-    {"path": "scripts/topological_source_zeros.py", "sha256": "6fa6a2aefd210bf55378d44f6947ad383ab9ea3301bc2d428b654c558b225ca7", "bytes": 7041, "applied_byte_identical": true},
-    {"path": "scripts/torus_source_hessian.py", "sha256": "956d5f4d776800fe7e8cd01170881ea96c6ca77ee5b0e147f7c587d3205bf0a0", "bytes": 9536, "applied_byte_identical": true},
-    {"path": "scripts/verify_source_hessian.py", "sha256": "7e002dd9d16e201b6ebb886782481d7b568bccf272eec0de0a7408a8a5166ecc", "bytes": 7048, "applied_byte_identical": true},
-    {"path": "tests/test_rank_source_zeros.py", "sha256": "9423003c0ec0b78f5c9d56c5e89b262ddbaa79294abb48b6b66ffb80c131b2bf", "bytes": 3295, "applied_byte_identical": true},
-    {"path": "tests/test_spatial_hessian.py", "sha256": "68a2c52e7d4a0a564536fc5425afb230561056c1edd271b534a5ed9a033fd4fc", "bytes": 2863, "applied_byte_identical": true},
-    {"path": "tests/test_spatial_marks_and_integration.py", "sha256": "92f0d25e0f7a59a84b65ba94c1085c4b77a89fb247bdd24d01a035c96fb5bda4", "bytes": 3552, "applied_byte_identical": true}
+    {
+      "path": "notes/annealed-quenched-root-20260913.md",
+      "sha256": "3f633592d3084948357bd4b264966c3f95f6fb43feba13ac17d08cac50376840",
+      "bytes": 4753,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "notes/conditional-odds-integration-20260913.md",
+      "sha256": "234e3430c455549fece5a3258c1a6def9141fadf4b154ed2f60245910722cc4b",
+      "bytes": 3578,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "notes/invisible-spatial-marks-20260913.md",
+      "sha256": "79b6dd273a486251a3179832a75c9ecc97ef7a8c60a99a4ef4a014e1e908ab7e",
+      "bytes": 4777,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "notes/limit-order-readout-audit-20260913.md",
+      "sha256": "f85d8ac364fb452319004ed92d8f04232c2e7d35cbf1e63db77039697251de9a",
+      "bytes": 5206,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "notes/multi-advance-handoff-20260913.md",
+      "sha256": "a036b32124d7832b3e434e3352a7daaef11e12a78880c6c9ab6ec54b8dee962a",
+      "bytes": 3099,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "notes/multi-advance-review-20260913-zh.md",
+      "sha256": "03321776c3cb0f68764ec8f74d7251486a253bd9028e09c5448c47e698a988a0",
+      "bytes": 5905,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "notes/rank-source-zero-free-strip-20260913.md",
+      "sha256": "20cd1e5508948abcd11280555e918f0b7e00644da79d8c1d46ec7faeb15fb6f2",
+      "bytes": 5417,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "notes/spatial-source-hessian-20260913.md",
+      "sha256": "32d326df2090f8802c0e9c417603715ce72119bd1557a147ad062d74d3c9a273",
+      "bytes": 8041,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "results/research-control-20260912/conditional-odds-integration.json",
+      "sha256": "02cfa3456fcbb66005287282ddb4295c5a6fc502256c79047df8aacbbdf20694",
+      "bytes": 3728,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "results/research-control-20260912/full-site-hessian-independent.json",
+      "sha256": "598e4cead845f509d44835beaad764b01c866d538187f829f5757080ca1ed247",
+      "bytes": 14803,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "results/research-control-20260912/full-site-hessian.json",
+      "sha256": "b5caac534fa720a2ab0b84b9e7ca5fd09514df4a0d7bbda7f1918292a1b00190",
+      "bytes": 118841,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "results/research-control-20260912/invisible-spatial-marks.json",
+      "sha256": "67ba43b3c4b597687e8a11ba9194457c23d79b6316c3700cf8f42e7415cc2530",
+      "bytes": 10631,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "results/research-control-20260912/topological-source-zeros.json",
+      "sha256": "657171582ede2fc23dab31fdc2e52ad8e9771e01c3d3c100f1a0a5d1d80da111",
+      "bytes": 41798,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "scripts/conditional_odds_integration.py",
+      "sha256": "f424b41b0051ee30cf0db37c14edf141ef9e5036876779077056ddda64cb51f1",
+      "bytes": 4503,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "scripts/invisible_spatial_marks.py",
+      "sha256": "faae8b5d8a37262bdd99e0388efba3e577a571f165db4a4f81f36163f04f05ed",
+      "bytes": 5923,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "scripts/topological_source_zeros.py",
+      "sha256": "6fa6a2aefd210bf55378d44f6947ad383ab9ea3301bc2d428b654c558b225ca7",
+      "bytes": 7041,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "scripts/torus_source_hessian.py",
+      "sha256": "956d5f4d776800fe7e8cd01170881ea96c6ca77ee5b0e147f7c587d3205bf0a0",
+      "bytes": 9536,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "scripts/verify_source_hessian.py",
+      "sha256": "7e002dd9d16e201b6ebb886782481d7b568bccf272eec0de0a7408a8a5166ecc",
+      "bytes": 7048,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "tests/test_rank_source_zeros.py",
+      "sha256": "9423003c0ec0b78f5c9d56c5e89b262ddbaa79294abb48b6b66ffb80c131b2bf",
+      "bytes": 3295,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "tests/test_spatial_hessian.py",
+      "sha256": "68a2c52e7d4a0a564536fc5425afb230561056c1edd271b534a5ed9a033fd4fc",
+      "bytes": 2863,
+      "applied_byte_identical": true
+    },
+    {
+      "path": "tests/test_spatial_marks_and_integration.py",
+      "sha256": "92f0d25e0f7a59a84b65ba94c1085c4b77a89fb247bdd24d01a035c96fb5bda4",
+      "bytes": 3552,
+      "applied_byte_identical": true
+    }
   ],
   "reruns": [
-    {"script": "torus_source_hessian.py", "result": "full-site-hessian.json", "identical_except_elapsed_seconds": true, "actual_elapsed_seconds": 1.1012761350000346},
-    {"script": "verify_source_hessian.py", "result": "full-site-hessian-independent.json", "identical_except_elapsed_seconds": true, "actual_elapsed_seconds": 0.4464508300000034},
-    {"script": "invisible_spatial_marks.py", "result": "invisible-spatial-marks.json", "identical_except_elapsed_seconds": true, "actual_elapsed_seconds": 0.5653261269999348},
-    {"script": "topological_source_zeros.py", "result": "topological-source-zeros.json", "identical_except_elapsed_seconds": true, "actual_elapsed_seconds": 0.1282181799999762},
-    {"script": "conditional_odds_integration.py", "result": "conditional-odds-integration.json", "identical_except_elapsed_seconds": true, "actual_elapsed_seconds": 1.5825697859997945}
+    {
+      "script": "torus_source_hessian.py",
+      "result": "full-site-hessian.json",
+      "identical_except_elapsed_seconds": true,
+      "actual_elapsed_seconds": 1.1012761350000346
+    },
+    {
+      "script": "verify_source_hessian.py",
+      "result": "full-site-hessian-independent.json",
+      "identical_except_elapsed_seconds": true,
+      "actual_elapsed_seconds": 0.4464508300000034
+    },
+    {
+      "script": "invisible_spatial_marks.py",
+      "result": "invisible-spatial-marks.json",
+      "identical_except_elapsed_seconds": true,
+      "actual_elapsed_seconds": 0.5653261269999348
+    },
+    {
+      "script": "topological_source_zeros.py",
+      "result": "topological-source-zeros.json",
+      "identical_except_elapsed_seconds": true,
+      "actual_elapsed_seconds": 0.1282181799999762
+    },
+    {
+      "script": "conditional_odds_integration.py",
+      "result": "conditional-odds-integration.json",
+      "identical_except_elapsed_seconds": true,
+      "actual_elapsed_seconds": 1.5825697859997945
+    }
   ],
   "higher_precision_check": "HIGH_PRECISION.json",
   "scientific_boundaries": [
