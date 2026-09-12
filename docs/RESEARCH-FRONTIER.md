@@ -1,184 +1,157 @@
-# Research frontier: three claims, not a catalogue of tasks
+# Research frontier: one active paper, two visible reserves
 
-**Owner-delegated reset, 2026-09-13.** Baseline read: main at
-`eb89e9422791d9e3c3a78f0e65d56912b815a7bd`, including #702--#705.
-This document changes research allocation, not historical experimental verdicts.
-[ROADMAP](ROADMAP.md) owns the current work choices; live Issue updates override
-this dated snapshot. [STATUS](STATUS.md) separates current adjudications from the
-[verbatim older ledger](history/STATUS-before-20260913.md).
+**2026-09-13, owner-delegated reset reconciled with the latest #650.**
+The single active deliverable is a probability-theorem manuscript and independent
+proof audit: #735's arbitrary-period root theorem, with #613/#736's sharp axial
+full-law boundary. Return one acceptance package to #735. The other directions
+below remain scientifically visible but are not parallel active assignments.
 
-**Live addition during this reset:** [#737](https://github.com/LightChainr/Matching-One/pull/737)
-arrived after the first scan. Its spatial Hessian and invisible-mark calculations
-are completed finite assets, not tasks to commission again; see section 2 below.
+[ROADMAP](ROADMAP.md) controls execution; live Issue updates override this dated
+snapshot. [STATUS](STATUS.md) distinguishes current scope from the
+[verbatim historical ledger](history/STATUS-before-20260913.md). The baseline
+read was main at `eb89e9422791d9e3c3a78f0e65d56912b815a7bd` (#702--#705 merged).
+Navigation was integrated by #738; the research PRs below remain unmerged.
 
-## 1. Primary: geometry can separate a correct root from an incorrect full law
+## 1. Active probability paper: correct root does not imply a concentrated law
 
-The most immediately tractable theorem programme is now #613, not another
-attempt to assign a continuum field to a fitted exponent.
+For independent NN square-site percolation on an honest torus,
+`M=P2-P0`, `F=E[r]/2=(1+M)/2`, `Q=F^{-1}`. The balance root is Q(1/2).
+The conditional rare-sector function `H=P2/(P0+P2)` is not F.
 
-For independent NN square-site percolation on an honest torus, let
-`M=P2-P0`, `F=E[r]/2=(1+M)/2`, and `Q=F^{-1}`. The balance root is Q(1/2).
-The conditional rare-sector function `H=P2/(P0+P2)` is a different object.
+#735 supplies arbitrary-integer-period root consistency as the genuine shortest
+period ell grows, with no aspect or area-versus-systole restriction. At fixed
+subcritical p it compares rates: `P2/P0 <= exp[-kappa(p) N/ell]`.
+#736 adds the exact axial contrast: for 2<=w<=m and wm->infinity,
+all fixed interior Q(u) converge to p_c **iff** `log(m)/w -> 0`.
+These are proofs under named probability/topology inputs, not a new numerical
+critical point, a fitted root-shift exponent or an established priority claim.
 
-**Supplied results.** #735 proves balance-root consistency on arbitrary integer
-period lattices as the genuine shortest period ell grows, without an aspect or
-area-versus-systole condition. Its fixed-subcritical bound is
-`P2/P0 <= exp[-kappa(p) N/ell]`. #736 supplies a sharp contrast on axial w-by-m
-tori: all fixed interior Q(u) converge to p_c **iff** `log(m)/w -> 0`.
-Both statements depend on their named probability/topology inputs. Neither
-claims a numerical threshold, an L^-4 shift, or publication priority.
+The new contribution in this reset is #736's necessity argument. Critical
+square-site RSW and finite-product continuity give a seam-closed occupied ring
+with probability >=exp(-eta*w) at a FIXED p_eta<p_c. Independent transverse
+bands amplify it. On a subsequence with log(m)>=d*w this keeps every fixed
+lower quantile away from p_c, while the median can remain consistent. Failure
+of a union upper bound alone would never have proved this implication.
 
-**What was done in this reset.** #736 adds necessity to #613's sufficiency.
-Critical square-site RSW and finite-product continuity produce a seam-closed
-occupied winding ring with probability at least exp(-eta*w) at a fixed
-p_eta<p_c. Independent transverse bands amplify it. If log(m)>=d*w along a
-subsequence, every fixed lower quantile is bounded away from p_c, even though
-the median can remain consistent. This closes the logarithmic-width case,
-not only the earlier fixed-width or w=o(log m) examples.
+**Current acceptance work:** consolidate the theorem statement and imported
+inputs, independently audit #735's local support/injectivity, oblique entry
+count, backtracking-path extraction and disjoint-band independence; audit #736's
+seam and quantifier order; compare the exact statements with their closest
+strip-percolation, RSW and homological-percolation predecessors. Deliver one
+manuscript, not another growing list of review tickets. Finite code checks and
+verbatim quotations are not substitutes for the all-size argument.
 
-**Next missing lemma, not another simulation.** Extend the fixed-subcritical
-winding-ring construction uniformly around an arbitrary shortest integer
-period u, with cost exp(-eta*|u|) and bounded-thickness disjoint corridors.
-Oblique orientation and ambient nonprimitivity must be handled on the physical
-NN lattice. Changing a period basis does not rotate its interaction. This is
-the specific route towards necessity of `log N/ell -> 0` beyond axial tori;
-that general necessity is still open in this repository.
+**Potential strengthening, not a new prerequisite or second dispatch:** build
+uniform fixed-subcritical winding corridors around an arbitrary shortest
+integer period u, with probability >=exp(-eta*|u|), then pack disjoint corridors.
+This could establish necessity of `log N/ell -> 0` beyond axial tori. It is NOT
+proved here. Orientation and ambient nonprimitivity must be handled on the
+physical NN lattice; changing a period basis does not rotate its interaction.
+A counterexample could instead reveal a finer geometric invariant. Neither
+outcome invalidates the already supplied narrower results by implication.
 
-A second possible outcome is a geometric obstruction showing that a finer
-quantity than the shortest period is necessary. Either would change the paper.
-Preparing a paper also requires one independent examination of the supplied
-proof and a systematic comparison with strip-percolation/RSW and homological
-percolation literature. Repeated negative web searches are not a novelty proof.
+#736's executed controls cover 21,760 exhaustive strip configurations and 2,365
+deterministic uneven-cell masks, with exact Fraction inequalities, three local
+mathematical tests and compilation. Full repository CI was not run. The theorem
+rests on its argument and imported inputs, not on extrapolating these checks.
 
-## 2. Parallel: the minimal state is determined by the allowed sources
+## 2. Representation reserve: sources determine which states can be merged
 
-#708 supplies rank-future sufficient lifted states and 509 deterministic
-continuation classes at width four. #710 supplies the all-p scalar spectrum:
-common modes in P0 and P2 cancel in M. #733 supplies physical site interventions,
-source-compatible quotients and an exact final-rank-conditioned backward sampler.
-Two independently addressed adjacent columns already require all 509 classes
-within the investigated common-strong-lumping class.
+#708 gives lifted rank-future states and 509 deterministic continuation classes
+at width four. #710 gives the all-p scalar spectrum and exact cancellation of
+common P0/P2 modes in M. #733 gives source-compatible quotients, physical two-row
+site responses and exact final-rank-conditioned backward sampling. Two adjacent
+independently addressed columns require all 509 classes within the investigated
+common-strong-lumping class. These completed calculations are not assignments
+to repeat merely because their PRs are absent from main.
 
-The scientific claim is not "509 fields" or "a new transfer-matrix technique".
-It is that state compression can be exact for one observer/source language and
-fail for another, with an explicit topology-preserving construction and witnesses.
-The two-row square-site source is the preferred physical laboratory: its linear
-response vanishes while a mixed response is nonzero. P398 is the known periodic
-identified-connectivity O(1) TL calibration chain (#718), not the site process.
+The distinction worth pursuing after reactivation is an actual all-width
+closure-weight theorem or a source-faithful response separating concrete
+candidate representations. Deterministic classes, strong lumpings, scalar
+Hankel order, positive order and noise-limited effective order are different.
+A full-operator spectral gap need not be the gap visible to M. P398 is the
+known periodic IC O(1) TL calibration process (#718), not square-site percolation.
 
-**Next distinction:** determine the actual all-width topological closure weights
-and their observable cancellations, or separate two concrete candidate closures
-using the same physical source. A full-operator spectral gap need not be the gap
-seen by M. Fixed-width exponential convergence is not a width-uniform theorem.
-Reuse the width-four certificate; do not fund a duplicate state enumeration.
+### Concurrent #737: a concrete bridge to spatial structure factors
 
-### Newly delivered #737: spatial-source curvature is a structure-factor contrast
-
-The finite full-site Hessian and invisible-mark notes were read at
-`7b459c4809baee9dfc2b910091e00a3a8d508d1c`, including their limitations. For
-mean-zero logit source h and H=sum h_i n_i, its logit-root formula is
+The spatial-Hessian and invisible-mark notes were read at the pinned head below.
+For a mean-zero logit source h, H=sum_i h_i n_i and occupation count K, the
+finite logit-root curvature is
 
     z_*''(h) = -[Var(H|r=2)-Var(H|r=0)] / [E(K|r=2)-E(K|r=0)].
 
-This exposes a physical bridge from a moving root to rank-conditioned spatial
-structure factors. Additive probability fields and logit fields have different
-second-order corrections; do not silently exchange them. The 4x4 root Hessian
-has both positive and negative directions in the reported additive coordinate.
-These are finite-volume claims, not a disorder-relevance or critical-exponent law.
+This identifies a difference of rank-conditioned spatial structure factors,
+not another uniform thermal derivative. Additive probability and additive logit
+fields have different second-order corrections. The reported 4x4 additive-root
+Hessian has both signs; no infinite-volume disorder relevance follows.
 
-The invisible-mark construction preserves the entire uniform (r,K) distribution
-but separates under spatial sources. It uses strictly positive **dependent marked
-measures**, not two distinct predictions of the already specified Bernoulli law
-and not the two original-U candidate fields. A separate orbit calculation in this
-reset reproduced sizes 16/128/64 and the two-source contrast matrix
-`[[-512,-128],[0,-256]]`, determinant 131072. That check is not a rerun of the
-Hessian, all scripts, or full CI.
+The invisible-mark example preserves the entire uniform (r,K) law but separates
+under spatial sources. It uses positive DEPENDENT marked measures, not an
+ambiguity about the already specified Bernoulli law or the two original-U fields.
+A separate orbit calculation in this reset reproduced sizes 16/128/64, contrast
+matrix `[[-512,-128],[0,-256]]` and determinant 131072. This checks that finite
+algebra, not the full Hessian or complete CI. #737 discloses three missing
+delivery artifacts; resolve actual `delivery/` paths and reproduction inputs
+before treating archive execution logs as a fresh-checkout installation.
 
-#737 is still unmerged and its PR lists three uncommitted delivery artifacts.
-Use the actual `delivery/notes/` paths and resolve its declared reproduction
-inputs before reuse; a successful execution log from the source archive does
-not establish a complete fresh-checkout installation. Do not repeat its finite
-Hessian or marks. The larger question is a width-uniform/topology-resolved source
-response and an actual candidate map, not one more uniform thermal derivative.
+### Exact class growth need not be robust at finite precision
 
-### Exact complexity is not finite-noise complexity
+#549's k+1 branching classes have identical full unbranched survival. In its
+specified single-fork readout, adjacent separation is `1/[2k(8k-1)^2]`, while
+the whole family's span is `1/[2(8k-1)^2]`. More exact classes coexist with a
+shrinking observable range. This is not a bound for every branching experiment.
+The reserve question is whether budgeted admissible interventions amplify the
+separation, not whether larger k gives a larger exact class count.
 
-#549's cut-network family has k+1 distinct branching-predictive classes within
-one identical full unbranched-survival class. In its specified single-fork
-readout the adjacent gap is `1/[2k(8k-1)^2]` and the entire family's span is
-`1/[2(8k-1)^2]`. Thus this readout becomes less separating as exact class count
-grows. This direct consequence of the existing formula is not a lower bound
-for every experiment in the full branching language.
+## 3. Theory-blocked flagship: original U, not a substitute observer
 
-A worthwhile reserve question is whether a specified budget of admissible
-interventions can amplify those separations. More values of k alone do not
-answer it, and an exact discrete class-count theorem is not a Euclidean or
-noise-robust dimension theorem.
+#275 remains P1 with UNIDENTIFIABLE_WITH_CURRENT_ASSETS. This does not disprove
+Jordan or equate two physical theories. The missing input is two candidate maps
+through the SAME source, six-coordinate thermal jet, physical normalizer,
+rank-one denominator and pooled moving-root counterterm. Establish baseline
+representability, then compare nuisance-profiled prediction images using existing
+covariance. More precision cannot supply unspecified theoretical columns.
 
-## 3. High-upside flagship, theory-blocked: original-U identification
+#735's positive irreducible stochastic controls share all ordinary trace jets
+while differing in Jordan structure. Actual visibility depends on
+`C N_lambda^k P_lambda B`. A derivative-jet lift can have its own nilpotent part;
+its repeated pole does not identify the physical operator. Spin, a power and a
+logarithm are not substitutes for the source/readout map. #737 does not supply
+the two missing continuum candidates.
 
-#275 is retained as P1 rather than the default P0 expenditure. Its current-asset
-closure is UNIDENTIFIABLE_WITH_CURRENT_ASSETS, not "Jordan disproved" and not
-"the two physical theories are identical".
+## Pinned unmerged assets
 
-The next input remains two candidate-specific maps through the SAME source,
-`s0,s1,s2,partial_p s0,partial_p s1,partial_p s2`, physical normalizer, rank-one
-denominator and pooled moving-root counterterm. Check each coordinate's baseline
-representability, then the nuisance-profiled prediction images on existing data.
-No new source or statistical coordinate should be substituted merely because it
-separates better without those physical maps.
-
-#735 strengthens the diagnostic warning: positive irreducible stochastic matrices
-can share every ordinary trace and thermal derivative while differing in Jordan
-structure. For a specified response it is `C N_lambda^k P_lambda B` that determines
-visibility. A repeated pole of a derivative-jet lift does not certify a Jordan
-block of the physical operator. Spin, a power, and a logarithm are not substitutes
-for this source/readout map.
-
-## Pinned research assets and integration boundaries
-
-All entries below were open/unmerged when this reset was prepared. The navigation
-commit does not merge them or certify their complete test suites.
-
-| PR | Pinned head | Evidence role |
+| PR | Head | Role |
 |---|---|---|
-| [#708](https://github.com/LightChainr/Matching-One/pull/708) | `f782061c1a592ed2f9fd0e9dabaa45f0e54bc4e7` | Finite lifted closure and deterministic/scalar rank certificates |
-| [#710](https://github.com/LightChainr/Matching-One/pull/710) | `d543ba1afe052a36682d2c1723c8a07281c28950` | Parametric spectrum; geometric minimal-winding configurations |
-| [#718](https://github.com/LightChainr/Matching-One/pull/718) | `72d2ee6b8e5d25bd96aaef586c113bc94201f64a` | Axial root consistency; P398 identification with published IC TL |
-| [#733](https://github.com/LightChainr/Matching-One/pull/733) | `525c8e98d99c44d4c76280a1f0f83064df9bfa72` | Physical site sources, conditional sampler, event dictionary correction |
-| [#734](https://github.com/LightChainr/Matching-One/pull/734) | `bb41df7da8021d922a48ad353709f35912977c37` | Bounded prior-art survey, not an originality certificate |
-| [#735](https://github.com/LightChainr/Matching-One/pull/735) | `9d29d014df28af7c635e6859d98a95ffe2b34d06` | Arbitrary-period root proof, marked robustness, Jordan controls |
-| [#736](https://github.com/LightChainr/Matching-One/pull/736) | `64d809b4404f80ff3f9adf9713337cc76008e92d` | New axial full-law iff proof and exact finite gluing controls |
-| [#737](https://github.com/LightChainr/Matching-One/pull/737) | `7b459c4809baee9dfc2b910091e00a3a8d508d1c` | Spatial-source Hessian and invisible marks; delivery-input gaps disclosed |
-
-#736 reports 21,760 exhaustive strip configurations, 2,365 deterministic uneven-
-cell controls, exact Fraction inequalities, three local mathematical tests and
-compilation. Full repository CI was not run. The all-size theorem rests on the
-written argument and imported inputs, not on those finite checks.
+| [#708](https://github.com/LightChainr/Matching-One/pull/708) | `f782061c1a592ed2f9fd0e9dabaa45f0e54bc4e7` | Finite rank closure |
+| [#710](https://github.com/LightChainr/Matching-One/pull/710) | `d543ba1afe052a36682d2c1723c8a07281c28950` | Parametric spectrum and geometric onsets |
+| [#718](https://github.com/LightChainr/Matching-One/pull/718) | `72d2ee6b8e5d25bd96aaef586c113bc94201f64a` | Axial root theorem and IC TL identification |
+| [#733](https://github.com/LightChainr/Matching-One/pull/733) | `525c8e98d99c44d4c76280a1f0f83064df9bfa72` | Physical sources, sampler and dictionary correction |
+| [#734](https://github.com/LightChainr/Matching-One/pull/734) | `bb41df7da8021d922a48ad353709f35912977c37` | Prior-art sweep, not novelty certification |
+| [#735](https://github.com/LightChainr/Matching-One/pull/735) | `9d29d014df28af7c635e6859d98a95ffe2b34d06` | Arbitrary-period root proof and Jordan controls |
+| [#736](https://github.com/LightChainr/Matching-One/pull/736) | `64d809b4404f80ff3f9adf9713337cc76008e92d` | New axial full-law iff proof |
+| [#737](https://github.com/LightChainr/Matching-One/pull/737) | `7b459c4809baee9dfc2b910091e00a3a8d508d1c` | Spatial-source Hessian and invisible marks |
 
 ## Corrections that must travel with the result
 
 | Old inference | Current reading |
 |---|---|
-| #628 bond duality fails | Implementation/convention errors; corrected by #631/#646/#653 |
-| Raw M(p)+M(1-p) diagnoses normalized shape | Wrong centre/gauge; use the corrected anchored-quantile quantity (#702/#706) |
-| #675 excludes any one-operator representation | Unrestricted no-go withdrawn; distinguish efficient local closure from existence |
-| #715 P398 has no named process | Periodic IC TL under the explicit fattening map (#718/#729) |
-| #717 finite 2D/0D weights categorically differ from rank2/rank0 | Same finite site ensemble has the event dictionary in #733; no all-width intertwiner follows |
-| #724/#731 linear eigenvalue split implies semisimplicity | Explicit counterexample in #735; m*lambda^m alone is not either diagnostic |
-| Primitive Gaussian C3's old H8 label identifies local spin | Later unit-rotation/H0 result in #275 supersedes that near-alias |
-| N580 compatibility identifies bare-aspect scaling | Same-block nominal compatibility after #703/#704; no physical-law identification |
+| #628 bond duality fails | Code/convention defects, corrected #631/#646/#653 |
+| Raw M(p)+M(1-p) diagnoses normalized shape | Wrong centre/gauge; corrected anchored quantiles #702/#706 |
+| #675 rules out any single-operator representation | Unrestricted no-go withdrawn; efficiency and existence differ |
+| #715 P398 is unnamed | Periodic IC TL via the explicit map #718/#729 |
+| #717 finite 2D/0D categorically differs from rank2/rank0 | Same-site event dictionary #733; no all-width intertwiner follows |
+| #724/#731 linear split implies semisimplicity | Counterexample #735; m*lambda^m alone is not either diagnostic |
+| Primitive Gaussian C3 H8 label identifies local spin | Later unit-rotation/H0 correction in #275 supersedes the near-alias |
+| N580 compatibility identifies bare-aspect scaling | Same-block nominal compatibility after #703/#704, not a physical law |
 
-N is site count. For square-period geometries the linear size is sqrt(N).
-Do not compare N=425 with a published L=425 lattice, or treat site, bond,
-rank-two cross and rank-one spiral as interchangeable observables.
+N is site count; square-period linear size is sqrt(N). Do not compare N=425
+with a published L=425 lattice. Site/bond, rank-two cross/rank-one spiral,
+fixed-p/moving-root and physical/jet operators must remain typed.
 
-## What is intentionally not expanded
-
-No default new Monte Carlo, GPU campaign, width ladder, descriptor ladder,
-angle grid, generic venue survey or polynomial-height census follows from this
-reset. A genuinely discriminating idea may change allocation. The test is the
-mathematical distinction it resolves, not its conformity to an ever-growing
-checklist. #537's proof obligations, #622's completed shape analysis, the finite
-terminal algebra and P2/P3/P4 manuscript work remain visible through the
-[atlas](RESEARCH-ATLAS.md); their historical data and failures are retained.
+Global H4 finite-size evidence, #537's proof obligations, #622's completed #706
+analysis, cut networks, finite terminal algebra and publication units remain in
+the [atlas](RESEARCH-ATLAS.md). No new Monte Carlo, GPU campaign, width or
+angle ladder, generic venue survey, or census expansion is started by exposing
+a reserve. Preserve their historical data and failures. Allocation should reduce
+open claims, not automatically generate a fresh branch of tasks from every result.

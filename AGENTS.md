@@ -5,11 +5,14 @@ Issue and its latest comments. `docs/STATUS.md` distinguishes current scope
 from the verbatim historical ledger. Old acquisition instructions, opening
 Issue bodies and publication-portfolio snapshots are not a current run queue.
 
-Owner-delegated focus dated 2026-09-13:
-- #613: geometric root/full-law separation; #736's axial iff is delivered.
-  The new proof target is uniform oblique winding corridors, not a duplicate census.
-- #636: structural observable closure and physical source-visible states;
-  reuse #708/#710/#733 at their pinned refs.
+Owner-delegated focus dated 2026-09-13, reconciled with the latest #650:
+- One active acceptance package: consolidate and independently audit #735's
+  arbitrary-period root theorem, with #613/#736's sharp axial full-law boundary,
+  as one probability manuscript. Return the package to #735.
+- Uniform oblique winding corridors are a possible strengthening within this
+  programme, not a new mandatory parallel project or duplicate census.
+- #636 is a visible representation reserve, paused for new extension this round.
+  Reuse #708/#710/#733/#737 rather than re-commissioning their finite results.
 - #275: original-U candidate maps before more sampling; theory-blocked P1,
   with its original source/normalizer/moving-root contract retained.
 

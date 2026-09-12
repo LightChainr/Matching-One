@@ -1,42 +1,59 @@
 # Research execution roadmap
 
-**Owner-delegated reset: 2026-09-13.** One primary mathematical objective,
-one bounded parallel representation lane, and one explicitly theory-blocked
-physical flagship. This replaces the stale acquisition list; it does not
+**Owner-delegated reset: 2026-09-13; reconciled with the latest #650.**
+One active deliverable: a consolidated probability-theorem manuscript and
+independent proof audit. Representation and original-U work remain visible
+research reserves, not simultaneous active assignments. This replaces the stale acquisition list; it does not
 rewrite frozen experimental decisions. Live Issue comments/state take
 precedence over this dated snapshot.
 
-## Primary: #613 — geometric phase diagram of topological thresholds
+## One active package: #735 with #613/#736 — root versus full-law geometry
 
 Delivered, not to be reassigned: #613/#670 supplied the full-law sufficient
 condition; #718/#735 removed aspect restrictions for the balance root; #736
 now supplies the missing axial full-law necessity. #276 remains completed.
 
-The next primary mathematical question is the **uniform oblique-corridor lemma**:
+First consolidate and independently audit #735's arbitrary-period root proof,
+including oblique entry counts, support injectivity and disjoint bands. Return
+one theorem manuscript and a closest-prior-theorem comparison to #735. Use
+#736's axial iff as the precise full-law boundary chapter, with its own RSW
+input and independent seam/quantifier check. This is one probability paper,
+not two new dispatches.
+
+A possible strengthening INSIDE this programme, not a second active task, is
+the **uniform oblique-corridor lemma**:
 for every eta>0, find a fixed p_eta<p_c and bounded-thickness occupied winding
 corridors around an actual shortest period u, with probability >=exp(-eta|u|),
 uniformly in its orientation and ambient primitivity. Pack disjoint corridors
 in an arbitrary integer-period torus, or exhibit the geometric obstruction.
 The physical NN interaction must not be rotated by a change of period basis.
 
-In parallel with preparing the probability paper, independently examine #736's
+As part of that same acceptance package, independently examine #736's
 seam construction and quantifier order once, then compare its exact statement
 with strip-percolation, RSW finite-size criteria and homological-percolation
 prior art. A negative search is not an originality certificate.
 
-**Deliverable:** proof/counterexample for that one geometric lemma and its
-consequence for all-quantile convergence. **Not useful:** another enormous
+**Deliverable:** one consolidated theorem manuscript, independent lemma-level
+audit and precise novelty comparison. Treat a proved oblique-corridor extension
+as a strengthening, or record its exact missing lemma; do not make it a new
+prerequisite for the already supplied narrower results. **Not useful:** another enormous
 thin-torus simulation, another proof that a fixed-width root is not p_c,
 or re-enumeration of the tiny checks already delivered.
 
-## Bounded parallel: #636 — source-visible topology and structural closure
+## Representation reserve: #636 — source-visible topology and structural closure
+
+This lane is exposed for scientific value but paused for new extension during
+the one-package allocation in #650. Reactivate only for a concrete need of the
+primary theorem or a later explicit allocation decision. #737's spatial
+Hessian and invisible marks are also already delivered finite assets, not new
+assignments.
 
 Treat #708's rank-future closure, #710's all-p width-four scalar spectrum,
 and #733's source-compatible quotients and exact rank-conditioned sampler as
 available research inputs at their pinned, unmerged commits. Do not rebuild
 those jobs because they are absent from main.
 
-The next result is either an all-width description of the actual site
+Upon reactivation, the next result is either an all-width description of the actual site
 transfer's topological closure weights and observable cancellations, or a
 source-faithful response that distinguishes two concrete surviving state
 representations. Keep deterministic continuation classes, strong lumpings,
