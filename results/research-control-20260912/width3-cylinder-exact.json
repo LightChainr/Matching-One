@@ -1,0 +1,486 @@
+{
+  "schema": "matching-one.width3-cylinder-exact.v1",
+  "scope": "square-site width 3, length m>=2; NOT infinite-lattice pc or an all-width pTL intertwiner",
+  "cylinder_sextic_low_first": [
+    1,
+    1,
+    0,
+    -4,
+    -5,
+    -3,
+    1
+  ],
+  "cylinder_exact_rational_bracket": [
+    "6566239220600206483872888902707641265663279/11150372599265311570767859136324180752990208",
+    "840478620236826429935729779546578082004899713/1427247692705959881058285969449495136382746624"
+  ],
+  "cylinder_q_diagnostic": "0.58888069991785299805144269575170493372217050345701",
+  "published_n3_value": "0.5888806999178529980514426957517049337221",
+  "source": "Jacobsen 2015 arXiv:1507.03027v1 section 6.1 Table 2, primary HTML read 2026-09-12",
+  "published_match_below_1e_minus_40": true,
+  "block_B_eigenvalues_diagnostic": [
+    "0.79578766896424903605620104266078116604873503565708",
+    "0.036213972909320692438479008027583384373767333677894",
+    "-0.10055279425572726240102376097844011798302112947222"
+  ],
+  "block_C_eigenvalues_diagnostic": [
+    "0.17886584993224404842481657728063602638614720762375",
+    "-0.079333776450120950401600026784588924049863141321157"
+  ],
+  "block_C_eigenvalue_multiplicity": 2,
+  "closed_rate_diagnostic": "0.79578766896424903605620104266078116604873503565708",
+  "rho_diagnostic": "0.22476579734522079198176767579637432574092549867206",
+  "hprime_diagnostic": "2.6904978143712394890696018902702841665091753340637",
+  "all_leading_coefficients": 1,
+  "dominant_subleading_coefficient": 2,
+  "exact_enumeration_checks": {
+    "2": {
+      "configurations": 64,
+      "classification_failures": 0,
+      "bernstein_counts": [
+        -1,
+        -6,
+        -12,
+        -6,
+        6,
+        6,
+        1
+      ],
+      "power_coefficients": [
+        -1,
+        0,
+        3,
+        2,
+        -3
+      ]
+    },
+    "3": {
+      "configurations": 512,
+      "classification_failures": 0,
+      "bernstein_counts": [
+        -1,
+        -9,
+        -36,
+        -78,
+        -90,
+        -36,
+        36,
+        36,
+        9,
+        1
+      ],
+      "power_coefficients": [
+        -1,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        -18,
+        18,
+        -4
+      ]
+    },
+    "4": {
+      "configurations": 4096,
+      "classification_failures": 0,
+      "bernstein_counts": [
+        -1,
+        -12,
+        -66,
+        -216,
+        -456,
+        -624,
+        -498,
+        -84,
+        222,
+        192,
+        66,
+        12,
+        1
+      ],
+      "power_coefficients": [
+        -1,
+        0,
+        0,
+        4,
+        3,
+        0,
+        6,
+        0,
+        -87,
+        136,
+        -72,
+        12
+      ]
+    },
+    "5": {
+      "configurations": 32768,
+      "classification_failures": 0,
+      "bernstein_counts": [
+        -1,
+        -15,
+        -105,
+        -450,
+        -1305,
+        -2670,
+        -3885,
+        -3885,
+        -2235,
+        45,
+        1245,
+        1020,
+        420,
+        105,
+        15,
+        1
+      ],
+      "power_coefficients": [
+        -1,
+        0,
+        0,
+        5,
+        0,
+        3,
+        -10,
+        30,
+        0,
+        -200,
+        312,
+        -120,
+        -65,
+        60,
+        -15,
+        2
+      ]
+    },
+    "6": {
+      "configurations": 262144,
+      "classification_failures": 0,
+      "bernstein_counts": [
+        -1,
+        -18,
+        -153,
+        -810,
+        -2970,
+        -7938,
+        -15846,
+        -23778,
+        -26478,
+        -20658,
+        -8766,
+        2232,
+        6750,
+        5382,
+        2520,
+        774,
+        153,
+        18,
+        1
+      ],
+      "power_coefficients": [
+        -1,
+        0,
+        0,
+        6,
+        0,
+        0,
+        -12,
+        0,
+        54,
+        32,
+        -396,
+        486,
+        30,
+        -414,
+        288,
+        -114,
+        72,
+        -36,
+        6
+      ]
+    }
+  },
+  "integer_matrix_trace_checks_m_2_to_10": true,
+  "finite_roots": {
+    "2": {
+      "exact_rational_root_bracket": [
+        "400312927426073777010206031846360697872060411/713623846352979940529142984724747568191373312",
+        "800625854852147554020412063692721395744120823/1427247692705959881058285969449495136382746624"
+      ],
+      "root_diagnostic": "0.5609578904515291298145210442389823818645",
+      "root_minus_cylinder_diagnostic": "-0.02792280946632386823692165",
+      "leading_shift_diagnostic": "-0.01877706920495645957168997",
+      "shift_ratio_diagnostic": "1.487069635923441540396485"
+    },
+    "3": {
+      "exact_rational_root_bracket": [
+        "837097121055181458023268930732850654644401453/1427247692705959881058285969449495136382746624",
+        "418548560527590729011634465366425327322200727/713623846352979940529142984724747568191373312"
+      ],
+      "root_diagnostic": "0.5865114551126756356545589766069017348243",
+      "root_minus_cylinder_diagnostic": "-0.002369244805177362396883719",
+      "leading_shift_diagnostic": "-0.002813628621105619791973803",
+      "shift_ratio_diagnostic": "0.8420602446979530384188936"
+    },
+    "4": {
+      "exact_rational_root_bracket": [
+        "839738285972989758802080916395032008952045671/1427247692705959881058285969449495136382746624",
+        "104967285746623719850260114549379001119005709/178405961588244985132285746181186892047843328"
+      ],
+      "root_diagnostic": "0.5883619852843523124446730988582938294302",
+      "root_minus_cylinder_diagnostic": "-0.0005187146335006856067695969",
+      "leading_shift_diagnostic": "-0.0004743056103421040659819628",
+      "shift_ratio_diagnostic": "1.09362955484871977242227"
+    },
+    "5": {
+      "exact_rational_root_bracket": [
+        "420181142003630538273314870547619800015168973/713623846352979940529142984724747568191373312",
+        "840362284007261076546629741095239600030337947/1427247692705959881058285969449495136382746624"
+      ],
+      "root_diagnostic": "0.5887991890279353635088962923004941727878",
+      "root_minus_cylinder_diagnostic": "-0.00008151088991763454254640345",
+      "leading_shift_diagnostic": "-0.00008528614295508369719285866",
+      "shift_ratio_diagnostic": "0.9557342739788642171284672"
+    },
+    "6": {
+      "exact_rational_root_bracket": [
+        "840455282049249677895950177429479812000281615/1427247692705959881058285969449495136382746624",
+        "52528455128078104868496886089342488250017601/89202980794122492566142873090593446023921664"
+      ],
+      "root_diagnostic": "0.5888643480346472844728520094931130823426",
+      "root_minus_cylinder_diagnostic": "-0.00001635188320571357859068626",
+      "leading_shift_diagnostic": "-0.00001597450660316489351440316",
+      "shift_ratio_diagnostic": "1.023623678146899300822827"
+    },
+    "8": {
+      "exact_rational_root_bracket": [
+        "420238875377231236692311921907541377775002945/713623846352979940529142984724747568191373312",
+        "840477750754462473384623843815082755550005891/1427247692705959881058285969449495136382746624"
+      ],
+      "root_diagnostic": "0.5888800907157023131380716130272317396199",
+      "root_minus_cylinder_diagnostic": "-0.0000006092021506849133710827245",
+      "leading_shift_diagnostic": "-0.0000006052700254996210060063077",
+      "shift_ratio_diagnostic": "1.006496480941785588560711"
+    },
+    "12": {
+      "exact_rational_root_bracket": [
+        "840478618766141554937576837740610249769443589/1427247692705959881058285969449495136382746624",
+        "420239309383070777468788418870305124884721795/713623846352979940529142984724747568191373312"
+      ],
+      "root_diagnostic": "0.5888806988874187696311190589824471686986",
+      "root_minus_cylinder_diagnostic": "-1.030434228420323636769258e-9",
+      "leading_shift_diagnostic": "-1.029861467037597738970488e-9",
+      "shift_ratio_diagnostic": "1.000556153813943004503969"
+    },
+    "20": {
+      "exact_rational_root_bracket": [
+        "13132478441200323205557217575903864723271695/22300745198530623141535718272648361505980416",
+        "840478620236820685155661924857847342289388481/1427247692705959881058285969449495136382746624"
+      ],
+      "root_diagnostic": "0.5888806999178489729756992114548407710935",
+      "root_minus_cylinder_diagnostic": "-4.025075743484296864162629e-15",
+      "leading_shift_diagnostic": "-4.025055391908418730765929e-15",
+      "shift_ratio_diagnostic": "1.000005056222560078609715"
+    }
+  },
+  "width4_obstructions": [
+    {
+      "width": 4,
+      "length": 4,
+      "rows_as_bitmasks": [
+        1,
+        5,
+        4,
+        5
+      ],
+      "occupied_vertices": [
+        0,
+        4,
+        6,
+        10,
+        12,
+        14
+      ],
+      "full_row": false,
+      "every_interface_overlaps": true,
+      "actual_ambient_rank": 0,
+      "naive_rank": 1
+    },
+    {
+      "width": 4,
+      "length": 2,
+      "rows_as_bitmasks": [
+        11,
+        14
+      ],
+      "occupied_vertices": [
+        0,
+        1,
+        3,
+        5,
+        6,
+        7
+      ],
+      "full_row": false,
+      "every_interface_overlaps": true,
+      "actual_ambient_rank": 2,
+      "naive_rank": 1
+    }
+  ],
+  "exact_interval_certificate": {
+    "q_rational_interval": [
+      "11777613998357/20000000000000",
+      "29444034995893/50000000000000"
+    ],
+    "q_polynomial_endpoint_signs": [
+      1,
+      -1
+    ],
+    "eigenvalue_intervals": {
+      "B_negative": {
+        "rational_interval": [
+          "-51/500",
+          "-99/1000"
+        ],
+        "endpoint_signs": [
+          -1,
+          1
+        ]
+      },
+      "B_small_positive": {
+        "rational_interval": [
+          "7/200",
+          "19/500"
+        ],
+        "endpoint_signs": [
+          1,
+          -1
+        ]
+      },
+      "B_perron": {
+        "rational_interval": [
+          "397/500",
+          "797/1000"
+        ],
+        "endpoint_signs": [
+          -1,
+          1
+        ]
+      },
+      "C_negative": {
+        "rational_interval": [
+          "-81/1000",
+          "-39/500"
+        ],
+        "endpoint_signs": [
+          1,
+          -1
+        ]
+      },
+      "C_positive": {
+        "rational_interval": [
+          "89/500",
+          "9/50"
+        ],
+        "endpoint_signs": [
+          -1,
+          1
+        ]
+      }
+    },
+    "negative_beta_over_positive_mu_upper": "3/5",
+    "negative_mu_over_positive_mu_upper": "1/2",
+    "P_prime_at_q_sign": -1,
+    "F_lambda_at_perron_sign": 1,
+    "hprime_positive": true,
+    "all_m_at_least_2_defect_positive": true,
+    "arithmetic": "Fraction interval arithmetic; every endpoint sign certified"
+  },
+  "width4_continuation_memory_witness": {
+    "width": 4,
+    "prefixes": [
+      [
+        0,
+        5
+      ],
+      [
+        7,
+        5
+      ]
+    ],
+    "common_frontier_mask": 5,
+    "common_suffix": [
+      13,
+      0
+    ],
+    "completed_torus_ranks": [
+      0,
+      1
+    ],
+    "completed_matching_D": [
+      -1,
+      0
+    ],
+    "conclusion": "Any deterministic continuation state identifying these prefixes cannot preserve the rank readout."
+  },
+  "width4_topology_memory_witness": {
+    "width": 4,
+    "prefixes": [
+      [
+        13,
+        5
+      ],
+      [
+        7,
+        5
+      ]
+    ],
+    "common_suffix": [
+      13,
+      0
+    ],
+    "prefix_signatures": [
+      {
+        "occupied_count": 5,
+        "frontier_mask": 5,
+        "ordinary_frontier_partition": [
+          [
+            0,
+            2
+          ]
+        ],
+        "existing_transverse_winding": false,
+        "lifted_frontier_displacements": {
+          "0->2": -2
+        }
+      },
+      {
+        "occupied_count": 5,
+        "frontier_mask": 5,
+        "ordinary_frontier_partition": [
+          [
+            0,
+            2
+          ]
+        ],
+        "existing_transverse_winding": false,
+        "lifted_frontier_displacements": {
+          "0->2": 2
+        }
+      }
+    ],
+    "completed_torus_ranks": [
+      0,
+      1
+    ],
+    "completed_matching_D": [
+      -1,
+      0
+    ],
+    "exact_common_prefix_probability": "p^5*(1-p)^3",
+    "conclusion": "Even frontier mask, ordinary set partition, occupation count, and current winding flag do not preserve continuation; lifted/annular path information is needed."
+  },
+  "boundary": "Rows remember occupancy only; width 4 requires within-row/accumulated connectivity. Width-three proof does not justify mask-only transfer at width 4."
+}

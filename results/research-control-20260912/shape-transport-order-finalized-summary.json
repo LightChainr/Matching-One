@@ -1,0 +1,82 @@
+{
+  "schema": "matching-one.shape-transport-order-finalized-summary.v1",
+  "provenance": {
+    "head": "59fff91c6592e8c947ccd1e3df25e15df6a291e5",
+    "checkout": "93f44c5dfb52d178046f546e9d644fd84e50dfcd",
+    "run_id": 34685638146,
+    "job_id": 103532033981,
+    "command": "python scripts/shape_transport_order.py",
+    "extraction": "Fields read from completed successful workflow stdout. Not a new local raw-histogram run.",
+    "elapsed_seconds": 17.045987239,
+    "mathematical_tests_in_job": 19
+  },
+  "finalization_date": "2026-09-12",
+  "reference_levels": [
+    0.3,
+    0.5,
+    0.7
+  ],
+  "reference_points": [
+    0.5638915164071909,
+    0.5927517136919742,
+    0.6211934034174541
+  ],
+  "composition_difference_high_precision": [
+    -4.249439184159747e-06,
+    -4.474271110694973e-06,
+    -4.553323687558643e-06
+  ],
+  "standard_errors": [
+    1.900866250374583e-06,
+    1.836344494162728e-06,
+    1.8494040220848198e-06
+  ],
+  "covariance": [
+    [
+      3.613292501813127e-12,
+      3.4593671499807256e-12,
+      3.46768682759206e-12
+    ],
+    [
+      3.4593671499807256e-12,
+      3.372161101241766e-12,
+      3.3685088503157967e-12
+    ],
+    [
+      3.46768682759206e-12,
+      3.3685088503157967e-12,
+      3.4202952369035086e-12
+    ]
+  ],
+  "jackknife_bias_estimate": [
+    -1.0533094393337672e-11,
+    -1.2296963397197432e-11,
+    -2.1912731669465483e-11
+  ],
+  "simultaneous_nominal_alpha": 0.0027,
+  "bonferroni_critical_z": 3.3200541166994784,
+  "lower": [
+    -1.0560418004010983e-05,
+    -1.057103420821836e-05,
+    -1.0693445124521922e-05
+  ],
+  "upper": [
+    2.0615396356914884e-06,
+    1.622491986828414e-06,
+    1.586797749404636e-06
+  ],
+  "max_abs_marginal_z": 2.462049197030357,
+  "resolved_crossing": false,
+  "verdict": "UNRESOLVED_FULL_COMMON_COORDINATE_COLLAPSE",
+  "pooled_float_vs_55dps_max": 1.48427446819855e-15,
+  "composition_quantiles_range_all_deletions": [
+    0.24880019486659927,
+    0.7510794674016856
+  ],
+  "limits": [
+    "No resolved crossing is not evidence establishing a common coordinate.",
+    "A nonzero constant-sign commutator would not reject affine conjugacy: Aff(1) is nonabelian.",
+    "Estimated nonlinear jackknife covariance and nominal marginal intervals; no exact finite-sample coverage claim.",
+    "Same effective spin0 laws and fixed central points, not a new independent experiment."
+  ]
+}
