@@ -1,0 +1,141 @@
+# Project Status and Claim Ledger
+
+**Status date:** 2026-09-07
+
+`main` is the shared research line. Claim strength follows evidence and chronology, not PR state. `docs/ROADMAP.md` ranks information gain; it is not a permission system.
+
+## What is required while exploring
+
+`GOVERNANCE.md` §2 is the whole list, and it is short: don't fool yourself about a
+number, don't destroy data, don't misdate a freeze, say which observable, and count
+one random block once. Nothing else in this repository gates exploratory work.
+
+The three that bear directly on this ledger: frozen predictions and result history are
+preserved rather than overwritten; a claim-bearing comparison uses identical observable
+semantics or an exact registered map; and correlated views of one raw random block are
+counted once, not as independent primary evidence.
+
+Everything else — digests, provenance chains, second implementations, preregistration,
+power — is publication-time work and lives in `docs/PUBLICATION-CHECKLIST.md`.
+
+## Strongest current evidence
+
+| Statement | Level | Current evidence |
+|---|---:|---|
+| Square-site matching-odd orientation signal exists | C3 | Independent P43+P57 primary synthesis rejects global zero: `chi2=31.1857355515/4`, `p=2.81e-6`; fixed H4 predictions give `3.4622795373/4`, `p=.484` |
+| Central square-site odd sector is compatible with `DeltaCos4*N^-13/8` | C3 | P31/P32/P37/P43/P50/P57 |
+| Frozen norm-5 H4 transfer beats H12/H8 aliases | C3 | H4 `0.4163/2`; H12 `35.1931/2`; H8 `16.0120/2` |
+| P57 child block alone rejects zero | negative refinement | No: zero `1.77635/2`; its value is harmonic/transfer discrimination |
+| N145->290 full curve is one scalar multiplier | C3 negative | No: three-level transfer `9.3520/2`, `p=.0093`; the resolved shape mode fails while the common amplitude direction remains viable |
+| Frozen finite-size center-slope correction predicts N290 | C3 | corrected slope residual `z=-0.666`; bare `2^(3/8)` gives `z=-22.690` |
+| Pure `P4[S'] ~ N^-5/4` is sufficient | C3 negative | Prospectively falsified; `52.71634/2` on P48 new geometry |
+| One scalar width explains the higher thermal jet | C2 negative | No: full covariance norm-5 width score `24.5004/10`; width-corrected q2 `22.2386/10` |
+| Rank-2/Jordan is uniquely established | C2 | No. Jordan/log is compatible (`17.0513/10`) and now has a precise Q4-module origin, but scale-log behavior alone is not module identification |
+| Intrinsic quantile-center transfer obeys `N^-3/4` on N145->290 | C3 | frozen ratio observed `0.59584549` vs `2^-3/4=0.59460356`, `z=-1.033` |
+| Square/rectangular spin-4 ratio carries the area-normalized weight-4 shape | C3 negative | Prospectively falsified at N=290: ratio `1.880 +/- 0.177` excludes `11/4` at `4.9` sigma, area scaling `4` at `12.0`, and no-dependence `1` at `5.0`. Tests the fingerprint as constructed, not the module: the normalization assumption is a second conjunct (`docs/astra/Q2`) |
+| Weight-4 modular amplitude law `(1, 2.75, 10.99)` holds across aspect ratios | C3 negative | N=580 ladder `A4(4i)/A4(i) = 4.58` scored by Fieller contrast (the denominator is 3.6σ from zero, so the ratio z is not used). `no_modulus_dependence` (`1.00`) is excluded at `9.5` sigma; `bare_aspect_ratio` (`4.00`, z=+0.50), the weight-4 shape (`10.99`, z=−2.08) and plain area scaling (`16`, z=−2.56) all survive — **underpowered**, three survivors. Cross-rung covariance measured (`ρ=−0.1648`, #575 replay) and moves no verdict. `notes/aspect-ladder-n580-result-20260905.md` |
+| #582's Wasserstein remainder `r_N` is indexed by a pre-existing discrete label | C2 negative | Re-frozen five transitions reproduce #582 affine statistics bit-for-bit; exact permutation null over ≤30 relabellings is beaten by **no** label — lineage p=.133, multiplier/interpolation .300, prime parity/min-component .700, prime cos4-sign .600. The remainder is structured but unlabelled and not smooth curvature (Taylor stat 1.82e6/1.19e6 on 7 df, curvatures 43–80° from `r_N`, never dominant). `notes/type582-residual-20260906.md` |
+| P398's balanced realization factors through the reflection quotient | exact (bounded to the frozen I/O object) | #600 Phase C. A (microscopic, `Catalan(w)`) vs B (`r_reflect(w)` orbit quotient) agree bit-for-bit in every resolvable Hankel direction at `w=4..8` (`max |A-B| ≤ 2.7e-15`); balanced order and numerical rank preserved; odd sector (`4/16/56/197/680`) carries no reach/observe energy (`< 6e-17`). Control: `halves_linked` is not `R`-even at odd widths, so the exposed dictionary breaks at `w=5,7` (`1.8e-2`, `8.7e-3`) and only there; symmetrization restores agreement to `1e-16`. `notes/p598-phase-c-balanced-quotient-20260906.md` |
+| #581's two typed Q-score pieces keep distinct scale/noise profiles to L=8 | C2 | square-bond `p=1/2`, L=3/4/8 at 10⁵ configs, unbiased paired estimator (L=3 reproduces the enumerated gate; telescoping exact to 1e-18): ambient homology `X` single-signed/monotone with `Cov(wrap,X)` ≈0.29–0.30 nearly size-independent; duality-even `B_even` alternating, opposite, 6–11× smaller; `X` degree-one decays ≈1/L while `B_even`'s stays at the floor. `notes/qtangent-empirical-20260907.md` |
+| #609's 55% curvature discrepancy is a real second scale | C2 negative | The discrepancy is an affine change of chart: `a_curv = 2/(h0+h1)[a1 - a0/k + ell_C(r1) - ell_C(r0)/k]` closes to 3e-13 on the eight committed productions with published `g` fixed, reproduces the published ratios exactly (1.53681/1.55744 spin0, 1.57891/1.44387 equal), and the chart term carries 89–117% of the excess (97.5%/94.9% on the primary weighting). `notes/p612-n725-decision-20260907.md` |
+| #609's amplitude law forecast holds at N=725 within ±5% | C3 (weighting-conditional) | One production, 100 batches × 1M paired = 1e8 per orientation (`#609`'s "100 batches × 100M" was 100× this; `n290` metadata says `samples_per_pair = 1e8`). `a_hat(290→725) = -4.8083e-04 ± 2.2941e-06`; the 3se interval lies wholly inside the ±5% band, so the finite forecast is **supported** — but the point miss is 5.56 se (2.7%) and the spin0→equal weighting systematic is 12% (~25 se), under which the same rule reads **stops**. |
+
+## Exact semantics and controls
+
+The Issue #43 even-sector channel correction remains
+
+```text
+DeltaS_cross = -DeltaS_either
+```
+
+with corrected score `0.5700315436/2`.
+
+Finite Russo/chain rule is exact:
+
+```text
+M'(p) = pivotal_mass_primal(p) + pivotal_mass_matching(1-p).
+```
+
+The N=26 frozen finite families remain falsified:
+
+```text
+Beta(5,5): first k=5 difference = -96
+Beta(7,7): first k=5 difference = +156
+```
+
+## Square-site thermal spin-4 sector
+
+The durable empirical picture is a leading matching-odd H4-like sector with `x=21/4` candidate scaling, plus non-scalar finite-size mixing in the derivative/full-curve state.
+
+The exact LCFT bridge is now sharper: the percolation energy Jordan pair can be lifted by the repository Q4 descendant to a rank-2 `x=21/4`, spin-4 pair. In the repository normalization `<Q4|Q4>=4930`. The resulting logarithmic slope has the exact module relation
+
+```text
+B_logN(tau) = -(lambda_top/2) A_q(tau),
+A_q/A_epsilon = (493/96) g2(tau),
+```
+
+so the frozen module coefficient is `-493/192`. This supplies a representation-theory origin for Jordan/log scaling; it does **not** prove that the lattice `P4[S']` overlaps that module.
+
+The next identifying evidence must use shape/modulus information. Exact assets include the rectangular/CM `11/4` ratio and the hexagonal degree-2 E4 phase projector. A scalar-cancelled modulus fingerprint is more identifying than another radial exponent fit.
+
+## Pivotal and self-matching mechanism
+
+Pivotal normalization gives two stable archived relations:
+
+```text
+N * P4[D']/Mbar'                 chi2 = 8.793/7
+[P4[S']/Mbar']/P4[D]             chi2 = 9.458/7
+```
+
+while `N^(13/8)P4[S']/Mbar'` is nonconstant (`117.880/7`). A genuinely local landing-marked pivotal H4 observable is measurably orientation-sensitive.
+
+Microscopically the N=10 local odd tangent has two independent response rows,
+
+```text
+[[15/8, 5/4],
+ [-3/64, 11/64]],
+```
+
+but at N130/N170 the second singular direction is unresolved (condition numbers about 1687 and 608). More samples of the same two rows are therefore low information. The multiradius N130/N170 prototype also rejects a simple constant shell-log story and shows `R=8` is geometrically non-injective there. Future local tomography should change geometry/readout, not merely add replicas.
+
+## Rank gap versus local thermal jet
+
+The exact neutral-area covector maps the full Krawtchouk expansion to `E[K_plus-K_minus]/(N+1)`, but the expansion is severely ill-conditioned when truncated around the intrinsic center. The global rank gap is therefore **not** a redundant low-order thermal-jet coordinate. This closes the scalar-width/common-state shortcut.
+
+## Distinct primitive square-bond spin-4 sector
+
+Primitive homology characters form a separate mechanism from the square-site thermal Q4 candidate.
+
+The continuum-subtracted non-scalar C3 character is directly observed with a passing reflection null. The simple scalar `C proportional E4(tau)` Pell phase bridge fails, so this sector should not be identified with the thermal Q4 one-point function.
+
+Two prospectively frozen norm-2 generations instead select the negative rank-4 H4 phase:
+
+```text
+first generation:  H4 -1/2  chi2=5.4171/2
+second generation: H4 -1/2  chi2=1.7077/2, p=.426
+```
+
+Frozen positive-phase alternatives are strongly excluded in both generations. Individual lineages do not converge monotonically to `-1/2`, so monotonic convergence is not claimed.
+
+A zero-new-compute vacuum-KdV calculation predicts `C30/C56=1.99068780`; observed is `1.99360564`, with the C-only score essentially exact. The scalar S residual is a separate direction. Current interpretation: a distinct `x≈4`, spin-4 identity/vacuum-family response with finite-size corrections.
+
+## Norm-4 quotient structure
+
+The general integer-period backend is production-ready. Exact Gaussian-cover arithmetic shows norm-4 `2i` has deck group `Z2 x Z2`, and `(1+i)^2=2i` has an exact coarse/detail Hadamard character decomposition. There is no Gaussian scalar norm-4 cyclic `Z4` comparator. Therefore quotient dependence should be tested with character-resolved readouts when cheap, not treated as an unspecified nuisance.
+
+## Current interpretation
+
+1. **Signal existence is no longer the bottleneck.** Independent primary square-site blocks strongly reject global zero while remaining compatible with fixed H4 predictions.
+2. **The central/derivative state is not scalar.** N290 shape, norm-5 thermal jet, rank-gap and width analyses all point toward compact mixing/transfer rather than another free correction exponent.
+3. **Jordan has a concrete module origin but is not identified by scale behavior alone.** Modulus/shape is the next orthogonal discriminator.
+4. **Local pivotal physics is real, but current N130/N170 readouts are nearly rank-one.** Change the readout/geometry rather than buying more of the same samples.
+5. **Primitive square-bond H4 is a separate `x≈4` sector.** Do not fold it into the thermal `x=21/4` story.
+6. **Norm-4 has exact deck-character structure.** Use it to sharpen, not delay, the existing production design.
+7. **The #582 dominant transferable direction is the robust finite object; its remainder is real but unlabelled.** The remainder after removing the consensus `g_N` is structured yet matches no pre-existing discrete label above its permutation null, and is not a smooth one-parameter-law curvature artifact. Resolve it with one crossed transition or a changed readout, not with another fitted rank or exponent.
+8. **#581's two typed Q-score pieces are a usable typed fingerprint.** On square bond the ambient-homology source is single-signed, low-scale and size-stable, while the duality-even Betti tangent alternates and stays small and opposite — a separation that survives to L=8. This is the square-bond baseline against which a square-site `X_site` coupling can be read as bulk-like or topological.
+9. **The 55% "second scale" at the curvature is a chart, not a law failure.** The exact chart identity closes to 3e-13 on every committed production and absorbs 95–98% of the old excess under the primary weighting. What remains after transport is a ~4% curvature misfit (7.3 se) and a structured full-law residual (1447/6 df at the new transition) — the amplitude forecast's ±5% pass does not establish the whole law, and the verdict is weighting-conditional (the `equal` sensitivity reads *stops*).
+10. **The `Q_N(u) → p_c` bridge is a scoped corollary, not a new theorem.** It holds under three imported hypotheses — digital Alexander duality (the repository's own), Duminil-Copin–Tassion exponential decay (their §1.2 site adaptation), and `p_c + p_c* = 1` for amenable pairs (Grimmett–Li (1.3) + `p_c = p_u`, or van den Berg + sharpness; van den Berg's counterexample keeps it a genuine hypothesis). Duncan–Kahle–Schweinhart already have the sharp threshold for giant cycles, so no novelty claim is available. Thin tori (`ell_N = O(log N)`), unbounded weights and `u → 0/1` stay outside.
+
+## Explicit non-claims
+
+The project does not claim a closed form for square-site `p_c`, global uniqueness of H4 or `13/8`, a unique q2/Jordan mechanism, a scalar-width explanation, proof of the lattice-to-Q4 overlap, a full matching/OPE automorphism, or a rigorous new percolation bound.
