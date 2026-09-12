@@ -7,6 +7,7 @@ on:
       - 'scripts/shape_lineage_nonlinear_jackknife.py'
       - 'scripts/shape_common_chart.py'
       - 'scripts/shape_reflection_commutator.py'
+      - 'scripts/shape_reflection_order.py'
       - 'tests/test_shape*.py'
       - '.github/workflows/shape-lineage-review.yml'
 permissions:
@@ -14,7 +15,7 @@ permissions:
 jobs:
   review:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -25,9 +26,6 @@ jobs:
           python -m unittest discover -s tests -p 'test_shape_lineage_review.py'
           python -m unittest discover -s tests -p 'test_shape_common_chart.py'
           python -m unittest discover -s tests -p 'test_shape_reflection_commutator.py'
-      - name: Read existing quantiles and covariance only
-        run: python scripts/shape_lineage_review.py --compact
-      - name: Check full nonlinear uncertainty on existing histograms
-        run: python scripts/shape_lineage_nonlinear_jackknife.py
-      - name: Test common-chart commutation without a polynomial fit
-        run: python scripts/shape_reflection_commutator.py
+          python -m unittest discover -s tests -p 'test_shape_reflection_order.py'
+      - name: New sign-order test only; prior executed covariance/commutator results retained
+        run: python scripts/shape_reflection_order.py

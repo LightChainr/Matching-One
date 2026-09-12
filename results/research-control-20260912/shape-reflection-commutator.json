@@ -1,0 +1,55 @@
+{
+  "schema": "matching-one.shape-reflection-commutator-record.v1",
+  "provenance": {
+    "analysis_head": "2f900dd2066bd38a4d53f02e76ab32cb7b32cedf",
+    "tested_checkout": "55d2b9b5d66918493593f3b20401707ba2bb50a7",
+    "run_id": 34685079362,
+    "job_id": 103530556772,
+    "command": "python scripts/shape_reflection_commutator.py",
+    "extraction": "Numerical fields copied from the completed GitHub Actions stdout; statistical interpretation below is the reviewed reading, not an additional run.",
+    "python": "3.11.16", "numpy": "2.4.6", "scipy": "1.17.1", "mpmath": "1.4.1",
+    "elapsed_seconds": 78.51089948600003,
+    "mathematical_tests_in_job": 13,
+    "pooled_Q_beta_vs_original_max_each": [2.14e-14,2.08e-14,1.95e-14]
+  },
+  "standing": "C2 existing effective spin0 quantile laws. No fitted chart, new simulation, or independent evidence. One-size-at-a-time nonlinear deletion includes the random N290 reference points.",
+  "sizes": [145,290,725],
+  "reference_levels": [0.3,0.5,0.7],
+  "reference_p_values": [0.5638915164071909,0.5927517136919742,0.6211934034174541],
+  "definition": "R_i(p)=Q_i(1-F_i(p)), F_i=inverse of combined Q_i; C=R1 R3-R2 R3 R1 R2 evaluated right-to-left",
+  "commutator_high_precision_pooled": [-5.642573955188146e-10,-2.7336215561412736e-13,5.482200467464304e-10],
+  "standard_errors_nonlinear_jackknife": [1.4934727558307275e-9,4.855386934130967e-13,1.4502874132698063e-9],
+  "covariance": [
+    [2.230460872408628e-18,5.803964612316742e-22,-2.165964629629277e-18],
+    [5.803964612316742e-22,2.3574782280129714e-25,-5.63735645904496e-22],
+    [-2.165964629629277e-18,-5.63735645904496e-22,2.103333581088826e-18]
+  ],
+  "composition_quantiles_range_pooled": [0.23047267136948918,0.7694572984763953],
+  "all_deletions_stayed_in_checked_range": [0.05,0.95],
+  "precision_controls": {
+    "dps": 55,
+    "pooled_beta_vs_bernstein_max": 1.19943071917533e-15,
+    "selected_deleted_beta_vs_bernstein": [8.100217279442468e-16,4.0058717599497387e-16,6.117757390433664e-16],
+    "float_involution_max": 1.3322676295501878e-15,
+    "max_control_error_over_min_marginal_se": 0.002743895898769686,
+    "adequate_at_one_percent_marginal_se": true,
+    "scope": "Independent numerical controls, not interval certificates or an all-direction statistical calibration."
+  },
+  "descriptive_gaussian_reference": {
+    "statistic": 0.5746485169805402,
+    "dof": 3,
+    "log10_p": -0.044692032666073,
+    "max_abs_marginal_z": 0.563007973046446,
+    "covariance_condition": 481057718.2854624,
+    "calibrated_test": false,
+    "warning": "Near-coincident involutions can make the commutator quadratic in estimation errors. Gaussian/chi-square reference is descriptive unless nondegeneracy or suitable null calibration is established."
+  },
+  "verdict": "UNRESOLVED_COMMON_CHART; no measured contradiction, no positive identification",
+  "limits": [
+    "The exact quadratic chart fails, but this necessary test does not exclude every common monotone symmetrizing chart.",
+    "A zero at three points is not a functional identity; even an exact identity is only necessary.",
+    "The numerical magnitude is coordinate-dependent; only equality of the composed maps is conjugacy-invariant.",
+    "This test concerns the combined effective quantile laws, not a silently substituted mixture CDF or an orientation-wise observable.",
+    "No larger-N or sample top-up is justified from an unresolved central estimate; first establish which alternative the acquisition would distinguish."
+  ]
+}
