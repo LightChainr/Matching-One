@@ -1,0 +1,5 @@
+-r requirements.txt
+# Existing P598 balanced-realization tests import the scientific Python stack.
+# Keep these test dependencies separate from the lightweight core runtime.
+numpy>=1.24,<3
+scipy>=1.10,<2
