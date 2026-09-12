@@ -3,11 +3,7 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - 'scripts/shape_lineage_review.py'
-      - 'scripts/shape_lineage_nonlinear_jackknife.py'
-      - 'scripts/shape_common_chart.py'
-      - 'scripts/shape_reflection_commutator.py'
-      - 'scripts/shape_reflection_order.py'
+      - 'scripts/shape*.py'
       - 'tests/test_shape*.py'
       - '.github/workflows/shape-lineage-review.yml'
 permissions:
@@ -27,5 +23,6 @@ jobs:
           python -m unittest discover -s tests -p 'test_shape_common_chart.py'
           python -m unittest discover -s tests -p 'test_shape_reflection_commutator.py'
           python -m unittest discover -s tests -p 'test_shape_reflection_order.py'
-      - name: New sign-order test only; prior executed covariance/commutator results retained
-        run: python scripts/shape_reflection_order.py
+          python -m unittest discover -s tests -p 'test_shape_transport_order.py'
+      - name: Full-profile transport order; prior executed tests remain archived
+        run: python scripts/shape_transport_order.py

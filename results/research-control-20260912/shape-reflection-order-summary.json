@@ -1,0 +1,17 @@
+{
+  "schema":"matching-one.shape-reflection-order-summary.v1",
+  "provenance":{"head":"8df13d10c7e53c86147c7cff9406a926484035e7","checkout":"bdd1012681495d9a9b94872ef04fe5a99e17b3fb","run_id":34685479687,"job_id":103531624273,"command":"python scripts/shape_reflection_order.py","extraction":"Selected fields from completed workflow stdout; full covariance is printed by the reproducible reader.","elapsed_seconds":28.787224390999995,"mathematical_tests_in_job":16},
+  "standing":"C2 same effective spin0 laws. Necessary noncrossing condition, not positive identification.",
+  "coordinates_per_pair":["median difference","R difference at Q290(.3)","R difference at Q290(.5)","R difference at Q290(.7)"],
+  "alpha_nominal":0.0027,"critical_z_bonferroni":3.6891551298537215,
+  "pairs":[
+    {"sizes":[145,290],"values":[-1.0057987858815821e-5,-2.0149056970062666e-5,-2.011602729721897e-5,-2.0747337739071048e-5],"standard_errors":[4.040053454070079e-6,7.855410196331045e-6,8.080148349486049e-6,8.088550103495104e-6],"incompatible_sign_order":false},
+    {"sizes":[145,725],"values":[-4.7964495971137935e-6,-8.902090303758448e-6,-9.592936627011683e-6,-9.166176376702043e-6],"standard_errors":[3.79050106701839e-6,7.252848255766946e-6,7.581035488259411e-6,7.468079227667932e-6],"incompatible_sign_order":false},
+    {"sizes":[290,725],"values":[5.261538261702028e-6,1.1246966666304219e-5,1.0523090670207288e-5,1.1581161362369003e-5],"standard_errors":[3.251080701006259e-6,6.231936741990175e-6,6.502178799303818e-6,6.417051723589638e-6],"incompatible_sign_order":false}
+  ],
+  "all_twelve_simultaneous_intervals_include_zero":true,
+  "max_abs_marginal_z":2.565025557560188,
+  "beta_vs_bernstein_max":1.3077985417699056e-15,
+  "verdict":"NO_RESOLVED_REFLECTION_CROSSING; common-chart question remains unresolved",
+  "limits":["Nominal Bonferroni intervals use estimated nonlinear-jackknife marginal variances, not exact finite-sample coverage.","No inverse covariance or independence of the twelve entries is assumed.","The same .3/.5/.7 point set is retained; no search for a favorable crossing."]
+}
