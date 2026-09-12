@@ -1,0 +1,76 @@
+{
+  "schema": "matching-one.p398-double-pulse-bareiss-check.v1",
+  "method": "Independent fraction-free Bareiss elimination of stored integer Hankel matrices, with exact division at every step.",
+  "checks": [
+    {
+      "width": 4,
+      "object": "baseline",
+      "dimension": 10,
+      "exact_integer_determinant": "190412207161344",
+      "modular_residue_matches": true
+    },
+    {
+      "width": 4,
+      "object": "double_pulse",
+      "dimension": 4,
+      "exact_integer_determinant": "-131712",
+      "modular_residue_matches": true
+    },
+    {
+      "width": 4,
+      "object": "controlled",
+      "dimension": 14,
+      "exact_integer_determinant": "25079572629634940928",
+      "modular_residue_matches": true
+    },
+    {
+      "width": 4,
+      "object": "contrasts",
+      "dimension": 13,
+      "exact_integer_determinant": "9139785943744512",
+      "modular_residue_matches": true
+    },
+    {
+      "width": 4,
+      "object": "scalar_pulse",
+      "dimension": 4,
+      "exact_integer_determinant": "-16",
+      "modular_residue_matches": true
+    },
+    {
+      "width": 5,
+      "object": "baseline",
+      "dimension": 26,
+      "exact_integer_determinant": "181461345108945382405059034718742430957841106782936682773049890032294986062007730129156072676524032000",
+      "modular_residue_matches": true
+    },
+    {
+      "width": 5,
+      "object": "double_pulse",
+      "dimension": 16,
+      "exact_integer_determinant": "-55257277593008057571282631920143302656",
+      "modular_residue_matches": true
+    },
+    {
+      "width": 5,
+      "object": "controlled",
+      "dimension": 42,
+      "exact_integer_determinant": "1003010516639565501054746927538419021927479495940253540378748715938811486404608",
+      "modular_residue_matches": true
+    },
+    {
+      "width": 5,
+      "object": "contrasts",
+      "dimension": 41,
+      "exact_integer_determinant": "-269269123942828146125905496928518351626665783934226473965736224702792355282944",
+      "modular_residue_matches": true
+    },
+    {
+      "width": 5,
+      "object": "scalar_pulse",
+      "dimension": 16,
+      "exact_integer_determinant": "3807433982136661932690399812209868620891979914831462400",
+      "modular_residue_matches": true
+    }
+  ]
+}
