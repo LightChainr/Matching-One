@@ -120,7 +120,11 @@ def _exact_support_fit(y,directions,kept,values,vectors,tol,roundoff):
     residual = W*(y-V*amplitudes)
     statistic = mp.fsum(x*x for x in residual)
     degrees = len(kept)-fitted_rank
-    if degrees == 0 and statistic < support_tol**2:
+    if degrees == 0:
+        # Saturation is an algebraic zero, not a chi-square fluctuation.
+        scale = max(1, mp.norm(W*y), mp.norm(W*V*amplitudes))
+        if mp.norm(residual) > support_tol*scale:
+            raise ArithmeticError('saturated support solve lost numerical accuracy')
         statistic = mp.mpf(0)
     return statistic,degrees,amplitudes,constraint_rank,fitted_rank,support_tol
 
@@ -168,6 +172,13 @@ def subspace_residual(observed: Sequence[Any], covariance: Sequence[Sequence[Any
             degrees = rank-width
             if degrees < 0:
                 raise ValueError('model has more directions than covariance rank')
+            if degrees == 0:
+                # The design spans all observations. Do not turn roundoff into p=0.
+                tolerance = mp.power(10, -mp.dps//2)
+                scale = max(1, mp.norm(y), mp.norm(y-residual))
+                if mp.norm(residual) > tolerance*scale:
+                    raise ArithmeticError('saturated solve lost numerical accuracy')
+                statistic = mp.mpf(0)
         return {'statistic':float(statistic),'degrees_of_freedom':degrees,
                 'amplitudes':[float(x) for x in amplitudes], 'covariance_rank':rank,
                 'covariance_condition_number':float(condition) if condition is not None else None,
