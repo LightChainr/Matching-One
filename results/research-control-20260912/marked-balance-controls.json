@@ -1,0 +1,149 @@
+{
+  "schema": "matching-one.marked-balance-controls.v1",
+  "N": 16,
+  "scope": "axis 4x4, uniform base Bernoulli law, one positive nonproduct p-independent mark",
+  "physical_configurations": 65536,
+  "cross_mask": 4383,
+  "rank0_block_mask": 61152,
+  "cross_k_rank": [
+    7,
+    2
+  ],
+  "block_k_rank": [
+    9,
+    0
+  ],
+  "source_weight": "1+10^12*(1{omega=cross}+1{omega=3x3_block})",
+  "weight_min": "1",
+  "weight_max": "1000000000001",
+  "base_matching_Bernstein_counts": [
+    -1,
+    -16,
+    -120,
+    -560,
+    -1812,
+    -4272,
+    -7448,
+    -9424,
+    -7874,
+    -2896,
+    1720,
+    2832,
+    1660,
+    560,
+    120,
+    16,
+    1
+  ],
+  "rank_counts_by_occupation": [
+    [
+      1,
+      16,
+      120,
+      560,
+      1812,
+      4272,
+      7448,
+      9440,
+      8082,
+      3984,
+      792,
+      32,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      8,
+      96,
+      560,
+      1984,
+      4580,
+      6368,
+      4704,
+      1472,
+      160,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      16,
+      208,
+      1088,
+      2512,
+      2864,
+      1660,
+      560,
+      120,
+      16,
+      1
+    ]
+  ],
+  "marked_numerator": "M(p)+10^12*p^7*(1-p)^7*(1-2p)",
+  "rational_sign_checks": [
+    {
+      "p": "1/1000",
+      "unnormalized_balance": "-499999999500482522479459826955803027935992015997/500000000000000000000000000000000000000000000000",
+      "normalizer": "500000000495518454573419559471507999/500000000000000000000000000000000000",
+      "normalized_balance": "-499999999500482522479459826955803027935992015997/500000000495518454573419559471507999000000000000",
+      "sign": -1,
+      "multiplicative_odds_bound_checked": true
+    },
+    {
+      "p": "1/4",
+      "unnormalized_balance": "8747997929829443/2147483648",
+      "normalizer": "2669678258663/524288",
+      "normalized_balance": "8747997929829443/10935002147483648",
+      "sign": 1,
+      "multiplicative_odds_bound_checked": true
+    },
+    {
+      "p": "3/4",
+      "unnormalized_balance": "-8747998455530621/2147483648",
+      "normalizer": "2669678258663/524288",
+      "normalized_balance": "-8747998455530621/10935002147483648",
+      "sign": -1,
+      "multiplicative_odds_bound_checked": true
+    },
+    {
+      "p": "999/1000",
+      "unnormalized_balance": "499999999424674562079327169156970711824127968003/500000000000000000000000000000000000000000000000",
+      "normalizer": "500000000495518454573419559471507999/500000000000000000000000000000000000",
+      "normalized_balance": "499999999424674562079327169156970711824127968003/500000000495518454573419559471507999000000000000",
+      "sign": 1,
+      "multiplicative_odds_bound_checked": true
+    }
+  ],
+  "at_least_three_distinct_roots": true,
+  "root_intervals": [
+    [
+      "1/1000",
+      "1/4"
+    ],
+    [
+      "1/4",
+      "3/4"
+    ],
+    [
+      "3/4",
+      "999/1000"
+    ]
+  ],
+  "not_claimed": "This is not a product local-field source; arbitrary marks do not inherit finite monotonicity. All roots can still concentrate asymptotically under an oscillation bound.",
+  "elapsed_seconds": 0.26406363399996735
+}
