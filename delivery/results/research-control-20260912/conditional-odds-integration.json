@@ -1,0 +1,75 @@
+{
+  "schema": "matching-one.conditional-odds-integration.v1",
+  "sites": 16,
+  "rank2_onset": 7,
+  "rank2_onset_count": 16,
+  "rank0_onset": 0,
+  "rank0_onset_count": 1,
+  "dps": 70,
+  "controls": [
+    {
+      "p": "0.2",
+      "log_odds_by_integration": "-8.02285366754663363108546518666429498063600611",
+      "log_odds_direct": "-8.02285366754663363108546518666429498063600611",
+      "absolute_error": "1.448908653e-70",
+      "conditional_K_mean_rank0": "3.1539878901173182994944198023",
+      "conditional_K_mean_rank2": "8.91006125576166023296011288412",
+      "conditional_K_variance_rank0": "2.41727992647976147046746095902",
+      "conditional_K_variance_rank2": "1.14475958556355673706175489264"
+    },
+    {
+      "p": "0.5",
+      "log_odds_by_integration": "-1.39671527506701689205595722638753878534945391",
+      "log_odds_direct": "-1.39671527506701689205595722638753878534945391",
+      "absolute_error": "1.811135816e-71",
+      "conditional_K_mean_rank0": "6.84088733280450778194151918816",
+      "conditional_K_mean_rank2": "10.7604201216141514648977335544",
+      "conditional_K_variance_rank0": "2.30207176385907223303574542842",
+      "conditional_K_variance_rank2": "1.51838920989915602260181189746"
+    },
+    {
+      "p": "0.5906721123310283",
+      "log_odds_by_integration": "4.78885539147954517855619640932135175784181824e-17",
+      "log_odds_direct": "4.78885539147954517855619640932135175784181824e-17",
+      "absolute_error": "3.041494958e-71",
+      "conditional_K_mean_rank0": "7.60807446864798796465865927942",
+      "conditional_K_mean_rank2": "11.3381197294469339727905940397",
+      "conditional_K_variance_rank0": "1.88415965186677760538400549186",
+      "conditional_K_variance_rank2": "1.63436685149469687562234422653"
+    },
+    {
+      "p": "0.8",
+      "log_odds_by_integration": "3.89446090685367585305928505829937124501179802",
+      "log_odds_direct": "3.89446090685367585305928505829937124501179802",
+      "absolute_error": "3.622271632e-71",
+      "conditional_K_mean_rank0": "9.05436428853351603737870336784",
+      "conditional_K_mean_rank2": "13.1377634123497056195286392798",
+      "conditional_K_variance_rank0": "1.04997068849764767320136367773",
+      "conditional_K_variance_rank2": "1.8018431610974180169094826455"
+    }
+  ],
+  "root_via_integrated_conditional_means": "0.59067211233102829689590201143951286962111713272216",
+  "direct_polynomial_root": "0.59067211233102829689590201143951286962111713272216",
+  "low_fugacity_anchor_bounds": [
+    {
+      "t0": "1/10000",
+      "rigorous_absolute_anchor_error_bound": "1287114408008436818200560012000160001/16000000000000000000000000000000000000",
+      "bound_diagnostic": 0.0804446505005273,
+      "actual_anchor_correction": "-0.00030008499998103926099419810536099379"
+    },
+    {
+      "t0": "1/100000000",
+      "rigorous_absolute_anchor_error_bound": "128700001144000008008000043680000182000000560000001200000001600000001/16000000000000000000000000000000000000000000000000000000000000000000000000",
+      "bound_diagnostic": 8.0437500715e-06,
+      "actual_anchor_correction": "-0.000000030000000849999999999998102500142685"
+    },
+    {
+      "t0": "1/1000000000000",
+      "rigorous_absolute_anchor_error_bound": "12870000000011440000000008008000000004368000000001820000000000560000000000120000000000016000000000001/16000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "bound_diagnostic": 8.04375000000715e-10,
+      "actual_anchor_correction": "-3.0000000000084999999999999999999998e-12"
+    }
+  ],
+  "scope": "fixed exact 4x4 oracle; path-sampling identity not a new sampler or complexity claim",
+  "elapsed_seconds": 1.5319051920000675
+}
