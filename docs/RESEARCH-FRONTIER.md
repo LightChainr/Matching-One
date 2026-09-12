@@ -7,6 +7,10 @@ This document changes research allocation, not historical experimental verdicts.
 this dated snapshot. [STATUS](STATUS.md) separates current adjudications from the
 [verbatim older ledger](history/STATUS-before-20260913.md).
 
+**Live addition during this reset:** [#737](https://github.com/LightChainr/Matching-One/pull/737)
+arrived after the first scan. Its spatial Hessian and invisible-mark calculations
+are completed finite assets, not tasks to commission again; see section 2 below.
+
 ## 1. Primary: geometry can separate a correct root from an incorrect full law
 
 The most immediately tractable theorem programme is now #613, not another
@@ -68,6 +72,35 @@ using the same physical source. A full-operator spectral gap need not be the gap
 seen by M. Fixed-width exponential convergence is not a width-uniform theorem.
 Reuse the width-four certificate; do not fund a duplicate state enumeration.
 
+### Newly delivered #737: spatial-source curvature is a structure-factor contrast
+
+The finite full-site Hessian and invisible-mark notes were read at
+`7b459c4809baee9dfc2b910091e00a3a8d508d1c`, including their limitations. For
+mean-zero logit source h and H=sum h_i n_i, its logit-root formula is
+
+    z_*''(h) = -[Var(H|r=2)-Var(H|r=0)] / [E(K|r=2)-E(K|r=0)].
+
+This exposes a physical bridge from a moving root to rank-conditioned spatial
+structure factors. Additive probability fields and logit fields have different
+second-order corrections; do not silently exchange them. The 4x4 root Hessian
+has both positive and negative directions in the reported additive coordinate.
+These are finite-volume claims, not a disorder-relevance or critical-exponent law.
+
+The invisible-mark construction preserves the entire uniform (r,K) distribution
+but separates under spatial sources. It uses strictly positive **dependent marked
+measures**, not two distinct predictions of the already specified Bernoulli law
+and not the two original-U candidate fields. A separate orbit calculation in this
+reset reproduced sizes 16/128/64 and the two-source contrast matrix
+`[[-512,-128],[0,-256]]`, determinant 131072. That check is not a rerun of the
+Hessian, all scripts, or full CI.
+
+#737 is still unmerged and its PR lists three uncommitted delivery artifacts.
+Use the actual `delivery/notes/` paths and resolve its declared reproduction
+inputs before reuse; a successful execution log from the source archive does
+not establish a complete fresh-checkout installation. Do not repeat its finite
+Hessian or marks. The larger question is a width-uniform/topology-resolved source
+response and an actual candidate map, not one more uniform thermal derivative.
+
 ### Exact complexity is not finite-noise complexity
 
 #549's cut-network family has k+1 distinct branching-predictive classes within
@@ -116,6 +149,7 @@ commit does not merge them or certify their complete test suites.
 | [#734](https://github.com/LightChainr/Matching-One/pull/734) | `bb41df7da8021d922a48ad353709f35912977c37` | Bounded prior-art survey, not an originality certificate |
 | [#735](https://github.com/LightChainr/Matching-One/pull/735) | `9d29d014df28af7c635e6859d98a95ffe2b34d06` | Arbitrary-period root proof, marked robustness, Jordan controls |
 | [#736](https://github.com/LightChainr/Matching-One/pull/736) | `64d809b4404f80ff3f9adf9713337cc76008e92d` | New axial full-law iff proof and exact finite gluing controls |
+| [#737](https://github.com/LightChainr/Matching-One/pull/737) | `7b459c4809baee9dfc2b910091e00a3a8d508d1c` | Spatial-source Hessian and invisible marks; delivery-input gaps disclosed |
 
 #736 reports 21,760 exhaustive strip configurations, 2,365 deterministic uneven-
 cell controls, exact Fraction inequalities, three local mathematical tests and
