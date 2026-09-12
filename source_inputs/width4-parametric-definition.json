@@ -1,0 +1,27 @@
+{
+  "schema": "matching-one.width4-parametric-definition.v1",
+  "source_pr": 708,
+  "source_head": "f782061c1a592ed2f9fd0e9dabaa45f0e54bc4e7",
+  "source_blob": "50b7297deefe7c50215aea2ed534ca5810461af3",
+  "source_path": "results/research-control-20260912/width4-rank-closure-certificate.json",
+  "variable": "t=p/(1-p), normalization (1+t)^(4*m)",
+  "blocks": {
+    "5": {"quotient_state_indices": [0, 16, 17, 18, 19], "factorization": [["closed_b", 1], ["closed_a", 2], ["closed_2", 1]]},
+    "15": {"quotient_state_indices": [15, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152], "factorization": [["negative_square", 1], ["open_3b", 1], ["open_3a", 2], ["open_5", 1]]},
+    "16": {"quotient_state_indices": [1, 21, 22, 23, 24, 25, 153, 154, 155, 156, 157, 158, 160, 161, 163, 481], "factorization": [["negative_square", 1], ["shared_3", 1], ["shared_4a", 1], ["shared_4b", 2]]}
+  },
+  "factors": {
+    "closed_b": {"coefficients_desc_x_ascending_t": [[1], [0, 0, -1, 1]], "formula": "t**3 - t**2 + x", "degree_x": 1},
+    "closed_a": {"coefficients_desc_x_ascending_t": [[1], [0, 0, -1, -1]], "formula": "-t**3 - t**2 + x", "degree_x": 1},
+    "closed_2": {"coefficients_desc_x_ascending_t": [[1], [-1, -4, -7, -3], [0, 0, 1, 3, 2, -2]], "formula": "-2*t**5 + 2*t**4 - 3*t**3*x + 3*t**3 - 7*t**2*x + t**2 - 4*t*x + x**2 - x", "degree_x": 2},
+    "negative_square": {"coefficients_desc_x_ascending_t": [[1], [0, 0, 1]], "formula": "t**2 + x", "degree_x": 1},
+    "open_3b": {"coefficients_desc_x_ascending_t": [[1], [0, -1, -2], [0, 0, 0, 1, 0, 1], [0, 0, 0, 0, 0, 0, -1, -1]], "formula": "-t**7 - t**6 + t**5*x + t**3*x - 2*t**2*x**2 - t*x**2 + x**3", "degree_x": 3},
+    "open_3a": {"coefficients_desc_x_ascending_t": [[1], [0, -1, -2], [0, 0, 0, -1, -2, -1], [0, 0, 0, 0, 0, 0, 1, 1]], "formula": "t**7 + t**6 - t**5*x - 2*t**4*x - t**3*x - 2*t**2*x**2 - t*x**2 + x**3", "degree_x": 3},
+    "open_5": {"coefficients_desc_x_ascending_t": [[1], [0, -1, -5, -4, -1], [0, 0, 0, 0, -2, -6, -1], [0, 0, 0, 0, 0, 1, 3, 2, -2, -1], [0, 0, 0, 0, 0, 0, 0, 0, -1, -4, -3, -2], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -1]], "formula": "-t**13 - t**12 - 2*t**11*x - 3*t**10*x - t**9*x**2 - 4*t**9*x - 2*t**8*x**2 - t**8*x + 2*t**7*x**2 - t**6*x**3 + 3*t**6*x**2 - 6*t**5*x**3 + t**5*x**2 - t**4*x**4 - 2*t**4*x**3 - 4*t**3*x**4 - 5*t**2*x**4 - t*x**4 + x**5", "degree_x": 5},
+    "shared_3": {"coefficients_desc_x_ascending_t": [[1], [0, -1, -2, 1], [0, 0, 0, 1, -1], [0, 0, 0, 0, 0, 0, -1, -1]], "formula": "-t**7 - t**6 - t**4*x + t**3*x**2 + t**3*x - 2*t**2*x**2 - t*x**2 + x**3", "degree_x": 3},
+    "shared_4a": {"coefficients_desc_x_ascending_t": [[1], [0, -1, -5, -3], [0, 0, 0, 0, -3, -7], [0, 0, 0, 0, 0, 1, 2, -1], [0, 0, 0, 0, 0, 0, 0, 0, -1, -1]], "formula": "-t**9 - t**8 - t**7*x + 2*t**6*x - 7*t**5*x**2 + t**5*x - 3*t**4*x**2 - 3*t**3*x**3 - 5*t**2*x**3 - t*x**3 + x**4", "degree_x": 4},
+    "shared_4b": {"coefficients_desc_x_ascending_t": [[1], [0, -1, -3, -1], [0, 0, 0, 0, 1, 1], [0, 0, 0, 0, 0, 1, 4, 3], [0, 0, 0, 0, 0, 0, 0, 0, -1, -1]], "formula": "-t**9 - t**8 + 3*t**7*x + 4*t**6*x + t**5*x**2 + t**5*x + t**4*x**2 - t**3*x**3 - 3*t**2*x**3 - t*x**3 + x**4", "degree_x": 4}
+  },
+  "crossing_polynomial_ascending_t": [-2, -35, -278, -1344, -4503, -11396, -23218, -39092, -52627, -51259, -28383, 1795, 16534, 12915, 5205, 1305, 198, 9],
+  "crossing_polynomial_formula": "9*t**17 + 198*t**16 + 1305*t**15 + 5205*t**14 + 12915*t**13 + 16534*t**12 + 1795*t**11 - 28383*t**10 - 51259*t**9 - 52627*t**8 - 39092*t**7 - 23218*t**6 - 11396*t**5 - 4503*t**4 - 1344*t**3 - 278*t**2 - 35*t - 2"
+}
