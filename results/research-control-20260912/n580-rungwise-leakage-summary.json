@@ -1,0 +1,23 @@
+{
+  "schema": "matching-one.n580-rungwise-leakage.v1",
+  "source_path": "results/research-control-20260912/n580-complete-covariance-summary.json",
+  "input_mean": [0.0009016433036753112, 0.0029109770266212776, 0.004131807633330795],
+  "input_covariance": [[6.207020770273794e-8,1.3480872826970252e-9,-8.011196220988015e-9],[1.3480872826970252e-9,6.713835319545046e-8,5.5621485097801135e-9],[-8.011196220988015e-9,5.5621485097801135e-9,3.807514679910218e-8]],
+  "standing": "C2 same-block retrospective sensitivity; not a new experiment or amended freeze",
+  "model": "mu_i=a*v_i*(1+leak_i*rho_i), signed a, independent |rho_i|<=B",
+  "leakage": [-0.05460166468489893,0.05460166468489893,-0.05460166468489893],
+  "reference": {"alpha":0.002699796063260189,"mean_dimension":3,"ellipsoid_cutoff":14.156413609126687,"calibration":"Known Gaussian covariance: simultaneous mean region; estimated jackknife covariance: nominal/asymptotic. NOT a fitted-cone chi-square law."},
+  "source_revision_declared": "b924b2af94ebb99a058e252df6884594c51da381",
+  "fixed_bounds": [0.0,0.2,1.0],
+  "validation": {"precision_dps":60,"max_kkt_violation_relative":1.752675059801698e-61,"max_complementarity_relative":5.098343976919491e-61,"boundary_endpoints":"38-step numerical bisection; both endpoints re-solved and KKT checked","scope":"Numerical checks, not exact rational certificates; no local shard replay."},
+  "results": {
+    "bare_aspect_ratio": {"shape":[1,2,4],"minimum_D":[10.86445991488253,9.74509254800503,5.725238696529666],"ellipsoid_intersects":[true,true,true],"first_intersection_B_bracket":[0.0,0.0],"point_interpolation_B":4.303270536830905},
+    "no_modulus_dependence": {"shape":[1,1,1],"minimum_D":[89.85851023621422,86.39871390455572,73.37075188747089],"ellipsoid_intersects":[false,false,false],"first_intersection_B_bracket":[6.55584366158984,6.555843661656468],"point_interpolation_B":11.753112511511077},
+    "plain_area_scaling": {"shape":[1,4,16],"minimum_D":[57.512493327374884,56.0949653359015,50.29088287143035],"ellipsoid_intersects":[false,false,false],"first_intersection_B_bracket":[5.716120946982922,5.71612094704955],"point_interpolation_B":10.159333776915771},
+    "q4_jordan_weight4": {"shape":[1,2.75,10.9908008589],"minimum_D":[55.58771053243131,54.15771504988703,48.31479684287533],"ellipsoid_intersects":[false,false,false],"first_intersection_B_bracket":[5.494173654615238,5.494173654681866],"point_interpolation_B":8.71507766254339},
+    "weight12_E12": {"shape":[1,32.515625,2080.30719731],"minimum_D":[132.26732359383956,132.14876716559357,131.64755162607125],"ellipsoid_intersects":[false,false,false],"first_intersection_B_bracket":[17.335707481691877,17.335707481758504],"point_interpolation_B":18.23395057396472},
+    "weight12_E4_cubed": {"shape":[1,20.796875,1327.6635036],"minimum_D":[132.22611687853123,132.1066545820167,131.60160831283216],"ellipsoid_intersects":[false,false,false],"first_intersection_B_bracket":[17.306379074781873,17.3063790748485],"point_interpolation_B":18.18846733903283},
+    "weight12_delta": {"shape":[1,0.125,2.79010739704e-5],"minimum_D":[513.6592181764852,513.3257486417529,511.9161666098316],"ellipsoid_intersects":[false,false,false],"first_intersection_B_bracket":[18.313976744188892,18.31397674425552],"point_interpolation_B":18.314236913782494},
+    "weight8_E8": {"shape":[1,7.5625,120.79770352],"minimum_D":[115.80437790454678,115.33656826633613,113.36508234095133],"ellipsoid_intersects":[false,false,false],"first_intersection_B_bracket":[14.291762888017313,14.291762888083941],"point_interpolation_B":16.97570720119975}
+  }
+}
