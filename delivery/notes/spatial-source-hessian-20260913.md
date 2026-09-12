@@ -29,7 +29,7 @@ R*1=0. This is also forced by the exact local identity q(a+c*1)=q(a)-c.
 For EVERY zero-mean spatial pattern h, sum_i h_i=0,
 
     q'(0;h)=0,
-    q''(0;h)=-h^T M_site'' h / M'.                             (2)
+    q''(0;h)=-h^T M_site'' h / M'.                           (2)
 
 This first-order null needs only transitive translations, not a reflection making h odd.
 Consequently a vanishing single-source response for a zero-mean field is NOT by itself
