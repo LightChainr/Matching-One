@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/shape_lineage_review.py'
+      - 'scripts/shape_lineage_nonlinear_jackknife.py'
       - 'tests/test_shape_lineage_review.py'
       - '.github/workflows/shape-lineage-review.yml'
 permissions:
@@ -11,7 +12,7 @@ permissions:
 jobs:
   review:
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -21,3 +22,5 @@ jobs:
       - run: python -m unittest discover -s tests -p 'test_shape_lineage_review.py'
       - name: Read existing quantiles and covariance only
         run: python scripts/shape_lineage_review.py --compact
+      - name: Check full nonlinear uncertainty on existing histograms
+        run: python scripts/shape_lineage_nonlinear_jackknife.py
