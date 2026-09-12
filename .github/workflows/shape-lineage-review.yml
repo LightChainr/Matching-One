@@ -5,7 +5,9 @@ on:
     paths:
       - 'scripts/shape_lineage_review.py'
       - 'scripts/shape_lineage_nonlinear_jackknife.py'
-      - 'tests/test_shape_lineage_review.py'
+      - 'scripts/shape_common_chart.py'
+      - 'scripts/shape_reflection_commutator.py'
+      - 'tests/test_shape*.py'
       - '.github/workflows/shape-lineage-review.yml'
 permissions:
   contents: read
@@ -18,9 +20,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python -m pip install numpy mpmath
-      - run: python -m unittest discover -s tests -p 'test_shape_lineage_review.py'
+      - run: python -m pip install numpy scipy mpmath
+      - run: |
+          python -m unittest discover -s tests -p 'test_shape_lineage_review.py'
+          python -m unittest discover -s tests -p 'test_shape_common_chart.py'
+          python -m unittest discover -s tests -p 'test_shape_reflection_commutator.py'
       - name: Read existing quantiles and covariance only
         run: python scripts/shape_lineage_review.py --compact
       - name: Check full nonlinear uncertainty on existing histograms
         run: python scripts/shape_lineage_nonlinear_jackknife.py
+      - name: Test common-chart commutation without a polynomial fit
+        run: python scripts/shape_reflection_commutator.py

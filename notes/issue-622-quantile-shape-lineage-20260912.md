@@ -1,110 +1,99 @@
-# #622 after #702: reflection residual and finite-size shape motion
+# #622 reviewed: finite shape movement and its dominant smooth-coordinate component
 
-Date: 2026-09-12. Base: `main` at `6edf775e` (includes #702–#704).
-Machine: XPk2PZ (16 vCPU ARM, no GPU), job under `/workspace/mo-622/`.
-Artifacts: `results/probe-invariant-shape/quantile-shape-lineage-622.json`,
-`scripts/probe_invariant_shape/quantile_shape_lineage_622.py`,
-`tests/test_quantile_shape_lineage_622.py`, `results/probe-invariant-shape/run-622.log`.
+2026-09-12. The original #706 source analysis is retained in Git history and
+`results/probe-invariant-shape/quantile-shape-lineage-622.json` (v1). Its pooled
+Q/Z/A and per-size covariance remain inputs. Its W standard errors and the
+independent-error comparison of two adjacent interval norms are superseded.
+Do not run the historical `quantile_shape_lineage_622.py` and interpret those
+v1 fields as the current verdict. Current analysis entry points are
+`scripts/shape_lineage_review.py` and `scripts/shape_lineage_nonlinear_jackknife.py`.
 
-C2 reanalysis of already-committed blocks. No Monte Carlo, no GPU, no exponent
-fit, no `docs/STATUS.md`, no issue closed.
+## Executed validation
 
-## Object and order of operations
+Run 34684353419, job 103528608026, head eff8c5e158fb9be93ffde27ba80bc958eff34573,
+merge checkout 51f9817c59fcf757858c0338ec724aa4992e0d94. Seven new mathematical
+checks passed. The first command read existing Q/covariance; the second actually
+reconstructed pooled and all 100 delete-one Q vectors from each of the three
+committed histogram sets. It took 94.70 s; all three pooled Q vectors reproduced
+EXACTLY in the executed float path. No simulation or new independent evidence.
 
-For each size the two orientations are inverted **separately** and only then
-combined, `Q_spin0 = w_1 Q_1 + w_2 Q_2` with `w_1+w_2=1` and
-`sum w_i cos4theta_i = 0` (checked to `6e-17`); CDFs are never mixed before
-inversion. Then, on the nine frozen deciles with anchors `a=0.2`, `b=0.8`,
+Summary: `results/research-control-20260912/shape-lineage-reviewed-summary.json`.
+The scripts produce full covariance/diagnostics; summary fields were extracted
+from the successful job stdout, not invented or inferred from CI colour.
+This bounded job is not a claim that the complete repository suite passed.
 
-    W_N = Q_N(0.8) - Q_N(0.2) > 0
-    Z_N(u) = [Q_N(u) - Q_N(0.2)] / W_N
-    A_N(u) = Z_N(u) + Z_N(1-u) - 1
+## Corrected original conclusion
 
-with `A` the corrected normalized-shape reflection residual (not
-`M_N(p)+M_N(1-p)`). Every delete-one batch repeats the whole map; the reported
-covariances are of one random object across the grid. Independent coordinates
-`u = 0.1,0.3,0.4,0.5` are used because `A(0.2)=A(0.8)=0` and `A(1-u)=A(u)`
-exactly; `Z(0.2)=0`, `Z(0.8)=1` are likewise fixed. Angles/covariance use the
-`cos 4theta` convention of `scripts/threshold_quantile_lineage.py`
-(blob `3b328f29`, the #655 lineage); the equal weighting is a sensitivity on the
-same block, not a second experiment.
+A=Z(u)+Z(1-u)-1 is resolved nonzero and decreases in norm across N145/290/725.
+This finite-lineage result survives. Individual adjacent Delta Z/Delta A also
+remain nonzero. The width SEs must be multiplied by 99: the original script
+mistook delete-one estimates for independent observations. The corrected
+primary widths and SEs are
 
-## Lineage, geometry, weights
+| N | W | corrected jackknife SE |
+|---|---:|---:|
+|145|0.1192132991|3.673003868e-6|
+|290|0.0922037501|2.737674335e-6|
+|725|0.0655307632|2.322561571e-6|
 
-Same channel (`rank-2 cross wrapping`) and same observable (`K_plus`, `K_minus`)
-at all three sizes; the exact tiny site/bond labs are a different observable and
-are not mixed in.
+Delta1 and Delta2 share N290, so their cross-covariance is -S290 even though
+size blocks have independent random streams. Correctly propagating it gives
+|Delta Z_2|-|Delta Z_1|=-0.0003775392 with SE 0.00004177061 (about 9.04 nominal
+sigma, not 10.9). The analogous Delta A norm change has SE 0.00007209953 and
+is only 0.897 nominal sigma from zero. Full nonlinear deletion independently
+reproduces these corrected uncertainties. No convergence or exponent follows.
 
-| N | reps (first, second) | shortest period `sqrt(N)` | seed | spin-0 weights |
-|--:|:--|--:|--:|:--|
-| 145 | (12,1), (9,8) | 12.0416 | 2026105003 | (0.50711806, 0.49288194) |
-| 290 | (13,11), (17,1) | 17.0294 | 2026105004 | (0.50711806, 0.49288194) |
-| 725 | (26,7), (23,14) | 26.9258 | 2026105011 | (0.53827771, 0.46172229) |
+## New finding: most asymmetry is consistent in magnitude with a smooth chart
 
-`site_count = |a+bi|^2`, so the shortest lifted period holds `sqrt(N)` sites.
-All three spin-0 combinations are interpolations; distinct seeds mean the
-cross-size covariance term is taken as zero on random-stream provenance.
+The ratios ||A||/W are 0.2559635, 0.2563966, 0.2568465. The median coefficient
+K_mid=-4*A(.5)/W is approximately -0.511 at all three sizes. This motivates
+an analytic-coordinate control, not another freely fitted exponent.
 
-## Reflection residual `A = 0` (spin0 primary)
+The conditional normal-form lemma in `notes/shape-lineage-review-20260912.md`
+states: if Q=h(t+s z) with a common increasing C4 h and reflected z, then
+A/W=K*(X^2-1/4)+O(W^2), K=h''/h'^2 and X=(Z-Z_reflected)/2.
+It is a lemma about coordinate transformations, not a percolation theorem.
 
-| N | W (SE) | A(0.1) | A(0.3) | A(0.4) | A(0.5) | `\|A\|` (SE) | nominal chi2, 4 dof |
-|--:|:--|--:|--:|--:|--:|:--|:--|
-| 145 | 0.11921330 (3.7e-8) | -0.0204652 | 0.0093537 | 0.0138721 | 0.0152436 | 0.0305142 (2.6e-5) | 2.27e6 |
-| 290 | 0.09220375 (2.8e-8) | -0.0159133 | 0.0072317 | 0.0107147 | 0.0117706 | 0.0236407 (2.9e-5) | 1.00e6 |
-| 725 | 0.06553076 (2.4e-8) | -0.0113451 | 0.0051435 | 0.0076198 | 0.0083705 | 0.0168313 (3.5e-5) | 3.56e5 |
+One exact quadratic chart was fixed from the N145 MEDIAN ONLY:
 
-`p` is below double reference at every size. The tests are nominal Gaussian
-references with estimated delete-one covariance. The 4x4 `A` covariance is
-near-collinear (correlations up to 0.9999; condition number 2.4e8 / 6.3e7 /
-1.7e7), so the full-inverse chi-square is quoted next to the correlation-free
-diagonal chi-square; the full value is **smaller** than the diagonal value at
-every size and every displacement test, so the rejection is carried by the
-per-coordinate residuals (max `|t|` = 1354, 913, 525), not by inverting a
-near-null direction. No pseudoinverse is used anywhere.
+    phi(p)=p+beta*(p-.5)^2,
+    beta=0.2684067158 +/- 0.0002742089 (nonlinear jackknife).
 
-## Adjacent-size motion (pooled, spin0)
+It is increasing throughout [0,1]. Applied unchanged to N290 and N725, it
+reduces the independent-coordinate asymmetry norms to respectively 0.267081%
+and 0.068014% of their original values. This is norm reduction, NOT explained
+variance or proof that the physical scaling field is quadratic.
 
-| pair | `\|dZ\|` (SE) | `\|dA\|` (SE) | chi2_Z, 7 dof | chi2_A, 4 dof |
-|:--|:--|:--|:--|:--|
-| 145→290 | 0.00537503 (2.1e-5) | 0.00687410 (3.9e-5) | 1.37e5 | 4.51e4 |
-| 290→725 | 0.00499749 (2.7e-5) | 0.00680943 (4.5e-5) | 6.42e4 | 3.27e4 |
+The attractive scalar reading is not the full-vector verdict. Including the
+shared source-beta uncertainty, the two target residual vectors have
+D=105.9080 on 8 nominal degrees of freedom (log10 p=-18.5793). The source's
+other three coordinates already fail exact quadratic symmetry. Likewise,
+exact equality of the entire A/W vector across sizes fails (D=309.74895/8).
+Thus neither exact scalar collapse nor a universally exact quadratic chart
+is established. Do not raise the polynomial degree until something passes.
 
-Both displacements are resolved from zero; `Cov(dZ)=Cov(Z_from)+Cov(Z_to)`.
-The declared norm is the Euclidean `L2` on the independent coordinates.
+The full nonlinear jackknife confirms the target covariance against the
+linearized calculation in ALL stochastic directions: generalized eigenvalues
+lie between 0.999998211 and 1.000002384. This matters because the target
+covariance condition number is about 1.3e8; agreement of diagonal errors alone
+would not have sufficed. It checks propagation, not exact tail coverage for
+an estimated covariance. All references remain nominal/asymptotic.
 
-Interval-to-interval change: `|dZ|` falls by `3.78e-4 +/- 3.45e-5` (10.9σ,
-resolved); `|dA|` changes by `-6.47e-5 +/- 5.95e-5` (1.1σ, **not** resolved).
+Equal weighting has the same qualitative reading but is a sensitivity of the
+SAME blocks. Its quadratic residual ratios are 0.323681% and 0.052247%; its
+full-vector null also fails. No second evidence vote is counted.
 
-## Equal-weighting sensitivity
+## Decision
 
-Equal weighting retains a spin-4 residue (`-1.37e-2`, `+1.37e-2`, `-4.11e-2`).
-The difference from spin0 is at most `1.6e-5` in `A` and `8.7e-6` in `Z`. The
-qualitative reading is unchanged; it is one analysis, not two.
+The raw A signal should not be named a new irrelevant field merely because it
+shrinks. Separate the dominant smooth-coordinate-like contribution from the
+much smaller resolved residual. Rejecting one exact quadratic chart does not
+reject every smooth chart, while arbitrary higher-degree fitting is not an
+identifying experiment.
 
-## Measured profile
-
-Load of the three blocks 1.0 s; N=725 pooled pass 1.05 s; one N=725 delete-one
-batch 1.02 s. Full delivery (3 sizes × 2 weightings, 100 batches each,
-single-threaded) 5 min 23 s wall, about 0.09 CPU-hours — the 4 CPU-hour cap is
-not binding, so the complete delete-one path was delivered rather than a
-substituted estimator. N=725 pooled `Q` reproduces the #655 decile values to
-`4.1e-9` (that reference is published to 8 decimals).
-
-## Outcome
-
-* **Reflection residual: resolved.** `A != 0` at all three sizes at hundreds to
-  >1000σ per coordinate; the normalized shape is not reflection-symmetric.
-* **Size trend on this finite lineage: decreasing.** `|A| = 0.03051 -> 0.02364
-  -> 0.01683`, each step resolved (178σ, 150σ). Three sizes cannot establish
-  convergence or a limit; this is observed finite movement, and no exponent is
-  fitted.
-* **Adjacent-size shape change: resolved.** Non-affine displacement remains
-  between adjacent sizes (`|dZ|`, `|dA|` both nonzero). Between the two
-  available intervals `|dZ|` decreases slightly (10.9σ) while `|dA|` is
-  consistent with constant (1.1σ).
-* Weighting does not change the qualitative reading; no covariance-aware test
-  is decided by a near-null direction.
-
-No conclusion here identifies an exponent, a field, or a threshold; a larger-N
-purchase would need a separate decision naming which surviving alternative it
-separates, and none is authorized here. #622 stays open.
+`notes/common-chart-commutator-20260912.md` gives the next parameter-free
+necessary condition: three reflection involutions from the effective quantile
+laws must have commuting pair compositions if one common symmetrizing chart
+exists. Its real-data evaluation is not done in this delivery. It can use the
+same histograms; no larger-N or GPU purchase is licensed. #275's original-U
+candidate-map question remains separate.
