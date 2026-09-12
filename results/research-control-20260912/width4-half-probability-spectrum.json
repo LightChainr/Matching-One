@@ -1,0 +1,124 @@
+{
+  "schema": "matching-one.width4-half-probability-spectrum.v1",
+  "scope": "M_(4,m)(1/2), all integer m>=2; no other p or width asserted",
+  "integer_sequence_definition": "s_m=16^m*M_(4,m)(1/2)=b*A^(m-1)*c",
+  "trace_formula": "s_m = sum_j weight_j * sum_{f_j(lambda)=0} lambda^m (multiplicity included)",
+  "factors_descending_and_weights": [
+    [
+      -2,
+      [
+        1,
+        -2
+      ]
+    ],
+    [
+      1,
+      [
+        1,
+        1
+      ]
+    ],
+    [
+      -1,
+      [
+        1,
+        -15,
+        4
+      ]
+    ],
+    [
+      2,
+      [
+        1,
+        -3,
+        -4,
+        2
+      ]
+    ],
+    [
+      1,
+      [
+        1,
+        -3,
+        2,
+        -2
+      ]
+    ],
+    [
+      1,
+      [
+        1,
+        -11,
+        -9,
+        3,
+        -10,
+        -2
+      ]
+    ]
+  ],
+  "minimal_scalar_recurrence_order": 15,
+  "recurrence_descending": [
+    1,
+    -33,
+    353,
+    -1301,
+    697,
+    4327,
+    -5785,
+    -551,
+    5534,
+    -8814,
+    872,
+    2716,
+    -3992,
+    1480,
+    80,
+    -64
+  ],
+  "recurrence_is_squarefree_over_Q": true,
+  "hankel_determinant_15_start_m2": -1480741158238721640945362024307471335089774150588805816471254212544678061868790579200000,
+  "finite_dimensional_certificate_dimension": 509,
+  "annihilator_zero_scalar_moments_verified": 509,
+  "pA_c_nonzero_entries": 82,
+  "initial_trace_power_identities_verified": 31,
+  "first_31_s_m": [
+    0,
+    -46,
+    -1464,
+    -27514,
+    -467240,
+    -7568494,
+    -119388136,
+    -1850806458,
+    -28342936392,
+    -430168917166,
+    -6485164995144,
+    -97272274510042,
+    -1453300596591272,
+    -21647273727763086,
+    -321679039870596584,
+    -4771299628033839738,
+    -70667055165917120648,
+    -1045436061966429481198,
+    -15451931157489435989384,
+    -228220684705345695257114,
+    -3368828511332610617805928,
+    -49705628452107159678962510,
+    -733120634385154825294067496,
+    -10809872854629806802861614010,
+    -159355274612023382199893728840,
+    -2348730748989230971326312464302,
+    -34612824078688255447045260637896,
+    -510024033529269360261814692900698,
+    -7514571807950217946301809929033256,
+    -110709767796539584122033242382917134,
+    -1630955864389294282204931570018833512
+  ],
+  "normalization": "s_m counts configurations; divide by 16^m, not 16^(m-1)",
+  "limitations": [
+    "one-parameter point only",
+    "not a global generator spectrum",
+    "not a continuum Jordan test",
+    "no all-width prefactor theorem"
+  ]
+}
