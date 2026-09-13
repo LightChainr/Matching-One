@@ -1,0 +1,174 @@
+{
+  "schema": "matching-one.winding-prefactor-contrast.v1",
+  "issue": 741,
+  "pr": 739,
+  "date": "2026-09-13",
+  "definition": "nu_w = expected number of complete horizontally winding components retired per vertical row, pi.g on the reward-preserving lumped chain",
+  "graph_inputs": [
+    {
+      "graph": "NN",
+      "p": "1/4",
+      "why_subcritical": "3p<1"
+    },
+    {
+      "graph": "matching NN+NNN",
+      "p": "1/8",
+      "why_subcritical": "7p<1"
+    }
+  ],
+  "engine": {
+    "python_reference": "scripts/cylinder_winding_intensity.py",
+    "fast_builder": "scripts/cylinder_winding_intensity_fast.cpp",
+    "note": "allocation-free C++ port of advance()/empty_state()/reward_lump(); validated against every published control of the Python reference"
+  },
+  "validation": {
+    "points": 18,
+    "source": "results/geometric-consistency/cylinder-winding-intensity.json",
+    "agreement": "exact rational equality at every (graph,width,p) control, plus identical frontier-state and reward-lump counts"
+  },
+  "runs": [
+    {
+      "graph": "NN",
+      "p": "1/4",
+      "widths": [
+        {
+          "w": 4,
+          "frontier_states": 38,
+          "reward_lumps": 7,
+          "log_nu": -5.419513505387646,
+          "nu": "52135149017187/11770514026725376",
+          "certificate_bound": 0.0,
+          "log_nu_abs_error_bound": 0.0,
+          "mode": "exact-rational solve"
+        },
+        {
+          "w": 8,
+          "frontier_states": 2214,
+          "reward_lumps": 90,
+          "log_nu": -10.023930900250674,
+          "nu": "17502628473380503424175742111730325030001801413138981331992379782406219403788076443461112141432226837307423006489737552208224632141450146887713404996562363206349515250607990987848286702015668340618931011832915030867953648522909129625535987525113998308888891118101205671016155713840182276590146401648999847735217782956902290870163141233/394858190638015284877611732299089108091767441305269271936475303287570100103520767278514851975447321604769571781491275729897390594072360939445749498586029794045625531954047737173300378900180040052249014005467482837461037862326207208006914196399920025371610656324995371887037376183738569888770649458081597003907666586548661425781189401116672",
+          "certificate_bound": 0.0,
+          "log_nu_abs_error_bound": 0.0,
+          "mode": "exact-rational solve"
+        },
+        {
+          "w": 12,
+          "frontier_states": 147578,
+          "reward_lumps": 2105,
+          "log_nu": -14.400335955876589,
+          "nu": "379212808133946169010962655969307/680564733841878484886207429475057875728",
+          "certificate_bound": 3.0907075957690434e-16,
+          "log_nu_abs_error_bound": 5.546825221358631e-10,
+          "mode": "float64 solve + exact-rational residual correction + exact certification"
+        }
+      ]
+    },
+    {
+      "graph": "matching NN+NNN",
+      "p": "1/8",
+      "widths": [
+        {
+          "w": 4,
+          "frontier_states": 38,
+          "reward_lumps": 7,
+          "log_nu": -5.742669143987384,
+          "nu": "578542977420046503529/180445122308089296453632",
+          "certificate_bound": 0.0,
+          "log_nu_abs_error_bound": 0.0,
+          "mode": "exact-rational solve"
+        },
+        {
+          "w": 8,
+          "frontier_states": 2214,
+          "reward_lumps": 90,
+          "log_nu": -10.180101524506828,
+          "nu": "4304066353276814600044997473461749946733998654996906665848710094050668526018463750118116035133786833693570766188431654980451251563150021628926696864281471364809534986496434452171916677495079889807512646873142689361000629991021992202254034107483405752782584490865423182129099195425092500784726730027782992682182888628256311224842606882093651369807185556594705994887406409039631339042921350991283756541994077559051452642113341699201143846379431566869183683434604000069810038992473728867102962226989648218217/113511764657387757743385852913961444340846792248681594418514915909829354582886141640860978491305768062425209800158664229180983934165690093259309006582490727717774659821138193397179076192301603758529671081392965053326462178884774141814282691798376964456718728193496138901518192555819255671364890966589998223829885349719255811426060081926113431586436483919311190561771297363987867516713176200921755746267736239849245504325297603519015385553972106891313881673522269765109458789284250226055406632424069191379714048",
+          "certificate_bound": 0.0,
+          "log_nu_abs_error_bound": 0.0,
+          "mode": "exact-rational solve"
+        },
+        {
+          "w": 12,
+          "frontier_states": 147578,
+          "reward_lumps": 2105,
+          "log_nu": -14.471261214034028,
+          "nu": "2825989450032982531722048546838021/5444517870735033276005206910959493898816",
+          "certificate_bound": 7.541392155565239e-17,
+          "log_nu_abs_error_bound": 1.4529177860822529e-10,
+          "mode": "float64 solve + exact-rational residual correction + exact certification"
+        }
+      ]
+    }
+  ],
+  "contrast": {
+    "NN": {
+      "log_nu_by_width": {
+        "2": -2.868379786881457,
+        "4": -5.419513505387646,
+        "8": -10.023930900250674,
+        "12": -14.400335955876589
+      },
+      "effective_kappa_4_8": 1.151104348715757,
+      "effective_kappa_8_12": 1.0941012639064787,
+      "R_window_4_8_12": 1.2561008246626348,
+      "log_R": 0.2280123392371145,
+      "log_R_error_bound": 5.546825221358631e-10,
+      "beta_eff_4_8_12": 0.7925844571886983,
+      "beta_eff_error_bound": 1.9281094487694742e-09,
+      "R_window_2_4_8": 0.128312873113551,
+      "beta_eff_2_4_8": -7.137336222788077,
+      "deviation_from_one_half": 0.2925844571886983
+    },
+    "matching": {
+      "log_nu_by_width": {
+        "2": -3.3390984215201938,
+        "4": -5.742669143987384,
+        "8": -10.180101524506828,
+        "12": -14.471261214034028
+      },
+      "effective_kappa_4_8": 1.109358095129861,
+      "effective_kappa_8_12": 1.0727899223818,
+      "R_window_4_8_12": 1.157511788056221,
+      "log_R": 0.1462726909922445,
+      "log_R_error_bound": 1.4529177860822529e-10,
+      "beta_eff_4_8_12": 0.5084525766434808,
+      "beta_eff_error_bound": 5.050428668354995e-10,
+      "R_window_2_4_8": 0.13082932628049532,
+      "beta_eff_2_4_8": -7.069824131613746,
+      "deviation_from_one_half": 0.008452576643480758
+    }
+  },
+  "resource_report": {
+    "w12_NN": {
+      "frontier_states": 147578,
+      "reward_lumps": 2105,
+      "transitions": 604479488,
+      "bfs_seconds": 234.2,
+      "table_cache_seconds": 237.8,
+      "table_gigabytes": 2.25,
+      "total_seconds": 504.1,
+      "peak_rss_gigabytes": 2.4,
+      "exit": "0"
+    },
+    "w12_matching": {
+      "frontier_states": 147578,
+      "reward_lumps": 2105,
+      "transitions": 604479488,
+      "bfs_seconds": 261.4,
+      "table_cache_seconds": 263.3,
+      "total_seconds": 560.9,
+      "peak_rss_gigabytes": 2.4,
+      "exit": "0"
+    },
+    "host": "Huawei Cloud EulerOS 2.0 aarch64 container, 16 vCPU, 30 GiB visible, g++ 10.3.1 -O2/-O3, single-process single-thread",
+    "naive_python_estimate": "the Python builder is capped at width<=10 and its builder took 6.7 s at w=8 against 0.5 s here; a w=12 build in pure Python was not attempted"
+  },
+  "interpretation": [
+    "3-width window (4,8,12) gives beta_eff = 0.792584457 +- 1.9e-9 for NN at p=1/4 and 0.508452577 +- 5.1e-10 for matching at p=1/8.",
+    "The 1/2 sewing hypothesis is therefore numerically close on the matching graph at p=1/8 (deviation +0.00845) but not on NN at p=1/4 (deviation +0.29258). An identical construction cannot have two different true exponents, so at least one of these is not asymptotic.",
+    "The (2,4,8) window returns beta_eff = -7.137 (NN) and -7.070 (matching), i.e. the assumed form nu_w = A w^-beta exp(-kappa w) does not hold at those widths at all. This is direct evidence that the (4,8,12) values are finite-window effective exponents.",
+    "The adjacent-window effective kappa is still decreasing in magnitude over 4->8->12 for both graphs (-1.2756,-1.1511,-1.0941 for NN; -1.2018,-1.1094,-1.0728 for matching), so the amplitude has not settled either.",
+    "Three widths cannot establish an asymptote. The contrast is reported as an effective finite-width diagnostic, not as a determination of beta, and not as a refutation of the sewing hypothesis.",
+    "Exact rational values are available at w=4 and w=8 (certificate bound zero); the w=12 values carry the certificate bounds listed above, all below 6e-10 on log nu."
+  ]
+}
