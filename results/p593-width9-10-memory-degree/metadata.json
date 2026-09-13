@@ -1,0 +1,43 @@
+{
+  "issue": 593,
+  "phase": "B",
+  "date": "2026-09-13",
+  "widths_new": [9, 10],
+  "widths_recomputed": [4, 5, 6, 7, 8],
+  "memory_degree": {
+    "rank_C": [2, 3, 3, 3, 3, 3, 3],
+    "block_hankel_numerical_rank_tol_1e-6": [4, 9, 12, 13, 14, 14, 14],
+    "effective_order_99": [2, 3, 3, 3, 3, 3, 3],
+    "effective_order_999": [2, 3, 4, 4, 4, 4, 4],
+    "integrated_norm": [0.876, 1.016, 1.207, 1.456, 1.681, 1.873, 2.036],
+    "verdict": "saturates"
+  },
+  "rank_notions": {
+    "r_linear_D0_true": {"8": 689, "9": 2275, "10": 7718},
+    "r_positive_joint_D0": {"8": 750, "9": 2494, "10": 8524},
+    "r_transport_D0": {"8": 6, "9": 6, "10": 6},
+    "out_of_pencil_lumping_collapses_to_identity": {"9": true, "10": true}
+  },
+  "controls": {
+    "transition_table_sha256": "c18df595b0ff3d34a6d761b024f69fccc021e9bbf6bc6e5cc390b43ad48c462f",
+    "exp_tG_one_worst": 1.6e-15,
+    "uniformization_vs_taylor_width5": 1.9e-15,
+    "full_rank_projection_kernel_norm": 0.0,
+    "generator_closed_span_kernel_relative": 5.75e-30,
+    "resolvent_schur_identity_width5": 3.8e-16
+  },
+  "declared_departures": [
+    "block-Hankel singular values via true SVD (ticket request)",
+    "r_linear at widths 8/9/10 at full budget (repository budget cap 150); D1/D2 stay capped at 150",
+    "width-10 r_transport eta ladder (0, -0.25, 0.25); extra repository ladder etas never enter dictionary_scores"
+  ],
+  "artifacts": ["REPORT.md", "metadata.json", "commands.txt", "raw/"],
+  "scripts": [
+    "scripts/p593_noncrossing_fast.py",
+    "scripts/p593_phaseB_memory.py",
+    "scripts/p593_phaseB_rlinear_true.py",
+    "scripts/p593_phaseB_transport.py",
+    "scripts/p593_phaseB_controls.py"
+  ],
+  "ci_status": "Full Matching-One repository CI has not been run for this commit."
+}

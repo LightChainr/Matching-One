@@ -1,0 +1,7 @@
+cd scripts
+python p593_noncrossing_fast.py
+python p593_phaseB_memory.py 4 5 6 7 8 9 10
+python p593_phaseB_rlinear_true.py 8 9 10
+python p593_phaseB_transport.py lumping 4 5 6 7 8 9 10
+python p593_phaseB_transport.py transport 9 10
+python p593_phaseB_controls.py
