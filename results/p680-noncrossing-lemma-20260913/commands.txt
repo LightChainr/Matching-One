@@ -1,0 +1,19 @@
+# commands.txt — p680 (2026-09-13, assigned local Mac)
+
+# Environment
+#   Python: /Users/lc/.workbuddy/binaries/python/envs/default/bin/python (stdlib only)
+#   No Huawei budget used; nothing enumerated above w = 6.
+
+# Main run: honest-convention table + delayed-closing/full-frontier table + witness
+# (writes raw class lists per cell and summary.json)
+python scripts/p680_frontier_partition_enumeration.py --out results/p680-noncrossing-lemma-20260913/raw
+
+# Extra cross-validations (run inline during the session, not persisted as files):
+# 1. brute-force per-configuration union-find vs BFS, honest convention:
+#    all w*R <= 16 cells, both rules -> match
+# 2. brute-force per-configuration union-find vs BFS, delayed-closing/full-frontier
+#    convention: (3,3),(4,3),(4,4),(5,3),(5,4),(6,3),(6,4), both rules -> match
+# 3. delayed-closing set differences: NN-only class (0,1,0) at (3,3);
+#    NN+NNN-only class (0,0,1,1) at (4,4)
+
+# Full Matching-One repository CI has not been run for this commit.

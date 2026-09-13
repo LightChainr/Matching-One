@@ -1,0 +1,58 @@
+{
+  "issue": 680,
+  "date": "2026-09-13",
+  "agent": "p680",
+  "outcome": "proof (noncrossing claim, all w and R) + verified-small-width class-set equality + convention reconciliation for #675's 28/66",
+  "machine": "assigned local Mac (no Huawei budget)",
+  "python": "managed env, stdlib only",
+  "max_width_enumerated": 6,
+  "model": {
+    "lattice": "rectangle depth R x width w, open boundary in transverse direction",
+    "frontier": "last processed column, w sites",
+    "partition": "set partition of the OCCUPIED frontier sites induced by occupied-site connectivity through the processed rectangle",
+    "rules": {
+      "NN": "von Neumann (4-neighbour)",
+      "NN+NNN": "king (8-neighbour)"
+    },
+    "class_record": "(occupied-position tuple, canonical restricted-growth string)"
+  },
+  "honest_convention": {
+    "description": "all bonds counted, including the frontier column's own bonds; frontier occupancy free",
+    "sets_equal_NN_NNN": "true at every (w,R) with w=2..6, R=1..4",
+    "all_noncrossing": "true at every (w,R), both rules",
+    "class_count_sequences_w2_to_w6": {
+      "R1": [4, 8, 16, 32, 64],
+      "R2": [4, 9, 21, 50, 120],
+      "R3": [4, 9, 21, 51, 127],
+      "R4": [4, 9, 21, 51, 127]
+    },
+    "saturates_from_R": 3,
+    "brute_force_cross_check": "matches BFS at every w*R <= 16, both rules",
+    "note": "51 > C_5 and 127 > C_6: with vacancies the ambient exceeds Catalan; the #675 Catalan comparison belongs to the delayed-closing/full-frontier convention"
+  },
+  "delayed_closing_full_frontier": {
+    "description": "previous row closed before adding the new row; final row fully occupied and its own horizontal bonds pending; classes = partitions of [w]",
+    "counts": {
+      "w5_R3": {"NN": 28, "NNN": 13},
+      "w5_R4": {"NN": 28, "NNN": 13},
+      "w6_R3": {"NN": 65, "NNN": 24},
+      "w6_R4": {"NN": 66, "NNN": 24}
+    },
+    "reconciliation": "reproduces #675's 28 exactly at (w=5,R=4); 66 appears at (w=6,R=4) while '3 rows' gives 65 (off-by-one suspected)",
+    "sets_equal_NN_NNN": "false (differences in both directions); all classes still noncrossing",
+    "brute_force_cross_check": "matches BFS at (3,3),(4,3),(4,4),(5,3),(5,4),(6,3),(6,4), both rules"
+  },
+  "witness_converse_false_cluster_level": {
+    "occupied": [[1, 0], [0, 1], [1, 2]],
+    "king_frontier_footprints": [[0, 2]],
+    "nn_frontier_footprints": [[0], [2]],
+    "conclusion": "diagonal relay footprint NN cannot make with the same occupied set; partition {0,2} still NN-reachable at depth >= 2, so class sets coincide"
+  },
+  "claim_boundaries": [
+    "Theorem 1 (noncrossing) proved in full rigour for all w, R, open strip",
+    "Claim 2 (class-set equality) verified w<=6, R<=4 only; status unchanged from #675",
+    "cyclic/periodic-y strip not covered (circular noncrossing is a different predicate)",
+    "no weighted counts or realizations-per-state compared",
+    "Full Matching-One repository CI has not been run for this commit."
+  ]
+}
