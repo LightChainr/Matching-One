@@ -1,0 +1,296 @@
+{
+  "schema": "matching-one.oblique-corridor.v1",
+  "date": "2026-09-13",
+  "scope": "deterministic NN staircase gluing and finite-group packing; not an RSW computation",
+  "tiny_exhaustive": [
+    {
+      "u": [
+        4,
+        0
+      ],
+      "v": [
+        1,
+        3
+      ],
+      "scale": 1,
+      "N": 12,
+      "rectangles": 12,
+      "all_rectangles_inject": true,
+      "configurations": 4096,
+      "ring_configurations": 279,
+      "ring_counts_by_occupation": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        76,
+        124,
+        66,
+        12,
+        1
+      ],
+      "implication_failures": []
+    },
+    {
+      "u": [
+        4,
+        1
+      ],
+      "v": [
+        0,
+        4
+      ],
+      "scale": 1,
+      "N": 16,
+      "rectangles": 15,
+      "all_rectangles_inject": true,
+      "configurations": 65536,
+      "ring_configurations": 3282,
+      "ring_counts_by_occupation": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        31,
+        210,
+        619,
+        974,
+        870,
+        440,
+        120,
+        16,
+        1
+      ],
+      "implication_failures": []
+    },
+    {
+      "u": [
+        4,
+        2
+      ],
+      "v": [
+        0,
+        4
+      ],
+      "scale": 1,
+      "N": 16,
+      "rectangles": 18,
+      "all_rectangles_inject": true,
+      "configurations": 65536,
+      "ring_configurations": 2365,
+      "ring_counts_by_occupation": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10,
+        90,
+        332,
+        656,
+        724,
+        416,
+        120,
+        16,
+        1
+      ],
+      "implication_failures": []
+    }
+  ],
+  "geometry": [
+    {
+      "u": [
+        64,
+        0
+      ],
+      "v": [
+        17,
+        83
+      ],
+      "scale": 1,
+      "ell_squared": 4096,
+      "N": 5312,
+      "ambient_gcd_u": 64,
+      "events": 192,
+      "lifted_support_size": 201,
+      "max_distance_squared_to_segment": "2",
+      "rank_of_full_corridor_support": 1
+    },
+    {
+      "u": [
+        63,
+        16
+      ],
+      "v": [
+        -33,
+        127
+      ],
+      "scale": 1,
+      "ell_squared": 4225,
+      "N": 8529,
+      "ambient_gcd_u": 1,
+      "events": 237,
+      "lifted_support_size": 246,
+      "max_distance_squared_to_segment": "24649/4225",
+      "rank_of_full_corridor_support": 1
+    },
+    {
+      "u": [
+        32,
+        57
+      ],
+      "v": [
+        -130,
+        85
+      ],
+      "scale": 1,
+      "ell_squared": 4273,
+      "N": 10130,
+      "ambient_gcd_u": 1,
+      "events": 267,
+      "lifted_support_size": 276,
+      "max_distance_squared_to_segment": "21025/4273",
+      "rank_of_full_corridor_support": 1
+    },
+    {
+      "u": [
+        48,
+        48
+      ],
+      "v": [
+        -80,
+        112
+      ],
+      "scale": 1,
+      "ell_squared": 4608,
+      "N": 9216,
+      "ambient_gcd_u": 48,
+      "events": 288,
+      "lifted_support_size": 297,
+      "max_distance_squared_to_segment": "9/2",
+      "rank_of_full_corridor_support": 1
+    },
+    {
+      "u": [
+        128,
+        33
+      ],
+      "v": [
+        -50,
+        263
+      ],
+      "scale": 2,
+      "ell_squared": 17473,
+      "N": 35314,
+      "ambient_gcd_u": 1,
+      "events": 291,
+      "lifted_support_size": 830,
+      "max_distance_squared_to_segment": "264196/17473",
+      "rank_of_full_corridor_support": 1
+    },
+    {
+      "u": [
+        -65,
+        17
+      ],
+      "v": [
+        -35,
+        -188
+      ],
+      "scale": 1,
+      "ell_squared": 4514,
+      "N": 12815,
+      "ambient_gcd_u": 1,
+      "events": 246,
+      "lifted_support_size": 255,
+      "max_distance_squared_to_segment": "26569/4514",
+      "rank_of_full_corridor_support": 1
+    }
+  ],
+  "packing": [
+    {
+      "group_order": 23,
+      "pattern": [
+        0,
+        1,
+        4
+      ],
+      "difference_size": 7,
+      "centers": [
+        0,
+        2,
+        7,
+        9,
+        14,
+        16
+      ],
+      "cover_inequality": true
+    },
+    {
+      "group_order": 64,
+      "pattern": [
+        0,
+        2,
+        5,
+        11
+      ],
+      "difference_size": 13,
+      "centers": [
+        0,
+        1,
+        8,
+        15,
+        16,
+        23,
+        30,
+        31,
+        38,
+        45,
+        46
+      ],
+      "cover_inequality": true
+    },
+    {
+      "group_order": 101,
+      "pattern": [
+        0,
+        1,
+        2,
+        8,
+        9
+      ],
+      "difference_size": 13,
+      "centers": [
+        0,
+        3,
+        13,
+        16,
+        26,
+        29,
+        39,
+        42,
+        52,
+        55,
+        65,
+        68,
+        78,
+        81,
+        91
+      ],
+      "cover_inequality": true
+    }
+  ],
+  "total_exhaustive_configurations": 135168,
+  "all_implications_hold": true
+}

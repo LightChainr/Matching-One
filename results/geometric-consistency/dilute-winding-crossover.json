@@ -1,0 +1,277 @@
+{
+  "schema": "matching-one/dilute-prefactor/v1",
+  "scope": "NN SITE dilute double limit plus an explicitly separate matrix-renewal control; no fixed-p OZ theorem",
+  "geometry_checks": {
+    "cycles": 2443,
+    "gap_subset_checks": 27,
+    "max_contact_over_r": 4.0
+  },
+  "minimal_nonrow_census": [
+    {
+      "width": 3,
+      "tested_fixed_size_sets": 41,
+      "nonrow_winding_counts": {
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "predicted_first_count": 0
+    },
+    {
+      "width": 4,
+      "tested_fixed_size_sets": 154,
+      "nonrow_winding_counts": {
+        "4": 0,
+        "5": 0,
+        "6": 4
+      },
+      "predicted_first_count": 4
+    },
+    {
+      "width": 5,
+      "tested_fixed_size_sets": 582,
+      "nonrow_winding_counts": {
+        "5": 0,
+        "6": 0,
+        "7": 10
+      },
+      "predicted_first_count": 10
+    },
+    {
+      "width": 6,
+      "tested_fixed_size_sets": 2211,
+      "nonrow_winding_counts": {
+        "6": 0,
+        "7": 0,
+        "8": 18
+      },
+      "predicted_first_count": 18
+    },
+    {
+      "width": 7,
+      "tested_fixed_size_sets": 8437,
+      "nonrow_winding_counts": {
+        "7": 0,
+        "8": 0,
+        "9": 28
+      },
+      "predicted_first_count": 28
+    },
+    {
+      "width": 8,
+      "tested_fixed_size_sets": 32318,
+      "nonrow_winding_counts": {
+        "8": 0,
+        "9": 0,
+        "10": 40
+      },
+      "predicted_first_count": 40
+    }
+  ],
+  "independent_matrix_trace_coefficients": [
+    "3/8",
+    "107/128",
+    "291/1024",
+    "9427/32768",
+    "49329/262144",
+    "736831/4194304",
+    "5138027/33554432",
+    "314325251/2147483648",
+    "2382293829/17179869184",
+    "36896778821/274877906944"
+  ],
+  "numerics": {
+    "small_width_retained_site_controls": [
+      {
+        "width": 2,
+        "p": "1/32",
+        "nu_exact": "1015777/1041235968",
+        "nu_over_p_to_w": "0.99896246380916414904330312",
+        "bessel": "1.0039100663533544851278467",
+        "ratio": "0.99507166756265108739969013"
+      },
+      {
+        "width": 2,
+        "p": "1/64",
+        "nu_exact": "16515009/67662512128",
+        "nu_over_p_to_w": "0.99974823187221051326555914",
+        "bessel": "1.0009768009444507521251346",
+        "ratio": "0.99877262982410676433877674"
+      },
+      {
+        "width": 2,
+        "p": "1/128",
+        "nu_exact": "266338177/4363955208192",
+        "nu_over_p_to_w": "0.99993801122809597404195116",
+        "bessel": "1.0002441555265654198830768",
+        "ratio": "0.9996939304301075568999033"
+      },
+      {
+        "width": 3,
+        "p": "1/32",
+        "nu_exact": "34050535322719/1115805188582539264",
+        "nu_over_p_to_w": "0.99996661861043110149987111",
+        "bessel": "1.0088083932745527185892953",
+        "ratio": "0.99123542714050825726667325"
+      },
+      {
+        "width": 3,
+        "p": "1/64",
+        "nu_exact": "17728526576767167/4647445430768219717632",
+        "nu_over_p_to_w": "0.99999600644516563507956396",
+        "bessel": "1.0021984729137734562207749",
+        "ratio": "0.99780236497247455333717852"
+      },
+      {
+        "width": 3,
+        "p": "1/128",
+        "nu_exact": "9150751527491551615/19190526232621887891963904",
+        "nu_over_p_to_w": "0.99999951198628886374492172",
+        "bessel": "1.0005493918479830188616354",
+        "ratio": "0.99945042207193935280084832"
+      },
+      {
+        "width": 4,
+        "p": "1/32",
+        "nu_exact": "4474941304325856444847338672710119/4675167075569569864633478310744408719360",
+        "nu_over_p_to_w": "1.0036680994022294152982275",
+        "bessel": "1.0156861412236079233547345",
+        "ratio": "0.98816756344937399171306128"
+      },
+      {
+        "width": 4,
+        "p": "1/64",
+        "nu_exact": "343083015125336094706475689322942604624447/5750535312434487951923723844041041486567897563136",
+        "nu_over_p_to_w": "1.0009464402805725375335546",
+        "bessel": "1.0039100663533544851278467",
+        "ratio": "0.99704791676853371072386202"
+      },
+      {
+        "width": 4,
+        "p": "1/128",
+        "nu_exact": "322259858718084930015533383531141592775736914503/86485185297567971130649207291796618094959772345772802048",
+        "nu_over_p_to_w": "1.0002403513138719845713588",
+        "bessel": "1.0009768009444507521251346",
+        "ratio": "0.99926426903212551391020752"
+      }
+    ],
+    "bessel_contrast_curve": [
+      {
+        "lambda": "0.05",
+        "beta_crossover": "0.017112316840867266575199661"
+      },
+      {
+        "lambda": "0.1",
+        "beta_crossover": "0.065397172746318797803725633"
+      },
+      {
+        "lambda": "0.25",
+        "beta_crossover": "0.30766035968951565158837001"
+      },
+      {
+        "lambda": "0.5",
+        "beta_crossover": "0.60217481012385055449362348"
+      },
+      {
+        "lambda": "1",
+        "beta_crossover": "0.63345301281698534244879706"
+      },
+      {
+        "lambda": "2",
+        "beta_crossover": "0.55014475672342332825451932"
+      },
+      {
+        "lambda": "4",
+        "beta_crossover": "0.52063665446642206842220606"
+      },
+      {
+        "lambda": "10",
+        "beta_crossover": "0.50759817582716807023129548"
+      },
+      {
+        "lambda": "30",
+        "beta_crossover": "0.50245165937891411565443832"
+      }
+    ],
+    "matching_fixed_width_low_p_limit_not_finite_p_data": {
+      "c4": 19,
+      "c8": 1107,
+      "c12": 73789,
+      "R4_exact": "1401991/1225449",
+      "beta_effective_limit": "0.46782915803867695654419993"
+    },
+    "proved_bound_numerical_controls_not_density_estimates": [
+      {
+        "width": 64,
+        "p": "1/256",
+        "lambda": "0.25",
+        "finite_lower_over_bessel": "0.97976236544816369011344071",
+        "walk_upper_over_bessel": "1.0019903375367301483087813",
+        "universal_lower_factor": "0.875",
+        "universal_upper_factor": "1.005876574714478322766683"
+      },
+      {
+        "width": 256,
+        "p": "1/256",
+        "lambda": "1.0",
+        "finite_lower_over_bessel": "0.88818847544168495401452164",
+        "walk_upper_over_bessel": "1.009103052658314946935824",
+        "universal_lower_factor": "0.5",
+        "universal_upper_factor": "1.0237143166023579169688505"
+      },
+      {
+        "width": 1024,
+        "p": "1/1024",
+        "lambda": "1.0",
+        "finite_lower_over_bessel": "0.97128740046313902746753251",
+        "walk_upper_over_bessel": "1.0022550698722570539788439",
+        "universal_lower_factor": "0.875",
+        "universal_upper_factor": "1.005876574714478322766683"
+      },
+      {
+        "width": 1024,
+        "p": "1/256",
+        "lambda": "4.0",
+        "finite_lower_over_bessel": "0.51066693893278599483236007",
+        "walk_upper_over_bessel": "1.044565976499507742163823",
+        "universal_lower_factor": "-1.0",
+        "universal_upper_factor": "1.0982851403078258486502099"
+      }
+    ],
+    "matrix_renewal_controls_not_site_model": {
+      "mean_forward_length": "3/2",
+      "single_step_transverse_variance": "1/2",
+      "asymptotic_variance_per_renewal": "1",
+      "D": "2/3",
+      "naive_D_ignoring_correlations": "1/3",
+      "sequence": [
+        {
+          "width": 8,
+          "normalized_gaussian_amplitude": "0.8473029209783016747029948",
+          "beta_effective": "0.2889944274690882503308101"
+        },
+        {
+          "width": 16,
+          "normalized_gaussian_amplitude": "0.92847341407200684608741177",
+          "beta_effective": "0.38846535391804191114872381"
+        },
+        {
+          "width": 32,
+          "normalized_gaussian_amplitude": "0.96956080304801010351813996",
+          "beta_effective": "0.46026688247931377606194586"
+        },
+        {
+          "width": 64,
+          "normalized_gaussian_amplitude": "0.98563441495658425494014059",
+          "beta_effective": "0.48241781188732095533592058"
+        },
+        {
+          "width": 128,
+          "normalized_gaussian_amplitude": "0.99299850301651533865874337",
+          "beta_effective": "0.49167011031188536311776649"
+        }
+      ]
+    },
+    "log_nu_absolute_error_to_beta_error_multiplier": "13.904237987128827641505998"
+  }
+}

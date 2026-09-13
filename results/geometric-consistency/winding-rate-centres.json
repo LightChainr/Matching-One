@@ -1,0 +1,524 @@
+{
+  "schema": "matching-one.winding-rate-centres.v1",
+  "date": "2026-09-13",
+  "claim_boundary": "Finite deterministic controls only; no infinite correlation length numerically computed.",
+  "seed_bounds": {
+    "NN": {
+      "conditional_origin": true,
+      "seed_vertex_count": 9,
+      "independent_remaining_sites": 8,
+      "source": [
+        0,
+        1
+      ],
+      "target": [
+        2,
+        1
+      ],
+      "conditional_connection_counts_by_occupied_other_sites": [
+        0,
+        0,
+        1,
+        6,
+        17,
+        26,
+        21,
+        7,
+        1
+      ],
+      "q_at_one_quarter": {
+        "numerator": "4477",
+        "denominator": "65536"
+      },
+      "seed_root_target": "1/16",
+      "seed_root_interval": [
+        {
+          "numerator": "276476994980459069",
+          "denominator": "1152921504606846976"
+        },
+        {
+          "numerator": "4423631919687345105",
+          "denominator": "18446744073709551616"
+        }
+      ],
+      "seed_root_midpoint_decimal": "0.239805566880062101731879",
+      "strict_upper_bound_on_first_centre_at_d_log4": "0.239805566880062101758984",
+      "cluster_comparison": {
+        "cap": 5,
+        "p": "1/5",
+        "q": "1/4",
+        "lhs": {
+          "numerator": "1809",
+          "denominator": "131072"
+        },
+        "rhs": {
+          "numerator": "16621",
+          "denominator": "640000"
+        },
+        "passed": true
+      }
+    },
+    "matching": {
+      "conditional_origin": true,
+      "seed_vertex_count": 9,
+      "independent_remaining_sites": 8,
+      "source": [
+        0,
+        1
+      ],
+      "target": [
+        2,
+        1
+      ],
+      "conditional_connection_counts_by_occupied_other_sites": [
+        0,
+        0,
+        3,
+        15,
+        31,
+        34,
+        21,
+        7,
+        1
+      ],
+      "q_at_one_quarter": {
+        "numerator": "37",
+        "denominator": "256"
+      },
+      "seed_root_target": "1/16",
+      "seed_root_interval": [
+        {
+          "numerator": "1442483380047527557",
+          "denominator": "9223372036854775808"
+        },
+        {
+          "numerator": "2884966760095055115",
+          "denominator": "18446744073709551616"
+        }
+      ],
+      "seed_root_midpoint_decimal": "0.156394361442176291779544",
+      "strict_upper_bound_on_first_centre_at_d_log4": "0.156394361442176291806649",
+      "cluster_comparison": {
+        "cap": 5,
+        "p": "1/5",
+        "q": "1/4",
+        "lhs": {
+          "numerator": "8343",
+          "denominator": "262144"
+        },
+        "rhs": {
+          "numerator": "61",
+          "denominator": "1024"
+        },
+        "passed": true
+      }
+    },
+    "certified_d_log4_centre_brackets": {
+      "a_lower": "1/12",
+      "a_upper": {
+        "numerator": "4423631919687345105",
+        "denominator": "18446744073709551616"
+      },
+      "b_lower": {
+        "numerator": "15561777313614496501",
+        "denominator": "18446744073709551616"
+      },
+      "b_upper": "27/28",
+      "warning": "Seed roots bound the infinite centres; they are NOT centre estimates."
+    }
+  },
+  "censuses": [
+    {
+      "width": 3,
+      "height": 3,
+      "graph": "NN",
+      "configurations": 512,
+      "nonzero_winding_configurations": 253,
+      "first_span_cut_witnesses_checked": 253,
+      "winding_counts": [
+        0,
+        0,
+        0,
+        6,
+        36,
+        81,
+        84,
+        36,
+        9,
+        1
+      ],
+      "ring_counts": [
+        0,
+        0,
+        0,
+        1,
+        6,
+        17,
+        26,
+        21,
+        7,
+        1
+      ],
+      "rational_probability_checks": [
+        {
+          "p": "1/100",
+          "winding_probability": {
+            "numerator": "1199820000179",
+            "denominator": "200000000000000000"
+          },
+          "cut_upper_using_path_mass_lower": {
+            "numerator": "729",
+            "denominator": "500000"
+          },
+          "conditional_harris_lower": {
+            "numerator": "1000197999901",
+            "denominator": "100000000000000000000"
+          },
+          "ring_probability": {
+            "numerator": "1000197999901",
+            "denominator": "1000000000000000000"
+          }
+        },
+        {
+          "p": "1/4",
+          "winding_probability": {
+            "numerator": "22303",
+            "denominator": "262144"
+          },
+          "cut_upper_using_path_mass_lower": {
+            "numerator": "729",
+            "denominator": "32"
+          },
+          "conditional_harris_lower": {
+            "numerator": "4477",
+            "denominator": "1048576"
+          },
+          "ring_probability": {
+            "numerator": "4477",
+            "denominator": "262144"
+          }
+        },
+        {
+          "p": "1/2",
+          "winding_probability": {
+            "numerator": "253",
+            "denominator": "512"
+          },
+          "conditional_harris_lower": {
+            "numerator": "79",
+            "denominator": "1024"
+          },
+          "ring_probability": {
+            "numerator": "79",
+            "denominator": "512"
+          }
+        }
+      ]
+    },
+    {
+      "width": 3,
+      "height": 3,
+      "graph": "matching",
+      "configurations": 512,
+      "nonzero_winding_configurations": 421,
+      "first_span_cut_witnesses_checked": 421,
+      "winding_counts": [
+        0,
+        0,
+        0,
+        48,
+        117,
+        126,
+        84,
+        36,
+        9,
+        1
+      ],
+      "ring_counts": [
+        0,
+        0,
+        0,
+        3,
+        15,
+        31,
+        34,
+        21,
+        7,
+        1
+      ],
+      "rational_probability_checks": [
+        {
+          "p": "1/100",
+          "winding_probability": {
+            "numerator": "46315890898201",
+            "denominator": "1000000000000000000"
+          },
+          "cut_upper_using_path_mass_lower": {
+            "numerator": "3969",
+            "denominator": "500000"
+          },
+          "conditional_harris_lower": {
+            "numerator": "29701",
+            "denominator": "1000000000000"
+          },
+          "ring_probability": {
+            "numerator": "29701",
+            "denominator": "10000000000"
+          }
+        },
+        {
+          "p": "1/4",
+          "winding_probability": {
+            "numerator": "76249",
+            "denominator": "262144"
+          },
+          "conditional_harris_lower": {
+            "numerator": "37",
+            "denominator": "4096"
+          },
+          "ring_probability": {
+            "numerator": "37",
+            "denominator": "1024"
+          }
+        },
+        {
+          "p": "1/2",
+          "winding_probability": {
+            "numerator": "421",
+            "denominator": "512"
+          },
+          "conditional_harris_lower": {
+            "numerator": "7",
+            "denominator": "64"
+          },
+          "ring_probability": {
+            "numerator": "7",
+            "denominator": "32"
+          }
+        }
+      ]
+    },
+    {
+      "width": 3,
+      "height": 4,
+      "graph": "NN",
+      "configurations": 4096,
+      "nonzero_winding_configurations": 2031,
+      "first_span_cut_witnesses_checked": 2031,
+      "winding_counts": [
+        0,
+        0,
+        0,
+        4,
+        39,
+        168,
+        414,
+        612,
+        495,
+        220,
+        66,
+        12,
+        1
+      ],
+      "ring_counts": null,
+      "rational_probability_checks": [
+        {
+          "p": "1/100",
+          "winding_probability": {
+            "numerator": "4029993759210863599",
+            "denominator": "1000000000000000000000000"
+          },
+          "cut_upper_using_path_mass_lower": {
+            "numerator": "243",
+            "denominator": "125000"
+          }
+        },
+        {
+          "p": "1/4",
+          "winding_probability": {
+            "numerator": "1199215",
+            "denominator": "16777216"
+          },
+          "cut_upper_using_path_mass_lower": {
+            "numerator": "243",
+            "denominator": "8"
+          }
+        },
+        {
+          "p": "1/2",
+          "winding_probability": {
+            "numerator": "2031",
+            "denominator": "4096"
+          }
+        }
+      ]
+    },
+    {
+      "width": 3,
+      "height": 4,
+      "graph": "matching",
+      "configurations": 4096,
+      "nonzero_winding_configurations": 3495,
+      "first_span_cut_witnesses_checked": 3495,
+      "winding_counts": [
+        0,
+        0,
+        0,
+        28,
+        273,
+        696,
+        912,
+        792,
+        495,
+        220,
+        66,
+        12,
+        1
+      ],
+      "ring_counts": null,
+      "rational_probability_checks": [
+        {
+          "p": "1/100",
+          "winding_probability": {
+            "numerator": "28163313903045558799",
+            "denominator": "1000000000000000000000000"
+          },
+          "cut_upper_using_path_mass_lower": {
+            "numerator": "1323",
+            "denominator": "125000"
+          }
+        },
+        {
+          "p": "1/4",
+          "winding_probability": {
+            "numerator": "4768399",
+            "denominator": "16777216"
+          }
+        },
+        {
+          "p": "1/2",
+          "winding_probability": {
+            "numerator": "3495",
+            "denominator": "4096"
+          }
+        }
+      ]
+    },
+    {
+      "width": 4,
+      "height": 4,
+      "graph": "NN",
+      "configurations": 65536,
+      "nonzero_winding_configurations": 28977,
+      "first_span_cut_witnesses_checked": 28977,
+      "winding_counts": [
+        0,
+        0,
+        0,
+        0,
+        8,
+        96,
+        560,
+        2000,
+        4788,
+        7456,
+        7216,
+        4336,
+        1820,
+        560,
+        120,
+        16,
+        1
+      ],
+      "ring_counts": null,
+      "rational_probability_checks": [
+        {
+          "p": "1/100",
+          "winding_probability": {
+            "numerator": "8003121011311886033740849",
+            "denominator": "100000000000000000000000000000000"
+          },
+          "cut_upper_using_path_mass_lower": {
+            "numerator": "54",
+            "denominator": "390625"
+          }
+        },
+        {
+          "p": "1/4",
+          "winding_probability": {
+            "numerator": "147889201",
+            "denominator": "4294967296"
+          },
+          "cut_upper_using_path_mass_lower": {
+            "numerator": "54",
+            "denominator": "1"
+          }
+        },
+        {
+          "p": "1/2",
+          "winding_probability": {
+            "numerator": "28977",
+            "denominator": "65536"
+          }
+        }
+      ]
+    },
+    {
+      "width": 4,
+      "height": 4,
+      "graph": "matching",
+      "configurations": 65536,
+      "nonzero_winding_configurations": 56491,
+      "first_span_cut_witnesses_checked": 56491,
+      "winding_counts": [
+        0,
+        0,
+        0,
+        0,
+        160,
+        1504,
+        5496,
+        10352,
+        12662,
+        11424,
+        8008,
+        4368,
+        1820,
+        560,
+        120,
+        16,
+        1
+      ],
+      "ring_counts": null,
+      "rational_probability_checks": [
+        {
+          "p": "1/100",
+          "winding_probability": {
+            "numerator": "155794089847908319405147243",
+            "denominator": "100000000000000000000000000000000"
+          },
+          "cut_upper_using_path_mass_lower": {
+            "numerator": "686",
+            "denominator": "390625"
+          }
+        },
+        {
+          "p": "1/4",
+          "winding_probability": {
+            "numerator": "994873963",
+            "denominator": "4294967296"
+          }
+        },
+        {
+          "p": "1/2",
+          "winding_probability": {
+            "numerator": "56491",
+            "denominator": "65536"
+          }
+        }
+      ]
+    }
+  ],
+  "total_graph_configuration_checks": 140288,
+  "total_cut_witnesses": 91668
+}
