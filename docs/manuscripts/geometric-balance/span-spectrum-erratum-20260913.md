@@ -102,6 +102,46 @@ distinct span bins among *retiring components*, each component contributes one b
 `W <= 8` components retire in a transition (`span_spectrum_build.cpp` line 182 caps W at 8), so
 the `nret < 8` guard is unreachable and no retirement can be silently dropped.
 
+## 5.1 What the data actually support: the moment prediction is not contradicted
+
+With the CIV mechanism in hand, §5's headline ("the ratio is driven toward zero — NOT toward the
+Brownian-bridge constant") is itself an over-read and is withdrawn. The decoration contributes
+`O((log w)^2)` to the variance against `Var(chain) ~ w`, so it is *subleading*: convergence to
+`pi/3 - 1` was never excluded, and the direction the ratio moves cannot distinguish the two
+readings. What can:
+
+    model A:  Var/(E L)^2 = (pi/3 - 1) + c/w      [conjectured constant, c free]
+    model B:  Var/(E L)^2 = c/w                   [decays to 0]
+
+Under A, `R*w = (Var/(E L)^2 - (pi/3 - 1))*w` is constant; under B it decreases *linearly* at
+`-pi/3 + 1 = -0.0471975511966` per unit width. `scripts/span_moment_limits.py` computes both
+from the committed results JSON (the w=8 columns combine this delivery's chain with the owner's
+independent tagged resolvent):
+
+| family | w | R*w, w=4.. | slope of R*w (w>=4) | required by B | [A] rms | [B] rms |
+|---|---|---|---|---|---|---|
+| NN p=1/4 | 4,5,6,7,8 | 0.657, 0.665, 0.659, 0.650, 0.640 | **-0.0049** | -0.0472 | 0.0316 | 0.0442 |
+| NN p=1/8 | 4,5,6,7 | 0.669, 0.724, 0.741, 0.736 | **+0.0218** | -0.0472 | 0.0571 | 0.0625 |
+| matching p=1/8 | 4,5,6,7,8 | 0.523, 0.548, 0.556, 0.556, 0.551 | **+0.0064** | -0.0472 | 0.0427 | 0.0524 |
+| matching p=1/16 | 4,5,6,7 | 0.277, 0.288, 0.293, 0.290 | **+0.0043** | -0.0472 | 0.0187 | 0.0334 |
+
+**The "limit 0" reading is excluded in all four families**: `R*w` does not fall at the rate that
+reading requires — in three families its slope has the opposite sign, and in the fourth it is 9.6x
+too small. Model A, whose limit is fixed a priori, fits better than B in all four while using the
+same number of free parameters, and its correction amplitude is
+
+    c = 0.619 (NN 1/4), 0.631 (NN 1/8), 0.495 (matching 1/8), 0.257 (matching 1/16),
+
+i.e. `c(p)` grows as p decreases — the same amplitude question #740 asks about.
+
+**Revised finding.** The §6.3 moment prediction `Var/(E L)^2 -> pi/3 - 1` is *not contradicted*
+by this delivery's data; the measured ratios approach it like `c(p)/w`, reaching 2.7x the target
+at the largest width because `c(p)/w` is still 0.64 there. The original note's "2-4x the target,
+no plateau **so the prediction is not supported**" conflated "not yet reached" with "not
+supported"; only the former is measured. Caveats kept explicit: the 1/w law is an empirical fit
+over 4-5 widths, not a theorem; the dilute families NN p=1/8 (spread 10.1%) and matching p=1/16
+(5.4%) are the least settled; and two of the four w=8 points come from the owner's chain.
+
 ## 6. Restored artifact and independent corroboration
 
 `results/geometric-consistency/span-spectrum-20260913.json` (the 30-run table behind §3/§4) was

@@ -11,11 +11,11 @@
  },
  "engine": {
   "builder": "scripts/span_spectrum_build.cpp",
-  "solver": "scripts/span_spectrum_solve.py",
+  "solver": "scripts/span_spectrum_solve.py", "moment_test": "scripts/span_moment_limits.py",
   "validation": [
    "d_1 = p^w (1-p)^(2w) exact at every config",
    "sum_{h<=3} d_h = 9087/1048576 exact (section 4.1 control, NN w=4 p=1/2 D_MAX=3)",
-   "closure sum d_h + tail = certified nu_w exact wherever an independent nu_w exists (published controls w=2..4; #741 certified values w=4,8)"
+   "closure sum d_h + tail = certified nu_w exact in every run where a certified reference was supplied (w=2,3,4 at the published p); no closure was run at w=5..7 because no certified nu_w reference exists at those widths (#741's w=4,8 values were not used: the w=8 spectrum is absent)"
   ],
   "cost": {
    "w8_build_seconds": 469,

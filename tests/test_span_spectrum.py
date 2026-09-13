@@ -107,6 +107,27 @@ class SpanSpectrumTests(unittest.TestCase):
                 m = S.spectrum_moments(r["d_h_float"], r["tail_bin_float"], r["d_max"])
                 self.assertFalse(m["censored"], r["label"] + " w=%d" % r["width"])
 
+    def test_moment_limit_reading(self):
+        """`limit 0` is excluded; the conjectured constant is the better reading.
+
+        Locks the erratum 5.1 table: for all four families the slope of
+        (Var/(E L)^2 - (pi/3 - 1))*w is far from the -0.0472 per unit width that
+        a decay to zero would require, and model A beats model B on rms.
+        """
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import span_moment_limits as M  # noqa: E402
+
+        self.assertAlmostEqual(M.TARGET, 0.04719755119659763, places=15)
+        rows = {r["family"]: r for r in M.report(str(RESULTS), verbose=False)}
+        expected_c = {"NN p=1/4": 0.619, "NN p=1/8": 0.631,
+                      "matching p=1/8": 0.495, "matching p=1/16": 0.257}
+        for fam, want_c in expected_c.items():
+            r = rows[fam]
+            self.assertTrue(r["excludes_limit_zero"], fam)
+            self.assertGreater(r["slope_Rw_w_ge_4"], -0.5 * M.TARGET, fam)
+            self.assertLess(r["model_A"]["rms"], r["model_B"]["rms"], fam)
+            self.assertAlmostEqual(r["model_A"]["c"], want_c, places=3)
+
 
 if __name__ == "__main__":
     unittest.main()

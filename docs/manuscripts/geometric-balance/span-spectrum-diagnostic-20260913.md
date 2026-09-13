@@ -5,6 +5,13 @@
 > §4/§5 "additive span" mechanism reading is withdrawn; and two solver defects (an unnormalised
 > `light` chain, an implicit certificate-versus-observable gap) are fixed there. The §3/§4
 > tables themselves stand and are reproducible from the committed results JSON.
+>
+> **The §4/§5 conclusion is also revised, not just its mechanism.** Re-read against the CIV
+> log-closeness statement, the moment series `Var/(E L)^2` is consistent with approaching
+> `pi/3 - 1` as `c(p)/w` (amplitudes 0.26–0.63), and the competing "decays to zero" reading is
+> excluded by the slope of `(Var/(E L)^2 - (pi/3 - 1))*w` in all four families. "Not yet reached"
+> is not "not supported": the prediction is **not contradicted** at these widths. See §5.1 of
+> the erratum.
 
 **Status: finite-width DIAGNOSTIC of the §6 research conjecture, delivered as the ticket asked.
 The conjecture is neither proved nor refuted; its moment prediction is not supported at any
