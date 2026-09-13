@@ -1,0 +1,27 @@
+{
+  "engine": "same-N Gaussian threshold-rank Newman-Ziff",
+  "generated_utc": "2026-08-29T10:57:48Z",
+  "git_commit": "bfab0330f5f56ca4d746b45d737f1607e3d229a0",
+  "command": "build/threshold_rank_orientation_mc --n 130 --samples 1900000000 --batches 100 --seed 2026104501 --replica-offset 5100000000 --threads 8 --git-commit bfab0330f5f56ca4d746b45d737f1607e3d229a0 --output-prefix results/server-20260829/P154-norm4-production/raw/n130_1900m",
+  "compiler": "10.3.1",
+  "openmp": true,
+  "threads_requested": 8,
+  "samples_per_pair": 1900000000,
+  "batches": 100,
+  "seed": 2026104501,
+  "replica_counter_first": 5100000000,
+  "replica_counter_last_exclusive": 7000000000,
+  "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+  "coupling": "same cyclic permutation shared by same-N orientations",
+  "channel": "rank-2 cross wrapping",
+  "K_plus": "first black primal cross rank, 1-based",
+  "K_minus": "first black rank after white matching cross is lost; N-r+1",
+  "sparse_joint_histogram": false,
+  "per_batch_joint_moments": true,
+  "elapsed_seconds": 4824.6858824009996,
+  "designs": [
+    {"N": 130, "first": [11,3], "second": [9,7]}
+  ],
+  "histogram_csv": "results/server-20260829/P154-norm4-production/raw/n130_1900m.hist.csv",
+  "moments_csv": "results/server-20260829/P154-norm4-production/raw/n130_1900m.moments.csv"
+}
