@@ -1,0 +1,1643 @@
+{
+ "schema": "matching-one.issue674.spiral-involution.v1",
+ "geometry": "axis",
+ "L": 3,
+ "N": 9,
+ "question_cell": "both-same x both-same, rank pair (1,1)",
+ "cell_size": 6,
+ "configs": [
+  {
+   "mask": 238,
+   "k": 6,
+   "black_occupied": [
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "black_wrap": {
+    "rank": 1,
+    "direction_0": true,
+    "direction_1": true,
+    "either": true,
+    "both": true,
+    "cross": false
+   },
+   "white_wrap": {
+    "rank": 1,
+    "direction_0": true,
+    "direction_1": true,
+    "either": true,
+    "both": true,
+    "cross": false
+   }
+  },
+  {
+   "mask": 245,
+   "k": 6,
+   "black_occupied": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "black_wrap": {
+    "rank": 1,
+    "direction_0": true,
+    "direction_1": true,
+    "either": true,
+    "both": true,
+    "cross": false
+   },
+   "white_wrap": {
+    "rank": 1,
+    "direction_0": true,
+    "direction_1": true,
+    "either": true,
+    "both": true,
+    "cross": false
+   }
+  },
+  {
+   "mask": 350,
+   "k": 6,
+   "black_occupied": [
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "black_wrap": {
+    "rank": 1,
+    "direction_0": true,
+    "direction_1": true,
+    "either": true,
+    "both": true,
+    "cross": false
+   },
+   "white_wrap": {
+    "rank": 1,
+    "direction_0": true,
+    "direction_1": true,
+    "either": true,
+    "both": true,
+    "cross": false
+   }
+  },
+  {
+   "mask": 371,
+   "k": 6,
+   "black_occupied": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "black_wrap": {
+    "rank": 1,
+    "direction_0": true,
+    "direction_1": true,
+    "either": true,
+    "both": true,
+    "cross": false
+   },
+   "white_wrap": {
+    "rank": 1,
+    "direction_0": true,
+    "direction_1": true,
+    "either": true,
+    "both": true,
+    "cross": false
+   }
+  },
+  {
+   "mask": 413,
+   "k": 6,
+   "black_occupied": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "black_wrap": {
+    "rank": 1,
+    "direction_0": true,
+    "direction_1": true,
+    "either": true,
+    "both": true,
+    "cross": false
+   },
+   "white_wrap": {
+    "rank": 1,
+    "direction_0": true,
+    "direction_1": true,
+    "either": true,
+    "both": true,
+    "cross": false
+   }
+  },
+  {
+   "mask": 427,
+   "k": 6,
+   "black_occupied": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "black_wrap": {
+    "rank": 1,
+    "direction_0": true,
+    "direction_1": true,
+    "either": true,
+    "both": true,
+    "cross": false
+   },
+   "white_wrap": {
+    "rank": 1,
+    "direction_0": true,
+    "direction_1": true,
+    "either": true,
+    "both": true,
+    "cross": false
+   }
+  }
+ ],
+ "candidate_maps_tested": [
+  "identity",
+  "refl-anti(0,0)",
+  "refl-anti(0,1)",
+  "refl-anti(0,2)",
+  "refl-anti(1,0)",
+  "refl-anti(1,1)",
+  "refl-anti(1,2)",
+  "refl-anti(2,0)",
+  "refl-anti(2,1)",
+  "refl-anti(2,2)",
+  "refl-x(0)",
+  "refl-x(1)",
+  "refl-x(2)",
+  "refl-y(0)",
+  "refl-y(1)",
+  "refl-y(2)",
+  "rot90(0,0)",
+  "rot90(0,1)",
+  "rot90(0,2)",
+  "rot90(1,0)",
+  "rot90(1,1)",
+  "rot90(1,2)",
+  "rot90(2,0)",
+  "rot90(2,1)",
+  "rot90(2,2)",
+  "translation(0,1)",
+  "translation(0,2)",
+  "translation(1,0)",
+  "translation(1,1)",
+  "translation(1,2)",
+  "translation(2,0)",
+  "translation(2,1)",
+  "translation(2,2)"
+ ],
+ "actions_on_cell": {
+  "identity": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "is_involution_on_cell": true,
+   "fixed_points": 6,
+   "orbits": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "translation(0,1)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    4,
+    2,
+    5,
+    0,
+    3,
+    1
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 0,
+   "orbits": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "translation(0,2)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    3,
+    5,
+    1,
+    4,
+    0,
+    2
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 0,
+   "orbits": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "translation(1,0)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    3,
+    2,
+    5,
+    4,
+    0,
+    1
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 0,
+   "orbits": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "translation(1,1)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    0,
+    5,
+    1,
+    3,
+    4,
+    2
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 3,
+   "orbits": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "translation(1,2)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    4,
+    1,
+    2,
+    0,
+    3,
+    5
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 3,
+   "orbits": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     5,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "translation(2,0)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    4,
+    5,
+    1,
+    0,
+    3,
+    2
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 0,
+   "orbits": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "translation(2,1)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    3,
+    1,
+    2,
+    4,
+    0,
+    5
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 3,
+   "orbits": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     5,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "translation(2,2)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    0,
+    2,
+    5,
+    3,
+    4,
+    1
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 3,
+   "orbits": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "rot90(0,0)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    2,
+    3,
+    0,
+    5,
+    1,
+    4
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 0,
+   "orbits": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     4,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "rot90(0,1)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    1,
+    0,
+    4,
+    2,
+    5,
+    3
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 0,
+   "orbits": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     3,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "rot90(0,2)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    5,
+    4,
+    3,
+    1,
+    2,
+    0
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 0,
+   "orbits": [
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     0,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "rot90(1,0)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    5,
+    0,
+    4,
+    1,
+    2,
+    3
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 0,
+   "orbits": [
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "rot90(1,1)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    2,
+    4,
+    3,
+    5,
+    1,
+    0
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 0,
+   "orbits": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     0,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "rot90(1,2)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    1,
+    3,
+    0,
+    2,
+    5,
+    4
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 0,
+   "orbits": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "rot90(2,0)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    1,
+    4,
+    3,
+    2,
+    5,
+    0
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 0,
+   "orbits": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     0,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "rot90(2,1)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    5,
+    3,
+    0,
+    1,
+    2,
+    4
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 0,
+   "orbits": [
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     4,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "rot90(2,2)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    2,
+    0,
+    4,
+    5,
+    1,
+    3
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 0,
+   "orbits": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     3,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "refl-x(0)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    2,
+    3,
+    0,
+    1,
+    5,
+    4
+   ],
+   "is_involution_on_cell": true,
+   "fixed_points": 0,
+   "orbits": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "refl-y(0)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    2,
+    4,
+    0,
+    5,
+    1,
+    3
+   ],
+   "is_involution_on_cell": true,
+   "fixed_points": 0,
+   "orbits": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     3,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "refl-x(1)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    5,
+    4,
+    3,
+    2,
+    1,
+    0
+   ],
+   "is_involution_on_cell": true,
+   "fixed_points": 0,
+   "orbits": [
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     0,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "refl-y(1)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    5,
+    3,
+    4,
+    1,
+    2,
+    0
+   ],
+   "is_involution_on_cell": true,
+   "fixed_points": 0,
+   "orbits": [
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     0,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "refl-x(2)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    1,
+    0,
+    4,
+    5,
+    2,
+    3
+   ],
+   "is_involution_on_cell": true,
+   "fixed_points": 0,
+   "orbits": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "refl-y(2)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    1,
+    0,
+    3,
+    2,
+    5,
+    4
+   ],
+   "is_involution_on_cell": true,
+   "fixed_points": 0,
+   "orbits": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "refl-anti(0,0)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    0,
+    5,
+    2,
+    3,
+    4,
+    1
+   ],
+   "is_involution_on_cell": true,
+   "fixed_points": 4,
+   "orbits": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "refl-anti(0,1)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    3,
+    1,
+    5,
+    4,
+    0,
+    2
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 1,
+   "orbits": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "refl-anti(0,2)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    4,
+    2,
+    1,
+    0,
+    3,
+    5
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 1,
+   "orbits": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     5,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "refl-anti(1,0)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    4,
+    1,
+    5,
+    0,
+    3,
+    2
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 1,
+   "orbits": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "refl-anti(1,1)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    0,
+    2,
+    1,
+    3,
+    4,
+    5
+   ],
+   "is_involution_on_cell": true,
+   "fixed_points": 4,
+   "orbits": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "refl-anti(1,2)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    3,
+    5,
+    2,
+    4,
+    0,
+    1
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 1,
+   "orbits": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "refl-anti(2,0)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    3,
+    2,
+    1,
+    4,
+    0,
+    5
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 1,
+   "orbits": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     5,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "refl-anti(2,1)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    4,
+    5,
+    2,
+    0,
+    3,
+    1
+   ],
+   "is_involution_on_cell": false,
+   "fixed_points": 1,
+   "orbits": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "preserves_k": true
+  },
+  "refl-anti(2,2)": {
+   "is_cell_selfmap": true,
+   "image_indices": [
+    0,
+    1,
+    5,
+    3,
+    4,
+    2
+   ],
+   "is_involution_on_cell": true,
+   "fixed_points": 4,
+   "orbits": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "preserves_k": true
+  }
+ }
+}
