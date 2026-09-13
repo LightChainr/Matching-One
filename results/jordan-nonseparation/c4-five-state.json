@@ -1,0 +1,322 @@
+{
+  "basis": [
+    "1",
+    "x",
+    "y",
+    "x^2",
+    "xy"
+  ],
+  "boundary": "Not valid without flatness, cyclicity, the declared global Laurent action, and the source character. Matching the allowed character is necessary, not sufficient, for reducedness.",
+  "exact_checks": {
+    "all_cubic_monomials_vanish": true,
+    "cyclic_Laurent_quotient": true,
+    "log_generators_commute": true,
+    "nonreduced_character": true,
+    "nonzero_nilpotent": true,
+    "only_reduced_orbit_decomposition": true,
+    "quadratic_relation": true,
+    "reduced_character": true,
+    "reduced_cyclic": true,
+    "reduced_points_distinct": true,
+    "reduced_rotation_U_to_V": true,
+    "reduced_rotation_V_to_U_inverse": true,
+    "reduced_rotation_order_four": true,
+    "reduced_unit_invariant": true,
+    "rotation_U_to_V": true,
+    "rotation_V_to_U_inverse": true,
+    "rotation_order_four": true,
+    "translation_inverse": true,
+    "translations_commute": true,
+    "unit_source_invariant": true
+  },
+  "hypotheses": [
+    "flat cyclic length-five quotient of C[U^+-1,V^+-1]",
+    "commuting invertible U,V",
+    "R^4=I",
+    "R U R^-1=V",
+    "R V R^-1=U^-1",
+    "R b=b with b cyclic"
+  ],
+  "kind": "exact_conditional_model_control_not_P250_data",
+  "nonreduced_control": {
+    "R": [
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1"
+      ]
+    ],
+    "U": [
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1/2",
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "1"
+      ]
+    ],
+    "V": [
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "-1/2",
+        "0",
+        "-1",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "character_R_powers": [
+      5,
+      -1,
+      1,
+      -1
+    ],
+    "log_U": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ]
+    ],
+    "log_V": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "multiplicities_1_i_minus1_minusi": [
+      1,
+      1,
+      2,
+      1
+    ]
+  },
+  "passed_exact_checks": 20,
+  "reduced_control": {
+    "R": [
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "character_R_powers": [
+      5,
+      1,
+      1,
+      1
+    ],
+    "joint_points": [
+      [
+        "1",
+        "1"
+      ],
+      [
+        "2",
+        "3"
+      ],
+      [
+        "3",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "1/3"
+      ],
+      [
+        "1/3",
+        "2"
+      ]
+    ],
+    "multiplicities_1_i_minus1_minusi": [
+      2,
+      1,
+      1,
+      1
+    ]
+  },
+  "reduced_support_orbit_counts_1_2_4": [
+    [
+      1,
+      0,
+      1
+    ]
+  ],
+  "schema": "matching-one/c4-five-state-obstruction/v1"
+}
