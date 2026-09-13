@@ -1,0 +1,30 @@
+{
+  "definition": "NN square SITE percolation on the L x L torus; wraps the horizontal (period-1) direction, including configs that also wrap vertically and including spirals. enum2 = scripts/exact_wrapping_enum2.cpp (displacement union-find, independent of the doubled-grid criterion).",
+  "comparison": {
+    "2": {
+      "enum2_sum": 7,
+      "published_sum": null,
+      "coefficient_mismatches": null,
+      "match": null,
+      "note": "no published block (torus.txt starts at L=3)"
+    },
+    "3": {
+      "enum2_sum": 175,
+      "published_sum": 175,
+      "coefficient_mismatches": [],
+      "match": true
+    },
+    "4": {
+      "enum2_sum": 19571,
+      "published_sum": 19571,
+      "coefficient_mismatches": [],
+      "match": true
+    },
+    "5": {
+      "enum2_sum": 8853301,
+      "published_sum": 8853301,
+      "coefficient_mismatches": [],
+      "match": true
+    }
+  }
+}
