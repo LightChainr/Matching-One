@@ -1,0 +1,61 @@
+{
+  "claim_boundary": {
+    "excluded": "pipeline phases, descendant-process attribution, state counts, branching, extrapolation, or hardware decisions",
+    "included": "single-command wall time, direct-process RSS, exit and provenance telemetry",
+    "parent_issue": "remain open"
+  },
+  "command": {
+    "argv": [
+      "/bin/sh",
+      "-c",
+      "exec /workspace/p11/p11dp_q crt --n 12 > crt_n12.json 2> crt_n12.rows"
+    ],
+    "cwd": "/workspace/p11",
+    "executable": "/usr/bin/bash",
+    "executable_sha256": "ad31a5d34b338d78bf394d260247300fe82e3475d7e021470851c1e8b1cd1b8d",
+    "shell": false
+  },
+  "environment": {
+    "allowlisted": {},
+    "policy": "only fixed non-secret parallel-runtime variables are retained"
+  },
+  "host": {
+    "logical_cpu_count": 16,
+    "machine": "aarch64",
+    "platform": "Linux-5.10.0-182.0.0.95.r3582_286.hce2.aarch64-aarch64-with-glibc2.34",
+    "python": "3.9.9"
+  },
+  "label": "crt_n12",
+  "memory": {
+    "peak_rss_kib": 194920,
+    "rusage_observations": 1,
+    "scope": "specific waited command process; descendant aggregation follows host wait4 semantics",
+    "source": "os.wait4(pid) rusage.ru_maxrss"
+  },
+  "process": {
+    "exit_code": 0
+  },
+  "repository": {
+    "commit": null,
+    "root": "/workspace",
+    "tracked_files_dirty": null
+  },
+  "schema": "matching-one/transfer-resource-telemetry/v1",
+  "stderr": {
+    "bytes": 0,
+    "content_retained": false,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout": {
+    "bytes": 0,
+    "content_retained": false,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "timing": {
+    "clock": "time.monotonic",
+    "ended_utc": "2026-09-13T10:54:15.830040Z",
+    "poll_interval_ms": 10,
+    "started_utc": "2026-09-13T10:52:46.868180Z",
+    "wall_seconds": 88.96162524000101
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "matching-one/p11-subfrontier-metadata/v1",
+  "date": "2026-09-13",
+  "ticket": "issue #11 (T07)",
+  "branch": "analysis/p11-transfer-subfrontier-20260913",
+  "reference_papers": [
+    "Mertens 2022, arXiv:2109.12102 (square site percolation, p_med/p_cell, free boundaries)",
+    "Jacobsen 2015, arXiv:1507.03027 (cylinder p_c via Lambda_open = Lambda_closed)"
+  ],
+  "published_table": "data/mertens_2022_square_site_estimators.csv",
+  "hardware": {
+    "containers": "Huawei Cloud DevEnv ARM aarch64, 16 vCPU / 32 GiB cgroup limit",
+    "used": ["TgFr7R", "TV2N0X", "HZsCM6", "XPk2PZ", "ZyTrST", "H2WFxB", "NePnUn", "TVVfoB", "551oUR", "1lBUMY"]
+  },
+  "toolchain": {
+    "container_gcc": "10.3 (aarch64 Linux, long double = IEEE binary128)",
+    "build_flags": "-O3 -std=gnu++17 -DHAVE_LDBL128",
+    "local_python": "CPython 3.13 + mpmath (dps=60) + sympy (prime verification)",
+    "probe": "scripts/transfer_resource_probe.py (os.wait4 rusage peak RSS)"
+  },
+  "crt_primes_30bit": [1073741789, 1073741783, 1073741741, 1073741723, 1073741719, 1073741717, 1073741689, 1073741671, 1073741663, 1073741651],
+  "reproduction_reach": {
+    "exact_pathA_python": "n=2..10 (p_med 30/30 digits; p_cell n=2..5)",
+    "exact_pathB_bruteforce": "n=2..5 (A(k) bit-identical with path A)",
+    "exact_cpp_crt": "n=11,12,13,14 verified 32-digit match (all 30 published digits); n=15 in flight at delivery, not claimed",
+    "f128_audited": "n=5..10: 32 digits, bracket 1e-25 ok",
+    "f128_uncertified": "n=16,17,18 (no exact cross-check; bracket 1e-25/1e-30 only)",
+    "cylinder_jacobsen": "negative result beyond n=1 (see REPORT.md §2)"
+  },
+  "hard_boundaries": {
+    "never_claimed": ["cylinder n>=2", "exact CRT n>=16", "widths 19..24", "widths 25..28 (model only)"]
+  },
+  "resource_model": "raw/resource_model.json (log-linear fits n=11..14; state resid 1.6e-3, RSS 1.1e-2, per-pass wall 6.0e-2)",
+  "checkpoint_restart": {
+    "n14_dump_row": 7,
+    "checkpoint_sha256": "8ec26ebf6c42fe07334025ddb5e77e1cfc79164930b7332df6571630806cc4f3",
+    "restart_prime0_A_identical": true
+  }
+}
