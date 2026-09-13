@@ -169,6 +169,15 @@ Every fix is pinned by the cross-validation matrix of §1.1.
 - Widths 19..24 were not attempted: extrapolated cost exceeds what 10x32GiB
   containers can deliver in this ticket's budget (see the resource model).
   Nothing in this report should be read as covering n>=19.
+- Fleet reliability observation: shortly after delivery, the cloud-side
+  DevEnv VMs transitioned to Stopping/Ready on their own (all ten, both
+  accounts; not triggered by us). This terminated the in-flight f128 runs
+  (med/cell n=16..18) before any completed, and the n=15 CRT run. We did
+  not power machines back on. No f128 n>=16 result is claimed anywhere in
+  this report; the only surviving n=18 datum is the partial probe record
+  cited in §2. Long production runs on this fleet need checkpointing at
+  finer granularity than per-pass (implemented: per-pass row-7 dumps; the
+  row-level dump/restart path exists and is verified).
 
 ## 6. Files
 
