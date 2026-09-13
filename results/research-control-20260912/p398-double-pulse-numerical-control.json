@@ -1,0 +1,33 @@
+{
+  "schema": "matching-one.p398-double-pulse-numerical-control.v1",
+  "standing": "Numerical independent matrix-exponential control, not an exact certificate or simulation.",
+  "dps": 45,
+  "source": "delta_wrapped_pair",
+  "readout": "wrap",
+  "tau": "1/4",
+  "pulse_duration": "1/32",
+  "frechet_series_terms": 35,
+  "finite_window_mixed_derivative": "0.00011718197680195303035423582807185137",
+  "short_pulse_kernel": "0.14768526677394918469419728021686467",
+  "finite_window_derivative_divided_by_delta_squared": "0.1199943442451999030827374879455758",
+  "ladder": [
+    {
+      "epsilon": "1/8",
+      "centered_mixed_difference": "0.00011718260331862801207829848206207703",
+      "finite_window_derivative_error": "6.265166749817240626539902e-10",
+      "parity_pair_max_error": "0.0"
+    },
+    {
+      "epsilon": "1/16",
+      "centered_mixed_difference": "0.00011718213343087405684069949919877212",
+      "finite_window_derivative_error": "1.566289210264864636711269e-10",
+      "parity_pair_max_error": "0.0"
+    },
+    {
+      "epsilon": "1/32",
+      "centered_mixed_difference": "0.00011718201595916780455799284674114656",
+      "finite_window_derivative_error": "3.91572147742037570186693e-11",
+      "parity_pair_max_error": "0.0"
+    }
+  ]
+}
