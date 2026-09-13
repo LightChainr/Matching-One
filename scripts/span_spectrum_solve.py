@@ -113,6 +113,38 @@ def stationary(K_float, mode="auto"):
     return pi
 
 
+CENSOR_TOL = 1e-6
+
+
+def spectrum_moments(dh, tail_bin, d_max):
+    """Binned moments of the span spectrum d_1..d_{d_max} plus the tail bin.
+
+    The tail bin collects span >= d_max+1 and is EXCLUDED from the moments, so
+    E[L] and Var/E^2 are censored readouts. `censored` flags any configuration
+    whose tail fraction is not negligible; at such a width the moments are a
+    lower bound and must be quoted as censored (see the 2026-09-13 erratum).
+    """
+    n = len(dh)
+    tot = float(sum(dh))
+    m1 = float(sum((i + 1) * dh[i] for i in range(n)))
+    m2 = float(sum(float(i + 1) ** 2 * dh[i] for i in range(n)))
+    E = m1 / tot if tot else float("nan")
+    E2 = m2 / tot if tot else float("nan")
+    V = E2 - E * E
+    tail = float(tail_bin)
+    return {
+        "d_max": d_max,
+        "sum_dh": tot,
+        "tail_bin": tail,
+        "nu_total": tot + tail,
+        "tail_fraction": tail / (tot + tail) if (tot + tail) else 0.0,
+        "E_L": E,
+        "E_L2": E2,
+        "var_over_E2": V / (E * E) if E else float("nan"),
+        "censored": bool(tail / (tot + tail) > CENSOR_TOL if (tot + tail) else False),
+    }
+
+
 def analyse(path, p_num, p_den, nu_ref=None, label="", light=False, d_max_override=None):
     W, matching, d_max, n, f, dt = load_header(path)
     if d_max_override is not None:
@@ -163,7 +195,16 @@ def analyse(path, p_num, p_den, nu_ref=None, label="", light=False, d_max_overri
             # memory-light: float64 chain only, no int64 certificate.
             # Validation rests on the exact closure against the independently
             # certified nu_w of the winding_build engine (#741).
-            Kf = K_int
+            #
+            # FIX (erratum 2026-09-13, PR #739 issuecomment-5653178247): this
+            # branch used to hand the RAW integer-weight float32 chain to
+            # stationary(). The stationary distribution is scale invariant, but
+            # neither solver is: with K unscaled, (K^T - I) is nonsingular so the
+            # splu path returns a non-stationary vector whose residual is O(p_den**W)
+            # (measured: residual 255.0, nu total x84 wrong at w=4), and the power
+            # iteration grows by p_den**W per sweep and overflows to inf/nan
+            # (measured: nan at w=5 NN p=1/4). Divide exactly as the normal branch.
+            Kf = K_int.astype(np.float64) / P_W
             pi = stationary(Kf)
             pi = np.maximum(pi, 0.0)
             pi /= pi.sum()
@@ -174,7 +215,7 @@ def analyse(path, p_num, p_den, nu_ref=None, label="", light=False, d_max_overri
             nu_total_f = total_f + tail_f
             fres = float(np.abs(Kf.T @ pi - pi).sum())
             cert = "skipped(light; closure vs certified nu_w)"
-            mode = "float64(power, light)"
+            mode = f"float64(light/{'splu' if n <= 50000 else 'power'})"
             out = {
                 "file": path, "label": label, "width": W, "matching": matching,
                 "p": f"{p_num}/{p_den}", "states": n, "d_max": d_max, "mode": mode,
@@ -183,6 +224,9 @@ def analyse(path, p_num, p_den, nu_ref=None, label="", light=False, d_max_overri
                 "certificate_bound": cert, "float_residual_l1": fres,
                 "tail_bound_eq9": str(eq9), "tail_bound_eq9_float": float(eq9),
                 "delta": str(delta),
+                "ginf_num": ginf_num,
+                "moments": spectrum_moments(dh_f, tail_f, d_max),
+                "cert_candidate": None,
             }
             if nu_ref is not None:
                 ref = Fraction(nu_ref)
@@ -201,6 +245,17 @@ def analyse(path, p_num, p_den, nu_ref=None, label="", light=False, d_max_overri
         nu_total_f = total_f + tail_f
         fres = float(np.abs(Kf.T @ pi - pi).sum())
         cert = None
+        pi_cert = None
+        k = None
+        # The precision claim has two separate parts (erratum 2026-09-13):
+        #   bound_cert  bounds |observable(pi_cert) - observable(pi_exact)|, where
+        #               pi_cert = a/2^k is the RATIONAL candidate, not the float pi;
+        #   bound_float bounds |observable(pi_float) - observable(pi_exact)| by the
+        #               same lemma, using the reported float residual.
+        # Reporting bound_cert alone certifies the candidate, not the printed value;
+        # we therefore emit the certified candidate's observables and the float-side
+        # bound as well, so no gap is left implicit.
+        bound_float = float(Fraction(ginf_num, P_W) * Fraction(fres) / delta)
         # exact int64 certificate where the scale fits
         try:
             k = min(40, max(20, 62 - int(P_W).bit_length() - 4))
@@ -223,8 +278,35 @@ def analyse(path, p_num, p_den, nu_ref=None, label="", light=False, d_max_overri
             l1 = int(np.abs(r_num).sum())
             bound = Fraction(ginf_num, P_W) * Fraction(l1, (1 << k) * P_W) / delta
             cert = str(bound) if bound < Fraction(1, 10 ** 6) else f"WEAK({float(bound):.2e})"
+            pi_cert = a.astype(np.float64) / float(1 << k)
         except (OverflowError, AssertionError):
             cert = None
+            pi_cert = None
+            k = None
+        run_bound_cert = None
+        if pi_cert is not None:
+            nu_c = (pi_cert @ Gd) / P_W
+            dh_c = [float(x) for x in nu_c[1:d_max + 1]]
+            tail_c = float(nu_c[d_max + 1])
+            mc = spectrum_moments(dh_c, tail_c, d_max)
+            mf = spectrum_moments(dh_f, tail_f, d_max)
+            run_bound_cert = float(cert.split("(")[1].rstrip(")")) if cert.startswith("WEAK") else float(
+                Fraction(cert) if cert else 0.0)
+            _cert_block = {
+                "k": k,
+                "d_h_float": dh_c,
+                "sum_dh_float": mc["sum_dh"],
+                "tail_bin_float": tail_c,
+                "moments": mc,
+                "max_abs_diff_dh_vs_float": max(abs(dh_c[i] - dh_f[i]) for i in range(len(dh_f))),
+                "rel_diff_sum_dh_vs_float": abs(mc["sum_dh"] - mf["sum_dh"]) / mf["sum_dh"],
+                "observable_bound_cert": run_bound_cert,
+                "observable_bound_float": bound_float,
+                "observable_bound_sum": (
+                    run_bound_cert + bound_float if run_bound_cert is not None else None),
+            }
+        else:
+            _cert_block = None
         mode = f"float64({'splu' if n <= 50000 else 'power'})"
 
     out = {
@@ -240,7 +322,12 @@ def analyse(path, p_num, p_den, nu_ref=None, label="", light=False, d_max_overri
         "certificate_bound": cert,
         "tail_bound_eq9": str(eq9), "tail_bound_eq9_float": float(eq9),
         "delta": str(delta),
+        "ginf_num": ginf_num,
+        "moments": spectrum_moments(dh_f, tail_f, d_max),
+        "cert_candidate": (_cert_block if not exact else None),
     }
+    if exact:
+        out["moments_exact_denominator"] = str(Fraction(P_W) ** 2)
     if fres is not None:
         out["float_residual_l1"] = fres
     if nu_ref is not None:
@@ -255,5 +342,41 @@ def analyse(path, p_num, p_den, nu_ref=None, label="", light=False, d_max_overri
             out["closure_exact"] = False
             out["gap_float"] = float(ref) - (total_f + tail_f)
     return out
+
+
+def run_jobs(spec_path, out_path):
+    """Rerun a list of configurations from a small JSON job spec.
+
+    spec: [{"table":..., "p":"1/4", "d_max":48, "light":false,
+            "nu_ref":"...", "label":"NN w4 p=1/4"}, ...]
+    Written so that any delivered spectrum can be regenerated from the committed
+    scripts without the ad-hoc driver used on 2026-09-13 (erratum note, §5).
+    """
+    import json
+    with open(spec_path) as fh:
+        jobs = json.load(fh)
+    rows = []
+    for j in jobs:
+        pn, pd = j["p"].split("/")
+        r = analyse(j["table"], int(pn), int(pd), nu_ref=j.get("nu_ref"),
+                    label=j.get("label", ""), light=bool(j.get("light", False)),
+                    d_max_override=j.get("d_max"))
+        rows.append(r)
+        m = r["moments"]
+        print("%-24s W=%d %-6s n=%-8d mode=%-28s E[L]=%.6f var/E^2=%.6f tail=%.2e%s"
+              % (r["label"], r["width"], r["p"], r["states"], r["mode"], m["E_L"],
+                 m["var_over_E2"], m["tail_fraction"], "  CENSORED" if m["censored"] else ""))
+    with open(out_path, "w") as fh:
+        json.dump(rows, fh, indent=1)
+    return rows
+
+
+if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser(description="span-spectrum solver / moment reporter")
+    ap.add_argument("spec", help="job-spec JSON (list of configurations)")
+    ap.add_argument("out", help="where to write the result JSON")
+    args = ap.parse_args()
+    run_jobs(args.spec, args.out)
 
 

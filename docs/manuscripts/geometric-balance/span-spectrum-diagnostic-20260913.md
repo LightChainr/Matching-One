@@ -1,5 +1,11 @@
 # Span-spectrum diagnostic for the heat-kernel sewing conjecture (§6)
 
+> **Partly superseded — see `span-spectrum-erratum-20260913.md`.** The solved width range is
+> 2–7, not 2–8; the §2 tail-negligibility sentence is false for 4 of 30 configurations; the
+> §4/§5 "additive span" mechanism reading is withdrawn; and two solver defects (an unnormalised
+> `light` chain, an implicit certificate-versus-observable gap) are fixed there. The §3/§4
+> tables themselves stand and are reproducible from the committed results JSON.
+
 **Status: finite-width DIAGNOSTIC of the §6 research conjecture, delivered as the ticket asked.
 The conjecture is neither proved nor refuted; its moment prediction is not supported at any
 accessible fixed-p width, and its scaling exponent is near-diffusive but not yet settled.**
