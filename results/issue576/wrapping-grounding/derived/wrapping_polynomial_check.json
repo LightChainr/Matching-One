@@ -1,0 +1,140 @@
+{
+  "source": "https://arxiv.org/src/2204.01517v1/anc/torus.txt",
+  "paper": "Akhunzhanov-Eserkepov-Tarasevich 2022, J.Phys.A 55 204004 (arXiv:2204.01517)",
+  "validation": [
+    {
+      "L": 3,
+      "coeff_count": 10,
+      "expected_coeff_count": 10,
+      "sum_c_k": 175,
+      "independent_enum_count": 175,
+      "match": true
+    },
+    {
+      "L": 4,
+      "coeff_count": 17,
+      "expected_coeff_count": 17,
+      "sum_c_k": 19571,
+      "independent_enum_count": 19571,
+      "match": true
+    },
+    {
+      "L": 5,
+      "coeff_count": 26,
+      "expected_coeff_count": 26,
+      "sum_c_k": 8853301,
+      "independent_enum_count": 8853291,
+      "match": false
+    },
+    {
+      "L": 6,
+      "coeff_count": 37,
+      "expected_coeff_count": 37,
+      "sum_c_k": 16054020781,
+      "independent_enum_count": null,
+      "match": false
+    },
+    {
+      "L": 7,
+      "coeff_count": 50,
+      "expected_coeff_count": 50,
+      "sum_c_k": 116295364128357,
+      "independent_enum_count": null,
+      "match": false
+    },
+    {
+      "L": 8,
+      "coeff_count": 65,
+      "expected_coeff_count": 65,
+      "sum_c_k": 3363458287994491283,
+      "independent_enum_count": null,
+      "match": false
+    },
+    {
+      "L": 9,
+      "coeff_count": 82,
+      "expected_coeff_count": 82,
+      "sum_c_k": 388338158699818471040971,
+      "independent_enum_count": null,
+      "match": false
+    },
+    {
+      "L": 10,
+      "coeff_count": 100,
+      "expected_coeff_count": 101,
+      "sum_c_k": 178999196561439497468143527576,
+      "independent_enum_count": null,
+      "match": false
+    },
+    {
+      "L": 11,
+      "coeff_count": 122,
+      "expected_coeff_count": 122,
+      "sum_c_k": 329414209863790324268308226918418239,
+      "independent_enum_count": null,
+      "match": false
+    },
+    {
+      "L": 12,
+      "coeff_count": 145,
+      "expected_coeff_count": 145,
+      "sum_c_k": 2420594737169105335216240450930333342911521,
+      "independent_enum_count": null,
+      "match": false
+    }
+  ],
+  "PL_half_convergence": [
+    {
+      "L": 3,
+      "PL_half_exact": "175/512",
+      "PL_half_float": 0.341796875
+    },
+    {
+      "L": 4,
+      "PL_half_exact": "19571/65536",
+      "PL_half_float": 0.2986297607421875
+    },
+    {
+      "L": 5,
+      "PL_half_exact": "8853301/33554432",
+      "PL_half_float": 0.2638489305973053
+    },
+    {
+      "L": 6,
+      "PL_half_exact": "16054020781/68719476736",
+      "PL_half_float": 0.2336167494795518
+    },
+    {
+      "L": 7,
+      "PL_half_exact": "116295364128357/562949953421312",
+      "PL_half_float": 0.2065820654599495
+    },
+    {
+      "L": 8,
+      "PL_half_exact": "3363458287994491283/18446744073709551616",
+      "PL_half_float": 0.18233343914540015
+    },
+    {
+      "L": 9,
+      "PL_half_exact": "388338158699818471040971/2417851639229258349412352",
+      "PL_half_float": 0.16061289799551537
+    },
+    {
+      "L": 10,
+      "PL_half_exact": "22374899570179937183517940947/158456325028528675187087900672",
+      "PL_half_float": 0.141205468233291
+    },
+    {
+      "L": 11,
+      "PL_half_exact": "329414209863790324268308226918418239/2658455991569831745807614120560689152",
+      "PL_half_float": 0.12391185368815136
+    },
+    {
+      "L": 12,
+      "PL_half_exact": "2420594737169105335216240450930333342911521/22300745198530623141535718272648361505980416",
+      "PL_half_float": 0.10854322201432964
+    }
+  ],
+  "continuum_baseline_pi_i_10": 0.1694154353213469,
+  "notes": "L=3,4 match independent enumeration exactly. L=5 published sum 8853301 vs independent 8853291 (diff 10, unresolved). L=10 block malformed (one coefficient missing). L>=9 P_L(1/2) falls below the continuum limit 0.1694 (impossible for convergence from above) -> supplement coefficients for L>=9 appear corrupted; not treated as ground truth."
+}

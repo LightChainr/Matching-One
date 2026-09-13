@@ -1,0 +1,30 @@
+{
+  "definition": "NN square SITE percolation on L x L torus; horizontal (period-1) winding. Exact brute force 2^(L^2) via scripts/exact_wrapping_enum.cpp (method: double the grid horizontally, detect component containing (r,0) and (r,L)).",
+  "values": [
+    {
+      "L": 2,
+      "count": 7,
+      "fraction": "7/16",
+      "p_half": 0.4375
+    },
+    {
+      "L": 3,
+      "count": 175,
+      "fraction": "175/512",
+      "p_half": 0.341796875
+    },
+    {
+      "L": 4,
+      "count": 19571,
+      "fraction": "19571/65536",
+      "p_half": 0.2986297607421875
+    },
+    {
+      "L": 5,
+      "count": 8853291,
+      "fraction": "8853291/33554432",
+      "p_half": 0.263848632574
+    }
+  ],
+  "reachable": "L<=5 exact (2^25 = 33,554,432 configs, ~20s in C++). L=6 (2^36) not attempted."
+}

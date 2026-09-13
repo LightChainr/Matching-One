@@ -1,0 +1,38 @@
+{
+  "issue": 576,
+  "branch": "compute/p576-wrapping-channel-grounding-20260913",
+  "caller": "compute1",
+  "campaign": "issue576-wrapping-grounding",
+  "parts": ["1_torus_polynomials", "2_pinson_arguin_r1r2r4", "3_three_11over4"],
+  "part1": {
+    "source": "https://arxiv.org/src/2204.01517v1/anc/torus.txt",
+    "paper": "Akhunzhanov-Eserkepov-Tarasevich 2022, J.Phys.A 55 204004, arXiv:2204.01517",
+    "retrieval": "success",
+    "scope": "NN square site torus ONLY (paper does not cover NN+NNN / Sq8 matching)",
+    "enum_l2l5": {"2": "7/16", "3": "175/512", "4": "19571/65536", "5": "8853291/33554432"},
+    "validated_exact": ["L=3 (175)", "L=4 (19571)"],
+    "discrepancies": [
+      "L=5: published 8853301 vs independent 8853291 (diff 10, unresolved, flagged)",
+      "L=10 block malformed (100 coeffs vs 101 expected)",
+      "L>=9 P_L(1/2) below continuum limit 0.1694 -> coefficients appear corrupted"
+    ]
+  },
+  "part2": {
+    "formula": "Pinson 1994 / Arguin 2002 hep-th/0111193, percolation e0=2/3",
+    "pi_1i": "0.16941543532134688938260796919875445000145337645375",
+    "pi_2i": "0.50303589769463904028462207879367242007166407775608",
+    "pi_4i": "0.85596932105387227330836216781610004621209130143655",
+    "direct_theta_agreement": "1e-82 .. 1e-90",
+    "pruessner_moloney_crosscheck": "r=2 agreement with Pinson < 1e-8 (inherited via 1e-82 internal agreement)",
+    "decision": "ii_explicit_nonclaim"
+  },
+  "part3": {
+    "distinct_11over4": [
+      "E4(2i)/E4(i) = 11/4 (modular weight-4 amplitude ratio)",
+      "Newman-Ziff L^-11/4 (finite-size rate 1/nu+theta=11/4)",
+      "Mertens-Ziff matching root ~ L^-4 (different exponent)"
+    ],
+    "claim_ledger_entry_added": false
+  },
+  "ci_note": "Full Matching-One repository CI has not been run for this commit."
+}

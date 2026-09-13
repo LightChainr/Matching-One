@@ -1,0 +1,14 @@
+# Issue #576 commands — run from repo root /tmp/c1-wt
+PY=/Users/lc/.workbuddy/binaries/python/envs/default/bin/python
+
+# Part 1: retrieve the published torus wrapping polynomials
+curl -L https://arxiv.org/src/2204.01517v1/anc/torus.txt -o results/issue576/wrapping-grounding/raw/torus.txt
+
+# Part 1: independent exact enumeration (L=2..5), ~20s in C++
+g++ -O2 -std=c++17 -o /tmp/exact_wrapping_enum scripts/exact_wrapping_enum.cpp && /tmp/exact_wrapping_enum
+
+# Part 1: parse + validate + convergence
+$PY scripts/torus_wrapping_polynomial_check.py results/issue576/wrapping-grounding/raw/torus.txt
+
+# Part 2: Pinson/Arguin continuum wrapping at tau=i,2i,4i + Part 1b derived JSON
+$PY scripts/gen_issue576_derived.py
