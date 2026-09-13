@@ -1,0 +1,228 @@
+{
+ "schema": "matching-one.probe-invariant-shape.issue661-glift-exact-lab.v1",
+ "issue": 661,
+ "leftover_of": 633,
+ "not_a_new_production": true,
+ "not_622": true,
+ "n725_rerun": false,
+ "levels": [
+  0.1,
+  0.2,
+  0.3,
+  0.4,
+  0.5,
+  0.6,
+  0.7,
+  0.8,
+  0.9
+ ],
+ "g_anchors": [
+  0.2,
+  0.8
+ ],
+ "g": [
+  -0.2887126766006569,
+  -0.12066783122729056,
+  0.06921759100370817,
+  0.2385347464569182,
+  0.3780737808016512,
+  0.47827324271813404,
+  0.518589378735454,
+  0.444347665976014,
+  0.048264834818264817
+ ],
+ "g_provenance": [
+  "results/type582-residual/latest.json consensus_g",
+  "results/p612-n725-score/latest.json weightings.spin0.consensus_direction_frozen_from_five_committed_transitions"
+ ],
+ "g_freeze_excludes_725": true,
+ "inputs": {
+  "census": "results/probe-invariant-shape/census-exact.json (PR #653 repaired; bond dual_fail = 0)",
+  "n725_corrected": "results/probe-invariant-shape/n725-zflow-corrected.json (PR #655, cited not recomputed)",
+  "historical_withdrawn": "results/probe-invariant-shape/blindness-and-glift.json"
+ },
+ "formula": "DZ_Q[g](u) = (g(u)-g(a))/W - (Q(u)-Q(a))(g(b)-g(a))/W^2, W = Q(b)-Q(a), a=0.2 b=0.8",
+ "chart_note": "Q on the deciles is recovered from the census Z exactly up to affine; the lift direction is invariant under Q -> cQ + d (DZ_{cQ+d}[g] = DZ_Q[g]/c), so the angle is chart-exact.",
+ "exact_lab_deltaZ_site_L4_minus_L3": [
+  -0.006797699629817133,
+  0.0002479930160355637,
+  -0.0009907372721496138,
+  -0.003537707044666105,
+  -0.0054824715154933035,
+  -0.005748146216893901,
+  -0.0030877168533604005,
+  0.004938246020020465,
+  0.02583032703854138
+ ],
+ "angles": {
+  "spin0": {
+   "DZ_Q3_vs_deltaZ_site": {
+    "DZ_Q[g]": [
+     -0.04590685144626999,
+     0.0,
+     0.23275668196968086,
+     0.45426388884666424,
+     0.6099303197327367,
+     0.6549966226111241,
+     0.5133120513829883,
+     0.0,
+     -1.5582388669503862
+    ],
+    "Q_used": "site L=3 quantile on deciles (from census Z, affine-exact)",
+    "angle": {
+     "undetermined": false,
+     "abs_cosine": 0.9072881745290168,
+     "unoriented_angle_deg": 24.866753181486924,
+     "oriented_angle_deg": 155.13324681851307,
+     "supplement_deg": 24.866753181486928
+    }
+   },
+   "DZ_Q4_vs_deltaZ_site": {
+    "DZ_Q[g]": [
+     -0.0467072732003041,
+     0.0,
+     0.2906501536787948,
+     0.5694317237611014,
+     0.7659051017146012,
+     0.823125854548467,
+     0.6451526874124143,
+     0.0,
+     -1.9549459013266768
+    ],
+    "Q_used": "site L=4 quantile on deciles (from census Z, affine-exact)",
+    "angle": {
+     "undetermined": false,
+     "abs_cosine": 0.9083441109890034,
+     "unoriented_angle_deg": 24.722486365157316,
+     "oriented_angle_deg": 155.27751363484268,
+     "supplement_deg": 24.722486365157323
+    }
+   },
+   "DZ_Qbond_vs_deltaZ_site": {
+    "DZ_Q[g]": [
+     -0.0925461373162797,
+     0.0,
+     0.30363539443401505,
+     0.5845402808640013,
+     0.7781807179715399,
+     0.830246212876729,
+     0.6469032505536589,
+     0.0,
+     -1.9376320845061075
+    ],
+    "Q_used": "bond L=3 quantile on deciles (from census Z, affine-exact)",
+    "angle": {
+     "undetermined": false,
+     "abs_cosine": 0.9002696949407579,
+     "unoriented_angle_deg": 25.806459892823096,
+     "oriented_angle_deg": 154.19354010717691,
+     "supplement_deg": 25.806459892823085
+    }
+   }
+  },
+  "equal": {
+   "DZ_Q3_vs_deltaZ_site": {
+    "DZ_Q[g]": [
+     -0.06074480777126601,
+     0.0,
+     0.2690998907679317,
+     0.5231614255047904,
+     0.7007382235322221,
+     0.7511455365479518,
+     0.5877518445553369,
+     0.0,
+     -1.7786716284121584
+    ],
+    "Q_used": "site L=3 quantile on deciles (from census Z, affine-exact)",
+    "angle": {
+     "undetermined": false,
+     "abs_cosine": 0.9055334394141108,
+     "unoriented_angle_deg": 25.10477552619196,
+     "oriented_angle_deg": 154.89522447380804,
+     "supplement_deg": 25.104775526191958
+    }
+   },
+   "DZ_Q4_vs_deltaZ_site": {
+    "DZ_Q[g]": [
+     -0.0645774503946358,
+     0.0,
+     0.3356090283629875,
+     0.6547639839121768,
+     0.8784412084587006,
+     0.9423167591680894,
+     0.737441641740441,
+     0.0,
+     -2.2281236532821502
+    ],
+    "Q_used": "site L=4 quantile on deciles (from census Z, affine-exact)",
+    "angle": {
+     "undetermined": false,
+     "abs_cosine": 0.906540049437126,
+     "unoriented_angle_deg": 24.968492825628104,
+     "oriented_angle_deg": 155.0315071743719,
+     "supplement_deg": 24.96849282562809
+    }
+   },
+   "DZ_Qbond_vs_deltaZ_site": {
+    "DZ_Q[g]": [
+     -0.11168753664293107,
+     0.0,
+     0.34775293253809186,
+     0.6679021943687657,
+     0.8878200232915316,
+     0.9461404725444196,
+     0.7364937344340572,
+     0.0,
+     -2.2019474775399637
+    ],
+    "Q_used": "bond L=3 quantile on deciles (from census Z, affine-exact)",
+    "angle": {
+     "undetermined": false,
+     "abs_cosine": 0.8991400297273758,
+     "unoriented_angle_deg": 25.954742784699015,
+     "oriented_angle_deg": 154.04525721530098,
+     "supplement_deg": 25.95474278469902
+    }
+   }
+  }
+ },
+ "sensitivity_equal_weighting": {
+  "note": "Equal weighting is a sensitivity, not a second vote.",
+  "delta_unoriented_deg_primary": -0.23802234470503691
+ },
+ "historical_withdrawn_reading": {
+  "source": "results/probe-invariant-shape/blindness-and-glift.json",
+  "raw_deg": 93.91923544902247,
+  "affine_removed_deg": 159.62484413088862,
+  "unoriented_deg": 20.37515586911138,
+  "status": "withdrawn in #633 (raw oriented angle and affine-removed reading replaced by unoriented 20.4)"
+ },
+ "scope_limits": [
+  "The exact laboratory is deterministic: no sampling covariance for Delta Z_exact; the N725 jackknife covariance lives in n725-zflow-corrected.json and is cited, not recomputed.",
+  "Tiny-torus / exact-lab Delta Z cannot prove an asymptotic mismatch.",
+  "Equal weighting is a sensitivity, not a second vote."
+ ],
+ "n725_cited_not_recomputed": {
+  "file": "results/probe-invariant-shape/n725-zflow-corrected.json",
+  "g_lift_DZ_Q_anchors_0.2_0.8": [
+   -0.21272027493304035,
+   0.0,
+   1.2412422534636602,
+   2.428553083731784,
+   3.263644590503705,
+   3.50488701715073,
+   2.7449924738210703,
+   0.0,
+   -8.298053476346686
+  ],
+  "angle_g_lift_vs_Z_in_0.2_0.8_chart": {
+   "undetermined": false,
+   "abs_cosine": 0.1489195537575465,
+   "unoriented_angle_deg": 81.43568168217404,
+   "oriented_angle_deg": 98.56431831782596,
+   "supplement_deg": 81.43568168217404
+  },
+  "tiny_torus_unoriented_deg": 20.37515586911138,
+  "status": "no second production size; N725 g-vs-DeltaZ remains undetermined"
+ }
+}
