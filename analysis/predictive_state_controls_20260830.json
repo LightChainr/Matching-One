@@ -1,0 +1,56 @@
+{
+  "boundaries": [
+    "No P250, P334 or P337 production score replayed or changed",
+    "No new Monte Carlo run or RNG used",
+    "Conditional arm arithmetic is not a square-site exponent or typed-gluing theorem",
+    "No continuum field count, Jordan identification, or threshold formula",
+    "No existing navigation or frozen protocol file changed"
+  ],
+  "checked_result": "results/exact-predictive-state-controls/20260830.json",
+  "commands": [
+    "python scripts/predictive_state_counterexamples.py --output /tmp/predictive-state-controls.json",
+    "cmp /tmp/predictive-state-controls.json results/exact-predictive-state-controls/20260830.json",
+    "python -m unittest discover -s tests -p 'test_predictive_state_counterexamples.py' -v",
+    "python -m compileall -q scripts/predictive_state_counterexamples.py tests/test_predictive_state_counterexamples.py"
+  ],
+  "contribution_base_main_sha": "fe9305ca2f6679896991d8312f5168807d96b645",
+  "created_utc_date": "2026-08-30",
+  "data_class": "independent exact rational and finite-enumeration controls; no production inputs",
+  "environment": {
+    "dependencies": "Python standard library only",
+    "implementation": "CPython",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "python": "3.13.5",
+    "python_39_grammar_checked": true,
+    "python_39_runtime_tested": false
+  },
+  "initial_review_main_sha": "6f711e524d9b33693703109521e592ca893e9cb0",
+  "issues": [
+    400,
+    403,
+    405
+  ],
+  "repository": "LightChainr/Matching-One",
+  "schema": "matching-one/predictive-state-controls-manifest/v1",
+  "sha256": {
+    "notes/predictive-state-generator-boundaries-20260830.md": "24fa2a3f1ec7edb6bbc669748fc6bb1221355365838856262816a49cb42327c6",
+    "results/exact-predictive-state-controls/20260830.json": "9d8e3b3df02d9933eb574ce906e4cb1febfb298444e3dd3bcb6a73cb7497188e",
+    "scripts/predictive_state_counterexamples.py": "438781db433027d6e94c418ee7588329b52845b4e29572a1edd96c4b84e20ec4",
+    "tests/test_predictive_state_counterexamples.py": "4ccf30262ba4c8e1281db6a8f997a1b5a8c1db2df6cda4c8bbf7cff99db30c64"
+  },
+  "validation": {
+    "arithmetic": "integers and fractions.Fraction",
+    "direct_birth_paths": 288000,
+    "direct_birth_permutation_paths_counted_by_dp": 3628800,
+    "explicit_future_permutations_per_witness": 120,
+    "focused_tests_passed": 19,
+    "independent_topology_methods": [
+      "lifted BFS",
+      "weighted disjoint-set union in tests"
+    ],
+    "killed_vs_subset_state_horizons": 1650,
+    "rank_one_configurations": 310,
+    "topology_configurations": 1024,
+    "whole_repository_suite_run": false
+  }
+}

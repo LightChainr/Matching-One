@@ -1,0 +1,319 @@
+{
+  "birth_controls": {
+    "configuration_count": 1024,
+    "direct_birth_priority_control": {
+      "directed_edge_count": 80,
+      "directed_edge_counts_by_k": {
+        "5": 40,
+        "6": 40
+      },
+      "meaning": "exact untyped N10 priority identity; no arm-exponent claim",
+      "permutation_paths_with_direct_birth": 288000,
+      "probability_from_beta_weights": "5/63",
+      "probability_from_permutation_dp": "5/63",
+      "total_permutation_paths": 3628800
+    },
+    "killed_vs_subset_checks": 1650,
+    "meaning": "exact finite counterexample, not a production memory claim",
+    "period_matrix": [
+      [
+        3,
+        -1
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "rank_counts": {
+      "0": 548,
+      "1": 310,
+      "2": 166
+    },
+    "site_label": "j corresponds to (0,j), j=0,...,9",
+    "two_step_survival_gap": "1/10",
+    "witnesses": [
+      {
+        "exit_counts": {
+          "1": 24,
+          "2": 48,
+          "3": 48
+        },
+        "future_permutation_count": 120,
+        "line": [
+          0,
+          1
+        ],
+        "mask": 31,
+        "minimal_trigger_pairs": [
+          [
+            5,
+            8
+          ],
+          [
+            6,
+            9
+          ]
+        ],
+        "occupied_site_labels": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "one_step_exit_probability": "1/5",
+        "rank": 1,
+        "singleton_triggers_H2": [
+          7
+        ],
+        "survival_probabilities": [
+          "1",
+          "4/5",
+          "2/5",
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      {
+        "exit_counts": {
+          "1": 24,
+          "2": 60,
+          "3": 36
+        },
+        "future_permutation_count": 120,
+        "line": [
+          0,
+          1
+        ],
+        "mask": 47,
+        "minimal_trigger_pairs": [
+          [
+            4,
+            7
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            9
+          ]
+        ],
+        "occupied_site_labels": [
+          0,
+          1,
+          2,
+          3,
+          5
+        ],
+        "one_step_exit_probability": "1/5",
+        "rank": 1,
+        "singleton_triggers_H2": [
+          8
+        ],
+        "survival_probabilities": [
+          "1",
+          "4/5",
+          "3/10",
+          "0",
+          "0",
+          "0"
+        ]
+      }
+    ]
+  },
+  "boundary": "Does not replay P250/P334/P337 production, infer physical field count, identify Jordan, or prove square-site critical exponents.",
+  "conditional_arm_arithmetic": {
+    "claim": "conditional scaling arithmetic only; not an arm correspondence theorem",
+    "relative_area_decay_exponent": "7/6",
+    "required_inputs": [
+      "typed-arm frequency",
+      "near-critical window",
+      "integrable scaling profile",
+      "square-site universality"
+    ],
+    "rows": [
+      {
+        "area_decay_exponent": "5/6",
+        "arm_exponent": "35/12",
+        "arms": 6
+      },
+      {
+        "area_decay_exponent": "2",
+        "arm_exponent": "21/4",
+        "arms": 8
+      }
+    ]
+  },
+  "data_class": "independent exact controls; no Monte Carlo inputs",
+  "generator_controls": {
+    "additive_grid": "r_n=n+1",
+    "false_constant_rank_one_first_heldout_residual": "1/12",
+    "geometric_grid": "r_n=2^n",
+    "log_pair_function": "g(r)=(1+log_2(r))/r",
+    "meaning": "exact kinematic controls, not a production rank decision",
+    "power_function": "g(r)=1/r",
+    "recurrence_residuals": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "rows": [
+      {
+        "additive_power_rank": 1,
+        "geometric_log_pair_rank": 1,
+        "geometric_power_rank": 1,
+        "hilbert_determinant": "1",
+        "size": 1
+      },
+      {
+        "additive_power_rank": 2,
+        "geometric_log_pair_rank": 2,
+        "geometric_power_rank": 1,
+        "hilbert_determinant": "1/12",
+        "size": 2
+      },
+      {
+        "additive_power_rank": 3,
+        "geometric_log_pair_rank": 2,
+        "geometric_power_rank": 1,
+        "hilbert_determinant": "1/2160",
+        "size": 3
+      },
+      {
+        "additive_power_rank": 4,
+        "geometric_log_pair_rank": 2,
+        "geometric_power_rank": 1,
+        "hilbert_determinant": "1/6048000",
+        "size": 4
+      },
+      {
+        "additive_power_rank": 5,
+        "geometric_log_pair_rank": 2,
+        "geometric_power_rank": 1,
+        "hilbert_determinant": "1/266716800000",
+        "size": 5
+      },
+      {
+        "additive_power_rank": 6,
+        "geometric_log_pair_rank": 2,
+        "geometric_power_rank": 1,
+        "hilbert_determinant": "1/186313420339200000",
+        "size": 6
+      },
+      {
+        "additive_power_rank": 7,
+        "geometric_log_pair_rank": 2,
+        "geometric_power_rank": 1,
+        "hilbert_determinant": "1/2067909047925770649600000",
+        "size": 7
+      },
+      {
+        "additive_power_rank": 8,
+        "geometric_log_pair_rank": 2,
+        "geometric_power_rank": 1,
+        "hilbert_determinant": "1/365356847125734485878112256000000",
+        "size": 8
+      },
+      {
+        "additive_power_rank": 9,
+        "geometric_log_pair_rank": 2,
+        "geometric_power_rank": 1,
+        "hilbert_determinant": "1/1028781784378569697887052962909388800000000",
+        "size": 9
+      },
+      {
+        "additive_power_rank": 10,
+        "geometric_log_pair_rank": 2,
+        "geometric_power_rank": 1,
+        "hilbert_determinant": "1/46206893947914691316295628839036278726983680000000000",
+        "size": 10
+      }
+    ],
+    "variable_coefficient_recurrence": "(n+2)g_(n+1)-(n+1)g_n=0"
+  },
+  "issues": [
+    400,
+    403,
+    405
+  ],
+  "one_clock_covariance_controls": {
+    "boundary": "not a replay of the P334 temporal kernel or its eigenvalue fractions",
+    "kernel": "min(u,v)-u*v",
+    "meaning": "a single threshold clock can have full temporal covariance rank",
+    "process": "X(u)=1[U<=u], U uniform on (0,1)",
+    "rows": [
+      {
+        "covariance_rank": 1,
+        "determinant": "1/4",
+        "size": 1
+      },
+      {
+        "covariance_rank": 2,
+        "determinant": "1/27",
+        "size": 2
+      },
+      {
+        "covariance_rank": 3,
+        "determinant": "1/256",
+        "size": 3
+      },
+      {
+        "covariance_rank": 4,
+        "determinant": "1/3125",
+        "size": 4
+      },
+      {
+        "covariance_rank": 5,
+        "determinant": "1/46656",
+        "size": 5
+      },
+      {
+        "covariance_rank": 6,
+        "determinant": "1/823543",
+        "size": 6
+      },
+      {
+        "covariance_rank": 7,
+        "determinant": "1/16777216",
+        "size": 7
+      },
+      {
+        "covariance_rank": 8,
+        "determinant": "1/387420489",
+        "size": 8
+      },
+      {
+        "covariance_rank": 9,
+        "determinant": "1/10000000000",
+        "size": 9
+      },
+      {
+        "covariance_rank": 10,
+        "determinant": "1/285311670611",
+        "size": 10
+      }
+    ]
+  },
+  "schema": "matching-one/predictive-state-counterexamples/v1"
+}
