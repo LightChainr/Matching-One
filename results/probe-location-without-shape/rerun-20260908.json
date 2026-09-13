@@ -1,0 +1,54 @@
+{
+ "meta": {
+  "issue": "#624",
+  "probe": "re-run 2026-09-08 \u2014 location without shape: independent verification of the #634 toy families on main",
+  "date": "2026-09-08",
+  "provenance": "families introduced in PR #634 (merged); this re-run re-adjudicates with independent code paths (mpmath 50 dps closed forms, off-grid and N=2^30 probes)",
+  "theorem_cited_not_reproved": "Theorem L (#613 / PR #614)"
+ },
+ "checks": {
+  "i1_t2_closed_form_50dps_offgrid_N2^30": {
+   "max_abs_dev_50dps": 1.3659995735121005e-42,
+   "passes": true
+  },
+  "i2_t2_cdf_side_inversion": {
+   "max_abs_dev": 4.105604745063829e-13,
+   "passes": true
+  },
+  "i3_t1_closed_form": {
+   "parity_gap_closed_form": 0.4119818783608963,
+   "sinlog_t_spread": 0.9846615897670914,
+   "expected_sinlog_Z_spread_upper": 0.4056627313020726,
+   "passes": true
+  },
+  "i4_d1_constancy_closed_form": {
+   "max_drift_k8_to_k17": 0.0,
+   "theory_bound_exp_c_over_w": 0.9980487811074755,
+   "passes": true
+  },
+  "i5_t3_affine_orbit_50dps": {
+   "max_abs_dev_50dps": 5.345529420184391e-51,
+   "passes": true
+  },
+  "i6_w5_quotients_rederived": {
+   "q_action_dev_new_affine": 3.885780586188048e-15,
+   "p_kink_dev_u0.35_slope2": 0.13816571258296031,
+   "passes": true
+  },
+  "committed_json_provenance": {
+   "path": "results/probe-location-without-shape/latest.json",
+   "date": "2026-09-07",
+   "frontier_of_origin": "claude/matching-one-workspace-pwr5pv @ 8b5f9d1a",
+   "bit_exact_rerun_on_main": true,
+   "note": "toy_cdf_families.py rerun on main @ the PR head reproduced latest.json byte-identically (git diff empty)."
+  }
+ },
+ "all_checks_pass": true,
+ "verdicts": {
+  "T2": "ACHIEVED \u2014 re-confirmed at 50 dps off the committed grid and beyond the committed N range (N = 2^30): Z_N = zeta exactly.",
+  "T1": "ACHIEVED \u2014 parity gap and sin(log N) spread re-derived in closed form from the two normalised profiles.",
+  "T3": "NULL \u2014 the anchor affine-orbit identity is EXACTLY zero at 50 dps (the float 0.0 in the original was not luck).",
+  "D1": "non-example re-confirmed: Route-B drift over seven further decades of w_N is < 1e-9, matching the exp(-c/w) theory.",
+  "W5": "Q-action invariance exact for a second (alpha,beta); p-axis kink at a different location/scale still moves the shape O(1)."
+ }
+}
