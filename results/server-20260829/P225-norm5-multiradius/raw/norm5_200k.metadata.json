@@ -1,0 +1,22 @@
+{
+  "schema": "matching-one/matching-multiradius-pivotal/v1",
+  "generated_utc": "2026-08-29T09:31:39Z",
+  "git_commit": "89dd3606ac14f1d7630321e6326c8660bbb93c8d",
+  "command": "build/matching_multiradius_pivotal_mc --samples 200000 --batches 200 --radii 2,4,7,8 --cutoff euclidean --p 0.592746050790 --threads 16 --seed 22550260829 --replica-offset 15000000000 --git-commit 89dd3606ac14f1d7630321e6326c8660bbb93c8d --output-prefix results/server-20260829/P225-norm5-multiradius/raw/norm5_200k",
+  "samples_per_design": 200000,
+  "batches": 200,
+  "seed": 22550260829,
+  "replica_counter_first": 15000000000,
+  "replica_counter_last_exclusive": 15000200000,
+  "p": "0.59274605079",
+  "cutoff": "euclidean",
+  "radii": [2,4,7,8],
+  "designs": [{"label":"n325_first","N":325,"a":17,"b":6},{"label":"n325_second","N":325,"a":18,"b":1},{"label":"n425_first","N":425,"a":16,"b":13},{"label":"n425_second","N":425,"a":19,"b":8}],
+  "graph_semantics": "black NN primal; complemented white NN+NNN matching",
+  "landing_registry": "absolute lattice axis minus diagonal; no per-design sign relabeling",
+  "boundary_rule": "euclidean: (R-1)^2 < x^2+y^2 <= R^2; chebyshev: max(|x|,|y|)=R",
+  "cross_radius_coupling": "same configuration and pivotal flag",
+  "cross_design_coupling": "same seed/counter; identical fields within equal N and prefix-coupled across N",
+  "elapsed_seconds": 4.0238334980000001,
+  "batch_csv": "results/server-20260829/P225-norm5-multiradius/raw/norm5_200k.batches.csv"
+}

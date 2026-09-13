@@ -339,6 +339,7 @@ int run_multi(int argc, char** argv) {
 
 }  // namespace
 
+#ifndef C4_MULTIRADIUS_NO_MAIN
 int main(int argc, char** argv) {
     try {
         return run_multi(argc, argv);
@@ -347,3 +348,4 @@ int main(int argc, char** argv) {
         return 2;
     }
 }
+#endif
