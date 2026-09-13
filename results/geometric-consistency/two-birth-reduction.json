@@ -1,0 +1,238 @@
+{
+  "schema": "matching-one.two-birth-reduction.v1",
+  "scope": "Existing width-two exact oracle; no new width, no Monte Carlo",
+  "precision": {
+    "working_decimal_digits": 80,
+    "reported_digits": 24,
+    "quadrature_status": "high precision numerical control, not interval certification"
+  },
+  "universal_constant": "Friedgut--Kalai constant left unspecified; not fitted or priced",
+  "exact_controls": {
+    "censuses": [
+      {
+        "width": 2,
+        "length": 2,
+        "configurations": 16,
+        "counts_by_rank_and_occupation": [
+          [
+            1,
+            4,
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            4,
+            1
+          ]
+        ],
+        "mean_first_birth": "7/15",
+        "mean_second_birth": "3/5",
+        "integral_P1_exact": "2/15"
+      },
+      {
+        "width": 2,
+        "length": 3,
+        "configurations": 64,
+        "counts_by_rank_and_occupation": [
+          [
+            1,
+            6,
+            12,
+            6,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            3,
+            14,
+            9,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            6,
+            6,
+            1
+          ]
+        ],
+        "mean_first_birth": "31/70",
+        "mean_second_birth": "23/35",
+        "integral_P1_exact": "3/14"
+      },
+      {
+        "width": 2,
+        "length": 4,
+        "configurations": 256,
+        "counts_by_rank_and_occupation": [
+          [
+            1,
+            8,
+            24,
+            32,
+            14,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            4,
+            24,
+            56,
+            48,
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            16,
+            8,
+            1
+          ]
+        ],
+        "mean_first_birth": "127/315",
+        "mean_second_birth": "44/63",
+        "integral_P1_exact": "31/105"
+      }
+    ],
+    "total_configurations": 336,
+    "permutation_control": {
+      "width": 2,
+      "length": 3,
+      "permutations": 720,
+      "normalized_mean_birth_rank_gap": "3/14",
+      "birth_time_covariance": "1123/58800"
+    }
+  },
+  "finite_length_controls": [
+    {
+      "width": 2,
+      "length": 2,
+      "sites": 4,
+      "first_birth_median": "0.458803899853803015600277",
+      "matching_root": "0.541196100146196984399723",
+      "second_birth_median": "0.614272431867610451724497",
+      "median_separation": "0.15546853201380743612422",
+      "mixture_q25": "0.366025403784438646763723",
+      "mixture_q75": "0.707106781186547524400844",
+      "mixture_IQR": "0.341081377402108877637121",
+      "integral_P1": "0.133333333333333333333333",
+      "first_birth_MAD": "0.184916542699632925904895",
+      "second_birth_MAD": "0.165533413388540059841259",
+      "mixture_W1_to_two_median_atoms": "0.125640559792018812765218",
+      "component_coupling_W1_upper": "0.175224978044086492873077"
+    },
+    {
+      "width": 2,
+      "length": 4,
+      "sites": 8,
+      "first_birth_median": "0.395436722146492579302221",
+      "matching_root": "0.563864986818845832313288",
+      "second_birth_median": "0.717504182456928314943545",
+      "median_separation": "0.322067460310435735641324",
+      "mixture_q25": "0.37580635877208387452519",
+      "mixture_q75": "0.735662455380684050167617",
+      "mixture_IQR": "0.359856096608600175642427",
+      "integral_P1": "0.295238095238095238095238",
+      "first_birth_MAD": "0.152731960470947226955025",
+      "second_birth_MAD": "0.132186922221715014370339",
+      "mixture_W1_to_two_median_atoms": "0.104585785998960442820658",
+      "component_coupling_W1_upper": "0.142459441346331120662682"
+    },
+    {
+      "width": 2,
+      "length": 8,
+      "sites": 16,
+      "first_birth_median": "0.288087697543491088866109",
+      "matching_root": "0.565186915007972908279838",
+      "second_birth_median": "0.8062743570534467506602",
+      "median_separation": "0.518186659509955661794091",
+      "mixture_q25": "0.288020678659088142104401",
+      "mixture_q75": "0.806342683005338318960378",
+      "mixture_IQR": "0.518322004346250176855977",
+      "integral_P1": "0.490331890331890331890332",
+      "first_birth_MAD": "0.119169122112798731672424",
+      "second_birth_MAD": "0.0936880608925678662934832",
+      "mixture_W1_to_two_median_atoms": "0.100715347015863140545303",
+      "component_coupling_W1_upper": "0.106428591502683298982954"
+    },
+    {
+      "width": 2,
+      "length": 16,
+      "sites": 32,
+      "first_birth_median": "0.205904636425127329663174",
+      "matching_root": "0.565197715825889906165507",
+      "second_birth_median": "0.867138698438055207434922",
+      "median_separation": "0.661234062012927877771749",
+      "mixture_q25": "0.205904636399435486977378",
+      "mixture_q75": "0.867138698480686033844308",
+      "mixture_IQR": "0.66123406208125054686693",
+      "integral_P1": "0.638967532846024539955863",
+      "first_birth_MAD": "0.088236907821274692877401",
+      "second_birth_MAD": "0.0641893702225797165224883",
+      "mixture_W1_to_two_median_atoms": "0.0760701055702370555700931",
+      "component_coupling_W1_upper": "0.0762131390219272046999447"
+    },
+    {
+      "width": 2,
+      "length": 32,
+      "sites": 64,
+      "first_birth_median": "0.146382847056271813348706",
+      "matching_root": "0.56519771738363933134003",
+      "second_birth_median": "0.908410478436269182496879",
+      "median_separation": "0.762027631379997369148173",
+      "mixture_q25": "0.146382847056271813348706",
+      "mixture_q75": "0.908410478436269182496879",
+      "mixture_IQR": "0.762027631379997369148173",
+      "integral_P1": "0.745727145682731652042279",
+      "first_birth_MAD": "0.0638725762471686157164193",
+      "second_birth_MAD": "0.0437352250473570618738386",
+      "mixture_W1_to_two_median_atoms": "0.053803742027170950798523",
+      "component_coupling_W1_upper": "0.053803900647262838795129"
+    },
+    {
+      "width": 2,
+      "length": 128,
+      "sites": 256,
+      "first_birth_median": "0.0734886148758215767986785",
+      "matching_root": "0.565197717383639396437528",
+      "second_birth_median": "0.955781733111481641066709",
+      "median_separation": "0.88229311823566006426803",
+      "mixture_q25": "0.0734886148758215767986785",
+      "mixture_q75": "0.955781733111481641066709",
+      "mixture_IQR": "0.88229311823566006426803",
+      "integral_P1": "0.874239684305420680243789",
+      "first_birth_MAD": "0.0325092171535030132257381",
+      "second_birth_MAD": "0.0205388473568717407670128",
+      "mixture_W1_to_two_median_atoms": "0.0265240322551873769963718",
+      "component_coupling_W1_upper": "0.0265240322551873769963755"
+    }
+  ],
+  "interpretation": "Fixed width 2 does not approach the infinite square-site critical point"
+}
