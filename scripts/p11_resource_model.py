@@ -91,19 +91,34 @@ def main():
                 "a": a, "b": b, "max_rel_resid": rmax}
 
     # ---- container CRT telemetry -----------------------------------------
-    ns, states, walls, rss = [], [], [], []
+    # Note: widths used different numbers of CRT primes (n=11..13: 10 primes,
+    # n=14: 7 primes), so we also fit per-pass wall time, which is the
+    # width-scalable quantity. Prime counts are read from the parsed CRT JSON.
+    ns, states, walls, rss, per_pass = [], [], [], [], []
     for j in sorted(RAW.glob("probe_crt_n*.json")):
-        n = int(re.search(r"n(\d+)", j.stem).group(1))
+        n = re.search(r"n(\d+)", j.stem).group(1)
         w, r = probe_stats(j)
         rows = RAW / f"crt_rows_n{n}.rows"
         if not rows.exists():
             rows = RAW / f"crt_n{n}.rows"
         s = peak_states_from_rows(rows) if rows.exists() else None
-        ns.append(n)
+        npass = None
+        parsed = RAW / f"crt_n{n}_parsed.json"
+        raw = RAW / f"crt_n{n}.json"
+        try:
+            npass = len(json.loads(parsed.read_text())["passes"])
+        except Exception:
+            try:
+                npass = len(json.loads(raw.read_text())["passes"])
+            except Exception:
+                pass
+        ns.append(int(n))
         walls.append(w)
         rss.append(r)
+        per_pass.append(w / npass if npass else None)
         if s:
             states.append(s)
+    pp = [(n, t) for n, t in zip(ns, per_pass) if t]
     if len(ns) >= 3:
         a, b, rmax, _ = loglin_fit(ns, walls)
         out["fits"]["crt_wall_seconds_all_primes"] = {
@@ -118,10 +133,20 @@ def main():
             out["fits"]["crt_peak_states"] = {
                 "points": dict(zip(map(str, ns), states)),
                 "a": a, "b": b, "max_rel_resid": rmax}
+    if len(pp) >= 3:
+        pxs, pys = zip(*pp)
+        a, b, rmax, _ = loglin_fit(list(pxs), list(pys))
+        out["fits"]["crt_wall_seconds_per_pass"] = {
+            "points": {str(n): t for n, t in pp},
+            "a": a, "b": b, "max_rel_resid": rmax}
 
     # ---- f128 evaluations --------------------------------------------------
+    # The in-flight n=18 partial probe is excluded from the fits (reported as
+    # a bounded observation instead).
     ns, walls, rss = [], [], []
     for j in sorted(RAW.glob("probe_f128_med_n*.json")):
+        if "partial" in j.stem:
+            continue
         n = int(re.search(r"n(\d+)", j.stem).group(1))
         w, r = probe_stats(j)
         ns.append(n)

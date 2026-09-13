@@ -35,10 +35,15 @@ def crt_pair(r1, m1, r2, m2):
 
 
 def combine(passes):
+    from math import gcd
     rs, ms = [], []
     for p in passes:
         rs.append(int(p["prime"]))
         ms.append(p["A"])
+    for i in range(len(rs)):
+        for j in range(i + 1, len(rs)):
+            assert gcd(rs[i], rs[j]) == 1, \
+                f"moduli {rs[i]},{rs[j]} not coprime"
     nm = len(ms[0]) - 1
     A = [0] * (nm + 1)
     for k in range(nm + 1):

@@ -1,0 +1,41 @@
+# Exact command lines producing every artifact in this directory.
+# Machines: Huawei ARM containers (16 vCPU / 32 GiB cgroup), aarch64 Linux,
+# gcc 10.3; binary128 = long double (IEEE binary128 on aarch64).
+# Build: g++ -O3 -std=gnu++17 -DHAVE_LDBL128 -o p11dp_q p11_exact_dp.cpp
+
+# --- local (macOS) path A exact DP (n=2..10) -------------------------------
+python3 scripts/p11_square_dp.py --n 9 --out results/transfer-subfrontier-20260913/raw/dpA_n9.json
+python3 scripts/p11_square_dp.py --n 10 --out results/transfer-subfrontier-20260913/raw/dpA_n10.json
+
+# --- path B brute force (n=2..5) -------------------------------------------
+g++ -O3 -std=gnu++17 -o p11brute scripts/p11_bruteforce.cpp
+./p11brute 5   # prints A(k); compared bit-for-bit with path A
+
+# --- container CRT exact runs (each wrapped in transfer_resource_probe.py) --
+# n=11 (TgFr7R), n=12 (TV2N0X), n=13 (HZsCM6), n=14 (XPk2PZ), n=15 (ZyTrST):
+python3 transfer_resource_probe.py --label crt_n11 --output probe_crt_n11.json -- \
+  /bin/sh -c "exec ./p11dp_q crt --n 11 > crt_n11.json 2> crt_n11.rows"
+python3 transfer_resource_probe.py --label crt_n14 --output probe_crt_n14.json -- \
+  /bin/sh -c "exec ./p11dp_q crt --n 14 --dump-row 7 --map-out ck_n14.bin > crt_n14.json 2> crt_n14.rows"
+python3 transfer_resource_probe.py --label crt_n14_restart --output probe_crt_n14_restart.json -- \
+  /bin/sh -c "exec ./p11dp_q crt --n 14 --map-in ck_n14.bin > crt_n14_restart.json 2> crt_n14_restart.rows"
+sha256sum ck_n14.bin > ck_n14.sha256
+
+# --- binary128 digit audit (H2WFxB), n=5..10 --------------------------------
+python3 transfer_resource_probe.py --label f128audit_med_n5 --output probe_f128audit_med_n5.json -- \
+  /bin/sh -c "exec ./p11dp_q f128 --kind med --n 5 --p0 0.575810073211627653605032974314 --iters 10 --bracket 1e-25 > f128audit_med_n5.json 2> f128audit_med_n5.rows"
+# ... same for n=6..10 with published p_med as p0
+
+# --- binary128 extension runs (f128, no exact cross-check available) --------
+# NePnUn: med n=16; TVVfoB: cell n=16; 551oUR: med n=17; 1lBUMY: cell n=17;
+# H2WFxB: med n=18 (p0 from published-sequence extrapolation)
+python3 transfer_resource_probe.py --label f128_med_n16 --output probe_f128_med_n16.json -- \
+  /bin/sh -c "exec ./p11dp_q f128 --kind med --n 16 --p0 0.589887013723258987 --iters 10 --bracket 1e-30 > f128_med_n16.json 2> f128_med_n16.rows"
+
+# --- CRT combine, roots, digit comparison (local) ---------------------------
+python3 scripts/p11_crt_roots.py --crt raw/crt_n11.json --n 11 --out raw/roots_n11.json
+python3 scripts/p11_crt_roots.py --crt raw/crt_n12.json --cell-crt raw/crt_n11.json --n 12 --out raw/roots_n12.json
+python3 scripts/p11_crt_roots.py --crt raw/crt_n13.json --cell-crt raw/crt_n12.json --n 13 --out raw/roots_n13.json
+
+# --- resource model ----------------------------------------------------------
+python3 scripts/p11_resource_model.py > raw/resource_model.json

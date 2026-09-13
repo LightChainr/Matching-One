@@ -315,10 +315,11 @@ static double now_s() {
 
 int mode_crt(int n, int m, const char* map_in, const char* map_out,
              int dump_row) {
-    uint64_t primes[] = {1073741789ULL, 1073741831ULL, 1073741837ULL,
-                         1073741909ULL, 1073741963ULL, 1073742009ULL,
-                         1073742029ULL, 1073742047ULL, 1073742061ULL,
-                         1073742107ULL};
+    // verified primes (sympy.isprime), pairwise coprime
+    uint64_t primes[] = {1073741789ULL, 1073741783ULL, 1073741741ULL,
+                         1073741723ULL, 1073741719ULL, 1073741717ULL,
+                         1073741689ULL, 1073741671ULL, 1073741663ULL,
+                         1073741651ULL};
     const int np = 10;
     int need = (n * m + 29) / 30;   // prod(p_i) > 2^(nm) >= max A(k)
     if (map_in) need = 1;  // restart: single pass with the checkpoint modulus
