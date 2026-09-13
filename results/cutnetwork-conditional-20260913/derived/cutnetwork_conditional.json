@@ -1,0 +1,84 @@
+{
+  "issue": 578,
+  "contract": "A (influence-function diagnostic)",
+  "network": {
+    "terminals": [
+      "L",
+      "R"
+    ],
+    "switchable": [
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "s5"
+    ],
+    "n_futures": 32,
+    "fixed_cardinality_law": "uniform over subsets of each k"
+  },
+  "total_var_phi": 0.10022808159722223,
+  "tower_identity_holds_exactly": true,
+  "decomposition_S0_S3": [
+    {
+      "level": 0,
+      "n_states": 1,
+      "V_between": 0.0,
+      "V_within": 0.10022808159722223,
+      "V_total": 0.10022808159722223,
+      "var_reduction_fraction": 0.0,
+      "inner_cost": 32,
+      "outer_cost_states": 1,
+      "tower_residual": 0.0,
+      "wallclock_cost_proxy": 33,
+      "info_per_wallclock": 0.0
+    },
+    {
+      "level": 1,
+      "n_states": 6,
+      "V_between": 0.030783637152777783,
+      "V_within": 0.06944444444444446,
+      "V_total": 0.10022808159722224,
+      "var_reduction_fraction": 0.3071358511727808,
+      "inner_cost": 32,
+      "outer_cost_states": 6,
+      "tower_residual": 1.3877787807814457e-17,
+      "wallclock_cost_proxy": 38,
+      "info_per_wallclock": 0.008082522399283705
+    },
+    {
+      "level": 2,
+      "n_states": 16,
+      "V_between": 0.07129289641203707,
+      "V_within": 0.028935185185185185,
+      "V_total": 0.10022808159722225,
+      "var_reduction_fraction": 0.7113066046553254,
+      "inner_cost": 32,
+      "outer_cost_states": 16,
+      "tower_residual": 2.7755575615628914e-17,
+      "wallclock_cost_proxy": 48,
+      "info_per_wallclock": 0.014818887596985944
+    },
+    {
+      "level": 3,
+      "n_states": 32,
+      "V_between": 0.10022808159722223,
+      "V_within": 0.0,
+      "V_total": 0.10022808159722223,
+      "var_reduction_fraction": 1.0,
+      "inner_cost": 32,
+      "outer_cost_states": 32,
+      "tower_residual": 0.0,
+      "wallclock_cost_proxy": 64,
+      "info_per_wallclock": 0.015625
+    }
+  ],
+  "decision_input": {
+    "best_var_reduction_level": 3,
+    "note": "S3 (full typed network) gives V_within=0 by construction; coarser levels trade variance reduction against inner cost."
+  },
+  "buy_back": {
+    "real_original_U_phi_coefficients": "NOT in tree (psi_E, psi_q, a_g, R, R_xi, D) -> declared buy-back",
+    "P334_147_saved_prefixes": "NOT in tree -> saved-prefix asset audit BLOCKED",
+    "suffix_noise_84_86pct": "cannot be re-attributed to true phi without the archive -> buy-back"
+  }
+}

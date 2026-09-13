@@ -1,0 +1,4 @@
+PY=/Users/lc/.workbuddy/binaries/python/envs/default/bin/python
+git checkout analysis/p595-channel-leverage-20260913
+$PY scripts/channel_leverage_scan.py
+# outputs: results/channel-leverage-20260913/{raw,derived}/*.json|csv, metadata.json
