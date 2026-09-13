@@ -158,6 +158,93 @@ def check_truncation_bias(tagged: dict, spectrum: dict) -> dict:
     }
 
 
+def check_spectrum_vs_tagged_histogram(tagged: dict, spectrum: dict,
+                                       floor_rel: float = 1e-20) -> dict:
+    """Compare the two constructions height by height, not just in their moments.
+
+    The depth-clamped chain (span_spectrum_build.cpp) tracks the ages of every
+    active component and then projects onto a span histogram. The tagged
+    resolvent tracks one lineage and never stores an age. If they are both
+    computing the span of the same object, they must agree on d_h for every
+    h <= D_MAX, and on the mass sitting above the cutoff. Comparing only the
+    first two moments would not catch a compensating error; this does.
+
+    Only heights whose value exceeds `floor_rel * nu` are scored. Below that the
+    committed file stores denormal-scale float64 numbers (d_h ~ 1e-40, tail bins
+    ~ 1e-45) whose relative difference is meaningless, and they are counted
+    separately rather than used to characterise agreement.
+
+    Requires importing the delivered tagged module, so it is the one check here
+    that consumes delivered code rather than a committed artifact.
+    """
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import tagged_winding_span as T  # noqa: E402
+
+    rows = []
+    for run in spectrum["runs"]:
+        if run["width"] > 7:
+            continue  # width 8 has no committed truncated row to compare against
+        graph = "matching" if run["matching"] else "NN"
+        states, trans, source = T.build(run["width"], bool(run["matching"]))
+        trans, source, _ = T.lump(trans, source)
+        res = T.moments(trans, source, Fraction(run["p"]), bins=run["d_max"], exact=True)
+        dh_exact = res["d_h"]
+        dh_spec = run["d_h_float"]
+        if len(dh_exact) != len(dh_spec):
+            rows.append({"graph": graph, "width": run["width"], "p": run["p"],
+                         "error": f"length mismatch {len(dh_exact)} vs {len(dh_spec)}"})
+            continue
+        nu = float(res["nu"])
+        cut = floor_rel * nu
+        worst_h, worst_rel = None, 0.0
+        scored = below = 0
+        for h, (a, b) in enumerate(zip(dh_exact, dh_spec), start=1):
+            fa = float(a)
+            if fa <= cut:
+                below += 1
+                continue
+            scored += 1
+            rel = abs(fa - b) / fa
+            if rel > worst_rel:
+                worst_h, worst_rel = h, rel
+        tail_exact = float(res["tail"])
+        tail_spec = run["tail_bin_float"]
+        tail_scored = tail_exact > cut
+        tail_rel = (abs(tail_exact - tail_spec) / tail_exact) if tail_scored else None
+        rows.append({
+            "graph": graph, "width": run["width"], "p": run["p"],
+            "d_max": run["d_max"],
+            "tagged_states": len(states), "tagged_lumps": len(trans),
+            "spectrum_states": run["states"],
+            "heights_total": len(dh_exact),
+            "heights_scored": scored, "heights_below_floor": below,
+            "floor_abs": cut,
+            "max_rel_diff_d_h": (worst_rel if scored else None),
+            "max_rel_diff_at_height": worst_h,
+            "tail_exact": tail_exact, "tail_spectrum": tail_spec,
+            "tail_scored": tail_scored, "tail_rel_diff": tail_rel,
+            "d_h_tagged_head": [float(x) for x in dh_exact[:4]],
+            "d_h_spectrum_head": dh_spec[:4],
+        })
+    scored_rows = [r for r in rows if r.get("max_rel_diff_d_h") is not None]
+    worst = max((r["max_rel_diff_d_h"] for r in scored_rows), default=None)
+    return {
+        "what": "depth-clamped chain vs tagged resolvent, height by height",
+        "constructions": {
+            "spectrum": "span_spectrum_build.cpp: all component ages, then span histogram",
+            "tagged": "tagged_winding_span.py: one lineage, no age, no depth cutoff",
+        },
+        "points_compared": len(rows),
+        "points_scored": len(scored_rows),
+        "scoring_floor": f"d_h > {floor_rel:g} * nu",
+        "worst_rel_diff_over_all_heights": worst,
+        "total_heights_below_floor": sum(r.get("heights_below_floor", 0) for r in rows),
+        "state_space_ratio_note": "at w=7 the tagged lumping is 71 states against 389391; "
+                                  "at w=6, 36 against 668439",
+        "rows": rows,
+    }
+
+
 def _slope(xs: list[float], ys: list[float]) -> float:
     n = len(xs)
     mx, my = sum(xs) / n, sum(ys) / n
@@ -235,6 +322,7 @@ def main() -> int:
         },
         "density_containment": check_density_containment(tagged, certified),
         "truncation_bias": check_truncation_bias(tagged, spectrum),
+        "histogram_agreement": check_spectrum_vs_tagged_histogram(tagged, spectrum),
         "model_discriminator": check_model_discriminator(tagged),
         "honesty": [
             "This script verifies arithmetic and mutual consistency. It does not "
@@ -243,7 +331,11 @@ def main() -> int:
             "The independent nu_w used in check 1 comes from a different exact engine "
             "but shares the same underlying cylinder model; it is an independent "
             "implementation, not an independent model.",
-            "Check 3 fits four widths at most. Model A beating model B on rms is a "
+            "Check 3 compares two constructions of the same object, but the tagged "
+            "side is delivered code imported at run time, so a shared misreading of "
+            "the span definition would not be caught by it. The two state spaces are "
+            "structurally unrelated, which is the reason the agreement is meaningful.",
+            "Check 4 fits four widths at most. Model A beating model B on rms is a "
             "consistency statement about two one-parameter readings, not evidence "
             "for any particular correction exponent.",
         ],
@@ -256,8 +348,11 @@ def main() -> int:
     print(f"[2] truncation bias: {t['points_compared']} points; "
           f"{len(t['material_bias_points'])} exceed 1e-6 tail and are materially biased; "
           f"clean points max CV^2 rel.bias {t['clean_points_max_cv2_rel_bias']:.2e}")
+    h = report["histogram_agreement"]
+    print(f"[3] histogram agreement: {h['points_compared']} points, "
+          f"worst d_h rel.diff over all heights {h['worst_rel_diff_over_all_heights']:.2e}")
     m = report["model_discriminator"]
-    print(f"[3] model discriminator: {m['families_favouring_model_A']}/{m['families_tested']} "
+    print(f"[4] model discriminator: {m['families_favouring_model_A']}/{m['families_tested']} "
           f"families favour model A; smallest model-B gap at w=8 {m['min_model_B_gap_at_w8']:.4f}")
 
     if args.write:

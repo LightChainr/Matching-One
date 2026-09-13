@@ -117,7 +117,54 @@ fraction of order 1e-7 to 1e-12. The two p=1/2 rows that are off by 5% and 18%
 in CV^2 were not used in the slope test, and must not be quoted as measurements
 of the p=1/2 span law.
 
-## 4. The section 6.3 moment limit, now tested on uncensored moments
+## 4. The two constructions agree height by height, not just in their moments
+
+The strongest check available, and the one that actually used the delivered
+construction rather than treating it as one more set of numbers. The two engines
+compute the same object through structurally unrelated state spaces:
+
+| | state space at w=7 | stored quantity |
+|---|---:|---|
+| `span_spectrum_build.cpp` | 389391 states (668439 at w=6) | all component ages, then projected onto a span histogram |
+| `tagged_winding_span.py` | 71 lumped states (36 at w=6) | one tagged lineage, no age, no depth cutoff |
+
+Agreement at every height h <= D_MAX and on the cutoff tail, across all 30 cells
+of the committed spectrum:
+
+| quantity | worst relative difference, over scored heights |
+|---|---:|
+| `d_h` at w=2,3,4 | 1.0e-14 |
+| `d_h` at w=5 | 1.4e-12 |
+| `d_h` at w=6 | 2.4e-12 |
+| `d_h` at w=7 | 3.0e-12 |
+| cutoff tail bin, w=5..7 | 3.3e-12 |
+
+Two further details make this a real cross-validation rather than a coincidence.
+
+First, the error grows smoothly with height and with width (4e-16 at h=11 to
+3e-12 at h=48) — exactly the signature of the committed file's own float64
+stationary solve, whose accuracy degrades as `d_h` becomes a small remainder.
+The tagged side is exact rational, so the residual is the older file's error,
+not a constructional disagreement. At w=2, both are exact and the difference is
+identically zero.
+
+Second, 231 of the 1408 compared heights fall below `1e-20 * nu`, where the
+committed file stores denormal-scale floats (`d_h` ~ 1e-40, tail bins ~ 1e-45);
+those are excluded from the score rather than used to characterise agreement, and
+are reported separately as `heights_below_floor`. Without that floor the naive
+worst case reads 0.73 purely from noise in the 1e-40 range. The check is
+scale-aware for that reason.
+
+A caveat on what this does and does not establish. Both engines could share a
+misreading of what "span" means — the check cannot detect that, and the
+arithmetic agreement would survive it. What it does establish is that the
+depth-clamped construction and the tagged construction are computing the same
+quantities to the accuracy of the less precise of the two, so the tag/forbidden
+lumping is not silently changing the observable. A 1e-12-level agreement between
+a 389391-state and a 71-state description of the same law is also the clearest
+statement available of how much the age bookkeeping was buying.
+
+## 5. The section 6.3 moment limit, now tested on uncensored moments
 
 The point of the delivered construction for us is section 2's
 `nu = alpha Z b`, `m1 = alpha Z^2 b`, `m2 = alpha (2Z^3 - Z^2) b`, which give
@@ -157,7 +204,7 @@ from its limit. Section 6.3's conjecture remains neither proved nor refuted —
 it is refuted only in the strong "ratio tends to zero" reading, which was
 already the reading withdrawn in the erratum.
 
-## 5. What changes, and what is now open
+## 6. What changes, and what is now open
 
 Changed: the w=8 point of the moment-limit test exists, exactly and without
 censoring, so the w=8 span-table build is no longer on the critical path; it is
@@ -173,18 +220,30 @@ the delivered file `tagged-span-resolvent.json` was indeed absent from the read
 commit's tree, which is the gap the erratum restored. Item 1 — that a complete
 component's span is a maximum-minus-minimum, not a sum of irreducible piece
 heights — targets a mechanism reading, not the computation; the erratum had
-already withdrawn that mechanism, and the arithmetic agreement in section 3 above
-confirms the truncated chain was measuring the true span all along.
+already withdrawn that mechanism, and the height-by-height agreement in section 4
+above — where a 389391-state age-tracking chain and a 71-state tagged chain land on
+the same `d_h` to 1e-12 — confirms the truncated chain was measuring the true span
+all along.
 
 Open, in rough order of value:
 
 1. Width 9, past the delivered `build()` cap of 8, to see whether `R_w` keeps
    drifting or plateaus — the cleanest remaining discriminator among
    correction exponents.
-2. A method independent of linear algebra. Everything above is exact rational
-   arithmetic on one or another transfer operator; a direct simulation of the
-   cylinder is the only check that does not share that architecture.
-3. The `psi_w(z,u,v)` joint activity of the delivered section 3, whose
+2. A method independent of linear algebra. Every check above, including the
+   height-by-height one, is exact rational or float64 arithmetic on one or
+   another transfer operator; a direct simulation of the cylinder is the only
+   check that does not share that architecture.
+3. The width-8 height-by-height row of section 4, which is currently missing
+   because no committed truncated w=8 spectrum exists. The delivered tagged
+   construction can supply the reference side immediately — at NN p=1/4,
+   `nu = 4.432636548604856e-05`, `E[L] = 4.56334396378038`,
+   `CV^2 = 0.12716350006804397`, `sum_{h>20} d_h = 1.2246438200402218e-11`,
+   and at matching p=1/8, `nu = 3.791735919415724e-05`,
+   `E[L] = 4.711805413158092`, `CV^2 = 0.11600493483091046`,
+   `sum_{h>20} d_h = 1.3400726036376886e-11`; both close exactly,
+   `sum(d_h) + tail = nu`.
+4. The `psi_w(z,u,v)` joint activity of the delivered section 3, whose
    `Corr(L,K)^2 ~ 0.867` at NN w=4 is the frontier note's conjecture J input.
    The delivered direct-activity transfer closes only to width 5 or 6, so this
    is where a width extension would buy something the resolvent does not
