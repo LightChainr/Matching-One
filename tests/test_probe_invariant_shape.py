@@ -78,15 +78,42 @@ class TestExactCensus(unittest.TestCase):
         z2 = [(q - qa2) / (qb2 - qa2) for q in q2]
         self.assertEqual(z1, z2)
 
-    def test_same_M_different_F_counterexample(self) -> None:
+    def test_p11_rescaling_leaves_the_simplex(self) -> None:
+        """#632: P11 → 3/2 P11 is not a probability counterexample.
+
+        Rank-complement plus P20+P11+P02=1 forces F=(1+M)/2. Scaling P11
+        alone leaves the simplex (L=3 p=1/2 mass 593/512). After
+        normalization M also changes. Keep the weaker true statement:
+        equal M need not determine the full joint (P11,P20,P02).
+        """
         comps = census.site_rank_pair_components(3)
         M0, F0 = census.M_and_F_from_components(comps)
+        self.assertEqual(
+            census.eval_poly_at(F0, Fraction(1, 2)),
+            (1 + census.eval_poly_at(M0, Fraction(1, 2))) / 2,
+        )
         lam = Fraction(3, 2)
         comps1 = {"P11": [c * lam for c in comps["P11"]],
                   "P20": comps["P20"], "P02": comps["P02"]}
         M1, F1 = census.M_and_F_from_components(comps1)
+        mass = census.eval_poly_at(
+            [comps1["P11"][k] + comps1["P20"][k] + comps1["P02"][k]
+             for k in range(10)],
+            Fraction(1, 2),
+        )
+        self.assertEqual(mass, Fraction(593, 512))
         self.assertEqual(M0, M1)
-        self.assertNotEqual(F0, F1)
+        self.assertNotEqual(
+            census.eval_poly_at(M1, Fraction(1, 2)) / mass,
+            census.eval_poly_at(M0, Fraction(1, 2)),
+        )
+
+    def test_float_cdf_matches_exact_site_l3_half(self) -> None:
+        comps = census.site_rank_pair_components(3)
+        _, F = census.M_and_F_from_components(comps)
+        exact = census.eval_poly_at(F, Fraction(1, 2))
+        self.assertEqual(exact, Fraction(43, 128))
+        self.assertAlmostEqual(census.eval_F_float(F, 0.5), float(exact), places=12)
 
 
 class TestResultFiles(unittest.TestCase):
@@ -104,7 +131,10 @@ class TestResultFiles(unittest.TestCase):
                                places=12)
         b = self.census_json["bond"]["3"]
         self.assertEqual(b["configs"], 262144)
-        self.assertEqual(b["dual_fail"], 118133)
+        self.assertEqual(b["dual_fail"], 0)
+        self.assertEqual(b["rank_pair_counts"]["0,2"], 75460)
+        self.assertEqual(b["rank_pair_counts"]["1,1"], 111224)
+        self.assertEqual(b["rank_pair_counts"]["2,0"], 75460)
 
     def test_toy_families_separated(self) -> None:
         a = self.toy["families"]["A_scale_linear"][-1]["Z"]
