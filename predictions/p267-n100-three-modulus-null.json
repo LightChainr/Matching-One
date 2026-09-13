@@ -1,0 +1,453 @@
+{
+  "schema": "matching-one/p267-three-modulus-null/v1",
+  "geometry_source_commit": "b9e4ea19bc585cbed18ec6ba1d13e85f2b5accc7",
+  "N": 100,
+  "shape_order": [
+    "2i",
+    "4i",
+    "1/2+i"
+  ],
+  "field_order": [
+    "A_top",
+    "E_top",
+    "C",
+    "W"
+  ],
+  "stacking": "shape-major: [Y2_A,Y2_E,Y2_C,Y2_W,Y4_A,...,Ys_W]",
+  "measure": "square-site fixed p_ref=0.59274605079; same signed chi4-normalized quotient contrasts as ce01e4d",
+  "smith_pair": [
+    [
+      1,
+      100
+    ],
+    [
+      5,
+      20
+    ]
+  ],
+  "coupling_assumption": "Y_j(tau)=a_j+b_j*f(tau), at this N and p, with arbitrary coordinate-specific a_j,b_j constant across only the three declared shapes",
+  "models": {
+    "affine_E4": {
+      "shape_coordinates": [
+        {
+          "rational": "11/4",
+          "sqrt2": "0",
+          "decimal": 2.75
+        },
+        {
+          "rational": "91/16",
+          "sqrt2": "15/4",
+          "decimal": 10.990800858899107
+        },
+        {
+          "rational": "91/16",
+          "sqrt2": "-15/4",
+          "decimal": 0.38419914110089337
+        }
+      ],
+      "unnormalized_exact_weights": [
+        {
+          "rational": "0",
+          "sqrt2": "120",
+          "decimal": 169.7056274847714
+        },
+        {
+          "rational": "47",
+          "sqrt2": "-60",
+          "decimal": -37.852813742385706
+        },
+        {
+          "rational": "-47",
+          "sqrt2": "-60",
+          "decimal": -131.8528137423857
+        }
+      ],
+      "normalized_weights_shear_coefficient_one": [
+        {
+          "rational": "-14400/4991",
+          "sqrt2": "5640/4991",
+          "decimal": -1.287083852577789
+        },
+        {
+          "rational": "9409/4991",
+          "sqrt2": "-5640/4991",
+          "decimal": 0.2870838525777888
+        },
+        {
+          "rational": "1",
+          "sqrt2": "0",
+          "decimal": 1.0
+        }
+      ],
+      "signed_secant_ratio_r": {
+        "rational": "-9409/4991",
+        "sqrt2": "5640/4991",
+        "decimal": -0.2870838525777888
+      },
+      "offset_residual_exact": {
+        "rational": "0",
+        "sqrt2": "0",
+        "decimal": 0.0
+      },
+      "shape_residual_exact": {
+        "rational": "0",
+        "sqrt2": "0",
+        "decimal": 0.0
+      },
+      "joint_projection_matrix_L": [
+        [
+          -1.287083852577789,
+          0.0,
+          0.0,
+          0.0,
+          0.2870838525777888,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.287083852577789,
+          0.0,
+          0.0,
+          0.0,
+          0.2870838525777888,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.287083852577789,
+          0.0,
+          0.0,
+          0.0,
+          0.2870838525777888,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          -1.287083852577789,
+          0.0,
+          0.0,
+          0.0,
+          0.2870838525777888,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "affine_height_only_E4": {
+      "shape_coordinates": [
+        {
+          "rational": "11/4",
+          "sqrt2": "0",
+          "decimal": 2.75
+        },
+        {
+          "rational": "91/16",
+          "sqrt2": "15/4",
+          "decimal": 10.990800858899107
+        },
+        {
+          "rational": "1",
+          "sqrt2": "0",
+          "decimal": 1.0
+        }
+      ],
+      "unnormalized_exact_weights": [
+        {
+          "rational": "75",
+          "sqrt2": "60",
+          "decimal": 159.8528137423857
+        },
+        {
+          "rational": "-28",
+          "sqrt2": "0",
+          "decimal": -28.0
+        },
+        {
+          "rational": "-47",
+          "sqrt2": "-60",
+          "decimal": -131.8528137423857
+        }
+      ],
+      "normalized_weights_shear_coefficient_one": [
+        {
+          "rational": "-525/713",
+          "sqrt2": "-240/713",
+          "decimal": -1.2123580013598076
+        },
+        {
+          "rational": "-188/713",
+          "sqrt2": "240/713",
+          "decimal": 0.2123580013598076
+        },
+        {
+          "rational": "1",
+          "sqrt2": "0",
+          "decimal": 1.0
+        }
+      ],
+      "signed_secant_ratio_r": {
+        "rational": "188/713",
+        "sqrt2": "-240/713",
+        "decimal": -0.2123580013598076
+      },
+      "offset_residual_exact": {
+        "rational": "0",
+        "sqrt2": "0",
+        "decimal": 0.0
+      },
+      "shape_residual_exact": {
+        "rational": "0",
+        "sqrt2": "0",
+        "decimal": 0.0
+      },
+      "joint_projection_matrix_L": [
+        [
+          -1.2123580013598076,
+          0.0,
+          0.0,
+          0.0,
+          0.2123580013598076,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.2123580013598076,
+          0.0,
+          0.0,
+          0.0,
+          0.2123580013598076,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.2123580013598076,
+          0.0,
+          0.0,
+          0.0,
+          0.2123580013598076,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          -1.2123580013598076,
+          0.0,
+          0.0,
+          0.0,
+          0.2123580013598076,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "affine_y_squared": {
+      "shape_coordinates": [
+        {
+          "rational": "4",
+          "sqrt2": "0",
+          "decimal": 4.0
+        },
+        {
+          "rational": "16",
+          "sqrt2": "0",
+          "decimal": 16.0
+        },
+        {
+          "rational": "1",
+          "sqrt2": "0",
+          "decimal": 1.0
+        }
+      ],
+      "unnormalized_exact_weights": [
+        {
+          "rational": "5",
+          "sqrt2": "0",
+          "decimal": 5.0
+        },
+        {
+          "rational": "-1",
+          "sqrt2": "0",
+          "decimal": -1.0
+        },
+        {
+          "rational": "-4",
+          "sqrt2": "0",
+          "decimal": -4.0
+        }
+      ],
+      "normalized_weights_shear_coefficient_one": [
+        {
+          "rational": "-5/4",
+          "sqrt2": "0",
+          "decimal": -1.25
+        },
+        {
+          "rational": "1/4",
+          "sqrt2": "0",
+          "decimal": 0.25
+        },
+        {
+          "rational": "1",
+          "sqrt2": "0",
+          "decimal": 1.0
+        }
+      ],
+      "signed_secant_ratio_r": {
+        "rational": "-1/4",
+        "sqrt2": "0",
+        "decimal": -0.25
+      },
+      "offset_residual_exact": {
+        "rational": "0",
+        "sqrt2": "0",
+        "decimal": 0.0
+      },
+      "shape_residual_exact": {
+        "rational": "0",
+        "sqrt2": "0",
+        "decimal": 0.0
+      },
+      "joint_projection_matrix_L": [
+        [
+          -1.25,
+          0.0,
+          0.0,
+          0.0,
+          0.25,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.25,
+          0.0,
+          0.0,
+          0.0,
+          0.25,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.25,
+          0.0,
+          0.0,
+          0.0,
+          0.25,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          -1.25,
+          0.0,
+          0.0,
+          0.0,
+          0.25,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  },
+  "pairwise_discriminators": [
+    {
+      "true_shape": "affine_E4",
+      "tested_shape": "affine_height_only_E4",
+      "normalized_wrong_model_residual_over_Y4_minus_Y2": {
+        "rational": "-10725/4991",
+        "sqrt2": "7320/4991",
+        "decimal": -0.07472585121798136
+      },
+      "intersection": "constant three-shape response only, independently in each field",
+      "illustrative_3sigma_SE_over_absolute_span": 0.024908617072660455
+    },
+    {
+      "true_shape": "affine_E4",
+      "tested_shape": "affine_y_squared",
+      "normalized_wrong_model_residual_over_Y4_minus_Y2": {
+        "rational": "-32645/19964",
+        "sqrt2": "5640/4991",
+        "decimal": -0.03708385257778879
+      },
+      "intersection": "constant three-shape response only, independently in each field",
+      "illustrative_3sigma_SE_over_absolute_span": 0.012361284192596264
+    },
+    {
+      "true_shape": "affine_height_only_E4",
+      "tested_shape": "affine_y_squared",
+      "normalized_wrong_model_residual_over_Y4_minus_Y2": {
+        "rational": "1465/2852",
+        "sqrt2": "-240/713",
+        "decimal": 0.03764199864019241
+      },
+      "intersection": "constant three-shape response only, independently in each field",
+      "illustrative_3sigma_SE_over_absolute_span": 0.012547332880064136
+    }
+  ],
+  "theta_duplication_G4": {
+    "rational": "91/16",
+    "sqrt2": "15/4",
+    "decimal": 10.990800858899107
+  },
+  "area_offset_free_observable": "R_f=Ys-Y2-r_f*(Y4-Y2); use linear null, not a noisy empirical ratio",
+  "covariance_contract": "R=L mean; Cov(R)=L Sigma L^T with full same-stream cross-shape/cross-field covariance; no independent-evidence multiplication",
+  "degeneracy": "Y4-Y2=0 in every field makes the three affine shape hypotheses coincide; absence of a resolved span is underpowered, not acceptance",
+  "boundary": "Conditional finite-lattice coupling test, not automatic transfer of E4 to A/E/C/W, not an exponent, field identity, or approval for acquisition. No N50 estimates or area scale are used."
+}
