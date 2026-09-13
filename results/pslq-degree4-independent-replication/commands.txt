@@ -1,0 +1,13 @@
+# screen build
+g++ -O3 -std=c++17 -o census_screen scripts/independent_census_screen.cpp
+
+# local: solve-based brute force, scale 1e15, all four intervals and degrees 1..4
+python scripts/independent_census.py 4 brute out4
+
+# fleet, 10 containers, 144 vCPU, 560 shards, run with  xargs -P 12
+#   loop : ./census_screen --d 4 --H 100 --B <B> --c 1000000000000000,<w1>,<w2>,<w3>,<w4> --mode brute_loop --shard <k> 60 out/loop-<interval>-s<k>.txt
+#   mitm : ./census_screen --d 4 --H 100 --B <B> --c <same>                                    --mode mitm       --shard <k> 20 out/mitm-<interval>-s<k>.txt
+#   alt  : ./census_screen --d 4 --H 100 --B <B_2^50> --c 1125899906842624,<w1>,<w2>,<w3>,<w4>  --mode brute      --shard <k> 60 out/alt-<interval>-s<k>.txt
+
+# agreement against the committed primary artefacts
+python scripts/independent_census_agreement.py <repo-checkout> out4 agreement.json
