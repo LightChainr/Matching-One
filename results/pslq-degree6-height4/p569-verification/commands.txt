@@ -1,0 +1,12 @@
+# Ticket A (#569) independent verification commands — run from repo root /tmp/c1-wt
+PY=/Users/lc/.workbuddy/binaries/python/envs/default/bin/python
+
+# Re-run the second implementation at height 4 for all four intervals (independent census)
+for id in jacobsen-2015-eigenvalue mertens-2022-p-cell mertens-2022-p-med yang-zhou-2024-corrected; do
+  $PY scripts/degree6_independent_replication.py "$id" --height 4
+done
+
+# Re-run the agreement harness (height 3 and 4); wrote to scratch to avoid overwriting committed artifact
+$PY scripts/degree6_implementation_agreement.py --output /tmp/agree_height4.json
+
+# Expected: heights_compared [3,4], cells_compared 48, cells_in_agreement 48, implementations_agree True
