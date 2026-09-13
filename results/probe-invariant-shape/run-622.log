@@ -1,0 +1,22 @@
+loaded {145: 145, 290: 290, 725: 725} in 1.0s
+N=145 spin0 done in 19.4s
+N=145 equal done in 19.3s
+N=290 spin0 done in 38.8s
+N=290 equal done in 39.0s
+N=725 spin0 done in 102.5s
+N=725 equal done in 102.5s
+
+=== summary (spin0) ===
+N=145: |A|=0.0305142 +/- 2.6e-05  chi2(A=0)=2273560.463866949  dof=4  p=0.0
+N=290: |A|=0.0236407 +/- 2.9e-05  chi2(A=0)=1000970.7397946715  dof=4  p=0.0
+N=725: |A|=0.0168313 +/- 3.5e-05  chi2(A=0)=355970.477979064  dof=4  p=0.0
+145->290: |dZ|=0.00537503 +/- 2.1e-05 (p=0.0), |dA|=0.0068741 +/- 3.9e-05 (p=0.0)
+290->725: |dZ|=0.00499749 +/- 2.7e-05 (p=0.0), |dA|=0.00680943 +/- 4.5e-05 (p=0.0)
+A-norm trend (spin0): decreasing {'145->290': (-0.00687352, 178.2), '290->725': (-0.00680938, 150.5)}
+interval change: {'delta_Z_norm': {'difference_between_intervals': -0.0003775391993112113, 'se': 3.451924111497411e-05, 'sigma_multiple': 10.937065448621304, 'resolved_change': True}, 'delta_A_norm': {'difference_between_intervals': -6.467749063354157e-05, 'se': 5.949803671724884e-05, 'sigma_multiple': 1.087052518067225, 'resolved_change': False}}
+N725 Q vs #655: 4.117237994982759e-09
+wrote results/probe-invariant-shape/quantile-shape-lineage-622.json
+
+real	5m22.560s
+user	5m22.345s
+sys	0m0.024s
