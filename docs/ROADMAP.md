@@ -13,32 +13,30 @@ Delivered, not to be reassigned: #613/#670 supplied the full-law sufficient
 condition; #718/#735 removed aspect restrictions for the balance root; #736
 now supplies the missing axial full-law necessity. #276 remains completed.
 
-First consolidate and independently audit #735's arbitrary-period root proof,
-including oblique entry counts, support injectivity and disjoint bands. Return
-one theorem manuscript and a closest-prior-theorem comparison to #735. Use
-#736's axial iff as the precise full-law boundary chapter, with its own RSW
-input and independent seam/quantifier check. This is one probability paper,
-not two new dispatches.
+The working consolidation is now
+[**When the matching root locates criticality but the threshold law does not**](manuscripts/geometric-consistency/README.md).
+It contains the earlier root proof, the full-law sufficient argument, and a
+new author proof of the arbitrary-period necessity direction. The resulting
+criterion is `log(N)/ell -> 0` for the entire law; roots require only `ell -> infinity`
+as a sufficient condition. No new numerical critical point or exponent is claimed.
 
-A possible strengthening INSIDE this programme, not a second active task, is
-the **uniform oblique-corridor lemma**:
-for every eta>0, find a fixed p_eta<p_c and bounded-thickness occupied winding
-corridors around an actual shortest period u, with probability >=exp(-eta|u|),
-uniformly in its orientation and ambient primitivity. Pack disjoint corridors
-in an arbitrary integer-period torus, or exhibit the geometric obstruction.
-The physical NN interaction must not be rotated by a change of period basis.
+The previously missing oblique corridor is constructed with axis-aligned
+circuits and connectors, including a closed periodic seam. Integer translations
+pack disjoint supports even when the shortest period is nonprimitive in Z^2.
+This replaces the missing-lemma placeholder as a research result, not as an
+assertion of independent referee acceptance or literature novelty.
 
-As part of that same acceptance package, independently examine #736's
-seam construction and quantifier order once, then compare its exact statement
-with strip-percolation, RSW finite-size criteria and homological-percolation
-prior art. A negative search is not an originality certificate.
+Keep further edits within this one probability manuscript and return the
+consolidation to #735, with #613/#736 as its source thread. The focused code
+controls support geometry and seam closure; they do not substitute for the
+proof. The literature comparison now includes Damron--Lam's tall-thin rectangle
+crossing estimates and their "sponge dimensions" antecedents. Do not commission
+another general survey or thin-torus census merely to restate those inputs.
 
-**Deliverable:** one consolidated theorem manuscript, independent lemma-level
-audit and precise novelty comparison. Treat a proved oblique-corridor extension
-as a strengthening, or record its exact missing lemma; do not make it a new
-prerequisite for the already supplied narrower results. **Not useful:** another enormous
-thin-torus simulation, another proof that a fixed-width root is not p_c,
-or re-enumeration of the tiny checks already delivered.
+**Next useful work:** resolve any concrete objection to the argument and make
+the hypothesis/conclusion comparison precise enough for a stand-alone paper.
+Do not add the Jordan controls, local-source hierarchy, or sampling variants as
+new prerequisites or chapters. Preserve the older narrower proofs in history.
 
 ## Representation reserve: #636 — source-visible topology and structural closure
 
