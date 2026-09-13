@@ -1,0 +1,305 @@
+{
+ "schema": "matching-one/pslq-degree4-independent-replication/v1",
+ "issue": 568,
+ "date": "2026-09-13",
+ "role": "independent second implementation of the degree<=4, height<=100 census",
+ "protocol_source": "docs/manuscripts/p2-algebraic-exclusion/manuscript.md sections 3 and 5",
+ "implementation_disclosure": "The implementation is disjoint from scripts/degree4_interval_exclusion.py, scripts/degree4_fixed_point_screen.cpp and scripts/exact_polynomial_root_certificate.py, which were never read. It is however NOT a blind replication: the primary's committed summary artefacts (results/pslq-degree4-*/latest.json) were read before writing it, because they define the comparison. Recorded rather than passed off.",
+ "paths": [
+  {
+   "tag": "local",
+   "description": "solve-based brute force, scale S=10^15, exact leading-coefficient solve",
+   "where": "workstation"
+  },
+  {
+   "tag": "loop",
+   "description": "naive degree-4 nested enumeration, leading coefficient looped not solved, S=10^15",
+   "where": "Huawei fleet, 60 shards/interval"
+  },
+  {
+   "tag": "mitm",
+   "description": "meet-in-the-middle split {0,1,2}|{3,4}, sorted right half, S=10^15",
+   "where": "Huawei fleet, 20 shards/interval"
+  },
+  {
+   "tag": "alt",
+   "description": "solve-based brute force on a DIFFERENT screen lattice S=2^50",
+   "where": "Huawei fleet, 60 shards/interval"
+  }
+ ],
+ "fleet": {
+  "machines": 10,
+  "vcpu": 144,
+  "units": 560,
+  "all_completed": true,
+  "shards": 60
+ },
+ "rows": [
+  {
+   "interval_id": "jacobsen-2015-eigenvalue",
+   "lower": "0.59274605079208",
+   "upper": "0.59274605079212",
+   "scale": 1000000000000000,
+   "weights": [
+    592746050792100,
+    351347880729631,
+    208260068756662,
+    123445333293203
+   ],
+   "rho": "7686546224338895232565910573032297919/10000000000000000000000000000000000000",
+   "screen_bound": 20077,
+   "class_size": 157309446881,
+   "retained_raw": 0,
+   "retained_primitive": 0,
+   "root_containing_polynomials": 0,
+   "distinct_roots_in_interval": 0,
+   "excluded": true,
+   "closest_polynomial": [
+    -84,
+    99,
+    -7,
+    99,
+    58
+   ],
+   "closest_residual": "14904339879758404633399966390104683411388429/12207031250000000000000000000000000000000000000000000",
+   "path_agreement": {
+    "local_eq_loop": true,
+    "local_eq_mitm": true,
+    "alt_superset_of_local": true,
+    "alt_equals_local": true,
+    "shard_union_size_loop": 0,
+    "shard_union_size_mitm": 0,
+    "shard_union_size_alt": 0
+   },
+   "root_witnesses": []
+  },
+  {
+   "interval_id": "mertens-2022-p-med",
+   "lower": "0.592746050783",
+   "upper": "0.592746050789",
+   "scale": 1000000000000000,
+   "weights": [
+    592746050786000,
+    351347880722399,
+    208260068750233,
+    123445333288121
+   ],
+   "rho": "53129090819380871648563294193601/62500000000000000000000000000000",
+   "screen_bound": 3000086,
+   "class_size": 157309446881,
+   "retained_raw": 3,
+   "retained_primitive": 3,
+   "root_containing_polynomials": 1,
+   "distinct_roots_in_interval": 1,
+   "excluded": false,
+   "closest_polynomial": [
+    -84,
+    99,
+    -7,
+    99,
+    58
+   ],
+   "closest_residual": "0",
+   "path_agreement": {
+    "local_eq_loop": true,
+    "local_eq_mitm": true,
+    "alt_superset_of_local": true,
+    "alt_equals_local": true,
+    "shard_union_size_loop": 3,
+    "shard_union_size_mitm": 3,
+    "shard_union_size_alt": 3
+   },
+   "root_witnesses": [
+    [
+     -84,
+     99,
+     -7,
+     99,
+     58
+    ]
+   ]
+  },
+  {
+   "interval_id": "mertens-2022-p-cell",
+   "lower": "0.59274605052",
+   "upper": "0.59274605068",
+   "scale": 1000000000000000,
+   "weights": [
+    592746050600000,
+    351347880501898,
+    208260068554181,
+    123445333133176
+   ],
+   "rho": "479982034581456010007919/625000000000000000000000",
+   "screen_bound": 80000077,
+   "class_size": 157309446881,
+   "retained_raw": 132,
+   "retained_primitive": 127,
+   "root_containing_polynomials": 15,
+   "distinct_roots_in_interval": 15,
+   "excluded": false,
+   "closest_polynomial": [
+    -97,
+    87,
+    54,
+    98,
+    49
+   ],
+   "closest_residual": "0",
+   "path_agreement": {
+    "local_eq_loop": true,
+    "local_eq_mitm": true,
+    "alt_superset_of_local": true,
+    "alt_equals_local": true,
+    "shard_union_size_loop": 132,
+    "shard_union_size_mitm": 132,
+    "shard_union_size_alt": 132
+   },
+   "root_witnesses": [
+    [
+     -97,
+     87,
+     54,
+     98,
+     49
+    ],
+    [
+     -91,
+     95,
+     98,
+     -45,
+     78
+    ],
+    [
+     -79,
+     97,
+     -8,
+     80,
+     62
+    ],
+    [
+     -77,
+     82,
+     69,
+     -18,
+     64
+    ],
+    [
+     -59,
+     92,
+     7,
+     -36,
+     77
+    ],
+    [
+     -48,
+     31,
+     43,
+     62,
+     13
+    ],
+    [
+     -47,
+     94,
+     -99,
+     89,
+     61
+    ],
+    [
+     -45,
+     79,
+     -22,
+     -9,
+     63
+    ],
+    [
+     -32,
+     3,
+     91,
+     -9,
+     1
+    ],
+    [
+     -14,
+     -53,
+     50,
+     78,
+     94
+    ],
+    [
+     20,
+     -71,
+     36,
+     -11,
+     95
+    ],
+    [
+     34,
+     -18,
+     -14,
+     -89,
+     1
+    ],
+    [
+     54,
+     -89,
+     22,
+     -100,
+     96
+    ],
+    [
+     66,
+     -87,
+     -84,
+     25,
+     80
+    ],
+    [
+     86,
+     -92,
+     -69,
+     -91,
+     95
+    ]
+   ]
+  },
+  {
+   "interval_id": "yang-zhou-2024-corrected",
+   "lower": "0.5927460507895",
+   "upper": "0.5927460507897",
+   "scale": 1000000000000000,
+   "weights": [
+    592746050789600,
+    351347880726667,
+    208260068754027,
+    123445333291120
+   ],
+   "rho": "1574738498838320187782581333490561/2441406250000000000000000000000000",
+   "screen_bound": 100065,
+   "class_size": 157309446881,
+   "retained_raw": 0,
+   "retained_primitive": 0,
+   "root_containing_polynomials": 0,
+   "distinct_roots_in_interval": 0,
+   "excluded": true,
+   "closest_polynomial": [
+    -84,
+    99,
+    -7,
+    99,
+    58
+   ],
+   "closest_residual": "4744588291708108610506363461656530238349/8000000000000000000000000000000000000000000000000",
+   "path_agreement": {
+    "local_eq_loop": true,
+    "local_eq_mitm": true,
+    "alt_superset_of_local": true,
+    "alt_equals_local": true,
+    "shard_union_size_loop": 0,
+    "shard_union_size_mitm": 0,
+    "shard_union_size_alt": 0
+   },
+   "root_witnesses": []
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+{
+ "schema": "matching-one/result-metadata/v1",
+ "campaign": "pslq",
+ "task": "pslq-degree4-independent-replication",
+ "issue": 568,
+ "date": "2026-09-13",
+ "role": "exact-control",
+ "integration_state": "branch_only",
+ "scientific_role": "exact-control",
+ "primary_dependency": "docs/manuscripts/p2-algebraic-exclusion/manuscript.md sections 3 and 5; analysis/pslq_search_contract.json",
+ "does_not_prove": "does not remove the manuscript's single-implementation entry; the primary's committed summaries were read before this replication was written",
+ "computation": {"fleet": "10 Huawei ARM containers, 144 vCPU", "units": 560, "paths": ["local", "loop", "mitm", "alt"], "all_completed": true}
+}
