@@ -1,0 +1,57 @@
+version: 1
+frozen_date: 2026-08-29
+status: metric_definition_freeze
+issue: 113
+claim_level: C1
+not_fisher_zeros: true
+not_lee_yang_zeros: true
+do_not_fit_a_power: true
+purpose: >
+  Freeze local matching-polynomial zero metrics on the committed L<=5
+  exact catalogue before any future exact L=6 polynomial is inspected.
+  Global imaginary RMS was already falsified; this file defines the local
+  replacement diagnostics and records that they are not stable at the
+  available sizes.
+
+source_csv: results/exact-zero-map-pilot/roots.csv
+
+definitions:
+  physical_root:
+    meaning: unique real root in the open interval (0,1)
+  nearest_nonreal:
+    meaning: nonreal root of minimal complex distance to the physical root
+    tie_break: prefer the upper-half representative of a conjugate pair
+  imag:
+    meaning: absolute imaginary part of nearest_nonreal
+  complex_distance:
+    meaning: "|z_nearest - p_star|"
+  matching_partner_of_physical:
+    meaning: "1 - p_star, the dual-polynomial partner, not necessarily a root of P"
+  physical_self_matching_gap:
+    meaning: "|2 p_star - 1|"
+  local_spacing:
+    meaning: "min |z - p_star| over roots other than the physical root"
+  nearest_pair_gap:
+    meaning: "min |z_i + z_j - 1| over all roots including i=j"
+
+named_diagnostics:
+  imag_times_L_to_3_over_4:
+    formula: "L^{3/4} |Im z_nearest|"
+    candidate_reason: thermal eigenvalue y_t = 3/4
+    role: named_diagnostic_not_a_fit_target
+  complex_distance_times_L_to_4:
+    formula: "L^4 |z_nearest - p_star|"
+    candidate_reason: matching-root analytic bias L^{-4}
+    role: named_diagnostic_not_a_fit_target
+
+closure_rule:
+  close_complex_zero_scaling_route_unless: >
+    every geometry with at least two nonreal sizes keeps both named
+    diagnostics inside a factor-of-1.1 envelope.
+  available_exact_sizes: closed
+  do_not_invent_further_cloud_statistics: true
+  later_exact_size_must_use_these_metrics: true
+
+language_boundary:
+  allowed: matching polynomial zeros, physical root, local spacing
+  forbidden: [Fisher zeros, Lee-Yang zeros, CFT, conformal]
