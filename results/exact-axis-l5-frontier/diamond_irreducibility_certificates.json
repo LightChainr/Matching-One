@@ -1,0 +1,67 @@
+{
+  "schema": "matching-one/diamond-irreducibility-certificate/v1",
+  "method": "Gauss lemma + Rabin irreducibility over a prespecified finite field",
+  "certificates": [
+    {
+      "geometry": "diamond",
+      "L": 1,
+      "N": 2,
+      "integer_degree": 2,
+      "integer_content": 1,
+      "certificate_prime": 3,
+      "same_degree_mod_prime": true,
+      "finite_field": {
+        "irreducible": true,
+        "degree": 2,
+        "prime": 3,
+        "monic_reduction_ascending": [1,0,1],
+        "x_qn_equals_x": true,
+        "gcd_checks": [{"degree_divisor": 2, "frobenius_level": 1, "gcd": [1], "gcd_is_one": true}]
+      },
+      "irreducible_over_Q": true,
+      "physical_root_algebraic_degree_if_root_is_selected": 2
+    },
+    {
+      "geometry": "diamond",
+      "L": 2,
+      "N": 8,
+      "integer_degree": 8,
+      "integer_content": 1,
+      "certificate_prime": 3,
+      "same_degree_mod_prime": true,
+      "finite_field": {
+        "irreducible": true,
+        "degree": 8,
+        "prime": 3,
+        "monic_reduction_ascending": [2,0,0,0,1,0,0,0,1],
+        "x_qn_equals_x": true,
+        "gcd_checks": [{"degree_divisor": 2, "frobenius_level": 4, "gcd": [1], "gcd_is_one": true}]
+      },
+      "irreducible_over_Q": true,
+      "physical_root_algebraic_degree_if_root_is_selected": 8
+    },
+    {
+      "geometry": "diamond",
+      "L": 3,
+      "N": 18,
+      "integer_degree": 18,
+      "integer_content": 1,
+      "certificate_prime": 79,
+      "same_degree_mod_prime": true,
+      "finite_field": {
+        "irreducible": true,
+        "degree": 18,
+        "prime": 79,
+        "monic_reduction_ascending": [20,0,0,0,0,0,8,54,34,7,62,26,8,21,61,38,44,70,1],
+        "x_qn_equals_x": true,
+        "gcd_checks": [
+          {"degree_divisor": 2, "frobenius_level": 9, "gcd": [1], "gcd_is_one": true},
+          {"degree_divisor": 3, "frobenius_level": 6, "gcd": [1], "gcd_is_one": true}
+        ]
+      },
+      "irreducible_over_Q": true,
+      "physical_root_algebraic_degree_if_root_is_selected": 18
+    }
+  ],
+  "all_irreducible_over_Q": true
+}
