@@ -1,0 +1,12 @@
+{
+  "issue": 593,
+  "phase": "A",
+  "date": "2026-09-13",
+  "topic": "r_linear definition",
+  "conclusion": "r_linear = dim span{G0^k f : k>=0, f in D0 readouts}, exact elimination mod 2147483647; candidates 2 and 3 falsified; true r_linear(8) = 689",
+  "widths": [4, 5, 6, 7, 8],
+  "prime": 2147483647,
+  "artifacts": ["raw/candidates.json"],
+  "scripts": ["scripts/p593_phaseA_rlinear_candidates.py"],
+  "ci_status": "Full Matching-One repository CI has not been run for this commit."
+}
