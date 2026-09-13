@@ -1,0 +1,52 @@
+{
+  "issue": 13,
+  "outcome": "B: theorem + explicit counterexample (finite class cannot provide monotone comparison)",
+  "finite_class": {
+    "n_orbits": 7,
+    "n_states": 15,
+    "note": "reconstructed via canonical terminal-partition D4 serial-category machinery; exact #438 192-state/41-orbit W5 table not in tree -> buy-back"
+  },
+  "determinism_failure": {
+    "orbit_pairs_total": 49,
+    "ambiguous_pairs": 26,
+    "associativity_triples_total": 343,
+    "associativity_failures": 166
+  },
+  "two_specific_period_diagrams": {
+    "A": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "A_orbit": 0,
+    "B_representative_1": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "B_representative_2": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "B_orbit": 2,
+    "glued_output_with_B1": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "glued_output_with_B2": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "distinct_composed_laws": 2
+  },
+  "theorem": "The finite D4-orbit serial class does not support a law-preserving monotone (Strassen / stochastic-dominance) comparison between two of its period diagrams: serial composition, the operation that would define the comparison under gluing, is not a function on the class (26/49 orbit pairs multi-valued; 166/343 triples non-associative). Hence no well-defined composed connectivity law, and therefore no monotone coupling, can be assigned. Exhibit: orbit pair (0,2) glues diagram A=[0, 0, 0, 0] with two class-2 representatives [0, 0, 1, 1] and [0, 1, 1, 0] to two different outputs [0, 0, 1, 1] and [0, 0, 0, 0].",
+  "no_new_work": "no adjacent-algebra census, no generic-certificate task added (per 2026-08-31 handoff)"
+}
