@@ -12,3 +12,25 @@ $PY scripts/torus_wrapping_polynomial_check.py results/issue576/wrapping-groundi
 
 # Part 2: Pinson/Arguin continuum wrapping at tau=i,2i,4i + Part 1b derived JSON
 $PY scripts/gen_issue576_derived.py
+
+# --- Resolution pass (compute1-retry, 2026-09-13) ---
+# Second independent enumerator: displacement union-find, full polynomial L=2..5
+g++ -O2 -std=c++17 -o /tmp/exact_wrapping_enum2 scripts/exact_wrapping_enum2.cpp
+/tmp/exact_wrapping_enum2 5 | tee results/issue576/wrapping-grounding/derived/exact_enum2_l2l5.txt
+
+# Locate the configs where the doubled-grid same-row criterion disagrees (10 spirals)
+g++ -O2 -std=c++17 -o /tmp/wrap_diff scripts/exact_wrapping_criterion_diff.cpp && /tmp/wrap_diff
+
+# Regenerate resolution artifacts (per-coefficient comparison, divisibility,
+# P_L(p_c) vs R^v anchor, spiral list with enforced winding assertions)
+$PY scripts/gen_issue576_resolution.py
+
+# Recompute Pinson/Arguin pi({1,0}) at tau = i, 2i, 4i (direct vs theta, 100 dps)
+$PY - <<'PY2'
+import sys; sys.path.insert(0,'scripts')
+import pinson_arguin_primitive as p, mpmath as mp
+for r in (1,2,4):
+    tau = mp.mpc(0, r)
+    print(r, mp.nstr(p.primitive_probability_direct(1,0,tau,dps=100), 55),
+             mp.nstr(p.primitive_probability_theta(1,0,tau,dps=100), 55))
+PY2

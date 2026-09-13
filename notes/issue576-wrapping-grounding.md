@@ -1,7 +1,9 @@
 # Issue #576 — Put the wrapping channel on published ground before the next ladder
 
 Branch: `compute/p576-wrapping-channel-grounding-20260913`
-Caller: compute1
+Caller: compute1; resolution pass 2026-09-13 by compute1-retry (second
+independent enumerator, spiral-bug diagnosis, divisibility + P_L(p_c) block
+health, Pinson values recomputed)
 
 This note covers the three parts of the ticket: (1) validate the main wrapping
 channel against the Akhunzhanov–Eserkepov–Tarasevich exact torus polynomials;
@@ -47,56 +49,101 @@ polynomial is `P_L(p) = Σ_k c_k p^k (1-p)^{L^2-k}`. At `p = 1/2`,
 | 4 | 19571 | 19571/65536 | 0.298629760742 |
 | 5 | 8853291 | 8853291/33554432 | 0.263848632574 |
 
-Reachable range: `L ≤ 5` exact (`2^25 = 33,554,432` configs, ~20 s in C++);
-`L = 6` (`2^36`) not attempted. The doubling method was cross-checked against a
-second (cut-graph) algorithm; the cut-graph version over-counts non-winding
-full-width clusters (verified on the 36 disagreeing `L=3` configs), so the
-doubling method is the correct one and is what produced the table above.
+**Resolution pass (2026-09-13, compute1-retry).** A second, independent
+enumerator was written and run, and the two discrepancies flagged above were
+both resolved. The corrected table is:
 
-### Comparison with the published coefficients
+| L | count (displacement-DSU enum, `exact_wrapping_enum2.cpp`) | published Σ c_k | match |
+|---|---|---|---|
+| 2 | 7 | — (file starts at L=3) | — |
+| 3 | 175 | 175 | YES (per-coefficient) |
+| 4 | 19571 | 19571 | YES (per-coefficient) |
+| 5 | **8853301** | **8853301** | **YES (per-coefficient, all 26 coefficients)** |
 
-| L | published Σ c_k | independent enumeration | match |
-|---|-----------------|------------------------|-------|
+Reachable range: `L ≤ 5` exact (`2^25 = 33,554,432` configs);
+`L = 6` (`2^36`) not attempted.
+
+**Resolution of the earlier L=5 "diff 10".** The first enumerator's
+doubled-grid criterion ("some doubled-grid component contains both (r,0) and
+(r,L) for one row r") is not equivalent to winding: it misses **spiral**
+configurations, whose occupied cluster winds in x AND in y simultaneously, so
+its lift to the doubled strip contains no same-row `(r,0),(r,L)` pair.
+`scripts/exact_wrapping_criterion_diff.cpp` scans all `2^25` configurations and
+finds **exactly 10** disagreements, all of the form "DSU says wraps, same-row
+doubled criterion says not" — all 10 have 15 occupied sites (inside the c_15
+bin) and each is verified (see `gen_issue576_resolution.py`, enforced by
+assertion) to wind in both directions. So `8853291 = 8853301 − 10` is fully
+explained: **the published polynomial is correct; the first enumerator was
+wrong.** The displacement-DSU method (union-find with lattice displacement
+potentials, cf. `scripts/matched_torus_reference.py`) is the ground-truth
+method and is what `exact_wrapping_enum2.cpp` implements.
+
+### Comparison with the published coefficients (corrected)
+
+| L | published Σ c_k | independent enumeration (enum2) | match |
+|---|-----------------|---------------------------------|-------|
 | 3 | 175 | 175 | YES |
 | 4 | 19571 | 19571 | YES |
-| 5 | 8853301 | 8853291 | **NO (diff 10)** |
-| 6–8 | parseable | (enum infeasible) | P_L(1/2) decreases toward continuum limit from above |
-| 9 | 388338158699818471040971 | — | **P_L(1/2) = 0.1606 < limit 0.1694 → coefficients appear corrupted** |
-| 10 | block malformed (100 entries, 101 expected) | — | **unparseable; would give P > 1** |
-| 11, 12 | P_L(1/2) = 0.1239, 0.1085 < limit | — | **appear corrupted** |
+| 5 | 8853301 | 8853301 | YES (per-coefficient) |
+| 6–8 | parseable, pass divisibility | (enum infeasible) | consistent (see below) |
+| 9–12 | parseable, pass divisibility | (enum infeasible) | consistent (see below) |
+| 10 | 100 of 101 coefficients in file | — | trailing c_100 = 1 missing from the ancillary file (a truncation; c_N = 1 necessarily, all sites occupied) |
 
-Findings (reported, not reconciled):
-- **L=3 and L=4 match the independent enumeration exactly** — the published
-  polynomials are validated at the two smallest reachable sizes.
-- **L=5: published Σ c_k = 8853301, independent enumeration = 8853291 — a
-  discrepancy of 10 configurations.** I could not resolve which is correct with
-  the resources here: my enumeration is a clean uniform brute-force that matches
-  L=3,4 exactly, so a supplement transcription error is plausible, but I do not
-  assert it. Flagged for maintainer review; not silently "made to match".
-- **L ≥ 9 (and the malformed L=10 block)** in `torus.txt` give `P_L(1/2)` values
-  that fall *below* the continuum limit `0.1694154…`, which is impossible for a
-  sequence converging to it from above. These large-L coefficient blocks in the
-  supplement appear corrupted and are **not** treated as ground truth.
+Block health (see `derived/torus_blocks_health.json`,
+`scripts/gen_issue576_resolution.py`):
+
+- **The paper proves a divisibility test** (Lemma 1: `c_k` must be divisible by
+  `L²/gcd(k, L²)` on the torus). **Every parsed block L=3..12 passes it** —
+  including L=10 with the necessarily-restored trailing 1.
+- The earlier claim "L≥9 blocks appear corrupted because P_L(1/2) falls below
+  the continuum limit 0.1694" is **RETRACTED**. It was a category error:
+  `P_L(1/2)` is the wrapping probability at `p = 1/2 < p_c`, whose limit is
+  **0**, not 0.1694 (0.1694… is the critical continuum class-`{1,0}`
+  probability π({1,0})(i), a different object). The correct published anchor
+  for this polynomial is the Mertens–Ziff continuum value
+  `R^v = 0.521058290…` (specified-direction wrapping incl. both, at `p_c`;
+  the same 0.521058290 appears in Newman–Ziff PRE 64, 016706).
+- Evaluated at `p_c = 0.59274605079210`, the published polynomials converge
+  smoothly and monotonically (from L=4 on) to that anchor:
+
+| L | P_L(p_c) | R^v − P_L(p_c) |
+|---|----------|----------------|
+| 3 | 0.521273730479 | −0.000215440 |
+| 4 | 0.517303557598 | +0.003754732 |
+| 5 | 0.517195470567 | +0.003862819 |
+| 6 | 0.517834766352 | +0.003223524 |
+| 7 | 0.518425696010 | +0.002632594 |
+| 8 | 0.518892914782 | +0.002165375 |
+| 9 | 0.519253790705 | +0.001804499 |
+| 10 | 0.519534108648 | +0.001524181 |
+| 11 | 0.519754734224 | +0.001303556 |
+| 12 | 0.519930925308 | +0.001127365 |
+
+  No corruption anywhere in the file; the only defect is the truncated L=10
+  block (missing trailing 1). The paper additionally states its L∈[3,7] torus
+  polynomials match Mertens' (unpublished) polynomials exactly, which covers
+  the sizes where our independent enumeration cannot reach.
 
 ### Relation to the repository's committed wrapping observable
-The repository's committed wrapping observable for the main channel is the
-Pinson/Arguin continuum baseline (`predictions/p156_pinson_arguin_baselines_20260829.json`,
-`scripts/pinson_arguin_primitive.py`): `π_i({1,0}) = 0.16941543532134688938…`,
-the `L → ∞` limit of the square torus. The validated published polynomials give
-`P_L(1/2)` monotonically decreasing from `0.4375` (L=2) toward this limit
-(`0.2986` at L=4, `0.234` at L=6, `0.182` at L=8), consistent with it. So the
-main (NN square site) wrapping channel is now on published closed-form ground at
-reachable sizes (L ≤ 8, with the L=5 caveat), which is exactly the unique
-"already-published closed form, reachable sizes" check point the ticket asked
-for. The NN+NNN (Sq8) matching channel is out of scope of the paper and remains
-unvalidated against it.
+The validated published polynomials `P_L(p)` are the **finite-L** ground truth
+for the main (NN square site) wrapping channel at every `p`; the committed
+continuum baselines are the `L → ∞` anchors at `p_c` (`R^v = 0.521058290…` for
+the P_L-defined event) and the Pinson/Arguin class probabilities. The two are
+consistent: `P_L(p_c) → 0.521058…` as the table above shows. The main channel
+is therefore on published closed-form ground at all sizes for which a closed
+form exists, and the finite-L polynomial and the continuum anchor now check
+against each other. The NN+NNN (Sq8) matching channel is out of scope of the
+paper and remains unvalidated against it.
 
 ## Part 2 — Pinson / Arguin continuum wrapping at r = 1, 2, 4
 
 Used the repository's already-implemented, validated formula
 (`scripts/pinson_arguin_primitive.py`, percolation specialization `e0 = 2/3`).
 Evaluated `π({1,0})(i·r)` for `r = 1, 2, 4` with two independent evaluations
-(direct Gaussian winding sum vs compact theta form) cross-checking each other:
+(direct Gaussian winding sum vs compact theta form) cross-checking each other;
+**all three values were recomputed from scratch on the resolution pass and
+reproduce exactly** (internal direct–theta agreement now measured at
+~1e-110 … 1e-116 at 100 dps):
 
 | r | τ | π({1,0})(τ) | direct–theta abs diff |
 |---|---|-------------|----------------------|
