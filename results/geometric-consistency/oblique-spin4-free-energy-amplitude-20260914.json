@@ -1,0 +1,23 @@
+{
+  "schema": "oblique-spin4-free-energy-amplitude-v1",
+  "reference_pc": 0.59274605079,
+  "definition": "B_est=|u|*Theta_row(pc)*ell^(17/4)/cos(4theta), with ell=n|u| and Bezout-row normal height 1/|u|",
+  "prediction": "Theta_row(pc) ~ (B/|u|)*cos(4theta)*ell^(-17/4)",
+  "claim_boundary": [
+    "Theta values are deterministic safe-transfer outputs",
+    "the exponent 17/4 and spin-four interpretation are scaling hypotheses",
+    "reference_pc is an external diagnostic value"
+  ],
+  "records": [
+    {"direction": [1,1], "n": 4, "Theta_row_pc": -0.0004709625494906111, "B_estimate": 1.0518288425272435},
+    {"direction": [1,1], "n": 5, "Theta_row_pc": -0.00017703612050035122, "B_estimate": 1.0206765596904341},
+    {"direction": [2,1], "n": 3, "Theta_row_pc": -0.000040366938679571585, "B_estimate": 1.0505806015967085},
+    {"direction": [2,1], "n": 4, "Theta_row_pc": -0.000011559827635690412, "B_estimate": 1.0217497772698440},
+    {"direction": [3,1], "n": 3, "Theta_row_pc": 0.000006156687298333047, "B_estimate": 0.9884492979881588},
+    {"direction": [3,2], "n": 2, "Theta_row_pc": -0.00004502926789524617, "B_estimate": 1.0216765154470286}
+  ],
+  "axis_comparison": {
+    "B_estimate_w8_approx": 1.02163,
+    "B_estimate_w9_approx": 1.01235
+  }
+}
