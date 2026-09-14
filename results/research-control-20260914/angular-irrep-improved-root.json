@@ -1,0 +1,104 @@
+{
+  "schema": "angular-irrep-improved-root-v1",
+  "date": "2026-09-14",
+  "definition": {
+    "H4": "cos(4 theta)",
+    "same_ell_model": "p_i = pc - A4 H4_i / ell^4 + residual",
+    "pc_projector": "pc4perp=(H1*p2-H2*p1)/(H1-H2)",
+    "A4_projector": "A4=ell^4*(p2-p1)/(H1-H2)"
+  },
+  "algorithm_provenance": {
+    "oblique": "local execution of scripts/oblique_charge_transfer.py semantics at 6192f7df2e16627a9e5d2bef17761d7af5ea8eed",
+    "axis": "local optimized C++ reimplementation of scripts/fixed_width_charge_transfer.py lifted-gain semantics",
+    "axis_validation": {
+      "w9_repository_root": 0.5927006240698073,
+      "w9_local_root": 0.5927006240691101,
+      "difference": -6.972200594645983e-13
+    },
+    "oblique_validation": {
+      "direction": [5, 2],
+      "n": 2,
+      "repository_root": 0.5927450615814472,
+      "local_root": 0.5927450615720459,
+      "difference": -9.401368572525826e-12
+    }
+  },
+  "pairs": [
+    {
+      "ell": 5.0,
+      "orientation_1": {"u": [1,0], "n": 5, "H4": 1.0, "root": 0.5922358232050258},
+      "orientation_2": {"u": [3,4], "n": 1, "H4": -0.8432, "root": 0.5931582013380546, "states_G4": 45, "states_G8": 147},
+      "pc4perp": 0.5927362453692130,
+      "A4_hat": 0.3127638526162537,
+      "pc4perp_minus_diagnostic_reference": -9.805420786990204e-06,
+      "thermal_shape": {
+        "D_axis": 3.447892045996305,
+        "D_oblique": 3.4505542673624325,
+        "a2_axis": 0.021411069573031176,
+        "a2_oblique": 0.023067129472255116,
+        "a3_axis": 0.029039391466043542,
+        "a3_oblique": 0.029138601736312553
+      }
+    },
+    {
+      "ell": 8.06225774829855,
+      "ell_squared": 65,
+      "orientation_1": {"u": [1,8], "n": 1, "H4_exact": "3713/4225", "H4": 0.8788165680473373, "root": 0.5926839084948207, "states_G4": 1394, "states_G8": 2153},
+      "orientation_2": {"u": [4,7], "n": 1, "H4_exact": "-2047/4225", "H4": -0.48449704142011835, "root": 0.5927803979513810, "states_G4": 1134, "states_G8": 6216},
+      "pc4perp": 0.5927461073406902,
+      "A4_hat": 0.29902727526269046,
+      "pc4perp_minus_diagnostic_reference": 5.6550690241685686e-08,
+      "thermal_shape": {
+        "D_1": 3.4027357366530753,
+        "D_2": 3.402964129810002,
+        "a2_1": 0.015577197453205432,
+        "a2_2": 0.015798082373164705,
+        "a3_1": 0.024776195416238413,
+        "a3_2": 0.024801273242682737,
+        "normalized_curve_difference_orientation2_minus_orientation1": [
+          {"y": -0.5, "difference": 0.000047025964481972604},
+          {"y": -0.25, "difference": 0.000013099755579585315},
+          {"y": 0.25, "difference": 0.000013865485847515791},
+          {"y": 0.5, "difference": 0.00005294645805840159}
+        ]
+      }
+    },
+    {
+      "ell": 10.0,
+      "orientation_1": {"u": [1,0], "n": 10, "H4": 1.0, "root": 0.5927163956300879, "states_G4": 8953, "states_G8": 8953},
+      "orientation_2": {"u": [3,4], "n": 2, "H4": -0.8432, "root": 0.5927709164472407, "states_G4": 7259, "states_G8": 75541},
+      "pc4perp": 0.5927459750664773,
+      "A4_hat": 0.29579436389288577,
+      "pc4perp_minus_diagnostic_reference": -7.572352267448679e-08,
+      "thermal_shape": {
+        "D_axis": 3.391799320548683,
+        "D_oblique": 3.3918787405216855,
+        "relative_D_difference": 0.00002341529244409557,
+        "a2_axis": 0.0133250393,
+        "a2_oblique": 0.0134624997637573,
+        "a3_axis": 0.0235506613,
+        "a3_oblique": 0.02356480057684157,
+        "normalized_curve_difference_oblique_minus_axis": [
+          {"y": -0.5, "difference": 0.00002777577397783393},
+          {"y": -0.25, "difference": 0.000008090631900381506},
+          {"y": 0.25, "difference": 0.00000858666406777786},
+          {"y": 0.5, "difference": 0.00003276618852021684}
+        ]
+      }
+    }
+  ],
+  "diagnostic_reference_pc": 0.59274605079,
+  "observations": [
+    "The H4-projected pc estimator is reference-free; the diagnostic reference is used only after the projection.",
+    "At ell approximately 8--10 the projected residual is O(1e-7), far smaller than the raw orientation-dependent root shifts.",
+    "The ell=5 to ell=10 residual magnitude ratio is about 129; with only these scales no correction exponent is assigned.",
+    "Equal-ell physical thermal slopes are orientation-independent to 1e-4--1e-5, and root/slope-normalized curves differ by only O(1e-5--5e-5) on |y|<=0.5.",
+    "These finite controls strongly disfavor an orientation-independent exponent-four term as the dominant explanation of the observed root shift and support a predominantly thermal-tangent spin-four correction."
+  ],
+  "claim_boundary": [
+    "All new roots are finite deterministic transfer outputs from locally executed copies/reimplementations of committed algorithms, with published control roots reproduced to about 1e-11 or better.",
+    "The projected threshold estimates are not rigorous threshold enclosures; higher-irrep and scalar finite-size corrections remain.",
+    "No exponent is inferred from the three projected residuals.",
+    "The angular-irrep hierarchy and TANGENT_SPIN4 interpretation remain scaling conjectures."
+  ]
+}
