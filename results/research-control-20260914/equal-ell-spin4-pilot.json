@@ -1,7 +1,7 @@
 {
-  "schema": "equal-ell-spin4-pilot-v1",
+  "schema": "equal-ell-spin4-pilot-v2",
   "date": "2026-09-14",
-  "purpose": "Bounded post-compass diagnostic for spin-4 numerator, scalar thermal denominator, and tangent-vs-normal charge response.",
+  "purpose": "Bounded post-compass diagnostic for spin-4 numerator, scalar thermal denominator, reference-free critical cancellation, and tangent-vs-normal charge response.",
   "provenance": {
     "repository_algorithm": "scripts/oblique_charge_transfer.py at 6192f7df2e16627a9e5d2bef17761d7af5ea8eed",
     "execution": "Local copy of the repository algorithm; no repository-wide CI and no external compute.",
@@ -41,6 +41,52 @@
       }
     }
   },
+  "near_equal_circumference_control": {
+    "axis": {
+      "direction": [1, 0],
+      "n": 9,
+      "ell": 9.0,
+      "root": 0.5927006240698073,
+      "physical_thermal_slope_indicator": 3.396596345288809,
+      "descriptive_local_a2": 0.0143802939,
+      "descriptive_local_a3": 0.0241007713
+    },
+    "oblique": {
+      "direction": [2, 1],
+      "n": 4,
+      "ell": 8.94427190999916,
+      "cos_4theta": -0.28,
+      "safe_states_G4": 2866,
+      "safe_states_G8": 17051,
+      "row_memory_G4": 2,
+      "row_memory_G8": 3,
+      "charge_root_p": 0.5927592096219316,
+      "physical_thermal_slope_indicator": 3.3970869975426115,
+      "local_a2": 0.014587913300682766,
+      "local_a3": 0.024155436009950897,
+      "normalized_curve_points": [
+        {"y": -0.8, "Q": -0.8025853778409048, "Q_minus_y": -0.0025853778409047345},
+        {"y": -0.4, "Q": -0.3991841749509856, "Q_minus_y": 0.0008158250490143959},
+        {"y": 0.4, "Q": 0.4039074495488476, "Q_minus_y": 0.003907449548847586},
+        {"y": 0.8, "Q": 0.822140277631288, "Q_minus_y": 0.022140277631288008}
+      ]
+    },
+    "comparison": {
+      "relative_ell_mismatch": 0.006191010000093334,
+      "relative_thermal_slope_difference_oblique_over_axis_minus_1": 0.00014445155572095825,
+      "relative_a2_difference": 0.014437772956337653,
+      "relative_a3_difference": 0.002268144765027118,
+      "reference_free_pc_hat": 0.5927461435419498,
+      "reference_free_A4_hat": 0.2986532567271586,
+      "pc_hat_minus_diagnostic_reference_0_59274605079": 9.275194978730639e-08,
+      "normalized_curve_residual_difference_after_axis_interpolation": [
+        {"y": -0.8, "oblique_minus_axis": 0.0004779664765172994},
+        {"y": -0.4, "oblique_minus_axis": 0.00005319644967300775},
+        {"y": 0.4, "oblique_minus_axis": -0.00004776900812846017},
+        {"y": 0.8, "oblique_minus_axis": 0.00005580918564660574}
+      ]
+    }
+  },
   "axial_comparators": {
     "w8": {
       "physical_thermal_slope_indicator": 3.403146112835565,
@@ -54,7 +100,7 @@
     }
   },
   "reference_free_two_orientation_inversions": [
-    {"pair": "axis9 + (2,1)n4", "pc_hat": 0.592746143543, "A4_hat": 0.298653},
+    {"pair": "axis9 + (2,1)n4", "pc_hat": 0.5927461435419498, "A4_hat": 0.2986532567271586},
     {"pair": "axis8 + (2,1)n4", "pc_hat": 0.592746072183, "A4_hat": 0.300284},
     {"pair": "axis8 + diagonal(1,1)n5", "pc_hat": 0.592745892926, "A4_hat": 0.299550},
     {"pair": "axis8 + (3,2)n2", "pc_hat": 0.592745970903, "A4_hat": 0.299870},
@@ -68,10 +114,10 @@
     "amplitude_estimator": "A4_hat=10000*(625/1152)*(p_34-p_axis10)"
   },
   "interpretation_boundary": [
-    "The new (3,4) values are deterministic outputs of a local copy of the committed transfer algorithm, with a committed (5,2) root reproduced to about 1e-11.",
+    "The new oblique values are deterministic outputs of a local copy of the committed transfer algorithm, with committed roots reproduced to about 1e-11 or better.",
     "The reference-free pc inversions use only finite-width roots and the assumed leading cos(4 theta)/ell^4 form; their agreement is evidence for that form, not an independent theorem for pc.",
-    "The w9 normalized shape coefficients use the existing descriptive root-centered curve fit rather than a dedicated derivative calculation.",
-    "TANGENT_SPIN4 remains a conjecture; the pilot shows that root translation plus slope normalization removes most orientation dependence at the tested sizes.",
-    "The next decisive bounded calculation is the dedicated axial w=10 root/derivative, which completes the exact equal-circumference pair."
+    "The axis-w9 normalized coefficients use the existing descriptive root-centered curve fit rather than a dedicated derivative calculation; the axis-w8 values use direct derivative controls.",
+    "The near-equal-circumference axis9/(2,1)n4 comparison is the strongest current finite diagnostic for TANGENT_SPIN4: root and raw orientation effects differ strongly, while physical thermal slope and root/slope-normalized local shape nearly coincide.",
+    "The next decisive bounded calculation is the dedicated axial w=10 root/derivative, which completes the exact equal-circumference pair with the already measured (3,4)n2 control."
   ]
 }
