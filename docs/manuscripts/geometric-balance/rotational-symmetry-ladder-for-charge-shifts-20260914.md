@@ -1,164 +1,286 @@
-# A rotational-symmetry ladder for semi-infinite charge-root shifts
+# A rotational/Kac-module selection rule for semi-infinite charge-root shifts
 
-2026-09-14.  Broad conjectural synthesis motivated by the square/kagome contrast in Jacobsen's eigenvalue method and the sector-odd thermal-family hypothesis developed on this branch.
+2026-09-14.  Corrected conjectural synthesis for the sector-odd charge correction.  This note replaces the earlier naive rule `s_*=lcm(2,k)`: point-group symmetry alone is not enough.  One must also remove descendants that are null or redundant in the percolation thermal conformal family.
 
-## 1. General rule
+The correction was forced by the level-two null vector of the thermal field `phi_{2,1}` and by the new same-model oblique-cylinder spin-four controls.
 
-Consider a two-dimensional percolation lattice whose continuum limit is the ordinary `c=0` percolation fixed point.  Let the semi-infinite-cylinder charge/eigenvalue root be defined by equality of the primal and dual magnetic/topological sectors.
+## 1. Charge-root shift as a sector-odd thermal-family anisotropy
 
-Suppose:
-
-1. lower-dimensional sector-even corrections cancel from the sector difference;
-2. the leading sector-odd irrelevant perturbation belongs to the thermal conformal family;
-3. the lowest nonredundant thermal-family anisotropy allowed by the microscopic point group has spin `s_*`.
-
-A spin-`s` descendant has total dimension
+Assume the leading primal/matching sector difference at criticality comes from a nonredundant chiral descendant of the thermal primary.  Percolation has
 
 \[
-x_{odd}=x_t+s,
-\qquad x_t=5/4.                                                \tag{1.1}
+h_t=\bar h_t=5/8,
+\qquad x_t=5/4.                                               \tag{1.1}
 \]
 
-The critical sector mismatch in a per-row excitation energy then scales as
+A chiral descendant at level `s` and its reflected anti-chiral partner have total dimension
 
 \[
-\Theta_w(p_c)\asymp w^{1-(x_t+s_*)},                         \tag{1.2}
+x_{odd}=x_t+s                                                \tag{1.2}
+\]
+
+and spins `+s,-s`.  A real lattice perturbation uses the reflection-even combination and hence produces an angular harmonic such as `cos(s theta)`.
+
+The critical sector mismatch scales as
+
+\[
+\Theta_w(p_c)\asymp w^{1-(x_t+s)},                           \tag{1.3}
 \]
 
 while the thermal slope scales as
 
 \[
-\Theta'_w(p_c)\asymp w^{1-x_t}.                              \tag{1.3}
+\Theta'_w(p_c)\asymp w^{1-x_t}.                              \tag{1.4}
 \]
 
-Their ratio gives the remarkably simple prediction
+Therefore a surviving level-`s` anisotropy gives
 
 \[
-\boxed{p_w-p_c\asymp w^{-s_*}.}                              \tag{1.4}
+\boxed{p_w-p_c\asymp w^{-s}.}                               \tag{1.5}
 \]
 
-Thus the pseudo-critical shift exponent directly reads the lowest allowed **sector-odd rotational spin**, not a generic scalar irrelevant exponent.
+The exponent is a descendant **level/spin only after null and redundant states have been removed**.
 
-## 2. Point-group ladder
+## 2. The thermal level-two state is not an independent spin-two field
 
-For a nonchiral lattice with reflection/inversion symmetry, odd spin is excluded.  If the rotational subgroup is `C_k`, the first candidate is the smallest positive even integer divisible by `k` (or equivalently by the effective bulk rotation order):
+The thermal primary is the degenerate Kac field
 
 \[
-s_*=\operatorname{lcm}(2,k).                                 \tag{2.1}
+\phi_t=\phi_{2,1}.                                            \tag{2.1}
 \]
 
-This gives
+Its level-two singular-vector relation is
 
-| effective point symmetry | first allowed sector-odd anisotropy | predicted shift |
+\[
+\left(
+L_{-2}-\frac{3}{2(2h_t+1)}L_{-1}^2
+\right)|t\rangle=0.                                         \tag{2.2}
+\]
+
+For `h_t=5/8`,
+
+\[
+\boxed{L_{-2}|t\rangle=\frac23L_{-1}^2|t\rangle.}           \tag{2.3}
+\]
+
+Thus after quotienting by the null state there is no independent level-two quasiprimary.  The would-be spin-two thermal descendant is only a derivative/coordinate redundancy.
+
+This removes the previous proposed `C2 -> Delta=2` mechanism.
+
+It also aligns with the geometric warning already present in the first version of this note: ordinary spin-two anisotropy mostly changes the continuum metric.  The Virasoro null relation shows more sharply why there is no independent thermal-family spin-two correction to promote after metric calibration.
+
+Primary null-vector references are standard Virasoro/Kac theory; the generic `phi_{2,1}` level-two relation is also used in BPZ differential-equation derivations.
+
+## 3. First nonredundant low levels of the `phi_{2,1}` quotient
+
+At a purely counting level, the Verma dimensions at levels `n=0,1,2,3,4` are
+
+\[
+1,1,2,3,5.                                                    \tag{3.1}
+\]
+
+Removing the level-two null module subtracts the partition numbers at level `n-2`, leaving
+
+\[
+1,1,1,2,3.                                                    \tag{3.2}
+\]
+
+Modulo total `L_{-1}` derivatives, the first new quasiprimary content is therefore
+
+- no independent level-two quasiprimary;
+- one level-three quasiprimary;
+- one new level-four quasiprimary.
+
+This is the representation-theoretic reason the point-group rule must start from the **actual thermal Kac module**, not from all integer spins.
+
+A full logarithmic-module treatment may refine higher levels; only the low-level null structure needed for the selection statements below is used here.
+
+## 4. Corrected point-group ladder
+
+Let `C_k` be the microscopic rotational subgroup.  The candidate level must both
+
+1. be invariant under the point group, `s=0 mod k`;
+2. exist as a nonnull/nonredundant thermal-family quasiprimary.
+
+Reflection does **not** by itself exclude odd spin: it exchanges the `+s` and `-s` chiral descendants, and their real sum is reflection even.
+
+For the low symmetries relevant here this gives
+
+| microscopic rotational symmetry | first thermal-family candidate | predicted charge-root shift |
 |---|---:|---:|
-| `C2` | spin 2 | `w^-2` |
-| `C4` | spin 4 | `w^-4` |
-| `C3` plus inversion/reflection | spin 6 | `w^-6` |
-| `C6` | spin 6 | `w^-6` |
+| no nontrivial rotation (`C1`, reflection allowed) | spin 3 | `w^-3` |
+| `C2` / `D2` | spin 4 | `w^-4` |
+| `C3` / `D3` without 60-degree rotation | spin 3 | `w^-3` |
+| `C4` / `D4` | spin 4 | `w^-4` |
+| `C6` / `D6` | spin 6 | `w^-6` |
 
-Exact self-matching/self-duality can override the table by forcing the whole sector-odd amplitude to zero.
+Exact self-matching/self-duality can annihilate the complete sector-odd amplitude and override the table.
 
-## 3. Existing evidence
+The old claim `C2 -> w^-2` is withdrawn.
 
-### Square site
+## 5. Square site: exponent, sign and angular amplitude now all resolve spin four
 
-The square lattice has `C4` symmetry.  Jacobsen finds
-
-\[
-\Delta_1=4,                                                    \tag{3.1}
-\]
-
-and the safe transfer directly resolves
+The square lattice has `C4`.  The axial safe transfer gives
 
 \[
-\Theta_w(p_c)\asymp w^{-17/4},
-\qquad
-\Theta'_w\asymp w^{-1/4}.                                    \tag{3.2}
+p_w^{axis}-p_c\sim-\frac{A}{w^4},
+\qquad A\approx0.30.                                         \tag{5.1}
 \]
 
-This is exactly the `s_*=4` case.
-
-### Kagome bond
-
-The kagome lattice has hexagonal bulk symmetry (Jacobsen discusses the relevant basis contrast as three-fold versus the square lattice's four-fold rotation).  He finds the square-like exponent-four amplitude absent and
+The new oblique safe transfers keep the microscopic model fixed and rotate only the homology direction.  If the correction has spin four, the leading law is
 
 \[
-\Delta_{lead}=6,                                               \tag{3.3}
+\boxed{
+p_{n,u}^{ch}-p_c
+\sim
+-\frac{A\cos(4\theta_u)}{(n|u|)^4}.}                         \tag{5.2}
 \]
 
-and explicitly suggests rotational symmetry as the reason.
+This prediction is supported quantitatively by several independent directions.
 
-This is exactly the `s_*=6` case.
+### Axis `(1,0)`
 
-### Triangular site
-
-Triangular-site percolation is self-matching at `p_c=1/2`.  Digital Alexander plus complement symmetry gives the charge root exactly `1/2` at every finite size.  Thus all sector-odd amplitudes vanish, a stronger cancellation than the rotational rule alone.
-
-## 4. The most discriminating new prediction: C2 should give exponent two
-
-A non-self-dual percolation realization with only two-fold rotational symmetry but reflection/inversion retained should permit the spin-two thermal-family anisotropy.  The ladder therefore predicts
+`cos(4theta)=+1`.  Widths 8--9 give
 
 \[
-\boxed{p_w-p_c\asymp w^{-2}.}                                \tag{4.1}
+A_{est}=0.30020,\ 0.29804.                                   \tag{5.3}
 \]
 
-At the free-energy level,
+### Diagonal `(1,1)`
+
+`cos(4theta)=-1`; the root moves to the **opposite side** of `p_c`.  At `n=5`, after using physical circumference `ell=5sqrt2`,
 
 \[
-\boxed{\Theta_w(p_c)\asymp w^{1-(x_t+2)}=w^{-9/4}.}           \tag{4.2}
+A_{est}=0.29916.                                              \tag{5.4}
 \]
 
-This is a much sharper falsification test than adding more square widths: exponent two is qualitatively separated from both four and six.
-
-A useful implementation must avoid a fake `C2` produced only by choosing a rectangular simulation box for an otherwise `C4`-symmetric microscopic lattice.  The **local interaction/occupation rule** itself must break `C4` while remaining non-self-dual, and the continuum metric anisotropy must be accounted for rather than mistaken for an irrelevant spin-two coupling.
-
-## 5. Metric anisotropy versus genuine spin-two irrelevant coupling
-
-Two-fold anisotropy contains a potential trap.  A leading deformation of the continuum metric is a redundant/marginal geometric reparameterization, not the irrelevant descendant responsible for (4.1).  Therefore a clean `C2` test should:
-
-1. determine the physical correlation-length metric;
-2. express the cylinder circumference in that isotropized continuum metric;
-3. only then fit the residual sector-odd charge mismatch.
-
-The prediction `Delta=2` refers to the first **nonredundant** spin-two thermal-family correction after this metric calibration.
-
-Failure to remove metric anisotropy can manufacture lower-order shape errors that have nothing to do with the charge-sector selection rule.
-
-## 6. Controlled symmetry breaking gives amplitude selection rules
-
-Let `a_s` denote a microscopic anisotropy coupling transforming in spin `s`.  Near a high-symmetry lattice, the charge mismatch should have schematic expansion
+### Direction `(2,1)`
 
 \[
-\Theta_w(p_c)
-=\sum_s C_s a_s\,w^{1-(x_t+s)}+\cdots,                        \tag{6.1}
+\cos4\theta=-7/25=-0.28.                                    \tag{5.5}
 \]
 
-where only point-group-invariant combinations survive.
-
-This gives several targeted experiments.
-
-- Start from a six-fold non-self-dual lattice and add a weak spin-four distortion.  A `w^-17/4` sector mismatch and `w^-4` root shift should turn on linearly in the spin-four component.
-- Start from square `C4` and add a weak `C2` distortion after metric calibration.  A new `w^-9/4` mismatch / `w^-2` root shift should eventually dominate the original spin-four term.
-- Preserve self-matching while distorting geometry: the whole odd charge difference should still vanish, providing a parity control against pure metric artifacts.
-
-## 7. Why this is not a generic correction-to-scaling statement
-
-Ordinary percolation observables can have lower correction exponents and lattice-dependent analytic terms.  The eigenvalue/matching root is special because it subtracts two topological magnetic sectors that share the same leading CFT content.  The rotational ladder concerns the **first correction surviving that subtraction**, not the leading irrelevant operator of the bulk theory.
-
-This is why a common `x≈4` correction can be plainly visible in each square-sector energy while the root drift begins only at exponent four through a much higher-dimensional sector-odd field.
-
-## 8. Literature boundary
-
-Jacobsen, arXiv:1507.03027, supplies the crucial square/kagome empirical pattern and explicitly raises rotational symmetry as the explanation for the missing kagome exponent-four amplitude.  Older finite-size-scaling work on square versus triangular/honeycomb critical models also documents lattice-symmetry-dependent cancellation of correction amplitudes.  The general idea that lattice rotations select allowed conformal spin is standard.
-
-The specific formula
+At `n=4`,
 
 \[
-\boxed{\Delta_{charge}=s_*}                                  \tag{8.1}
+A_{est}=0.30077.                                              \tag{5.6}
 \]
 
-for the primal/dual charge-sector eigenvalue criterion, and especially the `C2 -> Delta=2` prediction, are research conjectures here.
+### Direction `(3,2)`
 
-## 9. Claim boundary
+\[
+\cos4\theta=-0.7041420118\ldots                              \tag{5.7}
+\]
 
-The point-group selection rules are exact symmetry statements.  The mapping from the leading allowed spin to a thermal-family descendant of dimension `x_t+s` and hence to the pseudo-critical exponent `s` is conjectural.  It should be tested on a genuinely `C2`, non-self-matching model before being elevated beyond a mechanism hypothesis.
+and already at `n=2`,
+
+\[
+A_{est}=0.29956.                                              \tag{5.8}
+\]
+
+These are much more discriminating than an exponent-four fit: a scalar field of dimension `x_t+4` would not produce the observed orientation sign/magnitude law.
+
+Data and scripts:
+
+- `diagonal-spin4-charge-root-20260914.md`;
+- `scripts/diagonal_charge_transfer.py`;
+- `scripts/oblique_charge_transfer.py`;
+- `results/geometric-consistency/oblique-spin4-angular-controls-20260914.json`.
+
+## 6. Kagome/hexagonal symmetry remains a spin-six control
+
+Jacobsen's kagome bond eigenvalue sequence has the square-like exponent-four amplitude absent and a leading shift compatible with exponent six.  The kagome/hexagonal bulk symmetry includes 60-degree rotation, which forbids spin four and allows spin six.
+
+This remains consistent with the corrected Kac-module rule:
+
+\[
+C_6:\quad s_*=6.                                              \tag{6.1}
+\]
+
+The triangular-site self-matching model is stronger still: complement symmetry fixes the charge root to `1/2` at every width, so every sector-odd amplitude vanishes.
+
+## 7. A new distinction: `C3` is not `C6`
+
+The old table bundled three-fold symmetry plus reflection with six-fold symmetry.  That is not generally justified.
+
+A spin-three pair transforms trivially under a `120 degree` rotation:
+
+\[
+e^{\pm i3(2\pi/3)}=1,                                       \tag{7.1}
+\]
+
+and the real combination is reflection even.  Since a nontrivial level-three thermal quasiprimary survives the level-two null quotient, a genuine `D3` lattice without 60-degree rotation can in principle have
+
+\[
+\boxed{p_w-p_c\asymp w^{-3}.}                               \tag{7.2}
+\]
+
+A `D6` lattice forbids it and first admits spin six.
+
+This gives a sharper future lattice-symmetry test than the earlier `C2` proposal.
+
+## 8. Pell directions create a same-model spin-four null experiment
+
+The square harmonic factorizes arithmetically:
+
+\[
+a^4-6a^2b^2+b^4
+=(a^2-2ab-b^2)(a^2+2ab-b^2).                                 \tag{8.1}
+\]
+
+The exact spin-four zero direction is
+
+\[
+\frac ab=1+\sqrt2,
+\qquad \theta=\pi/8.                                         \tag{8.2}
+\]
+
+Choose primitive Pell approximants satisfying
+
+\[
+a^2-2ab-b^2=\pm1.                                           \tag{8.3}
+\]
+
+Then
+
+\[
+\cos4\theta=O(|u|^{-2}).                                     \tag{8.4}
+\]
+
+Consequently the nominal `ell^-4` spin-four root shift is geometrically suppressed to order `ell^-6` along this sequence.  The two Pell signs flip the residual spin-four contribution.
+
+This suggests a powerful same-model experiment:
+
+- average the `+1` and `-1` Pell subsequences to expose a genuine spin-six term;
+- difference them to isolate the residual spin-four anisotropy.
+
+The existing `(5,2)` control already lies near this null direction (`cos4theta=41/841`) and its charge root is within about `10^-6` of the reference `p_c` at only `n=2`, despite physical circumference about `10.77`.
+
+A wider Pell computation is a targeted follow-up, not a generic angle scan.
+
+## 9. Revised general rule
+
+The correct conjectural selection principle is
+
+\[
+\boxed{
+\Delta_{charge}=s_*,
+\quad
+s_*=\min\{s>0:\ s\text{ is point-group allowed and is a nonredundant thermal-family quasiprimary level}\}.} \tag{9.1}
+\]
+
+This is stronger and safer than the old arithmetic rule `lcm(2,k)`.
+
+It separates three mechanisms that must not be conflated:
+
+1. continuum metric/stress-tensor anisotropy;
+2. Virasoro-null or total-derivative descendants;
+3. genuine sector-odd thermal-family anisotropy.
+
+Only the third sets the charge-root shift after the first two are removed.
+
+## 10. Claim boundary
+
+The `phi_{2,1}` level-two null vector is standard CFT structure.  The oblique charge roots are deterministic lattice calculations.  Point-group invariance of a spin harmonic is exact.
+
+The identification of the leading charge correction with a thermal-family quasiprimary, the higher-level logarithmic-module content, the `D3 -> 3` and Pell spin-six separation predictions remain conjectural.  The previous `C2 -> 2` prediction is explicitly superseded by this corrected note.
