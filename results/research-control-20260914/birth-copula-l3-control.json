@@ -1,0 +1,37 @@
+{
+  "scope": "exact all 9! site permutations on L=3 square and triangular tori; LP bounds use only static birth marginals",
+  "systems": [
+    {
+      "model": "square",
+      "L": 3,
+      "permutations": 362880,
+      "D_histogram": {"0":31104,"1":181440,"2":98496,"3":41472,"4":10368},
+      "P_D0": "3/35",
+      "E_D": "3/2",
+      "E_D2": "43/14",
+      "Var_D": "23/28",
+      "static_E_D": "3/2",
+      "static_ED_agrees": true,
+      "J1_marginal": ["0","0","1/14","3/14","5/14","5/14","0","0","0"],
+      "J2_marginal": ["0","0","0","0","1/14","5/14","4/7","0","0"],
+      "marginal_only_LP_bounds": {"p_equal":[0.0,0.4285714285714286],"D2":[2.5,4.2142857142857135]},
+      "joint_nonzero_cells": 11
+    },
+    {
+      "model": "triangular",
+      "L": 3,
+      "permutations": 362880,
+      "D_histogram": {"0":20736,"1":186624,"2":112752,"3":38880,"4":3888},
+      "P_D0": "2/35",
+      "E_D": "3/2",
+      "E_D2": "81/28",
+      "Var_D": "9/14",
+      "static_E_D": "3/2",
+      "static_ED_agrees": true,
+      "J1_marginal": ["0","0","3/28","15/28","5/14","0","0","0","0"],
+      "J2_marginal": ["0","0","0","0","5/14","15/28","3/28","0","0"],
+      "marginal_only_LP_bounds": {"p_equal":[0.0,0.35714285714285715],"D2":[2.5,3.8571428571428568]},
+      "joint_nonzero_cells": 9
+    }
+  ]
+}
