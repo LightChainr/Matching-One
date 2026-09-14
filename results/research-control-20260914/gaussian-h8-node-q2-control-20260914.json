@@ -1,0 +1,89 @@
+{
+  "schema": "gaussian-h8-node-q2-control-v1",
+  "date": "2026-09-14",
+  "freeze_provenance": "Issue #768 comment 5666850020 was posted before the (5,1) target roots were evaluated.",
+  "model": "p(u,n)=pc+c4*H4*ell^-4+c46*H4*ell^-6+c8*H8*ell^-6+higher",
+  "training_lineage": {
+    "parent": [2,1],
+    "child": [3,1],
+    "gaussian_multiplier": "1+i up to square symmetries",
+    "H4_parent": -0.28,
+    "H4_child": 0.28,
+    "H8_common": -0.8432,
+    "n_values": [2,3],
+    "tight_roots": {
+      "parent_n2": 0.5929714652070754,
+      "child_n2": 0.5926956531470028,
+      "parent_n3": 0.5927885674009905,
+      "child_n3": 0.5927359840351146
+    },
+    "difference_fit": {
+      "definition": "D_n=p_child-p_parent=alpha*n^-4+beta*n^-6",
+      "alpha": -0.004136260375773327,
+      "beta": -0.0011069303415566429
+    },
+    "four_root_saturated_decomposition": {
+      "pc_fit": 0.5927460854444604,
+      "c4": -0.2954471696980948,
+      "c46": -0.11998694156938763,
+      "c8": -0.13631120371404618,
+      "note": "This is post-reveal training and is not itself new evidence."
+    }
+  },
+  "frozen_H8_node_control": {
+    "parent": [3,2],
+    "child": [5,1],
+    "gaussian_relation": "(3+2i)(1+i)=1+5i",
+    "H4_parent_exact": "-119/169",
+    "H4_child_exact": "+119/169",
+    "H8_common_exact": "-239/28561",
+    "H8_common": -0.008368054339833897,
+    "resource_preflight": {
+      "child_n1_states_G4": 64,
+      "child_n1_states_G8": 99,
+      "child_n2_states_G4": 14278,
+      "child_n2_states_G8": 33757,
+      "n3_stopped_above_state_cap": 500000
+    },
+    "frozen_prediction": {
+      "alpha": -0.0015387334649554147,
+      "beta": -0.00004371729829274529,
+      "D1": -0.00158245076324816,
+      "D2": -0.00009685392434553756,
+      "predicted_H8_piece_of_beta": -4.542909034280429e-7,
+      "interpretation": "Because H8 is near zero, beta is a negative control for c8 and mainly measures c46 H4 dressing."
+    },
+    "target_roots": {
+      "parent_n1": 0.5940218205591057,
+      "child_n1": 0.5924348977628815,
+      "parent_n2": 0.5928240591852278,
+      "child_n2": 0.5927268521423491
+    },
+    "observed_differences": {
+      "D1": -0.0015869227962241883,
+      "D2": -0.00009720704287874415
+    },
+    "observed_alpha_beta": {
+      "alpha": -0.0015447759826718126,
+      "beta": -0.00004214681355237578,
+      "relative_alpha_error_vs_frozen": 0.003927,
+      "relative_beta_error_vs_frozen": -0.03592
+    }
+  },
+  "two_lineage_difference_only_decomposition": {
+    "description": "Solve the two Gaussian-lineage beta coefficients for c46 and c8. pc cancels completely.",
+    "c46": -0.11561405460044301,
+    "c8": -0.13817818581653674,
+    "comparison_to_training_saturated_values": {
+      "c46_training": -0.11998694156938763,
+      "c8_training": -0.13631120371404618
+    },
+    "interpretation": "The H8 q=2 coefficient remains stable when extracted using an H8-node negative control and no external pc."
+  },
+  "claim_boundary": [
+    "n=1 is strongly preasymptotic; the close alpha/beta agreement is a deterministic finite control, not an asymptotic theorem.",
+    "The decomposition establishes an H8 angular response with the q=2/root-ell^-6 scaling template within this two-lineage model. It does not by itself identify whether the H8 response is a nonlinear T4 x I4 response tensor or a distinct continuum block.",
+    "The simplest locked H0:H8=1:1 aligned-monomial model is not assumed. A general second-order spin4 x spin4 response has separate spin0 and spin8 tensor channels unless factorization is proved.",
+    "All roots were located without an external pc; pc is absent from the primary D_n and two-lineage decomposition."
+  ]
+}
