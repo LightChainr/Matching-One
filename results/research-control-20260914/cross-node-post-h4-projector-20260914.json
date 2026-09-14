@@ -1,0 +1,105 @@
+{
+  "schema": "cross-node-post-h4-projector-v1",
+  "date": "2026-09-14",
+  "purpose": "Replace infeasible same-ell multi-angle tomography by a bounded near-equal-ell pair that nearly nulls complementary angular harmonics.",
+  "algorithm_provenance": {
+    "semantics": "local execution of scripts/oblique_charge_transfer.py lifted-gain safe transfer on #771 branch",
+    "eigensolver": "scipy sparse eigs, tol=1e-12; brent root xtol/rtol about 1e-14",
+    "validation": {
+      "direction": [3, 2],
+      "n": 2,
+      "repository_root": 0.5928240591851011,
+      "local_root": 0.5928240591852450,
+      "difference": 1.44e-13
+    },
+    "warning": "The shipped oblique script used looser eig/root tolerances. Small post-H4 residuals must use a single p_c convention and tight tolerances."
+  },
+  "directions": [
+    {
+      "direction": [5, 2],
+      "n": 2,
+      "ell_squared": 116,
+      "ell": 10.770329614269007,
+      "H4_exact": "41/841",
+      "H4": 0.04875148632580262,
+      "H8_exact": "-703919/707281",
+      "H8": -0.9952465851620501,
+      "safe_states_G4": 22994,
+      "safe_states_G8": 131677,
+      "row_memory_G4": 5,
+      "row_memory_G8": 7,
+      "tight_root": 0.5927450615721411,
+      "repository_loose_root": 0.5927450615814472
+    },
+    {
+      "direction": [3, 2],
+      "n": 3,
+      "ell_squared": 117,
+      "ell": 10.816653826391967,
+      "H4_exact": "-119/169",
+      "H4": -0.7041420118343196,
+      "H8_exact": "-239/28561",
+      "H8": -0.008368054339833897,
+      "safe_states_G4": 19018,
+      "safe_states_G8": 206197,
+      "row_memory_G4": 3,
+      "row_memory_G8": 5,
+      "tight_root": 0.5927612086097266
+    }
+  ],
+  "leading_H4_projector": {
+    "definition": "q4_i=H4_i/ell_i^4; choose weights w_i summing to one with sum w_i q4_i=0",
+    "weights": [0.934200379537736, 0.06579962046226387],
+    "A4_hat": 0.2932542820236196,
+    "pc_hat_perp_H4": 0.5927461240410858,
+    "diagnostic_pc": 0.5927460507921,
+    "residual_vs_diagnostic_pc": 7.324898587679485e-08,
+    "raw_angular_weights_after_projection": {
+      "H8": -0.9303103523915915,
+      "H4_squared": 0.034844823804204124
+    },
+    "interpretation": "This pair is close to an H4-node/H8-node cross filter: H8 survives with O(1) weight while H4^2 is suppressed to about 3.5 percent in the raw angular projector."
+  },
+  "comparison_to_existing_equal_ell_projector": {
+    "axis_1_0_n10_vs_3_4_n2": {
+      "ell": 10.0,
+      "pc_hat_perp_H4": 0.5927459750664773,
+      "residual_vs_same_diagnostic_pc": -7.572562266133787e-08,
+      "effective_H8_weight": 0.6864,
+      "effective_H4_squared_weight": 0.8432
+    },
+    "key_observation": "At nearly the same physical scale, the two H4-projected residuals have opposite signs while their effective H8 weights also have opposite signs. A single angle-independent residual cannot naturally explain this sign reversal without additional channels."
+  },
+  "reference_free_model_checks": {
+    "pure_scalar_ell_minus_7_fit_on_axis_34_ell5_ell10": {
+      "fit_pc": 0.5927460516782668,
+      "fit_amplitude": -0.7661178948280093,
+      "predicted_cross_node_pc_hat": 0.5927460061955850,
+      "observed_cross_node_pc_hat": 0.5927461240410858,
+      "miss": -1.178455008e-07,
+      "note": "The H4 ell^-6 dressing leakage from the 0.43 percent ell mismatch is about 1.6e-10 for A2 about 0.66, negligible relative to this miss."
+    },
+    "pure_H4_squared_ell_minus_6_fit_on_axis_34_ell5_ell10": {
+      "fit_pc": 0.5927461295061164,
+      "fit_amplitude": -0.18315896479616048,
+      "predicted_cross_node_pc_hat": 0.5927461255146714,
+      "observed_cross_node_pc_hat": 0.5927461240410858,
+      "miss": 1.47e-09,
+      "caveat": "This three-point geometry fit is excellent but its fitted asymptotic pc is about 7.9e-8 above the independent diagnostic pc. Therefore it cannot be promoted as the full asymptotic mechanism without an additional channel."
+    }
+  },
+  "diagnostic_H8_amplitudes_assuming_root_power_27_over_4": {
+    "N65_same_ell_projector": -0.5005840192,
+    "N85_same_ell_projector": 0.0062896510,
+    "ell10_axis_34_projector": -0.6203911276,
+    "cross_node_projector": -0.7306793201,
+    "note": "N85 is a near-cancellation geometry. The other three signs/magnitudes are consistent with a negative H8-like component plus radial dressing, but no exponent is inferred."
+  },
+  "claim_boundary": [
+    "This is deterministic finite transfer evidence, not an asymptotic decomposition theorem.",
+    "The diagnostic pc is not used to locate any root; it is used only in the displayed residual/amplitude diagnostics.",
+    "The cross-node result overturns the earlier ranking of a pure scalar ell^-7 residual as the default post-H4 explanation; it does not uniquely identify the H8 continuum field.",
+    "A mixed H4^2 ell^-6 contribution can mimic the new projector very well over these scales but gives a shifted fitted pc, so a multi-channel explanation remains live.",
+    "Do not revive N1105 under the current row-memory solver; the low-memory cross-node route is the intended bounded replacement."
+  ]
+}
