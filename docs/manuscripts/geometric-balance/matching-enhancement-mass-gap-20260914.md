@@ -1,6 +1,6 @@
 # Matching enhancement and a strict inverse-correlation-length gap
 
-2026-09-14.  Targeted proof reduction motivated by Grimmett--Li's site-enhancement argument.  The conclusion is **conditional on one directional finite-volume adaptation** isolated below; it is not yet promoted to the theorem layer.
+2026-09-14.  Targeted proof reduction motivated by Grimmett--Li's site-enhancement argument.  The conclusion is **conditional on one two-terminal finite-volume adaptation** isolated below; it is not yet promoted to the theorem layer.
 
 ## 1. Desired statement
 
@@ -37,81 +37,78 @@ For the finite event `v_0 <-> partial Lambda_n`, Lemma 5.4 maps every pivotal or
 \le g(p,s)\,\partial_s\theta_n(p,s),
 \]
 
-with `g` locally finite/continuous on the interior parameter square.  Their equation (5.5) integrates this comparison along characteristics: on every compact parameter rectangle, a fixed amount of enhancement can compensate a strictly positive decrement of the ordinary site density.
+with `g` locally bounded on the interior parameter square.  Their equation (5.5) integrates this comparison along characteristics: on every compact parameter rectangle, a fixed amount of enhancement can compensate a strictly positive decrement of the ordinary site density.
 
-The square lattice is transitive and nontriangular, so the local enhancement is essential; their theorem indeed gives `p_c(G8)<p_c(G4)`.  What we need here is a finite-direction version below, not merely the critical-point conclusion.
+The square lattice is transitive and nontriangular, so the local enhancement is essential; their theorem indeed gives `p_c(G8)<p_c(G4)`.  What we need here is a **two-terminal** version of the pivotal comparison, not merely the critical-point conclusion.
 
-## 3. Directional Enhancement Lemma (DEL) — the single missing adaptation
+## 3. Two-terminal Directional Enhancement Lemma (DEL) — the single missing adaptation
 
-For `C>1`, let `R_n=[0,n] x [-Cn,Cn]` and let `A_n` be the event that there is an open connection in `hat G` from the left side to the right side of `R_n`, with a fixed `O(1)` thickening if needed to absorb facial sites.
-
-**DEL.**  For every compact `K subset (0,1)^2`, there are `g_K<infinity`, a boundary-thickening constant and `n_0` such that, for all large `n` and `(p,s) in K`,
+Let
 
 \[
-\partial_p P_{p,s}(A_n)
-\le g_K\,\partial_s P_{p,s}(A_n)
-+e^{-c_K n},
+A_n=\{0\leftrightarrow ne_1\text{ in }\widehat G\}
 \]
 
-or, more than sufficiently, the same inequality with an error whose logarithmic effect on `P(A_n)` is `o(n)`.
+under `P_{p,s}`.  Facial sites are auxiliary; at `s=0` this is the NN two-point event, while at `s=1` connectivity of original vertices is equivalent to connectivity in the matching graph, up to the harmless two-edge replacement through a facial site.
 
-Why this looks close to the printed proof rather than a new enhancement theorem: Grimmett--Li's Lemma 5.4 is local.  Their five-stage surgery takes an open path through an original pivotal vertex, modifies only a bounded neighbourhood, and inserts a translated copy of the essential enhancement pattern so a nearby facial site becomes pivotal.  In the interior of a long rectangle the two arms from the pivotal vertex terminate on the two crossing sides instead of `v_0` and `partial Lambda_n`; the bounded surgery is otherwise of the same type.  What must still be written carefully is the treatment of pivotal sites within `O(1)` of the two terminal sides and the exact finite-domain convention.
-
-This lemma should be proved directly before the strict mass claim is promoted.  A citation of the critical-point theorem alone is not enough.
-
-## 4. DEL implies a finite-volume sprinkling comparison
-
-Fix `p` in a compact subinterval of `(0,p_c(G8))`.  Work first with facial parameter `s` in `[eta,1-eta]`.  By DEL, take `gamma_K=1/g_K>0` (shrinking it if necessary).  Along a segment with
-
-\[
-\frac{dp}{ds}=-\gamma_K,
-\]
-
-we have, up to the negligible DEL boundary error,
-
-\[
-\frac d{ds}P_{p(s),s}(A_n)
-=\partial_sP-\gamma_K\partial_pP\ge0.
-\]
-
-Integrating across a fixed positive `s` interval and using monotonicity to move from the interior cutoffs to `s=0,1` gives a number `delta=delta(p)>0`, independent of `n`, such that
+**DEL.**  For every compact `K subset (0,1)^2`, there are `g_K<infinity`, `M<infinity` and `n_0` such that, for all `n>=n_0` and `(p,s) in K`,
 
 \[
 \boxed{
-P_{p}^{G8}(A_n)
-\ge P_{p+\delta}^{G4}(A_n)\,e^{-o(n)}.}
+\partial_p P_{p,s}(A_n)
+\le g_K\,\partial_s P_{p,s}(A_n).}
 \]
 
-Choose `delta` small enough that `p+delta<p_c(G4)`.  The exact numerical value is irrelevant for strictness.
+A version with a multiplicative/subexponential finite-endpoint error is already sufficient for the mass comparison below.
 
-## 5. The rectangle-crossing exponent is the horizontal mass
+### Why this is genuinely a local adaptation
 
-For either square-symmetric finite-range graph `G`, let `tau_{G,p}` be its subcritical connection norm.  Reflection symmetry makes `y -> tau(1,y)` even and convex, hence
+The printed Grimmett--Li proof of Lemma 5.4 starts from an open non-self-touching path through an original pivotal vertex.  Outside a bounded neighbourhood of that pivotal vertex it retains the two arms of the path; inside, a five-stage planar surgery inserts a translated copy of the essential enhancement pattern so that a nearby facial site becomes pivotal.  The target `partial Lambda_n` supplies only the far endpoint of one retained arm.
+
+For `A_n`, a pivotal original vertex away from the two terminal `O(M)` neighbourhoods again has exactly two retained arms, now ending at `0` and `ne_1`.  The same bounded surgery is therefore available without any change in the local enhancement gadget.  What must be written explicitly is:
+
+1. the replacement of the terminal `partial Lambda_n` arm by the arm ending at `ne_1`;
+2. the finitely many local types when the pivotal site lies within `O(M)` of either terminal;
+3. a bounded-multiplicity map from original-pivotal configurations to nearby facial-pivotal configurations.
+
+On the square lattice these endpoint cases are finite local configurations rather than a new large-scale geometric problem.  Nevertheless, they should be written before the strict mass claim is promoted.  A citation of the strict critical-point theorem alone is not enough.
+
+## 4. DEL gives a uniform sprinkling comparison for the two-point function
+
+Fix `p in (0,p_c(G8))`.  Choose a compact parameter rectangle containing a path from an interior facial parameter near `0` to one near `1`, and let
 
 \[
-\tau(1,y)\ge\tau(1,0)=\kappa_G(p).
+\gamma=1/\sup_K g>0.
 \]
 
-The left-right crossing probability of `R_n` has logarithmic rate `kappa_G(p)`:
-
-- a point-to-point connection from `(0,0)` to `(n,0)` is a left-right crossing, giving the lower probability bound;
-- a crossing contains a pair of boundary vertices whose horizontal displacement is `n+O(1)` and vertical displacement `O(n)`; every such pair costs at least `n kappa_G(p)+O(1)` by the norm inequality above, while the number of endpoint pairs is polynomial in `n`.
-
-Thus
+Along a characteristic with `dp/ds=-gamma`, DEL gives
 
 \[
--\frac1n\log P_p^G(A_n)\to\kappa_G(p).
+\frac d{ds}P_{p(s),s}(A_n)
+=\partial_sP-\gamma\partial_pP\ge0.
 \]
 
-This step uses only the already standard existence/norm property of subcritical inverse correlation length and a polynomial endpoint union bound, not an OZ prefactor.
-
-Taking logarithmic rates in the sprinkling comparison yields
+Integrating a fixed positive amount in `s` and using ordinary monotonicity for the small endpoint pieces `s in [0,eta]` and `[1-eta,1]` yields a number `delta=delta(p)>0`, independent of `n`, such that
 
 \[
-\kappa_8(p)\le\kappa_4(p+\delta).
+\boxed{
+P_p^{G8}(0\leftrightarrow ne_1)
+\ge
+P_{p+\delta}^{G4}(0\leftrightarrow ne_1)
+}
 \]
 
-The #739 branch already derives strict decrease of the NN mass in its occupation parameter at differentiability points, and more quantitatively the comparison
+for all sufficiently large `n` (or the same inequality up to a factor `e^{o(n)}` if one uses the weaker DEL form).  Choose `delta` small enough that `p+delta<p_c(G4)`.
+
+Taking `-n^{-1}log` and passing to the limit gives directly
+
+\[
+\boxed{\kappa_8(p)\le\kappa_4(p+\delta).}
+\]
+
+No directional union bound, rectangle endpoint count, or OZ prefactor is involved: the finite event is already the defining two-point event for the axial mass.
+
+The #739 branch derives the strict parameter comparison
 
 \[
 \kappa_4(p)-\kappa_4(q)
@@ -119,15 +116,15 @@ The #739 branch already derives strict decrease of the NN mass in its occupation
 \qquad p<q<p_c(G4),
 \]
 
-from the Friedgut--Kalai birth argument.  Therefore
+from its Friedgut--Kalai birth argument.  Therefore DEL implies
 
 \[
 \boxed{\kappa_8(p)<\kappa_4(p).}
 \]
 
-If one prefers not to reuse that branch inequality, strict monotonicity of the Bernoulli inverse correlation length in `p` on a fixed finite-range graph is a separate standard input that may be substituted after its precise site reference is fixed.
+If one prefers not to reuse that branch inequality, a precise site reference for strict monotonicity of the Bernoulli inverse correlation length may be substituted.
 
-## 6. Consequence for the two exponential-aspect centres
+## 5. Consequence for the two exponential-aspect centres
 
 Let
 
@@ -163,7 +160,7 @@ is strictly positive throughout the separated-window regime.  Equivalently the l
 
 This strict centre asymmetry is unrelated to the possible nondifferentiability exceptional set in the Gumbel proof.  The two questions must remain separate.
 
-## 7. Quantitative version worth pursuing
+## 6. Quantitative version worth pursuing
 
 The enhancement proof is local and its characteristic slope is uniform on compact `(p,s)` sets.  A quantitative DEL would produce an explicit `delta_I>0` for every compact `I subset (0,p_c(G8))`, and therefore
 
@@ -172,12 +169,12 @@ The enhancement proof is local and its characteristic slope is uniform on compac
 \ge \kappa_4(p)-\kappa_4(p+\delta_I)
 \]
 
-on `I`, with a further explicit lower bound from the branch's mass-slope inequality.  Such a certificate would be useful for separating directional centre intervals without estimating an OZ amplitude.
+on `I`, with a further explicit lower bound from the branch's mass-slope inequality.  Such a certificate would separate directional centre intervals without estimating an OZ amplitude.
 
-## 8. Decision rule
+## 7. Decision rule
 
-- If DEL is proved: promote `kappa_8(p)<kappa_4(p)` and `a(d)+b(d)>1` to theorem-level consequences.
-- If the local pivotal surgery fails specifically for directional crossing: record the obstruction; the published strict critical-point theorem does not by itself imply a strict mass gap.
+- If the two-terminal DEL is written successfully: promote `kappa_8(p)<kappa_4(p)` and `a(d)+b(d)>1` to theorem-level consequences.
+- If the local pivotal surgery fails specifically for a two-terminal event: record the obstruction; the published strict critical-point theorem does not by itself imply a strict mass gap.
 - No numerical width scan is needed to decide this question.
 
 Primary source checked: G. Grimmett and Z. Li, *Percolation critical probabilities of matching lattice-pairs*, Random Structures & Algorithms 65 (2024), 832--856, especially equations (5.2)--(5.5) and Lemma 5.4.
