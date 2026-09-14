@@ -55,12 +55,34 @@ def solve(L):
     theta=mp.acos(1-1/(2*a)) if a>=mp.mpf('0.25') else mp.pi
     def cg(s): return mp.log(P[0]*mp.e**(-s)+P[1]+P[2]*mp.e**s)
     cumul=[mp.diff(cg,0,n) for n in range(1,7)]
+    kc=[]
+    for r in (0,2):
+        weights=[mp.mpf(c[r][k])*root**k*(1-root)**(N-k) for k in range(N+1)]
+        mass=mp.fsum(weights)
+        mu=mp.fsum(mp.mpf(k)*weights[k] for k in range(N+1))/mass
+        var=mp.fsum((mp.mpf(k)-mu)**2*weights[k] for k in range(N+1))/mass
+        k3=mp.fsum((mp.mpf(k)-mu)**3*weights[k] for k in range(N+1))/mass
+        kc.append((mu,var,k3))
+    g1=kc[1][0]-kc[0][0]; g2=kc[1][1]-kc[0][1]; g3=kc[1][2]-kc[0][2]
+    z1=-2/g1
+    z2=-4*g2/g1**3
+    z3=8*(g1*g3-3*g2**2)/g1**5
+    EX2=2*a
+    EXK=P[2]*kc[1][0]-P[0]*kc[0][0]
+    proj_delta=2*EXK/EX2
+    assert abs(proj_delta-g1)<mp.mpf('1e-45')
     return {
       'L':L,'root':mp.nstr(root,50),
       'P0':mp.nstr(P[0],50),'P1':mp.nstr(P[1],50),'P2':mp.nstr(P[2],50),
       'a':mp.nstr(a,50),'nearest_zero_imag_if_pure_imag':mp.nstr(theta,50),
       'theta_over_pi':mp.nstr(theta/mp.pi,40),
       'cumulants_1_to_6':[mp.nstr(x,40) for x in cumul],
+      'conditional_K_cumulants':{
+        'rank0':{'mean':mp.nstr(kc[0][0],40),'variance':mp.nstr(kc[0][1],40),'third':mp.nstr(kc[0][2],40)},
+        'rank2':{'mean':mp.nstr(kc[1][0],40),'variance':mp.nstr(kc[1][1],40),'third':mp.nstr(kc[1][2],40)},
+        'delta_g1_g2_g3':[mp.nstr(g1,40),mp.nstr(g2,40),mp.nstr(g3,40)]},
+      'topological_source_root_logit_derivatives_s1_s2_s3':[mp.nstr(z1,40),mp.nstr(z2,40),mp.nstr(z3,40)],
+      'projector_deltaK_abs_error':mp.nstr(abs(proj_delta-g1),5),
       'rank_count_coefficients':c,
     }
 
