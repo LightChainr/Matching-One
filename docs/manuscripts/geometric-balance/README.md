@@ -27,3 +27,26 @@ contains the entire root and concentration arguments, and gives a bounded
 closest-source comparison. It is an author-supplied proof; no independent
 publication acceptance or originality certification is claimed. Existing
 proofs, data, frozen designs and research branches are retained unchanged.
+
+## 2026-09-14 integrated structural continuation
+
+Two follow-up notes collect consequences that reduce several previously
+separate analysis directions without changing the main theorem's acceptance
+status:
+
+- [`structural-consequences-20260914.md`](structural-consequences-20260914.md): persistent 4/8 birth reflection; dual-even/odd birth coordinates; exact same-parameter `(rank,K)` count reduction; alternating black/white barrier Palm identities; marked-Poisson transport; complementary Palm score constraints; convex loop/branch frontier; the `D^{-1}=partial_yy tau` consistency relation; and deterministic directional separation in exponential elongation.
+- [`research-frontier-20260914.md`](research-frontier-20260914.md): the homological-free-energy variational picture, a small-`p` actual-SITE transfer/local-CLT programme for the closed-component `w^{-1/2}` prefactor, and the recommended order for the remaining common-window work.
+
+Finite controls for the persistent reflection are in
+`scripts/persistent_alexander_birth_reflection.py`, with committed L=3 and L=4
+outputs in `results/geometric-consistency/`.  The L=3 run exhausts all 512
+configurations and all 362,880 strict site orders; the L=4 run exhausts all
+65,536 configurations and checks 20,000 fixed-seed site orders.  A separate
+zero-cost calculation of the constrained-Poisson/topology constants is in
+`scripts/poisson_topology_constants.py`.
+
+These notes deliberately separate deterministic consequences, deductions that
+also use the author-level probability results already on this branch, and
+conjectural proof programmes.  They do not identify a continuum field, certify
+an OZ sewing theorem, or turn the near-critical crossover into an accepted
+square-site theorem.
