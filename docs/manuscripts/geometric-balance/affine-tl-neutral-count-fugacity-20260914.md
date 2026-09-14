@@ -103,24 +103,73 @@ q_top                    : zero-through-line trivial-vs-cross projector.   (4.1)
 
 The second symbol is schematic here; no existing massive formula is asserted.
 
-## 5. Stronger #782 target
+## 5. Minimal toroidal rank-source trace dictionary
+
+The same-parameter topological count algebra elsewhere in this project has the schematic form
+
+```text
+G(s,t)
+ = endpoint_rank2 * s
+   + endpoint_rank0 * t
+   + neutral_rank1 * H(st).                              (5.1)
+```
+
+The loop dictionary shows exactly how the neutral product variable should enter a toroidal modified trace:
+
+```text
+z=st = alpha^2/Q,
+alpha=sqrt(Q s t).                                        (5.2)
+```
+
+The two endpoint variables cannot be represented by `alpha`, because both rank0 and rank2 sit in the zero-noncontractible-loop sector. Introduce two zero-through-line amplitudes, schematically
+
+```text
+q0 : trivial/rank0 topology,
+q2 : cross/rank2 topology.
+```
+
+Then the minimal toroidal source object has the typed structure
+
+```text
+T(q0,q2,alpha)
+ = q0 Z0
+   + sum_u Z_{1,u}(alpha^2/Q)
+   + q2 Z2.                                               (5.3)
+```
+
+After slope aggregation and normalization, the percolation rank-source specialization is
+
+```text
+q0=t,
+q2=s,
+alpha^2=st                 (Q=1).                         (5.4)
+```
+
+Thus the exact finite rank-source algebra itself predicts the minimal number and roles of continuum seam/trace parameters:
+
+- one continuous noncontractible-loop fugacity for the neutral gas;
+- two endpoint amplitudes, or equivalently one normalization plus one odd endpoint/duality source.
+
+This is a target interface, not a claim that the massive theory has already supplied these three parameters.
+
+## 6. Stronger #782 target
 
 This reduces the continuum problem further. A useful massive affine-TL object would be a toroidal modified trace
 
 ```text
-T_massive(mL,mR; alpha, q_top)
+T_massive(mL,mR; q0,q2,alpha)
 ```
 
 such that:
 
 1. `alpha` weights noncontractible loops and hence evaluates `H(z)` with `z=alpha^2/Q` in rank-one sectors;
-2. `q_top` separates the two zero-through-line topologies (rank0 and rank2);
-3. the UV limit reproduces the Arguin/Pinson critical homology weights;
+2. `q0,q2` separate the two zero-through-line topologies (rank0 and rank2);
+3. the UV limit reproduces the Arguin/Pinson critical homology weights and the finite rank-source algebra;
 4. the IR one-particle/loop terms reproduce the correct complete winding insertion, not merely an open-boundary crossing amplitude.
 
 This is more specific than asking for a generic twisted Potts TBA.
 
-## 6. A finite-width test before any continuum construction
+## 7. A finite-width test before any continuum construction
 
 On an existing periodic FK/TL transfer matrix, introduce a symbolic or numerical noncontractible-loop fugacity `alpha` while leaving contractible loops at `sqrt(Q)`. In a rank-one sector, compare the transfer output to a direct essential-component count generating function under
 
@@ -130,8 +179,11 @@ z=alpha^2/Q.
 
 The coefficients must agree configuration by configuration after the standard toroidal FK/loop normalization is included. A failure would indicate a convention/Markov-trace mismatch before any massive interpretation is attempted.
 
-## 7. Claim boundary
+A second finite test is to turn on independent zero-through-line endpoint amplitudes and verify (5.3) against directly classified rank0/rank1/rank2 configurations.
+
+## 8. Claim boundary
 
 - Exact within a fixed rank-one FK homology sector: `N_nc=2K` and `z=alpha^2/Q`.
+- Exact source typing: the neutral variable belongs to `alpha`; trivial/cross separation requires an additional zero-through-line projector.
 - Structural conclusion: a noncontractible-loop seam naturally realizes the neutral-count source and is better suited to Q-continuation than literal spin permutations.
 - Not claimed: an existing massive formula for the zero-through-line projector, a completed Q->1 TBA, or direct transfer of this bond-FK loop identity to square-site complete-component amplitudes without a universality/sewing argument.
