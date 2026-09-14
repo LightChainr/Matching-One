@@ -1,0 +1,27 @@
+{
+  "schema": "matching-one/span-visible-pole-splitting/v1",
+  "date": "2026-09-14",
+  "source_path": "results/geometric-consistency/span-spectrum-20260913.json",
+  "source_sha": "58e070f814f290d1d6a7d10c00ab4273d671c5bb",
+  "method": "normalized second-order late recurrence starting at h=13 plus separate two-exponential residue fit",
+  "claim_boundary": "Projected/Prony diagnostic on an existing scalar sequence; not a certified full transfer eigendecomposition.",
+  "nn_p_1_4": [
+    {"width":2,"rho1":0.29035945694,"rho2":0.18750000038,"delta_gamma":0.437340815,"relaxation_length":2.2865,"relaxation_length_over_width":1.143,"c2_over_c1":-0.9984},
+    {"width":3,"rho1":0.32928891833,"rho2":0.30300474518,"delta_gamma":0.083187071,"relaxation_length":12.021,"relaxation_length_over_width":4.007,"c2_over_c1":-1.00485,"delta_gamma_over_w_nu":1.8256},
+    {"width":4,"rho1":0.34453662879,"rho2":0.33436154796,"delta_gamma":0.029977523,"relaxation_length":33.358,"relaxation_length_over_width":8.340,"c2_over_c1":-1.02036,"delta_gamma_over_w_nu":1.6919,"gamma_eff_at_w":0.7790,"gamma_eff_at_2w":0.94357,"gamma1":1.06555},
+    {"width":5,"rho1":0.35091375383,"rho2":0.34676672776,"delta_gamma":0.011888178,"relaxation_length":84.117,"relaxation_length_over_width":16.823,"c2_over_c1":-1.01527,"delta_gamma_over_w_nu":1.7687,"gamma_eff_at_w":0.78670,"gamma_eff_at_2w":0.93879,"gamma1":1.04721},
+    {"width":6,"rho1":0.35356856032,"rho2":0.35183695653,"delta_gamma":0.004909537,"relaxation_length":203.685,"relaxation_length_over_width":33.948,"c2_over_c1":-1.00910,"delta_gamma_over_w_nu":1.9391,"gamma_eff_at_w":0.80418,"gamma_eff_at_2w":0.94399,"gamma1":1.03968},
+    {"width":7,"rho1":0.35459715576,"rho2":0.35403420318,"delta_gamma":0.001588845,"relaxation_length":629.388,"relaxation_length_over_width":89.913,"c2_over_c1":-1.00377,"delta_gamma_over_w_nu":1.6737,"gamma_eff_at_w":0.82422,"gamma_eff_at_2w":0.95189,"gamma1":1.03677}
+  ],
+  "secondary_controls": [
+    {"label":"NN p=1/8","width":6,"rho1":0.15331177010,"rho2":0.15328278242,"delta_gamma":0.00018909458,"relaxation_length":5288.36,"relaxation_length_over_width":881.39,"c2_over_c1":-1.000264,"max_recurrence_relative_residual":6.2e-11},
+    {"label":"matching p=1/16","width":5,"rho1":0.18310566243,"rho2":0.18253656178,"delta_gamma":0.003112885,"relaxation_length":321.25,"relaxation_length_over_width":64.25,"c2_over_c1":-1.00365},
+    {"label":"matching p=1/16","width":6,"rho1":0.18355402843,"rho2":0.18340223624,"delta_gamma":0.000827304,"relaxation_length":1208.75,"relaxation_length_over_width":201.46,"c2_over_c1":-1.00138}
+  ],
+  "verdicts": {
+    "single_pole_relaxation_o_w": "incompatible with current width trend",
+    "macroscopic_LDP_candidate": "not falsified",
+    "periodic_mass_locality_gamma_minus_kappa": "not falsified",
+    "recommended_interface": "coalescing slow visible subspace; analyze h=A w directly rather than assuming fixed-w Perron capture"
+  }
+}
