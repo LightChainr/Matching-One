@@ -1,0 +1,1567 @@
+{
+  "schema": "matching-one.thermal-window-clock-and-effective-range.v1",
+  "date": "2026-09-14",
+  "author_agent": "bridge780b",
+  "machine": {
+    "alias": "DevEnvC_TVVfoB",
+    "account": 2,
+    "python": "3.9.9",
+    "numpy": "2.0.2",
+    "workdir": "/workspace/genealogy",
+    "note": "all numbers produced on this cloud machine; none on the local Mac"
+  },
+  "scope": "Verification of the #780 companion derivation (thermal-window-no-merger-detailed-companion-20260914.md) plus the Q1 intensity-clock uniform error on an exact fixed-width component-retirement transfer. No exponential-window merger search, no Poisson-kernel/Laguerre/lineage-moment production.",
+  "inputs_read": [
+    "/Users/lc/WorkBuddy/2026-09-13-12-33-57/ROUND-STATE-1745.md",
+    "issue #780 (body + 6 comments), #650, #801",
+    "branch analysis/geometric-balance-round2-integrated-20260914 : docs/WORK-NOW.md",
+    "dispatch-followthrough-20260914/{README-zh.md, EXECUTION.json, REMOTE_ACTIONS.json, repo/docs/manuscripts/geometric-balance/thermal-window-no-merger-detailed-companion-20260914.md, repo/scripts/essential_lineage_merger_control.py, repo/results/research-dispatch/essential-lineage-merger-control.json}",
+    "winding-intensity-20260913/repo/docs/manuscripts/geometric-balance/winding-intensity-and-prefactor.md (quoted closed forms nu_2, nu_3; NOT re-derived)"
+  ],
+  "A1_finite_check_independent_reproduction": {
+    "method": "own script a1_merger_control_independent.py (pure stdlib, nothing imported from the package). Two independent winding tests required to agree on all 512 masks: (T1) lift-potential BFS; (T2) explicit universal-cover exploration capped at |S|+1 lifted sites. Deliberately NOT the wrong 'm_wrap >= n_open' count.",
+    "reproduced": {
+      "physical_masks_crosschecked": 512,
+      "common_label_pairs": 19683,
+      "pairs_with_a_merger": 7,
+      "minimal_winding_witnesses": 3,
+      "explicit_merger": {
+        "early": 455,
+        "late": 463,
+        "ancestor_counts": [
+          2
+        ],
+        "pairs": 1
+      }
+    },
+    "matches_package_json": true,
+    "own_derivation_of_721_125000000": {
+      "three_colour_weights": "(1/5)^e (1/20)^a (3/4)^c with e+a+c=9",
+      "integerisation": "(1/5)^e(1/20)^a(3/4)^c * 20^9 = 4^e 15^c  (a cancels exactly)",
+      "identity": "sum over merging nested pairs of 4^e 15^c = 721*4096 = 2953216",
+      "computed": 2953216,
+      "other_two_pairs": {
+        "(1/4,1/3)": {
+          "integerisation": "(1/4)^e(1/12)^a(2/3)^c*12^9 = 2^(3c)3^e",
+          "identity": "= 217*729 = 158193",
+          "computed": 158193
+        },
+        "(2/5,3/5)": {
+          "integerisation": "(2/5)^e(1/5)^a(2/5)^c*5^9 = 2^(e+c)",
+          "identity": "= 1216",
+          "computed": 1216
+        }
+      }
+    },
+    "exact_probabilities": [
+      {
+        "p_minus": "1/5",
+        "p_plus": "1/4",
+        "merger_probability": "721/125000000",
+        "factorial_pair_expectation": "721/125000000",
+        "lineage_loss_expectation": "721/125000000",
+        "one_witness_probability_at_p_plus": "12097/262144",
+        "two_disjoint_witnesses_probability_at_p_plus": "95/131072",
+        "BK_upper": "146337409/68719476736"
+      },
+      {
+        "p_minus": "1/4",
+        "p_plus": "1/3",
+        "merger_probability": "217/7077888",
+        "factorial_pair_expectation": "217/7077888",
+        "lineage_loss_expectation": "217/7077888",
+        "one_witness_probability_at_p_plus": "2107/19683",
+        "two_disjoint_witnesses_probability_at_p_plus": "79/19683",
+        "BK_upper": "4439449/387420489"
+      },
+      {
+        "p_minus": "2/5",
+        "p_plus": "3/5",
+        "merger_probability": "1216/1953125",
+        "factorial_pair_expectation": "1216/1953125",
+        "lineage_loss_expectation": "1216/1953125",
+        "one_witness_probability_at_p_plus": "1011933/1953125",
+        "two_disjoint_witnesses_probability_at_p_plus": "234009/1953125",
+        "BK_upper": "1024008396489/3814697265625"
+      }
+    ],
+    "per_pair_identities_asserted_on_all_19683_pairs": [
+      "sum_C n_C == #early essential comps",
+      "0 <= loss <= mcount",
+      "mcount>0 implies two vertex-disjoint minimal witnesses inside the late mask",
+      "mcount <= C(h,2) = 3",
+      "sum event <= sum pairs <= C(h,2)*d",
+      "d <= q^2"
+    ],
+    "own_observation": "on the 3x3 free-vertical cylinder the merger probability, the factorial pair expectation and the lineage-loss expectation coincide exactly; i.e. every merger is one late essential comp containing exactly two early ones with loss 1. Minimal-width only; not extrapolated."
+  },
+  "A2_step_by_step_verdicts": {
+    "1_merger_implies_two_disjoint_witnesses": {
+      "verdict": "holds (deterministic implication)",
+      "why": "two distinct essential clusters just before the merger have disjoint vertex sets and each contains a non-contractible cycle; the same uniform labels make occupancy monotone, so both cycles survive to p_+ and lie in one final cluster. Not an equivalence - the note says so explicitly.",
+      "extra_conditions_needed": [
+        "same-label monotone coupling",
+        "'essential' means non-zero horizontal winding"
+      ]
+    },
+    "2_Qw_bound_and_p_dependence": {
+      "verdict": "holds as an upper bound; p-dependence is self-consistent; two items must be flagged",
+      "cut_argument": "first reach of horizontal span w-1 forces the whole prefix into a window of w consecutive columns, so the site set injects into the plane; the simple subpath between the two extreme-x endpoints is a genuine plane connection. w = choice of starting column mod w; H^2 = the two endpoints' row indices (a deliberately loose union bound).",
+      "p_dependence": "single factor p, NOT p^w: the bound is on the two-point function t_p, which already sums over the interior; the w-site cost lives in e^{-(w-1)kappa(p)}. p^w would be a FALSE (too small) bound at fixed p_0, because kappa(p_0) < log(1/p_0); the two merge only in the sparse limit kappa(p) ~ log(1/p).",
+      "kappa_w_evidence_vs_log1over_p0": {
+        "p0=0.25": {
+          "log(1/p0)": 1.386,
+          "kappa_w": {
+            "3": 1.39575,
+            "4": 1.35488,
+            "8": 1.25299
+          }
+        },
+        "p0=0.40": {
+          "log(1/p0)": 0.916,
+          "kappa_w": {
+            "3": 0.96935,
+            "4": 0.8863,
+            "8": 0.71735
+          }
+        },
+        "p0=0.50": {
+          "log(1/p0)": 0.693,
+          "kappa_w": {
+            "3": 0.82099,
+            "4": 0.71153,
+            "8": 0.49629
+          }
+        }
+      },
+      "flagged": [
+        "prefactor w*H^2 is a union-bound count, not tight: measured bound/Q grows like w^2.85",
+        "identification that the same kappa enters (2.1) and -(1/w)log nu_w -> kappa: an input, only internally cross-checked here (see B2 closure margins)"
+      ]
+    },
+    "3_BK_on_occupied_witnesses": {
+      "verdict": "holds",
+      "why": "site BK (van den Berg-Kesten) gives Pr(A box B) <= Pr(A)Pr(B) for increasing events, which is an UPPER bound - the direction used. 'two vertex-disjoint occupied winding witnesses' is exactly E box E. BK is applied to the PLANE lift (product measure), not to cluster anchors with closed boundary conditions (those are non-monotone); the note makes this distinction correctly."
+    },
+    "4_uniform_volume_tail_cycle_vs_plane_labels": {
+      "verdict": "holds",
+      "why": "a cylinder site has w plane translates; neither 'independent copies' nor 'one shared label' is right. The discovery-tree lift reads one fresh label per newly discovered cylinder site (distinct residues -> distinct plane sites, injective), giving |C_cyl| <= |C_plane| and hence the w-uniform plane volume tail [AV Thm 3].",
+      "flagged": [
+        "[AV] Thm 3 is a quoted input, not re-proved here"
+      ]
+    },
+    "5_mQw2_exponent_accounting": {
+      "verdict": "closes",
+      "why": "(1/w)log[(m+2H+2)Q_w^2] -> kappa(p_0) - 2 kappa(p_+) -> -kappa(p_0) < 0; the tail Cw(m+2H+2)e^{-cH} with H=w^2 is superexponentially dominated. The factor 2 (BK square) is essential: it is what permits p_+ - p_0 = o(1). For a fixed macroscopic interval the sufficient condition 2 kappa(p_b) > kappa(p_a) can genuinely fail."
+    }
+  },
+  "A3_unclaimed_items": {
+    "affine_thermal_clock_p0_plus_x_over_vw_and_Lambda_exp_x": "not used by the theorem",
+    "uniformity_as_p0_to_pc": "not used (proof needs fixed compact subcritical p; the note flags the degeneration)",
+    "all_path_topologies_and_higher_moments": "not used (finite spatial windows x finite mark bins only)",
+    "actually_open_intermediate_steps": [
+      "(a) uniformity of B_w/nu_0 -> 0 over the parameter window (the note itself asks for compact-uniform constants)",
+      "(b) the local log-intensity slope needed for p_0 + x/(v w) (the note flags this too)"
+    ],
+    "conclusion": "no unclaimed item is smuggled in; the soft spots are unclosed intermediate steps, not hidden assumptions"
+  },
+  "B1_Qw_vs_bound": {
+    "method": "same exact transfer; Q_w(H;p)=Pr[a winding occupied closed path exists in an H-row free band] computed from the 'no winding so far' sub-chain",
+    "rows": [
+      {
+        "w": 4,
+        "p": 0.25,
+        "H": 16,
+        "nu_w": 0.004429300954810734,
+        "kappa_w": 1.3548783763469074,
+        "Q": 0.06865019189930588,
+        "bound": 4.3953286892962184,
+        "bound_over_Q": 64.02500222786209,
+        "Q_over_H_nu": 0.968693940077946
+      },
+      {
+        "w": 4,
+        "p": 0.4,
+        "H": 16,
+        "nu_w": 0.02886241607310145,
+        "kappa_w": 0.886303753030951,
+        "Q": 0.3999532775997411,
+        "bound": 28.682001902345895,
+        "bound_over_Q": 71.71338130912835,
+        "Q_over_H_nu": 0.8660771775541009
+      },
+      {
+        "w": 4,
+        "p": 0.5,
+        "H": 16,
+        "nu_w": 0.05806909140463645,
+        "kappa_w": 0.7115304365685295,
+        "Q": 0.7291929753244208,
+        "bound": 60.56597794278336,
+        "bound_over_Q": 83.05891580460894,
+        "Q_over_H_nu": 0.7848333744401839
+      },
+      {
+        "w": 5,
+        "p": 0.25,
+        "H": 25,
+        "nu_w": 0.0013443169288498858,
+        "kappa_w": 1.3223738509047718,
+        "Q": 0.032786519632929,
+        "bound": 3.940863246593468,
+        "bound_over_Q": 120.19766936883045,
+        "Q_over_H_nu": 0.975559228015647
+      },
+      {
+        "w": 5,
+        "p": 0.4,
+        "H": 25,
+        "nu_w": 0.01601834274086165,
+        "kappa_w": 0.8268041584155194,
+        "Q": 0.3438839051527478,
+        "bound": 45.7724415270256,
+        "bound_over_Q": 133.10434376594102,
+        "Q_over_H_nu": 0.8587253019016118
+      },
+      {
+        "w": 5,
+        "p": 0.5,
+        "H": 25,
+        "nu_w": 0.04193460289723798,
+        "kappa_w": 0.6343287896146834,
+        "Q": 0.7459600288614474,
+        "bound": 123.56004387634196,
+        "bound_over_Q": 165.6389606624508,
+        "Q_over_H_nu": 0.7115460524945904
+      },
+      {
+        "w": 6,
+        "p": 0.25,
+        "H": 36,
+        "nu_w": 0.0004219779152266575,
+        "kappa_w": 1.295092929813972,
+        "Q": 0.014894672177433899,
+        "bound": 2.9952818558891496,
+        "bound_over_Q": 201.09753475656464,
+        "Q_over_H_nu": 0.9804799703685325
+      },
+      {
+        "w": 6,
+        "p": 0.4,
+        "H": 36,
+        "nu_w": 0.009202474183511567,
+        "kappa_w": 0.7813804830154581,
+        "Q": 0.28750199196112214,
+        "bound": 62.527358639118795,
+        "bound_over_Q": 217.48495797404473,
+        "Q_over_H_nu": 0.8678281823027149
+      },
+      {
+        "w": 6,
+        "p": 0.5,
+        "H": 36,
+        "nu_w": 0.03145597334932063,
+        "kappa_w": 0.5765277303757491,
+        "Q": 0.7543658307841303,
+        "bound": 217.67682608038396,
+        "bound_over_Q": 288.55605224605466,
+        "Q_over_H_nu": 0.6661566684956151
+      },
+      {
+        "w": 7,
+        "p": 0.25,
+        "H": 49,
+        "nu_w": 0.0001356156875547294,
+        "kappa_w": 1.2722407856025586,
+        "Q": 0.006535470565996682,
+        "bound": 2.03360823424258,
+        "bound_over_Q": 311.16477592649795,
+        "Q_over_H_nu": 0.9834920482384233
+      },
+      {
+        "w": 7,
+        "p": 0.4,
+        "H": 49,
+        "nu_w": 0.0054020251289817415,
+        "kappa_w": 0.7458544816900402,
+        "Q": 0.23392836888377644,
+        "bound": 76.56446940600564,
+        "bound_over_Q": 327.29877855919847,
+        "Q_over_H_nu": 0.8837515988132314
+      },
+      {
+        "w": 7,
+        "p": 0.5,
+        "H": 49,
+        "nu_w": 0.02416330970892604,
+        "kappa_w": 0.5318457034334962,
+        "Q": 0.7557152979244464,
+        "bound": 345.61634975012015,
+        "bound_over_Q": 457.3367122504295,
+        "Q_over_H_nu": 0.6382718827807896
+      },
+      {
+        "w": 8,
+        "p": 0.25,
+        "H": 64,
+        "nu_w": 4.432636548597084e-05,
+        "kappa_w": 1.2529913625315534,
+        "Q": 0.002795395582520954,
+        "bound": 1.271215856180789,
+        "bound_over_Q": 454.7534753683685,
+        "Q_over_H_nu": 0.9853741785058799
+      },
+      {
+        "w": 8,
+        "p": 0.4,
+        "H": 64,
+        "nu_w": 0.0032186746051071128,
+        "kappa_w": 0.717348202185326,
+        "Q": 0.18570664897112488,
+        "bound": 86.44250935410066,
+        "bound_over_Q": 465.478806671814,
+        "Q_over_H_nu": 0.9015097038916934
+      },
+      {
+        "w": 8,
+        "p": 0.5,
+        "H": 64,
+        "nu_w": 0.01886677707525762,
+        "kappa_w": 0.49629409130159696,
+        "Q": 0.7513761938354462,
+        "bound": 507.75644250872654,
+        "bound_over_Q": 675.7686052267006,
+        "Q_over_H_nu": 0.6222712539533484
+      }
+    ],
+    "conclusions": [
+      "bound holds at all 15 (w,p) points (Q >= 5e-6)",
+      "true Q ~ H*nu_w ~ w^2 A w^-beta e^{-kappa w}: same exponent as the bound",
+      "bound/Q grows 64 -> 455 (w=4 -> 8), i.e. ln(bound/Q) ~ 2.85 ln w: the polynomial prefactor is over-counted by ~w^2.9; harmless for (4.2), fatal for numeric substitution"
+    ]
+  },
+  "B2_intensity_clock": {
+    "definition": "F_w(p)=log nu_w(p); v_w := -d kappa_w/dp at p_0 = F_w'(p_0)/w > 0; affine clock p_w(x)=p_0+x/(v_w w); phi_w(x)=F_w(p_w(x))-F_w(p_0)",
+    "exact_result": "E_w(X) := sup_{|x|<=X}|phi_w(x)-x| = |F_w''(p_0)| X^2 / (2 F_w'(p_0)^2) (1+o(1)) = |kappa_w''(p_0)| X^2 / (2 kappa_w'(p_0)^2 w) (1+o(1)) = O(X^2/w), the coefficient being computable at every (w,p_0)",
+    "table": [
+      {
+        "p0": "0.25",
+        "w": 3,
+        "kappa_w": 1.3957493462042567,
+        "nu_w": 0.015188024270440522,
+        "v_w": 3.8666309405644355,
+        "F1": 11.599892821693306,
+        "F2": -52.26803907472839,
+        "Xmax_accessible": 1.3919871386031966,
+        "E_w_X1": 0.24685011522739142,
+        "predicted_E_at_X1": 0.19422192683624498,
+        "E_times_w_at_X1": 0.7405503456821743,
+        "E_window": {
+          "0.25": 0.012771190406966504,
+          "0.5": 0.05403986848185305,
+          "1.0": 0.24685011522739142,
+          "2.0": 0.5445024414175059
+        }
+      },
+      {
+        "p0": "0.25",
+        "w": 4,
+        "kappa_w": 1.3548783763469205,
+        "nu_w": 0.004429300954810502,
+        "v_w": 4.127718742886717,
+        "F1": 16.51087497154687,
+        "F2": -68.0308366812395,
+        "Xmax_accessible": 1.9813049965856242,
+        "E_w_X1": 0.1460749444676157,
+        "predicted_E_at_X1": 0.1247773158558752,
+        "E_times_w_at_X1": 0.5842997778704628,
+        "E_window": {
+          "0.25": 0.008077570960920433,
+          "0.5": 0.03355453189156421,
+          "1.0": 0.1460749444676157,
+          "2.0": 0.7100817653046312
+        }
+      },
+      {
+        "p0": "0.25",
+        "w": 5,
+        "kappa_w": 1.322373850904801,
+        "nu_w": 0.0013443169288496885,
+        "v_w": 4.3038580511923845,
+        "F1": 21.519290255961923,
+        "F2": -84.83046926399673,
+        "Xmax_accessible": 2.582314830715431,
+        "E_w_X1": 0.10286574373120327,
+        "predicted_E_at_X1": 0.0915937809563401,
+        "E_times_w_at_X1": 0.5143287186560164,
+        "E_window": {
+          "0.25": 0.005879345062556496,
+          "0.5": 0.024188922007236435,
+          "1.0": 0.10286574373120327,
+          "2.0": 0.47660918684386644
+        }
+      },
+      {
+        "p0": "0.25",
+        "w": 6,
+        "kappa_w": 1.29509292981526,
+        "nu_w": 0.0004219779152233961,
+        "v_w": 4.42983733070453,
+        "F1": 26.579023984227177,
+        "F2": -102.63847053700499,
+        "Xmax_accessible": 3.189482878107261,
+        "E_w_X1": 0.07959941837118123,
+        "predicted_E_at_X1": 0.07264439614085016,
+        "E_times_w_at_X1": 0.4775965102270874,
+        "E_window": {
+          "0.25": 0.004638568512795871,
+          "0.5": 0.018973350132196032,
+          "1.0": 0.07959941837118123,
+          "2.0": 0.3552759613018601
+        }
+      },
+      {
+        "p0": "0.25",
+        "w": 7,
+        "kappa_w": 1.272240785597338,
+        "nu_w": 0.0001356156875596853,
+        "v_w": 4.520987472688492,
+        "F1": 31.64691230881944,
+        "F2": -121.02396091817624,
+        "Xmax_accessible": 3.797629477058333,
+        "E_w_X1": 0.06516834271902638,
+        "predicted_E_at_X1": 0.06041971600718887,
+        "E_times_w_at_X1": 0.4561783990331847,
+        "E_window": {
+          "0.25": 0.0038446151693154462,
+          "0.5": 0.015666740933397705,
+          "1.0": 0.06516834271902638,
+          "2.0": 0.2844985998041558
+        }
+      },
+      {
+        "p0": "0.25",
+        "w": 8,
+        "kappa_w": 1.25299136256891,
+        "nu_w": 4.432636547272383e-05,
+        "v_w": 4.588614743600838,
+        "F1": 36.70891794880671,
+        "F2": -139.65818500090896,
+        "Xmax_accessible": 4.405070153856805,
+        "E_w_X1": 0.05528812134017791,
+        "predicted_E_at_X1": 0.051819501594368204,
+        "E_times_w_at_X1": 0.4423049707214233,
+        "E_window": {
+          "0.25": 0.003289311158413355,
+          "0.5": 0.0133688837353656,
+          "1.0": 0.05528812134017791,
+          "2.0": 0.23791767193016966
+        }
+      },
+      {
+        "p0": "0.4",
+        "w": 3,
+        "kappa_w": 0.9693481181602842,
+        "nu_w": 0.05458236932671215,
+        "v_w": 1.9902802783594329,
+        "F1": 5.970840835078299,
+        "F2": -30.47154504531857,
+        "Xmax_accessible": 0.7165009002093958,
+        "E_w_X1": 0.23679395114987756,
+        "predicted_E_at_X1": 0.42735962653221266,
+        "E_times_w_at_X1": 0.7103818534496327,
+        "E_window": {
+          "0.25": 0.02713911104806055,
+          "0.5": 0.11151313991888223,
+          "1.0": 0.23679395114987756,
+          "2.0": 0.23679395114987756
+        }
+      },
+      {
+        "p0": "0.4",
+        "w": 4,
+        "kappa_w": 0.8863037530309589,
+        "nu_w": 0.028862416073100538,
+        "v_w": 2.2778018467324395,
+        "F1": 9.111207386929758,
+        "F2": -41.29784199765248,
+        "Xmax_accessible": 1.093344886431571,
+        "E_w_X1": 0.26056467274220685,
+        "predicted_E_at_X1": 0.24873992474742762,
+        "E_times_w_at_X1": 1.0422586909688274,
+        "E_window": {
+          "0.25": 0.015597429950833241,
+          "0.5": 0.0629268586445968,
+          "1.0": 0.26056467274220685,
+          "2.0": 0.31438124111058086
+        }
+      },
+      {
+        "p0": "0.4",
+        "w": 5,
+        "kappa_w": 0.8268041584155086,
+        "nu_w": 0.01601834274086252,
+        "v_w": 2.46225972936025,
+        "F1": 12.31129864680125,
+        "F2": -51.49597779907644,
+        "Xmax_accessible": 1.47735583761615,
+        "E_w_X1": 0.17497136054487727,
+        "predicted_E_at_X1": 0.16987739011950187,
+        "E_times_w_at_X1": 0.8748568027243864,
+        "E_window": {
+          "0.25": 0.01064669487546599,
+          "0.5": 0.042840290022972294,
+          "1.0": 0.17497136054487727,
+          "2.0": 0.3933818877916062
+        }
+      },
+      {
+        "p0": "0.4",
+        "w": 6,
+        "kappa_w": 0.7813804830155014,
+        "nu_w": 0.009202474183509177,
+        "v_w": 2.584846376702433,
+        "F1": 15.509078260214599,
+        "F2": -61.22314784332931,
+        "Xmax_accessible": 1.8610893912257518,
+        "E_w_X1": 0.13009534261951172,
+        "predicted_E_at_X1": 0.12726637817608014,
+        "E_times_w_at_X1": 0.7805720557170703,
+        "E_window": {
+          "0.25": 0.007969598270841871,
+          "0.5": 0.032016054990367415,
+          "1.0": 0.13009534261951172,
+          "2.0": 0.4728103937835988
+        }
+      },
+      {
+        "p0": "0.4",
+        "w": 7,
+        "kappa_w": 0.7458544816900835,
+        "nu_w": 0.0054020251289801065,
+        "v_w": 2.670682107828763,
+        "F1": 18.69477475480134,
+        "F2": -70.56138472331479,
+        "Xmax_accessible": 2.2433729705761607,
+        "E_w_X1": 0.10239954406263507,
+        "predicted_E_at_X1": 0.10094774581756795,
+        "E_times_w_at_X1": 0.7167968084384455,
+        "E_window": {
+          "0.25": 0.006315092297057845,
+          "0.5": 0.02532684709589894,
+          "1.0": 0.10239954406263507,
+          "2.0": 0.428305276275768
+        }
+      },
+      {
+        "p0": "0.4",
+        "w": 8,
+        "kappa_w": 0.7173482021881835,
+        "nu_w": 0.0032186746050335354,
+        "v_w": 2.7337194402306717,
+        "F1": 21.869755521845374,
+        "F2": -79.67324761123014,
+        "Xmax_accessible": 2.6243706626214447,
+        "E_w_X1": 0.08441768969831731,
+        "predicted_E_at_X1": 0.08329034635982452,
+        "E_times_w_at_X1": 0.6753415175865385,
+        "E_window": {
+          "0.25": 0.005213365249175261,
+          "0.5": 0.020911119448146387,
+          "1.0": 0.08441768969831731,
+          "2.0": 0.3487821331940806
+        }
+      },
+      {
+        "p0": "0.5",
+        "w": 3,
+        "kappa_w": 0.8209905243072505,
+        "nu_w": 0.08518145161290265,
+        "v_w": 0.9673601832353445,
+        "F1": 2.9020805497060334,
+        "F2": -32.101990736545275,
+        "Xmax_accessible": 0.21111489907168043,
+        "E_w_X1": 0.08856588038029176,
+        "predicted_E_at_X1": 1.9058251091679497,
+        "E_times_w_at_X1": 0.26569764114087524,
+        "E_window": {
+          "0.25": 0.08856588038029176,
+          "0.5": 0.08856588038029176,
+          "1.0": 0.08856588038029176,
+          "2.0": 0.08856588038029176
+        }
+      },
+      {
+        "p0": "0.5",
+        "w": 4,
+        "kappa_w": 0.7115304365685393,
+        "nu_w": 0.058069091404634184,
+        "v_w": 1.1902372985437077,
+        "F1": 4.760949194174831,
+        "F2": -47.725668291299066,
+        "Xmax_accessible": 0.34634025189804957,
+        "E_w_X1": 0.13425326999088177,
+        "predicted_E_at_X1": 1.0527734618957065,
+        "E_times_w_at_X1": 0.5370130799635271,
+        "E_window": {
+          "0.25": 0.0687629578915816,
+          "0.5": 0.13425326999088177,
+          "1.0": 0.13425326999088177,
+          "2.0": 0.13425326999088177
+        }
+      },
+      {
+        "p0": "0.5",
+        "w": 5,
+        "kappa_w": 0.6343287896146892,
+        "nu_w": 0.04193460289723677,
+        "v_w": 1.3461782543244827,
+        "F1": 6.730891271622413,
+        "F2": -63.63441098977406,
+        "Xmax_accessible": 0.4896457583215463,
+        "E_w_X1": 0.1829056766884713,
+        "predicted_E_at_X1": 0.702290643700041,
+        "E_times_w_at_X1": 0.9145283834423565,
+        "E_window": {
+          "0.25": 0.04580183625653689,
+          "0.5": 0.1829056766884713,
+          "1.0": 0.1829056766884713,
+          "2.0": 0.1829056766884713
+        }
+      },
+      {
+        "p0": "0.5",
+        "w": 6,
+        "kappa_w": 0.5765277303757476,
+        "nu_w": 0.03145597334932093,
+        "v_w": 1.462149512171529,
+        "F1": 8.772897073029174,
+        "F2": -79.1511016270385,
+        "Xmax_accessible": 0.6381936160684453,
+        "E_w_X1": 0.23262520196150482,
+        "predicted_E_at_X1": 0.5142104519264287,
+        "E_times_w_at_X1": 1.395751211769029,
+        "E_window": {
+          "0.25": 0.03349677508550686,
+          "0.5": 0.13966573662347503,
+          "1.0": 0.23262520196150482,
+          "2.0": 0.23262520196150482
+        }
+      },
+      {
+        "p0": "0.5",
+        "w": 7,
+        "kappa_w": 0.5318457034334759,
+        "nu_w": 0.02416330970892949,
+        "v_w": 1.5540798017254198,
+        "F1": 10.878558612077939,
+        "F2": -93.98423815846388,
+        "Xmax_accessible": 0.7913721773390581,
+        "E_w_X1": 0.282485627654224,
+        "predicted_E_at_X1": 0.3970839356611675,
+        "E_times_w_at_X1": 1.9773993935795682,
+        "E_window": {
+          "0.25": 0.02583287398131251,
+          "0.5": 0.10765135745655874,
+          "1.0": 0.282485627654224,
+          "2.0": 0.282485627654224
+        }
+      },
+      {
+        "p0": "0.5",
+        "w": 8,
+        "kappa_w": 0.49629409130139324,
+        "nu_w": 0.01886677707528837,
+        "v_w": 1.6294041350962445,
+        "F1": 13.035233080769956,
+        "F2": -108.03799060086425,
+        "Xmax_accessible": 0.9482617277805527,
+        "E_w_X1": 0.33190869056133954,
+        "predicted_E_at_X1": 0.31791344867826615,
+        "E_times_w_at_X1": 2.6552695244907163,
+        "E_window": {
+          "0.25": 0.02064971963392459,
+          "0.5": 0.08596492569592407,
+          "1.0": 0.33190869056133954,
+          "2.0": 0.33190869056133954
+        }
+      }
+    ],
+    "notes": [
+      "E_w(0.5)/E_w(1) ~ 1/4.1 confirms the X^2 law",
+      "E_w(1)*w is roughly constant (0.58 -> 0.44 for p0=0.25 over w=3..8): supports 1/w",
+      "measurable but still drifting: see B3.1",
+      "predicted vs measured at X=1 agree to a few percent for w>=6; at w=3 the quartic term matters"
+    ],
+    "common_label_check": {
+      "design": "ONE batch of i.i.d. uniform labels per sample on a w x 1200 cylinder (transverse periodic, vertical free); nested thresholds; 4092 samples per width; b2_common_label_mc.py",
+      "nu_hat_vs_exact": {
+        "p0=0.40": [
+          [
+            "w=4",
+            0.028831052460084716,
+            0.0288624
+          ],
+          [
+            "w=5",
+            0.01603413163897035,
+            0.0160183
+          ],
+          [
+            "w=6",
+            0.009151392961876833,
+            0.00920247
+          ]
+        ],
+        "p0=0.25": [
+          [
+            "w=4",
+            0.004408,
+            0.0044293
+          ],
+          [
+            "w=5",
+            0.001335,
+            0.0013443
+          ],
+          [
+            "w=6",
+            0.000426,
+            0.00042198
+          ]
+        ],
+        "comment": "agrees to ~0.5-1%; the small deficit is the expected O(1/L) free-height boundary bias"
+      },
+      "clock_deviation_phi_minus_x": {
+        "p0=0.40, delta=+0.01": {
+          "w=4": -0.0018,
+          "w=5": -0.0008,
+          "w=6": -0.002
+        },
+        "p0=0.40, delta=+0.02": {
+          "w=4": -0.007,
+          "w=5": -0.0103,
+          "w=6": -0.0125
+        },
+        "p0=0.40, delta=+0.04": {
+          "w=4": -0.032,
+          "w=5": -0.0441,
+          "w=6": -0.0447
+        },
+        "mc_se": {
+          "w=4": 0.003,
+          "w=5": 0.005,
+          "w=6": 0.006
+        },
+        "back_solved_C_w": {
+          "w=4": 0.249,
+          "w=5": 0.17,
+          "w=6": 0.122
+        },
+        "predicted_C_w": {
+          "w=4": 0.2487,
+          "w=5": 0.1699,
+          "w=6": 0.1273
+        },
+        "verdict": "common-label MC reproduces the exact affine clock within 1 s.e. for |x|<=0.15 and shows exactly the predicted -C_w x^2 curvature beyond"
+      }
+    }
+  },
+  "B3_minimal_gaps": {
+    "1_clock_rate_not_certified": {
+      "v_w": {
+        "0.25": {
+          "v_inf_1overw": 5.0121204715262335,
+          "coef_1overw": -3.477481387992959,
+          "v_inf_1overw2": 5.1321525137904915,
+          "coefs": [
+            -4.653454047028344,
+            2.566394572806654
+          ],
+          "points": [
+            [
+              3.0,
+              3.8666309405644355
+            ],
+            [
+              4.0,
+              4.127718742886717
+            ],
+            [
+              5.0,
+              4.3038580511923845
+            ],
+            [
+              6.0,
+              4.42983733070453
+            ],
+            [
+              7.0,
+              4.520987472688492
+            ],
+            [
+              8.0,
+              4.588614743600838
+            ]
+          ]
+        },
+        "0.4": {
+          "v_inf_1overw": 3.180854238245023,
+          "coef_1overw": -3.5846040529962466,
+          "v_inf_1overw2": 3.211396920752254,
+          "coefs": [
+            -3.8838354822426786,
+            0.6530304171026807
+          ],
+          "points": [
+            [
+              3.0,
+              1.9902802783594329
+            ],
+            [
+              4.0,
+              2.2778018467324395
+            ],
+            [
+              5.0,
+              2.46225972936025
+            ],
+            [
+              6.0,
+              2.584846376702433
+            ],
+            [
+              7.0,
+              2.670682107828763
+            ],
+            [
+              8.0,
+              2.7337194402306717
+            ]
+          ]
+        },
+        "0.5": {
+          "v_inf_1overw": 1.9996050058673678,
+          "coef_1overw": -3.1598294370383972,
+          "v_inf_1overw2": 2.19920947053353,
+          "coefs": [
+            -5.115385542232637,
+            4.267725560308616
+          ],
+          "points": [
+            [
+              3.0,
+              0.9673601832353445
+            ],
+            [
+              4.0,
+              1.1902372985437077
+            ],
+            [
+              5.0,
+              1.3461782543244827
+            ],
+            [
+              6.0,
+              1.462149512171529
+            ],
+            [
+              7.0,
+              1.5540798017254198
+            ],
+            [
+              8.0,
+              1.6294041350962445
+            ]
+          ]
+        }
+      },
+      "comment": "1/w vs 1/w^2 extrapolations differ by 2.4% (p0=0.25), 1.0% (0.40), 10% (0.50); the asymptotic clock rate = -kappa'(p_0) is not certified from w<=8. Normalising Lambda to a prescribed shape (e.g. e^x) needs a proof that the local log-intensity slope converges (kappa_w - kappa = c/w + o(1/w))."
+    },
+    "2_C2_local_convergence": "E_w = O(X^2/w) requires kappa_w', kappa_w'' -> kappa', kappa''; the companion only needs kappa continuous for (4.2). The affine clock needs more, and w<=8 does not certify it.",
+    "3_closure_margins": {
+      "rows": [
+        {
+          "w": 3,
+          "p0": "0.25",
+          "C": "1",
+          "p_plus": 0.5833333333333333,
+          "kappa_w_p_plus": 0.7793820747767332,
+          "margin_2kplus_minus_k0": 0.1630148033492096,
+          "ratio_to_kappa0": 0.11679375225396214
+        },
+        {
+          "w": 3,
+          "p0": "0.25",
+          "C": "2",
+          "p_plus": 0.9166666666666666,
+          "kappa_w_p_plus": 1.9000543285271043,
+          "margin_2kplus_minus_k0": 2.404359310849952,
+          "ratio_to_kappa0": 1.7226297238745711
+        },
+        {
+          "w": 3,
+          "p0": "0.25",
+          "C": "4",
+          "p_plus": 1.5833333333333333,
+          "skipped": "p_plus out of (0,1)"
+        },
+        {
+          "w": 3,
+          "p0": "0.4",
+          "C": "1",
+          "p_plus": 0.7333333333333334,
+          "kappa_w_p_plus": 0.9378736202630503,
+          "margin_2kplus_minus_k0": 0.9063991223658164,
+          "ratio_to_kappa0": 0.9350604858923768
+        },
+        {
+          "w": 3,
+          "p0": "0.4",
+          "C": "2",
+          "p_plus": 1.0666666666666667,
+          "skipped": "p_plus out of (0,1)"
+        },
+        {
+          "w": 3,
+          "p0": "0.4",
+          "C": "4",
+          "p_plus": 1.7333333333333334,
+          "skipped": "p_plus out of (0,1)"
+        },
+        {
+          "w": 3,
+          "p0": "0.5",
+          "C": "1",
+          "p_plus": 0.8333333333333333,
+          "kappa_w_p_plus": 1.2840350157703617,
+          "margin_2kplus_minus_k0": 1.7470795072334728,
+          "ratio_to_kappa0": 2.1280142163731472
+        },
+        {
+          "w": 3,
+          "p0": "0.5",
+          "C": "2",
+          "p_plus": 1.1666666666666665,
+          "skipped": "p_plus out of (0,1)"
+        },
+        {
+          "w": 3,
+          "p0": "0.5",
+          "C": "4",
+          "p_plus": 1.8333333333333333,
+          "skipped": "p_plus out of (0,1)"
+        },
+        {
+          "w": 4,
+          "p0": "0.25",
+          "C": "1",
+          "p_plus": 0.5,
+          "kappa_w_p_plus": 0.7115304365685295,
+          "margin_2kplus_minus_k0": 0.06818249679013855,
+          "ratio_to_kappa0": 0.05032370283595125
+        },
+        {
+          "w": 4,
+          "p0": "0.25",
+          "C": "2",
+          "p_plus": 0.75,
+          "kappa_w_p_plus": 0.8665740210164962,
+          "margin_2kplus_minus_k0": 0.3782696656860718,
+          "ratio_to_kappa0": 0.27919086487008393
+        },
+        {
+          "w": 4,
+          "p0": "0.25",
+          "C": "4",
+          "p_plus": 1.25,
+          "skipped": "p_plus out of (0,1)"
+        },
+        {
+          "w": 4,
+          "p0": "0.4",
+          "C": "1",
+          "p_plus": 0.65,
+          "kappa_w_p_plus": 0.6847528118130931,
+          "margin_2kplus_minus_k0": 0.48320187059522735,
+          "ratio_to_kappa0": 0.5451876616146394
+        },
+        {
+          "w": 4,
+          "p0": "0.4",
+          "C": "2",
+          "p_plus": 0.9,
+          "kappa_w_p_plus": 1.6388548333488704,
+          "margin_2kplus_minus_k0": 2.391405913666782,
+          "ratio_to_kappa0": 2.6981787062152374
+        },
+        {
+          "w": 4,
+          "p0": "0.4",
+          "C": "4",
+          "p_plus": 1.4,
+          "skipped": "p_plus out of (0,1)"
+        },
+        {
+          "w": 4,
+          "p0": "0.5",
+          "C": "1",
+          "p_plus": 0.75,
+          "kappa_w_p_plus": 0.8665740210164962,
+          "margin_2kplus_minus_k0": 1.021617605464453,
+          "ratio_to_kappa0": 1.4358030984469967
+        },
+        {
+          "w": 4,
+          "p0": "0.5",
+          "C": "2",
+          "p_plus": 1.0,
+          "skipped": "p_plus out of (0,1)"
+        },
+        {
+          "w": 4,
+          "p0": "0.5",
+          "C": "4",
+          "p_plus": 1.5,
+          "skipped": "p_plus out of (0,1)"
+        },
+        {
+          "w": 5,
+          "p0": "0.25",
+          "C": "1",
+          "p_plus": 0.45,
+          "kappa_w_p_plus": 0.7167268528197921,
+          "margin_2kplus_minus_k0": 0.1110798547347831,
+          "ratio_to_kappa0": 0.08400034124901933
+        },
+        {
+          "w": 5,
+          "p0": "0.25",
+          "C": "2",
+          "p_plus": 0.65,
+          "kappa_w_p_plus": 0.5997954545766958,
+          "margin_2kplus_minus_k0": -0.12278294175140947,
+          "ratio_to_kappa0": -0.09285040056365175
+        },
+        {
+          "w": 5,
+          "p0": "0.25",
+          "C": "4",
+          "p_plus": 1.05,
+          "skipped": "p_plus out of (0,1)"
+        },
+        {
+          "w": 5,
+          "p0": "0.4",
+          "C": "1",
+          "p_plus": 0.6000000000000001,
+          "kappa_w_p_plus": 0.5708461138722101,
+          "margin_2kplus_minus_k0": 0.31488806932891156,
+          "ratio_to_kappa0": 0.3808496439257932
+        },
+        {
+          "w": 5,
+          "p0": "0.4",
+          "C": "2",
+          "p_plus": 0.8,
+          "kappa_w_p_plus": 0.9662799523567989,
+          "margin_2kplus_minus_k0": 1.1057557462980891,
+          "ratio_to_kappa0": 1.3373853228038484
+        },
+        {
+          "w": 5,
+          "p0": "0.4",
+          "C": "4",
+          "p_plus": 1.2000000000000002,
+          "skipped": "p_plus out of (0,1)"
+        },
+        {
+          "w": 5,
+          "p0": "0.5",
+          "C": "1",
+          "p_plus": 0.7,
+          "kappa_w_p_plus": 0.6730913818082767,
+          "margin_2kplus_minus_k0": 0.7118539740018641,
+          "ratio_to_kappa0": 1.1222160899149258
+        },
+        {
+          "w": 5,
+          "p0": "0.5",
+          "C": "2",
+          "p_plus": 0.9,
+          "kappa_w_p_plus": 1.5809625411848107,
+          "margin_2kplus_minus_k0": 2.5275962927549323,
+          "ratio_to_kappa0": 3.984678504487037
+        },
+        {
+          "w": 5,
+          "p0": "0.5",
+          "C": "4",
+          "p_plus": 1.3,
+          "skipped": "p_plus out of (0,1)"
+        },
+        {
+          "w": 6,
+          "p0": "0.25",
+          "C": "1",
+          "p_plus": 0.41666666666666663,
+          "kappa_w_p_plus": 0.7397198174939615,
+          "margin_2kplus_minus_k0": 0.18434670517266305,
+          "ratio_to_kappa0": 0.14234245352490604
+        },
+        {
+          "w": 6,
+          "p0": "0.25",
+          "C": "2",
+          "p_plus": 0.5833333333333333,
+          "kappa_w_p_plus": 0.5062902041992354,
+          "margin_2kplus_minus_k0": -0.2825125214167892,
+          "ratio_to_kappa0": -0.21814073331176975
+        },
+        {
+          "w": 6,
+          "p0": "0.25",
+          "C": "4",
+          "p_plus": 0.9166666666666666,
+          "kappa_w_p_plus": 1.7101088796813606,
+          "margin_2kplus_minus_k0": 2.1251248295474614,
+          "ratio_to_kappa0": 1.6409052822569283
+        },
+        {
+          "w": 6,
+          "p0": "0.4",
+          "C": "1",
+          "p_plus": 0.5666666666666667,
+          "kappa_w_p_plus": 0.5113394481364173,
+          "margin_2kplus_minus_k0": 0.24129841325733314,
+          "ratio_to_kappa0": 0.3088103919950943
+        },
+        {
+          "w": 6,
+          "p0": "0.4",
+          "C": "2",
+          "p_plus": 0.7333333333333334,
+          "kappa_w_p_plus": 0.692807108990709,
+          "margin_2kplus_minus_k0": 0.6042337349659165,
+          "ratio_to_kappa0": 0.7732900272016768
+        },
+        {
+          "w": 6,
+          "p0": "0.4",
+          "C": "4",
+          "p_plus": 1.0666666666666667,
+          "skipped": "p_plus out of (0,1)"
+        },
+        {
+          "w": 6,
+          "p0": "0.5",
+          "C": "1",
+          "p_plus": 0.6666666666666666,
+          "kappa_w_p_plus": 0.5578400807472513,
+          "margin_2kplus_minus_k0": 0.5391524311187551,
+          "ratio_to_kappa0": 0.9351717232532191
+        },
+        {
+          "w": 6,
+          "p0": "0.5",
+          "C": "2",
+          "p_plus": 0.8333333333333333,
+          "kappa_w_p_plus": 1.0737783403152117,
+          "margin_2kplus_minus_k0": 1.571028950254676,
+          "ratio_to_kappa0": 2.7249841897991094
+        },
+        {
+          "w": 6,
+          "p0": "0.5",
+          "C": "4",
+          "p_plus": 1.1666666666666665,
+          "skipped": "p_plus out of (0,1)"
+        },
+        {
+          "w": 7,
+          "p0": "0.25",
+          "C": "1",
+          "p_plus": 0.39285714285714285,
+          "kappa_w_p_plus": 0.7651880026986756,
+          "margin_2kplus_minus_k0": 0.2581352198000131,
+          "ratio_to_kappa0": 0.2028980855843372
+        },
+        {
+          "w": 7,
+          "p0": "0.25",
+          "C": "2",
+          "p_plus": 0.5357142857142857,
+          "kappa_w_p_plus": 0.48546040061539036,
+          "margin_2kplus_minus_k0": -0.3013199843665574,
+          "ratio_to_kappa0": -0.23684194672715406
+        },
+        {
+          "w": 7,
+          "p0": "0.25",
+          "C": "4",
+          "p_plus": 0.8214285714285714,
+          "kappa_w_p_plus": 0.9781248153859897,
+          "margin_2kplus_minus_k0": 0.6840088451746413,
+          "ratio_to_kappa0": 0.5376410290552727
+        },
+        {
+          "w": 7,
+          "p0": "0.4",
+          "C": "1",
+          "p_plus": 0.5428571428571429,
+          "kappa_w_p_plus": 0.4785398780151381,
+          "margin_2kplus_minus_k0": 0.21122527434019267,
+          "ratio_to_kappa0": 0.28319904153630965
+        },
+        {
+          "w": 7,
+          "p0": "0.4",
+          "C": "2",
+          "p_plus": 0.6857142857142857,
+          "kappa_w_p_plus": 0.5424268871791262,
+          "margin_2kplus_minus_k0": 0.33899929266816897,
+          "ratio_to_kappa0": 0.4545113034649962
+        },
+        {
+          "w": 7,
+          "p0": "0.4",
+          "C": "4",
+          "p_plus": 0.9714285714285714,
+          "kappa_w_p_plus": 2.717628560455368,
+          "margin_2kplus_minus_k0": 4.689402639220652,
+          "ratio_to_kappa0": 6.287288947563348
+        },
+        {
+          "w": 7,
+          "p0": "0.5",
+          "C": "1",
+          "p_plus": 0.6428571428571428,
+          "kappa_w_p_plus": 0.4810807346869543,
+          "margin_2kplus_minus_k0": 0.43031576594043264,
+          "ratio_to_kappa0": 0.8090988855647626
+        },
+        {
+          "w": 7,
+          "p0": "0.5",
+          "C": "2",
+          "p_plus": 0.7857142857142857,
+          "kappa_w_p_plus": 0.8229150683335709,
+          "margin_2kplus_minus_k0": 1.1139844332336657,
+          "ratio_to_kappa0": 2.094563190117046
+        },
+        {
+          "w": 7,
+          "p0": "0.5",
+          "C": "4",
+          "p_plus": 1.0714285714285714,
+          "skipped": "p_plus out of (0,1)"
+        },
+        {
+          "w": 8,
+          "p0": "0.25",
+          "C": "1",
+          "p_plus": 0.375,
+          "kappa_w_p_plus": 0.7888187045077183,
+          "margin_2kplus_minus_k0": 0.3246460464465266,
+          "ratio_to_kappa0": 0.2590967951933286
+        },
+        {
+          "w": 8,
+          "p0": "0.25",
+          "C": "2",
+          "p_plus": 0.5,
+          "kappa_w_p_plus": 0.49629409130159696,
+          "margin_2kplus_minus_k0": -0.26040317996571605,
+          "ratio_to_kappa0": -0.20782519955431442
+        },
+        {
+          "w": 8,
+          "p0": "0.25",
+          "C": "4",
+          "p_plus": 0.75,
+          "kappa_w_p_plus": 0.6680367204374497,
+          "margin_2kplus_minus_k0": 0.08308207830598935,
+          "ratio_to_kappa0": 0.0663069840606504
+        },
+        {
+          "w": 8,
+          "p0": "0.4",
+          "C": "1",
+          "p_plus": 0.525,
+          "kappa_w_p_plus": 0.45999798934043573,
+          "margin_2kplus_minus_k0": 0.20264777649268795,
+          "ratio_to_kappa0": 0.2824956915965434
+        },
+        {
+          "w": 8,
+          "p0": "0.4",
+          "C": "2",
+          "p_plus": 0.65,
+          "kappa_w_p_plus": 0.45046328336431435,
+          "margin_2kplus_minus_k0": 0.18357836454044518,
+          "ratio_to_kappa0": 0.2559124898904907
+        },
+        {
+          "w": 8,
+          "p0": "0.4",
+          "C": "4",
+          "p_plus": 0.9,
+          "kappa_w_p_plus": 1.4809007573525612,
+          "margin_2kplus_minus_k0": 2.244453312516939,
+          "ratio_to_kappa0": 3.1288198752997594
+        },
+        {
+          "w": 8,
+          "p0": "0.5",
+          "C": "1",
+          "p_plus": 0.625,
+          "kappa_w_p_plus": 0.42651945335847913,
+          "margin_2kplus_minus_k0": 0.356744815415565,
+          "ratio_to_kappa0": 0.718817373948783
+        },
+        {
+          "w": 8,
+          "p0": "0.5",
+          "C": "2",
+          "p_plus": 0.75,
+          "kappa_w_p_plus": 0.6680367204374497,
+          "margin_2kplus_minus_k0": 0.8397793495735061,
+          "ratio_to_kappa0": 1.6921002371223448
+        },
+        {
+          "w": 8,
+          "p0": "0.5",
+          "C": "4",
+          "p_plus": 1.0,
+          "skipped": "p_plus out of (0,1)"
+        }
+      ],
+      "comment": "2 kappa_w(p_+) - kappa_w(p_0) > 0 for C=1 everywhere; but C=2, p0=0.25, w=5..8 is NEGATIVE (w=8: -0.260) because p_+=0.50 and kappa_w(0.50)=0.496 < kappa_w(0.25)/2. The sufficient condition is not automatic and yields a concrete effective-range bound (a computable slice of Q3); it is not a phase line."
+    }
+  },
+  "B4_fixed_location_protocol": {
+    "statement": "At fixed p_0>0 a fixed micro-site is black with probability exactly p_0 and, if white, may sit in a finite white island. No point is silently swapped: all numbers below are for a FIXED row / FIXED micro-site, including the black and finite-white cases.",
+    "exact_microsite_weights": [
+      {
+        "w": 3,
+        "p0": 0.25,
+        "P_site_black": 0.25,
+        "P_site_white_in_winding_white_comp": 0.691019078641228,
+        "P_site_white_in_nonwinding_white_comp": 0.058980921358771976
+      },
+      {
+        "w": 3,
+        "p0": 0.4,
+        "P_site_black": 0.4,
+        "P_site_white_in_winding_white_comp": 0.40354798156167043,
+        "P_site_white_in_nonwinding_white_comp": 0.19645201843832955
+      },
+      {
+        "w": 3,
+        "p0": 0.5,
+        "P_site_black": 0.5,
+        "P_site_white_in_winding_white_comp": 0.22580645161290333,
+        "P_site_white_in_nonwinding_white_comp": 0.27419354838709664
+      },
+      {
+        "w": 4,
+        "p0": 0.25,
+        "P_site_black": 0.25,
+        "P_site_white_in_winding_white_comp": 0.6972268192121444,
+        "P_site_white_in_nonwinding_white_comp": 0.052773180787855645
+      },
+      {
+        "w": 4,
+        "p0": 0.4,
+        "P_site_black": 0.4,
+        "P_site_white_in_winding_white_comp": 0.3671523295117286,
+        "P_site_white_in_nonwinding_white_comp": 0.23284767048827137
+      },
+      {
+        "w": 4,
+        "p0": 0.5,
+        "P_site_black": 0.5,
+        "P_site_white_in_winding_white_comp": 0.16525131971540064,
+        "P_site_white_in_nonwinding_white_comp": 0.33474868028459936
+      },
+      {
+        "w": 5,
+        "p0": 0.25,
+        "P_site_black": 0.25,
+        "P_site_white_in_winding_white_comp": 0.7038004165698423,
+        "P_site_white_in_nonwinding_white_comp": 0.04619958343015773
+      },
+      {
+        "w": 5,
+        "p0": 0.4,
+        "P_site_black": 0.4,
+        "P_site_white_in_winding_white_comp": 0.3425856917046396,
+        "P_site_white_in_nonwinding_white_comp": 0.2574143082953604
+      },
+      {
+        "w": 5,
+        "p0": 0.5,
+        "P_site_black": 0.5,
+        "P_site_white_in_winding_white_comp": 0.12397869842320419,
+        "P_site_white_in_nonwinding_white_comp": 0.3760213015767958
+      },
+      {
+        "w": 6,
+        "p0": 0.25,
+        "P_site_black": 0.25,
+        "P_site_white_in_winding_white_comp": 0.7088599300666804,
+        "P_site_white_in_nonwinding_white_comp": 0.041140069933319645
+      },
+      {
+        "w": 6,
+        "p0": 0.4,
+        "P_site_black": 0.4,
+        "P_site_white_in_winding_white_comp": 0.32474108841852345,
+        "P_site_white_in_nonwinding_white_comp": 0.27525891158147653
+      },
+      {
+        "w": 6,
+        "p0": 0.5,
+        "P_site_black": 0.5,
+        "P_site_white_in_winding_white_comp": 0.0947694718666976,
+        "P_site_white_in_nonwinding_white_comp": 0.4052305281333024
+      },
+      {
+        "w": 7,
+        "p0": 0.25,
+        "P_site_black": 0.25,
+        "P_site_white_in_winding_white_comp": 0.7124800466978775,
+        "P_site_white_in_nonwinding_white_comp": 0.037519953302122544
+      },
+      {
+        "w": 7,
+        "p0": 0.4,
+        "P_site_black": 0.4,
+        "P_site_white_in_winding_white_comp": 0.31096199585845336,
+        "P_site_white_in_nonwinding_white_comp": 0.2890380041415466
+      },
+      {
+        "w": 7,
+        "p0": 0.5,
+        "P_site_black": 0.5,
+        "P_site_white_in_winding_white_comp": 0.07333901562126968,
+        "P_site_white_in_nonwinding_white_comp": 0.42666098437873035
+      },
+      {
+        "w": 8,
+        "p0": 0.25,
+        "P_site_black": 0.25,
+        "P_site_white_in_winding_white_comp": 0.7149852698339092,
+        "P_site_white_in_nonwinding_white_comp": 0.0350147301660908
+      },
+      {
+        "w": 8,
+        "p0": 0.4,
+        "P_site_black": 0.4,
+        "P_site_white_in_winding_white_comp": 0.29988928203346576,
+        "P_site_white_in_nonwinding_white_comp": 0.3001107179665342
+      },
+      {
+        "w": 8,
+        "p0": 0.5,
+        "P_site_black": 0.5,
+        "P_site_white_in_winding_white_comp": 0.057265537886500496,
+        "P_site_white_in_nonwinding_white_comp": 0.4427344621134995
+      }
+    ],
+    "mc_fixed_row_u": {
+      "p0=0.25": {
+        "4": {
+          "P0": 0.0146484375,
+          "P1": 0.983154296875,
+          "P_ge2": 0.002197265625
+        },
+        "5": {
+          "P0": 0.005615234375,
+          "P1": 0.9892578125,
+          "P_ge2": 0.005126953125
+        },
+        "6": {
+          "P0": 0.00244140625,
+          "P1": 0.993408203125,
+          "P_ge2": 0.004150390625
+        }
+      },
+      "p0=0.40": {
+        "4": {
+          "P0": 0.24902248289345064,
+          "P1": 0.7482893450635386,
+          "P_ge2": 0.002688172043010753
+        },
+        "5": {
+          "P0": 0.229227761485826,
+          "P1": 0.7629521016617791,
+          "P_ge2": 0.007820136852394917
+        },
+        "6": {
+          "P0": 0.22116324535679374,
+          "P1": 0.7675953079178885,
+          "P_ge2": 0.011241446725317693
+        }
+      },
+      "comment": "p0=0.25 (white 0.75, far from pc): protocol usable, anomaly 0.2-0.5%. p0=0.40 (white 0.60, just above pc=0.592746): NOT in the asymptotic regime, P(u=0) ~ 0.22-0.25 and the anomaly even grows (0.27% -> 1.12% over w=4..6). p0 > 1-pc ~ 0.4073: white is subcritical and a fixed row usually carries NO winding white component (P0=0.877 at w=8, p0=0.5)."
+    },
+    "extra_condition_needed": "the fixed-row protocol needs 1-p_0 strictly supercritical and in its winding regime; the companion's section 6 does not state this.",
+    "two_definitions_differ": "an EXACT transfer records only components that have ALREADY wound by the current row (P(u>=2)=0 exactly for w<=8); the protocol needs full-span winding components. An explicit witness (see below) shows the two differ."
+  },
+  "B5_explicit_witness_two_winding_clusters_sharing_a_row": {
+    "found": true,
+    "w": 5,
+    "L": 14,
+    "popcount": 17,
+    "shared_first_row": 4,
+    "witness_mask": 26268577987584,
+    "component_A": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      17,
+      22
+    ],
+    "component_B": [
+      24,
+      29,
+      34,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      44
+    ],
+    "picture": [
+      ". . . . .",
+      ". . . . .",
+      "# # # # #",
+      ". . # . .",
+      ". . # . #",
+      ". . . . #",
+      ". . . . #",
+      ". . # # #",
+      "# # # . #",
+      ". . . . .",
+      ". . . . .",
+      ". . . . .",
+      ". . . . .",
+      ". . . . ."
+    ],
+    "meaning": "two distinct essential clusters CAN cover the same row, so 'the unique essential white component covering a fixed row' is not a one-sided Markov observable; computing the protocol's anomaly exactly needs a two-sided transfer or the full-cluster notion."
+  },
+  "not_claimed": [
+    "no statement that mergers are absent: small-width mergers are non-zero (721/125000000 reproduced)",
+    "B_w/nu_- -> 0 is the TARGET; only finite interfaces (3 widths, 2 parameter pairs) were computed as a regression",
+    "E_w(X)=O(X^2/w) is an exact finite-width quantity plus finite-w numerics, not a proved limit statement",
+    "the affine clock p_0+x/(vw), Lambda=e^x is NOT realised: only v_w and its drift are given",
+    "the (2.1) bound is not numerically tight (off by ~w^2.9)",
+    "the fixed-row protocol is not repaired: its anomaly does not decrease at p0=0.40 over w=4..6 and the protocol fails for p0 > 1-pc",
+    "quoted, not re-derived: [AV] volume tail / two-point bound, the seed argument for (4.1), the nu_2/nu_3 closed forms, pc ~ 0.592746"
+  ]
+}

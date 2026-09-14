@@ -1,0 +1,33 @@
+{
+  "schema": "oblique-spin4-angular-controls-v1",
+  "model": "same square-site NN / complementary matching charge-coexistence roots",
+  "reference_pc": 0.59274605079,
+  "prediction": "p_root-pc ~ -A*cos(4theta)/ell^4",
+  "interpretation_boundary": [
+    "roots are deterministic safe-transfer outputs",
+    "reference_pc is used only to form the displayed scaling combinations",
+    "the spin-four angular law and common amplitude are scaling conjectures",
+    "small n and directions close to a cos(4theta) node can have relatively large higher-order contamination"
+  ],
+  "records": [
+    {"direction": [1,0], "n": 8, "charge_root_p": 0.5926727605746268, "physical_circumference": 8.0, "cos_4theta": 1.0, "root_minus_pc": -0.00007329021537316738, "shift_times_ell4": -0.3001967221684936, "A_estimate": 0.3001967221684936},
+    {"direction": [1,0], "n": 9, "charge_root_p": 0.5927006240698091, "physical_circumference": 9.0, "cos_4theta": 1.0, "root_minus_pc": -0.000045426720190921976, "shift_times_ell4": -0.2980447111726391, "A_estimate": 0.2980447111726391},
+    {"direction": [1,1], "n": 4, "charge_root_p": 0.5930452429807460, "physical_circumference": 5.656854249492381, "cos_4theta": -1.0, "root_minus_pc": 0.00029919219074603376, "shift_times_ell4": 0.3063728033239386, "A_estimate": 0.3063728033239386},
+    {"direction": [1,1], "n": 5, "charge_root_p": 0.5928657129692908, "physical_circumference": 7.0710678118654755, "cos_4theta": -1.0, "root_minus_pc": 0.00011966217929082479, "shift_times_ell4": 0.2991554482270620, "A_estimate": 0.2991554482270620},
+    {"direction": [2,1], "n": 3, "charge_root_p": 0.5927885674009657, "physical_circumference": 6.708203932499369, "cos_4theta": -0.28, "root_minus_pc": 0.00004251661096577042, "shift_times_ell4": 0.08609613720568511, "A_estimate": 0.30748620430601825},
+    {"direction": [2,1], "n": 4, "charge_root_p": 0.5927592096236479, "physical_circumference": 8.94427190999916, "cos_4theta": -0.28, "root_minus_pc": 0.00001315883364794157, "shift_times_ell4": 0.08421653534682606, "A_estimate": 0.30077334052437876},
+    {"direction": [3,1], "n": 2, "charge_root_p": 0.5926956531500451, "physical_circumference": 6.324555320336759, "cos_4theta": 0.28, "root_minus_pc": -0.000050397639954846696, "shift_times_ell4": -0.08063622392775474, "A_estimate": 0.2879865140276955},
+    {"direction": [3,1], "n": 3, "charge_root_p": 0.5927359840350691, "physical_circumference": 9.486832980505138, "cos_4theta": 0.28, "root_minus_pc": -0.000010066754930870836, "shift_times_ell4": -0.08154071494005377, "A_estimate": 0.2912168390716206},
+    {"direction": [3,2], "n": 2, "charge_root_p": 0.5928240591851011, "physical_circumference": 7.211102550927978, "cos_4theta": -0.7041420118343196, "root_minus_pc": 0.00007800839510108126, "shift_times_ell4": 0.2109347003533237, "A_estimate": 0.29956272571186304},
+    {"direction": [5,2], "n": 2, "charge_root_p": 0.5927450615814472, "physical_circumference": 10.770329614269007, "cos_4theta": 0.04875148632580262, "root_minus_pc": -9.892085527374306e-7, "shift_times_ell4": -0.013310790285634862, "A_estimate": 0.2730335275663151}
+  ],
+  "summary": {
+    "common_amplitude_target": 0.30,
+    "strongest_non_axis_controls": [
+      "direction (1,1): sign flips and A_est=0.29916 at n=5",
+      "direction (2,1): cos4=-7/25 and A_est=0.30077 at n=4",
+      "direction (3,2): cos4=-0.704142 and A_est=0.29956 already at n=2",
+      "direction (5,2): near cos4 node, root is within about 1e-6 of pc at n=2"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "diagonal-charge-transfer-v1",
+  "model": "same square-site NN / complementary matching graph; period n*(1,1)",
+  "coordinate_map": "(x,y)=s*(1,1)+t*(0,1), s mod n",
+  "reference_pc": 0.59274605079,
+  "spin4_control": "theta=pi/4, so cos(4 theta)=-1 versus +1 on the axis",
+  "claim_boundary": [
+    "root is located from safe Perron equality only",
+    "reference_pc is used only for the displayed scaling diagnostic",
+    "n=2 is retained as a small control but asymptotic interpretation uses increasing n"
+  ],
+  "records": [
+    {"n": 2, "period_vector": [2,2], "physical_circumference": 2.8284271247461903, "safe_states_G4_two_row": 17, "safe_states_G8_two_row": 9, "charge_root_p": 0.5997254073143432, "root_minus_reference_pc": 0.006979356524343228, "root_shift_times_physical_circumference_fourth": 0.4466788175579667},
+    {"n": 3, "period_vector": [3,3], "physical_circumference": 4.242640687119286, "safe_states_G4_two_row": 99, "safe_states_G8_two_row": 52, "charge_root_p": 0.5937572147651211, "root_minus_reference_pc": 0.001011163975121132, "root_shift_times_physical_circumference_fourth": 0.32761712793924697},
+    {"n": 4, "period_vector": [4,4], "physical_circumference": 5.656854249492381, "safe_states_G4_two_row": 609, "safe_states_G8_two_row": 305, "charge_root_p": 0.593045242980746, "root_minus_reference_pc": 0.00029919219074603376, "root_shift_times_physical_circumference_fourth": 0.3063728033239386},
+    {"n": 5, "period_vector": [5,5], "physical_circumference": 7.0710678118654755, "safe_states_G4_two_row": 4003, "safe_states_G8_two_row": 1761, "charge_root_p": 0.5928657129692908, "root_minus_reference_pc": 0.00011966217929082479, "root_shift_times_physical_circumference_fourth": 0.299155448227062}
+  ],
+  "axis_comparison": {
+    "axis_root_shift_convention": "reference_pc - p_axis",
+    "axis_scaled_shift_w8": 0.3001967221684936,
+    "axis_scaled_shift_w9": 0.2980447111726391,
+    "interpretation": "diagonal p-root shift has the opposite sign and approaches the same magnitude after physical-circumference normalization"
+  }
+}

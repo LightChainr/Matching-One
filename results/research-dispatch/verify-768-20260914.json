@@ -1,0 +1,110 @@
+{
+  "verifier": "verify768",
+  "date": "2026-09-14",
+  "machine": "DevEnvC_NePnUn (account2)",
+  "cloud_workdir": "/workspace/verify768",
+  "target": {
+    "deliverable": "theory768-out/note-first-noncommon-correction.md",
+    "claim_under_test": "momentum-0 exclusion of thermal spin(+/-4) at x=21/4",
+    "issues_read_only": [768, 802]
+  },
+  "method": {
+    "own_route": "independent Virasoro normal-ordering (greedy insert/push recursion), independent exact-rational linear algebra",
+    "reused_theory768_code": false,
+    "local_mac_computation": "none (all compute on cloud)",
+    "scripts": ["v768_v1_verma.py", "v768_v1b_diag.py", "v768_v2_classes.py"],
+    "controls": ["(c,h)=(1/2,3/7) generic", "(c,h)=(0,0) vacuum"],
+    "cross_check_routes_for_e_n": ["A complement+mod rad", "B full V_{n-1}+mod rad", "C explicit quotient coords", "D adjoint L_1 kernel"]
+  },
+  "V1": {
+    "verdict": "all four sub-claims HOLD",
+    "p_n": [1, 1, 2, 3, 5, 7, 11],
+    "gram_rank": [1, 1, 1, 2, 3, 4, 6],
+    "gram_nullity": [0, 0, 1, 1, 2, 3, 5],
+    "rank_eq_p_minus_p_shift2_all": true,
+    "theory768_json_flag_rank_equals_p_shift2": false,
+    "theory768_json_flag_is_SCRIPT_BUG": true,
+    "singular_dims": {"2": 1, "others": 0},
+    "chi_int": [-3, 2],
+    "chi_norm_gram": "0",
+    "chi_norm_direct": "0",
+    "chi_two_routes_agree": true,
+    "L1_chi_zero": true,
+    "L2_chi_zero": true,
+    "L3_chi_zero": true,
+    "intermediate": {"Lm2_norm_2x2": "5/2", "Lm1sq_norm": "45/8", "cross": "15/4", "detG2_c0_factor_4h2_8h_minus_5": "0"},
+    "modLm1_irreducible_seq_1_4": [0, 0, 1, 1],
+    "modLm1_verma_seq_1_4": [0, 1, 1, 2],
+    "e_n_equals_d_prev_n_le_6": true,
+    "Lm1_injective_on_irreducible_quotient": true,
+    "is_0011_arithmetic_restatement": true,
+    "interpretation": "0,0,1,1 follows by PURE ARITHMETIC from rank G_n = p(n)-p(n-2) together with injectivity of L_{-1} on the irreducible quotient. The only non-arithmetic input is that injectivity (verified by 4 independent routes for n<=6). It is NOT an independent new fact."
+  },
+  "V2": {
+    "headline": "one-order matrix-element statement holds; the 'different predicted images / feasible exclusion' does NOT hold as stated",
+    "V2_1_delta_h_hbar": {
+      "verdict": "HOLDS (exact, elementary)",
+      "derivation": "[P,phi]=(h-hbar)(2pi/L)phi, P|vac>=0  =>  (h-hbar)<mom0|phi|mom0>=0",
+      "conditions": ["translation invariance along compact direction (periodic BC)", "initial/final state momentum 0", "phi has definite (h,hbar)"],
+      "flaw_in_wording": "on an INFINITE periodic cylinder the one-point function of a PRIMARY vanishes for ALL h (conformal map from the plane); the delta_{h,hbar} statement is really about (a) the torus modular trace or (b) the matrix element <mom0|phi|mom0>. The note conflates one-point function / matrix element / per-row finite-size correction."
+    },
+    "V2_2_observable_is_momentum0": {
+      "verdict": "HOLDS at first order; GAP on order (1st vs 2nd)",
+      "argument": "Theta_w / Delta_w = difference of per-row sector excitation energies; per-row energy = log of leading transfer-matrix eigenvalue per row; for a translation-invariant transfer matrix the leading eigenvalue is momentum 0 (Perron-Frobenius) => momentum-0 quantity.",
+      "gap": "#802 explicitly demands distinguishing first vs second order ('均值零列场在平移不变背景下一阶往往为零；需要先推导使用一阶还是二阶'). 'Matrix element = 0' is FIRST order. At SECOND order a spin-4 operator can shift a momentum-0 level via phi_4 phi_{-4} (spin 0) with a different exponent. The note never shows the w^{-17/4} term is first order.",
+      "note_self_admission": "note §3.6/§4.1 marks the Theta_w definition (momentum-0 vs direction-resolved) as UNDECIDED while §3.4 D1 is presented as a delivered criterion -- internal tension."
+    },
+    "V2_3_distinguishing_power": {
+      "verdict": "8-arm weight HOLDS; but NOT unique",
+      "eight_arm": {"h_4_2": "21/8", "h_2_7": "21/8", "x": "21/4", "spin": 0},
+      "thermal_s4": {"h": "37/8", "hbar": "5/8", "x": "21/4", "spin": 4},
+      "c4_rules": {"C4_allowed_spins": [4, 8], "C3_allowed": [3, 6], "C6_allowed": [6]},
+      "why_not_unique": "the momentum rule can only KILL spin!=0; it can never SELECT a scalar. Alive scalars at x<=21/4: k=2..7 scalar Kac arms (x=1/4,2/3,5/4,2,35/12,4) which the note itself calls '本轮最大的空白'; log partner psi-hat at x=5/4. Identity family is killed by parity (dual-even), not by momentum. Also the nonzero-ness of the 8-arm amplitude is NOT established by the momentum rule (and <0|8-arm|0>=0 for any primary with Delta!=0)."
+    },
+    "V2_4_the_addendum": {
+      "verdict": "DOES NOT HOLD for scenario (ii); UNESTABLISHED for (iii). Contradicts the note's own §1.2.",
+      "arithmetic_confirmed": "independent recomputation: q_(ii)=[1,0,1,1,2,2,4]; at x=21/4 the class (a,b)=(2,2) has spin 0, dim 1, momentum 0, C4-ok. So the class EXISTS. In (i) q_2=0 so it does not.",
+      "why_the_inference_fails": [
+        "(ii): the 'extra' level-2 non-derivative class IS the null direction itself. V_2/L_{-1}V_1 is 1-dimensional spanned by [L_{-2}|h>], and [chi] = -3[L_{-2}] != 0, so the whole class is the null direction. A null field is annihilated by all positive modes => its correlators vanish identically => the (2,2) class contributes NOTHING in (ii). This is consistent with the note's own §1.2 ('(i) and (ii) have identical correlators').",
+        "(iii): whether the (2,2) class is a genuine operator (non-zero matrix element) is NOT determined by the Virasoro algebra -- the note says so itself. => unestablished."
+      ],
+      "consequence": {
+        "exclusion_holds_in": ["(i) class projected out", "(ii) class is null => zero correlators"],
+        "exclusion_may_fail_in": "(iii) if the class is a genuine operator",
+        "but": "the note itself argues the physical module is (iii) while using the (ii) class counting to support a (iii) effect -- argument invalid",
+        "note_D3_claim_wrong_for_ii": "note §3.4 D3 says 'in (ii)/(iii) there are 2 independent momentum-0 amplitudes at x=21/4'; for (ii) this is WRONG (still 1, because the extra class is null)."
+      }
+    },
+    "my_independent_class_tables": {
+      "q_irreducible_(i)": [1, 0, 0, 1, 1, 1, 2],
+      "q_verma_(ii)": [1, 0, 1, 1, 2, 2, 4],
+      "at_x_21_4_(i)": [{"ab": [0, 4], "spin": -4, "dim": 1, "momentum0": false, "C4": true}, {"ab": [4, 0], "spin": 4, "dim": 1, "momentum0": false, "C4": true}],
+      "momentum0_C4_at_x_21_4_(i)": [],
+      "at_x_21_4_(ii)": [{"ab": [0, 4], "spin": -4, "dim": 2, "momentum0": false, "C4": true}, {"ab": [2, 2], "spin": 0, "dim": 1, "momentum0": true, "C4": true}, {"ab": [4, 0], "spin": 4, "dim": 2, "momentum0": false, "C4": true}],
+      "momentum0_C4_at_x_21_4_(ii)": [{"ab": [2, 2], "spin": 0, "dim": 1}],
+      "matches_theory768_table": true
+    }
+  },
+  "V3": {
+    "cannot_claim_level4_diff_matrix_element_nonzero": "respected in §1.5, but §3.3's prediction table implicitly assumes both amplitudes nonzero (mild leak)",
+    "cannot_claim_partial4_epsilon_insertion": "respected; and this is TRIVIALLY true (L_{-1}^4|h> lies in L_{-1}V_3 by definition)",
+    "cannot_declare_winner": "respected in §3.6, but §0#4/'feasible exclusion' and §3.4 D1 lean toward spin4 failing (tension)",
+    "cannot_claim_w_minus_17_4_explained": "respected"
+  },
+  "issues_found": [
+    {"id": "IF-1", "severity": "high", "what": "theory768's JSON flag rank_equals_p_shift2=false contradicts its own table and conclusion; script bug: compares rank G_n to p(n-2) instead of p(n)-p(n-2)", "repro": "g2_virasoro.py: pnm2 = len(B[n-2]); if rank[n] != pnm2: ok_char=False", "note_table_is_right": true},
+    {"id": "IF-2", "severity": "high", "what": "note §0#4 addendum contradicts note §1.2: in scenario (ii) the extra (2,2) class is exactly the null direction => zero correlators => cannot enter momentum-0 observables", "minimal_repro": "V_2/L_{-1}V_1 is 1-dim spanned by [L_{-2}|h>]; chi=-3L_{-2}+2L_{-1}^2 => [chi]=-3[L_{-2}] != 0"},
+    {"id": "IF-3", "severity": "medium", "what": "note conflates (ii) 'zero-norm state retained' with (iii) 'log module'"},
+    {"id": "IF-4", "severity": "medium", "what": "note's 'one-point function ∝ delta_{h,hbar}' is a torus/matrix-element statement; on an infinite periodic cylinder primary one-point functions vanish for all h"},
+    {"id": "IF-5", "severity": "medium", "what": "note uses the (ii) class counting to argue a (iii) effect without establishing nonvanishing"},
+    {"id": "IF-6", "severity": "low", "what": "my own first implementation had a complement-selection bug (cur==rank[n-1] instead of cur==len(Bp)) giving 0,0,1,2; caught only by 4-route cross-check. Recorded to show a single 'independent' implementation can also be consistently wrong."}
+  ],
+  "cannot_claim": [
+    "did not recompute #802's (T_g,N_g)",
+    "did not verify the numerical definition of Theta_w on the real sector engine",
+    "did not determine whether the (2,2) class is a genuine operator in (iii) (needs log-module construction; Virasoro algebra is insufficient)",
+    "did not establish the nonzero-ness of the 8-arm amplitude",
+    "all literature citations are 'quoted, not independently recomputed'"
+  ],
+  "bottom_line": "V1 holds throughout (chi norm is exactly 0; 0,0,1,1 holds but is an arithmetic consequence, not an independent fact). V2's momentum-0 exclusion of spin(+/-4) is correct as a FIRST-ORDER matrix-element statement and Theta_w is indeed a momentum-0 quantity, but (a) it is only first order (#802's second-order question unprocessed), (b) it only kills spins and cannot select a scalar (not unique), (c) its own acknowledged (2,2) addendum does NOT hold -- in (ii) that class is the null direction with identically zero correlators, contradicting the note's own §1.2; in (iii) it is unestablished. Hence the 'feasible exclusion' is CONDITIONAL: it holds in (i)/(ii) and may fail in (iii) if the class is a genuine operator -- yet the note itself argues the physical module is (iii)."
+}
