@@ -1,0 +1,552 @@
+{
+ "marker": "PY39COMPAT_MARKER=1",
+ "thermal_chiral_ladder": {
+  "primary": {
+   "h": "5/8",
+   "hbar": "5/8",
+   "x": "5/4",
+   "spin": "0"
+  },
+  "descendants": {
+   "s0": {
+    "h": "5/8",
+    "hbar": "5/8",
+    "x": "5/4",
+    "spin": "0"
+   },
+   "s1": {
+    "h": "13/8",
+    "hbar": "5/8",
+    "x": "9/4",
+    "spin": "1"
+   },
+   "s2": {
+    "h": "21/8",
+    "hbar": "5/8",
+    "x": "13/4",
+    "spin": "2"
+   },
+   "s3": {
+    "h": "29/8",
+    "hbar": "5/8",
+    "x": "17/4",
+    "spin": "3"
+   },
+   "s4": {
+    "h": "37/8",
+    "hbar": "5/8",
+    "x": "21/4",
+    "spin": "4"
+   },
+   "s5": {
+    "h": "45/8",
+    "hbar": "5/8",
+    "x": "25/4",
+    "spin": "5"
+   },
+   "s6": {
+    "h": "53/8",
+    "hbar": "5/8",
+    "x": "29/4",
+    "spin": "6"
+   },
+   "s7": {
+    "h": "61/8",
+    "hbar": "5/8",
+    "x": "33/4",
+    "spin": "7"
+   },
+   "s8": {
+    "h": "69/8",
+    "hbar": "5/8",
+    "x": "37/4",
+    "spin": "8"
+   }
+  }
+ },
+ "kac_scalar_table": {
+  "k0": {
+   "h": "-1/24",
+   "x": "-1/12"
+  },
+  "k1": {
+   "h": "0",
+   "x": "0"
+  },
+  "k2": {
+   "h": "1/8",
+   "x": "1/4"
+  },
+  "k3": {
+   "h": "1/3",
+   "x": "2/3"
+  },
+  "k4": {
+   "h": "5/8",
+   "x": "5/4"
+  },
+  "k5": {
+   "h": "1",
+   "x": "2"
+  },
+  "k6": {
+   "h": "35/24",
+   "x": "35/12"
+  },
+  "k7": {
+   "h": "2",
+   "x": "4"
+  },
+  "k8": {
+   "h": "21/8",
+   "x": "21/4"
+  },
+  "k9": {
+   "h": "10/3",
+   "x": "20/3"
+  },
+  "k10": {
+   "h": "33/8",
+   "x": "33/4"
+  }
+ },
+ "eight_arm": {
+  "h_4_2": "21/8",
+  "h_2_7": "21/8",
+  "equal": true,
+  "x": "21/4",
+  "spin": "0",
+  "same_x_as_thermal_s4": true
+ },
+ "spin4_thermal": {
+  "h": "37/8",
+  "hbar": "5/8",
+  "x": "21/4",
+  "spin": "4",
+  "x_equals_21_4": true
+ },
+ "rotation_rules": {
+  "C4_square": {
+   "1": false,
+   "2": false,
+   "3": false,
+   "4": true,
+   "5": false,
+   "6": false,
+   "7": false,
+   "8": true
+  },
+  "C3_triangular": {
+   "1": false,
+   "2": false,
+   "3": true,
+   "4": false,
+   "5": false,
+   "6": true,
+   "7": false,
+   "8": false
+  },
+  "C6_hexagonal": {
+   "1": false,
+   "2": false,
+   "3": false,
+   "4": false,
+   "5": false,
+   "6": true,
+   "7": false,
+   "8": false
+  },
+  "first_allowed_square": 4,
+  "first_allowed_C3": 3,
+  "first_allowed_C6": 6
+ },
+ "v1_rerun": {
+  "c0_h58": {
+   "gram_rank": {
+    "0": 1,
+    "1": 1,
+    "2": 1,
+    "3": 2,
+    "4": 3,
+    "5": 4,
+    "6": 6
+   },
+   "gram_nullity": {
+    "0": 0,
+    "1": 0,
+    "2": 1,
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 5
+   },
+   "singular_dims": {
+    "0": 0,
+    "1": 0,
+    "2": 1,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0
+   },
+   "modLm1_irred": {
+    "0": 1,
+    "1": 0,
+    "2": 0,
+    "3": 1,
+    "4": 1,
+    "5": 1,
+    "6": 2
+   },
+   "modLm1_verma": {
+    "0": 1,
+    "1": 0,
+    "2": 1,
+    "3": 1,
+    "4": 2,
+    "5": 2,
+    "6": 4
+   }
+  }
+ },
+ "q_irreducible_(i)": {
+  "0": 1,
+  "1": 0,
+  "2": 0,
+  "3": 1,
+  "4": 1,
+  "5": 1,
+  "6": 2
+ },
+ "q_verma_(ii)": {
+  "0": 1,
+  "1": 0,
+  "2": 1,
+  "3": 1,
+  "4": 2,
+  "5": 2,
+  "6": 4
+ },
+ "classes_(i)_amax4": [
+  {
+   "a": 0,
+   "b": 0,
+   "spin": 0,
+   "x": "5/4",
+   "dim": 1,
+   "momentum0": true,
+   "C4_ok": true
+  },
+  {
+   "a": 0,
+   "b": 3,
+   "spin": -3,
+   "x": "17/4",
+   "dim": 1,
+   "momentum0": false,
+   "C4_ok": false
+  },
+  {
+   "a": 0,
+   "b": 4,
+   "spin": -4,
+   "x": "21/4",
+   "dim": 1,
+   "momentum0": false,
+   "C4_ok": true
+  },
+  {
+   "a": 3,
+   "b": 0,
+   "spin": 3,
+   "x": "17/4",
+   "dim": 1,
+   "momentum0": false,
+   "C4_ok": false
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "spin": 0,
+   "x": "29/4",
+   "dim": 1,
+   "momentum0": true,
+   "C4_ok": true
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "spin": -1,
+   "x": "33/4",
+   "dim": 1,
+   "momentum0": false,
+   "C4_ok": false
+  },
+  {
+   "a": 4,
+   "b": 0,
+   "spin": 4,
+   "x": "21/4",
+   "dim": 1,
+   "momentum0": false,
+   "C4_ok": true
+  },
+  {
+   "a": 4,
+   "b": 3,
+   "spin": 1,
+   "x": "33/4",
+   "dim": 1,
+   "momentum0": false,
+   "C4_ok": false
+  },
+  {
+   "a": 4,
+   "b": 4,
+   "spin": 0,
+   "x": "37/4",
+   "dim": 1,
+   "momentum0": true,
+   "C4_ok": true
+  }
+ ],
+ "classes_(ii)_amax4": [
+  {
+   "a": 0,
+   "b": 0,
+   "spin": 0,
+   "x": "5/4",
+   "dim": 1,
+   "momentum0": true,
+   "C4_ok": true
+  },
+  {
+   "a": 0,
+   "b": 2,
+   "spin": -2,
+   "x": "13/4",
+   "dim": 1,
+   "momentum0": false,
+   "C4_ok": false
+  },
+  {
+   "a": 0,
+   "b": 3,
+   "spin": -3,
+   "x": "17/4",
+   "dim": 1,
+   "momentum0": false,
+   "C4_ok": false
+  },
+  {
+   "a": 0,
+   "b": 4,
+   "spin": -4,
+   "x": "21/4",
+   "dim": 2,
+   "momentum0": false,
+   "C4_ok": true
+  },
+  {
+   "a": 2,
+   "b": 0,
+   "spin": 2,
+   "x": "13/4",
+   "dim": 1,
+   "momentum0": false,
+   "C4_ok": false
+  },
+  {
+   "a": 2,
+   "b": 2,
+   "spin": 0,
+   "x": "21/4",
+   "dim": 1,
+   "momentum0": true,
+   "C4_ok": true
+  },
+  {
+   "a": 2,
+   "b": 3,
+   "spin": -1,
+   "x": "25/4",
+   "dim": 1,
+   "momentum0": false,
+   "C4_ok": false
+  },
+  {
+   "a": 2,
+   "b": 4,
+   "spin": -2,
+   "x": "29/4",
+   "dim": 2,
+   "momentum0": false,
+   "C4_ok": false
+  },
+  {
+   "a": 3,
+   "b": 0,
+   "spin": 3,
+   "x": "17/4",
+   "dim": 1,
+   "momentum0": false,
+   "C4_ok": false
+  },
+  {
+   "a": 3,
+   "b": 2,
+   "spin": 1,
+   "x": "25/4",
+   "dim": 1,
+   "momentum0": false,
+   "C4_ok": false
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "spin": 0,
+   "x": "29/4",
+   "dim": 1,
+   "momentum0": true,
+   "C4_ok": true
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "spin": -1,
+   "x": "33/4",
+   "dim": 2,
+   "momentum0": false,
+   "C4_ok": false
+  },
+  {
+   "a": 4,
+   "b": 0,
+   "spin": 4,
+   "x": "21/4",
+   "dim": 2,
+   "momentum0": false,
+   "C4_ok": true
+  },
+  {
+   "a": 4,
+   "b": 2,
+   "spin": 2,
+   "x": "29/4",
+   "dim": 2,
+   "momentum0": false,
+   "C4_ok": false
+  },
+  {
+   "a": 4,
+   "b": 3,
+   "spin": 1,
+   "x": "33/4",
+   "dim": 2,
+   "momentum0": false,
+   "C4_ok": false
+  },
+  {
+   "a": 4,
+   "b": 4,
+   "spin": 0,
+   "x": "37/4",
+   "dim": 4,
+   "momentum0": true,
+   "C4_ok": true
+  }
+ ],
+ "at_x_21_4(i)": [
+  {
+   "a": 0,
+   "b": 4,
+   "spin": -4,
+   "x": "21/4",
+   "dim": 1,
+   "momentum0": false,
+   "C4_ok": true
+  },
+  {
+   "a": 4,
+   "b": 0,
+   "spin": 4,
+   "x": "21/4",
+   "dim": 1,
+   "momentum0": false,
+   "C4_ok": true
+  }
+ ],
+ "momentum0_C4_ok_at_x_21_4(i)": [],
+ "at_x_21_4(ii)": [
+  {
+   "a": 0,
+   "b": 4,
+   "spin": -4,
+   "x": "21/4",
+   "dim": 2,
+   "momentum0": false,
+   "C4_ok": true
+  },
+  {
+   "a": 2,
+   "b": 2,
+   "spin": 0,
+   "x": "21/4",
+   "dim": 1,
+   "momentum0": true,
+   "C4_ok": true
+  },
+  {
+   "a": 4,
+   "b": 0,
+   "spin": 4,
+   "x": "21/4",
+   "dim": 2,
+   "momentum0": false,
+   "C4_ok": true
+  }
+ ],
+ "momentum0_C4_ok_at_x_21_4(ii)": [
+  {
+   "a": 2,
+   "b": 2,
+   "spin": 0,
+   "x": "21/4",
+   "dim": 1,
+   "momentum0": true,
+   "C4_ok": true
+  }
+ ],
+ "chi_expansion_level2": {
+  "(-2,)": "-3",
+  "(-1, -1)": "2"
+ },
+ "L_m2_expansion": {
+  "(-2,)": "1"
+ },
+ "L_m1sq_expansion": {
+  "(-1, -1)": "1"
+ },
+ "level2_quotient_class_is_chi_direction": true,
+ "chi_norm_via_gram": "0",
+ "Lm1sq_norm": "45/8",
+ "Lm2_norm": "5/2",
+ "momentum_rule_check": {
+  "5/8": {
+   "()": "5/8"
+  },
+  "21/8": {
+   "()": "21/8"
+  },
+  "37/8": {
+   "()": "37/8"
+  }
+ },
+ "momentum_rule_statement": "[P,phi]=(h-hbar)phi, P|vac>=0  =>  <mom0|phi|mom0>=0 whenever h!=hbar (exact, 只要求沿紧致方向平移不变 + 初末态动量 0)",
+ "verdicts": {
+  "V2_1_delta_h_hbar": "成立（精确、初等）——条件是紧致方向平移不变(周期)、初末态动量 0、phi 有确定 (h,hbar)。开放边界下不成立。",
+  "V2_2_observable_is_momentum0": "Θ_w/Δ_w 作为「每行扇区能量差」是动量 0 的；但 note 把它当『一点函数』——无限周期圆柱上主场的一点函数恒为 0（无论 h 是否 = hbar），δ_{h,hbar} 其实是 torus/modular 迹的陈述。另：『矩阵元为 0』只在一阶成立（#802 明确要求区分一/二阶）。",
+  "V2_3_eight_arm_weight": "(21/8,21/8)、spin 0、x=21/4 成立；但动量规则只能杀 spin!=0，永远选不出标量；k=2..7 标量 arm 未排除 ⇒ 不唯一。",
+  "V2_4_third_scenario": "note 的附加结论（(2,2) 的 spin-0 类在 (ii)/(iii) 下进入动量 0）与它自己 §1.2『(i)(ii) 关联函数相同』矛盾：(ii) 下该额外类正是零范态 chi 的方向 ⇒ 关联函数恒为 0；(iii) 下该类是否为真算子不由 Virasoro 代数决定 ⇒ 未建立。"
+ }
+}
