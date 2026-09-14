@@ -1,0 +1,81 @@
+{
+  "exact": {
+    "L1_quasiprimary": {},
+    "chi": {
+      "1,1": "-2/3",
+      "2": "1"
+    },
+    "cylinder_Lminus2_coefficient_at_magnetic_weight": "0",
+    "cylinder_chiral_Lminus4_coefficient": "1/384",
+    "eta_product_matches_null_ward_ODE": true,
+    "eta_without_q_leading_coeffs": [
+      "1",
+      "-5/4",
+      "-35/32",
+      "45/128",
+      "595/2048",
+      "11837/8192",
+      "-7735/65536",
+      "267885/262144",
+      "-3231805/8388608",
+      "-17638775/33554432",
+      "-63492013/268435456"
+    ],
+    "first_trace_coefficient_from_primary_3point": "-5/4",
+    "normalized_class": "L_-4 modulo null descendants and total derivatives",
+    "normalized_quasiprimary": {
+      "1,1,1,1": "160/1479",
+      "2,1,1": "-160/261",
+      "2,2": "80/87",
+      "3,1": "-20/29",
+      "4": "-11/29"
+    },
+    "null_diagonal_magnetic_weight": "5/96",
+    "quotient_and_derivative_rank_at_level4": 4,
+    "retained_null_correction_coefficient": "80/87",
+    "retained_null_form": "U4 = L_-4 epsilon + (80/87)L_-2 chi modulo total derivatives",
+    "thermal_h": "5/8",
+    "torus_chiral_G4_coefficient": "15/8",
+    "torus_chiral_pi4_E4_coefficient": "1/24"
+  },
+  "existing_data_diagnostics": [
+    {
+      "L": 5,
+      "cardinality_sum_check": true,
+      "cylinder_root_input": "0.5922358232050258",
+      "normalization_only_not_rank_assignment_audit": true,
+      "ratio_pc_derivative": "-950.964558437368723291996",
+      "relative_deviation_from_E4_i": "0.0202268239781703722129468",
+      "shift_ratio": "1.4852083520445807045506",
+      "torus_root": "0.591988256518333844610968680211928879"
+    },
+    {
+      "L": 6,
+      "cardinality_sum_check": true,
+      "cylinder_root_input": "0.592507356205638",
+      "normalization_only_not_rank_assignment_audit": true,
+      "ratio_pc_derivative": "-1970.77981232236608481856",
+      "relative_deviation_from_E4_i": "0.0100645373769641237477404",
+      "shift_ratio": "1.47041447230994514444914",
+      "torus_root": "0.592395070817704237693855807642505434"
+    }
+  ],
+  "existing_data_provenance": {
+    "cylinders": "results/geometric-consistency/fixed-width-charge-spectrum-derivatives-w4-w8-20260914.json; printed root values; no independent Perron rerun",
+    "pc_reference_not_certificate": "0.59274605079210",
+    "rank5": "results/geometric-consistency/rank-sector-C-L5-20260914.json; blob e3b03a7583b5346083907a4531ba51dc4f3d8819",
+    "rank6": "results/geometric-consistency/rank-sector-C-L6-20260914.json; blob 4146a7bd51ca8f2e5c964b5c157ce1b2c4bd1f2e"
+  },
+  "modular_numerical": {
+    "E4_2i": "1.00083698843473765919291512747422264",
+    "E4_i": "1.45576289226870932246242200359886929",
+    "S_transform_error": "5.7273143e-71",
+    "T_transform_error": "1.8111358e-71",
+    "arithmetic_is_not_outward_interval": true,
+    "hex_E4_abs": "3.7061726e-71",
+    "hex_E4_derivative": "(-2.7163143322843540433439449752e-71 - 6.03508556884125381064036268813j)"
+  },
+  "repo_snapshot": "8e1282f6d4397f03c80a2883b917c2d31a4b93a3",
+  "schema": "thermal-null-ward-modular-root-v1",
+  "scope": "Exact conditional Virasoro algebra; numerical modular functions; reanalysis of supplied rank counts. No site scaling theorem or new large enumeration."
+}
