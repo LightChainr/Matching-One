@@ -1,0 +1,49 @@
+{
+  "scope": "exact finite single-site rank-jump-two attachment-spine control; counts are configuration counts, not arm exponents",
+  "classification": {
+    "T3": "one closed outside component touches v through exactly three NN attachment germs and that component plus v already has ambient rank two",
+    "T4plus": "one outside component with >=4 contacts plus v already has rank two",
+    "Rsplit": "no single touching component has rank two, but at least two touching components individually create rank-one cycles through v"
+  },
+  "systems": [
+    {
+      "L": 3,
+      "neighbors_of_v0": [1,2,3,6],
+      "jump2_total": 5,
+      "type_counts": {"Rsplit":1,"T4plus":4},
+      "occupancy_histograms": {
+        "Rsplit": {"4":1},
+        "T4plus": {"5":4}
+      },
+      "weighted_at_p_0_59274605079210": {
+        "jump2_probability_over_other_sites": "0.02316541372106678175430047286125634440617",
+        "type_fractions": {"Rsplit":"0.14658712711851754","T4plus":"0.8534128728814825"}
+      },
+      "examples": {
+        "Rsplit": {"closed_mask":78,"open_mask":79,"touching":[{"mask":6,"attachments":[1,2],"rank_with_v":1},{"mask":72,"attachments":[3,6],"rank_with_v":1}]},
+        "T4plus": {"closed_mask":94,"open_mask":95,"touching":[{"mask":94,"attachments":[1,2,3,6],"rank_with_v":2}]}
+      }
+    },
+    {
+      "L": 4,
+      "neighbors_of_v0": [1,3,4,12],
+      "jump2_total": 289,
+      "type_counts": {"Rsplit":21,"T4plus":92,"T3":176},
+      "occupancy_histograms": {
+        "Rsplit": {"6":1,"7":5,"8":10,"9":4,"10":1},
+        "T4plus": {"7":4,"8":20,"9":44,"10":20,"11":4},
+        "T3": {"7":8,"8":56,"9":80,"10":32}
+      },
+      "weighted_at_p_0_59274605079210": {
+        "jump2_probability_over_other_sites": "0.01158227217861686722477027373797609310234",
+        "type_fractions": {"Rsplit":"0.053409360977433984","T4plus":"0.3458900366819573","T3":"0.6007006023406087"}
+      },
+      "examples": {
+        "Rsplit": {"closed_mask":4382,"open_mask":4383,"touching":[{"mask":14,"attachments":[1,3],"rank_with_v":1},{"mask":4368,"attachments":[4,12],"rank_with_v":1}]},
+        "T4plus": {"closed_mask":4414,"open_mask":4415,"touching":[{"mask":4414,"attachments":[1,3,4,12],"rank_with_v":2}]},
+        "T3": {"closed_mask":4476,"open_mask":4477,"touching":[{"mask":4476,"attachments":[3,4,12],"rank_with_v":2}]}
+      }
+    }
+  ],
+  "interpretation": "T3 exists abundantly at L=4. This kills the naive claim that a single-site rank jump two topologically requires four black attachment arms. It does not by itself prove a nonzero continuum 6-arm matching-odd amplitude."
+}

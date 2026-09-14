@@ -1,0 +1,52 @@
+{
+  "scope": "exact L=3,4 square-balance and triangular-selfmatching Fourier/spectral controls; no asymptotic fit",
+  "square": [
+    {
+      "L": 3,
+      "p": "0.586511455112675635654558976607",
+      "varX": "0.658256053261595307729654378548",
+      "E_Delta0X_squared": "0.490259120151119935347765955262",
+      "spectral_mean_size": "1.62559857774577922012595250407",
+      "spectral_factorial_second": "2.04129755648611574436671632646",
+      "spectral_size_variance": "1.02432539826279475695064588259",
+      "P0_P1_P2": ["0.329128026630797653864827189274","0.341743946738404692270345621452","0.329128026630797653864827189274"]
+    },
+    {
+      "L": 4,
+      "p": "0.59067211233102829689590201144",
+      "varX": "0.645488196546392452050851389066",
+      "E_Delta0X_squared": "0.334324189137950136099835410853",
+      "spectral_mean_size": "2.00362886002147498850809668488",
+      "spectral_factorial_second": "4.13861085677455477865063689413",
+      "spectral_size_variance": "2.12771110808507435367229068088",
+      "P0_P1_P2": ["0.322744098273196226025425694533","0.354511803453607547949148610934","0.322744098273196226025425694533"]
+    }
+  ],
+  "triangular": [
+    {
+      "L": 3,
+      "p": "0.5",
+      "varX": "0.6484375",
+      "E_Delta0X_squared": "0.484375",
+      "spectral_mean_size": "1.68072289156626506024096385542",
+      "spectral_factorial_second": "2.49397590361445783132530120482",
+      "spectral_size_variance": "1.34986935694585571200464508637",
+      "walsh_level_energy_integer_numerators": [0,121104,0,40512,0,7776,0,576,0,16],
+      "max_abs_even_nonconstant_walsh_numerator": 0,
+      "P0_P1_P2": ["0.32421875","0.3515625","0.32421875"]
+    },
+    {
+      "L": 4,
+      "p": "0.5",
+      "varX": "0.641387939453125",
+      "E_Delta0X_squared": "0.32635498046875",
+      "spectral_mean_size": "2.0353047532949517057620021887",
+      "spectral_factorial_second": "4.42784412618356568492173002807",
+      "spectral_size_variance": "2.32068344069349316431101462511",
+      "walsh_level_energy_integer_numerators": [0,1695462976,0,768168640,0,226972224,0,53961920,0,8959168,0,1131072,0,82624,0,1600,0],
+      "max_abs_even_nonconstant_walsh_numerator": 0,
+      "P0_P1_P2": ["0.3206939697265625","0.358612060546875","0.3206939697265625"]
+    }
+  ],
+  "qualification": "The triangular all-even-level vanishing is exact in the integer Walsh numerators. Other displayed values are high-precision evaluations of exact finite sums."
+}

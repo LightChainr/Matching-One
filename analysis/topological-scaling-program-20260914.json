@@ -1,0 +1,104 @@
+{
+  "base_main": "d31fa5fe9584b77595e4a78b9560aa2ff77cf0b3",
+  "branch": "analysis/topological-scaling-program-20260914",
+  "draft_pr": 773,
+  "working_assets": {
+    "geometric_balance": "PR739@907a9d94",
+    "source_visible": "PR737@7b459c48",
+    "width2_bridge": "fc19cc74",
+    "graded_tangent": "PR746@5ff1b168"
+  },
+  "architecture": [
+    "geometry/root-vs-full-law",
+    "complete-component Palm/activity",
+    "topological pivotal geometry",
+    "rank-simplex/source calculus",
+    "two-birth persistence process",
+    "Fourier spectral/noise dynamics",
+    "configuration-complex Alexander duality",
+    "critical modular/generic-Q controls"
+  ],
+  "exact_results": [
+    "rank projectors and canonical b,d coordinates",
+    "topological source translates b->b-s with d invariant",
+    "Z3 rank character encodes entire rank law",
+    "general balance-line source quotient modulo span{1,K}",
+    "rank sigma-algebra has exactly two centered channels X and Y at balance",
+    "Fisher sphere geometry and intrinsic rank-curve invariants",
+    "extreme-sector K laws obey MLR and g1 is their W1 distance",
+    "two-birth persistence representation and matching pathwise duality",
+    "one-step dynamics = static marginals + direct 0->2 flux B_k",
+    "threshold-boundary decomposition alpha/beta/gamma",
+    "p-variation defect equals simultaneous-birth atom",
+    "rank enumerator reciprocal matching curve",
+    "graph-polynomial root = exact topological-source balance with s_Q=-1/2 log Q",
+    "configuration complexes Delta0,Delta1 are matching Alexander-dual pairs",
+    "p-biased Fourier coefficients are mixed discrete derivatives",
+    "self-matching critical rank has only odd Fourier levels for X and even positive levels for Y",
+    "spectral Dirichlet excess over thermal influence equals direct double-birth flux"
+  ],
+  "conditional_program": [
+    "near-critical winding-intensity crossover",
+    "Palm K/B Ward cancellation and composition locking",
+    "periodic one-particle sewing residue controls intensity prefactor and Brownian span",
+    "near-critical rank-source equation of state",
+    "topological spectral sample cardinality on L^(3/4) scale",
+    "universal odd/even dynamical relaxation functions",
+    "rank-conditioned K information loss and full TP2 conjecture",
+    "canonical two-birth copula / rank-one shell flag hierarchy",
+    "8-arm first matching-odd scalar conjecture subject to 6-arm cancellation"
+  ],
+  "continuum_controls": {
+    "critical_square_torus": "Pinson/Newman-Ziff P0=P2=0.309526275429831...",
+    "arbitrary_modulus": "Arguin/Pinson Q=1 homology sums",
+    "source_zero_collision_rectangular": "r*=1.787829352679657... and reciprocal",
+    "generic_Q": "P2=Q P0 and s_Q=-1/2 log Q",
+    "triangular_selfmatching": "finite complement/rank symmetry exact at L3,L4; torus near-critical interface still open"
+  },
+  "strong_conjectures": [
+    "first nonzero matching-odd scalar correction is spinless 8-arm/8-leg x=21/4; theta/6-arm geometry must cancel from the odd one-point channel",
+    "complete-component K/B macroscopic fluctuations lock to composition ray (p,q) with transverse score CLT",
+    "periodic complete-cluster intensity and Brownian span arise from the same lowest dispersion branch with visible residue C",
+    "full rank-cardinality coefficient array C[r,k] is TP2",
+    "rank spectral sample has nondegenerate L^(3/4) scaling and universal odd/even dynamical limits"
+  ],
+  "open_tasks": [768,769,770,774,775,776,778,781,784,786,787,788,789,790],
+  "delegated_tasks": {
+    "768": "matching-odd sector audit with 6-arm kill test",
+    "769": "exact pivotal-pair atlas / alpha-beta-gamma / L5 controls / level-2 coherence",
+    "770": "mass-defined thermal coordinate and Harris controls",
+    "774": "complete-component K/B covariance, Palm Ward and composition CLT",
+    "775": "exact rank-sector occupation polynomials L5-8, TP2/MLR and derived invariants",
+    "776": "triangular self-matching positive control and near-critical torus interface",
+    "778": "existing-data paired two-birth copula with transport-bound fallback",
+    "781": "critical modular rank-law extremum at hexagonal modulus",
+    "784": "topological Fourier spectral sample / noise sensitivity / Hessian bridge",
+    "786": "rank-one shell flag enumerator for persistence moments",
+    "787": "periodic sewing residue linking intensity prefactor to Brownian span",
+    "788": "rank-process p-variation defect and D=0",
+    "789": "K-only topological information loss / Bayes threshold / MLR",
+    "790": "configuration-complex Alexander duality and algorithmic certificate duality"
+  },
+  "key_artifacts": [
+    "notes/topological-scaling-program-20260914.md",
+    "notes/topological-scaling-program-20260914-addendum.md",
+    "notes/rank-birth-flux-conservation-20260914.md",
+    "notes/two-threshold-boundary-intersection-20260914.md",
+    "notes/topological-fourier-spectral-sample-20260914.md",
+    "notes/rank-spectral-thermal-jump2-bridge-20260914.md",
+    "notes/selfmatching-rank-dynamics-parity-20260914.md",
+    "notes/rank-configuration-complex-alexander-duality-20260914.md",
+    "notes/rank-sector-mlr-information-loss-20260914.md",
+    "notes/rank-enumerator-reciprocal-curve-20260914.md",
+    "notes/graph-polynomial-as-topological-source-balance-20260914.md",
+    "notes/rank-persistence-matching-duality-20260914.md",
+    "scripts/topological_fourier_spectral_control.py",
+    "results/research-control-20260914/topological-fourier-spectral-control.json"
+  ],
+  "correction_log": [
+    "First triangular result JSON manually mistranscribed several higher conditional-K cumulants; script was correct and JSON was corrected, with Git history preserved.",
+    "A symmetric generic-Q derivative was mistakenly attempted at Q=4 endpoint locally; committed control explicitly marks endpoint_not_differentiated.",
+    "Issues 791-799 were accidental integration/tool-selection placeholders and are closed as not planned after Round-9 index update."
+  ],
+  "note": "No STATUS or original-U claim upgrade. Exact finite algebra, continuum controls, conditional asymptotics and conjectures remain separated."
+}
