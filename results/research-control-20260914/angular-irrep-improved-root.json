@@ -1,5 +1,5 @@
 {
-  "schema": "angular-irrep-improved-root-v1",
+  "schema": "angular-irrep-improved-root-v2",
   "date": "2026-09-14",
   "definition": {
     "H4": "cos(4 theta)",
@@ -64,6 +64,25 @@
       }
     },
     {
+      "ell": 9.219544457292887,
+      "ell_squared": 85,
+      "orientation_1": {"u": [2,9], "n": 1, "H4_exact": "4633/7225", "H4": 0.6412456747404844, "root": 0.5927198385492305, "states_G4": 4997, "states_G8": 11865},
+      "orientation_2": {"u": [6,7], "n": 1, "H4_exact": "-6887/7225", "H4": -0.9532179930795848, "root": 0.5927850166194443, "states_G4": 2767, "states_G8": 27659},
+      "pc4perp": 0.5927460512227809,
+      "A4_hat": 0.2953416668,
+      "pc4perp_minus_diagnostic_reference": 4.327808111214137e-10,
+      "thermal_shape": {
+        "D_1": 3.39549610,
+        "D_2": 3.39551688,
+        "relative_D_difference": 6.12e-06,
+        "a2_1": 0.0141685,
+        "a2_2": 0.0143268,
+        "a3_1": 0.0239713,
+        "a3_2": 0.0239978,
+        "normalized_curve_difference_scale": "approximately 9e-6 to 3.8e-5 on |y|<=0.5"
+      }
+    },
+    {
       "ell": 10.0,
       "orientation_1": {"u": [1,0], "n": 10, "H4": 1.0, "root": 0.5927163956300879, "states_G4": 8953, "states_G8": 8953},
       "orientation_2": {"u": [3,4], "n": 2, "H4": -0.8432, "root": 0.5927709164472407, "states_G4": 7259, "states_G8": 75541},
@@ -90,15 +109,16 @@
   "diagnostic_reference_pc": 0.59274605079,
   "observations": [
     "The H4-projected pc estimator is reference-free; the diagnostic reference is used only after the projection.",
-    "At ell approximately 8--10 the projected residual is O(1e-7), far smaller than the raw orientation-dependent root shifts.",
-    "The ell=5 to ell=10 residual magnitude ratio is about 129; with only these scales no correction exponent is assigned.",
+    "At ell approximately 8--10 the projected residual is O(1e-7) or smaller, far below the raw orientation-dependent root shifts.",
+    "The ell^2=85 pair gives pc4perp=0.5927460512227809, only about 4.3e-10 from the diagnostic reference after the fit; this is an exploratory finite-size result, not a rigorous enclosure.",
     "Equal-ell physical thermal slopes are orientation-independent to 1e-4--1e-5, and root/slope-normalized curves differ by only O(1e-5--5e-5) on |y|<=0.5.",
-    "These finite controls strongly disfavor an orientation-independent exponent-four term as the dominant explanation of the observed root shift and support a predominantly thermal-tangent spin-four correction."
+    "These finite controls strongly disfavor an orientation-independent exponent-four term as the dominant explanation of the observed root shift and support a predominantly thermal-tangent spin-four correction.",
+    "Same-ell angular projection acts as a finite-size improvement operator: it removes the observed H4 irrep before any residual exponent or module assignment is attempted."
   ],
   "claim_boundary": [
     "All new roots are finite deterministic transfer outputs from locally executed copies/reimplementations of committed algorithms, with published control roots reproduced to about 1e-11 or better.",
     "The projected threshold estimates are not rigorous threshold enclosures; higher-irrep and scalar finite-size corrections remain.",
-    "No exponent is inferred from the three projected residuals.",
+    "No exponent is inferred from the projected residuals.",
     "The angular-irrep hierarchy and TANGENT_SPIN4 interpretation remain scaling conjectures."
   ]
 }
