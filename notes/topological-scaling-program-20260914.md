@@ -203,6 +203,49 @@ This directly links three previously separate objects:
 
 It does **not** make `X` a continuum field identity; it is a finite algebraic projector relation.
 
+### 2.5 Exact source-quotient geometry: thermal + topological nuisance directions
+
+At a homogeneous balance root, let a physical infinitesimal source have score observable `A`. Before assigning a continuum label, remove the two exact finite nuisance directions already present in the ensemble:
+
+    thermal score:    K - E K,
+    topological score: X  (because E X=0 at balance).
+
+Let
+
+    G = [[Var K,    Cov(K,X)],
+         [Cov(K,X), Var X   ]],
+
+and
+
+    c_A = [Cov(A,K), Cov(A,X)]^T.
+
+When `G` is nonsingular, the least-variance subtraction of the thermal/topological tangent space is
+
+    beta = G^(-1) c_A,
+    A_perp = A - beta_K K - beta_X X                    (2.12)
+
+(up to irrelevant constants), with
+
+    Cov(A_perp,K)=Cov(A_perp,X)=0,
+    Var(A_perp)=Var(A)-c_A^T G^(-1)c_A.                  (2.13)
+
+The dimensionless residual fraction
+
+    rho_perp^2 = Var(A_perp)/Var(A)                      (2.14)
+
+is invariant under any invertible linear reparameterisation of the nuisance pair `(K,X)`. It is an estimator/source-identifiability diagnostic, **not** a continuum field count.
+
+This gives a concrete pre-filter for original-U candidate sources: a source with `rho_perp=0` is locally indistinguishable from a combination of uniform thermal and topological chemical-potential perturbations at first order. A nonzero residual demonstrates a genuinely new finite source direction, but still does not identify its continuum representation.
+
+Mean-zero spatial fields supply a useful control. For `H=sum_i h_i n_i`, `sum h_i=0`, homogeneous translation invariance gives
+
+    Cov(H,K)=0,
+    Cov(H,X)=0.                                           (2.15)
+
+Thus their entire first-order tangent already lies outside neither nuisance direction: it is exactly zero. Their leading observable information starts at second order, consistent with the spatial-root Hessian formula (2.11). This is why a vanishing linear spatial response is not itself a nontrivial selection rule.
+
+The same projection can be enlarged to the actual nuisance space frozen in #275; `(K,X)` is only a universal two-column calibration subspace, not a replacement for that contract.
+
 ---
 
 ## 3. Continuum positive control from Pinson wrapping probabilities
