@@ -34,6 +34,23 @@ The stacked continuation on PR #771 collects consequences that reduce several
 previously separate analysis directions without changing the parent #739
 acceptance status.
 
+**Start review with [`round2-claim-ledger-20260914.md`](round2-claim-ledger-20260914.md).**
+It is the current claim-level index and explicitly separates `EXACT`,
+`AUTHOR-PROOF`, `CONDITIONAL`, `CONJECTURE / PROGRAMME`, and external-literature
+boundary statements.  It also records the shortcuts that were rejected or
+corrected during self-audit.  The thematic list below is an earlier compact
+index; the ledger supersedes it when statuses differ or when newer continuation
+files are not listed here.
+
+Since this compact index was first written, PR #771 has also added the
+full-period first-exit torus bound, arbitrary-shape fixed-`p` homological free
+energy, varying-direction centre theorem, all-direction quantitative mass
+monotonicity, exact charge-neutral crossover coordinates, fixed-direction
+Poisson--Gumbel extension, giant-white mean reward theorem, fixed-width charge
+free energy, and a 2026 near-critical OZ/SITE-renewal boundary audit.  Those
+results are organized in the claim ledger rather than duplicated exhaustively
+below.
+
 ### Exact finite topology and birth structure
 
 - [`structural-consequences-20260914.md`](structural-consequences-20260914.md): persistent 4/8 birth reflection; dual-even/odd birth coordinates; exact same-parameter `(rank,K)` count reduction; alternating black/white barrier Palm identities; marked-Poisson transport; complementary Palm score constraints; convex loop/branch frontier; the `D^{-1}=partial_yy tau` consistency relation; and deterministic directional separation in exponential elongation.
