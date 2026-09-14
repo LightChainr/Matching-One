@@ -1,7 +1,10 @@
 {
-  "schema": "gaussian-h8-node-q2-control-v1",
+  "schema": "gaussian-h8-node-q2-control-v2",
   "date": "2026-09-14",
-  "freeze_provenance": "Issue #768 comment 5666850020 was posted before the (5,1) target roots were evaluated.",
+  "freeze_provenance": {
+    "H8_node_control": "Issue #768 comment 5666850020 was posted before the (5,1) target roots were evaluated.",
+    "positive_H8_control": "Issue #768 comment 5666992538 was posted before the (7,1),n=1 parent root was evaluated."
+  },
   "model": "p(u,n)=pc+c4*H4*ell^-4+c46*H4*ell^-6+c8*H8*ell^-6+higher",
   "training_lineage": {
     "parent": [2,1],
@@ -74,16 +77,47 @@
     "description": "Solve the two Gaussian-lineage beta coefficients for c46 and c8. pc cancels completely.",
     "c46": -0.11561405460044301,
     "c8": -0.13817818581653674,
+    "leading_c4_from_alpha_least_squares": -0.29558821336234653,
     "comparison_to_training_saturated_values": {
       "c46_training": -0.11998694156938763,
       "c8_training": -0.13631120371404618
     },
     "interpretation": "The H8 q=2 coefficient remains stable when extracted using an H8-node negative control and no external pc."
   },
+  "frozen_positive_H8_control": {
+    "parent": [7,1],
+    "parent_n": 1,
+    "child": [3,4],
+    "child_n": 2,
+    "gaussian_relation": "(7+i)(1+i)=6+8i=2(3+4i)",
+    "H4_parent": 0.8432,
+    "H4_child": -0.8432,
+    "H8_common": 0.42197248,
+    "frozen_prediction": {
+      "alpha": 0.00012461999075356528,
+      "beta": 0.000001285523679808176,
+      "D_pred": 0.00012590551443337347,
+      "known_child_root": 0.5927709164472407,
+      "parent_root_pred": 0.5926450109328073
+    },
+    "target_parent_root": {
+      "root": 0.5926447378755775,
+      "safe_states_G4": 494,
+      "safe_states_G8": 765,
+      "row_memory_G4": 7,
+      "row_memory_G8": 8
+    },
+    "observed": {
+      "D": 0.00012617857166319357,
+      "D_minus_prediction": 2.7305722982010126e-7,
+      "relative_D_error": 0.002168747183544509
+    },
+    "interpretation": "This is an overdetermining held-out control with positive common H8. The frozen q=2 model predicts the child-parent difference to about 0.22 percent at n=1 despite strong preasymptotic conditions."
+  },
   "claim_boundary": [
-    "n=1 is strongly preasymptotic; the close alpha/beta agreement is a deterministic finite control, not an asymptotic theorem.",
-    "The decomposition establishes an H8 angular response with the q=2/root-ell^-6 scaling template within this two-lineage model. It does not by itself identify whether the H8 response is a nonlinear T4 x I4 response tensor or a distinct continuum block.",
+    "n=1 is strongly preasymptotic; close agreement is a deterministic finite control, not an asymptotic theorem.",
+    "The decomposition establishes a robust H8 angular response with the q=2/root-ell^-6 scaling template within multiple Gaussian lineages. It does not by itself identify whether the H8 response is a nonlinear T4 x I4 response tensor or a distinct continuum block.",
     "The simplest locked H0:H8=1:1 aligned-monomial model is not assumed. A general second-order spin4 x spin4 response has separate spin0 and spin8 tensor channels unless factorization is proved.",
-    "All roots were located without an external pc; pc is absent from the primary D_n and two-lineage decomposition."
+    "All primary Gaussian differences eliminate pc. External pc is not used in the alpha/beta, c46/c8, or positive-H8 held-out tests."
   ]
 }
