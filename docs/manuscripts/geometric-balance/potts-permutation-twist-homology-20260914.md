@@ -148,11 +148,47 @@ Thus a finite collection of commuting permutation twists probes different ration
 
 At fixed integer Q this is already a stronger tomography interface than regular cyclic translations.
 
-## 6. What this changes for #782
+## 6. Exact seam-interpolation theorem in a fixed slope sector
+
+First project to one rank-one primitive slope sector and choose the torus basis so that this slope is horizontal. Set the transverse twist to the identity. Then a longitudinal permutation `sigma` with exactly `f` fixed colors evaluates
+
+```text
+Z_{1,u}(z) at z=f/Q.                                      (6.1)
+```
+
+A permutation of Q symbols can have exactly
+
+```text
+f in {0,1,...,Q-2,Q}
+```
+
+fixed points: move `Q-f` symbols in one cycle for `Q-f>=2`, or use the identity for `f=Q`. Thus one obtains Q distinct evaluation points
+
+```text
+z in {0,1/Q,2/Q,...,(Q-2)/Q,1}.                           (6.2)
+```
+
+If the slope-resolved finite system has
+
+```text
+K <= K_max <= Q-1,
+```
+
+then `Z_{1,u}(z)` has degree at most `Q-1` and is determined exactly by these Q seam traces through ordinary polynomial interpolation.
+
+More generally, the same data determine the first `Q-1` coefficients/moments of a higher-degree neutral polynomial after a declared truncation/linear solve; no probabilistic approximation is involved in the seam evaluations themselves.
+
+This gives a finite-transfer regression before any massive continuation:
+
+> a sector-resolved transfer implementation with permutation seams and a direct essential-component counter must return the same neutral polynomial under (6.1)--(6.2).
+
+The theorem is deliberately slope-resolved. Without a homology/slope projector, other rank-one slopes and the rank-two endpoint sector also contribute to the torus trace and must be separated by the surrounding toroidal character machinery.
+
+## 7. What this changes for #782
 
 The continuum problem can be typed more narrowly.
 
-A satisfactory massive construction need not guess an FK rank observable from a generic energy level. It should provide a continuation of the finite twisted traces whose lattice meaning is already fixed by (2.1)--(3.5).
+A satisfactory massive construction need not guess an FK rank observable from a generic energy level. It should provide a continuation of the finite twisted traces whose lattice meaning is already fixed by (2.1)--(6.2).
 
 The required objects are therefore:
 
@@ -163,7 +199,7 @@ The required objects are therefore:
 
 This points naturally toward affine/periodic Temperley--Lieb or partition-algebra descriptions. The generic-Q representation theory in `arXiv:2208.14298` makes this route more natural than analytically continuing literal `S_Q` permutations to Q=1.
 
-## 7. Massive-engine verdict
+## 8. Massive-engine verdict
 
 Current status should be described as
 
@@ -187,8 +223,8 @@ Arguin/Pinson rank law and whose seam variable realizes (3.3).
 
 That is the concrete #782 blocker.
 
-## 8. Claim boundary
+## 9. Claim boundary
 
-- Exact finite integer-Q algebra: Sections 2--5.
-- Literature-grounded programme: Section 6.
+- Exact finite integer-Q algebra: Sections 2--6.
+- Literature-grounded programme: Section 7.
 - Not claimed: existence of the required massive Q->1 seam/TBA, analytic continuation of literal permutation fixed-point counts, or equality of an open-boundary crossing amplitude with a complete torus-winding intensity.
