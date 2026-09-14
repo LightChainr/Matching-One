@@ -140,7 +140,7 @@ Since `c=c(D_F)` is strictly decreasing,
 nabla c = -csc^2(D_F/2) cot(D_F/2) * nabla D_F.           (5.1)
 ```
 
-At any modular stationary point of the critical rank law, `nabla c=0` iff `nabla D_F=0`. At such a point the Hessians differ only by the positive/negative scalar derivative `dc/dD_F`:
+At any modular stationary point of the critical rank law, `nabla c=0` iff `nabla D_F=0`. At such a point the Hessians differ only by the scalar derivative `dc/dD_F`:
 
 ```text
 Hess c = (dc/dD_F) Hess D_F.                              (5.2)
@@ -148,8 +148,42 @@ Hess c = (dc/dD_F) Hess D_F.                              (5.2)
 
 Therefore the Morse classification in the modular note can equivalently be read as a classification of extrema of Fisher distance.
 
-## 6. Claim boundary
+## 6. Exact modular-identifiability no-go for aggregate rank data
 
-- Exact: (1.1)--(3.2), (5.1)--(5.2).
+The critical modulus `tau` is two real dimensional, but the aggregate rank law factors through the single scalar
+
+```text
+a(tau)=P0(tau)=P2(tau),
+```
+
+or equivalently `c_*(tau)` or `D_F(tau)`. Hence the differential of the map
+
+```text
+tau -> (P0,P1,P2)
+```
+
+has real rank at most one everywhere.
+
+Consequences:
+
+1. any bounded observable that is a function only of ambient rank `r in {0,1,2}` is a function of the same one scalar at critical Q=1;
+2. any rank-only source partition function has the same modular level sets as `P0`, `c_*`, and `D_F`;
+3. no collection of aggregate rank-only observables can locally identify both real modulus directions;
+4. at modular stationary points such as the square and hexagonal elliptic points, **all first-order aggregate-rank modulus responses vanish simultaneously**.
+
+Thus a map-resolved continuum programme that wants genuine two-dimensional modulus information must add a mark not measurable from ambient rank alone, for example:
+
+```text
+projective homology slope,
+individual winding class,
+map/connectivity sector,
+or another explicitly modulus-sensitive source.
+```
+
+This is an exact observer-separation statement. Numerical closeness of a rank-only quantity to a map-resolved prediction cannot overcome the one-dimensional information bottleneck.
+
+## 7. Claim boundary
+
+- Exact: Sections 1--3, 5--6.
 - Numerical: the displayed square/hex distances.
 - Conjectural: the global hexagonal maximum of `D_F`, equivalent to the #781 global minimum of `c_*`.
