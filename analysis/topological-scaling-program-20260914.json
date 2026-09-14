@@ -1,6 +1,7 @@
 {
   "base_main": "d31fa5fe9584b77595e4a78b9560aa2ff77cf0b3",
   "branch": "analysis/topological-scaling-program-20260914",
+  "draft_pr": 773,
   "working_assets": {
     "geometric_balance": "PR739@907a9d94",
     "source_visible": "PR737@7b459c48",
@@ -11,24 +12,39 @@
     "rank projectors from X=r-1",
     "balance-root rank-source equation of state",
     "source-zero formula",
+    "general balance-line source calculus",
     "source-tilted root inverse odds and conditional-K cumulant hierarchy",
     "unconditioned projector formula for spatial Hessian",
-    "thermal-plus-topological source quotient geometry"
+    "thermal-plus-topological source quotient geometry",
+    "thermal-topological Fisher geometry"
   ],
   "conditional_program": [
     "near-critical winding intensity crossover",
-    "Palm K/B score cancellation"
+    "Palm K/B score cancellation",
+    "near-critical two-variable rank-source equation of state",
+    "odd log-odds derivative parity ladder",
+    "rank-conditioned global-density CLT"
   ],
   "strong_conjecture": "first nonzero matching-odd scalar correction is spinless 8-arm/8-leg x=21/4",
   "open_tasks": [768,769,770],
   "issue_comments": {
-    "769": "rank-source L=5 continuation requested",
+    "769": "pivotal-pair atlas plus rank-source L=5 continuation requested",
     "585": "rank-source modular positive control suggested",
     "275": "thermal-plus-topological source quotient suggested as pre-filter"
   },
-  "files_sha256": {
-    "topological-scaling-program-20260914.md": "eb38b233a7f9f622cedd31e35175e6ff62552ec110d697c2045ac6a3b16cf72f",
+  "artifacts": {
+    "main_note": "notes/topological-scaling-program-20260914.md",
+    "source_geometry_addendum": "notes/topological-scaling-program-20260914-addendum.md",
+    "rank_source_control_script": "scripts/topological_rank_source_control.py",
+    "rank_source_control_result": "results/research-control-20260914/topological-rank-source-control.json",
+    "scaling_check_script": "scripts/topological_rank_source_scaling_checks.py",
+    "scaling_check_result": "results/research-control-20260914/topological-rank-source-scaling-checks.json"
+  },
+  "local_sha256_for_reproducible_files": {
     "topological_rank_source_control.py": "84bf5343220043befad4f9897270bf8af7301a6d56c008e636540a1643f5c2aa",
-    "topological-rank-source-control.json": "30f2435bd50749dcf57e5d5e3823888e7c4a71741fd19909fc4e59279520b27d"
-  }
+    "topological-rank-source-control.json": "30f2435bd50749dcf57e5d5e3823888e7c4a71741fd19909fc4e59279520b27d",
+    "topological_rank_source_scaling_checks.py": "fcd0ccf3212f6d9c85e76bf7b8303b512e4bb2b0f2a5895f701d0b377942fab3",
+    "topological-rank-source-scaling-checks.json": "db00e9d91f729dee4867ab84b5e0f192a9f69cf383677b4fa6e9cac3e7b09342"
+  },
+  "note": "The addendum carries the later general source calculus, Fisher geometry, near-critical equation-of-state, derivative-parity ladder and conditional-density CLT; no STATUS or claim-ledger upgrade is implied."
 }
