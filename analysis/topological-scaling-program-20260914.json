@@ -20,7 +20,8 @@
     "thermal-topological Fisher geometry",
     "self-normalized rank curve c=C_L(b)",
     "rank-jump-two attachment-spine classification",
-    "macroscopic black-arm extraction from lift copies"
+    "macroscopic black-arm extraction from lift copies",
+    "triangular-site self-matching rank/complement identity verified exactly at L=3,4"
   ],
   "conditional_program": [
     "near-critical winding intensity crossover",
@@ -40,7 +41,8 @@
     "275": "thermal-plus-topological source quotient suggested as pre-filter",
     "578": "K-only conditioning asymptotically weak under Fisher/conditional-density scaling",
     "636": "rank source identified as closure-functional deformation",
-    "768": "theta spine/6-arm risk sharpened and exact finite abundance reported"
+    "768": "theta spine/6-arm risk sharpened and exact finite abundance reported",
+    "776": "exact triangular L3/L4 control delivered as non-independent preliminary path; independent reproduction still requested"
   },
   "artifacts": {
     "main_note": "notes/topological-scaling-program-20260914.md",
@@ -54,7 +56,9 @@
     "scaling_check_script": "scripts/topological_rank_source_scaling_checks.py",
     "scaling_check_result": "results/research-control-20260914/topological-rank-source-scaling-checks.json",
     "jump2_spine_script": "scripts/rank_jump_two_spine_control.py",
-    "jump2_spine_result": "results/research-control-20260914/rank-jump-two-spine-control.json"
+    "jump2_spine_result": "results/research-control-20260914/rank-jump-two-spine-control.json",
+    "triangular_control_script": "scripts/triangular_rank_source_control.py",
+    "triangular_control_result": "results/research-control-20260914/triangular-rank-source-control.json"
   },
   "delegated_tasks": {
     "768": "matching-odd continuum sector audit with 6-arm kill test",
@@ -70,7 +74,12 @@
     "topological_rank_source_scaling_checks.py": "fcd0ccf3212f6d9c85e76bf7b8303b512e4bb2b0f2a5895f701d0b377942fab3",
     "topological-rank-source-scaling-checks.json": "db00e9d91f729dee4867ab84b5e0f192a9f69cf383677b4fa6e9cac3e7b09342",
     "rank_jump_two_spine_control.py": "194cbbc5b799bfabfb59b4863c2f12ad3c93ccd0960cf2b2c3dbb4482569c0fd",
-    "rank-jump-two-spine-control.json": "5be0de665706f880aea53c072b3130833012d9942f9cb2a38e90978d425082cf"
+    "rank-jump-two-spine-control.json": "5be0de665706f880aea53c072b3130833012d9942f9cb2a38e90978d425082cf",
+    "triangular_rank_source_control.py": "14b86f0d76cd6e32d89088cf7284b6a9804d2f87c71ef8b57c6b67f4aec2de81",
+    "triangular-rank-source-control.json": "d0a71980f7568be2d1baf94c9c8713085c6a588fbfd4a8afd6c7435906c2e524"
   },
+  "correction_log": [
+    "The first committed triangular-rank-source-control.json manually mistranscribed several higher conditional-K cumulants. Script was correct. Result file corrected at cfde7ae6be71f406a73154515b6f7e9159a0386f to the executed output; Git history preserves the bad transcription."
+  ],
   "note": "No STATUS or original-U claim upgrade is implied. Exact finite algebra and controls are separated from universality assumptions and continuum conjectures."
 }
