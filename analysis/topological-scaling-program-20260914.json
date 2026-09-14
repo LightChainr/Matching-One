@@ -10,41 +10,67 @@
   },
   "exact_results": [
     "rank projectors from X=r-1",
-    "balance-root rank-source equation of state",
-    "source-zero formula",
+    "rank-simplex canonical coordinates b,c",
+    "topological source acts as exact translation b->b-s with c invariant",
+    "balance-root rank-source equation of state and source zeros",
     "general balance-line source calculus",
     "source-tilted root inverse odds and conditional-K cumulant hierarchy",
     "unconditioned projector formula for spatial Hessian",
     "thermal-plus-topological source quotient geometry",
-    "thermal-topological Fisher geometry"
+    "thermal-topological Fisher geometry",
+    "self-normalized rank curve c=C_L(b)",
+    "rank-jump-two attachment-spine classification",
+    "macroscopic black-arm extraction from lift copies"
   ],
   "conditional_program": [
     "near-critical winding intensity crossover",
     "Palm K/B score cancellation",
+    "complete-component K/B covariance locking",
     "near-critical two-variable rank-source equation of state",
     "odd log-odds derivative parity ladder",
-    "rank-conditioned global-density CLT"
+    "rank-conditioned global-density CLT",
+    "matching-odd root-shift versus even-coordinate-slope exponent relation",
+    "square-vs-triangular self-normalized rank-law universality"
   ],
-  "strong_conjecture": "first nonzero matching-odd scalar correction is spinless 8-arm/8-leg x=21/4",
-  "open_tasks": [768,769,770],
+  "strong_conjecture": "first nonzero matching-odd scalar correction is spinless 8-arm/8-leg x=21/4; now explicitly threatened by abundant theta/6-arm rank-jump-two spines unless a sector/parity cancellation is proved",
+  "open_tasks": [768,769,770,774,775,776],
   "issue_comments": {
-    "769": "pivotal-pair atlas plus rank-source L=5 continuation requested",
-    "585": "rank-source modular positive control suggested",
-    "275": "thermal-plus-topological source quotient suggested as pre-filter"
+    "769": "pivotal-pair atlas, L5 rank-source/cumulants, canonical-c slope and attachment-spine classification requested",
+    "585": "rank-source and self-normalized c(b) modular positive controls suggested",
+    "275": "thermal-plus-topological source quotient suggested as pre-filter",
+    "578": "K-only conditioning asymptotically weak under Fisher/conditional-density scaling",
+    "636": "rank source identified as closure-functional deformation",
+    "768": "theta spine/6-arm risk sharpened and exact finite abundance reported"
   },
   "artifacts": {
     "main_note": "notes/topological-scaling-program-20260914.md",
     "source_geometry_addendum": "notes/topological-scaling-program-20260914-addendum.md",
+    "rank_simplex_coordinates": "notes/rank-simplex-canonical-coordinates-20260914.md",
+    "rank_self_normalized_curve": "notes/rank-simplex-self-normalized-curve-20260914.md",
+    "jump2_spine_note": "notes/rank-jump-two-attachment-spines-20260914.md",
+    "jump2_arm_note": "notes/rank-jump-two-arm-extraction-20260914.md",
     "rank_source_control_script": "scripts/topological_rank_source_control.py",
     "rank_source_control_result": "results/research-control-20260914/topological-rank-source-control.json",
     "scaling_check_script": "scripts/topological_rank_source_scaling_checks.py",
-    "scaling_check_result": "results/research-control-20260914/topological-rank-source-scaling-checks.json"
+    "scaling_check_result": "results/research-control-20260914/topological-rank-source-scaling-checks.json",
+    "jump2_spine_script": "scripts/rank_jump_two_spine_control.py",
+    "jump2_spine_result": "results/research-control-20260914/rank-jump-two-spine-control.json"
+  },
+  "delegated_tasks": {
+    "768": "matching-odd continuum sector audit with 6-arm kill test",
+    "769": "exact pivotal-pair atlas and L5 rank/spine controls",
+    "770": "mass-defined thermal coordinate and Harris controls",
+    "774": "complete-component K/B joint covariance and Palm Ward locking",
+    "775": "exact torus rank-sector occupation polynomials L5-8",
+    "776": "triangular self-matching rigorous positive control"
   },
   "local_sha256_for_reproducible_files": {
     "topological_rank_source_control.py": "84bf5343220043befad4f9897270bf8af7301a6d56c008e636540a1643f5c2aa",
     "topological-rank-source-control.json": "30f2435bd50749dcf57e5d5e3823888e7c4a71741fd19909fc4e59279520b27d",
     "topological_rank_source_scaling_checks.py": "fcd0ccf3212f6d9c85e76bf7b8303b512e4bb2b0f2a5895f701d0b377942fab3",
-    "topological-rank-source-scaling-checks.json": "db00e9d91f729dee4867ab84b5e0f192a9f69cf383677b4fa6e9cac3e7b09342"
+    "topological-rank-source-scaling-checks.json": "db00e9d91f729dee4867ab84b5e0f192a9f69cf383677b4fa6e9cac3e7b09342",
+    "rank_jump_two_spine_control.py": "194cbbc5b799bfabfb59b4863c2f12ad3c93ccd0960cf2b2c3dbb4482569c0fd",
+    "rank-jump-two-spine-control.json": "5be0de665706f880aea53c072b3130833012d9942f9cb2a38e90978d425082cf"
   },
-  "note": "The addendum carries the later general source calculus, Fisher geometry, near-critical equation-of-state, derivative-parity ladder and conditional-density CLT; no STATUS or claim-ledger upgrade is implied."
+  "note": "No STATUS or original-U claim upgrade is implied. Exact finite algebra and controls are separated from universality assumptions and continuum conjectures."
 }
