@@ -1,0 +1,436 @@
+{
+  "marker": "PY39COMPAT_MARKER=1",
+  "G1": {
+    "kac_scalar_channels": [
+      {
+        "k": 0,
+        "h": "-1/24",
+        "x": "-1/12",
+        "x_float": -0.08333333333333333,
+        "x_le_21_4": true,
+        "kac_labels": [
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            6,
+            9
+          ]
+        ]
+      },
+      {
+        "k": 1,
+        "h": "0",
+        "x": "0",
+        "x_float": 0.0,
+        "x_le_21_4": true,
+        "kac_labels": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            7,
+            10
+          ]
+        ]
+      },
+      {
+        "k": 2,
+        "h": "1/8",
+        "x": "1/4",
+        "x_float": 0.25,
+        "x_le_21_4": true,
+        "kac_labels": [
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6,
+            8
+          ]
+        ]
+      },
+      {
+        "k": 3,
+        "h": "1/3",
+        "x": "2/3",
+        "x_float": 0.6666666666666666,
+        "x_le_21_4": true,
+        "kac_labels": [
+          [
+            3,
+            3
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            7,
+            9
+          ]
+        ]
+      },
+      {
+        "k": 4,
+        "h": "5/8",
+        "x": "5/4",
+        "x_float": 1.25,
+        "x_le_21_4": true,
+        "kac_labels": [
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            6,
+            7
+          ]
+        ]
+      },
+      {
+        "k": 5,
+        "h": "1",
+        "x": "2",
+        "x_float": 2.0,
+        "x_le_21_4": true,
+        "kac_labels": [
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            7,
+            8
+          ]
+        ]
+      },
+      {
+        "k": 6,
+        "h": "35/24",
+        "x": "35/12",
+        "x_float": 2.9166666666666665,
+        "x_le_21_4": true,
+        "kac_labels": [
+          [
+            4,
+            3
+          ],
+          [
+            6,
+            6
+          ]
+        ]
+      },
+      {
+        "k": 7,
+        "h": "2",
+        "x": "4",
+        "x_float": 4.0,
+        "x_le_21_4": true,
+        "kac_labels": [
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            7,
+            7
+          ]
+        ]
+      },
+      {
+        "k": 8,
+        "h": "21/8",
+        "x": "21/4",
+        "x_float": 5.25,
+        "x_le_21_4": true,
+        "kac_labels": [
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            5
+          ]
+        ]
+      }
+    ],
+    "notes": [],
+    "c4_allowed_spin_s": {
+      "0": true,
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": false,
+      "6": false,
+      "7": false,
+      "8": true
+    },
+    "c4_rule": "square lattice C4: spin s allowed iff s ≡ 0 mod 4",
+    "thermal_chiral_tower": [
+      {
+        "level": 0,
+        "x": "5/4",
+        "x_float": 1.25,
+        "spin": "±0",
+        "c4_allowed": true,
+        "irrelevant_vs_21_4": "below"
+      },
+      {
+        "level": 1,
+        "x": "9/4",
+        "x_float": 2.25,
+        "spin": "±1",
+        "c4_allowed": false,
+        "irrelevant_vs_21_4": "below"
+      },
+      {
+        "level": 2,
+        "x": "13/4",
+        "x_float": 3.25,
+        "spin": "±2",
+        "c4_allowed": false,
+        "irrelevant_vs_21_4": "below"
+      },
+      {
+        "level": 3,
+        "x": "17/4",
+        "x_float": 4.25,
+        "spin": "±3",
+        "c4_allowed": false,
+        "irrelevant_vs_21_4": "below"
+      },
+      {
+        "level": 4,
+        "x": "21/4",
+        "x_float": 5.25,
+        "spin": "±4",
+        "c4_allowed": true,
+        "irrelevant_vs_21_4": "equal"
+      },
+      {
+        "level": 5,
+        "x": "25/4",
+        "x_float": 6.25,
+        "spin": "±5",
+        "c4_allowed": false,
+        "irrelevant_vs_21_4": "above"
+      },
+      {
+        "level": 6,
+        "x": "29/4",
+        "x_float": 7.25,
+        "spin": "±6",
+        "c4_allowed": false,
+        "irrelevant_vs_21_4": "above"
+      }
+    ],
+    "identity_chiral_tower": [
+      {
+        "level": 0,
+        "x": "0",
+        "spin": "±0",
+        "c4_allowed": true
+      },
+      {
+        "level": 1,
+        "x": "1",
+        "spin": "±1",
+        "c4_allowed": false
+      },
+      {
+        "level": 2,
+        "x": "2",
+        "spin": "±2",
+        "c4_allowed": false
+      },
+      {
+        "level": 3,
+        "x": "3",
+        "spin": "±3",
+        "c4_allowed": false
+      },
+      {
+        "level": 4,
+        "x": "4",
+        "spin": "±4",
+        "c4_allowed": true
+      },
+      {
+        "level": 5,
+        "x": "5",
+        "spin": "±5",
+        "c4_allowed": false
+      }
+    ],
+    "scalar8arm_chiral_tower": [
+      {
+        "level": 0,
+        "x": "21/4",
+        "spin": "±0",
+        "c4_allowed": true
+      },
+      {
+        "level": 1,
+        "x": "25/4",
+        "spin": "±1",
+        "c4_allowed": false
+      },
+      {
+        "level": 2,
+        "x": "29/4",
+        "spin": "±2",
+        "c4_allowed": false
+      },
+      {
+        "level": 3,
+        "x": "33/4",
+        "spin": "±3",
+        "c4_allowed": false
+      },
+      {
+        "level": 4,
+        "x": "37/4",
+        "spin": "±4",
+        "c4_allowed": true
+      }
+    ],
+    "scalars_below_21_4": [
+      {
+        "k": 1,
+        "x": "0",
+        "x_float": 0.0
+      },
+      {
+        "k": 2,
+        "x": "1/4",
+        "x_float": 0.25
+      },
+      {
+        "k": 3,
+        "x": "2/3",
+        "x_float": 0.6666666666666666
+      },
+      {
+        "k": 4,
+        "x": "5/4",
+        "x_float": 1.25
+      },
+      {
+        "k": 5,
+        "x": "2",
+        "x_float": 2.0
+      },
+      {
+        "k": 6,
+        "x": "35/12",
+        "x_float": 2.9166666666666665
+      },
+      {
+        "k": 7,
+        "x": "4",
+        "x_float": 4.0
+      }
+    ]
+  },
+  "G3": {
+    "identity_T": "-b_g/b_p",
+    "identity_N": "-b_g*e_p/b_p + e_g",
+    "N_equals_ep_times_T_when_eg0": true,
+    "counterexample_T": "L**(-4)",
+    "counterexample_N": "0",
+    "counterexample_N_zero": true,
+    "counterexample_dpda_equals_Lm4": true,
+    "counterexample_root_shift": "p*-pc = a L^-4 (任意 a, 任意 C0)",
+    "note_counterexample": "b_L 与 C0 任意时 N==0 而 T=aL^-4，说明内禀曲线看不见纯热切向位移；非零 N 需要额外 even 响应",
+    "predictions": [
+      {
+        "candidate": "scalar_8arm",
+        "operator": "(h,hbar) = (21/8, 21/8); 独立 primary; Kac label h_{4,2}=h_{2,7}",
+        "x": "21/4",
+        "spin": "0",
+        "in_thermal_module": false,
+        "theta_w_leading": "A_S * w^(-17/4)",
+        "theta_prime_leading": "B * w^(-1/4)  (thermal primary x=5/4)",
+        "T_leading": "-(A_S/B) * w^(-4)",
+        "N_leading": "e_p * T = -(e_p A_S/B) w^(-4)   [若源纯 dual-odd]",
+        "log_term": "无来自该算符的首阶 log（其模内 level<4 无手征伴随）",
+        "free_amplitudes": 1,
+        "companions_below_21_4": "无（其手征后代全部 >= 25/4）",
+        "image_in_TN": "1 维射线 N = e_p T"
+      },
+      {
+        "candidate": "thermal_spin4",
+        "operator": "(h,hbar) = (5/8+4, 5/8) 及其反手征共轭; thermal 模 level-4 手征后代",
+        "x": "21/4",
+        "spin": "±4",
+        "in_thermal_module": true,
+        "theta_w_leading": "A_4 * w^(-17/4) * (1 + lambda * log w)   [lambda != 0 条件性地由 (iii) log 模给出]",
+        "theta_prime_leading": "B * w^(-1/4)",
+        "T_leading": "-(A_4/B) * w^(-4) * (1 + lambda * log w)",
+        "N_leading": "e_p * T + (even 分量, 仅在不可分解参数非零时)",
+        "log_term": "是（若 level-2 null 被保留/嵌入 log 模）",
+        "free_amplitudes": "1（null 解耦 (i)）或 >=2（log / 保留 (ii)(iii)）",
+        "companions_below_21_4": "有：level 1,2,3 -> x=9/4,13/4,17/4, spin ±1,±2,±3（C4 禁止于标量观测量，可见于方向分辨观测量）",
+        "image_in_TN": "同一条射线 N = e_p T（纯 dual-odd 源），但 T(w) 带 log 因子；幅度数不同"
+      }
+    ],
+    "discriminators": [
+      {
+        "id": "D1",
+        "observable": "C4 破缺（方向分辨）观测量，例如 <10> 缝 vs <11> 缝 / 格点各向异性",
+        "scalar_8arm": "无伴随修正；x<21/4 处只有它自己",
+        "thermal_spin4": "必须有伴随：x=9/4, 13/4, 17/4（spin ±1,±2,±3）",
+        "evidence": "模结构（我算）+ C4 选择定则（精确）。观测量是否可测未验证。"
+      },
+      {
+        "id": "D2",
+        "observable": "根位移 T(w) 是否需要 log w 因子",
+        "scalar_8arm": "无首阶 log",
+        "thermal_spin4": "若 (iii) 成立则有 w^(-4)(1+lambda log w)",
+        "evidence": "条件性；lambda 的确切值未算。注意：h=21/8 在 c=0 扩展 Kac 表内，按 He(2024) 的一般陈述它同样可能是零范/log bottom，故 log 不是干净判据。"
+      },
+      {
+        "id": "D3",
+        "observable": "(T,N) 平面上的可达像维数",
+        "scalar_8arm": "1 个自由幅度 A_S",
+        "thermal_spin4": "1（解耦）或 >=2（保留/log）",
+        "evidence": "模结构 + 我的等级计数。"
+      }
+    ]
+  }
+}
