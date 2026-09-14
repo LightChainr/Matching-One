@@ -1,0 +1,48 @@
+{
+  "schema": "even-omega2-same-ell-angular-decomposition-v1",
+  "date": "2026-09-14",
+  "definition": "At each fixed physical ell, solve (ell*I0 - 2pi*5/48)*ell^2 = A0(ell)+A4(ell)*cos(4theta) from two orientations at their charge roots.",
+  "target_2pi_5_over_48": 0.6544984694978736,
+  "pairs": [
+    {
+      "ell_squared": 25,
+      "ell": 5.0,
+      "orientations": [
+        {"direction":[1,0],"n":5,"H4":1.0,"root":0.5922358232050267,"scaled_gap":0.6672979451886933,"states_G4":51,"states_G8":51},
+        {"direction":[3,4],"n":1,"H4":-0.8432,"root":0.5931582013380804,"scaled_gap":0.6658695720920044,"states_G4":45,"states_G8":147}
+      ],
+      "A0": 0.3006133422394473,
+      "A4": 0.019373550031046183
+    },
+    {
+      "ell_squared": 65,
+      "ell": 8.06225774829855,
+      "orientations": [
+        {"direction":[1,8],"n":1,"H4":0.8788165680473373,"root":0.5926839084966005,"scaled_gap":0.6597557372947834,"states_G4":1394,"states_G8":2153},
+        {"direction":[4,7],"n":1,"H4":-0.48449704142011835,"root":0.5927803979494244,"scaled_gap":0.6593733135920737,"states_G4":1134,"states_G8":6216}
+      ],
+      "A0": 0.32569878726259877,
+      "A4": 0.01823317870775144
+    },
+    {
+      "ell_squared": 85,
+      "ell": 9.219544457292887,
+      "orientations": [
+        {"direction":[2,9],"n":1,"H4":0.6412456747404844,"root":0.5927198385491780,"scaled_gap":0.6585618113002926,"states_G4":4997,"states_G8":11865},
+        {"direction":[6,7],"n":1,"H4":-0.9532179930795848,"root":0.5927850166195059,"scaled_gap":0.6582319478504072,"states_G4":2767,"states_G8":27659}
+      ],
+      "A0": 0.33410784870195587,
+      "A4": 0.01758484298271412
+    }
+  ],
+  "observations": [
+    "The common omega~2 correction is predominantly angular-scalar, but a nonzero spin4 component is resolved at equal physical circumference and is not an artifact of mixing different ell values.",
+    "A4(ell) drifts smoothly from about 0.0194 to 0.0176 over ell=5 to 9.22; a simple asymptotic extrapolation is not claimed from three sizes.",
+    "This supplies the even-spin4 parent channel needed by a T4 x I4 mixed q=2/H8 mechanism, while A0 supplies the separate scalar parent channel for T4 x S0 H4 dressing."
+  ],
+  "claim_boundary": [
+    "All values are deterministic safe-transfer finite-size controls evaluated at the orientation-specific charge root.",
+    "The extraction gives angular coefficients of the common magnetic-gap correction, not a direct normalized CFT coupling.",
+    "Do not form a universal mixed-amplitude ratio without deriving the lattice-to-CFT normalization and contact-term convention."
+  ]
+}
