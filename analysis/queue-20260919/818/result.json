@@ -1,0 +1,83 @@
+{
+  "issue": 818,
+  "status": "exact small-size postprocessing complete",
+  "systems": [
+    {
+      "L": 3,
+      "p": "1/2",
+      "N": 9,
+      "quoted_configuration_batch": 512,
+      "rank_counts": [
+        166,
+        180,
+        166
+      ],
+      "P_rank": [
+        "83/256",
+        "45/128",
+        "83/256"
+      ],
+      "P0_minus_P2_exact": "0",
+      "C_columns_checked": 10,
+      "coefficient_complement_identity": true,
+      "walsh_parseval_residual": "0",
+      "even_walsh_energy": "0",
+      "Mprime": "261/64",
+      "E_delta": "29/64",
+      "E_delta_squared": "31/64",
+      "delta_probabilities": [
+        "9/16",
+        "27/64",
+        "1/64"
+      ],
+      "derived_fixed_site_delta_counts": [
+        144,
+        108,
+        4
+      ],
+      "R_jump2_exact": "2/29",
+      "R_jump2_display": "0.068965517241"
+    },
+    {
+      "L": 4,
+      "p": "1/2",
+      "N": 16,
+      "quoted_configuration_batch": 65536,
+      "rank_counts": [
+        21017,
+        23502,
+        21017
+      ],
+      "P_rank": [
+        "21017/65536",
+        "11751/32768",
+        "21017/65536"
+      ],
+      "P0_minus_P2_exact": "0",
+      "C_columns_checked": 17,
+      "coefficient_complement_identity": true,
+      "walsh_parseval_residual": "0",
+      "even_walsh_energy": "0",
+      "Mprime": "5147/1024",
+      "E_delta": "5147/16384",
+      "E_delta_squared": "5347/16384",
+      "delta_probabilities": [
+        "11337/16384",
+        "4947/16384",
+        "25/4096"
+      ],
+      "derived_fixed_site_delta_counts": [
+        22674,
+        9894,
+        200
+      ],
+      "R_jump2_exact": "200/5147",
+      "R_jump2_display": "0.038857586944"
+    }
+  ],
+  "new_configurations_enumerated": 0,
+  "rank_kernel_invoked": false,
+  "direct_configuration_duality_rerun": false,
+  "source": "Existing PR773 integer rank counts and unnormalized integer Walsh energies",
+  "scope": "Integer/Fraction reconstruction, not a rerun of the historical enumeration or a scaling claim."
+}
