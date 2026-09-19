@@ -1,0 +1,31 @@
+{
+  "purpose": "Independent reimplementation check of the 2026-09-19 queue numerical claims (#815, #817, #818)",
+  "implementation": "rank_census.c (this directory); no kernel, table or snapshot from PR773/PR775 or from the queue deliverables was read",
+  "definition": "r(omega) = dim_Q image[H1(G_omega) -> H1(T)], via DFS displacement labelling and the rank of the collected winding vectors",
+  "triangular": [
+    {"L": 3, "rank_counts": [166, 180, 166], "fixed_site_delta_counts": [144, 108, 4], "matches_issue_818": true},
+    {"L": 4, "rank_counts": [21017, 23502, 21017], "fixed_site_delta_counts": [22674, 9894, 200], "matches_issue_818": true}
+  ],
+  "square_nn": [
+    {"L": 3, "rank_counts": [259, 162, 91], "fixed_site_delta_counts": [161, 90, 5], "jump2": 5, "matches_issue_815": true},
+    {"L": 4, "rank_counts": [36559, 19932, 9045], "fixed_site_delta_counts": [24639, 7840, 289], "jump2": 289, "matches_issue_815": true},
+    {"L": 5, "rank_counts": [20218851, 9649920, 3685661], "fixed_site_delta_counts": [13800255, 2906128, 70833], "jump2": 70833, "matches_issue_815": true}
+  ],
+  "delta_out_of_range_count": 0,
+  "R_jump2_at_frozen_p": {
+    "p": "59274605079210/100000000000000",
+    "definition": "2*P(delta=2)/E[delta], exact rational from occupation-number histograms",
+    "L3": "0.10391132091753346",
+    "L4": "0.07434091137140370",
+    "L5": "0.05208534450886294",
+    "a_eff_3_4": "1.16405038647",
+    "a_eff_4_5": "1.59438983752",
+    "matches_issue_817": true
+  },
+  "cost": {
+    "square_L5_full_enumeration_seconds": 10.2,
+    "square_L5_rank_evaluations": 33554432,
+    "note": "Full brute force at L=5 is 10 s single core. L=6 is 2^35 external configurations, single-core hours, trivially shardable. L=7 is 2^48 and remains out of reach for enumeration."
+  },
+  "not_done": ["L=6 or larger", "any exponent fitting", "any rerun of the queue scripts", "any change to existing files or claims"]
+}
