@@ -1,0 +1,32 @@
+{
+  "issue": 815,
+  "deterministic_lemma": "proved for the explicitly declared lattice annuli",
+  "acceptance": "partial: requested all-jump2 L<=5 census not executed",
+  "rectangle_4_8_checks": [
+    {
+      "w": 2,
+      "h": 2,
+      "configurations": 16,
+      "violations": 0
+    },
+    {
+      "w": 3,
+      "h": 3,
+      "configurations": 512,
+      "violations": 0
+    },
+    {
+      "w": 4,
+      "h": 4,
+      "configurations": 65536,
+      "violations": 0
+    }
+  ],
+  "wrong_4_4_control": {
+    "black_mask": 9,
+    "white_mask": 6
+  },
+  "all_jump2_configurations_checked": 0,
+  "blocker": "Named #775/#769 C kernel and raw witness files were not obtained from the checked branch sources; no replacement rank kernel was written.",
+  "wall_seconds": 0.477914
+}
