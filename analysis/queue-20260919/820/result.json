@@ -1,0 +1,71 @@
+{
+  "issue": 820,
+  "R2_recommendation": "downgrade broad state-family novelty; preserve narrower rank-image question",
+  "terminal_support_controls": [
+    {
+      "vertices": 3,
+      "graphs": 8,
+      "connected_terminal_cases": 4,
+      "violations": 0
+    },
+    {
+      "vertices": 4,
+      "graphs": 64,
+      "connected_terminal_cases": 206,
+      "violations": 0
+    },
+    {
+      "vertices": 5,
+      "graphs": 1024,
+      "connected_terminal_cases": 12678,
+      "violations": 0
+    }
+  ],
+  "degree8_pairings": 105,
+  "nonzero_checkerboard_pairings": [
+    [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        6,
+        7
+      ]
+    ],
+    [
+      [
+        0,
+        7
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        6
+      ]
+    ]
+  ],
+  "three_edge_block_projector_weights": [
+    "1",
+    "0",
+    "0",
+    "1"
+  ],
+  "exact_named_scalar_specialization_proved": false,
+  "scope": "Small graph support witnesses and local alphabets only; no site-torus enumeration."
+}
