@@ -1,0 +1,66 @@
+{
+  "issue": 816,
+  "status": "BLOCKED_BEFORE_ENUMERATION",
+  "L7_produced": false,
+  "L8_started": false,
+  "blocker": "Required #775 rank/winding source not obtained; the cited TM is a design, not a retrieved validated executable.",
+  "new_configurations_enumerated": 0,
+  "transfer_states": null,
+  "transfer_peak_rss": null,
+  "transfer_wall_seconds": null,
+  "quoted_table_checks": [
+    {
+      "L": 3,
+      "integer_columns_checked": 10,
+      "nonzero_residuals": 0,
+      "quoted_rank_totals": [
+        259,
+        162,
+        91
+      ]
+    },
+    {
+      "L": 4,
+      "integer_columns_checked": 17,
+      "nonzero_residuals": 0,
+      "quoted_rank_totals": [
+        36559,
+        19932,
+        9045
+      ]
+    },
+    {
+      "L": 5,
+      "integer_columns_checked": 26,
+      "nonzero_residuals": 0,
+      "quoted_rank_totals": [
+        20218851,
+        9649920,
+        3685661
+      ]
+    },
+    {
+      "L": 6,
+      "integer_columns_checked": 37,
+      "nonzero_residuals": 0,
+      "quoted_rank_totals": [
+        44162178463,
+        18469776586,
+        6087521687
+      ]
+    }
+  ],
+  "integer_columns_checked": 90,
+  "brute_force_work": {
+    "L7_masks": 562949953421312,
+    "L8_masks": 18446744073709551616,
+    "L7_to_L6_factor": 8192,
+    "quoted_L6_seconds": "24661.427",
+    "constant_rate_L7_seconds": "25253301248/125",
+    "constant_rate_L7_days": "197291416/84375",
+    "caveat": "Illustrative same-rate extrapolation only; no measured TM state count or runtime."
+  },
+  "validation_only_wall_seconds": 0.000208,
+  "validation_only_peak_rss_kib": 92200,
+  "scope": "Only integer revalidation of quoted L3-L6 tables. No rank kernel, fit, new-width run, or full CI."
+}
