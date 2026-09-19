@@ -1,0 +1,159 @@
+{
+  "issue": 815,
+  "reference_git_blob": "9fc042535aa0707651a5e38a2e2121669d99d59a",
+  "rank775_kernel_retrieved": false,
+  "integer_algorithms": [
+    "integer lift DFS",
+    "integer unit-capacity max flow"
+  ],
+  "oracle_checks": [
+    {
+      "L": 1,
+      "masks": 2,
+      "selection": "all masks",
+      "mismatches": 0
+    },
+    {
+      "L": 2,
+      "masks": 16,
+      "selection": "all masks",
+      "mismatches": 0
+    },
+    {
+      "L": 3,
+      "masks": 512,
+      "selection": "all masks",
+      "mismatches": 0
+    },
+    {
+      "L": 4,
+      "masks": 65536,
+      "selection": "all masks",
+      "mismatches": 0
+    },
+    {
+      "L": 5,
+      "masks": 2002,
+      "selection": "2000 fixed-seed random masks plus empty/full",
+      "mismatches": 0
+    }
+  ],
+  "reference_classification_rerun": [
+    {
+      "L": 3,
+      "jump2": 5,
+      "type_counts": {
+        "Rsplit": 1,
+        "T4plus": 4
+      },
+      "mismatches": 0
+    },
+    {
+      "L": 4,
+      "jump2": 289,
+      "type_counts": {
+        "Rsplit": 21,
+        "T4plus": 92,
+        "T3": 176
+      },
+      "mismatches": 0
+    }
+  ],
+  "systems": [
+    {
+      "L": 1,
+      "rest_masks": 1,
+      "rank_calls": 2,
+      "closed_rank_zero": 1,
+      "jump2": 1,
+      "T3": 0,
+      "T4plus": 0,
+      "Rsplit": 0,
+      "arm_failures": 0,
+      "inner_radius": 1,
+      "outer_radius": 1,
+      "periodic_self_loop_exclusion": true,
+      "injective_box": false,
+      "wall_seconds": 5e-07,
+      "first_failure_masks": []
+    },
+    {
+      "L": 2,
+      "rest_masks": 8,
+      "rank_calls": 13,
+      "closed_rank_zero": 5,
+      "jump2": 1,
+      "T3": 0,
+      "T4plus": 0,
+      "Rsplit": 1,
+      "arm_failures": 0,
+      "inner_radius": 1,
+      "outer_radius": 1,
+      "periodic_self_loop_exclusion": false,
+      "injective_box": false,
+      "wall_seconds": 1.1538e-05,
+      "first_failure_masks": []
+    },
+    {
+      "L": 3,
+      "rest_masks": 256,
+      "rank_calls": 415,
+      "closed_rank_zero": 159,
+      "jump2": 5,
+      "T3": 0,
+      "T4plus": 4,
+      "Rsplit": 1,
+      "arm_failures": 0,
+      "inner_radius": 1,
+      "outer_radius": 1,
+      "periodic_self_loop_exclusion": false,
+      "injective_box": true,
+      "wall_seconds": 8.623e-05,
+      "first_failure_masks": []
+    },
+    {
+      "L": 4,
+      "rest_masks": 32768,
+      "rank_calls": 53696,
+      "closed_rank_zero": 20928,
+      "jump2": 289,
+      "T3": 176,
+      "T4plus": 92,
+      "Rsplit": 21,
+      "arm_failures": 0,
+      "inner_radius": 1,
+      "outer_radius": 1,
+      "periodic_self_loop_exclusion": false,
+      "injective_box": true,
+      "wall_seconds": 0.006145,
+      "first_failure_masks": []
+    },
+    {
+      "L": 5,
+      "rest_masks": 16777216,
+      "rank_calls": 27893838,
+      "closed_rank_zero": 11116622,
+      "jump2": 70833,
+      "T3": 51496,
+      "T4plus": 17484,
+      "Rsplit": 1853,
+      "arm_failures": 0,
+      "inner_radius": 1,
+      "outer_radius": 2,
+      "periodic_self_loop_exclusion": false,
+      "injective_box": true,
+      "wall_seconds": 4.0608,
+      "first_failure_masks": []
+    }
+  ],
+  "L3_to_L5_all_jump2_checked": 71127,
+  "L3_L4_arm_contract": "thin annuli; disjoint single-vertex paths allowed, nonempty ordered endpoints required",
+  "L1_scope": "rank census only; periodic self-loop quotient has no outside-site arm event",
+  "L2_scope": "cover-germ check only; the radius-one box is not injective in the quotient",
+  "R1_limit_claim": "no square-site exponent or continuum b(lambda)=0 upgrade",
+  "L6_guard": "rejected as required",
+  "compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "available_cpus": 5,
+  "total_wall_seconds": 6.102607
+}
