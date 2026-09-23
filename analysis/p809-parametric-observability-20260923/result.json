@@ -1,0 +1,419 @@
+{
+  "schema": "matching-one.p809-parameter-observability.v1",
+  "input_blob": "50b7297deefe7c50215aea2ed534ca5810461af3",
+  "scope": "fixed width-four NN site; homogeneous future Bernoulli rows; rank at virtual periodic closure",
+  "binary_observable": "1{rank=1}, with current output B0 included",
+  "binary_linear_dimension": "93 at the two listed roots; 94 elsewhere in 0<p<1",
+  "ternary_linear_dimension": "93 only at the degree-11 root; 94 elsewhere in 0<p<1",
+  "binary_exception_roots": {
+    "11": {
+      "odds_polynomial": [
+        -2,
+        -26,
+        -132,
+        -331,
+        -420,
+        -193,
+        149,
+        264,
+        165,
+        57,
+        11,
+        1
+      ],
+      "p_polynomial": [
+        -2,
+        -4,
+        18,
+        17,
+        -64,
+        31,
+        19,
+        -14,
+        -3,
+        5,
+        -3,
+        1
+      ],
+      "p_interval": [
+        "2295471662/4282253993",
+        "1611411727/3006124805"
+      ],
+      "p_decimal_diagnostic": "0.53604285634441581340"
+    },
+    "17": {
+      "odds_polynomial": [
+        -2,
+        -35,
+        -278,
+        -1344,
+        -4503,
+        -11396,
+        -23218,
+        -39092,
+        -52627,
+        -51259,
+        -28383,
+        1795,
+        16534,
+        12915,
+        5205,
+        1305,
+        198,
+        9
+      ],
+      "p_polynomial": [
+        -2,
+        -1,
+        10,
+        -14,
+        -37,
+        5,
+        174,
+        134,
+        -144,
+        -377,
+        -117,
+        362,
+        320,
+        -122,
+        -286,
+        34,
+        98,
+        -28
+      ],
+      "p_interval": [
+        "2173770671/3675528507",
+        "2124611563/3592407640"
+      ],
+      "p_decimal_diagnostic": "0.59141717085313848176"
+    }
+  },
+  "primary_determinants": [
+    {
+      "block": 0,
+      "size": 55,
+      "degree": 628,
+      "removed_x_power": 157
+    },
+    {
+      "block": 1,
+      "size": 1,
+      "degree": 0,
+      "removed_x_power": 0
+    },
+    {
+      "block": 2,
+      "size": 38,
+      "degree": 414,
+      "removed_x_power": 122
+    }
+  ],
+  "factor_coverage": [
+    {
+      "block": 0,
+      "degree": 1,
+      "multiplicity": 1,
+      "reason": "nonnegative coefficients, nonzero on positive odds"
+    },
+    {
+      "block": 0,
+      "degree": 1,
+      "multiplicity": 2,
+      "reason": "nonnegative coefficients, nonzero on positive odds"
+    },
+    {
+      "block": 0,
+      "degree": 1,
+      "multiplicity": 29,
+      "reason": "nonnegative coefficients, nonzero on positive odds"
+    },
+    {
+      "block": 0,
+      "degree": 1,
+      "multiplicity": 276,
+      "reason": "nonnegative coefficients, nonzero on positive odds"
+    },
+    {
+      "block": 0,
+      "degree": 2,
+      "multiplicity": 1,
+      "dimension_lower_bound": 94,
+      "prime": 1013,
+      "root": 96,
+      "minor_determinant_mod": 5
+    },
+    {
+      "block": 0,
+      "degree": 2,
+      "multiplicity": 1,
+      "reason": "nonnegative coefficients, nonzero on positive odds"
+    },
+    {
+      "block": 0,
+      "degree": 3,
+      "multiplicity": 1,
+      "reason": "nonnegative coefficients, nonzero on positive odds"
+    },
+    {
+      "block": 0,
+      "degree": 4,
+      "multiplicity": 1,
+      "reason": "nonnegative coefficients, nonzero on positive odds"
+    },
+    {
+      "block": 0,
+      "degree": 5,
+      "multiplicity": 1,
+      "reason": "nonnegative coefficients, nonzero on positive odds"
+    },
+    {
+      "block": 0,
+      "degree": 6,
+      "multiplicity": 1,
+      "reason": "nonnegative coefficients, nonzero on positive odds"
+    },
+    {
+      "block": 0,
+      "degree": 7,
+      "multiplicity": 1,
+      "reason": "exact Sturm count: no positive roots"
+    },
+    {
+      "block": 0,
+      "degree": 11,
+      "multiplicity": 1,
+      "dimension_lower_bound": 93,
+      "prime": 1021,
+      "root": 173,
+      "minor_determinant_mod": 292,
+      "upper_bound": {
+        "degree": 11,
+        "support_size": 15,
+        "one_row_detuning_first_derivative_nonzero": true,
+        "eigenvector_identity_exact": true,
+        "ternary_invisible": true,
+        "histories_have_only_binary_output_zero_initially": true
+      }
+    },
+    {
+      "block": 0,
+      "degree": 17,
+      "multiplicity": 1,
+      "dimension_lower_bound": 93,
+      "prime": 1021,
+      "root": 207,
+      "minor_determinant_mod": 357,
+      "upper_bound": {
+        "degree": 17,
+        "support_size": 7,
+        "one_row_detuning_first_derivative_nonzero": true,
+        "eigenvector_identity_exact": true,
+        "ternary_invisible": false,
+        "histories_have_only_binary_output_zero_initially": true
+      }
+    },
+    {
+      "block": 0,
+      "degree": 19,
+      "multiplicity": 1,
+      "dimension_lower_bound": 94,
+      "prime": 1009,
+      "root": 396,
+      "minor_determinant_mod": 282
+    },
+    {
+      "block": 0,
+      "degree": 80,
+      "multiplicity": 1,
+      "dimension_lower_bound": 94,
+      "prime": 1013,
+      "root": 284,
+      "minor_determinant_mod": 553
+    },
+    {
+      "block": 0,
+      "degree": 164,
+      "multiplicity": 1,
+      "dimension_lower_bound": 94,
+      "prime": 1009,
+      "root": 798,
+      "minor_determinant_mod": 253
+    },
+    {
+      "block": 2,
+      "degree": 1,
+      "multiplicity": 10,
+      "reason": "nonnegative coefficients, nonzero on positive odds"
+    },
+    {
+      "block": 2,
+      "degree": 1,
+      "multiplicity": 94,
+      "reason": "nonnegative coefficients, nonzero on positive odds"
+    },
+    {
+      "block": 2,
+      "degree": 310,
+      "multiplicity": 1,
+      "dimension_lower_bound": 94,
+      "prime": 1013,
+      "root": 505,
+      "minor_determinant_mod": 475
+    }
+  ],
+  "ternary_rescue_minor": {
+    "dimension": 94,
+    "prime": 1021,
+    "root": 207,
+    "minor_determinant_mod": 275,
+    "maximum_word_length": 11,
+    "minor_rows": [
+      0,
+      1,
+      5,
+      6,
+      2,
+      76,
+      32,
+      4,
+      11,
+      19,
+      7,
+      92,
+      33,
+      3,
+      89,
+      77,
+      20,
+      34,
+      8,
+      35,
+      9,
+      16,
+      48,
+      10,
+      18,
+      38,
+      12,
+      49,
+      13,
+      61,
+      14,
+      93,
+      73,
+      15,
+      90,
+      60,
+      24,
+      74,
+      17,
+      88,
+      21,
+      91,
+      22,
+      23,
+      25,
+      26,
+      36,
+      27,
+      39,
+      41,
+      28,
+      43,
+      29,
+      45,
+      50,
+      52,
+      56,
+      59,
+      62,
+      64,
+      63,
+      65,
+      68,
+      75,
+      78,
+      46,
+      30,
+      71,
+      37,
+      84,
+      40,
+      42,
+      44,
+      47,
+      51,
+      31,
+      53,
+      54,
+      55,
+      57,
+      66,
+      67,
+      58,
+      69,
+      70,
+      72,
+      79,
+      80,
+      81,
+      82,
+      83,
+      85,
+      86,
+      87
+    ]
+  },
+  "det_K_in_p": "p^192*(1-p)^150*(2*p-1)*(2*p^3+p^2-1)^2",
+  "transition_rank_checks": [
+    {
+      "prime": 1009,
+      "odds_mod_prime": 1,
+      "rank_A_lower": 93,
+      "rank_A_squared_lower": 93
+    },
+    {
+      "prime": 1009,
+      "odds_mod_prime": 481,
+      "rank_A_lower": 92,
+      "rank_A_squared_lower": 92
+    }
+  ],
+  "delayed_positive_models": {
+    "cubic_positive_edge_states": 92,
+    "half_positive_edge_states": 93,
+    "cubic_factorization_shapes": [
+      [
+        94,
+        92
+      ],
+      [
+        92,
+        94
+      ]
+    ],
+    "cubic_UV_identity_exact": true,
+    "seven_state_core": [
+      0,
+      6,
+      7,
+      19,
+      73,
+      74,
+      75
+    ],
+    "positivity_proof": "all formulas positive for the unique cubic odds root t>1"
+  },
+  "physical_graph_rank_checks": 374,
+  "same_height_five_preparation_states": 94,
+  "positive_minimality_boundary": "At observable dimension 93, minimal positive order is only bounded 93..94 unless separately constructed; do not identify linear rank with positive order.",
+  "not_run": [
+    "full repository CI",
+    "new width",
+    "Monte Carlo",
+    "external independent review",
+    "publication novelty certification"
+  ],
+  "sympy_version": "1.14.0"
+}
