@@ -1,0 +1,38 @@
+{
+  "scope": "Focused controls stacked on PR #771. No claim upgrade.",
+  "clock_semigroup": {
+    "intensity_ratio": 2.0,
+    "fixed_location_gap_correlation": 0.5,
+    "no_cut_probability_two_sides": 0.25,
+    "joint_laplace_formula": "J_r(s,t)=(r+s)/((1+s)*(s+r*(1+t))); two-sided transform=J_r^2"
+  },
+  "critical_modular_rank": {
+    "hexagonal": {
+      "tau": [0.5, 0.8660254037844386],
+      "P0_equals_P2": "0.3160534127014016860652710696850982177792",
+      "c": "0.5820110775781618924991731983989074527149",
+      "hessian": [["1.01315266106979019658579486489", "0"], ["0", "1.01315266106979019658579486489"]],
+      "verdict": "strict numerical local minimum"
+    },
+    "square": {
+      "tau": [0.0, 1.0],
+      "P0_equals_P2": "0.3095262754298313227696936333528987765445",
+      "c": "0.6153717460841171742717940288615239560588",
+      "hessian": [["-0.482066947400697785573710130065", "0"], ["0", "1.92866506353063892452099278454"]],
+      "verdict": "numerical saddle"
+    },
+    "rectangular_c_equals_1": {
+      "aspect": "1.78782935267965703762908251131828066576",
+      "rank_probabilities": ["1/4", "1/2", "1/4"],
+      "source_zero": "s=i*pi, double"
+    },
+    "claim_boundary": "Numerical Morse/collision controls; global hex minimum remains conjectural."
+  },
+  "potts_permutation_twist_Q4": {
+    "sigma": [1, 0, 2, 3],
+    "tau": [0, 1, 3, 2],
+    "description": "commuting disjoint transpositions",
+    "rank1_fugacity_by_slope": {"1,0": 0.5, "0,1": 0.5, "1,1": 0.0, "1,-1": 0.0, "2,1": 0.5},
+    "rank2_cross_fugacity": 0.0
+  }
+}
