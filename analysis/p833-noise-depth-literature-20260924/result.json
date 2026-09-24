@@ -1,0 +1,514 @@
+{
+  "adaptive_erasure": {
+    "adaptive_policies_scope": "one explicit two-row policy, all forced-erasure trit seeds",
+    "forced_erasure_seed_pairs": 6561,
+    "physical_graph_calls_on_erasure": 26244,
+    "probability": "1/9",
+    "seed_pairs": 59049
+  },
+  "ladder": {
+    "checked_colourings": 5456,
+    "rectangles": [
+      {
+        "adjacent_cross_row_pairs": 4,
+        "all_colourings": 16,
+        "columns": 2,
+        "no_LR_crossing": 9
+      },
+      {
+        "adjacent_cross_row_pairs": 7,
+        "all_colourings": 64,
+        "columns": 3,
+        "no_LR_crossing": 47
+      },
+      {
+        "adjacent_cross_row_pairs": 10,
+        "all_colourings": 256,
+        "columns": 4,
+        "no_LR_crossing": 215
+      },
+      {
+        "adjacent_cross_row_pairs": 13,
+        "all_colourings": 1024,
+        "columns": 5,
+        "no_LR_crossing": 925
+      },
+      {
+        "adjacent_cross_row_pairs": 16,
+        "all_colourings": 4096,
+        "columns": 6,
+        "no_LR_crossing": 3857
+      }
+    ]
+  },
+  "not_claimed": [
+    "fixed-noise logarithmic-height full-query construction",
+    "all-history erasure bound",
+    "full repository CI",
+    "critical exponent",
+    "independent external proof review"
+  ],
+  "query": {
+    "full_graph_rank_calls": 40960,
+    "guard_implies_zero_checks": 2304,
+    "larger_widths_scope": "widths 10 and 12: all preparations and single-bit queries, all <=2 future faults only",
+    "parent_oracle_comparisons": 40960,
+    "positive_witness_checks": 6880,
+    "width5_complete_fault_histograms": [
+      {
+        "bits": [
+          [
+            0,
+            0
+          ]
+        ],
+        "error_counts_by_fault_number": [
+          0,
+          3,
+          14,
+          33,
+          50,
+          45,
+          25,
+          7,
+          1,
+          0,
+          0
+        ],
+        "query": [
+          0,
+          0
+        ],
+        "rational_evaluations": [
+          {
+            "bound": "1403/200000",
+            "epsilon": "1/1000",
+            "error": "1493514479515998490010495001/500000000000000000000000000000"
+          },
+          {
+            "bound": "143/2000",
+            "epsilon": "1/100",
+            "error": "1436429659840104501/50000000000000000000"
+          },
+          {
+            "bound": "17/20",
+            "epsilon": "1/10",
+            "error": "976076001/5000000000"
+          },
+          {
+            "bound": "1/1",
+            "epsilon": "1/4",
+            "error": "136341/524288"
+          }
+        ],
+        "width": 5
+      },
+      {
+        "bits": [
+          [
+            0,
+            0
+          ]
+        ],
+        "error_counts_by_fault_number": [
+          0,
+          3,
+          14,
+          33,
+          50,
+          45,
+          25,
+          7,
+          1,
+          0,
+          0
+        ],
+        "query": [
+          0,
+          1
+        ],
+        "rational_evaluations": [
+          {
+            "bound": "1403/200000",
+            "epsilon": "1/1000",
+            "error": "1493514479515998490010495001/500000000000000000000000000000"
+          },
+          {
+            "bound": "143/2000",
+            "epsilon": "1/100",
+            "error": "1436429659840104501/50000000000000000000"
+          },
+          {
+            "bound": "17/20",
+            "epsilon": "1/10",
+            "error": "976076001/5000000000"
+          },
+          {
+            "bound": "1/1",
+            "epsilon": "1/4",
+            "error": "136341/524288"
+          }
+        ],
+        "width": 5
+      },
+      {
+        "bits": [
+          [
+            1,
+            0
+          ]
+        ],
+        "error_counts_by_fault_number": [
+          0,
+          5,
+          30,
+          87,
+          160,
+          207,
+          185,
+          113,
+          44,
+          10,
+          1
+        ],
+        "query": [
+          0,
+          0
+        ],
+        "rational_evaluations": [
+          {
+            "bound": "1403/200000",
+            "epsilon": "1/1000",
+            "error": "2492513485511987513989004999/500000000000000000000000000000"
+          },
+          {
+            "bound": "143/2000",
+            "epsilon": "1/100",
+            "error": "2426335618763890499/50000000000000000000"
+          },
+          {
+            "bound": "17/20",
+            "epsilon": "1/10",
+            "error": "1871587949/5000000000"
+          },
+          {
+            "bound": "1/1",
+            "epsilon": "1/4",
+            "error": "335459/524288"
+          }
+        ],
+        "width": 5
+      },
+      {
+        "bits": [
+          [
+            1,
+            0
+          ]
+        ],
+        "error_counts_by_fault_number": [
+          0,
+          3,
+          14,
+          33,
+          50,
+          45,
+          27,
+          9,
+          1,
+          0,
+          0
+        ],
+        "query": [
+          0,
+          1
+        ],
+        "rational_evaluations": [
+          {
+            "bound": "1403/200000",
+            "epsilon": "1/1000",
+            "error": "1493514479515999487013494001/500000000000000000000000000000"
+          },
+          {
+            "bound": "143/2000",
+            "epsilon": "1/100",
+            "error": "1436429659937134401/50000000000000000000"
+          },
+          {
+            "bound": "17/20",
+            "epsilon": "1/10",
+            "error": "976083291/5000000000"
+          },
+          {
+            "bound": "1/1",
+            "epsilon": "1/4",
+            "error": "136449/524288"
+          }
+        ],
+        "width": 5
+      },
+      {
+        "bits": [
+          [
+            0,
+            1
+          ]
+        ],
+        "error_counts_by_fault_number": [
+          0,
+          3,
+          14,
+          33,
+          50,
+          45,
+          27,
+          9,
+          1,
+          0,
+          0
+        ],
+        "query": [
+          0,
+          0
+        ],
+        "rational_evaluations": [
+          {
+            "bound": "1403/200000",
+            "epsilon": "1/1000",
+            "error": "1493514479515999487013494001/500000000000000000000000000000"
+          },
+          {
+            "bound": "143/2000",
+            "epsilon": "1/100",
+            "error": "1436429659937134401/50000000000000000000"
+          },
+          {
+            "bound": "17/20",
+            "epsilon": "1/10",
+            "error": "976083291/5000000000"
+          },
+          {
+            "bound": "1/1",
+            "epsilon": "1/4",
+            "error": "136449/524288"
+          }
+        ],
+        "width": 5
+      },
+      {
+        "bits": [
+          [
+            0,
+            1
+          ]
+        ],
+        "error_counts_by_fault_number": [
+          0,
+          5,
+          30,
+          87,
+          160,
+          207,
+          185,
+          113,
+          44,
+          10,
+          1
+        ],
+        "query": [
+          0,
+          1
+        ],
+        "rational_evaluations": [
+          {
+            "bound": "1403/200000",
+            "epsilon": "1/1000",
+            "error": "2492513485511987513989004999/500000000000000000000000000000"
+          },
+          {
+            "bound": "143/2000",
+            "epsilon": "1/100",
+            "error": "2426335618763890499/50000000000000000000"
+          },
+          {
+            "bound": "17/20",
+            "epsilon": "1/10",
+            "error": "1871587949/5000000000"
+          },
+          {
+            "bound": "1/1",
+            "epsilon": "1/4",
+            "error": "335459/524288"
+          }
+        ],
+        "width": 5
+      },
+      {
+        "bits": [
+          [
+            1,
+            1
+          ]
+        ],
+        "error_counts_by_fault_number": [
+          0,
+          5,
+          30,
+          87,
+          160,
+          207,
+          183,
+          111,
+          44,
+          10,
+          1
+        ],
+        "query": [
+          0,
+          0
+        ],
+        "rational_evaluations": [
+          {
+            "bound": "1403/200000",
+            "epsilon": "1/1000",
+            "error": "2492513485511986516986005999/500000000000000000000000000000"
+          },
+          {
+            "bound": "143/2000",
+            "epsilon": "1/100",
+            "error": "2426335618666860599/50000000000000000000"
+          },
+          {
+            "bound": "17/20",
+            "epsilon": "1/10",
+            "error": "1871580659/5000000000"
+          },
+          {
+            "bound": "1/1",
+            "epsilon": "1/4",
+            "error": "335351/524288"
+          }
+        ],
+        "width": 5
+      },
+      {
+        "bits": [
+          [
+            1,
+            1
+          ]
+        ],
+        "error_counts_by_fault_number": [
+          0,
+          5,
+          30,
+          87,
+          160,
+          207,
+          183,
+          111,
+          44,
+          10,
+          1
+        ],
+        "query": [
+          0,
+          1
+        ],
+        "rational_evaluations": [
+          {
+            "bound": "1403/200000",
+            "epsilon": "1/1000",
+            "error": "2492513485511986516986005999/500000000000000000000000000000"
+          },
+          {
+            "bound": "143/2000",
+            "epsilon": "1/100",
+            "error": "2426335618666860599/50000000000000000000"
+          },
+          {
+            "bound": "17/20",
+            "epsilon": "1/10",
+            "error": "1871580659/5000000000"
+          },
+          {
+            "bound": "1/1",
+            "epsilon": "1/4",
+            "error": "335351/524288"
+          }
+        ],
+        "width": 5
+      }
+    ],
+    "zero_bit_low_mask_checks": 12864
+  },
+  "scalars": {
+    "RAC_integer_inequalities": true,
+    "exact_height_lower_bounds": [
+      {
+        "epsilon": "1/10",
+        "g": 10,
+        "minimum_possible_height_lower_bound": 3,
+        "requested_bit_error": "1/100",
+        "w": 50
+      },
+      {
+        "epsilon": "1/10",
+        "g": 100,
+        "minimum_possible_height_lower_bound": 4,
+        "requested_bit_error": "1/100",
+        "w": 500
+      },
+      {
+        "epsilon": "1/10",
+        "g": 1000,
+        "minimum_possible_height_lower_bound": 5,
+        "requested_bit_error": "1/100",
+        "w": 5000
+      },
+      {
+        "epsilon": "1/10",
+        "g": 10000,
+        "minimum_possible_height_lower_bound": 6,
+        "requested_bit_error": "1/100",
+        "w": 50000
+      }
+    ],
+    "illustrations_only_decimal": [
+      {
+        "beta_decimal": "0.36603234127322950493061602657251738618971207663892369140595737269931704475072475",
+        "epsilon": "1/10",
+        "h": 2,
+        "necessary_repeats_for_error_1pct_decimal": "8.5835656063140347149027756630326270081159001534051383552049530200276764948249861",
+        "pair_error_lower_bound_decimal": "0.31698382936338524753469198671374130690514396168053815429702131365034147762463762",
+        "w": 500
+      },
+      {
+        "beta_decimal": "0.000043171247410658250988632828635259739210876906214864402040821731191157685603850458",
+        "epsilon": "1/10",
+        "h": 2,
+        "necessary_repeats_for_error_1pct_decimal": "90614.443547402141367529488132858020779732821130388789740343052446176349227483078",
+        "pair_error_lower_bound_decimal": "0.49997841437629467087450568358568237013039456154689256779897958913440442115719808",
+        "w": 5000
+      },
+      {
+        "beta_decimal": "2.2487748498164822437158214138871897704446035413005699997098935503517635599843187E-44",
+        "epsilon": "1/10",
+        "h": 2,
+        "necessary_repeats_for_error_1pct_decimal": "173962413611455943526596147309631410769613816.93781146574067903275664306624567039",
+        "pair_error_lower_bound_decimal": "0.49999999999999999999999999999999999999999998875612575091758878142089293056405115",
+        "w": 50000
+      }
+    ],
+    "natural_preparation_mass": {
+      "one_block_max_probability": "38423222208/302875106592253",
+      "optimizer_when_w_equals_5t": "6/13",
+      "probability_formula": "p^(6t)*(1-p)^(3w-8t)",
+      "w_equals_5t_half_probability": "2^(-13t)"
+    },
+    "strict_1pct_bound": "1403/160000 < 1/100"
+  },
+  "schema": "matching-one.guard-erasure-and-two-row-noise.v1",
+  "scope": "tensor preparation family; rank-only transcript; future sites conditionally independent; input noise, not preparation noise",
+  "total_new_integer_graph_calls": 70516
+}
