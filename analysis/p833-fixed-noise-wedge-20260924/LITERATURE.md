@@ -51,7 +51,7 @@ https://epubs.siam.org/doi/10.1137/S0097539795281232
 
 ## L5 — Angel–Benjamini–Ofek–Wieder：巨型分量中的路由
 
-**来源：** Omer Angel, Itai Benjamini, Eran Ofek, Udi Wieder, *Routing complexity of the giant cluster in supercritical percolation*, Random Structures & Algorithms 32(1), 71–87 (2008)，DOI 10.1002/rsa.20163；预印本2004：
+**来源：** Omer Angel, Itai Benjamini, Eran Ofek, Udi Wieder, *Routing Complexity of Faulty Networks*, Random Structures & Algorithms 32(1), 71–87 (2008)，DOI 10.1002/rsa.20163；预印本2004：
 https://arxiv.org/abs/math/0407185
 https://arxiv.org/pdf/math/0407185
 
@@ -140,7 +140,7 @@ https://arxiv.org/abs/math/0003117v2
 ## 路线取舍
 
 1. 对当前微观准备，NOTE.md已给足够小固定ε的O(logw)查询作者证明；与PR #836下界匹配高度阶数，不再把这个目标保持为纯猜想。
-2. 后续最有区分力的问题是单出口最优误差：当前证明给O(ε)上界与[1−(1−ε)^4]/2=2ε+O(ε²)下界，差别是常数和可否达到擦除底。可先在不更改旧准备的前提下分析，不购买更大宽度机器。
+2. 后续最有区分力的问题是单出口最优误差：当前证明给O(ε)上界与补件中的[1−(1−ε)^5]/2=(5/2)ε+O(ε²)下界，差别是常数和可否达到擦除底。可先在不更改旧准备的前提下分析，不购买更大宽度机器。
 3. 若追求固定ε下误差趋零，端口擦除下界迫使改变准备或允许独立重新制备。那是新的编码合同，应把出口数d、总宽度和保留的独立信息位数一起计量。
 4. 原自然iid三行中该准备族的质量仍指数小；本次的最坏情况结论没有自动成为自然平均复杂度定理。
 
