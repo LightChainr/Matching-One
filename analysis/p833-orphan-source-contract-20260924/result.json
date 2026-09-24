@@ -1,0 +1,235 @@
+{
+  "schema": "matching-one.orphan-source-contract.result.v1",
+  "date": "2026-09-24",
+  "parent_pr": 834,
+  "parent_commit": "8f40247491af737c03aa3b1156db5918a7024093",
+  "scope": "width5 NN; controlled row extension; current output included; all pure histories and mixtures; not an autonomous near-critical gap",
+  "input_checks": {
+    "graph_transition_checks": 344512,
+    "physical_torus_checks": 37230,
+    "common_preparation_length": 7,
+    "all_deterministic_states_preparable": 3438
+  },
+  "dihedral_transition_relations": 1100160,
+  "local_mechanism": {
+    "independent_relations": 110,
+    "output_support_counts": {
+      "0": 85,
+      "1": 25
+    },
+    "whole_boundary_update_checks": 14080,
+    "orbit_sizes": [
+      5,
+      5,
+      5,
+      5,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ]
+  },
+  "controlled_binary_refinement": [
+    2,
+    808,
+    3318,
+    3438,
+    3438
+  ],
+  "controlled_linear_dimension": {
+    "dimension": 3328,
+    "field": 2,
+    "actual_controlled_word_minor": 3328,
+    "minor_determinant_mod_2": 1,
+    "maximum_future_rows": 5,
+    "both_row_and_column_elimination_pass": true
+  },
+  "controlled_positive_minimum": 3438,
+  "controlled_positive_linear_gap": 110,
+  "positive_invariant_sources": {
+    "state_count": 385,
+    "orbit_count": 8,
+    "orbit_records": [
+      {
+        "masks": [
+          0
+        ],
+        "size": 1,
+        "occupied_sites": 0,
+        "occupied_neighbor_pairs": 0,
+        "minimum_VC_entry": 0
+      },
+      {
+        "masks": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "size": 5,
+        "occupied_sites": 1,
+        "occupied_neighbor_pairs": 0,
+        "minimum_VC_entry": 0
+      },
+      {
+        "masks": [
+          3,
+          6,
+          12,
+          17,
+          24
+        ],
+        "size": 5,
+        "occupied_sites": 2,
+        "occupied_neighbor_pairs": 1,
+        "minimum_VC_entry": 0
+      },
+      {
+        "masks": [
+          5,
+          9,
+          10,
+          18,
+          20
+        ],
+        "size": 5,
+        "occupied_sites": 2,
+        "occupied_neighbor_pairs": 0,
+        "minimum_VC_entry": 0
+      },
+      {
+        "masks": [
+          7,
+          14,
+          19,
+          25,
+          28
+        ],
+        "size": 5,
+        "occupied_sites": 3,
+        "occupied_neighbor_pairs": 2,
+        "minimum_VC_entry": 0
+      },
+      {
+        "masks": [
+          11,
+          13,
+          21,
+          22,
+          26
+        ],
+        "size": 5,
+        "occupied_sites": 3,
+        "occupied_neighbor_pairs": 1,
+        "minimum_VC_entry": 0
+      },
+      {
+        "masks": [
+          15,
+          23,
+          27,
+          29,
+          30
+        ],
+        "size": 5,
+        "occupied_sites": 4,
+        "occupied_neighbor_pairs": 3,
+        "minimum_VC_entry": 0
+      },
+      {
+        "masks": [
+          31
+        ],
+        "size": 1,
+        "occupied_sites": 5,
+        "occupied_neighbor_pairs": 5,
+        "minimum_VC_entry": 0
+      }
+    ],
+    "all_orbit_coefficients_nonnegative": true,
+    "all_orbit_intertwinings_exact": true,
+    "fixed_encoding_source_constraint_rank": 24,
+    "allowed_unnormalized_source_dimension": 8,
+    "allowed_probability_simplex_dimension": 7,
+    "uniform_source_dimension_lower_bound": {
+      "dimension_lower_bound": 385,
+      "prime": 1000003,
+      "odds_mod": 1,
+      "minor_determinant_mod": 821642,
+      "maximum_word_length": 19,
+      "parent_witness_actual_columns_recomputed": true
+    }
+  },
+  "physical_examples": {
+    "physical_graph_rank_checks": 8256,
+    "raw_square_equal_length_histories": [
+      [
+        0,
+        0,
+        15
+      ],
+      [
+        0,
+        7,
+        13
+      ],
+      [
+        0,
+        14,
+        11
+      ],
+      [
+        0,
+        15,
+        9
+      ]
+    ],
+    "square_signed_coefficients": [
+      1,
+      -1,
+      -1,
+      1
+    ],
+    "single_column_histories": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "single_column_probability_response": [
+      "-delta",
+      "delta",
+      "0"
+    ]
+  },
+  "strictly_interior_control_bound": {
+    "epsilon_interval": [
+      "0",
+      "1/177246090"
+    ],
+    "example_epsilon": "1/1000000000",
+    "commands": 32,
+    "sites_per_distinguishing_experiment_at_most": 15,
+    "pairwise_initial_overlap_bound": "30 epsilon",
+    "total_overlap_budget_at_example": "17724609/100000000",
+    "positive_minimum_on_interval": 3438,
+    "linear_dimension_on_interval": 3328
+  },
+  "not_claimed": [
+    "gap for autonomous homogeneous p near pc",
+    "minimum for arbitrary intermediate command noise",
+    "all-width completeness of local generators",
+    "independent external review or publication novelty",
+    "full repository CI or change to original-U"
+  ]
+}
