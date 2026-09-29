@@ -4,6 +4,11 @@ Date: 2026-09-29. New finite/probabilistic analysis for the paired-birth route.
 This note proves statements about ordered two-birth processes; it does **not**
 prove a percolation scaling limit or square-site universality.
 
+Follow-up: [Two-time pivotal density](two-time-pivotal-density-bound-20260929.md)
+derives the needed windowed small-ball bound from arm inputs and supplies a
+triangular noncoalescence author corollary. The general identities and
+counterexample below remain unchanged; uniqueness is a different question.
+
 ## The useful new target
 
 The question is not only whether a single insertion can create both homology

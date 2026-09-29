@@ -8,11 +8,15 @@ Issue bodies and publication-portfolio snapshots are not a current run queue.
 Owner-delegated focus dated 2026-09-29, replacing the Sep13 one-paper allocation:
 - Primary: joint near-critical rank process. #773/#823 supply finite birth/arm
   inputs; direct jump-two suppression is not a proof against aggregation of two
-  distinct births. Advance paired birth-gap anti-concentration and its physical
-  inputs, with triangular comparison and square universality kept distinct.
+  distinct births. This branch now supplies a two-time density bound and an
+  author triangular noncoalescence corollary. Advance the square 4/8 input
+  transfer and continuum torus-observer identification, not another request
+  to derive the same bound. No copula uniqueness or square universality yet.
 - Parallel: #809/#833 source-dependent predictive state and noisy information.
-  Reuse #829--#837. Direct repetition restores a missing uv response column;
-  do not keep the old 3^t rank bound after changing the preparation.
+  Reuse #829--#837 and this branch's all-k deterministic four-state encoding
+  theorem, including actual two-row product queries. Distributed deterministic
+  block codes restore rank four; stochastic codes/restricted sources are
+  different contracts. Do not keep 3^t after changing the preparation.
 - Bounded writing: #739 already supplies arbitrary-oblique full-law necessity;
   #771 adds fixed-p consequences. Do not dispatch that proof as missing again.
 - #275: derive normal projected candidate columns under the ORIGINAL source,

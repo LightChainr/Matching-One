@@ -20,7 +20,8 @@ date, numbers and claims. Use the original commit linked in
 | Fixed-p homological free energy and rare-birth clocks | Author results in open #771 | Fixed-p probability inputs and directional uniformity must not silently be promoted to moving near-critical estimates |
 | Single-insertion jump-two has a six-arm-type separator | Author argument and exact finite census in #823; finite numbers independently reproduced in #828 | Does not supply square-lattice universality, nonzero amplitude or exclusion of adjacent-birth aggregation |
 | No direct double jumps implies no double birth in a scaling limit | False for general monotone two-birth processes | New explicit counterexample has equal static laws AND adjacent transition tables but limit diagonal atoms 0 and 1/2; not a percolation counterexample |
-| Joint near-diagonal criterion | New general probability derivation in this branch | Under pair tightness, vanishing double-limit soft gap mass is equivalent to no coalescence; percolation uniform small-ball bound remains open |
+| Joint near-diagonal criterion | New general probability derivation in this branch | Under pair tightness, vanishing double-limit soft gap mass is equivalent to no coalescence |
+| Two-time birth density and triangular noncoalescence | New author proof in this branch using explicit near-critical arm inputs | Locally bounded joint density plus vanishing same-site atom and tightness; no copula uniqueness; square 4/8 input transfer remains conditional; exact square 5/4 is not required |
 | Joint-gap finite-size evidence | New 128k local + independent 560k cloud filtrations, L up to 512 | Soft mass decreases approximately with resolution down to delta=.00625; no resolved plateau, not an exclusion of a limiting atom; no cross-modulus universality claim |
 | L6 jump-stratified census | Not delivered by #825 | Revalidation of older static rank tables is not new jump enumeration; 36-site extension of #828's 32-bit control requires a representation repair |
 | Width-four source/trajectory closure | Exact finite results in #829--#832 | Terminal classes, strong lumping, linear order, positive order and delayed readout have different contracts |
@@ -28,6 +29,7 @@ date, numbers and claims. Use the original commit linked in
 | Fixed small-noise query height | Author upper/lower bounds Theta(log w), #836/#837 | Artificial preparations, fixed error, epsilon<=10^-5 for the stated upper bound; not natural critical typical histories |
 | Rank-only microscopic erasure floor | At least [1-(1-epsilon)^5]/2, #837 supplement | Stronger than the complete first-boundary fourth-power bound; attainability of the fifth-power bound is open |
 | Direct copying preserves the old tensor response-rank saving | False for the stated full query family | #837 latest discussion adds uv and restores 4^t; not a universal prohibition on coding |
+| Distributed deterministic four-state block coding preserves rank three | Excluded for the full tensor language, with physical product queries now constructed | All-k classification; one exact 65,536-code census; rank-four obstruction transfers to original five-column blocks and complete noisy command family, not arbitrary codes or finite-error complexity |
 | m*lambda^m or linear eigenvalue splitting identifies Jordan | False as a standalone diagnostic | #735 gives explicit counterexamples, including positive stochastic matrices with identical trace jets |
 | Full unbranched survival is a complete branching state | False in the declared cut-network family | #549's exact growing-family witness; no universal square-NN or finite-noise dimension claim |
 
@@ -37,6 +39,10 @@ No original result file or frozen scorer is changed. This round adds
 [paired-birth analysis](../notes/birth-gap-pilot-20260929.md), whose actual run
 and uncertainty are recorded separately; finite Monte Carlo is not a proof of
 noncoalescence. No full-repository CI or document-wording tests were run.
+The subsequent [two-time proof](../notes/two-time-pivotal-density-bound-20260929.md)
+does not infer its bound from the pilot. The
+[encoding proof](../notes/deterministic-block-encoding-obstruction-20260929.md)
+separately records its sole algebraic census and all-width physical construction.
 
 The source/normalizer corrections in #771 and the thermal-tangent discussion in
 #275 matter for interpretation: strong root H4 and weak normalized U need not

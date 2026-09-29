@@ -218,22 +218,29 @@
         "P823",
         "P828"
       ],
-      "known": "Finite birth flux/copula identities and author separator proof with exact L3-L5 control.",
-      "boundary": "No square universality theorem or uniform two-time anti-concentration supplied by single-site arm inclusion.",
+      "known": "Finite birth flux and separator inputs; new author two-time density bound under explicit arm hypotheses, with triangular-site tightness and noncoalescence corollary.",
+      "boundary": "No copula uniqueness or square universality theorem. Square NN/white-matching probability input transfer is conditional here; no exact square 5/4 exponent needed. IQR-to-pivotal clock comparison is separate.",
       "new_branch_paths": [
         "notes/birth-gap-noncoalescence-20260929.md",
         "notes/birth-gap-pilot-20260929.md",
-        "notes/birth-gap-cloud-20260929.md"
+        "notes/birth-gap-cloud-20260929.md",
+        "notes/two-time-pivotal-density-bound-20260929.md"
       ],
       "observer": "rank_filtration",
       "acquisition": [
         "exact construction",
         "128000-filtration local pilot",
-        "560000-filtration independent CPU block through L512"
+        "560000-filtration independent CPU block through L512",
+        "two-time arm-density proof and primary-literature probability inputs"
       ],
       "tension": "Same static laws and all adjacent transition tables can coexist with different limit diagonal atoms.",
       "finite_result": "Soft gap mass approximately proportional to resolution down to delta=.00625, L<=512; no resolved plateau, not proof of noncoalescence.",
-      "next": "Uniform two-time small-ball bound plus pair tightness; no automatic larger-size campaign. Triangular and square inputs separately typed.",
+      "theory_result": "Different-site birth pairs have locally uniformly bounded time density; direct diagonal mass is bounded by alpha6/alpha4. Tightness then excludes limit coalescence. This is an author proof, not independent certification.",
+      "probability_input_sources": [
+        "https://arxiv.org/abs/0711.4948",
+        "https://arxiv.org/abs/1305.5526"
+      ],
+      "next": "Square 4/8 probability-input transfer and continuum torus-observer identification / uniqueness. No automatic larger-size campaign.",
       "information_gain": "high: decides missing process-continuity mechanism",
       "cost": "small exact algebra; bounded pilot; substantial two-time probability theory"
     },
@@ -252,14 +259,20 @@
         "P837"
       ],
       "observer": "tensor_noise",
-      "known": "Source-dependent linear/positive orders, fixed small-noise logarithmic query height, five-point erasure bound.",
-      "boundary": "Artificial preparations; small-noise upper bound; no claim for typical critical states or arbitrary noise.",
-      "tension": "Direct repetition restores uv and full 4^t response rank.",
+      "known": "Source-dependent orders, small-noise logarithmic query height and five-point erasure bound. New all-k four-state deterministic coding classification plus explicit two-row physical product queries.",
+      "boundary": "Original five-column artificial preparation and full tensor queries; noisy rank transfer needs the complete command cube. No stochastic-code obstruction or finite-error/sample-complexity theorem.",
+      "tension": "Every injective deterministic code with multiple informative blocks has rank four, not only literal repetition; independent encoded logical groups restore 4^t.",
       "discussion": "https://github.com/LightChainr/Matching-One/pull/837#issuecomment-5814562555",
-      "next": "Non-copy encoding or conditional obstruction, reporting A/L/error/width/height together.",
+      "new_branch_paths": [
+        "notes/deterministic-block-encoding-obstruction-20260929.md",
+        "analysis/deterministic-block-encoding-20260929/check.py",
+        "analysis/deterministic-block-encoding-20260929/result.json"
+      ],
+      "next": "A concrete stochastic encoder, restricted query family or changed block geometry with its changed assumption and A/L/error/width/height reported; not another deterministic block-code search under the same contract.",
       "acquisition": [
         "reuse exact finite engines",
-        "small exact construction"
+        "all-k algebraic proof and all-width physical construction",
+        "one exact census of 65536 two-block encoders"
       ],
       "information_gain": "high: tests whether reliability preserves the representation advantage",
       "cost": "bounded one-block algebra/topology first"
@@ -321,11 +334,26 @@
       "interpretation": "local pilot and independent finer cloud block are exploratory, not proof of double limit"
     },
     {
+      "id": "two_time_birth_density",
+      "node": "joint_birth_process",
+      "status": "author_proof_with_explicit_probability_inputs",
+      "source_paths": [
+        "notes/two-time-pivotal-density-bound-20260929.md"
+      ],
+      "bound": "P(gap<=delta,both births in compact window)<=C_window*delta+C_window*alpha6/alpha4",
+      "interpretation": "Triangular corollary includes tightness. Square 4/8 input transfer and unique copula are not claimed. Does not infer a global delta bound by dropping the window tail."
+    },
+    {
       "id": "coded_response_rank",
       "node": "source_noise_state",
-      "status": "proposed_not_started",
+      "status": "all_k_classification_and_physical_product_query_proof",
       "statistic": "(A,L,eta,w,h) under one fixed preparation/source/readout contract",
-      "mechanism_contrast": "noise protection preserving a rank defect versus generating formerly absent response monomials"
+      "mechanism_contrast": "Only a single informative block preserves rank three for deterministic four-state encoders; distributed encoding yields rank four",
+      "source_paths": [
+        "notes/deterministic-block-encoding-obstruction-20260929.md",
+        "analysis/deterministic-block-encoding-20260929/result.json"
+      ],
+      "finite_control": "One exact k=2 census, 65536 encoders; 43680 injective: 192 rank3, 43488 rank4. Physical query construction is proved, not numerically re-enumerated."
     },
     {
       "id": "normal_candidate_columns",
