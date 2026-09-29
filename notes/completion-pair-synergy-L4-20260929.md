@@ -3,6 +3,11 @@
 2026-09-29. Exact finite calculation under the uniform-permutation **count
 clock**, on square NN and triangular (+diagonal) occupied-site tori.
 
+The later [independent L512 safe-insertion block](safe-insertion-independent-block-20260929.md)
+has now measured the proposed mean successor contrast without resolving a
+history difference. That empirical outcome does not alter the exact L4
+counterexamples below or promote them to large-size conclusions.
+
 **Result.** Current rank, persistent direction and completion count do not
 give a Markov state even from the uniform empty preparation at L4. There
 are positive-probability early/late first-birth groups with identical

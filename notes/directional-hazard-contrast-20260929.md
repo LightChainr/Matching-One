@@ -5,6 +5,12 @@ necessity check**, not a new experiment. The
 [original prospective readout](completion-hazard-independent-block-20260929.md)
 and every original result, cutoff and contract remain unchanged.
 
+**Independent follow-up:** the [new safe-insertion block](safe-insertion-independent-block-20260929.md)
+predeclared and repeated the same-D completion-count contrast, obtaining
+`-0.03987 +/- .56988`, not reproducing the `+1.62917 +/- .39098` below.
+The original post-hoc result is preserved, but must not be read as a stable
+empirical exclusion. L512 direction-only closure remains unresolved.
+
 **Outcome.** Within the same primitive direction, early histories have
 `1.6292 +/- .3910` more completion sites than late histories, using the
 existing exact-D overlap weights and aligned batch SE. Direction-only

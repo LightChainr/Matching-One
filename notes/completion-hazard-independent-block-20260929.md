@@ -16,6 +16,9 @@ uses the already saved completion counts and challenges direction-only
 Markovness (+1.629 +/- .391 sites within direction). It is explicitly
 retrospective and leaves every prospective result below unchanged; the
 working candidate suggested by this report must not be read as accepted.
+The subsequent [independent safe-insertion block](safe-insertion-independent-block-20260929.md)
+did not reproduce that retrospective challenge; direction-only closure
+remains unresolved rather than accepted or independently excluded.
 
 | Fixed readout | Estimate, percentage-point scale | Aligned batch SE, same scale |
 |---|---:|---:|

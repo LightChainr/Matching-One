@@ -28,9 +28,10 @@ Owner-delegated focus dated 2026-09-29, replacing the Sep13 one-paper allocation
   fixed at the old count cutoffs. The pooled survival contrast is smaller;
   exact-D and exact-(D,nu2) weighted finite-lag contrasts are unresolved.
   The directional kernel's next-step necessity has now been checked:
-  within-D early histories have +1.629 +/- .391 more completion sites.
-  This one post-hoc readout challenges direction-only Markov closure; it
-  is not independent validation or a change to the original lag outcome.
+  within-D early histories had +1.629 +/- .391 more completion sites in
+  one post-hoc readout. The later independent safe-insertion block gives
+  -.040 +/- .570 and does NOT reproduce it. Do not retain the earlier
+  selected contrast as an accepted empirical exclusion of direction closure.
   Advance completion-count successor dynamics or a targeted independent
   prediction, not an automatic next descriptor or reacquisition of this
   block. Flow-matched Markov completions do not identify actual history.
@@ -41,6 +42,12 @@ Owner-delegated focus dated 2026-09-29, replacing the Sep13 one-paper allocation
   finite closure as missing or automatically enumerate the next L.
   Its large-size importance remains open; use a specified completion-
   creation prediction, not equality of the tautological immediate hazard.
+  The first large-size safe-insertion block is now delivered: 140k new
+  L512 prefixes, four probes per eligible prefix, primary same-(D,nu)
+  increment contrast +.00668 +/- .01209, unresolved. Only .560% of probes
+  have nonzero increments. Advance continuum predictions or an unbiased
+  variance reduction for this same target, not another automatic sparse-
+  probe block. Current L512 recursive closure remains undecided.
 - Parallel: #809/#833 source-dependent predictive state and noisy information.
   Reuse #829--#837 and this branch's all-k deterministic four-state encoding
   theorem, including actual two-row product queries. Distributed deterministic
