@@ -27,9 +27,13 @@ Owner-delegated focus dated 2026-09-29, replacing the Sep13 one-paper allocation
   A new independent 140k square-L512 completion block is now delivered,
   fixed at the old count cutoffs. The pooled survival contrast is smaller;
   exact-D and exact-(D,nu2) weighted finite-lag contrasts are unresolved.
-  Advance a directional-kernel prediction, not an automatic next descriptor
-  or another acquisition of this same block. One conditional zero does not
-  prove sectorwise Markovness. Raw and integrated-hazard estimates share data.
+  The directional kernel's next-step necessity has now been checked:
+  within-D early histories have +1.629 +/- .391 more completion sites.
+  This one post-hoc readout challenges direction-only Markov closure; it
+  is not independent validation or a change to the original lag outcome.
+  Advance completion-count successor dynamics or a targeted independent
+  prediction, not an automatic next descriptor or reacquisition of this
+  block. Flow-matched Markov completions do not identify actual history.
 - Parallel: #809/#833 source-dependent predictive state and noisy information.
   Reuse #829--#837 and this branch's all-k deterministic four-state encoding
   theorem, including actual two-row product queries. Distributed deterministic

@@ -11,6 +11,12 @@ are not resolved. This shifts the next candidate toward a direction-mixture
 model; it does not establish direction sufficiency or license adding an
 unlimited sequence of descriptors to the same block.
 
+**Subsequent interpretation update:** the [directional next-step check](directional-hazard-contrast-20260929.md)
+uses the already saved completion counts and challenges direction-only
+Markovness (+1.629 +/- .391 sites within direction). It is explicitly
+retrospective and leaves every prospective result below unchanged; the
+working candidate suggested by this report must not be read as accepted.
+
 | Fixed readout | Estimate, percentage-point scale | Aligned batch SE, same scale |
 |---|---:|---:|
 | Early-minus-late survival | +0.686 | 0.444 |
