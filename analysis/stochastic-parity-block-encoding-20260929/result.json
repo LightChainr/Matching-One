@@ -1,0 +1,224 @@
+{
+  "arithmetic": "exact integers and fractions.Fraction",
+  "cases": [
+    {
+      "alternating_row_relation": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "best_single_monotone_equal_prior_error": "1/4",
+      "constant_allU_allV_columns": [
+        [
+          "1/1",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/1",
+          "0/1",
+          "1/2"
+        ],
+        [
+          "1/1",
+          "1/2",
+          "0/1"
+        ],
+        [
+          "1/1",
+          "0/1",
+          "0/1"
+        ]
+      ],
+      "exact_moment_checks": 36,
+      "exact_tensor_response_rank": 3,
+      "four_supports_pairwise_disjoint": true,
+      "hypothetical_independent_share_BSC": [
+        {
+          "all_noisy_shares_TV": "16/25",
+          "epsilon": "1/10",
+          "max_single_monotone_TV": "8/25",
+          "parity_decoder_error": "9/50"
+        },
+        {
+          "all_noisy_shares_TV": "1/4",
+          "epsilon": "1/4",
+          "max_single_monotone_TV": "1/8",
+          "parity_decoder_error": "3/8"
+        }
+      ],
+      "joint_support_size_per_logical_state": 4,
+      "k": 2,
+      "max_single_monotone_TV": "1/2",
+      "max_single_product_query_TV_for_u": "1/2",
+      "maximizing_monotone_functions": 2,
+      "maximizing_weight_thresholds": [
+        1,
+        2
+      ],
+      "monotone_boolean_functions_checked": 6,
+      "parity_class_size": 2,
+      "proper_block_marginal_checks": 12,
+      "tensor_columns": 9
+    },
+    {
+      "alternating_row_relation": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "best_single_monotone_equal_prior_error": "1/4",
+      "constant_allU_allV_columns": [
+        [
+          "1/1",
+          "0/1",
+          "0/1"
+        ],
+        [
+          "1/1",
+          "1/4",
+          "0/1"
+        ],
+        [
+          "1/1",
+          "0/1",
+          "1/4"
+        ],
+        [
+          "1/1",
+          "1/4",
+          "1/4"
+        ]
+      ],
+      "exact_moment_checks": 108,
+      "exact_tensor_response_rank": 3,
+      "four_supports_pairwise_disjoint": true,
+      "hypothetical_independent_share_BSC": [
+        {
+          "all_noisy_shares_TV": "64/125",
+          "epsilon": "1/10",
+          "max_single_monotone_TV": "32/125",
+          "parity_decoder_error": "61/250"
+        },
+        {
+          "all_noisy_shares_TV": "1/8",
+          "epsilon": "1/4",
+          "max_single_monotone_TV": "1/16",
+          "parity_decoder_error": "7/16"
+        }
+      ],
+      "joint_support_size_per_logical_state": 16,
+      "k": 3,
+      "max_single_monotone_TV": "1/2",
+      "max_single_product_query_TV_for_u": "1/4",
+      "maximizing_monotone_functions": 1,
+      "maximizing_weight_thresholds": [
+        2
+      ],
+      "monotone_boolean_functions_checked": 20,
+      "parity_class_size": 4,
+      "proper_block_marginal_checks": 28,
+      "tensor_columns": 27
+    },
+    {
+      "alternating_row_relation": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "best_single_monotone_equal_prior_error": "5/16",
+      "constant_allU_allV_columns": [
+        [
+          "1/1",
+          "1/8",
+          "1/8"
+        ],
+        [
+          "1/1",
+          "0/1",
+          "1/8"
+        ],
+        [
+          "1/1",
+          "1/8",
+          "0/1"
+        ],
+        [
+          "1/1",
+          "0/1",
+          "0/1"
+        ]
+      ],
+      "exact_moment_checks": 324,
+      "exact_tensor_response_rank": 3,
+      "four_supports_pairwise_disjoint": true,
+      "hypothetical_independent_share_BSC": [
+        {
+          "all_noisy_shares_TV": "256/625",
+          "epsilon": "1/10",
+          "max_single_monotone_TV": "96/625",
+          "parity_decoder_error": "369/1250"
+        },
+        {
+          "all_noisy_shares_TV": "1/16",
+          "epsilon": "1/4",
+          "max_single_monotone_TV": "3/128",
+          "parity_decoder_error": "15/32"
+        }
+      ],
+      "joint_support_size_per_logical_state": 64,
+      "k": 4,
+      "max_single_monotone_TV": "3/8",
+      "max_single_product_query_TV_for_u": "1/8",
+      "maximizing_monotone_functions": 2,
+      "maximizing_weight_thresholds": [
+        2,
+        3
+      ],
+      "monotone_boolean_functions_checked": 168,
+      "parity_class_size": 8,
+      "proper_block_marginal_checks": 60,
+      "tensor_columns": 81
+    }
+  ],
+  "contract": {
+    "BSC_scope": "independent errors on observed shares, not derived physical instruction errors",
+    "encoder_randomness": "private; no side channel revealing the sampled shares",
+    "encoding": "independent uniform U,V subject to xor(U)=u and xor(V)=v",
+    "general_physical_future_query_rank_upper_bound_proved_here": false,
+    "logical_state_order": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "monotone_TV_scope": "one Boolean output; not a transcript or adaptive controller",
+    "response_space": "full tensor of local (1,U_i,V_i)"
+  },
+  "failures": 0,
+  "not_run": [
+    "old deterministic census",
+    "physical graph enumeration",
+    "Monte Carlo",
+    "cloud jobs",
+    "whole-machine audit"
+  ],
+  "schema": "matching-one.stochastic-parity-block-encoding.v1",
+  "total_monotone_functions_checked": 194,
+  "total_tensor_moments_checked": 468
+}

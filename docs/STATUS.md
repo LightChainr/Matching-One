@@ -21,7 +21,8 @@ date, numbers and claims. Use the original commit linked in
 | Single-insertion jump-two has a six-arm-type separator | Author argument and exact finite census in #823; finite numbers independently reproduced in #828 | Does not supply square-lattice universality, nonzero amplitude or exclusion of adjacent-birth aggregation |
 | No direct double jumps implies no double birth in a scaling limit | False for general monotone two-birth processes | New explicit counterexample has equal static laws AND adjacent transition tables but limit diagonal atoms 0 and 1/2; not a percolation counterexample |
 | Joint near-diagonal criterion | New general probability derivation in this branch | Under pair tightness, vanishing double-limit soft gap mass is equivalent to no coalescence |
-| Two-time birth density and triangular noncoalescence | New author proof in this branch using explicit near-critical arm inputs | Locally bounded joint density plus vanishing same-site atom and tightness; no copula uniqueness; square 4/8 input transfer remains conditional; exact square 5/4 is not required |
+| Two-time birth density and noncoalescence | Author proof in this branch, now with triangular and square NN/matching input transfer | Locally bounded joint density, vanishing same-site atom and tightness; standard arm/length estimates named; no unique copula, square exact exponent or universality claim |
+| Population insertion-IQR versus pivotal clock | New author proof: W_population asymp N*a_eta | Order-statistic coupling uses four-arm power above one; tightness plus local density bound controls population width; not convergence of the ratio or a finite-sample quantile guarantee |
 | Joint-gap finite-size evidence | New 128k local + independent 560k cloud filtrations, L up to 512 | Soft mass decreases approximately with resolution down to delta=.00625; no resolved plateau, not an exclusion of a limiting atom; no cross-modulus universality claim |
 | L6 jump-stratified census | Not delivered by #825 | Revalidation of older static rank tables is not new jump enumeration; 36-site extension of #828's 32-bit control requires a representation repair |
 | Width-four source/trajectory closure | Exact finite results in #829--#832 | Terminal classes, strong lumping, linear order, positive order and delayed readout have different contracts |
@@ -30,6 +31,8 @@ date, numbers and claims. Use the original commit linked in
 | Rank-only microscopic erasure floor | At least [1-(1-epsilon)^5]/2, #837 supplement | Stronger than the complete first-boundary fourth-power bound; attainability of the fifth-power bound is open |
 | Direct copying preserves the old tensor response-rank saving | False for the stated full query family | #837 latest discussion adds uv and restores 4^t; not a universal prohibition on coding |
 | Distributed deterministic four-state block coding preserves rank three | Excluded for the full tensor language, with physical product queries now constructed | All-k classification; one exact 65,536-code census; rank-four obstruction transfers to original five-column blocks and complete noisy command family, not arbitrary codes or finite-error complexity |
+| Distributed stochastic parity coding | Tensor response rank exactly three, with disjoint supports and uninformative proper block marginals | Explicit physical product family has positive initial memory three too; no retained positive/linear gap; full physical-language rank only bounded between three and four |
+| Reliable single readout from the parity code as k grows | Excluded for the stated monotone Boolean readout contract | Product TV=2^(1-k); sharp abstract monotone TV=binom(k-1,floor((k-1)/2))/2^(k-1); applies to one nonadaptive final physical rank, not a transcript or feedback controller |
 | m*lambda^m or linear eigenvalue splitting identifies Jordan | False as a standalone diagnostic | #735 gives explicit counterexamples, including positive stochastic matrices with identical trace jets |
 | Full unbranched survival is a complete branching state | False in the declared cut-network family | #549's exact growing-family witness; no universal square-NN or finite-noise dimension claim |
 
@@ -43,6 +46,11 @@ The subsequent [two-time proof](../notes/two-time-pivotal-density-bound-20260929
 does not infer its bound from the pilot. The
 [encoding proof](../notes/deterministic-block-encoding-obstruction-20260929.md)
 separately records its sole algebraic census and all-width physical construction.
+The [square/clock continuation](../notes/square-birth-transfer-and-iqr-clock-20260929.md)
+adds probability input transfer, not new samples. The
+[stochastic continuation](../notes/stochastic-parity-block-encoding-20260929.md)
+adds displayed all-k proofs and one exact k=2,3,4 control (468 tensor moments,
+194 monotone functions), not a rerun of the older census or physical graph enumeration.
 
 The source/normalizer corrections in #771 and the thermal-tangent discussion in
 #275 matter for interpretation: strong root H4 and weak normalized U need not

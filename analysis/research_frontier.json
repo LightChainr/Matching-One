@@ -218,30 +218,34 @@
         "P823",
         "P828"
       ],
-      "known": "Finite birth flux and separator inputs; new author two-time density bound under explicit arm hypotheses, with triangular-site tightness and noncoalescence corollary.",
-      "boundary": "No copula uniqueness or square universality theorem. Square NN/white-matching probability input transfer is conditional here; no exact square 5/4 exponent needed. IQR-to-pivotal clock comparison is separate.",
+      "known": "Finite birth flux and separator inputs; author two-time density proof now has triangular and square NN/matching input transfer and population insertion-IQR/pivotal-clock comparability.",
+      "boundary": "No copula uniqueness, exact square exponent or cross-lattice universality theorem. Population width comparability is not ratio convergence or a finite-sample quantile guarantee.",
       "new_branch_paths": [
         "notes/birth-gap-noncoalescence-20260929.md",
         "notes/birth-gap-pilot-20260929.md",
         "notes/birth-gap-cloud-20260929.md",
-        "notes/two-time-pivotal-density-bound-20260929.md"
+        "notes/two-time-pivotal-density-bound-20260929.md",
+        "notes/square-birth-transfer-and-iqr-clock-20260929.md"
       ],
       "observer": "rank_filtration",
       "acquisition": [
         "exact construction",
         "128000-filtration local pilot",
         "560000-filtration independent CPU block through L512",
-        "two-time arm-density proof and primary-literature probability inputs"
+        "two-time arm-density proof and primary-literature probability inputs",
+        "square matching-arm transfer and population-clock proof; no new samples"
       ],
       "tension": "Same static laws and all adjacent transition tables can coexist with different limit diagonal atoms.",
       "finite_result": "Soft gap mass approximately proportional to resolution down to delta=.00625, L<=512; no resolved plateau, not proof of noncoalescence.",
-      "theory_result": "Different-site birth pairs have locally uniformly bounded time density; direct diagonal mass is bounded by alpha6/alpha4. Tightness then excludes limit coalescence. This is an author proof, not independent certification.",
+      "theory_result": "Different-site birth pairs have locally uniformly bounded time density; direct diagonal mass is bounded by alpha6/alpha4. Tightness excludes limit coalescence for triangular and square NN/matching models on their own pivotal clocks. Population insertion-IQR is comparable to N*a_eta. Author proofs, not independent certification.",
       "probability_input_sources": [
         "https://arxiv.org/abs/0711.4948",
-        "https://arxiv.org/abs/1305.5526"
+        "https://arxiv.org/abs/1305.5526",
+        "https://doi.org/10.1007/BF01205674",
+        "https://arxiv.org/abs/2008.01606"
       ],
-      "next": "Square 4/8 probability-input transfer and continuum torus-observer identification / uniqueness. No automatic larger-size campaign.",
-      "information_gain": "high: decides missing process-continuity mechanism",
+      "next": "Continuum torus-observer identification, joint law / copula uniqueness and geometry dependence; do not redispatch completed square transfer or population clock comparison. No automatic larger-size campaign.",
+      "information_gain": "high: identifies process structure beyond the completed noncoalescence argument",
       "cost": "small exact algebra; bounded pilot; substantial two-time probability theory"
     },
     {
@@ -259,20 +263,24 @@
         "P837"
       ],
       "observer": "tensor_noise",
-      "known": "Source-dependent orders, small-noise logarithmic query height and five-point erasure bound. New all-k four-state deterministic coding classification plus explicit two-row physical product queries.",
-      "boundary": "Original five-column artificial preparation and full tensor queries; noisy rank transfer needs the complete command cube. No stochastic-code obstruction or finite-error/sample-complexity theorem.",
-      "tension": "Every injective deterministic code with multiple informative blocks has rank four, not only literal repetition; independent encoded logical groups restore 4^t.",
+      "known": "All-k deterministic coding obstruction and physical product queries; distributed stochastic parity code has tensor rank three, product-family positive initial memory three, and exact single-readout distinction bounds.",
+      "boundary": "Original five-column artificial preparation. Tensor rank three is not a full physical-language upper bound. Sharp monotone TV concerns one Boolean nonadaptive output, not transcripts or feedback; abstract threshold attainment is not physical realization.",
+      "tension": "Stochastic sharing evades the deterministic rank-four obstruction, but product TV decays exponentially and general monotone single-output TV decays as k^-1/2; the product family loses the old positive/linear memory gap too.",
       "discussion": "https://github.com/LightChainr/Matching-One/pull/837#issuecomment-5814562555",
       "new_branch_paths": [
         "notes/deterministic-block-encoding-obstruction-20260929.md",
         "analysis/deterministic-block-encoding-20260929/check.py",
-        "analysis/deterministic-block-encoding-20260929/result.json"
+        "analysis/deterministic-block-encoding-20260929/result.json",
+        "notes/stochastic-parity-block-encoding-20260929.md",
+        "analysis/stochastic-parity-block-encoding-20260929/check.py",
+        "analysis/stochastic-parity-block-encoding-20260929/result.json"
       ],
-      "next": "A concrete stochastic encoder, restricted query family or changed block geometry with its changed assumption and A/L/error/width/height reported; not another deterministic block-code search under the same contract.",
+      "next": "Error-versus-memory under a concrete realizable query family; if using transcripts or feedback state that changed contract. Stochastic rank-three existence alone is now answered; report A/L/error/width/height and positive memory.",
       "acquisition": [
         "reuse exact finite engines",
         "all-k algebraic proof and all-width physical construction",
-        "one exact census of 65536 two-block encoders"
+        "one exact census of 65536 two-block encoders",
+        "stochastic parity and sharp monotone proofs; one k=2,3,4 exact control, 468 tensor moments and 194 monotone functions"
       ],
       "information_gain": "high: tests whether reliability preserves the representation advantage",
       "cost": "bounded one-block algebra/topology first"
@@ -338,10 +346,21 @@
       "node": "joint_birth_process",
       "status": "author_proof_with_explicit_probability_inputs",
       "source_paths": [
-        "notes/two-time-pivotal-density-bound-20260929.md"
+        "notes/two-time-pivotal-density-bound-20260929.md",
+        "notes/square-birth-transfer-and-iqr-clock-20260929.md"
       ],
       "bound": "P(gap<=delta,both births in compact window)<=C_window*delta+C_window*alpha6/alpha4",
-      "interpretation": "Triangular corollary includes tightness. Square 4/8 input transfer and unique copula are not claimed. Does not infer a global delta bound by dropping the window tail."
+      "interpretation": "Triangular and square NN/matching corollaries include tightness. Does not infer a global delta bound by dropping the window tail, or a unique copula."
+    },
+    {
+      "id": "population_iqr_clock",
+      "node": "joint_birth_process",
+      "status": "author_proof_using_standard_arm_bounds",
+      "source_paths": [
+        "notes/square-birth-transfer-and-iqr-clock-20260929.md"
+      ],
+      "bound": "W_population asymp (N+1)*a_eta; rescaled insertion and label times differ by o_P(1)",
+      "interpretation": "Population normalization cannot manufacture or remove a limiting zero-gap atom; no ratio limit, finite-sample guarantee or cross-modulus universality claim."
     },
     {
       "id": "coded_response_rank",
@@ -354,6 +373,20 @@
         "analysis/deterministic-block-encoding-20260929/result.json"
       ],
       "finite_control": "One exact k=2 census, 65536 encoders; 43680 injective: 192 rank3, 43488 rank4. Physical query construction is proved, not numerically re-enumerated."
+    },
+    {
+      "id": "stochastic_parity_readout",
+      "node": "source_noise_state",
+      "status": "all_k_author_proofs_and_one_small_k_exact_control",
+      "source_paths": [
+        "notes/stochastic-parity-block-encoding-20260929.md",
+        "analysis/stochastic-parity-block-encoding-20260929/result.json"
+      ],
+      "mechanism_contrast": "Private randomization can preserve rank three with distributed shares, but exact rank does not preserve one-shot reliability or a positive/linear gap.",
+      "rank_and_memory": "Explicit product-query family: tensor rank=minimum positive initial memory=3; larger physical language only bounded between 3 and 4.",
+      "bound": "TV_product=2^(1-k); TV_single_monotone<=binom(k-1,floor((k-1)/2))/2^(k-1)",
+      "finite_control": "One k=2,3,4 run: 468 exact tensor moments and 194 monotone Boolean functions; no old-census rerun or cloud job.",
+      "interpretation": "Single nonadaptive final rank only. Full transcript, feedback and physical threshold implementation are separate questions; observed-share BSC is not a derived instruction-noise channel."
     },
     {
       "id": "normal_candidate_columns",

@@ -349,6 +349,11 @@ limits. Unique continuum law is not asserted.
 
 ### Square-site consequence is conditional, but exact exponents are not the gap
 
+**Follow-up:** [Square birth transfer and the population-IQR clock](square-birth-transfer-and-iqr-clock-20260929.md)
+supplies the convention/standard-input transfer and the nondegenerate population
+width comparison left open in this section and item 3 below. The original
+conditional formulation is retained here to separate the two proof steps.
+
 For square black NN / white matching connectivity, the same theorem consumes
 the actual alternating 4/8 arms. Nolin's general-lattice discussion indicates
 the relevant RSW-based ingredients, including four-arm power below two and
