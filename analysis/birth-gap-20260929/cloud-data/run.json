@@ -1,0 +1,55 @@
+{
+  "schema": "matching-one.joint-birth-run.v1",
+  "utc_started": "2026-09-29T11:41:54.042025+00:00",
+  "command": "python3 /workspace/Matching-One-TV2N0X/birth-gap-20260929/run_pilot.py --compiler g++ --role cloud-independent-20260929 --sizes 64 128 256 512 --batches 14 --samples 10000 --workers 14 --budget-seconds 300 --skip-exact-control --exact-control-reference abc78c6a:analysis/birth-gap-20260929/data/run.json --git-base-commit abc78c6a1c69e83c9a2daf4d92911833bd6f3937 --output cloud-data",
+  "platform": "Linux-5.10.0-182.0.0.95.r3582_286.hce2.aarch64-aarch64-with-glibc2.34",
+  "machine": "aarch64",
+  "python": "3.9.9",
+  "workers": 14,
+  "compiler": "g++ (GCC) 10.3.1\nCopyright (C) 2020 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+  "git_base_commit": "abc78c6a1c69e83c9a2daf4d92911833bd6f3937",
+  "production_role": "cloud-independent-20260929",
+  "exact_control_reference": "abc78c6a:analysis/birth-gap-20260929/data/run.json",
+  "exact_control_skipped": true,
+  "estimated_wall_budget_seconds": 300.0,
+  "source_sha256": {
+    "engine.cpp": "72997c726bc734da7695d104fc8fb51ed5672506c967c2a88312bdc092925506",
+    "run_pilot.py": "8338502301e34d719e3729d435d794246f80a8fb2954ffb8617450f6f0de747c"
+  },
+  "seed_rule": "first 64 SHA256 bits of matching-one/birth-gap/20260929/{role}/{lattice}/{L}/{batch}",
+  "random_streams": "separate mt19937_64 per (role,lattice,L,batch); no paired/cross-size common random numbers",
+  "sampling": "unbiased Fisher-Yates of all N sites; stop after same-filtration global rank reaches 2",
+  "controls": [],
+  "benchmarks": [
+    {
+      "file": "benchmark-cloud-independent-20260929-square-L512-b00.json.gz",
+      "lattice": "square",
+      "L": 512,
+      "batch": 0,
+      "role": "benchmark-cloud-independent-20260929",
+      "seed": "11773303504918451570",
+      "samples": 200,
+      "runtime_seconds": 3.187666129,
+      "command": "/workspace/Matching-One-TV2N0X/birth-gap-20260929/tmp/matching-birth-gap-build-j4ke5sm6/birth-gap square 512 200 11773303504918451570 /workspace/Matching-One-TV2N0X/birth-gap-20260929/tmp/matching-birth-gap-build-j4ke5sm6/benchmark-cloud-independent-20260929-square-L512-b00.json sample",
+      "sha256": "2f761e78f28ef629496217661f5ea9ce5ff67757343ca4d0100ffe6453f0d824",
+      "dependency_group": "benchmark-cloud-independent-20260929/square/L512/batch0"
+    },
+    {
+      "file": "benchmark-cloud-independent-20260929-triangular-L512-b00.json.gz",
+      "lattice": "triangular",
+      "L": 512,
+      "batch": 0,
+      "role": "benchmark-cloud-independent-20260929",
+      "seed": "8466267847465560210",
+      "samples": 200,
+      "runtime_seconds": 3.299936495,
+      "command": "/workspace/Matching-One-TV2N0X/birth-gap-20260929/tmp/matching-birth-gap-build-j4ke5sm6/birth-gap triangular 512 200 8466267847465560210 /workspace/Matching-One-TV2N0X/birth-gap-20260929/tmp/matching-birth-gap-build-j4ke5sm6/benchmark-cloud-independent-20260929-triangular-L512-b00.json sample",
+      "sha256": "9f4ce0a0a869e6261afede2817d9a5aa2bfb59c903f726b2334c420fcf9e17aa",
+      "dependency_group": "benchmark-cloud-independent-20260929/triangular/L512/batch0"
+    }
+  ],
+  "batches": [],
+  "build_command": "g++ -O3 -std=c++17 -DNDEBUG /workspace/Matching-One-TV2N0X/birth-gap-20260929/engine.cpp -o /workspace/Matching-One-TV2N0X/birth-gap-20260929/tmp/matching-birth-gap-build-j4ke5sm6/birth-gap",
+  "estimated_production_cpu_seconds": 6031.443064499999,
+  "status": "benchmark-budget-stop"
+}

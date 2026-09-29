@@ -18,7 +18,11 @@
 理论、已有数据和新计算可以并行。不要把支持性工具的完成数量当成机制空间缩小。
 
 本轮研究：[非合并判据与反例](notes/birth-gap-noncoalescence-20260929.md) ·
-[联合出生 pilot](notes/birth-gap-pilot-20260929.md)。
+[联合出生 pilot](notes/birth-gap-pilot-20260929.md) ·
+[云端独立块](notes/birth-gap-cloud-20260929.md)。
+已完成本地 12.8 万 + 云端 56 万条过滤，最大 L=512。
+近对角 soft mass 随分辨率缩小而近似同比下降；在已观察网格上未出现平台，
+但这不是无聚合极限的证明。下一理论目标是统一两时间小球界，而不是自动继续放大尺寸。
 完整入口：[研究前沿](docs/RESEARCH-FRONTIER.md) ·
 [下一步](docs/ROADMAP.md) · [科学结论](docs/STATUS.md) ·
 [观察者地图](docs/RESEARCH-MAP.md) · [机器可读当前索引](analysis/research_frontier.json)。

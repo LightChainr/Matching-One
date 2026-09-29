@@ -1,6 +1,7 @@
 {
   "schema": "matching-one.research-frontier.v1",
   "as_of": "2026-09-29",
+  "current_pr": 838,
   "main_base": "d31fa5fe9584b77595e4a78b9560aa2ff77cf0b3",
   "scope": "current attention and research map; not a replacement of historical result contracts",
   "priority_semantics": "attention only; no locks, research permissions or automatic rejection",
@@ -210,6 +211,7 @@
     {
       "id": "joint_birth_process",
       "attention": "P0",
+      "issue": 778,
       "integration": "open_pr",
       "sources": [
         "P773",
@@ -220,15 +222,18 @@
       "boundary": "No square universality theorem or uniform two-time anti-concentration supplied by single-site arm inclusion.",
       "new_branch_paths": [
         "notes/birth-gap-noncoalescence-20260929.md",
-        "notes/birth-gap-pilot-20260929.md"
+        "notes/birth-gap-pilot-20260929.md",
+        "notes/birth-gap-cloud-20260929.md"
       ],
       "observer": "rank_filtration",
       "acquisition": [
         "exact construction",
-        "small independent paired pilot"
+        "128000-filtration local pilot",
+        "560000-filtration independent CPU block through L512"
       ],
       "tension": "Same static laws and all adjacent transition tables can coexist with different limit diagonal atoms.",
-      "next": "Uniform near-diagonal small-ball bound and paired soft gap mass; triangular and square inputs separately typed.",
+      "finite_result": "Soft gap mass approximately proportional to resolution down to delta=.00625, L<=512; no resolved plateau, not proof of noncoalescence.",
+      "next": "Uniform two-time small-ball bound plus pair tightness; no automatic larger-size campaign. Triangular and square inputs separately typed.",
       "information_gain": "high: decides missing process-continuity mechanism",
       "cost": "small exact algebra; bounded pilot; substantial two-time probability theory"
     },
@@ -313,7 +318,7 @@
         "analysis/birth-gap-20260929/analyze.py"
       ],
       "mechanism_contrast": "vanishing uniform small-ball mass versus aggregation; direct atom alone does not decide",
-      "interpretation": "finite-grid pilot is exploratory, not proof of double limit"
+      "interpretation": "local pilot and independent finer cloud block are exploratory, not proof of double limit"
     },
     {
       "id": "coded_response_rank",
@@ -339,6 +344,11 @@
       "id": "birth_gap_pilot",
       "path": "analysis/birth-gap-20260929/data/run.json",
       "rule": "separate streams by lattice/size/batch; within-batch derived statistics share full delete-one covariance; controls/benchmarks excluded"
+    },
+    {
+      "id": "birth_gap_cloud",
+      "path": "analysis/birth-gap-20260929/cloud-data-5k/run.json",
+      "rule": "new cloud-independent-20260929 namespace; 14 batches per cell; no pooling with local pilot; derived CDF/Z/moments within cell share covariance; repeated excluded benchmarks are not new evidence"
     },
     {
       "id": "source_response_families",
