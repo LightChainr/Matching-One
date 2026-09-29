@@ -1,0 +1,173 @@
+{
+  "schema": "matching-one.birth-marked-clock.v1",
+  "as_of": "2026-09-29",
+  "source": "analysis/birth-completion-geometry-20260929/result.json",
+  "source_sha256": "34ae32ed0961cda535f8dbf1f104341ac7161fa5d15b8c39f838bc8776515b1d",
+  "definition": "H_d(p,q)=P(T1<=p,T2>q,D=d), unconditional sector mass; 0<=p<=q<=1",
+  "normalization": "full 9! permutation count, not conditional on visiting the sector",
+  "clock_transform": "multinomial thinning of the same uniform permutation, iid Uniform site labels",
+  "determinant": "H_d(a,c)H_d(b,b)-H_d(a,b)H_d(b,c)",
+  "cohort_mean_completion_count": "-(1-q) partial_q log H_d(p,q), fixed entry cutoff p",
+  "cases": [
+    {
+      "lattice": "square",
+      "L": 3,
+      "N": 9,
+      "unmarked_kernel": "6*p**3*(1 - q**2)**3",
+      "marked_kernels_sum_to_unmarked": true,
+      "sectors": [
+        {
+          "direction": [
+            0,
+            1
+          ],
+          "symmetry_orbit": "axial",
+          "kernel_closed_form": "3*p**3*(1 - q)**3*(-p**3 + (q + 1)**3)",
+          "coefficient_matrix_rank": 2,
+          "markov_determinant": "-9*a**3*b**3*(1 - b)**3*(1 - c)**3*(-a**3 + b**3)*(-(b + 1)**3 + (c + 1)**3)",
+          "markov_identity_for_all_label_triples": false,
+          "cohort_mean_completion_count": "-(3 - 3*q)*(q + 1)**2/(-p**3 + (q + 1)**3) + 3",
+          "specified_label_triple": [
+            "1/3",
+            "1/2",
+            "2/3"
+          ],
+          "early_minus_late_survival_at_triple": "-1084/250187",
+          "all_closed_form_identities_exact": true
+        },
+        {
+          "direction": [
+            1,
+            -1
+          ],
+          "symmetry_orbit": "diagonal",
+          "kernel_closed_form": "3*p**6*(1 - q)**3",
+          "coefficient_matrix_rank": 1,
+          "markov_determinant": "0",
+          "markov_identity_for_all_label_triples": true,
+          "cohort_mean_completion_count": "3",
+          "specified_label_triple": [
+            "1/3",
+            "1/2",
+            "2/3"
+          ],
+          "early_minus_late_survival_at_triple": "0",
+          "all_closed_form_identities_exact": true
+        },
+        {
+          "direction": [
+            1,
+            0
+          ],
+          "symmetry_orbit": "axial",
+          "kernel_closed_form": "3*p**3*(1 - q)**3*(-p**3 + (q + 1)**3)",
+          "coefficient_matrix_rank": 2,
+          "markov_determinant": "-9*a**3*b**3*(1 - b)**3*(1 - c)**3*(-a**3 + b**3)*(-(b + 1)**3 + (c + 1)**3)",
+          "markov_identity_for_all_label_triples": false,
+          "cohort_mean_completion_count": "-(3 - 3*q)*(q + 1)**2/(-p**3 + (q + 1)**3) + 3",
+          "specified_label_triple": [
+            "1/3",
+            "1/2",
+            "2/3"
+          ],
+          "early_minus_late_survival_at_triple": "-1084/250187",
+          "all_closed_form_identities_exact": true
+        },
+        {
+          "direction": [
+            1,
+            1
+          ],
+          "symmetry_orbit": "diagonal",
+          "kernel_closed_form": "3*p**6*(1 - q)**3",
+          "coefficient_matrix_rank": 1,
+          "markov_determinant": "0",
+          "markov_identity_for_all_label_triples": true,
+          "cohort_mean_completion_count": "3",
+          "specified_label_triple": [
+            "1/3",
+            "1/2",
+            "2/3"
+          ],
+          "early_minus_late_survival_at_triple": "0",
+          "all_closed_form_identities_exact": true
+        }
+      ]
+    },
+    {
+      "lattice": "triangular",
+      "L": 3,
+      "N": 9,
+      "unmarked_kernel": "9*p**3*(1 - q)**3*(2*p**3 - 6*p**2 + 3*p - 2*q**3 + 3*q + 1)",
+      "marked_kernels_sum_to_unmarked": true,
+      "sectors": [
+        {
+          "direction": [
+            0,
+            1
+          ],
+          "symmetry_orbit": "three_direction_orbit",
+          "kernel_closed_form": "3*p**3*(1 - q)**3*(2*p**3 - 6*p**2 + 3*p - 2*q**3 + 3*q + 1)",
+          "coefficient_matrix_rank": 2,
+          "markov_determinant": "9*a**3*b**3*(1 - b)**3*(1 - c)**3*(2*b**3 - 3*b - 2*c**3 + 3*c)*(-2*a**3 + 6*a**2 - 3*a + 2*b**3 - 6*b**2 + 3*b)",
+          "markov_identity_for_all_label_triples": false,
+          "cohort_mean_completion_count": "-(1 - q)*(3 - 6*q**2)/(2*p**3 - 6*p**2 + 3*p - 2*q**3 + 3*q + 1) + 3",
+          "specified_label_triple": [
+            "1/3",
+            "1/2",
+            "2/3"
+          ],
+          "early_minus_late_survival_at_triple": "-1156/716639",
+          "all_closed_form_identities_exact": true
+        },
+        {
+          "direction": [
+            1,
+            0
+          ],
+          "symmetry_orbit": "three_direction_orbit",
+          "kernel_closed_form": "3*p**3*(1 - q)**3*(2*p**3 - 6*p**2 + 3*p - 2*q**3 + 3*q + 1)",
+          "coefficient_matrix_rank": 2,
+          "markov_determinant": "9*a**3*b**3*(1 - b)**3*(1 - c)**3*(2*b**3 - 3*b - 2*c**3 + 3*c)*(-2*a**3 + 6*a**2 - 3*a + 2*b**3 - 6*b**2 + 3*b)",
+          "markov_identity_for_all_label_triples": false,
+          "cohort_mean_completion_count": "-(1 - q)*(3 - 6*q**2)/(2*p**3 - 6*p**2 + 3*p - 2*q**3 + 3*q + 1) + 3",
+          "specified_label_triple": [
+            "1/3",
+            "1/2",
+            "2/3"
+          ],
+          "early_minus_late_survival_at_triple": "-1156/716639",
+          "all_closed_form_identities_exact": true
+        },
+        {
+          "direction": [
+            1,
+            1
+          ],
+          "symmetry_orbit": "three_direction_orbit",
+          "kernel_closed_form": "3*p**3*(1 - q)**3*(2*p**3 - 6*p**2 + 3*p - 2*q**3 + 3*q + 1)",
+          "coefficient_matrix_rank": 2,
+          "markov_determinant": "9*a**3*b**3*(1 - b)**3*(1 - c)**3*(2*b**3 - 3*b - 2*c**3 + 3*c)*(-2*a**3 + 6*a**2 - 3*a + 2*b**3 - 6*b**2 + 3*b)",
+          "markov_identity_for_all_label_triples": false,
+          "cohort_mean_completion_count": "-(1 - q)*(3 - 6*q**2)/(2*p**3 - 6*p**2 + 3*p - 2*q**3 + 3*q + 1) + 3",
+          "specified_label_triple": [
+            "1/3",
+            "1/2",
+            "2/3"
+          ],
+          "early_minus_late_survival_at_triple": "-1156/716639",
+          "all_closed_form_identities_exact": true
+        }
+      ]
+    }
+  ],
+  "boundaries": [
+    "Exact L3 statement about a specified observer and clock, not a continuum result.",
+    "Revealing a persistent direction can destroy a weak Markov projection; no contradiction with unmarked rank Markovness.",
+    "Polynomial coefficient rank is not a positive hidden-state dimension.",
+    "Four-state count-clock realization does not establish four-state label-clock closure with hidden count."
+  ],
+  "python": "3.11.15",
+  "sympy": "1.14.0",
+  "wall_seconds": 0.25175825000042096
+}

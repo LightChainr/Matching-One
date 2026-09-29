@@ -1,0 +1,9869 @@
+{
+  "schema": "matching-one.birth-completion-geometry.v1",
+  "as_of": "2026-09-29",
+  "question": "Does rank-one direction remove birth-history memory, and what immediate completion geometry carries it?",
+  "method": "lifted traversal of 512 subsets per lattice; exact prefix dynamic programming and outgoing-site counts",
+  "direction": "primitive unoriented rational homology line; fixed until rank two by image inclusion",
+  "nu2": "number of vacant vertices whose addition changes ambient rank from one to two",
+  "one_step_exit": "nu2/(N-k) conditional on the full occupied configuration at count k",
+  "cases": [
+    {
+      "lattice": "square",
+      "L": 3,
+      "N": 9,
+      "subsets": 512,
+      "archived_histogram_matches": true,
+      "archive_file": "analysis/birth-gap-20260929/data/exact-control-square-L3-b00.json.gz",
+      "archive_sha256": "dccb0e132d7b2100bd39c6414f385366354c9099facbecbbaa1e3a5fd8f37a78",
+      "primitive_unoriented_directions": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "rank_counts": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          9
+        ],
+        [
+          2,
+          0,
+          36
+        ],
+        [
+          3,
+          0,
+          78
+        ],
+        [
+          3,
+          1,
+          6
+        ],
+        [
+          4,
+          0,
+          90
+        ],
+        [
+          4,
+          1,
+          36
+        ],
+        [
+          5,
+          0,
+          45
+        ],
+        [
+          5,
+          1,
+          72
+        ],
+        [
+          5,
+          2,
+          9
+        ],
+        [
+          6,
+          1,
+          48
+        ],
+        [
+          6,
+          2,
+          36
+        ],
+        [
+          7,
+          2,
+          36
+        ],
+        [
+          8,
+          2,
+          9
+        ],
+        [
+          9,
+          2,
+          1
+        ]
+      ],
+      "completion_profiles": [
+        {
+          "k": 3,
+          "rank_one_configurations": 6,
+          "nu2_state_counts": {
+            "0": 6
+          }
+        },
+        {
+          "k": 4,
+          "rank_one_configurations": 36,
+          "nu2_state_counts": {
+            "1": 36
+          }
+        },
+        {
+          "k": 5,
+          "rank_one_configurations": 72,
+          "nu2_state_counts": {
+            "2": 72
+          }
+        },
+        {
+          "k": 6,
+          "rank_one_configurations": 48,
+          "nu2_state_counts": {
+            "3": 48
+          }
+        }
+      ],
+      "direction_kernels": [
+        {
+          "direction": [
+            0,
+            1
+          ],
+          "non_direct_permutation_count": 152928,
+          "paired_histogram": [
+            [
+              3,
+              5,
+              2592
+            ],
+            [
+              3,
+              6,
+              5184
+            ],
+            [
+              3,
+              7,
+              5184
+            ],
+            [
+              4,
+              5,
+              7776
+            ],
+            [
+              4,
+              6,
+              15552
+            ],
+            [
+              4,
+              7,
+              15552
+            ],
+            [
+              5,
+              6,
+              31104
+            ],
+            [
+              5,
+              7,
+              31104
+            ],
+            [
+              6,
+              7,
+              38880
+            ]
+          ],
+          "count_time_violations": []
+        },
+        {
+          "direction": [
+            1,
+            -1
+          ],
+          "non_direct_permutation_count": 12960,
+          "paired_histogram": [
+            [
+              6,
+              7,
+              12960
+            ]
+          ],
+          "count_time_violations": []
+        },
+        {
+          "direction": [
+            1,
+            0
+          ],
+          "non_direct_permutation_count": 152928,
+          "paired_histogram": [
+            [
+              3,
+              5,
+              2592
+            ],
+            [
+              3,
+              6,
+              5184
+            ],
+            [
+              3,
+              7,
+              5184
+            ],
+            [
+              4,
+              5,
+              7776
+            ],
+            [
+              4,
+              6,
+              15552
+            ],
+            [
+              4,
+              7,
+              15552
+            ],
+            [
+              5,
+              6,
+              31104
+            ],
+            [
+              5,
+              7,
+              31104
+            ],
+            [
+              6,
+              7,
+              38880
+            ]
+          ],
+          "count_time_violations": []
+        },
+        {
+          "direction": [
+            1,
+            1
+          ],
+          "non_direct_permutation_count": 12960,
+          "paired_histogram": [
+            [
+              6,
+              7,
+              12960
+            ]
+          ],
+          "count_time_violations": []
+        }
+      ],
+      "risk_k5_entry_cut4": {
+        "grain": "ordered prefixes ending at rank-one occupied set; multiply by 4! for full-permutation counts",
+        "early_prefixes": 3456,
+        "late_prefixes": 5184,
+        "mean_nu2_early": "2",
+        "mean_nu2_late": "2",
+        "one_step_survival_difference": "0",
+        "composition": [
+          {
+            "direction": [
+              0,
+              1
+            ],
+            "nu2": 2,
+            "early_prefixes": 1728,
+            "late_prefixes": 2592
+          },
+          {
+            "direction": [
+              1,
+              0
+            ],
+            "nu2": 2,
+            "early_prefixes": 1728,
+            "late_prefixes": 2592
+          }
+        ]
+      },
+      "rank_one_k_direction_nu2_strong_lumping_failures": [],
+      "rank_one_k_nu2_transition_classes": [
+        {
+          "k": 3,
+          "nu2": 0,
+          "states": 6,
+          "successor_counts": {
+            "rank1_nu1": 6
+          },
+          "denominator": 6
+        },
+        {
+          "k": 4,
+          "nu2": 1,
+          "states": 36,
+          "successor_counts": {
+            "absorbed_rank2": 1,
+            "rank1_nu2": 4
+          },
+          "denominator": 5
+        },
+        {
+          "k": 5,
+          "nu2": 2,
+          "states": 72,
+          "successor_counts": {
+            "absorbed_rank2": 2,
+            "rank1_nu3": 2
+          },
+          "denominator": 4
+        },
+        {
+          "k": 6,
+          "nu2": 3,
+          "states": 48,
+          "successor_counts": {
+            "absorbed_rank2": 3
+          },
+          "denominator": 3
+        }
+      ],
+      "count_clock_phase_realization": {
+        "states": [
+          "rank0",
+          "rank1_slow",
+          "rank1_fast",
+          "rank2"
+        ],
+        "phase": "at fixed k, slow is minimum nu2 among rank-one states; fast is the other value if present",
+        "external_time": "occupied count k, not hidden iid-label count",
+        "claim": "weak Markov realization from the empty uniform-permutation start; rank-one rows strongly close across all configurations",
+        "off_risk_rows": "identity placeholders; not a statement about artificial unreachable preparations",
+        "paired_birth_histogram_reproduced_exactly": true,
+        "transition_matrices": [
+          {
+            "k": 0,
+            "reachable_states": [
+              0
+            ],
+            "matrix": [
+              [
+                "1",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            ]
+          },
+          {
+            "k": 1,
+            "reachable_states": [
+              0
+            ],
+            "matrix": [
+              [
+                "1",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            ]
+          },
+          {
+            "k": 2,
+            "reachable_states": [
+              0
+            ],
+            "matrix": [
+              [
+                "13/14",
+                "1/14",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            ]
+          },
+          {
+            "k": 3,
+            "reachable_states": [
+              0,
+              1
+            ],
+            "matrix": [
+              [
+                "10/13",
+                "3/13",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            ]
+          },
+          {
+            "k": 4,
+            "reachable_states": [
+              0,
+              1
+            ],
+            "matrix": [
+              [
+                "1/2",
+                "12/25",
+                "0",
+                "1/50"
+              ],
+              [
+                "0",
+                "4/5",
+                "0",
+                "1/5"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            ]
+          },
+          {
+            "k": 5,
+            "reachable_states": [
+              0,
+              1,
+              3
+            ],
+            "matrix": [
+              [
+                "0",
+                "4/5",
+                "0",
+                "1/5"
+              ],
+              [
+                "0",
+                "1/2",
+                "0",
+                "1/2"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            ]
+          },
+          {
+            "k": 6,
+            "reachable_states": [
+              1,
+              3
+            ],
+            "matrix": [
+              [
+                "1",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            ]
+          },
+          {
+            "k": 7,
+            "reachable_states": [
+              3
+            ],
+            "matrix": [
+              [
+                "1",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            ]
+          },
+          {
+            "k": 8,
+            "reachable_states": [
+              3
+            ],
+            "matrix": [
+              [
+                "1",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            ]
+          }
+        ]
+      },
+      "rank_one_configuration_rows": [
+        {
+          "mask": 7,
+          "occupied": [
+            0,
+            1,
+            2
+          ],
+          "k": 3,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [],
+          "nu2": 0,
+          "prefix_birth_counts": {
+            "3": 6
+          }
+        },
+        {
+          "mask": 15,
+          "occupied": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 23,
+          "occupied": [
+            0,
+            1,
+            2,
+            4
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            7
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 31,
+          "occupied": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 39,
+          "occupied": [
+            0,
+            1,
+            2,
+            5
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            8
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 47,
+          "occupied": [
+            0,
+            1,
+            2,
+            3,
+            5
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 55,
+          "occupied": [
+            0,
+            1,
+            2,
+            4,
+            5
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            7,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 56,
+          "occupied": [
+            3,
+            4,
+            5
+          ],
+          "k": 3,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [],
+          "nu2": 0,
+          "prefix_birth_counts": {
+            "3": 6
+          }
+        },
+        {
+          "mask": 57,
+          "occupied": [
+            0,
+            3,
+            4,
+            5
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 58,
+          "occupied": [
+            1,
+            3,
+            4,
+            5
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            7
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 59,
+          "occupied": [
+            0,
+            1,
+            3,
+            4,
+            5
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 60,
+          "occupied": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            8
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 61,
+          "occupied": [
+            0,
+            2,
+            3,
+            4,
+            5
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 62,
+          "occupied": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            7,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 63,
+          "occupied": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6,
+            7,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 72,
+            "4": 216,
+            "5": 432
+          }
+        },
+        {
+          "mask": 71,
+          "occupied": [
+            0,
+            1,
+            2,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 73,
+          "occupied": [
+            0,
+            3,
+            6
+          ],
+          "k": 3,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [],
+          "nu2": 0,
+          "prefix_birth_counts": {
+            "3": 6
+          }
+        },
+        {
+          "mask": 75,
+          "occupied": [
+            0,
+            1,
+            3,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 77,
+          "occupied": [
+            0,
+            2,
+            3,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 87,
+          "occupied": [
+            0,
+            1,
+            2,
+            4,
+            6
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 89,
+          "occupied": [
+            0,
+            3,
+            4,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            5
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 91,
+          "occupied": [
+            0,
+            1,
+            3,
+            4,
+            6
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            5
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 93,
+          "occupied": [
+            0,
+            2,
+            3,
+            4,
+            6
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            5
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 103,
+          "occupied": [
+            0,
+            1,
+            2,
+            5,
+            6
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 105,
+          "occupied": [
+            0,
+            3,
+            5,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            4
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 107,
+          "occupied": [
+            0,
+            1,
+            3,
+            5,
+            6
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            4
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 109,
+          "occupied": [
+            0,
+            2,
+            3,
+            5,
+            6
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            4
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 119,
+          "occupied": [
+            0,
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            7,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 120,
+          "occupied": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 122,
+          "occupied": [
+            1,
+            3,
+            4,
+            5,
+            6
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 124,
+          "occupied": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 126,
+          "occupied": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            7,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 135,
+          "occupied": [
+            0,
+            1,
+            2,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            4
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 143,
+          "occupied": [
+            0,
+            1,
+            2,
+            3,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            4,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 146,
+          "occupied": [
+            1,
+            4,
+            7
+          ],
+          "k": 3,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [],
+          "nu2": 0,
+          "prefix_birth_counts": {
+            "3": 6
+          }
+        },
+        {
+          "mask": 147,
+          "occupied": [
+            0,
+            1,
+            4,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 150,
+          "occupied": [
+            1,
+            2,
+            4,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 154,
+          "occupied": [
+            1,
+            3,
+            4,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            5
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 155,
+          "occupied": [
+            0,
+            1,
+            3,
+            4,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            5
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 158,
+          "occupied": [
+            1,
+            2,
+            3,
+            4,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            5
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 167,
+          "occupied": [
+            0,
+            1,
+            2,
+            5,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            4,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 175,
+          "occupied": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            7
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            4,
+            6,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 178,
+          "occupied": [
+            1,
+            4,
+            5,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            3
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 179,
+          "occupied": [
+            0,
+            1,
+            4,
+            5,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            3
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 182,
+          "occupied": [
+            1,
+            2,
+            4,
+            5,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            3
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 184,
+          "occupied": [
+            3,
+            4,
+            5,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            1
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 185,
+          "occupied": [
+            0,
+            3,
+            4,
+            5,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            1,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 188,
+          "occupied": [
+            2,
+            3,
+            4,
+            5,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            1,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 189,
+          "occupied": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            7
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            1,
+            6,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 199,
+          "occupied": [
+            0,
+            1,
+            2,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            4
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 201,
+          "occupied": [
+            0,
+            3,
+            6,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            8
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 203,
+          "occupied": [
+            0,
+            1,
+            3,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 205,
+          "occupied": [
+            0,
+            2,
+            3,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 210,
+          "occupied": [
+            1,
+            4,
+            6,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            8
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 211,
+          "occupied": [
+            0,
+            1,
+            4,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 214,
+          "occupied": [
+            1,
+            2,
+            4,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 217,
+          "occupied": [
+            0,
+            3,
+            4,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            5,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 218,
+          "occupied": [
+            1,
+            3,
+            4,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            5,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 219,
+          "occupied": [
+            0,
+            1,
+            3,
+            4,
+            6,
+            7
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            5,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 72,
+            "4": 216,
+            "5": 432
+          }
+        },
+        {
+          "mask": 221,
+          "occupied": [
+            0,
+            2,
+            3,
+            4,
+            6,
+            7
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            5,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 222,
+          "occupied": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            5,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 231,
+          "occupied": [
+            0,
+            1,
+            2,
+            5,
+            6,
+            7
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            4,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 233,
+          "occupied": [
+            0,
+            3,
+            5,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            4,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 235,
+          "occupied": [
+            0,
+            1,
+            3,
+            5,
+            6,
+            7
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            4,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 237,
+          "occupied": [
+            0,
+            2,
+            3,
+            5,
+            6,
+            7
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            4,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 238,
+          "occupied": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            0,
+            4,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "6": 720
+          }
+        },
+        {
+          "mask": 242,
+          "occupied": [
+            1,
+            4,
+            5,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            3,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 243,
+          "occupied": [
+            0,
+            1,
+            4,
+            5,
+            6,
+            7
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            3,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 245,
+          "occupied": [
+            0,
+            2,
+            4,
+            5,
+            6,
+            7
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            -1
+          ],
+          "completion_sites": [
+            1,
+            3,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "6": 720
+          }
+        },
+        {
+          "mask": 246,
+          "occupied": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            7
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            3,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 248,
+          "occupied": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            1
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 252,
+          "occupied": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            1,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 263,
+          "occupied": [
+            0,
+            1,
+            2,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            5
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 271,
+          "occupied": [
+            0,
+            1,
+            2,
+            3,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            5,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 279,
+          "occupied": [
+            0,
+            1,
+            2,
+            4,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            5,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 287,
+          "occupied": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            5,
+            6,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 292,
+          "occupied": [
+            2,
+            5,
+            8
+          ],
+          "k": 3,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [],
+          "nu2": 0,
+          "prefix_birth_counts": {
+            "3": 6
+          }
+        },
+        {
+          "mask": 293,
+          "occupied": [
+            0,
+            2,
+            5,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 294,
+          "occupied": [
+            1,
+            2,
+            5,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 300,
+          "occupied": [
+            2,
+            3,
+            5,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            4
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 301,
+          "occupied": [
+            0,
+            2,
+            3,
+            5,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            4
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 302,
+          "occupied": [
+            1,
+            2,
+            3,
+            5,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            4
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 308,
+          "occupied": [
+            2,
+            4,
+            5,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            3
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 309,
+          "occupied": [
+            0,
+            2,
+            4,
+            5,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            3
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 310,
+          "occupied": [
+            1,
+            2,
+            4,
+            5,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            3
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 312,
+          "occupied": [
+            3,
+            4,
+            5,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            2
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 313,
+          "occupied": [
+            0,
+            3,
+            4,
+            5,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            2,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 314,
+          "occupied": [
+            1,
+            3,
+            4,
+            5,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            2,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 315,
+          "occupied": [
+            0,
+            1,
+            3,
+            4,
+            5,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            2,
+            6,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 327,
+          "occupied": [
+            0,
+            1,
+            2,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            5
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 329,
+          "occupied": [
+            0,
+            3,
+            6,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            7
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 331,
+          "occupied": [
+            0,
+            1,
+            3,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 333,
+          "occupied": [
+            0,
+            2,
+            3,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 343,
+          "occupied": [
+            0,
+            1,
+            2,
+            4,
+            6,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            5,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 345,
+          "occupied": [
+            0,
+            3,
+            4,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            5,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 347,
+          "occupied": [
+            0,
+            1,
+            3,
+            4,
+            6,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            5,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 349,
+          "occupied": [
+            0,
+            2,
+            3,
+            4,
+            6,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            5,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 350,
+          "occupied": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            -1
+          ],
+          "completion_sites": [
+            0,
+            5,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "6": 720
+          }
+        },
+        {
+          "mask": 356,
+          "occupied": [
+            2,
+            5,
+            6,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            7
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 357,
+          "occupied": [
+            0,
+            2,
+            5,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 358,
+          "occupied": [
+            1,
+            2,
+            5,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 361,
+          "occupied": [
+            0,
+            3,
+            5,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            4,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 363,
+          "occupied": [
+            0,
+            1,
+            3,
+            5,
+            6,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            4,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 364,
+          "occupied": [
+            2,
+            3,
+            5,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            4,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 365,
+          "occupied": [
+            0,
+            2,
+            3,
+            5,
+            6,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            4,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 72,
+            "4": 216,
+            "5": 432
+          }
+        },
+        {
+          "mask": 366,
+          "occupied": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            4,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 371,
+          "occupied": [
+            0,
+            1,
+            4,
+            5,
+            6,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            2,
+            3,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "6": 720
+          }
+        },
+        {
+          "mask": 372,
+          "occupied": [
+            2,
+            4,
+            5,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            3,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 373,
+          "occupied": [
+            0,
+            2,
+            4,
+            5,
+            6,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            3,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 374,
+          "occupied": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            3,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 376,
+          "occupied": [
+            3,
+            4,
+            5,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            2
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 378,
+          "occupied": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            2,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 391,
+          "occupied": [
+            0,
+            1,
+            2,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            4,
+            5
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 399,
+          "occupied": [
+            0,
+            1,
+            2,
+            3,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            4,
+            5,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 402,
+          "occupied": [
+            1,
+            4,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            6
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 403,
+          "occupied": [
+            0,
+            1,
+            4,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 406,
+          "occupied": [
+            1,
+            2,
+            4,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 410,
+          "occupied": [
+            1,
+            3,
+            4,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            5,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 411,
+          "occupied": [
+            0,
+            1,
+            3,
+            4,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            5,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 413,
+          "occupied": [
+            0,
+            2,
+            3,
+            4,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            1,
+            5,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "6": 720
+          }
+        },
+        {
+          "mask": 414,
+          "occupied": [
+            1,
+            2,
+            3,
+            4,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            5,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 420,
+          "occupied": [
+            2,
+            5,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            6
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 421,
+          "occupied": [
+            0,
+            2,
+            5,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 422,
+          "occupied": [
+            1,
+            2,
+            5,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 427,
+          "occupied": [
+            0,
+            1,
+            3,
+            5,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            -1
+          ],
+          "completion_sites": [
+            2,
+            4,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "6": 720
+          }
+        },
+        {
+          "mask": 428,
+          "occupied": [
+            2,
+            3,
+            5,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            4,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 429,
+          "occupied": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            4,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 430,
+          "occupied": [
+            1,
+            2,
+            3,
+            5,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            4,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 434,
+          "occupied": [
+            1,
+            4,
+            5,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            3,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 435,
+          "occupied": [
+            0,
+            1,
+            4,
+            5,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            3,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 436,
+          "occupied": [
+            2,
+            4,
+            5,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            3,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 437,
+          "occupied": [
+            0,
+            2,
+            4,
+            5,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            3,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 438,
+          "occupied": [
+            1,
+            2,
+            4,
+            5,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            3,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 72,
+            "4": 216,
+            "5": 432
+          }
+        },
+        {
+          "mask": 440,
+          "occupied": [
+            3,
+            4,
+            5,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            1,
+            2
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 441,
+          "occupied": [
+            0,
+            3,
+            4,
+            5,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            1,
+            2,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 448,
+          "occupied": [
+            6,
+            7,
+            8
+          ],
+          "k": 3,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [],
+          "nu2": 0,
+          "prefix_birth_counts": {
+            "3": 6
+          }
+        },
+        {
+          "mask": 449,
+          "occupied": [
+            0,
+            6,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 450,
+          "occupied": [
+            1,
+            6,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            4
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 451,
+          "occupied": [
+            0,
+            1,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            4
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 452,
+          "occupied": [
+            2,
+            6,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            5
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 453,
+          "occupied": [
+            0,
+            2,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            5
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 454,
+          "occupied": [
+            1,
+            2,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            4,
+            5
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 455,
+          "occupied": [
+            0,
+            1,
+            2,
+            6,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            4,
+            5
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 72,
+            "4": 216,
+            "5": 432
+          }
+        },
+        {
+          "mask": 456,
+          "occupied": [
+            3,
+            6,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 458,
+          "occupied": [
+            1,
+            3,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            4
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 460,
+          "occupied": [
+            2,
+            3,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            5
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 462,
+          "occupied": [
+            1,
+            2,
+            3,
+            6,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            4,
+            5
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 464,
+          "occupied": [
+            4,
+            6,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            1
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 465,
+          "occupied": [
+            0,
+            4,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            1,
+            3
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 468,
+          "occupied": [
+            2,
+            4,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            1,
+            5
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 469,
+          "occupied": [
+            0,
+            2,
+            4,
+            6,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            1,
+            3,
+            5
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 472,
+          "occupied": [
+            3,
+            4,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            1
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 476,
+          "occupied": [
+            2,
+            3,
+            4,
+            6,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            1,
+            5
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 480,
+          "occupied": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            2
+          ],
+          "nu2": 1,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 481,
+          "occupied": [
+            0,
+            5,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            2,
+            3
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 482,
+          "occupied": [
+            1,
+            5,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            2,
+            4
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 483,
+          "occupied": [
+            0,
+            1,
+            5,
+            6,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            2,
+            3,
+            4
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 488,
+          "occupied": [
+            3,
+            5,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            2
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 490,
+          "occupied": [
+            1,
+            3,
+            5,
+            6,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            2,
+            4
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 496,
+          "occupied": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            1,
+            2
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 497,
+          "occupied": [
+            0,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            1,
+            2,
+            3
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 36,
+            "4": 108,
+            "5": 216,
+            "6": 360
+          }
+        },
+        {
+          "mask": 504,
+          "occupied": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            1,
+            2
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 72,
+            "4": 216,
+            "5": 432
+          }
+        }
+      ]
+    },
+    {
+      "lattice": "triangular",
+      "L": 3,
+      "N": 9,
+      "subsets": 512,
+      "archived_histogram_matches": true,
+      "archive_file": "analysis/birth-gap-20260929/data/exact-control-triangular-L3-b00.json.gz",
+      "archive_sha256": "eed9f4d3f0e996bfaba8e6b0ab3928ba26776bef0b2b1a18d86e08b051d30391",
+      "primitive_unoriented_directions": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "rank_counts": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          9
+        ],
+        [
+          2,
+          0,
+          36
+        ],
+        [
+          3,
+          0,
+          75
+        ],
+        [
+          3,
+          1,
+          9
+        ],
+        [
+          4,
+          0,
+          45
+        ],
+        [
+          4,
+          1,
+          81
+        ],
+        [
+          5,
+          1,
+          81
+        ],
+        [
+          5,
+          2,
+          45
+        ],
+        [
+          6,
+          1,
+          9
+        ],
+        [
+          6,
+          2,
+          75
+        ],
+        [
+          7,
+          2,
+          36
+        ],
+        [
+          8,
+          2,
+          9
+        ],
+        [
+          9,
+          2,
+          1
+        ]
+      ],
+      "completion_profiles": [
+        {
+          "k": 3,
+          "rank_one_configurations": 9,
+          "nu2_state_counts": {
+            "0": 9
+          }
+        },
+        {
+          "k": 4,
+          "rank_one_configurations": 81,
+          "nu2_state_counts": {
+            "2": 54,
+            "3": 27
+          }
+        },
+        {
+          "k": 5,
+          "rank_one_configurations": 81,
+          "nu2_state_counts": {
+            "3": 54,
+            "4": 27
+          }
+        },
+        {
+          "k": 6,
+          "rank_one_configurations": 9,
+          "nu2_state_counts": {
+            "3": 9
+          }
+        }
+      ],
+      "direction_kernels": [
+        {
+          "direction": [
+            0,
+            1
+          ],
+          "non_direct_permutation_count": 114048,
+          "paired_histogram": [
+            [
+              3,
+              5,
+              5184
+            ],
+            [
+              3,
+              6,
+              6480
+            ],
+            [
+              3,
+              7,
+              1296
+            ],
+            [
+              4,
+              5,
+              31104
+            ],
+            [
+              4,
+              6,
+              27216
+            ],
+            [
+              4,
+              7,
+              6480
+            ],
+            [
+              5,
+              6,
+              31104
+            ],
+            [
+              5,
+              7,
+              5184
+            ]
+          ],
+          "count_time_violations": [
+            {
+              "times": [
+                3,
+                4,
+                5
+              ],
+              "conditional_covariance": "1/90",
+              "survival_difference": "2/25"
+            },
+            {
+              "times": [
+                4,
+                5,
+                6
+              ],
+              "conditional_covariance": "1/90",
+              "survival_difference": "5/112"
+            }
+          ]
+        },
+        {
+          "direction": [
+            1,
+            0
+          ],
+          "non_direct_permutation_count": 114048,
+          "paired_histogram": [
+            [
+              3,
+              5,
+              5184
+            ],
+            [
+              3,
+              6,
+              6480
+            ],
+            [
+              3,
+              7,
+              1296
+            ],
+            [
+              4,
+              5,
+              31104
+            ],
+            [
+              4,
+              6,
+              27216
+            ],
+            [
+              4,
+              7,
+              6480
+            ],
+            [
+              5,
+              6,
+              31104
+            ],
+            [
+              5,
+              7,
+              5184
+            ]
+          ],
+          "count_time_violations": [
+            {
+              "times": [
+                3,
+                4,
+                5
+              ],
+              "conditional_covariance": "1/90",
+              "survival_difference": "2/25"
+            },
+            {
+              "times": [
+                4,
+                5,
+                6
+              ],
+              "conditional_covariance": "1/90",
+              "survival_difference": "5/112"
+            }
+          ]
+        },
+        {
+          "direction": [
+            1,
+            1
+          ],
+          "non_direct_permutation_count": 114048,
+          "paired_histogram": [
+            [
+              3,
+              5,
+              5184
+            ],
+            [
+              3,
+              6,
+              6480
+            ],
+            [
+              3,
+              7,
+              1296
+            ],
+            [
+              4,
+              5,
+              31104
+            ],
+            [
+              4,
+              6,
+              27216
+            ],
+            [
+              4,
+              7,
+              6480
+            ],
+            [
+              5,
+              6,
+              31104
+            ],
+            [
+              5,
+              7,
+              5184
+            ]
+          ],
+          "count_time_violations": [
+            {
+              "times": [
+                3,
+                4,
+                5
+              ],
+              "conditional_covariance": "1/90",
+              "survival_difference": "2/25"
+            },
+            {
+              "times": [
+                4,
+                5,
+                6
+              ],
+              "conditional_covariance": "1/90",
+              "survival_difference": "5/112"
+            }
+          ]
+        }
+      ],
+      "risk_k5_entry_cut4": {
+        "grain": "ordered prefixes ending at rank-one occupied set; multiply by 4! for full-permutation counts",
+        "early_prefixes": 5184,
+        "late_prefixes": 4536,
+        "mean_nu2_early": "13/4",
+        "mean_nu2_late": "24/7",
+        "one_step_survival_difference": "5/112",
+        "composition": [
+          {
+            "direction": [
+              0,
+              1
+            ],
+            "nu2": 3,
+            "early_prefixes": 1296,
+            "late_prefixes": 864
+          },
+          {
+            "direction": [
+              0,
+              1
+            ],
+            "nu2": 4,
+            "early_prefixes": 432,
+            "late_prefixes": 648
+          },
+          {
+            "direction": [
+              1,
+              0
+            ],
+            "nu2": 3,
+            "early_prefixes": 1296,
+            "late_prefixes": 864
+          },
+          {
+            "direction": [
+              1,
+              0
+            ],
+            "nu2": 4,
+            "early_prefixes": 432,
+            "late_prefixes": 648
+          },
+          {
+            "direction": [
+              1,
+              1
+            ],
+            "nu2": 3,
+            "early_prefixes": 1296,
+            "late_prefixes": 864
+          },
+          {
+            "direction": [
+              1,
+              1
+            ],
+            "nu2": 4,
+            "early_prefixes": 432,
+            "late_prefixes": 648
+          }
+        ]
+      },
+      "rank_one_k_direction_nu2_strong_lumping_failures": [],
+      "rank_one_k_nu2_transition_classes": [
+        {
+          "k": 3,
+          "nu2": 0,
+          "states": 9,
+          "successor_counts": {
+            "rank1_nu2": 6
+          },
+          "denominator": 6
+        },
+        {
+          "k": 4,
+          "nu2": 2,
+          "states": 54,
+          "successor_counts": {
+            "absorbed_rank2": 2,
+            "rank1_nu3": 2,
+            "rank1_nu4": 1
+          },
+          "denominator": 5
+        },
+        {
+          "k": 4,
+          "nu2": 3,
+          "states": 27,
+          "successor_counts": {
+            "absorbed_rank2": 3,
+            "rank1_nu3": 2
+          },
+          "denominator": 5
+        },
+        {
+          "k": 5,
+          "nu2": 3,
+          "states": 54,
+          "successor_counts": {
+            "absorbed_rank2": 3,
+            "rank1_nu3": 1
+          },
+          "denominator": 4
+        },
+        {
+          "k": 5,
+          "nu2": 4,
+          "states": 27,
+          "successor_counts": {
+            "absorbed_rank2": 4
+          },
+          "denominator": 4
+        },
+        {
+          "k": 6,
+          "nu2": 3,
+          "states": 9,
+          "successor_counts": {
+            "absorbed_rank2": 3
+          },
+          "denominator": 3
+        }
+      ],
+      "count_clock_phase_realization": {
+        "states": [
+          "rank0",
+          "rank1_slow",
+          "rank1_fast",
+          "rank2"
+        ],
+        "phase": "at fixed k, slow is minimum nu2 among rank-one states; fast is the other value if present",
+        "external_time": "occupied count k, not hidden iid-label count",
+        "claim": "weak Markov realization from the empty uniform-permutation start; rank-one rows strongly close across all configurations",
+        "off_risk_rows": "identity placeholders; not a statement about artificial unreachable preparations",
+        "paired_birth_histogram_reproduced_exactly": true,
+        "transition_matrices": [
+          {
+            "k": 0,
+            "reachable_states": [
+              0
+            ],
+            "matrix": [
+              [
+                "1",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            ]
+          },
+          {
+            "k": 1,
+            "reachable_states": [
+              0
+            ],
+            "matrix": [
+              [
+                "1",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            ]
+          },
+          {
+            "k": 2,
+            "reachable_states": [
+              0
+            ],
+            "matrix": [
+              [
+                "25/28",
+                "3/28",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            ]
+          },
+          {
+            "k": 3,
+            "reachable_states": [
+              0,
+              1
+            ],
+            "matrix": [
+              [
+                "2/5",
+                "9/25",
+                "6/25",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            ]
+          },
+          {
+            "k": 4,
+            "reachable_states": [
+              0,
+              1,
+              2
+            ],
+            "matrix": [
+              [
+                "0",
+                "12/25",
+                "9/25",
+                "4/25"
+              ],
+              [
+                "0",
+                "2/5",
+                "1/5",
+                "2/5"
+              ],
+              [
+                "0",
+                "2/5",
+                "0",
+                "3/5"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            ]
+          },
+          {
+            "k": 5,
+            "reachable_states": [
+              1,
+              2,
+              3
+            ],
+            "matrix": [
+              [
+                "1",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1/4",
+                "0",
+                "3/4"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            ]
+          },
+          {
+            "k": 6,
+            "reachable_states": [
+              1,
+              3
+            ],
+            "matrix": [
+              [
+                "1",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            ]
+          },
+          {
+            "k": 7,
+            "reachable_states": [
+              3
+            ],
+            "matrix": [
+              [
+                "1",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            ]
+          },
+          {
+            "k": 8,
+            "reachable_states": [
+              3
+            ],
+            "matrix": [
+              [
+                "1",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            ]
+          }
+        ]
+      },
+      "rank_one_configuration_rows": [
+        {
+          "mask": 7,
+          "occupied": [
+            0,
+            1,
+            2
+          ],
+          "k": 3,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [],
+          "nu2": 0,
+          "prefix_birth_counts": {
+            "3": 6
+          }
+        },
+        {
+          "mask": 15,
+          "occupied": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 23,
+          "occupied": [
+            0,
+            1,
+            2,
+            4
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            7,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 30,
+          "occupied": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6,
+            7,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 31,
+          "occupied": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6,
+            7,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 39,
+          "occupied": [
+            0,
+            1,
+            2,
+            5
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 43,
+          "occupied": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6,
+            7,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 47,
+          "occupied": [
+            0,
+            1,
+            2,
+            3,
+            5
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6,
+            7,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 53,
+          "occupied": [
+            0,
+            2,
+            4,
+            5
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6,
+            7,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 55,
+          "occupied": [
+            0,
+            1,
+            2,
+            4,
+            5
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6,
+            7,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 56,
+          "occupied": [
+            3,
+            4,
+            5
+          ],
+          "k": 3,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [],
+          "nu2": 0,
+          "prefix_birth_counts": {
+            "3": 6
+          }
+        },
+        {
+          "mask": 57,
+          "occupied": [
+            0,
+            3,
+            4,
+            5
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 58,
+          "occupied": [
+            1,
+            3,
+            4,
+            5
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 59,
+          "occupied": [
+            0,
+            1,
+            3,
+            4,
+            5
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6,
+            7,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 60,
+          "occupied": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            7,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 61,
+          "occupied": [
+            0,
+            2,
+            3,
+            4,
+            5
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6,
+            7,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 62,
+          "occupied": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6,
+            7,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 63,
+          "occupied": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            6,
+            7,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 72,
+            "4": 360,
+            "5": 288
+          }
+        },
+        {
+          "mask": 71,
+          "occupied": [
+            0,
+            1,
+            2,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            5
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 73,
+          "occupied": [
+            0,
+            3,
+            6
+          ],
+          "k": 3,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [],
+          "nu2": 0,
+          "prefix_birth_counts": {
+            "3": 6
+          }
+        },
+        {
+          "mask": 75,
+          "occupied": [
+            0,
+            1,
+            3,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            5
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 77,
+          "occupied": [
+            0,
+            2,
+            3,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 78,
+          "occupied": [
+            1,
+            2,
+            3,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            0,
+            4,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 87,
+          "occupied": [
+            0,
+            1,
+            2,
+            4,
+            6
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            5,
+            7,
+            8
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 89,
+          "occupied": [
+            0,
+            3,
+            4,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            5,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 90,
+          "occupied": [
+            1,
+            3,
+            4,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            5,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 91,
+          "occupied": [
+            0,
+            1,
+            3,
+            4,
+            6
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            5,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 93,
+          "occupied": [
+            0,
+            2,
+            3,
+            4,
+            6
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            5,
+            7,
+            8
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 98,
+          "occupied": [
+            1,
+            5,
+            6
+          ],
+          "k": 3,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [],
+          "nu2": 0,
+          "prefix_birth_counts": {
+            "3": 6
+          }
+        },
+        {
+          "mask": 99,
+          "occupied": [
+            0,
+            1,
+            5,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            2,
+            3
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 101,
+          "occupied": [
+            0,
+            2,
+            5,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            4,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 102,
+          "occupied": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            0,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 105,
+          "occupied": [
+            0,
+            3,
+            5,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            4
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 106,
+          "occupied": [
+            1,
+            3,
+            5,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            0,
+            4
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 109,
+          "occupied": [
+            0,
+            2,
+            3,
+            5,
+            6
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            4,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 110,
+          "occupied": [
+            1,
+            2,
+            3,
+            5,
+            6
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            0,
+            4,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 113,
+          "occupied": [
+            0,
+            4,
+            5,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            2,
+            3,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 114,
+          "occupied": [
+            1,
+            4,
+            5,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            3,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 115,
+          "occupied": [
+            0,
+            1,
+            4,
+            5,
+            6
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            2,
+            3,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 118,
+          "occupied": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            0,
+            3,
+            7,
+            8
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 120,
+          "occupied": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            1
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 124,
+          "occupied": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            1,
+            7,
+            8
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 135,
+          "occupied": [
+            0,
+            1,
+            2,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            4
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 139,
+          "occupied": [
+            0,
+            1,
+            3,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            5,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 140,
+          "occupied": [
+            2,
+            3,
+            7
+          ],
+          "k": 3,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [],
+          "nu2": 0,
+          "prefix_birth_counts": {
+            "3": 6
+          }
+        },
+        {
+          "mask": 141,
+          "occupied": [
+            0,
+            2,
+            3,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            1,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 142,
+          "occupied": [
+            1,
+            2,
+            3,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            0,
+            4
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 146,
+          "occupied": [
+            1,
+            4,
+            7
+          ],
+          "k": 3,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [],
+          "nu2": 0,
+          "prefix_birth_counts": {
+            "3": 6
+          }
+        },
+        {
+          "mask": 147,
+          "occupied": [
+            0,
+            1,
+            4,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 149,
+          "occupied": [
+            0,
+            2,
+            4,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            1,
+            5,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 150,
+          "occupied": [
+            1,
+            2,
+            4,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            3
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 154,
+          "occupied": [
+            1,
+            3,
+            4,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            5
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 155,
+          "occupied": [
+            0,
+            1,
+            3,
+            4,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            5,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 156,
+          "occupied": [
+            2,
+            3,
+            4,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            1,
+            5
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 157,
+          "occupied": [
+            0,
+            2,
+            3,
+            4,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            1,
+            5,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 167,
+          "occupied": [
+            0,
+            1,
+            2,
+            5,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            4,
+            6,
+            8
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 170,
+          "occupied": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            0,
+            4,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 172,
+          "occupied": [
+            2,
+            3,
+            5,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            4,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 173,
+          "occupied": [
+            0,
+            2,
+            3,
+            5,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            1,
+            4,
+            6,
+            8
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 174,
+          "occupied": [
+            1,
+            2,
+            3,
+            5,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            0,
+            4,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 178,
+          "occupied": [
+            1,
+            4,
+            5,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            3,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 179,
+          "occupied": [
+            0,
+            1,
+            4,
+            5,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            3,
+            6,
+            8
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 180,
+          "occupied": [
+            2,
+            4,
+            5,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            3,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 182,
+          "occupied": [
+            1,
+            2,
+            4,
+            5,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            3,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 184,
+          "occupied": [
+            3,
+            4,
+            5,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            1,
+            2
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 185,
+          "occupied": [
+            0,
+            3,
+            4,
+            5,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            1,
+            2,
+            6,
+            8
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 197,
+          "occupied": [
+            0,
+            2,
+            6,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            4,
+            5
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 199,
+          "occupied": [
+            0,
+            1,
+            2,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            4,
+            5
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 201,
+          "occupied": [
+            0,
+            3,
+            6,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 203,
+          "occupied": [
+            0,
+            1,
+            3,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            5,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 204,
+          "occupied": [
+            2,
+            3,
+            6,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            0,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 206,
+          "occupied": [
+            1,
+            2,
+            3,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            0,
+            4,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 209,
+          "occupied": [
+            0,
+            4,
+            6,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            5,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 210,
+          "occupied": [
+            1,
+            4,
+            6,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            5,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 211,
+          "occupied": [
+            0,
+            1,
+            4,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            5,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 214,
+          "occupied": [
+            1,
+            2,
+            4,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 217,
+          "occupied": [
+            0,
+            3,
+            4,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            5,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 218,
+          "occupied": [
+            1,
+            3,
+            4,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            5,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 219,
+          "occupied": [
+            0,
+            1,
+            3,
+            4,
+            6,
+            7
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            5,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 72,
+            "4": 360,
+            "5": 288
+          }
+        },
+        {
+          "mask": 220,
+          "occupied": [
+            2,
+            3,
+            4,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            0,
+            1,
+            5,
+            8
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 226,
+          "occupied": [
+            1,
+            5,
+            6,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            4,
+            8
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 227,
+          "occupied": [
+            0,
+            1,
+            5,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            2,
+            3,
+            4,
+            8
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 228,
+          "occupied": [
+            2,
+            5,
+            6,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            0,
+            4,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 230,
+          "occupied": [
+            1,
+            2,
+            5,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            0,
+            4,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 233,
+          "occupied": [
+            0,
+            3,
+            5,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 234,
+          "occupied": [
+            1,
+            3,
+            5,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            0,
+            4,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 236,
+          "occupied": [
+            2,
+            3,
+            5,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            0,
+            4,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 238,
+          "occupied": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            0,
+            4,
+            8
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 72,
+            "4": 360,
+            "5": 288
+          }
+        },
+        {
+          "mask": 240,
+          "occupied": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            1,
+            2
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 248,
+          "occupied": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            1,
+            2
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 263,
+          "occupied": [
+            0,
+            1,
+            2,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            4,
+            5
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 271,
+          "occupied": [
+            0,
+            1,
+            2,
+            3,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 273,
+          "occupied": [
+            0,
+            4,
+            8
+          ],
+          "k": 3,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [],
+          "nu2": 0,
+          "prefix_birth_counts": {
+            "3": 6
+          }
+        },
+        {
+          "mask": 275,
+          "occupied": [
+            0,
+            1,
+            4,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            2,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 277,
+          "occupied": [
+            0,
+            2,
+            4,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            1,
+            5
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 278,
+          "occupied": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            3,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 281,
+          "occupied": [
+            0,
+            3,
+            4,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            5,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 283,
+          "occupied": [
+            0,
+            1,
+            3,
+            4,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            2,
+            5,
+            6,
+            7
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 284,
+          "occupied": [
+            2,
+            3,
+            4,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            1,
+            5,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 285,
+          "occupied": [
+            0,
+            2,
+            3,
+            4,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            1,
+            5,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 291,
+          "occupied": [
+            0,
+            1,
+            5,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            2,
+            3,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 292,
+          "occupied": [
+            2,
+            5,
+            8
+          ],
+          "k": 3,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [],
+          "nu2": 0,
+          "prefix_birth_counts": {
+            "3": 6
+          }
+        },
+        {
+          "mask": 293,
+          "occupied": [
+            0,
+            2,
+            5,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            4
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 294,
+          "occupied": [
+            1,
+            2,
+            5,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 297,
+          "occupied": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            4,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 300,
+          "occupied": [
+            2,
+            3,
+            5,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            4,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 301,
+          "occupied": [
+            0,
+            2,
+            3,
+            5,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            4,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 302,
+          "occupied": [
+            1,
+            2,
+            3,
+            5,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            4,
+            6,
+            7
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 305,
+          "occupied": [
+            0,
+            4,
+            5,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            2,
+            3
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 307,
+          "occupied": [
+            0,
+            1,
+            4,
+            5,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            2,
+            3,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 308,
+          "occupied": [
+            2,
+            4,
+            5,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            3
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 310,
+          "occupied": [
+            1,
+            2,
+            4,
+            5,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            3,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 312,
+          "occupied": [
+            3,
+            4,
+            5,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            2
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 314,
+          "occupied": [
+            1,
+            3,
+            4,
+            5,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            2,
+            6,
+            7
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 326,
+          "occupied": [
+            1,
+            2,
+            6,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            4,
+            5
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 327,
+          "occupied": [
+            0,
+            1,
+            2,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            4,
+            5
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 329,
+          "occupied": [
+            0,
+            3,
+            6,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            4,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 331,
+          "occupied": [
+            0,
+            1,
+            3,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            2,
+            4,
+            5,
+            7
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 332,
+          "occupied": [
+            2,
+            3,
+            6,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            4,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 333,
+          "occupied": [
+            0,
+            2,
+            3,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            4,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 337,
+          "occupied": [
+            0,
+            4,
+            6,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            3,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 338,
+          "occupied": [
+            1,
+            4,
+            6,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            2,
+            3,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 339,
+          "occupied": [
+            0,
+            1,
+            4,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            2,
+            3,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 341,
+          "occupied": [
+            0,
+            2,
+            4,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 344,
+          "occupied": [
+            3,
+            4,
+            6,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            1,
+            2
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 354,
+          "occupied": [
+            1,
+            5,
+            6,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            2,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 355,
+          "occupied": [
+            0,
+            1,
+            5,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            2,
+            3,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 356,
+          "occupied": [
+            2,
+            5,
+            6,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            7
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 357,
+          "occupied": [
+            0,
+            2,
+            5,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            4,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 361,
+          "occupied": [
+            0,
+            3,
+            5,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            4,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 362,
+          "occupied": [
+            1,
+            3,
+            5,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            0,
+            2,
+            4,
+            7
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 364,
+          "occupied": [
+            2,
+            3,
+            5,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            4,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 365,
+          "occupied": [
+            0,
+            2,
+            3,
+            5,
+            6,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            4,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 72,
+            "4": 360,
+            "5": 288
+          }
+        },
+        {
+          "mask": 369,
+          "occupied": [
+            0,
+            4,
+            5,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            2,
+            3,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 370,
+          "occupied": [
+            1,
+            4,
+            5,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            2,
+            3,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 371,
+          "occupied": [
+            0,
+            1,
+            4,
+            5,
+            6,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            2,
+            3,
+            7
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 72,
+            "4": 360,
+            "5": 288
+          }
+        },
+        {
+          "mask": 372,
+          "occupied": [
+            2,
+            4,
+            5,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            1,
+            3,
+            7
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 376,
+          "occupied": [
+            3,
+            4,
+            5,
+            6,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            1,
+            2
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 387,
+          "occupied": [
+            0,
+            1,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            4,
+            5
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 391,
+          "occupied": [
+            0,
+            1,
+            2,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            4,
+            5
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 393,
+          "occupied": [
+            0,
+            3,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            1,
+            5,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 396,
+          "occupied": [
+            2,
+            3,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            5,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 397,
+          "occupied": [
+            0,
+            2,
+            3,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            1,
+            5,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 398,
+          "occupied": [
+            1,
+            2,
+            3,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            0,
+            4,
+            5,
+            6
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 401,
+          "occupied": [
+            0,
+            4,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            1,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 402,
+          "occupied": [
+            1,
+            4,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 405,
+          "occupied": [
+            0,
+            2,
+            4,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            1,
+            5,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 406,
+          "occupied": [
+            1,
+            2,
+            4,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            3,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 409,
+          "occupied": [
+            0,
+            3,
+            4,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            1,
+            5,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 410,
+          "occupied": [
+            1,
+            3,
+            4,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            2,
+            5,
+            6
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 412,
+          "occupied": [
+            2,
+            3,
+            4,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            1,
+            5,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 413,
+          "occupied": [
+            0,
+            2,
+            3,
+            4,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            1,
+            5,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 72,
+            "4": 360,
+            "5": 288
+          }
+        },
+        {
+          "mask": 418,
+          "occupied": [
+            1,
+            5,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            3,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 420,
+          "occupied": [
+            2,
+            5,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            3,
+            6
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 421,
+          "occupied": [
+            0,
+            2,
+            5,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            1,
+            3,
+            4,
+            6
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 422,
+          "occupied": [
+            1,
+            2,
+            5,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            3,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 424,
+          "occupied": [
+            3,
+            5,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            1,
+            2
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "4": 24
+          }
+        },
+        {
+          "mask": 433,
+          "occupied": [
+            0,
+            4,
+            5,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            1
+          ],
+          "completion_sites": [
+            1,
+            2,
+            3,
+            6
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 434,
+          "occupied": [
+            1,
+            4,
+            5,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            3,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 436,
+          "occupied": [
+            2,
+            4,
+            5,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            3,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 438,
+          "occupied": [
+            1,
+            2,
+            4,
+            5,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            0,
+            1
+          ],
+          "completion_sites": [
+            0,
+            3,
+            6
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 72,
+            "4": 360,
+            "5": 288
+          }
+        },
+        {
+          "mask": 440,
+          "occupied": [
+            3,
+            4,
+            5,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            1,
+            2
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 448,
+          "occupied": [
+            6,
+            7,
+            8
+          ],
+          "k": 3,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [],
+          "nu2": 0,
+          "prefix_birth_counts": {
+            "3": 6
+          }
+        },
+        {
+          "mask": 449,
+          "occupied": [
+            0,
+            6,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            4
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 450,
+          "occupied": [
+            1,
+            6,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            4,
+            5
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 451,
+          "occupied": [
+            0,
+            1,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            4,
+            5
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 452,
+          "occupied": [
+            2,
+            6,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            5
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 453,
+          "occupied": [
+            0,
+            2,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            4,
+            5
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 454,
+          "occupied": [
+            1,
+            2,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            4,
+            5
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 455,
+          "occupied": [
+            0,
+            1,
+            2,
+            6,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            3,
+            4,
+            5
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 72,
+            "4": 360,
+            "5": 288
+          }
+        },
+        {
+          "mask": 456,
+          "occupied": [
+            3,
+            6,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            2
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 458,
+          "occupied": [
+            1,
+            3,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            2,
+            4,
+            5
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 464,
+          "occupied": [
+            4,
+            6,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            1
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 468,
+          "occupied": [
+            2,
+            4,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 472,
+          "occupied": [
+            3,
+            4,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            1,
+            2
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 480,
+          "occupied": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "k": 4,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            1,
+            2
+          ],
+          "nu2": 2,
+          "prefix_birth_counts": {
+            "3": 6,
+            "4": 18
+          }
+        },
+        {
+          "mask": 481,
+          "occupied": [
+            0,
+            5,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "nu2": 4,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 36,
+            "5": 72
+          }
+        },
+        {
+          "mask": 488,
+          "occupied": [
+            3,
+            5,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            1,
+            2
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 496,
+          "occupied": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "k": 5,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            1,
+            2
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 12,
+            "4": 60,
+            "5": 48
+          }
+        },
+        {
+          "mask": 504,
+          "occupied": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "k": 6,
+          "direction": [
+            1,
+            0
+          ],
+          "completion_sites": [
+            0,
+            1,
+            2
+          ],
+          "nu2": 3,
+          "prefix_birth_counts": {
+            "3": 72,
+            "4": 360,
+            "5": 288
+          }
+        }
+      ]
+    }
+  ],
+  "no_monte_carlo_or_permutation_enumeration": true,
+  "limitations": [
+    "L3 only; not large-size or continuum sufficiency.",
+    "One-step hazard sufficiency is not recursive state sufficiency.",
+    "Strong-lumping failure is not by itself failure of the weak Markov law from the empty state.",
+    "A homology direction is not the full connectivity or geometric state."
+  ],
+  "python": "3.11.15",
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "wall_seconds": 0.0206800420419313
+}

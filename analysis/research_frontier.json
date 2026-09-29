@@ -168,6 +168,23 @@
       ]
     },
     {
+      "id": "marked_rank_filtration",
+      "state": "rank0, persistent primitive unoriented rank1 direction, absorbing rank2",
+      "source": "same uniform permutation or iid Uniform site labels; clocks kept distinct",
+      "geometry": "fixed honest torus; new exact computation at L3 only",
+      "readout": [
+        "direction-marked H_d(s,t)",
+        "completion-pivotal count nu2",
+        "rank-one completion phase"
+      ],
+      "not_equivalent_to": [
+        "unmarked rank filtration",
+        "future direction revealed before birth",
+        "original U",
+        "label process with occupied count also observed"
+      ]
+    },
+    {
       "id": "prefix_prediction",
       "state": "lifted connectivity with temporary closure",
       "source": "explicit uniform or addressed site source language",
@@ -218,8 +235,8 @@
         "P823",
         "P828"
       ],
-      "known": "Author noncoalescence and population clock proofs; all-triples rank-one kernel characterization of rank-only Markovness; exact L3 square/triangular positive/negative controls in count and label time; retrospective L512 history contrast.",
-      "boundary": "No copula uniqueness, exact square exponent or cross-lattice universality theorem. Modest finite insertion-clock history effects do not establish continuum non-Markovness. Population width comparability is not finite-sample calibration.",
+      "known": "Author noncoalescence and population clock proofs; all-triples Markov kernel characterization; exact L3 completion geometry explains triangular history memory with a binary rank-one phase. Square unmarked label rank is Markov but marked axial sectors are not. Retrospective L512 contrast remains modest.",
+      "boundary": "No copula uniqueness, exact square exponent or cross-lattice universality theorem. L3 completion-phase closure is count-clock, from the uniform empty start, not a continuum or hidden-count label realization. Population width comparability is not finite-sample calibration.",
       "new_branch_paths": [
         "notes/birth-gap-noncoalescence-20260929.md",
         "notes/birth-gap-pilot-20260929.md",
@@ -229,7 +246,11 @@
         "notes/birth-kernel-markov-characterization-20260929.md",
         "notes/birth-history-memory-readout-20260929.md",
         "analysis/birth-markov-kernel-20260929/result.json",
-        "analysis/birth-markov-kernel-20260929/exact-clock.json"
+        "analysis/birth-markov-kernel-20260929/exact-clock.json",
+        "notes/completion-pivotal-hazard-kernel-20260929.md",
+        "notes/birth-completion-geometry-20260929.md",
+        "analysis/birth-completion-geometry-20260929/result.json",
+        "analysis/birth-completion-geometry-20260929/marked-clock.json"
       ],
       "observer": "rank_filtration",
       "acquisition": [
@@ -238,7 +259,8 @@
         "560000-filtration independent CPU block through L512",
         "two-time arm-density proof and primary-literature probability inputs",
         "square matching-arm transfer and population-clock proof; no new samples",
-        "existing cloud-block three-time analysis and exact L3 archive polynomial transform; no enumeration rerun"
+        "existing cloud-block three-time analysis and exact L3 archive polynomial transform; no enumeration rerun",
+        "new L3 512-subset geometry per lattice, prefix DP, exact phase realization and marked-label polynomial transform; no Monte Carlo or 9! rerun"
       ],
       "tension": "Same static laws and all adjacent transition tables can coexist with different limit diagonal atoms.",
       "finite_result": "Soft gap mass approximately proportional to resolution down to delta=.00625, L<=512; no resolved plateau, not proof of noncoalescence.",
@@ -250,7 +272,8 @@
         "https://doi.org/10.1007/BF01205674",
         "https://arxiv.org/abs/2008.01606"
       ],
-      "next": "Continuum rank-one kernel and geometric/marked-state explanation of its Markov defect; age alone encodes rank history and is not a microscopic mechanism. No automatic larger-size campaign or cutoff hunt.",
+      "completion_geometry_result": "Triangular L3 early/late fast-type fractions 1/4 versus 3/7 explain survival difference 5/112; nu2 phase rows close strongly within rank one and yield a four-state weak count-clock realization. Triangular H_d=H/3. Square H_axis=3p^3(1-q)^3[(1+q)^3-p^3], H_diag=3p^6(1-q)^3: pooled label Markovness does not survive axial marking.",
+      "next": "Scale-dependent completion geometry -> hazard -> H transmission and continuum kernel identification. Future independent geometry-marked acquisition must declare one clock and an interval readout; existing L512 birth pairs lack geometry. No automatic size campaign, cutoff hunt or repetition of the completed L3 direction question.",
       "information_gain": "high: identifies process structure beyond the completed noncoalescence argument",
       "cost": "small exact algebra; bounded pilot; substantial two-time probability theory"
     },
@@ -412,6 +435,25 @@
       "interpretation": "Exact finite Markov and non-Markov controls do not determine the limit. Large-size association is small and retrospective, not independent certification. Label/count clocks and current rank/full microscopic state are different contracts."
     },
     {
+      "id": "completion_geometry_transmission",
+      "node": "joint_birth_process",
+      "observer": "marked_rank_filtration",
+      "status": "author_hazard_identity_and_exact_L3_mechanism",
+      "source_paths": [
+        "notes/completion-pivotal-hazard-kernel-20260929.md",
+        "notes/birth-completion-geometry-20260929.md",
+        "analysis/birth-completion-geometry-20260929/analyze.py",
+        "analysis/birth-completion-geometry-20260929/result.json",
+        "analysis/birth-completion-geometry-20260929/exact_marked_clock.py",
+        "analysis/birth-completion-geometry-20260929/marked-clock.json"
+      ],
+      "mechanism_contrast": "Direction alone versus completion-geometry mixing as the carrier of birth history; unmarked versus direction-marked weak Markovness under a fixed clock.",
+      "identity": "Exit probability nu2/(N-k); iid-label intensity nu2/(1-t); logarithmic H defect is minus the integral of birth-by-a minus birth-by-b cohort mean nu2 over 1-t.",
+      "finite_result": "Triangular direction does not remove memory; completion-type weights explain 5/112 and a binary rank-one phase closes count dynamics. Square marked axial label kernels are non-Markov despite pooled Markovness; all marked square count kernels remain Markov.",
+      "next_independent_readout": "Direction and completion geometry across a specified risk interval on a new block, not reconstructed from existing birth-pair histograms; benchmark before increasing size.",
+      "interpretation": "512 subsets per lattice and exact symbolic thinning, not production validation. Four-state count realization is not minimality, arbitrary rank0 strong lumpability, label closure with hidden count or continuum sufficiency."
+    },
+    {
       "id": "normal_candidate_columns",
       "node": "original_u_identification",
       "status": "missing_theoretical_input",
@@ -433,6 +475,11 @@
       "id": "birth_gap_cloud",
       "path": "analysis/birth-gap-20260929/cloud-data-5k/run.json",
       "rule": "cloud-independent-20260929 namespace; 14 batches per cell; no pooling with local pilot; derived CDF/Z/moments and later rank-history contrasts reuse the SAME block and are not independent evidence; excluded benchmarks are not evidence"
+    },
+    {
+      "id": "birth_L3_exact_geometry",
+      "path": "analysis/birth-completion-geometry-20260929/result.json",
+      "rule": "Deterministic occupied-set census and prefix DP share the same finite model as the earlier complete-permutation tables; source collapse is an exact identity, not independent stochastic evidence. Marked-label kernels derive from this same census."
     },
     {
       "id": "source_response_families",

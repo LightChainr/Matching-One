@@ -18,6 +18,12 @@ Owner-delegated focus dated 2026-09-29, replacing the Sep13 one-paper allocation
   controls are available in insertion AND label time. The L512 memory
   contrast is modest, retrospective and insertion-clock only; do not promote
   it to continuum certification or redispatch the old 9! enumerations.
+  L3 completion geometry is now computed: triangular direction does not
+  remove memory, whereas a binary completion phase gives an exact four-state
+  count-clock realization. Square unmarked label rank is Markov but marked
+  axial sectors are not. Use the completion-pivotal hazard identity for the
+  next scale-dependent mechanism question; do not redispatch direction-only
+  closure at L3 or confuse count-clock closure with hidden-count label time.
 - Parallel: #809/#833 source-dependent predictive state and noisy information.
   Reuse #829--#837 and this branch's all-k deterministic four-state encoding
   theorem, including actual two-row product queries. Distributed deterministic
