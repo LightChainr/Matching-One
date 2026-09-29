@@ -1,0 +1,352 @@
+{
+  "schema": "matching-one.research-frontier.v1",
+  "as_of": "2026-09-29",
+  "main_base": "d31fa5fe9584b77595e4a78b9560aa2ff77cf0b3",
+  "scope": "current attention and research map; not a replacement of historical result contracts",
+  "priority_semantics": "attention only; no locks, research permissions or automatic rejection",
+  "entry_points": {
+    "overview": "README.md",
+    "claims": "docs/STATUS.md",
+    "frontier": "docs/RESEARCH-FRONTIER.md",
+    "next": "docs/ROADMAP.md",
+    "historical_evidence": "analysis/research_ledger.yaml"
+  },
+  "branch_sources": [
+    {
+      "id": "P739",
+      "pr": 739,
+      "commit": "907a9d94ee0c3f20b00188647872a067abffd275",
+      "branch": "analysis/geometric-balance-manuscript-20260913",
+      "path": "docs/manuscripts/geometric-balance/manuscript.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/907a9d94ee0c3f20b00188647872a067abffd275/docs/manuscripts/geometric-balance/manuscript.md"
+    },
+    {
+      "id": "P771",
+      "pr": 771,
+      "commit": "29f92a93658ad163aeb0fad227e8bd6d3c2ea5e3",
+      "branch": "analysis/geometric-balance-round2-integrated-20260914",
+      "path": "docs/manuscripts/geometric-balance/round2-claim-ledger-20260914.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/29f92a93658ad163aeb0fad227e8bd6d3c2ea5e3/docs/manuscripts/geometric-balance/round2-claim-ledger-20260914.md"
+    },
+    {
+      "id": "P773",
+      "pr": 773,
+      "commit": "9ef22d1cc531c09dedf9b1195ab6aad8ef79668f",
+      "branch": "analysis/topological-scaling-program-20260914",
+      "path": "notes/rank-birth-flux-conservation-20260914.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/9ef22d1cc531c09dedf9b1195ab6aad8ef79668f/notes/rank-birth-flux-conservation-20260914.md"
+    },
+    {
+      "id": "P822",
+      "pr": 822,
+      "commit": "b23bd0c44a7ae6d6969ee95d3402d7aa1a25a962",
+      "branch": "analysis/delta1-mechanism-20260919",
+      "path": "analysis/queue-20260919/814/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/b23bd0c44a7ae6d6969ee95d3402d7aa1a25a962/analysis/queue-20260919/814/NOTE.md"
+    },
+    {
+      "id": "P823",
+      "pr": 823,
+      "commit": "3d0176a9f394f7d7228766709731493fd15095c5",
+      "branch": "proof/white-matching-separator-20260919",
+      "path": "analysis/queue-20260919/815/supplement/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/3d0176a9f394f7d7228766709731493fd15095c5/analysis/queue-20260919/815/supplement/NOTE.md"
+    },
+    {
+      "id": "P825",
+      "pr": 825,
+      "commit": "3bf94a6900fe2866626eaf6c3e7f2a00180bb775",
+      "branch": "analysis/rank-L7-gate-20260919",
+      "path": "analysis/queue-20260919/816/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/3bf94a6900fe2866626eaf6c3e7f2a00180bb775/analysis/queue-20260919/816/NOTE.md"
+    },
+    {
+      "id": "P828",
+      "pr": 828,
+      "commit": "9e59eef0007382c07f879fb9eadeb5e5be141f5b",
+      "branch": "research/control-rev2-20260919",
+      "path": "docs/research-status/control-20260919-rev2.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/9e59eef0007382c07f879fb9eadeb5e5be141f5b/docs/research-status/control-20260919-rev2.md"
+    },
+    {
+      "id": "P829",
+      "pr": 829,
+      "commit": "2fd4186de14d8566ef828c11f937a5bab06b41da",
+      "branch": "analysis/p809-endpoint-reversal-20260923",
+      "path": "analysis/p809-endpoint-reversal-20260923/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/2fd4186de14d8566ef828c11f937a5bab06b41da/analysis/p809-endpoint-reversal-20260923/NOTE.md"
+    },
+    {
+      "id": "P830",
+      "pr": 830,
+      "commit": "48ec90124865525d5823ccd7b431b4adcc9be4c7",
+      "branch": "analysis/p809-passive-path-20260923",
+      "path": "analysis/p809-passive-path-20260923/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/48ec90124865525d5823ccd7b431b4adcc9be4c7/analysis/p809-passive-path-20260923/NOTE.md"
+    },
+    {
+      "id": "P831",
+      "pr": 831,
+      "commit": "e099524bdc7e9c8844c56d88e5d7b411225f85c9",
+      "branch": "analysis/p809-parametric-observability-20260923",
+      "path": "analysis/p809-parametric-observability-20260923/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/e099524bdc7e9c8844c56d88e5d7b411225f85c9/analysis/p809-parametric-observability-20260923/NOTE.md"
+    },
+    {
+      "id": "P832",
+      "pr": 832,
+      "commit": "fc17b825447adee725a04f081eed1178f554ee46",
+      "branch": "analysis/p809-positive-order-gap-20260923",
+      "path": "analysis/p809-positive-order-gap-20260923/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/fc17b825447adee725a04f081eed1178f554ee46/analysis/p809-positive-order-gap-20260923/NOTE.md"
+    },
+    {
+      "id": "P834",
+      "pr": 834,
+      "commit": "8f40247491af737c03aa3b1156db5918a7024093",
+      "branch": "analysis/p833-width5-positive-cylinder-20260923",
+      "path": "analysis/p833-width5-positive-cylinder-20260923/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/8f40247491af737c03aa3b1156db5918a7024093/analysis/p833-width5-positive-cylinder-20260923/NOTE.md"
+    },
+    {
+      "id": "P835",
+      "pr": 835,
+      "commit": "5d063e3a0053035a648db99969c4c4972e7d8584",
+      "branch": "analysis/p833-orphan-source-contract-20260924",
+      "path": "analysis/p833-orphan-source-contract-20260924/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/5d063e3a0053035a648db99969c4c4972e7d8584/analysis/p833-orphan-source-contract-20260924/NOTE.md"
+    },
+    {
+      "id": "P836",
+      "pr": 836,
+      "commit": "19b6771437276ce0522d21dd1a5cbf1b7c7c5c1c",
+      "branch": "analysis/p833-noise-depth-literature-20260924",
+      "path": "analysis/p833-noise-depth-literature-20260924/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/19b6771437276ce0522d21dd1a5cbf1b7c7c5c1c/analysis/p833-noise-depth-literature-20260924/NOTE.md"
+    },
+    {
+      "id": "P837",
+      "pr": 837,
+      "commit": "0ed7e4f7a6e68ba628ce26dd1e9cf1e65d64c9f3",
+      "branch": "analysis/p833-fixed-noise-wedge-20260924",
+      "path": "analysis/p833-fixed-noise-wedge-20260924/INTERFACE-REFINEMENT.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/0ed7e4f7a6e68ba628ce26dd1e9cf1e65d64c9f3/analysis/p833-fixed-noise-wedge-20260924/INTERFACE-REFINEMENT.md"
+    }
+  ],
+  "observer_sectors": [
+    {
+      "id": "rank_filtration",
+      "state": "ambient image rank 0/1/2",
+      "source": "iid Bernoulli monotone coupling / uniform site permutation",
+      "geometry": "fixed honest torus",
+      "readout": [
+        "J1",
+        "J2",
+        "T1",
+        "T2",
+        "two-time rank-one overlap"
+      ],
+      "not_equivalent_to": [
+        "temporary prefix closure",
+        "original U"
+      ]
+    },
+    {
+      "id": "prefix_prediction",
+      "state": "lifted connectivity with temporary closure",
+      "source": "explicit uniform or addressed site source language",
+      "geometry": "growing periodic strip",
+      "readout": [
+        "endpoint rank",
+        "rank trajectory"
+      ],
+      "not_equivalent_to": [
+        "all-source deterministic state",
+        "fixed-torus insertion filtration"
+      ]
+    },
+    {
+      "id": "tensor_noise",
+      "state": "artificial three-row preparations",
+      "source": "epsilon-bounded independent future sites",
+      "geometry": "cylinder with temporary closure",
+      "readout": [
+        "rank-only bit query"
+      ],
+      "not_equivalent_to": [
+        "complete boundary observation",
+        "typical critical Bernoulli preparation",
+        "full recursive realization order"
+      ]
+    },
+    {
+      "id": "original_u",
+      "source": "original named source B and six-coordinate thermal jet",
+      "geometry": "original norm-4/norm-5 contracts",
+      "readout": "physical normalizer, rank-one denominator and pooled moving-root counterterm",
+      "not_equivalent_to": [
+        "root H4",
+        "aggregate balanced rank",
+        "primitive C3 channel"
+      ]
+    }
+  ],
+  "scientific_nodes": [
+    {
+      "id": "joint_birth_process",
+      "attention": "P0",
+      "integration": "open_pr",
+      "sources": [
+        "P773",
+        "P823",
+        "P828"
+      ],
+      "known": "Finite birth flux/copula identities and author separator proof with exact L3-L5 control.",
+      "boundary": "No square universality theorem or uniform two-time anti-concentration supplied by single-site arm inclusion.",
+      "new_branch_paths": [
+        "notes/birth-gap-noncoalescence-20260929.md",
+        "notes/birth-gap-pilot-20260929.md"
+      ],
+      "observer": "rank_filtration",
+      "acquisition": [
+        "exact construction",
+        "small independent paired pilot"
+      ],
+      "tension": "Same static laws and all adjacent transition tables can coexist with different limit diagonal atoms.",
+      "next": "Uniform near-diagonal small-ball bound and paired soft gap mass; triangular and square inputs separately typed.",
+      "information_gain": "high: decides missing process-continuity mechanism",
+      "cost": "small exact algebra; bounded pilot; substantial two-time probability theory"
+    },
+    {
+      "id": "source_noise_state",
+      "attention": "P1",
+      "integration": "open_pr",
+      "sources": [
+        "P829",
+        "P830",
+        "P831",
+        "P832",
+        "P834",
+        "P835",
+        "P836",
+        "P837"
+      ],
+      "observer": "tensor_noise",
+      "known": "Source-dependent linear/positive orders, fixed small-noise logarithmic query height, five-point erasure bound.",
+      "boundary": "Artificial preparations; small-noise upper bound; no claim for typical critical states or arbitrary noise.",
+      "tension": "Direct repetition restores uv and full 4^t response rank.",
+      "discussion": "https://github.com/LightChainr/Matching-One/pull/837#issuecomment-5814562555",
+      "next": "Non-copy encoding or conditional obstruction, reporting A/L/error/width/height together.",
+      "acquisition": [
+        "reuse exact finite engines",
+        "small exact construction"
+      ],
+      "information_gain": "high: tests whether reliability preserves the representation advantage",
+      "cost": "bounded one-block algebra/topology first"
+    },
+    {
+      "id": "geometric_threshold_laws",
+      "attention": "P1 bounded writing",
+      "integration": "open_pr",
+      "sources": [
+        "P739",
+        "P771"
+      ],
+      "observer": "rank_filtration",
+      "known": "Author arbitrary-period root and full-law iff proofs; fixed-p homological free energy and birth clocks.",
+      "boundary": "Author proof supplied is not independent all-proof certification; fixed-p does not grant nearcritical uniformity.",
+      "next": "Integrate supplied statements and actual remaining probability inputs, not repeat oblique necessity as missing.",
+      "acquisition": [
+        "existing proof synthesis"
+      ],
+      "information_gain": "consolidates a mature result; lower need for new production",
+      "cost": "bounded writing/theory"
+    },
+    {
+      "id": "original_u_identification",
+      "attention": "P1 theory",
+      "integration": "hypothesis",
+      "sources": [
+        "P771",
+        "P773",
+        "P822",
+        "P828"
+      ],
+      "issue": 275,
+      "observer": "original_u",
+      "known": "Historical production exists; root thermal tangent may be removed by moving-root normalization.",
+      "boundary": "Candidate operator identity and original-U normal forward maps remain unresolved.",
+      "tension": "Strong root H4 need not survive original-U quotient; equivalent black/white pair sources are not independent.",
+      "next": "Two represented same-source normal columns or actual projected Ward/mixed-response coefficient.",
+      "acquisition": [
+        "existing data",
+        "small exact/source calculation",
+        "theory"
+      ],
+      "information_gain": "high if columns differ, zero precision benefit if images agree",
+      "cost": "theory/small matrix rather than broad sampling"
+    }
+  ],
+  "decision_experiments": [
+    {
+      "id": "birth_soft_diagonal",
+      "node": "joint_birth_process",
+      "status": "implemented_in_this_branch",
+      "statistic": "Z_L(delta)=E[(1-G_L/delta)_+]",
+      "source_paths": [
+        "notes/birth-gap-noncoalescence-20260929.md",
+        "analysis/birth-gap-20260929/analyze.py"
+      ],
+      "mechanism_contrast": "vanishing uniform small-ball mass versus aggregation; direct atom alone does not decide",
+      "interpretation": "finite-grid pilot is exploratory, not proof of double limit"
+    },
+    {
+      "id": "coded_response_rank",
+      "node": "source_noise_state",
+      "status": "proposed_not_started",
+      "statistic": "(A,L,eta,w,h) under one fixed preparation/source/readout contract",
+      "mechanism_contrast": "noise protection preserving a rank defect versus generating formerly absent response monomials"
+    },
+    {
+      "id": "normal_candidate_columns",
+      "node": "original_u_identification",
+      "status": "missing_theoretical_input",
+      "statistic": "same-source nuisance-profiled normal prediction images",
+      "mechanism_contrast": "distinct images identifiable; equal images remain unidentifiable regardless of precision"
+    }
+  ],
+  "dependency_groups": [
+    {
+      "id": "existing_paired_archives",
+      "rule": "marginals, roots, slopes, direct atoms, gap CDF and soft mass from one paired block are correlated views, not extra independent votes"
+    },
+    {
+      "id": "birth_gap_pilot",
+      "path": "analysis/birth-gap-20260929/data/run.json",
+      "rule": "separate streams by lattice/size/batch; within-batch derived statistics share full delete-one covariance; controls/benchmarks excluded"
+    },
+    {
+      "id": "source_response_families",
+      "rule": "equivalent black/white pair source after normalizer/logit change is one normal direction"
+    },
+    {
+      "id": "research_pr_lineage",
+      "rule": "stacked proofs, copied tables and rerun controls are not independent external reviews"
+    }
+  ]
+}

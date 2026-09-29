@@ -5,16 +5,26 @@ Issue and its latest comments. `docs/STATUS.md` distinguishes current scope
 from the verbatim historical ledger. Old acquisition instructions, opening
 Issue bodies and publication-portfolio snapshots are not a current run queue.
 
-Owner-delegated focus dated 2026-09-13, reconciled with the latest #650:
-- One active acceptance package: consolidate and independently audit #735's
-  arbitrary-period root theorem, with #613/#736's sharp axial full-law boundary,
-  as one probability manuscript. Return the package to #735.
-- Uniform oblique winding corridors are a possible strengthening within this
-  programme, not a new mandatory parallel project or duplicate census.
-- #636 is a visible representation reserve, paused for new extension this round.
-  Reuse #708/#710/#733/#737 rather than re-commissioning their finite results.
-- #275: original-U candidate maps before more sampling; theory-blocked P1,
-  with its original source/normalizer/moving-root contract retained.
+Owner-delegated focus dated 2026-09-29, replacing the Sep13 one-paper allocation:
+- Primary: joint near-critical rank process. #773/#823 supply finite birth/arm
+  inputs; direct jump-two suppression is not a proof against aggregation of two
+  distinct births. Advance paired birth-gap anti-concentration and its physical
+  inputs, with triangular comparison and square universality kept distinct.
+- Parallel: #809/#833 source-dependent predictive state and noisy information.
+  Reuse #829--#837. Direct repetition restores a missing uv response column;
+  do not keep the old 3^t rank bound after changing the preparation.
+- Bounded writing: #739 already supplies arbitrary-oblique full-law necessity;
+  #771 adds fixed-p consequences. Do not dispatch that proof as missing again.
+- #275: derive normal projected candidate columns under the ORIGINAL source,
+  normalizer and moving root. E_top production existed; missing model maps do
+  not mean that experiment was never run. Aggregate rank is not original U.
+
+These are attention priorities, never task locks or permission classes. The
+owner authorizes useful local/cloud computation; benchmark the specific job
+and use task-local paths. Do not reset containers or stop unknown jobs. Current
+machine availability must be checked, not inferred from a dated skill snapshot.
+Coordinate through concise repository updates rather than repeated cross-chat
+messages. Keep completed results available even when their lane is not primary.
 
 Choose work by the mathematical or physical distinction it can settle, not by
 how many PRs, scripts, new widths or compatibility scores it generates. A useful

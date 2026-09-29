@@ -1,95 +1,49 @@
 # Matching One
 
-**Exact topology, geometric threshold laws, and the information needed to identify a physical response.**
+**拓扑阈值的几何、两次出生的随机过程，以及观察者能保留多少信息。**
 
-Matching One studies square-lattice site percolation. Its strongest current
-questions are no longer "which exponent fits?" or "which familiar field name
-looks plausible?" They are:
+当前研究入口更新于 **2026-09-29**，阅读截至 #837 的开放研究及最新讨论。
+主分支基线为 `d31fa5fe`；下列较新成果多数仍在开放 PR 中，**进入总览不等于已合并或已被独立证明**。
 
-1. When does a topological balance root locate the infinite-volume threshold,
-   even when the whole finite-volume threshold law does not concentrate?
-2. Which finite states preserve a declared observable under future updates and
-   physical source interventions?
-3. Which additional prediction or measurement can actually distinguish the
-   remaining mechanisms of the original normalized response U?
+## 现在值得集中做什么
 
-**Start with [the research frontier](docs/RESEARCH-FRONTIER.md), then
-[the execution roadmap](docs/ROADMAP.md).** This entry point was reset under the
-owner's research delegation dated 2026-09-13. Historical data, failed tests of
-physical hypotheses, and unmerged branches are retained. Main integration,
-mathematical correctness, independent evidence and publication novelty are
-separate questions.
-
-## The exact observable
-
-For an occupied configuration on a torus,
-
-    r = rank im[H1(occupied complex) -> H1(torus)] in {0,1,2},
-    X = r-1,
-    M = E[X] = P2-P0,       E_top = E[X^2] = P2+P0,
-    F(p) = E_p[r]/2 = (1+M(p))/2.
-
-The balance root is Q(1/2), where Q=F^{-1}. In contrast,
-H=P2/(P0+P2) conditions on the rare non-rank-one sectors; it is NOT F.
-The identity X^3=X defines a two-dimensional nonconstant observable algebra,
-not a two-state dynamical model or a two-field continuum theory.
-These observables sit in the established matching/wrapping/homological
-percolation literature; their names alone are not a novelty claim.
-
-## Three research lanes
-
-| Lane | Current asset | Next result worth obtaining |
+| 注意力 | 已经到达哪里 | 下一项真正增加信息的工作 |
 |---|---|---|
-| **Geometric separation of root and full-law consistency** | [#735](https://github.com/LightChainr/Matching-One/pull/735): arbitrary-period balance roots; [#736](https://github.com/LightChainr/Matching-One/pull/736): sharp axial full-law criterion | Check the supplied proof and novelty once; prove or refute the uniform oblique winding-corridor lemma |
-| **Observable- and source-dependent minimal state** | [#708](https://github.com/LightChainr/Matching-One/pull/708), [#710](https://github.com/LightChainr/Matching-One/pull/710), [#733](https://github.com/LightChainr/Matching-One/pull/733): exact rank closure, visible spectrum, physical site sources | An all-width structural closure theorem or one source-faithful separating response, not another width count |
-| **Original-U physical identifiability** | [#275](https://github.com/LightChainr/Matching-One/issues/275): current assets do not identify the named candidates | Two same-source, same-normalizer forward maps; nuisance-profiled separation before further acquisition |
+| **主线：联合近临界秩过程** | #773 给出两次出生、单步流量与精确小格控制；#823 给出 jump-2 分隔的作者证明 | 区分“同一步双跳消失”与“两次相邻出生在缩放极限中合并”。本轮直接研究联合 gap，不再只增加局部斜率 |
+| **并行：源和噪声约束下的预测状态** | #829–#835 区分末端/轨迹、线性/正表示；#836–#837 给足够小固定噪声下的对数查询高度及不可逆接口擦除 | 非复制冗余是否同时改善可靠性并保留响应秩缺陷？或给出明确合同下的障碍 |
+| **有界收尾：几何阈值定理** | #739 已提供任意整数周期的 full-law iff；#771 推进固定亚临界自由能 | 整合已给证明、明确概率输入和固定-p 边界；不重新指派“尚未做”的斜向必要性 |
+| **机制研究：原始 U 与 root H4** | 强 root H4 与弱 normalized-U 可以由热切向投影相容；#275 原合同仍缺两个候选的完整映射 | 同源、同正规化下的 normal forward columns / 实际秩投影 Ward 或混合响应；更多精度不能替代缺失的列 |
 
-The linked research PRs are **open/unmerged at this snapshot**; these links do
-not silently install their code on main. The [frontier](docs/RESEARCH-FRONTIER.md)
-pins their commits and distinguishes results from remaining hypotheses.
+优先级只分配注意力，**不锁任务、不设置研究许可、不自动否定低优先级方向**。
+理论、已有数据和新计算可以并行。不要把支持性工具的完成数量当成机制空间缩小。
 
-For axial w-by-m tori with m>=w and w->infinity, the new organizing contrast is
+本轮研究：[非合并判据与反例](notes/birth-gap-noncoalescence-20260929.md) ·
+[联合出生 pilot](notes/birth-gap-pilot-20260929.md)。
+完整入口：[研究前沿](docs/RESEARCH-FRONTIER.md) ·
+[下一步](docs/ROADMAP.md) · [科学结论](docs/STATUS.md) ·
+[观察者地图](docs/RESEARCH-MAP.md) · [机器可读当前索引](analysis/research_frontier.json)。
 
-    balance-root consistency:       no aspect-ratio restriction (#718/#735),
-    convergence of every fixed Q(u): log(m)/w -> 0 iff (#736 + #613 inputs).
+## 固定术语：不要把不同问题压成同一个故事
 
-The iff proof uses critical square-site RSW, finite-product continuity, a
-seam-closed crossing ring and independent transverse bands. It is not derived
-by fitting sizes. Its arbitrary-oblique necessity extension remains open,
-and no near-critical rate or new numerical p_c is claimed.
+对 honest torus 上的占据子复形，令
 
-## What survives from the numerical program
+    r = rank im[H1(occupied complex) -> H1(torus)] ∈ {0,1,2},
+    X = r-1,       M = E[X] = P2-P0,
+    E_top = E[X²] = P2+P0,       F = E[r]/2 = (1+M)/2.
 
-The global orientation-sensitive matching-odd signal and several frozen H4
-transfer comparisons remain substantive finite-size evidence. A successful
-harmonic comparison is not a standalone nonzero detection and not a field
-identification. Single-multiplier full-curve closure and several scalar
-correction models have failed; their raw blocks are not discarded.
+平衡根为 `Q(1/2)`，`Q=F^{-1}`；`H=P2/(P0+P2)` 是另一个条件观察量。
+`J1,J2` 是**同一均匀随机排列**首次达到秩 1、2 的占据数，`T1,T2` 是同一 iid
+均匀标签过滤的出生时间。`N` 是站点数；方形周期 `L×L` 有 `N=L²`。
 
-The primitive-C3 Gaussian observer has a later exact unit-rotation explanation;
-its old H8 near-alias must not be exported to square-site U. N580's recovered
-covariance and bounded-H8 reanalysis do not establish a bare-aspect physical law.
-See [current adjudications](docs/STATUS.md), not the historical opening text of
-an issue, for these distinctions. N denotes site count; on square-period
-geometries the linear scale is sqrt(N), not N.
+有限表、过程极限、CFT 算符、论文新颖性是不同结论。全局 H4、带电扇区、临时闭合前缀、
+固定环面过滤以及 original-U 都有自己的源、几何和读出合同；不得互换。
 
-## Other valuable assets, without automatic expansion
+## 保留哪些历史资产
 
-The cut-network/branching program [#549](https://github.com/LightChainr/Matching-One/pull/549)
-separates complete unbranched survival from branching prediction. Its exact
-class-count lower bound is not a noise-robust effective-dimension theorem.
-Bounded algebraic exclusion and projective inference remain publication units,
-not reasons to grow a polynomial census or claim a new statistical principle.
-The [research atlas](docs/RESEARCH-ATLAS.md) preserves less prominent work and
-closed-unmerged assets; its old execution priorities are historical.
+原始样本、冻结预测、负结果和未合并研究全部保留。
+[历史 atlas](docs/RESEARCH-ATLAS.md) 和
+[历史 ledger](analysis/research_ledger.yaml) 用于查找旧证据，不再作为当前派工单。
+同一随机块的根、斜率、分位数和新投影仍然只是一块数据。
 
-## Reproduction and working rules
-
-[REPRODUCIBILITY.md](REPRODUCIBILITY.md) describes the existing engines and data.
-[GOVERNANCE.md](GOVERNANCE.md) keeps exploration lightweight; raw data and
-chronology are preserved. [AGENTS.md](AGENTS.md) routes new work to the current
-scientific question instead of stale acquisition instructions.
-
-The old README, roadmap, map and status ledger are preserved byte-for-byte in
-[docs/history](docs/history/README.md). This is a navigation and allocation
-reset, not a claim that older experiments were never run.
+[复现说明](REPRODUCIBILITY.md) · [轻量探索规则](GOVERNANCE.md) ·
+[协作入口](AGENTS.md)。本轮不合并别人的 PR，不关闭或锁定研究 Issue，不创建自动尺寸阶梯。

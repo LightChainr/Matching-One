@@ -1,106 +1,68 @@
-# Research execution roadmap
+# 下一步：按研究信息增量安排注意力
 
-**Owner-delegated reset: 2026-09-13; reconciled with the latest #650.**
-One active deliverable: a consolidated probability-theorem manuscript and
-independent proof audit. Representation and original-U work remain visible
-research reserves, not simultaneous active assignments. This replaces the stale acquisition list; it does not
-rewrite frozen experimental decisions. Live Issue comments/state take
-precedence over this dated snapshot.
+2026-09-29。替代 9 月 13 日单论文队列，并吸收 #828 与 #829–#837。
+这里的 P0/P1/P2 **不是许可、锁或对正确性的投票**；任何新反例或可区分预测都可以改变分配。
+旧的 freeze 保留其统计含义，不扩展成禁止探索的规则。
 
-## One active package: #735 with #613/#736 — root versus full-law geometry
+## P0 — 从单点 jump-2 转到两次出生的联合极限
 
-Delivered, not to be reassigned: #613/#670 supplied the full-law sufficient
-condition; #718/#735 removed aspect restrictions for the balance root; #736
-now supplies the missing axial full-law necessity. #276 remains completed.
+**问题：** 在相同近临界时间尺度上，`T1<T2` 的间隔是否保持非退化，还是两次单位出生聚合？
+#823 的确定性分隔和 L3–L5 枚举不回答这个问题。#828 已列出该缺口，却仍把大部分计算排给
+L6 局部斜率；本轮把实际工作移到联合 gap。
 
-First consolidate and independently audit #735's arbitrary-period root proof,
-including oblique entry counts, support injectivity and disjoint bands. Return
-one theorem manuscript and a closest-prior-theorem comparison to #735. Use
-#736's axial iff as the precise full-law boundary chapter, with its own RSW
-input and independent seam/quantifier check. This is one probability paper,
-not two new dispatches.
+本轮交付两部分：
 
-A possible strengthening INSIDE this programme, not a second active task, is
-the **uniform oblique-corridor lemma**:
-for every eta>0, find a fixed p_eta<p_c and bounded-thickness occupied winding
-corridors around an actual shortest period u, with probability >=exp(-eta|u|),
-uniformly in its orientation and ambient primitivity. Pack disjoint corridors
-in an arbitrary integer-period torus, or exhibit the geometric obstruction.
-The physical NN interaction must not be rotated by a change of period basis.
+1. [反例和非合并判据](../notes/birth-gap-noncoalescence-20260929.md)：明确需要控制哪种近对角质量，
+   哪些边际量不能决定它。
+2. [同过滤 paired-birth pilot](../notes/birth-gap-pilot-20260929.md)：方格与三角格并行，保存批次联合表，
+   同时看直接原子、近对角带及不预设方格临界指数的宽度归一化。
 
-As part of that same acceptance package, independently examine #736's
-seam construction and quantifier order once, then compare its exact statement
-with strip-percolation, RSW finite-size criteria and homological-percolation
-prior art. A negative search is not an originality certificate.
+下一理论产物不是“再得到一个指数”，而是从**两时间 pivotal/臂事件**导出对整个临界窗口的
+统一 gap 小球界；控制误差怎样随时间网格和空间尺度变化。三角格是严格概率输入的候选正控制，
+方格比较不能自动继承其臂指数定理。
 
-**Deliverable:** one consolidated theorem manuscript, independent lemma-level
-audit and precise novelty comparison. Treat a proved oblique-corridor extension
-as a strengthening, or record its exact missing lemma; do not make it a new
-prerequisite for the already supplied narrower results. **Not useful:** another enormous
-thin-torus simulation, another proof that a fixed-width root is not p_c,
-or re-enumeration of the tiny checks already delivered.
+下一计算按 pilot 决定：若固定近对角带已有稳定存活质量，先量化它对更窄带的变化；若质量太小，
+优先多一些独立配对样本，不默认同时扩大 L、模型、几何、源。有限 pilot 是探索，不预称验证极限。
 
-## Representation reserve: #636 — source-visible topology and structural closure
+**可改变路线的结果：** 两时间可积小球界支持无聚合；缩放后向零集中的联合质量则反对当前
+“简单单位跳极限”图景，要求包含聚合机制。直接 jump-2 下降与否不是这二者的判决。
 
-This lane is exposed for scientific value but paused for new extension during
-the one-package allocation in #650. Reactivate only for a concrete need of the
-primary theorem or a later explicit allocation decision. #737's spatial
-Hessian and invisible marks are also already delivered finite assets, not new
-assignments.
+## P1 — 有噪声的预测状态：保留什么优势、付出什么代价
 
-Treat #708's rank-future closure, #710's all-p width-four scalar spectrum,
-and #733's source-compatible quotients and exact rank-conditioned sampler as
-available research inputs at their pinned, unmerged commits. Do not rebuild
-those jobs because they are absent from main.
+#837 已有 `0<epsilon<=10^-5` 下 `Theta(log w)` 高度读位的作者证明。
+不要重新开“是否存在”的任务。rank-only 微观错误下界采用五次幂补件，不再采用已被加强的四次幂目标。
 
-Upon reactivation, the next result is either an all-width description of the actual site
-transfer's topological closure weights and observable cancellations, or a
-source-faithful response that distinguishes two concrete surviving state
-representations. Keep deterministic continuation classes, strong lumpings,
-scalar Hankel order, positive realization order and noise-limited effective
-order distinct. A new width is informative only when it can refute a specific
-structural conjecture named before the computation.
+下一项小而硬的工作是**非复制编码**或带条件的障碍：对同一准备族和允许源同时报告
+`(准备数 A, 响应秩 L, 误差 eta, 宽度 w, 查询高度 h)`。
+普通复制已经给出 `uv` 列，把 `3^t` 恢复到 `4^t`；改善可靠性不自动保留线性压缩。
+先处理一个逻辑块，不扩大整个自动机。自然临界先验的平均复杂度是另一项研究，不能把人工极稀有
+准备族的最坏情形结论搬过去。
 
-Physical two-row site sources are the preferred exact intervention laboratory.
-P398 is the known periodic IC O(1) TL calibration process, not square-site
-percolation. Its pulse kernels do not transfer without a microscopic map.
+## P1 — 原始 U / 模参数机制：产出实际映射
 
-## Flagship, theory-blocked: #275 — original U, not a substitute observer
+#275 不需要再被写成“E_top 一直没做”。历史生产与识别失败都保留；目前缺的是实际候选列。
+对两个候选写出 `raw = a * thermal_tangent + normal`，应用原 moving-root、normalizer 和 nuisance
+处理，比较真正留下的 normal 预测。根 H4 很强而 U 很弱可以相容。
 
-Scientific upside stays high; active allocation moves from P0 to P1 because
-the next missing object is a pair of forward maps, not data precision.
-Preserve the named source, six-coordinate thermal jet, physical normalizer,
-rank-one denominator and pooled moving-root counterterm.
+#771 的 odd thermal Q4 × even correction 混合响应，以及 #822 的 actual rank projection/Ward 接口，
+是值得做的定向理论/小矩阵工作。不能把动量零当成排除局域 spin4，不能把 Jacobsen 的公共磁扇区
+相消称为已完整推导 `L^-4` 或 E4 模参数振幅。允许新猜想，但明确哪些矩阵元、接触项还未计算。
 
-For two named candidates: establish baseline representability of every used
-coordinate; specify nuisance amplitudes/phase transport; compare the profiled
-prediction images on existing dictionaries and covariance. Equal images keep
-UNIDENTIFIABLE_WITH_CURRENT_ASSETS. Separated images permit one frozen score.
-A new acquisition needs one explicit separating coordinate absent from the
-archive. More generic PCA coordinates, angle scans or a log-looking curve do
-not supply that map. Unanchored model cones meet at zero; design information
-must be priced at a stated nonzero signal or fixed SNR.
+## P1 — 几何论文有界收尾
 
-## Retained, but not the default compute queue
+#739 已提供任意整数周期 full-law 的 `log N/ell -> 0` iff 作者证明；#771 给固定-p 的 rho/logN 相图。
+把定理、输入和最邻近先例整合为一个可读稿；审查具体争议引理即可，不再启动完整重审或薄环面模拟。
+固定-p 误差常数不能无说明地搬到随尺寸移动的 near-critical 窗口。
 
-- #537: the three existing thermal/contact proof obligations remain; N145 is
-  unresolved under its frozen rule. A third-size fit does not close them.
-- #549/#550: write the cut-network statement and exact-versus-noisy complexity
-  boundary. Do not enlarge the parallel family merely to increase k+1.
-- P2/P3/P4 manuscripts: reconcile corrected claims and evidence dependencies.
-  No larger algebraic census, N580 replay, or unidentifiable N650 design by default.
-- #622: use the delivered #706 same-observable shape analysis. Do not rerun it
-  as a new result or infer a limiting shape from three sizes.
+## P2 — 仍可做，但不自动占用本轮大算力
 
-These are allocation choices, not a prohibition on a genuinely informative
-new idea. A proposal should say which uncertainty it removes, the smallest
-calculation/proof that decides it, and what would make that route stop.
-No servers, credentials, paid compute or autonomous production were activated
-by this reset. No new recurring task was scheduled.
+- #816 L6 jump 直方图：是尚未交付的有效支持计算，不是“已有 L6 秩表”或无聚合定理。
+  #828 的短 C 控制使用 32 位 occupation；扩到 36 位前必须修正表示并实测成本。L7 是另一种 DP 工作。
+- #819 `p_pol` 代数普查、#821 修正指数分类：按尚未有落库产物处理；完成它们不等于缩小核心机制空间。
+- 新宽度/角度/高精度根、更多等价源和通用 certificate：有具体消费者时推进，不作为默认增长指标。
 
-## Integration is not scientific promotion
+## 本轮执行方式
 
-This roadmap and the entry-point rewrite are independent of the unmerged
-research stack. Existing results, result-producing code and frozen designs
-are untouched. The old text is in [history](history/README.md); the compact
-[frontier](RESEARCH-FRONTIER.md) carries the current correction map.
+已有成果以原 PR/commit/path 引用，不批量合并、改名或关闭。一个新 Draft PR 承载本轮导航与新增研究；
+协调 Issue #650 留一次摘要即可。保留分支来源和随机块依赖，检查与科学风险成比例；不跑文档措辞测试、
+全仓测试或重复的“通过”仪式。云服务若不可用，小计算继续本地，不让机器登录变成研究前置条件。

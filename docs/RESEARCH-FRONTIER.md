@@ -1,157 +1,94 @@
-# Research frontier: one active paper, two visible reserves
+# 当前科学前沿：过程、预测与物理映射
 
-**2026-09-13, owner-delegated reset reconciled with the latest #650.**
-The single active deliverable is a probability-theorem manuscript and independent
-proof audit: #735's arbitrary-period root theorem, with #613/#736's sharp axial
-full-law boundary. Return one acceptance package to #735. The other directions
-below remain scientifically visible but are not parallel active assignments.
+**2026-09-29；基线 main `d31fa5fe9584b77595e4a78b9560aa2ff77cf0b3`。**
+本页替代 9 月 13 日单论文快照。阅读了 #739/#771/#773、#828 的修订及 #829–#837；
+不是对所有历史脚本的重新认证。开放 PR 的结果仍是开放 PR；来源的固定 commit/path
+统一放在 [当前索引](../analysis/research_frontier.json)，防止 issue 尾部评论成为唯一入口。
 
-[ROADMAP](ROADMAP.md) controls execution; live Issue updates override this dated
-snapshot. [STATUS](STATUS.md) distinguishes current scope from the
-[verbatim historical ledger](history/STATUS-before-20260913.md). The baseline
-read was main at `eb89e9422791d9e3c3a78f0e65d56912b815a7bd` (#702--#705 merged).
-Navigation was integrated by #738; the research PRs below remain unmerged.
+## 1. 首要缺口：微观双跳与极限聚合不是同一件事
 
-## 1. Active probability paper: correct root does not imply a concentrated law
+均匀随机排列的两个秩出生为 `J1<=J2`，iid 标签过滤的出生为 `T1<=T2`。
+#773 的有限流量恒等式已经给出：
 
-For independent NN square-site percolation on an honest torus,
-`M=P2-P0`, `F=E[r]/2=(1+M)/2`, `Q=F^{-1}`. The balance root is Q(1/2).
-The conditional rare-sector function `H=P2/(P0+P2)` is not F.
+- 静态 rank law 决定两出生边际，配合直接双跳流量决定相邻时刻转移表；
+- 这些并不决定全路径、copula 或 gap 分布；
+- 条件于 `D=J2-J1=d>0`，标签间隔为 `Beta(d,N+1-d)`；
+  `d=0` 是直接双跳原子。
 
-#735 supplies arbitrary-integer-period root consistency as the genuine shortest
-period ell grows, with no aspect or area-versus-systole restriction. At fixed
-subcritical p it compares rates: `P2/P0 <= exp[-kappa(p) N/ell]`.
-#736 adds the exact axial contrast: for 2<=w<=m and wm->infinity,
-all fixed interior Q(u) converge to p_c **iff** `log(m)/w -> 0`.
-These are proofs under named probability/topology inputs, not a new numerical
-critical point, a fitted root-shift exponent or an established priority claim.
+#823 给出白 matching 分隔的作者证明及 L3–L5 全枚举；#828 已独立复算这些有限数字。
+它们不自动给方格臂指数，也不排除不同插入在缩放后合并。L6 **静态秩**表已在，
+但 L6 **jump 分层**新表仍没有交付（#825/#816）；不把两者混写。
 
-The new contribution in this reset is #736's necessity argument. Critical
-square-site RSW and finite-product continuity give a seam-closed occupied ring
-with probability >=exp(-eta*w) at a FIXED p_eta<p_c. Independent transverse
-bands amplify it. On a subsequence with log(m)>=d*w this keeps every fixed
-lower quantile away from p_c, while the median can remain consistent. Failure
-of a union upper bound alone would never have proved this implication.
+本轮 [新分析](../notes/birth-gap-noncoalescence-20260929.md) 给出了更尖锐的反例：
+两个过程拥有相同的全部静态 law、相同相邻转移表、零直接双跳，但极限对角原子为 0 与 1/2。
+因此下一目标是真正的两时间信息：
 
-**Current acceptance work:** consolidate the theorem statement and imported
-inputs, independently audit #735's local support/injectivity, oblique entry
-count, backtracking-path extraction and disjoint-band independence; audit #736's
-seam and quantifier order; compare the exact statements with their closest
-strip-percolation, RSW and homological-percolation predecessors. Deliver one
-manuscript, not another growing list of review tickets. Finite code checks and
-verbatim quotations are not substitutes for the all-size argument.
+    Z_L(delta) = E[(1-G_L/delta)_+],
+    G_L = 缩放后的两出生间隔。
 
-**Potential strengthening, not a new prerequisite or second dispatch:** build
-uniform fixed-subcritical winding corridors around an arbitrary shortest
-integer period u, with probability >=exp(-eta*|u|), then pack disjoint corridors.
-This could establish necessity of `log N/ell -> 0` beyond axial tori. It is NOT
-proved here. Orientation and ambient nonprimitivity must be handled on the
-physical NN lattice; changing a period basis does not rotate its interaction.
-A counterexample could instead reveal a finer geometric invariant. Neither
-outcome invalidates the already supplied narrower results by implication.
+在出生对紧性下，`lim_delta↓0 limsup_L Z_L(delta)=0` 等价于所有子序列极限无聚合。
+它还等于秩一驻留长度与 lagged overlap 的归一化差；这给理论和可复用 paired 档案同一接口。
+本轮 [pilot](../notes/birth-gap-pilot-20260929.md) 直接采集这类联合信息，而不是再拟一个自由指数。
+判据是一般概率结果；渗流模型所需的统一小球界仍需证明。
 
-#736's executed controls cover 21,760 exhaustive strip configurations and 2,365
-deterministic uneven-cell masks, with exact Fraction inequalities, three local
-mathematical tests and compilation. Full repository CI was not run. The theorem
-rests on its argument and imported inputs, not on extrapolating these checks.
+## 2. 预测状态已从“有多少态”推进到源合同与噪声代价
 
-## 2. Representation reserve: sources determine which states can be merged
-
-#708 gives lifted rank-future states and 509 deterministic continuation classes
-at width four. #710 gives the all-p scalar spectrum and exact cancellation of
-common P0/P2 modes in M. #733 gives source-compatible quotients, physical two-row
-site responses and exact final-rank-conditioned backward sampling. Two adjacent
-independently addressed columns require all 509 classes within the investigated
-common-strong-lumping class. These completed calculations are not assignments
-to repeat merely because their PRs are absent from main.
-
-The distinction worth pursuing after reactivation is an actual all-width
-closure-weight theorem or a source-faithful response separating concrete
-candidate representations. Deterministic classes, strong lumpings, scalar
-Hankel order, positive order and noise-limited effective order are different.
-A full-operator spectral gap need not be the gap visible to M. P398 is the
-known periodic IC O(1) TL calibration process (#718), not square-site percolation.
-
-### Concurrent #737: a concrete bridge to spatial structure factors
-
-The spatial-Hessian and invisible-mark notes were read at the pinned head below.
-For a mean-zero logit source h, H=sum_i h_i n_i and occupation count K, the
-finite logit-root curvature is
-
-    z_*''(h) = -[Var(H|r=2)-Var(H|r=0)] / [E(K|r=2)-E(K|r=0)].
-
-This identifies a difference of rank-conditioned spatial structure factors,
-not another uniform thermal derivative. Additive probability and additive logit
-fields have different second-order corrections. The reported 4x4 additive-root
-Hessian has both signs; no infinite-volume disorder relevance follows.
-
-The invisible-mark example preserves the entire uniform (r,K) law but separates
-under spatial sources. It uses positive DEPENDENT marked measures, not an
-ambiguity about the already specified Bernoulli law or the two original-U fields.
-A separate orbit calculation in this reset reproduced sizes 16/128/64, contrast
-matrix `[[-512,-128],[0,-256]]` and determinant 131072. This checks that finite
-algebra, not the full Hessian or complete CI. #737 discloses three missing
-delivery artifacts; resolve actual `delivery/` paths and reproduction inputs
-before treating archive execution logs as a fresh-checkout installation.
-
-### Exact class growth need not be robust at finite precision
-
-#549's k+1 branching classes have identical full unbranched survival. In its
-specified single-fork readout, adjacent separation is `1/[2k(8k-1)^2]`, while
-the whole family's span is `1/[2(8k-1)^2]`. More exact classes coexist with a
-shrinking observable range. This is not a bound for every branching experiment.
-The reserve question is whether budgeted admissible interventions amplify the
-separation, not whether larger k gives a larger exact class count.
-
-## 3. Theory-blocked flagship: original U, not a substitute observer
-
-#275 remains P1 with UNIDENTIFIABLE_WITH_CURRENT_ASSETS. This does not disprove
-Jordan or equate two physical theories. The missing input is two candidate maps
-through the SAME source, six-coordinate thermal jet, physical normalizer,
-rank-one denominator and pooled moving-root counterterm. Establish baseline
-representability, then compare nuisance-profiled prediction images using existing
-covariance. More precision cannot supply unspecified theoretical columns.
-
-#735's positive irreducible stochastic controls share all ordinary trace jets
-while differing in Jordan structure. Actual visibility depends on
-`C N_lambda^k P_lambda B`. A derivative-jet lift can have its own nilpotent part;
-its repeated pole does not identify the physical operator. Spin, a power and a
-logarithm are not substitutes for the source/readout map. #737 does not supply
-the two missing continuum candidates.
-
-## Pinned unmerged assets
-
-| PR | Head | Role |
-|---|---|---|
-| [#708](https://github.com/LightChainr/Matching-One/pull/708) | `f782061c1a592ed2f9fd0e9dabaa45f0e54bc4e7` | Finite rank closure |
-| [#710](https://github.com/LightChainr/Matching-One/pull/710) | `d543ba1afe052a36682d2c1723c8a07281c28950` | Parametric spectrum and geometric onsets |
-| [#718](https://github.com/LightChainr/Matching-One/pull/718) | `72d2ee6b8e5d25bd96aaef586c113bc94201f64a` | Axial root theorem and IC TL identification |
-| [#733](https://github.com/LightChainr/Matching-One/pull/733) | `525c8e98d99c44d4c76280a1f0f83064df9bfa72` | Physical sources, sampler and dictionary correction |
-| [#734](https://github.com/LightChainr/Matching-One/pull/734) | `bb41df7da8021d922a48ad353709f35912977c37` | Prior-art sweep, not novelty certification |
-| [#735](https://github.com/LightChainr/Matching-One/pull/735) | `9d29d014df28af7c635e6859d98a95ffe2b34d06` | Arbitrary-period root proof and Jordan controls |
-| [#736](https://github.com/LightChainr/Matching-One/pull/736) | `64d809b4404f80ff3f9adf9713337cc76008e92d` | New axial full-law iff proof |
-| [#737](https://github.com/LightChainr/Matching-One/pull/737) | `7b459c4809baee9dfc2b910091e00a3a8d508d1c` | Spatial-source Hessian and invisible marks |
-
-## Corrections that must travel with the result
-
-| Old inference | Current reading |
+| 来源 | 新结果 / 必须保留的合同 |
 |---|---|
-| #628 bond duality fails | Code/convention defects, corrected #631/#646/#653 |
-| Raw M(p)+M(1-p) diagnoses normalized shape | Wrong centre/gauge; corrected anchored quantiles #702/#706 |
-| #675 rules out any single-operator representation | Unrestricted no-go withdrawn; efficiency and existence differ |
-| #715 P398 is unnamed | Periodic IC TL via the explicit map #718/#729 |
-| #717 finite 2D/0D categorically differs from rank2/rank0 | Same-site event dictionary #733; no all-width intertwiner follows |
-| #724/#731 linear split implies semisimplicity | Counterexample #735; m*lambda^m alone is not either diagnostic |
-| Primitive Gaussian C3 H8 label identifies local spin | Later unit-rotation/H0 correction in #275 supersedes the near-alias |
-| N580 compatibility identifies bare-aspect scaling | Same-block nominal compatibility after #703/#704, not a physical law |
+| #829 | 宽四末端预测合同的 62/94/274/509 随均匀、逐行、逐列、逐点源而变；62 不是完整递归阶数 |
+| #830 | p=1/2 的单时刻可见维数 30；全部两点信息达到 94 并决定所述轨迹。混合准备与纯历史不相同 |
+| #831/#832 | 特殊参数的线性盲点；包含当前读出、相同全历史合同下正阶数 94 > 线性 93。有延迟的合同另算 |
+| #834/#835 | 宽五对称源正=线性=385；定向受控正3438>线性3328。两者不是矛盾 |
+| #836/#837 | 人工张量准备下，足够小固定噪声的固定错误读位高度为 Theta(log w)；不是自然临界典型态复杂度 |
 
-N is site count; square-period linear size is sqrt(N). Do not compare N=425
-with a published L=425 lattice. Site/bond, rank-two cross/rank-one spiral,
-fixed-p/moving-root and physical/jet operators must remain typed.
+#837 的**五点补件**将 rank-only 误差下界加强为
+`[1-(1-epsilon)^5]/2`；第一步完整边界的四次幂界不再是 rank-only 可达到的目标。
+五次幂也尚未证明可达到。查询高度可以改善宏观导线，不能恢复已被接口擦掉的位。
 
-Global H4 finite-size evidence, #537's proof obligations, #622's completed #706
-analysis, cut networks, finite terminal algebra and publication units remain in
-the [atlas](RESEARCH-ATLAS.md). No new Monte Carlo, GPU campaign, width or
-angle ladder, generic venue survey, or census expansion is started by exposing
-a reserve. Preserve their historical data and failures. Allocation should reduce
-open claims, not automatically generate a fresh branch of tasks from every result.
+最新 [#837 讨论](https://github.com/LightChainr/Matching-One/pull/837#issuecomment-5814562555)
+又排除了一个具体捷径：直接复制逻辑块产生 `uv` 查询，响应秩从 `3^t` 变为 `4^t`。
+这不是普遍无复制定理；下一步是非复制编码或有条件的障碍，同时报告准备数、响应秩、误差、宽度和高度。
+继续堆宽度或孤立盲点不及这个问题有用。
+
+## 3. 几何底座比 main 入口所说的更完整
+
+#739 已提供任意整数周期的 full-law iff 作者证明，不再仅限轴向：
+
+    ell -> infinity: balance root -> p_c，不限制面积/长宽比；
+    全部固定内部分位数 -> p_c iff log N / ell -> 0。
+
+必要性采用真实 NN 格点上短周期的固定亚临界绕行见证与不交平移打包，
+不是旋转坐标后直接套轴向结果。定理范围、输入和作者证明状态必须随结果保留；
+本页不宣称完成独立全证明审阅或原创性认证。
+
+#771 继续给出固定亚临界的同调自由能：
+`rho=min_{lambda!=0} tau_p(lambda)`，`log P(r>0)=-(rho-log N)_+ + o(rho)`，
+以及稀有出生/共同标签桥接。固定-p、移动 near-critical、任意变化方向的均匀性是不同层次；
+不要把固定-p PPP 自动当作临界过程。
+
+## 4. 原始 U 与全局 H4：相容的信号，不是同一个识别实验
+
+#275 的生产和 E_top 分析不是空白。当前缺口是两个候选在原 source、六坐标 thermal jet、
+normalizer、rank-one denominator、pooled moving-root 下的**normal forward columns**。
+原始 U 的结果不可由一个 aggregate rank 观察量替换。
+
+#771 的有限 same-model 结果支持显著 thermal-tangent H4，且后续控制发现高阶 dressing/H8；
+不能再把 post-H4 residual 称作纯标量律。若某项只平移热坐标，moving-root 正会将它消去，
+所以 root H4 强、normalized-U 弱并不矛盾。热/度量效应与真正新 normal 方向要分开。
+
+两个与下一步直接相关的纠正：
+
+- 水平黑/白 pair 源满足 `H_W=N-2K+H_B`。保留行配分正规化后，
+  它们不是两个独立的 normal 源；不要各启动一套生产。
+- 动量零不等于局域共形 spin0；公共磁扇区相消也尚未完整推出 E4 振幅。
+  #822/#828 指出的 actual rank projection、Ward/null、接触项接口仍值得做。
+
+## 5. 研究资产、执行与证明分开记
+
+[STATUS](STATUS.md) 记录结论边界；[ROADMAP](ROADMAP.md) 只排序注意力。
+[RESEARCH-MAP](RESEARCH-MAP.md) 区分观察者；[历史 atlas](RESEARCH-ATLAS.md) 保留长尾资产。
+旧 ledger 的证据块仍有效地描述其历史交付，不代表 2026-09-29 的全项目判决。
+
+全局 matching-odd、charged sector、边界 Q-tangent、跨微观 log-pair、cut-network、
+精确模型消除等都保留；本轮选择联合过程不构成否定它们。
+不锁任务、不批量关闭、不为了导航合并研究 PR，也不把新工具数量作为科研进度。
