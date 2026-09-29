@@ -235,7 +235,7 @@
         "P823",
         "P828"
       ],
-      "known": "Author noncoalescence and clock proofs; L3 mechanisms and observer-dependent Markovness. L512 conditional finite-lag contrasts unresolved, but a single retrospective within-direction completion-count contrast challenges direction-only next-step Markovness. The old prospective outcomes remain unchanged.",
+      "known": "Author noncoalescence and clock proofs; L3 mechanisms. L512 retrospective within-direction completion contrast challenges direction-only closure. New exact L4 uniform-start birth cohorts disprove universal (rank,D,nu2) weak closure, with a safe-pair formula for the two-step transmission. Old L512 prospective outcomes remain unchanged.",
       "boundary": "No copula uniqueness, exact square exponent or cross-lattice universality theorem. L3 completion-phase closure is count-clock, from the uniform empty start, not a continuum or hidden-count label realization. Population width comparability is not finite-sample calibration.",
       "new_branch_paths": [
         "notes/birth-gap-noncoalescence-20260929.md",
@@ -257,7 +257,10 @@
         "analysis/completion-hazard-production-20260929/results/result.json",
         "notes/directional-markov-completion-20260929.md",
         "notes/directional-hazard-contrast-20260929.md",
-        "analysis/directional-hazard-contrast-20260929/result.json"
+        "analysis/directional-hazard-contrast-20260929/result.json",
+        "notes/completion-pair-synergy-20260929.md",
+        "notes/completion-pair-synergy-L4-20260929.md",
+        "analysis/completion-pair-synergy-20260929/result.json"
       ],
       "observer": "rank_filtration",
       "acquisition": [
@@ -269,7 +272,8 @@
         "existing cloud-block three-time analysis and exact L3 archive polynomial transform; no enumeration rerun",
         "new L3 512-subset geometry per lattice, prefix DP, exact phase realization and marked-label polynomial transform; no Monte Carlo or 9! rerun",
         "new independent 140000-filtration square-L512 block on TV2N0X, precommitted source/contract 9520c9bdf702a62435f1054e64184b1df4fc0ab3; completion geometry at b and independent uniform audit time tau",
-        "one retrospective necessary-condition contrast on the same saved nu_b, cohorts, cutoffs and exact-D weights; no new acquisition, feature or threshold scan"
+        "one retrospective necessary-condition contrast on the same saved nu_b, cohorts, cutoffs and exact-D weights; no new acquisition, feature or threshold scan",
+        "one exact 65536-subset L4 census per lattice and integer prefix DP, 1.23 seconds total; no Monte Carlo, permutation enumeration or L512 reanalysis"
       ],
       "tension": "Same static laws and all adjacent transition tables can coexist with different limit diagonal atoms.",
       "finite_result": "Soft gap mass approximately proportional to resolution down to delta=.00625, L<=512; no resolved plateau, not proof of noncoalescence.",
@@ -284,7 +288,8 @@
       "completion_geometry_result": "Triangular L3 early/late fast-type fractions 1/4 versus 3/7 explain survival difference 5/112; nu2 phase rows close strongly within rank one and yield a four-state weak count-clock realization. Triangular H_d=H/3. Square H_axis=3p^3(1-q)^3[(1+q)^3-p^3], H_diag=3p^6(1-q)^3: pooled label Markovness does not survive axial marking.",
       "independent_geometry_result": "Raw early-late survival +0.0068571 SE0.0044443; exact-D overlap -0.0041500 SE0.0045119; exact-(D,nu2) overlap +0.0012161 SE0.0047636. Random-time integrated prediction +0.0155022 SE0.0035050; paired closure residual -0.0086451 SE0.0063892. No old/new pooling; different conditional weights are not an explained fraction.",
       "directional_hazard_result": "Within-D early-minus-late mean nu_b=+1.629168 SE0.390976 sites; next-insertion exit contrast=1.52602e-5 SE3.66223e-6. Direction-only Markovness requires zero. Post-hoc on the same 140k block, not independent rejection; within-(D,nu) immediate equality is tautological.",
-      "next": "Completion-count successor dynamics after matching (D,nu_b), or independent confirmation of the fixed directional next-step necessity. Markov completions preserve adjacent flows but do not identify actual history. No automatic descriptor search or sampling extension.",
+      "pair_synergy_result": "At matched (k,D,nu2), exact uniform-start early-minus-late two-step survival is -4/4131 square L4 and 2/121 triangular L4, while immediate survival equals 1. Safe-pair edge count e gives survival2=[(m-nu)(m-nu-1)-2e]/[m(m-1)] and safe-step mean completion increment 2e/(m-nu).",
+      "next": "Quantify completion-creation history dependence at large size through a fixed safe-insertion drift prediction, or independently confirm the fixed directional immediate contrast. Universal completion-count closure is already false at L4; large-size and continuum importance remain open. No automatic descriptor or size ladder.",
       "information_gain": "high: identifies process structure beyond the completed noncoalescence argument",
       "cost": "small exact algebra; bounded pilot; substantial two-time probability theory"
     },
@@ -503,7 +508,27 @@
       "null_prediction": "At every count, within every persistent direction, mean nu2 must be independent of entry cutoff; all such conditions are necessary and sufficient for marked-rank Markovness under the uniform permutation source.",
       "result": "Same-D overlap-weighted mean nu_b difference +1.629168 SE0.390976 sites; the unchanged finite-lag survival contrast remains -0.00414999 SE0.00451194.",
       "interpretation": "Direction-only closure challenged, not independently certified false. Same block, no new samples, directions or cutoff scan. Long-window zero is weaker than next-step equality; an exact nonphysical toy illustrates cancellation but data do not establish temporal cancellation.",
-      "next": "A fixed prediction of completion-geometry successor dynamics or a genuinely independent replication; no new generic descriptors."
+      "next": "The successor mechanism now has an exact safe-pair formula and L4 weak-history counterexamples below; its large-size weight or genuinely independent replication remains open."
+    },
+    {
+      "id": "completion_pair_synergy",
+      "node": "joint_birth_process",
+      "observer": "rank_direction_completion_count_history",
+      "status": "author_identity_and_exact_L4_weak_markov_counterexamples",
+      "integration": "open_pr",
+      "source_paths": [
+        "notes/completion-pair-synergy-20260929.md",
+        "notes/completion-pair-synergy-L4-20260929.md",
+        "analysis/completion-pair-synergy-20260929/analyze.py",
+        "analysis/completion-pair-synergy-20260929/result.json"
+      ],
+      "reused_topology_commit": "8b37c20e5f2b1946cefbed98b09280a0cad25ed2",
+      "reused_topology_path": "analysis/birth-completion-geometry-20260929/analyze.py",
+      "identity": "A safe v creates degree(v) completion sites in the safe-pair graph. At fixed k,D,nu, two-step survival contrast is -2 Delta(mean e)/[m(m-1)]. Full degree distribution gives the one-step successor law, not automatic recursive closure.",
+      "exact_result": "Square k6,a4,D(0,1),nu0: survival2 difference -4/4131. Triangular k5,a4,D(0,1),nu0: 2/121. Both cohorts survive the next rank step with probability1. All fractions under the original uniform empty preparation.",
+      "computation": "65536 occupied subsets per lattice, integer prefix DP; all 43434 rank-one rows have the pair identity checked within the new calculation; one square physical witness has a hand-geometric check. No 16! enumeration, old-census rerun, new samples or cloud.",
+      "boundary": "Refutes universal weak (rank,D,nu) closure by finite examples. Does not extrapolate to L512, a continuum limit or an original-U mechanism. L3 closure and original prospective L512 readouts remain unchanged.",
+      "next": "A prospective same-(D,nu) safe-insertion increment measures 2e/(m-nu) without all-pair enumeration. Independent prefixes, shared dependency for repeated continuations. Large-size effect not yet acquired."
     },
     {
       "id": "normal_candidate_columns",
@@ -537,6 +562,11 @@
       "id": "completion_hazard_independent_L512",
       "path": "analysis/completion-hazard-production-20260929/data/run.json",
       "rule": "New completion-independent-20260929 namespace, 14 independent equal batches; all survival, directional and hazard readouts, including the later retrospective within-D nu_b necessity check, reuse this one block. Old birth-gap streams and the excluded benchmark are not pooled."
+    },
+    {
+      "id": "completion_pair_L4_exact_geometry",
+      "path": "analysis/completion-pair-synergy-20260929/result.json",
+      "rule": "Deterministic finite census and exact prefix-history weights, not a random block or independent replication of L512. Strong witnesses, weak-history contrasts and graph identities derive from the same L4 model."
     },
     {
       "id": "source_response_families",

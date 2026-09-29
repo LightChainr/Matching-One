@@ -34,6 +34,13 @@ Owner-delegated focus dated 2026-09-29, replacing the Sep13 one-paper allocation
   Advance completion-count successor dynamics or a targeted independent
   prediction, not an automatic next descriptor or reacquisition of this
   block. Flow-matched Markov completions do not identify actual history.
+  The next-count question is now answered negatively in finite L4: even
+  (rank,D,nu2) fails weak Markovness from the uniform empty start, on both
+  square and triangular lattices. Safe-pair synergy gives the exact
+  two-step transfer and safe-insertion nu drift. Do not redispatch generic
+  finite closure as missing or automatically enumerate the next L.
+  Its large-size importance remains open; use a specified completion-
+  creation prediction, not equality of the tautological immediate hazard.
 - Parallel: #809/#833 source-dependent predictive state and noisy information.
   Reuse #829--#837 and this branch's all-k deterministic four-state encoding
   theorem, including actual two-row product queries. Distributed deterministic
