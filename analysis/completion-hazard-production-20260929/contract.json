@@ -1,0 +1,34 @@
+{
+  "schema": "matching-one.completion-hazard-contract.v1",
+  "namespace": "completion-independent-20260929",
+  "frozen_before_new_data": true,
+  "parent_commit": "e772037d09678a2dda299ca99f24dc6f6a765af9",
+  "lattice": "square",
+  "L": 512,
+  "N": 262144,
+  "a": 154646,
+  "b": 155385,
+  "c": 156120,
+  "cutoff_source": "analysis/birth-markov-kernel-20260929/result.json; old cloud square L512 pooled .25/.50/.75 birth-mixture quantiles, held fixed in this new block",
+  "batches": 14,
+  "samples_per_batch": 10000,
+  "workers": 14,
+  "sampling": "uniform Fisher-Yates permutation; independent mt19937_64 stream for uniform integer tau in [b,c-1]",
+  "early": "J1<=a and J2>b",
+  "late": "a<J1<=b and J2>b",
+  "primary": [
+    "early-minus-late survival P(J2>c)",
+    "overlap-weighted early-minus-late survival within exact direction",
+    "overlap-weighted early-minus-late survival within exact (direction,integer nu_b)"
+  ],
+  "mechanistic_readouts": [
+    "immediate mean nu_b contrast scaled by (c-b)/(N-b), not a finite-lag explanation",
+    "I=(c-b)*1{J2>tau}*nu_tau/(N-tau); hazard-predicted survival contrast mean(I_late)-mean(I_early)",
+    "actual survival contrast minus hazard-predicted contrast with same-batch covariance"
+  ],
+  "strata_weights": "w=e*l/(e+l), only strata with both groups; recompute on every batch deletion; not a mediated fraction of the pooled contrast",
+  "prospective_model_contrast": "rank-only, rank+direction, and rank+direction+instantaneous completion-count predictive sufficiency each imply their corresponding fixed finite-lag contrast is zero; a zero contrast does not establish full Markovness",
+  "analysis": "aligned delete-one batch estimates and full covariance; fixed sample count; no p-value stopping, cutoff scan, free exponent, regression feature search or pooling with old archives",
+  "benchmark": "32 independent samples, excluded from scientific block; runtime alone decides resource feasibility",
+  "scope": "one existing large size, one lattice and insertion clock; not an original-U identification or continuum/universality certificate"
+}
