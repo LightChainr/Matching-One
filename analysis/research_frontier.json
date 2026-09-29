@@ -218,14 +218,18 @@
         "P823",
         "P828"
       ],
-      "known": "Finite birth flux and separator inputs; author two-time density proof now has triangular and square NN/matching input transfer and population insertion-IQR/pivotal-clock comparability.",
-      "boundary": "No copula uniqueness, exact square exponent or cross-lattice universality theorem. Population width comparability is not ratio convergence or a finite-sample quantile guarantee.",
+      "known": "Author noncoalescence and population clock proofs; all-triples rank-one kernel characterization of rank-only Markovness; exact L3 square/triangular positive/negative controls in count and label time; retrospective L512 history contrast.",
+      "boundary": "No copula uniqueness, exact square exponent or cross-lattice universality theorem. Modest finite insertion-clock history effects do not establish continuum non-Markovness. Population width comparability is not finite-sample calibration.",
       "new_branch_paths": [
         "notes/birth-gap-noncoalescence-20260929.md",
         "notes/birth-gap-pilot-20260929.md",
         "notes/birth-gap-cloud-20260929.md",
         "notes/two-time-pivotal-density-bound-20260929.md",
-        "notes/square-birth-transfer-and-iqr-clock-20260929.md"
+        "notes/square-birth-transfer-and-iqr-clock-20260929.md",
+        "notes/birth-kernel-markov-characterization-20260929.md",
+        "notes/birth-history-memory-readout-20260929.md",
+        "analysis/birth-markov-kernel-20260929/result.json",
+        "analysis/birth-markov-kernel-20260929/exact-clock.json"
       ],
       "observer": "rank_filtration",
       "acquisition": [
@@ -233,18 +237,20 @@
         "128000-filtration local pilot",
         "560000-filtration independent CPU block through L512",
         "two-time arm-density proof and primary-literature probability inputs",
-        "square matching-arm transfer and population-clock proof; no new samples"
+        "square matching-arm transfer and population-clock proof; no new samples",
+        "existing cloud-block three-time analysis and exact L3 archive polynomial transform; no enumeration rerun"
       ],
       "tension": "Same static laws and all adjacent transition tables can coexist with different limit diagonal atoms.",
       "finite_result": "Soft gap mass approximately proportional to resolution down to delta=.00625, L<=512; no resolved plateau, not proof of noncoalescence.",
       "theory_result": "Different-site birth pairs have locally uniformly bounded time density; direct diagonal mass is bounded by alpha6/alpha4. Tightness excludes limit coalescence for triangular and square NN/matching models on their own pivotal clocks. Population insertion-IQR is comparable to N*a_eta. Author proofs, not independent certification.",
+      "memory_result": "L512 early-minus-late rank-one survival: square +0.0142234 SE0.0051069, triangular +0.0070228 SE0.0051459, one (.25,.50,.75) mixture-quantile triple. Exact L3 label kernels are separated for square and nonseparated for triangular. The evidential levels remain distinct.",
       "probability_input_sources": [
         "https://arxiv.org/abs/0711.4948",
         "https://arxiv.org/abs/1305.5526",
         "https://doi.org/10.1007/BF01205674",
         "https://arxiv.org/abs/2008.01606"
       ],
-      "next": "Continuum torus-observer identification, joint law / copula uniqueness and geometry dependence; do not redispatch completed square transfer or population clock comparison. No automatic larger-size campaign.",
+      "next": "Continuum rank-one kernel and geometric/marked-state explanation of its Markov defect; age alone encodes rank history and is not a microscopic mechanism. No automatic larger-size campaign or cutoff hunt.",
       "information_gain": "high: identifies process structure beyond the completed noncoalescence argument",
       "cost": "small exact algebra; bounded pilot; substantial two-time probability theory"
     },
@@ -389,6 +395,23 @@
       "interpretation": "Single nonadaptive final rank only. Full transcript, feedback and physical threshold implementation are separate questions; observed-share BSC is not a derived instruction-noise channel."
     },
     {
+      "id": "rank_one_history_memory",
+      "node": "joint_birth_process",
+      "status": "author_characterization_exact_finite_controls_and_retrospective_archive_readout",
+      "source_paths": [
+        "notes/birth-kernel-markov-characterization-20260929.md",
+        "notes/birth-history-memory-readout-20260929.md",
+        "analysis/birth-markov-kernel-20260929/analyze.py",
+        "analysis/birth-markov-kernel-20260929/result.json",
+        "analysis/birth-markov-kernel-20260929/exact_clock.py",
+        "analysis/birth-markov-kernel-20260929/exact-clock.json"
+      ],
+      "null": "For current-rank-only time-inhomogeneous Markov models, H(a,c)H(b,b)=H(a,b)H(b,c) for every triple; all triples also suffice in natural rank history.",
+      "statistic": "Early-minus-late P(J2>c) within J1<=b<J2; one mixture-quantile triple, full aligned-batch covariance and cutoff re-estimation.",
+      "exact_result": "Stored L3 complete tables: square all count triples satisfy the identity and label H=6p^3(1-q^2)^3; triangular has two count violations and a nonzero label polynomial determinant.",
+      "interpretation": "Exact finite Markov and non-Markov controls do not determine the limit. Large-size association is small and retrospective, not independent certification. Label/count clocks and current rank/full microscopic state are different contracts."
+    },
+    {
       "id": "normal_candidate_columns",
       "node": "original_u_identification",
       "status": "missing_theoretical_input",
@@ -409,7 +432,7 @@
     {
       "id": "birth_gap_cloud",
       "path": "analysis/birth-gap-20260929/cloud-data-5k/run.json",
-      "rule": "new cloud-independent-20260929 namespace; 14 batches per cell; no pooling with local pilot; derived CDF/Z/moments within cell share covariance; repeated excluded benchmarks are not new evidence"
+      "rule": "cloud-independent-20260929 namespace; 14 batches per cell; no pooling with local pilot; derived CDF/Z/moments and later rank-history contrasts reuse the SAME block and are not independent evidence; excluded benchmarks are not evidence"
     },
     {
       "id": "source_response_families",

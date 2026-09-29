@@ -1,0 +1,56 @@
+{
+  "schema": "matching-one.birth-kernel-exact-clock.v1",
+  "as_of": "2026-09-29",
+  "definition": "H(p,q)=P(T1<=p,T2>q), 0<=p<=q<=1, iid Uniform site labels",
+  "clock_transform": "sum_(k<=ell) Multinomial(N;k,ell-k,N-ell;p,q-p,1-q) H_J(k,ell)",
+  "determinant": "H(a,c)H(b,b)-H(a,b)H(b,c), a<b<c",
+  "triangular_A": "2*p**3 - 6*p**2 + 3*p",
+  "triangular_B": "-2*q**3 + 3*q + 1",
+  "cases": [
+    {
+      "lattice": "square",
+      "L": 3,
+      "N": 9,
+      "source_path": "analysis/birth-gap-20260929/data/exact-control-square-L3-b00.json.gz",
+      "source_sha256": "dccb0e132d7b2100bd39c6414f385366354c9099facbecbbaa1e3a5fd8f37a78",
+      "permutations_in_archive": 362880,
+      "kernel_closed_form": "6*p**3*(1 - q**2)**3",
+      "kernel_polynomial": "-6*p**3*q**6 + 18*p**3*q**4 - 18*p**3*q**2 + 6*p**3",
+      "coefficient_matrix_rank": 1,
+      "markov_determinant_closed_form": "0",
+      "markov_identity_holds_for_all_label_triples": true,
+      "specified_label_triple": [
+        "1/3",
+        "1/2",
+        "2/3"
+      ],
+      "conditional_survival_difference_at_triple": "0",
+      "exact_polynomial_identity": true
+    },
+    {
+      "lattice": "triangular",
+      "L": 3,
+      "N": 9,
+      "source_path": "analysis/birth-gap-20260929/data/exact-control-triangular-L3-b00.json.gz",
+      "source_sha256": "eed9f4d3f0e996bfaba8e6b0ab3928ba26776bef0b2b1a18d86e08b051d30391",
+      "permutations_in_archive": 362880,
+      "kernel_closed_form": "9*p**3*(1 - q)**3*(2*p**3 - 6*p**2 + 3*p - 2*q**3 + 3*q + 1)",
+      "kernel_polynomial": "-18*p**6*q**3 + 54*p**6*q**2 - 54*p**6*q + 18*p**6 + 54*p**5*q**3 - 162*p**5*q**2 + 162*p**5*q - 54*p**5 - 27*p**4*q**3 + 81*p**4*q**2 - 81*p**4*q + 27*p**4 + 18*p**3*q**6 - 54*p**3*q**5 + 27*p**3*q**4 + 54*p**3*q**3 - 54*p**3*q**2 + 9*p**3",
+      "coefficient_matrix_rank": 2,
+      "markov_determinant_closed_form": "81*a**3*b**3*(1 - b)**3*(1 - c)**3*(2*b**3 - 3*b - 2*c**3 + 3*c)*(-2*a**3 + 6*a**2 - 3*a + 2*b**3 - 6*b**2 + 3*b)",
+      "markov_identity_holds_for_all_label_triples": false,
+      "specified_label_triple": [
+        "1/3",
+        "1/2",
+        "2/3"
+      ],
+      "conditional_survival_difference_at_triple": "-1156/716639",
+      "exact_polynomial_identity": true
+    }
+  ],
+  "scope": "Exact archived L3 engine convention; rank natural filtration, ordinary deterministic-time Markov property; no continuum extrapolation or hidden-positive-state dimension claim.",
+  "no_new_permutations_or_random_labels": true,
+  "python": "3.11.15",
+  "sympy": "1.14.0",
+  "wall_seconds": 0.0988064159755595
+}

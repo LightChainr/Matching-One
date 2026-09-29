@@ -13,6 +13,11 @@ Owner-delegated focus dated 2026-09-29, replacing the Sep13 one-paper allocation
   NN/matching input transfer and population-IQR/pivotal-clock comparability.
   Advance continuum torus-observer identification and the joint law, not
   another request to derive these bounds. No unique copula or universality yet.
+  The new H(s,t) kernel criterion separates rank-only Markov models from
+  entry-history dependence. Exact L3 square/triangular positive/negative
+  controls are available in insertion AND label time. The L512 memory
+  contrast is modest, retrospective and insertion-clock only; do not promote
+  it to continuum certification or redispatch the old 9! enumerations.
 - Parallel: #809/#833 source-dependent predictive state and noisy information.
   Reuse #829--#837 and this branch's all-k deterministic four-state encoding
   theorem, including actual two-row product queries. Distributed deterministic
