@@ -24,6 +24,12 @@ Owner-delegated focus dated 2026-09-29, replacing the Sep13 one-paper allocation
   axial sectors are not. Use the completion-pivotal hazard identity for the
   next scale-dependent mechanism question; do not redispatch direction-only
   closure at L3 or confuse count-clock closure with hidden-count label time.
+  A new independent 140k square-L512 completion block is now delivered,
+  fixed at the old count cutoffs. The pooled survival contrast is smaller;
+  exact-D and exact-(D,nu2) weighted finite-lag contrasts are unresolved.
+  Advance a directional-kernel prediction, not an automatic next descriptor
+  or another acquisition of this same block. One conditional zero does not
+  prove sectorwise Markovness. Raw and integrated-hazard estimates share data.
 - Parallel: #809/#833 source-dependent predictive state and noisy information.
   Reuse #829--#837 and this branch's all-k deterministic four-state encoding
   theorem, including actual two-row product queries. Distributed deterministic

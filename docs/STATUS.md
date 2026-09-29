@@ -30,6 +30,8 @@ date, numbers and claims. Use the original commit linked in
 | Completion geometry transmits to the rank-one kernel | Exact finite hazard identity and new L3 geometric computation | Exit probability nu_2/(N-k), label intensity nu_2/(1-t); cohort-mean differences integrate to the logarithmic Markov defect; not an original-U or causal-intervention claim |
 | Triangular L3 birth-history mechanism | Fast completion-type weights 1/4 versus 3/7 explain the exact survival difference 5/112; direction does not remove it | One binary rank-one phase closes recursively at this size; four-state weak count-clock realization from uniform empty start reproduces the entire paired law, not a minimality or continuum claim |
 | Square L3 Markovness is preserved by revealing direction | False in iid-label time | Axial sector kernel has strictly negative determinant for every interior triple although the pooled rank kernel is Markov; diagonal sectors and all count-clock sectors remain Markov. Observer and hidden count matter |
+| Independent L512 geometric transmission block | Completed: 140k new square filtrations at fixed old count cutoffs | Raw early-minus-late survival +.686 +/- .444 pp; exact-D weighted -.415 +/- .451 pp; exact-(D,nu2) weighted +.122 +/- .476 pp, batch SE. Conditional contrasts unresolved; not a proof of sufficiency |
+| Interval completion geometry predicts pooled survival | Exact expectation identity, now measured on the independent block | Random-time hazard prediction +1.550 +/- .351 pp; actual-minus-predicted -.865 +/- .639 pp. Correlated readouts, not independent confirmations; no causal or original-U identification |
 | L6 jump-stratified census | Not delivered by #825 | Revalidation of older static rank tables is not new jump enumeration; 36-site extension of #828's 32-bit control requires a representation repair |
 | Width-four source/trajectory closure | Exact finite results in #829--#832 | Terminal classes, strong lumping, linear order, positive order and delayed readout have different contracts |
 | Width-five positive and linear orders | Symmetric source: 385=385 (#834); controlled directed source: 3438>3328 (#835) | Source language changes; no contradiction and no unrestricted all-width claim |
@@ -62,6 +64,11 @@ adds a new 512-subset computation per lattice, prefix dynamic programming,
 phase transitions and exact marked-label kernels; it does not rerun 9!
 permutations or add Monte Carlo. The [general hazard note](../notes/completion-pivotal-hazard-kernel-20260929.md)
 separates instantaneous sufficiency from recursive state closure.
+The subsequent [independent completion block](../notes/completion-hazard-independent-block-20260929.md)
+is genuinely new production, not an archive relabel: 14 x 10k square-L512
+filtrations, 325.512 s on TV2N0X, with precommitted acquisition contract.
+Its smaller raw association and unresolved conditional contrasts are retained
+without post-result sampling extension or promotion to a Markov theorem.
 
 The source/normalizer corrections in #771 and the thermal-tangent discussion in
 #275 matter for interpretation: strong root H4 and weak normalized U need not

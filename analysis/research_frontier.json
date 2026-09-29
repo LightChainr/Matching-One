@@ -171,7 +171,7 @@
       "id": "marked_rank_filtration",
       "state": "rank0, persistent primitive unoriented rank1 direction, absorbing rank2",
       "source": "same uniform permutation or iid Uniform site labels; clocks kept distinct",
-      "geometry": "fixed honest torus; new exact computation at L3 only",
+      "geometry": "fixed honest torus; exact L3 geometry and independent square-L512 conditional readout",
       "readout": [
         "direction-marked H_d(s,t)",
         "completion-pivotal count nu2",
@@ -235,7 +235,7 @@
         "P823",
         "P828"
       ],
-      "known": "Author noncoalescence and population clock proofs; all-triples Markov kernel characterization; exact L3 completion geometry explains triangular history memory with a binary rank-one phase. Square unmarked label rank is Markov but marked axial sectors are not. Retrospective L512 contrast remains modest.",
+      "known": "Author noncoalescence and population clock proofs; exact L3 completion mechanisms and observer-dependent Markovness. New independent 140k square-L512 block resolves completion-count differences but not finite-lag within-direction or within-(direction,nu2) survival contrasts; pooled raw association is smaller than the old block.",
       "boundary": "No copula uniqueness, exact square exponent or cross-lattice universality theorem. L3 completion-phase closure is count-clock, from the uniform empty start, not a continuum or hidden-count label realization. Population width comparability is not finite-sample calibration.",
       "new_branch_paths": [
         "notes/birth-gap-noncoalescence-20260929.md",
@@ -250,7 +250,11 @@
         "notes/completion-pivotal-hazard-kernel-20260929.md",
         "notes/birth-completion-geometry-20260929.md",
         "analysis/birth-completion-geometry-20260929/result.json",
-        "analysis/birth-completion-geometry-20260929/marked-clock.json"
+        "analysis/birth-completion-geometry-20260929/marked-clock.json",
+        "notes/completion-hazard-independent-block-20260929.md",
+        "analysis/completion-hazard-production-20260929/contract.json",
+        "analysis/completion-hazard-production-20260929/data/run.json",
+        "analysis/completion-hazard-production-20260929/results/result.json"
       ],
       "observer": "rank_filtration",
       "acquisition": [
@@ -260,7 +264,8 @@
         "two-time arm-density proof and primary-literature probability inputs",
         "square matching-arm transfer and population-clock proof; no new samples",
         "existing cloud-block three-time analysis and exact L3 archive polynomial transform; no enumeration rerun",
-        "new L3 512-subset geometry per lattice, prefix DP, exact phase realization and marked-label polynomial transform; no Monte Carlo or 9! rerun"
+        "new L3 512-subset geometry per lattice, prefix DP, exact phase realization and marked-label polynomial transform; no Monte Carlo or 9! rerun",
+        "new independent 140000-filtration square-L512 block on TV2N0X, precommitted source/contract 9520c9bdf702a62435f1054e64184b1df4fc0ab3; completion geometry at b and independent uniform audit time tau"
       ],
       "tension": "Same static laws and all adjacent transition tables can coexist with different limit diagonal atoms.",
       "finite_result": "Soft gap mass approximately proportional to resolution down to delta=.00625, L<=512; no resolved plateau, not proof of noncoalescence.",
@@ -273,7 +278,8 @@
         "https://arxiv.org/abs/2008.01606"
       ],
       "completion_geometry_result": "Triangular L3 early/late fast-type fractions 1/4 versus 3/7 explain survival difference 5/112; nu2 phase rows close strongly within rank one and yield a four-state weak count-clock realization. Triangular H_d=H/3. Square H_axis=3p^3(1-q)^3[(1+q)^3-p^3], H_diag=3p^6(1-q)^3: pooled label Markovness does not survive axial marking.",
-      "next": "Scale-dependent completion geometry -> hazard -> H transmission and continuum kernel identification. Future independent geometry-marked acquisition must declare one clock and an interval readout; existing L512 birth pairs lack geometry. No automatic size campaign, cutoff hunt or repetition of the completed L3 direction question.",
+      "independent_geometry_result": "Raw early-late survival +0.0068571 SE0.0044443; exact-D overlap -0.0041500 SE0.0045119; exact-(D,nu2) overlap +0.0012161 SE0.0047636. Random-time integrated prediction +0.0155022 SE0.0035050; paired closure residual -0.0086451 SE0.0063892. No old/new pooling; different conditional weights are not an explained fraction.",
+      "next": "Derive or contradict a persistent-direction mixture kernel H_d under a specified clock; the first independent geometry block is already complete. Unresolved conditional contrasts do not prove marked Markovness. No automatic extra descriptor, cutoff hunt or sampling extension.",
       "information_gain": "high: identifies process structure beyond the completed noncoalescence argument",
       "cost": "small exact algebra; bounded pilot; substantial two-time probability theory"
     },
@@ -450,8 +456,27 @@
       "mechanism_contrast": "Direction alone versus completion-geometry mixing as the carrier of birth history; unmarked versus direction-marked weak Markovness under a fixed clock.",
       "identity": "Exit probability nu2/(N-k); iid-label intensity nu2/(1-t); logarithmic H defect is minus the integral of birth-by-a minus birth-by-b cohort mean nu2 over 1-t.",
       "finite_result": "Triangular direction does not remove memory; completion-type weights explain 5/112 and a binary rank-one phase closes count dynamics. Square marked axial label kernels are non-Markov despite pooled Markovness; all marked square count kernels remain Markov.",
-      "next_independent_readout": "Direction and completion geometry across a specified risk interval on a new block, not reconstructed from existing birth-pair histograms; benchmark before increasing size.",
+      "next_independent_readout": "Completed as completion_hazard_independent_L512 below; not still a missing acquisition.",
       "interpretation": "512 subsets per lattice and exact symbolic thinning, not production validation. Four-state count realization is not minimality, arbitrary rank0 strong lumpability, label closure with hidden count or continuum sufficiency."
+    },
+    {
+      "id": "completion_hazard_independent_L512",
+      "node": "joint_birth_process",
+      "observer": "marked_rank_filtration",
+      "status": "completed_fixed_new_block",
+      "acquisition_commit": "9520c9bdf702a62435f1054e64184b1df4fc0ab3",
+      "source_paths": [
+        "notes/completion-hazard-independent-block-20260929.md",
+        "analysis/completion-hazard-production-20260929/contract.json",
+        "analysis/completion-hazard-production-20260929/ESTIMANDS.md",
+        "analysis/completion-hazard-production-20260929/data/run.json",
+        "analysis/completion-hazard-production-20260929/results/result.json"
+      ],
+      "design": "square L512, 14 x 10000, fixed insertion cutoffs 154646/155385/156120; exact D and nu2 at b, independent uniform integer tau in [b,c-1]; 32 benchmark samples excluded",
+      "result": "Pooled survival contrast smaller than old archive; exact-D and exact-(D,nu2) overlap-weighted finite-lag contrasts unresolved. Completion-count and integrated-hazard contrasts measurable; actual/predicted difference about 1.35 batch SE.",
+      "null_predictions": "Rank-only, rank+D and rank+D+nu2 sufficiency imply the corresponding conditional survival contrast is zero. One zero weighted contrast does not imply cellwise or recursive closure.",
+      "interpretation": "Prospective new-block readout, not continuum certification. Direction composition is a candidate, not proven mediation. Raw/conditional/hazard outputs share data and full covariance. Fixed run ended without result-dependent extension.",
+      "next": "A specific directional exit-kernel prediction; no redispatch of the completed acquisition."
     },
     {
       "id": "normal_candidate_columns",
@@ -480,6 +505,11 @@
       "id": "birth_L3_exact_geometry",
       "path": "analysis/birth-completion-geometry-20260929/result.json",
       "rule": "Deterministic occupied-set census and prefix DP share the same finite model as the earlier complete-permutation tables; source collapse is an exact identity, not independent stochastic evidence. Marked-label kernels derive from this same census."
+    },
+    {
+      "id": "completion_hazard_independent_L512",
+      "path": "analysis/completion-hazard-production-20260929/data/run.json",
+      "rule": "New completion-independent-20260929 namespace, 14 independent equal batches; all survival, directional and hazard readouts within the block share aligned covariance. Old birth-gap streams and the excluded benchmark are not pooled."
     },
     {
       "id": "source_response_families",
