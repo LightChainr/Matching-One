@@ -66,6 +66,15 @@ Owner-delegated focus dated 2026-09-29, replacing the Sep13 one-paper allocation
   block. Main's new fixed735-step source response has its own contract at
   analysis/geometric-source-window-20260930/contract.json; it reuses the first
   block's permutations to test finite-window transmission, not replication.
+  That735-step job is now completed: susceptibility=-.01104203 +/-.00015767,
+  same55028risk/140000prefixes;14workers,519.145s onTgFr7R, released toReady.
+  Do not rerun it as a missing tool, new precision block or size ladder.
+  Main next mechanism: safe-path/selection coupling, with an exact local-query
+  rejection/flag sampler in notes/safe-path-selection-coupling-20260930.md.
+  A separate one-sided-birth source derivation now maps deltaM=deltaEtop
+  through the moving root; symmetricL4 gives a genuine positive normal
+  response and rank2Jacobian. It is a constructed dynamic-source control,
+  not the missing original norm4/U six-coordinate forward columns.
   Label hazard derivative explicitly contains
   mean(c)+2mean(e)-Var(c); fixed-count data are not fixed-label observations.
 - Parallel: #809/#833 source-dependent predictive state and noisy information.
