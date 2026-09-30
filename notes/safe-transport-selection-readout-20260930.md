@@ -100,6 +100,76 @@ finite count-clock calculation does not identify original U or continuum
 fields. The two earlier original-block contrasts are context, not numbers
 to subtract from this new realization or pool as additional votes.
 
+## If safe transport persists: an identifiable next comparison
+
+Do not try to "hold J1 fixed and swap early/late labels": the cohorts are
+defined by J1, and the birth configuration's cardinality is J1. That is not
+an intervention identifying age separately from birth geometry.
+
+Instead specify two actual source columns: an entrance-law perturbation
+delta alpha_j with zero total mass at each j (preserving the first-birth
+count law), and a row-sum-zero safe-transition perturbation delta P_i
+(preserving safety and the insertion clock). Let P_(j:b) be the reference
+safe propagator, Z=sum_j alpha_j P_(j:b)1_C, and mu its conditional endpoint
+mean. Their distinct response formulas are
+
+    entrance: Z^(-1) sum_j delta alpha_j P_(j:b)[(f-mu)1_C],
+    growth:   Z^(-1) sum_(j<=i<b) alpha_j P_(j:i)
+                        delta P_i P_(i+1:b)[(f-mu)1_C].
+
+The centered terminal function includes the changing endpoint-cell
+normalizer. The sources must be realizable, not arbitrary fitted columns;
+these formulas define the comparison rather than supplying such a source
+automatically. At least two nonredundant readouts are needed to distinguish
+the two response columns; a single scalar contrast cannot identify them.
+These are within-cell formulas. An overlap-weighted multi-cell response
+must either fix its external cell weights in advance or include their
+derivatives; it must not silently hold data-dependent weights constant.
+
+In particular, **Y and two-step survival are a bad two-readout pair** here.
+Within fixed (k,D,c), with m=N-k,s=m-c,
+
+    survival_2 = s(s-1)/(m(m-1)) - s*Y/(m(m-1)).
+
+Their source columns are exactly proportional after the within-cell
+normalizer. More precision cannot restore the missing rank. Pooling
+different c cells with different coefficients can change the apparent
+weighted relation but would not create a new within-cell physical readout.
+
+A same-contract long-window survival readout is a genuine candidate for the
+second row: the already calculated L4 preparations A and C have equal c,e,Y
+but different lag-three source responses. Use a real propagator rather than
+replace it with two-step curvature. Whether entrance and growth columns
+are independent for a specified source pair is the next mechanism question,
+not answered by the current decomposition and not a request for an automatic
+size/precision ladder. The earlier735-step susceptibility cannot be pasted
+in as a column under a different preparation or normalization.
+
+### Static M/E_top also cannot separate two first-birth-preserving sources
+
+There is a second structural rank bound, complementary to the previous
+[one-sided-source positive control](one-sided-birth-source-normal-response-20260930.md).
+Suppose BOTH proposed sources preserve the complete first-birth marginal
+and hence P0(p), and are evaluated at the same p. For column r let
+g_r=partial_r P2. Probability conservation gives
+
+    partial_r (P0,P1,P2) = g_r (0,-1,1),
+    partial_r (M,E_top) = g_r (1,1).
+
+All such source columns are proportional in these static readouts. At the
+moving root their (root position, root E_top) columns remain proportional:
+
+    partial_r (p_star,E_top(p_star))
+       = g_r (-1/M_p, -2 P0_p/M_p).
+
+Thus the genuine rank-two **thermal p plus one geometric source** Jacobian
+already proved is not rank-two identification of **two geometric sources**.
+More precise M/E_top data at one p cannot distinguish the latter. Multiple
+p values or a joint-time/geometry readout may supply a nonproportional row,
+but that must be demonstrated under the same source definition. This bound
+does not apply indiscriminately to the missing original norm-4/U columns,
+whose sources and observables have a different contract.
+
 ## Reproduction
 
 See [contract](../analysis/safe-transport-selection-20260930/contract.json),
