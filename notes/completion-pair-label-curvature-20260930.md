@@ -125,3 +125,13 @@ descriptions predict the same or different scaled pair/selection combination
 in (8), under the same observer and entry-history contract? Merely appending
 another geometric feature does not answer this question. This is attention
 guidance, not a restriction on parallel research.
+
+One immediate necessary condition is worth distinguishing. A rank-only
+Markov kernel has the same mu_s(t) for every surviving entry cutoff s;
+where differentiation is valid, (6) then requires **2*eps_s-v_s** to be
+independent of s too. It does not require eps_s and v_s separately to lose
+their history dependence: cancellation is compatible with the coarser
+observer. Conversely, matching exact c and D removes this initial variance
+term and asks about closure of the enlarged observer. A failure there is
+not by itself a proof that the unmarked rank-only law is non-Markov. This
+is the same observer distinction already exhibited by the finite L3 kernels.

@@ -61,6 +61,13 @@ search is included.
 
 ## Reproduction
 
+Owner routing preference updated 2026-09-30: medium/large replays go to
+Huawei first; local work is for small calculations, scoring and editing.
+This run began locally, was paused by the owner, then retained batches0..7
+and transferred only the missing batches8..13 to TV2N0X. `resume.py` records
+the first local restart; `finish_on_cloud.py` is this specific six-batch
+handoff, not a generic scheduler. No stopped partial batch is scored.
+
 To rescore the saved data without overwriting the report:
 
 ```sh
@@ -69,7 +76,8 @@ python3 analysis/exact-completion-pairs-20260929/analyze.py \
 ```
 
 To reproduce geometry from seeds, use an isolated checkout of the replay
-source commit named in `data/run.json` (before replay outputs existed):
+source commit named in `data/run.json` (before replay outputs existed) on
+the selected compute host; use `--compiler g++` on the Huawei image:
 
 ```sh
 python3 analysis/exact-completion-pairs-20260929/run.py \

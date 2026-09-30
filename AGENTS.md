@@ -63,7 +63,10 @@ Owner-delegated focus dated 2026-09-29, replacing the Sep13 one-paper allocation
 
 These are attention priorities, never task locks or permission classes. The
 owner authorizes useful local/cloud computation; benchmark the specific job
-and use task-local paths. Do not reset containers or stop unknown jobs. Current
+and use task-local paths. Owner routing update on 2026-09-30: medium and large
+computations go to Huawei first; keep local work for small derivations, scoring
+and editing. This changes compute placement, not scientific permission. Do not
+reset containers or stop unknown jobs. Current
 machine availability must be checked, not inferred from a dated skill snapshot.
 Coordinate through concise repository updates rather than repeated cross-chat
 messages. Keep completed results available even when their lane is not primary.
