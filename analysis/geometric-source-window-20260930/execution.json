@@ -1,0 +1,72 @@
+{
+  "status": "completed_and_resources_released",
+  "source_commit": "d9824b5bf478fc8acad238be2b9f31ce99787966",
+  "contract_commit": "18ca9e132f08b89071291d74cbd10133d99b2e5d",
+  "runner_and_scorer_commit": "5929403a002c6e956cb74f1b6bb8d827bcc84109",
+  "remote_root": "/workspace/Matching-One-TgFr7R/geometric-source-window-20260930",
+  "instance": "DevEnvC_TgFr7R",
+  "instance_uuid": "83750ac4eae34bbbbc64b894b854dd8c",
+  "local_ssh_port": 10027,
+  "initial_state": "Ready",
+  "startup": "Running verified after power-on; one successful ssh-key-reset, local key mode600; only this named instance's tunnel started",
+  "tunnel_pid": 98390,
+  "runner_pid": 995,
+  "resources": {
+    "architecture": "aarch64",
+    "python": "3.9.9",
+    "compiler": "GCC10.3.1 in task-local installroot",
+    "system_packages_changed": false,
+    "cpu_quota_cores": 14.5,
+    "memory_limit_bytes": 26843545600,
+    "workers": 14,
+    "worker_peak_observed_rss_kib_approx": 80000,
+    "thread_environment": "OMP_NUM_THREADS=OPENBLAS_NUM_THREADS=MKL_NUM_THREADS=1"
+  },
+  "benchmark": {
+    "old_prefixes": 32,
+    "scientific_weight": 0,
+    "wall_seconds": 1.0649478120030835,
+    "all_first5_match": true,
+    "note": "children_peak_rss in benchmark includes the compiler and is a conservative concurrency input, not the engine-only peak"
+  },
+  "replay": {
+    "started_utc": "2026-09-30T02:33:23.742283+00:00",
+    "finished_utc": "2026-09-30T02:42:02.887470+00:00",
+    "wall_seconds": 519.1446849519853,
+    "batches": 14,
+    "prefixes": 140000,
+    "new_independent_prefixes": 0,
+    "exit_status": "all14engines0; data/run.json completed",
+    "command": "python3 analysis/geometric-source-window-20260930/run.py run --source-commit d9824b5bf478fc8acad238be2b9f31ce99787966",
+    "binary_sha256": "db3b6ea76b9e5e9dc3bb9010c4256f65e577124677a44b92fa255975b434a24b"
+  },
+  "transfer": {
+    "input_bundle_sha256": "74a2d7955f8de882b607d81d227145b2b69b06ca2e5491633f57bbc2c0de42fb",
+    "return_bundle_sha256": "ac8bbdd755fed0d1e26dcb3c6189d860e92d90429df59b4b2baf0cf2734e180f",
+    "local_and_remote_sha_match": true,
+    "run_manifest_sha256": "c1285f6d260a1a2ec9eafc3b166829a132bfdf6491be40495caa10ca66da6e68",
+    "result_sha256": "f4942305786b10bab6080e4f35141096dbc9b3a450db04ffeaa9fe6e74af88b6",
+    "raw_remote_files_preserved": true
+  },
+  "analysis": {
+    "local_python": "research-py311 Python3.11",
+    "full_score_runs": 1,
+    "all140000_first5_match": true,
+    "risk_prefixes": 55028,
+    "lag": 735,
+    "primary": -0.0110420319107,
+    "batch_se": 0.000157666446747,
+    "full_covariance": "results/result.json",
+    "support_review": "verification.md; one exact specified L4,h3 control and source review; no production rerun"
+  },
+  "cleanup": {
+    "pre_shutdown_no_other_research_jobs_verified_utc": "2026-09-30T02:43:40Z",
+    "own_tunnel_stopped": true,
+    "power_off_requested": true,
+    "final_cloud_state": "Ready",
+    "final_cloud_state_verified_utc": "2026-09-30T02:47:22Z",
+    "other_machine_operations_by_main": 0,
+    "note": "The separate support worker operated TV2N0X and recorded its own completed/Ready receipt; main did not operate it."
+  },
+  "scope": "New finite-window modified-source readout on the existing safe-insertion dependency group, not a new Monte Carlo production block, independent history replication, original-U identification or continuum proof"
+}
