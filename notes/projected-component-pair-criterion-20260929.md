@@ -5,6 +5,9 @@ This supplies the geometric enumeration behind the
 [completion-pair identities](completion-pair-synergy-20260929.md).
 Implementation and benchmark results belong to the parent's separate note;
 this note makes no code-performance, empirical-validation, or novelty claim.
+The later [complete same-prefix readout](exact-completion-pairs-readout-20260930.md)
+reports the actual L512 refinement; the original probe result quoted below
+is retained as the motivation, not the latest precision.
 
 ## 1. Graph, ambient rank, and transverse potential
 

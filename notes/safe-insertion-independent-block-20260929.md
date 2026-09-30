@@ -6,6 +6,11 @@ pushed at `55fa265629701e04b879b774ae7d3b97fefa845f` before sampling. The
 scorer was pushed at `f340aa55134213be71d22941fae2ccb7fd068cb7` while the
 job was running and before any production response was read.
 
+**2026-09-30 follow-up:** [exact conditional averaging](exact-completion-pairs-readout-20260930.md)
+of these same prefixes resolves the same target at −.003449±.000772,
+SE15.65x smaller. This note retains the original four-probe readout;
+the refinement is not independent confirmation and leaves the secondary unchanged.
+
 **Outcome.** The prespecified completion-creation contrast is unresolved.
 The prespecified independent replication of the earlier direction-only
 completion-count contrast also does **not** reproduce that signal. This

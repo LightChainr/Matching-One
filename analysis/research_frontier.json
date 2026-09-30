@@ -1,6 +1,6 @@
 {
   "schema": "matching-one.research-frontier.v1",
-  "as_of": "2026-09-29",
+  "as_of": "2026-09-30",
   "current_pr": 838,
   "main_base": "d31fa5fe9584b77595e4a78b9560aa2ff77cf0b3",
   "scope": "current attention and research map; not a replacement of historical result contracts",
@@ -13,6 +13,33 @@
     "historical_evidence": "analysis/research_ledger.yaml"
   },
   "branch_sources": [
+    {
+      "id": "P838_exact_pair_readout",
+      "pr": 838,
+      "commit": "7f71af8599ce6e7c0f426cb6f7a069dbc0cf6100",
+      "branch": "research/frontier-and-birth-gap-20260929",
+      "path": "notes/exact-completion-pairs-readout-20260930.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/7f71af8599ce6e7c0f426cb6f7a069dbc0cf6100/notes/exact-completion-pairs-readout-20260930.md"
+    },
+    {
+      "id": "P838_exact_pairs",
+      "pr": 838,
+      "commit": "8b5eee0d47b6c220c2ba46a5bae08d2d19b392a4",
+      "branch": "research/frontier-and-birth-gap-20260929",
+      "path": "notes/projected-component-pair-criterion-20260929.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/8b5eee0d47b6c220c2ba46a5bae08d2d19b392a4/notes/projected-component-pair-criterion-20260929.md"
+    },
+    {
+      "id": "P838_label_curvature",
+      "pr": 838,
+      "commit": "ed9f3e281909a9f292818c3492d6219a4471282a",
+      "branch": "research/frontier-and-birth-gap-20260929",
+      "path": "notes/completion-pair-label-curvature-20260930.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/ed9f3e281909a9f292818c3492d6219a4471282a/notes/completion-pair-label-curvature-20260930.md"
+    },
     {
       "id": "P739",
       "pr": 739,
@@ -233,9 +260,12 @@
       "sources": [
         "P773",
         "P823",
-        "P828"
+        "P828",
+        "P838_exact_pairs",
+        "P838_label_curvature",
+        "P838_exact_pair_readout"
       ],
-      "known": "Author noncoalescence and clock proofs, L3 mechanisms, exact L4 weak-closure counterexamples and safe-pair transmission. New independent L512 safe-insertion primary is unresolved and its prespecified direction-only nu replication does not reproduce the older retrospective signal. Large-size closure remains undecided.",
+      "known": "Author noncoalescence/clock proofs and exact L4 weak-closure failures. Exact same-prefix conditional averaging now resolves the L512 completion-creation target at -0.00344939 SE0.00077225, supporting finite enlarged-observer history dependence. This is post-readout refinement, not independent confirmation; direction-only secondary still does not reproduce the earlier selected signal.",
       "boundary": "No copula uniqueness, exact square exponent or cross-lattice universality theorem. L3 completion-phase closure is count-clock, from the uniform empty start, not a continuum or hidden-count label realization. Population width comparability is not finite-sample calibration.",
       "new_branch_paths": [
         "notes/birth-gap-noncoalescence-20260929.md",
@@ -264,7 +294,12 @@
         "notes/safe-insertion-independent-block-20260929.md",
         "analysis/safe-insertion-production-20260929/contract.json",
         "analysis/safe-insertion-production-20260929/data/run.json",
-        "analysis/safe-insertion-production-20260929/results/result.json"
+        "analysis/safe-insertion-production-20260929/results/result.json",
+        "notes/projected-component-pair-criterion-20260929.md",
+        "notes/completion-pair-label-curvature-20260930.md",
+        "notes/exact-completion-pairs-readout-20260930.md",
+        "analysis/exact-completion-pairs-20260929/data/run.json",
+        "analysis/exact-completion-pairs-20260929/results/result.json"
       ],
       "observer": "rank_filtration",
       "acquisition": [
@@ -278,7 +313,8 @@
         "new independent 140000-filtration square-L512 block on TV2N0X, precommitted source/contract 9520c9bdf702a62435f1054e64184b1df4fc0ab3; completion geometry at b and independent uniform audit time tau",
         "one retrospective necessary-condition contrast on the same saved nu_b, cohorts, cutoffs and exact-D weights; no new acquisition, feature or threshold scan",
         "one exact 65536-subset L4 census per lattice and integer prefix DP, 1.23 seconds total; no Monte Carlo, permutation enumeration or L512 reanalysis",
-        "new independent 140000-prefix square-L512 safe-insertion block, four probes per eligible prefix; acquisition commit55fa2656 before samples, scoring commitf340aa55 before readout; 519.843 seconds on TV2N0X"
+        "new independent 140000-prefix square-L512 safe-insertion block, four probes per eligible prefix; acquisition commit55fa2656 before samples, scoring commitf340aa55 before readout; 519.843 seconds on TV2N0X",
+        "same140000 prefixes replayed with exact pair enumeration; 8 local completed batches retained,6 missing batches on TV2N0X in420.381s. No new independent prefixes; all140k original first-five-field tuples matched."
       ],
       "tension": "Same static laws and all adjacent transition tables can coexist with different limit diagonal atoms.",
       "finite_result": "Soft gap mass approximately proportional to resolution down to delta=.00625, L<=512; no resolved plateau, not proof of noncoalescence.",
@@ -295,7 +331,9 @@
       "directional_hazard_result": "Old post-hoc within-D mean nu_b=+1.629168 SE0.390976, not reproduced by the new independent predeclared contrast -0.039865 SE0.569878. Preserve both; no pooling or accepted direction-only exclusion. Within-(D,nu) immediate equality is tautological.",
       "pair_synergy_result": "At matched (k,D,nu2), exact uniform-start early-minus-late two-step survival is -4/4131 square L4 and 2/121 triangular L4, while immediate survival equals 1. Safe-pair edge count e gives survival2=[(m-nu)(m-nu-1)-2e]/[m(m-1)] and safe-step mean completion increment 2e/(m-nu).",
       "safe_insertion_result": "Primary same-(D,nu) increment deltaY=0.00668183 SE0.01208706; derived deltaZ2=-6.25403e-8 SE1.13192e-7. 55028 risk prefixes, 220112 probes, only1233 nonzero; 98.973% common-support coverage. A null weighted mean does not prove full closure.",
-      "next": "Continuum-kernel predictions or unbiased variance reduction for the same completion-creation target. The first independent safe-insertion block and directional replication are delivered; do not treat the unreplicated old signal as an accepted model constraint or automatically extend sparse probes.",
+      "label_curvature_identity": "Fixed-entry H_tt=E[I(c(c-1)-2e)]/(1-t)^2. Risk-set mean count derivative=(2 mean e-Var(c))/(1-t); hazard derivative=(mean c+2 mean e-Var(c))/(1-t)^2. Exact finite identities, not a count-to-label substitution or continuum limit.",
+      "exact_pair_refinement": "Same target deltaY=-0.003449385668 SE0.000772252763, about4.47 batchSE; SE15.65x smaller. Derived deltaZ2=3.228181004e-8 SE7.230661888e-9. Original direction-only secondary unchanged. Same data, not extra confirmation or a continuum conclusion.",
+      "next": "Fix the negative completion-creation prediction on an independent replayable block; prefer existing usable archives to immediate new sampling, and label reuse honestly. In parallel derive continuous-kernel pair-creation/selection predictions. Do not redispatch exact averaging as a missing tool or revive the unreplicated direction-only signal.",
       "information_gain": "high: identifies process structure beyond the completed noncoalescence argument",
       "cost": "small exact algebra; bounded pilot; substantial two-time probability theory"
     },
@@ -534,7 +572,7 @@
       "exact_result": "Square k6,a4,D(0,1),nu0: survival2 difference -4/4131. Triangular k5,a4,D(0,1),nu0: 2/121. Both cohorts survive the next rank step with probability1. All fractions under the original uniform empty preparation.",
       "computation": "65536 occupied subsets per lattice, integer prefix DP; all 43434 rank-one rows have the pair identity checked within the new calculation; one square physical witness has a hand-geometric check. No 16! enumeration, old-census rerun, new samples or cloud.",
       "boundary": "Refutes universal weak (rank,D,nu) closure by finite examples. Does not extrapolate to L512, a continuum limit or an original-U mechanism. L3 closure and original prospective L512 readouts remain unchanged.",
-      "next": "The proposed independent L512 acquisition is now completed below with unresolved contrast. Improve precision for the same target without changing source; finite exact counterexamples remain separate from large-size evidence."
+      "next": "The L512 acquisition and its exact conditional-mean refinement are both completed below. Finite L4 proofs, refined L512 evidence and continuum predictions are distinct."
     },
     {
       "id": "safe_insertion_independent_L512",
@@ -558,7 +596,42 @@
       "secondary": "predeclared independent same-D current nu contrast -0.03986511616 SE0.5698779455, not reproducing the old post-hoc +1.629168 SE0.390976",
       "information": "1190 common exact cells retain54463/55028 risk prefixes;1233/220112 probes nonzero; full6x6 aligned covariance and14deletions retained",
       "boundary": "No full-Markov, limiting, sign-reversal or engine-error inference. L4 exact failures and all original prior results remain preserved. Continuation outputs are sparse despite broad common-support coverage; no variance fraction is inferred from sparsity alone.",
-      "next": "Unbiased conditional averaging or importance sampling of the same creation target, with correct weights, alongside continuum-kernel theory; no automatic same-method extension."
+      "next": "Exact conditional averaging is now delivered below and resolves this same target. Preserve this original four-probe report rather than replacing it; the secondary remains unchanged."
+    },
+    {
+      "id": "exact_pair_conditional_mean_L512",
+      "node": "joint_birth_process",
+      "observer": "rank_direction_completion_count_history",
+      "status": "completed_same_target_refinement_resolved_finite_history_contrast",
+      "integration": "open_pr",
+      "result_commit": "7f71af8599ce6e7c0f426cb6f7a069dbc0cf6100",
+      "dependency_group": "safe_insertion_independent_L512",
+      "source_paths": [
+        "notes/exact-completion-pairs-readout-20260930.md",
+        "notes/projected-component-pair-criterion-20260929.md",
+        "analysis/exact-completion-pairs-20260929/data/run.json",
+        "analysis/exact-completion-pairs-20260929/results/result.json"
+      ],
+      "design": "Exact2e/(m-c) replaces four uniform-safe probes on the same140k prefixes; all original rows/cutoffs/exact cells/weights retained. Post-readout estimator refinement, zero new independent samples.",
+      "primary": "deltaY=-0.003449385668 SE0.000772252763; approximately4.47 batchSE from zero; early0.09557456,late0.09902395",
+      "derived": "deltaE=-183.963985 SE41.205291; deltaZ2=+3.228181004e-8 SE7.230661888e-9; exact transfer, not independent endpoints",
+      "precision": "SE_RB/SE_probe0.0638908941; empirical variance ratio0.00408204635. Paired estimator difference -0.01013121 SE0.01239566. Full8x8 covariance and14 aligned deletions retained.",
+      "interpretation": "Supports failure of finite enlarged-observer closure at L512, not a proof of unmarked rank non-Markovness, an independent replication, or a continuum limit. Direction-only secondary remains unreplicated.",
+      "execution": "8 completed local batches plus6 HuaweiTV2N0X batches,420.381s cloud,6workers. Medium/large computation now cloud-first; prior pause and interrupted partial evaluations do not add samples.",
+      "next": "One fixed negative-sign readout on an independent correctly replayable block; continuous-kernel creation-versus-selection prediction in parallel."
+    },
+    {
+      "id": "label_pair_selection_curvature",
+      "node": "joint_birth_process",
+      "observer": "fixed_entry_label_time_rank_one_cohort",
+      "status": "author_finite_identity_supplied_continuum_prediction_open",
+      "integration": "open_pr",
+      "source_commit": "ed9f3e281909a9f292818c3492d6219a4471282a",
+      "source_paths": ["notes/completion-pair-label-curvature-20260930.md"],
+      "mechanism_contrast": "pair creation increases future completion opportunities; survival selection of high-c geometries contributes a negative variance term",
+      "statistic": "nearcritical hazard derivative a_L^2*(mean c+2 mean e-Var(c))/(1-t)^2",
+      "boundary": "Requires the actual label-time cohort; original fixed-count replay cannot be relabelled by t=b/N. No uniform remainder, continuum moment limit or finite-window extrapolation supplied.",
+      "next": "Derive a numerical/sign/scaling distinction between candidate continuous kernels for this specified combination under one observer/source contract."
     },
     {
       "id": "normal_candidate_columns",
@@ -601,7 +674,8 @@
     {
       "id": "safe_insertion_independent_L512",
       "path": "analysis/safe-insertion-production-20260929/data/run.json",
-      "rule": "New safe-insertion-independent-20260929 namespace,14 independent batches; four safe probes share each prefix. Primary, derived edge/survival and secondary nu contrasts share one covariance. Independent of older blocks; excluded benchmark never pooled."
+      "refinement_path": "analysis/exact-completion-pairs-20260929/data/run.json",
+      "rule": "One safe-insertion-independent-20260929 block,14 independent batches. Four probes, later exact-pair conditional means, derived survival and secondary nu all reuse these prefixes. The refinement is not a new group or independent confirmation. Aligned old/new8x8 covariance retained; local/cloud execution does not change sample identity."
     },
     {
       "id": "source_response_families",

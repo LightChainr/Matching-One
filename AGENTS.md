@@ -45,9 +45,15 @@ Owner-delegated focus dated 2026-09-29, replacing the Sep13 one-paper allocation
   The first large-size safe-insertion block is now delivered: 140k new
   L512 prefixes, four probes per eligible prefix, primary same-(D,nu)
   increment contrast +.00668 +/- .01209, unresolved. Only .560% of probes
-  have nonzero increments. Advance continuum predictions or an unbiased
-  variance reduction for this same target, not another automatic sparse-
-  probe block. Current L512 recursive closure remains undecided.
+  have nonzero increments. Exact projected-component evaluation now resolves
+  the SAME target on all140k prefixes: -.003449 +/- .000772, SE15.65x smaller.
+  This supports finite L512 failure of enlarged (rank,D,nu) closure; it is
+  post-readout estimator refinement, not independent confirmation or a
+  continuum theorem. Direction-only replication remains unresolved.
+  Advance the fixed negative prediction on an independent replayable block
+  or continuum pair-creation/selection predictions, not another descriptor
+  or sparse-probe extension. Label hazard derivative explicitly contains
+  mean(c)+2mean(e)-Var(c); fixed-count data are not fixed-label observations.
 - Parallel: #809/#833 source-dependent predictive state and noisy information.
   Reuse #829--#837 and this branch's all-k deterministic four-state encoding
   theorem, including actual two-row product queries. Distributed deterministic
