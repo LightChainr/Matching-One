@@ -50,9 +50,16 @@ Owner-delegated focus dated 2026-09-29, replacing the Sep13 one-paper allocation
   This supports finite L512 failure of enlarged (rank,D,nu) closure; it is
   post-readout estimator refinement, not independent confirmation or a
   continuum theorem. Direction-only replication remains unresolved.
-  Advance the fixed negative prediction on an independent replayable block
-  or continuum pair-creation/selection predictions, not another descriptor
-  or sparse-probe extension. Label hazard derivative explicitly contains
+  Owner allocation on Sep30: one support worker owns precision/replication;
+  the main investigator advances mechanism, not further precision rounds.
+  The new clock-preserving geometric source leaves all count arrivals and
+  current exit hazard unchanged but has two-step response
+  -s*Var_safe(degree)/(m*(m-1)). Three specified L4 full-lag responses are
+  already calculated; do not redispatch them. Advance finite-window source
+  propagation and the exact safe-path versus survival-weight decomposition
+  in notes/birth-selection-intervention-20260930.md. Replication is not a
+  prerequisite for these derivations or an excuse for another descriptor.
+  Label hazard derivative explicitly contains
   mean(c)+2mean(e)-Var(c); fixed-count data are not fixed-label observations.
 - Parallel: #809/#833 source-dependent predictive state and noisy information.
   Reuse #829--#837 and this branch's all-k deterministic four-state encoding
