@@ -48,6 +48,11 @@
 不证明连续极限，也不改变上面的方向-only 未复现结论。
 [标签曲率公式](notes/completion-pair-label-curvature-20260930.md)进一步分开创建和生存选择。
 
+[独立旧档案的固定目标复核](notes/completion-creation-independent-replication-20260930.md)
+现已由支持工作者完成：第二块为 **−0.003199±0.000620**，与前块相近，未合并。
+它是另一随机块上首次 e 读出，其它结果此前已读过，不称为全新前瞻验证。
+下一主计算是[原735步窗口的几何源传输](notes/geometric-source-window-identity-20260930.md)，不是第三轮精度扩张。
+
 需要追溯时：[历史核与 L3 正负控制](notes/birth-history-memory-readout-20260929.md) ·
 [L3 完成相态/方向标记](notes/birth-completion-geometry-20260929.md) ·
 [首个独立几何块](notes/completion-hazard-independent-block-20260929.md) ·

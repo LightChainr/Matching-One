@@ -59,6 +59,13 @@ Owner-delegated focus dated 2026-09-29, replacing the Sep13 one-paper allocation
   propagation and the exact safe-path versus survival-weight decomposition
   in notes/birth-selection-intervention-20260930.md. Replication is not a
   prerequisite for these derivations or an excuse for another descriptor.
+  The support worker's other independent140k archive readout is now complete:
+  -.00319937 +/- .00062009, same negative sign, no block pooling. Other archive
+  outcomes were already read; this is first e readout, not new prospective
+  production. Do not redispatch that replication or run another precision
+  block. Main's new fixed735-step source response has its own contract at
+  analysis/geometric-source-window-20260930/contract.json; it reuses the first
+  block's permutations to test finite-window transmission, not replication.
   Label hazard derivative explicitly contains
   mean(c)+2mean(e)-Var(c); fixed-count data are not fixed-label observations.
 - Parallel: #809/#833 source-dependent predictive state and noisy information.
