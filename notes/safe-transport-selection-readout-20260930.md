@@ -42,6 +42,36 @@ survival selection masks part of that contrast rather than creates it.
 These predictions are fixed before reading the new continuations. No fourth
 descriptor or adaptive time window will be added to explain the outcome.
 
+### What the selection term means physically
+
+Completing vacancies are persistent along a safe rank-one path: once adding
+v would create rank two, enlarging the occupied set without adding v cannot
+make it non-completing. Safe insertion never occupies one of these sites.
+Consequently c_(i+1)=c_i+d_i, with d_i>=0 the chosen safe site's synergy
+degree. The killing weight therefore remembers **when completion sites
+were created**, not just how many exist at the final endpoint.
+
+For two paths with the same entry and terminal counts and equal terminal c,
+if c_i on one path is at least as large at every intermediate count, its W
+is no larger; the inequality is strict when an interior factor differs and
+both weights are positive. Natural survival prefers later completion
+creation under this pointwise comparison. This is an exact ordering, not a
+claim that an arbitrary endpoint Y contrast must have a particular sign.
+Endpoint c matching cannot remove it. No new feature is needed to test the
+aggregate consequence: the coupled flag already samples the full weight.
+
+| Fixed result pattern | Mechanism consequence for this comparison |
+|---|---|
+| Safe-reference contrast unresolved, selection resolved | Selection can account for the observed contrast; not proof of all-history closure |
+| Safe-reference contrast resolved, selection unresolved | Entrance/safe transport is needed; quantify selection as unresolved, not exactly zero |
+| Both resolved, same sign | Entrance/transport and selection reinforce |
+| Both resolved, opposite signs | Selection attenuates or reverses the entrance/transport contrast |
+
+These are interpretation branches, not significance-driven instructions to
+extend the sample. Endpoint conditioning is retained in both laws; "without
+selection" here means without the **natural survival reweighting**, not
+without all conditioning or with an unmodified iid source.
+
 ## One endpoint, unchanged history groups
 
 - Source: all 140000 original square-L512 permutations, grouped in their
