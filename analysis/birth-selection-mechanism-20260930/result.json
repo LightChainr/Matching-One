@@ -1,0 +1,372 @@
+{
+  "schema": "matching-one.birth-selection-intervention.v1",
+  "date": "2026-09-30",
+  "lattice": "square NN occupied-site L4 torus",
+  "clock": "insertion count; k=6; one tilted insertion then original uniform continuation at every later count",
+  "source": "P_theta(v|A,safe) proportional to exp(theta*synergy_degree(v)); exit mass c/m unchanged",
+  "scope": "exact specified-preparation controls, not uniform-start population inference or L512 evidence",
+  "topology_source": "analysis/birth-completion-geometry-20260929/analyze.py",
+  "topology_source_commit": "8b37c20e5f2b1946cefbed98b09280a0cad25ed2",
+  "rows": [
+    {
+      "name": "A",
+      "occupied": [
+        0,
+        1,
+        4,
+        5,
+        8,
+        12
+      ],
+      "rank": 1,
+      "direction": [
+        0,
+        1
+      ],
+      "c": 0,
+      "e": 2,
+      "synergy_edges": [
+        [
+          2,
+          3
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "safe_degree_counts": {
+        "0": 6,
+        "1": 4
+      },
+      "safe_degree_mean": "2/5",
+      "safe_degree_variance": "6/25",
+      "retaining_subsets_by_size": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        1
+      ],
+      "birth_cdf_at_count_a": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1/15",
+        "1/3",
+        "1"
+      ],
+      "survival_two_uniform": "43/45",
+      "survival_two_first_kick_derivative_at_zero": "-2/75",
+      "survival_two_first_kick_exp_theta_2": "59/63",
+      "all_lags_single_kick": [
+        {
+          "lag_insertions": 1,
+          "uniform_survival": "1",
+          "first_kick_derivative_at_zero": "0",
+          "first_kick_exp_theta_2_survival": "1"
+        },
+        {
+          "lag_insertions": 2,
+          "uniform_survival": "43/45",
+          "first_kick_derivative_at_zero": "-2/75",
+          "first_kick_exp_theta_2_survival": "59/63"
+        },
+        {
+          "lag_insertions": 3,
+          "uniform_survival": "5/6",
+          "first_kick_derivative_at_zero": "-7/180",
+          "first_kick_exp_theta_2_survival": "29/36"
+        },
+        {
+          "lag_insertions": 4,
+          "uniform_survival": "127/210",
+          "first_kick_derivative_at_zero": "-17/525",
+          "first_kick_exp_theta_2_survival": "57/98"
+        },
+        {
+          "lag_insertions": 5,
+          "uniform_survival": "41/126",
+          "first_kick_derivative_at_zero": "-2/105",
+          "first_kick_exp_theta_2_survival": "275/882"
+        },
+        {
+          "lag_insertions": 6,
+          "uniform_survival": "1/10",
+          "first_kick_derivative_at_zero": "-1/150",
+          "first_kick_exp_theta_2_survival": "2/21"
+        },
+        {
+          "lag_insertions": 7,
+          "uniform_survival": "0",
+          "first_kick_derivative_at_zero": "0",
+          "first_kick_exp_theta_2_survival": "0"
+        },
+        {
+          "lag_insertions": 8,
+          "uniform_survival": "0",
+          "first_kick_derivative_at_zero": "0",
+          "first_kick_exp_theta_2_survival": "0"
+        },
+        {
+          "lag_insertions": 9,
+          "uniform_survival": "0",
+          "first_kick_derivative_at_zero": "0",
+          "first_kick_exp_theta_2_survival": "0"
+        },
+        {
+          "lag_insertions": 10,
+          "uniform_survival": "0",
+          "first_kick_derivative_at_zero": "0",
+          "first_kick_exp_theta_2_survival": "0"
+        }
+      ],
+      "mean_remaining_steps_to_completion_derivative": "-779/6300"
+    },
+    {
+      "name": "B",
+      "occupied": [
+        0,
+        2,
+        4,
+        5,
+        8,
+        12
+      ],
+      "rank": 1,
+      "direction": [
+        0,
+        1
+      ],
+      "c": 0,
+      "e": 3,
+      "synergy_edges": [
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "safe_degree_counts": {
+        "0": 6,
+        "1": 2,
+        "2": 2
+      },
+      "safe_degree_mean": "3/5",
+      "safe_degree_variance": "16/25",
+      "retaining_subsets_by_size": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        1
+      ],
+      "birth_cdf_at_count_a": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1/15",
+        "1/3",
+        "1"
+      ],
+      "survival_two_uniform": "14/15",
+      "survival_two_first_kick_derivative_at_zero": "-16/225",
+      "survival_two_first_kick_exp_theta_2": "71/81",
+      "all_lags_single_kick": [
+        {
+          "lag_insertions": 1,
+          "uniform_survival": "1",
+          "first_kick_derivative_at_zero": "0",
+          "first_kick_exp_theta_2_survival": "1"
+        },
+        {
+          "lag_insertions": 2,
+          "uniform_survival": "14/15",
+          "first_kick_derivative_at_zero": "-16/225",
+          "first_kick_exp_theta_2_survival": "71/81"
+        },
+        {
+          "lag_insertions": 3,
+          "uniform_survival": "23/30",
+          "first_kick_derivative_at_zero": "-173/1800",
+          "first_kick_exp_theta_2_survival": "223/324"
+        },
+        {
+          "lag_insertions": 4,
+          "uniform_survival": "53/105",
+          "first_kick_derivative_at_zero": "-307/4200",
+          "first_kick_exp_theta_2_survival": "335/756"
+        },
+        {
+          "lag_insertions": 5,
+          "uniform_survival": "61/252",
+          "first_kick_derivative_at_zero": "-47/1260",
+          "first_kick_exp_theta_2_survival": "17/81"
+        },
+        {
+          "lag_insertions": 6,
+          "uniform_survival": "1/15",
+          "first_kick_derivative_at_zero": "-67/6300",
+          "first_kick_exp_theta_2_survival": "65/1134"
+        },
+        {
+          "lag_insertions": 7,
+          "uniform_survival": "0",
+          "first_kick_derivative_at_zero": "0",
+          "first_kick_exp_theta_2_survival": "0"
+        },
+        {
+          "lag_insertions": 8,
+          "uniform_survival": "0",
+          "first_kick_derivative_at_zero": "0",
+          "first_kick_exp_theta_2_survival": "0"
+        },
+        {
+          "lag_insertions": 9,
+          "uniform_survival": "0",
+          "first_kick_derivative_at_zero": "0",
+          "first_kick_exp_theta_2_survival": "0"
+        },
+        {
+          "lag_insertions": 10,
+          "uniform_survival": "0",
+          "first_kick_derivative_at_zero": "0",
+          "first_kick_exp_theta_2_survival": "0"
+        }
+      ],
+      "mean_remaining_steps_to_completion_derivative": "-454/1575"
+    },
+    {
+      "name": "C",
+      "occupied": [
+        0,
+        1,
+        5,
+        8,
+        9,
+        12
+      ],
+      "rank": 1,
+      "direction": [
+        0,
+        1
+      ],
+      "c": 0,
+      "e": 2,
+      "synergy_edges": [
+        [
+          2,
+          3
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "safe_degree_counts": {
+        "0": 6,
+        "1": 4
+      },
+      "safe_degree_mean": "2/5",
+      "safe_degree_variance": "6/25",
+      "retaining_subsets_by_size": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "birth_cdf_at_count_a": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "survival_two_uniform": "43/45",
+      "survival_two_first_kick_derivative_at_zero": "-2/75",
+      "survival_two_first_kick_exp_theta_2": "59/63",
+      "all_lags_single_kick": [
+        {
+          "lag_insertions": 1,
+          "uniform_survival": "1",
+          "first_kick_derivative_at_zero": "0",
+          "first_kick_exp_theta_2_survival": "1"
+        },
+        {
+          "lag_insertions": 2,
+          "uniform_survival": "43/45",
+          "first_kick_derivative_at_zero": "-2/75",
+          "first_kick_exp_theta_2_survival": "59/63"
+        },
+        {
+          "lag_insertions": 3,
+          "uniform_survival": "49/60",
+          "first_kick_derivative_at_zero": "-17/450",
+          "first_kick_exp_theta_2_survival": "199/252"
+        },
+        {
+          "lag_insertions": 4,
+          "uniform_survival": "41/70",
+          "first_kick_derivative_at_zero": "-6/175",
+          "first_kick_exp_theta_2_survival": "55/98"
+        },
+        {
+          "lag_insertions": 5,
+          "uniform_survival": "13/42",
+          "first_kick_derivative_at_zero": "-2/105",
+          "first_kick_exp_theta_2_survival": "29/98"
+        },
+        {
+          "lag_insertions": 6,
+          "uniform_survival": "2/21",
+          "first_kick_derivative_at_zero": "-2/315",
+          "first_kick_exp_theta_2_survival": "40/441"
+        },
+        {
+          "lag_insertions": 7,
+          "uniform_survival": "0",
+          "first_kick_derivative_at_zero": "0",
+          "first_kick_exp_theta_2_survival": "0"
+        },
+        {
+          "lag_insertions": 8,
+          "uniform_survival": "0",
+          "first_kick_derivative_at_zero": "0",
+          "first_kick_exp_theta_2_survival": "0"
+        },
+        {
+          "lag_insertions": 9,
+          "uniform_survival": "0",
+          "first_kick_derivative_at_zero": "0",
+          "first_kick_exp_theta_2_survival": "0"
+        },
+        {
+          "lag_insertions": 10,
+          "uniform_survival": "0",
+          "first_kick_derivative_at_zero": "0",
+          "first_kick_exp_theta_2_survival": "0"
+        }
+      ],
+      "mean_remaining_steps_to_completion_derivative": "-391/3150"
+    }
+  ],
+  "equal_A_B_entry_ensemble_e_tilt_survival_derivative": "-1/180"
+}
