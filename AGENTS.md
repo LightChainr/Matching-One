@@ -69,8 +69,16 @@ Owner-delegated focus dated 2026-09-29, replacing the Sep13 one-paper allocation
   That735-step job is now completed: susceptibility=-.01104203 +/-.00015767,
   same55028risk/140000prefixes;14workers,519.145s onTgFr7R, released toReady.
   Do not rerun it as a missing tool, new precision block or size ladder.
-  Main next mechanism: safe-path/selection coupling, with an exact local-query
-  rejection/flag sampler in notes/safe-path-selection-coupling-20260930.md.
+  The safe-path/selection coupling is now completed too: same1198cells give
+  safe-reference=-.00253706+/-.00063649, natural=-.00220507+/-.00078709,
+  selection=+.00033199+/-.00028738 (unresolved). All140000births match;
+  97666new conditional continuations, not independent preparations. Main next:
+  distinguish realizable entrance and safe-growth sources with nonredundant
+  same-contract readouts. Do not redispatch this coupling or precision.
+  Y and two-step survival at fixed(k,D,c) are affine. Two first-birth-
+  preserving sources also have proportional static M/Etop and moving-root
+  columns at one p; thermal p plus ONE source rank2 does not identify TWO
+  geometric sources. See notes/safe-transport-selection-readout-20260930.md.
   A separate one-sided-birth source derivation now maps deltaM=deltaEtop
   through the moving root; symmetricL4 gives a genuine positive normal
   response and rank2Jacobian. It is a constructed dynamic-source control,
