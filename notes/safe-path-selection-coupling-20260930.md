@@ -78,6 +78,8 @@ weighting can add, oppose or dominate it. It would still not uniquely split
 birth geometry from subsequent safe evolution. No new descriptor, cutoff,
 size ladder or forced statistical significance is required.
 
-This note gives the exact mechanism sampler. It is not a claim that the
-coupled L512 continuation has already run; the completed experiment is the
-different single-kick735-step response linked above.
+**Execution update:** the [coupledL512 continuation](safe-transport-selection-readout-20260930.md)
+is now complete. The safe-reference history contrast remains negative
+(-.00253706+/-.00063649), while selection's contribution is unresolved
+(+.00033199+/-.00028738). This is distinct from the earlier735-step source
+response and uses new conditional futures of the same archived entrances.

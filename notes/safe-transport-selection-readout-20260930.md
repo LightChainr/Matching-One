@@ -2,8 +2,39 @@
 
 2026-09-30. Contract and implementation committed before new continuations
 at `5054c02383242473834045fcbddc7379d83acfb9`, in Draft #838.
-The result section is pending the single bounded cloud run; this is not a
-claim that the experiment is complete.
+**Completed.** The negative early-minus-late completion-creation contrast
+persists after removing natural survival reweighting. For this specified
+reference comparison, selection-only is disfavoured; entrance/safe transport
+is needed. The selection contribution itself remains unresolved, not zero.
+
+| Same1198 endpoint cells, same weights | Estimate | Aligned14-batch SE |
+|---|---:|---:|
+| Natural-alive contrast | -0.002205065286 | 0.000787091700 |
+| Uniform-safe reference contrast | **-0.002537058794** | **0.000636492674** |
+| Selection = natural minus reference | +0.000331993508 | 0.000287375294 |
+
+The reference contrast is about3.99 batch SE from zero. Selection's point
+estimate opposes it, but its sign is not resolved (about1.16SE); do not call
+that a proved cancellation or a measured mediation percentage. These are
+correlated components of one experiment, not three independent confirmations.
+
+All140000 original J1 values match. There are97666 rank-one entrances
+(56286early,41380late),42329 no-entrance prefixes and5 direct rank-two
+entrances. Every reference entrance reaches b; none has an undefined safe
+endpoint. The natural flag survives on54850 endpoints (24216early,30634late).
+Common support contains54295natural endpoints and94123reference endpoints.
+The strong cohort difference in overall survival is retained; an unresolved
+selection term for this matched Y contrast does **not** make selection
+irrelevant to survival generally.
+
+Weighted natural early/late means are .09610311808/.09830818336; reference
+means are .09540936877/.09794642757. The exact decomposition and singular
+3x3 covariance are saved with all14 deletions and cell means in
+[result.json](../analysis/safe-transport-selection-20260930/results/result.json).
+This is new conditional continuation of old entrances, not a new independent
+prefix block. The outcome supports moving the main question to entrance
+versus safe growth under explicit sources, rather than more precision or
+more descriptions of the same endpoint.
 
 ## What changes the explanation
 
@@ -175,6 +206,15 @@ whose sources and observables have a different contract.
 See [contract](../analysis/safe-transport-selection-20260930/contract.json),
 [runner](../analysis/safe-transport-selection-20260930/run.py) and
 [scorer](../analysis/safe-transport-selection-20260930/score.py).
-Medium computation is assigned to Huawei TgFr7R in a new task directory;
-one support worker reviews the coupling and a tiny physical query control.
-No precision production, new size or repeated all-repository test suite.
+Huawei TgFr7R completed14workers in664.094seconds, ARM64/Python3.9.9/GCC10.3.1;
+actual14.5CPU/25GiB limit. All14 engine exits were zero. The new task directory
+reused only this task's persistent compiler in a distinct compilation subtree.
+The32-old-prefix cost probe predicted430.389seconds and was excluded; the
+full task took longer, with no sample extension. Output hashes and commands
+are in [execution.json](../analysis/safe-transport-selection-20260930/execution.json).
+
+One support worker reviewed source/coupling/covariance and ran one fixedL4
+vacancy-query control plus one exact analytic coupling example; see
+[verification.md](../analysis/safe-transport-selection-20260930/verification.md).
+Main ran the fixed scorer once in research-py311 after retrieving the files.
+No extra precision production, new size or repeated all-repository test suite.
