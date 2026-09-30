@@ -89,6 +89,23 @@ public:
         }
         return result;
     }
+    // Query only: no insertion. The lifted-potential criterion is the same
+    // one used by completion_count; old sampling/observations are unchanged.
+    bool completes_if_inserted(int v) {
+        if(rank!=1 || active[v])throw std::logic_error("rank-one vacancy required");
+        std::array<Root,6> roots;int used=0;
+        for(int j=0;j<degree;++j){
+            Neighbor e=neighbor[v][j];if(!active[e.vertex])continue;
+            Root r=find(e.vertex);r.x=e.dx-r.x;r.y=e.dy-r.y;
+            for(int h=0;h<used;++h)if(roots[h].vertex==r.vertex){
+                auto x=r.x-roots[h].x,y=r.y-roots[h].y;
+                if(x%L || y%L)throw std::logic_error("hypothetical nonperiodic cycle");
+                if(bx*y!=by*x)return true;
+            }
+            roots[used++]=r;
+        }
+        return false;
+    }
     Observation observe(const std::vector<int>&order,int b,int tau){
         reset();Observation o;o.tau=tau;
         for(int k=1;k<=N;++k){
