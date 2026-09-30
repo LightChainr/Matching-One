@@ -1,0 +1,36 @@
+{
+  "status": "running",
+  "started_utc": "2026-09-30T02:12:46.643643+00:00",
+  "pid": 1015,
+  "workers": 14,
+  "environment": {
+    "utc": "2026-09-30T02:12:46.639231+00:00",
+    "platform": "Linux-5.10.0-182.0.0.95.r3582_286.hce2.aarch64-aarch64-with-glibc2.34",
+    "python": "3.9.9 (main, May 16 2026, 13:00:28) \n[GCC 10.3.1]",
+    "machine": "aarch64",
+    "hostname": "4a8d1d443419434889e49148ed0a7ba6",
+    "cpu_quota_cores": 14.5,
+    "memory_limit_bytes": 26843545600,
+    "affinity_cpus": 16,
+    "compiler": "g++ (GCC) 10.3.1\nCopyright (C) 2020 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "ps": "    PID    PPID COMMAND             ELAPSED %CPU %MEM\n      1       0 tini                  06:47  0.0  0.0\n      6       1 start_docker.sh       06:47  0.0  0.0\n     11       1 sudo                  06:47  0.0  0.0\n     16      11 devenvd               06:47  0.0  0.0\n     17       1 sshd                  06:47  0.0  0.0\n    999       6 sleep                 00:07  0.0  0.0\n   1015       1 python3               00:00  0.0  0.0\n   1018    1015 ps                    00:00  0.0  0.0\n",
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "fixed": {
+    "L": 512,
+    "N": 262144,
+    "a": 154646,
+    "b": 155385,
+    "batches": 14,
+    "samples_per_batch": 10000
+  },
+  "new_random_prefixes": 0,
+  "source_manifest_sha256": "7c63af9d9c7dcf5eff4b0f14644fe83560d73190532d8528f3e0cf0c5f0af2df",
+  "binary_sha256": "72ddbdb1c2e26352ed8f62b820bfcdc741750bc5b50cf459f4b0adefe019fab7",
+  "runner_sha256": "c27446cda4cb48e5eba3e298d1b972d04df60fe36f2a0f7e7aa572cc630d58c4",
+  "batches": []
+}

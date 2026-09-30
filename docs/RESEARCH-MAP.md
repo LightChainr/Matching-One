@@ -1,44 +1,25 @@
-# Scientific map
+# 研究对象与观察者地图
 
-Updated 2026-09-13. The [frontier](RESEARCH-FRONTIER.md) gives evidence and
-corrections; the [roadmap](ROADMAP.md) sets current allocation.
+2026-09-30。结果及固定来源见 [前沿](RESEARCH-FRONTIER.md)，注意力见 [路线](ROADMAP.md)。
 
-## The central chain
+| 对象 | 状态 / 几何 | 源与读出 | 已知信息的边界 | 最有用的新增信息 |
+|---|---|---|---|---|
+| 几何阈值律 | 任意整数周期 honest torus | Bernoulli p；M、F、Q | 根一致不要求 law 集中；#739 的 iff 已有作者证明 | 已给证明整合；固定-p 向 near-critical 的统一性 |
+| 两次拓扑出生 | 固定环面的排列/共同标签过滤，时钟分开 | 出生对、rank path、秩一核 H(s,t) | 无聚合及时钟比较已给；方向即时必要条件已有定向挑战 | 完成几何后继动态与连续核识别 |
+| 方向标记的出生过程 | 同一 rank1 构型的持久同调方向 | H_d、完成站点数 nu_2；源不变、观察者改变 | 旧事后 L512 nu 差 +1.629±.391 未被独立 −.040±.570 复现 | 大尺寸方向闭合仍开放，不把旧选择信号当稳定约束 |
+| 完成数的后继过程 | 相同 (k,D,nu)；安全空站点协同图 | 一次安全插入后的 nu；两步 rank 生存 | 同块精确读出−.003449±.000772；另档案−.003199±.000620，均已交付、未合并 | 已转入源机制区分；不再派复核或精度块 |
+| 保时钟几何干预 | 相同占据到达过程和当前退出概率 | 安全站点 exp(theta*degree) 转移源；未来 rank | L512735步导数 −.011042±.000158；人为修改源，不是自然H4归因 | 比较入口/转移源的非冗余响应；不再重复证实传输存在 |
+| 安全路径与自然生存筛选 | 原首次出生前缀的新条件续接；同(k,D,c)端点 | 同Y、同权重的自然/参考/筛选三项 | 参考差−.002537±.000636仍在，筛选项+.000332±.000287未分辨；同一依赖组 | 入口和安全生长源的同合同响应；Y/两步生存及单p M/E_top的结构冗余先排除 |
+| 单侧第二出生源 | 首次出生边际及占据时钟不变 | deltaM=deltaE_top；moving-root E_top | 对称L4构造给严格正normal响应与秩2的真实源Jacobian | 原U仍须其同源、六坐标、正规化映射；不能用动态正控制代替 |
+| 完成创建与生存选择 | iid 标签时间的固定进入队列，不是固定占据数 | 核 H 的二阶导数、退出 hazard 的导数 | 精确组合为 mean c+2 mean e−Var(c)；强创建可以被风险集选择抵消 | 相同时间/观察合同下的连续核定量预测；不将 t=b/N 当作数据换钟 |
+| 预测状态 | 生长圆柱的临时闭合前缀 | 均匀/逐列/逐站点源，末端/全轨迹 rank | 强 lumping、线性维数、正阶数、初始记忆不同 | 在同一源合同下比较可靠性与表示成本 |
+| 噪声查询 | 人工三行张量/随机奇偶准备 | 有界概率 site 源、单次 rank-only query | 确定性分布式秩 4；随机乘积查询秩=正初始记忆=3，但单次区分力衰减 | 可实现查询下的误差—记忆权衡；全轨迹与反馈另立合同 |
+| 全局 matching-odd | 方格/斜向同周长 | 根位移、thermal tangent | 有限 H4 不直接识别 CFT 模；高阶有 dressing/alias | 实际投影下混合响应和模参数预测 |
+| 原始 U | 原 norm-4/norm-5 合同 | 指名 source、六坐标 jet、normalizer、pooled moving root | rank-only 或 root H4 不替代 U 的 normal 列 | 两候选在同一映射下的分离 |
+| 带电/边界/跨微观 | Gaussian cover、annulus、三角格等 | deck character、Q tangent、边界/局部源 | 观察者依赖是信息，不应压成统一 H4/H8 故事 | 真实共同源—读出接口而非标签类比 |
 
-    microscopic occupation and honest torus geometry
-        -> ambient rank and topology-resolved probabilities
-        -> observable closure under a specified update/source language
-        -> exact response or covariance-aware finite evidence
-        -> distinguishable candidate forward maps
-        -> only then a continuum-field identification
+共同的研究链是：**微观模型 → 允许源/过滤 → 可测量量 → 预测差异**。
+可以大胆提出新机制；代价在于给它一条可计算或可证明的映射，而不是再添加名字。
 
-## Three main objects
-
-**Geometric threshold laws (#613/#718/#735/#736).** Root consistency, full-law
-concentration and normalized profile convergence are three different questions.
-The axial full-law criterion is now sharp under named RSW/sharpness inputs;
-uniform oblique necessity is the next missing geometric step.
-
-**Intervention-dependent predictive state (#636/#708/#710/#733; #549).**
-Sufficient topology must survive the allowed future experiments. Linear scalar
-order can be far smaller than deterministic state count. Exact class growth
-can coexist with small observable separation at fixed precision. Physical
-square-site interventions and calibration-process interventions stay distinct.
-
-**Original-U identification (#275/#537).** Same spin and compatible exponents
-are not an observable map. A thermal jet, a normalizer and a moving-root
-counterterm belong to the prediction, not to a later plotting choice. The
-current candidate pair remains unidentifiable until its forward columns exist.
-
-## Evidence retained outside the primary queue
-
-Global matching-odd H4 finite-size tests; whole-curve and shape failures;
-cut-network continuation; finite terminal algebra; bounded exact threshold
-relation exclusion; covariance/projective inference; primitive homology
-characters; local sources and contact asymptotics. None is deleted because it
-is not today's primary. [RESEARCH-ATLAS.md](RESEARCH-ATLAS.md) retains the wider
-historical map, including branch-only and closed-unmerged science.
-
-The old map is [preserved verbatim](history/RESEARCH-MAP-before-20260913.md).
-Its Q4/Jordan and primitive-character framing is historical, not a current
-claim of physical identification.
+旧 [atlas](RESEARCH-ATLAS.md) 与 [ledger](../analysis/research_ledger.yaml) 保留历史索引。
+[当前结构化入口](../analysis/research_frontier.json) 指向具体提交；旧地图的执行优先级不再适用。

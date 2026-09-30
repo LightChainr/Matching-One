@@ -1,0 +1,63 @@
+{
+  "schema": "matching-one.one-sided-birth-source.v1",
+  "date": "2026-09-30",
+  "source": "At count6 only, kick when occupied set is in the translation/dihedral orbit of A={0,1,4,5,8,12}; otherwise uniform. Uniform continuation after the kick.",
+  "source_model": "square NN occupied-site L4; theta0 is the original uniform-permutation/iid-label model",
+  "orbit_size": 64,
+  "prefix_activation_probability": "8/1001",
+  "delta_P2_Bernstein_degree16_coefficients": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "16/75075",
+    "2/6435",
+    "136/525525",
+    "16/105105",
+    "4/75075",
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "delta_P2_coefficients_of_p_k_times_1_minus_p_16_minus_k": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "96/35",
+    "32/9",
+    "1088/525",
+    "256/385",
+    "16/165",
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "exact_sign": "All coefficients nonnegative and some positive: delta_P2(p)>0 for every0<p<1. Delta_P0=0 exactly.",
+  "root_illustration": {
+    "p_balance": 0.5906721123312584,
+    "baseline_Etop": 0.6454881965464061,
+    "M_prime": 4.979143122349653,
+    "P0_prime": -2.4597460525088057,
+    "delta_M": 0.00017057649239640227,
+    "delta_Etop": 0.00017057649239640227,
+    "root_derivative": -3.425820230608422e-05,
+    "moving_root_Etop_derivative": 0.00016853295577687747,
+    "normal_factor": 0.9880198227152202
+  },
+  "source_artifact_sha256": {
+    "analysis/completion-pair-synergy-20260929/result.json": "0aabdbfcc79f906bc3161d25fddbd859d63faf0e07f4c6377adfa275070ba800",
+    "analysis/birth-selection-mechanism-20260930/result.json": "b18565c1f5a9aff5ad241069d64e57699d6e84f472259630aa3ba54ac86832bb"
+  },
+  "scope": "Exact finite, symmetry-invariant constructed dynamic source. Not natural-archive evidence, original norm4 source, U six-coordinate normalization, large-size scaling or CFT identification."
+}

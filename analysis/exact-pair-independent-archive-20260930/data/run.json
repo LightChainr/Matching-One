@@ -1,0 +1,333 @@
+{
+  "status": "completed",
+  "started_utc": "2026-09-30T02:12:46.643643+00:00",
+  "pid": 1015,
+  "workers": 14,
+  "environment": {
+    "utc": "2026-09-30T02:12:46.639231+00:00",
+    "platform": "Linux-5.10.0-182.0.0.95.r3582_286.hce2.aarch64-aarch64-with-glibc2.34",
+    "python": "3.9.9 (main, May 16 2026, 13:00:28) \n[GCC 10.3.1]",
+    "machine": "aarch64",
+    "hostname": "4a8d1d443419434889e49148ed0a7ba6",
+    "cpu_quota_cores": 14.5,
+    "memory_limit_bytes": 26843545600,
+    "affinity_cpus": 16,
+    "compiler": "g++ (GCC) 10.3.1\nCopyright (C) 2020 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "ps": "    PID    PPID COMMAND             ELAPSED %CPU %MEM\n      1       0 tini                  06:47  0.0  0.0\n      6       1 start_docker.sh       06:47  0.0  0.0\n     11       1 sudo                  06:47  0.0  0.0\n     16      11 devenvd               06:47  0.0  0.0\n     17       1 sshd                  06:47  0.0  0.0\n    999       6 sleep                 00:07  0.0  0.0\n   1015       1 python3               00:00  0.0  0.0\n   1018    1015 ps                    00:00  0.0  0.0\n",
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "fixed": {
+    "L": 512,
+    "N": 262144,
+    "a": 154646,
+    "b": 155385,
+    "batches": 14,
+    "samples_per_batch": 10000
+  },
+  "new_random_prefixes": 0,
+  "source_manifest_sha256": "7c63af9d9c7dcf5eff4b0f14644fe83560d73190532d8528f3e0cf0c5f0af2df",
+  "binary_sha256": "72ddbdb1c2e26352ed8f62b820bfcdc741750bc5b50cf459f4b0adefe019fab7",
+  "runner_sha256": "c27446cda4cb48e5eba3e298d1b972d04df60fe36f2a0f7e7aa572cc630d58c4",
+  "batches": [
+    {
+      "batch": 0,
+      "seed": "18419746559907930925",
+      "samples": 10000,
+      "original_file": "production-square-L512-b00.csv.gz",
+      "dependency_group": "completion-independent-20260929/square/L512/batch0",
+      "command": [
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/build/engine",
+        "512",
+        "10000",
+        "18419746559907930925",
+        "155385",
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/data/exact-square-L512-b00.csv"
+      ],
+      "returncode": 0,
+      "stdout": "prefixes=10000 seconds=497.94\n",
+      "stderr": "",
+      "wall_seconds": 498.0191309801303,
+      "file": "exact-square-L512-b00.csv.gz",
+      "sha256": "bde569f3e47c308f4fc72d4d4b5b4cc7dc54c60121f30f4b6b129bc51c003454"
+    },
+    {
+      "batch": 1,
+      "seed": "13442365983088886094",
+      "samples": 10000,
+      "original_file": "production-square-L512-b01.csv.gz",
+      "dependency_group": "completion-independent-20260929/square/L512/batch1",
+      "command": [
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/build/engine",
+        "512",
+        "10000",
+        "13442365983088886094",
+        "155385",
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/data/exact-square-L512-b01.csv"
+      ],
+      "returncode": 0,
+      "stdout": "prefixes=10000 seconds=496.606\n",
+      "stderr": "",
+      "wall_seconds": 496.69426990509965,
+      "file": "exact-square-L512-b01.csv.gz",
+      "sha256": "689e61b321519807f79b93c0845e93065caf3a966d3a1738d9a10a7a143b126d"
+    },
+    {
+      "batch": 2,
+      "seed": "12192384056273429425",
+      "samples": 10000,
+      "original_file": "production-square-L512-b02.csv.gz",
+      "dependency_group": "completion-independent-20260929/square/L512/batch2",
+      "command": [
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/build/engine",
+        "512",
+        "10000",
+        "12192384056273429425",
+        "155385",
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/data/exact-square-L512-b02.csv"
+      ],
+      "returncode": 0,
+      "stdout": "prefixes=10000 seconds=518.555\n",
+      "stderr": "",
+      "wall_seconds": 518.6520514099393,
+      "file": "exact-square-L512-b02.csv.gz",
+      "sha256": "6a3ab722db9aa4de2dcc9558e6c5548c5449bf9bc2286f8362b60ded9a150616"
+    },
+    {
+      "batch": 3,
+      "seed": "16795263932832913938",
+      "samples": 10000,
+      "original_file": "production-square-L512-b03.csv.gz",
+      "dependency_group": "completion-independent-20260929/square/L512/batch3",
+      "command": [
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/build/engine",
+        "512",
+        "10000",
+        "16795263932832913938",
+        "155385",
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/data/exact-square-L512-b03.csv"
+      ],
+      "returncode": 0,
+      "stdout": "prefixes=10000 seconds=512.749\n",
+      "stderr": "",
+      "wall_seconds": 512.8563893151004,
+      "file": "exact-square-L512-b03.csv.gz",
+      "sha256": "5059fd7feaccc8fe9f05014407ad61f92d376be1cb5077ff34c6130957390638"
+    },
+    {
+      "batch": 4,
+      "seed": "5606540329541986450",
+      "samples": 10000,
+      "original_file": "production-square-L512-b04.csv.gz",
+      "dependency_group": "completion-independent-20260929/square/L512/batch4",
+      "command": [
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/build/engine",
+        "512",
+        "10000",
+        "5606540329541986450",
+        "155385",
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/data/exact-square-L512-b04.csv"
+      ],
+      "returncode": 0,
+      "stdout": "prefixes=10000 seconds=520.684\n",
+      "stderr": "",
+      "wall_seconds": 520.7907340640668,
+      "file": "exact-square-L512-b04.csv.gz",
+      "sha256": "3c59445e71d013abd09fae7de3c1f040a35302c099a5c2d2aac05cdb06e80977"
+    },
+    {
+      "batch": 5,
+      "seed": "176734671850227651",
+      "samples": 10000,
+      "original_file": "production-square-L512-b05.csv.gz",
+      "dependency_group": "completion-independent-20260929/square/L512/batch5",
+      "command": [
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/build/engine",
+        "512",
+        "10000",
+        "176734671850227651",
+        "155385",
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/data/exact-square-L512-b05.csv"
+      ],
+      "returncode": 0,
+      "stdout": "prefixes=10000 seconds=519.204\n",
+      "stderr": "",
+      "wall_seconds": 519.3030597630423,
+      "file": "exact-square-L512-b05.csv.gz",
+      "sha256": "78d3bb56aedfaa4c6ab2354ba69c1a2c4a63448444fdccbd7932ff7c771b8730"
+    },
+    {
+      "batch": 6,
+      "seed": "14922363405798405830",
+      "samples": 10000,
+      "original_file": "production-square-L512-b06.csv.gz",
+      "dependency_group": "completion-independent-20260929/square/L512/batch6",
+      "command": [
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/build/engine",
+        "512",
+        "10000",
+        "14922363405798405830",
+        "155385",
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/data/exact-square-L512-b06.csv"
+      ],
+      "returncode": 0,
+      "stdout": "prefixes=10000 seconds=520.065\n",
+      "stderr": "",
+      "wall_seconds": 520.1712592260446,
+      "file": "exact-square-L512-b06.csv.gz",
+      "sha256": "fca94baacc8a5abddc79eca22fbd69fe6f62a14907e7e533bde17d1594ba0b0c"
+    },
+    {
+      "batch": 7,
+      "seed": "3540279280158270918",
+      "samples": 10000,
+      "original_file": "production-square-L512-b07.csv.gz",
+      "dependency_group": "completion-independent-20260929/square/L512/batch7",
+      "command": [
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/build/engine",
+        "512",
+        "10000",
+        "3540279280158270918",
+        "155385",
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/data/exact-square-L512-b07.csv"
+      ],
+      "returncode": 0,
+      "stdout": "prefixes=10000 seconds=508.834\n",
+      "stderr": "",
+      "wall_seconds": 508.9134591759648,
+      "file": "exact-square-L512-b07.csv.gz",
+      "sha256": "4cefc523bdd7bd53d10a0fe0c51f306239b5f09a58ce6d281d4b1e118b20ad7f"
+    },
+    {
+      "batch": 8,
+      "seed": "182843979474712324",
+      "samples": 10000,
+      "original_file": "production-square-L512-b08.csv.gz",
+      "dependency_group": "completion-independent-20260929/square/L512/batch8",
+      "command": [
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/build/engine",
+        "512",
+        "10000",
+        "182843979474712324",
+        "155385",
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/data/exact-square-L512-b08.csv"
+      ],
+      "returncode": 0,
+      "stdout": "prefixes=10000 seconds=514.132\n",
+      "stderr": "",
+      "wall_seconds": 514.2208237138111,
+      "file": "exact-square-L512-b08.csv.gz",
+      "sha256": "897bf784f9b41e33b654d9e0c45007b02e7e09c3a53b583f412bc2b926d55c83"
+    },
+    {
+      "batch": 9,
+      "seed": "4164285986391024372",
+      "samples": 10000,
+      "original_file": "production-square-L512-b09.csv.gz",
+      "dependency_group": "completion-independent-20260929/square/L512/batch9",
+      "command": [
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/build/engine",
+        "512",
+        "10000",
+        "4164285986391024372",
+        "155385",
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/data/exact-square-L512-b09.csv"
+      ],
+      "returncode": 0,
+      "stdout": "prefixes=10000 seconds=520.72\n",
+      "stderr": "",
+      "wall_seconds": 520.8245567351114,
+      "file": "exact-square-L512-b09.csv.gz",
+      "sha256": "2e11efdcbc1efeca3d2d5ccc99e247a071a416159deeeb56fe4b21b4bc3f3f84"
+    },
+    {
+      "batch": 10,
+      "seed": "15500924042285991404",
+      "samples": 10000,
+      "original_file": "production-square-L512-b10.csv.gz",
+      "dependency_group": "completion-independent-20260929/square/L512/batch10",
+      "command": [
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/build/engine",
+        "512",
+        "10000",
+        "15500924042285991404",
+        "155385",
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/data/exact-square-L512-b10.csv"
+      ],
+      "returncode": 0,
+      "stdout": "prefixes=10000 seconds=515.465\n",
+      "stderr": "",
+      "wall_seconds": 515.5714685129933,
+      "file": "exact-square-L512-b10.csv.gz",
+      "sha256": "5e4fce9340902006ba1f6668a0b96786340564d750304d80ba921b11105cc425"
+    },
+    {
+      "batch": 11,
+      "seed": "17186215622830953477",
+      "samples": 10000,
+      "original_file": "production-square-L512-b11.csv.gz",
+      "dependency_group": "completion-independent-20260929/square/L512/batch11",
+      "command": [
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/build/engine",
+        "512",
+        "10000",
+        "17186215622830953477",
+        "155385",
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/data/exact-square-L512-b11.csv"
+      ],
+      "returncode": 0,
+      "stdout": "prefixes=10000 seconds=520.011\n",
+      "stderr": "",
+      "wall_seconds": 520.1165391458198,
+      "file": "exact-square-L512-b11.csv.gz",
+      "sha256": "21a9afee3c31dccfefd36e5d8dab2214f291074bd77c69828c568d9dce647b3c"
+    },
+    {
+      "batch": 12,
+      "seed": "11279241988091952515",
+      "samples": 10000,
+      "original_file": "production-square-L512-b12.csv.gz",
+      "dependency_group": "completion-independent-20260929/square/L512/batch12",
+      "command": [
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/build/engine",
+        "512",
+        "10000",
+        "11279241988091952515",
+        "155385",
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/data/exact-square-L512-b12.csv"
+      ],
+      "returncode": 0,
+      "stdout": "prefixes=10000 seconds=520.137\n",
+      "stderr": "",
+      "wall_seconds": 520.217798746191,
+      "file": "exact-square-L512-b12.csv.gz",
+      "sha256": "43ec82aabced0bd2ba2811c069566df52babaa03ceef435f44e249ba477a3520"
+    },
+    {
+      "batch": 13,
+      "seed": "10329155733035115099",
+      "samples": 10000,
+      "original_file": "production-square-L512-b13.csv.gz",
+      "dependency_group": "completion-independent-20260929/square/L512/batch13",
+      "command": [
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/build/engine",
+        "512",
+        "10000",
+        "10329155733035115099",
+        "155385",
+        "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/data/exact-square-L512-b13.csv"
+      ],
+      "returncode": 0,
+      "stdout": "prefixes=10000 seconds=515.136\n",
+      "stderr": "",
+      "wall_seconds": 515.23845415283,
+      "file": "exact-square-L512-b13.csv.gz",
+      "sha256": "8e747eac3d298295c389860618358861a4b049c4b3c94b07e2e4b02030be2ba2"
+    }
+  ],
+  "wall_seconds": 520.8756419259589,
+  "finished_utc": "2026-09-30T02:21:27.519776+00:00"
+}

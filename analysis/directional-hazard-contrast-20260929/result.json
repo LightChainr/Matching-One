@@ -1,0 +1,460 @@
+{
+  "schema": "matching-one.directional-hazard-contrast.v1",
+  "date": "2026-09-29",
+  "status": "retrospective_single_necessary_condition_not_new_validation",
+  "source_commit": "87f6644d3b57c7dbd67c44c63bcceffb6b7693ac",
+  "source_manifest": "analysis/completion-hazard-production-20260929/data/run.json",
+  "source_manifest_sha256": "7c63af9d9c7dcf5eff4b0f14644fe83560d73190532d8528f3e0cf0c5f0af2df",
+  "source_reader_sha256": "83222cbd9e73d6fe7c452f32a12e67da5ae331d27aa47707460bd4a323181365",
+  "samples": 140000,
+  "cutoffs": [
+    154646,
+    155385,
+    156120
+  ],
+  "N": 262144,
+  "question": "Does direction-only Markov closure pass its exact next-insertion hazard necessity?",
+  "null": "For every direction d, E[nu_b|early,d]=E[nu_b|late,d] under marked-rank Markovness",
+  "selection": "Question chosen after seeing the published finite-lag readout; no time, threshold, direction subset or feature scan",
+  "weights": "same exact-D overlap weights e*l/(e+l), recomputed in every whole-batch deletion",
+  "scalar_order": [
+    "pooled_nu_early_minus_late",
+    "within_D_nu_early_minus_late",
+    "within_D_survival_early_minus_late"
+  ],
+  "point": {
+    "pooled_nu_early_minus_late": -2.1847327292311007,
+    "within_D_nu_early_minus_late": 1.6291680567969193,
+    "within_D_survival_early_minus_late": -0.0041499928123224636
+  },
+  "se": {
+    "pooled_nu_early_minus_late": 0.4794961673090409,
+    "within_D_nu_early_minus_late": 0.39097616465913365,
+    "within_D_survival_early_minus_late": 0.004511941723660848
+  },
+  "covariance": [
+    [
+      0.22991657446405975,
+      0.1775224479955025,
+      -0.00016932981133567867
+    ],
+    [
+      0.1775224479955025,
+      0.15286236133156597,
+      -0.00027094610841093555
+    ],
+    [
+      -0.00016932981133567867,
+      -0.00027094610841093555,
+      2.035761811771162e-05
+    ]
+  ],
+  "delete_one_vectors": [
+    [
+      -2.018000629567865,
+      1.783977958199084,
+      -0.002919145291324874
+    ],
+    [
+      -2.325420226578686,
+      1.556267956392056,
+      -0.00477357738437172
+    ],
+    [
+      -1.9892709822265857,
+      1.745199967518535,
+      -0.004934137714091619
+    ],
+    [
+      -2.090701930202556,
+      1.6792616516650039,
+      -0.0026017718607748838
+    ],
+    [
+      -2.2475318645691686,
+      1.5771929977455288,
+      -0.003950169891317702
+    ],
+    [
+      -2.2448636873931918,
+      1.6477781532691969,
+      -0.004951711375779151
+    ],
+    [
+      -2.492703518103994,
+      1.3825079611013626,
+      -0.004385325139063321
+    ],
+    [
+      -2.344017881267618,
+      1.4361283568998433,
+      -0.003003390681550195
+    ],
+    [
+      -2.068444329682549,
+      1.6948946913620369,
+      -0.00554643231550222
+    ],
+    [
+      -2.116659397318955,
+      1.7040425471394742,
+      -0.004327132560620712
+    ],
+    [
+      -2.204421520887692,
+      1.5834555641416685,
+      -0.0015369172452727713
+    ],
+    [
+      -2.1374625763463655,
+      1.6589565083934306,
+      -0.00642420751014362
+    ],
+    [
+      -2.1183765338579974,
+      1.6878822494583414,
+      -0.0050376866339166505
+    ],
+    [
+      -2.1866233444075363,
+      1.672343042596936,
+      -0.0037193135551129575
+    ]
+  ],
+  "derived": {
+    "within_D_next_insertion_exit_difference": {
+      "estimate": 1.5260240886453782e-05,
+      "se": 3.6622314246024563e-06
+    },
+    "within_D_window_scaled_exit_difference": {
+      "estimate": 0.01121627705154353,
+      "se": 0.0026917400970828055
+    }
+  },
+  "support": {
+    "supported_early": 24218,
+    "supported_late": 30490,
+    "early_total": 24218,
+    "late_total": 30505,
+    "overlap_weight_sum": 13369.571391148975,
+    "direction_rows": [
+      {
+        "direction": [
+          0,
+          1
+        ],
+        "early": {
+          "count": 11168,
+          "survivors": 5132,
+          "sum_I": 5982.097617860022,
+          "sum_nu_b": 1051934,
+          "mean_Z": 0.4595272206303725,
+          "mean_I": 0.5356462766708473,
+          "mean_nu_b": 94.19179799426934
+        },
+        "late": {
+          "count": 13113,
+          "survivors": 6042,
+          "sum_I": 7153.399168479315,
+          "sum_nu_b": 1226334,
+          "mean_Z": 0.46076412720201326,
+          "mean_I": 0.5455196498497152,
+          "mean_nu_b": 93.52047586364677
+        },
+        "weight": 6031.299534615543,
+        "mean_nu_difference": 0.6713221306225705
+      },
+      {
+        "direction": [
+          1,
+          -2
+        ],
+        "early": {
+          "count": 2,
+          "survivors": 0,
+          "sum_I": 1.1308753166338306,
+          "sum_nu_b": 394,
+          "mean_Z": 0.0,
+          "mean_I": 0.5654376583169153,
+          "mean_nu_b": 197.0
+        },
+        "late": {
+          "count": 4,
+          "survivors": 0,
+          "sum_I": 2.630434986274932,
+          "sum_nu_b": 1415,
+          "mean_Z": 0.0,
+          "mean_I": 0.657608746568733,
+          "mean_nu_b": 353.75
+        },
+        "weight": 1.3333333333333333,
+        "mean_nu_difference": -156.75
+      },
+      {
+        "direction": [
+          1,
+          -1
+        ],
+        "early": {
+          "count": 925,
+          "survivors": 245,
+          "sum_I": 610.7816934992491,
+          "sum_nu_b": 143455,
+          "mean_Z": 0.2648648648648649,
+          "mean_I": 0.6603045335127017,
+          "mean_nu_b": 155.08648648648648
+        },
+        "late": {
+          "count": 2072,
+          "survivors": 599,
+          "sum_I": 1437.5539123693968,
+          "sum_nu_b": 321652,
+          "mean_Z": 0.2890926640926641,
+          "mean_I": 0.6938001507574308,
+          "mean_nu_b": 155.23745173745175
+        },
+        "weight": 639.5061728395061,
+        "mean_nu_difference": -0.15096525096527103
+      },
+      {
+        "direction": [
+          1,
+          0
+        ],
+        "early": {
+          "count": 11184,
+          "survivors": 5083,
+          "sum_I": 6028.8292146761405,
+          "sum_nu_b": 1066339,
+          "mean_Z": 0.45448855507868385,
+          "mean_I": 0.5390584061763359,
+          "mean_nu_b": 95.34504649499284
+        },
+        "late": {
+          "count": 13150,
+          "survivors": 6032,
+          "sum_I": 7091.969947987316,
+          "sum_nu_b": 1218377,
+          "mean_Z": 0.45870722433460076,
+          "mean_I": 0.5393133040294537,
+          "mean_nu_b": 92.65224334600761
+        },
+        "weight": 6043.79058107997,
+        "mean_nu_difference": 2.6928031489852344
+      },
+      {
+        "direction": [
+          1,
+          1
+        ],
+        "early": {
+          "count": 938,
+          "survivors": 261,
+          "sum_I": 646.2467634577035,
+          "sum_nu_b": 144896,
+          "mean_Z": 0.27825159914712155,
+          "mean_I": 0.6889624343898758,
+          "mean_nu_b": 154.4733475479744
+        },
+        "late": {
+          "count": 2148,
+          "survivors": 620,
+          "sum_I": 1488.0321827081254,
+          "sum_nu_b": 326291,
+          "mean_Z": 0.2886405959031657,
+          "mean_I": 0.6927524128063899,
+          "mean_nu_b": 151.90456238361267
+        },
+        "weight": 652.8917692806222,
+        "mean_nu_difference": 2.568785164361742
+      },
+      {
+        "direction": [
+          1,
+          2
+        ],
+        "early": {
+          "count": 0,
+          "survivors": 0,
+          "sum_I": 0.0,
+          "sum_nu_b": 0,
+          "mean_Z": null,
+          "mean_I": null,
+          "mean_nu_b": null
+        },
+        "late": {
+          "count": 10,
+          "survivors": 1,
+          "sum_I": 5.775421020756097,
+          "sum_nu_b": 3024,
+          "mean_Z": 0.1,
+          "mean_I": 0.5775421020756097,
+          "mean_nu_b": 302.4
+        },
+        "weight": 0.0,
+        "mean_nu_difference": null
+      },
+      {
+        "direction": [
+          2,
+          -1
+        ],
+        "early": {
+          "count": 1,
+          "survivors": 0,
+          "sum_I": 0.0,
+          "sum_nu_b": 301,
+          "mean_Z": 0.0,
+          "mean_I": 0.0,
+          "mean_nu_b": 301.0
+        },
+        "late": {
+          "count": 3,
+          "survivors": 1,
+          "sum_I": 1.0594669455357395,
+          "sum_nu_b": 559,
+          "mean_Z": 0.3333333333333333,
+          "mean_I": 0.35315564851191317,
+          "mean_nu_b": 186.33333333333334
+        },
+        "weight": 0.75,
+        "mean_nu_difference": 114.66666666666666
+      },
+      {
+        "direction": [
+          2,
+          1
+        ],
+        "early": {
+          "count": 0,
+          "survivors": 0,
+          "sum_I": 0.0,
+          "sum_nu_b": 0,
+          "mean_Z": null,
+          "mean_I": null,
+          "mean_nu_b": null
+        },
+        "late": {
+          "count": 5,
+          "survivors": 0,
+          "sum_I": 6.218543349964713,
+          "sum_nu_b": 1253,
+          "mean_Z": 0.0,
+          "mean_I": 1.2437086699929425,
+          "mean_nu_b": 250.6
+        },
+        "weight": 0.0,
+        "mean_nu_difference": null
+      }
+    ]
+  },
+  "batches": [
+    {
+      "file": "production-square-L512-b00.csv.gz",
+      "samples": 10000,
+      "seed": "18419746559907930925",
+      "sha256": "32f16cc37728d67fdbe3446a48da1bb4d36c48fc4f051648ac8e36e2595d4026",
+      "sha256_verified": true
+    },
+    {
+      "file": "production-square-L512-b01.csv.gz",
+      "samples": 10000,
+      "seed": "13442365983088886094",
+      "sha256": "fdc708228c1e0535787aa3426ea725b276ecef0b8ba193215b1bf93512518892",
+      "sha256_verified": true
+    },
+    {
+      "file": "production-square-L512-b02.csv.gz",
+      "samples": 10000,
+      "seed": "12192384056273429425",
+      "sha256": "57b5f9ef9bcc6f21a5a14f5e7b6c24fccb94388f349943738916cc1700ab4897",
+      "sha256_verified": true
+    },
+    {
+      "file": "production-square-L512-b03.csv.gz",
+      "samples": 10000,
+      "seed": "16795263932832913938",
+      "sha256": "65ec5cee09f76a03c69b702a21bb6f27dd70930b48e3b7f047de33103032eaa4",
+      "sha256_verified": true
+    },
+    {
+      "file": "production-square-L512-b04.csv.gz",
+      "samples": 10000,
+      "seed": "5606540329541986450",
+      "sha256": "033189fab591caa248c66c9710d63104036dc3d26b88e495d965615a84ecc4fb",
+      "sha256_verified": true
+    },
+    {
+      "file": "production-square-L512-b05.csv.gz",
+      "samples": 10000,
+      "seed": "176734671850227651",
+      "sha256": "b38b95839aab1c6f6575a9b94702c41a032a2cc00430c6eb904840472488fbd4",
+      "sha256_verified": true
+    },
+    {
+      "file": "production-square-L512-b06.csv.gz",
+      "samples": 10000,
+      "seed": "14922363405798405830",
+      "sha256": "330829d82ec4dad029f53dc07fe8bda5252bb35118aa9b507012c73df88e5a35",
+      "sha256_verified": true
+    },
+    {
+      "file": "production-square-L512-b07.csv.gz",
+      "samples": 10000,
+      "seed": "3540279280158270918",
+      "sha256": "a292a7a8be0fb5f79f2449745709c51942fc4261fd50e542569d33d04005ee30",
+      "sha256_verified": true
+    },
+    {
+      "file": "production-square-L512-b08.csv.gz",
+      "samples": 10000,
+      "seed": "182843979474712324",
+      "sha256": "113325911eb95469467bfe73496d5b57448413125dcea383b55b0ff7875db4ac",
+      "sha256_verified": true
+    },
+    {
+      "file": "production-square-L512-b09.csv.gz",
+      "samples": 10000,
+      "seed": "4164285986391024372",
+      "sha256": "b5712154670f8179ddf32487f35a794ea16b5ef4f0cdad2025c3f8e447f321da",
+      "sha256_verified": true
+    },
+    {
+      "file": "production-square-L512-b10.csv.gz",
+      "samples": 10000,
+      "seed": "15500924042285991404",
+      "sha256": "98bb914abc5188216cd5b9b4584ba46539bd4c16c1b4d745b6a8033748243668",
+      "sha256_verified": true
+    },
+    {
+      "file": "production-square-L512-b11.csv.gz",
+      "samples": 10000,
+      "seed": "17186215622830953477",
+      "sha256": "73aaa04f05ee279532f7c781a97acda5191840cf79fc2cee72f2a6c9caaed7f1",
+      "sha256_verified": true
+    },
+    {
+      "file": "production-square-L512-b12.csv.gz",
+      "samples": 10000,
+      "seed": "11279241988091952515",
+      "sha256": "75f556befdd4986e26f6594f7d2ec44fa6517b9b19021b9cbaa612116471875c",
+      "sha256_verified": true
+    },
+    {
+      "file": "production-square-L512-b13.csv.gz",
+      "samples": 10000,
+      "seed": "10329155733035115099",
+      "sha256": "d5ffad750a152bd62325ae22375496b861da96f8687ded8ad7c0a8220d06a202",
+      "sha256_verified": true
+    }
+  ],
+  "boundaries": [
+    "Raw counts, next-insertion probability and window-scaled intensity have different units.",
+    "Within-(D,nu_b) immediate nu equality is tautological and is not tested as closure evidence.",
+    "Same 140k block, not independent corroboration; original prospective estimands and results unchanged.",
+    "One aggregate zero does not prove sectorwise equality; nonzero population weighted contrast contradicts the necessary null.",
+    "Batch SE is approximate; no multiplicity-adjusted certification or continuum extrapolation."
+  ],
+  "python": "3.11.15",
+  "wall_seconds": 0.32170062500517815
+}

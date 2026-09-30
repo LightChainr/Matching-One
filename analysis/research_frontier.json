@@ -1,0 +1,842 @@
+{
+  "schema": "matching-one.research-frontier.v1",
+  "as_of": "2026-09-30",
+  "current_pr": 838,
+  "main_base": "d31fa5fe9584b77595e4a78b9560aa2ff77cf0b3",
+  "scope": "current attention and research map; not a replacement of historical result contracts",
+  "priority_semantics": "attention only; no locks, research permissions or automatic rejection",
+  "allocation_update": "2026-09-30 owner direction: one support worker handles precision and replication; main investigator leads mechanism derivation and discriminating interventions, without waiting for precision results. Medium/large compute goes to Huawei first.",
+  "entry_points": {
+    "overview": "README.md",
+    "claims": "docs/STATUS.md",
+    "frontier": "docs/RESEARCH-FRONTIER.md",
+    "next": "docs/ROADMAP.md",
+    "historical_evidence": "analysis/research_ledger.yaml"
+  },
+  "branch_sources": [
+    {
+      "id": "P838_safe_transport_selection",
+      "pr": 838,
+      "commit": "e56c0b8361628a066abea4ba4d3655c74e3a62bf",
+      "branch": "research/frontier-and-birth-gap-20260929",
+      "path": "notes/safe-transport-selection-readout-20260930.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/e56c0b8361628a066abea4ba4d3655c74e3a62bf/notes/safe-transport-selection-readout-20260930.md"
+    },
+    {
+      "id": "P838_window_source_readout",
+      "pr": 838,
+      "commit": "bbfe8c89a4c2e63f4b29d7961721a2d2f5311ade",
+      "branch": "research/frontier-and-birth-gap-20260929",
+      "path": "notes/geometric-source-window-readout-20260930.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/bbfe8c89a4c2e63f4b29d7961721a2d2f5311ade/notes/geometric-source-window-readout-20260930.md"
+    },
+    {
+      "id": "P838_one_sided_normal_source",
+      "pr": 838,
+      "commit": "467b18255f0dbf04916db1cd6682a01f70c09f9e",
+      "branch": "research/frontier-and-birth-gap-20260929",
+      "path": "notes/one-sided-birth-source-normal-response-20260930.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/467b18255f0dbf04916db1cd6682a01f70c09f9e/notes/one-sided-birth-source-normal-response-20260930.md"
+    },
+    {
+      "id": "P838_independent_pair_replication",
+      "pr": 838,
+      "commit": "d9824b5bf478fc8acad238be2b9f31ce99787966",
+      "branch": "research/frontier-and-birth-gap-20260929",
+      "path": "analysis/exact-pair-independent-archive-20260930/results/RESULT.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/d9824b5bf478fc8acad238be2b9f31ce99787966/analysis/exact-pair-independent-archive-20260930/results/RESULT.md"
+    },
+    {
+      "id": "P838_window_source_identity",
+      "pr": 838,
+      "commit": "18ca9e132f08b89071291d74cbd10133d99b2e5d",
+      "branch": "research/frontier-and-birth-gap-20260929",
+      "path": "notes/geometric-source-window-identity-20260930.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/18ca9e132f08b89071291d74cbd10133d99b2e5d/notes/geometric-source-window-identity-20260930.md"
+    },
+    {
+      "id": "P838_geometric_source",
+      "pr": 838,
+      "commit": "4e4b6a03fd5e31ee01384b18ecede12a071d3608",
+      "branch": "research/frontier-and-birth-gap-20260929",
+      "path": "notes/birth-selection-intervention-20260930.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/4e4b6a03fd5e31ee01384b18ecede12a071d3608/notes/birth-selection-intervention-20260930.md"
+    },
+    {
+      "id": "P838_exact_pair_readout",
+      "pr": 838,
+      "commit": "7f71af8599ce6e7c0f426cb6f7a069dbc0cf6100",
+      "branch": "research/frontier-and-birth-gap-20260929",
+      "path": "notes/exact-completion-pairs-readout-20260930.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/7f71af8599ce6e7c0f426cb6f7a069dbc0cf6100/notes/exact-completion-pairs-readout-20260930.md"
+    },
+    {
+      "id": "P838_exact_pairs",
+      "pr": 838,
+      "commit": "8b5eee0d47b6c220c2ba46a5bae08d2d19b392a4",
+      "branch": "research/frontier-and-birth-gap-20260929",
+      "path": "notes/projected-component-pair-criterion-20260929.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/8b5eee0d47b6c220c2ba46a5bae08d2d19b392a4/notes/projected-component-pair-criterion-20260929.md"
+    },
+    {
+      "id": "P838_label_curvature",
+      "pr": 838,
+      "commit": "ed9f3e281909a9f292818c3492d6219a4471282a",
+      "branch": "research/frontier-and-birth-gap-20260929",
+      "path": "notes/completion-pair-label-curvature-20260930.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/ed9f3e281909a9f292818c3492d6219a4471282a/notes/completion-pair-label-curvature-20260930.md"
+    },
+    {
+      "id": "P739",
+      "pr": 739,
+      "commit": "907a9d94ee0c3f20b00188647872a067abffd275",
+      "branch": "analysis/geometric-balance-manuscript-20260913",
+      "path": "docs/manuscripts/geometric-balance/manuscript.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/907a9d94ee0c3f20b00188647872a067abffd275/docs/manuscripts/geometric-balance/manuscript.md"
+    },
+    {
+      "id": "P771",
+      "pr": 771,
+      "commit": "29f92a93658ad163aeb0fad227e8bd6d3c2ea5e3",
+      "branch": "analysis/geometric-balance-round2-integrated-20260914",
+      "path": "docs/manuscripts/geometric-balance/round2-claim-ledger-20260914.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/29f92a93658ad163aeb0fad227e8bd6d3c2ea5e3/docs/manuscripts/geometric-balance/round2-claim-ledger-20260914.md"
+    },
+    {
+      "id": "P773",
+      "pr": 773,
+      "commit": "9ef22d1cc531c09dedf9b1195ab6aad8ef79668f",
+      "branch": "analysis/topological-scaling-program-20260914",
+      "path": "notes/rank-birth-flux-conservation-20260914.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/9ef22d1cc531c09dedf9b1195ab6aad8ef79668f/notes/rank-birth-flux-conservation-20260914.md"
+    },
+    {
+      "id": "P822",
+      "pr": 822,
+      "commit": "b23bd0c44a7ae6d6969ee95d3402d7aa1a25a962",
+      "branch": "analysis/delta1-mechanism-20260919",
+      "path": "analysis/queue-20260919/814/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/b23bd0c44a7ae6d6969ee95d3402d7aa1a25a962/analysis/queue-20260919/814/NOTE.md"
+    },
+    {
+      "id": "P823",
+      "pr": 823,
+      "commit": "3d0176a9f394f7d7228766709731493fd15095c5",
+      "branch": "proof/white-matching-separator-20260919",
+      "path": "analysis/queue-20260919/815/supplement/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/3d0176a9f394f7d7228766709731493fd15095c5/analysis/queue-20260919/815/supplement/NOTE.md"
+    },
+    {
+      "id": "P825",
+      "pr": 825,
+      "commit": "3bf94a6900fe2866626eaf6c3e7f2a00180bb775",
+      "branch": "analysis/rank-L7-gate-20260919",
+      "path": "analysis/queue-20260919/816/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/3bf94a6900fe2866626eaf6c3e7f2a00180bb775/analysis/queue-20260919/816/NOTE.md"
+    },
+    {
+      "id": "P828",
+      "pr": 828,
+      "commit": "9e59eef0007382c07f879fb9eadeb5e5be141f5b",
+      "branch": "research/control-rev2-20260919",
+      "path": "docs/research-status/control-20260919-rev2.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/9e59eef0007382c07f879fb9eadeb5e5be141f5b/docs/research-status/control-20260919-rev2.md"
+    },
+    {
+      "id": "P829",
+      "pr": 829,
+      "commit": "2fd4186de14d8566ef828c11f937a5bab06b41da",
+      "branch": "analysis/p809-endpoint-reversal-20260923",
+      "path": "analysis/p809-endpoint-reversal-20260923/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/2fd4186de14d8566ef828c11f937a5bab06b41da/analysis/p809-endpoint-reversal-20260923/NOTE.md"
+    },
+    {
+      "id": "P830",
+      "pr": 830,
+      "commit": "48ec90124865525d5823ccd7b431b4adcc9be4c7",
+      "branch": "analysis/p809-passive-path-20260923",
+      "path": "analysis/p809-passive-path-20260923/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/48ec90124865525d5823ccd7b431b4adcc9be4c7/analysis/p809-passive-path-20260923/NOTE.md"
+    },
+    {
+      "id": "P831",
+      "pr": 831,
+      "commit": "e099524bdc7e9c8844c56d88e5d7b411225f85c9",
+      "branch": "analysis/p809-parametric-observability-20260923",
+      "path": "analysis/p809-parametric-observability-20260923/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/e099524bdc7e9c8844c56d88e5d7b411225f85c9/analysis/p809-parametric-observability-20260923/NOTE.md"
+    },
+    {
+      "id": "P832",
+      "pr": 832,
+      "commit": "fc17b825447adee725a04f081eed1178f554ee46",
+      "branch": "analysis/p809-positive-order-gap-20260923",
+      "path": "analysis/p809-positive-order-gap-20260923/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/fc17b825447adee725a04f081eed1178f554ee46/analysis/p809-positive-order-gap-20260923/NOTE.md"
+    },
+    {
+      "id": "P834",
+      "pr": 834,
+      "commit": "8f40247491af737c03aa3b1156db5918a7024093",
+      "branch": "analysis/p833-width5-positive-cylinder-20260923",
+      "path": "analysis/p833-width5-positive-cylinder-20260923/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/8f40247491af737c03aa3b1156db5918a7024093/analysis/p833-width5-positive-cylinder-20260923/NOTE.md"
+    },
+    {
+      "id": "P835",
+      "pr": 835,
+      "commit": "5d063e3a0053035a648db99969c4c4972e7d8584",
+      "branch": "analysis/p833-orphan-source-contract-20260924",
+      "path": "analysis/p833-orphan-source-contract-20260924/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/5d063e3a0053035a648db99969c4c4972e7d8584/analysis/p833-orphan-source-contract-20260924/NOTE.md"
+    },
+    {
+      "id": "P836",
+      "pr": 836,
+      "commit": "19b6771437276ce0522d21dd1a5cbf1b7c7c5c1c",
+      "branch": "analysis/p833-noise-depth-literature-20260924",
+      "path": "analysis/p833-noise-depth-literature-20260924/NOTE.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/19b6771437276ce0522d21dd1a5cbf1b7c7c5c1c/analysis/p833-noise-depth-literature-20260924/NOTE.md"
+    },
+    {
+      "id": "P837",
+      "pr": 837,
+      "commit": "0ed7e4f7a6e68ba628ce26dd1e9cf1e65d64c9f3",
+      "branch": "analysis/p833-fixed-noise-wedge-20260924",
+      "path": "analysis/p833-fixed-noise-wedge-20260924/INTERFACE-REFINEMENT.md",
+      "integration": "open_pr",
+      "url": "https://github.com/LightChainr/Matching-One/blob/0ed7e4f7a6e68ba628ce26dd1e9cf1e65d64c9f3/analysis/p833-fixed-noise-wedge-20260924/INTERFACE-REFINEMENT.md"
+    }
+  ],
+  "observer_sectors": [
+    {
+      "id": "rank_filtration",
+      "state": "ambient image rank 0/1/2",
+      "source": "iid Bernoulli monotone coupling / uniform site permutation",
+      "geometry": "fixed honest torus",
+      "readout": [
+        "J1",
+        "J2",
+        "T1",
+        "T2",
+        "two-time rank-one overlap"
+      ],
+      "not_equivalent_to": [
+        "temporary prefix closure",
+        "original U"
+      ]
+    },
+    {
+      "id": "marked_rank_filtration",
+      "state": "rank0, persistent primitive unoriented rank1 direction, absorbing rank2",
+      "source": "same uniform permutation or iid Uniform site labels; clocks kept distinct",
+      "geometry": "fixed honest torus; exact L3 geometry and independent square-L512 conditional readout",
+      "readout": [
+        "direction-marked H_d(s,t)",
+        "completion-pivotal count nu2",
+        "rank-one completion phase"
+      ],
+      "not_equivalent_to": [
+        "unmarked rank filtration",
+        "future direction revealed before birth",
+        "original U",
+        "label process with occupied count also observed"
+      ]
+    },
+    {
+      "id": "prefix_prediction",
+      "state": "lifted connectivity with temporary closure",
+      "source": "explicit uniform or addressed site source language",
+      "geometry": "growing periodic strip",
+      "readout": [
+        "endpoint rank",
+        "rank trajectory"
+      ],
+      "not_equivalent_to": [
+        "all-source deterministic state",
+        "fixed-torus insertion filtration"
+      ]
+    },
+    {
+      "id": "tensor_noise",
+      "state": "artificial three-row preparations",
+      "source": "epsilon-bounded independent future sites",
+      "geometry": "cylinder with temporary closure",
+      "readout": [
+        "rank-only bit query"
+      ],
+      "not_equivalent_to": [
+        "complete boundary observation",
+        "typical critical Bernoulli preparation",
+        "full recursive realization order"
+      ]
+    },
+    {
+      "id": "original_u",
+      "source": "original named source B and six-coordinate thermal jet",
+      "geometry": "original norm-4/norm-5 contracts",
+      "readout": "physical normalizer, rank-one denominator and pooled moving-root counterterm",
+      "not_equivalent_to": [
+        "root H4",
+        "aggregate balanced rank",
+        "primitive C3 channel"
+      ]
+    }
+  ],
+  "scientific_nodes": [
+    {
+      "id": "joint_birth_process",
+      "attention": "P0",
+      "issue": 778,
+      "integration": "open_pr",
+      "sources": [
+        "P773",
+        "P823",
+        "P828",
+        "P838_exact_pairs",
+        "P838_label_curvature",
+        "P838_exact_pair_readout",
+        "P838_geometric_source",
+        "P838_independent_pair_replication",
+        "P838_window_source_identity",
+        "P838_window_source_readout",
+        "P838_one_sided_normal_source",
+        "P838_safe_transport_selection"
+      ],
+      "known": "Author noncoalescence/clock proofs and exact L4 weak-closure failures. Exact same-prefix conditional averaging now resolves the L512 completion-creation target at -0.00344939 SE0.00077225, supporting finite enlarged-observer history dependence. This is post-readout refinement, not independent confirmation; direction-only secondary still does not reproduce the earlier selected signal.",
+      "boundary": "No copula uniqueness, exact square exponent or cross-lattice universality theorem. L3 completion-phase closure is count-clock, from the uniform empty start, not a continuum or hidden-count label realization. Population width comparability is not finite-sample calibration.",
+      "new_branch_paths": [
+        "notes/birth-gap-noncoalescence-20260929.md",
+        "notes/birth-gap-pilot-20260929.md",
+        "notes/birth-gap-cloud-20260929.md",
+        "notes/two-time-pivotal-density-bound-20260929.md",
+        "notes/square-birth-transfer-and-iqr-clock-20260929.md",
+        "notes/birth-kernel-markov-characterization-20260929.md",
+        "notes/birth-history-memory-readout-20260929.md",
+        "analysis/birth-markov-kernel-20260929/result.json",
+        "analysis/birth-markov-kernel-20260929/exact-clock.json",
+        "notes/completion-pivotal-hazard-kernel-20260929.md",
+        "notes/birth-completion-geometry-20260929.md",
+        "analysis/birth-completion-geometry-20260929/result.json",
+        "analysis/birth-completion-geometry-20260929/marked-clock.json",
+        "notes/completion-hazard-independent-block-20260929.md",
+        "analysis/completion-hazard-production-20260929/contract.json",
+        "analysis/completion-hazard-production-20260929/data/run.json",
+        "analysis/completion-hazard-production-20260929/results/result.json",
+        "notes/directional-markov-completion-20260929.md",
+        "notes/directional-hazard-contrast-20260929.md",
+        "analysis/directional-hazard-contrast-20260929/result.json",
+        "notes/completion-pair-synergy-20260929.md",
+        "notes/completion-pair-synergy-L4-20260929.md",
+        "analysis/completion-pair-synergy-20260929/result.json",
+        "notes/safe-insertion-independent-block-20260929.md",
+        "analysis/safe-insertion-production-20260929/contract.json",
+        "analysis/safe-insertion-production-20260929/data/run.json",
+        "analysis/safe-insertion-production-20260929/results/result.json",
+        "notes/projected-component-pair-criterion-20260929.md",
+        "notes/completion-pair-label-curvature-20260930.md",
+        "notes/exact-completion-pairs-readout-20260930.md",
+        "analysis/exact-completion-pairs-20260929/data/run.json",
+        "analysis/exact-completion-pairs-20260929/results/result.json"
+      ],
+      "observer": "rank_filtration",
+      "acquisition": [
+        "exact construction",
+        "128000-filtration local pilot",
+        "560000-filtration independent CPU block through L512",
+        "two-time arm-density proof and primary-literature probability inputs",
+        "square matching-arm transfer and population-clock proof; no new samples",
+        "existing cloud-block three-time analysis and exact L3 archive polynomial transform; no enumeration rerun",
+        "new L3 512-subset geometry per lattice, prefix DP, exact phase realization and marked-label polynomial transform; no Monte Carlo or 9! rerun",
+        "new independent 140000-filtration square-L512 block on TV2N0X, precommitted source/contract 9520c9bdf702a62435f1054e64184b1df4fc0ab3; completion geometry at b and independent uniform audit time tau",
+        "one retrospective necessary-condition contrast on the same saved nu_b, cohorts, cutoffs and exact-D weights; no new acquisition, feature or threshold scan",
+        "one exact 65536-subset L4 census per lattice and integer prefix DP, 1.23 seconds total; no Monte Carlo, permutation enumeration or L512 reanalysis",
+        "new independent 140000-prefix square-L512 safe-insertion block, four probes per eligible prefix; acquisition commit55fa2656 before samples, scoring commitf340aa55 before readout; 519.843 seconds on TV2N0X",
+        "same140000 prefixes replayed with exact pair enumeration; 8 local completed batches retained,6 missing batches on TV2N0X in420.381s. No new independent prefixes; all140k original first-five-field tuples matched."
+      ],
+      "tension": "Same static laws and all adjacent transition tables can coexist with different limit diagonal atoms.",
+      "finite_result": "Soft gap mass approximately proportional to resolution down to delta=.00625, L<=512; no resolved plateau, not proof of noncoalescence.",
+      "theory_result": "Different-site birth pairs have locally uniformly bounded time density; direct diagonal mass is bounded by alpha6/alpha4. Tightness excludes limit coalescence for triangular and square NN/matching models on their own pivotal clocks. Population insertion-IQR is comparable to N*a_eta. Author proofs, not independent certification.",
+      "memory_result": "L512 early-minus-late rank-one survival: square +0.0142234 SE0.0051069, triangular +0.0070228 SE0.0051459, one (.25,.50,.75) mixture-quantile triple. Exact L3 label kernels are separated for square and nonseparated for triangular. The evidential levels remain distinct.",
+      "probability_input_sources": [
+        "https://arxiv.org/abs/0711.4948",
+        "https://arxiv.org/abs/1305.5526",
+        "https://doi.org/10.1007/BF01205674",
+        "https://arxiv.org/abs/2008.01606"
+      ],
+      "completion_geometry_result": "Triangular L3 early/late fast-type fractions 1/4 versus 3/7 explain survival difference 5/112; nu2 phase rows close strongly within rank one and yield a four-state weak count-clock realization. Triangular H_d=H/3. Square H_axis=3p^3(1-q)^3[(1+q)^3-p^3], H_diag=3p^6(1-q)^3: pooled label Markovness does not survive axial marking.",
+      "independent_geometry_result": "Raw early-late survival +0.0068571 SE0.0044443; exact-D overlap -0.0041500 SE0.0045119; exact-(D,nu2) overlap +0.0012161 SE0.0047636. Random-time integrated prediction +0.0155022 SE0.0035050; paired closure residual -0.0086451 SE0.0063892. No old/new pooling; different conditional weights are not an explained fraction.",
+      "directional_hazard_result": "Old post-hoc within-D mean nu_b=+1.629168 SE0.390976, not reproduced by the new independent predeclared contrast -0.039865 SE0.569878. Preserve both; no pooling or accepted direction-only exclusion. Within-(D,nu) immediate equality is tautological.",
+      "pair_synergy_result": "At matched (k,D,nu2), exact uniform-start early-minus-late two-step survival is -4/4131 square L4 and 2/121 triangular L4, while immediate survival equals 1. Safe-pair edge count e gives survival2=[(m-nu)(m-nu-1)-2e]/[m(m-1)] and safe-step mean completion increment 2e/(m-nu).",
+      "safe_insertion_result": "Primary same-(D,nu) increment deltaY=0.00668183 SE0.01208706; derived deltaZ2=-6.25403e-8 SE1.13192e-7. 55028 risk prefixes, 220112 probes, only1233 nonzero; 98.973% common-support coverage. A null weighted mean does not prove full closure.",
+      "label_curvature_identity": "Fixed-entry H_tt=E[I(c(c-1)-2e)]/(1-t)^2. Risk-set mean count derivative=(2 mean e-Var(c))/(1-t); hazard derivative=(mean c+2 mean e-Var(c))/(1-t)^2. Exact finite identities, not a count-to-label substitution or continuum limit.",
+      "exact_pair_refinement": "Same target deltaY=-0.003449385668 SE0.000772252763, about4.47 batchSE; SE15.65x smaller. Derived deltaZ2=3.228181004e-8 SE7.230661888e-9. Original direction-only secondary unchanged. Same data, not extra confirmation or a continuum conclusion.",
+      "geometric_source_result": "Safe-site exponential degree tilt preserves the whole occupation clock and current rank exit hazard, but has delayed survival response -s Var_safe(degree)/(m(m-1)). All-lag single-kick responses computed on three specified square-L4 preparations. Birth contrast equals a backward-retention/forward-future covariance; safe-path weighting separates geometry transport and survival selection.",
+      "independent_pair_replication": "Other independent140k archive reproduces fixed negative target: deltaY=-0.0031993684 SE0.0006200906. Archive-minus-first=0.0002500173 SE0.0009903973; no pooling. All140k prefixes match. Other archive readouts had been seen; first e readout, not new prospective production. Support worker completed520.876s onTV2N0X and verifiedReady.",
+      "window_source_result": "Completed735-step derivative=-0.01104203191 SE0.00015766645; baseline survival0.4447553973 SE0.0021409587. Same55028risk/140000prefixes,14batches,3x3covariance. TgFr7R14workers519.145s, retrieved and Ready verified. New mechanism readout, not independent block or finite-theta effect.",
+      "one_sided_source_result": "First birth unchanged, deltaM=deltaEtop=g. Moving-root normal factor=-2P0'/M'>0. Explicit symmetric squareL4 source has g(p)>0 at every interior p, rank2 physical response Jacobian and normalEtop derivative0.00016853296 at balance. Constructed dynamic source, not original norm4/U mapping.",
+      "safe_transport_selection_result": "Completed: same1198cells give natural=-0.002205065286 SE0.000787091700, safe-reference=-0.002537058794 SE0.000636492674, selection=0.000331993508 SE0.000287375294. Safe-reference memory persists; selection-only disfavoured for this estimand, selection term itself unresolved.97666new conditional futures of old entrances, not independent preparations.",
+      "source_identification_bounds": "At fixed(k,D,c), Y and survival2 are affine. At one p, two first-birth-preserving source columns in(M,Etop) are g_r*(1,1); moving-root columns remain proportional. Thermal p plus ONE geometric-source rank2 is not identification of TWO geometric sources.",
+      "next": "Distinguish realizable entrance-law and safe-growth sources through nonredundant same-contract response columns, including endpoint normalization. Do not swap early/late labels at fixed birth count, reuse proportional readouts or paste the old735-step column into a changed source contract. Replication,735-step transmission and safe/selection decomposition are completed; no automatic precision or size ladder.",
+      "information_gain": "high: identifies process structure beyond the completed noncoalescence argument",
+      "cost": "small exact algebra; bounded pilot; substantial two-time probability theory"
+    },
+    {
+      "id": "source_noise_state",
+      "attention": "P1",
+      "integration": "open_pr",
+      "sources": [
+        "P829",
+        "P830",
+        "P831",
+        "P832",
+        "P834",
+        "P835",
+        "P836",
+        "P837"
+      ],
+      "observer": "tensor_noise",
+      "known": "All-k deterministic coding obstruction and physical product queries; distributed stochastic parity code has tensor rank three, product-family positive initial memory three, and exact single-readout distinction bounds.",
+      "boundary": "Original five-column artificial preparation. Tensor rank three is not a full physical-language upper bound. Sharp monotone TV concerns one Boolean nonadaptive output, not transcripts or feedback; abstract threshold attainment is not physical realization.",
+      "tension": "Stochastic sharing evades the deterministic rank-four obstruction, but product TV decays exponentially and general monotone single-output TV decays as k^-1/2; the product family loses the old positive/linear memory gap too.",
+      "discussion": "https://github.com/LightChainr/Matching-One/pull/837#issuecomment-5814562555",
+      "new_branch_paths": [
+        "notes/deterministic-block-encoding-obstruction-20260929.md",
+        "analysis/deterministic-block-encoding-20260929/check.py",
+        "analysis/deterministic-block-encoding-20260929/result.json",
+        "notes/stochastic-parity-block-encoding-20260929.md",
+        "analysis/stochastic-parity-block-encoding-20260929/check.py",
+        "analysis/stochastic-parity-block-encoding-20260929/result.json"
+      ],
+      "next": "Error-versus-memory under a concrete realizable query family; if using transcripts or feedback state that changed contract. Stochastic rank-three existence alone is now answered; report A/L/error/width/height and positive memory.",
+      "acquisition": [
+        "reuse exact finite engines",
+        "all-k algebraic proof and all-width physical construction",
+        "one exact census of 65536 two-block encoders",
+        "stochastic parity and sharp monotone proofs; one k=2,3,4 exact control, 468 tensor moments and 194 monotone functions"
+      ],
+      "information_gain": "high: tests whether reliability preserves the representation advantage",
+      "cost": "bounded one-block algebra/topology first"
+    },
+    {
+      "id": "geometric_threshold_laws",
+      "attention": "P1 bounded writing",
+      "integration": "open_pr",
+      "sources": [
+        "P739",
+        "P771"
+      ],
+      "observer": "rank_filtration",
+      "known": "Author arbitrary-period root and full-law iff proofs; fixed-p homological free energy and birth clocks.",
+      "boundary": "Author proof supplied is not independent all-proof certification; fixed-p does not grant nearcritical uniformity.",
+      "next": "Integrate supplied statements and actual remaining probability inputs, not repeat oblique necessity as missing.",
+      "acquisition": [
+        "existing proof synthesis"
+      ],
+      "information_gain": "consolidates a mature result; lower need for new production",
+      "cost": "bounded writing/theory"
+    },
+    {
+      "id": "original_u_identification",
+      "attention": "P1 theory",
+      "integration": "hypothesis",
+      "sources": [
+        "P771",
+        "P773",
+        "P822",
+        "P828"
+      ],
+      "issue": 275,
+      "observer": "original_u",
+      "known": "Historical production exists; root thermal tangent may be removed by moving-root normalization.",
+      "boundary": "Candidate operator identity and original-U normal forward maps remain unresolved.",
+      "tension": "Strong root H4 need not survive original-U quotient; equivalent black/white pair sources are not independent.",
+      "next": "Two represented same-source normal columns or actual projected Ward/mixed-response coefficient.",
+      "acquisition": [
+        "existing data",
+        "small exact/source calculation",
+        "theory"
+      ],
+      "information_gain": "high if columns differ, zero precision benefit if images agree",
+      "cost": "theory/small matrix rather than broad sampling"
+    }
+  ],
+  "decision_experiments": [
+    {
+      "id": "birth_soft_diagonal",
+      "node": "joint_birth_process",
+      "status": "implemented_in_this_branch",
+      "statistic": "Z_L(delta)=E[(1-G_L/delta)_+]",
+      "source_paths": [
+        "notes/birth-gap-noncoalescence-20260929.md",
+        "analysis/birth-gap-20260929/analyze.py"
+      ],
+      "mechanism_contrast": "vanishing uniform small-ball mass versus aggregation; direct atom alone does not decide",
+      "interpretation": "local pilot and independent finer cloud block are exploratory, not proof of double limit"
+    },
+    {
+      "id": "two_time_birth_density",
+      "node": "joint_birth_process",
+      "status": "author_proof_with_explicit_probability_inputs",
+      "source_paths": [
+        "notes/two-time-pivotal-density-bound-20260929.md",
+        "notes/square-birth-transfer-and-iqr-clock-20260929.md"
+      ],
+      "bound": "P(gap<=delta,both births in compact window)<=C_window*delta+C_window*alpha6/alpha4",
+      "interpretation": "Triangular and square NN/matching corollaries include tightness. Does not infer a global delta bound by dropping the window tail, or a unique copula."
+    },
+    {
+      "id": "population_iqr_clock",
+      "node": "joint_birth_process",
+      "status": "author_proof_using_standard_arm_bounds",
+      "source_paths": [
+        "notes/square-birth-transfer-and-iqr-clock-20260929.md"
+      ],
+      "bound": "W_population asymp (N+1)*a_eta; rescaled insertion and label times differ by o_P(1)",
+      "interpretation": "Population normalization cannot manufacture or remove a limiting zero-gap atom; no ratio limit, finite-sample guarantee or cross-modulus universality claim."
+    },
+    {
+      "id": "coded_response_rank",
+      "node": "source_noise_state",
+      "status": "all_k_classification_and_physical_product_query_proof",
+      "statistic": "(A,L,eta,w,h) under one fixed preparation/source/readout contract",
+      "mechanism_contrast": "Only a single informative block preserves rank three for deterministic four-state encoders; distributed encoding yields rank four",
+      "source_paths": [
+        "notes/deterministic-block-encoding-obstruction-20260929.md",
+        "analysis/deterministic-block-encoding-20260929/result.json"
+      ],
+      "finite_control": "One exact k=2 census, 65536 encoders; 43680 injective: 192 rank3, 43488 rank4. Physical query construction is proved, not numerically re-enumerated."
+    },
+    {
+      "id": "stochastic_parity_readout",
+      "node": "source_noise_state",
+      "status": "all_k_author_proofs_and_one_small_k_exact_control",
+      "source_paths": [
+        "notes/stochastic-parity-block-encoding-20260929.md",
+        "analysis/stochastic-parity-block-encoding-20260929/result.json"
+      ],
+      "mechanism_contrast": "Private randomization can preserve rank three with distributed shares, but exact rank does not preserve one-shot reliability or a positive/linear gap.",
+      "rank_and_memory": "Explicit product-query family: tensor rank=minimum positive initial memory=3; larger physical language only bounded between 3 and 4.",
+      "bound": "TV_product=2^(1-k); TV_single_monotone<=binom(k-1,floor((k-1)/2))/2^(k-1)",
+      "finite_control": "One k=2,3,4 run: 468 exact tensor moments and 194 monotone Boolean functions; no old-census rerun or cloud job.",
+      "interpretation": "Single nonadaptive final rank only. Full transcript, feedback and physical threshold implementation are separate questions; observed-share BSC is not a derived instruction-noise channel."
+    },
+    {
+      "id": "rank_one_history_memory",
+      "node": "joint_birth_process",
+      "status": "author_characterization_exact_finite_controls_and_retrospective_archive_readout",
+      "source_paths": [
+        "notes/birth-kernel-markov-characterization-20260929.md",
+        "notes/birth-history-memory-readout-20260929.md",
+        "analysis/birth-markov-kernel-20260929/analyze.py",
+        "analysis/birth-markov-kernel-20260929/result.json",
+        "analysis/birth-markov-kernel-20260929/exact_clock.py",
+        "analysis/birth-markov-kernel-20260929/exact-clock.json"
+      ],
+      "null": "For current-rank-only time-inhomogeneous Markov models, H(a,c)H(b,b)=H(a,b)H(b,c) for every triple; all triples also suffice in natural rank history.",
+      "statistic": "Early-minus-late P(J2>c) within J1<=b<J2; one mixture-quantile triple, full aligned-batch covariance and cutoff re-estimation.",
+      "exact_result": "Stored L3 complete tables: square all count triples satisfy the identity and label H=6p^3(1-q^2)^3; triangular has two count violations and a nonzero label polynomial determinant.",
+      "interpretation": "Exact finite Markov and non-Markov controls do not determine the limit. Large-size association is small and retrospective, not independent certification. Label/count clocks and current rank/full microscopic state are different contracts."
+    },
+    {
+      "id": "completion_geometry_transmission",
+      "node": "joint_birth_process",
+      "observer": "marked_rank_filtration",
+      "status": "author_hazard_identity_and_exact_L3_mechanism",
+      "source_paths": [
+        "notes/completion-pivotal-hazard-kernel-20260929.md",
+        "notes/birth-completion-geometry-20260929.md",
+        "analysis/birth-completion-geometry-20260929/analyze.py",
+        "analysis/birth-completion-geometry-20260929/result.json",
+        "analysis/birth-completion-geometry-20260929/exact_marked_clock.py",
+        "analysis/birth-completion-geometry-20260929/marked-clock.json"
+      ],
+      "mechanism_contrast": "Direction alone versus completion-geometry mixing as the carrier of birth history; unmarked versus direction-marked weak Markovness under a fixed clock.",
+      "identity": "Exit probability nu2/(N-k); iid-label intensity nu2/(1-t); logarithmic H defect is minus the integral of birth-by-a minus birth-by-b cohort mean nu2 over 1-t.",
+      "finite_result": "Triangular direction does not remove memory; completion-type weights explain 5/112 and a binary rank-one phase closes count dynamics. Square marked axial label kernels are non-Markov despite pooled Markovness; all marked square count kernels remain Markov.",
+      "next_independent_readout": "Completed as completion_hazard_independent_L512 below; not still a missing acquisition.",
+      "interpretation": "512 subsets per lattice and exact symbolic thinning, not production validation. Four-state count realization is not minimality, arbitrary rank0 strong lumpability, label closure with hidden count or continuum sufficiency."
+    },
+    {
+      "id": "completion_hazard_independent_L512",
+      "node": "joint_birth_process",
+      "observer": "marked_rank_filtration",
+      "status": "completed_fixed_new_block",
+      "acquisition_commit": "9520c9bdf702a62435f1054e64184b1df4fc0ab3",
+      "source_paths": [
+        "notes/completion-hazard-independent-block-20260929.md",
+        "analysis/completion-hazard-production-20260929/contract.json",
+        "analysis/completion-hazard-production-20260929/ESTIMANDS.md",
+        "analysis/completion-hazard-production-20260929/data/run.json",
+        "analysis/completion-hazard-production-20260929/results/result.json"
+      ],
+      "design": "square L512, 14 x 10000, fixed insertion cutoffs 154646/155385/156120; exact D and nu2 at b, independent uniform integer tau in [b,c-1]; 32 benchmark samples excluded",
+      "result": "Pooled survival contrast smaller than old archive; exact-D and exact-(D,nu2) overlap-weighted finite-lag contrasts unresolved. Completion-count and integrated-hazard contrasts measurable; actual/predicted difference about 1.35 batch SE.",
+      "null_predictions": "Rank-only, rank+D and rank+D+nu2 sufficiency imply the corresponding conditional survival contrast is zero. One zero weighted contrast does not imply cellwise or recursive closure.",
+      "interpretation": "Prospective new-block readout, not continuum certification. Direction composition is a candidate, not proven mediation. Raw/conditional/hazard outputs share data and full covariance. Fixed run ended without result-dependent extension.",
+      "next": "The directional next-step necessity has since been checked retrospectively below; no redispatch of the completed acquisition or silent upgrade of its conditional zero to closure."
+    },
+    {
+      "id": "directional_next_step_necessity",
+      "node": "joint_birth_process",
+      "observer": "marked_rank_filtration",
+      "status": "retrospective_signal_not_reproduced_in_later_independent_block",
+      "source_paths": [
+        "notes/directional-markov-completion-20260929.md",
+        "notes/directional-hazard-contrast-20260929.md",
+        "analysis/directional-hazard-contrast-20260929/analyze.py",
+        "analysis/directional-hazard-contrast-20260929/result.json"
+      ],
+      "input_source_commit": "87f6644d3b57c7dbd67c44c63bcceffb6b7693ac",
+      "input_source_paths": [
+        "analysis/completion-hazard-production-20260929/data/run.json",
+        "analysis/completion-hazard-production-20260929/analyze.py"
+      ],
+      "integration": "open_pr",
+      "null_prediction": "At every count, within every persistent direction, mean nu2 must be independent of entry cutoff; all such conditions are necessary and sufficient for marked-rank Markovness under the uniform permutation source.",
+      "result": "Same-D overlap-weighted mean nu_b difference +1.629168 SE0.390976 sites; the unchanged finite-lag survival contrast remains -0.00414999 SE0.00451194.",
+      "interpretation": "The original same-block signal is preserved, but its independent predeclared replication is -0.039865 SE0.569878 and does not reproduce it. Direction-only L512 closure is not empirically excluded or proved. Long-window zero remains weaker than an all-count criterion.",
+      "next": "Independent replication and successor sampling are now delivered below; current large-size conclusions remain unresolved."
+    },
+    {
+      "id": "completion_pair_synergy",
+      "node": "joint_birth_process",
+      "observer": "rank_direction_completion_count_history",
+      "status": "author_identity_and_exact_L4_weak_markov_counterexamples",
+      "integration": "open_pr",
+      "source_paths": [
+        "notes/completion-pair-synergy-20260929.md",
+        "notes/completion-pair-synergy-L4-20260929.md",
+        "analysis/completion-pair-synergy-20260929/analyze.py",
+        "analysis/completion-pair-synergy-20260929/result.json"
+      ],
+      "reused_topology_commit": "8b37c20e5f2b1946cefbed98b09280a0cad25ed2",
+      "reused_topology_path": "analysis/birth-completion-geometry-20260929/analyze.py",
+      "identity": "A safe v creates degree(v) completion sites in the safe-pair graph. At fixed k,D,nu, two-step survival contrast is -2 Delta(mean e)/[m(m-1)]. Full degree distribution gives the one-step successor law, not automatic recursive closure.",
+      "exact_result": "Square k6,a4,D(0,1),nu0: survival2 difference -4/4131. Triangular k5,a4,D(0,1),nu0: 2/121. Both cohorts survive the next rank step with probability1. All fractions under the original uniform empty preparation.",
+      "computation": "65536 occupied subsets per lattice, integer prefix DP; all 43434 rank-one rows have the pair identity checked within the new calculation; one square physical witness has a hand-geometric check. No 16! enumeration, old-census rerun, new samples or cloud.",
+      "boundary": "Refutes universal weak (rank,D,nu) closure by finite examples. Does not extrapolate to L512, a continuum limit or an original-U mechanism. L3 closure and original prospective L512 readouts remain unchanged.",
+      "next": "The L512 acquisition and its exact conditional-mean refinement are both completed below. Finite L4 proofs, refined L512 evidence and continuum predictions are distinct."
+    },
+    {
+      "id": "safe_insertion_independent_L512",
+      "node": "joint_birth_process",
+      "observer": "rank_direction_completion_count_history",
+      "status": "completed_fixed_new_block_primary_unresolved_secondary_not_reproduced",
+      "integration": "open_pr",
+      "acquisition_commit": "55fa265629701e04b879b774ae7d3b97fefa845f",
+      "scorer_commit_before_readout": "f340aa55134213be71d22941fae2ccb7fd068cb7",
+      "source_paths": [
+        "notes/safe-insertion-independent-block-20260929.md",
+        "analysis/safe-insertion-production-20260929/contract.json",
+        "analysis/safe-insertion-production-20260929/ESTIMANDS.md",
+        "analysis/safe-insertion-production-20260929/data/run.json",
+        "analysis/safe-insertion-production-20260929/results/result.json",
+        "analysis/safe-insertion-production-20260929/execution-receipt.json"
+      ],
+      "design": "square L512, fixed a154646,b155385;14x10000 independent prefixes,4 uniform-safe probes per rank1 prefix, averaged within prefix; no old/new pooling",
+      "primary": "exact-(D,nu) overlap-weighted early-minus-late Y=nu_after_safe-nu_before:0.006681826608 SE0.01208705518",
+      "derived": "same probes imply mean-edge difference356.3978 SE645.0460 and two-step-survival difference-6.254031427e-8 SE1.131920089e-7; not independent binary outcomes",
+      "secondary": "predeclared independent same-D current nu contrast -0.03986511616 SE0.5698779455, not reproducing the old post-hoc +1.629168 SE0.390976",
+      "information": "1190 common exact cells retain54463/55028 risk prefixes;1233/220112 probes nonzero; full6x6 aligned covariance and14deletions retained",
+      "boundary": "No full-Markov, limiting, sign-reversal or engine-error inference. L4 exact failures and all original prior results remain preserved. Continuation outputs are sparse despite broad common-support coverage; no variance fraction is inferred from sparsity alone.",
+      "next": "Exact conditional averaging is now delivered below and resolves this same target. Preserve this original four-probe report rather than replacing it; the secondary remains unchanged."
+    },
+    {
+      "id": "exact_pair_conditional_mean_L512",
+      "node": "joint_birth_process",
+      "observer": "rank_direction_completion_count_history",
+      "status": "completed_same_target_refinement_resolved_finite_history_contrast",
+      "integration": "open_pr",
+      "result_commit": "7f71af8599ce6e7c0f426cb6f7a069dbc0cf6100",
+      "dependency_group": "safe_insertion_independent_L512",
+      "source_paths": [
+        "notes/exact-completion-pairs-readout-20260930.md",
+        "notes/projected-component-pair-criterion-20260929.md",
+        "analysis/exact-completion-pairs-20260929/data/run.json",
+        "analysis/exact-completion-pairs-20260929/results/result.json"
+      ],
+      "design": "Exact2e/(m-c) replaces four uniform-safe probes on the same140k prefixes; all original rows/cutoffs/exact cells/weights retained. Post-readout estimator refinement, zero new independent samples.",
+      "primary": "deltaY=-0.003449385668 SE0.000772252763; approximately4.47 batchSE from zero; early0.09557456,late0.09902395",
+      "derived": "deltaE=-183.963985 SE41.205291; deltaZ2=+3.228181004e-8 SE7.230661888e-9; exact transfer, not independent endpoints",
+      "precision": "SE_RB/SE_probe0.0638908941; empirical variance ratio0.00408204635. Paired estimator difference -0.01013121 SE0.01239566. Full8x8 covariance and14 aligned deletions retained.",
+      "interpretation": "Supports failure of finite enlarged-observer closure at L512, not a proof of unmarked rank non-Markovness, an independent replication, or a continuum limit. Direction-only secondary remains unreplicated.",
+      "execution": "8 completed local batches plus6 HuaweiTV2N0X batches,420.381s cloud,6workers. Medium/large computation now cloud-first; prior pause and interrupted partial evaluations do not add samples.",
+      "next": "Independent archival replication is complete and recorded separately. Main attention is clock-preserving finite-window geometric intervention, not additional precision cycles."
+    },
+    {
+      "id": "label_pair_selection_curvature",
+      "node": "joint_birth_process",
+      "observer": "fixed_entry_label_time_rank_one_cohort",
+      "status": "author_finite_identity_supplied_continuum_prediction_open",
+      "integration": "open_pr",
+      "source_commit": "ed9f3e281909a9f292818c3492d6219a4471282a",
+      "source_paths": ["notes/completion-pair-label-curvature-20260930.md"],
+      "mechanism_contrast": "pair creation increases future completion opportunities; survival selection of high-c geometries contributes a negative variance term",
+      "statistic": "nearcritical hazard derivative a_L^2*(mean c+2 mean e-Var(c))/(1-t)^2",
+      "boundary": "Requires the actual label-time cohort; original fixed-count replay cannot be relabelled by t=b/N. No uniform remainder, continuum moment limit or finite-window extrapolation supplied.",
+      "next": "Derive a numerical/sign/scaling distinction between candidate continuous kernels for this specified combination under one observer/source contract."
+    },
+    {
+      "id": "clock_preserving_geometric_intervention",
+      "node": "joint_birth_process",
+      "attention": "P0",
+      "status": "finite_source_map_and_large_L512_fixed_window_propagation_delivered",
+      "integration": "open_pr",
+      "source_commit": "4e4b6a03fd5e31ee01384b18ecede12a071d3608",
+      "source_paths": [
+        "notes/birth-selection-intervention-20260930.md",
+        "analysis/birth-selection-mechanism-20260930/result.json"
+      ],
+      "source": "Safe choices weighted exp(theta*degree) with total safe mass fixed; completing choices unchanged. At nonzero theta this is an explicitly modified source, not iid Bernoulli labels.",
+      "fixed_quantities": ["entire occupied-count arrival law", "instantaneous rank exit hazard at any fixed geometry"],
+      "prediction": "Immediate rank response zero; two-step survival derivative -s Var_safe(degree)/(m(m-1)); label survival curvature derivative -s Var_safe(degree)/(1-t)^2. No universal long-window sign asserted.",
+      "completed_readout": "For three specified square-L4 starts, actual lagged derivative peaks in magnitude at lag3 and is zero after lag6. Same birth law can give different futures; same c,e and local response can give different birth laws and lag3 responses.",
+      "next": "Both fixed735-step transfer and safe/selection decomposition are completed in separate entries. Next distinguish entrance versus safe-growth sources with nonredundant same-contract readouts; continuum scaled gain remains open, not an automatic size ladder.",
+      "boundary": "Exact finite modified-source mechanism, not natural L512 population evidence, continuum identification, original-U mapping or a new field identification. No new large production launched by this derivation."
+    },
+    {
+      "id": "fixed_sign_independent_pair_archive",
+      "node": "joint_birth_process",
+      "attention": "support_completed",
+      "status": "negative_prediction_reproduced",
+      "integration": "open_pr",
+      "source_commit": "d9824b5bf478fc8acad238be2b9f31ce99787966",
+      "dependency_group": "completion_hazard_independent_L512",
+      "source_paths": ["analysis/exact-pair-independent-archive-20260930/results/result.json", "analysis/exact-pair-independent-archive-20260930/execution.json"],
+      "primary": "deltaY=-0.003199368397 SE0.000620090643",
+      "comparison": "other archive minus first=0.000250017271 SE0.000990397261; no pooling",
+      "boundary": "Independent random block, other readouts already seen, fixed first e readout; not untouched holdout, new sampling, continuum proof or direction-only replication."
+    },
+    {
+      "id": "fixed735_geometric_source_transmission",
+      "node": "joint_birth_process",
+      "attention": "P0",
+      "status": "completed_resolved_delayed_geometric_transmission",
+      "integration": "open_pr",
+      "source_commit": "18ca9e132f08b89071291d74cbd10133d99b2e5d",
+      "result_commit": "bbfe8c89a4c2e63f4b29d7961721a2d2f5311ade",
+      "dependency_group": "safe_insertion_independent_L512",
+      "source_paths": ["notes/geometric-source-window-identity-20260930.md", "analysis/geometric-source-window-20260930/contract.json", "analysis/geometric-source-window-20260930/results/result.json", "analysis/geometric-source-window-20260930/execution.json"],
+      "primary": "Mean derivative of survival through735insertions under one safe-degree source kick, conditional onrank_b=1; b155385, endpoint156120",
+      "estimator": "Original uniform h-subset continuation gives survival*(sum_initial_degrees/h-2e/s), by exact conditional averaging over the first-arrival position.",
+      "result": "derivative=-0.0110420319107 SE0.000157666446747; baseline survival0.444755397252 SE0.00214095866922; two-step derivative-5.90719899852e-5 SE4.69939324914e-7. Full3x3covariance,14aligned deletions,55028riskprefixes, all140000first5matched.",
+      "boundary": "New mechanism readout on existing permutations; no independent data, new lag, theta grid, subgroup search, original-U or continuum claim."
+    },
+    {
+      "id": "safe_transport_selection_coupling",
+      "node": "joint_birth_process",
+      "attention": "P0",
+      "status": "completed_reference_memory_persists_selection_unresolved",
+      "integration": "open_pr",
+      "source_commit": "5054c02383242473834045fcbddc7379d83acfb9",
+      "result_commit": "e56c0b8361628a066abea4ba4d3655c74e3a62bf",
+      "dependency_group": "safe_insertion_independent_L512",
+      "source_paths": ["notes/safe-path-selection-coupling-20260930.md", "notes/safe-transport-selection-readout-20260930.md", "analysis/safe-transport-selection-20260930/contract.json", "analysis/safe-transport-selection-20260930/results/result.json", "analysis/safe-transport-selection-20260930/execution.json"],
+      "result": "Natural=-.002205065286 SE.000787091700; safe-reference=-.002537058794 SE.000636492674; selection=+.000331993508 SE.000287375294. Same1198cells/weights, full3x3covariance and14deletions;140000births match,97666reference endpoints,54850natural survivors. TgFr7R14workers664.094s, returned and Ready verified.",
+      "mechanism_contrast": "Selection-only for the specified contrast predicts zero unweighted safe-transport contrast; nonzero unweighted contrast requires entrance/transport contribution. Selection may reinforce or oppose it.",
+      "sampler": "Uniform random-order safe rejection keeps a reference path; first proposal completing kills a separate natural-survival flag. Accepted site is uniform safe and conditional expected flag equals the exact path weight. Only local hypothetical completion queries needed per proposal, not a full completion census per step.",
+      "boundary": "New conditional continuations of old first-birth prefixes share their dependency group; not independent preparations or unique birth-versus-evolution causal attribution."
+    },
+    {
+      "id": "entrance_versus_safe_growth_sources",
+      "node": "joint_birth_process",
+      "attention": "P0",
+      "status": "response_placement_formulas_and_rank_bounds_derived_realizable_source_pair_next",
+      "integration": "open_pr",
+      "source_commit": "2f639f69fa4730d2225308f21133948d6c9c1b62",
+      "source_paths": ["notes/safe-transport-selection-readout-20260930.md"],
+      "mechanism_contrast": "Entrance-law perturbation preserving each birth-count mass versus row-sum-zero safe-transition perturbation. Compare genuinely distinct response columns under one specified preparation, endpoint and normalization, not age-label swaps.",
+      "structural_bound": "Y/survival2 at fixed(k,D,c) are redundant. Two first-birth-preserving sources are also collinear in single-p static M/Etop and moving-root readouts. More precision cannot fix these ranks.",
+      "next": "Specify a realizable pair and a nonredundant joint-time or long-window readout before computation; include conditional-normalizer and any data-dependent external-weight derivatives.",
+      "boundary": "No claim that the proposed source columns have already been computed or separated; existing735-step susceptibility belongs to its own source contract."
+    },
+    {
+      "id": "one_sided_birth_moving_root_control",
+      "node": "joint_birth_process",
+      "attention": "mechanism_positive_control_completed",
+      "status": "explicit_finite_nonzero_normal_response_delivered",
+      "integration": "open_pr",
+      "source_commit": "467b18255f0dbf04916db1cd6682a01f70c09f9e",
+      "source_paths": ["notes/one-sided-birth-source-normal-response-20260930.md", "analysis/one-sided-birth-source-20260930/result.json"],
+      "result": "SquareL4 count6 kick on64 translation/dihedral-related preparations; alpha8/1001. Exact positive polynomialg; deltaM=deltaEtop=g and moving-root normal=g*(-2P0'/M'). Normal response0.00016853296, genuine rank2(p,theta)->(M,Etop)Jacobian.",
+      "boundary": "Constructed dynamic source at finiteL4, not the original norm4/U source/normalizer, continuum field identification or natural H4 attribution. L512fixed-count735-step result cannot be substituted for label-timeg."
+    },
+    {
+      "id": "normal_candidate_columns",
+      "node": "original_u_identification",
+      "status": "missing_theoretical_input",
+      "statistic": "same-source nuisance-profiled normal prediction images",
+      "mechanism_contrast": "distinct images identifiable; equal images remain unidentifiable regardless of precision"
+    }
+  ],
+  "dependency_groups": [
+    {
+      "id": "existing_paired_archives",
+      "rule": "marginals, roots, slopes, direct atoms, gap CDF and soft mass from one paired block are correlated views, not extra independent votes"
+    },
+    {
+      "id": "birth_gap_pilot",
+      "path": "analysis/birth-gap-20260929/data/run.json",
+      "rule": "separate streams by lattice/size/batch; within-batch derived statistics share full delete-one covariance; controls/benchmarks excluded"
+    },
+    {
+      "id": "birth_gap_cloud",
+      "path": "analysis/birth-gap-20260929/cloud-data-5k/run.json",
+      "rule": "cloud-independent-20260929 namespace; 14 batches per cell; no pooling with local pilot; derived CDF/Z/moments and later rank-history contrasts reuse the SAME block and are not independent evidence; excluded benchmarks are not evidence"
+    },
+    {
+      "id": "birth_L3_exact_geometry",
+      "path": "analysis/birth-completion-geometry-20260929/result.json",
+      "rule": "Deterministic occupied-set census and prefix DP share the same finite model as the earlier complete-permutation tables; source collapse is an exact identity, not independent stochastic evidence. Marked-label kernels derive from this same census."
+    },
+    {
+      "id": "completion_hazard_independent_L512",
+      "path": "analysis/completion-hazard-production-20260929/data/run.json",
+      "rule": "New completion-independent-20260929 namespace, 14 independent equal batches; all survival, directional and hazard readouts, including the later retrospective within-D nu_b necessity check, reuse this one block. Old birth-gap streams and the excluded benchmark are not pooled."
+    },
+    {
+      "id": "completion_pair_L4_exact_geometry",
+      "path": "analysis/completion-pair-synergy-20260929/result.json",
+      "rule": "Deterministic finite census and exact prefix-history weights, not a random block or independent replication of L512. Strong witnesses, weak-history contrasts and graph identities derive from the same L4 model."
+    },
+    {
+      "id": "safe_insertion_independent_L512",
+      "path": "analysis/safe-insertion-production-20260929/data/run.json",
+      "refinement_path": "analysis/exact-completion-pairs-20260929/data/run.json",
+      "conditional_continuation_path": "analysis/safe-transport-selection-20260930/data/run.json",
+      "rule": "One safe-insertion-independent-20260929 block,14 independent batches. Four probes, later exact-pair conditional means, derived survival, secondary nu and735-step source response reuse these prefixes. Safe/reference selection uses new conditional futures of those same first-birth prefixes and retains the same groups, not independent preparations. Each analysis retains aligned covariance; local/cloud execution does not change sample identity."
+    },
+    {
+      "id": "source_response_families",
+      "rule": "equivalent black/white pair source after normalizer/logit change is one normal direction"
+    },
+    {
+      "id": "research_pr_lineage",
+      "rule": "stacked proofs, copied tables and rerun controls are not independent external reviews"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "arithmetic": "exact integer Gaussian elimination over Q",
+  "assignments_checked": 65536,
+  "by_distinct_codewords_and_rank": [
+    {"assignments": 16, "distinct_codewords": 1, "rank": 1},
+    {"assignments": 1680, "distinct_codewords": 2, "rank": 2},
+    {"assignments": 20160, "distinct_codewords": 3, "rank": 3},
+    {"assignments": 192, "distinct_codewords": 4, "rank": 3},
+    {"assignments": 43488, "distinct_codewords": 4, "rank": 4}
+  ],
+  "classification_mismatches": 0,
+  "combinatorial_count_crosscheck": "passed",
+  "contract": {
+    "columns": ["1", "u1", "v1", "u0", "u0*u1", "u0*v1", "v0", "v0*u1", "v0*v1"],
+    "corner_order": [[0, 0], [1, 0], [0, 1], [1, 1]],
+    "logical_states": 4,
+    "physical_blocks": 2,
+    "physical_product_query_reachability_verified_here": false,
+    "query_language": "full algebraic tensor span",
+    "response": "(1,u0,v0) tensor (1,u1,v1)",
+    "word_id": "first_corner + 4*second_corner"
+  },
+  "examples": {
+    "direct_copy": {"corner_word_ids": [0, 5, 10, 15], "exact_rank": 4, "local_image_cardinalities": [4, 4]},
+    "one_informative_block": {"corner_word_ids": [0, 1, 2, 3], "exact_rank": 3, "local_image_cardinalities": [4, 1]},
+    "parity_second_block": {"corner_word_ids": [0, 5, 6, 3], "exact_rank": 4, "local_image_cardinalities": [4, 2]},
+    "split_bits": {"corner_word_ids": [0, 1, 4, 5], "exact_rank": 4, "local_image_cardinalities": [2, 2]}
+  },
+  "general_k_rank3_injective_count": "24*k*4^(k-1), k>=1",
+  "injective_assignments": 43680,
+  "injective_by_local_cardinality": [
+    {"assignments": 96, "local_image_cardinalities": [1, 4], "rank": 3},
+    {"assignments": 864, "local_image_cardinalities": [2, 2], "rank": 4},
+    {"assignments": 6912, "local_image_cardinalities": [2, 3], "rank": 4},
+    {"assignments": 2016, "local_image_cardinalities": [2, 4], "rank": 4},
+    {"assignments": 6912, "local_image_cardinalities": [3, 2], "rank": 4},
+    {"assignments": 17280, "local_image_cardinalities": [3, 3], "rank": 4},
+    {"assignments": 3456, "local_image_cardinalities": [3, 4], "rank": 4},
+    {"assignments": 96, "local_image_cardinalities": [4, 1], "rank": 3},
+    {"assignments": 2016, "local_image_cardinalities": [4, 2], "rank": 4},
+    {"assignments": 3456, "local_image_cardinalities": [4, 3], "rank": 4},
+    {"assignments": 576, "local_image_cardinalities": [4, 4], "rank": 4}
+  ],
+  "injective_rank3": 192,
+  "injective_rank4": 43488,
+  "not_claimed": [
+    "all tensor columns are physically reachable in every source contract",
+    "a stochastic-encoder obstruction",
+    "a full-machine positive versus linear dimension theorem",
+    "optimal noisy error probability",
+    "novelty certification"
+  ],
+  "rank3_informative_block_counts": {"0": 96, "1": 96},
+  "rank_counts": {"1": 16, "2": 1680, "3": 20352, "4": 43488},
+  "schema": "matching-one.deterministic-block-encoding.v1",
+  "scope": "finite algebraic census supporting the all-k proof in the note",
+  "unlabelled_injective_codebooks": {"rank3": 8, "rank4": 1812, "total": 1820}
+}

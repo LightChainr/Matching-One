@@ -1,0 +1,79 @@
+{
+  "status": "completed_and_resources_released",
+  "source_commit": "5054c02383242473834045fcbddc7379d83acfb9",
+  "remote_root": "/workspace/Matching-One-TgFr7R/safe-transport-selection-20260930",
+  "instance": "DevEnvC_TgFr7R",
+  "instance_uuid": "83750ac4eae34bbbbc64b894b854dd8c",
+  "local_ssh_port": 10027,
+  "initial_state": "Ready",
+  "startup": "Running verified after power-on, one successful ssh-key-reset, local key mode600; only this instance's tunnel started",
+  "tunnel_pid": 2132,
+  "runner_pid": 209,
+  "resources": {
+    "architecture": "aarch64",
+    "python": "3.9.9",
+    "compiler": "GCC10.3.1 in previously owned persistent installroot, new safe-transport-selection-project compilation subtree",
+    "reused_toolchain": "/workspace/Matching-One-TgFr7R/geometric-source-window-20260930/toolchain",
+    "old_source_or_results_overwritten": false,
+    "system_packages_changed": false,
+    "cpu_quota_cores": 14.5,
+    "memory_limit_bytes": 26843545600,
+    "workers": 14,
+    "worker_observed_rss_kib_approx": 79000,
+    "thread_environment": "OMP_NUM_THREADS=OPENBLAS_NUM_THREADS=1"
+  },
+  "benchmark": {
+    "old_prefixes": 32,
+    "scientific_weight": 0,
+    "wall_seconds": 1.3772434319835156,
+    "all_original_births_match": true,
+    "predicted_ideal_seconds": 430.38857249484863,
+    "actual_production_longer_than_probe_prediction": true,
+    "note": "children_peak_rss includes compilation, not an engine-only peak; no sample extension"
+  },
+  "continuation": {
+    "started_utc": "2026-09-30T03:05:32.320816+00:00",
+    "finished_utc": "2026-09-30T03:16:36.417712+00:00",
+    "wall_seconds": 664.0940968480427,
+    "batches": 14,
+    "original_prefixes": 140000,
+    "new_independent_prefixes": 0,
+    "new_conditional_continuations": 97666,
+    "exit_status": "all14engines0; data/run.json completed",
+    "command": "python3 analysis/safe-transport-selection-20260930/run.py run --source-commit 5054c02383242473834045fcbddc7379d83acfb9",
+    "binary_sha256": "9cd09ffeafc7bda7f4e2468e39b30266fa0f56830dcf61b5c14d9cad97bd60ef"
+  },
+  "transfer": {
+    "input_bundle_sha256": "6bfeb5c374e1f1fbadcecded27d3548d873d49a420a6db78315586c3f1a37882",
+    "return_bundle_sha256": "c6c3df008516b7325b6dcf25e56f6e11c124df56d4f795be85202a2c14b0a248",
+    "local_and_remote_sha_match": true,
+    "run_manifest_sha256": "94db3a4ae91b46f93c162a0979a3d7a4479525cb1809b62fa80ab7e1daa2d5d2",
+    "result_sha256": "07c800c52df4fd60b4e6568751308c440ab7c01a564d256b4c0b19d02b3b0a65",
+    "raw_remote_files_preserved": true
+  },
+  "analysis": {
+    "local_python": "research-py311 Python3.11",
+    "full_score_runs": 1,
+    "all140000_original_births_match": true,
+    "reference_cemetery_count": 0,
+    "no_safe_endpoint_count": 0,
+    "natural_survivors": 54850,
+    "common_natural_survivors": 54295,
+    "common_reference_endpoints": 94123,
+    "common_cells": 1198,
+    "natural_contrast": -0.00220506528552,
+    "safe_reference_contrast": -0.00253705879386,
+    "selection_contrast": 0.000331993508343,
+    "full_covariance_and_deletions": "results/result.json",
+    "support_review": "verification.md: one fixed L4 query control and one exact analytic coupling; source/covariance review; no production rerun"
+  },
+  "cleanup": {
+    "pre_shutdown_no_other_research_jobs_verified": true,
+    "own_tunnel_stopped": true,
+    "power_off_requested": true,
+    "last_verified_cloud_state": "Ready",
+    "final_cloud_state_verified_utc": "2026-09-30T03:20:51Z",
+    "other_machine_operations": 0
+  },
+  "scope": "New conditional Monte Carlo continuations from archived first-birth prefixes with their original dependency groups. One specified reference-process decomposition, not independent confirmation, unique birth/evolution causal attribution, original-U identification or continuum proof."
+}

@@ -1,0 +1,5392 @@
+{
+  "schema": "matching-one.birth-markov-kernel.v1",
+  "as_of": "2026-09-29",
+  "question": "Does entry history still predict completion after conditioning on present rank one?",
+  "contract": {
+    "time": "occupied-site insertion count, not iid-label time at finite N",
+    "cutoffs": "lower quantiles .25/.50/.75 of the equal-weight J1/J2 mixture, by cell",
+    "quantiles": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "risk": "J1<=b<J2",
+    "early": "J1<=a",
+    "late": "a<J1<=b",
+    "future": "J2>c",
+    "contrast": "P(future|risk,early)-P(future|risk,late)",
+    "null": "any time-inhomogeneous Markov description using current rank alone predicts zero",
+    "selection": "one triple selected before this scoring, primary L512; lower sizes are context, no cutoff scan",
+    "status": "retrospective exploratory reanalysis of an already-inspected random block",
+    "uncertainty": "complete equal-batch delete-one; recompute all three cutoffs in every replicate; SE not confidence bounds"
+  },
+  "source_manifest": "/private/tmp/matching-frontier-20260929-Jk39nH/analysis/birth-gap-20260929/cloud-data-5k/run.json",
+  "source_manifest_sha256": "50b519b94da0bad9093b7accb2c6e7e5bee44d85930d446f8a74be3f9766470a",
+  "source_production_role": "cloud-independent-20260929",
+  "source_engine_commit": "abc78c6a1c69e83c9a2daf4d92911833bd6f3937",
+  "source_samples": 560000,
+  "no_new_samples": true,
+  "environment": {
+    "python": "3.11.15 (main, Jun 23 2026, 15:46:51) [Clang 22.1.3 ]",
+    "platform": "macOS-27.0-arm64-arm-64bit"
+  },
+  "exact_control": {
+    "independent_table": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "dependent_table": [
+      [
+        3,
+        1
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "dependent_contrast": "1/2",
+    "dependent_covariance": "1/8",
+    "scope": "one exact four-cell arithmetic and inequality-boundary control"
+  },
+  "existing_exact_archives": [
+    {
+      "lattice": "square",
+      "L": 3,
+      "permutations": 362880,
+      "source_file": "/private/tmp/matching-frontier-20260929-Jk39nH/analysis/birth-gap-20260929/data/exact-control-square-L3-b00.json.gz",
+      "source_sha256": "dccb0e132d7b2100bd39c6414f385366354c9099facbecbbaa1e3a5fd8f37a78",
+      "triples_checked": 120,
+      "violations": [],
+      "rank_insertion_process_is_markov": true,
+      "exact_uniform_label_bridge": {
+        "times": [
+          "1/3",
+          "1/2",
+          "2/3"
+        ],
+        "H_a_b": "3/32",
+        "H_a_c": "250/6561",
+        "H_b_c": "125/972",
+        "H_b_b": "81/256",
+        "conditional_covariance": "0",
+        "survival_difference": "0",
+        "survival_difference_decimal": 0.0,
+        "markov_identity_violated_at_this_triple": false,
+        "method": "exact multinomial clock mixture of stored complete-permutation H_J; Fraction arithmetic, no random labels drawn"
+      },
+      "boundary": "exact finite archived histogram under its engine convention; not a label-clock, large-L or continuum claim"
+    },
+    {
+      "lattice": "triangular",
+      "L": 3,
+      "permutations": 362880,
+      "source_file": "/private/tmp/matching-frontier-20260929-Jk39nH/analysis/birth-gap-20260929/data/exact-control-triangular-L3-b00.json.gz",
+      "source_sha256": "eed9f4d3f0e996bfaba8e6b0ab3928ba26776bef0b2b1a18d86e08b051d30391",
+      "triples_checked": 120,
+      "violations": [
+        {
+          "cutoffs": [
+            3,
+            4,
+            5
+          ],
+          "risk_table": [
+            [
+              23328,
+              15552
+            ],
+            [
+              101088,
+              93312
+            ]
+          ],
+          "conditional_covariance": "1/90",
+          "survival_early": "3/5",
+          "survival_late": "13/25",
+          "survival_difference": "2/25"
+        },
+        {
+          "cutoffs": [
+            4,
+            5,
+            6
+          ],
+          "risk_table": [
+            [
+              23328,
+              101088
+            ],
+            [
+              15552,
+              93312
+            ]
+          ],
+          "conditional_covariance": "1/90",
+          "survival_early": "3/16",
+          "survival_late": "1/7",
+          "survival_difference": "5/112"
+        }
+      ],
+      "rank_insertion_process_is_markov": false,
+      "exact_uniform_label_bridge": {
+        "times": [
+          "1/3",
+          "1/2",
+          "2/3"
+        ],
+        "H_a_b": "287/2592",
+        "H_a_c": "76/2187",
+        "H_b_c": "287/2592",
+        "H_b_b": "45/128",
+        "conditional_covariance": "-4624/13286025",
+        "survival_difference": "-1156/716639",
+        "survival_difference_decimal": -0.0016130855284180738,
+        "markov_identity_violated_at_this_triple": true,
+        "method": "exact multinomial clock mixture of stored complete-permutation H_J; Fraction arithmetic, no random labels drawn"
+      },
+      "boundary": "exact finite archived histogram under its engine convention; not a label-clock, large-L or continuum claim"
+    }
+  ],
+  "cells": [
+    {
+      "lattice": "square",
+      "L": 64,
+      "N": 4096,
+      "samples": 70000,
+      "batches": 14,
+      "role": "size_context",
+      "cutoffs_insertion_counts": [
+        2376,
+        2428,
+        2480
+      ],
+      "risk_table_early_late_by_survive_exit": [
+        [
+          6201,
+          7138
+        ],
+        [
+          7104,
+          8599
+        ]
+      ],
+      "kernel_counts": {
+        "H_a_b": 13339,
+        "H_a_c": 6201,
+        "H_b_c": 13305,
+        "H_b_b": 29042
+      },
+      "point": {
+        "rank_one_risk_fraction": 0.4148857142857143,
+        "early_fraction_within_risk": 0.4593003236691688,
+        "survival_early": 0.4648774270934853,
+        "survival_late": 0.4523976310259186,
+        "survival_difference": 0.012479796067566662,
+        "conditional_covariance": 0.0030992766883034656
+      },
+      "metric_order": [
+        "rank_one_risk_fraction",
+        "early_fraction_within_risk",
+        "survival_early",
+        "survival_late",
+        "survival_difference",
+        "conditional_covariance"
+      ],
+      "jackknife_se": {
+        "rank_one_risk_fraction": 0.0013569057051326747,
+        "early_fraction_within_risk": 0.003247458471242331,
+        "survival_early": 0.004835451081033996,
+        "survival_late": 0.0037305149771411444,
+        "survival_difference": 0.0055289270963451995,
+        "conditional_covariance": 0.0013737335485123454
+      },
+      "delete_one_batch_covariance": [
+        [
+          1.841193092621601e-06,
+          2.0320565639726226e-06,
+          2.2836084440189043e-06,
+          1.1944120168628762e-06,
+          1.0891964271560285e-06,
+          2.7232932314563015e-07
+        ],
+        [
+          2.0320565639726226e-06,
+          1.0545986522443578e-05,
+          -1.0937924585861646e-06,
+          -3.066267076215025e-06,
+          1.97247461762886e-06,
+          4.999816097213017e-07
+        ],
+        [
+          2.2836084440189043e-06,
+          -1.0937924585861646e-06,
+          2.3381587157072835e-05,
+          3.3646471575235335e-06,
+          2.00169399995493e-05,
+          4.970649445853301e-06
+        ],
+        [
+          1.1944120168628762e-06,
+          -3.066267076215025e-06,
+          3.3646471575235335e-06,
+          1.3916741994674392e-05,
+          -1.0552094837150858e-05,
+          -2.624604073540372e-06
+        ],
+        [
+          1.0891964271560285e-06,
+          1.97247461762886e-06,
+          2.00169399995493e-05,
+          -1.0552094837150858e-05,
+          3.056903483670016e-05,
+          7.595253519393673e-06
+        ],
+        [
+          2.7232932314563015e-07,
+          4.999816097213017e-07,
+          4.970649445853301e-06,
+          -2.624604073540372e-06,
+          7.595253519393673e-06,
+          1.8871438623083204e-06
+        ]
+      ],
+      "delete_one": [
+        {
+          "omitted_batch": 0,
+          "cutoffs_insertion_counts": [
+            2376,
+            2428,
+            2480
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5771,
+              6652
+            ],
+            [
+              6571,
+              7983
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 12423,
+            "H_a_c": 5771,
+            "H_b_c": 12342,
+            "H_b_b": 26977
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.4150307692307692,
+            "early_fraction_within_risk": 0.4605033917781814,
+            "survival_early": 0.4645415761088304,
+            "survival_late": 0.4514909990380651,
+            "survival_difference": 0.01305057707076529,
+            "conditional_covariance": 0.00324228560157486
+          }
+        },
+        {
+          "omitted_batch": 1,
+          "cutoffs_insertion_counts": [
+            2376,
+            2428,
+            2480
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5738,
+              6607
+            ],
+            [
+              6601,
+              7986
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 12345,
+            "H_a_c": 5738,
+            "H_b_c": 12339,
+            "H_b_b": 26932
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.41433846153846154,
+            "early_fraction_within_risk": 0.4583766523095203,
+            "survival_early": 0.4648035641960308,
+            "survival_late": 0.452526221978474,
+            "survival_difference": 0.01227734221755683,
+            "conditional_covariance": 0.0030480650212694692
+          }
+        },
+        {
+          "omitted_batch": 2,
+          "cutoffs_insertion_counts": [
+            2376,
+            2428,
+            2480
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5773,
+              6621
+            ],
+            [
+              6596,
+              7990
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 12394,
+            "H_a_c": 5773,
+            "H_b_c": 12369,
+            "H_b_b": 26980
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.41507692307692307,
+            "early_fraction_within_risk": 0.4593773165307635,
+            "survival_early": 0.46578989833790546,
+            "survival_late": 0.4522144522144522,
+            "survival_difference": 0.013575446123453239,
+            "conditional_covariance": 0.0033714592969231252
+          }
+        },
+        {
+          "omitted_batch": 3,
+          "cutoffs_insertion_counts": [
+            2376,
+            2428,
+            2480
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5744,
+              6656
+            ],
+            [
+              6578,
+              7995
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 12400,
+            "H_a_c": 5744,
+            "H_b_c": 12322,
+            "H_b_b": 26973
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.41496923076923076,
+            "early_fraction_within_risk": 0.45971897823749674,
+            "survival_early": 0.4632258064516129,
+            "survival_late": 0.4513826940231936,
+            "survival_difference": 0.011843112428419289,
+            "conditional_covariance": 0.002941561938144254
+          }
+        },
+        {
+          "omitted_batch": 4,
+          "cutoffs_insertion_counts": [
+            2376,
+            2428,
+            2480
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5793,
+              6618
+            ],
+            [
+              6596,
+              8003
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 12411,
+            "H_a_c": 5793,
+            "H_b_c": 12389,
+            "H_b_b": 27010
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.4155384615384615,
+            "early_fraction_within_risk": 0.459496482784154,
+            "survival_early": 0.4667633550882282,
+            "survival_late": 0.4518117679293102,
+            "survival_difference": 0.014951587158917978,
+            "conditional_covariance": 0.0037133681890824098
+          }
+        },
+        {
+          "omitted_batch": 5,
+          "cutoffs_insertion_counts": [
+            2376,
+            2428,
+            2480
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5733,
+              6647
+            ],
+            [
+              6607,
+              7986
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 12380,
+            "H_a_c": 5733,
+            "H_b_c": 12340,
+            "H_b_b": 26973
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.41496923076923076,
+            "early_fraction_within_risk": 0.458977496014533,
+            "survival_early": 0.46308562197092085,
+            "survival_late": 0.4527513191256082,
+            "survival_difference": 0.01033430284531267,
+            "conditional_covariance": 0.0025661846728455176
+          }
+        },
+        {
+          "omitted_batch": 6,
+          "cutoffs_insertion_counts": [
+            2376,
+            2428,
+            2480
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5723,
+              6611
+            ],
+            [
+              6609,
+              7991
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 12334,
+            "H_a_c": 5723,
+            "H_b_c": 12332,
+            "H_b_b": 26934
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.41436923076923077,
+            "early_fraction_within_risk": 0.45793420954926856,
+            "survival_early": 0.4640019458407654,
+            "survival_late": 0.45267123287671235,
+            "survival_difference": 0.011330712964053025,
+            "conditional_covariance": 0.002812628196273106
+          }
+        },
+        {
+          "omitted_batch": 7,
+          "cutoffs_insertion_counts": [
+            2376,
+            2428,
+            2480
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5800,
+              6606
+            ],
+            [
+              6613,
+              7977
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 12406,
+            "H_a_c": 5800,
+            "H_b_c": 12413,
+            "H_b_b": 26996
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.4153230769230769,
+            "early_fraction_within_risk": 0.45954956289820714,
+            "survival_early": 0.46751571820087057,
+            "survival_late": 0.4532556545579164,
+            "survival_difference": 0.01426006364295418,
+            "conditional_covariance": 0.003541683054695316
+          }
+        },
+        {
+          "omitted_batch": 8,
+          "cutoffs_insertion_counts": [
+            2376,
+            2428,
+            2480
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5764,
+              6680
+            ],
+            [
+              6602,
+              7949
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 12444,
+            "H_a_c": 5764,
+            "H_b_c": 12366,
+            "H_b_b": 26995
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.4153076923076923,
+            "early_fraction_within_risk": 0.46097425449157253,
+            "survival_early": 0.4631951141112183,
+            "survival_late": 0.45371452133873963,
+            "survival_difference": 0.009480592772478647,
+            "conditional_covariance": 0.002355709166779563
+          }
+        },
+        {
+          "omitted_batch": 9,
+          "cutoffs_insertion_counts": [
+            2376,
+            2428,
+            2480
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5760,
+              6594
+            ],
+            [
+              6626,
+              7979
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 12354,
+            "H_a_c": 5760,
+            "H_b_c": 12386,
+            "H_b_b": 26959
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.41475384615384614,
+            "early_fraction_within_risk": 0.4582514188211729,
+            "survival_early": 0.4662457503642545,
+            "survival_late": 0.45368024649092775,
+            "survival_difference": 0.012565503873326722,
+            "conditional_covariance": 0.003119474998366132
+          }
+        },
+        {
+          "omitted_batch": 10,
+          "cutoffs_insertion_counts": [
+            2376,
+            2428,
+            2480
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5771,
+              6637
+            ],
+            [
+              6546,
+              7995
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 12408,
+            "H_a_c": 5771,
+            "H_b_c": 12317,
+            "H_b_b": 26949
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.4146,
+            "early_fraction_within_risk": 0.46042524769008125,
+            "survival_early": 0.46510315925209544,
+            "survival_late": 0.45017536620590054,
+            "survival_difference": 0.014927793046194904,
+            "conditional_covariance": 0.003708568933959296
+          }
+        },
+        {
+          "omitted_batch": 11,
+          "cutoffs_insertion_counts": [
+            2376,
+            2428,
+            2480
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5739,
+              6628
+            ],
+            [
+              6576,
+              7982
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 12367,
+            "H_a_c": 5739,
+            "H_b_c": 12315,
+            "H_b_b": 26925
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.41423076923076924,
+            "early_fraction_within_risk": 0.4593129062209842,
+            "survival_early": 0.46405757257216784,
+            "survival_late": 0.45171039978018956,
+            "survival_difference": 0.012347172791978278,
+            "conditional_covariance": 0.003066353199204434
+          }
+        },
+        {
+          "omitted_batch": 12,
+          "cutoffs_insertion_counts": [
+            2376,
+            2428,
+            2480
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5732,
+              6619
+            ],
+            [
+              6607,
+              8008
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 12351,
+            "H_a_c": 5732,
+            "H_b_c": 12339,
+            "H_b_b": 26966
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.41486153846153845,
+            "early_fraction_within_risk": 0.4580212118964622,
+            "survival_early": 0.4640919763581896,
+            "survival_late": 0.4520697913102976,
+            "survival_difference": 0.012022185047891987,
+            "conditional_covariance": 0.002984360543260134
+          }
+        },
+        {
+          "omitted_batch": 13,
+          "cutoffs_insertion_counts": [
+            2376,
+            2428,
+            2480
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5772,
+              6618
+            ],
+            [
+              6624,
+              7963
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 12390,
+            "H_a_c": 5772,
+            "H_b_c": 12396,
+            "H_b_b": 26977
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.4150307692307692,
+            "early_fraction_within_risk": 0.4592801275160322,
+            "survival_early": 0.4658595641646489,
+            "survival_late": 0.4541029683965174,
+            "survival_difference": 0.011756595768131484,
+            "conditional_covariance": 0.0029196552363593116
+          }
+        }
+      ],
+      "source_batches": [
+        {
+          "file": "cloud-independent-20260929-square-L64-b00.json.gz",
+          "batch": 0,
+          "samples": 5000,
+          "sha256": "037a6cca9054a00ee58ba2ef9204ed62c7379e1b15ab3d7ad9216ecf10454d89",
+          "dependency_group": "cloud-independent-20260929/square/L64/batch0"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L64-b01.json.gz",
+          "batch": 1,
+          "samples": 5000,
+          "sha256": "ae4863db514ddb933fd8a5c029fb8c21805f49b18c939e11dd2f0e61389e4dca",
+          "dependency_group": "cloud-independent-20260929/square/L64/batch1"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L64-b02.json.gz",
+          "batch": 2,
+          "samples": 5000,
+          "sha256": "a67551f13a8edc7a96ccaaac3337feed26abd21419547327d7e449c10b60f345",
+          "dependency_group": "cloud-independent-20260929/square/L64/batch2"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L64-b03.json.gz",
+          "batch": 3,
+          "samples": 5000,
+          "sha256": "aab99d01d68e51c794180723875707d2b1fc7bba199534600228fc88ff29eeae",
+          "dependency_group": "cloud-independent-20260929/square/L64/batch3"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L64-b04.json.gz",
+          "batch": 4,
+          "samples": 5000,
+          "sha256": "057626c65a3c57b58537899229e83e02ed2d09c8bd3ca9fb76f5322a2ec35b07",
+          "dependency_group": "cloud-independent-20260929/square/L64/batch4"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L64-b05.json.gz",
+          "batch": 5,
+          "samples": 5000,
+          "sha256": "ed032a6881cd7792cf3a8697771f22b2c0df41ec302c7414d275754641cefa05",
+          "dependency_group": "cloud-independent-20260929/square/L64/batch5"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L64-b06.json.gz",
+          "batch": 6,
+          "samples": 5000,
+          "sha256": "51112907f815a6d93828a9362fb2c29713afbf4c04a4501b430bcff9410b2711",
+          "dependency_group": "cloud-independent-20260929/square/L64/batch6"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L64-b07.json.gz",
+          "batch": 7,
+          "samples": 5000,
+          "sha256": "160cbff935c219cf6b3b8313745a484d552331eea8e82681fe903e623e307c0c",
+          "dependency_group": "cloud-independent-20260929/square/L64/batch7"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L64-b08.json.gz",
+          "batch": 8,
+          "samples": 5000,
+          "sha256": "0b137ce290c8c0a4bdd14a05aaa6d56c816806118a26906d8d22e8608048ad6f",
+          "dependency_group": "cloud-independent-20260929/square/L64/batch8"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L64-b09.json.gz",
+          "batch": 9,
+          "samples": 5000,
+          "sha256": "25d9158157d19c2787fa95779417a4136c286d4657b1f218cf914ebd0c4bd04a",
+          "dependency_group": "cloud-independent-20260929/square/L64/batch9"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L64-b10.json.gz",
+          "batch": 10,
+          "samples": 5000,
+          "sha256": "9df8c98ee72fb9c9180e6dbf6582660b506acd40f4f8ed4202047f7bfdb27bd4",
+          "dependency_group": "cloud-independent-20260929/square/L64/batch10"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L64-b11.json.gz",
+          "batch": 11,
+          "samples": 5000,
+          "sha256": "07476b0530f706f85e364913b217228e9e1175c3febb6d3b61b6e357adf6e090",
+          "dependency_group": "cloud-independent-20260929/square/L64/batch11"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L64-b12.json.gz",
+          "batch": 12,
+          "samples": 5000,
+          "sha256": "b076efb386555597db02f48690c8796ec5b07da7dad205941e3b43e7713f98f0",
+          "dependency_group": "cloud-independent-20260929/square/L64/batch12"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L64-b13.json.gz",
+          "batch": 13,
+          "samples": 5000,
+          "sha256": "e95658b8f53c93eb8caa1c20814c34e17fe14c7789b02adc91f157b519d26a93",
+          "dependency_group": "cloud-independent-20260929/square/L64/batch13"
+        }
+      ]
+    },
+    {
+      "lattice": "square",
+      "L": 128,
+      "N": 16384,
+      "samples": 70000,
+      "batches": 14,
+      "role": "size_context",
+      "cutoffs_insertion_counts": [
+        9585,
+        9712,
+        9838
+      ],
+      "risk_table_early_late_by_survive_exit": [
+        [
+          5758,
+          6993
+        ],
+        [
+          6863,
+          8604
+        ]
+      ],
+      "kernel_counts": {
+        "H_a_b": 12751,
+        "H_a_c": 5758,
+        "H_b_c": 12621,
+        "H_b_b": 28218
+      },
+      "point": {
+        "rank_one_risk_fraction": 0.4031142857142857,
+        "early_fraction_within_risk": 0.4518746899142391,
+        "survival_early": 0.4515724256921026,
+        "survival_late": 0.4437188853688498,
+        "survival_difference": 0.007853540323252806,
+        "conditional_covariance": 0.0019451959243173803
+      },
+      "metric_order": [
+        "rank_one_risk_fraction",
+        "early_fraction_within_risk",
+        "survival_early",
+        "survival_late",
+        "survival_difference",
+        "conditional_covariance"
+      ],
+      "jackknife_se": {
+        "rank_one_risk_fraction": 0.00221540205819054,
+        "early_fraction_within_risk": 0.004946137891737542,
+        "survival_early": 0.005512391115829627,
+        "survival_late": 0.004564740265505312,
+        "survival_difference": 0.004795797031706563,
+        "conditional_covariance": 0.001187011973395231
+      },
+      "delete_one_batch_covariance": [
+        [
+          4.908006279434881e-06,
+          -2.60366517073819e-06,
+          -1.0060122544097678e-07,
+          1.7029585864409357e-06,
+          -1.8035598118819125e-06,
+          -4.482431934073798e-07
+        ],
+        [
+          -2.60366517073819e-06,
+          2.4464280044081896e-05,
+          -2.241382484645445e-05,
+          -1.434553987850676e-05,
+          -8.068284967947686e-06,
+          -1.983955890031343e-06
+        ],
+        [
+          -1.0060122544097678e-07,
+          -2.241382484645445e-05,
+          3.0386455813877403e-05,
+          1.4111820168038712e-05,
+          1.627463564583869e-05,
+          4.0172782275448814e-06
+        ],
+        [
+          1.7029585864409357e-06,
+          -1.434553987850676e-05,
+          1.4111820168038712e-05,
+          2.08368536915255e-05,
+          -6.725033523486788e-06,
+          -1.6753741337118509e-06
+        ],
+        [
+          -1.8035598118819125e-06,
+          -8.068284967947686e-06,
+          1.627463564583869e-05,
+          -6.725033523486788e-06,
+          2.299966916932548e-05,
+          5.692652361256732e-06
+        ],
+        [
+          -4.482431934073798e-07,
+          -1.983955890031343e-06,
+          4.0172782275448814e-06,
+          -1.6753741337118509e-06,
+          5.692652361256732e-06,
+          1.4089974249836403e-06
+        ]
+      ],
+      "delete_one": [
+        {
+          "omitted_batch": 0,
+          "cutoffs_insertion_counts": [
+            9585,
+            9712,
+            9838
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5336,
+              6456
+            ],
+            [
+              6380,
+              7961
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11792,
+            "H_a_c": 5336,
+            "H_b_c": 11716,
+            "H_b_b": 26133
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.40204615384615383,
+            "early_fraction_within_risk": 0.45123024528374084,
+            "survival_early": 0.4525101763907734,
+            "survival_late": 0.44487832089812424,
+            "survival_difference": 0.007631855492649164,
+            "conditional_covariance": 0.0018898115890135859
+          }
+        },
+        {
+          "omitted_batch": 1,
+          "cutoffs_insertion_counts": [
+            9585,
+            9712,
+            9839
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5334,
+              6514
+            ],
+            [
+              6338,
+              7983
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11848,
+            "H_a_c": 5334,
+            "H_b_c": 11672,
+            "H_b_b": 26169
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.4026,
+            "early_fraction_within_risk": 0.45274943635599374,
+            "survival_early": 0.450202565833896,
+            "survival_late": 0.4425668598561553,
+            "survival_difference": 0.007635705977740714,
+            "conditional_covariance": 0.001891878896894843
+          }
+        },
+        {
+          "omitted_batch": 2,
+          "cutoffs_insertion_counts": [
+            9585,
+            9712,
+            9838
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5350,
+              6474
+            ],
+            [
+              6370,
+              7984
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11824,
+            "H_a_c": 5350,
+            "H_b_c": 11720,
+            "H_b_b": 26178
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.40273846153846155,
+            "early_fraction_within_risk": 0.45167698067079226,
+            "survival_early": 0.4524695534506089,
+            "survival_late": 0.44377873763410897,
+            "survival_difference": 0.008690815816499942,
+            "conditional_covariance": 0.002152409906727581
+          }
+        },
+        {
+          "omitted_batch": 3,
+          "cutoffs_insertion_counts": [
+            9585,
+            9712,
+            9838
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5340,
+              6518
+            ],
+            [
+              6417,
+              8022
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11858,
+            "H_a_c": 5340,
+            "H_b_c": 11757,
+            "H_b_b": 26297
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.4045692307692308,
+            "early_fraction_within_risk": 0.4509259611362513,
+            "survival_early": 0.45032889188733344,
+            "survival_late": 0.4444213588198629,
+            "survival_difference": 0.0059075330674705495,
+            "conditional_covariance": 0.001462656383659492
+          }
+        },
+        {
+          "omitted_batch": 4,
+          "cutoffs_insertion_counts": [
+            9585,
+            9712,
+            9838
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5362,
+              6507
+            ],
+            [
+              6358,
+              8021
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11869,
+            "H_a_c": 5362,
+            "H_b_c": 11720,
+            "H_b_b": 26248
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.40381538461538463,
+            "early_fraction_within_risk": 0.45218683328253584,
+            "survival_early": 0.451765102367512,
+            "survival_late": 0.4421726128381668,
+            "survival_difference": 0.009592489529345216,
+            "conditional_covariance": 0.0023761930024641985
+          }
+        },
+        {
+          "omitted_batch": 5,
+          "cutoffs_insertion_counts": [
+            9585,
+            9711,
+            9838
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5342,
+              6568
+            ],
+            [
+              6312,
+              7968
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11910,
+            "H_a_c": 5342,
+            "H_b_c": 11654,
+            "H_b_b": 26190
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.40292307692307694,
+            "early_fraction_within_risk": 0.4547537227949599,
+            "survival_early": 0.44853064651553315,
+            "survival_late": 0.44201680672268906,
+            "survival_difference": 0.006513839792844089,
+            "conditional_covariance": 0.001615124648626851
+          }
+        },
+        {
+          "omitted_batch": 6,
+          "cutoffs_insertion_counts": [
+            9585,
+            9711,
+            9838
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5341,
+              6564
+            ],
+            [
+              6318,
+              7972
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11905,
+            "H_a_c": 5341,
+            "H_b_c": 11659,
+            "H_b_b": 26195
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.403,
+            "early_fraction_within_risk": 0.45447604504676464,
+            "survival_early": 0.44863502729945404,
+            "survival_late": 0.44212736179146256,
+            "survival_difference": 0.006507665507991478,
+            "conditional_covariance": 0.0016134296926807006
+          }
+        },
+        {
+          "omitted_batch": 7,
+          "cutoffs_insertion_counts": [
+            9585,
+            9711,
+            9838
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5356,
+              6573
+            ],
+            [
+              6328,
+              7943
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11929,
+            "H_a_c": 5356,
+            "H_b_c": 11684,
+            "H_b_b": 26200
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.40307692307692305,
+            "early_fraction_within_risk": 0.45530534351145036,
+            "survival_early": 0.4489898566518568,
+            "survival_late": 0.4434167192207974,
+            "survival_difference": 0.005573137431059416,
+            "conditional_covariance": 0.0013821513897791504
+          }
+        },
+        {
+          "omitted_batch": 8,
+          "cutoffs_insertion_counts": [
+            9585,
+            9712,
+            9838
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5364,
+              6495
+            ],
+            [
+              6358,
+              8009
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11859,
+            "H_a_c": 5364,
+            "H_b_c": 11722,
+            "H_b_b": 26226
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.40347692307692307,
+            "early_fraction_within_risk": 0.45218485472431935,
+            "survival_early": 0.4523146976979509,
+            "survival_late": 0.4425419363819865,
+            "survival_difference": 0.009772761315964384,
+            "conditional_covariance": 0.002420846980916962
+          }
+        },
+        {
+          "omitted_batch": 9,
+          "cutoffs_insertion_counts": [
+            9585,
+            9712,
+            9838
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5346,
+              6500
+            ],
+            [
+              6364,
+              7968
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11846,
+            "H_a_c": 5346,
+            "H_b_c": 11710,
+            "H_b_b": 26178
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.40273846153846155,
+            "early_fraction_within_risk": 0.4525173810069524,
+            "survival_early": 0.45129157521526253,
+            "survival_late": 0.4440413061680156,
+            "survival_difference": 0.0072502690472469045,
+            "conditional_covariance": 0.0017962208116963619
+          }
+        },
+        {
+          "omitted_batch": 10,
+          "cutoffs_insertion_counts": [
+            9585,
+            9712,
+            9838
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5339,
+              6502
+            ],
+            [
+              6404,
+              7985
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11841,
+            "H_a_c": 5339,
+            "H_b_c": 11743,
+            "H_b_b": 26230
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.4035384615384615,
+            "early_fraction_within_risk": 0.451429660693862,
+            "survival_early": 0.45089097204627987,
+            "survival_late": 0.44506220029188964,
+            "survival_difference": 0.005828771754390227,
+            "conditional_covariance": 0.0014434424121989573
+          }
+        },
+        {
+          "omitted_batch": 11,
+          "cutoffs_insertion_counts": [
+            9585,
+            9712,
+            9838
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5341,
+              6487
+            ],
+            [
+              6342,
+              7992
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11828,
+            "H_a_c": 5341,
+            "H_b_c": 11683,
+            "H_b_b": 26162
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.4024923076923077,
+            "early_fraction_within_risk": 0.45210610809571133,
+            "survival_early": 0.45155563070679744,
+            "survival_late": 0.4424445374633738,
+            "survival_difference": 0.00911109324342363,
+            "conditional_covariance": 0.002256874058474293
+          }
+        },
+        {
+          "omitted_batch": 12,
+          "cutoffs_insertion_counts": [
+            9585,
+            9711,
+            9838
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5324,
+              6566
+            ],
+            [
+              6286,
+              7991
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11890,
+            "H_a_c": 5324,
+            "H_b_c": 11610,
+            "H_b_b": 26167
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.4025692307692308,
+            "early_fraction_within_risk": 0.45438911606221577,
+            "survival_early": 0.447771236333053,
+            "survival_late": 0.44028857603137916,
+            "survival_difference": 0.007482660301673827,
+            "conditional_covariance": 0.0018550985026053782
+          }
+        },
+        {
+          "omitted_batch": 13,
+          "cutoffs_insertion_counts": [
+            9585,
+            9712,
+            9838
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5346,
+              6494
+            ],
+            [
+              6368,
+              7985
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11840,
+            "H_a_c": 5346,
+            "H_b_c": 11714,
+            "H_b_b": 26193
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.40296923076923075,
+            "early_fraction_within_risk": 0.45202916809834687,
+            "survival_early": 0.45152027027027025,
+            "survival_late": 0.44367031282658675,
+            "survival_difference": 0.007849957443683497,
+            "conditional_covariance": 0.0019444250332518065
+          }
+        }
+      ],
+      "source_batches": [
+        {
+          "file": "cloud-independent-20260929-square-L128-b00.json.gz",
+          "batch": 0,
+          "samples": 5000,
+          "sha256": "40dc25bf3926a15c27defdb1e0a9456e03d3ea9bdfbfd707a9392b2cf353d6b3",
+          "dependency_group": "cloud-independent-20260929/square/L128/batch0"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L128-b01.json.gz",
+          "batch": 1,
+          "samples": 5000,
+          "sha256": "1c9cd6e6ee863b61831b70ef5488c08a4454a892b6c53283da9c3ccba51cf183",
+          "dependency_group": "cloud-independent-20260929/square/L128/batch1"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L128-b02.json.gz",
+          "batch": 2,
+          "samples": 5000,
+          "sha256": "54e2406b99b2b6a3aabdb14deeba6d6f8a837ce8af3401d6b930e8934bb3c088",
+          "dependency_group": "cloud-independent-20260929/square/L128/batch2"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L128-b03.json.gz",
+          "batch": 3,
+          "samples": 5000,
+          "sha256": "f264fc8514bd688250cd21caccc183582e8f6380f61fd143e8665869c0390e18",
+          "dependency_group": "cloud-independent-20260929/square/L128/batch3"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L128-b04.json.gz",
+          "batch": 4,
+          "samples": 5000,
+          "sha256": "e3b00f685bf23bfe3cd4e415e8ddfe719531bff8b0743ec8d1d297006a1c92aa",
+          "dependency_group": "cloud-independent-20260929/square/L128/batch4"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L128-b05.json.gz",
+          "batch": 5,
+          "samples": 5000,
+          "sha256": "0576ff458a1bc04b281c4141f0b0418b232a19e055c323037986d3086088a9ed",
+          "dependency_group": "cloud-independent-20260929/square/L128/batch5"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L128-b06.json.gz",
+          "batch": 6,
+          "samples": 5000,
+          "sha256": "aa0e10aabca141897fe7cc78fa9c57889f8f1554b44fc72231d07ac746ebf799",
+          "dependency_group": "cloud-independent-20260929/square/L128/batch6"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L128-b07.json.gz",
+          "batch": 7,
+          "samples": 5000,
+          "sha256": "86da667cc2dfaa971b196069ada69ab98a58cee318f572745b3aa79ee3c63c8b",
+          "dependency_group": "cloud-independent-20260929/square/L128/batch7"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L128-b08.json.gz",
+          "batch": 8,
+          "samples": 5000,
+          "sha256": "09082bbd42ef2ba6578050e861b020d9975aad9241b0ed50d5b1d890a3d2be9b",
+          "dependency_group": "cloud-independent-20260929/square/L128/batch8"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L128-b09.json.gz",
+          "batch": 9,
+          "samples": 5000,
+          "sha256": "ffe3ee493e9c9319ee7933e105851869cce254c102f63efeacaca21153968f53",
+          "dependency_group": "cloud-independent-20260929/square/L128/batch9"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L128-b10.json.gz",
+          "batch": 10,
+          "samples": 5000,
+          "sha256": "31b47d73538682169650dbc4d52b6b56551f8549f54861390d28c0b1b46a9d4f",
+          "dependency_group": "cloud-independent-20260929/square/L128/batch10"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L128-b11.json.gz",
+          "batch": 11,
+          "samples": 5000,
+          "sha256": "2812ad4d4b6c6a8948a94cdadfc19dad684511e366cf17a3525a8b41e7f8a195",
+          "dependency_group": "cloud-independent-20260929/square/L128/batch11"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L128-b12.json.gz",
+          "batch": 12,
+          "samples": 5000,
+          "sha256": "25c137e4a20441adb3fe3d699e5e3f9de14eb40a08f227e8e66ea29e036772a6",
+          "dependency_group": "cloud-independent-20260929/square/L128/batch12"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L128-b13.json.gz",
+          "batch": 13,
+          "samples": 5000,
+          "sha256": "2b9b335c5182e6df9c2833800d41062520cde06e64a3d4c623c5f91cdaa40974",
+          "dependency_group": "cloud-independent-20260929/square/L128/batch13"
+        }
+      ]
+    },
+    {
+      "lattice": "square",
+      "L": 256,
+      "N": 65536,
+      "samples": 70000,
+      "batches": 14,
+      "role": "size_context",
+      "cutoffs_insertion_counts": [
+        38542,
+        38848,
+        39154
+      ],
+      "risk_table_early_late_by_survive_exit": [
+        [
+          5651,
+          6694
+        ],
+        [
+          6848,
+          8582
+        ]
+      ],
+      "kernel_counts": {
+        "H_a_b": 12345,
+        "H_a_c": 5651,
+        "H_b_c": 12499,
+        "H_b_b": 27775
+      },
+      "point": {
+        "rank_one_risk_fraction": 0.3967857142857143,
+        "early_fraction_within_risk": 0.44446444644464445,
+        "survival_early": 0.45775617658971246,
+        "survival_late": 0.4438107582631238,
+        "survival_difference": 0.013945418326588688,
+        "conditional_covariance": 0.003443344154397438
+      },
+      "metric_order": [
+        "rank_one_risk_fraction",
+        "early_fraction_within_risk",
+        "survival_early",
+        "survival_late",
+        "survival_difference",
+        "conditional_covariance"
+      ],
+      "jackknife_se": {
+        "rank_one_risk_fraction": 0.0013670316419907799,
+        "early_fraction_within_risk": 0.003123742905304259,
+        "survival_early": 0.004342775375985941,
+        "survival_late": 0.004071703524988181,
+        "survival_difference": 0.006225255003066747,
+        "conditional_covariance": 0.00153706007353502
+      },
+      "delete_one_batch_covariance": [
+        [
+          1.868775510204008e-06,
+          2.5752106252437797e-08,
+          -2.4102376270686584e-06,
+          -1.4088499502207375e-06,
+          -1.0013876768479207e-06,
+          -2.4739839902062294e-07
+        ],
+        [
+          2.5752106252437797e-08,
+          9.757769738438694e-06,
+          1.1172717993559018e-06,
+          1.5690090769238108e-06,
+          -4.517372775679087e-07,
+          -9.592217135825772e-08
+        ],
+        [
+          -2.4102376270686584e-06,
+          1.1172717993559018e-06,
+          1.8859697966269833e-05,
+          -1.6576661457682758e-06,
+          2.0517364112038108e-05,
+          5.068143265170793e-06
+        ],
+        [
+          -1.4088499502207375e-06,
+          1.5690090769238108e-06,
+          -1.6576661457682758e-06,
+          1.657876959540118e-05,
+          -1.8236435741169458e-05,
+          -4.50039645033804e-06
+        ],
+        [
+          -1.0013876768479207e-06,
+          -4.517372775679087e-07,
+          2.0517364112038108e-05,
+          -1.8236435741169458e-05,
+          3.8753799853207565e-05,
+          9.568539715508832e-06
+        ],
+        [
+          -2.4739839902062294e-07,
+          -9.592217135825772e-08,
+          5.068143265170793e-06,
+          -4.50039645033804e-06,
+          9.568539715508832e-06,
+          2.3625536696554807e-06
+        ]
+      ],
+      "delete_one": [
+        {
+          "omitted_batch": 0,
+          "cutoffs_insertion_counts": [
+            38542,
+            38848,
+            39154
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5271,
+              6215
+            ],
+            [
+              6358,
+              7935
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11486,
+            "H_a_c": 5271,
+            "H_b_c": 11629,
+            "H_b_b": 25779
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3966,
+            "early_fraction_within_risk": 0.4455564606850537,
+            "survival_early": 0.45890649486331186,
+            "survival_late": 0.44483313510109845,
+            "survival_difference": 0.014073359762213411,
+            "conditional_covariance": 0.003476625109333575
+          }
+        },
+        {
+          "omitted_batch": 1,
+          "cutoffs_insertion_counts": [
+            38542,
+            38848,
+            39154
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5246,
+              6247
+            ],
+            [
+              6372,
+              7945
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11493,
+            "H_a_c": 5246,
+            "H_b_c": 11618,
+            "H_b_b": 25810
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.39707692307692305,
+            "early_fraction_within_risk": 0.4452925222781868,
+            "survival_early": 0.45645175324110326,
+            "survival_late": 0.4450653069777188,
+            "survival_difference": 0.011386446263384475,
+            "conditional_covariance": 0.0028125329783814934
+          }
+        },
+        {
+          "omitted_batch": 2,
+          "cutoffs_insertion_counts": [
+            38542,
+            38848,
+            39154
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5232,
+              6185
+            ],
+            [
+              6366,
+              7987
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11417,
+            "H_a_c": 5232,
+            "H_b_c": 11598,
+            "H_b_b": 25770
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3964615384615385,
+            "early_fraction_within_risk": 0.443034536282499,
+            "survival_early": 0.45826399229219583,
+            "survival_late": 0.4435309691353724,
+            "survival_difference": 0.014733023156823455,
+            "conditional_covariance": 0.003635446185315338
+          }
+        },
+        {
+          "omitted_batch": 3,
+          "cutoffs_insertion_counts": [
+            38543,
+            38849,
+            39154
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5276,
+              6186
+            ],
+            [
+              6382,
+              7957
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11462,
+            "H_a_c": 5276,
+            "H_b_c": 11658,
+            "H_b_b": 25801
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3969384615384615,
+            "early_fraction_within_risk": 0.4442463470408124,
+            "survival_early": 0.46030361193508984,
+            "survival_late": 0.445079852151475,
+            "survival_difference": 0.015223759783614843,
+            "conditional_covariance": 0.003758617348095398
+          }
+        },
+        {
+          "omitted_batch": 4,
+          "cutoffs_insertion_counts": [
+            38543,
+            38848,
+            39154
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5246,
+              6241
+            ],
+            [
+              6363,
+              7972
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11487,
+            "H_a_c": 5246,
+            "H_b_c": 11609,
+            "H_b_b": 25822
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.39726153846153844,
+            "early_fraction_within_risk": 0.44485322593137633,
+            "survival_early": 0.4566901714982154,
+            "survival_late": 0.44387861876525986,
+            "survival_difference": 0.012811552732955533,
+            "conditional_covariance": 0.0031639261158179846
+          }
+        },
+        {
+          "omitted_batch": 5,
+          "cutoffs_insertion_counts": [
+            38542,
+            38848,
+            39154
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5243,
+              6198
+            ],
+            [
+              6371,
+              7957
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11441,
+            "H_a_c": 5243,
+            "H_b_c": 11614,
+            "H_b_b": 25769
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.39644615384615384,
+            "early_fraction_within_risk": 0.4439830804454965,
+            "survival_early": 0.45826413775019664,
+            "survival_late": 0.4446538246789503,
+            "survival_difference": 0.013610313071246327,
+            "conditional_covariance": 0.00335987053071533
+          }
+        },
+        {
+          "omitted_batch": 6,
+          "cutoffs_insertion_counts": [
+            38542,
+            38848,
+            39154
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5274,
+              6223
+            ],
+            [
+              6325,
+              7969
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11497,
+            "H_a_c": 5274,
+            "H_b_c": 11599,
+            "H_b_b": 25791
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3967846153846154,
+            "early_fraction_within_risk": 0.4457756581753325,
+            "survival_early": 0.4587283639210229,
+            "survival_late": 0.44249335385476424,
+            "survival_difference": 0.01623501006625866,
+            "conditional_covariance": 0.00401101705340307
+          }
+        },
+        {
+          "omitted_batch": 7,
+          "cutoffs_insertion_counts": [
+            38543,
+            38849,
+            39154
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5275,
+              6205
+            ],
+            [
+              6340,
+              7982
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11480,
+            "H_a_c": 5275,
+            "H_b_c": 11615,
+            "H_b_b": 25802
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.39695384615384616,
+            "early_fraction_within_risk": 0.4449267498643516,
+            "survival_early": 0.4594947735191638,
+            "survival_late": 0.44267560396592653,
+            "survival_difference": 0.016819169553237256,
+            "conditional_covariance": 0.004153778789456482
+          }
+        },
+        {
+          "omitted_batch": 8,
+          "cutoffs_insertion_counts": [
+            38542,
+            38848,
+            39153
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5264,
+              6179
+            ],
+            [
+              6369,
+              7939
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11443,
+            "H_a_c": 5264,
+            "H_b_c": 11633,
+            "H_b_b": 25751
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3961692307692308,
+            "early_fraction_within_risk": 0.44437109238476175,
+            "survival_early": 0.460019225727519,
+            "survival_late": 0.4451355884819681,
+            "survival_difference": 0.014883637245550918,
+            "conditional_covariance": 0.0036748507742637754
+          }
+        },
+        {
+          "omitted_batch": 9,
+          "cutoffs_insertion_counts": [
+            38542,
+            38849,
+            39154
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5262,
+              6201
+            ],
+            [
+              6367,
+              8011
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11463,
+            "H_a_c": 5262,
+            "H_b_c": 11629,
+            "H_b_b": 25841
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.39755384615384615,
+            "early_fraction_within_risk": 0.4435973840021671,
+            "survival_early": 0.4590421355666056,
+            "survival_late": 0.44282932257615804,
+            "survival_difference": 0.016212812990447578,
+            "conditional_covariance": 0.004001626153740134
+          }
+        },
+        {
+          "omitted_batch": 10,
+          "cutoffs_insertion_counts": [
+            38544,
+            38850,
+            39155
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5253,
+              6187
+            ],
+            [
+              6345,
+              7975
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11440,
+            "H_a_c": 5253,
+            "H_b_c": 11598,
+            "H_b_b": 25760
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3963076923076923,
+            "early_fraction_within_risk": 0.4440993788819876,
+            "survival_early": 0.4591783216783217,
+            "survival_late": 0.44308659217877094,
+            "survival_difference": 0.016091729499550733,
+            "conditional_covariance": 0.003972647660198295
+          }
+        },
+        {
+          "omitted_batch": 11,
+          "cutoffs_insertion_counts": [
+            38541,
+            38848,
+            39154
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5221,
+              6202
+            ],
+            [
+              6386,
+              7987
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11423,
+            "H_a_c": 5221,
+            "H_b_c": 11607,
+            "H_b_b": 25796
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3968615384615385,
+            "early_fraction_within_risk": 0.4428205923398977,
+            "survival_early": 0.45706031690449095,
+            "survival_late": 0.4443052946496904,
+            "survival_difference": 0.012755022254800574,
+            "conditional_covariance": 0.003147053214095514
+          }
+        },
+        {
+          "omitted_batch": 12,
+          "cutoffs_insertion_counts": [
+            38543,
+            38850,
+            39155
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5239,
+              6210
+            ],
+            [
+              6347,
+              8019
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11449,
+            "H_a_c": 5239,
+            "H_b_c": 11586,
+            "H_b_b": 25815
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.39715384615384614,
+            "early_fraction_within_risk": 0.44350184001549486,
+            "survival_early": 0.4575945497423356,
+            "survival_late": 0.44180704441041346,
+            "survival_difference": 0.015787505331922136,
+            "conditional_covariance": 0.0038964819515969968
+          }
+        },
+        {
+          "omitted_batch": 13,
+          "cutoffs_insertion_counts": [
+            38543,
+            38849,
+            39154
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5239,
+              6228
+            ],
+            [
+              6388,
+              7955
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11467,
+            "H_a_c": 5239,
+            "H_b_c": 11627,
+            "H_b_b": 25810
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.39707692307692305,
+            "early_fraction_within_risk": 0.4442851607903913,
+            "survival_early": 0.4568762535972791,
+            "survival_late": 0.44537405005926234,
+            "survival_difference": 0.011502203538016786,
+            "conditional_covariance": 0.0028398463963626545
+          }
+        }
+      ],
+      "source_batches": [
+        {
+          "file": "cloud-independent-20260929-square-L256-b00.json.gz",
+          "batch": 0,
+          "samples": 5000,
+          "sha256": "6517dc4f5e87cc307413c24684dcff4a0301e467c76cb985c785ee0f02dcf773",
+          "dependency_group": "cloud-independent-20260929/square/L256/batch0"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L256-b01.json.gz",
+          "batch": 1,
+          "samples": 5000,
+          "sha256": "25dc0357c3379726c8f537350a2f950bb43cb57ecbb8c3a4738e5144ce5978eb",
+          "dependency_group": "cloud-independent-20260929/square/L256/batch1"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L256-b02.json.gz",
+          "batch": 2,
+          "samples": 5000,
+          "sha256": "fcb76d26cfc8ed885e0c400ca7ba35ae5a8a824d3af11be698abb9ed4863f46a",
+          "dependency_group": "cloud-independent-20260929/square/L256/batch2"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L256-b03.json.gz",
+          "batch": 3,
+          "samples": 5000,
+          "sha256": "c1c2ae0c937acde35804127752af526a2b6e9fb33ded153c35659ae7cf20111e",
+          "dependency_group": "cloud-independent-20260929/square/L256/batch3"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L256-b04.json.gz",
+          "batch": 4,
+          "samples": 5000,
+          "sha256": "8d2d83969fc7e6271c5cf51432174313af73a1431847ec10ac1fc93125318dd1",
+          "dependency_group": "cloud-independent-20260929/square/L256/batch4"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L256-b05.json.gz",
+          "batch": 5,
+          "samples": 5000,
+          "sha256": "e51479277db499f9cbe051c5506e95e5ffe956d06996f8358a0b76ef7bdd7866",
+          "dependency_group": "cloud-independent-20260929/square/L256/batch5"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L256-b06.json.gz",
+          "batch": 6,
+          "samples": 5000,
+          "sha256": "981d9922eb43441dd21261468f76acb94701a64bb4a885cba151007201d50a99",
+          "dependency_group": "cloud-independent-20260929/square/L256/batch6"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L256-b07.json.gz",
+          "batch": 7,
+          "samples": 5000,
+          "sha256": "c314e78fd3ae58cd637f4d039ff7014a1435f55996915a606d6dfed7f1768e2b",
+          "dependency_group": "cloud-independent-20260929/square/L256/batch7"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L256-b08.json.gz",
+          "batch": 8,
+          "samples": 5000,
+          "sha256": "3e3d75f4ea3a8b9f79c9afe3ce60b5e92ab66023f88da0c00d0b5916994a5381",
+          "dependency_group": "cloud-independent-20260929/square/L256/batch8"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L256-b09.json.gz",
+          "batch": 9,
+          "samples": 5000,
+          "sha256": "8c3af682d750798de7594a5051062a1727c7647c69875451d2a00cb15ef19fe0",
+          "dependency_group": "cloud-independent-20260929/square/L256/batch9"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L256-b10.json.gz",
+          "batch": 10,
+          "samples": 5000,
+          "sha256": "1b85f0936d3df1e58c7e55cc42dd257802d5e41a1e7caba08e5283e337af0375",
+          "dependency_group": "cloud-independent-20260929/square/L256/batch10"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L256-b11.json.gz",
+          "batch": 11,
+          "samples": 5000,
+          "sha256": "86cab37f5149ba91e1840ee598e718f910e084d46e0e92de5ee9c4a63a85cf7f",
+          "dependency_group": "cloud-independent-20260929/square/L256/batch11"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L256-b12.json.gz",
+          "batch": 12,
+          "samples": 5000,
+          "sha256": "675bceb58ffd5759ce489c27a9e0cdbfc780892be29f084a921284482618b1c1",
+          "dependency_group": "cloud-independent-20260929/square/L256/batch12"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L256-b13.json.gz",
+          "batch": 13,
+          "samples": 5000,
+          "sha256": "9f35d89a632b93566bf9c0b705bf870915a21be1810dd3189aacce803cf1e3b5",
+          "dependency_group": "cloud-independent-20260929/square/L256/batch13"
+        }
+      ]
+    },
+    {
+      "lattice": "square",
+      "L": 512,
+      "N": 262144,
+      "samples": 70000,
+      "batches": 14,
+      "role": "primary_largest_available_size",
+      "cutoffs_insertion_counts": [
+        154646,
+        155385,
+        156120
+      ],
+      "risk_table_early_late_by_survive_exit": [
+        [
+          5488,
+          6731
+        ],
+        [
+          6662,
+          8656
+        ]
+      ],
+      "kernel_counts": {
+        "H_a_b": 12219,
+        "H_a_c": 5488,
+        "H_b_c": 12150,
+        "H_b_b": 27537
+      },
+      "point": {
+        "rank_one_risk_fraction": 0.3933857142857143,
+        "early_fraction_within_risk": 0.44373025384028764,
+        "survival_early": 0.44913659055569194,
+        "survival_late": 0.43491317404360885,
+        "survival_difference": 0.014223416512083087,
+        "conditional_covariance": 0.0035108187471585687
+      },
+      "metric_order": [
+        "rank_one_risk_fraction",
+        "early_fraction_within_risk",
+        "survival_early",
+        "survival_late",
+        "survival_difference",
+        "conditional_covariance"
+      ],
+      "jackknife_se": {
+        "rank_one_risk_fraction": 0.0018294855201520044,
+        "early_fraction_within_risk": 0.0024707054098038507,
+        "survival_early": 0.004096515883525068,
+        "survival_late": 0.0038300646536531427,
+        "survival_difference": 0.005106857236045702,
+        "conditional_covariance": 0.0012583337424471434
+      },
+      "delete_one_batch_covariance": [
+        [
+          3.3470172684458505e-06,
+          1.2521983422468233e-06,
+          -2.3481403219975173e-06,
+          -8.88885696063018e-07,
+          -1.4592546259344993e-06,
+          -3.583679637527461e-07
+        ],
+        [
+          1.2521983422468233e-06,
+          6.104385222034013e-06,
+          -4.714274785749102e-06,
+          2.20605802445371e-06,
+          -6.920332810202812e-06,
+          -1.6984877453918735e-06
+        ],
+        [
+          -2.3481403219975173e-06,
+          -4.714274785749102e-06,
+          1.6781442383973164e-05,
+          2.6854234028919885e-06,
+          1.4096018981081176e-05,
+          3.4719068154008757e-06
+        ],
+        [
+          -8.88885696063018e-07,
+          2.20605802445371e-06,
+          2.6854234028919885e-06,
+          1.4669395251163169e-05,
+          -1.1983971848271179e-05,
+          -2.954202503664343e-06
+        ],
+        [
+          -1.4592546259344993e-06,
+          -6.920332810202812e-06,
+          1.4096018981081176e-05,
+          -1.1983971848271179e-05,
+          2.6079990829352355e-05,
+          6.426109319065218e-06
+        ],
+        [
+          -3.583679637527461e-07,
+          -1.6984877453918735e-06,
+          3.4719068154008757e-06,
+          -2.954202503664343e-06,
+          6.426109319065218e-06,
+          1.5834038073810339e-06
+        ]
+      ],
+      "delete_one": [
+        {
+          "omitted_batch": 0,
+          "cutoffs_insertion_counts": [
+            154646,
+            155384,
+            156120
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5085,
+              6279
+            ],
+            [
+              6172,
+              8025
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11364,
+            "H_a_c": 5085,
+            "H_b_c": 11257,
+            "H_b_b": 25561
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.39324615384615386,
+            "early_fraction_within_risk": 0.4445835452447087,
+            "survival_early": 0.44746568109820484,
+            "survival_late": 0.43473973374656616,
+            "survival_difference": 0.012725947351638678,
+            "conditional_covariance": 0.0031424056641099238
+          }
+        },
+        {
+          "omitted_batch": 1,
+          "cutoffs_insertion_counts": [
+            154646,
+            155384,
+            156120
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5093,
+              6275
+            ],
+            [
+              6167,
+              8068
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11368,
+            "H_a_c": 5093,
+            "H_b_c": 11260,
+            "H_b_b": 25603
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3938923076923077,
+            "early_fraction_within_risk": 0.4440104675233371,
+            "survival_early": 0.4480119634060521,
+            "survival_late": 0.4332279592553565,
+            "survival_difference": 0.014784004150695584,
+            "conditional_covariance": 0.0036496557312511876
+          }
+        },
+        {
+          "omitted_batch": 2,
+          "cutoffs_insertion_counts": [
+            154646,
+            155384,
+            156118
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5108,
+              6259
+            ],
+            [
+              6214,
+              8019
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11367,
+            "H_a_c": 5108,
+            "H_b_c": 11322,
+            "H_b_b": 25600
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.39384615384615385,
+            "early_fraction_within_risk": 0.4440234375,
+            "survival_early": 0.44937098618808835,
+            "survival_late": 0.43659102086699925,
+            "survival_difference": 0.012779965321089104,
+            "conditional_covariance": 0.0031549468994140624
+          }
+        },
+        {
+          "omitted_batch": 3,
+          "cutoffs_insertion_counts": [
+            154646,
+            155384,
+            156120
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5123,
+              6285
+            ],
+            [
+              6187,
+              8014
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11408,
+            "H_a_c": 5123,
+            "H_b_c": 11310,
+            "H_b_b": 25609
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3939846153846154,
+            "early_fraction_within_risk": 0.4454683900191339,
+            "survival_early": 0.4490708274894811,
+            "survival_late": 0.4356735441166115,
+            "survival_difference": 0.01339728337286955,
+            "conditional_covariance": 0.0033094813887147335
+          }
+        },
+        {
+          "omitted_batch": 4,
+          "cutoffs_insertion_counts": [
+            154647,
+            155386,
+            156122
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5109,
+              6209
+            ],
+            [
+              6168,
+              8024
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11318,
+            "H_a_c": 5109,
+            "H_b_c": 11277,
+            "H_b_b": 25510
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3924615384615385,
+            "early_fraction_within_risk": 0.44366914935319485,
+            "survival_early": 0.4514048418448489,
+            "survival_late": 0.4346110484780158,
+            "survival_difference": 0.01679379336683312,
+            "conditional_covariance": 0.0041451588688366115
+          }
+        },
+        {
+          "omitted_batch": 5,
+          "cutoffs_insertion_counts": [
+            154645,
+            155385,
+            156121
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5081,
+              6265
+            ],
+            [
+              6187,
+              8010
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11346,
+            "H_a_c": 5081,
+            "H_b_c": 11268,
+            "H_b_b": 25543
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3929692307692308,
+            "early_fraction_within_risk": 0.4441921465763614,
+            "survival_early": 0.4478230213291028,
+            "survival_late": 0.4357962949918997,
+            "survival_difference": 0.012026726337203086,
+            "conditional_covariance": 0.0029692241466374118
+          }
+        },
+        {
+          "omitted_batch": 6,
+          "cutoffs_insertion_counts": [
+            154645,
+            155384,
+            156121
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5103,
+              6284
+            ],
+            [
+              6180,
+              8036
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11387,
+            "H_a_c": 5103,
+            "H_b_c": 11283,
+            "H_b_b": 25603
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3938923076923077,
+            "early_fraction_within_risk": 0.44475256805843066,
+            "survival_early": 0.448142618775797,
+            "survival_late": 0.43472144063027574,
+            "survival_difference": 0.01342117814552124,
+            "conditional_covariance": 0.003314329359712805
+          }
+        },
+        {
+          "omitted_batch": 7,
+          "cutoffs_insertion_counts": [
+            154646,
+            155384,
+            156120
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5092,
+              6268
+            ],
+            [
+              6159,
+              8036
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11360,
+            "H_a_c": 5092,
+            "H_b_c": 11251,
+            "H_b_b": 25555
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.39315384615384613,
+            "early_fraction_within_risk": 0.4445314028565838,
+            "survival_early": 0.4482394366197183,
+            "survival_late": 0.433885170834801,
+            "survival_difference": 0.01435426578491733,
+            "conditional_covariance": 0.0035444017397994612
+          }
+        },
+        {
+          "omitted_batch": 8,
+          "cutoffs_insertion_counts": [
+            154646,
+            155386,
+            156121
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5078,
+              6239
+            ],
+            [
+              6190,
+              8013
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11317,
+            "H_a_c": 5078,
+            "H_b_c": 11268,
+            "H_b_b": 25520
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3926153846153846,
+            "early_fraction_within_risk": 0.44345611285266456,
+            "survival_early": 0.4487054873199611,
+            "survival_late": 0.43582341758783355,
+            "survival_difference": 0.012882069732127577,
+            "conditional_covariance": 0.003179330735743556
+          }
+        },
+        {
+          "omitted_batch": 9,
+          "cutoffs_insertion_counts": [
+            154647,
+            155383,
+            156119
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5095,
+              6228
+            ],
+            [
+              6173,
+              8080
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11323,
+            "H_a_c": 5095,
+            "H_b_c": 11268,
+            "H_b_b": 25576
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.39347692307692306,
+            "early_fraction_within_risk": 0.4427197372536753,
+            "survival_early": 0.449969089463923,
+            "survival_late": 0.4331018031291658,
+            "survival_difference": 0.016867286334757203,
+            "conditional_covariance": 0.004161479536502443
+          }
+        },
+        {
+          "omitted_batch": 10,
+          "cutoffs_insertion_counts": [
+            154648,
+            155386,
+            156120
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5101,
+              6222
+            ],
+            [
+              6187,
+              8011
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11323,
+            "H_a_c": 5101,
+            "H_b_c": 11288,
+            "H_b_b": 25521
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3926307692307692,
+            "early_fraction_within_risk": 0.44367383723208337,
+            "survival_early": 0.4504989843681003,
+            "survival_late": 0.4357656007888435,
+            "survival_difference": 0.014733383579256798,
+            "conditional_covariance": 0.0036366022226496917
+          }
+        },
+        {
+          "omitted_batch": 11,
+          "cutoffs_insertion_counts": [
+            154647,
+            155385,
+            156120
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5087,
+              6256
+            ],
+            [
+              6182,
+              8067
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11343,
+            "H_a_c": 5087,
+            "H_b_c": 11269,
+            "H_b_b": 25592
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3937230769230769,
+            "early_fraction_within_risk": 0.44322444513910597,
+            "survival_early": 0.44847042228687295,
+            "survival_late": 0.4338550073689382,
+            "survival_difference": 0.014615414917934777,
+            "conditional_covariance": 0.003606741471061848
+          }
+        },
+        {
+          "omitted_batch": 12,
+          "cutoffs_insertion_counts": [
+            154645,
+            155383,
+            156117
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5111,
+              6233
+            ],
+            [
+              6200,
+              8041
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11344,
+            "H_a_c": 5111,
+            "H_b_c": 11311,
+            "H_b_b": 25585
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3936153846153846,
+            "early_fraction_within_risk": 0.44338479577877665,
+            "survival_early": 0.4505465444287729,
+            "survival_late": 0.4353626852046907,
+            "survival_difference": 0.015183859224082219,
+            "conditional_covariance": 0.0037472962652436025
+          }
+        },
+        {
+          "omitted_batch": 13,
+          "cutoffs_insertion_counts": [
+            154647,
+            155385,
+            156119
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5104,
+              6250
+            ],
+            [
+              6208,
+              8027
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11354,
+            "H_a_c": 5104,
+            "H_b_c": 11312,
+            "H_b_b": 25589
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3936769230769231,
+            "early_fraction_within_risk": 0.44370628004220564,
+            "survival_early": 0.4495332041571252,
+            "survival_late": 0.4361081840533895,
+            "survival_difference": 0.013425020103735696,
+            "conditional_covariance": 0.0033137113667032654
+          }
+        }
+      ],
+      "source_batches": [
+        {
+          "file": "cloud-independent-20260929-square-L512-b00.json.gz",
+          "batch": 0,
+          "samples": 5000,
+          "sha256": "26947fe4f1ca4fb15454170329abda10aa107a9cf4399aaec51213d6ccbbad55",
+          "dependency_group": "cloud-independent-20260929/square/L512/batch0"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L512-b01.json.gz",
+          "batch": 1,
+          "samples": 5000,
+          "sha256": "64a1703f86f67855ff97eb938c9674a334c66205672de13b1c6c7a79bf7b712b",
+          "dependency_group": "cloud-independent-20260929/square/L512/batch1"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L512-b02.json.gz",
+          "batch": 2,
+          "samples": 5000,
+          "sha256": "02c1f585c8dd551b6db0c503edcdda0e894d5829ef86ab9b21647766a39cf436",
+          "dependency_group": "cloud-independent-20260929/square/L512/batch2"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L512-b03.json.gz",
+          "batch": 3,
+          "samples": 5000,
+          "sha256": "4cf9c75fc2f8118360467a962d7781a5112d6e869c5b4b2a9fafb9b725d6b152",
+          "dependency_group": "cloud-independent-20260929/square/L512/batch3"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L512-b04.json.gz",
+          "batch": 4,
+          "samples": 5000,
+          "sha256": "decf44addbf9394692502e340cd83fa085cbdc225c8e46450a66740b11064476",
+          "dependency_group": "cloud-independent-20260929/square/L512/batch4"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L512-b05.json.gz",
+          "batch": 5,
+          "samples": 5000,
+          "sha256": "7f1d443fc0d0296d11514482e337b2238765e9588a25c8996df3a85f10af866f",
+          "dependency_group": "cloud-independent-20260929/square/L512/batch5"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L512-b06.json.gz",
+          "batch": 6,
+          "samples": 5000,
+          "sha256": "239c1c2955572011c3946fb86e70a6b43223be8be4c5ed3d064f8bff85faa350",
+          "dependency_group": "cloud-independent-20260929/square/L512/batch6"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L512-b07.json.gz",
+          "batch": 7,
+          "samples": 5000,
+          "sha256": "8ce2fe03f6ad07863703e92c4ab7760d89bd63466ecd94f22ab4c1db2b84c567",
+          "dependency_group": "cloud-independent-20260929/square/L512/batch7"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L512-b08.json.gz",
+          "batch": 8,
+          "samples": 5000,
+          "sha256": "d34a3adb4f99ead27aaf2dc55a83a35aa89d72797adea96a28303b1310070910",
+          "dependency_group": "cloud-independent-20260929/square/L512/batch8"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L512-b09.json.gz",
+          "batch": 9,
+          "samples": 5000,
+          "sha256": "fd45d98af14b4aadf2534cc3fdd3b39b8e2a219f32ec928c863339099d4b3760",
+          "dependency_group": "cloud-independent-20260929/square/L512/batch9"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L512-b10.json.gz",
+          "batch": 10,
+          "samples": 5000,
+          "sha256": "9493c7efe6659ff06c875860b2605bf64717869a5c1545f33b78f2d3e51f9123",
+          "dependency_group": "cloud-independent-20260929/square/L512/batch10"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L512-b11.json.gz",
+          "batch": 11,
+          "samples": 5000,
+          "sha256": "260867c996ce2fb8d6e2839e2cb243e05a91f6c61d8887c84580f241d6f922f7",
+          "dependency_group": "cloud-independent-20260929/square/L512/batch11"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L512-b12.json.gz",
+          "batch": 12,
+          "samples": 5000,
+          "sha256": "07db06b3dea890def56943e17087af1ae2ca8a6a1fc1f69b2465bda0f1eefc43",
+          "dependency_group": "cloud-independent-20260929/square/L512/batch12"
+        },
+        {
+          "file": "cloud-independent-20260929-square-L512-b13.json.gz",
+          "batch": 13,
+          "samples": 5000,
+          "sha256": "62c649764d73d20f519f78647fb757490a4a2a721a03c73ce0250173dd0baac8",
+          "dependency_group": "cloud-independent-20260929/square/L512/batch13"
+        }
+      ]
+    },
+    {
+      "lattice": "triangular",
+      "L": 64,
+      "N": 4096,
+      "samples": 70000,
+      "batches": 14,
+      "role": "size_context",
+      "cutoffs_insertion_counts": [
+        1997,
+        2048,
+        2099
+      ],
+      "risk_table_early_late_by_survive_exit": [
+        [
+          5729,
+          7023
+        ],
+        [
+          7031,
+          8839
+        ]
+      ],
+      "kernel_counts": {
+        "H_a_b": 12752,
+        "H_a_c": 5729,
+        "H_b_c": 12760,
+        "H_b_b": 28622
+      },
+      "point": {
+        "rank_one_risk_fraction": 0.4088857142857143,
+        "early_fraction_within_risk": 0.4455314094053525,
+        "survival_early": 0.449262860727729,
+        "survival_late": 0.4430371770636421,
+        "survival_difference": 0.0062256836640868785,
+        "conditional_covariance": 0.0015379503873838925
+      },
+      "metric_order": [
+        "rank_one_risk_fraction",
+        "early_fraction_within_risk",
+        "survival_early",
+        "survival_late",
+        "survival_difference",
+        "conditional_covariance"
+      ],
+      "jackknife_se": {
+        "rank_one_risk_fraction": 0.001734170389199275,
+        "early_fraction_within_risk": 0.012223114305369338,
+        "survival_early": 0.004719158785474118,
+        "survival_late": 0.004424346406124769,
+        "survival_difference": 0.0052050166853466265,
+        "conditional_covariance": 0.0012851635175424817
+      },
+      "delete_one_batch_covariance": [
+        [
+          3.0073469387755648e-06,
+          4.585002836807372e-06,
+          8.548777636748775e-07,
+          3.0150876513107005e-06,
+          -2.1602098876358232e-06,
+          -5.315000791835991e-07
+        ],
+        [
+          4.585002836807372e-06,
+          0.00014940452332212455,
+          8.803768832611794e-06,
+          1.7316933060558712e-05,
+          -8.513164227946924e-06,
+          -2.0051553138746546e-06
+        ],
+        [
+          8.548777636748775e-07,
+          8.803768832611794e-06,
+          2.227045964251755e-05,
+          7.376551034584965e-06,
+          1.4893908607932585e-05,
+          3.6832744416229083e-06
+        ],
+        [
+          3.0150876513107005e-06,
+          1.7316933060558712e-05,
+          7.376551034584965e-06,
+          1.9574841121389162e-05,
+          -1.21982900868042e-05,
+          -3.0058900637659697e-06
+        ],
+        [
+          -2.1602098876358232e-06,
+          -8.513164227946924e-06,
+          1.4893908607932585e-05,
+          -1.21982900868042e-05,
+          2.709219869473678e-05,
+          6.689164505388878e-06
+        ],
+        [
+          -5.315000791835991e-07,
+          -2.0051553138746546e-06,
+          3.6832744416229083e-06,
+          -3.0058900637659697e-06,
+          6.689164505388878e-06,
+          1.651645266822165e-06
+        ]
+      ],
+      "delete_one": [
+        {
+          "omitted_batch": 0,
+          "cutoffs_insertion_counts": [
+            1997,
+            2048,
+            2099
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5342,
+              6474
+            ],
+            [
+              6523,
+              8210
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11816,
+            "H_a_c": 5342,
+            "H_b_c": 11865,
+            "H_b_b": 26549
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.40844615384615385,
+            "early_fraction_within_risk": 0.44506384421258804,
+            "survival_early": 0.4520988490182803,
+            "survival_late": 0.442747573474513,
+            "survival_difference": 0.009351275543767301,
+            "conditional_covariance": 0.0023095969120359655
+          }
+        },
+        {
+          "omitted_batch": 1,
+          "cutoffs_insertion_counts": [
+            1997,
+            2048,
+            2099
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5315,
+              6552
+            ],
+            [
+              6494,
+              8201
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11867,
+            "H_a_c": 5315,
+            "H_b_c": 11809,
+            "H_b_b": 26562
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.4086461538461538,
+            "early_fraction_within_risk": 0.4467660567728334,
+            "survival_early": 0.44788067750905874,
+            "survival_late": 0.4419190200748554,
+            "survival_difference": 0.005961657434203349,
+            "conditional_covariance": 0.0014735198994658054
+          }
+        },
+        {
+          "omitted_batch": 2,
+          "cutoffs_insertion_counts": [
+            1997,
+            2048,
+            2099
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5324,
+              6542
+            ],
+            [
+              6554,
+              8205
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11866,
+            "H_a_c": 5324,
+            "H_b_c": 11878,
+            "H_b_b": 26625
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.4096153846153846,
+            "early_fraction_within_risk": 0.44567136150234743,
+            "survival_early": 0.4486768919602225,
+            "survival_late": 0.44406802628904396,
+            "survival_difference": 0.004608865671178519,
+            "conditional_covariance": 0.0011386128854504176
+          }
+        },
+        {
+          "omitted_batch": 3,
+          "cutoffs_insertion_counts": [
+            1997,
+            2048,
+            2099
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5318,
+              6520
+            ],
+            [
+              6521,
+              8260
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11838,
+            "H_a_c": 5318,
+            "H_b_c": 11839,
+            "H_b_b": 26619
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.40952307692307693,
+            "early_fraction_within_risk": 0.44471993688718586,
+            "survival_early": 0.44923128906909954,
+            "survival_late": 0.4411744807523172,
+            "survival_difference": 0.008056808316782349,
+            "conditional_covariance": 0.0019895813964689426
+          }
+        },
+        {
+          "omitted_batch": 4,
+          "cutoffs_insertion_counts": [
+            1998,
+            2048,
+            2099
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5426,
+              6621
+            ],
+            [
+              6495,
+              8079
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 12047,
+            "H_a_c": 5426,
+            "H_b_c": 11921,
+            "H_b_b": 26621
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.40955384615384616,
+            "early_fraction_within_risk": 0.452537470418091,
+            "survival_early": 0.4504025898563958,
+            "survival_late": 0.44565664882667766,
+            "survival_difference": 0.004745941029718148,
+            "conditional_covariance": 0.0011757941153952675
+          }
+        },
+        {
+          "omitted_batch": 5,
+          "cutoffs_insertion_counts": [
+            1998,
+            2048,
+            2099
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5423,
+              6651
+            ],
+            [
+              6402,
+              8094
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 12074,
+            "H_a_c": 5423,
+            "H_b_c": 11825,
+            "H_b_b": 26570
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.4087692307692308,
+            "early_fraction_within_risk": 0.45442228076778324,
+            "survival_early": 0.4491469272817625,
+            "survival_late": 0.4416390728476821,
+            "survival_difference": 0.007507854434080363,
+            "conditional_covariance": 0.0018613673286023145
+          }
+        },
+        {
+          "omitted_batch": 6,
+          "cutoffs_insertion_counts": [
+            1997,
+            2048,
+            2099
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5301,
+              6541
+            ],
+            [
+              6525,
+              8192
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11842,
+            "H_a_c": 5301,
+            "H_b_c": 11826,
+            "H_b_b": 26559
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.4086,
+            "early_fraction_within_risk": 0.4458752212056177,
+            "survival_early": 0.4476439790575916,
+            "survival_late": 0.44336481619895357,
+            "survival_difference": 0.004279162858638053,
+            "conditional_covariance": 0.0010572549426697277
+          }
+        },
+        {
+          "omitted_batch": 7,
+          "cutoffs_insertion_counts": [
+            1997,
+            2048,
+            2099
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5321,
+              6508
+            ],
+            [
+              6543,
+              8196
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11829,
+            "H_a_c": 5321,
+            "H_b_c": 11864,
+            "H_b_b": 26568
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.40873846153846155,
+            "early_fraction_within_risk": 0.4452348690153568,
+            "survival_early": 0.4498266971003466,
+            "survival_late": 0.4439242825157745,
+            "survival_difference": 0.005902414584572135,
+            "conditional_covariance": 0.0014579010088003118
+          }
+        },
+        {
+          "omitted_batch": 8,
+          "cutoffs_insertion_counts": [
+            1997,
+            2048,
+            2099
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5331,
+              6543
+            ],
+            [
+              6500,
+              8181
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11874,
+            "H_a_c": 5331,
+            "H_b_c": 11831,
+            "H_b_b": 26555
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.4085384615384615,
+            "early_fraction_within_risk": 0.4471474298625494,
+            "survival_early": 0.44896412329459323,
+            "survival_late": 0.4427491315305497,
+            "survival_difference": 0.006214991764043554,
+            "conditional_covariance": 0.0015363870192497738
+          }
+        },
+        {
+          "omitted_batch": 9,
+          "cutoffs_insertion_counts": [
+            1997,
+            2048,
+            2099
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5296,
+              6528
+            ],
+            [
+              6504,
+              8241
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11824,
+            "H_a_c": 5296,
+            "H_b_c": 11800,
+            "H_b_b": 26569
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.40875384615384613,
+            "early_fraction_within_risk": 0.44502992208965336,
+            "survival_early": 0.4479025710419486,
+            "survival_late": 0.44109867751780263,
+            "survival_difference": 0.006803893524145954,
+            "conditional_covariance": 0.0016804139915725246
+          }
+        },
+        {
+          "omitted_batch": 10,
+          "cutoffs_insertion_counts": [
+            1998,
+            2048,
+            2099
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5434,
+              6626
+            ],
+            [
+              6476,
+              8099
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 12060,
+            "H_a_c": 5434,
+            "H_b_c": 11910,
+            "H_b_b": 26635
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.4097692307692308,
+            "early_fraction_within_risk": 0.4527876853763845,
+            "survival_early": 0.4505804311774461,
+            "survival_late": 0.44432246998284736,
+            "survival_difference": 0.00625796119459876,
+            "conditional_covariance": 0.0015505412865500702
+          }
+        },
+        {
+          "omitted_batch": 11,
+          "cutoffs_insertion_counts": [
+            1997,
+            2048,
+            2099
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5336,
+              6489
+            ],
+            [
+              6524,
+              8206
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11825,
+            "H_a_c": 5336,
+            "H_b_c": 11860,
+            "H_b_b": 26555
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.4085384615384615,
+            "early_fraction_within_risk": 0.44530220297495765,
+            "survival_early": 0.45124735729386894,
+            "survival_late": 0.44290563475899525,
+            "survival_difference": 0.008341722534873697,
+            "conditional_covariance": 0.002060473459499245
+          }
+        },
+        {
+          "omitted_batch": 12,
+          "cutoffs_insertion_counts": [
+            1997,
+            2048,
+            2099
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5303,
+              6537
+            ],
+            [
+              6518,
+              8204
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11840,
+            "H_a_c": 5303,
+            "H_b_c": 11821,
+            "H_b_b": 26562
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.4086461538461538,
+            "early_fraction_within_risk": 0.4457495670506739,
+            "survival_early": 0.4478885135135135,
+            "survival_late": 0.44273875832088033,
+            "survival_difference": 0.005149755192633165,
+            "conditional_covariance": 0.0012722825048559554
+          }
+        },
+        {
+          "omitted_batch": 13,
+          "cutoffs_insertion_counts": [
+            1998,
+            2048,
+            2099
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5389,
+              6608
+            ],
+            [
+              6442,
+              8098
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11997,
+            "H_a_c": 5389,
+            "H_b_c": 11831,
+            "H_b_b": 26537
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.40826153846153845,
+            "early_fraction_within_risk": 0.4520857670422429,
+            "survival_early": 0.4491956322413937,
+            "survival_late": 0.44305364511691886,
+            "survival_difference": 0.006141987124474835,
+            "conditional_covariance": 0.0015213961684901903
+          }
+        }
+      ],
+      "source_batches": [
+        {
+          "file": "cloud-independent-20260929-triangular-L64-b00.json.gz",
+          "batch": 0,
+          "samples": 5000,
+          "sha256": "c4adcbeef477452e5a14fe4bb7b58f22554ce2195431e83c48d973a0d13233cd",
+          "dependency_group": "cloud-independent-20260929/triangular/L64/batch0"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L64-b01.json.gz",
+          "batch": 1,
+          "samples": 5000,
+          "sha256": "9027182f82fe9d5a3557294dacfa8d3e4f394fad1dcc6f95991c5a2690139d6c",
+          "dependency_group": "cloud-independent-20260929/triangular/L64/batch1"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L64-b02.json.gz",
+          "batch": 2,
+          "samples": 5000,
+          "sha256": "32b9d19032665ec7b1d62f9d0d741332a13e2f333052a24423f88f4ad4546633",
+          "dependency_group": "cloud-independent-20260929/triangular/L64/batch2"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L64-b03.json.gz",
+          "batch": 3,
+          "samples": 5000,
+          "sha256": "c6d0191c1423ecb24e3fb41e440a727980f8bbd2ba511559bdb376a89201a553",
+          "dependency_group": "cloud-independent-20260929/triangular/L64/batch3"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L64-b04.json.gz",
+          "batch": 4,
+          "samples": 5000,
+          "sha256": "7a6f9dba6fa062d231328e4c2e29da5579a1469d12a70713f96fbb06e65f65ee",
+          "dependency_group": "cloud-independent-20260929/triangular/L64/batch4"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L64-b05.json.gz",
+          "batch": 5,
+          "samples": 5000,
+          "sha256": "319bb2b6c710c87bc2dca0cbed321be02981b700039a53db12e07633a1f11226",
+          "dependency_group": "cloud-independent-20260929/triangular/L64/batch5"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L64-b06.json.gz",
+          "batch": 6,
+          "samples": 5000,
+          "sha256": "902b4a8edae2e34c8ca20b71caaed34d007882d4f11c6b7b58e906885dec4562",
+          "dependency_group": "cloud-independent-20260929/triangular/L64/batch6"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L64-b07.json.gz",
+          "batch": 7,
+          "samples": 5000,
+          "sha256": "00e5f43b2910332d67b8ad72c8ad6f9e2c4fe063cf9262d51bdcc1d2e43538a6",
+          "dependency_group": "cloud-independent-20260929/triangular/L64/batch7"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L64-b08.json.gz",
+          "batch": 8,
+          "samples": 5000,
+          "sha256": "914e1bf94e14c21bec3ce2881e3f9f60b0a562dac3157f43be84d2f74e4c17c2",
+          "dependency_group": "cloud-independent-20260929/triangular/L64/batch8"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L64-b09.json.gz",
+          "batch": 9,
+          "samples": 5000,
+          "sha256": "a4efe1971533fe5132e7e7fecd41d1e657a6955ff467d36643ac4d5764337b08",
+          "dependency_group": "cloud-independent-20260929/triangular/L64/batch9"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L64-b10.json.gz",
+          "batch": 10,
+          "samples": 5000,
+          "sha256": "055b36f18e056a806779ba872e0bc364e3cd8d2909b9b1c28b84510321aeecca",
+          "dependency_group": "cloud-independent-20260929/triangular/L64/batch10"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L64-b11.json.gz",
+          "batch": 11,
+          "samples": 5000,
+          "sha256": "cf4cf194be761022864712a57c8d024eb5578ec937a3aca03088fc8969247e12",
+          "dependency_group": "cloud-independent-20260929/triangular/L64/batch11"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L64-b12.json.gz",
+          "batch": 12,
+          "samples": 5000,
+          "sha256": "17253af81b4b81fa9980607b34b581563d1dfae3c6b7ec6149f8f91ff20cd015",
+          "dependency_group": "cloud-independent-20260929/triangular/L64/batch12"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L64-b13.json.gz",
+          "batch": 13,
+          "samples": 5000,
+          "sha256": "a07558f99c206b859da12f404077049d3ff6c74f69993fd6c49f3cb1b087652a",
+          "dependency_group": "cloud-independent-20260929/triangular/L64/batch13"
+        }
+      ]
+    },
+    {
+      "lattice": "triangular",
+      "L": 128,
+      "N": 16384,
+      "samples": 70000,
+      "batches": 14,
+      "role": "size_context",
+      "cutoffs_insertion_counts": [
+        8068,
+        8192,
+        8317
+      ],
+      "risk_table_early_late_by_survive_exit": [
+        [
+          5362,
+          6751
+        ],
+        [
+          6726,
+          8590
+        ]
+      ],
+      "kernel_counts": {
+        "H_a_b": 12113,
+        "H_a_c": 5362,
+        "H_b_c": 12088,
+        "H_b_b": 27429
+      },
+      "point": {
+        "rank_one_risk_fraction": 0.39184285714285716,
+        "early_fraction_within_risk": 0.4416128914652375,
+        "survival_early": 0.44266490547345827,
+        "survival_late": 0.43914860276834683,
+        "survival_difference": 0.0035163027051114404,
+        "conditional_covariance": 0.0008670884089178909
+      },
+      "metric_order": [
+        "rank_one_risk_fraction",
+        "early_fraction_within_risk",
+        "survival_early",
+        "survival_late",
+        "survival_difference",
+        "conditional_covariance"
+      ],
+      "jackknife_se": {
+        "rank_one_risk_fraction": 0.0016844705786383581,
+        "early_fraction_within_risk": 0.0057062493725188465,
+        "survival_early": 0.004770444344989727,
+        "survival_late": 0.006011658236864166,
+        "survival_difference": 0.0071223392065938185,
+        "conditional_covariance": 0.0017564495064064304
+      },
+      "delete_one_batch_covariance": [
+        [
+          2.837441130298245e-06,
+          6.343966388064767e-06,
+          3.2739769947049265e-07,
+          -2.8607857715799693e-06,
+          3.188183471050462e-06,
+          7.880651609639982e-07
+        ],
+        [
+          6.343966388064767e-06,
+          3.256128190137173e-05,
+          4.8699807708003355e-06,
+          -1.852714236481211e-05,
+          2.3397123135612444e-05,
+          5.777342525511354e-06
+        ],
+        [
+          3.2739769947049265e-07,
+          4.8699807708003355e-06,
+          2.2757139248644468e-05,
+          4.084729115858882e-06,
+          1.8672410132785582e-05,
+          4.603246898173765e-06
+        ],
+        [
+          -2.8607857715799693e-06,
+          -1.852714236481211e-05,
+          4.084729115858882e-06,
+          3.614003475685677e-05,
+          -3.205530564099789e-05,
+          -7.906775515741214e-06
+        ],
+        [
+          3.188183471050462e-06,
+          2.3397123135612444e-05,
+          1.8672410132785582e-05,
+          -3.205530564099789e-05,
+          5.072771577378347e-05,
+          1.2510022413914981e-05
+        ],
+        [
+          7.880651609639982e-07,
+          5.777342525511354e-06,
+          4.603246898173765e-06,
+          -7.906775515741214e-06,
+          1.2510022413914981e-05,
+          3.085114868555393e-06
+        ]
+      ],
+      "delete_one": [
+        {
+          "omitted_batch": 0,
+          "cutoffs_insertion_counts": [
+            8068,
+            8192,
+            8316
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5009,
+              6212
+            ],
+            [
+              6250,
+              7976
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11221,
+            "H_a_c": 5009,
+            "H_b_c": 11259,
+            "H_b_b": 25447
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3914923076923077,
+            "early_fraction_within_risk": 0.4409557118717334,
+            "survival_early": 0.4463951519472418,
+            "survival_late": 0.4393364262617742,
+            "survival_difference": 0.0070587256854675595,
+            "conditional_covariance": 0.0017400730945161934
+          }
+        },
+        {
+          "omitted_batch": 1,
+          "cutoffs_insertion_counts": [
+            8068,
+            8192,
+            8317
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4989,
+              6257
+            ],
+            [
+              6243,
+              7991
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11246,
+            "H_a_c": 4989,
+            "H_b_c": 11232,
+            "H_b_b": 25480
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.392,
+            "early_fraction_within_risk": 0.4413657770800628,
+            "survival_early": 0.4436243997865908,
+            "survival_late": 0.4385977237600112,
+            "survival_difference": 0.00502667602657958,
+            "conditional_covariance": 0.0012393874347227116
+          }
+        },
+        {
+          "omitted_batch": 2,
+          "cutoffs_insertion_counts": [
+            8067,
+            8192,
+            8317
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4921,
+              6223
+            ],
+            [
+              6290,
+              7999
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11144,
+            "H_a_c": 4921,
+            "H_b_c": 11211,
+            "H_b_b": 25433
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3912769230769231,
+            "early_fraction_within_risk": 0.4381708803522982,
+            "survival_early": 0.4415829145728643,
+            "survival_late": 0.4401987542865141,
+            "survival_difference": 0.001384160286350189,
+            "conditional_covariance": 0.00034074864822808686
+          }
+        },
+        {
+          "omitted_batch": 3,
+          "cutoffs_insertion_counts": [
+            8068,
+            8192,
+            8317
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4977,
+              6274
+            ],
+            [
+              6224,
+              7986
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11251,
+            "H_a_c": 4977,
+            "H_b_c": 11201,
+            "H_b_b": 25461
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3917076923076923,
+            "early_fraction_within_risk": 0.441891520364479,
+            "survival_early": 0.44236067905075105,
+            "survival_late": 0.43800140745953553,
+            "survival_difference": 0.004359271591215519,
+            "conditional_covariance": 0.001075098401377426
+          }
+        },
+        {
+          "omitted_batch": 4,
+          "cutoffs_insertion_counts": [
+            8067,
+            8192,
+            8317
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4939,
+              6212
+            ],
+            [
+              6307,
+              8010
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11151,
+            "H_a_c": 4939,
+            "H_b_c": 11246,
+            "H_b_b": 25468
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3918153846153846,
+            "early_fraction_within_risk": 0.43784356839956023,
+            "survival_early": 0.4429199174961887,
+            "survival_late": 0.4405252497031501,
+            "survival_difference": 0.0023946677930385962,
+            "conditional_covariance": 0.0005894153360509512
+          }
+        },
+        {
+          "omitted_batch": 5,
+          "cutoffs_insertion_counts": [
+            8067,
+            8192,
+            8317
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4950,
+              6212
+            ],
+            [
+              6253,
+              8014
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11162,
+            "H_a_c": 4950,
+            "H_b_c": 11203,
+            "H_b_b": 25429
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.39121538461538463,
+            "early_fraction_within_risk": 0.4389476581855362,
+            "survival_early": 0.44346891238129366,
+            "survival_late": 0.4382841522394337,
+            "survival_difference": 0.005184760141859979,
+            "conditional_covariance": 0.0012768644204427214
+          }
+        },
+        {
+          "omitted_batch": 6,
+          "cutoffs_insertion_counts": [
+            8068,
+            8192,
+            8317
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4990,
+              6275
+            ],
+            [
+              6213,
+              8005
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11265,
+            "H_a_c": 4990,
+            "H_b_c": 11203,
+            "H_b_b": 25483
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3920461538461538,
+            "early_fraction_within_risk": 0.44205941215712435,
+            "survival_early": 0.4429649356413671,
+            "survival_late": 0.4369812913208609,
+            "survival_difference": 0.005983644320506187,
+            "conditional_covariance": 0.0014758233176523888
+          }
+        },
+        {
+          "omitted_batch": 7,
+          "cutoffs_insertion_counts": [
+            8068,
+            8192,
+            8316
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4985,
+              6218
+            ],
+            [
+              6319,
+              7939
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11203,
+            "H_a_c": 4985,
+            "H_b_c": 11304,
+            "H_b_b": 25461
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3917076923076923,
+            "early_fraction_within_risk": 0.4400062841208122,
+            "survival_early": 0.4449700972953673,
+            "survival_late": 0.44318978818908683,
+            "survival_difference": 0.0017803091062804643,
+            "conditional_covariance": 0.00043866950623850737
+          }
+        },
+        {
+          "omitted_batch": 8,
+          "cutoffs_insertion_counts": [
+            8068,
+            8192,
+            8317
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              5008,
+              6265
+            ],
+            [
+              6263,
+              7997
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11273,
+            "H_a_c": 5008,
+            "H_b_c": 11271,
+            "H_b_b": 25533
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3928153846153846,
+            "early_fraction_within_risk": 0.4415070692828888,
+            "survival_early": 0.4442473165971791,
+            "survival_late": 0.4392005610098177,
+            "survival_difference": 0.005046755587361396,
+            "conditional_covariance": 0.0012444218114816205
+          }
+        },
+        {
+          "omitted_batch": 9,
+          "cutoffs_insertion_counts": [
+            8068,
+            8192,
+            8317
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4997,
+              6283
+            ],
+            [
+              6251,
+              7997
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11280,
+            "H_a_c": 4997,
+            "H_b_c": 11248,
+            "H_b_b": 25528
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.39273846153846154,
+            "early_fraction_within_risk": 0.4418677530554685,
+            "survival_early": 0.44299645390070924,
+            "survival_late": 0.43872824256035936,
+            "survival_difference": 0.004268211340349881,
+            "conditional_covariance": 0.0010526290203733254
+          }
+        },
+        {
+          "omitted_batch": 10,
+          "cutoffs_insertion_counts": [
+            8067,
+            8192,
+            8317
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4953,
+              6216
+            ],
+            [
+              6318,
+              7960
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11169,
+            "H_a_c": 4953,
+            "H_b_c": 11271,
+            "H_b_b": 25447
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3914923076923077,
+            "early_fraction_within_risk": 0.4389122489880929,
+            "survival_early": 0.44345957561106636,
+            "survival_late": 0.44249894943269363,
+            "survival_difference": 0.0009606261783727255,
+            "conditional_covariance": 0.00023657176308425102
+          }
+        },
+        {
+          "omitted_batch": 11,
+          "cutoffs_insertion_counts": [
+            8068,
+            8192,
+            8317
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4966,
+              6277
+            ],
+            [
+              6274,
+              7962
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11243,
+            "H_a_c": 4966,
+            "H_b_c": 11240,
+            "H_b_b": 25479
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3919846153846154,
+            "early_fraction_within_risk": 0.441265355783194,
+            "survival_early": 0.4416970559459219,
+            "survival_late": 0.4407136836189941,
+            "survival_difference": 0.0009833723269278005,
+            "conditional_covariance": 0.00024245068475605038
+          }
+        },
+        {
+          "omitted_batch": 12,
+          "cutoffs_insertion_counts": [
+            8068,
+            8192,
+            8317
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4973,
+              6282
+            ],
+            [
+              6240,
+              7990
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11255,
+            "H_a_c": 4973,
+            "H_b_c": 11213,
+            "H_b_b": 25485
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3920769230769231,
+            "early_fraction_within_risk": 0.44163233274475183,
+            "survival_early": 0.44184806752554423,
+            "survival_late": 0.43851018973998596,
+            "survival_difference": 0.003337877785558274,
+            "conditional_covariance": 0.000823098015817065
+          }
+        },
+        {
+          "omitted_batch": 13,
+          "cutoffs_insertion_counts": [
+            8067,
+            8192,
+            8317
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4919,
+              6217
+            ],
+            [
+              6303,
+              8004
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 11136,
+            "H_a_c": 4919,
+            "H_b_c": 11222,
+            "H_b_b": 25443
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.39143076923076925,
+            "early_fraction_within_risk": 0.437684235349605,
+            "survival_early": 0.4417205459770115,
+            "survival_late": 0.44055357517299226,
+            "survival_difference": 0.0011669708040192295,
+            "conditional_covariance": 0.0002872110563507722
+          }
+        }
+      ],
+      "source_batches": [
+        {
+          "file": "cloud-independent-20260929-triangular-L128-b00.json.gz",
+          "batch": 0,
+          "samples": 5000,
+          "sha256": "5763f70ed52480ea3644f8adc8b9359612ab4e41838b6affc9b3b84b42d108c4",
+          "dependency_group": "cloud-independent-20260929/triangular/L128/batch0"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L128-b01.json.gz",
+          "batch": 1,
+          "samples": 5000,
+          "sha256": "da803edccd93f5c3bb63460381981458ab845224b6feedf9a4b4aac58c2d2047",
+          "dependency_group": "cloud-independent-20260929/triangular/L128/batch1"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L128-b02.json.gz",
+          "batch": 2,
+          "samples": 5000,
+          "sha256": "42dbc1b7e95f9f755eafa0476e844d6edd7cd81806ff52b92508e4734883db77",
+          "dependency_group": "cloud-independent-20260929/triangular/L128/batch2"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L128-b03.json.gz",
+          "batch": 3,
+          "samples": 5000,
+          "sha256": "1fd1c2138441f7072f00041da293a37e1a43169a4b1df7ef742f23bca949976b",
+          "dependency_group": "cloud-independent-20260929/triangular/L128/batch3"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L128-b04.json.gz",
+          "batch": 4,
+          "samples": 5000,
+          "sha256": "5eb8ecf3d28946662e1e6a95a83c7da9731533ee8f1e0a781ac4a644bc417378",
+          "dependency_group": "cloud-independent-20260929/triangular/L128/batch4"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L128-b05.json.gz",
+          "batch": 5,
+          "samples": 5000,
+          "sha256": "5da7a3de8c15ffb547617ce09bbd1b29bc8ce2b64155d58f4e80404c6cafc8f3",
+          "dependency_group": "cloud-independent-20260929/triangular/L128/batch5"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L128-b06.json.gz",
+          "batch": 6,
+          "samples": 5000,
+          "sha256": "54f6fb23558e9f96eae479947c1f733404f068041844a00a172e7cdd89b773bb",
+          "dependency_group": "cloud-independent-20260929/triangular/L128/batch6"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L128-b07.json.gz",
+          "batch": 7,
+          "samples": 5000,
+          "sha256": "79f1b9a9de5dd8dfcc9b594d5393aaac734bea72e4fced4985ec1a8e973e01cd",
+          "dependency_group": "cloud-independent-20260929/triangular/L128/batch7"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L128-b08.json.gz",
+          "batch": 8,
+          "samples": 5000,
+          "sha256": "d181ade591b69781bb6d586d58dc480a23f9164536e282364d96168db03fbd99",
+          "dependency_group": "cloud-independent-20260929/triangular/L128/batch8"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L128-b09.json.gz",
+          "batch": 9,
+          "samples": 5000,
+          "sha256": "7cb04cdc75cafb8bacf70a0edc55cd9d58ddfdbd780a1475dfca35c226b98d9a",
+          "dependency_group": "cloud-independent-20260929/triangular/L128/batch9"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L128-b10.json.gz",
+          "batch": 10,
+          "samples": 5000,
+          "sha256": "b95c48e25f792fe749cc322352a1a3228e0c54e41e3e9e2526f534d17d21cbfe",
+          "dependency_group": "cloud-independent-20260929/triangular/L128/batch10"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L128-b11.json.gz",
+          "batch": 11,
+          "samples": 5000,
+          "sha256": "5ffc64cdd17caf65217ca4ad82feaf46190f1bdcb7997a085b1e030b30cdaef8",
+          "dependency_group": "cloud-independent-20260929/triangular/L128/batch11"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L128-b12.json.gz",
+          "batch": 12,
+          "samples": 5000,
+          "sha256": "154019116cb3c047830c24ae9832d8fe3381b8da71e99a68d2187bde59e6fc1e",
+          "dependency_group": "cloud-independent-20260929/triangular/L128/batch12"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L128-b13.json.gz",
+          "batch": 13,
+          "samples": 5000,
+          "sha256": "3e3a8b2a037c292429f757abf9556c90ea7ad8a37692a82071bc48582168d1ed",
+          "dependency_group": "cloud-independent-20260929/triangular/L128/batch13"
+        }
+      ]
+    },
+    {
+      "lattice": "triangular",
+      "L": 256,
+      "N": 65536,
+      "samples": 70000,
+      "batches": 14,
+      "role": "size_context",
+      "cutoffs_insertion_counts": [
+        32468,
+        32769,
+        33071
+      ],
+      "risk_table_early_late_by_survive_exit": [
+        [
+          5127,
+          6451
+        ],
+        [
+          6594,
+          8660
+        ]
+      ],
+      "kernel_counts": {
+        "H_a_b": 11578,
+        "H_a_c": 5127,
+        "H_b_c": 11721,
+        "H_b_b": 26832
+      },
+      "point": {
+        "rank_one_risk_fraction": 0.3833142857142857,
+        "early_fraction_within_risk": 0.43149970184853903,
+        "survival_early": 0.4428225945759198,
+        "survival_late": 0.4322800576897863,
+        "survival_difference": 0.010542536886133547,
+        "conditional_covariance": 0.0025861655722001233
+      },
+      "metric_order": [
+        "rank_one_risk_fraction",
+        "early_fraction_within_risk",
+        "survival_early",
+        "survival_late",
+        "survival_difference",
+        "conditional_covariance"
+      ],
+      "jackknife_se": {
+        "rank_one_risk_fraction": 0.0014619882807752253,
+        "early_fraction_within_risk": 0.0019340424706258,
+        "survival_early": 0.0033341228240267302,
+        "survival_late": 0.003657800510388584,
+        "survival_difference": 0.004756231358268568,
+        "conditional_covariance": 0.001167010654726111
+      },
+      "delete_one_batch_covariance": [
+        [
+          2.137409733124099e-06,
+          9.15836551601177e-07,
+          2.4854732703850895e-06,
+          -1.3714440730364106e-06,
+          3.8569173434215e-06,
+          9.47134823548115e-07
+        ],
+        [
+          9.15836551601177e-07,
+          3.7405202781843488e-06,
+          1.7301823229611935e-06,
+          1.3886488741879292e-07,
+          1.5913174355424007e-06,
+          3.952727942766391e-07
+        ],
+        [
+          2.4854732703850895e-06,
+          1.7301823229611935e-06,
+          1.1116375005695979e-05,
+          9.370714230588472e-07,
+          1.0179303582637131e-05,
+          2.4986356298918084e-06
+        ],
+        [
+          -1.3714440730364106e-06,
+          1.3886488741879292e-07,
+          9.370714230588472e-07,
+          1.3379504573798984e-05,
+          -1.2442433150740136e-05,
+          -3.051923807356906e-06
+        ],
+        [
+          3.8569173434215e-06,
+          1.5913174355424007e-06,
+          1.0179303582637131e-05,
+          -1.2442433150740136e-05,
+          2.262173673337727e-05,
+          5.550559437248714e-06
+        ],
+        [
+          9.47134823548115e-07,
+          3.952727942766391e-07,
+          2.4986356298918084e-06,
+          -3.051923807356906e-06,
+          5.550559437248714e-06,
+          1.3619138682442665e-06
+        ]
+      ],
+      "delete_one": [
+        {
+          "omitted_batch": 0,
+          "cutoffs_insertion_counts": [
+            32467,
+            32769,
+            33070
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4731,
+              5968
+            ],
+            [
+              6138,
+              8036
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10699,
+            "H_a_c": 4731,
+            "H_b_c": 10869,
+            "H_b_b": 24873
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.38266153846153844,
+            "early_fraction_within_risk": 0.43014513729747117,
+            "survival_early": 0.4421908589587812,
+            "survival_late": 0.4330464230280796,
+            "survival_difference": 0.009144435930701578,
+            "conditional_covariance": 0.0022414868618094333
+          }
+        },
+        {
+          "omitted_batch": 1,
+          "cutoffs_insertion_counts": [
+            32468,
+            32769,
+            33071
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4783,
+              5993
+            ],
+            [
+              6160,
+              8000
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10776,
+            "H_a_c": 4783,
+            "H_b_c": 10943,
+            "H_b_b": 24936
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3836307692307692,
+            "early_fraction_within_risk": 0.43214629451395575,
+            "survival_early": 0.4438567186340015,
+            "survival_late": 0.4350282485875706,
+            "survival_difference": 0.008828470046430892,
+            "conditional_covariance": 0.0021664701288812353
+          }
+        },
+        {
+          "omitted_batch": 2,
+          "cutoffs_insertion_counts": [
+            32467,
+            32769,
+            33071
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4756,
+              5990
+            ],
+            [
+              6132,
+              8040
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10746,
+            "H_a_c": 4756,
+            "H_b_c": 10888,
+            "H_b_b": 24918
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.38335384615384616,
+            "early_fraction_within_risk": 0.43125451480857213,
+            "survival_early": 0.44258328680439235,
+            "survival_late": 0.43268416596104997,
+            "survival_difference": 0.00989912084334238,
+            "conditional_covariance": 0.002427997542510105
+          }
+        },
+        {
+          "omitted_batch": 3,
+          "cutoffs_insertion_counts": [
+            32468,
+            32770,
+            33071
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4772,
+              5978
+            ],
+            [
+              6126,
+              8047
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10750,
+            "H_a_c": 4772,
+            "H_b_c": 10898,
+            "H_b_b": 24923
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.38343076923076924,
+            "early_fraction_within_risk": 0.4313284917546042,
+            "survival_early": 0.44390697674418605,
+            "survival_late": 0.4322302970436746,
+            "survival_difference": 0.01167667970051145,
+            "conditional_covariance": 0.0028641053187145864
+          }
+        },
+        {
+          "omitted_batch": 4,
+          "cutoffs_insertion_counts": [
+            32468,
+            32769,
+            33071
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4771,
+              6002
+            ],
+            [
+              6110,
+              8050
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10773,
+            "H_a_c": 4771,
+            "H_b_c": 10881,
+            "H_b_b": 24933
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.38358461538461536,
+            "early_fraction_within_risk": 0.4320779689568042,
+            "survival_early": 0.44286642532256565,
+            "survival_late": 0.4314971751412429,
+            "survival_difference": 0.011369250181322732,
+            "conditional_covariance": 0.0027898616203831514
+          }
+        },
+        {
+          "omitted_batch": 5,
+          "cutoffs_insertion_counts": [
+            32469,
+            32769,
+            33071
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4773,
+              5976
+            ],
+            [
+              6133,
+              8004
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10749,
+            "H_a_c": 4773,
+            "H_b_c": 10906,
+            "H_b_b": 24886
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3828615384615385,
+            "early_fraction_within_risk": 0.43192959897130917,
+            "survival_early": 0.4440413061680156,
+            "survival_late": 0.4338261300134399,
+            "survival_difference": 0.010215176154575734,
+            "conditional_covariance": 0.002506461207863947
+          }
+        },
+        {
+          "omitted_batch": 6,
+          "cutoffs_insertion_counts": [
+            32468,
+            32769,
+            33071
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4770,
+              5985
+            ],
+            [
+              6112,
+              8049
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10755,
+            "H_a_c": 4770,
+            "H_b_c": 10882,
+            "H_b_b": 24916
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.38332307692307693,
+            "early_fraction_within_risk": 0.4316503451597367,
+            "survival_early": 0.4435146443514644,
+            "survival_late": 0.4316079372925641,
+            "survival_difference": 0.011906707058900345,
+            "conditional_covariance": 0.0029210524952538557
+          }
+        },
+        {
+          "omitted_batch": 7,
+          "cutoffs_insertion_counts": [
+            32469,
+            32770,
+            33071
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4762,
+              6000
+            ],
+            [
+              6132,
+              8049
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10762,
+            "H_a_c": 4762,
+            "H_b_c": 10894,
+            "H_b_b": 24943
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.38373846153846153,
+            "early_fraction_within_risk": 0.4314637373210921,
+            "survival_early": 0.4424828098866382,
+            "survival_late": 0.4324095620901206,
+            "survival_difference": 0.010073247796517582,
+            "conditional_covariance": 0.0024709956951458434
+          }
+        },
+        {
+          "omitted_batch": 8,
+          "cutoffs_insertion_counts": [
+            32468,
+            32769,
+            33072
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4758,
+              5987
+            ],
+            [
+              6131,
+              8052
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10745,
+            "H_a_c": 4758,
+            "H_b_c": 10889,
+            "H_b_b": 24928
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3835076923076923,
+            "early_fraction_within_risk": 0.4310413992297818,
+            "survival_early": 0.4428106095858539,
+            "survival_late": 0.43227807939081997,
+            "survival_difference": 0.010532530195033918,
+            "conditional_covariance": 0.002583047327780259
+          }
+        },
+        {
+          "omitted_batch": 9,
+          "cutoffs_insertion_counts": [
+            32468,
+            32769,
+            33071
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4741,
+              5999
+            ],
+            [
+              6103,
+              8030
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10740,
+            "H_a_c": 4741,
+            "H_b_c": 10844,
+            "H_b_b": 24873
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.38266153846153844,
+            "early_fraction_within_risk": 0.4317935110360632,
+            "survival_early": 0.44143389199255123,
+            "survival_late": 0.4318262223165641,
+            "survival_difference": 0.00960766967598714,
+            "conditional_covariance": 0.002357221337391173
+          }
+        },
+        {
+          "omitted_batch": 10,
+          "cutoffs_insertion_counts": [
+            32467,
+            32769,
+            33071
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4732,
+              5984
+            ],
+            [
+              6144,
+              8022
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10716,
+            "H_a_c": 4732,
+            "H_b_c": 10876,
+            "H_b_b": 24882
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3828,
+            "early_fraction_within_risk": 0.4306727755003617,
+            "survival_early": 0.4415826801045166,
+            "survival_late": 0.433714527742482,
+            "survival_difference": 0.007868152362034642,
+            "conditional_covariance": 0.001929221672617397
+          }
+        },
+        {
+          "omitted_batch": 11,
+          "cutoffs_insertion_counts": [
+            32468,
+            32770,
+            33071
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4772,
+              5964
+            ],
+            [
+              6130,
+              8050
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10736,
+            "H_a_c": 4772,
+            "H_b_c": 10902,
+            "H_b_b": 24916
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.38332307692307693,
+            "early_fraction_within_risk": 0.4308877829507144,
+            "survival_early": 0.4444858420268256,
+            "survival_late": 0.4322990126939351,
+            "survival_difference": 0.012186829332890503,
+            "conditional_covariance": 0.0029884969606402156
+          }
+        },
+        {
+          "omitted_batch": 12,
+          "cutoffs_insertion_counts": [
+            32468,
+            32769,
+            33072
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4751,
+              5991
+            ],
+            [
+              6114,
+              8045
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10742,
+            "H_a_c": 4751,
+            "H_b_c": 10865,
+            "H_b_b": 24901
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3830923076923077,
+            "early_fraction_within_risk": 0.43138829765872855,
+            "survival_early": 0.44228262893315956,
+            "survival_late": 0.43181015608446927,
+            "survival_difference": 0.010472472848690295,
+            "conditional_covariance": 0.0025688183582150974
+          }
+        },
+        {
+          "omitted_batch": 13,
+          "cutoffs_insertion_counts": [
+            32468,
+            32769,
+            33070
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4779,
+              5988
+            ],
+            [
+              6122,
+              8074
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10767,
+            "H_a_c": 4779,
+            "H_b_c": 10901,
+            "H_b_b": 24963
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.38404615384615387,
+            "early_fraction_within_risk": 0.4313183511597164,
+            "survival_early": 0.443856227361382,
+            "survival_late": 0.43124823894054665,
+            "survival_difference": 0.012607988420835381,
+            "conditional_covariance": 0.003092523094497125
+          }
+        }
+      ],
+      "source_batches": [
+        {
+          "file": "cloud-independent-20260929-triangular-L256-b00.json.gz",
+          "batch": 0,
+          "samples": 5000,
+          "sha256": "78acbfa46b45ac363f379912a848a16d41098b46d370f78b1ddbb26ef46ac01b",
+          "dependency_group": "cloud-independent-20260929/triangular/L256/batch0"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L256-b01.json.gz",
+          "batch": 1,
+          "samples": 5000,
+          "sha256": "05b48cc91d176a7e0442eb81555c59b20ab5e2129e37473b076262a7b0bfb7d9",
+          "dependency_group": "cloud-independent-20260929/triangular/L256/batch1"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L256-b02.json.gz",
+          "batch": 2,
+          "samples": 5000,
+          "sha256": "5f6ec5a22b05f3b26c4a23dddbaabf7c14cf45152d11000c0f17d68158d5a2bc",
+          "dependency_group": "cloud-independent-20260929/triangular/L256/batch2"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L256-b03.json.gz",
+          "batch": 3,
+          "samples": 5000,
+          "sha256": "9c718bb0689b7a46ff3b37af86776a402c194b020898deb8c792253c052b2a38",
+          "dependency_group": "cloud-independent-20260929/triangular/L256/batch3"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L256-b04.json.gz",
+          "batch": 4,
+          "samples": 5000,
+          "sha256": "1d1608ad81da73c007a7e3b69dfcd62cef9c096da0ab74a3ee77a76bc5a8eb13",
+          "dependency_group": "cloud-independent-20260929/triangular/L256/batch4"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L256-b05.json.gz",
+          "batch": 5,
+          "samples": 5000,
+          "sha256": "5d561799d1f4e749b8f3fd677036bdc0508ed2ebe7031e5e36b4c23c031b0eed",
+          "dependency_group": "cloud-independent-20260929/triangular/L256/batch5"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L256-b06.json.gz",
+          "batch": 6,
+          "samples": 5000,
+          "sha256": "3025828063a792836704dd4859f8e3d264561e3f0e8b86248f55ab6b6b5fe0de",
+          "dependency_group": "cloud-independent-20260929/triangular/L256/batch6"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L256-b07.json.gz",
+          "batch": 7,
+          "samples": 5000,
+          "sha256": "1e325fa156c855f7fe84ddd54835a4c3119e87dc880b2f9ef2b29ad620868d57",
+          "dependency_group": "cloud-independent-20260929/triangular/L256/batch7"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L256-b08.json.gz",
+          "batch": 8,
+          "samples": 5000,
+          "sha256": "e839ca3d1795c273eb7a41450b0b565ad14f11ca82e26fcc2521a5c1e8943a0f",
+          "dependency_group": "cloud-independent-20260929/triangular/L256/batch8"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L256-b09.json.gz",
+          "batch": 9,
+          "samples": 5000,
+          "sha256": "26e79e87c0fa7d5278c1f78e67bb18a8f0212fca1382c33cfccccc3da213544e",
+          "dependency_group": "cloud-independent-20260929/triangular/L256/batch9"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L256-b10.json.gz",
+          "batch": 10,
+          "samples": 5000,
+          "sha256": "359f0690235036051b05198d3b7bdca8c1377e33ba3da8fe1c5981e1625eac6f",
+          "dependency_group": "cloud-independent-20260929/triangular/L256/batch10"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L256-b11.json.gz",
+          "batch": 11,
+          "samples": 5000,
+          "sha256": "b13baf39f20ee9e091601c2339b6ac8abe7f86564a0be15dc965f4e3fd673920",
+          "dependency_group": "cloud-independent-20260929/triangular/L256/batch11"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L256-b12.json.gz",
+          "batch": 12,
+          "samples": 5000,
+          "sha256": "483f5a6ff980a56e72ee1f495c36d3b36e4d0bfdb6e83f7b94692e8d764be600",
+          "dependency_group": "cloud-independent-20260929/triangular/L256/batch12"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L256-b13.json.gz",
+          "batch": 13,
+          "samples": 5000,
+          "sha256": "2950304fd8d8a8ca44cc694c66c089fc63f6cc5aed66fd68ae17371b3a961011",
+          "dependency_group": "cloud-independent-20260929/triangular/L256/batch13"
+        }
+      ]
+    },
+    {
+      "lattice": "triangular",
+      "L": 512,
+      "N": 262144,
+      "samples": 70000,
+      "batches": 14,
+      "role": "primary_largest_available_size",
+      "cutoffs_insertion_counts": [
+        130353,
+        131078,
+        131803
+      ],
+      "risk_table_early_late_by_survive_exit": [
+        [
+          5009,
+          6573
+        ],
+        [
+          6424,
+          8675
+        ]
+      ],
+      "kernel_counts": {
+        "H_a_b": 11582,
+        "H_a_c": 5009,
+        "H_b_c": 11433,
+        "H_b_b": 26681
+      },
+      "point": {
+        "rank_one_risk_fraction": 0.38115714285714286,
+        "early_fraction_within_risk": 0.4340916757242982,
+        "survival_early": 0.4324814367121395,
+        "survival_late": 0.42545863964500963,
+        "survival_difference": 0.007022797067129882,
+        "conditional_covariance": 0.0017251928879764176
+      },
+      "metric_order": [
+        "rank_one_risk_fraction",
+        "early_fraction_within_risk",
+        "survival_early",
+        "survival_late",
+        "survival_difference",
+        "conditional_covariance"
+      ],
+      "jackknife_se": {
+        "rank_one_risk_fraction": 0.0015493351995096378,
+        "early_fraction_within_risk": 0.0018081362649325938,
+        "survival_early": 0.0028549414827247917,
+        "survival_late": 0.003372970080516553,
+        "survival_difference": 0.00514594774930099,
+        "conditional_covariance": 0.0012630203258383141
+      },
+      "delete_one_batch_covariance": [
+        [
+          2.4004395604395693e-06,
+          7.887844198329361e-07,
+          -2.088236238136659e-06,
+          2.9641027726845128e-06,
+          -5.052339010821172e-06,
+          -1.2399657486842923e-06
+        ],
+        [
+          7.887844198329361e-07,
+          3.269356752564391e-06,
+          -1.7068551489515763e-06,
+          3.1059207236267333e-06,
+          -4.81277587257831e-06,
+          -1.1788646471653684e-06
+        ],
+        [
+          -2.088236238136659e-06,
+          -1.7068551489515763e-06,
+          8.150690869782832e-06,
+          -3.4765801023466244e-06,
+          1.1627270972129457e-05,
+          2.8546934711707154e-06
+        ],
+        [
+          2.9641027726845128e-06,
+          3.1059207236267333e-06,
+          -3.4765801023466244e-06,
+          1.1376927164059843e-05,
+          -1.4853507266406467e-05,
+          -3.6447378154555933e-06
+        ],
+        [
+          -5.052339010821172e-06,
+          -4.81277587257831e-06,
+          1.1627270972129457e-05,
+          -1.4853507266406467e-05,
+          2.6480778238535922e-05,
+          6.499431286626307e-06
+        ],
+        [
+          -1.2399657486842923e-06,
+          -1.1788646471653684e-06,
+          2.8546934711707154e-06,
+          -3.6447378154555933e-06,
+          6.499431286626307e-06,
+          1.595220343480721e-06
+        ]
+      ],
+      "delete_one": [
+        {
+          "omitted_batch": 0,
+          "cutoffs_insertion_counts": [
+            130352,
+            131077,
+            131801
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4653,
+              6090
+            ],
+            [
+              5966,
+              8028
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10743,
+            "H_a_c": 4653,
+            "H_b_c": 10619,
+            "H_b_b": 24737
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.38056923076923077,
+            "early_fraction_within_risk": 0.4342887173060597,
+            "survival_early": 0.4331192404356325,
+            "survival_late": 0.42632556810061456,
+            "survival_difference": 0.006793672335017931,
+            "conditional_covariance": 0.0016690831922606432
+          }
+        },
+        {
+          "omitted_batch": 1,
+          "cutoffs_insertion_counts": [
+            130353,
+            131079,
+            131803
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4651,
+              6093
+            ],
+            [
+              5964,
+              8066
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10744,
+            "H_a_c": 4651,
+            "H_b_c": 10615,
+            "H_b_b": 24774
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.38113846153846154,
+            "early_fraction_within_risk": 0.4336804714620166,
+            "survival_early": 0.4328927773641102,
+            "survival_late": 0.42508909479686385,
+            "survival_difference": 0.0078036825672463395,
+            "conditional_covariance": 0.0019165978618993086
+          }
+        },
+        {
+          "omitted_batch": 2,
+          "cutoffs_insertion_counts": [
+            130353,
+            131079,
+            131804
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4648,
+              6130
+            ],
+            [
+              5990,
+              8032
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10778,
+            "H_a_c": 4648,
+            "H_b_c": 10638,
+            "H_b_b": 24800
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.38153846153846155,
+            "early_fraction_within_risk": 0.43459677419354836,
+            "survival_early": 0.43124884023009835,
+            "survival_late": 0.42718585080587645,
+            "survival_difference": 0.004062989424221897,
+            "conditional_covariance": 0.000998367585848075
+          }
+        },
+        {
+          "omitted_batch": 3,
+          "cutoffs_insertion_counts": [
+            130355,
+            131080,
+            131803
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4657,
+              6088
+            ],
+            [
+              5964,
+              8048
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10745,
+            "H_a_c": 4657,
+            "H_b_c": 10621,
+            "H_b_b": 24757
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.38087692307692306,
+            "early_fraction_within_risk": 0.43401866138869816,
+            "survival_early": 0.4334108887854816,
+            "survival_late": 0.4256351698544105,
+            "survival_difference": 0.007775718931071096,
+            "conditional_covariance": 0.001910077852350325
+          }
+        },
+        {
+          "omitted_batch": 4,
+          "cutoffs_insertion_counts": [
+            130353,
+            131077,
+            131802
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4643,
+              6119
+            ],
+            [
+              5963,
+              8047
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10762,
+            "H_a_c": 4643,
+            "H_b_c": 10606,
+            "H_b_b": 24772
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3811076923076923,
+            "early_fraction_within_risk": 0.4344421120620055,
+            "survival_early": 0.4314253856160565,
+            "survival_late": 0.4256245538900785,
+            "survival_difference": 0.005800831725977951,
+            "conditional_covariance": 0.001425276904180921
+          }
+        },
+        {
+          "omitted_batch": 5,
+          "cutoffs_insertion_counts": [
+            130354,
+            131079,
+            131803
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4662,
+              6101
+            ],
+            [
+              5990,
+              8055
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10763,
+            "H_a_c": 4662,
+            "H_b_c": 10652,
+            "H_b_b": 24808
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.38166153846153844,
+            "early_fraction_within_risk": 0.4338519832312157,
+            "survival_early": 0.4331506085663848,
+            "survival_late": 0.4264862940548238,
+            "survival_difference": 0.00666431451156102,
+            "conditional_covariance": 0.001636918519070057
+          }
+        },
+        {
+          "omitted_batch": 6,
+          "cutoffs_insertion_counts": [
+            130352,
+            131078,
+            131804
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4632,
+              6064
+            ],
+            [
+              5940,
+              8089
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10696,
+            "H_a_c": 4632,
+            "H_b_c": 10572,
+            "H_b_b": 24725
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3803846153846154,
+            "early_fraction_within_risk": 0.43259858442871585,
+            "survival_early": 0.4330590875093493,
+            "survival_late": 0.42340865350345713,
+            "survival_difference": 0.009650434005892161,
+            "conditional_covariance": 0.0023687670543828423
+          }
+        },
+        {
+          "omitted_batch": 7,
+          "cutoffs_insertion_counts": [
+            130352,
+            131078,
+            131802
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4650,
+              6112
+            ],
+            [
+              6004,
+              8062
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10762,
+            "H_a_c": 4650,
+            "H_b_c": 10654,
+            "H_b_b": 24828
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3819692307692308,
+            "early_fraction_within_risk": 0.4334622200741099,
+            "survival_early": 0.4320758223378554,
+            "survival_late": 0.42684487416465233,
+            "survival_difference": 0.005230948173203076,
+            "conditional_covariance": 0.0012845781911726027
+          }
+        },
+        {
+          "omitted_batch": 8,
+          "cutoffs_insertion_counts": [
+            130353,
+            131080,
+            131804
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4654,
+              6100
+            ],
+            [
+              5990,
+              8042
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10754,
+            "H_a_c": 4654,
+            "H_b_c": 10644,
+            "H_b_b": 24786
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.38132307692307693,
+            "early_fraction_within_risk": 0.4338739611070766,
+            "survival_early": 0.43276920215733683,
+            "survival_late": 0.42688141391106044,
+            "survival_difference": 0.005887788246276393,
+            "conditional_covariance": 0.0014462018065148443
+          }
+        },
+        {
+          "omitted_batch": 9,
+          "cutoffs_insertion_counts": [
+            130350,
+            131077,
+            131803
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4649,
+              6074
+            ],
+            [
+              5972,
+              8038
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10723,
+            "H_a_c": 4649,
+            "H_b_c": 10621,
+            "H_b_b": 24733
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3805076923076923,
+            "early_fraction_within_risk": 0.4335503173897222,
+            "survival_early": 0.43355404271192766,
+            "survival_late": 0.42626695217701643,
+            "survival_difference": 0.0072870905349112225,
+            "conditional_covariance": 0.001789596045920841
+          }
+        },
+        {
+          "omitted_batch": 10,
+          "cutoffs_insertion_counts": [
+            130354,
+            131080,
+            131803
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4641,
+              6096
+            ],
+            [
+              5982,
+              8056
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10737,
+            "H_a_c": 4641,
+            "H_b_c": 10623,
+            "H_b_b": 24775
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3811538461538462,
+            "early_fraction_within_risk": 0.43338042381432895,
+            "survival_early": 0.4322436434758312,
+            "survival_late": 0.4261290782162701,
+            "survival_difference": 0.006114565259561111,
+            "conditional_covariance": 0.001501503847442319
+          }
+        },
+        {
+          "omitted_batch": 11,
+          "cutoffs_insertion_counts": [
+            130352,
+            131078,
+            131802
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4645,
+              6117
+            ],
+            [
+              5973,
+              8055
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10762,
+            "H_a_c": 4645,
+            "H_b_c": 10618,
+            "H_b_b": 24790
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3813846153846154,
+            "early_fraction_within_risk": 0.43412666397741023,
+            "survival_early": 0.43161122467942764,
+            "survival_late": 0.4257912745936698,
+            "survival_difference": 0.0058199500857578634,
+            "conditional_covariance": 0.0014297330329914484
+          }
+        },
+        {
+          "omitted_batch": 12,
+          "cutoffs_insertion_counts": [
+            130352,
+            131078,
+            131803
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4664,
+              6087
+            ],
+            [
+              5962,
+              8066
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10751,
+            "H_a_c": 4664,
+            "H_b_c": 10626,
+            "H_b_b": 24779
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3812153846153846,
+            "early_fraction_within_risk": 0.43387545905807334,
+            "survival_early": 0.4338201097572319,
+            "survival_late": 0.425007128599943,
+            "survival_difference": 0.008812981157288902,
+            "conditional_covariance": 0.0021647109265471726
+          }
+        },
+        {
+          "omitted_batch": 13,
+          "cutoffs_insertion_counts": [
+            130354,
+            131078,
+            131803
+          ],
+          "risk_table_early_late_by_survive_exit": [
+            [
+              4661,
+              6099
+            ],
+            [
+              5961,
+              8051
+            ]
+          ],
+          "kernel_counts": {
+            "H_a_b": 10760,
+            "H_a_c": 4661,
+            "H_b_c": 10622,
+            "H_b_b": 24772
+          },
+          "point": {
+            "rank_one_risk_fraction": 0.3811076923076923,
+            "early_fraction_within_risk": 0.43436137574681094,
+            "survival_early": 0.43317843866171,
+            "survival_late": 0.4254210676562946,
+            "survival_difference": 0.007757371005415403,
+            "conditional_covariance": 0.0019059206691980646
+          }
+        }
+      ],
+      "source_batches": [
+        {
+          "file": "cloud-independent-20260929-triangular-L512-b00.json.gz",
+          "batch": 0,
+          "samples": 5000,
+          "sha256": "8d036c6aca66670246ffbdbe34f495e8da2071d05ee67159cec212afe50ab6b1",
+          "dependency_group": "cloud-independent-20260929/triangular/L512/batch0"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L512-b01.json.gz",
+          "batch": 1,
+          "samples": 5000,
+          "sha256": "1e16204d45d9d21cd2af262f438b5fd6b1ceb95f606b42b676a590d5ab2a5203",
+          "dependency_group": "cloud-independent-20260929/triangular/L512/batch1"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L512-b02.json.gz",
+          "batch": 2,
+          "samples": 5000,
+          "sha256": "6c090aad79fcb40c0948b18db141b64d76b9461316100901b53ad40b1bda8730",
+          "dependency_group": "cloud-independent-20260929/triangular/L512/batch2"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L512-b03.json.gz",
+          "batch": 3,
+          "samples": 5000,
+          "sha256": "0f4e9c8b72261bf350b7a9cead02eba1d33ea9962e54ecbeb6616177ad95a295",
+          "dependency_group": "cloud-independent-20260929/triangular/L512/batch3"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L512-b04.json.gz",
+          "batch": 4,
+          "samples": 5000,
+          "sha256": "609f14dc0260a68724eacb1bbdc5731b8c24adebe75c9820f4e2f48f7dfe130c",
+          "dependency_group": "cloud-independent-20260929/triangular/L512/batch4"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L512-b05.json.gz",
+          "batch": 5,
+          "samples": 5000,
+          "sha256": "8c300c9973f40c7197ce718972ec575584675e5bd3b99e8f9d964081e412632c",
+          "dependency_group": "cloud-independent-20260929/triangular/L512/batch5"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L512-b06.json.gz",
+          "batch": 6,
+          "samples": 5000,
+          "sha256": "cc05d24e7480087a092c5e4028cb52cb8cc9b38b27e2606aebecce659746b044",
+          "dependency_group": "cloud-independent-20260929/triangular/L512/batch6"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L512-b07.json.gz",
+          "batch": 7,
+          "samples": 5000,
+          "sha256": "6acc01a2e4a235ee9b6c8805c99d4be09e30be1a0f1f33b7fe8cf0525fed0b86",
+          "dependency_group": "cloud-independent-20260929/triangular/L512/batch7"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L512-b08.json.gz",
+          "batch": 8,
+          "samples": 5000,
+          "sha256": "879c4278fd01008a6d36335839b3aad516bfff714b7d7b4f6227f53150137059",
+          "dependency_group": "cloud-independent-20260929/triangular/L512/batch8"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L512-b09.json.gz",
+          "batch": 9,
+          "samples": 5000,
+          "sha256": "e481d011e6aeaf06ca578f35b72d5e1cd71b8f13f3eac31e67f72bec3cbd9faf",
+          "dependency_group": "cloud-independent-20260929/triangular/L512/batch9"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L512-b10.json.gz",
+          "batch": 10,
+          "samples": 5000,
+          "sha256": "657df81bf1f7469375c1c7f71106cedd0adc3a00fd2d058d2fdfb6b73c781e5c",
+          "dependency_group": "cloud-independent-20260929/triangular/L512/batch10"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L512-b11.json.gz",
+          "batch": 11,
+          "samples": 5000,
+          "sha256": "18dd1eb5c4a4939a2eb60ac6015c15fba57c53b905a3dcee5e7429be9466b239",
+          "dependency_group": "cloud-independent-20260929/triangular/L512/batch11"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L512-b12.json.gz",
+          "batch": 12,
+          "samples": 5000,
+          "sha256": "fa65fedbe181bca3a4020f357afe7638bac127d4aeeb798d9f86b0c6c858be74",
+          "dependency_group": "cloud-independent-20260929/triangular/L512/batch12"
+        },
+        {
+          "file": "cloud-independent-20260929-triangular-L512-b13.json.gz",
+          "batch": 13,
+          "samples": 5000,
+          "sha256": "111a16337cce62804352e90de94e68e6918e56e73ad8f20de7fe66724a56b0bf",
+          "dependency_group": "cloud-independent-20260929/triangular/L512/batch13"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Not prospective or independent model-elimination certification; this block already supplied gap readouts.",
+    "Finite-size conditional dependence does not prove non-Markovianity of a continuum limit.",
+    "Conditioning on rank one tests the Markov property; it is not a causal effect of earlier birth.",
+    "A zero contrast at one triple would not prove Markovianity; the theorem requires all triples.",
+    "Square and triangular primitive-coordinate tori have different moduli; no universality comparison.",
+    "No fitted exponent, pooled cross-lattice significance, adaptive cutoff search or hidden-state identification."
+  ],
+  "wall_seconds": 2.7442724999855272
+}

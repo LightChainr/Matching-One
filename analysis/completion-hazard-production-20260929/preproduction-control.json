@@ -1,0 +1,12 @@
+{
+  "schema": "matching-one.completion-geometry-control.v1",
+  "date": "2026-09-29",
+  "method": "One new C++ completion-site scan control against explicit copied-state single-site insertion; all 512 L3 subsets per lattice. Independent stored lifted-DFS direction/nu2 census also compared.",
+  "source_reference": "analysis/birth-completion-geometry-20260929/result.json at e772037d09678a2dda299ca99f24dc6f6a765af9",
+  "square": {"subsets": 512, "rank_one_states": 162, "single_site_probes": 648, "mismatches": 0},
+  "triangular": {"subsets": 512, "rank_one_states": 180, "single_site_probes": 810, "mismatches": 0},
+  "compile": "clang++ -O3 -std=c++17 analysis/completion-hazard-production-20260929/engine.cpp -o engine",
+  "reproduce": ["engine control square control-square.csv", "engine control triangular control-triangular.csv"],
+  "no_permutation_reenumeration": true,
+  "scope": "Hypothetical cycle and direction convention, not a full statistical calibration or continuum check"
+}

@@ -1,106 +1,184 @@
-# Research execution roadmap
+# 下一步：按研究信息增量安排注意力
 
-**Owner-delegated reset: 2026-09-13; reconciled with the latest #650.**
-One active deliverable: a consolidated probability-theorem manuscript and
-independent proof audit. Representation and original-U work remain visible
-research reserves, not simultaneous active assignments. This replaces the stale acquisition list; it does not
-rewrite frozen experimental decisions. Live Issue comments/state take
-precedence over this dated snapshot.
+2026-09-30。替代 9 月 13 日单论文队列，并吸收 #828 与 #829–#837 及本轮 #838。
+这里的 P0/P1/P2 **不是许可、锁或对正确性的投票**；任何新反例或可区分预测都可以改变分配。
+旧的 freeze 保留其统计含义，不扩展成禁止探索的规则。
 
-## One active package: #735 with #613/#736 — root versus full-law geometry
+GitHub 注意力标签同步为：#778 P0；#833/#768/#802/#780 P1；
+#816/#801 P2；#650 保留总控 P0。#801 是运维支持，不是第三条科研主线。
+没有关闭、锁定这些题目，也没有从标签推断任何旧作业被停止。
 
-Delivered, not to be reassigned: #613/#670 supplied the full-law sufficient
-condition; #718/#735 removed aspect restrictions for the balance root; #736
-now supplies the missing axial full-law necessity. #276 remains completed.
+## P0 — 联合出生的预测状态与连续核
 
-First consolidate and independently audit #735's arbitrary-period root proof,
-including oblique entry counts, support injectivity and disjoint bands. Return
-one theorem manuscript and a closest-prior-theorem comparison to #735. Use
-#736's axial iff as the precise full-law boundary chapter, with its own RSW
-input and independent seam/quantifier check. This is one probability paper,
-not two new dispatches.
+**当前问题：** 筛选不能单独解释已测历史差后，入口几何与安全生长的源响应如何区分？
+最新[直接耦合分解](../notes/safe-transport-selection-readout-20260930.md)已完成：
+去自然重加权的参考差 −.002537±.000636，筛选贡献 +.000332±.000287 未分辨。
+这支持入口/安全传输参与，不等于已分离出生与演化。计算使用旧出生前缀的新条件续接，不是独立确认。
+同一 L512 块的精确条件平均现给 −.003449±.000772（约4.47批次SE），支持扩展观察者的有限历史依赖。
+旧方向-only 信号仍未获独立复现，不能把两个观察者的结论混为一谈。
+按用户最新分工，精度与独立档案复核交给**一个支持工作者**；主线不等待它，也不继续以加精度替代机制。
+该支持项现已完成：[独立档案复核](../notes/completion-creation-independent-replication-20260930.md)
+给 −.003199±.000620，与前块相近，未合并；不再派作未完成任务。
+连续核唯一性仍是并行理论目标。前面的无聚合/时钟比较推导已给，不重复派工。
 
-A possible strengthening INSIDE this programme, not a second active task, is
-the **uniform oblique-corridor lemma**:
-for every eta>0, find a fixed p_eta<p_c and bounded-thickness occupied winding
-corridors around an actual shortest period u, with probability >=exp(-eta|u|),
-uniformly in its orientation and ambient primitivity. Pack disjoint corridors
-in an arbitrary integer-period torus, or exhibit the geometric obstruction.
-The physical NN interaction must not be rotated by a change of period basis.
+### 机制主线：传播和筛选分解已给，下一步区分源
 
-As part of that same acceptance package, independently examine #736's
-seam construction and quantifier order once, then compare its exact statement
-with strip-percolation, RSW finite-size criteria and homological-percolation
-prior art. A negative search is not an originality certificate.
+[新几何源](../notes/birth-selection-intervention-20260930.md)在安全站点内按
+`exp(theta*degree)` 重分配到达概率，保持总占据时钟和即时退出 hazard 不变。
+两步生存 susceptibility 为 `−(m−c) Var_safe(degree)/[m(m−1)]`；三个实际方格构型的
+全滞后响应也已算出，一步为零、第三步在这些控制中最强、最终饱和为零。下一项不是重复测这个恒等式。
 
-**Deliverable:** one consolidated theorem manuscript, independent lemma-level
-audit and precise novelty comparison. Treat a proved oblique-corridor extension
-as a strengthening, or record its exact missing lemma; do not make it a new
-prerequisite for the already supplied narrower results. **Not useful:** another enormous
-thin-torus simulation, another proof that a fixed-width root is not p_c,
-or re-enumeration of the tiny checks already delivered.
+1. **已完成的传输与真正下一问：** 固定L512735步源导数已为 −.011042±.000158；
+   不再把“局部作用能否传到这个窗口”派作未完成任务。下述筛选/传输分解也已交付；
+   若要连续尺度结论，再为具体消费者研究缩放增益，不自动开启尺寸阶梯。
+   仅改变到达时钟的模型不能解释“相同时钟、零即时响应、非零延迟响应”的这项干预；
+   这不自动排除不同合同中的热投影，也不把两步负号当作任意长窗口的定理。
+2. **传输还是筛选，已回答本合同：** 1198共同端点格中，安全参考差 −.002537±.000636
+   仍非零；自然差 −.002205±.000787；筛选差 +.000332±.000287 未分辨。入口/安全演化需要进入解释，
+   不能再优先把负差归因于纯筛选。不要把点值反号当成已经分辨的抵消，不追加复核或精度块。
+3. **当前主问：区分入口与安全生长源。** 写出实际可实现的入口源和行和为零的安全转移源，
+   用同端点、同正规化的非冗余读出比较响应列；源位置的传播公式已给。
+   同(k,D,c)下Y与两步生存是同一量；两个保持首次出生边际的源在单p的M/E_top上也必共线。
+   应使用真实长窗口/联合时间读出，先证明所选两列能分开，不以更高精度填补结构缺秩。
+   固定出生count再交换早晚标签不是入口干预；当前数据不能唯一拆出生与生长。
 
-## Representation reserve: #636 — source-visible topology and structural closure
+这是 P0 的注意力顺序，不是任务许可。中大计算优先华为；复核不扩成第二条准备流水线。
 
-This lane is exposed for scientific value but paused for new extension during
-the one-package allocation in #650. Reactivate only for a concrete need of the
-primary theorem or a later explicit allocation decision. #737's spatial
-Hessian and invisible marks are also already delivered finite assets, not new
-assignments.
+第一项已落实为[固定735步几何源读出](../notes/geometric-source-window-readout-20260930.md)：
+对原窗口的无序到达集合取条件平均，直接算原均匀源下的一次干预导数，不用多组theta扫描。
+合同和代码在计算前落库，复用原safe-insertion排列；这是新机制消费者，不是独立样本或旧差的精度升级。
+TgFr7R14workers、519.145秒完成并已Ready。下一项已有[直接耦合算法](../notes/safe-path-selection-coupling-20260930.md)：
+均匀安全拒绝采样继续路径，以首个提议是否安全记录自然存活flag；无需每步扫描全格计算W。
+该算法现已在TgFr7R14workers、664.094秒完成；140000个J1均与原档案对应，97666个入口完成续接。
+同一端点Y的分解已给，不再作为未完成生产任务派发，也不追加描述变量。
 
-Treat #708's rank-future closure, #710's all-p width-four scalar spectrum,
-and #733's source-compatible quotients and exact rank-conditioned sampler as
-available research inputs at their pinned, unmerged commits. Do not rebuild
-those jobs because they are absent from main.
+[单侧出生源的normal映射](../notes/one-sided-birth-source-normal-response-20260930.md)也已交付：
+首次出生边际不变，deltaM=deltaE_top；移动根后的系数为−2P0'/M'，非零源不能被全消去。
+实际对称L4控制的Jacobian秩为2、normal导数严格为正；这是动态源正控制，不是原U候选列已齐。
 
-Upon reactivation, the next result is either an all-width description of the actual site
-transfer's topological closure weights and observable cancellations, or a
-source-faithful response that distinguishes two concrete surviving state
-representations. Keep deterministic continuation classes, strong lumpings,
-scalar Hankel order, positive realization order and noise-limited effective
-order distinct. A new width is informative only when it can refute a specific
-structural conjecture named before the computation.
+本轮已交付：
 
-Physical two-row site sources are the preferred exact intervention laboratory.
-P398 is the known periodic IC O(1) TL calibration process, not square-site
-percolation. Its pulse kernels do not transfer without a microscopic map.
+1. [反例和非合并判据](../notes/birth-gap-noncoalescence-20260929.md)：明确需要控制哪种近对角质量，
+   哪些边际量不能决定它。
+2. [同过滤 paired-birth pilot](../notes/birth-gap-pilot-20260929.md)：方格与三角格并行，保存批次联合表，
+   同时看直接原子、近对角带及不预设方格临界指数的宽度归一化。
+3. [已完成的云端独立块](../notes/birth-gap-cloud-20260929.md)：新种子、56 万条过滤、L≤512，
+   更细 delta=.00625 网格；同样保留协方差，不与本地 pilot 混成独立坐标票。
+4. [两时间 pivotal 密度界](../notes/two-time-pivotal-density-bound-20260929.md)：
+   不交环带将两时间问题化成单时间臂概率，给紧窗联合密度上界；三角格无聚合作者推导已写出，
+   不以 Monte Carlo 作为证明。
+5. [方格 NN/matching 转接与总体 IQR 时钟](../notes/square-birth-transfer-and-iqr-clock-20260929.md)：
+   标准臂/长度估计接上方格约定，补上子序列无聚合；次序统计量误差及局部密度给出
+   `W_population asymp N*a_eta`。不宣称 IQR 比值收敛或有限样本分位数已获保证。
+6. [Markov 核与出生历史分析](../notes/birth-history-memory-readout-20260929.md)：
+   一条全三元组乘法判据；旧 L3 表上的方格 Markov/三角格非 Markov 精确控制（包含连续标签核）；
+   既有大尺寸档案的单一三时刻比较。L512 关联较小，未识别极限或证明潜在机制。
+7. [完成几何机制](../notes/birth-completion-geometry-20260929.md)：
+   完成站点数 nu_2 的精确 hazard 传递；三角 L3 的混合权重解释 `5/112`，并给出四状态
+   插入模型。方向本身不消除三角记忆；方格标签时钟反而因方向细化暴露轴向记忆。
+8. [独立方格 L512 完成几何块](../notes/completion-hazard-independent-block-20260929.md)：
+   预定14万条过滤已完成。原始差 +0.686±0.444、同方向 −0.415±0.451、
+   同方向同完成数 +0.122±0.476 个百分点（批次 SE）；条件剩余未分辨，完整协方差保留。
+9. [方向模型的即时必要条件](../notes/directional-hazard-contrast-20260929.md)：
+   同方向早减晚完成数 +1.629±.391；明确是同块事后读出，不是新验证。
+   [流量 Markov 完成与充要判据](../notes/directional-markov-completion-20260929.md)区分相邻表兼容和真实路径闭合。
+10. [协同完成对与 L4 反例](../notes/completion-pair-synergy-L4-20260929.md)：
+    原均匀源中同 (方向,完成数) 的早晚历史，两步生存仍差 `−4/4131`（方格）与 `2/121`（三角）。
+    [精确后继公式](../notes/completion-pair-synergy-20260929.md)给出图度数→新完成数→两步 rank 的映射。
+11. [独立 L512 安全插入块](../notes/safe-insertion-independent-block-20260929.md)：
+    新14万前缀、合格前缀4探测，主要增量差 +.00668±.01209；同方向 nu 复核 −.040±.570。
+    旧事后方向信号未复现，主要差未分辨。共同支持98.973%，只有0.560%探测非零。
+12. [投影分量判据](../notes/projected-component-pair-criterion-20260929.md)：
+    精确枚举协同完成对，取代稀疏探针的条件随机平均；不是新增观察量或新随机块。
+    [同前缀精确读出](../notes/exact-completion-pairs-readout-20260930.md)已完成14万行，
+    −.003449±.000772，标准误缩小15.65倍；旧正点估计在其大误差内，与精化结果不矛盾。
+    [标签曲率接口](../notes/completion-pair-label-curvature-20260930.md)同时给出
+    `hazard'=[mean c+2 mean e−Var(c)]/(1-t)^2`，区分创建和风险集选择；计数数据不直接代入标签公式。
 
-## Flagship, theory-blocked: #275 — original U, not a substitute observer
+下一理论产物不再是重复请求同一小球界、方格转接或时钟比较：
 
-Scientific upside stays high; active allocation moves from P0 to P1 because
-the next missing object is a pair of forward maps, not data precision.
-Preserve the named source, six-coordinate thermal jet, physical normalizer,
-rank-one denominator and pooled moving-root counterterm.
+- **极限识别：** 把固定环面的两出生接到连续 near-critical 观察量，解决 copula 唯一性或其可区分预测。
+  已有局部密度不推出 Markov 性、出生独立或普适振幅。
+- **具体预测对象：** 用已给的 `nu_2 -> completion hazard -> H` 公式研究历史如何传递。
+  L3 的方向假说和二元相态、L512 的首次独立几何比较都已完成，不再作为空白派工。
+  方向混合 H_d 的即时条件已检查，但事后挑战没有独立复现；不要把它当作已排除的模型。
+  匹配 (D,nu_b) 后的历史依赖在 L4 已精确出现，L512 精化估计也已有信号，且有两步消费者。
+  相同负向目标的独立档案读出交由支持工作者；不将旧档案再分析称为新前瞻生产，也不作为主理论的等待条件。
+  当前 nu 固定时的即时 hazard 相等是定义结果，不是递归充分性的成功检验。
+  大尺寸的现有固定三元组不扩成显著性 cutoff 搜索；有限插入结果也不静默替换成标签时间结果。
+- **几何信息：** 明确联合分布中哪些量超出已知静态边际；需要比较格点时先对齐模参数和时钟合同。
+  不把现有两个原始几何的数据直接宣称为同模参数普适性检验。
+- **具体连续系数：** 用上述创建减选择组合给出竞争核的不同定量预测。
+  近临界导数带 `a_L^2` 因子；有限公式不授权交换极限与导数，需要控制矩与时间余项。
+  这比再命名一个状态变量更直接；允许并行探索，不设置研究许可。
 
-For two named candidates: establish baseline representability of every used
-coordinate; specify nuisance amplitudes/phase transport; compare the profiled
-prediction images on existing dictionaries and covariance. Equal images keep
-UNIDENTIFIABLE_WITH_CURRENT_ASSETS. Separated images permit one frozen score.
-A new acquisition needs one explicit separating coordinate absent from the
-archive. More generic PCA coordinates, angle scans or a log-looking curve do
-not supply that map. Unanchored model cones meet at zero; design information
-must be priced at a stated nonzero signal or fixed SNR.
+首次新几何块已用独立随机区间时刻测累计 hazard，不再只是中点代理；旧出生对档案没有的
+标记已在新数据保存。实际生存与积分预测的差未显示明确不闭合，但同块派生读出不是第二票。
+当前块仅增加了上述单一定向必要条件检查，不扩成自适应年龄/特征扫描。
+匹配 (D,nu_b) 的安全插入及方向即时 contrast 独立复核现在**均已执行**，不要重复派成未做任务。
+新增完成数均值直接为 `2e/(m-nu)`，但实际均匀探测非常稀疏。
+该条件平均方法现已实现并给出实际结果，不再作为缺失工具派工。固定同一预测的独立读出
+是一次支持性工作，不取代上面的干预/传播研究；现块不算第二票，也不自动扩大尺寸或采样量。
+同一 prefix 的多个 continuation 始终属于同一依赖组；连续核理论可并行。
 
-## Retained, but not the default compute queue
+上一阶段按 pilot 决定计算：若固定近对角带已有稳定存活质量，量化它对更窄带的变化；若质量太小，
+优先独立配对样本，不同时扩大 L、模型、几何、源。有限 pilot 是探索，不预称验证极限。
 
-- #537: the three existing thermal/contact proof obligations remain; N145 is
-  unresolved under its frozen rule. A third-size fit does not close them.
-- #549/#550: write the cut-network statement and exact-versus-noisy complexity
-  boundary. Do not enlarge the parallel family merely to increase k+1.
-- P2/P3/P4 manuscripts: reconcile corrected claims and evidence dependencies.
-  No larger algebraic census, N580 replay, or unidentifiable N650 design by default.
-- #622: use the delivered #706 same-observable shape analysis. Do not rerun it
-  as a new result or infer a limiting shape from three sizes.
+本轮这个计算选择已经执行：云端将 L 和 delta 分辨率各推进四倍，仍见近似随 delta
+成比例的 soft mass，没有已分辨的平台。随后推进的是上述概率推导，
+不在本轮末尾自动开 L=1024。有限数据本身并未排除更小原子或缓慢交叉。
 
-These are allocation choices, not a prohibition on a genuinely informative
-new idea. A proposal should say which uncertainty it removes, the smallest
-calculation/proof that decides it, and what would make that route stop.
-No servers, credentials, paid compute or autonomous production were activated
-by this reset. No new recurring task was scheduled.
+**可改变路线的结果：** 两时间可积小球界支持无聚合；缩放后向零集中的联合质量则反对当前
+“简单单位跳极限”图景，要求包含聚合机制。直接 jump-2 下降与否不是这二者的判决。
 
-## Integration is not scientific promotion
+## P1 — 有噪声的预测状态：保留什么优势、付出什么代价
 
-This roadmap and the entry-point rewrite are independent of the unmerged
-research stack. Existing results, result-producing code and frozen designs
-are untouched. The old text is in [history](history/README.md); the compact
-[frontier](RESEARCH-FRONTIER.md) carries the current correction map.
+#837 已有 `0<epsilon<=10^-5` 下 `Theta(log w)` 高度读位的作者证明。
+不要重新开“是否存在”的任务。rank-only 微观错误下界采用五次幂补件，不再采用已被加强的四次幂目标。
+
+任意块数的[确定性四态编码障碍](../notes/deterministic-block-encoding-obstruction-20260929.md)
+已完成，并由显式两行乘积查询接上原五列块物理合同。不要再指派“换一种确定性分块试试”作为未做问题。
+在构造的张量查询族中，秩 3 恰好对应单一信息块；真正分布式单射编码的响应秩为 4，
+包括非复制和奇偶编码。任何包含该族的更大查询合同仍保留这个秩 4 下界；
+单信息块在任意额外查询下的秩上界不由这项构造单独保证。
+
+具体[随机奇偶构造](../notes/stochastic-parity-block-encoding-20260929.md) 已完成：
+乘积查询秩=正初始记忆=3；单次乘积 TV 为 `2^(1-k)`，任意单调二值读出的尖锐 TV 界为
+`binom(k-1,floor((k-1)/2))/2^(k-1)`。抽象阈值达到后者，不等于物理实现已给。
+这条构造既绕开确定性障碍，也暴露了可靠性损失和正/线性间隙消失。
+
+下一项有价值的问题是**具体可实现读出下的误差—记忆权衡**：若扩大到整段轨迹或反馈，
+先写清多次观察合同；若保留单次读出，给出不同随机构造或可实现的匹配界。
+不再只问是否存在随机秩 3 编码。仍同时报告
+`(准备数 A, 响应秩 L, 误差 eta, 宽度 w, 查询高度 h)`；
+若只要更可靠，接受秩 4 也是有效路线。固定噪声精确秩不等于有限精度可用维数。
+自然临界先验的平均复杂度另算，不能把人工极稀有准备族的最坏情形结论搬过去。
+
+## P1 — 原始 U / 模参数机制：产出实际映射
+
+#275 不需要再被写成“E_top 一直没做”。历史生产与识别失败都保留；目前缺的是实际候选列。
+对两个候选写出 `raw = a * thermal_tangent + normal`，应用原 moving-root、normalizer 和 nuisance
+处理，比较真正留下的 normal 预测。根 H4 很强而 U 很弱可以相容。
+
+#771 的 odd thermal Q4 × even correction 混合响应，以及 #822 的 actual rank projection/Ward 接口，
+是值得做的定向理论/小矩阵工作。不能把动量零当成排除局域 spin4，不能把 Jacobsen 的公共磁扇区
+相消称为已完整推导 `L^-4` 或 E4 模参数振幅。允许新猜想，但明确哪些矩阵元、接触项还未计算。
+
+## P1 — 几何论文有界收尾
+
+#739 已提供任意整数周期 full-law 的 `log N/ell -> 0` iff 作者证明；#771 给固定-p 的 rho/logN 相图。
+把定理、输入和最邻近先例整合为一个可读稿；审查具体争议引理即可，不再启动完整重审或薄环面模拟。
+固定-p 误差常数不能无说明地搬到随尺寸移动的 near-critical 窗口。
+
+## P2 — 仍可做，但不自动占用本轮大算力
+
+- #816 L6 jump 直方图：是尚未交付的有效支持计算，不是“已有 L6 秩表”或无聚合定理。
+  #828 的短 C 控制使用 32 位 occupation；扩到 36 位前必须修正表示并实测成本。L7 是另一种 DP 工作。
+- #819 `p_pol` 代数普查、#821 修正指数分类：按尚未有落库产物处理；完成它们不等于缩小核心机制空间。
+- 新宽度/角度/高精度根、更多等价源和通用 certificate：有具体消费者时推进，不作为默认增长指标。
+
+## 本轮执行方式
+
+已有成果以原 PR/commit/path 引用，不批量合并、改名或关闭。一个新 Draft PR 承载本轮导航与新增研究；
+协调 Issue #650 留一次摘要即可。保留分支来源和随机块依赖，检查与科学风险成比例；不跑文档措辞测试、
+全仓测试或重复的“通过”仪式。云服务若不可用，小计算继续本地，不让机器登录变成研究前置条件。

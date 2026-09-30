@@ -1,95 +1,103 @@
 # Matching One
 
-**Exact topology, geometric threshold laws, and the information needed to identify a physical response.**
+**拓扑阈值的几何、两次出生的随机过程，以及观察者能保留多少信息。**
 
-Matching One studies square-lattice site percolation. Its strongest current
-questions are no longer "which exponent fits?" or "which familiar field name
-looks plausible?" They are:
+当前研究入口更新于 **2026-09-30**，阅读截至 #837 的开放研究及最新讨论。
+主分支基线为 `d31fa5fe`；下列较新成果多数仍在开放 PR 中，**进入总览不等于已合并或已被独立证明**。
 
-1. When does a topological balance root locate the infinite-volume threshold,
-   even when the whole finite-volume threshold law does not concentrate?
-2. Which finite states preserve a declared observable under future updates and
-   physical source interventions?
-3. Which additional prediction or measurement can actually distinguish the
-   remaining mechanisms of the original normalized response U?
+## 现在值得集中做什么
 
-**Start with [the research frontier](docs/RESEARCH-FRONTIER.md), then
-[the execution roadmap](docs/ROADMAP.md).** This entry point was reset under the
-owner's research delegation dated 2026-09-13. Historical data, failed tests of
-physical hypotheses, and unmerged branches are retained. Main integration,
-mathematical correctness, independent evidence and publication novelty are
-separate questions.
-
-## The exact observable
-
-For an occupied configuration on a torus,
-
-    r = rank im[H1(occupied complex) -> H1(torus)] in {0,1,2},
-    X = r-1,
-    M = E[X] = P2-P0,       E_top = E[X^2] = P2+P0,
-    F(p) = E_p[r]/2 = (1+M(p))/2.
-
-The balance root is Q(1/2), where Q=F^{-1}. In contrast,
-H=P2/(P0+P2) conditions on the rare non-rank-one sectors; it is NOT F.
-The identity X^3=X defines a two-dimensional nonconstant observable algebra,
-not a two-state dynamical model or a two-field continuum theory.
-These observables sit in the established matching/wrapping/homological
-percolation literature; their names alone are not a novelty claim.
-
-## Three research lanes
-
-| Lane | Current asset | Next result worth obtaining |
+| 注意力 | 已经到达哪里 | 下一项真正增加信息的工作 |
 |---|---|---|
-| **Geometric separation of root and full-law consistency** | [#735](https://github.com/LightChainr/Matching-One/pull/735): arbitrary-period balance roots; [#736](https://github.com/LightChainr/Matching-One/pull/736): sharp axial full-law criterion | Check the supplied proof and novelty once; prove or refute the uniform oblique winding-corridor lemma |
-| **Observable- and source-dependent minimal state** | [#708](https://github.com/LightChainr/Matching-One/pull/708), [#710](https://github.com/LightChainr/Matching-One/pull/710), [#733](https://github.com/LightChainr/Matching-One/pull/733): exact rank closure, visible spectrum, physical site sources | An all-width structural closure theorem or one source-faithful separating response, not another width count |
-| **Original-U physical identifiability** | [#275](https://github.com/LightChainr/Matching-One/issues/275): current assets do not identify the named candidates | Two same-source, same-normalizer forward maps; nuisance-profiled separation before further acquisition |
+| **主线：联合近临界秩过程** | 735步传输已分辨；去掉自然生存重加权后，L512负向历史差仍在 | 区分入口几何与安全演化的真实源响应；先解决读出冗余，不追加精度批次 |
+| **并行：源和噪声约束下的预测状态** | 确定性分布式编码恢复秩 4；随机奇偶编码的乘积查询秩=正初始记忆=3，但单次读出变弱 | 在具体可实现的查询族下比较误差与记忆成本；明确单次、整段轨迹与自适应反馈的差别 |
+| **有界收尾：几何阈值定理** | #739 已提供任意整数周期的 full-law iff；#771 推进固定亚临界自由能 | 整合已给证明、明确概率输入和固定-p 边界；不重新指派“尚未做”的斜向必要性 |
+| **机制研究：原始 U 与 root H4** | 强 root H4 与弱 normalized-U 可以由热切向投影相容；#275 原合同仍缺两个候选的完整映射 | 同源、同正规化下的 normal forward columns / 实际秩投影 Ward 或混合响应；更多精度不能替代缺失的列 |
 
-The linked research PRs are **open/unmerged at this snapshot**; these links do
-not silently install their code on main. The [frontier](docs/RESEARCH-FRONTIER.md)
-pins their commits and distinguishes results from remaining hypotheses.
+优先级只分配注意力，**不锁任务、不设置研究许可、不自动否定低优先级方向**。
+理论、已有数据和新计算可以并行。不要把支持性工具的完成数量当成机制空间缩小。
 
-For axial w-by-m tori with m>=w and w->infinity, the new organizing contrast is
+**最新机制判别：** [安全传输／筛选分解已完成](notes/safe-transport-selection-readout-20260930.md)。
+同1198端点格、同权重下，安全参考差 **−0.002537±0.000636**，自然存活差 −0.002205±0.000787；
+筛选贡献 +0.000332±0.000287，尚未分辨。纯筛选不再是这个比较的首选解释，入口/安全演化需要进入模型。
+原14万出生前缀的新条件续接，不是新独立块；不宣称已分离出生与演化，也不把点估计当作解释百分比。
 
-    balance-root consistency:       no aspect-ratio restriction (#718/#735),
-    convergence of every fixed Q(u): log(m)/w -> 0 iff (#736 + #613 inputs).
+[保时钟几何干预](notes/birth-selection-intervention-20260930.md)
+只重新分配安全站点的到达概率，保持整个占据数过程和当前退出概率不变；两步生存响应
+精确为 `−(m−c) Var_safe(degree)/[m(m−1)]`。三个实际方格构型的全滞后响应已算出，
+不是把局部曲率外推。出生历史差同时被分解为“向后同调保留 × 向前完成”的协方差；
+安全路径权重给出几何演化与生存筛选的分离式。它们是有限机制推导，不是原始 U 或连续极限的识别。
 
-The iff proof uses critical square-site RSW, finite-product continuity, a
-seam-closed crossing ring and independent transverse bands. It is not derived
-by fitting sizes. Its arbitrary-oblique necessity extension remains open,
-and no near-critical rate or new numerical p_c is claimed.
+[L512长窗口已实际计算](notes/geometric-source-window-readout-20260930.md)：
+735步生存源导数 **−0.011042±0.000158**，证明该几何作用传到延迟终点；不是有限theta效应或新独立块。
+[第二出生源的移动根映射](notes/one-sided-birth-source-normal-response-20260930.md)还给出
+`delta M=delta E_top` 及不被移动根消去的正控制；对称 L4 例子的 normal E_top 导数约 `1.6853e−4`。
+这提供真实源响应列，但不是原 norm-4/U 源的替代品。
+另有[精确识别限制](notes/safe-transport-selection-readout-20260930.md)：保持首次出生边际的两个几何源，
+在单个p的M/E_top及移动根读出上都共线。热参数＋一个几何源的秩二，不等于两个几何机制已可区分；
+同(k,D,c)下Y与两步生存也只是同一量，下一项必须使用非冗余的同合同读出。
 
-## What survives from the numerical program
+## 三个不能混写的当前判断
 
-The global orientation-sensitive matching-odd signal and several frozen H4
-transfer comparisons remain substantive finite-size evidence. A successful
-harmonic comparison is not a standalone nonzero detection and not a field
-identification. Single-multiplier full-curve closure and several scalar
-correction models have failed; their raw blocks are not discarded.
+1. **两次出生不会在极限中聚合：已有作者证明。**
+   [两时间密度界](notes/two-time-pivotal-density-bound-20260929.md)与
+   [方格转接及总体 IQR 时钟](notes/square-birth-transfer-and-iqr-clock-20260929.md)
+   给出具名概率输入下的子序列无聚合；尚未识别唯一 copula 或普适振幅。
+   本地12.8万＋独立云端56万条过滤是有限数值补充，不是这项证明。
+2. **完成数不能在所有有限格点闭合过程：已有精确反例。**
+   [L4 原均匀源](notes/completion-pair-synergy-L4-20260929.md)中，同方向、同完成数的
+   早晚历史，一步生存相同、两步不同。[协同完成图](notes/completion-pair-synergy-20260929.md)
+   把新增完成数直接接到未来 rank；这并不自动证明 L512 或连续极限仍有可测记忆。
+3. **大尺寸方向模型是否充分：仍开放。**
+   [独立安全插入块](notes/safe-insertion-independent-block-20260929.md)的方向内完成数差
+   `−0.040±0.570` 未复现旧事后 `+1.629±.391`。旧数字保留，但不是已稳定排除模型的证据。
+   同 (D,nu) 安全增量原四探针差 `+0.00668±0.01209` 也未分辨。
 
-The primitive-C3 Gaussian observer has a later exact unit-rotation explanation;
-its old H8 near-alias must not be exported to square-site U. N580's recovered
-covariance and bounded-H8 reanalysis do not establish a bare-aspect physical law.
-See [current adjudications](docs/STATUS.md), not the historical opening text of
-an issue, for these distinctions. N denotes site count; on square-period
-geometries the linear scale is sqrt(N), not N.
+当前数值方法：[投影连通分量判据](notes/projected-component-pair-criterion-20260929.md)
+可精确求协同完成对，直接计算同一目标的条件均值 `2e/(m-nu)`，消除安全探针的随机噪声。
+[14万前缀的完整读出](notes/exact-completion-pairs-readout-20260930.md)已完成：
+同 (D,nu) 增量差为 **−0.003449±0.000772**，约4.47个批次SE，标准误缩小15.65倍。
+早出生组的完成创建较少，给出具体两步 rank 传递，而不是新增描述指标。
+这是原数据的事后估计量精化，不增加独立证据；支持 L512 扩展观察者的闭合失败，
+不证明连续极限，也不改变上面的方向-only 未复现结论。
+[标签曲率公式](notes/completion-pair-label-curvature-20260930.md)进一步分开创建和生存选择。
 
-## Other valuable assets, without automatic expansion
+[独立旧档案的固定目标复核](notes/completion-creation-independent-replication-20260930.md)
+现已由支持工作者完成：第二块为 **−0.003199±0.000620**，与前块相近，未合并。
+它是另一随机块上首次 e 读出，其它结果此前已读过，不称为全新前瞻验证。
+735步传输亦已完成；下一项是[安全路径与自然存活的直接耦合](notes/safe-path-selection-coupling-20260930.md)，不是第三轮精度扩张。
 
-The cut-network/branching program [#549](https://github.com/LightChainr/Matching-One/pull/549)
-separates complete unbranched survival from branching prediction. Its exact
-class-count lower bound is not a noise-robust effective-dimension theorem.
-Bounded algebraic exclusion and projective inference remain publication units,
-not reasons to grow a polynomial census or claim a new statistical principle.
-The [research atlas](docs/RESEARCH-ATLAS.md) preserves less prominent work and
-closed-unmerged assets; its old execution priorities are historical.
+需要追溯时：[历史核与 L3 正负控制](notes/birth-history-memory-readout-20260929.md) ·
+[L3 完成相态/方向标记](notes/birth-completion-geometry-20260929.md) ·
+[首个独立几何块](notes/completion-hazard-independent-block-20260929.md) ·
+[确定性编码](notes/deterministic-block-encoding-obstruction-20260929.md) ·
+[随机编码与可靠性](notes/stochastic-parity-block-encoding-20260929.md)。
 
-## Reproduction and working rules
+完整入口：[研究前沿](docs/RESEARCH-FRONTIER.md) ·
+[下一步](docs/ROADMAP.md) · [科学结论](docs/STATUS.md) ·
+[观察者地图](docs/RESEARCH-MAP.md) · [机器可读当前索引](analysis/research_frontier.json)。
 
-[REPRODUCIBILITY.md](REPRODUCIBILITY.md) describes the existing engines and data.
-[GOVERNANCE.md](GOVERNANCE.md) keeps exploration lightweight; raw data and
-chronology are preserved. [AGENTS.md](AGENTS.md) routes new work to the current
-scientific question instead of stale acquisition instructions.
+## 固定术语：不要把不同问题压成同一个故事
 
-The old README, roadmap, map and status ledger are preserved byte-for-byte in
-[docs/history](docs/history/README.md). This is a navigation and allocation
-reset, not a claim that older experiments were never run.
+对 honest torus 上的占据子复形，令
+
+    r = rank im[H1(occupied complex) -> H1(torus)] ∈ {0,1,2},
+    X = r-1,       M = E[X] = P2-P0,
+    E_top = E[X²] = P2+P0,       F = E[r]/2 = (1+M)/2.
+
+平衡根为 `Q(1/2)`，`Q=F^{-1}`；`H=P2/(P0+P2)` 是另一个条件观察量。
+`J1,J2` 是**同一均匀随机排列**首次达到秩 1、2 的占据数，`T1,T2` 是同一 iid
+均匀标签过滤的出生时间。`N` 是站点数；方形周期 `L×L` 有 `N=L²`。
+
+有限表、过程极限、CFT 算符、论文新颖性是不同结论。全局 H4、带电扇区、临时闭合前缀、
+固定环面过滤以及 original-U 都有自己的源、几何和读出合同；不得互换。
+
+## 保留哪些历史资产
+
+原始样本、冻结预测、负结果和未合并研究全部保留。
+[历史 atlas](docs/RESEARCH-ATLAS.md) 和
+[历史 ledger](analysis/research_ledger.yaml) 用于查找旧证据，不再作为当前派工单。
+同一随机块的根、斜率、分位数和新投影仍然只是一块数据。
+
+[复现说明](REPRODUCIBILITY.md) · [轻量探索规则](GOVERNANCE.md) ·
+[协作入口](AGENTS.md)。本轮不合并别人的 PR，不关闭或锁定研究 Issue，不创建自动尺寸阶梯。

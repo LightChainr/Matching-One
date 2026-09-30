@@ -1,157 +1,274 @@
-# Research frontier: one active paper, two visible reserves
+# 当前科学前沿：过程、预测与物理映射
 
-**2026-09-13, owner-delegated reset reconciled with the latest #650.**
-The single active deliverable is a probability-theorem manuscript and independent
-proof audit: #735's arbitrary-period root theorem, with #613/#736's sharp axial
-full-law boundary. Return one acceptance package to #735. The other directions
-below remain scientifically visible but are not parallel active assignments.
+**2026-09-30；基线 main `d31fa5fe9584b77595e4a78b9560aa2ff77cf0b3`。**
+本页替代 9 月 13 日单论文快照。阅读了 #739/#771/#773、#828 的修订及 #829–#837；
+不是对所有历史脚本的重新认证。开放 PR 的结果仍是开放 PR；来源的固定 commit/path
+统一放在 [当前索引](../analysis/research_frontier.json)，防止 issue 尾部评论成为唯一入口。
 
-[ROADMAP](ROADMAP.md) controls execution; live Issue updates override this dated
-snapshot. [STATUS](STATUS.md) distinguishes current scope from the
-[verbatim historical ledger](history/STATUS-before-20260913.md). The baseline
-read was main at `eb89e9422791d9e3c3a78f0e65d56912b815a7bd` (#702--#705 merged).
-Navigation was integrated by #738; the research PRs below remain unmerged.
+## 1. 联合出生：无聚合推导已给，当前区分预测状态
 
-## 1. Active probability paper: correct root does not imply a concentrated law
+当前最具体的分叉是：仅 rank、rank＋方向、rank＋方向＋完成数，哪一个能预测未来？
+无聚合和时钟比较已有作者证明，不能把后面的历史推导误当作仍待启动的任务。
 
-For independent NN square-site percolation on an honest torus,
-`M=P2-P0`, `F=E[r]/2=(1+M)/2`, `Q=F^{-1}`. The balance root is Q(1/2).
-The conditional rare-sector function `H=P2/(P0+P2)` is not F.
+**当前主导工作已从精度转为机制干预。** [保时钟几何源](../notes/birth-selection-intervention-20260930.md)
+保留全部占据数到达时钟与即时退出概率，却具有非零的延迟 rank 响应；两步响应由
+安全协同图的度数方差精确给出。三个物理构型的全滞后响应已计算，不是又一轮相关性精化。
+同一推导把出生记忆表示为向后同调保留与向前完成的协方差，并用安全路径/生存权重分开
+几何演化和筛选。精度与独立块复核由一个支持工作者承担，不主导路线。
+该支持项[已经完成](../notes/completion-creation-independent-replication-20260930.md)：
+另一14万档案首次 e 读出为 −.003199±.000620，与前块相近，未合并且不称全新前瞻验证。
+主线[735步几何源传输](../notes/geometric-source-window-readout-20260930.md)也已完成：
+源导数 −.011042±.000158；当前时钟/退出概率不变，延迟rank明确响应。
+[单侧第二出生源](../notes/one-sided-birth-source-normal-response-20260930.md)保持首次出生边际，
+满足deltaM=deltaE_top；给出对称L4的严格正moving-root normal响应，不替代原norm-4/U合同。
+[自然存活flag与安全路径耦合](../notes/safe-transport-selection-readout-20260930.md)现也已完成：
+安全参考差 **−.002537±.000636**，自然存活差 −.002205±.000787；筛选项 +.000332±.000287 未分辨。
+同1198格与权重、14批完整协方差，97666条原出生前缀的条件续接。去掉自然重加权后差仍在，
+主问题转为入口/安全演化的源区分，而不是继续确认旧效应。不得把未分辨筛选项写成严格零或已证抵消。
 
-#735 supplies arbitrary-integer-period root consistency as the genuine shortest
-period ell grows, with no aspect or area-versus-systole restriction. At fixed
-subcritical p it compares rates: `P2/P0 <= exp[-kappa(p) N/ell]`.
-#736 adds the exact axial contrast: for 2<=w<=m and wm->infinity,
-all fixed interior Q(u) converge to p_c **iff** `log(m)/w -> 0`.
-These are proofs under named probability/topology inputs, not a new numerical
-critical point, a fitted root-shift exponent or an established priority claim.
+**先解决识别结构，不追精度：** 同(k,D,c)的Y与两步生存严格仿射；两个保持首次出生边际的源，
+在同p的M/E_top及移动根读出上也共线。热p＋一个几何源的秩二不等于两个几何源已可区分。
+下一项应是明确入口源和转移源在非冗余、同合同读出上的响应比较，而非增加等价坐标。
 
-The new contribution in this reset is #736's necessity argument. Critical
-square-site RSW and finite-product continuity give a seam-closed occupied ring
-with probability >=exp(-eta*w) at a FIXED p_eta<p_c. Independent transverse
-bands amplify it. On a subsequence with log(m)>=d*w this keeps every fixed
-lower quantile away from p_c, while the median can remain consistent. Failure
-of a union upper bound alone would never have proved this implication.
-
-**Current acceptance work:** consolidate the theorem statement and imported
-inputs, independently audit #735's local support/injectivity, oblique entry
-count, backtracking-path extraction and disjoint-band independence; audit #736's
-seam and quantifier order; compare the exact statements with their closest
-strip-percolation, RSW and homological-percolation predecessors. Deliver one
-manuscript, not another growing list of review tickets. Finite code checks and
-verbatim quotations are not substitutes for the all-size argument.
-
-**Potential strengthening, not a new prerequisite or second dispatch:** build
-uniform fixed-subcritical winding corridors around an arbitrary shortest
-integer period u, with probability >=exp(-eta*|u|), then pack disjoint corridors.
-This could establish necessity of `log N/ell -> 0` beyond axial tori. It is NOT
-proved here. Orientation and ambient nonprimitivity must be handled on the
-physical NN lattice; changing a period basis does not rotate its interaction.
-A counterexample could instead reveal a finer geometric invariant. Neither
-outcome invalidates the already supplied narrower results by implication.
-
-#736's executed controls cover 21,760 exhaustive strip configurations and 2,365
-deterministic uneven-cell masks, with exact Fraction inequalities, three local
-mathematical tests and compilation. Full repository CI was not run. The theorem
-rests on its argument and imported inputs, not on extrapolating these checks.
-
-## 2. Representation reserve: sources determine which states can be merged
-
-#708 gives lifted rank-future states and 509 deterministic continuation classes
-at width four. #710 gives the all-p scalar spectrum and exact cancellation of
-common P0/P2 modes in M. #733 gives source-compatible quotients, physical two-row
-site responses and exact final-rank-conditioned backward sampling. Two adjacent
-independently addressed columns require all 509 classes within the investigated
-common-strong-lumping class. These completed calculations are not assignments
-to repeat merely because their PRs are absent from main.
-
-The distinction worth pursuing after reactivation is an actual all-width
-closure-weight theorem or a source-faithful response separating concrete
-candidate representations. Deterministic classes, strong lumpings, scalar
-Hankel order, positive order and noise-limited effective order are different.
-A full-operator spectral gap need not be the gap visible to M. P398 is the
-known periodic IC O(1) TL calibration process (#718), not square-site percolation.
-
-### Concurrent #737: a concrete bridge to spatial structure factors
-
-The spatial-Hessian and invisible-mark notes were read at the pinned head below.
-For a mean-zero logit source h, H=sum_i h_i n_i and occupation count K, the
-finite logit-root curvature is
-
-    z_*''(h) = -[Var(H|r=2)-Var(H|r=0)] / [E(K|r=2)-E(K|r=0)].
-
-This identifies a difference of rank-conditioned spatial structure factors,
-not another uniform thermal derivative. Additive probability and additive logit
-fields have different second-order corrections. The reported 4x4 additive-root
-Hessian has both signs; no infinite-volume disorder relevance follows.
-
-The invisible-mark example preserves the entire uniform (r,K) law but separates
-under spatial sources. It uses positive DEPENDENT marked measures, not an
-ambiguity about the already specified Bernoulli law or the two original-U fields.
-A separate orbit calculation in this reset reproduced sizes 16/128/64, contrast
-matrix `[[-512,-128],[0,-256]]` and determinant 131072. This checks that finite
-algebra, not the full Hessian or complete CI. #737 discloses three missing
-delivery artifacts; resolve actual `delivery/` paths and reproduction inputs
-before treating archive execution logs as a fresh-checkout installation.
-
-### Exact class growth need not be robust at finite precision
-
-#549's k+1 branching classes have identical full unbranched survival. In its
-specified single-fork readout, adjacent separation is `1/[2k(8k-1)^2]`, while
-the whole family's span is `1/[2(8k-1)^2]`. More exact classes coexist with a
-shrinking observable range. This is not a bound for every branching experiment.
-The reserve question is whether budgeted admissible interventions amplify the
-separation, not whether larger k gives a larger exact class count.
-
-## 3. Theory-blocked flagship: original U, not a substitute observer
-
-#275 remains P1 with UNIDENTIFIABLE_WITH_CURRENT_ASSETS. This does not disprove
-Jordan or equate two physical theories. The missing input is two candidate maps
-through the SAME source, six-coordinate thermal jet, physical normalizer,
-rank-one denominator and pooled moving-root counterterm. Establish baseline
-representability, then compare nuisance-profiled prediction images using existing
-covariance. More precision cannot supply unspecified theoretical columns.
-
-#735's positive irreducible stochastic controls share all ordinary trace jets
-while differing in Jordan structure. Actual visibility depends on
-`C N_lambda^k P_lambda B`. A derivative-jet lift can have its own nilpotent part;
-its repeated pole does not identify the physical operator. Spin, a power and a
-logarithm are not substitutes for the source/readout map. #737 does not supply
-the two missing continuum candidates.
-
-## Pinned unmerged assets
-
-| PR | Head | Role |
+| 候选状态 | 当前信息 | 仍需区分什么 |
 |---|---|---|
-| [#708](https://github.com/LightChainr/Matching-One/pull/708) | `f782061c1a592ed2f9fd0e9dabaa45f0e54bc4e7` | Finite rank closure |
-| [#710](https://github.com/LightChainr/Matching-One/pull/710) | `d543ba1afe052a36682d2c1723c8a07281c28950` | Parametric spectrum and geometric onsets |
-| [#718](https://github.com/LightChainr/Matching-One/pull/718) | `72d2ee6b8e5d25bd96aaef586c113bc94201f64a` | Axial root theorem and IC TL identification |
-| [#733](https://github.com/LightChainr/Matching-One/pull/733) | `525c8e98d99c44d4c76280a1f0f83064df9bfa72` | Physical sources, sampler and dictionary correction |
-| [#734](https://github.com/LightChainr/Matching-One/pull/734) | `bb41df7da8021d922a48ad353709f35912977c37` | Prior-art sweep, not novelty certification |
-| [#735](https://github.com/LightChainr/Matching-One/pull/735) | `9d29d014df28af7c635e6859d98a95ffe2b34d06` | Arbitrary-period root proof and Jordan controls |
-| [#736](https://github.com/LightChainr/Matching-One/pull/736) | `64d809b4404f80ff3f9adf9713337cc76008e92d` | New axial full-law iff proof |
-| [#737](https://github.com/LightChainr/Matching-One/pull/737) | `7b459c4809baee9dfc2b910091e00a3a8d508d1c` | Spatial-source Hessian and invisible marks |
+| rank | 原始窗口生存差较弱；预定 pooled 完成数差可测 | 过程历史与几何混合，而非更多边际精度 |
+| rank＋方向 | 旧事后即时差 +1.629±.391；新独立复核 −.040±.570，未复现 | 大尺寸闭合仍开放；不能把旧差当已稳定排除模型 |
+| rank＋方向＋完成数 | L4 有精确反例；L512 同一块精确降噪后 −.003449±.000772，分辨出历史差 | 几何源的有限窗口传播、出生/演化/筛选分离；独立档案复核仅作为支持 |
 
-## Corrections that must travel with the result
+均匀随机排列的两个秩出生为 `J1<=J2`，iid 标签过滤的出生为 `T1<=T2`。
+#773 的有限流量恒等式已经给出：
 
-| Old inference | Current reading |
+- 静态 rank law 决定两出生边际，配合直接双跳流量决定相邻时刻转移表；
+- 这些并不决定全路径、copula 或 gap 分布；
+- 条件于 `D=J2-J1=d>0`，标签间隔为 `Beta(d,N+1-d)`；
+  `d=0` 是直接双跳原子。
+
+#823 给出白 matching 分隔的作者证明及 L3–L5 全枚举；#828 已独立复算这些有限数字。
+它们不自动给方格臂指数，也不排除不同插入在缩放后合并。L6 **静态秩**表已在，
+但 L6 **jump 分层**新表仍没有交付（#825/#816）；不把两者混写。
+
+本轮 [新分析](../notes/birth-gap-noncoalescence-20260929.md) 给出了更尖锐的反例：
+两个过程拥有相同的全部静态 law、相同相邻转移表、零直接双跳，但极限对角原子为 0 与 1/2。
+因此下一目标是真正的两时间信息：
+
+    Z_L(delta) = E[(1-G_L/delta)_+],
+    G_L = 缩放后的两出生间隔。
+
+在出生对紧性下，`lim_delta↓0 limsup_L Z_L(delta)=0` 等价于所有子序列极限无聚合。
+它还等于秩一驻留长度与 lagged overlap 的归一化差；这给理论和可复用 paired 档案同一接口。
+本轮 [pilot](../notes/birth-gap-pilot-20260929.md) 直接采集这类联合信息，而不是再拟一个自由指数。
+判据本身是一般概率结果；下述后续推导开始补上渗流概率输入。
+
+本轮 [云端独立块](../notes/birth-gap-cloud-20260929.md) 已完成 L=64..512、
+56 万条新过滤，分辨率下探到 delta=.00625。L=512 的宽度归一化 Z(.00625) 为
+方格 .00336±.00015、三角格 .00378±.00014（batch SE）；依次将 delta 加倍时 Z
+近似加倍，未见已分辨的平台。不同原始几何不作同模参数普适性比较，有限网格也不证明双极限。
+后续 [两时间密度推导](../notes/two-time-pivotal-density-bound-20260929.md)
+已给出更强的局部结果：条件于两个不同站点的标签值，在不交空间环带保留四臂必要事件，
+得出生联合密度 `f_L(s,t)<=C_Lambda`。这不假设两出生独立。
+加上六臂直接原子界和紧性，三角格得到所有子序列极限无聚合的作者证明。
+统一 soft-gap 界带有窗口尾项，不能将局部常数当作全局常数。
+
+[方格转接续篇](../notes/square-birth-transfer-and-iqr-clock-20260929.md) 已补上两条原缺口：
+
+- 黑 NN / 白 matching 的交替臂与 planarised-white 分隔约定相容；具名文献提供
+  四臂幂小于 2、六臂幂大于 2、近临界比较和互补尾界。方格也得到自身 pivotal 时钟上的
+  子序列无聚合作者证明，**不需要**假定精确 5/4 或 conformal invariance。
+- 方格四臂幂大于 1 控制标签次序统计量的误差；结合紧性与局部密度界，证明出生混合
+  **总体分布**的计数 IQR 与 `N*a_eta` 同阶。因此这种归一化不会制造或移除极限零间隔原子。
+  这不是已测定的转换常数，也不是有限样本经验分位数的保证。
+
+下一缺口现在是连续环面观察量、联合 law / copula 的识别及唯一性。
+四臂幂的两侧界在证明中作用不同；不要重新把已补上的时钟比较或方格转接派成空白任务。
+
+最新[出生历史分析](../notes/birth-history-memory-readout-20260929.md)把这个缺口转成一个
+具体可区分约束。定义 `H(s,t)=P(T1<=s,T2>t)`；仅以当前秩为状态的时间非齐次 Markov
+模型必须满足 `H(a,c)H(b,b)=H(a,b)H(b,c)`，全三元组成立也给充分性。
+同一秩一风险集中比较早/晚首次出生组，正好检验这个等式，不需要增加自由指数。
+
+复用旧 L3 完整表已算出精确标签核：
+方格 `H(p,q)=6p^3(1-q^2)^3` 可分离，三角格为
+`9p^3(1-q)^3[A(p)+B(q)]`，其中 `A(x)=2x^3-6x^2+3x`、`B(x)=-2x^3+3x+1`。
+由此方格 L3 是 Markov 正控制、三角格 L3 是非 Markov 反例；这是精确有限结论，不向大尺寸外推。
+插入时钟的全三元组也已用旧表求值，没有重跑枚举。
+
+既有 56 万档案只用一个预选分位数三元组：L512 的早/晚组后续生存差为
+方格 `+1.422±0.511`、三角格 `+0.702±0.515` 个百分点（14 批 delete-one SE）。
+这是较小的探索性历史关联，不是新独立证据或连续极限非 Markov 的证明。
+“加上 birth age 就能描述过去”本身是两出生观察历史的编码事实，不是微观机制发现。
+
+新[完成几何计算](../notes/birth-completion-geometry-20260929.md)已经补上一条具体机制：
+定义 `nu_2(A)` 为秩一构型中、加上后立即达到秩二的空站点数。一般精确关系为
+插入时钟退出概率 `nu_2/(N-k)`、标签时钟退出强度 `nu_2/(1-t)`；
+[配套推导](../notes/completion-pivotal-hazard-kernel-20260929.md)把两队列的平均完成数差
+积分为 H 的对数 Markov 缺陷。
+
+- 三角 L3 在 k=5 的快型（nu_2=4）比例，早出生组为 1/4、晚出生组为 3/7，
+  其余慢型（nu_2=3）下一步存活率为 1/4；精确给出 `3/16-1/7=5/112`。
+  三个方向的核完全相同；方向不能消除历史。完成相态却递归闭合，给出从均匀空初态出发的
+  四状态插入时钟模型，完整复现出生联合表。不宣称最小维数或任意 rank0 准备的强闭合。
+- 方格 L3 每个秩一层的 `nu_2=k-3`，解释插入时钟 Markov 性。
+  标签时钟中，每个轴向核为 `3p^3(1-q)^3[(1+q)^3-p^3]`，每个对角核为
+  `3p^6(1-q)^3`。相加恢复未标记 Markov 核，但轴向自身的三时刻行列式严格为负。
+  **增加方向观察反而暴露隐藏记忆**，不与未标记结论矛盾。
+
+这次仅枚举每个格点模型的 512 个占据集合并做前缀 DP/精确多项式变换，未重跑 9!。
+原先的大尺寸出生对没有这些构型标记，不能事后虚构；也不能把 L3 闭合外推为连续机制。
+
+此后[独立 L512 完成几何实验](../notes/completion-hazard-independent-block-20260929.md)
+已真正执行：采样前固定合同及采样代码 `9520c9bd`，TV2N0X 14 workers、14 万条过滤，
+326 秒完成，未根据结果追加样本。沿用旧方格三时刻，但随机块全新：
+
+| 比较 | 生存差，百分点 ± batch SE |
 |---|---|
-| #628 bond duality fails | Code/convention defects, corrected #631/#646/#653 |
-| Raw M(p)+M(1-p) diagnoses normalized shape | Wrong centre/gauge; corrected anchored quantiles #702/#706 |
-| #675 rules out any single-operator representation | Unrestricted no-go withdrawn; efficiency and existence differ |
-| #715 P398 is unnamed | Periodic IC TL via the explicit map #718/#729 |
-| #717 finite 2D/0D categorically differs from rank2/rank0 | Same-site event dictionary #733; no all-width intertwiner follows |
-| #724/#731 linear split implies semisimplicity | Counterexample #735; m*lambda^m alone is not either diagnostic |
-| Primitive Gaussian C3 H8 label identifies local spin | Later unit-rotation/H0 correction in #275 supersedes the near-alias |
-| N580 compatibility identifies bare-aspect scaling | Same-block nominal compatibility after #703/#704, not a physical law |
+| 原始早减晚 | +0.686 ± 0.444 |
+| 同精确方向，overlap 加权 | −0.415 ± 0.451 |
+| 同方向、同整数完成数，overlap 加权 | +0.122 ± 0.476 |
 
-N is site count; square-period linear size is sqrt(N). Do not compare N=425
-with a published L=425 lattice. Site/bond, rank-two cross/rank-one spiral,
-fixed-p/moving-root and physical/jet operators must remain typed.
+随机区间时刻的无偏累计 hazard 估计给 pooled 差 `+1.550±0.351` 个百分点；
+实际生存减 hazard 预测为 `−0.865±0.639`。不是独立的第二份证据，也不把此较强辅助读出
+偷换成原始主读出。三种比较权重不同，不能据此声称“解释了百分之多少”。
+早/晚队列的轴向比例为 92.295% / 86.094%；方向混合是具体候选机制。
 
-Global H4 finite-size evidence, #537's proof obligations, #622's completed #706
-analysis, cut networks, finite terminal algebra and publication units remain in
-the [atlas](RESEARCH-ATLAS.md). No new Monte Carlo, GPU campaign, width or
-angle ladder, generic venue survey, or census expansion is started by exposing
-a reserve. Preserve their historical data and failures. Allocation should reduce
-open claims, not automatically generate a fresh branch of tasks from every result.
+新 raw 生存关联比旧块小，同方向及同方向同完成数比较均未分辨出剩余。
+这曾将方向混合推到候选首位；它的必要预测随后已真正计算，而不是直接接受。
+[同方向即时 hazard 检查](../notes/directional-hazard-contrast-20260929.md)沿用全部原 cutoff、
+方向和权重，只将终点生存换成已保存的完成数。未分方向时早减晚为 `−2.185±.479`，
+同方向为 `+1.629±.391` 个站点，对应下一插入退出概率差
+`(1.526±.366)×10^-5`。方向模型若 Markov，这个总体差必须为零。
+这是同一块的**事后**定向结果，保留全协方差，不算独立验证，也不改写原窗口零差。
+
+[方向 Markov 完成](../notes/directional-markov-completion-20260929.md)给出实际流量生成的
+唯一风险行转移：它保留所有 marked 单时刻和相邻联合表，却不自动保留真实路径。
+全时刻、全进入 cutoff 的风险平均完成数独立于历史，才给严格 Markov 充要条件。
+一次长窗口零差不能替代它；一般 toy 可因时序抵消为零，但本数据未证明发生抵消。
+
+方向仍有信息，但其独自充分性受到挑战。完成几何的**后继动态**随后已先做精确计算：
+[L4 方格与三角格](../notes/completion-pair-synergy-L4-20260929.md)都存在同 `(k,D,nu)`
+出生队列，一步生存恰好都为 1、两步生存却相差 `−4/4131` 与 `2/121`。
+这是从原均匀空初态的弱 Markov 反例，不仅是特殊准备之间的强 lumping 失败。
+每模型只算 65,536 个占据集合及整数前缀 DP，未枚举 16!、未做新生产。
+
+[协同完成对推导](../notes/completion-pair-synergy-20260929.md)定义空安全站点对的图：
+两个站点各自不完成第二方向，但一起加入会完成。其边数 e 给出精确两步生存
+`[(m-nu)(m-nu-1)-2e]/[m(m-1)]`，安全插入后的完成数增量均值为 `2e/(m-nu)`。
+这把同当前 hazard、不同后继几何直接接到未来 rank，而非新增一个无消费者的描述量。
+下一问题是这个传递在大尺寸的权重；随机安全插入可无偏测其漂移，不必枚举 O(m²) 对。
+L3 闭合仍正确、L4 已有反例；L512 的同条件有限窗口剩余及连续极限仍开放。
+原始批次、所有共同支持格和完整协方差已落库；本轮不自动扩尺寸或重跑生产。
+
+随后[独立安全插入实验](../notes/safe-insertion-independent-block-20260929.md)已落地：
+在同一 L512、固定旧 a,b 下另采14万前缀，每个合格前缀4个安全插入副本，先在前缀内平均。
+同 (D,nu) 新增完成数差 `+0.0066818±0.0120871`；由精确公式换算的两步生存差
+`−6.254×10^-8±1.132×10^-7`，不是额外独立测量。
+预定独立复核的同方向当前 nu 差为 `−0.03987±0.56988`，**没有复现**旧事后 `+1.629±.391`。
+因此旧挑战现在标记为未独立复现，不能继续用作已接受的大尺寸机制约束；这也不证明 Markov 性。
+
+55,028个 rank1 前缀的220,112次探测中只有1,233次非零；同条件共同支持仍保留98.973%风险。
+下一数值增益优先来自同一完成创建目标的无偏降噪，例如条件平均/明确加权采样；
+不直接把高接触点的便利样本换成原均匀安全源。连续核理论仍并行推进。
+本次519.843秒完成，所有批次保留，不补样、不合并旧新块、不用未分辨结果覆盖 L4 精确反例。
+
+[投影连通分量判据](../notes/projected-component-pair-criterion-20260929.md)现已给出精确计算途径：
+两个安全空站点对共享分量的横向势约束发生冲突，当且仅当共同插入会完成第二方向。
+相邻站点的直接边额外给一个约束。分量对分桶只产生真实协同边；固定格点度数下预计 O(N+e)，
+不再扫描所有空站点对。这样可直接求同一目标的条件均值 `2e/(m-nu)`，而不改变均匀安全源。
+
+[完整精确重放](../notes/exact-completion-pairs-readout-20260930.md)现已真正落地：14万行与原前缀逐一对应。
+同原 (D,nu) 权重的早减晚增量为 **−0.00344939±0.00077225**，约4.47个批次SE；
+标准误缩小15.65倍。早/晚均值为 .09557456/.09902395，差约为晚组的−3.48%。
+同一几何公式给两步生存差 `+3.22818e−8±7.23066e−9`；不是额外测得的独立终点。
+这支持有限 L512 扩展观察者的历史依赖，改变“该目标尚未分辨”的状态；但它是同块事后
+条件平均精化，不是新独立确认，也不改变方向-only 次要复核未复现的结论。
+单一支持工作者固定这一负向预测，在可正确重放的独立块上复核一次；主线推进上面的机制干预，不等待精度结果。
+8批保留本地结果、6批按用户新偏好在华为完成，云端420.381秒；完整8维协方差已保存。
+
+[标签时间曲率续篇](../notes/completion-pair-label-curvature-20260930.md)把同一个 e 接上连续核：
+固定进入 cutoff 的 `H_tt=E[I(c(c-1)-2e)]/(1-t)^2`；风险集中
+`hazard'=[mean c+2 mean e−Var(c)]/(1-t)^2`。这明确分出**创建与生存选择**：
+高完成数构型先退出，可能抵消安全插入造成的正创建。计数时钟也有精确风险集漂移
+`(2 mean e−Var(c))/(m−mean c)`，不同于在每个原前缀强制一次安全插入后的未重加权平均。
+这是有限公式，不把固定 k 数据换成固定标签时间，也不将两步差外推成735步差。
+下一理论预测应针对这一具名组合在近临界缩放中的行为；尚无极限系数或统一 Taylor 余项。
+
+## 2. 预测状态已从“有多少态”推进到源合同与噪声代价
+
+| 来源 | 新结果 / 必须保留的合同 |
+|---|---|
+| #829 | 宽四末端预测合同的 62/94/274/509 随均匀、逐行、逐列、逐点源而变；62 不是完整递归阶数 |
+| #830 | p=1/2 的单时刻可见维数 30；全部两点信息达到 94 并决定所述轨迹。混合准备与纯历史不相同 |
+| #831/#832 | 特殊参数的线性盲点；包含当前读出、相同全历史合同下正阶数 94 > 线性 93。有延迟的合同另算 |
+| #834/#835 | 宽五对称源正=线性=385；定向受控正3438>线性3328。两者不是矛盾 |
+| #836/#837 | 人工张量准备下，足够小固定噪声的固定错误读位高度为 Theta(log w)；不是自然临界典型态复杂度 |
+
+#837 的**五点补件**将 rank-only 误差下界加强为
+`[1-(1-epsilon)^5]/2`；第一步完整边界的四次幂界不再是 rank-only 可达到的目标。
+五次幂也尚未证明可达到。查询高度可以改善宏观导线，不能恢复已被接口擦掉的位。
+
+最新 [#837 讨论](https://github.com/LightChainr/Matching-One/pull/837#issuecomment-5814562555)
+又排除了一个具体捷径：直接复制逻辑块产生 `uv` 查询，响应秩从 `3^t` 变为 `4^t`。
+本轮进一步交付[任意块数的确定性四态编码分类](../notes/deterministic-block-encoding-obstruction-20260929.md)：
+完整 `(1,u,v)` 张量空间下，秩 3 的单射编码恰好只有一个携带信息的块，其余全恒定；
+任何真正分布式编码都为秩 4。双块 65,536 个编码一次精确枚举与分类一致。
+
+同一笔记给出实际两行掩码及黑绕路/白分隔证明，物理 rank 直接返回每块至多一位的任意乘积；
+不是把多个实验结果事后相乘。固定噪声的完整指令族经可逆翻转矩阵仍保留列空间，
+因此障碍适用于原五列块合同；它不决定有限样本代价或最优误差。
+
+这轮还完成了[随机奇偶编码](../notes/stochastic-parity-block-encoding-20260929.md)：
+四个混合准备支持不交，任意真子集的块不带逻辑信息，完整 `(1,U_i,V_i)` 张量响应秩仍为 3。
+但实际乘积查询的单次 TV 仅 `2^(1-k)`；任意单调 Boolean 读出的尖锐上界为
+`binom(k-1,floor((k-1)/2))/2^(k-1) ~ sqrt(2/(pi*k))`。
+单次非自适应物理最终 rank 也受此界约束；整个轨迹或反馈控制不在此结论内。
+
+更重要的是，这组乘积查询已有显式三标签归一化正模型：**正初始记忆=线性秩=3**，
+并未保留原正/线性差距。更大的实际物理查询族目前只有秩下界 3、上界 4；
+不能把张量上界当作所有未来查询的上界。一次 k=2,3,4 精确控制检查了 468 个期望和
+194 个单调函数；全 k 结论靠展示的证明，不靠外推。
+
+下一候选应针对具体允许查询的误差—记忆权衡，仍同时报告准备数、响应秩、误差、宽度和高度。
+这不是一般无编码定理，也不禁止接受秩 4 以换取可靠性；“随机编码是否可能”已不再是空白问题。
+
+## 3. 几何底座比 main 入口所说的更完整
+
+#739 已提供任意整数周期的 full-law iff 作者证明，不再仅限轴向：
+
+    ell -> infinity: balance root -> p_c，不限制面积/长宽比；
+    全部固定内部分位数 -> p_c iff log N / ell -> 0。
+
+必要性采用真实 NN 格点上短周期的固定亚临界绕行见证与不交平移打包，
+不是旋转坐标后直接套轴向结果。定理范围、输入和作者证明状态必须随结果保留；
+本页不宣称完成独立全证明审阅或原创性认证。
+
+#771 继续给出固定亚临界的同调自由能：
+`rho=min_{lambda!=0} tau_p(lambda)`，`log P(r>0)=-(rho-log N)_+ + o(rho)`，
+以及稀有出生/共同标签桥接。固定-p、移动 near-critical、任意变化方向的均匀性是不同层次；
+不要把固定-p PPP 自动当作临界过程。
+
+## 4. 原始 U 与全局 H4：相容的信号，不是同一个识别实验
+
+#275 的生产和 E_top 分析不是空白。当前缺口是两个候选在原 source、六坐标 thermal jet、
+normalizer、rank-one denominator、pooled moving-root 下的**normal forward columns**。
+原始 U 的结果不可由一个 aggregate rank 观察量替换。
+
+#771 的有限 same-model 结果支持显著 thermal-tangent H4，且后续控制发现高阶 dressing/H8；
+不能再把 post-H4 residual 称作纯标量律。若某项只平移热坐标，moving-root 正会将它消去，
+所以 root H4 强、normalized-U 弱并不矛盾。热/度量效应与真正新 normal 方向要分开。
+
+两个与下一步直接相关的纠正：
+
+- 水平黑/白 pair 源满足 `H_W=N-2K+H_B`。保留行配分正规化后，
+  它们不是两个独立的 normal 源；不要各启动一套生产。
+- 动量零不等于局域共形 spin0；公共磁扇区相消也尚未完整推出 E4 振幅。
+  #822/#828 指出的 actual rank projection、Ward/null、接触项接口仍值得做。
+
+## 5. 研究资产、执行与证明分开记
+
+[STATUS](STATUS.md) 记录结论边界；[ROADMAP](ROADMAP.md) 只排序注意力。
+[RESEARCH-MAP](RESEARCH-MAP.md) 区分观察者；[历史 atlas](RESEARCH-ATLAS.md) 保留长尾资产。
+旧 ledger 的证据块仍有效地描述其历史交付，不代表 2026-09-29 的全项目判决。
+
+全局 matching-odd、charged sector、边界 Q-tangent、跨微观 log-pair、cut-network、
+精确模型消除等都保留；本轮选择联合过程不构成否定它们。
+不锁任务、不批量关闭、不为了导航合并研究 PR，也不把新工具数量作为科研进度。

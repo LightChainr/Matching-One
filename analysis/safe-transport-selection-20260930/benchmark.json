@@ -1,0 +1,41 @@
+{
+  "environment": {
+    "platform": "Linux-5.10.0-182.0.0.95.r3582_286.hce2.aarch64-aarch64-with-glibc2.34",
+    "machine": "aarch64",
+    "python": "3.9.9",
+    "cpu_quota": 14.5,
+    "memory_bytes": 26843545600,
+    "hostname": "83750ac4eae34bbbbc64b894b854dd8c"
+  },
+  "command": [
+    "/workspace/Matching-One-TgFr7R/safe-transport-selection-20260930/analysis/safe-transport-selection-20260930/build/engine",
+    "512",
+    "32",
+    "9722445355900932119",
+    "7229524146119961523",
+    "155385",
+    "/workspace/Matching-One-TgFr7R/safe-transport-selection-20260930/analysis/safe-transport-selection-20260930/build/old-seed-32.csv"
+  ],
+  "build_command": [
+    "chroot",
+    "/workspace/Matching-One-TgFr7R/geometric-source-window-20260930/toolchain",
+    "/usr/bin/g++",
+    "-O3",
+    "-std=c++17",
+    "/safe-transport-selection-project/analysis/safe-transport-selection-20260930/engine.cpp",
+    "-o",
+    "/safe-transport-selection-project/engine"
+  ],
+  "compiler": "g++ (GCC) 10.3.1\nCopyright (C) 2020 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "stdout": "prefixes=32 seconds=1.35637\n",
+  "wall_seconds": 1.3772434319835156,
+  "children_peak_rss_kib": 190236,
+  "workers": 14,
+  "predicted_ideal_seconds": 430.38857249484863,
+  "within_cost_budget": true,
+  "rows": 32,
+  "original_births_match": true,
+  "scientific_weight": 0,
+  "source_commit": "5054c02383242473834045fcbddc7379d83acfb9",
+  "binary_sha256": "9cd09ffeafc7bda7f4e2468e39b30266fa0f56830dcf61b5c14d9cad97bd60ef"
+}

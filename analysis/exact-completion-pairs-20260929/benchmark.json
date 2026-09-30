@@ -1,0 +1,21 @@
+{
+  "purpose": "One-time physical witness control and same-prefix runtime/source check before full replay",
+  "compiler_command": "clang++ -O3 -std=c++17 analysis/exact-completion-pairs-20260929/engine.cpp -o <temporary>/engine",
+  "physical_controls": [
+    {"lattice": "square", "L": 4, "mask": 4403, "nu": 0, "edges": 2},
+    {"lattice": "square", "L": 4, "mask": 4405, "nu": 0, "edges": 3},
+    {"lattice": "triangular", "L": 4, "mask": 4371, "nu": 0, "edges": 4},
+    {"lattice": "triangular", "L": 4, "mask": 4402, "nu": 0, "edges": 6}
+  ],
+  "control_comparison": "Full enumerated pair sets equalled direct copied-Geometry two-insertion sets for these four witnesses only",
+  "replay_command": "<temporary>/engine 512 128 9722445355900932119 155385 <temporary>/replay-b00-first128.csv",
+  "prefixes": 128,
+  "engine_seconds": 1.83744,
+  "rank_one_prefixes": 56,
+  "maximum_edges": 31070,
+  "row_alignment": "All first five fields equalled the existing safe-insertion batch 0 first 128 rows",
+  "nonlocal_candidate_check": "candidate count <= 6 * edge count in all rank-one rows",
+  "new_random_prefixes": 0,
+  "scientific_cohort_contrast_computed": false,
+  "dependency": "These rows recur in full replay batch 0; they are not extra evidence"
+}

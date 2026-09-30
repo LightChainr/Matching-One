@@ -1,0 +1,51 @@
+{
+  "environment": {
+    "utc": "2026-09-30T02:12:22.665118+00:00",
+    "platform": "Linux-5.10.0-182.0.0.95.r3582_286.hce2.aarch64-aarch64-with-glibc2.34",
+    "python": "3.9.9 (main, May 16 2026, 13:00:28) \n[GCC 10.3.1]",
+    "machine": "aarch64",
+    "hostname": "4a8d1d443419434889e49148ed0a7ba6",
+    "cpu_quota_cores": 14.5,
+    "memory_limit_bytes": 26843545600,
+    "affinity_cpus": 16,
+    "compiler": "g++ (GCC) 10.3.1\nCopyright (C) 2020 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "ps": "    PID    PPID COMMAND             ELAPSED %CPU %MEM\n      1       0 tini                  06:23  0.0  0.0\n      6       1 start_docker.sh       06:23  0.0  0.0\n     11       1 sudo                  06:23  0.0  0.0\n     16      11 devenvd               06:23  0.0  0.0\n     17       1 sshd                  06:23  0.0  0.0\n    969       6 sleep                 00:03  0.0  0.0\n    971      17 sshd                  00:00  0.0  0.0\n    974     971 sshd                  00:00  0.0  0.0\n    975     974 python3               00:00  0.0  0.0\n    985     975 ps                    00:00  0.0  0.0\n",
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "build_command": [
+    "chroot",
+    "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/toolchain",
+    "/usr/bin/g++",
+    "-O3",
+    "-std=c++17",
+    "/project/source/exact-completion-pairs-20260929/engine.cpp",
+    "-o",
+    "/project/engine"
+  ],
+  "binary_sha256": "72ddbdb1c2e26352ed8f62b820bfcdc741750bc5b50cf459f4b0adefe019fab7",
+  "command": [
+    "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/toolchain/usr/bin/time",
+    "-v",
+    "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/build/engine",
+    "512",
+    "32",
+    "18419746559907930925",
+    "155385",
+    "/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/build/same-seed-32.csv"
+  ],
+  "stdout": "prefixes=32 seconds=1.00033\n",
+  "time_log": "\tCommand being timed: \"/workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/build/engine 512 32 18419746559907930925 155385 /workspace/Matching-One-TV2N0X/exact-pair-independent-20260930/build/same-seed-32.csv\"\n\tUser time (seconds): 1.01\n\tSystem time (seconds): 0.00\n\tPercent of CPU this job got: 99%\n\tElapsed (wall clock) time (h:mm:ss or m:ss): 0:01.01\n\tAverage shared text size (kbytes): 0\n\tAverage unshared data size (kbytes): 0\n\tAverage stack size (kbytes): 0\n\tAverage total size (kbytes): 0\n\tMaximum resident set size (kbytes): 75960\n\tAverage resident set size (kbytes): 0\n\tMajor (requiring I/O) page faults: 0\n\tMinor (reclaiming a frame) page faults: 10253\n\tVoluntary context switches: 0\n\tInvoluntary context switches: 2\n\tSwaps: 0\n\tFile system inputs: 0\n\tFile system outputs: 8\n\tSocket messages sent: 0\n\tSocket messages received: 0\n\tSignals delivered: 0\n\tPage size (bytes): 4096\n\tExit status: 0\n",
+  "wall_seconds": 1.020989065989852,
+  "max_rss_kib": 75960,
+  "same_seed": "18419746559907930925",
+  "batch": 0,
+  "rows": 32,
+  "all_mapped_first5_match": true,
+  "scientific_weight": 0,
+  "recommended_workers": 14,
+  "approximate_replay_seconds": 319.05908312182873
+}

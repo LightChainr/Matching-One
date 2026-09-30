@@ -1,0 +1,40 @@
+{
+  "environment": {
+    "platform": "Linux-5.10.0-182.0.0.95.r3582_286.hce2.aarch64-aarch64-with-glibc2.34",
+    "machine": "aarch64",
+    "python": "3.9.9",
+    "cpu_quota": 14.5,
+    "memory_bytes": 26843545600,
+    "hostname": "83750ac4eae34bbbbc64b894b854dd8c"
+  },
+  "command": [
+    "/workspace/Matching-One-TgFr7R/geometric-source-window-20260930/analysis/geometric-source-window-20260930/build/engine",
+    "512",
+    "32",
+    "9722445355900932119",
+    "155385",
+    "735",
+    "/workspace/Matching-One-TgFr7R/geometric-source-window-20260930/analysis/geometric-source-window-20260930/build/old-seed-32.csv"
+  ],
+  "build_command": [
+    "chroot",
+    "/workspace/Matching-One-TgFr7R/geometric-source-window-20260930/toolchain",
+    "/usr/bin/g++",
+    "-O3",
+    "-std=c++17",
+    "/project/analysis/geometric-source-window-20260930/engine.cpp",
+    "-o",
+    "/project/engine"
+  ],
+  "compiler": "g++ (GCC) 10.3.1\nCopyright (C) 2020 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "stdout": "prefixes=32 lag=735 seconds=1.04858\n",
+  "wall_seconds": 1.0649478120030835,
+  "children_peak_rss_kib": 185640,
+  "workers": 14,
+  "predicted_ideal_seconds": 332.7961912509636,
+  "rows": 32,
+  "aligned_first5": true,
+  "scientific_weight": 0,
+  "source_commit": "d9824b5bf478fc8acad238be2b9f31ce99787966",
+  "binary_sha256": "db3b6ea76b9e5e9dc3bb9010c4256f65e577124677a44b92fa255975b434a24b"
+}
