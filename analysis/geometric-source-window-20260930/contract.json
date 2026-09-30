@@ -1,0 +1,28 @@
+{
+  "schema": "matching-one.geometric-source-window-contract.v1",
+  "date": "2026-09-30",
+  "parent_commit": "eb9884dcc0a550b5d87fb247084e059504e76b2a",
+  "scientific_question": "Does a clock-preserving single geometric kick transmit to the original finite-window rank survival at L512?",
+  "lattice": "square occupied-site NN torus",
+  "L": 512,
+  "N": 262144,
+  "b": 155385,
+  "lag": 735,
+  "end_count": 156120,
+  "lag_origin": "original completion-hazard contract c-b, unchanged; no lag search",
+  "input_manifest": "analysis/safe-insertion-production-20260929/data/run.json",
+  "dependency_group": "safe_insertion_independent_L512",
+  "reuse_status": "previously analysed prefixes; new mechanism response on their existing full permutations, not new independent production or untouched holdout",
+  "source": "One kick at b: uniform completing probabilities 1/m; safe probabilities (s/m)*exp(theta*d)/sum_safe exp(theta*d). Original uniform source thereafter.",
+  "primary": "Mean derivative at theta=0 of P(rank remains one at b+735), conditional on rank_b=1 under the original prefix law",
+  "per_prefix_estimator": "1{rank_{b+h}=1} * [sum_{v in next h vacancies} d_v/h - 2e/s]; exactly zero if s=0",
+  "derivation": "Condition on the unordered next-h-site set; its first site is uniform among those h. Average the normalized source likelihood score over these h possible first sites. Endpoint survival depends on the set, not the order.",
+  "accompanying_readouts": [
+    "unperturbed rank-one survival at exactly the same endpoint",
+    "exact two-step derivative -(s*sum_d2-4e^2)/(s*m*(m-1)), zero for s=0"
+  ],
+  "inference": "14 original aligned whole-batch deletions; conditional risk denominators recomputed on each deletion; full 3x3 covariance. No early/late subgroup scan, no theta grid, no new cutoff, no expansion based on result.",
+  "interpretation": "Nonzero 735-step response establishes finite-size delayed rank transmission by a source that preserves the occupation clock and immediate hazard. Local negativity alone does not fix this sign. Does not identify a continuum limit, original-U mechanism or explain a fraction of passive history memory.",
+  "compute": "140000 existing permutations in 14 batches; Huawei TgFr7R only in a new task directory; one short old-seed cost probe of zero additional scientific weight; max14workers based on live cgroup limits",
+  "support_boundary": "Independent negative-history replication remains owned by the separate TV2N0X worker and is not changed or pooled with this mechanism computation."
+}

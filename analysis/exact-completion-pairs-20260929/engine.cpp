@@ -110,6 +110,7 @@ public:
     }
 };
 
+#ifndef MATCHING_ONE_PAIR_LIBRARY
 int main(int argc,char**argv){
     try{
         if(argc==2 && std::string(argv[1])=="control"){
@@ -157,3 +158,4 @@ int main(int argc,char**argv){
         return 0;
     }catch(const std::exception&e){std::cerr<<e.what()<<'\n';return 1;}
 }
+#endif
